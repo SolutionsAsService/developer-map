@@ -12,7 +12,7 @@ const state = {
   route: null,
   routeStep: 0,
   routesExpanded: false,
-  edgeFocus: true,
+  edgeFocus: false,
 };
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (value) =>
@@ -33,7 +33,7 @@ function connectIndexes(atlas) {
   state.byId = new Map(atlas.nodes.map((node) => [node.id, node]));
   state.edgesById = new Map();
   for (const edge of atlas.edges) {
-    for (const id of [edge.source, edge.target]) {
+    for (const id of new Set([edge.source, edge.target])) {
       if (!state.edgesById.has(id)) state.edgesById.set(id, []);
       state.edgesById.get(id).push(edge);
     }
@@ -66,7 +66,7 @@ function connectIndexes(atlas) {
 
 function relationDescription(edge, id) {
   const other = state.byId.get(edge.source === id ? edge.target : edge.source);
-  const direction = edge.source === id ? "→" : "←";
+  const direction = edge.source === edge.target ? "↻" : edge.source === id ? "→" : "←";
   const relation = edge.semantic || humanize(edge.relation).toLowerCase();
   return { other, direction, relation };
 }
@@ -75,6 +75,10 @@ function selectConcept(id, { scroll = false } = {}) {
   id = state.atlas.aliases?.[id] || id;
   if (!state.byId.has(id)) return;
   state.selected = id;
+  state.edgeFocus = false;
+  network?.edgeFocus(false);
+  $("#edge-focus").setAttribute("aria-pressed", "false");
+  $("#edge-focus").textContent = "Emphasize one edge";
   renderMap();
   renderPreview();
   renderInspector();
@@ -178,10 +182,10 @@ function renderMap() {
   $("#details-jump").hidden = !state.selected;
   $("#edge-focus").hidden = !state.selected;
   $("#map-mode").textContent = state.selected
-    ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()}`
+    ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()} · ALL INCIDENT LINKS / ALL SOURCES`
     : "WHOLE FIELD / ALL NODES";
   $("#map-count").textContent =
-    `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${network?.counts().connected || 0} direct neighbors${state.edgeFocus ? " · active edge emphasized" : " highlighted"}` : ""}`;
+    `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${(state.edgesById.get(state.selected) || []).length} incident links · ${network?.counts().connected || 0} direct neighbors · all sources (overview filter does not hide incident links)` : ""}`;
   const directed = (state.edgesById.get(state.selected) || []).filter(
     (edge) => window.DeveloperMapKey.classify(edge).arrow,
   );
@@ -387,12 +391,12 @@ function renderClaim(claim) {
   return `<div class="claim"><b>${escapeHtml(claim.id)}</b>${renderFields(fields)}</div>`;
 }
 
-function renderStudyMaterial(records) {
+function renderStudyMaterial(records, file) {
   if (!records.length) return "";
   return `<details class="related-material"><summary>Linked source material · ${records.length} records</summary>${records
     .map((item) => {
       const sequence = Array.isArray(item.record.sequence)
-        ? item.record.sequence.filter((id) => state.byId.has(id))
+        ? item.record.sequence.map(id => state.atlas.sourceNodeMap[file.split("_full_")[0] + ":" + id]).filter((id) => state.byId.has(id))
         : [];
       return `<article class="study-record"><h6>${escapeHtml(humanize(item.section))}</h6>${renderFields(item.fields)}${sequence.length ? `<div class="study-sequence">Explore this source path: ${sequence.map((id) => `<button type="button" data-concept="${escapeHtml(id)}">${escapeHtml(state.byId.get(id).label)}</button>`).join(" → ")}</div>` : ""}</article>`;
     })
@@ -460,17 +464,17 @@ function renderInspector() {
         .join("/");
       const context =
         document?.metadata.source || document?.metadata.source_policy || null;
-      return `<article class="source-variant"><h5>${escapeHtml(sourceTitle(variant.document))}</h5><p class="source-file">${escapeHtml(variant.document)} · <a href="./data/${encodedFile}" download>Download source JSON ↓</a></p>${renderFields(variant.fields) || "<p>No descriptive fields supplied in this record.</p>"}${variant.claims.length ? `<div class="claim-list"><strong>Supporting claims · ${variant.claims.length}</strong>${variant.claims.map(renderClaim).join("")}</div>` : ""}${renderStudyMaterial(variant.related || [])}${context ? `<div class="source-field"><strong>Source policy / origin</strong>${displayValue(context)}</div>` : ""}${document ? `<details class="document-context" data-file="${escapeHtml(variant.document)}"><summary>Source context, references &amp; complete metadata ↗</summary><div class="document-fields"></div><details class="document-raw"><summary>Full source metadata JSON</summary><pre></pre></details></details>` : ""}</article>`;
+      return `<article class="source-variant"><h5>${escapeHtml(sourceTitle(variant.document))}</h5><p class="source-file">${escapeHtml(variant.document)} · <a href="./data/${encodedFile}" download>Download source JSON ↓</a></p>${renderFields(variant.fields) || "<p>No descriptive fields supplied in this record.</p>"}${variant.claims.length ? `<div class="claim-list"><strong>Supporting claims · ${variant.claims.length}</strong>${variant.claims.map(renderClaim).join("")}</div>` : ""}${renderStudyMaterial(variant.related || [], variant.document)}${context ? `<div class="source-field"><strong>Source policy / origin</strong>${displayValue(context)}</div>` : ""}${document ? `<details class="document-context" data-file="${escapeHtml(variant.document)}"><summary>Source context, references &amp; complete metadata ↗</summary><div class="document-fields"></div><details class="document-raw"><summary>Full source metadata JSON</summary><pre></pre></details></details>` : ""}</article>`;
     })
     .join("");
   const relations = connections
     .map((edge) => {
       const { other, direction, relation } = relationDescription(edge, node.id);
       const style = window.DeveloperMapKey.classify(edge);
-      return `<article class="relation-entry" tabindex="-1" data-relation-id="${escapeHtml(edge.id)}"><button type="button" data-concept="${escapeHtml(other?.id || "")}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>${edge.curated ? "Editorial relation" : "Source relation"}: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || "Unknown")}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof">${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ""}<span>${edge.curated ? "Editorial connection ·" : "Recorded in"} ${escapeHtml(sourceTitle(edge.document))}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ""}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join("")}</div>` : "<p>No claim-level citation supplied for this relationship.</p>"}</div></article>`;
+      return `<article class="relation-entry" tabindex="-1" data-relation-id="${escapeHtml(edge.id)}"><button type="button" data-concept="${escapeHtml(other?.id || "")}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>${edge.source === edge.target ? "Self-loop" : edge.source === node.id ? "Outgoing" : "Incoming"} · ${edge.curated ? "Editorial relation" : "Source relation"}: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || "Unknown")}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof"><p><strong>Why this connection:</strong> ${escapeHtml(state.byId.get(edge.source)?.label || edge.source)} → ${escapeHtml(humanize(edge.relation))} → ${escapeHtml(state.byId.get(edge.target)?.label || edge.target)}.</p>${!(edge.fields || []).some(field => /reason|rationale|mechanism|description|explanation|condition|semantic/i.test(field.key)) ? "<p>The source records this relationship but does not provide a separate causal explanation.</p>" : ""}${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ""}<span>${edge.curated ? "Editorial connection ·" : "Recorded in"} ${escapeHtml(sourceTitle(edge.document))}${edge.sourcePointer ? ` · ${escapeHtml(edge.sourcePointer)}` : ""}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ""}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join("")}</div>` : "<p>No claim-level citation supplied for this relationship.</p>"}</div></article>`;
     })
     .join("");
-  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${new Set(node.variants.map((variant) => variant.document)).size} SOURCE DOCUMENTS</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ""}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ""}${node.addedByEditor ? '<p class="provenance-warning">Editorial note added to resolve a source reference; not an original graph node.</p>' : ""}</div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || "<p>No original source record.</p>"}</div></div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || "<p>No relationships are recorded for this concept yet.</p>"}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
+  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${new Set(node.variants.map((variant) => variant.document)).size} SOURCE DOCUMENTS</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ""}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ""}${node.addedByEditor ? '<p class="provenance-warning">Editorial note added to resolve a source reference; not an original graph node.</p>' : ""}</div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || "<p>No relationships are recorded for this concept yet.</p>"}</div></div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || "<p>No original source record.</p>"}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
   host
     .querySelectorAll("[data-concept]")
     .forEach((button) =>
@@ -512,15 +516,15 @@ function renderInspector() {
 }
 
 function renderRoutes() {
-  $("#route-list").innerHTML = state.atlas.paths
-    .slice(0, state.routesExpanded ? undefined : 8)
+  const featured = state.atlas.documents.map(doc => state.atlas.paths.find(path => path.document === doc.file)).filter(Boolean);
+  $("#route-list").innerHTML = (state.routesExpanded ? state.atlas.paths : featured)
     .map(
       (route, index) =>
-        `<button class="route-card ${escapeHtml(route.color)}" type="button" data-route="${escapeHtml(route.id)}"><span class="route-top"><span>PATH / 0${index + 1}</span><span aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true">${route.steps.map((_, step) => `<i style="--step:${step}"></i>`).join("")}</span><strong>${escapeHtml(route.title)}</strong><span class="route-subtitle">${escapeHtml(route.subtitle)}</span><span class="route-bottom">${route.steps.length} concepts <span>FOLLOW THIS ROUTE →</span></span></button>`,
+        `<button class="route-card ${escapeHtml(route.color)}" type="button" data-route="${escapeHtml(route.id)}"><span class="route-top"><span>PATH / 0${index + 1}</span><span aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true">${route.steps.map((_, step) => `<i style="--step:${step}"></i>`).join("")}</span><strong>${escapeHtml(route.title)}</strong><span class="route-subtitle">${escapeHtml(route.subtitle)}</span><span class="route-bottom">${route.steps.length} resolved · ${route.unresolvedSegments} unresolved <span>FOLLOW THIS ROUTE →</span></span></button>`,
     )
     .join("");
   $("#routes-more").hidden =
-    state.routesExpanded || state.atlas.paths.length <= 8;
+    state.routesExpanded || state.atlas.paths.length <= featured.length;
   $("#route-list")
     .querySelectorAll("button")
     .forEach((button) =>
@@ -546,35 +550,35 @@ function renderRouteDetail() {
   }
   host.hidden = false;
   const route = state.route;
-  const id = route.steps[state.routeStep];
+  const segment = route.segments[state.routeStep];
+  const id = segment?.conceptId;
   const concept = state.byId.get(id);
-  const previous = route.steps[state.routeStep - 1];
-  const bridge = previous
-    ? state.atlas.edges.find(
-        (edge) =>
-          (edge.source === previous && edge.target === id) ||
-          (edge.target === previous && edge.source === id),
-      )
-    : null;
-  const transition = !previous
-    ? "Every route starts somewhere. Choose this idea and follow its connections."
-    : bridge
-      ? `Recorded connection: ${escapeHtml(state.byId.get(previous).label)} ${escapeHtml(humanize(bridge.relation).toLowerCase())} ${escapeHtml(concept.label)}.`
-      : `Next, look at ${escapeHtml(concept.label)} to connect this idea with ${escapeHtml(state.byId.get(previous).label)}.`;
-  host.innerHTML = `<div><p class="eyebrow">FOLLOWING / ${escapeHtml(route.title.toUpperCase())}</p><h3>${escapeHtml(concept.label)}</h3><p>${escapeHtml(concept.note?.intuition || concept.description || "Explore this concept in its full source record.")}</p><small>${transition}</small><div class="route-actions"><button class="button primary" id="route-explore" type="button">Explore this idea ↗</button><button class="button outline" id="route-next" type="button">${state.routeStep + 1 === route.steps.length ? "Start again ↺" : "Next idea →"}</button></div></div><div class="route-progress"><span>YOUR ROUTE / ${state.routeStep + 1} OF ${route.steps.length}</span>${route.steps.map((step, index) => `<button type="button" data-step="${index}" class="${index === state.routeStep ? "current" : ""}"><b>${String(index + 1).padStart(2, "0")}</b>${escapeHtml(state.byId.get(step).label)}</button>`).join("")}</div>`;
-  $("#route-explore").addEventListener("click", () =>
-    selectConcept(id, { scroll: true }),
-  );
-  $("#route-next").addEventListener("click", () => {
-    state.routeStep = (state.routeStep + 1) % route.steps.length;
+  const previous = route.segments[state.routeStep - 1]?.conceptId;
+  const bridge = previous && id ? state.atlas.edges.find(edge => !edge.curated &&
+    ((edge.source === previous && edge.target === id) || (edge.target === previous && edge.source === id))) : null;
+  const transition = bridge
+    ? 'Recorded source edge: ' + state.byId.get(bridge.source).label + ' → ' + humanize(bridge.relation) + ' → ' + state.byId.get(bridge.target).label + ' (' + bridge.id + ').'
+    : 'No recorded source edge asserted for this transition. Source ordering is a learning suggestion, not a graph relationship.';
+  host.innerHTML = '<div><p class="eyebrow">FOLLOWING / ' + escapeHtml(route.title.toUpperCase()) + '</p>' +
+    (route.sequenceText ? '<h4>Original source prose</h4><p class="route-source-text">' + escapeHtml(route.sequenceText) + '</p>' : '') +
+    '<h3>' + escapeHtml(concept?.label || segment?.text || route.title) + '</h3><p class="' + (concept ? '' : 'route-unresolved') + '">' +
+    escapeHtml(concept ? concept.description || 'Resolved against this source document; inspect the original record.' : 'Unresolved source segment: ' + (segment?.reason || 'No exact local concept')) +
+    '</p><small>' + escapeHtml(transition) + '</small><p>' + escapeHtml(route.transitionPolicy) + '</p><div class="route-actions">' +
+    (concept ? '<button class="button primary" id="route-explore" type="button">Explore this idea ↗</button>' : '') +
+    '<button class="button outline" id="route-next" type="button">' + (state.routeStep + 1 === route.segments.length ? 'Start again ↺' : 'Next segment →') +
+    '</button></div><details><summary>Complete original path record</summary><pre>' + escapeHtml(JSON.stringify(route.record, null, 2)) + '</pre></details></div><div class="route-progress"><span>YOUR ROUTE / ' +
+    (state.routeStep + 1) + ' OF ' + route.segments.length + '</span>' + route.segments.map((item, index) =>
+      '<button type="button" data-step="' + index + '" class="' + (index === state.routeStep ? 'current' : '') + '"><b>' + String(index + 1).padStart(2, '0') + '</b>' +
+      escapeHtml(item.text) + '<small class="' + (item.status === 'unresolved' ? 'route-unresolved' : '') + '">' + escapeHtml(item.status + (item.match ? ' · ' + item.match : ' · ' + item.reason)) + '</small></button>').join('') + '</div>';
+  $('#route-explore')?.addEventListener('click', () => selectConcept(id, { scroll: true }));
+  $('#route-next').addEventListener('click', () => {
+    state.routeStep = (state.routeStep + 1) % route.segments.length;
     renderRouteDetail();
   });
-  host.querySelectorAll("[data-step]").forEach((button) =>
-    button.addEventListener("click", () => {
-      state.routeStep = Number(button.dataset.step);
-      renderRouteDetail();
-    }),
-  );
+  host.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
+    state.routeStep = Number(button.dataset.step);
+    renderRouteDetail();
+  }));
 }
 
 function renderCatalog() {
@@ -614,10 +618,10 @@ function setupMapGestures() {
     network.edgeFocus(state.edgeFocus);
     $("#edge-focus").setAttribute("aria-pressed", String(state.edgeFocus));
     $("#edge-focus").textContent = state.edgeFocus
-      ? "Active edge"
-      : "Neighborhood";
+      ? "Edge emphasized · all links shown"
+      : "Emphasize one edge";
     $("#map-count").textContent =
-      `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links · ${network?.counts().connected || 0} direct neighbors${state.edgeFocus ? " · active edge emphasized" : " highlighted"}`;
+      `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links · ${network?.counts().connected || 0} direct neighbors${state.edgeFocus ? " · edge emphasized; all incident links shown" : " · all incident links shown"}`;
   });
   $("#zoom-in").addEventListener("click", () => network.zoom(1.3));
   $("#zoom-out").addEventListener("click", () => network.zoom(1 / 1.3));
@@ -659,6 +663,9 @@ async function init() {
     $("#provenance-summary").textContent =
       `${state.atlas.summary.sourceRelationships} source links + ${state.atlas.summary.bridges} labeled editorial links. Originals preserved.`;
     setupMapGestures();
+    $("#network").addEventListener("edgeinspect", event => { state.featuredEdge = state.atlas.edges.find(edge => edge.id === event.detail.id); state.edgeFocus = true; $("#edge-focus").setAttribute("aria-pressed", "true"); $("#edge-focus").textContent = "Edge emphasized · all links shown"; renderPreview(); });
+    document.addEventListener("focusin", event => { const button = event.target.closest?.("[data-concept], [data-start]"); if (button) network.highlight(state.atlas.aliases?.[button.dataset.concept || button.dataset.start] || button.dataset.concept || button.dataset.start); });
+    document.addEventListener("focusout", () => network.highlight(null));
     renderMapKey();
     renderFilters();
     renderMap();

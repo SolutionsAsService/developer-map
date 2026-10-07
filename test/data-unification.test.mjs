@@ -18,9 +18,9 @@ test('explicit semantic aliases unify all reviewed source members', () => {
       assert.ok(canonical.variants.some(variant => variant.sourceKey === member), member);
     }
   }
-  for (const [alias, id] of Object.entries({ k8s: 'kubernetes', vm: 'virtual_machine', dependencies: 'dependency', open_shift: 'openshift', freebsd_jails: 'freebsd_jail', 'docker:namespaces': 'namespaces', 'containerization:cgroups': 'cgroups', container_portability: 'portability', namespace: 'kubernetes:namespace' })) assert.equal(resolve(alias), id);
-  assert.equal(byId.get('kubernetes').topics.length, 3);
-  assert.equal(byId.get('virtual_machine').topics.length, 3);
+  for (const [alias, id] of Object.entries({ k8s: 'kubernetes', dependencies: 'dependency', open_shift: 'openshift', freebsd_jails: 'freebsd_jail', 'docker:namespaces': 'namespaces', 'containerization:cgroups': 'cgroups', container_portability: 'portability' })) assert.equal(resolve(alias), id);
+  assert.equal(byId.get('kubernetes').topics.length, 4);
+  assert.equal(byId.get('virtual_machine').topics.length, 5);
 });
 
 test('ambiguous and narrower concepts are not conflated', () => {
@@ -68,12 +68,13 @@ test('every endpoint and learning path remaps through its own source identity', 
     for (const [index, record] of source.learning_paths.entries()) {
       const path = atlas.paths.find(path => path.id === doc.graphId + ':path:' + index);
       assert.deepEqual(path.record, record);
-      assert.deepEqual(path.steps, record.sequence.map(id => atlas.sourceNodeMap[doc.graphId + ':' + id]));
+      if (Array.isArray(record.sequence)) assert.deepEqual(path.steps, record.sequence.map(id => atlas.sourceNodeMap[doc.graphId + ':' + id]));
+      else assert.equal(path.sequenceText, record.sequence);
     }
   }
-  assert.equal(nodeRecords, 771);
-  assert.equal(edgeRecords, 638);
-  assert.ok(atlas.edges.every(edge => byId.has(edge.source) && byId.has(edge.target) && edge.source !== edge.target));
+  assert.equal(nodeRecords, 2317);
+  assert.equal(edgeRecords, 2373);
+  assert.ok(atlas.edges.every(edge => byId.has(edge.source) && byId.has(edge.target) && (edge.source !== edge.target || edge.record.source === edge.record.target)));
   assert.equal(new Set(atlas.edges.map(edge => edge.id)).size, atlas.edges.length);
   assert.ok(Object.values(atlas.aliases).every(id => byId.has(id)));
   assert.ok(Object.keys(atlas.aliases).every(id => !byId.has(id)));
@@ -90,12 +91,12 @@ test('claims and references remain isolated identities even without conventional
 
 test('connectivity audit reports disconnected data instead of inventing repairs', () => {
   assert.deepEqual(atlas.audit.connectivity, connectivity(atlas.nodes, atlas.edges));
-  assert.equal(atlas.summary.components, 228);
-  assert.equal(atlas.summary.isolated, 213);
-  assert.equal(atlas.audit.connectivity.componentSizes[0], 507);
+  assert.equal(atlas.summary.components, 623);
+  assert.equal(atlas.summary.isolated, 603);
+  assert.equal(atlas.audit.connectivity.componentSizes[0], 1607);
   assert.deepEqual(atlas.audit.sourceOnlyConnectivity.componentSizes, atlas.audit.connectivity.componentSizes);
-  assert.equal(atlas.audit.sourceClaimRecords, 52);
-  assert.deepEqual(atlas.audit.selfLoops, []);
+  assert.equal(atlas.audit.sourceClaimRecords, 153);
+  assert.deepEqual(atlas.audit.selfLoops, ['operating_system:46', 'operating_system:55', 'python_language:140']);
 });
 
 test('repeated builds are byte-for-byte deterministic including layout and audits', async () => {

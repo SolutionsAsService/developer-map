@@ -1,0 +1,62 @@
+flowchart TD
+  C["C · Design by Contract · Bertrand Meyer · preserve every source record, hash and URL meaning"]
+  P["P · A Pattern Language · Alexander, Ishikawa, Silverstein; with Jacobson, Fiksdahl-King, Angel · adapt existing builder and UI, no new framework"]
+  H["H · Literary Machines · Ted Nelson · stable section addresses and reversible record mappings"]
+  D["D · DRY · David Thomas and Andrew Hunt · one normalized atlas, exact manifest mappings"]
+  F["F · Refactoring · Martin Fowler with Kent Beck · fix string paths and add rich relationships without changing inputs"]
+  T["T · Tufte Style · Edward R. Tufte · ten domains, honest unresolved prose, source-backed trails"]
+  L["L · Least Privilege · Saltzer and Schroeder · repository only; normal push main"]
+  ATTR["Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService · workflow credit, not authorship of literature or source data"]
+  CAT["Catalog visible index checked 2026-10-07 · https://llm-coding.github.io/Semantic-Anchors/ · five catalog anchors; P and H retained verified local extensions; no catalog prose copied; upstream Apache-2.0 notices retained"]
+  R1["R1 · 2317 node records, 153 claims, 2373 base and 44 rich edges, 133 paths; byte-identical inputs"]
+  R2["R2 · conservative identity, no created loops, ambiguous URLs choose explicitly"]
+  R3["R3 · prose kept verbatim; exact local tokens resolved; unresolved segments retained; no inferred edges"]
+  R4["R4 · ten domains, new entry points, source-derived trails, complete rich inspectors"]
+  R6["R6 · reselect restores ALL incident edges across sources; both directions, parallel rich edges and original loops; hover never replaces pinned selection"]
+  NET["src/network.js · uncapped incident set, parallel curves, loops, whole-neighborhood framing and observable rendered IDs"]
+  R5["R5 · deterministic build, tests, desktop/mobile browser QA, normal push and remote verification"]
+  S0["data/containerization_full_relationship_rich_semantic_knowledge_graph_v1.json"]
+  S1["data/docker_full_relationship_rich_semantic_knowledge_graph_v1.json"]
+  S2["data/kubernetes_full_relationship_rich_semantic_knowledge_graph_v2_verified.json"]
+  S3["data/operating_system_full_relationship_rich_semantic_knowledge_graph_v2.json"]
+  S4["data/optical_disc_image_full_relationship_rich_semantic_knowledge_graph_v1.json"]
+  S5["data/python_language_full_relationship_rich_semantic_knowledge_graph_v2.json"]
+  S6["data/sandbox_computer_security_full_relationship_rich_semantic_knowledge_graph_v1.json"]
+  S7["data/system_image_full_relationship_rich_semantic_knowledge_graph_v1.json"]
+  S8["data/virtual_machine_full_relationship_rich_semantic_knowledge_graph_v1.json"]
+  S9["data/volume_computing_full_relationship_rich_semantic_knowledge_graph_v3.json"]
+  N["scripts/normalize-source.mjs · section enumeration, nested titles and conservative text paths"]
+  I["scripts/concept-curation.mjs and concept-identity.mjs · explicit scope decisions and ambiguity"]
+  B["scripts/build-atlas.mjs · preserve original records and section provenance"]
+  U["src/app.js, src/map-key.js, src/styles.css, index.html · domains, entries, routes, metadata"]
+  A["data/atlas.json · every derived node and relationship enumerated by stable ID"]
+  M["docs/integration-manifest.json · exact source pointer to derived node/edge/path/claim map and SHA256; grouped records are exhaustively enumerated"]
+  G["scripts/integration-manifest.mjs · reproducible provenance and artifact inventory"]
+  X["test/atlas.test.mjs, data-unification.test.mjs, interface.test.mjs, integration.test.mjs · all invariants"]
+  Q["docs/QA.md and docs/integration-browser.json · desktop/mobile evidence and timings"]
+  DOC["README.md and docs/DATA-AUDIT.md · actual metrics, limitations and credits"]
+  GRAPH["docs/data-integration.mmd and docs/integration-graph.svg · parse and rendered task graph"]
+  PUB["Normal main commit and push · refetch, ls-remote SHA and clean sync"]
+  C --> R1 & R2 & R3 & R4 & R5
+  C --> L --> P --> H --> D --> F --> T --> C
+  P --> CAT --> ATTR
+  S0 & S1 & S2 & S3 & S4 & S5 & S6 & S7 & S8 & S9 -->|source evidence only| N
+  R1 --> N --> B --> A
+  R2 --> I --> B
+  R3 --> N
+  R4 --> U
+  A --> U --> Q
+  H --> M
+  A --> G --> M --> X
+  B & I & N & U -->|regression proof| X
+  R5 --> X --> Q --> PUB
+  X -->|failures return| F
+  Q -->|usability failures return| T
+  M -->|all grouped records trace back| R1
+  M --> DOC --> GRAPH
+  GRAPH --> C
+  ATTR --> GRAPH
+  PUB -->|recheck contract| C
+  C --> R6 --> NET --> U
+  NET --> X
+  Q -->|reselect and high-degree desktop/mobile proof| R6

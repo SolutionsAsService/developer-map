@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+import { documentTitle, relationshipEntries, normalizePath } from './normalize-source.mjs';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,7 +14,7 @@ const slug = file => path.basename(file).split('_full_')[0];
 
 export async function buildAtlas() {
   const files = (await readdir(dataDirectory)).filter(file => file.endsWith('.json') && file !== 'atlas.json').sort();
-  const sources = await Promise.all(files.map(async file => ({ file, data: JSON.parse(await readFile(path.join(dataDirectory, file), 'utf8')) })));
+  const sources = await Promise.all(files.map(async file => ({ file, data: JSON.parse(await readFile(path.join(dataDirectory, file), 'utf8')), sha256: createHash('sha256').update(await readFile(path.join(dataDirectory, file))).digest('hex') })));
   const documents = sources.filter(({ data }) => Array.isArray(data.nodes) && (Array.isArray(data.edges) || Array.isArray(data.relationships)));
   const identity = createIdentityResolver(documents);
   const scopedId = identity.resolve;
@@ -21,13 +23,14 @@ export async function buildAtlas() {
   const documentMetadata = [];
   const paths = [];
 
-  for (const { file, data } of documents) {
+  for (const { file, data, sha256 } of documents) {
     const graphId = slug(file);
-    const relationships = data.edges || data.relationships;
+    const relationships = relationshipEntries(data);
+    const title = documentTitle(data, graphId);
     const claimsById = new Map(claimEntries(data).map(claim => [claim.id, claim]));
     const { nodes: _nodes, edges: _edges, relationships: _relationships, ...metadata } = data;
     const related = relatedSections(metadata, new Set([...data.nodes.map(node => node.id), ...claimsById.keys()]));
-    documentMetadata.push({ file, graphId, title: data.subject || data.title || graphId, domain: data.domain, nodeCount: data.nodes.length, edgeCount: relationships.length, fields: explainDocument(metadata), metadata });
+    documentMetadata.push({ file, graphId, title, sha256, domain: data.domain || data.metadata?.domain || graphId, nodeCount: data.nodes.length, edgeCount: relationships.length, fields: explainDocument(metadata), metadata });
 
     for (const original of data.nodes) {
       const id = scopedId(file, original.id);
@@ -47,13 +50,12 @@ export async function buildAtlas() {
       if (nodes.has(id)) continue;
       nodes.set(id, { id, originalId: claim.id, originalIds: [claim.id], label: String(claimText(claim) || claim.id).slice(0, 76), type: 'source claim', description: claimText(claim), topics: [graphId], claim: true, variants: [{ ...explainVariant(claim, file, claimsById), sourceId: claim.id, sourceKey: graphId + ':' + claim.id, related: related.get(claim.id) || [] }] });
     }
-    relationships.forEach((original, index) => {
+    relationships.forEach(({ record: original, section, index }) => {
       if (!original.source || !original.target) throw new Error(`Incomplete edge ${file}:${index}`);
-      edges.push({ id: `${graphId}:${index}`, source: scopedId(file, original.source), target: scopedId(file, original.target), relation: original.relation || original.relationship || 'related to', semantic: original.semantic || original.description || original.mechanism || '', ...explainEdge(original, file, claimsById), provenance: 'source', curated: false });
+      edges.push({ id: section === 'rich_semantic_relationships' || (section === 'edges' && data.relationships) ? `${graphId}:${section}:${index}` : `${graphId}:${index}`, section, sourceIndex: index, sourcePointer: `/${section}/${index}`, source: scopedId(file, original.source), target: scopedId(file, original.target), relation: original.relation || original.relationship || 'related to', semantic: original.semantic || original.description || original.mechanism || '', ...explainEdge(original, file, claimsById), provenance: 'source', curated: false });
     });
     for (const [index, learningPath] of (data.learning_paths || []).entries()) {
-      const steps = learningPath.sequence.map(id => scopedId(file, id));
-      paths.push({ id: `${graphId}:path:${index}`, title: learningPath.title || learningPath.name, subtitle: `From the ${data.subject || data.title || graphId} source graph`, color: ({ docker: 'cyan', kubernetes: 'violet', virtual_machine: 'amber', containerization: 'mint' })[graphId], description: `A recorded path through the ${data.subject || data.title || graphId} source graph.`, steps, document: file, record: learningPath });
+      paths.push({ id: `${graphId}:path:${index}`, title: learningPath.title || learningPath.name || learningPath.label || learningPath.id, subtitle: `From the ${title} source graph`, color: graphId, description: 'Original source learning suggestion; consecutive ideas need not have a recorded edge.', ...normalizePath(learningPath, data, id => scopedId(file, id)), document: file, sourcePointer: `/learning_paths/${index}`, record: learningPath });
     }
   }
 
@@ -83,8 +85,8 @@ export async function buildAtlas() {
     protectedRecordCount: identity.protectedKeys.size, selfLoops: edges.filter(edge => edge.source === edge.target).map(edge => edge.id),
     sourceParallelEdgesRetained: true, policy: 'No fuzzy identities. Original records and all parallel source edges retained. Editorial edges do not repair or endorse source claims.' };
 
-  return { schemaVersion: '1.1', title: 'Developer Map', documents: documentMetadata, nodes: unifiedNodes, edges, paths, aliases: identity.aliases, ambiguousAliases: identity.ambiguousAliases, sourceNodeMap: identity.sourceNodeMap, audit,
-    summary: { concepts: unifiedNodes.length, relationships: edges.length, overlaps: unifiedNodes.filter(node => node.topics.length > 1).length, sourceRelationships: edges.filter(edge => !edge.curated).length, bridges: edges.filter(edge => edge.curated).length, unresolved: 0, components: graphAudit.componentCount, isolated: graphAudit.isolatedNodeIds.length, aliasGroups: aliasGroups.length } };
+  return { schemaVersion: '1.2', title: 'Developer Map', documents: documentMetadata, nodes: unifiedNodes, edges, paths, aliases: identity.aliases, ambiguousAliases: identity.ambiguousAliases, sourceNodeMap: identity.sourceNodeMap, audit,
+    summary: { concepts: unifiedNodes.length, relationships: edges.length, overlaps: unifiedNodes.filter(node => node.topics.length > 1).length, sourceRelationships: edges.filter(edge => !edge.curated).length, bridges: edges.filter(edge => edge.curated).length, unresolved: 0, unresolvedPathSegments: paths.reduce((sum, item) => sum + item.unresolvedSegments, 0), textPaths: paths.filter(item => item.sequenceKind === 'prose').length, richRelationships: edges.filter(edge => edge.section === 'rich_semantic_relationships').length, components: graphAudit.componentCount, isolated: graphAudit.isolatedNodeIds.length, aliasGroups: aliasGroups.length } };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

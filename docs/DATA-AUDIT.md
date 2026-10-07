@@ -1,4 +1,44 @@
-# Data identity and relationship audit
+# Ten-source integration audit · 2026-10-07
+
+Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
+
+## Current verified totals
+
+- 10 original JSON datasets; placeholder is not a dataset. All ten source SHA-256 hashes match upload commit 10fb7ab63177eb18a4bb7ff80cd17e10df450b13.
+- 2,317 original node records, 153 claims, 133 learning paths, and all document metadata preserved.
+- 2,373 base + 44 rich source relationships = 2,417 source edges; the five pre-existing editorial edges remain separately labeled. No new editorial edge was manufactured.
+- 2,278 displayed concepts, 2,422 edges, 48 cross-document concepts, 10 explicit alias groups.
+- 623 weak components, largest 1,607 nodes, 603 graph-isolated records. This is not a claim that the whole map is transitively connected.
+- Three original loops retained: operating_system:46, operating_system:55, python_language:140. Zero dangling endpoints or merge-created loops.
+- 30 prose paths retain 116 whole segments: 60 resolved and 56 explicitly unresolved. All 103 ID-array paths retain their source-scoped steps. No relationships come from path order.
+
+## Evidence and identity
+
+The full exact record mapping and unchanged hashes are in [integration-manifest.json](integration-manifest.json). Every source node/claim, relationship section/index, learning-path record/segment, and metadata section maps to the derived atlas. The nonlinear [task graph](data-integration.mmd) connects sources, requirements, normalization, curation, UI, tests and publication. Seven workflow anchors retain their original literary authors; none serves as domain evidence.
+
+New explicit identities: OS/security Sandbox; Java VM/JVM (Python edge 310 → existing VM edge 33); sandbox Linux cgroups/namespaces with existing infrastructure; OS cross-domain Kubernetes and generic VM; sandbox VM implementation with generic VM. Source cgroups/namespaces context is sandbox relationships 25–27. OS edges 313/314/316 connect sandbox/containerization/VM. Original parallel rich edges retain distinct IDs such as operating_system:rich_semantic_relationships:0 and sourcePointer /rich_semantic_relationships/0.
+
+Declined: Python VM ≠ generic/system VM; OS vm ≠ OS virtual_machine (edge 317 same_concept_family must remain); Linux application sandboxing ≠ Linux OS/kernel; general volume ≠ Docker/Kubernetes volume; optical filesystem ≠ generic filesystem; all image types remain distinct. System-image edge 3 remains conditional on all relevant state being on disk. Generic filesystem/kernel label differences remain source-qualified conservatively. Sandbox isolation and iOS sandbox implementation were additionally separated from VM isolation and the OS product despite matching labels.
+
+Bare vm, linux, kernel, filesystem and namespace URLs now offer explicit choices rather than guessing. Qualified source links remain exact; jvm and sandbox are canonical. Prior bare vm/namespace automatic redirects are intentionally replaced by ambiguity choices when new source meanings arrive. No fuzzy matching, blanket singularization or external knowledge repairs are added.
+
+## Path normalization
+
+String arrows delimit display segments, not concept IDs or edges. Only whole exact local IDs or unambiguous local labels resolve; claims/references are not guessed from labels. Slashes, comparisons, unsupported phrases and composite sequences stay intact. Python Compilation has zero resolved concepts and remains fully readable without a broken Explore action. Full original prose and record always remain available. Source titles use top-level, metadata.title, or source.title; OS/sandbox path label is supported.
+
+## Complete incident neighborhoods
+
+Every selection and re-selection restores all recorded incident edges in both directions across all sources, regardless of overview filters. Parallel base/rich edges are distinct curves, source loops are drawn explicitly, and source/target direction is shown with arrows plus Incoming/Outgoing/Self-loop labels in the complete relationship list. The full incident set is uncapped; the preview is explicitly a sample, not the complete list. Hover/focus does not displace a pinned selection. Selected neighborhoods are framed as a whole rather than zooming into one edge. Edge emphasis never hides other incident edges. The canvas exposes the actual drawn edge IDs for exact set-comparison tests.
+
+## Verification scope
+
+26 Node/jsdom tests pass at the integration checkpoint, including every source record/hash, deterministic rebuild, ambiguity/compatibility, rich metadata and high-degree repeated selection with cross-source filters and original loops. Actual test output: docs/qa/integration-tests.txt. Browser-policy blocker and current browser verification status are recorded separately in [QA.md](QA.md); historical screenshots below do not prove this larger integration.
+
+---
+
+The earlier audit follows intact for historical evidence, source credits and the unchanged five editorial relations. Its metrics and bare-URL behavior are superseded by the current section above.
+
+# Historical four-source identity audit (superseded totals)
 
 Reviewed 2026-10-07. Scope: all four supplied JSON graphs, their definitions, relationships, claims, metadata and learning paths. This is an identity/provenance and navigability audit, **not independent verification of every source assertion**. Original source files are unchanged.
 

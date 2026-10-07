@@ -37,7 +37,13 @@
     let topic = "all";
     let focusedEdges = [];
     let featuredEdge = null;
-    let edgeOnly = true;
+    let edgeOnly = false;
+    let renderedIncidentIds = [];
+    let edgeGeometry = new Map();
+    const parallel = new Map();
+    const lanes = new Map();
+    for (const edge of edges) { const key = [edge.source, edge.target].sort().join("|"); if (!parallel.has(key)) parallel.set(key, []); parallel.get(key).push(edge); }
+    for (const group of parallel.values()) group.forEach((edge, index) => lanes.set(edge.id, { index, total: group.length }));
     let drag = null;
     let scheduled = false;
 
@@ -54,6 +60,9 @@
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       context.clearRect(0, 0, width, height);
       const active = selected || hovered;
+      renderedIncidentIds = [];
+      edgeGeometry = new Map();
+      const incident = active ? edges.filter(edge => edge.source === active || edge.target === active) : [];
       const related = active ? neighbors.get(active) || new Set() : null;
       function drawEdge(edge, highlighted) {
         const from = byId.get(edge.source),
@@ -65,11 +74,9 @@
           to.topics.includes(topic);
         const style = styles.get(edge);
         context.globalAlpha =
-          edge === featuredEdge
+          edge === featuredEdge && edgeOnly
             ? 1
-            : edgeOnly && featuredEdge
-              ? 0.035
-              : highlighted
+            : highlighted
                 ? 0.72
                 : active
                   ? 0.065
@@ -77,7 +84,7 @@
                     ? 0.21
                     : 0.05;
         context.strokeStyle = style.color;
-        context.lineWidth = edge === featuredEdge ? 4 : highlighted ? 2.2 : 0.8;
+        context.lineWidth = edge === featuredEdge && edgeOnly ? 4 : highlighted ? 2.2 : 0.8;
         context.setLineDash(style.dash);
         const sourcePoint = screen(from),
           targetPoint = screen(to);
@@ -98,17 +105,33 @@
         const end = featured
           ? { x: targetPoint.x - alongX * 14, y: targetPoint.y - alongY * 14 }
           : targetPoint;
+        const lane = lanes.get(edge.id);
+        const offset = lane.total > 1 ? (lane.index - (lane.total - 1) / 2) * 18 : 0;
+        const direction = edge.source < edge.target ? 1 : -1;
+        const control = { x: (start.x + end.x) / 2 - alongY * offset * direction, y: (start.y + end.y) / 2 + alongX * offset * direction };
         context.beginPath();
-        context.moveTo(start.x, start.y);
-        context.lineTo(end.x, end.y);
-        context.stroke();
+        if (edge.source === edge.target) {
+          const radius = 16 + lane.index * 7;
+          context.arc(start.x, start.y - radius, radius, 0.2, Math.PI * 2 + 0.2);
+          context.stroke();
+          if (highlighted) { context.fillStyle = style.color; context.fillText('↻ ' + edge.relation, start.x + radius + 4, start.y - radius); }
+        } else {
+          context.moveTo(start.x, start.y);
+          context.quadraticCurveTo(control.x, control.y, end.x, end.y);
+          context.stroke();
+          if (highlighted && offset) { context.fillStyle = style.color; context.font = '10px ui-monospace, monospace'; context.fillText(String(lane.index + 1), control.x, control.y); }
+        }
+        if (highlighted) { renderedIncidentIds.push(edge.id); edgeGeometry.set(edge.id, { start, end, control, loop: edge.source === edge.target, radius: 16 + lane.index * 7 }); }
         if (
-          style.arrow &&
+          (style.arrow || highlighted) &&
           (highlighted || (style.id === "orchestration" && !active && inTopic))
         ) {
           if (distance > 15) {
-            const tipX = end.x - alongX * (featured ? 0 : 5),
-              tipY = end.y - alongY * (featured ? 0 : 5);
+            const t = 0.82, u = 1 - t;
+            const tipX = u*u*start.x + 2*u*t*control.x + t*t*end.x, tipY = u*u*start.y + 2*u*t*control.y + t*t*end.y;
+            const tangentX = 2*u*(control.x-start.x)+2*t*(end.x-control.x), tangentY = 2*u*(control.y-start.y)+2*t*(end.y-control.y);
+            const tangentLength = Math.max(1, Math.hypot(tangentX,tangentY));
+            const alongX = tangentX/tangentLength, alongY = tangentY/tangentLength;
             const baseX = tipX - alongX * (featured ? 11 : 6),
               baseY = tipY - alongY * (featured ? 11 : 6);
             const halfWidth = featured ? 6 : 3;
@@ -145,16 +168,14 @@
         if (!active || (edge.source !== active && edge.target !== active))
           drawEdge(edge, false);
       if (active)
-        for (const edge of focusedEdges)
+        for (const edge of incident)
           if (edge !== featuredEdge) drawEdge(edge, true);
-      if (featuredEdge) drawEdge(featuredEdge, true);
+      if (featuredEdge && incident.includes(featuredEdge)) drawEdge(featuredEdge, true);
       context.setLineDash([]);
       const labeled = new Set(ranked.slice(0, 32).map((node) => node.id));
       if (active) {
         labeled.add(active);
-        for (const node of ranked
-          .filter((node) => related.has(node.id))
-          .slice(0, 25))
+        for (const node of ranked.filter((node) => related.has(node.id)))
           labeled.add(node.id);
       }
       if (featuredEdge) {
@@ -180,11 +201,7 @@
           featuredEdge &&
           (featuredEdge.source === node.id || featuredEdge.target === node.id);
         context.globalAlpha =
-          edgeOnly && featuredEdge
-            ? featured
-              ? 1
-              : 0.14
-            : active
+          active
               ? relevant
                 ? 1
                 : 0.3
@@ -222,16 +239,10 @@
       });
       for (const node of labelOrder) {
         if (
-          edgeOnly &&
-          featuredEdge &&
-          ![featuredEdge.source, featuredEdge.target].includes(node.id)
-        )
-          continue;
-        if (
           !labeled.has(node.id) ||
           (topic !== "all" &&
             !node.topics.includes(topic) &&
-            node.id !== active)
+            node.id !== active && !related?.has(node.id))
         )
           continue;
         if (active && node.id !== active && !related.has(node.id)) continue;
@@ -244,7 +255,7 @@
         )
           continue;
         const important =
-          node.id === active ||
+          node.id === active || related?.has(node.id) ||
           (featuredEdge &&
             [featuredEdge.source, featuredEdge.target].includes(node.id));
         context.font =
@@ -312,6 +323,9 @@
         context.fillText(caption, labelX + 9, labelY);
       }
       context.globalAlpha = 1;
+      canvas.dataset.incidentEdgeIds = JSON.stringify(renderedIncidentIds);
+      canvas.dataset.selectedConcept = selected || "";
+      canvas.dataset.neighborhoodScope = selected ? "all sources; incoming and outgoing; no edge cap" : "overview";
     }
 
     function requestDraw() {
@@ -322,22 +336,13 @@
       )(draw);
     }
 
-    function frameFeaturedEdge() {
-      if (!featuredEdge) return;
-      const from = byId.get(featuredEdge.source),
-        to = byId.get(featuredEdge.target);
-      const distance = Math.hypot(
-        (to.layout.x - from.layout.x) * fitScaleX,
-        (to.layout.y - from.layout.y) * fitScaleY,
-      );
-      zoom = Math.max(
-        1.8,
-        Math.min(8, (width < 600 ? 95 : 160) / Math.max(1, distance)),
-      );
-      const midpointX = (from.layout.x + to.layout.x) / 2 - centerX;
-      const midpointY = (from.layout.y + to.layout.y) / 2 - centerY;
-      panX = width * 0.5 - width / 2 - midpointX * fitScaleX * zoom;
-      panY = height * 0.48 - height / 2 - midpointY * fitScaleY * zoom;
+    function frameNeighborhood() {
+      const active = selected; if (!active) return;
+      const points = [byId.get(active), ...[...(neighbors.get(active) || [])].map(id => byId.get(id))];
+      const xs = points.map(n => (n.layout.x - centerX) * fitScaleX), ys = points.map(n => (n.layout.y - centerY) * fitScaleY);
+      const left = Math.min(...xs), right = Math.max(...xs), top = Math.min(...ys), bottom = Math.max(...ys);
+      zoom = Math.min(6, (width - 100) / Math.max(50, right - left), (height - 110) / Math.max(50, bottom - top));
+      panX = -(left + right) / 2 * zoom; panY = -(top + bottom) / 2 * zoom;
     }
 
     function resize() {
@@ -349,7 +354,7 @@
       canvas.height = Math.round(height * pixelRatio);
       fitScaleX = (width - 36) / Math.max(1, bounds.maxX - bounds.minX);
       fitScaleY = (height - 36) / Math.max(1, bounds.maxY - bounds.minY);
-      frameFeaturedEdge();
+      frameNeighborhood();
       draw();
     }
 
@@ -378,24 +383,14 @@
       let closest = null,
         distance = 7;
       for (const edge of focusedEdges) {
-        const start = screen(byId.get(edge.source)),
-          end = screen(byId.get(edge.target));
-        const horizontal = end.x - start.x,
-          vertical = end.y - start.y;
-        const lengthSquared = horizontal * horizontal + vertical * vertical;
-        if (!lengthSquared) continue;
-        const fraction = Math.max(
-          0,
-          Math.min(
-            1,
-            ((pointX - start.x) * horizontal + (pointY - start.y) * vertical) /
-              lengthSquared,
-          ),
-        );
-        const separation = Math.hypot(
-          pointX - start.x - fraction * horizontal,
-          pointY - start.y - fraction * vertical,
-        );
+        const geometry = edgeGeometry.get(edge.id); if (!geometry) continue;
+        const { start, end, control, loop, radius } = geometry;
+        let separation = Infinity;
+        if (loop) separation = Math.abs(Math.hypot(pointX - start.x, pointY - (start.y - radius)) - radius);
+        else for (let step = 0; step <= 30; step++) {
+          const t=step/30, u=1-t;
+          separation = Math.min(separation, Math.hypot(pointX-(u*u*start.x+2*u*t*control.x+t*t*end.x), pointY-(u*u*start.y+2*u*t*control.y+t*t*end.y)));
+        }
         if (separation < distance) {
           distance = separation;
           closest = edge;
@@ -408,7 +403,7 @@
       tooltip.hidden = !node && !edge;
       if (!node && !edge) return;
       tooltip.textContent = node
-        ? `${node.label} · ${node.degree} links`
+        ? `${node.label} · ${edges.filter(edge => edge.source === node.id || edge.target === node.id).length} incident links`
         : `${byId.get(edge.source).label} → ${byId.get(edge.target).label} · ${edge.relation.replaceAll("_", " ")}${edge.semantic ? ` · ${edge.semantic}` : ""}${edge.record?.mathematical_form ? ` · ${edge.record.mathematical_form}` : ""}${edge.record?.conditions ? ` · When: ${Array.isArray(edge.record.conditions) ? edge.record.conditions.join("; ") : edge.record.conditions}` : ""}`;
       const bounds = canvas.getBoundingClientRect();
       tooltip.style.left = `${Math.min(bounds.width - 190, Math.max(10, event.clientX - bounds.left + 12))}px`;
@@ -451,6 +446,7 @@
       if (drag && !drag.moved) {
         const node = hitTest(event.clientX, event.clientY);
         if (node) onSelect(node.id);
+        else { const edge = edgeAt(event.clientX, event.clientY); if (edge) { featuredEdge = edge; edgeOnly = true; draw(); canvas.dispatchEvent(new CustomEvent("edgeinspect", { detail: { id: edge.id } })); } }
       }
       drag = null;
     });
@@ -483,22 +479,25 @@
 
     return {
       select(id) {
-        if (selected !== id) featuredEdge = null;
+        featuredEdge = null;
+        edgeOnly = false;
         selected = id;
         focusedEdges = id
           ? edges.filter((edge) => edge.source === id || edge.target === id)
           : [];
         hovered = null;
         tooltip.hidden = true;
+        frameNeighborhood();
         draw();
       },
       focusEdge(edge) {
         featuredEdge = edge;
-        frameFeaturedEdge();
+        frameNeighborhood();
         draw();
       },
       edgeFocus(value) {
         edgeOnly = value;
+        frameNeighborhood();
         draw();
       },
       topic(id) {
@@ -518,8 +517,11 @@
         focusedEdges = [];
         draw();
       },
+      highlight(id) { hovered = id; draw(); },
       counts() {
         return {
+          incidentEdgeIds: [...renderedIncidentIds],
+          incidentEdges: focusedEdges.length,
           nodes: nodes.length,
           edges: edges.length,
           connected: selected ? neighbors.get(selected)?.size || 0 : 0,

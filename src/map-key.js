@@ -4,6 +4,13 @@
     { id: "containerization", label: "Containerization", color: "#75e0d4" },
     { id: "docker", label: "Docker", color: "#86bff5" },
     { id: "kubernetes", label: "Kubernetes", color: "#c4b0fa" },
+    {"id":"operating_system","label":"Operating systems","color":"#f0d575"},
+    {"id":"optical_disc_image","label":"Optical disc images","color":"#efa7cd"},
+    {"id":"python_language","label":"Python","color":"#91d795"},
+    {"id":"sandbox_computer_security","label":"Security sandboxes","color":"#f49f83"},
+    {"id":"system_image","label":"System images","color":"#83d5e2"},
+    {"id":"volume_computing","label":"Storage volumes","color":"#b5c6ef"},
+    {"id":"neutral","label":"Other / unclassified","color":"#a1a9b4"},
     { id: "source", label: "Sources / claims", color: "#839ba7" },
   ];
   const relationships = [
@@ -87,12 +94,11 @@
     if (topics.includes("kubernetes")) return "kubernetes";
     if (topics.includes("docker")) return "docker";
     if (topics.includes("containerization")) return "containerization";
-    return "vm";
+    if (topics.includes("virtual_machine")) return "vm";
+    return topics.find(topic => domainById.has(topic)) || "neutral";
   }
 
   function classify(edge) {
-    if (edge.curated && edge.relation === "same_platform_as")
-      return relationshipById.get("identity");
     if (edge.curated)
       return {
         id: "editorial",

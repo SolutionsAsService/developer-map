@@ -1,3 +1,4 @@
+import { relationshipEntries } from '../scripts/normalize-source.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -10,21 +11,21 @@ const byId = new Map(atlas.nodes.map(node => [node.id, node]));
 
 test('published atlas matches regenerated source data', () => {
   assert.deepEqual(published, atlas);
-  assert.equal(atlas.documents.length, 4);
-  assert.equal(atlas.summary.sourceRelationships, 638);
+  assert.equal(atlas.documents.length, 10);
+  assert.equal(atlas.summary.sourceRelationships, 2417);
   assert.equal(atlas.summary.bridges, 5);
   assert.equal(atlas.summary.unresolved, 0);
-  assert.equal(atlas.paths.length, 50);
+  assert.equal(atlas.paths.length, 133);
   assert.equal(byId.size, atlas.nodes.length);
 });
 
 test('every source node, relationship, claim and path survives with provenance', async () => {
   for (const doc of atlas.documents) {
     const source = JSON.parse(await readFile(new URL(`../data/${doc.file}`, import.meta.url)));
-    const originals = source.edges || source.relationships;
+    const originals = relationshipEntries(source);
     assert.equal(atlas.edges.filter(edge => edge.document === doc.file).length, originals.length);
-    originals.forEach((record, index) => {
-      const edge = atlas.edges.find(item => item.id === `${doc.graphId}:${index}`);
+    originals.forEach(({record, section, index}) => {
+      const edge = atlas.edges.find(item => item.document === doc.file && item.section === section && item.sourceIndex === index);
       assert.deepEqual(edge.record, record);
       assert.ok(byId.has(edge.source) && byId.has(edge.target));
     });
