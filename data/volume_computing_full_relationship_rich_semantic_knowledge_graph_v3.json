@@ -1,0 +1,3322 @@
+{
+  "schema": {
+    "name": "Full Relationship-Rich Semantic Knowledge Graph",
+    "version": "4.0-volume-source-preserving",
+    "description": "Preserves concepts, mechanisms, usage, directionality, conditions, effects, distinctions, examples, history, provenance, formal models, learning paths and expansion targets from the supplied Volume (computing) source.",
+    "source_policy": "Supplied source is authoritative; no external corrections or web research applied.",
+    "relationship_policy": "Typed, directional, mechanism-aware relationships; no generic related_to padding."
+  },
+  "source": {
+    "filename": "Pasted text(20261007-180556).txt",
+    "line_count": 131,
+    "title": "Volume (computing)",
+    "source_type": "Wikipedia-derived user-supplied text",
+    "source_lines": "49-131"
+  },
+  "nodes": [
+    {
+      "id": "volume",
+      "label": "Volume / logical drive",
+      "type": "storage_concept"
+    },
+    {
+      "id": "storage_area",
+      "label": "Distinctly-addressable storage area",
+      "type": "storage_concept"
+    },
+    {
+      "id": "single_fs",
+      "label": "Single file system",
+      "type": "filesystem"
+    },
+    {
+      "id": "mass_storage",
+      "label": "General-purpose mass-storage device",
+      "type": "storage_device"
+    },
+    {
+      "id": "partition",
+      "label": "Partition",
+      "type": "storage_structure"
+    },
+    {
+      "id": "filesystem",
+      "label": "File system",
+      "type": "filesystem"
+    },
+    {
+      "id": "physical_drive",
+      "label": "Physical drive",
+      "type": "storage_device"
+    },
+    {
+      "id": "redundancy",
+      "label": "Redundancy",
+      "type": "storage_property"
+    },
+    {
+      "id": "multiple_media",
+      "label": "Multiple storage media / physical drives",
+      "type": "storage_topology"
+    },
+    {
+      "id": "striping",
+      "label": "Striping",
+      "type": "storage_property"
+    },
+    {
+      "id": "simple_volume",
+      "label": "Simple volume",
+      "type": "storage_configuration"
+    },
+    {
+      "id": "memory_card",
+      "label": "Memory card",
+      "type": "storage_device"
+    },
+    {
+      "id": "floppy",
+      "label": "Floppy disk",
+      "type": "storage_device"
+    },
+    {
+      "id": "partition_table",
+      "label": "Partition table",
+      "type": "storage_structure"
+    },
+    {
+      "id": "logical_drive",
+      "label": "Logical drive",
+      "type": "identifier"
+    },
+    {
+      "id": "windows",
+      "label": "Microsoft Windows",
+      "type": "operating_system"
+    },
+    {
+      "id": "unix",
+      "label": "Unix-like system",
+      "type": "operating_system"
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "type": "operating_system"
+    },
+    {
+      "id": "ext4",
+      "label": "ext4",
+      "type": "filesystem"
+    },
+    {
+      "id": "ntfs",
+      "label": "NTFS",
+      "type": "filesystem"
+    },
+    {
+      "id": "fat32",
+      "label": "FAT32",
+      "type": "filesystem"
+    },
+    {
+      "id": "iso9660",
+      "label": "ISO 9660",
+      "type": "filesystem"
+    },
+    {
+      "id": "apple_disk_image",
+      "label": "Apple Disk Image",
+      "type": "disk_image"
+    },
+    {
+      "id": "volume_file",
+      "label": "Volume packed in a file",
+      "type": "storage_representation"
+    },
+    {
+      "id": "host_volume",
+      "label": "Host volume",
+      "type": "storage_concept"
+    },
+    {
+      "id": "kernel",
+      "label": "Operating-system kernel",
+      "type": "os_component"
+    },
+    {
+      "id": "disk_management",
+      "label": "Disk Management",
+      "type": "windows_tool"
+    },
+    {
+      "id": "diskpart",
+      "label": "diskpart",
+      "type": "windows_tool"
+    },
+    {
+      "id": "drive_letter",
+      "label": "Drive letter",
+      "type": "mount_namespace"
+    },
+    {
+      "id": "mount_point",
+      "label": "Mount point",
+      "type": "mount_namespace"
+    },
+    {
+      "id": "root_directory",
+      "label": "Root directory",
+      "type": "filesystem_structure"
+    },
+    {
+      "id": "unix_tree",
+      "label": "Unix-like filesystem tree",
+      "type": "mount_namespace"
+    },
+    {
+      "id": "logical_volume_manager",
+      "label": "Logical Volume Manager",
+      "type": "volume_manager"
+    },
+    {
+      "id": "enterprise_volume_management",
+      "label": "Enterprise Volume Management System",
+      "type": "volume_manager"
+    },
+    {
+      "id": "mount_command",
+      "label": "mount command",
+      "type": "unix_tool"
+    },
+    {
+      "id": "data_move_same_volume",
+      "label": "Same-volume file move",
+      "type": "filesystem_operation"
+    },
+    {
+      "id": "data_move_cross_volume",
+      "label": "Cross-volume file move",
+      "type": "filesystem_operation"
+    },
+    {
+      "id": "metadata_change",
+      "label": "Filesystem metadata change",
+      "type": "filesystem_operation"
+    },
+    {
+      "id": "content_copy",
+      "label": "File-content copy",
+      "type": "filesystem_operation"
+    },
+    {
+      "id": "volume_label",
+      "label": "Volume label",
+      "type": "identifier"
+    },
+    {
+      "id": "volume_serial",
+      "label": "Volume serial number",
+      "type": "identifier"
+    },
+    {
+      "id": "human_identifier",
+      "label": "Human-readable identifier",
+      "type": "identifier"
+    },
+    {
+      "id": "global_identifier",
+      "label": "Fixed / globally-unique identifier",
+      "type": "identifier"
+    },
+    {
+      "id": "mainframes",
+      "label": "Mainframes",
+      "type": "historical_system"
+    },
+    {
+      "id": "os360",
+      "label": "OS/360",
+      "type": "operating_system"
+    },
+    {
+      "id": "sysres",
+      "label": "SYSRES",
+      "type": "volume_identifier"
+    },
+    {
+      "id": "fat",
+      "label": "FAT filesystem",
+      "type": "filesystem"
+    },
+    {
+      "id": "vfat",
+      "label": "VFAT",
+      "type": "filesystem"
+    },
+    {
+      "id": "exfat",
+      "label": "exFAT",
+      "type": "filesystem"
+    },
+    {
+      "id": "boot_sector",
+      "label": "Disk boot sector",
+      "type": "storage_structure"
+    },
+    {
+      "id": "ebpb",
+      "label": "Extended BIOS Parameter Block",
+      "type": "storage_structure"
+    },
+    {
+      "id": "root_dir_entry",
+      "label": "Root-directory entry",
+      "type": "filesystem_structure"
+    },
+    {
+      "id": "os2",
+      "label": "OS/2",
+      "type": "operating_system"
+    },
+    {
+      "id": "msdos",
+      "label": "MS-DOS",
+      "type": "operating_system"
+    },
+    {
+      "id": "serial_clock",
+      "label": "Host real-time clock",
+      "type": "system_component"
+    },
+    {
+      "id": "media_change_detection",
+      "label": "Media-change detection",
+      "type": "storage_function"
+    },
+    {
+      "id": "formatting",
+      "label": "Formatting",
+      "type": "storage_operation"
+    },
+    {
+      "id": "relabeling",
+      "label": "Relabeling",
+      "type": "storage_operation"
+    },
+    {
+      "id": "dir_command",
+      "label": "dir command",
+      "type": "windows_tool"
+    },
+    {
+      "id": "vol_command",
+      "label": "vol command",
+      "type": "windows_tool"
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "type": "filesystem_namespace"
+    },
+    {
+      "id": "d0",
+      "label": "Physical drive D0",
+      "type": "physical_drive"
+    },
+    {
+      "id": "d1",
+      "label": "Physical drive D1",
+      "type": "physical_drive"
+    },
+    {
+      "id": "p0_d0",
+      "label": "D0 partition P0",
+      "type": "partition"
+    },
+    {
+      "id": "p1_d0",
+      "label": "D0 partition P1",
+      "type": "partition"
+    },
+    {
+      "id": "p0_d1",
+      "label": "D1 partition P0",
+      "type": "partition"
+    },
+    {
+      "id": "c_volume",
+      "label": "C: volume",
+      "type": "volume"
+    },
+    {
+      "id": "d_volume",
+      "label": "D: volume",
+      "type": "volume"
+    },
+    {
+      "id": "e_volume",
+      "label": "E: volume",
+      "type": "volume"
+    },
+    {
+      "id": "track1",
+      "label": "Track1.mp3",
+      "type": "file"
+    },
+    {
+      "id": "info_txt",
+      "label": "info.txt",
+      "type": "file"
+    },
+    {
+      "id": "music_mount",
+      "label": "C:\\Music",
+      "type": "mount_point"
+    },
+    {
+      "id": "iso_mount",
+      "label": "/mnt/iso9660",
+      "type": "mount_point"
+    },
+    {
+      "id": "sysres_volume",
+      "label": "SYSRES volume",
+      "type": "volume"
+    },
+    {
+      "id": "c1",
+      "label": "Definition",
+      "type": "source_claim",
+      "statement": "A volume or logical drive is a distinctly-addressable storage area with a single file system.",
+      "source_lines": {
+        "start": 53,
+        "end": 53
+      },
+      "semantic_role": "definition"
+    },
+    {
+      "id": "c2",
+      "label": "Storage topology",
+      "type": "source_claim",
+      "statement": "Mass storage is commonly divided into partitions used as volumes; volumes may span multiple media for redundancy, while simple volumes use one medium without redundancy or striping.",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      },
+      "semantic_role": "architecture"
+    },
+    {
+      "id": "c3",
+      "label": "Windows example",
+      "type": "source_claim",
+      "statement": "The source's two-drive example maps D0/P0 to NTFS C:, D0/P1 to FAT32 D:, and D1/P0 to FAT32 E:.",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      },
+      "semantic_role": "worked_example"
+    },
+    {
+      "id": "c4",
+      "label": "Partition versus volume recognition",
+      "type": "source_claim",
+      "statement": "An OS may recognize a partition without recognizing its volume when it is unformatted or uses an unsupported filesystem such as ext4 in the Windows example.",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      },
+      "semantic_role": "compatibility"
+    },
+    {
+      "id": "c5",
+      "label": "File-packed volume",
+      "type": "source_claim",
+      "statement": "A volume can be packed in one file, such as an ISO9660 disc image or Apple Disk Image; because it is a file inside a host volume, it is not a partition.",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      },
+      "semantic_role": "representation"
+    },
+    {
+      "id": "c6",
+      "label": "Windows mounting",
+      "type": "source_claim",
+      "statement": "Windows handles volumes in the kernel and configures volumes/mount points through Disk Management or diskpart; mounted volumes receive paths via drive letters or NTFS mount points.",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      },
+      "semantic_role": "os_implementation"
+    },
+    {
+      "id": "c7",
+      "label": "Unix mounting",
+      "type": "source_claim",
+      "statement": "Unix-like systems commonly use volume managers and mount; non-boot volumes are grafted into the filesystem tree at a mount point.",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      },
+      "semantic_role": "os_implementation"
+    },
+    {
+      "id": "c8",
+      "label": "Cross-volume performance",
+      "type": "source_claim",
+      "statement": "Moving a file within a volume can change metadata without copying content, while moving across volumes requires copying content and deleting the source.",
+      "source_lines": {
+        "start": 98,
+        "end": 99
+      },
+      "semantic_role": "performance"
+    },
+    {
+      "id": "c9",
+      "label": "Identifiers",
+      "type": "source_claim",
+      "statement": "Volumes can use human-readable labels and more fixed identifiers; serial numbers historically originated on mainframes and later supported media-change detection.",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      },
+      "semantic_role": "identity"
+    },
+    {
+      "id": "c10",
+      "label": "FAT/NTFS labels and serials",
+      "type": "source_claim",
+      "statement": "FAT, NTFS, and exFAT impose different volume-label constraints; FAT/NTFS serial numbers support detection of volume replacement and formatting changes the serial.",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      },
+      "semantic_role": "identifier_mechanism"
+    },
+    {
+      "id": "r1",
+      "label": "Understanding Disk Terminology",
+      "type": "reference",
+      "author": "Microsoft Corporation"
+    },
+    {
+      "id": "r2",
+      "label": "Partitions and Volumes",
+      "type": "reference",
+      "author": "Microsoft Corporation"
+    },
+    {
+      "id": "r3",
+      "label": "Use Built-In Tools to Create Partitions and Volumes in Windows Server",
+      "type": "reference",
+      "author": "Microsoft Corporation"
+    },
+    {
+      "id": "r4",
+      "label": "Issue with .XPSF playlists",
+      "type": "reference",
+      "author": "Unspecified"
+    },
+    {
+      "id": "r5",
+      "label": "Label - Disk label - Windows CMD",
+      "type": "reference",
+      "author": "SS64.com"
+    },
+    {
+      "id": "r6",
+      "label": "Changing a Disk's Volume Serial Number",
+      "type": "reference",
+      "author": "Brett Glass"
+    },
+    {
+      "id": "r7",
+      "label": "Inside OS/2",
+      "type": "reference",
+      "author": "Gordon Letwin"
+    },
+    {
+      "id": "person_brett_glass",
+      "label": "Brett Glass",
+      "type": "person",
+      "role": "author"
+    },
+    {
+      "id": "person_gordon_letwin",
+      "label": "Gordon Letwin",
+      "type": "person",
+      "role": "author"
+    },
+    {
+      "id": "event_1950s",
+      "label": "Origin of volume serial numbers",
+      "type": "historical_event",
+      "description": "Volume serial numbers originated with mainframes in the 1950s.",
+      "year": 1950
+    },
+    {
+      "id": "event_os2",
+      "label": "OS/2 development context",
+      "type": "historical_event",
+      "description": "The FAT/NTFS identification system was designed during OS/2 development.",
+      "year": null
+    },
+    {
+      "id": "event_msdos401",
+      "label": "MS-DOS 4.01 introduction",
+      "type": "historical_event",
+      "description": "The source says the volume serial number mechanism was introduced in MS-DOS 4.01 in 1988.",
+      "year": 1988
+    },
+    {
+      "id": "partition_vs_volume",
+      "label": "Partition Vs Volume",
+      "type": "semantic_distinction",
+      "concept_a": "partition",
+      "concept_b": "volume",
+      "distinction": "A partition is a storage division; a volume is the logically addressable storage area with a filesystem."
+    },
+    {
+      "id": "volume_vs_physical_drive",
+      "label": "Volume Vs Physical Drive",
+      "type": "semantic_distinction",
+      "concept_a": "volume",
+      "concept_b": "physical_drive",
+      "distinction": "A volume is logical; a physical drive is physical storage hardware."
+    },
+    {
+      "id": "simple_vs_redundant",
+      "label": "Simple Vs Redundant",
+      "type": "semantic_distinction",
+      "concept_a": "simple_volume",
+      "concept_b": "redundancy",
+      "distinction": "Simple volumes use one medium without redundancy or striping; specialized volumes may span media."
+    },
+    {
+      "id": "volume_file_vs_partition",
+      "label": "Volume File Vs Partition",
+      "type": "semantic_distinction",
+      "concept_a": "volume_file",
+      "concept_b": "partition",
+      "distinction": "A volume packed into a file is stored as a file inside a host volume and is not itself a partition."
+    },
+    {
+      "id": "drive_letter_vs_mount_point",
+      "label": "Drive Letter Vs Mount Point",
+      "type": "semantic_distinction",
+      "concept_a": "drive_letter",
+      "concept_b": "mount_point",
+      "distinction": "Windows can identify a volume by a drive letter or mount it at a path within an NTFS volume."
+    },
+    {
+      "id": "windows_vs_unix_mount",
+      "label": "Windows Vs Unix Mount",
+      "type": "semantic_distinction",
+      "concept_a": "windows",
+      "concept_b": "unix",
+      "distinction": "Windows uses drive letters and NTFS mount points; Unix-like systems graft volumes into one filesystem tree."
+    },
+    {
+      "id": "same_vs_cross_volume_move",
+      "label": "Same Vs Cross Volume Move",
+      "type": "semantic_distinction",
+      "concept_a": "data_move_same_volume",
+      "concept_b": "data_move_cross_volume",
+      "distinction": "Same-volume moves can alter metadata; cross-volume moves require data copying."
+    },
+    {
+      "id": "label_vs_serial",
+      "label": "Label Vs Serial",
+      "type": "semantic_distinction",
+      "concept_a": "volume_label",
+      "concept_b": "volume_serial",
+      "distinction": "Labels are user-assignable; serial numbers are generally fixed and less human-readable."
+    },
+    {
+      "id": "format_vs_relabel",
+      "label": "Format Vs Relabel",
+      "type": "semantic_distinction",
+      "concept_a": "formatting",
+      "concept_b": "relabeling",
+      "distinction": "Formatting typically changes serial number; relabeling does not."
+    },
+    {
+      "id": "filesystem_support",
+      "label": "Filesystem Support",
+      "type": "semantic_distinction",
+      "concept_a": "filesystem",
+      "concept_b": "volume",
+      "distinction": "Recognizing a partition does not guarantee recognition of its volume filesystem."
+    },
+    {
+      "id": "iso_volume_vs_partition",
+      "label": "Iso Volume Vs Partition",
+      "type": "semantic_distinction",
+      "concept_a": "iso9660",
+      "concept_b": "partition",
+      "distinction": "An ISO9660 disc image can represent a volume in a file rather than a partition."
+    },
+    {
+      "id": "logical_vs_global_id",
+      "label": "Logical Vs Global Id",
+      "type": "semantic_distinction",
+      "concept_a": "human_identifier",
+      "concept_b": "global_identifier",
+      "distinction": "Human-readable identifiers differ from fixed/global identifiers."
+    },
+    {
+      "id": "model_volume_identity",
+      "label": "Volume identity model",
+      "type": "formal_model",
+      "expression": "Volume = distinctly-addressable storage area + single filesystem"
+    },
+    {
+      "id": "model_partition_volume",
+      "label": "Partition-to-volume mapping",
+      "type": "formal_model",
+      "expression": "partition + supported filesystem -> volume"
+    },
+    {
+      "id": "model_redundant_volume",
+      "label": "Spanned/redundant volume",
+      "type": "formal_model",
+      "expression": "volume -> multiple physical media/drives"
+    },
+    {
+      "id": "model_simple_volume",
+      "label": "Simple volume",
+      "type": "formal_model",
+      "expression": "volume = one storage medium + no redundancy + no striping"
+    },
+    {
+      "id": "model_windows_path",
+      "label": "Windows volume path",
+      "type": "formal_model",
+      "expression": "volume -> drive letter OR NTFS mount point -> file path"
+    },
+    {
+      "id": "model_unix_mount",
+      "label": "Unix mount model",
+      "type": "formal_model",
+      "expression": "volume filesystem tree -> graft at existing mount-point directory"
+    },
+    {
+      "id": "model_same_volume_move",
+      "label": "Same-volume move",
+      "type": "formal_model",
+      "expression": "same volume + move -> metadata change; content need not copy"
+    },
+    {
+      "id": "model_cross_volume_move",
+      "label": "Cross-volume move",
+      "type": "formal_model",
+      "expression": "different volumes + move -> copy content + delete source"
+    },
+    {
+      "id": "model_identifier",
+      "label": "Volume identification",
+      "type": "formal_model",
+      "expression": "volume -> human label + fixed serial/global identifier"
+    },
+    {
+      "id": "model_media_change",
+      "label": "Media-change detection",
+      "type": "formal_model",
+      "expression": "current volume serial != previous serial -> possible volume exchange"
+    },
+    {
+      "id": "model_file_volume",
+      "label": "File-packed volume",
+      "type": "formal_model",
+      "expression": "volume image -> ordinary file in host volume; not partition"
+    },
+    {
+      "id": "model_windows_example",
+      "label": "Two-drive Windows example",
+      "type": "formal_model",
+      "expression": "D0:P0->NTFS:C:, D0:P1->FAT32:D:, D1:P0->FAT32:E:"
+    },
+    {
+      "id": "lp1",
+      "label": "Volume fundamentals",
+      "type": "learning_path",
+      "sequence": "volume -> storage_area -> filesystem"
+    },
+    {
+      "id": "lp2",
+      "label": "Physical to logical storage",
+      "type": "learning_path",
+      "sequence": "physical_drive -> partition -> volume -> filesystem"
+    },
+    {
+      "id": "lp3",
+      "label": "Windows storage namespace",
+      "type": "learning_path",
+      "sequence": "volume -> drive_letter -> path -> file"
+    },
+    {
+      "id": "lp4",
+      "label": "Windows mount points",
+      "type": "learning_path",
+      "sequence": "volume -> NTFS -> mount_point -> nested_path"
+    },
+    {
+      "id": "lp5",
+      "label": "Unix mounting",
+      "type": "learning_path",
+      "sequence": "volume -> mount_point -> unix_tree -> path"
+    },
+    {
+      "id": "lp6",
+      "label": "File-backed volumes",
+      "type": "learning_path",
+      "sequence": "volume_file -> host_volume -> mount/use"
+    },
+    {
+      "id": "lp7",
+      "label": "Storage performance",
+      "type": "learning_path",
+      "sequence": "same-volume move -> metadata_change vs cross-volume move -> content_copy"
+    },
+    {
+      "id": "lp8",
+      "label": "Volume identity",
+      "type": "learning_path",
+      "sequence": "volume_label -> human_identifier vs volume_serial -> fixed_identifier"
+    },
+    {
+      "id": "lp9",
+      "label": "Media-change detection",
+      "type": "learning_path",
+      "sequence": "volume_serial -> presence/exchange detection"
+    },
+    {
+      "id": "lp10",
+      "label": "Filesystem compatibility",
+      "type": "learning_path",
+      "sequence": "partition -> unsupported filesystem -> volume not recognized"
+    },
+    {
+      "id": "lp11",
+      "label": "FAT/NTFS identity",
+      "type": "learning_path",
+      "sequence": "filesystem -> label constraints -> serial semantics"
+    },
+    {
+      "id": "lp12",
+      "label": "Historical evolution",
+      "type": "learning_path",
+      "sequence": "mainframes -> OS/360 -> OS/2 -> MS-DOS 4.01"
+    },
+    {
+      "id": "mc1",
+      "label": "A volume is always a physical disk.",
+      "type": "misconception",
+      "correction": "A volume is logical and may be partition-based, span media, or be packed in a file."
+    },
+    {
+      "id": "mc2",
+      "label": "Every partition is automatically a usable volume.",
+      "type": "misconception",
+      "correction": "An OS can recognize a partition without recognizing its volume filesystem."
+    },
+    {
+      "id": "mc3",
+      "label": "An ISO volume is a partition.",
+      "type": "misconception",
+      "correction": "The source treats an ISO9660 volume image as a file in a host volume, not a partition."
+    },
+    {
+      "id": "mc4",
+      "label": "Windows and Unix-like systems expose volumes the same way.",
+      "type": "misconception",
+      "correction": "Windows uses drive letters/NTFS mount points; Unix-like systems graft volumes into a filesystem tree."
+    },
+    {
+      "id": "mc5",
+      "label": "Moving a file always copies its data.",
+      "type": "misconception",
+      "correction": "Within one volume the move can be metadata-only; across volumes content must be copied."
+    },
+    {
+      "id": "mc6",
+      "label": "A volume label is a permanent unique identifier.",
+      "type": "misconception",
+      "correction": "Labels are user-assignable; serial numbers provide a more fixed identifier."
+    },
+    {
+      "id": "mc7",
+      "label": "Relabeling and formatting have the same identity effect.",
+      "type": "misconception",
+      "correction": "Formatting typically changes the serial; relabeling does not."
+    },
+    {
+      "id": "mc8",
+      "label": "A volume has exactly one path.",
+      "type": "misconception",
+      "correction": "The source allows multiple path forms, including multiple drive letters via SUBST."
+    },
+    {
+      "id": "mc9",
+      "label": "A drive letter identifies physical hardware directly.",
+      "type": "misconception",
+      "correction": "A drive letter identifies a logical volume in the OS namespace."
+    },
+    {
+      "id": "mc10",
+      "label": "FAT, NTFS and exFAT use identical label constraints.",
+      "type": "misconception",
+      "correction": "The source gives different limits and character behavior for each."
+    },
+    {
+      "id": "q01",
+      "label": "How does a partition become a volume?",
+      "type": "question"
+    },
+    {
+      "id": "q02",
+      "label": "Why can an OS recognize a partition but not its associated volume?",
+      "type": "question"
+    },
+    {
+      "id": "q03",
+      "label": "How can one volume span multiple physical drives?",
+      "type": "question"
+    },
+    {
+      "id": "q04",
+      "label": "What makes a simple volume different from a redundant or striped volume?",
+      "type": "question"
+    },
+    {
+      "id": "q05",
+      "label": "How does Windows expose a volume through a drive letter?",
+      "type": "question"
+    },
+    {
+      "id": "q06",
+      "label": "How does an NTFS mount point expose a volume inside another volume?",
+      "type": "question"
+    },
+    {
+      "id": "q07",
+      "label": "How does Unix-like mounting graft a volume into the filesystem tree?",
+      "type": "question"
+    },
+    {
+      "id": "q08",
+      "label": "Why is moving a file within a volume potentially faster than moving it across volumes?",
+      "type": "question"
+    },
+    {
+      "id": "q09",
+      "label": "How do volume labels and serial numbers serve different identification purposes?",
+      "type": "question"
+    },
+    {
+      "id": "q10",
+      "label": "How does formatting affect volume identity?",
+      "type": "question"
+    },
+    {
+      "id": "q11",
+      "label": "How did volume serial numbers evolve from mainframes to MS-DOS?",
+      "type": "question"
+    },
+    {
+      "id": "q12",
+      "label": "How does FAT store a volume label?",
+      "type": "question"
+    },
+    {
+      "id": "q13",
+      "label": "What are the source-stated label constraints for FAT, NTFS, and exFAT?",
+      "type": "question"
+    },
+    {
+      "id": "q14",
+      "label": "How can multiple drive letters refer to one volume?",
+      "type": "question"
+    },
+    {
+      "id": "q15",
+      "label": "Why is an ISO9660 volume image not a partition?",
+      "type": "question"
+    },
+    {
+      "id": "q16",
+      "label": "How does a file-backed volume relate to its host volume?",
+      "type": "question"
+    },
+    {
+      "id": "q17",
+      "label": "How do Windows and Unix-like volume concepts differ in user experience?",
+      "type": "question"
+    },
+    {
+      "id": "q18",
+      "label": "How does volume identity support removable-media exchange detection?",
+      "type": "question"
+    },
+    {
+      "id": "expand_dynamic_disk_volume_implementations",
+      "label": "dynamic disk/volume implementations",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_raid_and_redundant_volume_layouts",
+      "label": "RAID and redundant volume layouts",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_lvm_logical_volumes",
+      "label": "LVM logical volumes",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_filesystem_mount_semantics",
+      "label": "filesystem mount semantics",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_windows_storage_spaces",
+      "label": "Windows Storage Spaces",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_gpt_mbr_partition_tables",
+      "label": "GPT/MBR partition tables",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_volume_guids",
+      "label": "volume GUIDs",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_filesystem_uuids",
+      "label": "filesystem UUIDs",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_bind_mounts_and_junctions",
+      "label": "bind mounts and junctions",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_symbolic_links_versus_mount_points",
+      "label": "symbolic links versus mount points",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_container_storage_volumes",
+      "label": "container storage volumes",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_virtual_disks",
+      "label": "virtual disks",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_vhd_vhdx_backed_volumes",
+      "label": "VHD/VHDX-backed volumes",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_iso_mounting_internals",
+      "label": "ISO mounting internals",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_copy_on_write_volume_systems",
+      "label": "copy-on-write volume systems",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_snapshotting",
+      "label": "snapshotting",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_thin_provisioning",
+      "label": "thin provisioning",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_distributed_volumes",
+      "label": "distributed volumes",
+      "type": "expansion_target"
+    },
+    {
+      "id": "storage_device",
+      "label": "Storage medium / device",
+      "type": "storage_device",
+      "description": "General category for storage media/devices to which the volume concept applies, preserving the source's broad statement."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "volume",
+      "target": "storage_area",
+      "relationship": "is_a_distinctly_addressable_form_of"
+    },
+    {
+      "source": "volume",
+      "target": "single_fs",
+      "relationship": "has",
+      "mechanism": "The defining organization is a single file system associated with the volume.",
+      "semantic_role": "definition"
+    },
+    {
+      "source": "mass_storage",
+      "target": "partition",
+      "relationship": "is_typically_divided_into"
+    },
+    {
+      "source": "partition",
+      "target": "volume",
+      "relationship": "is_used_as",
+      "mechanism": "Each partition can be used as a volume with its own file system."
+    },
+    {
+      "source": "volume",
+      "target": "filesystem",
+      "relationship": "is_formatted_with"
+    },
+    {
+      "source": "mass_storage",
+      "target": "redundancy",
+      "relationship": "may_be_configured_for"
+    },
+    {
+      "source": "volume",
+      "target": "multiple_media",
+      "relationship": "may_span"
+    },
+    {
+      "source": "volume",
+      "target": "striping",
+      "relationship": "may_use"
+    },
+    {
+      "source": "simple_volume",
+      "target": "volume",
+      "relationship": "is_a_basic_configuration_of"
+    },
+    {
+      "source": "simple_volume",
+      "target": "physical_drive",
+      "relationship": "uses"
+    },
+    {
+      "source": "simple_volume",
+      "target": "redundancy",
+      "relationship": "lacks"
+    },
+    {
+      "source": "simple_volume",
+      "target": "striping",
+      "relationship": "lacks"
+    },
+    {
+      "source": "memory_card",
+      "target": "partition",
+      "relationship": "may_have_one"
+    },
+    {
+      "source": "floppy",
+      "target": "partition_table",
+      "relationship": "may_have_no"
+    },
+    {
+      "source": "memory_card",
+      "target": "partition_table",
+      "relationship": "may_have_no"
+    },
+    {
+      "source": "memory_card",
+      "target": "volume",
+      "relationship": "may_be_logically_indistinguishable_from_drive"
+    },
+    {
+      "source": "volume",
+      "target": "logical_drive",
+      "relationship": "also_called"
+    },
+    {
+      "source": "physical_drive",
+      "target": "partition",
+      "relationship": "contains"
+    },
+    {
+      "source": "partition",
+      "target": "filesystem",
+      "relationship": "has"
+    },
+    {
+      "source": "windows",
+      "target": "partition",
+      "relationship": "can_recognize"
+    },
+    {
+      "source": "windows",
+      "target": "volume",
+      "relationship": "may_not_recognize"
+    },
+    {
+      "source": "partition",
+      "target": "volume",
+      "relationship": "can_exist_without",
+      "condition": "Partition may be unformatted or use an unsupported filesystem."
+    },
+    {
+      "source": "ext4",
+      "target": "linux",
+      "relationship": "is_commonly_used_with"
+    },
+    {
+      "source": "windows",
+      "target": "ext4",
+      "relationship": "is_the_source_example_of_unsupported_filesystem"
+    },
+    {
+      "source": "volume_file",
+      "target": "volume",
+      "relationship": "represents"
+    },
+    {
+      "source": "iso9660",
+      "target": "volume_file",
+      "relationship": "example_of"
+    },
+    {
+      "source": "apple_disk_image",
+      "target": "volume_file",
+      "relationship": "example_of"
+    },
+    {
+      "source": "volume_file",
+      "target": "host_volume",
+      "relationship": "is_stored_as_file_in"
+    },
+    {
+      "source": "volume_file",
+      "target": "partition",
+      "relationship": "is_not"
+    },
+    {
+      "source": "volume",
+      "target": "storage_device",
+      "relationship": "applies_to_any_type_of_storage_medium"
+    },
+    {
+      "source": "disk_management",
+      "target": "windows",
+      "relationship": "is_used_by"
+    },
+    {
+      "source": "diskpart",
+      "target": "windows",
+      "relationship": "is_used_by"
+    },
+    {
+      "source": "windows",
+      "target": "kernel",
+      "relationship": "handles_volumes_through"
+    },
+    {
+      "source": "disk_management",
+      "target": "volume",
+      "relationship": "configures"
+    },
+    {
+      "source": "diskpart",
+      "target": "volume",
+      "relationship": "configures"
+    },
+    {
+      "source": "windows",
+      "target": "root_directory",
+      "relationship": "does_not_have_single_global"
+    },
+    {
+      "source": "windows",
+      "target": "volume",
+      "relationship": "assigns_at_least_one_path_to"
+    },
+    {
+      "source": "drive_letter",
+      "target": "volume",
+      "relationship": "identifies"
+    },
+    {
+      "source": "mount_point",
+      "target": "volume",
+      "relationship": "identifies"
+    },
+    {
+      "source": "mount_point",
+      "target": "ntfs",
+      "relationship": "requires_mounted_to_volume_to_be_formatted_as",
+      "condition": "Source-stated Windows criterion"
+    },
+    {
+      "source": "mount_point",
+      "target": "root_directory",
+      "relationship": "requires_directory_at"
+    },
+    {
+      "source": "mount_point",
+      "target": "path",
+      "relationship": "is_a_path_within"
+    },
+    {
+      "source": "mount_point",
+      "target": "root_directory",
+      "relationship": "must_be_empty"
+    },
+    {
+      "source": "windows",
+      "target": "drive_letter",
+      "relationship": "assigns_by_default"
+    },
+    {
+      "source": "drive_letter",
+      "target": "volume",
+      "relationship": "can_be_reassigned_by_user"
+    },
+    {
+      "source": "volume",
+      "target": "drive_letter",
+      "relationship": "can_have_multiple",
+      "mechanism": "SUBST can configure more than one drive letter to refer to a single volume."
+    },
+    {
+      "source": "unix",
+      "target": "volume",
+      "relationship": "usually_handles_through"
+    },
+    {
+      "source": "logical_volume_manager",
+      "target": "volume",
+      "relationship": "handles"
+    },
+    {
+      "source": "enterprise_volume_management",
+      "target": "volume",
+      "relationship": "handles"
+    },
+    {
+      "source": "mount_command",
+      "target": "volume",
+      "relationship": "configures"
+    },
+    {
+      "source": "volume",
+      "target": "mount_point",
+      "relationship": "has_for_non_boot_unix_volume"
+    },
+    {
+      "source": "mount_point",
+      "target": "unix_tree",
+      "relationship": "grafts_volume_tree_into"
+    },
+    {
+      "source": "volume",
+      "target": "path",
+      "relationship": "becomes_accessible_through"
+    },
+    {
+      "source": "data_move_same_volume",
+      "target": "volume",
+      "relationship": "operates_within"
+    },
+    {
+      "source": "data_move_same_volume",
+      "target": "metadata_change",
+      "relationship": "uses"
+    },
+    {
+      "source": "data_move_same_volume",
+      "target": "content_copy",
+      "relationship": "avoids"
+    },
+    {
+      "source": "data_move_cross_volume",
+      "target": "volume",
+      "relationship": "crosses"
+    },
+    {
+      "source": "data_move_cross_volume",
+      "target": "content_copy",
+      "relationship": "requires"
+    },
+    {
+      "source": "data_move_cross_volume",
+      "target": "metadata_change",
+      "relationship": "is_not_sufficient"
+    },
+    {
+      "source": "data_move_cross_volume",
+      "target": "data_move_same_volume",
+      "relationship": "is_slower_than"
+    },
+    {
+      "source": "volume",
+      "target": "human_identifier",
+      "relationship": "may_have"
+    },
+    {
+      "source": "volume",
+      "target": "global_identifier",
+      "relationship": "may_have"
+    },
+    {
+      "source": "volume_label",
+      "target": "human_identifier",
+      "relationship": "implements"
+    },
+    {
+      "source": "volume_serial",
+      "target": "global_identifier",
+      "relationship": "implements"
+    },
+    {
+      "source": "mainframes",
+      "target": "volume_serial",
+      "relationship": "historical_origin"
+    },
+    {
+      "source": "os360",
+      "target": "volume_serial",
+      "relationship": "used"
+    },
+    {
+      "source": "sysres",
+      "target": "volume_serial",
+      "relationship": "example_of"
+    },
+    {
+      "source": "os360",
+      "target": "sysres",
+      "relationship": "commonly_uses"
+    },
+    {
+      "source": "volume_serial",
+      "target": "mount_point",
+      "relationship": "may_be_used_as_name_for"
+    },
+    {
+      "source": "fat",
+      "target": "volume_label",
+      "relationship": "stores"
+    },
+    {
+      "source": "fat",
+      "target": "root_dir_entry",
+      "relationship": "stores_volume_label_as"
+    },
+    {
+      "source": "root_dir_entry",
+      "target": "ebpb",
+      "relationship": "also_copies_label_to"
+    },
+    {
+      "source": "boot_sector",
+      "target": "ebpb",
+      "relationship": "contains"
+    },
+    {
+      "source": "fat",
+      "target": "volume_label",
+      "relationship": "limits_to_11_characters"
+    },
+    {
+      "source": "ntfs",
+      "target": "volume_label",
+      "relationship": "limits_to_32_characters"
+    },
+    {
+      "source": "exfat",
+      "target": "volume_label",
+      "relationship": "limits_to_11_characters"
+    },
+    {
+      "source": "ntfs",
+      "target": "volume_label",
+      "relationship": "supports_unicode"
+    },
+    {
+      "source": "exfat",
+      "target": "volume_label",
+      "relationship": "supports_unicode"
+    },
+    {
+      "source": "fat",
+      "target": "volume_label",
+      "relationship": "stores_uppercase"
+    },
+    {
+      "source": "vfat",
+      "target": "volume_label",
+      "relationship": "inherits_fat_label_constraints"
+    },
+    {
+      "source": "os2",
+      "target": "volume_serial",
+      "relationship": "development_context"
+    },
+    {
+      "source": "msdos",
+      "target": "volume_serial",
+      "relationship": "introduced_in_1988"
+    },
+    {
+      "source": "volume_serial",
+      "target": "serial_clock",
+      "relationship": "derived_from_in_msdos_example"
+    },
+    {
+      "source": "volume_label",
+      "target": "media_change_detection",
+      "relationship": "was_previously_used_for"
+    },
+    {
+      "source": "volume_serial",
+      "target": "media_change_detection",
+      "relationship": "replaced_as_more_reliable_identifier"
+    },
+    {
+      "source": "volume_label",
+      "target": "media_change_detection",
+      "relationship": "was_unreliable_when_optional_or_nonunique"
+    },
+    {
+      "source": "dir_command",
+      "target": "volume_label",
+      "relationship": "reports"
+    },
+    {
+      "source": "dir_command",
+      "target": "volume_serial",
+      "relationship": "reports"
+    },
+    {
+      "source": "vol_command",
+      "target": "volume_label",
+      "relationship": "reports"
+    },
+    {
+      "source": "vol_command",
+      "target": "volume_serial",
+      "relationship": "reports"
+    },
+    {
+      "source": "d0",
+      "target": "p0_d0",
+      "relationship": "contains"
+    },
+    {
+      "source": "d0",
+      "target": "p1_d0",
+      "relationship": "contains"
+    },
+    {
+      "source": "d1",
+      "target": "p0_d1",
+      "relationship": "contains"
+    },
+    {
+      "source": "p0_d0",
+      "target": "c_volume",
+      "relationship": "treated_as"
+    },
+    {
+      "source": "p1_d0",
+      "target": "d_volume",
+      "relationship": "treated_as"
+    },
+    {
+      "source": "p0_d1",
+      "target": "e_volume",
+      "relationship": "treated_as"
+    },
+    {
+      "source": "c_volume",
+      "target": "ntfs",
+      "relationship": "formatted_with"
+    },
+    {
+      "source": "d_volume",
+      "target": "fat32",
+      "relationship": "formatted_with"
+    },
+    {
+      "source": "e_volume",
+      "target": "fat32",
+      "relationship": "formatted_with"
+    },
+    {
+      "source": "c_volume",
+      "target": "drive_letter",
+      "relationship": "identified_by"
+    },
+    {
+      "source": "d_volume",
+      "target": "drive_letter",
+      "relationship": "identified_by"
+    },
+    {
+      "source": "e_volume",
+      "target": "drive_letter",
+      "relationship": "identified_by"
+    },
+    {
+      "source": "music_mount",
+      "target": "c_volume",
+      "relationship": "mounts_into"
+    },
+    {
+      "source": "music_mount",
+      "target": "ntfs",
+      "relationship": "requires"
+    },
+    {
+      "source": "info_txt",
+      "target": "iso_mount",
+      "relationship": "located_under"
+    },
+    {
+      "source": "sysres",
+      "target": "sysres_volume",
+      "relationship": "labels"
+    },
+    {
+      "source": "sysres_volume",
+      "target": "volume_serial",
+      "relationship": "identified_by"
+    },
+    {
+      "source": "track1",
+      "target": "path",
+      "relationship": "can_be_reached_as",
+      "examples": [
+        "F:\\Track1.mp3",
+        "C:\\Music\\Track1.mp3"
+      ]
+    },
+    {
+      "source": "info_txt",
+      "target": "path",
+      "relationship": "accessible_as",
+      "examples": [
+        "/mnt/iso9660/info.txt"
+      ]
+    },
+    {
+      "source": "c1",
+      "target": "volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 53,
+        "end": 53
+      }
+    },
+    {
+      "source": "c1",
+      "target": "storage_area",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 53,
+        "end": 53
+      }
+    },
+    {
+      "source": "c1",
+      "target": "single_fs",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 53,
+        "end": 53
+      }
+    },
+    {
+      "source": "c2",
+      "target": "mass_storage",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      }
+    },
+    {
+      "source": "c2",
+      "target": "partition",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      }
+    },
+    {
+      "source": "c2",
+      "target": "volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      }
+    },
+    {
+      "source": "c2",
+      "target": "redundancy",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      }
+    },
+    {
+      "source": "c2",
+      "target": "striping",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      }
+    },
+    {
+      "source": "c2",
+      "target": "simple_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      }
+    },
+    {
+      "source": "c3",
+      "target": "windows",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "physical_drive",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "partition",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "filesystem",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "drive_letter",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "c_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "d_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c3",
+      "target": "e_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      }
+    },
+    {
+      "source": "c4",
+      "target": "windows",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      }
+    },
+    {
+      "source": "c4",
+      "target": "partition",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      }
+    },
+    {
+      "source": "c4",
+      "target": "volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      }
+    },
+    {
+      "source": "c4",
+      "target": "ext4",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      }
+    },
+    {
+      "source": "c4",
+      "target": "filesystem",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      }
+    },
+    {
+      "source": "c5",
+      "target": "volume_file",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      }
+    },
+    {
+      "source": "c5",
+      "target": "iso9660",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      }
+    },
+    {
+      "source": "c5",
+      "target": "apple_disk_image",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      }
+    },
+    {
+      "source": "c5",
+      "target": "host_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      }
+    },
+    {
+      "source": "c5",
+      "target": "partition",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      }
+    },
+    {
+      "source": "c6",
+      "target": "windows",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c6",
+      "target": "kernel",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c6",
+      "target": "disk_management",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c6",
+      "target": "diskpart",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c6",
+      "target": "drive_letter",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c6",
+      "target": "mount_point",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c6",
+      "target": "ntfs",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      }
+    },
+    {
+      "source": "c7",
+      "target": "unix",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      }
+    },
+    {
+      "source": "c7",
+      "target": "logical_volume_manager",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      }
+    },
+    {
+      "source": "c7",
+      "target": "enterprise_volume_management",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      }
+    },
+    {
+      "source": "c7",
+      "target": "mount_command",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      }
+    },
+    {
+      "source": "c7",
+      "target": "mount_point",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      }
+    },
+    {
+      "source": "c7",
+      "target": "unix_tree",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      }
+    },
+    {
+      "source": "c8",
+      "target": "data_move_same_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 98,
+        "end": 99
+      }
+    },
+    {
+      "source": "c8",
+      "target": "data_move_cross_volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 98,
+        "end": 99
+      }
+    },
+    {
+      "source": "c8",
+      "target": "metadata_change",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 98,
+        "end": 99
+      }
+    },
+    {
+      "source": "c8",
+      "target": "content_copy",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 98,
+        "end": 99
+      }
+    },
+    {
+      "source": "c9",
+      "target": "volume",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c9",
+      "target": "human_identifier",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c9",
+      "target": "global_identifier",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c9",
+      "target": "volume_label",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c9",
+      "target": "volume_serial",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c9",
+      "target": "mainframes",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c9",
+      "target": "os360",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      }
+    },
+    {
+      "source": "c10",
+      "target": "fat",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "ntfs",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "exfat",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "volume_label",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "volume_serial",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "os2",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "msdos",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "media_change_detection",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "formatting",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "c10",
+      "target": "relabeling",
+      "relationship": "source_supports",
+      "semantic_role": "provenance",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      }
+    },
+    {
+      "source": "r1",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r2",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r3",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r4",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r5",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r6",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r7",
+      "target": "volume",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "person_brett_glass",
+      "target": "r6",
+      "relationship": "authored"
+    },
+    {
+      "source": "person_gordon_letwin",
+      "target": "r7",
+      "relationship": "authored"
+    },
+    {
+      "source": "event_1950s",
+      "target": "volume_serial",
+      "relationship": "historical_origin"
+    },
+    {
+      "source": "event_os2",
+      "target": "volume_serial",
+      "relationship": "development_context"
+    },
+    {
+      "source": "event_msdos401",
+      "target": "volume_serial",
+      "relationship": "introduced"
+    },
+    {
+      "source": "partition_vs_volume",
+      "target": "partition",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "partition_vs_volume",
+      "target": "volume",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "volume_vs_physical_drive",
+      "target": "volume",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "volume_vs_physical_drive",
+      "target": "physical_drive",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "simple_vs_redundant",
+      "target": "simple_volume",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "simple_vs_redundant",
+      "target": "redundancy",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "volume_file_vs_partition",
+      "target": "volume_file",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "volume_file_vs_partition",
+      "target": "partition",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "drive_letter_vs_mount_point",
+      "target": "drive_letter",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "drive_letter_vs_mount_point",
+      "target": "mount_point",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "windows_vs_unix_mount",
+      "target": "windows",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "windows_vs_unix_mount",
+      "target": "unix",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "same_vs_cross_volume_move",
+      "target": "data_move_same_volume",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "same_vs_cross_volume_move",
+      "target": "data_move_cross_volume",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "label_vs_serial",
+      "target": "volume_label",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "label_vs_serial",
+      "target": "volume_serial",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "format_vs_relabel",
+      "target": "formatting",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "format_vs_relabel",
+      "target": "relabeling",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "filesystem_support",
+      "target": "filesystem",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "filesystem_support",
+      "target": "volume",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "iso_volume_vs_partition",
+      "target": "iso9660",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "iso_volume_vs_partition",
+      "target": "partition",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "logical_vs_global_id",
+      "target": "human_identifier",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "logical_vs_global_id",
+      "target": "global_identifier",
+      "relationship": "distinguishes_from"
+    },
+    {
+      "source": "model_volume_identity",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_partition_volume",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_redundant_volume",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_simple_volume",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_windows_path",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_unix_mount",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_same_volume_move",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_cross_volume_move",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_identifier",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_media_change",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_file_volume",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "model_windows_example",
+      "target": "volume",
+      "relationship": "formalizes"
+    },
+    {
+      "source": "mc1",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc2",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc3",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc4",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc5",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc6",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc7",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc8",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc9",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc10",
+      "target": "volume",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "q01",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q02",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q03",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q04",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q05",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q06",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q07",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q08",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q09",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q10",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q11",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q12",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q13",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q14",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q15",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q16",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q17",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "q18",
+      "target": "volume",
+      "relationship": "asks_about",
+      "semantic_role": "learning_question"
+    },
+    {
+      "source": "volume",
+      "target": "expand_dynamic_disk_volume_implementations",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_raid_and_redundant_volume_layouts",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_lvm_logical_volumes",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_filesystem_mount_semantics",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_windows_storage_spaces",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_gpt_mbr_partition_tables",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_volume_guids",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_filesystem_uuids",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_bind_mounts_and_junctions",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_symbolic_links_versus_mount_points",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_container_storage_volumes",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_virtual_disks",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_vhd_vhdx_backed_volumes",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_iso_mounting_internals",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_copy_on_write_volume_systems",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_snapshotting",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_thin_provisioning",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "volume",
+      "target": "expand_distributed_volumes",
+      "relationship": "future_expansion_target",
+      "semantic_role": "scope_extension"
+    },
+    {
+      "source": "lp1",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp1",
+      "target": "filesystem",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp2",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp2",
+      "target": "partition",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp2",
+      "target": "filesystem",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp3",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp3",
+      "target": "drive_letter",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp4",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp4",
+      "target": "mount_point",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp5",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp5",
+      "target": "mount_point",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp6",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp7",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp8",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp8",
+      "target": "volume_serial",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp9",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp9",
+      "target": "volume_serial",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp10",
+      "target": "volume",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp10",
+      "target": "partition",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp10",
+      "target": "filesystem",
+      "relationship": "teaches_or_traverses"
+    },
+    {
+      "source": "lp11",
+      "target": "filesystem",
+      "relationship": "teaches_or_traverses"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c1",
+      "title": "Definition",
+      "statement": "A volume or logical drive is a distinctly-addressable storage area with a single file system.",
+      "source_lines": {
+        "start": 53,
+        "end": 53
+      },
+      "semantic_role": "definition"
+    },
+    {
+      "id": "c2",
+      "title": "Storage topology",
+      "statement": "Mass storage is commonly divided into partitions used as volumes; volumes may span multiple media for redundancy, while simple volumes use one medium without redundancy or striping.",
+      "source_lines": {
+        "start": 55,
+        "end": 55
+      },
+      "semantic_role": "architecture"
+    },
+    {
+      "id": "c3",
+      "title": "Windows example",
+      "statement": "The source's two-drive example maps D0/P0 to NTFS C:, D0/P1 to FAT32 D:, and D1/P0 to FAT32 E:.",
+      "source_lines": {
+        "start": 57,
+        "end": 65
+      },
+      "semantic_role": "worked_example"
+    },
+    {
+      "id": "c4",
+      "title": "Partition versus volume recognition",
+      "statement": "An OS may recognize a partition without recognizing its volume when it is unformatted or uses an unsupported filesystem such as ext4 in the Windows example.",
+      "source_lines": {
+        "start": 66,
+        "end": 66
+      },
+      "semantic_role": "compatibility"
+    },
+    {
+      "id": "c5",
+      "title": "File-packed volume",
+      "statement": "A volume can be packed in one file, such as an ISO9660 disc image or Apple Disk Image; because it is a file inside a host volume, it is not a partition.",
+      "source_lines": {
+        "start": 68,
+        "end": 68
+      },
+      "semantic_role": "representation"
+    },
+    {
+      "id": "c6",
+      "title": "Windows mounting",
+      "statement": "Windows handles volumes in the kernel and configures volumes/mount points through Disk Management or diskpart; mounted volumes receive paths via drive letters or NTFS mount points.",
+      "source_lines": {
+        "start": 75,
+        "end": 89
+      },
+      "semantic_role": "os_implementation"
+    },
+    {
+      "id": "c7",
+      "title": "Unix mounting",
+      "statement": "Unix-like systems commonly use volume managers and mount; non-boot volumes are grafted into the filesystem tree at a mount point.",
+      "source_lines": {
+        "start": 93,
+        "end": 96
+      },
+      "semantic_role": "os_implementation"
+    },
+    {
+      "id": "c8",
+      "title": "Cross-volume performance",
+      "statement": "Moving a file within a volume can change metadata without copying content, while moving across volumes requires copying content and deleting the source.",
+      "source_lines": {
+        "start": 98,
+        "end": 99
+      },
+      "semantic_role": "performance"
+    },
+    {
+      "id": "c9",
+      "title": "Identifiers",
+      "statement": "Volumes can use human-readable labels and more fixed identifiers; serial numbers historically originated on mainframes and later supported media-change detection.",
+      "source_lines": {
+        "start": 101,
+        "end": 112
+      },
+      "semantic_role": "identity"
+    },
+    {
+      "id": "c10",
+      "title": "FAT/NTFS labels and serials",
+      "statement": "FAT, NTFS, and exFAT impose different volume-label constraints; FAT/NTFS serial numbers support detection of volume replacement and formatting changes the serial.",
+      "source_lines": {
+        "start": 107,
+        "end": 114
+      },
+      "semantic_role": "identifier_mechanism"
+    }
+  ],
+  "references": [
+    {
+      "id": "r1",
+      "title": "Understanding Disk Terminology",
+      "author": "Microsoft Corporation"
+    },
+    {
+      "id": "r2",
+      "title": "Partitions and Volumes",
+      "author": "Microsoft Corporation"
+    },
+    {
+      "id": "r3",
+      "title": "Use Built-In Tools to Create Partitions and Volumes in Windows Server",
+      "author": "Microsoft Corporation"
+    },
+    {
+      "id": "r4",
+      "title": "Issue with .XPSF playlists",
+      "author": "Unspecified"
+    },
+    {
+      "id": "r5",
+      "title": "Label - Disk label - Windows CMD",
+      "author": "SS64.com"
+    },
+    {
+      "id": "r6",
+      "title": "Changing a Disk's Volume Serial Number",
+      "author": "Brett Glass"
+    },
+    {
+      "id": "r7",
+      "title": "Inside OS/2",
+      "author": "Gordon Letwin"
+    }
+  ],
+  "people": [
+    {
+      "id": "person_brett_glass",
+      "name": "Brett Glass",
+      "role": "author"
+    },
+    {
+      "id": "person_gordon_letwin",
+      "name": "Gordon Letwin",
+      "role": "author"
+    }
+  ],
+  "historical_events": [
+    {
+      "id": "event_1950s",
+      "title": "Origin of volume serial numbers",
+      "description": "Volume serial numbers originated with mainframes in the 1950s.",
+      "year": 1950
+    },
+    {
+      "id": "event_os2",
+      "title": "OS/2 development context",
+      "description": "The FAT/NTFS identification system was designed during OS/2 development.",
+      "year": null
+    },
+    {
+      "id": "event_msdos401",
+      "title": "MS-DOS 4.01 introduction",
+      "description": "The source says the volume serial number mechanism was introduced in MS-DOS 4.01 in 1988.",
+      "year": 1988
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "partition_vs_volume",
+      "concept_a": "partition",
+      "concept_b": "volume",
+      "distinction": "A partition is a storage division; a volume is the logically addressable storage area with a filesystem."
+    },
+    {
+      "id": "volume_vs_physical_drive",
+      "concept_a": "volume",
+      "concept_b": "physical_drive",
+      "distinction": "A volume is logical; a physical drive is physical storage hardware."
+    },
+    {
+      "id": "simple_vs_redundant",
+      "concept_a": "simple_volume",
+      "concept_b": "redundancy",
+      "distinction": "Simple volumes use one medium without redundancy or striping; specialized volumes may span media."
+    },
+    {
+      "id": "volume_file_vs_partition",
+      "concept_a": "volume_file",
+      "concept_b": "partition",
+      "distinction": "A volume packed into a file is stored as a file inside a host volume and is not itself a partition."
+    },
+    {
+      "id": "drive_letter_vs_mount_point",
+      "concept_a": "drive_letter",
+      "concept_b": "mount_point",
+      "distinction": "Windows can identify a volume by a drive letter or mount it at a path within an NTFS volume."
+    },
+    {
+      "id": "windows_vs_unix_mount",
+      "concept_a": "windows",
+      "concept_b": "unix",
+      "distinction": "Windows uses drive letters and NTFS mount points; Unix-like systems graft volumes into one filesystem tree."
+    },
+    {
+      "id": "same_vs_cross_volume_move",
+      "concept_a": "data_move_same_volume",
+      "concept_b": "data_move_cross_volume",
+      "distinction": "Same-volume moves can alter metadata; cross-volume moves require data copying."
+    },
+    {
+      "id": "label_vs_serial",
+      "concept_a": "volume_label",
+      "concept_b": "volume_serial",
+      "distinction": "Labels are user-assignable; serial numbers are generally fixed and less human-readable."
+    },
+    {
+      "id": "format_vs_relabel",
+      "concept_a": "formatting",
+      "concept_b": "relabeling",
+      "distinction": "Formatting typically changes serial number; relabeling does not."
+    },
+    {
+      "id": "filesystem_support",
+      "concept_a": "filesystem",
+      "concept_b": "volume",
+      "distinction": "Recognizing a partition does not guarantee recognition of its volume filesystem."
+    },
+    {
+      "id": "iso_volume_vs_partition",
+      "concept_a": "iso9660",
+      "concept_b": "partition",
+      "distinction": "An ISO9660 disc image can represent a volume in a file rather than a partition."
+    },
+    {
+      "id": "logical_vs_global_id",
+      "concept_a": "human_identifier",
+      "concept_b": "global_identifier",
+      "distinction": "Human-readable identifiers differ from fixed/global identifiers."
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_volume_identity",
+      "name": "Volume identity model",
+      "expression": "Volume = distinctly-addressable storage area + single filesystem"
+    },
+    {
+      "id": "model_partition_volume",
+      "name": "Partition-to-volume mapping",
+      "expression": "partition + supported filesystem -> volume"
+    },
+    {
+      "id": "model_redundant_volume",
+      "name": "Spanned/redundant volume",
+      "expression": "volume -> multiple physical media/drives"
+    },
+    {
+      "id": "model_simple_volume",
+      "name": "Simple volume",
+      "expression": "volume = one storage medium + no redundancy + no striping"
+    },
+    {
+      "id": "model_windows_path",
+      "name": "Windows volume path",
+      "expression": "volume -> drive letter OR NTFS mount point -> file path"
+    },
+    {
+      "id": "model_unix_mount",
+      "name": "Unix mount model",
+      "expression": "volume filesystem tree -> graft at existing mount-point directory"
+    },
+    {
+      "id": "model_same_volume_move",
+      "name": "Same-volume move",
+      "expression": "same volume + move -> metadata change; content need not copy"
+    },
+    {
+      "id": "model_cross_volume_move",
+      "name": "Cross-volume move",
+      "expression": "different volumes + move -> copy content + delete source"
+    },
+    {
+      "id": "model_identifier",
+      "name": "Volume identification",
+      "expression": "volume -> human label + fixed serial/global identifier"
+    },
+    {
+      "id": "model_media_change",
+      "name": "Media-change detection",
+      "expression": "current volume serial != previous serial -> possible volume exchange"
+    },
+    {
+      "id": "model_file_volume",
+      "name": "File-packed volume",
+      "expression": "volume image -> ordinary file in host volume; not partition"
+    },
+    {
+      "id": "model_windows_example",
+      "name": "Two-drive Windows example",
+      "expression": "D0:P0->NTFS:C:, D0:P1->FAT32:D:, D1:P0->FAT32:E:"
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "title": "Volume fundamentals",
+      "sequence": "volume -> storage_area -> filesystem"
+    },
+    {
+      "id": "lp2",
+      "title": "Physical to logical storage",
+      "sequence": "physical_drive -> partition -> volume -> filesystem"
+    },
+    {
+      "id": "lp3",
+      "title": "Windows storage namespace",
+      "sequence": "volume -> drive_letter -> path -> file"
+    },
+    {
+      "id": "lp4",
+      "title": "Windows mount points",
+      "sequence": "volume -> NTFS -> mount_point -> nested_path"
+    },
+    {
+      "id": "lp5",
+      "title": "Unix mounting",
+      "sequence": "volume -> mount_point -> unix_tree -> path"
+    },
+    {
+      "id": "lp6",
+      "title": "File-backed volumes",
+      "sequence": "volume_file -> host_volume -> mount/use"
+    },
+    {
+      "id": "lp7",
+      "title": "Storage performance",
+      "sequence": "same-volume move -> metadata_change vs cross-volume move -> content_copy"
+    },
+    {
+      "id": "lp8",
+      "title": "Volume identity",
+      "sequence": "volume_label -> human_identifier vs volume_serial -> fixed_identifier"
+    },
+    {
+      "id": "lp9",
+      "title": "Media-change detection",
+      "sequence": "volume_serial -> presence/exchange detection"
+    },
+    {
+      "id": "lp10",
+      "title": "Filesystem compatibility",
+      "sequence": "partition -> unsupported filesystem -> volume not recognized"
+    },
+    {
+      "id": "lp11",
+      "title": "FAT/NTFS identity",
+      "sequence": "filesystem -> label constraints -> serial semantics"
+    },
+    {
+      "id": "lp12",
+      "title": "Historical evolution",
+      "sequence": "mainframes -> OS/360 -> OS/2 -> MS-DOS 4.01"
+    }
+  ],
+  "misconception_corrections": [
+    {
+      "id": "mc1",
+      "misconception": "A volume is always a physical disk.",
+      "correction": "A volume is logical and may be partition-based, span media, or be packed in a file."
+    },
+    {
+      "id": "mc2",
+      "misconception": "Every partition is automatically a usable volume.",
+      "correction": "An OS can recognize a partition without recognizing its volume filesystem."
+    },
+    {
+      "id": "mc3",
+      "misconception": "An ISO volume is a partition.",
+      "correction": "The source treats an ISO9660 volume image as a file in a host volume, not a partition."
+    },
+    {
+      "id": "mc4",
+      "misconception": "Windows and Unix-like systems expose volumes the same way.",
+      "correction": "Windows uses drive letters/NTFS mount points; Unix-like systems graft volumes into a filesystem tree."
+    },
+    {
+      "id": "mc5",
+      "misconception": "Moving a file always copies its data.",
+      "correction": "Within one volume the move can be metadata-only; across volumes content must be copied."
+    },
+    {
+      "id": "mc6",
+      "misconception": "A volume label is a permanent unique identifier.",
+      "correction": "Labels are user-assignable; serial numbers provide a more fixed identifier."
+    },
+    {
+      "id": "mc7",
+      "misconception": "Relabeling and formatting have the same identity effect.",
+      "correction": "Formatting typically changes the serial; relabeling does not."
+    },
+    {
+      "id": "mc8",
+      "misconception": "A volume has exactly one path.",
+      "correction": "The source allows multiple path forms, including multiple drive letters via SUBST."
+    },
+    {
+      "id": "mc9",
+      "misconception": "A drive letter identifies physical hardware directly.",
+      "correction": "A drive letter identifies a logical volume in the OS namespace."
+    },
+    {
+      "id": "mc10",
+      "misconception": "FAT, NTFS and exFAT use identical label constraints.",
+      "correction": "The source gives different limits and character behavior for each."
+    }
+  ],
+  "questions": [
+    "How does a partition become a volume?",
+    "Why can an OS recognize a partition but not its associated volume?",
+    "How can one volume span multiple physical drives?",
+    "What makes a simple volume different from a redundant or striped volume?",
+    "How does Windows expose a volume through a drive letter?",
+    "How does an NTFS mount point expose a volume inside another volume?",
+    "How does Unix-like mounting graft a volume into the filesystem tree?",
+    "Why is moving a file within a volume potentially faster than moving it across volumes?",
+    "How do volume labels and serial numbers serve different identification purposes?",
+    "How does formatting affect volume identity?",
+    "How did volume serial numbers evolve from mainframes to MS-DOS?",
+    "How does FAT store a volume label?",
+    "What are the source-stated label constraints for FAT, NTFS, and exFAT?",
+    "How can multiple drive letters refer to one volume?",
+    "Why is an ISO9660 volume image not a partition?",
+    "How does a file-backed volume relate to its host volume?",
+    "How do Windows and Unix-like volume concepts differ in user experience?",
+    "How does volume identity support removable-media exchange detection?"
+  ],
+  "expansion_targets": [
+    "dynamic disk/volume implementations",
+    "RAID and redundant volume layouts",
+    "LVM logical volumes",
+    "filesystem mount semantics",
+    "Windows Storage Spaces",
+    "GPT/MBR partition tables",
+    "volume GUIDs",
+    "filesystem UUIDs",
+    "bind mounts and junctions",
+    "symbolic links versus mount points",
+    "container storage volumes",
+    "virtual disks",
+    "VHD/VHDX-backed volumes",
+    "ISO mounting internals",
+    "copy-on-write volume systems",
+    "snapshotting",
+    "thin provisioning",
+    "distributed volumes"
+  ],
+  "validation": {
+    "duplicate_node_ids": false,
+    "duplicate_ids": [],
+    "dangling_relationships": [],
+    "relationship_count_matches": true,
+    "status": "clean"
+  },
+  "statistics": {
+    "nodes": 179,
+    "typed_relationships": 285,
+    "source_claims": 10,
+    "formal_models": 12,
+    "references": 7,
+    "people": 2,
+    "historical_events": 3,
+    "semantic_distinctions": 12,
+    "learning_paths": 12,
+    "misconception_corrections": 10,
+    "questions": 18,
+    "expansion_targets": 18
+  }
+}

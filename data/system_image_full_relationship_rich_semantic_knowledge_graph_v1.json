@@ -1,0 +1,2189 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "title": "System image — full relationship-rich semantic knowledge graph",
+  "source": {
+    "title": "System image",
+    "type": "user_supplied_Wikipedia_text",
+    "external_research_used": false,
+    "note": "Source text is authoritative for this transformation; no outside correction or enrichment was applied."
+  },
+  "semantic_policy": {
+    "relationships_are_first_class": true,
+    "preserve_mechanisms": true,
+    "preserve_directionality": true,
+    "preserve_conditions": true,
+    "preserve_effects": true,
+    "preserve_distinctions": true,
+    "preserve_examples": true,
+    "avoid_generic_related_to": true
+  },
+  "nodes": [
+    {
+      "id": "system_image",
+      "label": "System image",
+      "type": "concept",
+      "description": "Serialized copy of the entire state of a computer system stored in non-volatile form."
+    },
+    {
+      "id": "computer_system_state",
+      "label": "Computer system state",
+      "type": "state"
+    },
+    {
+      "id": "serialization",
+      "label": "Serialization",
+      "type": "mechanism"
+    },
+    {
+      "id": "nonvolatile_storage",
+      "label": "Non-volatile storage",
+      "type": "storage"
+    },
+    {
+      "id": "binary_compressed_file",
+      "label": "Binary compressed file",
+      "type": "format"
+    },
+    {
+      "id": "disk_image",
+      "label": "Disk image",
+      "type": "concept"
+    },
+    {
+      "id": "disk_cloning",
+      "label": "Disk cloning",
+      "type": "mechanism"
+    },
+    {
+      "id": "disk_cloning_application",
+      "label": "Disk cloning application",
+      "type": "software"
+    },
+    {
+      "id": "nonvolatile_memory",
+      "label": "Non-volatile memory",
+      "type": "storage"
+    },
+    {
+      "id": "boot_rom",
+      "label": "Boot ROM",
+      "type": "hardware"
+    },
+    {
+      "id": "volatile_memory",
+      "label": "Volatile memory",
+      "type": "storage"
+    },
+    {
+      "id": "shutdown",
+      "label": "Shutdown",
+      "type": "operation"
+    },
+    {
+      "id": "restore",
+      "label": "Restoration",
+      "type": "operation"
+    },
+    {
+      "id": "exact_state_restoration",
+      "label": "Exact state restoration",
+      "type": "capability"
+    },
+    {
+      "id": "backup",
+      "label": "Backup",
+      "type": "purpose"
+    },
+    {
+      "id": "hibernation",
+      "label": "Hibernation",
+      "type": "mechanism"
+    },
+    {
+      "id": "ram",
+      "label": "RAM",
+      "type": "memory"
+    },
+    {
+      "id": "process_image",
+      "label": "Process image",
+      "type": "concept"
+    },
+    {
+      "id": "process_state",
+      "label": "Process state",
+      "type": "state"
+    },
+    {
+      "id": "persistence",
+      "label": "Persistence",
+      "type": "property"
+    },
+    {
+      "id": "dbms",
+      "label": "Database management system",
+      "type": "software"
+    },
+    {
+      "id": "database_state",
+      "label": "Database state",
+      "type": "state"
+    },
+    {
+      "id": "database_dump",
+      "label": "Database dump",
+      "type": "artifact"
+    },
+    {
+      "id": "restart",
+      "label": "Restart",
+      "type": "operation"
+    },
+    {
+      "id": "emulator",
+      "label": "Emulator",
+      "type": "software"
+    },
+    {
+      "id": "savestate",
+      "label": "Savestate",
+      "type": "artifact"
+    },
+    {
+      "id": "code_mobility",
+      "label": "Code mobility",
+      "type": "mechanism"
+    },
+    {
+      "id": "mobile_agent",
+      "label": "Mobile agent",
+      "type": "software"
+    },
+    {
+      "id": "state_transfer",
+      "label": "State transfer",
+      "type": "mechanism"
+    },
+    {
+      "id": "migration",
+      "label": "Migration",
+      "type": "operation"
+    },
+    {
+      "id": "programming_language_support",
+      "label": "Programming-language image support",
+      "type": "capability"
+    },
+    {
+      "id": "smalltalk",
+      "label": "Smalltalk",
+      "type": "language"
+    },
+    {
+      "id": "flex",
+      "label": "FLEX",
+      "type": "historical_technology"
+    },
+    {
+      "id": "lisp",
+      "label": "Lisp",
+      "type": "language"
+    },
+    {
+      "id": "repl",
+      "label": "Read-eval-print loop",
+      "type": "runtime_mechanism"
+    },
+    {
+      "id": "package_loading",
+      "label": "Package/code loading",
+      "type": "operation"
+    },
+    {
+      "id": "compilation",
+      "label": "Compilation",
+      "type": "process"
+    },
+    {
+      "id": "precompiled_code",
+      "label": "Pre-compiled code",
+      "type": "artifact"
+    },
+    {
+      "id": "application_data",
+      "label": "Application data",
+      "type": "data"
+    },
+    {
+      "id": "executable_image",
+      "label": "Executable system image",
+      "type": "artifact"
+    },
+    {
+      "id": "program_distribution",
+      "label": "Program distribution",
+      "type": "purpose"
+    },
+    {
+      "id": "initialization_work",
+      "label": "Initialization work",
+      "type": "process"
+    },
+    {
+      "id": "tex",
+      "label": "TeX",
+      "type": "software"
+    },
+    {
+      "id": "emacs",
+      "label": "Emacs",
+      "type": "software"
+    },
+    {
+      "id": "lisp_machine",
+      "label": "Lisp Machine",
+      "type": "computer_system"
+    },
+    {
+      "id": "lisp_world",
+      "label": "Lisp World",
+      "type": "artifact"
+    },
+    {
+      "id": "lisp_os",
+      "label": "Lisp Machine operating system",
+      "type": "software"
+    },
+    {
+      "id": "incremental_world",
+      "label": "Incremental World",
+      "type": "artifact"
+    },
+    {
+      "id": "memory_optimization",
+      "label": "Memory optimization",
+      "type": "mechanism"
+    },
+    {
+      "id": "memory_layout",
+      "label": "Memory layout",
+      "type": "state_property"
+    },
+    {
+      "id": "data_compaction",
+      "label": "Data structure compaction",
+      "type": "mechanism"
+    },
+    {
+      "id": "data_sorting",
+      "label": "Data sorting",
+      "type": "optimization"
+    },
+    {
+      "id": "core_dump",
+      "label": "Core dump",
+      "type": "artifact"
+    },
+    {
+      "id": "system_image_core_dump_distinction",
+      "label": "System image vs core dump",
+      "type": "semantic_distinction"
+    },
+    {
+      "id": "system_vs_process_image",
+      "label": "System image vs process image",
+      "type": "semantic_distinction",
+      "description": "System image covers entire computer-system state; process image covers a given process state."
+    },
+    {
+      "id": "disk_vs_complete_image",
+      "label": "Disk clone vs complete system image",
+      "type": "semantic_distinction",
+      "description": "Disk cloning is complete only if all relevant state is on disk and accessible."
+    },
+    {
+      "id": "persistent_vs_volatile",
+      "label": "Persistent vs volatile state",
+      "type": "semantic_distinction",
+      "description": "Images make otherwise volatile execution state recoverable."
+    },
+    {
+      "id": "hibernate_vs_backup",
+      "label": "Hibernation vs backup",
+      "type": "semantic_distinction",
+      "description": "Hibernation is a specific RAM-state persistence operation; backup is a broader purpose."
+    },
+    {
+      "id": "savestate_vs_backup",
+      "label": "Savestate vs backup",
+      "type": "semantic_distinction",
+      "description": "Savestate preserves emulated execution state; the source does not equate it with general backup."
+    },
+    {
+      "id": "migration_vs_restore",
+      "label": "Migration vs restoration",
+      "type": "semantic_distinction",
+      "description": "Migration transfers state to another machine; restoration reconstructs prior state."
+    },
+    {
+      "id": "lisp_image_vs_db_dump",
+      "label": "Lisp image vs database dump",
+      "type": "semantic_distinction",
+      "description": "Both persist state, but Lisp images can combine executable code and application data."
+    },
+    {
+      "id": "world_vs_incremental_world",
+      "label": "World vs incremental World",
+      "type": "semantic_distinction",
+      "description": "Full World contains OS/apps/data; incremental World contains changes from a base."
+    },
+    {
+      "id": "image_vs_core_dump",
+      "label": "System image vs core dump",
+      "type": "semantic_distinction",
+      "description": "Similar structure does not imply identical purpose."
+    },
+    {
+      "id": "image_vs_source",
+      "label": "Image vs source code",
+      "type": "semantic_distinction",
+      "description": "An image may contain compiled/customized runtime state rather than source text."
+    },
+    {
+      "id": "distribution_vs_rebuild",
+      "label": "Image distribution vs rebuild",
+      "type": "semantic_distinction",
+      "description": "Distribution of initialized images avoids repeated startup initialization."
+    },
+    {
+      "id": "runtime_vs_artifact",
+      "label": "Runtime state vs program artifact",
+      "type": "semantic_distinction",
+      "description": "Image can combine executable code, application data, and runtime state."
+    },
+    {
+      "id": "model_system",
+      "label": "System image restoration",
+      "type": "formal_model",
+      "description": "system_state → serialize → persistent_image → deserialize → prior_state"
+    },
+    {
+      "id": "model_disk",
+      "label": "Disk completeness",
+      "type": "formal_model",
+      "description": "complete_image ≈ disk_image only_if all_relevant_state ∈ disk"
+    },
+    {
+      "id": "model_process",
+      "label": "Process persistence",
+      "type": "formal_model",
+      "description": "process_state(t0) → process_image → later_restore → process_state(t0)"
+    },
+    {
+      "id": "model_hibernate",
+      "label": "Hibernation",
+      "type": "formal_model",
+      "description": "RAM_state → persistent_image → power_saving → restore"
+    },
+    {
+      "id": "model_dbms",
+      "label": "DBMS persistence",
+      "type": "formal_model",
+      "description": "database_state → database_dump → shutdown → restart → intact_state"
+    },
+    {
+      "id": "model_savestate",
+      "label": "Emulator savestate",
+      "type": "formal_model",
+      "description": "emulated_state → savestate → load → prior_state"
+    },
+    {
+      "id": "model_mobility",
+      "label": "Mobile-agent migration",
+      "type": "formal_model",
+      "description": "agent_state → save → copy → restart_on_destination"
+    },
+    {
+      "id": "model_lisp",
+      "label": "Lisp image",
+      "type": "formal_model",
+      "description": "running_Lisp + compiled_code + data → dump → executable_image"
+    },
+    {
+      "id": "model_world",
+      "label": "Incremental World",
+      "type": "formal_model",
+      "description": "base_World + delta → reconstructed_World"
+    },
+    {
+      "id": "model_distinction",
+      "label": "Image/core-dump distinction",
+      "type": "formal_model",
+      "description": "structural_similarity ≠ identical_purpose"
+    },
+    {
+      "id": "claim_1",
+      "label": "Definition",
+      "type": "source_claim",
+      "description": "System image is a serialized copy of entire computer-system state in non-volatile form."
+    },
+    {
+      "id": "claim_2",
+      "label": "Disk completeness",
+      "type": "source_claim",
+      "description": "Disk cloning can produce a system image only when relevant state is on disk; some state may be outside disks or inaccessible."
+    },
+    {
+      "id": "claim_3",
+      "label": "Backup",
+      "type": "source_claim",
+      "description": "Exact shutdown/restoration capability makes system images usable as backups."
+    },
+    {
+      "id": "claim_4",
+      "label": "Hibernation",
+      "type": "source_claim",
+      "description": "Hibernation images the computer's entire RAM."
+    },
+    {
+      "id": "claim_5",
+      "label": "Process image",
+      "type": "source_claim",
+      "description": "Process image captures process state and creates persistence."
+    },
+    {
+      "id": "claim_6",
+      "label": "DBMS",
+      "type": "source_claim",
+      "description": "DBMS can dump database state before closing and restore it after restart."
+    },
+    {
+      "id": "claim_7",
+      "label": "Emulator",
+      "type": "source_claim",
+      "description": "Emulators may save system images called savestates in video gaming."
+    },
+    {
+      "id": "claim_8",
+      "label": "Code mobility",
+      "type": "source_claim",
+      "description": "Mobile agents can migrate by saving, copying, and restarting state elsewhere."
+    },
+    {
+      "id": "claim_9",
+      "label": "Language support",
+      "type": "source_claim",
+      "description": "Smalltalk and Lisp support system images; Lisp can preserve compiled/customized code and loaded data."
+    },
+    {
+      "id": "claim_10",
+      "label": "Distribution",
+      "type": "source_claim",
+      "description": "Executable images can be distributed to avoid repeated initialization."
+    },
+    {
+      "id": "claim_11",
+      "label": "Lisp Worlds",
+      "type": "source_claim",
+      "description": "Lisp Machines boot from Worlds containing OS, applications, and data; incremental Worlds store changes."
+    },
+    {
+      "id": "claim_12",
+      "label": "Core dumps",
+      "type": "source_claim",
+      "description": "System images resemble core dumps structurally but have different purposes."
+    },
+    {
+      "id": "lp1",
+      "label": "Foundations",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp2",
+      "label": "Disk completeness",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp3",
+      "label": "Process persistence",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp4",
+      "label": "Hibernation",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp5",
+      "label": "Emulation state",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp6",
+      "label": "Code mobility",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp7",
+      "label": "Language images",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp8",
+      "label": "Image distribution",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp9",
+      "label": "Lisp Worlds",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp10",
+      "label": "Semantic distinctions",
+      "type": "learning_path"
+    },
+    {
+      "id": "m1",
+      "label": "A disk clone is always a complete system image",
+      "type": "misconception_correction",
+      "description": "False: non-disk state and privilege limits can make it incomplete."
+    },
+    {
+      "id": "m2",
+      "label": "System image means disk image",
+      "type": "misconception_correction",
+      "description": "False: disk is only one possible state substrate."
+    },
+    {
+      "id": "m3",
+      "label": "Process image means the whole machine",
+      "type": "misconception_correction",
+      "description": "False: it captures one process."
+    },
+    {
+      "id": "m4",
+      "label": "Hibernation only saves files",
+      "type": "misconception_correction",
+      "description": "False: the source says the entire RAM is imaged."
+    },
+    {
+      "id": "m5",
+      "label": "Savestate is source code",
+      "type": "misconception_correction",
+      "description": "False: it is saved emulated execution state."
+    },
+    {
+      "id": "m6",
+      "label": "Migration is only copying",
+      "type": "misconception_correction",
+      "description": "False: the source includes restarting on the destination."
+    },
+    {
+      "id": "m7",
+      "label": "Lisp image contains only code",
+      "type": "misconception_correction",
+      "description": "False: it can contain compiled code and application data."
+    },
+    {
+      "id": "m8",
+      "label": "Incremental World is a full independent World",
+      "type": "misconception_correction",
+      "description": "False: it contains changes from a base."
+    },
+    {
+      "id": "m9",
+      "label": "Core dump and system image have same purpose",
+      "type": "misconception_correction",
+      "description": "False: the source explicitly distinguishes purpose."
+    },
+    {
+      "id": "q1",
+      "label": "Under what condition can disk cloning produce a complete system image?",
+      "type": "question"
+    },
+    {
+      "id": "q2",
+      "label": "What state can exist outside disks?",
+      "type": "question"
+    },
+    {
+      "id": "q3",
+      "label": "How does hibernation use an image of RAM?",
+      "type": "question"
+    },
+    {
+      "id": "q4",
+      "label": "How does a process image create persistence?",
+      "type": "question"
+    },
+    {
+      "id": "q5",
+      "label": "How does a DBMS use a saved database dump?",
+      "type": "question"
+    },
+    {
+      "id": "q6",
+      "label": "How does a savestate preserve emulated state?",
+      "type": "question"
+    },
+    {
+      "id": "q7",
+      "label": "What must a mobile agent save to migrate?",
+      "type": "question"
+    },
+    {
+      "id": "q8",
+      "label": "How do Smalltalk and Lisp use system images?",
+      "type": "question"
+    },
+    {
+      "id": "q9",
+      "label": "Why does image distribution avoid repeated initialization?",
+      "type": "question"
+    },
+    {
+      "id": "q10",
+      "label": "What does a Lisp World contain?",
+      "type": "question"
+    },
+    {
+      "id": "q11",
+      "label": "How does an incremental World differ from a full World?",
+      "type": "question"
+    },
+    {
+      "id": "q12",
+      "label": "Why is a system image similar to but different from a core dump?",
+      "type": "question"
+    },
+    {
+      "id": "r1",
+      "label": "System image source article",
+      "type": "source"
+    },
+    {
+      "id": "r2",
+      "label": "ISO image",
+      "type": "see_also"
+    },
+    {
+      "id": "r3",
+      "label": "CryoPID",
+      "type": "external_resource"
+    },
+    {
+      "id": "r4",
+      "label": "Core dump",
+      "type": "concept_reference"
+    },
+    {
+      "id": "x1",
+      "label": "system imaging formats",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x2",
+      "label": "checkpoint/restore",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x3",
+      "label": "process checkpointing",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x4",
+      "label": "database checkpoints/WAL",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x5",
+      "label": "copy-on-write images",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x6",
+      "label": "incremental/differential images",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x7",
+      "label": "boot-time restoration",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x8",
+      "label": "mobile-agent serialization",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x9",
+      "label": "Smalltalk image VMs",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x10",
+      "label": "Lisp image internals",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x11",
+      "label": "core dump formats",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x12",
+      "label": "savestate formats",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x13",
+      "label": "distributed process migration",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x14",
+      "label": "image integrity",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x15",
+      "label": "image authenticity",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x16",
+      "label": "compression/deduplication",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x17",
+      "label": "reproducible image construction",
+      "type": "expansion_target"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "system_image",
+      "target": "computer_system_state",
+      "relationship": "serializes",
+      "semantic_role": "state_representation",
+      "mechanism": "State is serialized into a persistent representation.",
+      "conditions": "Complete relevant state must be captured.",
+      "effect": "Saved state can be reconstructed.",
+      "inverse_or_converse": "Restoration reverses serialization."
+    },
+    {
+      "source": "system_image",
+      "target": "nonvolatile_storage",
+      "relationship": "stored_on",
+      "semantic_role": "persistence",
+      "conditions": "Storage survives ordinary shutdown.",
+      "effect": "Image remains available.",
+      "inverse_or_converse": "restore reads stored image."
+    },
+    {
+      "source": "system_image",
+      "target": "binary_compressed_file",
+      "relationship": "can_be_stored_as",
+      "semantic_role": "format_example",
+      "conditions": "File preserves serialized state.",
+      "effect": "Portable image artifact."
+    },
+    {
+      "source": "disk_image",
+      "target": "system_image",
+      "relationship": "can_support",
+      "semantic_role": "conditional_support",
+      "mechanism": "Copying disk contents can produce the system image when disk contains all relevant state.",
+      "conditions": "All relevant state must be on disk.",
+      "effect": "Disk contents become a system image.",
+      "inverse_or_converse": "System image can include more than disk contents."
+    },
+    {
+      "source": "disk_cloning_application",
+      "target": "disk_cloning",
+      "relationship": "performs",
+      "semantic_role": "mechanism",
+      "mechanism": "Copies disk contents to a file/location.",
+      "conditions": "Program needs sufficient access.",
+      "effect": "Disk representation is created."
+    },
+    {
+      "source": "disk_cloning",
+      "target": "disk_image",
+      "relationship": "produces",
+      "semantic_role": "derivation",
+      "conditions": "Disk contents are copied.",
+      "effect": "Persistent disk image exists."
+    },
+    {
+      "source": "nonvolatile_memory",
+      "target": "computer_system_state",
+      "relationship": "may_contain",
+      "semantic_role": "state_location",
+      "conditions": "Some state can live outside disks.",
+      "effect": "Disk clone can be incomplete."
+    },
+    {
+      "source": "boot_rom",
+      "target": "nonvolatile_memory",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "Persistent non-disk state."
+    },
+    {
+      "source": "volatile_memory",
+      "target": "computer_system_state",
+      "relationship": "may_contain",
+      "semantic_role": "state_location",
+      "conditions": "Running state can reside in RAM.",
+      "effect": "Disk-only capture can omit it."
+    },
+    {
+      "source": "disk_cloning_application",
+      "target": "computer_system_state",
+      "relationship": "may_fail_to_capture",
+      "semantic_role": "limitation",
+      "mechanism": "The source notes privilege/visibility limits and non-disk state.",
+      "conditions": "Required state may be inaccessible.",
+      "effect": "Image may be incomplete."
+    },
+    {
+      "source": "exact_state_restoration",
+      "target": "system_image",
+      "relationship": "enables",
+      "semantic_role": "capability",
+      "conditions": "System can return to identical prior state.",
+      "effect": "Image supports backup."
+    },
+    {
+      "source": "shutdown",
+      "target": "restore",
+      "relationship": "precedes",
+      "semantic_role": "lifecycle",
+      "conditions": "State is saved before shutdown.",
+      "effect": "Later restoration reconstructs it."
+    },
+    {
+      "source": "system_image",
+      "target": "backup",
+      "relationship": "supports",
+      "semantic_role": "purpose",
+      "conditions": "Restoration fidelity is required.",
+      "effect": "State can be preserved."
+    },
+    {
+      "source": "hibernation",
+      "target": "ram",
+      "relationship": "images",
+      "semantic_role": "mechanism",
+      "mechanism": "Entire RAM is stored as an image.",
+      "conditions": "RAM is volatile.",
+      "effect": "RAM becomes persistent.",
+      "inverse_or_converse": "Resume reverses it."
+    },
+    {
+      "source": "hibernation",
+      "target": "system_image",
+      "relationship": "is_an_example_of",
+      "semantic_role": "example",
+      "mechanism": "Hibernation images computer execution state.",
+      "conditions": "State is represented as an image.",
+      "effect": "State can be restored."
+    },
+    {
+      "source": "process_image",
+      "target": "process_state",
+      "relationship": "captures",
+      "semantic_role": "state_capture",
+      "conditions": "Point-in-time process state is captured.",
+      "effect": "Process execution becomes persistent data."
+    },
+    {
+      "source": "process_image",
+      "target": "persistence",
+      "relationship": "provides",
+      "semantic_role": "purpose",
+      "conditions": "State is otherwise volatile.",
+      "effect": "Execution state can survive shutdown/termination."
+    },
+    {
+      "source": "dbms",
+      "target": "database_state",
+      "relationship": "maintains",
+      "semantic_role": "state_management",
+      "effect": "Database state persists."
+    },
+    {
+      "source": "dbms",
+      "target": "database_dump",
+      "relationship": "can_produce",
+      "semantic_role": "serialization",
+      "mechanism": "Stores database state to a file before closing.",
+      "conditions": "DBMS can access database state.",
+      "effect": "Restartable dump exists."
+    },
+    {
+      "source": "database_dump",
+      "target": "database_state",
+      "relationship": "represents",
+      "semantic_role": "representation",
+      "effect": "Saved database state."
+    },
+    {
+      "source": "database_dump",
+      "target": "restart",
+      "relationship": "supports",
+      "semantic_role": "lifecycle",
+      "conditions": "Saved information can be loaded after restart.",
+      "effect": "DBMS continues with intact data."
+    },
+    {
+      "source": "emulator",
+      "target": "savestate",
+      "relationship": "provides",
+      "semantic_role": "feature",
+      "conditions": "Emulated state can be captured.",
+      "effect": "Execution can later resume."
+    },
+    {
+      "source": "code_mobility",
+      "target": "mobile_agent",
+      "relationship": "uses",
+      "semantic_role": "mechanism",
+      "conditions": "Agent state is serializable.",
+      "effect": "Agent can migrate."
+    },
+    {
+      "source": "mobile_agent",
+      "target": "state_transfer",
+      "relationship": "requires",
+      "semantic_role": "dependency",
+      "conditions": "Saved execution state must be copied.",
+      "effect": "Destination receives state."
+    },
+    {
+      "source": "state_transfer",
+      "target": "migration",
+      "relationship": "enables",
+      "semantic_role": "causal_enabler",
+      "conditions": "Destination can reconstruct state.",
+      "effect": "Execution resumes elsewhere."
+    },
+    {
+      "source": "migration",
+      "target": "mobile_agent",
+      "relationship": "can_move",
+      "semantic_role": "application",
+      "conditions": "Agent state is saved/transferred.",
+      "effect": "Agent continues on another machine."
+    },
+    {
+      "source": "programming_language_support",
+      "target": "system_image",
+      "relationship": "provides",
+      "semantic_role": "capability",
+      "mechanism": "Runtime can dump a running program as an image.",
+      "conditions": "Implementation exposes image facility.",
+      "effect": "Program/runtime state is saved."
+    },
+    {
+      "source": "smalltalk",
+      "target": "programming_language_support",
+      "relationship": "provides",
+      "semantic_role": "implementation",
+      "effect": "System-image development state can be saved."
+    },
+    {
+      "source": "flex",
+      "target": "smalltalk",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "conditions": "Source states Smalltalk was inspired by FLEX.",
+      "effect": "Historical influence."
+    },
+    {
+      "source": "lisp",
+      "target": "programming_language_support",
+      "relationship": "provides",
+      "semantic_role": "implementation",
+      "effect": "Running Lisp state can be dumped."
+    },
+    {
+      "source": "lisp",
+      "target": "repl",
+      "relationship": "uses",
+      "semantic_role": "workflow",
+      "conditions": "Running implementation accepts interactive code.",
+      "effect": "Loaded state becomes imageable."
+    },
+    {
+      "source": "repl",
+      "target": "package_loading",
+      "relationship": "supports",
+      "semantic_role": "mechanism",
+      "effect": "Packages/code enter running system."
+    },
+    {
+      "source": "package_loading",
+      "target": "compilation",
+      "relationship": "can_trigger",
+      "semantic_role": "process",
+      "mechanism": "Source says Lisp normally compiles loaded programs.",
+      "conditions": "Loaded code is processed.",
+      "effect": "Compiled code exists."
+    },
+    {
+      "source": "compilation",
+      "target": "precompiled_code",
+      "relationship": "produces",
+      "semantic_role": "derivation",
+      "effect": "Compiled representation can be retained."
+    },
+    {
+      "source": "application_data",
+      "target": "lisp",
+      "relationship": "can_be_loaded_into",
+      "semantic_role": "state",
+      "conditions": "Running Lisp system accepts data.",
+      "effect": "Data enters image state."
+    },
+    {
+      "source": "precompiled_code",
+      "target": "system_image",
+      "relationship": "is_retained_in",
+      "semantic_role": "composition",
+      "conditions": "Image captures compiled state.",
+      "effect": "Startup recompilation can be avoided."
+    },
+    {
+      "source": "application_data",
+      "target": "system_image",
+      "relationship": "is_retained_in",
+      "semantic_role": "composition",
+      "conditions": "Loaded data is resident at dump time.",
+      "effect": "Application state persists."
+    },
+    {
+      "source": "system_image",
+      "target": "executable_image",
+      "relationship": "can_be",
+      "semantic_role": "format",
+      "conditions": "Source says image can often be executable.",
+      "effect": "Image itself can run."
+    },
+    {
+      "source": "executable_image",
+      "target": "program_distribution",
+      "relationship": "serves_as",
+      "semantic_role": "purpose",
+      "conditions": "Compatible machine/runtime required.",
+      "effect": "Initialized program can be distributed."
+    },
+    {
+      "source": "program_distribution",
+      "target": "initialization_work",
+      "relationship": "avoids_repeating",
+      "semantic_role": "optimization",
+      "conditions": "Pre-initialized state is retained.",
+      "effect": "Startup avoids repeated setup."
+    },
+    {
+      "source": "tex",
+      "target": "program_distribution",
+      "relationship": "historically_used",
+      "semantic_role": "historical_example",
+      "conditions": "Source names TeX.",
+      "effect": "Image-oriented distribution example."
+    },
+    {
+      "source": "emacs",
+      "target": "program_distribution",
+      "relationship": "historically_used",
+      "semantic_role": "historical_example",
+      "conditions": "Source names Emacs.",
+      "effect": "Image-oriented distribution example."
+    },
+    {
+      "source": "lisp_machine",
+      "target": "lisp_world",
+      "relationship": "boots_from",
+      "semantic_role": "boot",
+      "conditions": "World contains machine software/data.",
+      "effect": "Machine boots from image."
+    },
+    {
+      "source": "lisp_world",
+      "target": "lisp_os",
+      "relationship": "contains",
+      "semantic_role": "composition",
+      "effect": "OS is in World."
+    },
+    {
+      "source": "lisp_world",
+      "target": "application_data",
+      "relationship": "contains",
+      "semantic_role": "composition",
+      "effect": "Applications/data are restored together."
+    },
+    {
+      "source": "incremental_world",
+      "target": "lisp_world",
+      "relationship": "is_a_delta_of",
+      "semantic_role": "delta",
+      "conditions": "Base World exists.",
+      "effect": "Only changes are represented."
+    },
+    {
+      "source": "lisp_world",
+      "target": "memory_optimization",
+      "relationship": "can_apply_before",
+      "semantic_role": "preprocessing",
+      "conditions": "Optimization precedes saving.",
+      "effect": "Saved World has optimized memory organization."
+    },
+    {
+      "source": "memory_optimization",
+      "target": "memory_layout",
+      "relationship": "improves",
+      "semantic_role": "optimization",
+      "effect": "Better memory layout."
+    },
+    {
+      "source": "memory_optimization",
+      "target": "data_compaction",
+      "relationship": "includes",
+      "semantic_role": "subprocess",
+      "effect": "Data structures can be compacted."
+    },
+    {
+      "source": "memory_optimization",
+      "target": "data_sorting",
+      "relationship": "includes",
+      "semantic_role": "subprocess",
+      "effect": "Data can be sorted."
+    },
+    {
+      "source": "system_image",
+      "target": "core_dump",
+      "relationship": "similar_in_structure_to",
+      "semantic_role": "structural_similarity",
+      "conditions": "Both serialize substantial state.",
+      "effect": "Structural similarity exists.",
+      "inverse_or_converse": "Purpose differs."
+    },
+    {
+      "source": "system_image_core_dump_distinction",
+      "target": "system_image",
+      "relationship": "distinguishes",
+      "semantic_role": "semantic_distinction",
+      "effect": "System image and core dump are not synonymous."
+    },
+    {
+      "source": "system_image_core_dump_distinction",
+      "target": "core_dump",
+      "relationship": "distinguishes",
+      "semantic_role": "semantic_distinction",
+      "effect": "Different purpose despite structural similarity."
+    },
+    {
+      "source": "process_image",
+      "target": "system_image",
+      "relationship": "is_related_to",
+      "semantic_role": "cross_concept_link"
+    },
+    {
+      "source": "hibernation",
+      "target": "persistence",
+      "relationship": "implements",
+      "semantic_role": "cross_concept_link"
+    },
+    {
+      "source": "savestate",
+      "target": "persistence",
+      "relationship": "implements",
+      "semantic_role": "cross_concept_link"
+    },
+    {
+      "source": "code_mobility",
+      "target": "persistence",
+      "relationship": "extends",
+      "semantic_role": "cross_concept_link"
+    },
+    {
+      "source": "lisp_world",
+      "target": "system_image",
+      "relationship": "instantiates",
+      "semantic_role": "cross_concept_link"
+    },
+    {
+      "source": "incremental_world",
+      "target": "system_image",
+      "relationship": "specializes",
+      "semantic_role": "cross_concept_link"
+    },
+    {
+      "source": "model_system",
+      "target": "system_image",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "system_state → serialize → persistent_image → deserialize → prior_state"
+    },
+    {
+      "source": "model_disk",
+      "target": "disk_image",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "complete_image ≈ disk_image only_if all_relevant_state ∈ disk"
+    },
+    {
+      "source": "model_process",
+      "target": "process_image",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "process_state(t0) → process_image → later_restore → process_state(t0)"
+    },
+    {
+      "source": "model_hibernate",
+      "target": "hibernation",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "RAM_state → persistent_image → power_saving → restore"
+    },
+    {
+      "source": "model_dbms",
+      "target": "dbms",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "database_state → database_dump → shutdown → restart → intact_state"
+    },
+    {
+      "source": "model_savestate",
+      "target": "savestate",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "emulated_state → savestate → load → prior_state"
+    },
+    {
+      "source": "model_mobility",
+      "target": "migration",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "agent_state → save → copy → restart_on_destination"
+    },
+    {
+      "source": "model_lisp",
+      "target": "lisp",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "running_Lisp + compiled_code + data → dump → executable_image"
+    },
+    {
+      "source": "model_world",
+      "target": "incremental_world",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "base_World + delta → reconstructed_World"
+    },
+    {
+      "source": "model_distinction",
+      "target": "system_image_core_dump_distinction",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "structural_similarity ≠ identical_purpose"
+    },
+    {
+      "source": "claim_1",
+      "target": "system_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "disk_cloning",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "disk_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "nonvolatile_memory",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "volatile_memory",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "exact_state_restoration",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "backup",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_4",
+      "target": "hibernation",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_4",
+      "target": "ram",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_5",
+      "target": "process_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_5",
+      "target": "persistence",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_6",
+      "target": "dbms",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_6",
+      "target": "database_dump",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_7",
+      "target": "emulator",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_7",
+      "target": "savestate",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "code_mobility",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "migration",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_9",
+      "target": "smalltalk",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_9",
+      "target": "lisp",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_9",
+      "target": "precompiled_code",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_9",
+      "target": "application_data",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_10",
+      "target": "executable_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_10",
+      "target": "program_distribution",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_11",
+      "target": "lisp_machine",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_11",
+      "target": "lisp_world",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_11",
+      "target": "incremental_world",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_12",
+      "target": "core_dump",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_12",
+      "target": "system_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "lp1",
+      "target": "system_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward computer_system_state."
+    },
+    {
+      "source": "lp1",
+      "target": "computer_system_state",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward serialization."
+    },
+    {
+      "source": "lp1",
+      "target": "serialization",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward nonvolatile_storage."
+    },
+    {
+      "source": "lp1",
+      "target": "nonvolatile_storage",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward backup."
+    },
+    {
+      "source": "lp2",
+      "target": "disk_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward disk_cloning."
+    },
+    {
+      "source": "lp2",
+      "target": "disk_cloning",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward nonvolatile_memory."
+    },
+    {
+      "source": "lp2",
+      "target": "nonvolatile_memory",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward boot_rom."
+    },
+    {
+      "source": "lp2",
+      "target": "boot_rom",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward volatile_memory."
+    },
+    {
+      "source": "lp3",
+      "target": "process_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward process_state."
+    },
+    {
+      "source": "lp3",
+      "target": "process_state",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward dbms."
+    },
+    {
+      "source": "lp3",
+      "target": "dbms",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward database_dump."
+    },
+    {
+      "source": "lp3",
+      "target": "database_dump",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward restart."
+    },
+    {
+      "source": "lp4",
+      "target": "ram",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward hibernation."
+    },
+    {
+      "source": "lp4",
+      "target": "hibernation",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward restore."
+    },
+    {
+      "source": "lp5",
+      "target": "emulator",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward savestate."
+    },
+    {
+      "source": "lp5",
+      "target": "savestate",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward persistence."
+    },
+    {
+      "source": "lp6",
+      "target": "mobile_agent",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward state_transfer."
+    },
+    {
+      "source": "lp6",
+      "target": "state_transfer",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward migration."
+    },
+    {
+      "source": "lp7",
+      "target": "smalltalk",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward lisp."
+    },
+    {
+      "source": "lp7",
+      "target": "lisp",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward repl."
+    },
+    {
+      "source": "lp7",
+      "target": "repl",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward package_loading."
+    },
+    {
+      "source": "lp7",
+      "target": "package_loading",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward compilation."
+    },
+    {
+      "source": "lp7",
+      "target": "compilation",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward precompiled_code."
+    },
+    {
+      "source": "lp8",
+      "target": "executable_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward program_distribution."
+    },
+    {
+      "source": "lp8",
+      "target": "program_distribution",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward initialization_work."
+    },
+    {
+      "source": "lp9",
+      "target": "lisp_machine",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward lisp_world."
+    },
+    {
+      "source": "lp9",
+      "target": "lisp_world",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward incremental_world."
+    },
+    {
+      "source": "lp9",
+      "target": "incremental_world",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward memory_optimization."
+    },
+    {
+      "source": "lp10",
+      "target": "system_vs_process_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward disk_vs_complete_image."
+    },
+    {
+      "source": "lp10",
+      "target": "disk_vs_complete_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward migration_vs_restore."
+    },
+    {
+      "source": "lp10",
+      "target": "migration_vs_restore",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Ordered learning path toward image_vs_core_dump."
+    },
+    {
+      "source": "r1",
+      "target": "system_image",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r2",
+      "target": "disk_image",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r3",
+      "target": "process_image",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r4",
+      "target": "core_dump",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_system",
+      "name": "System image restoration",
+      "expression": "system_state → serialize → persistent_image → deserialize → prior_state"
+    },
+    {
+      "id": "model_disk",
+      "name": "Disk completeness",
+      "expression": "complete_image ≈ disk_image only_if all_relevant_state ∈ disk"
+    },
+    {
+      "id": "model_process",
+      "name": "Process persistence",
+      "expression": "process_state(t0) → process_image → later_restore → process_state(t0)"
+    },
+    {
+      "id": "model_hibernate",
+      "name": "Hibernation",
+      "expression": "RAM_state → persistent_image → power_saving → restore"
+    },
+    {
+      "id": "model_dbms",
+      "name": "DBMS persistence",
+      "expression": "database_state → database_dump → shutdown → restart → intact_state"
+    },
+    {
+      "id": "model_savestate",
+      "name": "Emulator savestate",
+      "expression": "emulated_state → savestate → load → prior_state"
+    },
+    {
+      "id": "model_mobility",
+      "name": "Mobile-agent migration",
+      "expression": "agent_state → save → copy → restart_on_destination"
+    },
+    {
+      "id": "model_lisp",
+      "name": "Lisp image",
+      "expression": "running_Lisp + compiled_code + data → dump → executable_image"
+    },
+    {
+      "id": "model_world",
+      "name": "Incremental World",
+      "expression": "base_World + delta → reconstructed_World"
+    },
+    {
+      "id": "model_distinction",
+      "name": "Image/core-dump distinction",
+      "expression": "structural_similarity ≠ identical_purpose"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_1",
+      "section": "Definition",
+      "text": "System image is a serialized copy of entire computer-system state in non-volatile form."
+    },
+    {
+      "id": "claim_2",
+      "section": "Disk completeness",
+      "text": "Disk cloning can produce a system image only when relevant state is on disk; some state may be outside disks or inaccessible."
+    },
+    {
+      "id": "claim_3",
+      "section": "Backup",
+      "text": "Exact shutdown/restoration capability makes system images usable as backups."
+    },
+    {
+      "id": "claim_4",
+      "section": "Hibernation",
+      "text": "Hibernation images the computer's entire RAM."
+    },
+    {
+      "id": "claim_5",
+      "section": "Process image",
+      "text": "Process image captures process state and creates persistence."
+    },
+    {
+      "id": "claim_6",
+      "section": "DBMS",
+      "text": "DBMS can dump database state before closing and restore it after restart."
+    },
+    {
+      "id": "claim_7",
+      "section": "Emulator",
+      "text": "Emulators may save system images called savestates in video gaming."
+    },
+    {
+      "id": "claim_8",
+      "section": "Code mobility",
+      "text": "Mobile agents can migrate by saving, copying, and restarting state elsewhere."
+    },
+    {
+      "id": "claim_9",
+      "section": "Language support",
+      "text": "Smalltalk and Lisp support system images; Lisp can preserve compiled/customized code and loaded data."
+    },
+    {
+      "id": "claim_10",
+      "section": "Distribution",
+      "text": "Executable images can be distributed to avoid repeated initialization."
+    },
+    {
+      "id": "claim_11",
+      "section": "Lisp Worlds",
+      "text": "Lisp Machines boot from Worlds containing OS, applications, and data; incremental Worlds store changes."
+    },
+    {
+      "id": "claim_12",
+      "section": "Core dumps",
+      "text": "System images resemble core dumps structurally but have different purposes."
+    }
+  ],
+  "references": [
+    {
+      "id": "r1",
+      "label": "System image source article",
+      "type": "source"
+    },
+    {
+      "id": "r2",
+      "label": "ISO image",
+      "type": "see_also"
+    },
+    {
+      "id": "r3",
+      "label": "CryoPID",
+      "type": "external_resource"
+    },
+    {
+      "id": "r4",
+      "label": "Core dump",
+      "type": "concept_reference"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "system_vs_process_image",
+      "label": "System image vs process image",
+      "description": "System image covers entire computer-system state; process image covers a given process state."
+    },
+    {
+      "id": "disk_vs_complete_image",
+      "label": "Disk clone vs complete system image",
+      "description": "Disk cloning is complete only if all relevant state is on disk and accessible."
+    },
+    {
+      "id": "persistent_vs_volatile",
+      "label": "Persistent vs volatile state",
+      "description": "Images make otherwise volatile execution state recoverable."
+    },
+    {
+      "id": "hibernate_vs_backup",
+      "label": "Hibernation vs backup",
+      "description": "Hibernation is a specific RAM-state persistence operation; backup is a broader purpose."
+    },
+    {
+      "id": "savestate_vs_backup",
+      "label": "Savestate vs backup",
+      "description": "Savestate preserves emulated execution state; the source does not equate it with general backup."
+    },
+    {
+      "id": "migration_vs_restore",
+      "label": "Migration vs restoration",
+      "description": "Migration transfers state to another machine; restoration reconstructs prior state."
+    },
+    {
+      "id": "lisp_image_vs_db_dump",
+      "label": "Lisp image vs database dump",
+      "description": "Both persist state, but Lisp images can combine executable code and application data."
+    },
+    {
+      "id": "world_vs_incremental_world",
+      "label": "World vs incremental World",
+      "description": "Full World contains OS/apps/data; incremental World contains changes from a base."
+    },
+    {
+      "id": "image_vs_core_dump",
+      "label": "System image vs core dump",
+      "description": "Similar structure does not imply identical purpose."
+    },
+    {
+      "id": "image_vs_source",
+      "label": "Image vs source code",
+      "description": "An image may contain compiled/customized runtime state rather than source text."
+    },
+    {
+      "id": "distribution_vs_rebuild",
+      "label": "Image distribution vs rebuild",
+      "description": "Distribution of initialized images avoids repeated startup initialization."
+    },
+    {
+      "id": "runtime_vs_artifact",
+      "label": "Runtime state vs program artifact",
+      "description": "Image can combine executable code, application data, and runtime state."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "title": "Foundations",
+      "sequence": [
+        "system_image",
+        "computer_system_state",
+        "serialization",
+        "nonvolatile_storage",
+        "backup"
+      ]
+    },
+    {
+      "id": "lp2",
+      "title": "Disk completeness",
+      "sequence": [
+        "disk_image",
+        "disk_cloning",
+        "nonvolatile_memory",
+        "boot_rom",
+        "volatile_memory"
+      ]
+    },
+    {
+      "id": "lp3",
+      "title": "Process persistence",
+      "sequence": [
+        "process_image",
+        "process_state",
+        "dbms",
+        "database_dump",
+        "restart"
+      ]
+    },
+    {
+      "id": "lp4",
+      "title": "Hibernation",
+      "sequence": [
+        "ram",
+        "hibernation",
+        "restore"
+      ]
+    },
+    {
+      "id": "lp5",
+      "title": "Emulation state",
+      "sequence": [
+        "emulator",
+        "savestate",
+        "persistence"
+      ]
+    },
+    {
+      "id": "lp6",
+      "title": "Code mobility",
+      "sequence": [
+        "mobile_agent",
+        "state_transfer",
+        "migration"
+      ]
+    },
+    {
+      "id": "lp7",
+      "title": "Language images",
+      "sequence": [
+        "smalltalk",
+        "lisp",
+        "repl",
+        "package_loading",
+        "compilation",
+        "precompiled_code"
+      ]
+    },
+    {
+      "id": "lp8",
+      "title": "Image distribution",
+      "sequence": [
+        "executable_image",
+        "program_distribution",
+        "initialization_work"
+      ]
+    },
+    {
+      "id": "lp9",
+      "title": "Lisp Worlds",
+      "sequence": [
+        "lisp_machine",
+        "lisp_world",
+        "incremental_world",
+        "memory_optimization"
+      ]
+    },
+    {
+      "id": "lp10",
+      "title": "Semantic distinctions",
+      "sequence": [
+        "system_vs_process_image",
+        "disk_vs_complete_image",
+        "migration_vs_restore",
+        "image_vs_core_dump"
+      ]
+    }
+  ],
+  "misconceptions_and_corrections": [
+    {
+      "id": "m1",
+      "label": "A disk clone is always a complete system image",
+      "correction": "False: non-disk state and privilege limits can make it incomplete."
+    },
+    {
+      "id": "m2",
+      "label": "System image means disk image",
+      "correction": "False: disk is only one possible state substrate."
+    },
+    {
+      "id": "m3",
+      "label": "Process image means the whole machine",
+      "correction": "False: it captures one process."
+    },
+    {
+      "id": "m4",
+      "label": "Hibernation only saves files",
+      "correction": "False: the source says the entire RAM is imaged."
+    },
+    {
+      "id": "m5",
+      "label": "Savestate is source code",
+      "correction": "False: it is saved emulated execution state."
+    },
+    {
+      "id": "m6",
+      "label": "Migration is only copying",
+      "correction": "False: the source includes restarting on the destination."
+    },
+    {
+      "id": "m7",
+      "label": "Lisp image contains only code",
+      "correction": "False: it can contain compiled code and application data."
+    },
+    {
+      "id": "m8",
+      "label": "Incremental World is a full independent World",
+      "correction": "False: it contains changes from a base."
+    },
+    {
+      "id": "m9",
+      "label": "Core dump and system image have same purpose",
+      "correction": "False: the source explicitly distinguishes purpose."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Under what condition can disk cloning produce a complete system image?"
+    },
+    {
+      "id": "q2",
+      "question": "What state can exist outside disks?"
+    },
+    {
+      "id": "q3",
+      "question": "How does hibernation use an image of RAM?"
+    },
+    {
+      "id": "q4",
+      "question": "How does a process image create persistence?"
+    },
+    {
+      "id": "q5",
+      "question": "How does a DBMS use a saved database dump?"
+    },
+    {
+      "id": "q6",
+      "question": "How does a savestate preserve emulated state?"
+    },
+    {
+      "id": "q7",
+      "question": "What must a mobile agent save to migrate?"
+    },
+    {
+      "id": "q8",
+      "question": "How do Smalltalk and Lisp use system images?"
+    },
+    {
+      "id": "q9",
+      "question": "Why does image distribution avoid repeated initialization?"
+    },
+    {
+      "id": "q10",
+      "question": "What does a Lisp World contain?"
+    },
+    {
+      "id": "q11",
+      "question": "How does an incremental World differ from a full World?"
+    },
+    {
+      "id": "q12",
+      "question": "Why is a system image similar to but different from a core dump?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "x1",
+      "topic": "system imaging formats"
+    },
+    {
+      "id": "x2",
+      "topic": "checkpoint/restore"
+    },
+    {
+      "id": "x3",
+      "topic": "process checkpointing"
+    },
+    {
+      "id": "x4",
+      "topic": "database checkpoints/WAL"
+    },
+    {
+      "id": "x5",
+      "topic": "copy-on-write images"
+    },
+    {
+      "id": "x6",
+      "topic": "incremental/differential images"
+    },
+    {
+      "id": "x7",
+      "topic": "boot-time restoration"
+    },
+    {
+      "id": "x8",
+      "topic": "mobile-agent serialization"
+    },
+    {
+      "id": "x9",
+      "topic": "Smalltalk image VMs"
+    },
+    {
+      "id": "x10",
+      "topic": "Lisp image internals"
+    },
+    {
+      "id": "x11",
+      "topic": "core dump formats"
+    },
+    {
+      "id": "x12",
+      "topic": "savestate formats"
+    },
+    {
+      "id": "x13",
+      "topic": "distributed process migration"
+    },
+    {
+      "id": "x14",
+      "topic": "image integrity"
+    },
+    {
+      "id": "x15",
+      "topic": "image authenticity"
+    },
+    {
+      "id": "x16",
+      "topic": "compression/deduplication"
+    },
+    {
+      "id": "x17",
+      "topic": "reproducible image construction"
+    }
+  ],
+  "validation": {
+    "status": "clean",
+    "errors": [],
+    "node_count": 140,
+    "relationship_count": 132,
+    "formal_model_count": 10,
+    "source_claim_count": 12,
+    "reference_count": 4,
+    "semantic_distinction_count": 12,
+    "learning_path_count": 10,
+    "misconception_count": 9,
+    "question_count": 12,
+    "expansion_target_count": 17
+  }
+}

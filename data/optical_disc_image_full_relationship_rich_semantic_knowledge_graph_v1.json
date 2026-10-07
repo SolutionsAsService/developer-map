@@ -1,0 +1,3356 @@
+{
+  "schema_version": "4.1-relationship-rich-semantic-provenance",
+  "title": "Optical disc image / ISO image — full relationship-rich semantic knowledge graph",
+  "source": {
+    "title": "Optical disc image",
+    "type": "user_supplied_Wikipedia_text",
+    "external_research_used": false,
+    "authority": "Supplied article is authoritative for this transformation; source claims are preserved without silent correction."
+  },
+  "semantic_policy": {
+    "relationships_are_first_class": true,
+    "preserve_mechanisms": true,
+    "preserve_directionality": true,
+    "preserve_conditions": true,
+    "preserve_effects": true,
+    "preserve_inverse_or_converse": true,
+    "preserve_limitations": true,
+    "preserve_distinctions": true,
+    "preserve_examples": true,
+    "avoid_generic_related_to": true
+  },
+  "nodes": [
+    {
+      "id": "optical_disc_image",
+      "label": "Optical disc image / ISO image",
+      "type": "disk_image",
+      "description": "Disk image containing everything that would be written to an optical disc, sector by sector, including its optical-disc filesystem."
+    },
+    {
+      "id": "iso_image",
+      "label": "ISO image",
+      "type": "format",
+      "description": "Optical-disc image commonly associated with ISO 9660."
+    },
+    {
+      "id": "disk_image",
+      "label": "Disk image",
+      "type": "concept",
+      "description": "General image representation of storage media."
+    },
+    {
+      "id": "optical_disc",
+      "label": "Optical disc",
+      "type": "physical_media",
+      "description": "Physical optical storage medium."
+    },
+    {
+      "id": "cd_rom",
+      "label": "CD-ROM",
+      "type": "optical_media"
+    },
+    {
+      "id": "dvd",
+      "label": "DVD",
+      "type": "optical_media"
+    },
+    {
+      "id": "blu_ray",
+      "label": "Blu-ray Disc",
+      "type": "optical_media"
+    },
+    {
+      "id": "sector",
+      "label": "Disc sector",
+      "type": "storage_unit"
+    },
+    {
+      "id": "logical_sector",
+      "label": "Logical sector",
+      "type": "storage_unit",
+      "description": "User-data portion of a data-optical-disc sector; the source gives 2,048 bytes."
+    },
+    {
+      "id": "raw_disc_image",
+      "label": "Raw disc image",
+      "type": "disk_image",
+      "description": "Raw representation containing complete disc information, including information from all tracks."
+    },
+    {
+      "id": "filesystem",
+      "label": "Optical-disc filesystem",
+      "type": "filesystem"
+    },
+    {
+      "id": "iso9660",
+      "label": "ISO 9660",
+      "type": "filesystem_standard"
+    },
+    {
+      "id": "udf",
+      "label": "UDF",
+      "type": "filesystem_standard",
+      "description": "ISO/IEC 13346 filesystem commonly used by DVDs and Blu-ray Discs."
+    },
+    {
+      "id": "iso_extensions",
+      "label": "ISO 9660 extensions",
+      "type": "filesystem_extension"
+    },
+    {
+      "id": "filesystem_data",
+      "label": "Filesystem data",
+      "type": "data"
+    },
+    {
+      "id": "file_data",
+      "label": "File data",
+      "type": "data"
+    },
+    {
+      "id": "binary_file",
+      "label": "Binary file",
+      "type": "file_format"
+    },
+    {
+      "id": "binary_copy",
+      "label": "Binary copy",
+      "type": "representation"
+    },
+    {
+      "id": "disc_imaging_software",
+      "label": "Disk imaging software",
+      "type": "software"
+    },
+    {
+      "id": "disc_authoring_software",
+      "label": "Optical-disc authoring software",
+      "type": "software"
+    },
+    {
+      "id": "file_collection",
+      "label": "Collection of files",
+      "type": "input"
+    },
+    {
+      "id": "image_conversion",
+      "label": "Disk-image conversion",
+      "type": "operation"
+    },
+    {
+      "id": "bootable_disc",
+      "label": "Bootable optical disc",
+      "type": "media_use"
+    },
+    {
+      "id": "downloadable_iso",
+      "label": "Downloadable ISO",
+      "type": "distribution_artifact"
+    },
+    {
+      "id": "disc_burning",
+      "label": "Optical-disc burning",
+      "type": "operation"
+    },
+    {
+      "id": "physical_install_media",
+      "label": "Physical installation media",
+      "type": "media_use"
+    },
+    {
+      "id": "data_link",
+      "label": "Data link",
+      "type": "transport"
+    },
+    {
+      "id": "removable_storage",
+      "label": "Removable storage",
+      "type": "transport"
+    },
+    {
+      "id": "archive",
+      "label": "Digital archive",
+      "type": "purpose"
+    },
+    {
+      "id": "true_digital_copy",
+      "label": "True digital copy",
+      "type": "property"
+    },
+    {
+      "id": "image_mounting",
+      "label": "Image mounting",
+      "type": "operation"
+    },
+    {
+      "id": "mount_driver",
+      "label": "Mount/driver software",
+      "type": "software"
+    },
+    {
+      "id": "operating_system",
+      "label": "Operating system",
+      "type": "software"
+    },
+    {
+      "id": "unix",
+      "label": "Unix-based operating systems",
+      "type": "os_family"
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "type": "operating_system"
+    },
+    {
+      "id": "macos",
+      "label": "macOS",
+      "type": "operating_system"
+    },
+    {
+      "id": "windows",
+      "label": "Windows",
+      "type": "operating_system"
+    },
+    {
+      "id": "windows8",
+      "label": "Windows 8+",
+      "type": "operating_system"
+    },
+    {
+      "id": "file_archiver",
+      "label": "Multi-format file archiver",
+      "type": "software"
+    },
+    {
+      "id": "iso_extension",
+      "label": "iso filename extension",
+      "type": ".iso"
+    },
+    {
+      "id": "img_extension",
+      "label": ".img filename extension",
+      "type": "filename_extension"
+    },
+    {
+      "id": "udf_extension",
+      "label": ".udf filename extension",
+      "type": "filename_extension"
+    },
+    {
+      "id": "control_headers",
+      "label": "Control headers",
+      "type": "disc_metadata"
+    },
+    {
+      "id": "error_correction",
+      "label": "Error-correction data",
+      "type": "disc_metadata"
+    },
+    {
+      "id": "user_data",
+      "label": "Sector user data",
+      "type": "data"
+    },
+    {
+      "id": "sector_size_2048",
+      "label": "2,048-byte logical sector",
+      "type": "numeric_fact"
+    },
+    {
+      "id": "sector_size_2352",
+      "label": "2,352-byte audio sector",
+      "type": "numeric_fact"
+    },
+    {
+      "id": "image_size_multiple",
+      "label": "ISO image size multiple of 2,048",
+      "type": "derived_constraint"
+    },
+    {
+      "id": "single_track_disc",
+      "label": "Single-track optical disc",
+      "type": "media_structure"
+    },
+    {
+      "id": "multi_track_disc",
+      "label": "Multi-track optical disc",
+      "type": "media_structure"
+    },
+    {
+      "id": "track",
+      "label": "Optical-disc track",
+      "type": "disc_structure"
+    },
+    {
+      "id": "audio_track",
+      "label": "Audio track",
+      "type": "disc_structure"
+    },
+    {
+      "id": "video_track",
+      "label": "Video track",
+      "type": "disc_structure"
+    },
+    {
+      "id": "data_track",
+      "label": "Data track",
+      "type": "disc_structure"
+    },
+    {
+      "id": "track_container",
+      "label": "Track as container",
+      "type": "disc_structure"
+    },
+    {
+      "id": "lead_in",
+      "label": "Disc lead-in",
+      "type": "disc_structure"
+    },
+    {
+      "id": "session",
+      "label": "Disc session",
+      "type": "disc_structure"
+    },
+    {
+      "id": "index_point",
+      "label": "Audio index point",
+      "type": "disc_addressing"
+    },
+    {
+      "id": "cd_time_code",
+      "label": "CD time code",
+      "type": "disc_addressing"
+    },
+    {
+      "id": "audio_stream",
+      "label": "Encoded audio stream",
+      "type": "data_stream"
+    },
+    {
+      "id": "video_cd",
+      "label": "Video CD",
+      "type": "optical_media"
+    },
+    {
+      "id": "super_video_cd",
+      "label": "Super Video CD",
+      "type": "optical_media"
+    },
+    {
+      "id": "cue_bin",
+      "label": "CUE/BIN",
+      "type": "multi_track_format"
+    },
+    {
+      "id": "ccd_img",
+      "label": "CCD/IMG",
+      "type": "multi_track_format"
+    },
+    {
+      "id": "mds_mdf",
+      "label": "MDS/MDF",
+      "type": "multi_track_format"
+    },
+    {
+      "id": "companion_file",
+      "label": "Companion track-description file",
+      "type": "metadata"
+    },
+    {
+      "id": "track_characteristics",
+      "label": "Track characteristics",
+      "type": "metadata"
+    },
+    {
+      "id": "raw_burning",
+      "label": "Raw image burning",
+      "type": "operation"
+    },
+    {
+      "id": "flash_drive",
+      "label": "USB flash drive",
+      "type": "removable_storage"
+    },
+    {
+      "id": "usb_image_write",
+      "label": "Writing raw images to USB",
+      "type": "operation"
+    },
+    {
+      "id": "audio_ripping",
+      "label": "Audio CD ripping",
+      "type": "operation"
+    },
+    {
+      "id": "wav",
+      "label": "WAV",
+      "type": "audio_format"
+    },
+    {
+      "id": "aiff",
+      "label": "AIFF",
+      "type": "audio_format"
+    },
+    {
+      "id": "audio_metadata",
+      "label": "Audio metadata",
+      "type": "metadata"
+    },
+    {
+      "id": "emulator",
+      "label": "Emulator",
+      "type": "software"
+    },
+    {
+      "id": "virtual_cdrom",
+      "label": "Virtual CD-ROM",
+      "type": "virtual_media"
+    },
+    {
+      "id": "hypervisor",
+      "label": "Hypervisor",
+      "type": "virtualization"
+    },
+    {
+      "id": "vmware_workstation",
+      "label": "VMware Workstation",
+      "type": "software"
+    },
+    {
+      "id": "virtualbox",
+      "label": "VirtualBox",
+      "type": "software"
+    },
+    {
+      "id": "dolphin",
+      "label": "Dolphin Emulator",
+      "type": "emulator"
+    },
+    {
+      "id": "pcsx2",
+      "label": "PCSX2",
+      "type": "emulator"
+    },
+    {
+      "id": "wii",
+      "label": "Wii",
+      "type": "game_console"
+    },
+    {
+      "id": "gamecube",
+      "label": "GameCube",
+      "type": "game_console"
+    },
+    {
+      "id": "playstation2",
+      "label": "PlayStation 2",
+      "type": "game_console"
+    },
+    {
+      "id": "iso_9660_standard",
+      "label": "ISO 9660 standard",
+      "type": "standard"
+    },
+    {
+      "id": "udf_standard",
+      "label": "UDF / ISO/IEC 13346 standard",
+      "type": "standard"
+    },
+    {
+      "id": "application_vnd_efi_iso",
+      "label": "application/vnd.efi.iso",
+      "type": "media_type"
+    },
+    {
+      "id": "uti_public_iso_image",
+      "label": "public.iso-image",
+      "type": "identifier"
+    },
+    {
+      "id": "magic_cd001",
+      "label": "CD001 magic / volume descriptor signature",
+      "type": "file_signature"
+    },
+    {
+      "id": "magic_nsr0",
+      "label": "NSR0 UDF signature",
+      "type": "file_signature"
+    },
+    {
+      "id": "sector_by_sector",
+      "label": "Sector-by-sector copying",
+      "type": "mechanism"
+    },
+    {
+      "id": "uncompressed",
+      "label": "Uncompressed image property",
+      "type": "property"
+    },
+    {
+      "id": "container_format",
+      "label": "Container format",
+      "type": "format_concept"
+    },
+    {
+      "id": "raw_media_information",
+      "label": "Raw media information",
+      "type": "data"
+    },
+    {
+      "id": "disc_file_system",
+      "label": "Disc filesystem",
+      "type": "filesystem"
+    },
+    {
+      "id": "mount_interface",
+      "label": "OS interface to mounted image",
+      "type": "interface"
+    },
+    {
+      "id": "installation",
+      "label": "Operating-system installation",
+      "type": "use_case"
+    },
+    {
+      "id": "emulation",
+      "label": "Optical-disc emulation",
+      "type": "use_case"
+    },
+    {
+      "id": "virtualization",
+      "label": "Virtualization",
+      "type": "use_case"
+    },
+    {
+      "id": "image_transfer",
+      "label": "Image transfer",
+      "type": "operation"
+    },
+    {
+      "id": "software_distribution",
+      "label": "Software distribution",
+      "type": "use_case"
+    },
+    {
+      "id": "backup_archive",
+      "label": "Archival use",
+      "type": "use_case"
+    },
+    {
+      "id": "iso_vs_raw",
+      "label": "ISO image vs raw disc image",
+      "type": "semantic_distinction",
+      "description": "ISO stores logical-sector user data and omits control/error-correction information; raw images can retain complete disc information."
+    },
+    {
+      "id": "filesystem_vs_track",
+      "label": "Filesystem vs physical track",
+      "type": "semantic_distinction",
+      "description": "A filesystem can reside inside a physical track, but ISO does not model physical tracks as track containers."
+    },
+    {
+      "id": "data_disc_vs_audio_disc",
+      "label": "Data optical disc vs audio CD",
+      "type": "semantic_distinction",
+      "description": "Data discs use filesystem-bearing sectors; audio CDs use continuous encoded audio streams and track addressing."
+    },
+    {
+      "id": "single_vs_multi_track",
+      "label": "Single-track vs multi-track",
+      "type": "semantic_distinction",
+      "description": "A single-track data disc can be represented as an ISO; a multi-track disc cannot be fully represented by one ISO."
+    },
+    {
+      "id": "iso_vs_img_extension",
+      "label": "ISO semantics vs .img extension",
+      "type": "semantic_distinction",
+      "description": ".img may be used for ISO images but can also denote images with different contents."
+    },
+    {
+      "id": "iso_vs_udf",
+      "label": "ISO 9660 vs UDF",
+      "type": "semantic_distinction",
+      "description": "Both filesystem structures can occur in optical-disc images; UDF is commonly associated with DVD/Blu-ray in the source."
+    },
+    {
+      "id": "image_vs_physical_disc",
+      "label": "Image vs physical disc",
+      "type": "semantic_distinction",
+      "description": "Image is a transferable binary artifact; physical disc is the optical medium it represents."
+    },
+    {
+      "id": "mount_vs_burn",
+      "label": "Mount vs burn",
+      "type": "semantic_distinction",
+      "description": "Mount exposes image through an OS interface; burning creates physical optical media."
+    },
+    {
+      "id": "archive_vs_emulation",
+      "label": "Archival vs emulation",
+      "type": "semantic_distinction",
+      "description": "The same image artifact can preserve disc contents or provide input to an emulator."
+    },
+    {
+      "id": "iso_vs_virtual_cd",
+      "label": "ISO vs virtual CD-ROM",
+      "type": "semantic_distinction",
+      "description": "ISO is the stored image; virtual CD-ROM is the runtime interface exposing it as optical media."
+    },
+    {
+      "id": "filesystem_copy_vs_raw_copy",
+      "label": "Filesystem binary copy vs raw media copy",
+      "type": "semantic_distinction",
+      "description": "ISO preserves filesystem/user data rather than every physical-media control/error structure."
+    },
+    {
+      "id": "track_addressing_vs_file_addressing",
+      "label": "Track addressing vs file addressing",
+      "type": "semantic_distinction",
+      "description": "Audio CD content is addressed through track/index/time structures rather than filesystem files."
+    },
+    {
+      "id": "model_iso_structure",
+      "label": "ISO image structure",
+      "type": "formal_model",
+      "description": "optical_disc_image = ordered logical-sector user-data + filesystem structure"
+    },
+    {
+      "id": "model_sector_size",
+      "label": "ISO size constraint",
+      "type": "formal_model",
+      "description": "ISO_size = N × 2048 bytes"
+    },
+    {
+      "id": "model_creation",
+      "label": "ISO creation pipeline",
+      "type": "formal_model",
+      "description": "optical_disc → imaging software → ISO | file collection → authoring software → ISO"
+    },
+    {
+      "id": "model_mount",
+      "label": "Mount model",
+      "type": "formal_model",
+      "description": "ISO → mount driver → OS mount interface → filesystem/files"
+    },
+    {
+      "id": "model_burn",
+      "label": "Burn model",
+      "type": "formal_model",
+      "description": "ISO → burning tool → recordable optical disc"
+    },
+    {
+      "id": "model_multitrack",
+      "label": "Multi-track limitation",
+      "type": "formal_model",
+      "description": "complete_multi_track_disc ↛ single_ISO"
+    },
+    {
+      "id": "model_raw",
+      "label": "Raw multi-track model",
+      "type": "formal_model",
+      "description": "complete_disc + track metadata → raw image + companion descriptor"
+    },
+    {
+      "id": "model_audio",
+      "label": "Audio CD model",
+      "type": "formal_model",
+      "description": "audio track → continuous encoded stream → track/index/time addressing"
+    },
+    {
+      "id": "model_emulation",
+      "label": "Emulation model",
+      "type": "formal_model",
+      "description": "ISO → emulator → emulated optical-disc contents"
+    },
+    {
+      "id": "model_virtual_cd",
+      "label": "Virtual CD model",
+      "type": "formal_model",
+      "description": "ISO → virtual CD-ROM → hypervisor/guest"
+    },
+    {
+      "id": "model_usb",
+      "label": "USB image-writing model",
+      "type": "formal_model",
+      "description": "raw image → image-writing software → USB flash drive"
+    },
+    {
+      "id": "model_archive",
+      "label": "Archival transfer model",
+      "type": "formal_model",
+      "description": "physical optical disc → image → data link/removable storage → destination"
+    },
+    {
+      "id": "claim_1",
+      "label": "Definition",
+      "type": "source_claim",
+      "description": "Optical disc image is a sector-by-sector disk image containing disc filesystem and data."
+    },
+    {
+      "id": "claim_2",
+      "label": "Creation",
+      "type": "source_claim",
+      "description": "Images can be created from optical discs, file collections, or other image files."
+    },
+    {
+      "id": "claim_3",
+      "label": "Sector semantics",
+      "type": "source_claim",
+      "description": "ISO stores user data, not control headers/error correction; logical data sectors are 2,048 bytes."
+    },
+    {
+      "id": "claim_4",
+      "label": "Transferability",
+      "type": "source_claim",
+      "description": "An image can be transferred over data links/removable media unlike a physical optical disc."
+    },
+    {
+      "id": "claim_5",
+      "label": "Mounting",
+      "type": "source_claim",
+      "description": "Suitable driver software can expose ISO to the OS as though it were a physical optical disc."
+    },
+    {
+      "id": "claim_6",
+      "label": "Multiple tracks",
+      "type": "source_claim",
+      "description": "ISO has no physical track concept and cannot fully represent multi-track discs."
+    },
+    {
+      "id": "claim_7",
+      "label": "Audio CDs",
+      "type": "source_claim",
+      "description": "Audio CDs cannot be represented as ISO because audio tracks contain continuous encoded audio rather than filesystems."
+    },
+    {
+      "id": "claim_8",
+      "label": "Raw formats",
+      "type": "source_claim",
+      "description": "CUE/BIN, CCD/IMG, and MDS/MDF can store complete multi-track images with companion track metadata."
+    },
+    {
+      "id": "claim_9",
+      "label": "USB",
+      "type": "source_claim",
+      "description": "Historically, writing ISO to flash drives was limited by software tooling; raw-image writers later existed."
+    },
+    {
+      "id": "claim_10",
+      "label": "Uses",
+      "type": "source_claim",
+      "description": "ISO is used for emulation, virtual CD-ROMs for hypervisors, and OS installation media."
+    },
+    {
+      "id": "lp1",
+      "label": "Optical image fundamentals",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp2",
+      "label": "ISO filesystem semantics",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp3",
+      "label": "Image creation",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp4",
+      "label": "Sector model",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp5",
+      "label": "Mounting and portability",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp6",
+      "label": "Multi-track boundary",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp7",
+      "label": "Audio CD distinction",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp8",
+      "label": "Multi-track formats",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp9",
+      "label": "Emulation and virtualization",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp10",
+      "label": "Installation and USB",
+      "type": "learning_path"
+    },
+    {
+      "id": "lp11",
+      "label": "Semantic distinctions",
+      "type": "learning_path"
+    },
+    {
+      "id": "m1",
+      "label": "ISO is always a raw copy of every physical disc byte",
+      "type": "misconception_correction",
+      "description": "False: source says ISO omits control headers and error-correction data."
+    },
+    {
+      "id": "m2",
+      "label": "Every optical disc can be stored in one ISO",
+      "type": "misconception_correction",
+      "description": "False: multi-track and audio-disc structures exceed the ISO filesystem model."
+    },
+    {
+      "id": "m3",
+      "label": "An ISO contains physical tracks",
+      "type": "misconception_correction",
+      "description": "False: source explicitly says there is no concept of a track inside an ISO."
+    },
+    {
+      "id": "m4",
+      "label": "Audio CD tracks are files",
+      "type": "misconception_correction",
+      "description": "False: source describes continuous encoded audio rather than a filesystem."
+    },
+    {
+      "id": "m5",
+      "label": ".img always means exactly the same thing as .iso",
+      "type": "misconception_correction",
+      "description": "False: .img can contain different kinds of image data."
+    },
+    {
+      "id": "m6",
+      "label": "UDF cannot occur in an ISO image",
+      "type": "misconception_correction",
+      "description": "False: source explicitly says an ISO image may contain UDF."
+    },
+    {
+      "id": "m7",
+      "label": "Mounting an ISO burns it to a disc",
+      "type": "misconception_correction",
+      "description": "False: mounting exposes it virtually; burning creates physical media."
+    },
+    {
+      "id": "m8",
+      "label": "ISO cannot be transferred because it represents physical media",
+      "type": "misconception_correction",
+      "description": "False: image is a binary file and can move over links/removable storage."
+    },
+    {
+      "id": "m9",
+      "label": "USB limitations are inherent to ISO format",
+      "type": "misconception_correction",
+      "description": "False: source attributes historical limitation to software-tool availability."
+    },
+    {
+      "id": "m10",
+      "label": "ISO and virtual CD-ROM are identical concepts",
+      "type": "misconception_correction",
+      "description": "False: ISO is stored representation; virtual CD-ROM is runtime interface."
+    },
+    {
+      "id": "q1",
+      "label": "Exactly what does an ISO image contain from an optical disc?",
+      "type": "question"
+    },
+    {
+      "id": "q2",
+      "label": "How does an ISO differ from a raw optical-disc image?",
+      "type": "question"
+    },
+    {
+      "id": "q3",
+      "label": "Why is ISO image size a multiple of 2,048 bytes?",
+      "type": "question"
+    },
+    {
+      "id": "q4",
+      "label": "What information does ISO omit compared with a raw disc image?",
+      "type": "question"
+    },
+    {
+      "id": "q5",
+      "label": "How can an ISO be created from a physical disc?",
+      "type": "question"
+    },
+    {
+      "id": "q6",
+      "label": "How can an ISO be created without a physical disc?",
+      "type": "question"
+    },
+    {
+      "id": "q7",
+      "label": "What does mounting an ISO actually do?",
+      "type": "question"
+    },
+    {
+      "id": "q8",
+      "label": "Why can a multi-track CD not be represented completely by one ISO?",
+      "type": "question"
+    },
+    {
+      "id": "q9",
+      "label": "Why can an audio CD not be represented as an ISO?",
+      "type": "question"
+    },
+    {
+      "id": "q10",
+      "label": "How do CUE/BIN, CCD/IMG, and MDS/MDF preserve multi-track structure?",
+      "type": "question"
+    },
+    {
+      "id": "q11",
+      "label": "How does audio-track addressing differ from filesystem addressing?",
+      "type": "question"
+    },
+    {
+      "id": "q12",
+      "label": "How are ISO images used by emulators?",
+      "type": "question"
+    },
+    {
+      "id": "q13",
+      "label": "How are ISO images used by hypervisors?",
+      "type": "question"
+    },
+    {
+      "id": "q14",
+      "label": "How are ISO images used to create physical installation media?",
+      "type": "question"
+    },
+    {
+      "id": "q15",
+      "label": "Why did USB writing historically depend on tooling rather than the ISO format itself?",
+      "type": "question"
+    },
+    {
+      "id": "r1",
+      "label": "IANA application/vnd.efi.iso",
+      "type": "reference"
+    },
+    {
+      "id": "r2",
+      "label": "File Signatures / magic numbers",
+      "type": "reference"
+    },
+    {
+      "id": "r3",
+      "label": "What Is an ISO File?",
+      "type": "reference"
+    },
+    {
+      "id": "r4",
+      "label": "Windows 8 native ISO mounting",
+      "type": "reference"
+    },
+    {
+      "id": "r5",
+      "label": "ISO image to USB conversion",
+      "type": "reference"
+    },
+    {
+      "id": "r6",
+      "label": "PowerISO ISO-to-USB documentation",
+      "type": "reference"
+    },
+    {
+      "id": "r7",
+      "label": "Dolphin Emulator ISO formats",
+      "type": "reference"
+    },
+    {
+      "id": "r8",
+      "label": "PCSX2 ISO usage",
+      "type": "reference"
+    },
+    {
+      "id": "r9",
+      "label": "ISO 13490",
+      "type": "related_standard"
+    },
+    {
+      "id": "r10",
+      "label": "Comparison of disc image software",
+      "type": "related_resource"
+    },
+    {
+      "id": "r11",
+      "label": "Live USB",
+      "type": "related_concept"
+    },
+    {
+      "id": "r12",
+      "label": "No-disc crack",
+      "type": "related_concept"
+    },
+    {
+      "id": "x1",
+      "label": "ISO 9660 volume descriptors",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x2",
+      "label": "ISO 9660 directory records",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x3",
+      "label": "UDF implementation details",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x4",
+      "label": "El Torito boot images",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x5",
+      "label": "hybrid ISO images",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x6",
+      "label": "ISO 9660 extensions",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x7",
+      "label": "Rock Ridge",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x8",
+      "label": "Joliet",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x9",
+      "label": "DVD/Blu-ray image semantics",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x10",
+      "label": "raw CD sector layouts",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x11",
+      "label": "CD session architecture",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x12",
+      "label": "subchannel data",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x13",
+      "label": "CUE sheet grammar",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x14",
+      "label": "MDS/MDF metadata",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x15",
+      "label": "CCD format metadata",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x16",
+      "label": "disc-image integrity hashes",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x17",
+      "label": "reproducible ISO construction",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x18",
+      "label": "bootable ISO workflows",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x19",
+      "label": "ISO mounting security",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x20",
+      "label": "virtual optical drives",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x21",
+      "label": "USB hybrid images",
+      "type": "expansion_target"
+    },
+    {
+      "id": "audio_cd",
+      "label": "Audio CD",
+      "type": "optical_media"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "optical_disc_image",
+      "target": "disk_image",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "mechanism": "An optical-disc image is a disk image representing optical media.",
+      "effect": "Provides a digital representation of disc contents."
+    },
+    {
+      "source": "iso_image",
+      "target": "optical_disc_image",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "ISO image is the common optical-disc image form."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "optical_disc",
+      "relationship": "represents",
+      "semantic_role": "representation",
+      "mechanism": "Contains everything that would be written to the optical disc sector by sector.",
+      "conditions": "Target is an optical disc.",
+      "effect": "Digital representation corresponds to physical media."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "sector_by_sector",
+      "relationship": "uses",
+      "semantic_role": "mechanism",
+      "mechanism": "Source defines optical-disc images as sector-by-sector copies.",
+      "conditions": "Disc data is represented sector by sector.",
+      "effect": "Preserves sector-ordered user data."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "filesystem",
+      "relationship": "contains",
+      "semantic_role": "composition",
+      "mechanism": "The image contains the optical-disc filesystem.",
+      "conditions": "Filesystem exists on the source optical disc.",
+      "effect": "Filesystem structure is represented inside image."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "binary_copy",
+      "relationship": "is_a",
+      "semantic_role": "representation",
+      "mechanism": "ISO image contains binary image of optical media filesystem and file data.",
+      "conditions": "Data is copied exactly as stored.",
+      "effect": "Binary representation preserves stored data."
+    },
+    {
+      "source": "binary_copy",
+      "target": "filesystem_data",
+      "relationship": "represents",
+      "semantic_role": "representation",
+      "effect": "Filesystem bytes are represented."
+    },
+    {
+      "source": "binary_copy",
+      "target": "file_data",
+      "relationship": "represents",
+      "semantic_role": "representation",
+      "effect": "File contents are represented in binary form."
+    },
+    {
+      "source": "iso9660",
+      "target": "iso_9660_standard",
+      "relationship": "conforms_to",
+      "semantic_role": "standardization",
+      "effect": "ISO 9660 filesystem standard defines the relevant filesystem."
+    },
+    {
+      "source": "udf",
+      "target": "udf_standard",
+      "relationship": "conforms_to",
+      "semantic_role": "standardization",
+      "effect": "UDF is ISO/IEC 13346."
+    },
+    {
+      "source": "iso_image",
+      "target": "iso9660",
+      "relationship": "commonly_contains",
+      "semantic_role": "filesystem",
+      "mechanism": "ISO image terminology derives from ISO 9660 media.",
+      "conditions": "Optical disc uses ISO 9660 or extensions.",
+      "effect": "ISO 9660 structure may be present."
+    },
+    {
+      "source": "iso_image",
+      "target": "udf",
+      "relationship": "can_contain",
+      "semantic_role": "filesystem",
+      "mechanism": "Source states ISO images may contain UDF.",
+      "conditions": "Common for DVD/Blu-ray media.",
+      "effect": "UDF filesystem/data can be represented."
+    },
+    {
+      "source": "iso9660",
+      "target": "iso_extensions",
+      "relationship": "can_have",
+      "semantic_role": "extension",
+      "effect": "Extended ISO 9660 filesystem structures can be represented."
+    },
+    {
+      "source": "udf",
+      "target": "dvd",
+      "relationship": "commonly_used_on",
+      "semantic_role": "deployment",
+      "effect": "UDF is commonly used by DVDs."
+    },
+    {
+      "source": "udf",
+      "target": "blu_ray",
+      "relationship": "commonly_used_on",
+      "semantic_role": "deployment",
+      "effect": "UDF is commonly used by Blu-ray Discs."
+    },
+    {
+      "source": "filesystem",
+      "target": "filesystem_data",
+      "relationship": "organizes",
+      "semantic_role": "organization",
+      "conditions": "Filesystem structures determine organization.",
+      "effect": "Files/data are organized according to filesystem."
+    },
+    {
+      "source": "filesystem",
+      "target": "file_data",
+      "relationship": "organizes",
+      "semantic_role": "organization",
+      "effect": "Files are represented according to disc filesystem."
+    },
+    {
+      "source": "optical_disc",
+      "target": "disc_imaging_software",
+      "relationship": "is_source_for",
+      "semantic_role": "creation",
+      "mechanism": "Imaging software reads an optical disc to create an image.",
+      "conditions": "Software can access disc data.",
+      "effect": "Disc image is produced."
+    },
+    {
+      "source": "disc_imaging_software",
+      "target": "optical_disc_image",
+      "relationship": "creates",
+      "semantic_role": "creation",
+      "conditions": "Optical disc is available as source.",
+      "effect": "Image artifact is produced."
+    },
+    {
+      "source": "file_collection",
+      "target": "disc_authoring_software",
+      "relationship": "is_input_to",
+      "semantic_role": "input",
+      "conditions": "Files are supplied to authoring software.",
+      "effect": "Software creates optical-disc content/image."
+    },
+    {
+      "source": "disc_authoring_software",
+      "target": "optical_disc_image",
+      "relationship": "creates",
+      "semantic_role": "creation",
+      "conditions": "Collection of files is used to author image.",
+      "effect": "Image is produced without first reading physical media."
+    },
+    {
+      "source": "disk_image",
+      "target": "image_conversion",
+      "relationship": "can_be_input_to",
+      "semantic_role": "conversion",
+      "conditions": "Source image is convertible.",
+      "effect": "Another image representation can be produced."
+    },
+    {
+      "source": "image_conversion",
+      "target": "optical_disc_image",
+      "relationship": "can_produce",
+      "semantic_role": "conversion",
+      "conditions": "Conversion maps compatible image data.",
+      "effect": "ISO optical image is produced."
+    },
+    {
+      "source": "downloadable_iso",
+      "target": "software_distribution",
+      "relationship": "serves_as",
+      "semantic_role": "distribution",
+      "conditions": "Software is distributed as downloadable image.",
+      "effect": "Users receive a disc-image artifact."
+    },
+    {
+      "source": "bootable_disc",
+      "target": "downloadable_iso",
+      "relationship": "can_be_distributed_as",
+      "semantic_role": "distribution",
+      "conditions": "Bootable software is often available as ISO download.",
+      "effect": "Bootable image can be transferred."
+    },
+    {
+      "source": "downloadable_iso",
+      "target": "optical_disc_image",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "Download artifact represents optical media."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "disc_burning",
+      "relationship": "input_to",
+      "semantic_role": "physicalization",
+      "conditions": "Image can be written to optical media.",
+      "effect": "Physical disc can be recreated."
+    },
+    {
+      "source": "disc_burning",
+      "target": "optical_disc",
+      "relationship": "creates",
+      "semantic_role": "physicalization",
+      "conditions": "Recordable optical media is available.",
+      "effect": "Physical optical disc is produced."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "image_transfer",
+      "relationship": "supports",
+      "semantic_role": "portability",
+      "conditions": "Image is a normal digital file.",
+      "effect": "Can traverse data links/removable storage."
+    },
+    {
+      "source": "image_transfer",
+      "target": "data_link",
+      "relationship": "can_use",
+      "semantic_role": "transport",
+      "effect": "Image can move across network/data links."
+    },
+    {
+      "source": "image_transfer",
+      "target": "removable_storage",
+      "relationship": "can_use",
+      "semantic_role": "transport",
+      "effect": "Image can be moved using removable media."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "archive",
+      "relationship": "supports",
+      "semantic_role": "purpose",
+      "conditions": "Digital representation can preserve disc content.",
+      "effect": "Disc can be archived without physical media."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "true_digital_copy",
+      "relationship": "can_be",
+      "semantic_role": "property",
+      "mechanism": "For a single-track CD-ROM/DVD/Blu-ray, ISO can represent a true digital copy.",
+      "conditions": "Single-track data disc.",
+      "effect": "Digital copy can be transferred and recreated."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "user_data",
+      "relationship": "stores",
+      "semantic_role": "content",
+      "mechanism": "ISO stores user data from each optical-disc sector.",
+      "conditions": "Only user-data portion is retained.",
+      "effect": "Image contains filesystem/file payload data."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "control_headers",
+      "relationship": "omits",
+      "semantic_role": "scope",
+      "mechanism": "Source states ISO files omit control headers.",
+      "conditions": "ISO representation is not a raw optical-media image.",
+      "effect": "Image is smaller than raw disc image."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "error_correction",
+      "relationship": "omits",
+      "semantic_role": "scope",
+      "mechanism": "Source states ISO files omit error-correction data.",
+      "conditions": "ISO stores logical sector user data rather than complete raw media information.",
+      "effect": "Image is smaller than raw image."
+    },
+    {
+      "source": "sector",
+      "target": "logical_sector",
+      "relationship": "contains",
+      "semantic_role": "structure",
+      "mechanism": "A logical sector is the user-data portion of a data-optical-disc sector.",
+      "conditions": "Data optical disc sector structure applies.",
+      "effect": "2,048-byte user payload is represented."
+    },
+    {
+      "source": "logical_sector",
+      "target": "sector_size_2048",
+      "relationship": "has_size",
+      "semantic_role": "numeric",
+      "conditions": "Source specifies 2,048 bytes.",
+      "effect": "Each logical sector contributes 2,048 bytes."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "image_size_multiple",
+      "relationship": "constrained_by",
+      "semantic_role": "derived_constraint",
+      "mechanism": "ISO image size follows logical-sector user-data size.",
+      "conditions": "Data optical sectors have 2,048-byte logical sectors.",
+      "effect": "Image size is a multiple of 2,048 bytes."
+    },
+    {
+      "source": "image_size_multiple",
+      "target": "sector_size_2048",
+      "relationship": "derived_from",
+      "semantic_role": "derivation",
+      "conditions": "Logical sector user-data size determines image unit.",
+      "effect": "ISO image size increments by 2,048 bytes."
+    },
+    {
+      "source": "raw_disc_image",
+      "target": "raw_media_information",
+      "relationship": "contains",
+      "semantic_role": "content",
+      "mechanism": "Raw disc image includes complete disc information.",
+      "conditions": "Raw image captures all tracks/media information.",
+      "effect": "More complete than ISO's logical-sector user data."
+    },
+    {
+      "source": "raw_disc_image",
+      "target": "optical_disc",
+      "relationship": "represents",
+      "semantic_role": "representation",
+      "conditions": "Complete disc is source.",
+      "effect": "All tracks and characteristics can be retained."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "raw_disc_image",
+      "relationship": "differs_from",
+      "semantic_role": "distinction",
+      "mechanism": "ISO omits control/error data while raw image can retain complete disc information.",
+      "conditions": "Raw representation captures information outside ISO user data.",
+      "effect": "Raw image can preserve details ISO cannot.",
+      "inverse_or_converse": "ISO is a reduced logical-sector representation."
+    },
+    {
+      "source": "iso_image",
+      "target": "iso_extension",
+      "relationship": "commonly_uses",
+      "semantic_role": "naming",
+      "conditions": "Source identifies .iso as most common extension.",
+      "effect": "Filename identifies image as ISO-like artifact."
+    },
+    {
+      "source": "iso_image",
+      "target": "img_extension",
+      "relationship": "can_use",
+      "semantic_role": "naming",
+      "conditions": "Some ISO images use .img.",
+      "effect": "Extension alone does not guarantee identical content semantics."
+    },
+    {
+      "source": "iso_image",
+      "target": "udf_extension",
+      "relationship": "can_use",
+      "semantic_role": "naming",
+      "conditions": ".udf may indicate UDF filesystem inside image.",
+      "effect": "Extension communicates filesystem choice."
+    },
+    {
+      "source": "img_extension",
+      "target": "optical_disc_image",
+      "relationship": "may_denote",
+      "semantic_role": "ambiguity",
+      "conditions": "IMG is broader and can have different contents.",
+      "effect": "Filename extension is not sufficient to classify exact contents."
+    },
+    {
+      "source": "iso_image",
+      "target": "application_vnd_efi_iso",
+      "relationship": "has_media_type",
+      "semantic_role": "metadata",
+      "conditions": "Source lists this Internet media type.",
+      "effect": "Media type identifies ISO image content."
+    },
+    {
+      "source": "iso_image",
+      "target": "uti_public_iso_image",
+      "relationship": "has_identifier",
+      "semantic_role": "metadata",
+      "conditions": "Source lists this UTI.",
+      "effect": "Platform identifier can identify ISO image."
+    },
+    {
+      "source": "iso_image",
+      "target": "magic_cd001",
+      "relationship": "identified_by",
+      "semantic_role": "file_signature",
+      "conditions": "Volume descriptor signature is given as CD001 at offset 32769.",
+      "effect": "Signature can identify ISO 9660 image structure."
+    },
+    {
+      "source": "iso_image",
+      "target": "magic_nsr0",
+      "relationship": "identified_by",
+      "semantic_role": "file_signature",
+      "conditions": "Source gives NSR0 for UDF at 38913 or 32769.",
+      "effect": "Signature can indicate UDF structure."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "image_mounting",
+      "relationship": "supports",
+      "semantic_role": "virtualization",
+      "conditions": "A suitable driver allows ISO to be mounted.",
+      "effect": "OS can expose image like physical optical media."
+    },
+    {
+      "source": "image_mounting",
+      "target": "mount_driver",
+      "relationship": "uses",
+      "semantic_role": "mechanism",
+      "conditions": "Driver software provides image interface.",
+      "effect": "Image becomes mountable."
+    },
+    {
+      "source": "image_mounting",
+      "target": "mount_interface",
+      "relationship": "provides",
+      "semantic_role": "interface",
+      "conditions": "Mounted image is exposed to OS as though physical optical disc.",
+      "effect": "Applications interact through normal OS media interface."
+    },
+    {
+      "source": "mount_interface",
+      "target": "operating_system",
+      "relationship": "integrates_with",
+      "semantic_role": "integration",
+      "conditions": "OS receives mounted optical-media interface.",
+      "effect": "Filesystem/data become accessible."
+    },
+    {
+      "source": "unix",
+      "target": "image_mounting",
+      "relationship": "has_builtin_support",
+      "semantic_role": "platform",
+      "conditions": "Source says most Unix-based systems have built-in ISO mounting.",
+      "effect": "Native OS capability exists."
+    },
+    {
+      "source": "linux",
+      "target": "unix",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "Linux is a Unix-based operating system in source context."
+    },
+    {
+      "source": "macos",
+      "target": "unix",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "macOS is included among systems with built-in support."
+    },
+    {
+      "source": "windows8",
+      "target": "windows",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "Windows versions beginning with Windows 8 have native mounting."
+    },
+    {
+      "source": "windows8",
+      "target": "image_mounting",
+      "relationship": "has_builtin_support",
+      "semantic_role": "platform",
+      "conditions": "Windows 8+ supports native ISO mounting according to source.",
+      "effect": "ISO can be mounted without separate driver software."
+    },
+    {
+      "source": "file_archiver",
+      "target": "optical_disc_image",
+      "relationship": "can_open",
+      "semantic_role": "access",
+      "conditions": "Source says almost every multi-format file archiver can open ISO images.",
+      "effect": "Archive tool can inspect image contents."
+    },
+    {
+      "source": "optical_disc",
+      "target": "track",
+      "relationship": "can_contain",
+      "semantic_role": "structure",
+      "conditions": "A CD may have multiple tracks.",
+      "effect": "Disc contents are divided into tracks."
+    },
+    {
+      "source": "multi_track_disc",
+      "target": "track",
+      "relationship": "contains_multiple",
+      "semantic_role": "structure",
+      "conditions": "Multiple tracks exist on multi-track disc.",
+      "effect": "Several track containers can coexist."
+    },
+    {
+      "source": "single_track_disc",
+      "target": "track",
+      "relationship": "contains_one",
+      "semantic_role": "structure",
+      "conditions": "Single-track disc has one track.",
+      "effect": "ISO can archive a single-track data disc."
+    },
+    {
+      "source": "track",
+      "target": "track_container",
+      "relationship": "is_a",
+      "semantic_role": "structure",
+      "conditions": "A track contains data or audio/video content.",
+      "effect": "Track provides container boundary on physical disc."
+    },
+    {
+      "source": "filesystem",
+      "target": "track",
+      "relationship": "can_reside_in",
+      "semantic_role": "placement",
+      "conditions": "ISO 9660 filesystem is stored inside one track.",
+      "effect": "Track must carry filesystem data.",
+      "inverse_or_converse": "Filesystem occupies track content."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "track",
+      "relationship": "does_not_model",
+      "semantic_role": "representation_limit",
+      "conditions": "ISO is expected to contain filesystem binary copy rather than a physical track structure.",
+      "effect": "Track container concept is absent inside ISO."
+    },
+    {
+      "source": "multi_track_disc",
+      "target": "optical_disc_image",
+      "relationship": "cannot_be_fully_represented_by",
+      "semantic_role": "limitation",
+      "mechanism": "A single ISO cannot contain the complete multi-track disc structure.",
+      "conditions": "Disc has multiple tracks and/or non-filesystem audio.",
+      "effect": "At most one standard-filesystem track's data can be represented."
+    },
+    {
+      "source": "audio_cd",
+      "target": "optical_disc",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "Audio CD is optical media."
+    },
+    {
+      "source": "audio_cd",
+      "target": "multi_track_disc",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "conditions": "Audio CDs are usually multiple tracks.",
+      "effect": "Track structure is essential."
+    },
+    {
+      "source": "audio_track",
+      "target": "audio_cd",
+      "relationship": "contains",
+      "semantic_role": "structure",
+      "effect": "Encoded audio is organized as tracks."
+    },
+    {
+      "source": "audio_track",
+      "target": "filesystem",
+      "relationship": "does_not_contain",
+      "semantic_role": "limitation",
+      "conditions": "Audio tracks contain continuous encoded audio rather than a filesystem.",
+      "effect": "No file-system structure exists.",
+      "inverse_or_converse": "Cannot be represented as an ISO filesystem image."
+    },
+    {
+      "source": "audio_track",
+      "target": "audio_stream",
+      "relationship": "contains",
+      "semantic_role": "content",
+      "conditions": "Audio data is a continuous encoded stream.",
+      "effect": "Stream is preserved by raw/audio formats rather than ISO filesystem semantics."
+    },
+    {
+      "source": "audio_track",
+      "target": "sector_size_2352",
+      "relationship": "uses_sector_size",
+      "semantic_role": "numeric",
+      "conditions": "Source gives 2,352-byte sectors for audio tracks.",
+      "effect": "Audio sector layout differs from data logical sectors."
+    },
+    {
+      "source": "audio_track",
+      "target": "lead_in",
+      "relationship": "addressed_by",
+      "semantic_role": "addressing",
+      "conditions": "CD audio addressing uses disc/session metadata.",
+      "effect": "Track/index/time addressing identifies audio."
+    },
+    {
+      "source": "audio_track",
+      "target": "index_point",
+      "relationship": "addressed_by",
+      "semantic_role": "addressing",
+      "effect": "Audio location can be addressed by index points."
+    },
+    {
+      "source": "audio_track",
+      "target": "cd_time_code",
+      "relationship": "addressed_by",
+      "semantic_role": "addressing",
+      "effect": "Audio location can be addressed by CD time code."
+    },
+    {
+      "source": "audio_cd",
+      "target": "iso_image",
+      "relationship": "cannot_be_stored_as",
+      "semantic_role": "limitation",
+      "conditions": "ISO requires filesystem-based data; audio CD track is continuous encoded audio.",
+      "effect": "No filesystem inside audio track."
+    },
+    {
+      "source": "video_cd",
+      "target": "multi_track_disc",
+      "relationship": "requires_at_least",
+      "semantic_role": "constraint",
+      "mechanism": "Source states Video CDs require at least two tracks.",
+      "conditions": "Disc structure contains multiple tracks.",
+      "effect": "Cannot be represented as one ISO image."
+    },
+    {
+      "source": "super_video_cd",
+      "target": "multi_track_disc",
+      "relationship": "requires_at_least",
+      "semantic_role": "constraint",
+      "mechanism": "Source states Super Video CDs require at least two tracks.",
+      "conditions": "Disc structure contains multiple tracks.",
+      "effect": "Cannot be represented as one ISO image."
+    },
+    {
+      "source": "video_cd",
+      "target": "iso_image",
+      "relationship": "cannot_be_stored_as",
+      "semantic_role": "limitation",
+      "conditions": "Multiple-track structure prevents complete ISO representation.",
+      "effect": "A different raw image format can be used."
+    },
+    {
+      "source": "super_video_cd",
+      "target": "iso_image",
+      "relationship": "cannot_be_stored_as",
+      "semantic_role": "limitation",
+      "conditions": "Multiple-track structure prevents complete ISO representation.",
+      "effect": "A different raw image format can be used."
+    },
+    {
+      "source": "video_cd",
+      "target": "raw_disc_image",
+      "relationship": "can_be_represented_by",
+      "semantic_role": "alternative",
+      "conditions": "Source says .IMG can achieve representation.",
+      "effect": "Raw image can preserve broader disc structure."
+    },
+    {
+      "source": "super_video_cd",
+      "target": "raw_disc_image",
+      "relationship": "can_be_represented_by",
+      "semantic_role": "alternative",
+      "conditions": "Source says .IMG can achieve representation.",
+      "effect": "Raw image can preserve broader disc structure."
+    },
+    {
+      "source": "cue_bin",
+      "target": "raw_disc_image",
+      "relationship": "stores",
+      "semantic_role": "format",
+      "mechanism": "These formats can store raw images of complete multi-track discs.",
+      "conditions": "Need to preserve all tracks.",
+      "effect": "Complete disc information can be represented."
+    },
+    {
+      "source": "cue_bin",
+      "target": "companion_file",
+      "relationship": "uses",
+      "semantic_role": "metadata",
+      "mechanism": "A companion file describes track structure/characteristics.",
+      "conditions": "Multi-track metadata is required.",
+      "effect": "Burning software gets required track information."
+    },
+    {
+      "source": "cue_bin",
+      "target": "track_characteristics",
+      "relationship": "describes",
+      "semantic_role": "metadata",
+      "conditions": "Companion metadata records track characteristics.",
+      "effect": "Track layout can be recreated."
+    },
+    {
+      "source": "ccd_img",
+      "target": "raw_disc_image",
+      "relationship": "stores",
+      "semantic_role": "format",
+      "mechanism": "These formats can store raw images of complete multi-track discs.",
+      "conditions": "Need to preserve all tracks.",
+      "effect": "Complete disc information can be represented."
+    },
+    {
+      "source": "ccd_img",
+      "target": "companion_file",
+      "relationship": "uses",
+      "semantic_role": "metadata",
+      "mechanism": "A companion file describes track structure/characteristics.",
+      "conditions": "Multi-track metadata is required.",
+      "effect": "Burning software gets required track information."
+    },
+    {
+      "source": "ccd_img",
+      "target": "track_characteristics",
+      "relationship": "describes",
+      "semantic_role": "metadata",
+      "conditions": "Companion metadata records track characteristics.",
+      "effect": "Track layout can be recreated."
+    },
+    {
+      "source": "mds_mdf",
+      "target": "raw_disc_image",
+      "relationship": "stores",
+      "semantic_role": "format",
+      "mechanism": "These formats can store raw images of complete multi-track discs.",
+      "conditions": "Need to preserve all tracks.",
+      "effect": "Complete disc information can be represented."
+    },
+    {
+      "source": "mds_mdf",
+      "target": "companion_file",
+      "relationship": "uses",
+      "semantic_role": "metadata",
+      "mechanism": "A companion file describes track structure/characteristics.",
+      "conditions": "Multi-track metadata is required.",
+      "effect": "Burning software gets required track information."
+    },
+    {
+      "source": "mds_mdf",
+      "target": "track_characteristics",
+      "relationship": "describes",
+      "semantic_role": "metadata",
+      "conditions": "Companion metadata records track characteristics.",
+      "effect": "Track layout can be recreated."
+    },
+    {
+      "source": "cue_bin",
+      "target": "multi_track_disc",
+      "relationship": "supports",
+      "semantic_role": "format_support",
+      "effect": "Multi-track disc images including audio CDs can be represented."
+    },
+    {
+      "source": "ccd_img",
+      "target": "multi_track_disc",
+      "relationship": "supports",
+      "semantic_role": "format_support",
+      "effect": "Multi-track disc images can be represented."
+    },
+    {
+      "source": "mds_mdf",
+      "target": "multi_track_disc",
+      "relationship": "supports",
+      "semantic_role": "format_support",
+      "effect": "Multi-track disc images can be represented."
+    },
+    {
+      "source": "companion_file",
+      "target": "disc_burning",
+      "relationship": "supplies_metadata",
+      "semantic_role": "burning",
+      "mechanism": "Track description and characteristics provide burning tool the information needed to recreate disc.",
+      "conditions": "Burning tool understands format.",
+      "effect": "Disc can be burned with track structure preserved."
+    },
+    {
+      "source": "raw_disc_image",
+      "target": "disc_burning",
+      "relationship": "supports",
+      "semantic_role": "burning",
+      "conditions": "Raw image includes all disc information.",
+      "effect": "Burning tool can reproduce source disc."
+    },
+    {
+      "source": "audio_cd",
+      "target": "audio_ripping",
+      "relationship": "can_use",
+      "semantic_role": "conversion",
+      "conditions": "Audio track data can be transferred to audio files.",
+      "effect": "Audio becomes ordinary file data."
+    },
+    {
+      "source": "audio_ripping",
+      "target": "wav",
+      "relationship": "can_produce",
+      "semantic_role": "conversion",
+      "conditions": "Source names WAV as uncompressed audio target.",
+      "effect": "Audio stream is represented as audio file."
+    },
+    {
+      "source": "audio_ripping",
+      "target": "aiff",
+      "relationship": "can_produce",
+      "semantic_role": "conversion",
+      "conditions": "Source names AIFF as uncompressed audio target.",
+      "effect": "Audio stream is represented as audio file."
+    },
+    {
+      "source": "audio_ripping",
+      "target": "audio_metadata",
+      "relationship": "can_optionally_preserve",
+      "semantic_role": "metadata",
+      "conditions": "Metadata may be retained during audio transfer.",
+      "effect": "Metadata accompanies audio files."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "raw_burning",
+      "relationship": "can_be_written_by",
+      "semantic_role": "writing",
+      "conditions": "Software commonly writes ISO to hard disks/recordable optical media; flash support historically varied.",
+      "effect": "Image can be transferred to other media when supported."
+    },
+    {
+      "source": "raw_burning",
+      "target": "flash_drive",
+      "relationship": "may_target",
+      "semantic_role": "tooling",
+      "conditions": "Source notes limitation was tooling-related, not inherent to ISO format.",
+      "effect": "Later tools can write raw images to USB flash drives."
+    },
+    {
+      "source": "usb_image_write",
+      "target": "flash_drive",
+      "relationship": "writes",
+      "semantic_role": "operation",
+      "conditions": "Source states software exists to write raw image files to USB flash drives.",
+      "effect": "Raw image writing tool is available.",
+      "inverse_or_converse": "USB becomes bootable/media representation when image supports it."
+    },
+    {
+      "source": "optical_disc_image",
+      "target": "usb_image_write",
+      "relationship": "can_be_input_to",
+      "semantic_role": "tooling",
+      "conditions": "ISO/raw image can be written to USB with suitable software.",
+      "effect": "Tool must support the relevant image semantics.",
+      "inverse_or_converse": "USB media receives image data."
+    },
+    {
+      "source": "iso_image",
+      "target": "emulator",
+      "relationship": "is_used_by",
+      "semantic_role": "use",
+      "conditions": "ISO files are commonly used in emulators to replicate CD images.",
+      "effect": "Emulator treats image as optical media representation."
+    },
+    {
+      "source": "dolphin",
+      "target": "iso_image",
+      "relationship": "uses",
+      "semantic_role": "implementation",
+      "conditions": "Source identifies Dolphin as using ISO files.",
+      "effect": "Wii/GameCube disc image is emulated."
+    },
+    {
+      "source": "dolphin",
+      "target": "wii",
+      "relationship": "emulates",
+      "semantic_role": "emulation",
+      "conditions": "Source names Wii.",
+      "effect": "Console software can be represented/emulated."
+    },
+    {
+      "source": "dolphin",
+      "target": "gamecube",
+      "relationship": "emulates",
+      "semantic_role": "emulation",
+      "conditions": "Source names GameCube.",
+      "effect": "Console software can be represented/emulated."
+    },
+    {
+      "source": "pcsx2",
+      "target": "iso_image",
+      "relationship": "uses",
+      "semantic_role": "implementation",
+      "conditions": "Source identifies PCSX2 as using ISO files.",
+      "effect": "PlayStation 2 disc image can be emulated."
+    },
+    {
+      "source": "pcsx2",
+      "target": "playstation2",
+      "relationship": "emulates",
+      "semantic_role": "emulation",
+      "conditions": "Source names PlayStation 2.",
+      "effect": "Console software can be represented/emulated."
+    },
+    {
+      "source": "iso_image",
+      "target": "virtual_cdrom",
+      "relationship": "can_serve_as",
+      "semantic_role": "virtual_media",
+      "conditions": "ISO can function as a virtual CD-ROM.",
+      "effect": "Software sees optical-media interface without physical disc."
+    },
+    {
+      "source": "virtual_cdrom",
+      "target": "hypervisor",
+      "relationship": "is_used_by",
+      "semantic_role": "virtualization",
+      "conditions": "ISO can be used as a virtual CD-ROM by hypervisors.",
+      "effect": "Hypervisor exposes image to guest environment."
+    },
+    {
+      "source": "vmware_workstation",
+      "target": "hypervisor",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "VMware Workstation is a hypervisor named by source."
+    },
+    {
+      "source": "virtualbox",
+      "target": "hypervisor",
+      "relationship": "is_a",
+      "semantic_role": "classification",
+      "effect": "VirtualBox is a hypervisor named by source."
+    },
+    {
+      "source": "vmware_workstation",
+      "target": "virtual_cdrom",
+      "relationship": "supports",
+      "semantic_role": "use",
+      "conditions": "Source identifies ISO use as virtual CD-ROM for VMware Workstation.",
+      "effect": "Guest can access image as virtual optical media."
+    },
+    {
+      "source": "virtualbox",
+      "target": "virtual_cdrom",
+      "relationship": "supports",
+      "semantic_role": "use",
+      "conditions": "Source identifies ISO use as virtual CD-ROM for VirtualBox.",
+      "effect": "Guest can access image as virtual optical media."
+    },
+    {
+      "source": "iso_image",
+      "target": "installation",
+      "relationship": "supports",
+      "semantic_role": "use_case",
+      "conditions": "Operating systems can be distributed as images and written to physical install media.",
+      "effect": "Installation media can be created."
+    },
+    {
+      "source": "installation",
+      "target": "physical_install_media",
+      "relationship": "uses",
+      "semantic_role": "deployment",
+      "conditions": "Operating-system installation can burn image to physical media.",
+      "effect": "Physical install disc becomes available."
+    },
+    {
+      "source": "model_iso_structure",
+      "target": "optical_disc_image",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "optical_disc_image = ordered logical-sector user-data + filesystem structure"
+    },
+    {
+      "source": "model_sector_size",
+      "target": "image_size_multiple",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "ISO_size = N × 2048 bytes"
+    },
+    {
+      "source": "model_creation",
+      "target": "disc_imaging_software",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "optical_disc → imaging software → ISO | file collection → authoring software → ISO"
+    },
+    {
+      "source": "model_mount",
+      "target": "image_mounting",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "ISO → mount driver → OS mount interface → filesystem/files"
+    },
+    {
+      "source": "model_burn",
+      "target": "disc_burning",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "ISO → burning tool → recordable optical disc"
+    },
+    {
+      "source": "model_multitrack",
+      "target": "multi_track_disc",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "complete_multi_track_disc ↛ single_ISO"
+    },
+    {
+      "source": "model_raw",
+      "target": "raw_disc_image",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "complete_disc + track metadata → raw image + companion descriptor"
+    },
+    {
+      "source": "model_audio",
+      "target": "audio_cd",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "audio track → continuous encoded stream → track/index/time addressing"
+    },
+    {
+      "source": "model_emulation",
+      "target": "emulator",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "ISO → emulator → emulated optical-disc contents"
+    },
+    {
+      "source": "model_virtual_cd",
+      "target": "virtual_cdrom",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "ISO → virtual CD-ROM → hypervisor/guest"
+    },
+    {
+      "source": "model_usb",
+      "target": "usb_image_write",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "raw image → image-writing software → USB flash drive"
+    },
+    {
+      "source": "model_archive",
+      "target": "image_transfer",
+      "relationship": "formalizes",
+      "semantic_role": "formal_model",
+      "mechanism": "physical optical disc → image → data link/removable storage → destination"
+    },
+    {
+      "source": "claim_1",
+      "target": "optical_disc_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_1",
+      "target": "filesystem",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_1",
+      "target": "binary_copy",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "disc_imaging_software",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "disc_authoring_software",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_2",
+      "target": "image_conversion",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "logical_sector",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "control_headers",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "error_correction",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "sector_size_2048",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_3",
+      "target": "image_size_multiple",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_4",
+      "target": "image_transfer",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_4",
+      "target": "data_link",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_4",
+      "target": "removable_storage",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_5",
+      "target": "image_mounting",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_5",
+      "target": "mount_driver",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_5",
+      "target": "mount_interface",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_6",
+      "target": "multi_track_disc",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_6",
+      "target": "track",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_6",
+      "target": "optical_disc_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_7",
+      "target": "audio_cd",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_7",
+      "target": "audio_track",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_7",
+      "target": "filesystem",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_7",
+      "target": "audio_stream",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "cue_bin",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "ccd_img",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "mds_mdf",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "raw_disc_image",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_8",
+      "target": "companion_file",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_9",
+      "target": "usb_image_write",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_9",
+      "target": "flash_drive",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_10",
+      "target": "emulator",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_10",
+      "target": "virtual_cdrom",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_10",
+      "target": "hypervisor",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "claim_10",
+      "target": "installation",
+      "relationship": "supports",
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "lp1",
+      "target": "optical_disc_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces disk_image after optical_disc_image."
+    },
+    {
+      "source": "lp1",
+      "target": "disk_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces optical_disc after disk_image."
+    },
+    {
+      "source": "lp1",
+      "target": "optical_disc",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces filesystem after optical_disc."
+    },
+    {
+      "source": "lp1",
+      "target": "filesystem",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces binary_copy after filesystem."
+    },
+    {
+      "source": "lp2",
+      "target": "iso_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces iso9660 after iso_image."
+    },
+    {
+      "source": "lp2",
+      "target": "iso9660",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces udf after iso9660."
+    },
+    {
+      "source": "lp2",
+      "target": "udf",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces filesystem_data after udf."
+    },
+    {
+      "source": "lp2",
+      "target": "filesystem_data",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces file_data after filesystem_data."
+    },
+    {
+      "source": "lp3",
+      "target": "optical_disc",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces disc_imaging_software after optical_disc."
+    },
+    {
+      "source": "lp3",
+      "target": "disc_imaging_software",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces file_collection after disc_imaging_software."
+    },
+    {
+      "source": "lp3",
+      "target": "file_collection",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces disc_authoring_software after file_collection."
+    },
+    {
+      "source": "lp3",
+      "target": "disc_authoring_software",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces image_conversion after disc_authoring_software."
+    },
+    {
+      "source": "lp4",
+      "target": "sector",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces logical_sector after sector."
+    },
+    {
+      "source": "lp4",
+      "target": "logical_sector",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces sector_size_2048 after logical_sector."
+    },
+    {
+      "source": "lp4",
+      "target": "sector_size_2048",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces control_headers after sector_size_2048."
+    },
+    {
+      "source": "lp4",
+      "target": "control_headers",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces error_correction after control_headers."
+    },
+    {
+      "source": "lp4",
+      "target": "error_correction",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces image_size_multiple after error_correction."
+    },
+    {
+      "source": "lp5",
+      "target": "optical_disc_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces image_transfer after optical_disc_image."
+    },
+    {
+      "source": "lp5",
+      "target": "image_transfer",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces image_mounting after image_transfer."
+    },
+    {
+      "source": "lp5",
+      "target": "image_mounting",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces mount_driver after image_mounting."
+    },
+    {
+      "source": "lp5",
+      "target": "mount_driver",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces mount_interface after mount_driver."
+    },
+    {
+      "source": "lp6",
+      "target": "track",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces multi_track_disc after track."
+    },
+    {
+      "source": "lp6",
+      "target": "multi_track_disc",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces filesystem after multi_track_disc."
+    },
+    {
+      "source": "lp6",
+      "target": "filesystem",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces optical_disc_image after filesystem."
+    },
+    {
+      "source": "lp6",
+      "target": "optical_disc_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces raw_disc_image after optical_disc_image."
+    },
+    {
+      "source": "lp7",
+      "target": "audio_cd",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces audio_track after audio_cd."
+    },
+    {
+      "source": "lp7",
+      "target": "audio_track",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces audio_stream after audio_track."
+    },
+    {
+      "source": "lp7",
+      "target": "audio_stream",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces sector_size_2352 after audio_stream."
+    },
+    {
+      "source": "lp7",
+      "target": "sector_size_2352",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces lead_in after sector_size_2352."
+    },
+    {
+      "source": "lp7",
+      "target": "lead_in",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces index_point after lead_in."
+    },
+    {
+      "source": "lp7",
+      "target": "index_point",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces cd_time_code after index_point."
+    },
+    {
+      "source": "lp8",
+      "target": "cue_bin",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces ccd_img after cue_bin."
+    },
+    {
+      "source": "lp8",
+      "target": "ccd_img",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces mds_mdf after ccd_img."
+    },
+    {
+      "source": "lp8",
+      "target": "mds_mdf",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces companion_file after mds_mdf."
+    },
+    {
+      "source": "lp8",
+      "target": "companion_file",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces track_characteristics after companion_file."
+    },
+    {
+      "source": "lp8",
+      "target": "track_characteristics",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces disc_burning after track_characteristics."
+    },
+    {
+      "source": "lp9",
+      "target": "iso_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces emulator after iso_image."
+    },
+    {
+      "source": "lp9",
+      "target": "emulator",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces dolphin after emulator."
+    },
+    {
+      "source": "lp9",
+      "target": "dolphin",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces pcsx2 after dolphin."
+    },
+    {
+      "source": "lp9",
+      "target": "pcsx2",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces virtual_cdrom after pcsx2."
+    },
+    {
+      "source": "lp9",
+      "target": "virtual_cdrom",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces hypervisor after virtual_cdrom."
+    },
+    {
+      "source": "lp10",
+      "target": "iso_image",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces disc_burning after iso_image."
+    },
+    {
+      "source": "lp10",
+      "target": "disc_burning",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces physical_install_media after disc_burning."
+    },
+    {
+      "source": "lp10",
+      "target": "physical_install_media",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces usb_image_write after physical_install_media."
+    },
+    {
+      "source": "lp10",
+      "target": "usb_image_write",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces flash_drive after usb_image_write."
+    },
+    {
+      "source": "lp11",
+      "target": "iso_vs_raw",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces filesystem_vs_track after iso_vs_raw."
+    },
+    {
+      "source": "lp11",
+      "target": "filesystem_vs_track",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces data_disc_vs_audio_disc after filesystem_vs_track."
+    },
+    {
+      "source": "lp11",
+      "target": "data_disc_vs_audio_disc",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces single_vs_multi_track after data_disc_vs_audio_disc."
+    },
+    {
+      "source": "lp11",
+      "target": "single_vs_multi_track",
+      "relationship": "teaches_before",
+      "semantic_role": "pedagogical_sequence",
+      "mechanism": "Learning sequence introduces mount_vs_burn after single_vs_multi_track."
+    },
+    {
+      "source": "r1",
+      "target": "application_vnd_efi_iso",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r2",
+      "target": "magic_cd001",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r3",
+      "target": "iso_image",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r4",
+      "target": "windows8",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r5",
+      "target": "usb_image_write",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r6",
+      "target": "usb_image_write",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r7",
+      "target": "dolphin",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r8",
+      "target": "pcsx2",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r9",
+      "target": "iso9660",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r10",
+      "target": "disc_imaging_software",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    },
+    {
+      "source": "r11",
+      "target": "flash_drive",
+      "relationship": "documents_or_points_to",
+      "semantic_role": "reference"
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_iso_structure",
+      "name": "ISO image structure",
+      "expression": "optical_disc_image = ordered logical-sector user-data + filesystem structure"
+    },
+    {
+      "id": "model_sector_size",
+      "name": "ISO size constraint",
+      "expression": "ISO_size = N × 2048 bytes"
+    },
+    {
+      "id": "model_creation",
+      "name": "ISO creation pipeline",
+      "expression": "optical_disc → imaging software → ISO | file collection → authoring software → ISO"
+    },
+    {
+      "id": "model_mount",
+      "name": "Mount model",
+      "expression": "ISO → mount driver → OS mount interface → filesystem/files"
+    },
+    {
+      "id": "model_burn",
+      "name": "Burn model",
+      "expression": "ISO → burning tool → recordable optical disc"
+    },
+    {
+      "id": "model_multitrack",
+      "name": "Multi-track limitation",
+      "expression": "complete_multi_track_disc ↛ single_ISO"
+    },
+    {
+      "id": "model_raw",
+      "name": "Raw multi-track model",
+      "expression": "complete_disc + track metadata → raw image + companion descriptor"
+    },
+    {
+      "id": "model_audio",
+      "name": "Audio CD model",
+      "expression": "audio track → continuous encoded stream → track/index/time addressing"
+    },
+    {
+      "id": "model_emulation",
+      "name": "Emulation model",
+      "expression": "ISO → emulator → emulated optical-disc contents"
+    },
+    {
+      "id": "model_virtual_cd",
+      "name": "Virtual CD model",
+      "expression": "ISO → virtual CD-ROM → hypervisor/guest"
+    },
+    {
+      "id": "model_usb",
+      "name": "USB image-writing model",
+      "expression": "raw image → image-writing software → USB flash drive"
+    },
+    {
+      "id": "model_archive",
+      "name": "Archival transfer model",
+      "expression": "physical optical disc → image → data link/removable storage → destination"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_1",
+      "section": "Definition",
+      "text": "Optical disc image is a sector-by-sector disk image containing disc filesystem and data."
+    },
+    {
+      "id": "claim_2",
+      "section": "Creation",
+      "text": "Images can be created from optical discs, file collections, or other image files."
+    },
+    {
+      "id": "claim_3",
+      "section": "Sector semantics",
+      "text": "ISO stores user data, not control headers/error correction; logical data sectors are 2,048 bytes."
+    },
+    {
+      "id": "claim_4",
+      "section": "Transferability",
+      "text": "An image can be transferred over data links/removable media unlike a physical optical disc."
+    },
+    {
+      "id": "claim_5",
+      "section": "Mounting",
+      "text": "Suitable driver software can expose ISO to the OS as though it were a physical optical disc."
+    },
+    {
+      "id": "claim_6",
+      "section": "Multiple tracks",
+      "text": "ISO has no physical track concept and cannot fully represent multi-track discs."
+    },
+    {
+      "id": "claim_7",
+      "section": "Audio CDs",
+      "text": "Audio CDs cannot be represented as ISO because audio tracks contain continuous encoded audio rather than filesystems."
+    },
+    {
+      "id": "claim_8",
+      "section": "Raw formats",
+      "text": "CUE/BIN, CCD/IMG, and MDS/MDF can store complete multi-track images with companion track metadata."
+    },
+    {
+      "id": "claim_9",
+      "section": "USB",
+      "text": "Historically, writing ISO to flash drives was limited by software tooling; raw-image writers later existed."
+    },
+    {
+      "id": "claim_10",
+      "section": "Uses",
+      "text": "ISO is used for emulation, virtual CD-ROMs for hypervisors, and OS installation media."
+    }
+  ],
+  "references": [
+    {
+      "id": "r1",
+      "label": "IANA application/vnd.efi.iso",
+      "type": "reference"
+    },
+    {
+      "id": "r2",
+      "label": "File Signatures / magic numbers",
+      "type": "reference"
+    },
+    {
+      "id": "r3",
+      "label": "What Is an ISO File?",
+      "type": "reference"
+    },
+    {
+      "id": "r4",
+      "label": "Windows 8 native ISO mounting",
+      "type": "reference"
+    },
+    {
+      "id": "r5",
+      "label": "ISO image to USB conversion",
+      "type": "reference"
+    },
+    {
+      "id": "r6",
+      "label": "PowerISO ISO-to-USB documentation",
+      "type": "reference"
+    },
+    {
+      "id": "r7",
+      "label": "Dolphin Emulator ISO formats",
+      "type": "reference"
+    },
+    {
+      "id": "r8",
+      "label": "PCSX2 ISO usage",
+      "type": "reference"
+    },
+    {
+      "id": "r9",
+      "label": "ISO 13490",
+      "type": "related_standard"
+    },
+    {
+      "id": "r10",
+      "label": "Comparison of disc image software",
+      "type": "related_resource"
+    },
+    {
+      "id": "r11",
+      "label": "Live USB",
+      "type": "related_concept"
+    },
+    {
+      "id": "r12",
+      "label": "No-disc crack",
+      "type": "related_concept"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "iso_vs_raw",
+      "label": "ISO image vs raw disc image",
+      "description": "ISO stores logical-sector user data and omits control/error-correction information; raw images can retain complete disc information."
+    },
+    {
+      "id": "filesystem_vs_track",
+      "label": "Filesystem vs physical track",
+      "description": "A filesystem can reside inside a physical track, but ISO does not model physical tracks as track containers."
+    },
+    {
+      "id": "data_disc_vs_audio_disc",
+      "label": "Data optical disc vs audio CD",
+      "description": "Data discs use filesystem-bearing sectors; audio CDs use continuous encoded audio streams and track addressing."
+    },
+    {
+      "id": "single_vs_multi_track",
+      "label": "Single-track vs multi-track",
+      "description": "A single-track data disc can be represented as an ISO; a multi-track disc cannot be fully represented by one ISO."
+    },
+    {
+      "id": "iso_vs_img_extension",
+      "label": "ISO semantics vs .img extension",
+      "description": ".img may be used for ISO images but can also denote images with different contents."
+    },
+    {
+      "id": "iso_vs_udf",
+      "label": "ISO 9660 vs UDF",
+      "description": "Both filesystem structures can occur in optical-disc images; UDF is commonly associated with DVD/Blu-ray in the source."
+    },
+    {
+      "id": "image_vs_physical_disc",
+      "label": "Image vs physical disc",
+      "description": "Image is a transferable binary artifact; physical disc is the optical medium it represents."
+    },
+    {
+      "id": "mount_vs_burn",
+      "label": "Mount vs burn",
+      "description": "Mount exposes image through an OS interface; burning creates physical optical media."
+    },
+    {
+      "id": "archive_vs_emulation",
+      "label": "Archival vs emulation",
+      "description": "The same image artifact can preserve disc contents or provide input to an emulator."
+    },
+    {
+      "id": "iso_vs_virtual_cd",
+      "label": "ISO vs virtual CD-ROM",
+      "description": "ISO is the stored image; virtual CD-ROM is the runtime interface exposing it as optical media."
+    },
+    {
+      "id": "filesystem_copy_vs_raw_copy",
+      "label": "Filesystem binary copy vs raw media copy",
+      "description": "ISO preserves filesystem/user data rather than every physical-media control/error structure."
+    },
+    {
+      "id": "track_addressing_vs_file_addressing",
+      "label": "Track addressing vs file addressing",
+      "description": "Audio CD content is addressed through track/index/time structures rather than filesystem files."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "title": "Optical image fundamentals",
+      "sequence": [
+        "optical_disc_image",
+        "disk_image",
+        "optical_disc",
+        "filesystem",
+        "binary_copy"
+      ]
+    },
+    {
+      "id": "lp2",
+      "title": "ISO filesystem semantics",
+      "sequence": [
+        "iso_image",
+        "iso9660",
+        "udf",
+        "filesystem_data",
+        "file_data"
+      ]
+    },
+    {
+      "id": "lp3",
+      "title": "Image creation",
+      "sequence": [
+        "optical_disc",
+        "disc_imaging_software",
+        "file_collection",
+        "disc_authoring_software",
+        "image_conversion"
+      ]
+    },
+    {
+      "id": "lp4",
+      "title": "Sector model",
+      "sequence": [
+        "sector",
+        "logical_sector",
+        "sector_size_2048",
+        "control_headers",
+        "error_correction",
+        "image_size_multiple"
+      ]
+    },
+    {
+      "id": "lp5",
+      "title": "Mounting and portability",
+      "sequence": [
+        "optical_disc_image",
+        "image_transfer",
+        "image_mounting",
+        "mount_driver",
+        "mount_interface"
+      ]
+    },
+    {
+      "id": "lp6",
+      "title": "Multi-track boundary",
+      "sequence": [
+        "track",
+        "multi_track_disc",
+        "filesystem",
+        "optical_disc_image",
+        "raw_disc_image"
+      ]
+    },
+    {
+      "id": "lp7",
+      "title": "Audio CD distinction",
+      "sequence": [
+        "audio_cd",
+        "audio_track",
+        "audio_stream",
+        "sector_size_2352",
+        "lead_in",
+        "index_point",
+        "cd_time_code"
+      ]
+    },
+    {
+      "id": "lp8",
+      "title": "Multi-track formats",
+      "sequence": [
+        "cue_bin",
+        "ccd_img",
+        "mds_mdf",
+        "companion_file",
+        "track_characteristics",
+        "disc_burning"
+      ]
+    },
+    {
+      "id": "lp9",
+      "title": "Emulation and virtualization",
+      "sequence": [
+        "iso_image",
+        "emulator",
+        "dolphin",
+        "pcsx2",
+        "virtual_cdrom",
+        "hypervisor"
+      ]
+    },
+    {
+      "id": "lp10",
+      "title": "Installation and USB",
+      "sequence": [
+        "iso_image",
+        "disc_burning",
+        "physical_install_media",
+        "usb_image_write",
+        "flash_drive"
+      ]
+    },
+    {
+      "id": "lp11",
+      "title": "Semantic distinctions",
+      "sequence": [
+        "iso_vs_raw",
+        "filesystem_vs_track",
+        "data_disc_vs_audio_disc",
+        "single_vs_multi_track",
+        "mount_vs_burn"
+      ]
+    }
+  ],
+  "misconceptions_and_corrections": [
+    {
+      "id": "m1",
+      "label": "ISO is always a raw copy of every physical disc byte",
+      "correction": "False: source says ISO omits control headers and error-correction data."
+    },
+    {
+      "id": "m2",
+      "label": "Every optical disc can be stored in one ISO",
+      "correction": "False: multi-track and audio-disc structures exceed the ISO filesystem model."
+    },
+    {
+      "id": "m3",
+      "label": "An ISO contains physical tracks",
+      "correction": "False: source explicitly says there is no concept of a track inside an ISO."
+    },
+    {
+      "id": "m4",
+      "label": "Audio CD tracks are files",
+      "correction": "False: source describes continuous encoded audio rather than a filesystem."
+    },
+    {
+      "id": "m5",
+      "label": ".img always means exactly the same thing as .iso",
+      "correction": "False: .img can contain different kinds of image data."
+    },
+    {
+      "id": "m6",
+      "label": "UDF cannot occur in an ISO image",
+      "correction": "False: source explicitly says an ISO image may contain UDF."
+    },
+    {
+      "id": "m7",
+      "label": "Mounting an ISO burns it to a disc",
+      "correction": "False: mounting exposes it virtually; burning creates physical media."
+    },
+    {
+      "id": "m8",
+      "label": "ISO cannot be transferred because it represents physical media",
+      "correction": "False: image is a binary file and can move over links/removable storage."
+    },
+    {
+      "id": "m9",
+      "label": "USB limitations are inherent to ISO format",
+      "correction": "False: source attributes historical limitation to software-tool availability."
+    },
+    {
+      "id": "m10",
+      "label": "ISO and virtual CD-ROM are identical concepts",
+      "correction": "False: ISO is stored representation; virtual CD-ROM is runtime interface."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Exactly what does an ISO image contain from an optical disc?"
+    },
+    {
+      "id": "q2",
+      "question": "How does an ISO differ from a raw optical-disc image?"
+    },
+    {
+      "id": "q3",
+      "question": "Why is ISO image size a multiple of 2,048 bytes?"
+    },
+    {
+      "id": "q4",
+      "question": "What information does ISO omit compared with a raw disc image?"
+    },
+    {
+      "id": "q5",
+      "question": "How can an ISO be created from a physical disc?"
+    },
+    {
+      "id": "q6",
+      "question": "How can an ISO be created without a physical disc?"
+    },
+    {
+      "id": "q7",
+      "question": "What does mounting an ISO actually do?"
+    },
+    {
+      "id": "q8",
+      "question": "Why can a multi-track CD not be represented completely by one ISO?"
+    },
+    {
+      "id": "q9",
+      "question": "Why can an audio CD not be represented as an ISO?"
+    },
+    {
+      "id": "q10",
+      "question": "How do CUE/BIN, CCD/IMG, and MDS/MDF preserve multi-track structure?"
+    },
+    {
+      "id": "q11",
+      "question": "How does audio-track addressing differ from filesystem addressing?"
+    },
+    {
+      "id": "q12",
+      "question": "How are ISO images used by emulators?"
+    },
+    {
+      "id": "q13",
+      "question": "How are ISO images used by hypervisors?"
+    },
+    {
+      "id": "q14",
+      "question": "How are ISO images used to create physical installation media?"
+    },
+    {
+      "id": "q15",
+      "question": "Why did USB writing historically depend on tooling rather than the ISO format itself?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "x1",
+      "topic": "ISO 9660 volume descriptors"
+    },
+    {
+      "id": "x2",
+      "topic": "ISO 9660 directory records"
+    },
+    {
+      "id": "x3",
+      "topic": "UDF implementation details"
+    },
+    {
+      "id": "x4",
+      "topic": "El Torito boot images"
+    },
+    {
+      "id": "x5",
+      "topic": "hybrid ISO images"
+    },
+    {
+      "id": "x6",
+      "topic": "ISO 9660 extensions"
+    },
+    {
+      "id": "x7",
+      "topic": "Rock Ridge"
+    },
+    {
+      "id": "x8",
+      "topic": "Joliet"
+    },
+    {
+      "id": "x9",
+      "topic": "DVD/Blu-ray image semantics"
+    },
+    {
+      "id": "x10",
+      "topic": "raw CD sector layouts"
+    },
+    {
+      "id": "x11",
+      "topic": "CD session architecture"
+    },
+    {
+      "id": "x12",
+      "topic": "subchannel data"
+    },
+    {
+      "id": "x13",
+      "topic": "CUE sheet grammar"
+    },
+    {
+      "id": "x14",
+      "topic": "MDS/MDF metadata"
+    },
+    {
+      "id": "x15",
+      "topic": "CCD format metadata"
+    },
+    {
+      "id": "x16",
+      "topic": "disc-image integrity hashes"
+    },
+    {
+      "id": "x17",
+      "topic": "reproducible ISO construction"
+    },
+    {
+      "id": "x18",
+      "topic": "bootable ISO workflows"
+    },
+    {
+      "id": "x19",
+      "topic": "ISO mounting security"
+    },
+    {
+      "id": "x20",
+      "topic": "virtual optical drives"
+    },
+    {
+      "id": "x21",
+      "topic": "USB hybrid images"
+    }
+  ],
+  "validation": {
+    "status": "clean",
+    "errors": [],
+    "node_count": 206,
+    "relationship_count": 227,
+    "formal_model_count": 12,
+    "source_claim_count": 10,
+    "reference_count": 12,
+    "semantic_distinction_count": 12,
+    "learning_path_count": 11,
+    "misconception_count": 10,
+    "question_count": 15,
+    "expansion_target_count": 21
+  }
+}

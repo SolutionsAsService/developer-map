@@ -1,0 +1,2904 @@
+{
+  "metadata": {
+    "schema_version": "4.0-relationship-rich-semantic-provenance",
+    "title": "Sandbox (computer security) — Full Relationship-Rich Semantic Knowledge Graph",
+    "source": "User-provided Wikipedia text",
+    "source_authority": "The supplied source is authoritative for this transformation.",
+    "transformation_policy": "Preserve source terminology, mechanisms, implementations, use cases, references and distinctions; no outside corrections or silent reconciliation.",
+    "domain": "computer security",
+    "core_thesis": "A sandbox separates running programs inside a restricted environment and controls their available resources and host access to contain failures and vulnerabilities.",
+    "relationship_semantics": "Directed relationships preserve mechanism, effect, conditions, scope, implementation, containment, restriction, comparison, use, historical association and provenance."
+  },
+  "nodes": [
+    {
+      "id": "sandbox",
+      "label": "Sandbox",
+      "type": "concept",
+      "definition": "Security mechanism separating running programs to mitigate spread of failures/vulnerabilities."
+    },
+    {
+      "id": "sandboxing",
+      "label": "Sandboxing",
+      "type": "concept"
+    },
+    {
+      "id": "program_separation",
+      "label": "Program separation",
+      "type": "security_property"
+    },
+    {
+      "id": "failure_containment",
+      "label": "System failure containment",
+      "type": "security_goal"
+    },
+    {
+      "id": "vulnerability_containment",
+      "label": "Software vulnerability containment",
+      "type": "security_goal"
+    },
+    {
+      "id": "untrusted_code",
+      "label": "Untrusted/unverified code",
+      "type": "security_input"
+    },
+    {
+      "id": "guest_program",
+      "label": "Guest program",
+      "type": "execution_subject"
+    },
+    {
+      "id": "host_machine",
+      "label": "Host machine",
+      "type": "execution_environment"
+    },
+    {
+      "id": "host_os",
+      "label": "Host operating system",
+      "type": "execution_environment"
+    },
+    {
+      "id": "restricted_os",
+      "label": "Restricted operating-system environment",
+      "type": "execution_environment"
+    },
+    {
+      "id": "controlled_resources",
+      "label": "Tightly controlled resources",
+      "type": "security_boundary"
+    },
+    {
+      "id": "isolation",
+      "label": "Isolation",
+      "type": "security_property"
+    },
+    {
+      "id": "virtualization",
+      "label": "Virtualization",
+      "type": "related_concept"
+    },
+    {
+      "id": "malware",
+      "label": "Malware / malicious code",
+      "type": "threat"
+    },
+    {
+      "id": "system_failure",
+      "label": "System failure",
+      "type": "failure_mode"
+    },
+    {
+      "id": "software_vulnerability",
+      "label": "Software vulnerability",
+      "type": "threat"
+    },
+    {
+      "id": "network_access",
+      "label": "Network access",
+      "type": "resource"
+    },
+    {
+      "id": "host_inspection",
+      "label": "Host-system inspection",
+      "type": "resource"
+    },
+    {
+      "id": "input_devices",
+      "label": "Input-device access",
+      "type": "resource"
+    },
+    {
+      "id": "storage_scratch",
+      "label": "Storage scratch space",
+      "type": "resource"
+    },
+    {
+      "id": "memory_scratch",
+      "label": "Memory scratch space",
+      "type": "resource"
+    },
+    {
+      "id": "file_descriptors",
+      "label": "File descriptors",
+      "type": "resource"
+    },
+    {
+      "id": "filesystem_space",
+      "label": "File-system space",
+      "type": "resource"
+    },
+    {
+      "id": "linux",
+      "label": "Linux application sandboxing",
+      "type": "implementation"
+    },
+    {
+      "id": "seccomp",
+      "label": "seccomp",
+      "type": "implementation"
+    },
+    {
+      "id": "cgroups",
+      "label": "cgroups",
+      "type": "implementation"
+    },
+    {
+      "id": "namespaces",
+      "label": "Linux namespaces",
+      "type": "implementation"
+    },
+    {
+      "id": "systemd",
+      "label": "systemd",
+      "type": "implementation"
+    },
+    {
+      "id": "chrome",
+      "label": "Google Chrome",
+      "type": "implementation"
+    },
+    {
+      "id": "firefox",
+      "label": "Firefox",
+      "type": "implementation"
+    },
+    {
+      "id": "firejail",
+      "label": "Firejail",
+      "type": "implementation"
+    },
+    {
+      "id": "android",
+      "label": "Android application sandbox",
+      "type": "implementation"
+    },
+    {
+      "id": "linux_uid",
+      "label": "Linux user ID",
+      "type": "implementation"
+    },
+    {
+      "id": "grapheneos",
+      "label": "GrapheneOS",
+      "type": "implementation"
+    },
+    {
+      "id": "apple",
+      "label": "Apple App Sandbox",
+      "type": "implementation"
+    },
+    {
+      "id": "mac_store",
+      "label": "Mac App Store",
+      "type": "implementation"
+    },
+    {
+      "id": "ios",
+      "label": "iOS/iPadOS",
+      "type": "implementation"
+    },
+    {
+      "id": "uac",
+      "label": "Windows User Account Control (UAC)",
+      "type": "implementation"
+    },
+    {
+      "id": "google_api",
+      "label": "Google Sandboxed API",
+      "type": "implementation"
+    },
+    {
+      "id": "vm",
+      "label": "Virtual machine",
+      "type": "implementation"
+    },
+    {
+      "id": "guest_os",
+      "label": "Guest operating system",
+      "type": "implementation"
+    },
+    {
+      "id": "emulator",
+      "label": "Emulator",
+      "type": "implementation"
+    },
+    {
+      "id": "jail",
+      "label": "Jail",
+      "type": "implementation"
+    },
+    {
+      "id": "virtual_hosting",
+      "label": "Virtual hosting",
+      "type": "implementation"
+    },
+    {
+      "id": "rules",
+      "label": "Rule-based execution",
+      "type": "implementation"
+    },
+    {
+      "id": "selinux",
+      "label": "SELinux",
+      "type": "implementation"
+    },
+    {
+      "id": "apparmor",
+      "label": "AppArmor",
+      "type": "implementation"
+    },
+    {
+      "id": "malware_analysis",
+      "label": "Malware analysis",
+      "type": "implementation"
+    },
+    {
+      "id": "native_client",
+      "label": "Google Native Client",
+      "type": "implementation"
+    },
+    {
+      "id": "capabilities",
+      "label": "Capability system",
+      "type": "implementation"
+    },
+    {
+      "id": "cap_token",
+      "label": "Opaque capability token",
+      "type": "implementation"
+    },
+    {
+      "id": "browser_html",
+      "label": "Browser HTML rendering",
+      "type": "implementation"
+    },
+    {
+      "id": "seccomp_strict",
+      "label": "seccomp strict mode",
+      "type": "implementation"
+    },
+    {
+      "id": "iframe",
+      "label": "HTML5 iframe sandbox attribute",
+      "type": "implementation"
+    },
+    {
+      "id": "java_vm",
+      "label": "Java virtual machine",
+      "type": "implementation"
+    },
+    {
+      "id": "java_applet",
+      "label": "Java applet",
+      "type": "implementation"
+    },
+    {
+      "id": "dotnet",
+      "label": " .NET Common Language Runtime",
+      "type": "implementation"
+    },
+    {
+      "id": "cas",
+      "label": "Code Access Security",
+      "type": "implementation"
+    },
+    {
+      "id": "sfi",
+      "label": "Software Fault Isolation (SFI)",
+      "type": "implementation"
+    },
+    {
+      "id": "memory_segments",
+      "label": "Isolated memory segments",
+      "type": "implementation"
+    },
+    {
+      "id": "online_judge",
+      "label": "Online judge system",
+      "type": "implementation"
+    },
+    {
+      "id": "pastebin",
+      "label": "Executable pastebin",
+      "type": "implementation"
+    },
+    {
+      "id": "qubes",
+      "label": "Qubes OS",
+      "type": "implementation"
+    },
+    {
+      "id": "xen",
+      "label": "Xen hypervisor",
+      "type": "implementation"
+    },
+    {
+      "id": "sandboxie",
+      "label": "Sandboxie",
+      "type": "implementation"
+    },
+    {
+      "id": "tor",
+      "label": "Tor",
+      "type": "implementation"
+    },
+    {
+      "id": "test_bench",
+      "label": "Test bench",
+      "type": "implementation"
+    },
+    {
+      "id": "sys_read",
+      "label": "read()",
+      "type": "system_call"
+    },
+    {
+      "id": "sys_write",
+      "label": "write()",
+      "type": "system_call"
+    },
+    {
+      "id": "sys_exit",
+      "label": "exit()",
+      "type": "system_call"
+    },
+    {
+      "id": "sys_sigreturn",
+      "label": "sigreturn()",
+      "type": "system_call"
+    },
+    {
+      "id": "asm_store",
+      "label": "store assembly instruction",
+      "type": "instruction_class"
+    },
+    {
+      "id": "asm_read",
+      "label": "read assembly instruction",
+      "type": "instruction_class"
+    },
+    {
+      "id": "asm_jump",
+      "label": "jump assembly instruction",
+      "type": "instruction_class"
+    },
+    {
+      "id": "person_ian_goldberg",
+      "label": "Ian Goldberg",
+      "type": "person",
+      "year": 1996
+    },
+    {
+      "id": "person_david_wagner",
+      "label": "David Wagner",
+      "type": "person",
+      "year": 1996
+    },
+    {
+      "id": "person_randi_thomas",
+      "label": "Randi Thomas",
+      "type": "person",
+      "year": 1996
+    },
+    {
+      "id": "person_eric_brewer",
+      "label": "Eric Brewer",
+      "type": "person",
+      "year": 1996
+    },
+    {
+      "id": "person_robert_wahbe",
+      "label": "Robert Wahbe",
+      "type": "person",
+      "year": 1993
+    },
+    {
+      "id": "person_eric_geier",
+      "label": "Eric Geier",
+      "type": "person",
+      "year": 2012
+    },
+    {
+      "id": "person_daniel_wilde",
+      "label": "Daniel Wilde",
+      "type": "person",
+      "year": 2024
+    },
+    {
+      "id": "r1",
+      "label": "Proofpoint — What Is a Sandbox Environment?",
+      "type": "reference",
+      "year": 2023
+    },
+    {
+      "id": "r2",
+      "label": "Goldberg, Wagner, Thomas & Brewer — A Secure Environment for Untrusted Helper Applications",
+      "type": "reference",
+      "year": 1996
+    },
+    {
+      "id": "r3",
+      "label": "Geier — How to Keep Your PC Safe With Sandboxing",
+      "type": "reference",
+      "year": 2012
+    },
+    {
+      "id": "r4",
+      "label": "Sandboxing Applications",
+      "type": "reference",
+      "year": 2001
+    },
+    {
+      "id": "r5",
+      "label": "Android Open Source Project — Application Sandbox",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r6",
+      "label": "Wilde — GrapheneOS review",
+      "type": "reference",
+      "year": 2024
+    },
+    {
+      "id": "r7",
+      "label": "Apple — About App Sandbox",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r8",
+      "label": "Apple Support — Security of runtime process in iOS and iPadOS",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r9",
+      "label": "Microsoft Learn — How User Account Control works",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r10",
+      "label": "Google — google/sandboxed-api",
+      "type": "reference",
+      "year": 2020
+    },
+    {
+      "id": "r11",
+      "label": "Auto-Sandboxing secure system",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r12",
+      "label": "Computer System Security and Access Controls",
+      "type": "reference",
+      "year": 1991
+    },
+    {
+      "id": "r13",
+      "label": "Native Client Sandbox — Untrusted x86 Native Code",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r14",
+      "label": "Welcome to Native Client",
+      "type": "reference",
+      "year": null
+    },
+    {
+      "id": "r15",
+      "label": "Internet Explorer Team Blog — HTML5 Sandbox",
+      "type": "reference",
+      "year": 2011
+    },
+    {
+      "id": "r16",
+      "label": "Wahbe — Efficient Software-Based Fault Isolation",
+      "type": "reference",
+      "year": 1993
+    },
+    {
+      "id": "m_boundary",
+      "label": "Sandbox boundary",
+      "type": "formal_model",
+      "expression": "guest_program -> controlled_resources -> limited_host_access"
+    },
+    {
+      "id": "m_linux",
+      "label": "Linux sandbox composition",
+      "type": "formal_model",
+      "expression": "Linux_sandbox = seccomp + cgroups + namespaces"
+    },
+    {
+      "id": "m_android",
+      "label": "Android identity isolation",
+      "type": "formal_model",
+      "expression": "application_i -> unique Linux UID_i"
+    },
+    {
+      "id": "m_vm",
+      "label": "VM mediation",
+      "type": "formal_model",
+      "expression": "guest_OS -> emulator/VM -> host_resources"
+    },
+    {
+      "id": "m_rules",
+      "label": "Rule-based access",
+      "type": "formal_model",
+      "expression": "program -> rules -> permitted operations"
+    },
+    {
+      "id": "m_cap",
+      "label": "Capability authority",
+      "type": "formal_model",
+      "expression": "program + capability_token -> specific_right"
+    },
+    {
+      "id": "m_seccomp",
+      "label": "Strict seccomp allowlist",
+      "type": "formal_model",
+      "expression": "Allowed = {read, write, exit, sigreturn}"
+    },
+    {
+      "id": "m_sfi",
+      "label": "Software Fault Isolation",
+      "type": "formal_model",
+      "expression": "untrusted_native_code -> isolate(store/read/jump) -> memory_segments"
+    },
+    {
+      "id": "m_iframe",
+      "label": "Iframe sandbox",
+      "type": "formal_model",
+      "expression": "iframe_content -> sandbox_attribute -> restricted_execution"
+    },
+    {
+      "id": "m_malware",
+      "label": "Sandbox malware analysis",
+      "type": "formal_model",
+      "expression": "malware -> replicated_target -> controlled_execution -> observation"
+    },
+    {
+      "id": "claim_01",
+      "label": "Source claim 1",
+      "type": "source_claim",
+      "statement": "Sandbox separates running programs to mitigate spread of system failures and software vulnerabilities.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_02",
+      "label": "Source claim 2",
+      "type": "source_claim",
+      "statement": "Sandbox resources include storage and memory scratch space; network access, host inspection and input-device access are usually restricted.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_03",
+      "label": "Source claim 3",
+      "type": "source_claim",
+      "statement": "Sandboxing can be comparable to virtualization when providing a highly controlled environment.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_04",
+      "label": "Source claim 4",
+      "type": "source_claim",
+      "statement": "Sandboxing is implemented by executing software in a restricted operating-system environment.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_05",
+      "label": "Source claim 5",
+      "type": "source_claim",
+      "statement": "Linux application sandboxing uses seccomp, cgroups and namespaces.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_06",
+      "label": "Source claim 6",
+      "type": "source_claim",
+      "statement": "Android assigns each application its own Linux user ID for application sandboxing.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_07",
+      "label": "Source claim 7",
+      "type": "source_claim",
+      "statement": "GrapheneOS hardens app sandboxing and allows sandboxing every app as described.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_08",
+      "label": "Source claim 8",
+      "type": "source_claim",
+      "statement": "Apple App Sandbox is required for specified App Store apps and recommended for other signed apps.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_09",
+      "label": "Source claim 9",
+      "type": "source_claim",
+      "statement": "Virtual machines emulate a complete host computer and mediate host-resource access through the emulator.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_10",
+      "label": "Source claim 10",
+      "type": "source_claim",
+      "statement": "Jails restrict network access and filesystem namespace and are common in virtual hosting.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_11",
+      "label": "Source claim 11",
+      "type": "source_claim",
+      "statement": "Rule-based execution controls process spawning, code injection, network access and file/registry operations.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_12",
+      "label": "Source claim 12",
+      "type": "source_claim",
+      "statement": "Security researchers use sandboxing to analyze malware behavior in replicated target environments.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_13",
+      "label": "Source claim 13",
+      "type": "source_claim",
+      "statement": "Google Native Client sandboxes compiled C/C++ code in browsers independently of the user's OS.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_14",
+      "label": "Source claim 14",
+      "type": "source_claim",
+      "statement": "Capability systems use opaque tokens to grant specific rights and can operate at kernel or user-space levels.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_15",
+      "label": "Source claim 15",
+      "type": "source_claim",
+      "statement": "Strict seccomp permits only read, write, exit and sigreturn.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_16",
+      "label": "Source claim 16",
+      "type": "source_claim",
+      "statement": "HTML5 iframe sandboxing restricts embedded content.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_17",
+      "label": "Source claim 17",
+      "type": "source_claim",
+      "statement": "Java virtual machines sandbox untrusted applets/code.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_18",
+      "label": "Source claim 18",
+      "type": "source_claim",
+      "statement": ".NET CLR Code Access Security restricts untrusted code.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_19",
+      "label": "Source claim 19",
+      "type": "source_claim",
+      "statement": "SFI isolates store, read and jump assembly instructions into memory segments.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_20",
+      "label": "Source claim 20",
+      "type": "source_claim",
+      "statement": "Online judges and executable pastebins are sandbox use cases.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "d1",
+      "label": "Sandbox vs virtualization",
+      "type": "semantic_distinction",
+      "definition": "Sandboxing is a security mechanism; virtualization can provide a highly controlled environment but is broader."
+    },
+    {
+      "id": "d2",
+      "label": "Restricted OS vs full VM",
+      "type": "semantic_distinction",
+      "definition": "A restricted process environment is distinct from a VM emulating a complete host computer."
+    },
+    {
+      "id": "d3",
+      "label": "Kernel mechanism vs policy",
+      "type": "semantic_distinction",
+      "definition": "seccomp/cgroups/namespaces are listed Linux building blocks; rule-based frameworks impose access policy."
+    },
+    {
+      "id": "d4",
+      "label": "Android UID isolation",
+      "type": "semantic_distinction",
+      "definition": "The described Android sandbox uses per-application Linux user IDs."
+    },
+    {
+      "id": "d5",
+      "label": "Jail vs VM",
+      "type": "semantic_distinction",
+      "definition": "A jail is characterized by network and filesystem namespace restrictions rather than full hardware emulation."
+    },
+    {
+      "id": "d6",
+      "label": "Capabilities vs rules",
+      "type": "semantic_distinction",
+      "definition": "Capabilities grant rights through tokens; rule-based systems assign access levels through rules."
+    },
+    {
+      "id": "d7",
+      "label": "OS vs instruction isolation",
+      "type": "semantic_distinction",
+      "definition": "SFI constrains native instructions to memory segments."
+    },
+    {
+      "id": "d8",
+      "label": "Defense vs analysis",
+      "type": "semantic_distinction",
+      "definition": "Sandboxing can contain threats and provide a controlled observation environment."
+    },
+    {
+      "id": "d9",
+      "label": "Restriction vs absolute denial",
+      "type": "semantic_distinction",
+      "definition": "Resources may be disallowed or heavily restricted; sandboxing is not necessarily total denial."
+    },
+    {
+      "id": "d10",
+      "label": "Guest vs host",
+      "type": "semantic_distinction",
+      "definition": "The sandbox boundary separates guest execution from host resources."
+    },
+    {
+      "id": "d11",
+      "label": "Security mechanism vs application container",
+      "type": "semantic_distinction",
+      "definition": "The source presents sandboxing as a security mechanism and does not equate it with application containerization."
+    },
+    {
+      "id": "d12",
+      "label": "Trusted vs untrusted code",
+      "type": "semantic_distinction",
+      "definition": "Sandboxing is especially useful for unverified/untrusted code."
+    },
+    {
+      "id": "d13",
+      "label": "Browser active code vs unrestricted code",
+      "type": "semantic_distinction",
+      "definition": "Native Client and iframe sandboxing show active browser code can execute under restrictions."
+    },
+    {
+      "id": "d14",
+      "label": "Strict vs normal syscall surface",
+      "type": "semantic_distinction",
+      "definition": "Strict seccomp exposes only four named system calls."
+    },
+    {
+      "id": "d15",
+      "label": "Embedded vs top-level content",
+      "type": "semantic_distinction",
+      "definition": "HTML5 sandbox specifically constrains iframe content."
+    },
+    {
+      "id": "d16",
+      "label": "Platform-specific mechanisms",
+      "type": "semantic_distinction",
+      "definition": "Linux, Android, Apple, Windows, browser and language runtimes use different mechanisms."
+    },
+    {
+      "id": "d17",
+      "label": "Virtual-hosting jail",
+      "type": "semantic_distinction",
+      "definition": "Jails are noted as common in virtual hosting."
+    },
+    {
+      "id": "d18",
+      "label": "Fine-grained capability control",
+      "type": "semantic_distinction",
+      "definition": "Capability systems are explicitly described as fine-grained sandboxing."
+    },
+    {
+      "id": "p1",
+      "label": "Fundamentals",
+      "type": "learning_path",
+      "sequence": [
+        "sandbox",
+        "program_separation",
+        "controlled_resources",
+        "isolation"
+      ]
+    },
+    {
+      "id": "p2",
+      "label": "Linux",
+      "type": "learning_path",
+      "sequence": [
+        "linux",
+        "seccomp",
+        "cgroups",
+        "namespaces"
+      ]
+    },
+    {
+      "id": "p3",
+      "label": "Android",
+      "type": "learning_path",
+      "sequence": [
+        "android",
+        "linux_uid",
+        "grapheneos"
+      ]
+    },
+    {
+      "id": "p4",
+      "label": "Virtual machines",
+      "type": "learning_path",
+      "sequence": [
+        "vm",
+        "guest_os",
+        "emulator"
+      ]
+    },
+    {
+      "id": "p5",
+      "label": "Jails",
+      "type": "learning_path",
+      "sequence": [
+        "jail",
+        "virtual_hosting"
+      ]
+    },
+    {
+      "id": "p6",
+      "label": "Policy",
+      "type": "learning_path",
+      "sequence": [
+        "rules",
+        "selinux",
+        "apparmor"
+      ]
+    },
+    {
+      "id": "p7",
+      "label": "Malware analysis",
+      "type": "learning_path",
+      "sequence": [
+        "malware_analysis",
+        "malware",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "p8",
+      "label": "Capabilities",
+      "type": "learning_path",
+      "sequence": [
+        "capabilities",
+        "cap_token"
+      ]
+    },
+    {
+      "id": "p9",
+      "label": "Browser",
+      "type": "learning_path",
+      "sequence": [
+        "native_client",
+        "browser_html",
+        "iframe"
+      ]
+    },
+    {
+      "id": "p10",
+      "label": "Language runtimes",
+      "type": "learning_path",
+      "sequence": [
+        "java_vm",
+        "dotnet",
+        "cas"
+      ]
+    },
+    {
+      "id": "p11",
+      "label": "Native code",
+      "type": "learning_path",
+      "sequence": [
+        "sfi",
+        "memory_segments"
+      ]
+    },
+    {
+      "id": "p12",
+      "label": "Server execution",
+      "type": "learning_path",
+      "sequence": [
+        "online_judge",
+        "pastebin"
+      ]
+    },
+    {
+      "id": "p13",
+      "label": "Qubes",
+      "type": "learning_path",
+      "sequence": [
+        "qubes",
+        "xen",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "p14",
+      "label": "Platform comparison",
+      "type": "learning_path",
+      "sequence": [
+        "linux",
+        "android",
+        "apple",
+        "uac"
+      ]
+    },
+    {
+      "id": "mis1",
+      "label": "Sandbox means full VM",
+      "type": "misconception",
+      "correction": "The source treats VMs as one implementation and lists many non-VM mechanisms."
+    },
+    {
+      "id": "mis2",
+      "label": "Sandbox blocks everything",
+      "type": "misconception",
+      "correction": "The source describes controlled, disallowed, or heavily restricted resources."
+    },
+    {
+      "id": "mis3",
+      "label": "Sandbox is only for malware",
+      "type": "misconception",
+      "correction": "Online judges and pastebins are explicit non-malware use cases."
+    },
+    {
+      "id": "mis4",
+      "label": "Every app sandbox requires a VM",
+      "type": "misconception",
+      "correction": "Android's described mechanism uses Linux user IDs."
+    },
+    {
+      "id": "mis5",
+      "label": "Jail equals VM",
+      "type": "misconception",
+      "correction": "The source characterizes jails through network and filesystem namespace restrictions."
+    },
+    {
+      "id": "mis6",
+      "label": "Capabilities equal rule policies",
+      "type": "misconception",
+      "correction": "Tokens/capabilities grant specific rights; rule systems assign access levels."
+    },
+    {
+      "id": "mis7",
+      "label": "Sandboxing is only OS-level",
+      "type": "misconception",
+      "correction": "The source includes browser, runtime, capability and instruction-level mechanisms."
+    },
+    {
+      "id": "mis8",
+      "label": "SFI is just process isolation",
+      "type": "misconception",
+      "correction": "SFI isolates specified native-code instruction effects into memory segments."
+    },
+    {
+      "id": "q01",
+      "label": "How does a sandbox limit guest resources?",
+      "type": "question"
+    },
+    {
+      "id": "q02",
+      "label": "Why restrict network and host inspection?",
+      "type": "question"
+    },
+    {
+      "id": "q03",
+      "label": "How do seccomp, cgroups and namespaces compose?",
+      "type": "question"
+    },
+    {
+      "id": "q04",
+      "label": "How does Android use Linux user IDs?",
+      "type": "question"
+    },
+    {
+      "id": "q05",
+      "label": "What does GrapheneOS change?",
+      "type": "question"
+    },
+    {
+      "id": "q06",
+      "label": "How does a VM mediate host access?",
+      "type": "question"
+    },
+    {
+      "id": "q07",
+      "label": "What distinguishes a jail from a VM?",
+      "type": "question"
+    },
+    {
+      "id": "q08",
+      "label": "How does rule-based execution control code injection?",
+      "type": "question"
+    },
+    {
+      "id": "q09",
+      "label": "Why is sandboxing useful for malware analysis?",
+      "type": "question"
+    },
+    {
+      "id": "q10",
+      "label": "How do capability tokens grant fine-grained rights?",
+      "type": "question"
+    },
+    {
+      "id": "q11",
+      "label": "What system calls does strict seccomp allow?",
+      "type": "question"
+    },
+    {
+      "id": "q12",
+      "label": "How does iframe sandboxing work?",
+      "type": "question"
+    },
+    {
+      "id": "q13",
+      "label": "How does Java sandbox untrusted code?",
+      "type": "question"
+    },
+    {
+      "id": "q14",
+      "label": "How does .NET Code Access Security restrict code?",
+      "type": "question"
+    },
+    {
+      "id": "q15",
+      "label": "How does SFI isolate native code?",
+      "type": "question"
+    },
+    {
+      "id": "q16",
+      "label": "Why use sandboxes for online judges?",
+      "type": "question"
+    },
+    {
+      "id": "q17",
+      "label": "Why use sandboxes for executable pastebins?",
+      "type": "question"
+    },
+    {
+      "id": "q18",
+      "label": "How are sandboxing and virtualization related?",
+      "type": "question"
+    },
+    {
+      "id": "x01",
+      "label": "Expand Linux seccomp/cgroups/namespaces.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x02",
+      "label": "Expand Android UID sandboxing and GrapheneOS hardening.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x03",
+      "label": "Expand Apple App Sandbox and signed-app restrictions.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x04",
+      "label": "Expand Windows UAC process/access controls.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x05",
+      "label": "Expand capability systems such as Capsicum and pledge.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x06",
+      "label": "Expand browser process/iframe sandboxing.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x07",
+      "label": "Expand VM sandbox boundaries and escape resistance.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x08",
+      "label": "Expand FreeBSD jail semantics.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x09",
+      "label": "Expand SELinux/AppArmor policy models.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x10",
+      "label": "Expand malware-analysis sandbox architecture.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x11",
+      "label": "Expand SFI instrumentation.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x12",
+      "label": "Expand Java/.NET runtime sandbox models.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x13",
+      "label": "Expand online-judge sandbox architecture.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x14",
+      "label": "Connect sandboxing to container/OCI isolation.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "x15",
+      "label": "Expand Qubes OS Xen compartmentalization.",
+      "type": "expansion_target"
+    },
+    {
+      "id": "ev1993",
+      "label": "1993 — Efficient Software-Based Fault Isolation",
+      "type": "historical_event"
+    },
+    {
+      "id": "ev1996",
+      "label": "1996 — Secure Environment for Untrusted Helper Applications",
+      "type": "historical_event"
+    },
+    {
+      "id": "ev2001",
+      "label": "2001 — Sandboxing Applications",
+      "type": "historical_event"
+    },
+    {
+      "id": "ev2011",
+      "label": "2011 — HTML5 sandbox discussion",
+      "type": "historical_event"
+    },
+    {
+      "id": "ev2020",
+      "label": "2020 — Google Sandboxed API",
+      "type": "historical_event"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "sandbox",
+      "target": "program_separation",
+      "relation": "provides"
+    },
+    {
+      "source": "sandbox",
+      "target": "failure_containment",
+      "relation": "mitigates"
+    },
+    {
+      "source": "sandbox",
+      "target": "vulnerability_containment",
+      "relation": "mitigates"
+    },
+    {
+      "source": "sandbox",
+      "target": "untrusted_code",
+      "relation": "contains"
+    },
+    {
+      "source": "sandbox",
+      "target": "guest_program",
+      "relation": "restricts"
+    },
+    {
+      "source": "sandbox",
+      "target": "controlled_resources",
+      "relation": "controls"
+    },
+    {
+      "source": "controlled_resources",
+      "target": "storage_scratch",
+      "relation": "includes"
+    },
+    {
+      "source": "controlled_resources",
+      "target": "memory_scratch",
+      "relation": "includes"
+    },
+    {
+      "source": "controlled_resources",
+      "target": "file_descriptors",
+      "relation": "includes"
+    },
+    {
+      "source": "controlled_resources",
+      "target": "filesystem_space",
+      "relation": "includes"
+    },
+    {
+      "source": "sandbox",
+      "target": "network_access",
+      "relation": "disallows_or_heavily_restricts"
+    },
+    {
+      "source": "sandbox",
+      "target": "host_inspection",
+      "relation": "disallows_or_heavily_restricts"
+    },
+    {
+      "source": "sandbox",
+      "target": "input_devices",
+      "relation": "disallows_or_heavily_restricts"
+    },
+    {
+      "source": "sandbox",
+      "target": "host_machine",
+      "relation": "protects"
+    },
+    {
+      "source": "sandbox",
+      "target": "host_os",
+      "relation": "protects"
+    },
+    {
+      "source": "sandbox",
+      "target": "untrusted_code",
+      "relation": "may_include",
+      "examples": [
+        "unverified third parties",
+        "suppliers",
+        "users",
+        "websites"
+      ]
+    },
+    {
+      "source": "sandboxing",
+      "target": "virtualization",
+      "relation": "comparable_to",
+      "qualification": "when providing a highly controlled environment"
+    },
+    {
+      "source": "sandbox",
+      "target": "restricted_os",
+      "relation": "implemented_by"
+    },
+    {
+      "source": "restricted_os",
+      "target": "guest_program",
+      "relation": "constrains"
+    },
+    {
+      "source": "guest_program",
+      "target": "host_machine",
+      "relation": "separated_from"
+    },
+    {
+      "source": "guest_program",
+      "target": "host_os",
+      "relation": "separated_from"
+    },
+    {
+      "source": "untrusted_code",
+      "target": "malware",
+      "relation": "may_be"
+    },
+    {
+      "source": "malware",
+      "target": "host_machine",
+      "relation": "could_harm"
+    },
+    {
+      "source": "sandbox",
+      "target": "malware",
+      "relation": "enables_analysis_without_host_harm"
+    },
+    {
+      "source": "linux",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "linux",
+      "target": "seccomp",
+      "relation": "built_on"
+    },
+    {
+      "source": "linux",
+      "target": "cgroups",
+      "relation": "built_on"
+    },
+    {
+      "source": "linux",
+      "target": "namespaces",
+      "relation": "built_on"
+    },
+    {
+      "source": "systemd",
+      "target": "linux",
+      "relation": "uses"
+    },
+    {
+      "source": "chrome",
+      "target": "linux",
+      "relation": "uses"
+    },
+    {
+      "source": "firefox",
+      "target": "linux",
+      "relation": "uses"
+    },
+    {
+      "source": "firejail",
+      "target": "linux",
+      "relation": "uses"
+    },
+    {
+      "source": "android",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "android",
+      "target": "linux_uid",
+      "relation": "assigns_each_app"
+    },
+    {
+      "source": "grapheneos",
+      "target": "android",
+      "relation": "hardens"
+    },
+    {
+      "source": "grapheneos",
+      "target": "sandbox",
+      "relation": "extends_to",
+      "scope": "every app"
+    },
+    {
+      "source": "apple",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "apple",
+      "target": "mac_store",
+      "relation": "required_for"
+    },
+    {
+      "source": "apple",
+      "target": "ios",
+      "relation": "required_for"
+    },
+    {
+      "source": "apple",
+      "target": "sandbox",
+      "relation": "recommended_for",
+      "scope": "other signed apps"
+    },
+    {
+      "source": "uac",
+      "target": "sandbox",
+      "relation": "implements",
+      "qualification": "source describes a low-mode process running"
+    },
+    {
+      "source": "google_api",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "vm",
+      "target": "sandbox",
+      "relation": "can_implement"
+    },
+    {
+      "source": "vm",
+      "target": "guest_os",
+      "relation": "hosts"
+    },
+    {
+      "source": "vm",
+      "target": "emulator",
+      "relation": "uses_to_mediate"
+    },
+    {
+      "source": "guest_os",
+      "target": "host_machine",
+      "relation": "accesses_through",
+      "mediator": "emulator"
+    },
+    {
+      "source": "guest_os",
+      "target": "host_os",
+      "relation": "does_not_function_natively_on"
+    },
+    {
+      "source": "jail",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "jail",
+      "target": "network_access",
+      "relation": "restricts"
+    },
+    {
+      "source": "jail",
+      "target": "filesystem_space",
+      "relation": "restricts"
+    },
+    {
+      "source": "jail",
+      "target": "virtual_hosting",
+      "relation": "commonly_used_for"
+    },
+    {
+      "source": "rules",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "selinux",
+      "target": "rules",
+      "relation": "implements"
+    },
+    {
+      "source": "apparmor",
+      "target": "rules",
+      "relation": "implements"
+    },
+    {
+      "source": "rules",
+      "target": "guest_program",
+      "relation": "controls"
+    },
+    {
+      "source": "rules",
+      "target": "network_access",
+      "relation": "controls"
+    },
+    {
+      "source": "rules",
+      "target": "filesystem_space",
+      "relation": "controls"
+    },
+    {
+      "source": "rules",
+      "target": "host_inspection",
+      "relation": "controls"
+    },
+    {
+      "source": "rules",
+      "target": "sandbox",
+      "relation": "assigns_access_levels_by_rules"
+    },
+    {
+      "source": "rules",
+      "target": "malware",
+      "relation": "reduces_infection_opportunities_for"
+    },
+    {
+      "source": "rules",
+      "target": "sandbox",
+      "relation": "controls",
+      "scope": "process start/spawn, code injection, network, file/registry read-write"
+    },
+    {
+      "source": "malware_analysis",
+      "target": "sandbox",
+      "relation": "relies_on"
+    },
+    {
+      "source": "malware_analysis",
+      "target": "malware",
+      "relation": "analyzes_behavior_of"
+    },
+    {
+      "source": "malware_analysis",
+      "target": "host_machine",
+      "relation": "models_or_replicates_target"
+    },
+    {
+      "source": "malware_analysis",
+      "target": "sandbox",
+      "relation": "supports_services"
+    },
+    {
+      "source": "native_client",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "native_client",
+      "target": "browser_html",
+      "relation": "runs_compiled_C_CPP_code_in"
+    },
+    {
+      "source": "native_client",
+      "target": "host_os",
+      "relation": "independent_of"
+    },
+    {
+      "source": "capabilities",
+      "target": "sandbox",
+      "relation": "provides_fine_grained_form"
+    },
+    {
+      "source": "capabilities",
+      "target": "cap_token",
+      "relation": "uses"
+    },
+    {
+      "source": "cap_token",
+      "target": "guest_program",
+      "relation": "grants_specific_rights_to"
+    },
+    {
+      "source": "capabilities",
+      "target": "sandbox",
+      "relation": "operates_at",
+      "levels": [
+        "kernel",
+        "user-space"
+      ]
+    },
+    {
+      "source": "browser_html",
+      "target": "capabilities",
+      "relation": "example_of"
+    },
+    {
+      "source": "seccomp_strict",
+      "target": "seccomp",
+      "relation": "strict_mode_of"
+    },
+    {
+      "source": "seccomp_strict",
+      "target": "sys_read",
+      "relation": "allows"
+    },
+    {
+      "source": "seccomp_strict",
+      "target": "sys_write",
+      "relation": "allows"
+    },
+    {
+      "source": "seccomp_strict",
+      "target": "sys_exit",
+      "relation": "allows"
+    },
+    {
+      "source": "seccomp_strict",
+      "target": "sys_sigreturn",
+      "relation": "allows"
+    },
+    {
+      "source": "seccomp_strict",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "iframe",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "iframe",
+      "target": "guest_program",
+      "relation": "restricts",
+      "scope": "embedded iframe content"
+    },
+    {
+      "source": "java_vm",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "java_vm",
+      "target": "java_applet",
+      "relation": "restricts"
+    },
+    {
+      "source": "java_vm",
+      "target": "untrusted_code",
+      "relation": "restricts"
+    },
+    {
+      "source": "dotnet",
+      "target": "cas",
+      "relation": "provides"
+    },
+    {
+      "source": "cas",
+      "target": "untrusted_code",
+      "relation": "restricts"
+    },
+    {
+      "source": "dotnet",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "sfi",
+      "target": "sandbox",
+      "relation": "implements"
+    },
+    {
+      "source": "sfi",
+      "target": "untrusted_code",
+      "relation": "sandboxes"
+    },
+    {
+      "source": "sfi",
+      "target": "memory_segments",
+      "relation": "isolates_into"
+    },
+    {
+      "source": "sfi",
+      "target": "asm_store",
+      "relation": "isolates"
+    },
+    {
+      "source": "sfi",
+      "target": "asm_read",
+      "relation": "isolates"
+    },
+    {
+      "source": "sfi",
+      "target": "asm_jump",
+      "relation": "isolates"
+    },
+    {
+      "source": "sfi",
+      "target": "isolation",
+      "relation": "enforces"
+    },
+    {
+      "source": "online_judge",
+      "target": "sandbox",
+      "relation": "uses"
+    },
+    {
+      "source": "online_judge",
+      "target": "untrusted_code",
+      "relation": "executes"
+    },
+    {
+      "source": "online_judge",
+      "target": "host_machine",
+      "relation": "protects"
+    },
+    {
+      "source": "pastebin",
+      "target": "sandbox",
+      "relation": "uses"
+    },
+    {
+      "source": "pastebin",
+      "target": "untrusted_code",
+      "relation": "executes"
+    },
+    {
+      "source": "pastebin",
+      "target": "host_machine",
+      "relation": "protects"
+    },
+    {
+      "source": "qubes",
+      "target": "xen",
+      "relation": "powered_by"
+    },
+    {
+      "source": "qubes",
+      "target": "sandbox",
+      "relation": "uses_aggressive_sandboxing"
+    },
+    {
+      "source": "sandboxie",
+      "target": "sandbox",
+      "relation": "is_a"
+    },
+    {
+      "source": "tor",
+      "target": "sandbox",
+      "relation": "listed_with"
+    },
+    {
+      "source": "test_bench",
+      "target": "sandbox",
+      "relation": "listed_with"
+    },
+    {
+      "source": "claim_01",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_02",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_03",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_04",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_05",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_06",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_07",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_08",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_09",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_10",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_11",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_12",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_13",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_14",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_15",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_16",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_17",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_18",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_19",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "claim_20",
+      "target": "sandbox",
+      "relation": "supports"
+    },
+    {
+      "source": "person_robert_wahbe",
+      "target": "ev1993",
+      "relation": "associated_with"
+    },
+    {
+      "source": "person_ian_goldberg",
+      "target": "ev1996",
+      "relation": "associated_with"
+    },
+    {
+      "source": "person_david_wagner",
+      "target": "ev1996",
+      "relation": "associated_with"
+    },
+    {
+      "source": "person_randi_thomas",
+      "target": "ev1996",
+      "relation": "associated_with"
+    },
+    {
+      "source": "person_eric_brewer",
+      "target": "ev1996",
+      "relation": "associated_with"
+    },
+    {
+      "source": "r1",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r2",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r3",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r4",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r5",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r6",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r7",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r8",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r9",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r10",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r11",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r12",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r13",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r14",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r15",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "r16",
+      "target": "sandbox",
+      "relation": "source_reference"
+    },
+    {
+      "source": "sandbox",
+      "target": "virtualization",
+      "relation": "related_to"
+    },
+    {
+      "source": "sandbox",
+      "target": "isolation",
+      "relation": "depends_on"
+    },
+    {
+      "source": "vm",
+      "target": "virtualization",
+      "relation": "implements"
+    },
+    {
+      "source": "jail",
+      "target": "isolation",
+      "relation": "implements"
+    },
+    {
+      "source": "linux",
+      "target": "sandbox",
+      "relation": "platform_implementation"
+    },
+    {
+      "source": "qubes",
+      "target": "sandbox",
+      "relation": "system_level_use"
+    }
+  ],
+  "rich_semantic_relationships": [
+    {
+      "id": "rich_001",
+      "source": "sandbox",
+      "target": "program_separation",
+      "relation": "causes_isolation",
+      "mechanism": "Execution occurs inside a restricted environment with controlled resources and host-facing operations.",
+      "effect": "Reduces the ability of failures and vulnerabilities to spread.",
+      "conditions": "Strength depends on enforcement of the sandbox boundary.",
+      "inverse_or_converse": "Broader host access weakens separation."
+    },
+    {
+      "id": "rich_002",
+      "source": "sandbox",
+      "target": "host_machine",
+      "relation": "protects",
+      "mechanism": "Network, host inspection, input devices and other resources are disallowed or heavily restricted.",
+      "effect": "Limits the guest's ability to harm the host.",
+      "conditions": "Requires effective resource/access enforcement.",
+      "inverse_or_converse": "Unrestricted host access weakens containment."
+    },
+    {
+      "id": "rich_003",
+      "source": "linux",
+      "target": "seccomp",
+      "relation": "builds_boundary_with",
+      "mechanism": "System-call filtering is one of the Linux kernel mechanisms used for application sandboxing.",
+      "effect": "Reduces the kernel interface exposed to a sandboxed application.",
+      "conditions": "The source explicitly combines it with cgroups and namespaces.",
+      "inverse_or_converse": "A broader syscall surface increases available operations."
+    },
+    {
+      "id": "rich_004",
+      "source": "linux",
+      "target": "cgroups",
+      "relation": "builds_boundary_with",
+      "mechanism": "cgroups are a Linux kernel feature used as part of application sandboxing.",
+      "effect": "Contributes resource control.",
+      "conditions": "Source does not specify a complete cgroup policy.",
+      "inverse_or_converse": "Broader resource allowance weakens containment."
+    },
+    {
+      "id": "rich_005",
+      "source": "linux",
+      "target": "namespaces",
+      "relation": "builds_boundary_with",
+      "mechanism": "Linux namespaces are a kernel feature used as part of application sandboxing.",
+      "effect": "Contributes process/environment separation.",
+      "conditions": "Used with seccomp and cgroups.",
+      "inverse_or_converse": "Broader namespace visibility weakens isolation."
+    },
+    {
+      "id": "rich_006",
+      "source": "android",
+      "target": "linux_uid",
+      "relation": "implements_isolation_by",
+      "mechanism": "Each application receives its own Linux user ID.",
+      "effect": "Creates application-level OS identity separation.",
+      "conditions": "Mechanism stated directly by source.",
+      "inverse_or_converse": "Shared identity would broaden permissions."
+    },
+    {
+      "id": "rich_007",
+      "source": "grapheneos",
+      "target": "android",
+      "relation": "hardens",
+      "mechanism": "Adds hardening to Android app sandboxing and permits sandboxing every app as described.",
+      "effect": "Increases sandbox scope/hardening.",
+      "conditions": "Source contrasts this with stock Android.",
+      "scope": "every app"
+    },
+    {
+      "id": "rich_008",
+      "source": "vm",
+      "target": "guest_os",
+      "relation": "isolates",
+      "mechanism": "A virtual machine emulates a complete host computer so a conventional guest OS can boot and run.",
+      "effect": "Guest execution is separated from native host execution.",
+      "conditions": "Host-resource access is mediated through the emulator.",
+      "inverse_or_converse": "Direct native host access bypasses the described mediation."
+    },
+    {
+      "id": "rich_009",
+      "source": "guest_os",
+      "target": "host_machine",
+      "relation": "accesses_through",
+      "mechanism": "Host resources are accessed through the emulator rather than natively.",
+      "effect": "Creates a mediated host/guest boundary.",
+      "conditions": "Depends on the emulator/VM layer.",
+      "inverse_or_converse": "Direct access bypasses mediation."
+    },
+    {
+      "id": "rich_010",
+      "source": "jail",
+      "target": "sandbox",
+      "relation": "restricts",
+      "mechanism": "Network-access restrictions and a restricted filesystem namespace define the jail boundary.",
+      "effect": "Limits network and filesystem reach.",
+      "conditions": "Source notes common use in virtual hosting.",
+      "inverse_or_converse": "Removing restrictions expands reach."
+    },
+    {
+      "id": "rich_011",
+      "source": "rules",
+      "target": "guest_program",
+      "relation": "assigns_access",
+      "mechanism": "Predetermined rules govern process spawning, code injection, network use and file/registry access.",
+      "effect": "Programs receive constrained access levels.",
+      "conditions": "SELinux and AppArmor are cited implementations.",
+      "inverse_or_converse": "More permissive rules increase authority."
+    },
+    {
+      "id": "rich_012",
+      "source": "malware_analysis",
+      "target": "sandbox",
+      "relation": "uses_as_observation_boundary",
+      "mechanism": "A sandbox mimics or replicates a target desktop and contains malware execution.",
+      "effect": "Researchers can evaluate malware behavior without exposing the real target host.",
+      "conditions": "A nonrepresentative environment may not reproduce target behavior.",
+      "scope": "security research"
+    },
+    {
+      "id": "rich_013",
+      "source": "capabilities",
+      "target": "cap_token",
+      "relation": "grants_authority",
+      "mechanism": "Opaque tokens/capabilities confer specific rights.",
+      "effect": "Enables fine-grained authority.",
+      "conditions": "Can operate at kernel or user-space levels.",
+      "inverse_or_converse": "Fewer capabilities reduce permitted actions."
+    },
+    {
+      "id": "rich_014",
+      "source": "seccomp_strict",
+      "target": "guest_program",
+      "relation": "limits_syscalls",
+      "mechanism": "Only read(), write(), exit(), and sigreturn() are permitted.",
+      "effect": "Dramatically reduces the system-call surface.",
+      "conditions": "The allowlist is exactly as stated in the source.",
+      "inverse_or_converse": "Operations requiring other calls cannot execute."
+    },
+    {
+      "id": "rich_015",
+      "source": "iframe",
+      "target": "guest_program",
+      "relation": "restricts_embedded_content",
+      "mechanism": "The HTML5 sandbox attribute restricts iframe content.",
+      "effect": "Embedded content runs under a constrained browser context.",
+      "conditions": "Scope is embedded content.",
+      "inverse_or_converse": "Removing the attribute removes those restrictions."
+    },
+    {
+      "id": "rich_016",
+      "source": "sfi",
+      "target": "memory_segments",
+      "relation": "isolates_instruction_effects",
+      "mechanism": "Store, read and jump assembly instructions are sandboxed into isolated memory segments.",
+      "effect": "Constrains untrusted native code to designated memory regions.",
+      "conditions": "Mechanism described as Software Fault Isolation.",
+      "inverse_or_converse": "Broader instruction reach weakens the isolation."
+    },
+    {
+      "id": "rich_017",
+      "source": "online_judge",
+      "target": "sandbox",
+      "relation": "contains_untrusted_execution",
+      "mechanism": "Contest programs execute in a constrained server environment.",
+      "effect": "Submitted programs can be tested while limiting impact on the judge host.",
+      "conditions": "Source explicitly lists online judges as a use case.",
+      "inverse_or_converse": "Unrestricted execution increases server risk."
+    },
+    {
+      "id": "rich_018",
+      "source": "pastebin",
+      "target": "sandbox",
+      "relation": "contains_server_side_code",
+      "mechanism": "Pasted code snippets execute on a server inside a sandbox.",
+      "effect": "User-supplied code can run while limiting server impact.",
+      "conditions": "Source explicitly lists executable pastebins.",
+      "inverse_or_converse": "Unrestricted execution increases server risk."
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "m_boundary",
+      "name": "Sandbox boundary",
+      "expression": "guest_program -> controlled_resources -> limited_host_access"
+    },
+    {
+      "id": "m_linux",
+      "name": "Linux sandbox composition",
+      "expression": "Linux_sandbox = seccomp + cgroups + namespaces"
+    },
+    {
+      "id": "m_android",
+      "name": "Android identity isolation",
+      "expression": "application_i -> unique Linux UID_i"
+    },
+    {
+      "id": "m_vm",
+      "name": "VM mediation",
+      "expression": "guest_OS -> emulator/VM -> host_resources"
+    },
+    {
+      "id": "m_rules",
+      "name": "Rule-based access",
+      "expression": "program -> rules -> permitted operations"
+    },
+    {
+      "id": "m_cap",
+      "name": "Capability authority",
+      "expression": "program + capability_token -> specific_right"
+    },
+    {
+      "id": "m_seccomp",
+      "name": "Strict seccomp allowlist",
+      "expression": "Allowed = {read, write, exit, sigreturn}"
+    },
+    {
+      "id": "m_sfi",
+      "name": "Software Fault Isolation",
+      "expression": "untrusted_native_code -> isolate(store/read/jump) -> memory_segments"
+    },
+    {
+      "id": "m_iframe",
+      "name": "Iframe sandbox",
+      "expression": "iframe_content -> sandbox_attribute -> restricted_execution"
+    },
+    {
+      "id": "m_malware",
+      "name": "Sandbox malware analysis",
+      "expression": "malware -> replicated_target -> controlled_execution -> observation"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_01",
+      "statement": "Sandbox separates running programs to mitigate spread of system failures and software vulnerabilities.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_02",
+      "statement": "Sandbox resources include storage and memory scratch space; network access, host inspection and input-device access are usually restricted.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_03",
+      "statement": "Sandboxing can be comparable to virtualization when providing a highly controlled environment.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_04",
+      "statement": "Sandboxing is implemented by executing software in a restricted operating-system environment.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_05",
+      "statement": "Linux application sandboxing uses seccomp, cgroups and namespaces.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_06",
+      "statement": "Android assigns each application its own Linux user ID for application sandboxing.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_07",
+      "statement": "GrapheneOS hardens app sandboxing and allows sandboxing every app as described.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_08",
+      "statement": "Apple App Sandbox is required for specified App Store apps and recommended for other signed apps.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_09",
+      "statement": "Virtual machines emulate a complete host computer and mediate host-resource access through the emulator.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_10",
+      "statement": "Jails restrict network access and filesystem namespace and are common in virtual hosting.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_11",
+      "statement": "Rule-based execution controls process spawning, code injection, network access and file/registry operations.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_12",
+      "statement": "Security researchers use sandboxing to analyze malware behavior in replicated target environments.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_13",
+      "statement": "Google Native Client sandboxes compiled C/C++ code in browsers independently of the user's OS.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_14",
+      "statement": "Capability systems use opaque tokens to grant specific rights and can operate at kernel or user-space levels.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_15",
+      "statement": "Strict seccomp permits only read, write, exit and sigreturn.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_16",
+      "statement": "HTML5 iframe sandboxing restricts embedded content.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_17",
+      "statement": "Java virtual machines sandbox untrusted applets/code.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_18",
+      "statement": ".NET CLR Code Access Security restricts untrusted code.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_19",
+      "statement": "SFI isolates store, read and jump assembly instructions into memory segments.",
+      "source": "user-provided Wikipedia text"
+    },
+    {
+      "id": "claim_20",
+      "statement": "Online judges and executable pastebins are sandbox use cases.",
+      "source": "user-provided Wikipedia text"
+    }
+  ],
+  "references": [
+    {
+      "id": "r1",
+      "title": "Proofpoint — What Is a Sandbox Environment?",
+      "year": 2023
+    },
+    {
+      "id": "r2",
+      "title": "Goldberg, Wagner, Thomas & Brewer — A Secure Environment for Untrusted Helper Applications",
+      "year": 1996
+    },
+    {
+      "id": "r3",
+      "title": "Geier — How to Keep Your PC Safe With Sandboxing",
+      "year": 2012
+    },
+    {
+      "id": "r4",
+      "title": "Sandboxing Applications",
+      "year": 2001
+    },
+    {
+      "id": "r5",
+      "title": "Android Open Source Project — Application Sandbox",
+      "year": null
+    },
+    {
+      "id": "r6",
+      "title": "Wilde — GrapheneOS review",
+      "year": 2024
+    },
+    {
+      "id": "r7",
+      "title": "Apple — About App Sandbox",
+      "year": null
+    },
+    {
+      "id": "r8",
+      "title": "Apple Support — Security of runtime process in iOS and iPadOS",
+      "year": null
+    },
+    {
+      "id": "r9",
+      "title": "Microsoft Learn — How User Account Control works",
+      "year": null
+    },
+    {
+      "id": "r10",
+      "title": "Google — google/sandboxed-api",
+      "year": 2020
+    },
+    {
+      "id": "r11",
+      "title": "Auto-Sandboxing secure system",
+      "year": null
+    },
+    {
+      "id": "r12",
+      "title": "Computer System Security and Access Controls",
+      "year": 1991
+    },
+    {
+      "id": "r13",
+      "title": "Native Client Sandbox — Untrusted x86 Native Code",
+      "year": null
+    },
+    {
+      "id": "r14",
+      "title": "Welcome to Native Client",
+      "year": null
+    },
+    {
+      "id": "r15",
+      "title": "Internet Explorer Team Blog — HTML5 Sandbox",
+      "year": 2011
+    },
+    {
+      "id": "r16",
+      "title": "Wahbe — Efficient Software-Based Fault Isolation",
+      "year": 1993
+    }
+  ],
+  "people": [
+    {
+      "id": "person_ian_goldberg",
+      "name": "Ian Goldberg",
+      "year": 1996
+    },
+    {
+      "id": "person_david_wagner",
+      "name": "David Wagner",
+      "year": 1996
+    },
+    {
+      "id": "person_randi_thomas",
+      "name": "Randi Thomas",
+      "year": 1996
+    },
+    {
+      "id": "person_eric_brewer",
+      "name": "Eric Brewer",
+      "year": 1996
+    },
+    {
+      "id": "person_robert_wahbe",
+      "name": "Robert Wahbe",
+      "year": 1993
+    },
+    {
+      "id": "person_eric_geier",
+      "name": "Eric Geier",
+      "year": 2012
+    },
+    {
+      "id": "person_daniel_wilde",
+      "name": "Daniel Wilde",
+      "year": 2024
+    }
+  ],
+  "historical_events": [
+    {
+      "id": "ev1993",
+      "label": "1993 — Efficient Software-Based Fault Isolation"
+    },
+    {
+      "id": "ev1996",
+      "label": "1996 — Secure Environment for Untrusted Helper Applications"
+    },
+    {
+      "id": "ev2001",
+      "label": "2001 — Sandboxing Applications"
+    },
+    {
+      "id": "ev2011",
+      "label": "2011 — HTML5 sandbox discussion"
+    },
+    {
+      "id": "ev2020",
+      "label": "2020 — Google Sandboxed API"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "label": "Sandbox vs virtualization",
+      "description": "Sandboxing is a security mechanism; virtualization can provide a highly controlled environment but is broader."
+    },
+    {
+      "id": "d2",
+      "label": "Restricted OS vs full VM",
+      "description": "A restricted process environment is distinct from a VM emulating a complete host computer."
+    },
+    {
+      "id": "d3",
+      "label": "Kernel mechanism vs policy",
+      "description": "seccomp/cgroups/namespaces are listed Linux building blocks; rule-based frameworks impose access policy."
+    },
+    {
+      "id": "d4",
+      "label": "Android UID isolation",
+      "description": "The described Android sandbox uses per-application Linux user IDs."
+    },
+    {
+      "id": "d5",
+      "label": "Jail vs VM",
+      "description": "A jail is characterized by network and filesystem namespace restrictions rather than full hardware emulation."
+    },
+    {
+      "id": "d6",
+      "label": "Capabilities vs rules",
+      "description": "Capabilities grant rights through tokens; rule-based systems assign access levels through rules."
+    },
+    {
+      "id": "d7",
+      "label": "OS vs instruction isolation",
+      "description": "SFI constrains native instructions to memory segments."
+    },
+    {
+      "id": "d8",
+      "label": "Defense vs analysis",
+      "description": "Sandboxing can contain threats and provide a controlled observation environment."
+    },
+    {
+      "id": "d9",
+      "label": "Restriction vs absolute denial",
+      "description": "Resources may be disallowed or heavily restricted; sandboxing is not necessarily total denial."
+    },
+    {
+      "id": "d10",
+      "label": "Guest vs host",
+      "description": "The sandbox boundary separates guest execution from host resources."
+    },
+    {
+      "id": "d11",
+      "label": "Security mechanism vs application container",
+      "description": "The source presents sandboxing as a security mechanism and does not equate it with application containerization."
+    },
+    {
+      "id": "d12",
+      "label": "Trusted vs untrusted code",
+      "description": "Sandboxing is especially useful for unverified/untrusted code."
+    },
+    {
+      "id": "d13",
+      "label": "Browser active code vs unrestricted code",
+      "description": "Native Client and iframe sandboxing show active browser code can execute under restrictions."
+    },
+    {
+      "id": "d14",
+      "label": "Strict vs normal syscall surface",
+      "description": "Strict seccomp exposes only four named system calls."
+    },
+    {
+      "id": "d15",
+      "label": "Embedded vs top-level content",
+      "description": "HTML5 sandbox specifically constrains iframe content."
+    },
+    {
+      "id": "d16",
+      "label": "Platform-specific mechanisms",
+      "description": "Linux, Android, Apple, Windows, browser and language runtimes use different mechanisms."
+    },
+    {
+      "id": "d17",
+      "label": "Virtual-hosting jail",
+      "description": "Jails are noted as common in virtual hosting."
+    },
+    {
+      "id": "d18",
+      "label": "Fine-grained capability control",
+      "description": "Capability systems are explicitly described as fine-grained sandboxing."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "p1",
+      "label": "Fundamentals",
+      "sequence": [
+        "sandbox",
+        "program_separation",
+        "controlled_resources",
+        "isolation"
+      ]
+    },
+    {
+      "id": "p2",
+      "label": "Linux",
+      "sequence": [
+        "linux",
+        "seccomp",
+        "cgroups",
+        "namespaces"
+      ]
+    },
+    {
+      "id": "p3",
+      "label": "Android",
+      "sequence": [
+        "android",
+        "linux_uid",
+        "grapheneos"
+      ]
+    },
+    {
+      "id": "p4",
+      "label": "Virtual machines",
+      "sequence": [
+        "vm",
+        "guest_os",
+        "emulator"
+      ]
+    },
+    {
+      "id": "p5",
+      "label": "Jails",
+      "sequence": [
+        "jail",
+        "virtual_hosting"
+      ]
+    },
+    {
+      "id": "p6",
+      "label": "Policy",
+      "sequence": [
+        "rules",
+        "selinux",
+        "apparmor"
+      ]
+    },
+    {
+      "id": "p7",
+      "label": "Malware analysis",
+      "sequence": [
+        "malware_analysis",
+        "malware",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "p8",
+      "label": "Capabilities",
+      "sequence": [
+        "capabilities",
+        "cap_token"
+      ]
+    },
+    {
+      "id": "p9",
+      "label": "Browser",
+      "sequence": [
+        "native_client",
+        "browser_html",
+        "iframe"
+      ]
+    },
+    {
+      "id": "p10",
+      "label": "Language runtimes",
+      "sequence": [
+        "java_vm",
+        "dotnet",
+        "cas"
+      ]
+    },
+    {
+      "id": "p11",
+      "label": "Native code",
+      "sequence": [
+        "sfi",
+        "memory_segments"
+      ]
+    },
+    {
+      "id": "p12",
+      "label": "Server execution",
+      "sequence": [
+        "online_judge",
+        "pastebin"
+      ]
+    },
+    {
+      "id": "p13",
+      "label": "Qubes",
+      "sequence": [
+        "qubes",
+        "xen",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "p14",
+      "label": "Platform comparison",
+      "sequence": [
+        "linux",
+        "android",
+        "apple",
+        "uac"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mis1",
+      "statement": "Sandbox means full VM",
+      "correction": "The source treats VMs as one implementation and lists many non-VM mechanisms."
+    },
+    {
+      "id": "mis2",
+      "statement": "Sandbox blocks everything",
+      "correction": "The source describes controlled, disallowed, or heavily restricted resources."
+    },
+    {
+      "id": "mis3",
+      "statement": "Sandbox is only for malware",
+      "correction": "Online judges and pastebins are explicit non-malware use cases."
+    },
+    {
+      "id": "mis4",
+      "statement": "Every app sandbox requires a VM",
+      "correction": "Android's described mechanism uses Linux user IDs."
+    },
+    {
+      "id": "mis5",
+      "statement": "Jail equals VM",
+      "correction": "The source characterizes jails through network and filesystem namespace restrictions."
+    },
+    {
+      "id": "mis6",
+      "statement": "Capabilities equal rule policies",
+      "correction": "Tokens/capabilities grant specific rights; rule systems assign access levels."
+    },
+    {
+      "id": "mis7",
+      "statement": "Sandboxing is only OS-level",
+      "correction": "The source includes browser, runtime, capability and instruction-level mechanisms."
+    },
+    {
+      "id": "mis8",
+      "statement": "SFI is just process isolation",
+      "correction": "SFI isolates specified native-code instruction effects into memory segments."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "question": "How does a sandbox limit guest resources?"
+    },
+    {
+      "id": "q02",
+      "question": "Why restrict network and host inspection?"
+    },
+    {
+      "id": "q03",
+      "question": "How do seccomp, cgroups and namespaces compose?"
+    },
+    {
+      "id": "q04",
+      "question": "How does Android use Linux user IDs?"
+    },
+    {
+      "id": "q05",
+      "question": "What does GrapheneOS change?"
+    },
+    {
+      "id": "q06",
+      "question": "How does a VM mediate host access?"
+    },
+    {
+      "id": "q07",
+      "question": "What distinguishes a jail from a VM?"
+    },
+    {
+      "id": "q08",
+      "question": "How does rule-based execution control code injection?"
+    },
+    {
+      "id": "q09",
+      "question": "Why is sandboxing useful for malware analysis?"
+    },
+    {
+      "id": "q10",
+      "question": "How do capability tokens grant fine-grained rights?"
+    },
+    {
+      "id": "q11",
+      "question": "What system calls does strict seccomp allow?"
+    },
+    {
+      "id": "q12",
+      "question": "How does iframe sandboxing work?"
+    },
+    {
+      "id": "q13",
+      "question": "How does Java sandbox untrusted code?"
+    },
+    {
+      "id": "q14",
+      "question": "How does .NET Code Access Security restrict code?"
+    },
+    {
+      "id": "q15",
+      "question": "How does SFI isolate native code?"
+    },
+    {
+      "id": "q16",
+      "question": "Why use sandboxes for online judges?"
+    },
+    {
+      "id": "q17",
+      "question": "Why use sandboxes for executable pastebins?"
+    },
+    {
+      "id": "q18",
+      "question": "How are sandboxing and virtualization related?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "x01",
+      "label": "Expand Linux seccomp/cgroups/namespaces."
+    },
+    {
+      "id": "x02",
+      "label": "Expand Android UID sandboxing and GrapheneOS hardening."
+    },
+    {
+      "id": "x03",
+      "label": "Expand Apple App Sandbox and signed-app restrictions."
+    },
+    {
+      "id": "x04",
+      "label": "Expand Windows UAC process/access controls."
+    },
+    {
+      "id": "x05",
+      "label": "Expand capability systems such as Capsicum and pledge."
+    },
+    {
+      "id": "x06",
+      "label": "Expand browser process/iframe sandboxing."
+    },
+    {
+      "id": "x07",
+      "label": "Expand VM sandbox boundaries and escape resistance."
+    },
+    {
+      "id": "x08",
+      "label": "Expand FreeBSD jail semantics."
+    },
+    {
+      "id": "x09",
+      "label": "Expand SELinux/AppArmor policy models."
+    },
+    {
+      "id": "x10",
+      "label": "Expand malware-analysis sandbox architecture."
+    },
+    {
+      "id": "x11",
+      "label": "Expand SFI instrumentation."
+    },
+    {
+      "id": "x12",
+      "label": "Expand Java/.NET runtime sandbox models."
+    },
+    {
+      "id": "x13",
+      "label": "Expand online-judge sandbox architecture."
+    },
+    {
+      "id": "x14",
+      "label": "Connect sandboxing to container/OCI isolation."
+    },
+    {
+      "id": "x15",
+      "label": "Expand Qubes OS Xen compartmentalization."
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "node_count": 205,
+    "typed_relationship_count": 152,
+    "rich_relationship_count": 18,
+    "formal_model_count": 10,
+    "source_claim_count": 20,
+    "reference_count": 16,
+    "person_count": 7,
+    "historical_event_count": 5,
+    "semantic_distinction_count": 18,
+    "learning_path_count": 14,
+    "misconception_count": 8,
+    "question_count": 18,
+    "expansion_target_count": 15,
+    "node_type_counts": {
+      "concept": 2,
+      "security_property": 2,
+      "security_goal": 2,
+      "security_input": 1,
+      "execution_subject": 1,
+      "execution_environment": 3,
+      "security_boundary": 1,
+      "related_concept": 1,
+      "threat": 2,
+      "failure_mode": 1,
+      "resource": 7,
+      "implementation": 44,
+      "system_call": 4,
+      "instruction_class": 3,
+      "person": 7,
+      "reference": 16,
+      "formal_model": 10,
+      "source_claim": 20,
+      "semantic_distinction": 18,
+      "learning_path": 14,
+      "misconception": 8,
+      "question": 18,
+      "expansion_target": 15,
+      "historical_event": 5
+    }
+  }
+}

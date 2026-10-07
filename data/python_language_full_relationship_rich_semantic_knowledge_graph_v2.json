@@ -1,0 +1,6378 @@
+{
+  "schema": {
+    "name": "Full Relationship-Rich Semantic Knowledge Graph",
+    "version": "5.0-python-language-ecosystem",
+    "purpose": "Detailed semantic map of Python language, runtime, object model, libraries, tooling, implementations, compilation ecosystem, governance, history and influences.",
+    "source_policy": "Supplied article is authoritative for source-derived claims; no external corrections silently applied.",
+    "relationship_policy": "Typed directional relationships preserve mechanisms, influence, implementation, usage, derivation, compatibility, governance, distinctions and provenance; generic related_to edges are avoided."
+  },
+  "source": {
+    "filename": "Pasted text(20261007-184547).txt",
+    "line_count": 709,
+    "title": "Python (programming language)",
+    "source_type": "user-supplied Wikipedia-derived text",
+    "source_lines": "57-554+"
+  },
+  "nodes": [
+    {
+      "id": "python",
+      "label": "Python",
+      "type": "programming_language"
+    },
+    {
+      "id": "guido",
+      "label": "Guido van Rossum",
+      "type": "person"
+    },
+    {
+      "id": "psf",
+      "label": "Python Software Foundation",
+      "type": "organization"
+    },
+    {
+      "id": "python2",
+      "label": "Python 2",
+      "type": "language_generation"
+    },
+    {
+      "id": "python3",
+      "label": "Python 3",
+      "type": "language_generation"
+    },
+    {
+      "id": "cpython",
+      "label": "CPython",
+      "type": "reference_implementation"
+    },
+    {
+      "id": "pypy",
+      "label": "PyPy",
+      "type": "implementation"
+    },
+    {
+      "id": "micropython",
+      "label": "MicroPython",
+      "type": "implementation"
+    },
+    {
+      "id": "circuitpython",
+      "label": "CircuitPython",
+      "type": "implementation"
+    },
+    {
+      "id": "ironpython",
+      "label": "IronPython",
+      "type": "implementation"
+    },
+    {
+      "id": "jython",
+      "label": "Jython",
+      "type": "implementation"
+    },
+    {
+      "id": "stackless",
+      "label": "Stackless Python",
+      "type": "implementation"
+    },
+    {
+      "id": "cython",
+      "label": "Cython",
+      "type": "dialect_or_compiler"
+    },
+    {
+      "id": "rpython",
+      "label": "RPython",
+      "type": "tool_or_language"
+    },
+    {
+      "id": "starlark",
+      "label": "Starlark",
+      "type": "dialect"
+    },
+    {
+      "id": "dynamic_typing",
+      "label": "Dynamic typing",
+      "type": "typing_model"
+    },
+    {
+      "id": "duck_typing",
+      "label": "Duck typing",
+      "type": "typing_model"
+    },
+    {
+      "id": "strong_typing",
+      "label": "Strong typing",
+      "type": "typing_model"
+    },
+    {
+      "id": "annotations",
+      "label": "Optional type annotations",
+      "type": "typing_model"
+    },
+    {
+      "id": "gc",
+      "label": "Garbage collection",
+      "type": "memory_management"
+    },
+    {
+      "id": "refcount",
+      "label": "Reference counting",
+      "type": "memory_management"
+    },
+    {
+      "id": "cycle_gc",
+      "label": "Cycle-detecting garbage collection",
+      "type": "memory_management"
+    },
+    {
+      "id": "late_binding",
+      "label": "Dynamic name resolution / late binding",
+      "type": "semantic_mechanism"
+    },
+    {
+      "id": "oop",
+      "label": "Object-oriented programming",
+      "type": "paradigm"
+    },
+    {
+      "id": "procedural",
+      "label": "Procedural / imperative programming",
+      "type": "paradigm"
+    },
+    {
+      "id": "functional",
+      "label": "Functional programming",
+      "type": "paradigm"
+    },
+    {
+      "id": "structured",
+      "label": "Structured programming",
+      "type": "paradigm"
+    },
+    {
+      "id": "reflective",
+      "label": "Reflective programming",
+      "type": "paradigm"
+    },
+    {
+      "id": "aspect",
+      "label": "Aspect-oriented programming",
+      "type": "paradigm"
+    },
+    {
+      "id": "metaprogramming",
+      "label": "Metaprogramming",
+      "type": "paradigm_extension"
+    },
+    {
+      "id": "metaobjects",
+      "label": "Metaobjects",
+      "type": "metaprogramming"
+    },
+    {
+      "id": "glue",
+      "label": "Glue language",
+      "type": "architecture"
+    },
+    {
+      "id": "stdlib",
+      "label": "Standard library",
+      "type": "library_ecosystem"
+    },
+    {
+      "id": "pypi",
+      "label": "PyPI",
+      "type": "package_ecosystem"
+    },
+    {
+      "id": "pip",
+      "label": "pip",
+      "type": "package_manager"
+    },
+    {
+      "id": "readability",
+      "label": "Readability",
+      "type": "design_goal"
+    },
+    {
+      "id": "simplicity",
+      "label": "Simplicity",
+      "type": "design_goal"
+    },
+    {
+      "id": "ease_writing",
+      "label": "Ease of writing",
+      "type": "design_goal"
+    },
+    {
+      "id": "indentation",
+      "label": "Significant indentation",
+      "type": "syntax"
+    },
+    {
+      "id": "zen",
+      "label": "Zen of Python / PEP 20",
+      "type": "design_philosophy"
+    },
+    {
+      "id": "pep",
+      "label": "Python Enhancement Proposal",
+      "type": "governance"
+    },
+    {
+      "id": "steering",
+      "label": "Python Steering Council",
+      "type": "governance"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "type": "development_platform"
+    },
+    {
+      "id": "python_dev",
+      "label": "python-dev",
+      "type": "development_process"
+    },
+    {
+      "id": "pycon",
+      "label": "PyCon",
+      "type": "community_event"
+    },
+    {
+      "id": "cwi",
+      "label": "CWI",
+      "type": "organization"
+    },
+    {
+      "id": "abc",
+      "label": "ABC",
+      "type": "programming_language"
+    },
+    {
+      "id": "setl",
+      "label": "SETL",
+      "type": "programming_language"
+    },
+    {
+      "id": "amoeba",
+      "label": "Amoeba",
+      "type": "operating_system"
+    },
+    {
+      "id": "monty",
+      "label": "Monty Python's Flying Circus",
+      "type": "cultural_influence"
+    },
+    {
+      "id": "py09",
+      "label": "Python 0.9.0",
+      "type": "release"
+    },
+    {
+      "id": "py20",
+      "label": "Python 2.0",
+      "type": "release"
+    },
+    {
+      "id": "py27",
+      "label": "Python 2.7",
+      "type": "release"
+    },
+    {
+      "id": "py30",
+      "label": "Python 3.0",
+      "type": "release"
+    },
+    {
+      "id": "py35",
+      "label": "Python 3.5",
+      "type": "release"
+    },
+    {
+      "id": "py38",
+      "label": "Python 3.8",
+      "type": "release"
+    },
+    {
+      "id": "py314",
+      "label": "Python 3.14.8",
+      "type": "release"
+    },
+    {
+      "id": "py315rc",
+      "label": "Python 3.15.0rc3",
+      "type": "release_candidate"
+    },
+    {
+      "id": "bdfl",
+      "label": "BDFL",
+      "type": "governance_role"
+    },
+    {
+      "id": "council",
+      "label": "Five-member Steering Council",
+      "type": "governance"
+    },
+    {
+      "id": "annual",
+      "label": "Annual release cycle",
+      "type": "release_process"
+    },
+    {
+      "id": "syntax",
+      "label": "Syntax",
+      "type": "language_system"
+    },
+    {
+      "id": "semantics",
+      "label": "Semantics",
+      "type": "language_system"
+    },
+    {
+      "id": "grammar",
+      "label": "Grammar",
+      "type": "language_system"
+    },
+    {
+      "id": "block",
+      "label": "Code block",
+      "type": "syntax_structure"
+    },
+    {
+      "id": "offside",
+      "label": "Off-side rule",
+      "type": "syntax_rule"
+    },
+    {
+      "id": "statement",
+      "label": "Statement",
+      "type": "construct"
+    },
+    {
+      "id": "expression",
+      "label": "Expression",
+      "type": "construct"
+    },
+    {
+      "id": "assignment",
+      "label": "Assignment",
+      "type": "statement"
+    },
+    {
+      "id": "if",
+      "label": "if",
+      "type": "statement"
+    },
+    {
+      "id": "elif",
+      "label": "elif",
+      "type": "statement"
+    },
+    {
+      "id": "else",
+      "label": "else",
+      "type": "statement"
+    },
+    {
+      "id": "for",
+      "label": "for",
+      "type": "statement"
+    },
+    {
+      "id": "while",
+      "label": "while",
+      "type": "statement"
+    },
+    {
+      "id": "try",
+      "label": "try",
+      "type": "statement"
+    },
+    {
+      "id": "except",
+      "label": "except",
+      "type": "statement"
+    },
+    {
+      "id": "except_star",
+      "label": "except*",
+      "type": "statement"
+    },
+    {
+      "id": "finally",
+      "label": "finally",
+      "type": "statement"
+    },
+    {
+      "id": "raise",
+      "label": "raise",
+      "type": "statement"
+    },
+    {
+      "id": "class",
+      "label": "class",
+      "type": "statement"
+    },
+    {
+      "id": "def",
+      "label": "def",
+      "type": "statement"
+    },
+    {
+      "id": "with",
+      "label": "with",
+      "type": "statement"
+    },
+    {
+      "id": "break",
+      "label": "break",
+      "type": "statement"
+    },
+    {
+      "id": "continue",
+      "label": "continue",
+      "type": "statement"
+    },
+    {
+      "id": "del",
+      "label": "del",
+      "type": "statement"
+    },
+    {
+      "id": "pass",
+      "label": "pass",
+      "type": "statement"
+    },
+    {
+      "id": "assert",
+      "label": "assert",
+      "type": "statement"
+    },
+    {
+      "id": "yield",
+      "label": "yield",
+      "type": "expression"
+    },
+    {
+      "id": "return",
+      "label": "return",
+      "type": "statement"
+    },
+    {
+      "id": "import",
+      "label": "import",
+      "type": "statement"
+    },
+    {
+      "id": "from_import",
+      "label": "from ... import",
+      "type": "statement"
+    },
+    {
+      "id": "match",
+      "label": "match",
+      "type": "statement"
+    },
+    {
+      "id": "case",
+      "label": "case",
+      "type": "statement"
+    },
+    {
+      "id": "lazy",
+      "label": "lazy",
+      "type": "keyword"
+    },
+    {
+      "id": "eval",
+      "label": "eval",
+      "type": "builtin_execution"
+    },
+    {
+      "id": "exec",
+      "label": "exec",
+      "type": "builtin_execution"
+    },
+    {
+      "id": "lambda",
+      "label": "lambda",
+      "type": "expression"
+    },
+    {
+      "id": "listcomp",
+      "label": "List comprehension",
+      "type": "expression"
+    },
+    {
+      "id": "genexpr",
+      "label": "Generator expression",
+      "type": "expression"
+    },
+    {
+      "id": "dictcomp",
+      "label": "Dictionary comprehension",
+      "type": "expression"
+    },
+    {
+      "id": "condexpr",
+      "label": "Conditional expression",
+      "type": "expression"
+    },
+    {
+      "id": "walrus",
+      "label": "Walrus operator :=",
+      "type": "expression"
+    },
+    {
+      "id": "slice",
+      "label": "Slicing",
+      "type": "expression"
+    },
+    {
+      "id": "unpack",
+      "label": "Sequence unpacking",
+      "type": "assignment_semantics"
+    },
+    {
+      "id": "fstring",
+      "label": "F-string",
+      "type": "string_syntax"
+    },
+    {
+      "id": "raw_string",
+      "label": "Raw string",
+      "type": "string_syntax"
+    },
+    {
+      "id": "triple_string",
+      "label": "Triple-quoted string",
+      "type": "string_syntax"
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "type": "callable"
+    },
+    {
+      "id": "generator",
+      "label": "Generator",
+      "type": "iterator"
+    },
+    {
+      "id": "coroutine",
+      "label": "Coroutine",
+      "type": "concurrency_construct"
+    },
+    {
+      "id": "module",
+      "label": "Module",
+      "type": "module_unit"
+    },
+    {
+      "id": "context_manager",
+      "label": "Context manager",
+      "type": "protocol"
+    },
+    {
+      "id": "iterable",
+      "label": "Iterable",
+      "type": "protocol"
+    },
+    {
+      "id": "name",
+      "label": "Name",
+      "type": "binding"
+    },
+    {
+      "id": "object",
+      "label": "Object",
+      "type": "object"
+    },
+    {
+      "id": "typeobj",
+      "label": "Type object",
+      "type": "type_object"
+    },
+    {
+      "id": "metaclass",
+      "label": "metaclass type",
+      "type": "metaclass"
+    },
+    {
+      "id": "class_instance",
+      "label": "Class instance",
+      "type": "object"
+    },
+    {
+      "id": "bool",
+      "label": "bool",
+      "type": "builtin_type"
+    },
+    {
+      "id": "bytearray",
+      "label": "bytearray",
+      "type": "builtin_type"
+    },
+    {
+      "id": "bytes",
+      "label": "bytes",
+      "type": "builtin_type"
+    },
+    {
+      "id": "complex",
+      "label": "complex",
+      "type": "builtin_type"
+    },
+    {
+      "id": "dict",
+      "label": "dict",
+      "type": "builtin_type"
+    },
+    {
+      "id": "ellipsis",
+      "label": "EllipsisType",
+      "type": "builtin_type"
+    },
+    {
+      "id": "float",
+      "label": "float",
+      "type": "builtin_type"
+    },
+    {
+      "id": "frozenset",
+      "label": "frozenset",
+      "type": "builtin_type"
+    },
+    {
+      "id": "int",
+      "label": "int",
+      "type": "builtin_type"
+    },
+    {
+      "id": "list",
+      "label": "list",
+      "type": "builtin_type"
+    },
+    {
+      "id": "none",
+      "label": "NoneType",
+      "type": "builtin_type"
+    },
+    {
+      "id": "notimpl",
+      "label": "NotImplementedType",
+      "type": "builtin_type"
+    },
+    {
+      "id": "range",
+      "label": "range",
+      "type": "builtin_type"
+    },
+    {
+      "id": "set",
+      "label": "set",
+      "type": "builtin_type"
+    },
+    {
+      "id": "str",
+      "label": "str",
+      "type": "builtin_type"
+    },
+    {
+      "id": "tuple",
+      "label": "tuple",
+      "type": "builtin_type"
+    },
+    {
+      "id": "hashable",
+      "label": "Hashable",
+      "type": "property"
+    },
+    {
+      "id": "mutable",
+      "label": "Mutable",
+      "type": "property"
+    },
+    {
+      "id": "immutable",
+      "label": "Immutable",
+      "type": "property"
+    },
+    {
+      "id": "unicode",
+      "label": "Unicode codepoints",
+      "type": "representation"
+    },
+    {
+      "id": "arbitrary_int",
+      "label": "Arbitrary precision integer",
+      "type": "numeric_model"
+    },
+    {
+      "id": "ieee754",
+      "label": "IEEE-754 double precision",
+      "type": "numeric_model"
+    },
+    {
+      "id": "decimal",
+      "label": "Decimal",
+      "type": "numeric_type"
+    },
+    {
+      "id": "fraction",
+      "label": "Fraction",
+      "type": "numeric_type"
+    },
+    {
+      "id": "typing",
+      "label": "typing module",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "mypy",
+      "label": "mypy",
+      "type": "external_type_checker"
+    },
+    {
+      "id": "mypyc",
+      "label": "mypyc",
+      "type": "compiler"
+    },
+    {
+      "id": "reflection",
+      "label": "Reflection",
+      "type": "metaprogramming"
+    },
+    {
+      "id": "c3",
+      "label": "C3 MRO",
+      "type": "object_model"
+    },
+    {
+      "id": "source",
+      "label": "Python source code",
+      "type": "artifact"
+    },
+    {
+      "id": "parser",
+      "label": "Parser",
+      "type": "runtime_component"
+    },
+    {
+      "id": "ast",
+      "label": "Abstract syntax tree",
+      "type": "intermediate_representation"
+    },
+    {
+      "id": "bytecode",
+      "label": "Python bytecode",
+      "type": "intermediate_representation"
+    },
+    {
+      "id": "vm",
+      "label": "Python virtual machine",
+      "type": "runtime_component"
+    },
+    {
+      "id": "machine_code",
+      "label": "Machine code",
+      "type": "executable"
+    },
+    {
+      "id": "jit",
+      "label": "JIT compilation",
+      "type": "optimization"
+    },
+    {
+      "id": "aot",
+      "label": "AOT compilation",
+      "type": "optimization"
+    },
+    {
+      "id": "extension",
+      "label": "Native extension module",
+      "type": "extension"
+    },
+    {
+      "id": "c_api",
+      "label": "Python C API",
+      "type": "api"
+    },
+    {
+      "id": "c11",
+      "label": "C11",
+      "type": "language"
+    },
+    {
+      "id": "c99",
+      "label": "C99",
+      "type": "language"
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "type": "language"
+    },
+    {
+      "id": "heap",
+      "label": "Object heap",
+      "type": "memory"
+    },
+    {
+      "id": "namespace",
+      "label": "Namespace",
+      "type": "runtime_structure"
+    },
+    {
+      "id": "callstack",
+      "label": "Call stack",
+      "type": "runtime_structure"
+    },
+    {
+      "id": "gil",
+      "label": "Global Interpreter Lock",
+      "type": "runtime_mechanism"
+    },
+    {
+      "id": "freethread",
+      "label": "Free-threaded mode",
+      "type": "runtime_mode"
+    },
+    {
+      "id": "multithreading",
+      "label": "Multithreading",
+      "type": "concurrency"
+    },
+    {
+      "id": "multiprocessing",
+      "label": "Multiprocessing",
+      "type": "concurrency"
+    },
+    {
+      "id": "eventloop",
+      "label": "Event loop",
+      "type": "runtime_component"
+    },
+    {
+      "id": "plus",
+      "label": "+",
+      "type": "operator"
+    },
+    {
+      "id": "minus",
+      "label": "-",
+      "type": "operator"
+    },
+    {
+      "id": "mul",
+      "label": "*",
+      "type": "operator"
+    },
+    {
+      "id": "div",
+      "label": "/",
+      "type": "operator"
+    },
+    {
+      "id": "floordiv",
+      "label": "//",
+      "type": "operator"
+    },
+    {
+      "id": "mod",
+      "label": "%",
+      "type": "operator"
+    },
+    {
+      "id": "power",
+      "label": "**",
+      "type": "operator"
+    },
+    {
+      "id": "matmul",
+      "label": "@",
+      "type": "operator"
+    },
+    {
+      "id": "eq",
+      "label": "==",
+      "type": "operator"
+    },
+    {
+      "id": "is",
+      "label": "is",
+      "type": "operator"
+    },
+    {
+      "id": "and",
+      "label": "and",
+      "type": "operator"
+    },
+    {
+      "id": "or",
+      "label": "or",
+      "type": "operator"
+    },
+    {
+      "id": "not",
+      "label": "not",
+      "type": "operator"
+    },
+    {
+      "id": "true_div",
+      "label": "True division",
+      "type": "numeric_semantics"
+    },
+    {
+      "id": "floor_sem",
+      "label": "Floor division",
+      "type": "numeric_semantics"
+    },
+    {
+      "id": "round_even",
+      "label": "Round-to-even",
+      "type": "numeric_semantics"
+    },
+    {
+      "id": "concat",
+      "label": "String concatenation",
+      "type": "operation"
+    },
+    {
+      "id": "repeat",
+      "label": "String repetition",
+      "type": "operation"
+    },
+    {
+      "id": "chain",
+      "label": "Chained comparisons",
+      "type": "operation"
+    },
+    {
+      "id": "itertools",
+      "label": "itertools",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "functools",
+      "label": "functools",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "re",
+      "label": "re",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "decimal_mod",
+      "label": "decimal",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "fractions_mod",
+      "label": "fractions",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "wsgiref",
+      "label": "wsgiref",
+      "type": "stdlib_module"
+    },
+    {
+      "id": "gui",
+      "label": "GUI support",
+      "type": "stdlib_capability"
+    },
+    {
+      "id": "db",
+      "label": "Relational DB support",
+      "type": "stdlib_capability"
+    },
+    {
+      "id": "http",
+      "label": "HTTP support",
+      "type": "stdlib_capability"
+    },
+    {
+      "id": "mime",
+      "label": "MIME support",
+      "type": "stdlib_capability"
+    },
+    {
+      "id": "testing",
+      "label": "Unit testing",
+      "type": "stdlib_capability"
+    },
+    {
+      "id": "regex",
+      "label": "Regular expressions",
+      "type": "capability"
+    },
+    {
+      "id": "mathlib",
+      "label": "Mathematics",
+      "type": "capability"
+    },
+    {
+      "id": "idles",
+      "label": "IDLE",
+      "type": "ide"
+    },
+    {
+      "id": "ipython",
+      "label": "IPython",
+      "type": "shell"
+    },
+    {
+      "id": "jupyter",
+      "label": "Jupyter",
+      "type": "interactive_environment"
+    },
+    {
+      "id": "pycharm",
+      "label": "PyCharm",
+      "type": "ide"
+    },
+    {
+      "id": "spyder",
+      "label": "Spyder",
+      "type": "ide"
+    },
+    {
+      "id": "vscode",
+      "label": "VS Code",
+      "type": "ide"
+    },
+    {
+      "id": "pythonanywhere",
+      "label": "PythonAnywhere",
+      "type": "cloud_ide"
+    },
+    {
+      "id": "canopy",
+      "label": "Canopy",
+      "type": "ide"
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "type": "library"
+    },
+    {
+      "id": "pandas",
+      "label": "Pandas",
+      "type": "library"
+    },
+    {
+      "id": "codon",
+      "label": "Codon",
+      "type": "compiler_implementation"
+    },
+    {
+      "id": "pyston",
+      "label": "Pyston",
+      "type": "implementation"
+    },
+    {
+      "id": "cinder",
+      "label": "Cinder",
+      "type": "implementation"
+    },
+    {
+      "id": "rustpython",
+      "label": "RustPython",
+      "type": "implementation"
+    },
+    {
+      "id": "snek",
+      "label": "Snek",
+      "type": "python_inspired_language"
+    },
+    {
+      "id": "unladen",
+      "label": "Unladen Swallow",
+      "type": "historical_project"
+    },
+    {
+      "id": "psyco",
+      "label": "Psyco",
+      "type": "historical_compiler"
+    },
+    {
+      "id": "pys60",
+      "label": "PyS60",
+      "type": "historical_implementation"
+    },
+    {
+      "id": "brython",
+      "label": "Brython",
+      "type": "transpiler"
+    },
+    {
+      "id": "transcrypt",
+      "label": "Transcrypt",
+      "type": "transpiler"
+    },
+    {
+      "id": "pyjl",
+      "label": "PyJL",
+      "type": "transpiler"
+    },
+    {
+      "id": "nuitka",
+      "label": "Nuitka",
+      "type": "compiler"
+    },
+    {
+      "id": "numba",
+      "label": "Numba",
+      "type": "jit_compiler"
+    },
+    {
+      "id": "pythran",
+      "label": "Pythran",
+      "type": "compiler"
+    },
+    {
+      "id": "myhdl",
+      "label": "MyHDL",
+      "type": "hardware_dsl"
+    },
+    {
+      "id": "grumpy",
+      "label": "Grumpy",
+      "type": "historical_transpiler"
+    },
+    {
+      "id": "pyrex",
+      "label": "Pyrex",
+      "type": "historical_compiler"
+    },
+    {
+      "id": "shedskin",
+      "label": "Shed Skin",
+      "type": "historical_compiler"
+    },
+    {
+      "id": "llvm",
+      "label": "LLVM",
+      "type": "compiler_infrastructure"
+    },
+    {
+      "id": "julia",
+      "label": "Julia",
+      "type": "language"
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "type": "language"
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "type": "language"
+    },
+    {
+      "id": "verilog",
+      "label": "Verilog",
+      "type": "hardware_language"
+    },
+    {
+      "id": "vhdl",
+      "label": "VHDL",
+      "type": "hardware_language"
+    },
+    {
+      "id": "dotnet",
+      "label": " .NET CLR",
+      "type": "runtime"
+    },
+    {
+      "id": "jvm",
+      "label": "Java VM",
+      "type": "runtime"
+    },
+    {
+      "id": "android",
+      "label": "Android",
+      "type": "platform"
+    },
+    {
+      "id": "avr",
+      "label": "AVR",
+      "type": "microcontroller_platform"
+    },
+    {
+      "id": "pep1",
+      "label": "PEP 1",
+      "type": "PEP",
+      "description": "Purpose and guidelines"
+    },
+    {
+      "id": "pep8",
+      "label": "PEP 8",
+      "type": "PEP",
+      "description": "Style guide"
+    },
+    {
+      "id": "pep20",
+      "label": "PEP 20",
+      "type": "PEP",
+      "description": "Zen of Python"
+    },
+    {
+      "id": "pep257",
+      "label": "PEP 257",
+      "type": "PEP",
+      "description": "Documentation conventions"
+    },
+    {
+      "id": "pep255",
+      "label": "PEP 255",
+      "type": "PEP",
+      "description": "Simple generators"
+    },
+    {
+      "id": "pep342",
+      "label": "PEP 342",
+      "type": "PEP",
+      "description": "Coroutines via enhanced generators"
+    },
+    {
+      "id": "pep380",
+      "label": "PEP 380",
+      "type": "PEP",
+      "description": "Generator delegation"
+    },
+    {
+      "id": "pep441",
+      "label": "PEP 441",
+      "type": "PEP",
+      "description": "ZIP application support"
+    },
+    {
+      "id": "pep465",
+      "label": "PEP 465",
+      "type": "PEP",
+      "description": "Matrix multiplication"
+    },
+    {
+      "id": "pep483",
+      "label": "PEP 483",
+      "type": "PEP",
+      "description": "Theory of type hints"
+    },
+    {
+      "id": "pep484",
+      "label": "PEP 484",
+      "type": "PEP",
+      "description": "Type hints"
+    },
+    {
+      "id": "pep488",
+      "label": "PEP 488",
+      "type": "PEP",
+      "description": "PYO elimination"
+    },
+    {
+      "id": "pep561",
+      "label": "PEP 561",
+      "type": "PEP",
+      "description": "Type information distribution"
+    },
+    {
+      "id": "pep738",
+      "label": "PEP 738",
+      "type": "PEP",
+      "description": "Android support"
+    },
+    {
+      "id": "pep790",
+      "label": "PEP 790",
+      "type": "PEP",
+      "description": "3.15 release schedule"
+    },
+    {
+      "id": "pep13",
+      "label": "PEP 13",
+      "type": "PEP",
+      "description": "Language governance"
+    },
+    {
+      "id": "in_abc",
+      "label": "ABC",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_ada",
+      "label": "Ada",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_algol_68",
+      "label": "ALGOL 68",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_apl",
+      "label": "APL",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_c",
+      "label": "C",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_clu",
+      "label": "CLU",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_dylan",
+      "label": "Dylan",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_haskell",
+      "label": "Haskell",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_icon",
+      "label": "Icon",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_lisp",
+      "label": "Lisp",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_modula_3",
+      "label": "Modula-3",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_perl",
+      "label": "Perl",
+      "type": "influence_language"
+    },
+    {
+      "id": "in_standard_ml",
+      "label": "Standard ML",
+      "type": "influence_language"
+    },
+    {
+      "id": "out_apache_groovy",
+      "label": "Apache Groovy",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_boo",
+      "label": "Boo",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_cobra",
+      "label": "Cobra",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_coffeescript",
+      "label": "CoffeeScript",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_d",
+      "label": "D",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_f",
+      "label": "F#",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_gdscript",
+      "label": "GDScript",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_go",
+      "label": "Go",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_javascript",
+      "label": "JavaScript",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_julia",
+      "label": "Julia",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_mojo",
+      "label": "Mojo",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_nim",
+      "label": "Nim",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_ruby",
+      "label": "Ruby",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_swift",
+      "label": "Swift",
+      "type": "influenced_language"
+    },
+    {
+      "id": "out_v",
+      "label": "V",
+      "type": "influenced_language"
+    },
+    {
+      "id": "dist_dynamic_static",
+      "label": "Dynamic vs static typing",
+      "type": "semantic_distinction",
+      "distinction": "Dynamic typing defers constraints to runtime; optional annotations allow external checking."
+    },
+    {
+      "id": "dist_duck_strong",
+      "label": "Duck vs strong typing",
+      "type": "semantic_distinction",
+      "distinction": "Duck typing concerns supported behavior; strong typing rejects undefined operations."
+    },
+    {
+      "id": "dist_statement_expression",
+      "label": "Statement vs expression",
+      "type": "semantic_distinction",
+      "distinction": "Python enforces a rigid distinction; statements cannot be embedded in expressions."
+    },
+    {
+      "id": "dist_list_tuple",
+      "label": "List vs tuple",
+      "type": "semantic_distinction",
+      "distinction": "Lists are mutable; tuples immutable and hashable only when their elements permit it."
+    },
+    {
+      "id": "dist_eq_is",
+      "label": "== vs is",
+      "type": "semantic_distinction",
+      "distinction": "== compares values; is compares object identity."
+    },
+    {
+      "id": "dist_slash_floor",
+      "label": "/ vs //",
+      "type": "semantic_distinction",
+      "distinction": "Modern / performs true division; // performs floor division."
+    },
+    {
+      "id": "dist_source_bytecode",
+      "label": "Source vs bytecode",
+      "type": "semantic_distinction",
+      "distinction": "CPython compiles source into intermediate bytecode before VM execution."
+    },
+    {
+      "id": "dist_bytecode_machine",
+      "label": "Bytecode vs machine code",
+      "type": "semantic_distinction",
+      "distinction": "Bytecode targets a VM; JIT/AOT/native paths can produce machine code."
+    },
+    {
+      "id": "dist_cpython_pypy",
+      "label": "CPython vs PyPy",
+      "type": "semantic_distinction",
+      "distinction": "CPython is reference implementation; PyPy uses JIT and differs in compatibility."
+    },
+    {
+      "id": "dist_python_dialect",
+      "label": "Python vs dialects",
+      "type": "semantic_distinction",
+      "distinction": "Cython/RPython/Starlark-related forms can alter or extend Python-like syntax/semantics."
+    },
+    {
+      "id": "dist_annotation_enforcement",
+      "label": "Annotation vs enforcement",
+      "type": "semantic_distinction",
+      "distinction": "Annotations are not enforced by Python itself according to source."
+    },
+    {
+      "id": "dist_refcount_gc",
+      "label": "Reference counting vs cycle GC",
+      "type": "semantic_distinction",
+      "distinction": "The memory strategy combines reference counting with cycle detection."
+    },
+    {
+      "id": "dist_with_try",
+      "label": "with vs try/finally",
+      "type": "semantic_distinction",
+      "distinction": "with provides context-manager resource management and cleanup semantics."
+    },
+    {
+      "id": "dist_generator_coroutine",
+      "label": "Generator vs coroutine",
+      "type": "semantic_distinction",
+      "distinction": "Generators use yield; Python extended them for coroutine-like behavior."
+    },
+    {
+      "id": "dist_listcomp_for",
+      "label": "Comprehension vs loop",
+      "type": "semantic_distinction",
+      "distinction": "Comprehensions are expressions; for is a statement."
+    },
+    {
+      "id": "dist_module_package",
+      "label": "Module vs package ecosystem",
+      "type": "semantic_distinction",
+      "distinction": "Modules are language import units; PyPI distributes third-party projects."
+    },
+    {
+      "id": "q01",
+      "label": "How did ABC shape Python's design?",
+      "type": "question"
+    },
+    {
+      "id": "q02",
+      "label": "How does significant indentation alter Python's syntax and semantics?",
+      "type": "question"
+    },
+    {
+      "id": "q03",
+      "label": "How do names, objects and dynamic typing interact?",
+      "type": "question"
+    },
+    {
+      "id": "q04",
+      "label": "How can Python be both dynamically and strongly typed?",
+      "type": "question"
+    },
+    {
+      "id": "q05",
+      "label": "How does CPython transform source code into executed behavior?",
+      "type": "question"
+    },
+    {
+      "id": "q06",
+      "label": "What role do bytecode and the VM play?",
+      "type": "question"
+    },
+    {
+      "id": "q07",
+      "label": "How do reference counting and cycle detection cooperate?",
+      "type": "question"
+    },
+    {
+      "id": "q08",
+      "label": "How do statements differ from expressions?",
+      "type": "question"
+    },
+    {
+      "id": "q09",
+      "label": "How do generators support coroutine-like behavior?",
+      "type": "question"
+    },
+    {
+      "id": "q10",
+      "label": "How do comprehensions connect Python to functional programming?",
+      "type": "question"
+    },
+    {
+      "id": "q11",
+      "label": "How do Python's built-in collections differ in mutability and hashing?",
+      "type": "question"
+    },
+    {
+      "id": "q12",
+      "label": "How do == and is differ?",
+      "type": "question"
+    },
+    {
+      "id": "q13",
+      "label": "How do /, // and % behave mathematically?",
+      "type": "question"
+    },
+    {
+      "id": "q14",
+      "label": "How do optional annotations connect to mypy and mypyc?",
+      "type": "question"
+    },
+    {
+      "id": "q15",
+      "label": "How does Python integrate native C/C++ code?",
+      "type": "question"
+    },
+    {
+      "id": "q16",
+      "label": "Why is Python a glue language?",
+      "type": "question"
+    },
+    {
+      "id": "q17",
+      "label": "How do stdlib, PyPI and pip form an ecosystem?",
+      "type": "question"
+    },
+    {
+      "id": "q18",
+      "label": "How do CPython, PyPy, MicroPython and CircuitPython differ?",
+      "type": "question"
+    },
+    {
+      "id": "q19",
+      "label": "How do JIT, AOT, transpilation and native extensions provide performance paths?",
+      "type": "question"
+    },
+    {
+      "id": "q20",
+      "label": "How does Python support scientific computing through NumPy and related libraries?",
+      "type": "question"
+    },
+    {
+      "id": "q21",
+      "label": "How does PEP governance connect proposals, community review and the Steering Council?",
+      "type": "question"
+    },
+    {
+      "id": "q22",
+      "label": "How did Python influence JavaScript, Go, Julia and GDScript?",
+      "type": "question"
+    },
+    {
+      "id": "q23",
+      "label": "How did Python evolve from 2.x to 3.x?",
+      "type": "question"
+    },
+    {
+      "id": "q24",
+      "label": "How does the implementation ecosystem extend Python to embedded and compiled environments?",
+      "type": "question"
+    },
+    {
+      "id": "mc01",
+      "label": "Python is statically typed",
+      "type": "misconception",
+      "correction": "Python is dynamically typed; annotations are optional and externally checkable."
+    },
+    {
+      "id": "mc02",
+      "label": "Dynamic means weak",
+      "type": "misconception",
+      "correction": "The source describes Python as dynamically and strongly typed."
+    },
+    {
+      "id": "mc03",
+      "label": "== and is are equivalent",
+      "type": "misconception",
+      "correction": "== compares values; is compares identity."
+    },
+    {
+      "id": "mc04",
+      "label": "A name has a fixed type",
+      "type": "misconception",
+      "correction": "Names are generic reference holders and may be rebound to objects of different types."
+    },
+    {
+      "id": "mc05",
+      "label": "CPython executes source directly",
+      "type": "misconception",
+      "correction": "CPython compiles programs to bytecode executed by a VM."
+    },
+    {
+      "id": "mc06",
+      "label": "Python is only interpreted",
+      "type": "misconception",
+      "correction": "The ecosystem includes bytecode execution, JITs, AOT compilers and transpilers."
+    },
+    {
+      "id": "mc07",
+      "label": "Lists and tuples are interchangeable",
+      "type": "misconception",
+      "correction": "Lists are mutable; tuples immutable with different key/hash semantics."
+    },
+    {
+      "id": "mc08",
+      "label": "Annotations enforce runtime types",
+      "type": "misconception",
+      "correction": "The source says annotations are not enforced by Python itself."
+    },
+    {
+      "id": "mc09",
+      "label": "Python is only object-oriented",
+      "type": "misconception",
+      "correction": "Python supports multiple paradigms."
+    },
+    {
+      "id": "mc10",
+      "label": "Indentation is cosmetic",
+      "type": "misconception",
+      "correction": "Indentation delimits blocks and therefore carries semantic meaning."
+    },
+    {
+      "id": "mc11",
+      "label": "PyPy is CPython",
+      "type": "misconception",
+      "correction": "PyPy is a separate implementation with JIT and compatibility differences."
+    },
+    {
+      "id": "mc12",
+      "label": "Snek is Python",
+      "type": "misconception",
+      "correction": "The source explicitly distinguishes Snek as Python-inspired but not Python."
+    },
+    {
+      "id": "mc13",
+      "label": "Python cannot be optimized",
+      "type": "misconception",
+      "correction": "JIT, AOT, multiprocessing, native extensions and efficient data structures are described optimization routes."
+    },
+    {
+      "id": "mc14",
+      "label": "All implementations have identical semantics",
+      "type": "misconception",
+      "correction": "The source notes alternative implementations can differ in semantics and APIs."
+    },
+    {
+      "id": "mc15",
+      "label": "with only applies to files",
+      "type": "misconception",
+      "correction": "with is a general context-manager mechanism for resource acquisition/cleanup."
+    },
+    {
+      "id": "c01",
+      "label": "Identity and design",
+      "type": "source_claim",
+      "statement": "Python is high-level, general-purpose, multi-paradigm, readability-oriented, indentation-based, standard-library-rich and garbage-collected.",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "id": "c02",
+      "label": "Origin",
+      "type": "source_claim",
+      "statement": "Python was conceived by Guido van Rossum at CWI as a successor to ABC; implementation began in 1989 and first release was 0.9.0 in 1991.",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "id": "c03",
+      "label": "Governance",
+      "type": "source_claim",
+      "statement": "Guido left the BDFL role in 2018 and a five-member Steering Council was elected in 2019.",
+      "source_lines": {
+        "start": 101,
+        "end": 103
+      }
+    },
+    {
+      "id": "c04",
+      "label": "Version history",
+      "type": "source_claim",
+      "statement": "Python 2.0 added major features; Python 3.0 was a major non-fully-compatible revision; typing capabilities began in Python 3.5.",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "id": "c05",
+      "label": "Philosophy",
+      "type": "source_claim",
+      "statement": "The Zen of Python emphasizes explicitness, simplicity, readability and practical consistency, while remaining a guideline.",
+      "source_lines": {
+        "start": 112,
+        "end": 137
+      }
+    },
+    {
+      "id": "c06",
+      "label": "PEPs",
+      "type": "source_claim",
+      "statement": "PEPs document information, processes, naming and language proposals and are overseen by the Steering Council.",
+      "source_lines": {
+        "start": 139,
+        "end": 142
+      }
+    },
+    {
+      "id": "c07",
+      "label": "Syntax",
+      "type": "source_claim",
+      "statement": "Python uses significant indentation and provides statements for assignment, control flow, exceptions, classes, functions, context management, imports, matching and generators.",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "id": "c08",
+      "label": "Expressions and semantics",
+      "type": "source_claim",
+      "statement": "Python distinguishes expressions and statements and supports comprehensions, lambdas, slicing, unpacking, string forms and dynamic references.",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "id": "c09",
+      "label": "Typing",
+      "type": "source_claim",
+      "statement": "Python uses duck typing with typed objects and untyped names while remaining strongly typed; annotations may be checked externally.",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "id": "c10",
+      "label": "Built-in types",
+      "type": "source_claim",
+      "statement": "Python provides bool, bytearray, bytes, complex, dict, float, frozenset, int, list, NoneType, range, set, str and tuple.",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "id": "c12",
+      "label": "Libraries",
+      "type": "source_claim",
+      "statement": "The standard library covers Internet protocols/formats, GUI, relational databases, pseudorandom numbers, decimals, regex and unit testing.",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "id": "c13",
+      "label": "Environments",
+      "type": "source_claim",
+      "statement": "Python implementations commonly provide REPLs; CPython includes IDLE and the ecosystem includes IPython, Jupyter and desktop/web IDEs.",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "id": "c14",
+      "label": "CPython",
+      "type": "source_claim",
+      "statement": "CPython is the reference implementation, written in C, compiling Python to bytecode executed by a VM.",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "id": "c15",
+      "label": "Alternative implementations",
+      "type": "source_claim",
+      "statement": "The source describes PyPy, Codon, MicroPython, CircuitPython, Pyston, Cinder, RustPython and Stackless Python.",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "id": "c16",
+      "label": "Compilers and transpilers",
+      "type": "source_claim",
+      "statement": "The ecosystem includes Brython, Transcrypt, Cython, PyJL, Nuitka, Numba, Pythran, RPython and MyHDL.",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "id": "c17",
+      "label": "Performance",
+      "type": "source_claim",
+      "statement": "JIT, static compilation, multiprocessing, efficient data structures and native numerical libraries can improve performance.",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "id": "c18",
+      "label": "Development lifecycle",
+      "type": "source_claim",
+      "statement": "Python development uses PEPs, community review, GitHub and a release process with incompatible, feature and bug-fix releases.",
+      "source_lines": {
+        "start": 395,
+        "end": 405
+      }
+    },
+    {
+      "id": "c19",
+      "label": "Culture and influence",
+      "type": "source_claim",
+      "statement": "PyCon, Monty Python naming/culture, Pythonic terminology and the influence graph are described.",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "id": "lp01",
+      "label": "Language identity",
+      "type": "learning_path",
+      "sequence": "python -> goals -> paradigms -> philosophy"
+    },
+    {
+      "id": "lp02",
+      "label": "History",
+      "type": "learning_path",
+      "sequence": "SETL -> ABC -> Python -> Python 2 -> Python 3"
+    },
+    {
+      "id": "lp03",
+      "label": "Execution",
+      "type": "learning_path",
+      "sequence": "source -> parser -> AST -> bytecode -> VM"
+    },
+    {
+      "id": "lp04",
+      "label": "Object model",
+      "type": "learning_path",
+      "sequence": "name -> object -> type -> class -> metaclass"
+    },
+    {
+      "id": "lp05",
+      "label": "Typing",
+      "type": "learning_path",
+      "sequence": "dynamic -> duck -> strong -> annotations -> external checking"
+    },
+    {
+      "id": "lp06",
+      "label": "Control flow",
+      "type": "learning_path",
+      "sequence": "indentation -> blocks -> statements -> exceptions -> with -> generators"
+    },
+    {
+      "id": "lp07",
+      "label": "Functional features",
+      "type": "learning_path",
+      "sequence": "lambda -> comprehensions -> generator expressions -> itertools/functools"
+    },
+    {
+      "id": "lp08",
+      "label": "Collections",
+      "type": "learning_path",
+      "sequence": "list/tuple/set/dict -> mutability -> hashing -> identity"
+    },
+    {
+      "id": "lp09",
+      "label": "Numerics",
+      "type": "learning_path",
+      "sequence": "operators -> arbitrary ints -> Decimal/Fraction -> NumPy"
+    },
+    {
+      "id": "lp10",
+      "label": "Memory",
+      "type": "learning_path",
+      "sequence": "reference counting -> cycle detection -> GC"
+    },
+    {
+      "id": "lp11",
+      "label": "Ecosystem",
+      "type": "learning_path",
+      "sequence": "import -> modules -> stdlib -> PyPI -> pip -> extensions"
+    },
+    {
+      "id": "lp12",
+      "label": "Performance",
+      "type": "learning_path",
+      "sequence": "CPython -> JIT/AOT -> native extensions -> NumPy -> multiprocessing"
+    },
+    {
+      "id": "lp13",
+      "label": "Implementations",
+      "type": "learning_path",
+      "sequence": "CPython -> PyPy -> MicroPython/CircuitPython -> RustPython/Stackless"
+    },
+    {
+      "id": "lp14",
+      "label": "Compilation",
+      "type": "learning_path",
+      "sequence": "Cython/Nuitka/Numba/Pythran/PyJL/Brython/Transcrypt"
+    },
+    {
+      "id": "lp15",
+      "label": "Tooling",
+      "type": "learning_path",
+      "sequence": "REPL -> IDLE/IPython -> Jupyter -> IDEs"
+    },
+    {
+      "id": "lp16",
+      "label": "Governance",
+      "type": "learning_path",
+      "sequence": "PEP -> review -> Steering Council -> GitHub -> releases"
+    },
+    {
+      "id": "lp17",
+      "label": "Influence",
+      "type": "learning_path",
+      "sequence": "languages -> Python -> JavaScript/Go/Julia/GDScript"
+    },
+    {
+      "id": "lp18",
+      "label": "Embedded",
+      "type": "learning_path",
+      "sequence": "MicroPython/CircuitPython -> microcontrollers -> constrained execution"
+    },
+    {
+      "id": "expand_object_data_model",
+      "label": "object/data model",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_descriptor_protocol",
+      "label": "descriptor protocol",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_attribute_lookup",
+      "label": "attribute lookup",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_mro",
+      "label": "MRO",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_import_machinery",
+      "label": "import machinery",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_packages_wheels",
+      "label": "packages/wheels",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_virtual_environments",
+      "label": "virtual environments",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_asyncio",
+      "label": "asyncio",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_async_await",
+      "label": "async/await",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_iterators_protocols",
+      "label": "iterators/protocols",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_context_manager_protocol",
+      "label": "context-manager protocol",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_exception_hierarchy",
+      "label": "exception hierarchy",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_generator_send_throw_close",
+      "label": "generator send/throw/close",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_decorators",
+      "label": "decorators",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_metaclasses",
+      "label": "metaclasses",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_pattern_matching",
+      "label": "pattern matching",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_buffer_protocol",
+      "label": "buffer protocol",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_memoryview",
+      "label": "memoryview",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_c_abi",
+      "label": "C ABI",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_stable_abi",
+      "label": "stable ABI",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_free_threaded_cpython",
+      "label": "free-threaded CPython",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_subinterpreters",
+      "label": "subinterpreters",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_gc_internals",
+      "label": "GC internals",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_bytecode_instruction_set",
+      "label": "bytecode instruction set",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_ast_tooling",
+      "label": "AST tooling",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_type_checker_ecosystem",
+      "label": "type-checker ecosystem",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_pypi_security",
+      "label": "PyPI security",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_wasi",
+      "label": "WASI",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_android",
+      "label": "Android",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_embedded_python",
+      "label": "embedded Python",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_scientific_python",
+      "label": "scientific Python",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_ml_ai_python",
+      "label": "ML/AI Python",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_web_frameworks",
+      "label": "web frameworks",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_automation",
+      "label": "automation",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_data_engineering",
+      "label": "data engineering",
+      "type": "expansion_target"
+    },
+    {
+      "id": "expand_testing_ecosystem",
+      "label": "testing ecosystem",
+      "type": "expansion_target"
+    },
+    {
+      "id": "r01",
+      "label": "General Python FAQ",
+      "type": "reference",
+      "author": "Python Software Foundation"
+    },
+    {
+      "id": "r02",
+      "label": "Python 0.9.1 archive",
+      "type": "reference",
+      "author": "alt.sources archives"
+    },
+    {
+      "id": "r03",
+      "label": "Python 3.14.8",
+      "type": "reference",
+      "author": "Python.org"
+    },
+    {
+      "id": "r04",
+      "label": "PEP 483 – Theory of Type Hints",
+      "type": "reference",
+      "author": "Guido van Rossum; Ivan Levkivskyi"
+    },
+    {
+      "id": "r05",
+      "label": "PEP 11 – CPython platform support",
+      "type": "reference",
+      "author": "Martin von Löwis; Brett Cannon"
+    },
+    {
+      "id": "r06",
+      "label": "PEP 738 – Android support",
+      "type": "reference",
+      "author": "Python PEP"
+    },
+    {
+      "id": "r07",
+      "label": "The Making of Python",
+      "type": "reference",
+      "author": "Bill Venners"
+    },
+    {
+      "id": "r08",
+      "label": "PEP 20 – The Zen of Python",
+      "type": "reference",
+      "author": "Tim Peters"
+    },
+    {
+      "id": "r09",
+      "label": "Python Cookbook",
+      "type": "reference",
+      "author": "Alex Martelli; Anna Ravenscroft; David Ascher"
+    },
+    {
+      "id": "r10",
+      "label": "PEP 1 – Purpose and Guidelines",
+      "type": "reference",
+      "author": "Berry Warsaw; Jeremy Hylton; David Goodger"
+    },
+    {
+      "id": "r11",
+      "label": "PEP 8 – Style Guide",
+      "type": "reference",
+      "author": "Guido van Rossum; Barry Warsaw"
+    },
+    {
+      "id": "r12",
+      "label": "PEP 484 – Type Hints",
+      "type": "reference",
+      "author": "Python PEP"
+    },
+    {
+      "id": "r13",
+      "label": "Why We Created Julia",
+      "type": "reference",
+      "author": "Julia authors"
+    },
+    {
+      "id": "r14",
+      "label": "PEP 342 – Coroutines via Enhanced Generators",
+      "type": "reference",
+      "author": "Guido van Rossum; Phillip J. Eby"
+    },
+    {
+      "id": "r15",
+      "label": "PEP 465 – Matrix multiplication",
+      "type": "reference",
+      "author": "Python PEP"
+    },
+    {
+      "id": "r16",
+      "label": "PEP 488 – Elimination of PYO files",
+      "type": "reference",
+      "author": "Brett Cannon"
+    },
+    {
+      "id": "r17",
+      "label": "PEP 561 – Type information distribution",
+      "type": "reference",
+      "author": "Emma Harper Smith"
+    },
+    {
+      "id": "r18",
+      "label": "Python 3.15 candidate 3",
+      "type": "reference",
+      "author": "Python Insider"
+    },
+    {
+      "id": "rust",
+      "label": "Rust",
+      "type": "language",
+      "description": "Language identified by the source as the implementation language of RustPython."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "in_abc",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_ada",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_algol_68",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_apl",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_c",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_c",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_clu",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_dylan",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_haskell",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_icon",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_lisp",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_modula_3",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_perl",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "in_standard_ml",
+      "target": "python",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_apache_groovy",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_boo",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_cobra",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_coffeescript",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_d",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_f",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_gdscript",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_go",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_javascript",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_julia",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_mojo",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_nim",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_ruby",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_swift",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "out_v",
+      "relationship": "influenced"
+    },
+    {
+      "source": "python",
+      "target": "guido",
+      "relationship": "designed_by"
+    },
+    {
+      "source": "python",
+      "target": "psf",
+      "relationship": "developed_by"
+    },
+    {
+      "source": "python",
+      "target": "oop",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "procedural",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "functional",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "structured",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "reflective",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "aspect",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "metaprogramming",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "dynamic_typing",
+      "relationship": "uses"
+    },
+    {
+      "source": "python",
+      "target": "duck_typing",
+      "relationship": "uses"
+    },
+    {
+      "source": "python",
+      "target": "strong_typing",
+      "relationship": "is"
+    },
+    {
+      "source": "python",
+      "target": "annotations",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "gc",
+      "relationship": "uses"
+    },
+    {
+      "source": "python",
+      "target": "late_binding",
+      "relationship": "uses"
+    },
+    {
+      "source": "python",
+      "target": "stdlib",
+      "relationship": "ships_with"
+    },
+    {
+      "source": "python",
+      "target": "glue",
+      "relationship": "is_designed_as"
+    },
+    {
+      "source": "python",
+      "target": "readability",
+      "relationship": "prioritizes"
+    },
+    {
+      "source": "python",
+      "target": "simplicity",
+      "relationship": "prioritizes"
+    },
+    {
+      "source": "python",
+      "target": "ease_writing",
+      "relationship": "prioritizes"
+    },
+    {
+      "source": "python",
+      "target": "indentation",
+      "relationship": "uses_as_semantic_block_delimiter"
+    },
+    {
+      "source": "python",
+      "target": "zen",
+      "relationship": "expresses_design_philosophy"
+    },
+    {
+      "source": "pep",
+      "target": "steering",
+      "relationship": "overseen_by"
+    },
+    {
+      "source": "python",
+      "target": "pep",
+      "relationship": "developed_through"
+    },
+    {
+      "source": "python",
+      "target": "pypi",
+      "relationship": "uses_ecosystem"
+    },
+    {
+      "source": "pypi",
+      "target": "pip",
+      "relationship": "serves"
+    },
+    {
+      "source": "python",
+      "target": "pycon",
+      "relationship": "has_major_conference"
+    },
+    {
+      "source": "python",
+      "target": "syntax",
+      "relationship": "has"
+    },
+    {
+      "source": "syntax",
+      "target": "grammar",
+      "relationship": "defines"
+    },
+    {
+      "source": "syntax",
+      "target": "semantics",
+      "relationship": "maps_to"
+    },
+    {
+      "source": "indentation",
+      "target": "offside",
+      "relationship": "implements"
+    },
+    {
+      "source": "offside",
+      "target": "block",
+      "relationship": "delimits"
+    },
+    {
+      "source": "block",
+      "target": "semantics",
+      "relationship": "has_visual_correspondence"
+    },
+    {
+      "source": "python",
+      "target": "cwi",
+      "relationship": "originated_at"
+    },
+    {
+      "source": "guido",
+      "target": "cwi",
+      "relationship": "worked_at"
+    },
+    {
+      "source": "python",
+      "target": "abc",
+      "relationship": "successor_to"
+    },
+    {
+      "source": "abc",
+      "target": "setl",
+      "relationship": "influenced_by"
+    },
+    {
+      "source": "abc",
+      "target": "amoeba",
+      "relationship": "could_interface_with"
+    },
+    {
+      "source": "python",
+      "target": "py09",
+      "relationship": "first_released_as"
+    },
+    {
+      "source": "py20",
+      "target": "python2",
+      "relationship": "release_of"
+    },
+    {
+      "source": "py30",
+      "target": "python3",
+      "relationship": "major_revision_of"
+    },
+    {
+      "source": "py35",
+      "target": "python3",
+      "relationship": "introduced_optional_typing"
+    },
+    {
+      "source": "py38",
+      "target": "python3",
+      "relationship": "introduced_walrus"
+    },
+    {
+      "source": "python",
+      "target": "py314",
+      "relationship": "stable_release_in_source"
+    },
+    {
+      "source": "python",
+      "target": "py315rc",
+      "relationship": "has_preview"
+    },
+    {
+      "source": "guido",
+      "target": "bdfl",
+      "relationship": "held_role_until_2018"
+    },
+    {
+      "source": "bdfl",
+      "target": "council",
+      "relationship": "succeeded_by"
+    },
+    {
+      "source": "python",
+      "target": "council",
+      "relationship": "governed_by_since_2019"
+    },
+    {
+      "source": "python",
+      "target": "monty",
+      "relationship": "named_after"
+    },
+    {
+      "source": "python2",
+      "target": "py27",
+      "relationship": "ended_with"
+    },
+    {
+      "source": "py27",
+      "target": "python2",
+      "relationship": "last_release"
+    },
+    {
+      "source": "python2",
+      "target": "python3",
+      "relationship": "predecessor_to"
+    },
+    {
+      "source": "python3",
+      "target": "annual",
+      "relationship": "follows_release_cycle"
+    },
+    {
+      "source": "statement",
+      "target": "syntax",
+      "relationship": "is_construct"
+    },
+    {
+      "source": "expression",
+      "target": "syntax",
+      "relationship": "is_construct"
+    },
+    {
+      "source": "assignment",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "if",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "for",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "while",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "try",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "raise",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "class",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "def",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "with",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "break",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "continue",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "del",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pass",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "assert",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "return",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "import",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "match",
+      "target": "statement",
+      "relationship": "is_a"
+    },
+    {
+      "source": "yield",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "lambda",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "listcomp",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "genexpr",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "dictcomp",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "condexpr",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "walrus",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "slice",
+      "target": "expression",
+      "relationship": "is_a"
+    },
+    {
+      "source": "def",
+      "target": "function",
+      "relationship": "defines"
+    },
+    {
+      "source": "yield",
+      "target": "generator",
+      "relationship": "produces"
+    },
+    {
+      "source": "generator",
+      "target": "coroutine",
+      "relationship": "supports"
+    },
+    {
+      "source": "try",
+      "target": "except",
+      "relationship": "catches"
+    },
+    {
+      "source": "try",
+      "target": "finally",
+      "relationship": "ensures_cleanup"
+    },
+    {
+      "source": "raise",
+      "target": "except",
+      "relationship": "triggers"
+    },
+    {
+      "source": "with",
+      "target": "context_manager",
+      "relationship": "uses"
+    },
+    {
+      "source": "with",
+      "target": "context_manager",
+      "relationship": "provides_resource_cleanup"
+    },
+    {
+      "source": "import",
+      "target": "module",
+      "relationship": "loads"
+    },
+    {
+      "source": "from_import",
+      "target": "module",
+      "relationship": "selectively_imports"
+    },
+    {
+      "source": "assignment",
+      "target": "name",
+      "relationship": "binds"
+    },
+    {
+      "source": "del",
+      "target": "name",
+      "relationship": "removes_binding"
+    },
+    {
+      "source": "assignment",
+      "target": "object",
+      "relationship": "binds_name_to"
+    },
+    {
+      "source": "for",
+      "target": "iterable",
+      "relationship": "iterates_over"
+    },
+    {
+      "source": "unpack",
+      "target": "iterable",
+      "relationship": "consumes"
+    },
+    {
+      "source": "listcomp",
+      "target": "list",
+      "relationship": "constructs"
+    },
+    {
+      "source": "genexpr",
+      "target": "generator",
+      "relationship": "constructs"
+    },
+    {
+      "source": "eval",
+      "target": "expression",
+      "relationship": "evaluates"
+    },
+    {
+      "source": "exec",
+      "target": "statement",
+      "relationship": "executes"
+    },
+    {
+      "source": "match",
+      "target": "case",
+      "relationship": "dispatches"
+    },
+    {
+      "source": "fstring",
+      "target": "str",
+      "relationship": "formats"
+    },
+    {
+      "source": "raw_string",
+      "target": "str",
+      "relationship": "represents_literal_backslashes"
+    },
+    {
+      "source": "triple_string",
+      "target": "str",
+      "relationship": "supports_multiline"
+    },
+    {
+      "source": "slice",
+      "target": "list",
+      "relationship": "selects"
+    },
+    {
+      "source": "walrus",
+      "target": "name",
+      "relationship": "assigns_within_expression"
+    },
+    {
+      "source": "lazy",
+      "target": "import",
+      "relationship": "modifies_import_behavior"
+    },
+    {
+      "source": "python",
+      "target": "object",
+      "relationship": "is_object_based"
+    },
+    {
+      "source": "object",
+      "target": "typeobj",
+      "relationship": "has_type"
+    },
+    {
+      "source": "class",
+      "target": "class_instance",
+      "relationship": "constructs"
+    },
+    {
+      "source": "class_instance",
+      "target": "object",
+      "relationship": "is_a"
+    },
+    {
+      "source": "class",
+      "target": "metaclass",
+      "relationship": "is_instance_of"
+    },
+    {
+      "source": "metaclass",
+      "target": "metaclass",
+      "relationship": "is_instance_of_itself"
+    },
+    {
+      "source": "name",
+      "target": "object",
+      "relationship": "refers_to"
+    },
+    {
+      "source": "dynamic_typing",
+      "target": "name",
+      "relationship": "allows_rebinding_to_different_types"
+    },
+    {
+      "source": "duck_typing",
+      "target": "object",
+      "relationship": "selects_behavior_by_supported_operations"
+    },
+    {
+      "source": "strong_typing",
+      "target": "python",
+      "relationship": "rejects_ill_defined_operations"
+    },
+    {
+      "source": "annotations",
+      "target": "mypy",
+      "relationship": "can_be_checked_by"
+    },
+    {
+      "source": "annotations",
+      "target": "mypyc",
+      "relationship": "can_enable_optimization"
+    },
+    {
+      "source": "python",
+      "target": "typing",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "bool",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "bytearray",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "bytes",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "complex",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "dict",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "ellipsis",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "float",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "frozenset",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "int",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "list",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "none",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "notimpl",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "range",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "set",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "str",
+      "relationship": "provides"
+    },
+    {
+      "source": "python",
+      "target": "tuple",
+      "relationship": "provides"
+    },
+    {
+      "source": "list",
+      "target": "mutable",
+      "relationship": "is"
+    },
+    {
+      "source": "dict",
+      "target": "mutable",
+      "relationship": "is"
+    },
+    {
+      "source": "set",
+      "target": "mutable",
+      "relationship": "is"
+    },
+    {
+      "source": "bytearray",
+      "target": "mutable",
+      "relationship": "is"
+    },
+    {
+      "source": "tuple",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "str",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "bytes",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "frozenset",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "int",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "float",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "complex",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "range",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "none",
+      "target": "immutable",
+      "relationship": "is"
+    },
+    {
+      "source": "dict",
+      "target": "hashable",
+      "relationship": "requires_keys_to_be"
+    },
+    {
+      "source": "tuple",
+      "target": "hashable",
+      "relationship": "can_be_if_elements_immutable"
+    },
+    {
+      "source": "str",
+      "target": "unicode",
+      "relationship": "represents"
+    },
+    {
+      "source": "int",
+      "target": "arbitrary_int",
+      "relationship": "implements"
+    },
+    {
+      "source": "float",
+      "target": "ieee754",
+      "relationship": "commonly_implements"
+    },
+    {
+      "source": "decimal_mod",
+      "target": "decimal",
+      "relationship": "provides"
+    },
+    {
+      "source": "fractions_mod",
+      "target": "fraction",
+      "relationship": "provides"
+    },
+    {
+      "source": "class",
+      "target": "metaprogramming",
+      "relationship": "enables"
+    },
+    {
+      "source": "metaclass",
+      "target": "reflection",
+      "relationship": "enables"
+    },
+    {
+      "source": "c3",
+      "target": "python",
+      "relationship": "used_for_method_resolution"
+    },
+    {
+      "source": "numpy",
+      "target": "python",
+      "relationship": "extends"
+    },
+    {
+      "source": "pandas",
+      "target": "numpy",
+      "relationship": "builds_on"
+    },
+    {
+      "source": "source",
+      "target": "parser",
+      "relationship": "parsed_by"
+    },
+    {
+      "source": "parser",
+      "target": "ast",
+      "relationship": "produces"
+    },
+    {
+      "source": "ast",
+      "target": "bytecode",
+      "relationship": "compiled_to"
+    },
+    {
+      "source": "cpython",
+      "target": "bytecode",
+      "relationship": "compiles_source_to"
+    },
+    {
+      "source": "bytecode",
+      "target": "vm",
+      "relationship": "executed_by"
+    },
+    {
+      "source": "cpython",
+      "target": "vm",
+      "relationship": "contains"
+    },
+    {
+      "source": "cpython",
+      "target": "c11",
+      "relationship": "written_in_since_311"
+    },
+    {
+      "source": "extension",
+      "target": "c_api",
+      "relationship": "uses"
+    },
+    {
+      "source": "extension",
+      "target": "c99",
+      "relationship": "can_be_written_in"
+    },
+    {
+      "source": "extension",
+      "target": "cpp",
+      "relationship": "can_be_written_in"
+    },
+    {
+      "source": "python",
+      "target": "heap",
+      "relationship": "uses"
+    },
+    {
+      "source": "object",
+      "target": "heap",
+      "relationship": "resides_in"
+    },
+    {
+      "source": "refcount",
+      "target": "object",
+      "relationship": "tracks_references_to"
+    },
+    {
+      "source": "cycle_gc",
+      "target": "heap",
+      "relationship": "detects_unreachable_cycles"
+    },
+    {
+      "source": "refcount",
+      "target": "cycle_gc",
+      "relationship": "complements"
+    },
+    {
+      "source": "gc",
+      "target": "refcount",
+      "relationship": "includes_strategy"
+    },
+    {
+      "source": "gc",
+      "target": "cycle_gc",
+      "relationship": "includes_strategy"
+    },
+    {
+      "source": "late_binding",
+      "target": "namespace",
+      "relationship": "resolves_names_at_runtime"
+    },
+    {
+      "source": "function",
+      "target": "callstack",
+      "relationship": "uses"
+    },
+    {
+      "source": "python",
+      "target": "multithreading",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "multiprocessing",
+      "relationship": "provides"
+    },
+    {
+      "source": "multiprocessing",
+      "target": "gil",
+      "relationship": "can_bypass_for_cpu_parallelism"
+    },
+    {
+      "source": "gil",
+      "target": "cpython",
+      "relationship": "historically_limits_parallel_cpu_execution"
+    },
+    {
+      "source": "freethread",
+      "target": "cpython",
+      "relationship": "optional_mode_since_313"
+    },
+    {
+      "source": "freethread",
+      "target": "gil",
+      "relationship": "reduces_dependency"
+    },
+    {
+      "source": "pypy",
+      "target": "jit",
+      "relationship": "uses"
+    },
+    {
+      "source": "jit",
+      "target": "machine_code",
+      "relationship": "generates_during_execution"
+    },
+    {
+      "source": "aot",
+      "target": "machine_code",
+      "relationship": "generates_before_execution"
+    },
+    {
+      "source": "python",
+      "target": "machine_code",
+      "relationship": "can_reach_via_compilers"
+    },
+    {
+      "source": "extension",
+      "target": "python",
+      "relationship": "extends_or_accelerates"
+    },
+    {
+      "source": "python",
+      "target": "plus",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "minus",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "mul",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "div",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "floordiv",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "mod",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "power",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "matmul",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "eq",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "is",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "and",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "or",
+      "relationship": "supports"
+    },
+    {
+      "source": "python",
+      "target": "not",
+      "relationship": "supports"
+    },
+    {
+      "source": "plus",
+      "target": "concat",
+      "relationship": "can_concatenate_strings"
+    },
+    {
+      "source": "mul",
+      "target": "repeat",
+      "relationship": "can_repeat_strings"
+    },
+    {
+      "source": "div",
+      "target": "true_div",
+      "relationship": "implements"
+    },
+    {
+      "source": "floordiv",
+      "target": "floor_sem",
+      "relationship": "implements"
+    },
+    {
+      "source": "eq",
+      "target": "object",
+      "relationship": "compares_value"
+    },
+    {
+      "source": "is",
+      "target": "object",
+      "relationship": "compares_identity"
+    },
+    {
+      "source": "chain",
+      "target": "expression",
+      "relationship": "is_expression_form"
+    },
+    {
+      "source": "matmul",
+      "target": "numpy",
+      "relationship": "intended_for"
+    },
+    {
+      "source": "round_even",
+      "target": "python3",
+      "relationship": "rounding_rule"
+    },
+    {
+      "source": "true_div",
+      "target": "python3",
+      "relationship": "default_since_3_0"
+    },
+    {
+      "source": "floordiv",
+      "target": "python3",
+      "relationship": "defined_in_modern_semantics"
+    },
+    {
+      "source": "stdlib",
+      "target": "itertools",
+      "relationship": "includes"
+    },
+    {
+      "source": "stdlib",
+      "target": "functools",
+      "relationship": "includes"
+    },
+    {
+      "source": "stdlib",
+      "target": "re",
+      "relationship": "includes"
+    },
+    {
+      "source": "stdlib",
+      "target": "decimal_mod",
+      "relationship": "includes"
+    },
+    {
+      "source": "stdlib",
+      "target": "fractions_mod",
+      "relationship": "includes"
+    },
+    {
+      "source": "stdlib",
+      "target": "wsgiref",
+      "relationship": "includes"
+    },
+    {
+      "source": "stdlib",
+      "target": "gui",
+      "relationship": "supports"
+    },
+    {
+      "source": "stdlib",
+      "target": "db",
+      "relationship": "supports"
+    },
+    {
+      "source": "stdlib",
+      "target": "http",
+      "relationship": "supports"
+    },
+    {
+      "source": "stdlib",
+      "target": "mime",
+      "relationship": "supports"
+    },
+    {
+      "source": "stdlib",
+      "target": "testing",
+      "relationship": "supports"
+    },
+    {
+      "source": "itertools",
+      "target": "functional",
+      "relationship": "supports"
+    },
+    {
+      "source": "functools",
+      "target": "functional",
+      "relationship": "supports"
+    },
+    {
+      "source": "re",
+      "target": "regex",
+      "relationship": "implements"
+    },
+    {
+      "source": "python",
+      "target": "pypi",
+      "relationship": "ecosystem_uses"
+    },
+    {
+      "source": "pip",
+      "target": "pypi",
+      "relationship": "installs_from"
+    },
+    {
+      "source": "cpython",
+      "target": "idles",
+      "relationship": "bundles"
+    },
+    {
+      "source": "python",
+      "target": "ipython",
+      "relationship": "has_shell"
+    },
+    {
+      "source": "ipython",
+      "target": "jupyter",
+      "relationship": "used_by"
+    },
+    {
+      "source": "python",
+      "target": "jupyter",
+      "relationship": "used_in"
+    },
+    {
+      "source": "pycharm",
+      "target": "python",
+      "relationship": "supports"
+    },
+    {
+      "source": "spyder",
+      "target": "python",
+      "relationship": "supports"
+    },
+    {
+      "source": "vscode",
+      "target": "python",
+      "relationship": "supports"
+    },
+    {
+      "source": "pythonanywhere",
+      "target": "python",
+      "relationship": "hosts"
+    },
+    {
+      "source": "canopy",
+      "target": "python",
+      "relationship": "supports"
+    },
+    {
+      "source": "numpy",
+      "target": "python",
+      "relationship": "is_major_library_for"
+    },
+    {
+      "source": "numpy",
+      "target": "machine_code",
+      "relationship": "uses_native_code_underneath"
+    },
+    {
+      "source": "pandas",
+      "target": "python",
+      "relationship": "is_major_library_for"
+    },
+    {
+      "source": "cpython",
+      "target": "python",
+      "relationship": "reference_implementation_of"
+    },
+    {
+      "source": "pypy",
+      "target": "python3",
+      "relationship": "implements"
+    },
+    {
+      "source": "pypy",
+      "target": "jit",
+      "relationship": "uses"
+    },
+    {
+      "source": "pypy",
+      "target": "python2",
+      "relationship": "supports_legacy"
+    },
+    {
+      "source": "pypy",
+      "target": "c_api",
+      "relationship": "does_not_fully_support"
+    },
+    {
+      "source": "micropython",
+      "target": "python",
+      "relationship": "microcontroller_variant"
+    },
+    {
+      "source": "circuitpython",
+      "target": "python",
+      "relationship": "microcontroller_variant"
+    },
+    {
+      "source": "stackless",
+      "target": "cpython",
+      "relationship": "fork_of"
+    },
+    {
+      "source": "stackless",
+      "target": "coroutine",
+      "relationship": "implements_as_microthreads"
+    },
+    {
+      "source": "rustpython",
+      "target": "rust",
+      "relationship": "written_in"
+    },
+    {
+      "source": "rustpython",
+      "target": "python",
+      "relationship": "implements"
+    },
+    {
+      "source": "codon",
+      "target": "aot",
+      "relationship": "uses"
+    },
+    {
+      "source": "codon",
+      "target": "llvm",
+      "relationship": "uses"
+    },
+    {
+      "source": "codon",
+      "target": "machine_code",
+      "relationship": "compiles_to"
+    },
+    {
+      "source": "codon",
+      "target": "python",
+      "relationship": "has_near_identical_syntax_but_differences"
+    },
+    {
+      "source": "pyston",
+      "target": "jit",
+      "relationship": "uses"
+    },
+    {
+      "source": "cinder",
+      "target": "cpython",
+      "relationship": "fork_of"
+    },
+    {
+      "source": "cinder",
+      "target": "jit",
+      "relationship": "uses"
+    },
+    {
+      "source": "snek",
+      "target": "python",
+      "relationship": "is_inspired_by_but_not"
+    },
+    {
+      "source": "snek",
+      "target": "avr",
+      "relationship": "runs_on"
+    },
+    {
+      "source": "brython",
+      "target": "python",
+      "relationship": "transpiles"
+    },
+    {
+      "source": "brython",
+      "target": "javascript",
+      "relationship": "targets"
+    },
+    {
+      "source": "transcrypt",
+      "target": "python",
+      "relationship": "transpiles_to"
+    },
+    {
+      "source": "transcrypt",
+      "target": "javascript",
+      "relationship": "targets"
+    },
+    {
+      "source": "pyjl",
+      "target": "python",
+      "relationship": "transpiles_subset"
+    },
+    {
+      "source": "pyjl",
+      "target": "julia",
+      "relationship": "targets"
+    },
+    {
+      "source": "nuitka",
+      "target": "python",
+      "relationship": "compiles"
+    },
+    {
+      "source": "numba",
+      "target": "python",
+      "relationship": "jit_compiles_subset"
+    },
+    {
+      "source": "numba",
+      "target": "numpy",
+      "relationship": "jit_compiles_subset"
+    },
+    {
+      "source": "pythran",
+      "target": "python",
+      "relationship": "compiles_subset"
+    },
+    {
+      "source": "pythran",
+      "target": "cpp",
+      "relationship": "targets"
+    },
+    {
+      "source": "rpython",
+      "target": "python",
+      "relationship": "builds"
+    },
+    {
+      "source": "rpython",
+      "target": "pypy",
+      "relationship": "builds"
+    },
+    {
+      "source": "myhdl",
+      "target": "python",
+      "relationship": "uses"
+    },
+    {
+      "source": "myhdl",
+      "target": "verilog",
+      "relationship": "converts_to"
+    },
+    {
+      "source": "myhdl",
+      "target": "vhdl",
+      "relationship": "converts_to"
+    },
+    {
+      "source": "grumpy",
+      "target": "python2",
+      "relationship": "transpiles"
+    },
+    {
+      "source": "grumpy",
+      "target": "go",
+      "relationship": "targets"
+    },
+    {
+      "source": "jython",
+      "target": "python2",
+      "relationship": "compiles_to"
+    },
+    {
+      "source": "jython",
+      "target": "jvm",
+      "relationship": "runs_on"
+    },
+    {
+      "source": "ironpython",
+      "target": "python2",
+      "relationship": "runs_on"
+    },
+    {
+      "source": "ironpython",
+      "target": "dotnet",
+      "relationship": "targets"
+    },
+    {
+      "source": "unladen",
+      "target": "llvm",
+      "relationship": "aimed_to_use"
+    },
+    {
+      "source": "psyco",
+      "target": "cpython",
+      "relationship": "integrates_with"
+    },
+    {
+      "source": "psyco",
+      "target": "machine_code",
+      "relationship": "specializes_to"
+    },
+    {
+      "source": "pys60",
+      "target": "python2",
+      "relationship": "implemented"
+    },
+    {
+      "source": "python",
+      "target": "micropython",
+      "relationship": "has_variant"
+    },
+    {
+      "source": "python",
+      "target": "circuitpython",
+      "relationship": "has_variant"
+    },
+    {
+      "source": "pep1",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep8",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep20",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep257",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep255",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep342",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep380",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep441",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep465",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep483",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep484",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep488",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep561",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep738",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep790",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep13",
+      "target": "pep",
+      "relationship": "is_a"
+    },
+    {
+      "source": "pep20",
+      "target": "zen",
+      "relationship": "defines"
+    },
+    {
+      "source": "pep8",
+      "target": "python",
+      "relationship": "defines_style_for"
+    },
+    {
+      "source": "pep483",
+      "target": "annotations",
+      "relationship": "theorizes"
+    },
+    {
+      "source": "pep484",
+      "target": "annotations",
+      "relationship": "specifies"
+    },
+    {
+      "source": "pep255",
+      "target": "generator",
+      "relationship": "specifies"
+    },
+    {
+      "source": "pep342",
+      "target": "coroutine",
+      "relationship": "specifies"
+    },
+    {
+      "source": "pep380",
+      "target": "generator",
+      "relationship": "extends"
+    },
+    {
+      "source": "pep465",
+      "target": "matmul",
+      "relationship": "specifies"
+    },
+    {
+      "source": "pep738",
+      "target": "android",
+      "relationship": "supports"
+    },
+    {
+      "source": "pep13",
+      "target": "steering",
+      "relationship": "specifies_governance"
+    },
+    {
+      "source": "q01",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q02",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q03",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q04",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q05",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q06",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q07",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q08",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q09",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q10",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q11",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q12",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q13",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q14",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q15",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q16",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q17",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q18",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q19",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q20",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q21",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q22",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q23",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "q24",
+      "target": "python",
+      "relationship": "asks_about"
+    },
+    {
+      "source": "mc01",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc02",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc03",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc04",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc05",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc06",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc07",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc08",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc09",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc10",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc11",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc12",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc13",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc14",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "mc15",
+      "target": "python",
+      "relationship": "corrective_scope"
+    },
+    {
+      "source": "c01",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c02",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "source": "c03",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 101,
+        "end": 103
+      }
+    },
+    {
+      "source": "c04",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "source": "c05",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 112,
+        "end": 137
+      }
+    },
+    {
+      "source": "c06",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 139,
+        "end": 142
+      }
+    },
+    {
+      "source": "c07",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c08",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c09",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "source": "c10",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c11",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c12",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c13",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c14",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "source": "c15",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c16",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c17",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "source": "c18",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 395,
+        "end": 405
+      }
+    },
+    {
+      "source": "c19",
+      "target": "python",
+      "relationship": "source_supports",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "source": "c01",
+      "target": "python",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "oop",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "procedural",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "functional",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "structured",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "reflective",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "dynamic_typing",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "gc",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "indentation",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c01",
+      "target": "stdlib",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "source": "c02",
+      "target": "guido",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "source": "c02",
+      "target": "cwi",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "source": "c02",
+      "target": "abc",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "source": "c02",
+      "target": "py09",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "source": "c03",
+      "target": "guido",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 101,
+        "end": 103
+      }
+    },
+    {
+      "source": "c03",
+      "target": "bdfl",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 101,
+        "end": 103
+      }
+    },
+    {
+      "source": "c03",
+      "target": "council",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 101,
+        "end": 103
+      }
+    },
+    {
+      "source": "c04",
+      "target": "py20",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "source": "c04",
+      "target": "py30",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "source": "c04",
+      "target": "py35",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "source": "c04",
+      "target": "python2",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "source": "c04",
+      "target": "python3",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "source": "c05",
+      "target": "zen",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 112,
+        "end": 137
+      }
+    },
+    {
+      "source": "c05",
+      "target": "readability",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 112,
+        "end": 137
+      }
+    },
+    {
+      "source": "c05",
+      "target": "simplicity",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 112,
+        "end": 137
+      }
+    },
+    {
+      "source": "c06",
+      "target": "pep",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 139,
+        "end": 142
+      }
+    },
+    {
+      "source": "c06",
+      "target": "steering",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 139,
+        "end": 142
+      }
+    },
+    {
+      "source": "c07",
+      "target": "indentation",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "statement",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "if",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "for",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "while",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "try",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "raise",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "class",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "def",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "with",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "yield",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "import",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c07",
+      "target": "match",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "source": "c08",
+      "target": "expression",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c08",
+      "target": "listcomp",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c08",
+      "target": "genexpr",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c08",
+      "target": "lambda",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c08",
+      "target": "slice",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c08",
+      "target": "unpack",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c08",
+      "target": "fstring",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "source": "c09",
+      "target": "duck_typing",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "source": "c09",
+      "target": "strong_typing",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "source": "c09",
+      "target": "annotations",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "source": "c09",
+      "target": "mypy",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "source": "c10",
+      "target": "bool",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "bytearray",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "bytes",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "complex",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "dict",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "float",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "frozenset",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "int",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "list",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "none",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "range",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "set",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "str",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c10",
+      "target": "tuple",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "source": "c11",
+      "target": "div",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "floordiv",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "mod",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "power",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "matmul",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "arbitrary_int",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "decimal",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c11",
+      "target": "fraction",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "source": "c12",
+      "target": "stdlib",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c12",
+      "target": "http",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c12",
+      "target": "mime",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c12",
+      "target": "gui",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c12",
+      "target": "db",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c12",
+      "target": "regex",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c12",
+      "target": "testing",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "source": "c13",
+      "target": "idles",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c13",
+      "target": "ipython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c13",
+      "target": "jupyter",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c13",
+      "target": "pycharm",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c13",
+      "target": "spyder",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c13",
+      "target": "vscode",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "source": "c14",
+      "target": "cpython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "source": "c14",
+      "target": "bytecode",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "source": "c14",
+      "target": "vm",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "source": "c14",
+      "target": "c11",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "source": "c15",
+      "target": "pypy",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "codon",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "micropython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "circuitpython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "pyston",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "cinder",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "rustpython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c15",
+      "target": "stackless",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "source": "c16",
+      "target": "brython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "transcrypt",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "cython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "pyjl",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "nuitka",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "numba",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "pythran",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "rpython",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c16",
+      "target": "myhdl",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "source": "c17",
+      "target": "jit",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "source": "c17",
+      "target": "aot",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "source": "c17",
+      "target": "multiprocessing",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "source": "c17",
+      "target": "numpy",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "source": "c18",
+      "target": "pep",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 395,
+        "end": 405
+      }
+    },
+    {
+      "source": "c18",
+      "target": "steering",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 395,
+        "end": 405
+      }
+    },
+    {
+      "source": "c18",
+      "target": "github",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 395,
+        "end": 405
+      }
+    },
+    {
+      "source": "c19",
+      "target": "pycon",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "source": "c19",
+      "target": "monty",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "source": "c19",
+      "target": "javascript",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "source": "c19",
+      "target": "go",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "source": "c19",
+      "target": "julia",
+      "relationship": "provenance_supports",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    },
+    {
+      "source": "python",
+      "target": "expand_object_data_model",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_descriptor_protocol",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_attribute_lookup",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_mro",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_import_machinery",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_packages_wheels",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_virtual_environments",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_asyncio",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_async_await",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_iterators_protocols",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_context_manager_protocol",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_exception_hierarchy",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_generator_send_throw_close",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_decorators",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_metaclasses",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_pattern_matching",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_buffer_protocol",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_memoryview",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_c_abi",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_stable_abi",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_free_threaded_cpython",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_subinterpreters",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_gc_internals",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_bytecode_instruction_set",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_ast_tooling",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_type_checker_ecosystem",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_pypi_security",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_wasi",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_android",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_embedded_python",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_scientific_python",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_ml_ai_python",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_web_frameworks",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_automation",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_data_engineering",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "python",
+      "target": "expand_testing_ecosystem",
+      "relationship": "future_expansion_target"
+    },
+    {
+      "source": "r01",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r02",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r03",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r04",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r05",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r06",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r07",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r08",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r09",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r10",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r11",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r12",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r13",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r14",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r15",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r16",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r17",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    },
+    {
+      "source": "r18",
+      "target": "python",
+      "relationship": "bibliographic_context"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c01",
+      "title": "Identity and design",
+      "statement": "Python is high-level, general-purpose, multi-paradigm, readability-oriented, indentation-based, standard-library-rich and garbage-collected.",
+      "source_lines": {
+        "start": 60,
+        "end": 92
+      }
+    },
+    {
+      "id": "c02",
+      "title": "Origin",
+      "statement": "Python was conceived by Guido van Rossum at CWI as a successor to ABC; implementation began in 1989 and first release was 0.9.0 in 1991.",
+      "source_lines": {
+        "start": 98,
+        "end": 104
+      }
+    },
+    {
+      "id": "c03",
+      "title": "Governance",
+      "statement": "Guido left the BDFL role in 2018 and a five-member Steering Council was elected in 2019.",
+      "source_lines": {
+        "start": 101,
+        "end": 103
+      }
+    },
+    {
+      "id": "c04",
+      "title": "Version history",
+      "statement": "Python 2.0 added major features; Python 3.0 was a major non-fully-compatible revision; typing capabilities began in Python 3.5.",
+      "source_lines": {
+        "start": 106,
+        "end": 110
+      }
+    },
+    {
+      "id": "c05",
+      "title": "Philosophy",
+      "statement": "The Zen of Python emphasizes explicitness, simplicity, readability and practical consistency, while remaining a guideline.",
+      "source_lines": {
+        "start": 112,
+        "end": 137
+      }
+    },
+    {
+      "id": "c06",
+      "title": "PEPs",
+      "statement": "PEPs document information, processes, naming and language proposals and are overseen by the Steering Council.",
+      "source_lines": {
+        "start": 139,
+        "end": 142
+      }
+    },
+    {
+      "id": "c07",
+      "title": "Syntax",
+      "statement": "Python uses significant indentation and provides statements for assignment, control flow, exceptions, classes, functions, context management, imports, matching and generators.",
+      "source_lines": {
+        "start": 144,
+        "end": 175
+      }
+    },
+    {
+      "id": "c08",
+      "title": "Expressions and semantics",
+      "statement": "Python distinguishes expressions and statements and supports comprehensions, lambdas, slicing, unpacking, string forms and dynamic references.",
+      "source_lines": {
+        "start": 177,
+        "end": 203
+      }
+    },
+    {
+      "id": "c09",
+      "title": "Typing",
+      "statement": "Python uses duck typing with typed objects and untyped names while remaining strongly typed; annotations may be checked externally.",
+      "source_lines": {
+        "start": 205,
+        "end": 214
+      }
+    },
+    {
+      "id": "c10",
+      "title": "Built-in types",
+      "statement": "Python provides bool, bytearray, bytes, complex, dict, float, frozenset, int, list, NoneType, range, set, str and tuple.",
+      "source_lines": {
+        "start": 216,
+        "end": 256
+      }
+    },
+    {
+      "id": "c11",
+      "title": "Numeric semantics",
+      "statement": "Python supports true/floor division, modulo, exponentiation, matrix multiplication, arbitrary precision integers, Decimal and Fraction.",
+      "source_lines": {
+        "start": 258,
+        "end": 275
+      }
+    },
+    {
+      "id": "c12",
+      "title": "Libraries",
+      "statement": "The standard library covers Internet protocols/formats, GUI, relational databases, pseudorandom numbers, decimals, regex and unit testing.",
+      "source_lines": {
+        "start": 312,
+        "end": 317
+      }
+    },
+    {
+      "id": "c13",
+      "title": "Environments",
+      "statement": "Python implementations commonly provide REPLs; CPython includes IDLE and the ecosystem includes IPython, Jupyter and desktop/web IDEs.",
+      "source_lines": {
+        "start": 319,
+        "end": 331
+      }
+    },
+    {
+      "id": "c14",
+      "title": "CPython",
+      "statement": "CPython is the reference implementation, written in C, compiling Python to bytecode executed by a VM.",
+      "source_lines": {
+        "start": 332,
+        "end": 339
+      }
+    },
+    {
+      "id": "c15",
+      "title": "Alternative implementations",
+      "statement": "The source describes PyPy, Codon, MicroPython, CircuitPython, Pyston, Cinder, RustPython and Stackless Python.",
+      "source_lines": {
+        "start": 345,
+        "end": 360
+      }
+    },
+    {
+      "id": "c16",
+      "title": "Compilers and transpilers",
+      "statement": "The ecosystem includes Brython, Transcrypt, Cython, PyJL, Nuitka, Numba, Pythran, RPython and MyHDL.",
+      "source_lines": {
+        "start": 365,
+        "end": 384
+      }
+    },
+    {
+      "id": "c17",
+      "title": "Performance",
+      "statement": "JIT, static compilation, multiprocessing, efficient data structures and native numerical libraries can improve performance.",
+      "source_lines": {
+        "start": 385,
+        "end": 394
+      }
+    },
+    {
+      "id": "c18",
+      "title": "Development lifecycle",
+      "statement": "Python development uses PEPs, community review, GitHub and a release process with incompatible, feature and bug-fix releases.",
+      "source_lines": {
+        "start": 395,
+        "end": 405
+      }
+    },
+    {
+      "id": "c19",
+      "title": "Culture and influence",
+      "statement": "PyCon, Monty Python naming/culture, Pythonic terminology and the influence graph are described.",
+      "source_lines": {
+        "start": 407,
+        "end": 419
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "r01",
+      "title": "General Python FAQ",
+      "author": "Python Software Foundation"
+    },
+    {
+      "id": "r02",
+      "title": "Python 0.9.1 archive",
+      "author": "alt.sources archives"
+    },
+    {
+      "id": "r03",
+      "title": "Python 3.14.8",
+      "author": "Python.org"
+    },
+    {
+      "id": "r04",
+      "title": "PEP 483 – Theory of Type Hints",
+      "author": "Guido van Rossum; Ivan Levkivskyi"
+    },
+    {
+      "id": "r05",
+      "title": "PEP 11 – CPython platform support",
+      "author": "Martin von Löwis; Brett Cannon"
+    },
+    {
+      "id": "r06",
+      "title": "PEP 738 – Android support",
+      "author": "Python PEP"
+    },
+    {
+      "id": "r07",
+      "title": "The Making of Python",
+      "author": "Bill Venners"
+    },
+    {
+      "id": "r08",
+      "title": "PEP 20 – The Zen of Python",
+      "author": "Tim Peters"
+    },
+    {
+      "id": "r09",
+      "title": "Python Cookbook",
+      "author": "Alex Martelli; Anna Ravenscroft; David Ascher"
+    },
+    {
+      "id": "r10",
+      "title": "PEP 1 – Purpose and Guidelines",
+      "author": "Berry Warsaw; Jeremy Hylton; David Goodger"
+    },
+    {
+      "id": "r11",
+      "title": "PEP 8 – Style Guide",
+      "author": "Guido van Rossum; Barry Warsaw"
+    },
+    {
+      "id": "r12",
+      "title": "PEP 484 – Type Hints",
+      "author": "Python PEP"
+    },
+    {
+      "id": "r13",
+      "title": "Why We Created Julia",
+      "author": "Julia authors"
+    },
+    {
+      "id": "r14",
+      "title": "PEP 342 – Coroutines via Enhanced Generators",
+      "author": "Guido van Rossum; Phillip J. Eby"
+    },
+    {
+      "id": "r15",
+      "title": "PEP 465 – Matrix multiplication",
+      "author": "Python PEP"
+    },
+    {
+      "id": "r16",
+      "title": "PEP 488 – Elimination of PYO files",
+      "author": "Brett Cannon"
+    },
+    {
+      "id": "r17",
+      "title": "PEP 561 – Type information distribution",
+      "author": "Emma Harper Smith"
+    },
+    {
+      "id": "r18",
+      "title": "Python 3.15 candidate 3",
+      "author": "Python Insider"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_dynamic_static",
+      "concept_a": "Dynamic typing",
+      "concept_b": "Static typing",
+      "distinction": "Dynamic typing defers constraints to runtime; optional annotations allow external checking."
+    },
+    {
+      "id": "dist_duck_strong",
+      "concept_a": "Duck typing",
+      "concept_b": "Strong typing",
+      "distinction": "Duck typing concerns supported behavior; strong typing rejects undefined operations."
+    },
+    {
+      "id": "dist_statement_expression",
+      "concept_a": "Statement",
+      "concept_b": "Expression",
+      "distinction": "Python enforces a rigid distinction; statements cannot be embedded in expressions."
+    },
+    {
+      "id": "dist_list_tuple",
+      "concept_a": "List",
+      "concept_b": "Tuple",
+      "distinction": "Lists are mutable; tuples immutable and hashable only when their elements permit it."
+    },
+    {
+      "id": "dist_eq_is",
+      "concept_a": "==",
+      "concept_b": "is",
+      "distinction": "== compares values; is compares object identity."
+    },
+    {
+      "id": "dist_slash_floor",
+      "concept_a": "/",
+      "concept_b": "//",
+      "distinction": "Modern / performs true division; // performs floor division."
+    },
+    {
+      "id": "dist_source_bytecode",
+      "concept_a": "Python source",
+      "concept_b": "Python bytecode",
+      "distinction": "CPython compiles source into intermediate bytecode before VM execution."
+    },
+    {
+      "id": "dist_bytecode_machine",
+      "concept_a": "Bytecode",
+      "concept_b": "Machine code",
+      "distinction": "Bytecode targets a VM; JIT/AOT/native paths can produce machine code."
+    },
+    {
+      "id": "dist_cpython_pypy",
+      "concept_a": "CPython",
+      "concept_b": "PyPy",
+      "distinction": "CPython is reference implementation; PyPy uses JIT and differs in compatibility."
+    },
+    {
+      "id": "dist_python_dialect",
+      "concept_a": "Python",
+      "concept_b": "Python dialects",
+      "distinction": "Cython/RPython/Starlark-related forms can alter or extend Python-like syntax/semantics."
+    },
+    {
+      "id": "dist_annotation_enforcement",
+      "concept_a": "Type annotation",
+      "concept_b": "Runtime enforcement",
+      "distinction": "Annotations are not enforced by Python itself according to source."
+    },
+    {
+      "id": "dist_refcount_gc",
+      "concept_a": "Reference counting",
+      "concept_b": "Cycle-detecting garbage collection",
+      "distinction": "The memory strategy combines reference counting with cycle detection."
+    },
+    {
+      "id": "dist_with_try",
+      "concept_a": "with",
+      "concept_b": "try/finally",
+      "distinction": "with provides context-manager resource management and cleanup semantics."
+    },
+    {
+      "id": "dist_generator_coroutine",
+      "concept_a": "Generator",
+      "concept_b": "Coroutine",
+      "distinction": "Generators use yield; Python extended them for coroutine-like behavior."
+    },
+    {
+      "id": "dist_listcomp_for",
+      "concept_a": "List comprehension",
+      "concept_b": "for loop",
+      "distinction": "Comprehensions are expressions; for is a statement."
+    },
+    {
+      "id": "dist_module_package",
+      "concept_a": "Module",
+      "concept_b": "Package ecosystem",
+      "distinction": "Modules are language import units; PyPI distributes third-party projects."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp01",
+      "title": "Language identity",
+      "sequence": "python -> goals -> paradigms -> philosophy"
+    },
+    {
+      "id": "lp02",
+      "title": "History",
+      "sequence": "SETL -> ABC -> Python -> Python 2 -> Python 3"
+    },
+    {
+      "id": "lp03",
+      "title": "Execution",
+      "sequence": "source -> parser -> AST -> bytecode -> VM"
+    },
+    {
+      "id": "lp04",
+      "title": "Object model",
+      "sequence": "name -> object -> type -> class -> metaclass"
+    },
+    {
+      "id": "lp05",
+      "title": "Typing",
+      "sequence": "dynamic -> duck -> strong -> annotations -> external checking"
+    },
+    {
+      "id": "lp06",
+      "title": "Control flow",
+      "sequence": "indentation -> blocks -> statements -> exceptions -> with -> generators"
+    },
+    {
+      "id": "lp07",
+      "title": "Functional features",
+      "sequence": "lambda -> comprehensions -> generator expressions -> itertools/functools"
+    },
+    {
+      "id": "lp08",
+      "title": "Collections",
+      "sequence": "list/tuple/set/dict -> mutability -> hashing -> identity"
+    },
+    {
+      "id": "lp09",
+      "title": "Numerics",
+      "sequence": "operators -> arbitrary ints -> Decimal/Fraction -> NumPy"
+    },
+    {
+      "id": "lp10",
+      "title": "Memory",
+      "sequence": "reference counting -> cycle detection -> GC"
+    },
+    {
+      "id": "lp11",
+      "title": "Ecosystem",
+      "sequence": "import -> modules -> stdlib -> PyPI -> pip -> extensions"
+    },
+    {
+      "id": "lp12",
+      "title": "Performance",
+      "sequence": "CPython -> JIT/AOT -> native extensions -> NumPy -> multiprocessing"
+    },
+    {
+      "id": "lp13",
+      "title": "Implementations",
+      "sequence": "CPython -> PyPy -> MicroPython/CircuitPython -> RustPython/Stackless"
+    },
+    {
+      "id": "lp14",
+      "title": "Compilation",
+      "sequence": "Cython/Nuitka/Numba/Pythran/PyJL/Brython/Transcrypt"
+    },
+    {
+      "id": "lp15",
+      "title": "Tooling",
+      "sequence": "REPL -> IDLE/IPython -> Jupyter -> IDEs"
+    },
+    {
+      "id": "lp16",
+      "title": "Governance",
+      "sequence": "PEP -> review -> Steering Council -> GitHub -> releases"
+    },
+    {
+      "id": "lp17",
+      "title": "Influence",
+      "sequence": "languages -> Python -> JavaScript/Go/Julia/GDScript"
+    },
+    {
+      "id": "lp18",
+      "title": "Embedded",
+      "sequence": "MicroPython/CircuitPython -> microcontrollers -> constrained execution"
+    }
+  ],
+  "misconception_corrections": [
+    {
+      "id": "mc01",
+      "misconception": "Python is statically typed",
+      "correction": "Python is dynamically typed; annotations are optional and externally checkable."
+    },
+    {
+      "id": "mc02",
+      "misconception": "Dynamic means weak",
+      "correction": "The source describes Python as dynamically and strongly typed."
+    },
+    {
+      "id": "mc03",
+      "misconception": "== and is are equivalent",
+      "correction": "== compares values; is compares identity."
+    },
+    {
+      "id": "mc04",
+      "misconception": "A name has a fixed type",
+      "correction": "Names are generic reference holders and may be rebound to objects of different types."
+    },
+    {
+      "id": "mc05",
+      "misconception": "CPython executes source directly",
+      "correction": "CPython compiles programs to bytecode executed by a VM."
+    },
+    {
+      "id": "mc06",
+      "misconception": "Python is only interpreted",
+      "correction": "The ecosystem includes bytecode execution, JITs, AOT compilers and transpilers."
+    },
+    {
+      "id": "mc07",
+      "misconception": "Lists and tuples are interchangeable",
+      "correction": "Lists are mutable; tuples immutable with different key/hash semantics."
+    },
+    {
+      "id": "mc08",
+      "misconception": "Annotations enforce runtime types",
+      "correction": "The source says annotations are not enforced by Python itself."
+    },
+    {
+      "id": "mc09",
+      "misconception": "Python is only object-oriented",
+      "correction": "Python supports multiple paradigms."
+    },
+    {
+      "id": "mc10",
+      "misconception": "Indentation is cosmetic",
+      "correction": "Indentation delimits blocks and therefore carries semantic meaning."
+    },
+    {
+      "id": "mc11",
+      "misconception": "PyPy is CPython",
+      "correction": "PyPy is a separate implementation with JIT and compatibility differences."
+    },
+    {
+      "id": "mc12",
+      "misconception": "Snek is Python",
+      "correction": "The source explicitly distinguishes Snek as Python-inspired but not Python."
+    },
+    {
+      "id": "mc13",
+      "misconception": "Python cannot be optimized",
+      "correction": "JIT, AOT, multiprocessing, native extensions and efficient data structures are described optimization routes."
+    },
+    {
+      "id": "mc14",
+      "misconception": "All implementations have identical semantics",
+      "correction": "The source notes alternative implementations can differ in semantics and APIs."
+    },
+    {
+      "id": "mc15",
+      "misconception": "with only applies to files",
+      "correction": "with is a general context-manager mechanism for resource acquisition/cleanup."
+    }
+  ],
+  "questions": [
+    "How did ABC shape Python's design?",
+    "How does significant indentation alter Python's syntax and semantics?",
+    "How do names, objects and dynamic typing interact?",
+    "How can Python be both dynamically and strongly typed?",
+    "How does CPython transform source code into executed behavior?",
+    "What role do bytecode and the VM play?",
+    "How do reference counting and cycle detection cooperate?",
+    "How do statements differ from expressions?",
+    "How do generators support coroutine-like behavior?",
+    "How do comprehensions connect Python to functional programming?",
+    "How do Python's built-in collections differ in mutability and hashing?",
+    "How do == and is differ?",
+    "How do /, // and % behave mathematically?",
+    "How do optional annotations connect to mypy and mypyc?",
+    "How does Python integrate native C/C++ code?",
+    "Why is Python a glue language?",
+    "How do stdlib, PyPI and pip form an ecosystem?",
+    "How do CPython, PyPy, MicroPython and CircuitPython differ?",
+    "How do JIT, AOT, transpilation and native extensions provide performance paths?",
+    "How does Python support scientific computing through NumPy and related libraries?",
+    "How does PEP governance connect proposals, community review and the Steering Council?",
+    "How did Python influence JavaScript, Go, Julia and GDScript?",
+    "How did Python evolve from 2.x to 3.x?",
+    "How does the implementation ecosystem extend Python to embedded and compiled environments?"
+  ],
+  "expansion_targets": [
+    "object/data model",
+    "descriptor protocol",
+    "attribute lookup",
+    "MRO",
+    "import machinery",
+    "packages/wheels",
+    "virtual environments",
+    "asyncio",
+    "async/await",
+    "iterators/protocols",
+    "context-manager protocol",
+    "exception hierarchy",
+    "generator send/throw/close",
+    "decorators",
+    "metaclasses",
+    "pattern matching",
+    "buffer protocol",
+    "memoryview",
+    "C ABI",
+    "stable ABI",
+    "free-threaded CPython",
+    "subinterpreters",
+    "GC internals",
+    "bytecode instruction set",
+    "AST tooling",
+    "type-checker ecosystem",
+    "PyPI security",
+    "WASI",
+    "Android",
+    "embedded Python",
+    "scientific Python",
+    "ML/AI Python",
+    "web frameworks",
+    "automation",
+    "data engineering",
+    "testing ecosystem"
+  ],
+  "validation": {
+    "duplicate_node_ids": [],
+    "dangling_relationships": [],
+    "status": "clean"
+  },
+  "statistics": {
+    "nodes": 428,
+    "typed_relationships": 576,
+    "source_claims": 19,
+    "references": 18,
+    "semantic_distinctions": 16,
+    "learning_paths": 18,
+    "misconception_corrections": 15,
+    "questions": 24,
+    "expansion_targets": 36
+  }
+}
