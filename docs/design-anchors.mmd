@@ -1,0 +1,45 @@
+flowchart LR
+  sideways["The Art of Looking Sideways (Alan Fletcher)"]
+  bring["The Elements of Typographic Style (Robert Bringhurst)"]
+  lupType["Thinking with Type (Ellen Lupton)"]
+  mb["Grid Systems in Graphic Design (Josef Müller-Brockmann)"]
+  samBreak["Making and Breaking the Grid (Timothy Samara)"]
+  shklovsky["Art as Technique (Viktor Shklovsky)"]
+  maya["MAYA: Most Advanced Yet Acceptable (Raymond Loewy)"]
+  tufteV["The Visual Display of Quantitative Information (Edward Tufte)"]
+  crit_prov["Critic: Provocateur (Debord, Shklovsky)"]
+  crit_inc["Critic: Inclusion (Holmes, Mace)"]
+  crit_use["Critic: Usability (Krug, Nielsen)"]
+  crit_evid["Critic: Evidence (Tufte, Cairo)"]
+  crit_craft["Critic: Craft (Sennett, Bringhurst)"]
+  bring -->|canon for| lupType
+  lupType -.->|popularizes| bring
+  lupType -->|Letter Text Grid leads to| mb
+  samBreak -.->|loosens| mb
+  shklovsky -->|making strange for| samBreak
+  shklovsky -->|making strange for| sideways
+  maya -.->|tempers strangeness of| shklovsky
+  maya -->|bounds the break of| samBreak
+  sideways -->|humor as welcome for| maya
+  crit_craft -->|checks type with| bring
+  crit_prov -->|makes strange with| shklovsky
+  crit_evid -->|checks graphical integrity with| tufteV
+  crit_prov -.->|attacks smoothness favored by| crit_use
+  crit_use -.->|demands clarity from| crit_prov
+  classDef visited fill:#d5ff70,stroke:#263323,color:#101211
+  class sideways,bring,lupType,mb,samBreak,shklovsky,maya,tufteV,crit_prov,crit_inc,crit_use,crit_evid,crit_craft visited
+  classDef kept fill:#d5ff70,stroke:#263323,color:#101211
+  classDef adapted fill:#ffe299,stroke:#765714,color:#101211
+  class sideways,bring,lupType,mb,shklovsky,maya,tufteV,crit_prov,crit_inc,crit_use,crit_evid,crit_craft kept
+  class samBreak adapted
+
+  tufteB["Beautiful Evidence (Edward Tufte)"] -->|extends| tufteE["Envisioning Information (Edward Tufte)"]
+  tufteE -->|extends| tufteV
+  tufteE -->|layering and separation| c_prog["Progressive Disclosure"]
+  tufteV -->|names| c_tufte["Tufte Style"]
+  crit_inc -->|finds who is excluded with| holmes["Mismatch: How Inclusion Shapes Design (Kat Holmes)"]
+  crit_inc -->|checks access with| mace["The Principles of Universal Design (Ronald Mace et al.)"]
+  mace -->|inclusive principles for| holmes
+  crit_use -->|tests first-use with| krug["Don't Make Me Think (Steve Krug)"]
+  c_prog -->|approachable surface and ambitious depth for| maya
+  class tufteB,tufteE,c_prog,c_tufte,holmes,mace,krug visited;

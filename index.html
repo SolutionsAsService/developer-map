@@ -1,40 +1,320 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#080f1c">
-  <meta name="description" content="A source-traceable developer knowledge map connecting virtual machines, containerization, Docker and Kubernetes.">
-  <title>Developer Map — infrastructure, connected</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/styles.css">
-  <script src="./src/map-key.js" defer></script>
-  <script src="./src/network.js" defer></script>
-  <script src="./src/app.js" defer></script>
-</head>
-<body>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="Developer Map home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>DEVELOPER<span class="brand-slash">/</span>MAP</span></a>
-      <nav class="top-nav" aria-label="Main navigation"><a href="#explorer">Explore</a><a href="#routes">Learning paths</a><a href="#catalog">Source index</a></nav>
-      <span class="nav-tag"><span class="signal-dot"></span> FOUR SOURCE GRAPHS · OPEN ACCESS</span>
-    </header>
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-line"></span> THE INFRASTRUCTURE KNOWLEDGE GRAPH</p><h1 id="hero-title">From machine<br>to <em>running service.</em></h1><p class="hero-lead">Virtual machines. Containers. Docker. Kubernetes. Follow the relationships between the systems developers build on—then inspect the underlying source records, not just a summary.</p><div class="hero-actions"><a class="button primary" href="#explorer">Explore the graph <span aria-hidden="true">↗</span></a><a class="button text" href="#explorer" id="demo-docker">Start with Docker →</a><a class="button text" href="#routes">Follow a source path ↗</a></div></div>
-        <div class="hero-visual"><svg viewBox="0 0 530 380" role="img" aria-labelledby="stack-title stack-desc"><title id="stack-title">Four interconnected infrastructure domains</title><desc id="stack-desc">Virtual machines, containerization, Docker and Kubernetes shown as four connected graph nodes. These are related domains, not a strict prerequisite ladder.</desc><defs><linearGradient id="rail" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#79e6dd"/><stop offset="1" stop-color="#baaafa"/></linearGradient></defs><rect x="22" y="20" width="486" height="340" rx="12" fill="#0d1726" stroke="#344957"/><path d="M60 95h414M60 182h414M60 269h414" stroke="#233343" stroke-dasharray="2 7"/><path d="M125 117c60 8 84 52 133 53s84-50 148-53M125 259c62-4 90-53 132-53 65 0 82 39 149 53" stroke="url(#rail)" stroke-width="1.7" fill="none"/><path d="M125 117v142M406 117v142" stroke="#2e5764" stroke-dasharray="4 7"/><g fill="#122233" stroke-width="1.5"><rect x="48" y="66" width="156" height="64" rx="8" stroke="#f8bf80"/><rect x="325" y="66" width="156" height="64" rx="8" stroke="#75e0d4"/><rect x="48" y="246" width="156" height="64" rx="8" stroke="#86bff5"/><rect x="325" y="246" width="156" height="64" rx="8" stroke="#c4b0fa"/></g><circle cx="265" cy="187" r="24" fill="#152938" stroke="url(#rail)" stroke-width="2"/><circle cx="265" cy="187" r="5" fill="#80e8d9"/><g fill="#eaf4f1" font-size="14" font-family="Space Grotesk, sans-serif" font-weight="600"><text x="65" y="96">Virtual machines</text><text x="342" y="96">Containers</text><text x="65" y="276">Docker</text><text x="342" y="276">Kubernetes</text></g><g fill="#89a5b6" font-size="9" font-family="IBM Plex Mono, monospace"><text x="65" y="113">COMPUTE / ISOLATION</text><text x="342" y="113">PROCESS / ISOLATION</text><text x="65" y="293">PACKAGE / RUN</text><text x="342" y="293">ORCHESTRATE</text><text x="214" y="232">SOURCE-LINKED</text></g></svg><div class="visual-caption">SYSTEMS ARE CONNECTED <span>FIG. 01 / INFRASTRUCTURE FIELD</span></div></div>
-      </section>
-      <section class="metrics" aria-label="Atlas statistics"><div><strong id="metric-concepts">—</strong><span>unified source records</span></div><div><strong id="metric-relations">—</strong><span>traceable relationships</span></div><div><strong id="metric-overlap">—</strong><span>concepts in multiple sources</span></div><div class="metric-copy"><span class="signal-dot"></span> Original records preserved. One editorial bridge is marked separately from source relationships.</div></section>
-      <section id="explorer" class="explorer" aria-labelledby="explorer-heading"><div class="section-top"><div><p class="eyebrow">01 / GRAPH EXPLORER</p><h2 id="explorer-heading">See the whole system.</h2><p>Every node stays visible. Select a concept to illuminate its neighbors and directed links; the original wording and evidence are one click away.</p></div><div class="section-index">01 — 03</div></div>
-        <div class="explorer-controls"><label class="searchbox"><span aria-hidden="true">⌕</span><span class="sr-only">Search concepts</span><input id="search" type="search" placeholder="Search concepts, definitions, claims…" autocomplete="off"><kbd>/</kbd></label><div id="topic-filters" class="filter-row" role="group" aria-label="Filter by source graph"></div></div><div id="search-results" class="search-results" hidden></div>
-        <div class="explorer-grid"><div class="map-panel"><div class="panel-toolbar"><span><span class="signal-dot"></span><span id="map-mode">WHOLE FIELD / ALL NODES</span></span><div class="map-tools"><button id="details-jump" type="button" hidden>Read entry ↓</button><button id="reset-map" type="button">Fit all</button><button id="zoom-out" type="button" aria-label="Zoom out">−</button><button id="zoom-in" type="button" aria-label="Zoom in">+</button></div></div><div class="map-canvas"><canvas id="network" role="img" aria-label="All developer infrastructure concepts and relationships; select or search to highlight connections"></canvas><div id="map-tooltip" class="map-tooltip" hidden></div><aside id="map-preview" class="map-preview" aria-label="Concept preview" hidden></aside><div class="map-hint">ALL NODES VISIBLE · SELECT TO HIGHLIGHT · SCROLL TO ZOOM · DRAG TO PAN · ESC TO CLEAR</div></div><div class="map-footer"><div id="domain-key" class="domain-key" aria-label="Concept colors"></div><span class="map-count" id="map-count"></span></div><div class="relation-key"><span class="key-title">LINES / WHY CONNECTED</span><div id="relation-key" class="relation-key-items" aria-label="Relationship line styles"></div></div></div><aside id="inspector" class="inspector" aria-live="polite"></aside></div>
-      </section>
-      <section id="routes" class="routes" aria-labelledby="routes-heading"><div class="section-top"><div><p class="eyebrow">02 / SOURCE LEARNING PATHS</p><h2 id="routes-heading">A way in. Many ways across.</h2><p>Follow the recorded paths from the four source graphs, then branch into any connected idea.</p></div><div class="section-index">02 — 03</div></div><div id="route-list" class="route-list"></div><button id="routes-more" class="button more" type="button">Show all paths ↓</button><div id="route-detail" class="route-detail" hidden></div></section>
-      <section id="catalog" class="catalog" aria-labelledby="catalog-heading"><div class="section-top"><div><p class="eyebrow">03 / ORIGINAL MATERIAL</p><h2 id="catalog-heading">Read past the diagram.</h2><p>Browse every imported record, including claim and reference nodes. Open a record to inspect its fields, evidence, and original JSON.</p></div><div class="section-index">03 — 03</div></div><div class="catalog-layout"><div class="catalog-list"><div class="catalog-bar"><label for="catalog-search">COMPLETE INDEX</label><input id="catalog-search" type="search" placeholder="Filter all records…"><span id="catalog-count"></span></div><div id="catalog-items" class="catalog-items"></div><button id="catalog-more" class="button more" type="button">Show more records ↓</button></div><div class="source-card"><div class="source-glyph">{ }</div><p class="eyebrow">TRACE THE SOURCE</p><h3>No black boxes.</h3><p>All four source files are included. Same-label concepts are unified; conflicting IDs, claims, and references stay source-scoped. Only the clearly marked Kubernetes alias bridge is editorial.</p><div id="source-links" class="source-links"></div><p class="source-foot">An arrow records the direction of the source link; it does not by itself prove causation or an operational prerequisite.</p></div></div></section>
-    </main>
-    <footer class="footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>DEVELOPER<span class="brand-slash">/</span>MAP</span></a><span>An interconnected infrastructure learning map.</span><a href="https://github.com/SolutionsAsService/developer-map">View source ↗</a></footer>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101211" />
+    <meta
+      name="description"
+      content="A source-traceable developer knowledge map connecting virtual machines, containerization, Docker and Kubernetes."
+    />
+    <title>Developer Map — infrastructure, connected</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script src="./src/map-key.js" defer></script>
+    <script src="./src/network.js" defer></script>
+    <script src="./src/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#explorer">Skip to graph explorer</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Developer Map home"
+          ><span class="brand-mark" aria-hidden="true"
+            ><span></span><span></span><span></span></span
+          ><span>developer<span class="brand-slash">/</span>map</span></a
+        >
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#explorer">Explore</a><a href="#routes">Learning paths</a
+          ><a href="#catalog">Source index</a>
+        </nav>
+        <span class="nav-tag"
+          ><span class="signal-dot"></span> PUBLIC DATA / NO SIGN-IN</span
+        >
+      </header>
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="terminal-prompt">&gt;_</span> INFRASTRUCTURE, WITHOUT
+              THE SILOS
+            </p>
+            <h1 id="hero-title">
+              Know the stack.<br /><em>Trace the connections.</em>
+            </h1>
+            <p class="hero-lead">
+              An explorable map of VMs, containers, Docker, and Kubernetes. Find
+              the concept. Follow the edge. Read the evidence.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" id="demo-docker" href="#explorer"
+                >Explore Docker <span aria-hidden="true">↗</span></a
+              ><a class="button text" href="#catalog"
+                >Browse the source index →</a
+              >
+            </div>
+          </div>
+          <div class="terminal-card" aria-label="Relationship quick start">
+            <div class="terminal-title">
+              <span><i></i> relationship.query</span><span>READ ONLY</span>
+            </div>
+            <div class="terminal-body">
+              <p class="code-comment">
+                // Start with a relationship, not a silo.
+              </p>
+              <p class="query-line">
+                <span class="code-keyword">match</span> (docker)—[<span
+                  class="code-accent"
+                  >relation</span
+                >]—(concept)
+              </p>
+              <div id="quick-relations" class="quick-relations">
+                <span>Loading graph relationships…</span>
+              </div>
+              <div class="terminal-end">
+                <span class="signal-dot"></span
+                ><span id="query-status">Loading source records</span
+                ><kbd>CLICK TO INSPECT ↗</kbd>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="metrics" aria-label="Atlas statistics">
+          <div>
+            <strong id="metric-concepts">—</strong
+            ><span>canonical records</span>
+          </div>
+          <div>
+            <strong id="metric-relations">—</strong
+            ><span>explicit relationships</span>
+          </div>
+          <div>
+            <strong id="metric-overlap">—</strong
+            ><span>cross-source concepts</span>
+          </div>
+          <div class="metric-copy">
+            <span class="signal-dot"></span
+            ><span id="provenance-summary"
+              >Source records preserved. Editorial connections labeled.</span
+            >
+          </div>
+        </section>
+        <section
+          id="explorer"
+          class="explorer"
+          aria-labelledby="explorer-heading"
+        >
+          <div class="section-top">
+            <div>
+              <p class="eyebrow">01 / WORKSPACE</p>
+              <h2 id="explorer-heading">Your infrastructure, connected.</h2>
+              <p>
+                Select a node to trace its neighborhood. Search and the text
+                index provide the same concepts without using the canvas.
+              </p>
+            </div>
+            <div class="section-index">01 — 03</div>
+          </div>
+          <div class="explorer-controls">
+            <label class="searchbox"
+              ><span aria-hidden="true">⌕</span
+              ><span class="sr-only">Search concepts</span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Search concepts, definitions, claims…"
+                autocomplete="off"
+              /><kbd>/</kbd></label
+            >
+            <div
+              id="topic-filters"
+              class="filter-row"
+              role="group"
+              aria-label="Filter by source graph"
+            ></div>
+          </div>
+          <div id="search-results" class="search-results" hidden></div>
+          <div class="workspace-tabs">
+            <span class="active"
+              ><span aria-hidden="true">⌘</span> infrastructure.graph</span
+            ><a href="#catalog">{ } sources.json</a
+            ><a href="#routes">↳ learning.paths</a
+            ><span class="workspace-language">KNOWLEDGE GRAPH</span>
+          </div>
+          <div class="explorer-grid">
+            <div class="map-panel">
+              <div class="panel-toolbar">
+                <span
+                  ><span class="signal-dot"></span
+                  ><span id="map-mode">WHOLE FIELD / ALL NODES</span></span
+                >
+                <div class="map-tools">
+                  <button
+                    id="edge-focus"
+                    type="button"
+                    aria-pressed="true"
+                    hidden
+                  >
+                    Active edge</button
+                  ><button id="details-jump" type="button" hidden>
+                    Read entry ↓</button
+                  ><button id="reset-map" type="button">Fit all</button
+                  ><button id="zoom-out" type="button" aria-label="Zoom out">
+                    −</button
+                  ><button id="zoom-in" type="button" aria-label="Zoom in">
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="map-canvas">
+                <canvas
+                  id="network"
+                  role="img"
+                  aria-label="All developer infrastructure concepts and relationships; select or search to highlight connections"
+                ></canvas>
+                <div id="map-tooltip" class="map-tooltip" hidden></div>
+                <div class="map-hint">
+                  ALL NODES VISIBLE · SELECT TO HIGHLIGHT · SCROLL TO ZOOM ·
+                  DRAG TO PAN · ESC TO CLEAR
+                </div>
+              </div>
+              <div class="map-footer">
+                <div
+                  id="domain-key"
+                  class="domain-key"
+                  aria-label="Concept colors"
+                ></div>
+                <span class="map-count" id="map-count"></span>
+              </div>
+              <div class="relation-key">
+                <span class="key-title">LINES / WHY CONNECTED</span>
+                <div
+                  id="relation-key"
+                  class="relation-key-items"
+                  aria-label="Relationship line styles"
+                ></div>
+              </div>
+            </div>
+            <aside class="connection-pane" aria-label="Selected concept">
+              <div class="pane-title">
+                <span>INSPECT / CONCEPT</span><span aria-hidden="true">↗</span>
+              </div>
+              <div
+                id="map-preview"
+                class="map-preview"
+                aria-live="polite"
+                hidden
+              ></div>
+              <div id="selection-empty" class="selection-empty">
+                <span class="empty-code">{ ? }</span>
+                <h3>Pick a starting point.</h3>
+                <p>
+                  Select a node or search a concept. Its direct relationships
+                  appear here.
+                </p>
+                <div class="quick-starts">
+                  <button data-start="docker">Docker <span>↗</span></button
+                  ><button data-start="container">
+                    Container <span>↗</span></button
+                  ><button data-start="kubernetes">
+                    Kubernetes <span>↗</span></button
+                  ><button data-start="virtual_machine">
+                    Virtual machine <span>↗</span>
+                  </button>
+                </div>
+                <p class="shortcut-help">
+                  <kbd>/</kbd> Search <kbd>Esc</kbd> Clear selection
+                </p>
+              </div>
+            </aside>
+          </div>
+          <div
+            id="connection-trail"
+            class="connection-trail"
+            aria-live="polite"
+          >
+            <span>$ inspect</span> Select a concept to reveal its connections.
+          </div>
+          <aside
+            id="inspector"
+            class="inspector"
+            aria-label="Complete concept record"
+          ></aside>
+        </section>
+        <section id="routes" class="routes" aria-labelledby="routes-heading">
+          <div class="section-top">
+            <div>
+              <p class="eyebrow">02 / SOURCE LEARNING PATHS</p>
+              <h2 id="routes-heading">Trace a learning path.</h2>
+              <p>
+                Follow the recorded paths from the four source graphs, then
+                branch into any connected idea.
+              </p>
+            </div>
+            <div class="section-index">02 — 03</div>
+          </div>
+          <div id="route-list" class="route-list"></div>
+          <button id="routes-more" class="button more" type="button">
+            Show all paths ↓
+          </button>
+          <div id="route-detail" class="route-detail" hidden></div>
+        </section>
+        <section id="catalog" class="catalog" aria-labelledby="catalog-heading">
+          <div class="section-top">
+            <div>
+              <p class="eyebrow">03 / ORIGINAL MATERIAL</p>
+              <h2 id="catalog-heading">Open the source.</h2>
+              <p>
+                Browse every imported record, including claim and reference
+                nodes. Open a record to inspect its fields, evidence, and
+                original JSON.
+              </p>
+            </div>
+            <div class="section-index">03 — 03</div>
+          </div>
+          <div class="catalog-layout">
+            <div class="catalog-list">
+              <div class="catalog-bar">
+                <label for="catalog-search">COMPLETE INDEX</label
+                ><input
+                  id="catalog-search"
+                  type="search"
+                  placeholder="Filter all records…"
+                /><span id="catalog-count"></span>
+              </div>
+              <div id="catalog-items" class="catalog-items"></div>
+              <button id="catalog-more" class="button more" type="button">
+                Show more records ↓
+              </button>
+            </div>
+            <div class="source-card">
+              <div class="source-glyph">{ }</div>
+              <p class="eyebrow">TRACE THE SOURCE</p>
+              <h3>Inspectable by design.</h3>
+              <p>
+                All four source files are included. Reviewed aliases share a
+                canonical concept; distinct meanings, claims, and references
+                stay separate. Editorial connections are labeled, with rationale
+                kept alongside original source records.
+              </p>
+              <div id="source-links" class="source-links"></div>
+              <p class="source-foot">
+                An arrow records the direction of the source link; it does not
+                by itself prove causation or an operational prerequisite.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <a class="brand" href="#top"
+          ><span class="brand-mark" aria-hidden="true"
+            ><span></span><span></span><span></span></span
+          ><span>DEVELOPER<span class="brand-slash">/</span>MAP</span></a
+        ><span>An interconnected infrastructure learning map.</span
+        ><a href="https://github.com/SolutionsAsService/developer-map"
+          >View source ↗</a
+        >
+      </footer>
+    </div>
+  </body>
 </html>
