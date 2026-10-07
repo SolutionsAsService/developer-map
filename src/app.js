@@ -13,6 +13,10 @@ const state = {
   routeStep: 0,
   routesExpanded: false,
   edgeFocus: false,
+  neighborhood: true,
+  selectionHistory: [],
+  relationQuery: "",
+  relationDirection: "all",
 };
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (value) =>
@@ -71,9 +75,12 @@ function relationDescription(edge, id) {
   return { other, direction, relation };
 }
 
-function selectConcept(id, { scroll = false } = {}) {
+function selectConcept(id, { scroll = false, remember = true } = {}) {
   id = state.atlas.aliases?.[id] || id;
   if (!state.byId.has(id)) return;
+  if (remember && state.selected && state.selected !== id) state.selectionHistory.push(state.selected);
+  state.relationQuery = "";
+  state.relationDirection = "all";
   state.selected = id;
   state.edgeFocus = false;
   network?.edgeFocus(false);
@@ -181,6 +188,11 @@ function renderMap() {
   network?.topic(state.topic);
   $("#details-jump").hidden = !state.selected;
   $("#edge-focus").hidden = !state.selected;
+  $("#neighborhood-view").hidden = !state.selected;
+  $("#fit-selection").hidden = !state.selected;
+  $("#selection-back").disabled = !state.selectionHistory.length;
+  $("#neighborhood-view").setAttribute("aria-pressed", String(state.neighborhood));
+  $("#neighborhood-view").textContent = state.neighborhood ? "Neighborhood · on" : "Whole-map context";
   $("#map-mode").textContent = state.selected
     ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()} · ALL INCIDENT LINKS / ALL SOURCES`
     : "WHOLE FIELD / ALL NODES";
@@ -323,6 +335,43 @@ function renderPreview() {
       '</small><button type="button" id="active-edge-evidence">Inspect this relationship ↓</button></div>'
     : "";
   host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} relationships</span><span>${sources.length} source documents</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(" · ")) + (sources.length > 2 ? ` · +${sources.length - 2} more` : "") : "No original source record"}</p>${proof}${why ? `<div class="preview-why"><span class="preview-kicker">WHY THESE POINTS CONNECT</span>${why}<p>Showing ${examples.length} of ${connections.length} recorded links. All links and evidence appear in the full entry.</p></div>` : ""}<button type="button" id="preview-read">Read full entry ↓</button>`;
+  const oldPreview = host.querySelector('.preview-why');
+  if (oldPreview) oldPreview.remove();
+  const panel = document.createElement('section'); panel.className = 'connection-browser';
+  panel.innerHTML = '<h4>All connections &amp; why</h4><label>Find a connection<input id="connection-search" type="search" placeholder="Name, relation, explanation, source…" /></label><label>Direction<select id="connection-direction"><option value="all">All directions</option><option value="outgoing">Outgoing</option><option value="incoming">Incoming</option><option value="loop">Self-loops</option></select></label><p id="connection-match-count" role="status"></p><div id="connection-results"></div>';
+  host.querySelector('#preview-read').before(panel);
+  const input = panel.querySelector('#connection-search'), directionSelect = panel.querySelector('#connection-direction');
+  input.value = state.relationQuery; directionSelect.value = state.relationDirection;
+  const signatureCounts = new Map();
+  for (const edge of connections) { const key = JSON.stringify([edge.source,edge.target,edge.relation]); signatureCounts.set(key,(signatureCounts.get(key)||0)+1); }
+  const renderConnections = () => {
+    const query = state.relationQuery.trim().toLowerCase();
+    const matches = connections.filter(edge => {
+      const loop = edge.source === edge.target;
+      if (state.relationDirection==='outgoing' && (loop || edge.source !== node.id)) return false;
+      if (state.relationDirection==='incoming' && (loop || edge.target !== node.id)) return false;
+      if (state.relationDirection==='loop' && !loop) return false;
+      const haystack = [state.byId.get(edge.source)?.label,state.byId.get(edge.target)?.label,edge.relation,edge.semantic,sourceTitle(edge.document),JSON.stringify(edge.record)].join(' ').toLowerCase();
+      return !query || haystack.includes(query);
+    });
+    panel.querySelector('#connection-match-count').textContent = matches.length + ' of ' + connections.length + ' records · graph always shows all links';
+    panel.querySelector('#connection-results').innerHTML = matches.map(edge => {
+      const {other,direction,relation} = relationDescription(edge,node.id);
+      const reason = edge.record?.rationale || edge.record?.mechanism || edge.semantic || '';
+      const repeated = signatureCounts.get(JSON.stringify([edge.source,edge.target,edge.relation]));
+      return '<article class="connection-card" data-connection-id="'+escapeHtml(edge.id)+'"><button type="button" class="connection-neighbor" data-neighbor="'+escapeHtml(other.id)+'">'+escapeHtml(direction+' '+other.label)+'</button><p><b>'+escapeHtml(humanize(edge.relation))+'</b></p><p>'+escapeHtml(reason ? (typeof reason==='string'?reason:JSON.stringify(reason)) : 'Recorded source relationship; no separate causal explanation supplied.')+'</p><small>'+escapeHtml((edge.curated?'Editorial · ':'Source · ')+sourceTitle(edge.document)+' · '+(edge.sourcePointer||edge.id))+'</small>'+(repeated>1?'<small class="duplicate-note">'+repeated+' source records share these endpoints and predicate; details are preserved.</small>':'')+'<button type="button" data-inspect-edge="'+escapeHtml(edge.id)+'" aria-pressed="'+String(state.featuredEdge?.id===edge.id)+'">Emphasize &amp; explain</button></article>';
+    }).join('') || '<p>No matching connections. Clear the search or choose all directions.</p>';
+    panel.querySelectorAll('[data-neighbor]').forEach(button => button.addEventListener('click',()=>selectConcept(button.dataset.neighbor)));
+    panel.querySelectorAll('[data-inspect-edge]').forEach(button => button.addEventListener('click',()=>{
+      state.featuredEdge=connections.find(edge=>edge.id===button.dataset.inspectEdge); state.edgeFocus=true;
+      network.focusEdge(state.featuredEdge); network.edgeFocus(true);
+      $('#edge-focus').setAttribute('aria-pressed','true'); $('#edge-focus').textContent='Edge emphasized · all links shown';
+      const priorScroll=host.scrollTop; renderPreview(); host.scrollTop=priorScroll;
+    }));
+  };
+  input.addEventListener('input',()=>{state.relationQuery=input.value;renderConnections();});
+  directionSelect.addEventListener('change',()=>{state.relationDirection=directionSelect.value;renderConnections();});
+  renderConnections();
   host.scrollTop = 0;
   $("#active-edge-evidence")?.addEventListener("click", () => {
     const entry = [...document.querySelectorAll("[data-relation-id]")].find(
@@ -623,6 +672,10 @@ function setupMapGestures() {
     $("#map-count").textContent =
       `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links · ${network?.counts().connected || 0} direct neighbors${state.edgeFocus ? " · edge emphasized; all incident links shown" : " · all incident links shown"}`;
   });
+  $("#selection-back").addEventListener("click",()=>{ const id=state.selectionHistory.pop(); if(id)selectConcept(id,{remember:false}); });
+  $("#neighborhood-view").addEventListener("click",()=>{state.neighborhood=!state.neighborhood;network.view(state.neighborhood);$("#neighborhood-view").setAttribute("aria-pressed",String(state.neighborhood));$("#neighborhood-view").textContent=state.neighborhood?"Neighborhood · on":"Whole-map context";});
+  $("#fit-selection").addEventListener("click",()=>network.fitSelection());
+  $("#network").addEventListener("keydown",event=>{ if(['+','=','-','Home'].includes(event.key)){event.preventDefault();if(event.key==='Home')network.fitSelection();else network.zoom(event.key==='-'?1/1.3:1.3);} });
   $("#zoom-in").addEventListener("click", () => network.zoom(1.3));
   $("#zoom-out").addEventListener("click", () => network.zoom(1 / 1.3));
   $("#reset-map").addEventListener("click", () =>

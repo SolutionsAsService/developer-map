@@ -91,9 +91,9 @@ test('claims and references remain isolated identities even without conventional
 
 test('connectivity audit reports disconnected data instead of inventing repairs', () => {
   assert.deepEqual(atlas.audit.connectivity, connectivity(atlas.nodes, atlas.edges));
-  assert.equal(atlas.summary.components, 623);
-  assert.equal(atlas.summary.isolated, 603);
-  assert.equal(atlas.audit.connectivity.componentSizes[0], 1607);
+  assert.equal(atlas.summary.components, 621);
+  assert.equal(atlas.summary.isolated, 601);
+  assert.equal(atlas.audit.connectivity.componentSizes[0], 1598);
   assert.deepEqual(atlas.audit.sourceOnlyConnectivity.componentSizes, atlas.audit.connectivity.componentSizes);
   assert.equal(atlas.audit.sourceClaimRecords, 153);
   assert.deepEqual(atlas.audit.selfLoops, ['operating_system:46', 'operating_system:55', 'python_language:140']);

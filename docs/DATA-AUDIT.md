@@ -1,3 +1,17 @@
+# Focused interaction and identity audit · 2026-10-07
+
+Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
+
+This section supersedes the totals in the historical checkpoints below. The original ten JSON inputs remain unchanged. Reviewed source identities now also unify general Operating System, Linux OS/platform, Microsoft Windows, Go, .NET CLR, and the sandbox source's JVM record. Implementation-specific sandboxes, Python's VM, kernels, filesystem variants, and product-specific volumes remain distinct. No new editorial relationships were invented.
+
+Current generated atlas: **2,267 concepts, 2,422 relationships (2,417 source + 5 existing editorial), 53 cross-document concepts, 15 explicit alias groups**. All 2,317 source node records, 153 claims, 133 paths and 44 rich relationships remain preserved. There are 621 components and 601 isolated records; the largest component has 1,598 nodes. Zero dangling endpoints. Original loops and parallel records remain intact.
+
+Selected concepts now have a focused radial neighborhood containing every incident edge and endpoint, reversible whole-map context, Fit connections and Back. The adjacent connection browser supports text and direction filters without removing graph edges. Parallel source records are identified rather than discarded. Visible canvas labels take hit-test priority over nearby node hit areas so clicking a label selects its concept.
+
+Verification evidence is recorded in `docs/QA.md`, `docs/integration-browser.json` and `docs/qa/integration-tests.txt` (repository-relative paths).
+
+---
+
 # Ten-source integration audit · 2026-10-07
 
 Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService

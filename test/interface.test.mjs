@@ -305,3 +305,45 @@ test('high degree reselect preserves every incoming outgoing parallel rich edge 
   assert.equal(d.querySelector('#network').dataset.selectedConcept,'');
   dom.window.close();
 });
+
+
+test('focused neighborhood exposes every endpoint and supports context and back navigation', async () => {
+  const dom = await mount(); const w = dom.window; const d = w.document;
+  w.selectConcept('os');
+  const canvas = d.querySelector('canvas');
+  const incident = atlas.edges.filter(e => e.source === 'os' || e.target === 'os');
+  const expected = [...new Set(['os', ...incident.flatMap(e => [e.source,e.target])])].sort();
+  assert.deepEqual(JSON.parse(canvas.dataset.visibleNodeIds).sort(), expected);
+  assert.equal(canvas.dataset.viewMode, 'neighborhood');
+  d.querySelector('#neighborhood-view').click();
+  assert.equal(canvas.dataset.viewMode, 'context');
+  assert.deepEqual(JSON.parse(canvas.dataset.incidentEdgeIds).sort(), incident.map(e=>e.id).sort());
+  d.querySelector('#neighborhood-view').click();
+  d.querySelector('#fit-selection').click();
+  assert.equal(canvas.dataset.selectedConcept, 'os');
+  w.selectConcept('python');
+  d.querySelector('#selection-back').click();
+  assert.equal(canvas.dataset.selectedConcept, 'os');
+  dom.window.close();
+});
+
+test('connection browser preserves complete records and filters without hiding graph links', async () => {
+  const dom = await mount(); const w = dom.window; const d = w.document;
+  w.selectConcept('sandbox');
+  const canvas = d.querySelector('canvas');
+  const incident = atlas.edges.filter(e=>e.source==='sandbox'||e.target==='sandbox');
+  const rows = () => [...d.querySelectorAll('#connection-results [data-connection-id]')].map(e=>e.dataset.connectionId).sort();
+  assert.deepEqual(rows(), incident.map(e=>e.id).sort());
+  const direction=d.querySelector('#connection-direction');
+  direction.value='incoming'; direction.dispatchEvent(new w.Event('change',{bubbles:true}));
+  assert.deepEqual(rows(), incident.filter(e=>e.target==='sandbox'&&e.source!=='sandbox').map(e=>e.id).sort());
+  const search=d.querySelector('#connection-search');
+  search.value='no-such-relationship-zzzz'; search.dispatchEvent(new w.Event('input',{bubbles:true}));
+  assert.equal(rows().length,0);
+  assert.deepEqual(JSON.parse(canvas.dataset.incidentEdgeIds).sort(),incident.map(e=>e.id).sort());
+  w.selectConcept('sandbox');
+  d.querySelector('#connection-results [data-inspect-edge]').click();
+  assert.equal(canvas.dataset.selectedConcept,'sandbox');
+  assert.deepEqual(JSON.parse(canvas.dataset.incidentEdgeIds).sort(),incident.map(e=>e.id).sort());
+  dom.window.close();
+});

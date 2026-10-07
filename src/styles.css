@@ -3007,3 +3007,25 @@ input::placeholder {
 .route-source-text { white-space: pre-wrap; overflow-wrap: anywhere; }
 .route-unresolved { color: #f8bf80; }
 .route-progress button small { display: block; font-size: 11px; }
+
+/* SolutionsAsService — focused connection controls. */
+.panel-toolbar { flex-wrap: wrap; gap: 10px; }
+.map-tools { flex-wrap: wrap; gap: 6px; }
+.map-tools button { min-height: 36px; }
+.map-tools button:disabled { opacity: .45; cursor: default; }
+#network:focus-visible { outline: 2px solid var(--accent, #d2fb83); outline-offset: -3px; }
+.map-tooltip, .map-hint { pointer-events: none; }
+.connection-browser { margin-top: 18px; border-top: 1px solid #384632; padding-top: 12px; }
+.connection-browser h4 { margin: 0 0 12px; color: #e9ffd0; }
+.connection-browser label { display: block; color: #bdcbb5; font-size: 12px; margin: 10px 0; }
+.connection-browser input, .connection-browser select { box-sizing: border-box; width: 100%; min-width: 0; padding: 10px; margin-top: 5px; background: #121b10; color: #edffd8; border: 1px solid #546449; border-radius: 4px; font: inherit; }
+#connection-match-count { font-size: 11px; color: #d2fb83; }
+#connection-results { max-height: 460px; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.connection-card { padding: 12px 8px; border-bottom: 1px solid #35442d; overflow-wrap: anywhere; }
+.connection-card p { font-size: 12px; line-height: 1.5; margin: 6px 0; }
+.connection-card small { display: block; font-size: 10px; color: #b3c1ac; margin: 5px 0; }
+.connection-card button { width: 100%; text-align: left; min-height: 38px; padding: 8px; background: #1c2a16; color: #e7ffc9; border: 1px solid #4b5e3e; border-radius: 4px; cursor: pointer; }
+.connection-card button[aria-pressed="true"] { border-color: #d2fb83; background: #304323; }
+.connection-card .connection-neighbor { font-weight: 650; }
+.duplicate-note { border-left: 2px solid #9baf88; padding-left: 7px; }
+@media (max-width: 600px) { .map-tools { width: 100%; } .map-tools button { flex: 1 1 auto; min-height: 42px; } #connection-results { max-height: 360px; } }

@@ -148,6 +148,9 @@
                   ><span id="map-mode">WHOLE FIELD / ALL NODES</span></span
                 >
                 <div class="map-tools">
+                  <button id="selection-back" type="button" disabled aria-label="Back to previous selected concept">← Back</button>
+                  <button id="neighborhood-view" type="button" aria-pressed="true" hidden>Neighborhood</button>
+                  <button id="fit-selection" type="button" hidden>Fit connections</button>
                   <button
                     id="edge-focus"
                     type="button"
@@ -168,13 +171,14 @@
               <div class="map-canvas">
                 <canvas
                   id="network"
+                  tabindex="0"
                   role="img"
                   aria-label="All developer infrastructure concepts and relationships; select or search to highlight connections"
                 ></canvas>
                 <div id="map-tooltip" class="map-tooltip" hidden></div>
                 <div class="map-hint">
-                  ALL NODES VISIBLE · SELECT TO HIGHLIGHT · SCROLL TO ZOOM ·
-                  DRAG TO PAN · ESC TO CLEAR
+                  CLICK NODE OR LABEL · SELECTED NODE + ALL NEIGHBORS ·
+                  DRAG TO PAN · + / − TO ZOOM · HOME TO FIT · ESC TO CLEAR
                 </div>
               </div>
               <div class="map-footer">

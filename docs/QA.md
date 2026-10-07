@@ -1,3 +1,11 @@
+# Focused interaction verification · 2026-10-07
+
+All 28 Node/jsdom tests passed after the final code edit; atlas build and whitespace checks passed. Current-pass results are recorded in `integration-browser.json` and `qa/integration-tests.txt`. Earlier verification below is historical, not proof of the current working tree. The current browser runner explicitly tests connection search, edge explanation, neighborhood/context toggle, Fit, actual canvas label clicks and Back for seven entry concepts at 1440, 390 and 320 px. It also compares full incident-edge sets before and after controls, checks rich metadata, all 133 paths, exact search, page errors and overflow.
+
+The browser test exposed label/node hit overlap, hover-induced label movement, and a mobile canvas whose internal drawing size became stale when controls changed the layout. Hit testing now prefers visible labels, hover no longer shifts label geometry, and a ResizeObserver synchronizes the canvas after element-size changes. The runner also scrolls the canvas into view before real pointer clicks. The final Chromium rerun passed all seven entry concepts at all three widths with zero page errors and zero horizontal overflow. This is local browser verification, not deployed-site verification or a new accessibility certification.
+
+---
+
 # Verification report
 
 Checked October 7, 2026. Local static server; Chromium 153 via Playwright. Temporary browser tooling is outside this repository and adds no app dependencies.

@@ -87,18 +87,18 @@
     ]
   },
   "summary": {
-    "concepts": 2278,
+    "concepts": 2267,
     "relationships": 2422,
-    "overlaps": 48,
+    "overlaps": 53,
     "sourceRelationships": 2417,
     "bridges": 5,
     "unresolved": 0,
     "unresolvedPathSegments": 56,
     "textPaths": 30,
     "richRelationships": 44,
-    "components": 623,
-    "isolated": 603,
-    "aliasGroups": 10
+    "components": 621,
+    "isolated": 601,
+    "aliasGroups": 15
   },
   "sourceNodeMap": {
     "containerization:ahuja": "ahuja",
@@ -359,7 +359,7 @@
     "docker:kubernetes": "kubernetes",
     "docker:libcontainer": "libcontainer",
     "docker:libvirt": "libvirt",
-    "docker:linux": "docker:linux",
+    "docker:linux": "linux_os",
     "docker:linux_kernel": "linux_kernel",
     "docker:lxc": "lxc",
     "docker:macos": "macos",
@@ -484,7 +484,7 @@
     "docker:vm": "virtual_machine",
     "docker:volume": "docker:volume",
     "docker:volume_instruction": "volume_instruction",
-    "docker:windows": "docker:windows",
+    "docker:windows": "windows_os",
     "docker:windows_native": "windows_native",
     "docker:windows_server": "windows_server",
     "docker:wsl2": "wsl2",
@@ -602,7 +602,7 @@
     "kubernetes:expand_storage": "expand_storage",
     "kubernetes:extensibility": "extensibility",
     "kubernetes:garbage_collection": "garbage_collection",
-    "kubernetes:go_language": "go_language",
+    "kubernetes:go_language": "go",
     "kubernetes:google": "google",
     "kubernetes:heartbeat": "heartbeat",
     "kubernetes:high_availability": "high_availability",
@@ -857,7 +857,7 @@
     "operating_system:library_call": "library_call",
     "operating_system:lightweight": "lightweight",
     "operating_system:linus_torvalds": "linus_torvalds",
-    "operating_system:linux": "operating_system:linux",
+    "operating_system:linux": "linux_os",
     "operating_system:live_cd": "live_cd",
     "operating_system:liveusb": "liveusb",
     "operating_system:livio_soares": "livio_soares",
@@ -1071,7 +1071,7 @@
     "operating_system:vxworks": "vxworks",
     "operating_system:wait_queue": "wait_queue",
     "operating_system:william_stallings": "william_stallings",
-    "operating_system:windows": "operating_system:windows",
+    "operating_system:windows": "windows_os",
     "operating_system:windows_driver_model": "windows_driver_model",
     "operating_system:windows_nt": "windows_nt",
     "optical_disc_image:aiff": "aiff",
@@ -1147,7 +1147,7 @@
     "optical_disc_image:iso_vs_virtual_cd": "iso_vs_virtual_cd",
     "optical_disc_image:iso9660": "iso9660",
     "optical_disc_image:lead_in": "lead_in",
-    "optical_disc_image:linux": "optical_disc_image:linux",
+    "optical_disc_image:linux": "linux_os",
     "optical_disc_image:logical_sector": "logical_sector",
     "optical_disc_image:lp1": "optical_disc_image:lp1",
     "optical_disc_image:lp10": "optical_disc_image:lp10",
@@ -1190,7 +1190,7 @@
     "optical_disc_image:mount_interface": "mount_interface",
     "optical_disc_image:mount_vs_burn": "mount_vs_burn",
     "optical_disc_image:multi_track_disc": "multi_track_disc",
-    "optical_disc_image:operating_system": "operating_system",
+    "optical_disc_image:operating_system": "os",
     "optical_disc_image:optical_disc": "optical_disc",
     "optical_disc_image:optical_disc_image": "optical_disc_image",
     "optical_disc_image:pcsx2": "pcsx2",
@@ -1257,7 +1257,7 @@
     "optical_disc_image:vmware_workstation": "vmware_workstation",
     "optical_disc_image:wav": "wav",
     "optical_disc_image:wii": "wii",
-    "optical_disc_image:windows": "optical_disc_image:windows",
+    "optical_disc_image:windows": "windows_os",
     "optical_disc_image:windows8": "windows8",
     "optical_disc_image:x1": "optical_disc_image:x1",
     "optical_disc_image:x10": "optical_disc_image:x10",
@@ -1556,7 +1556,7 @@
     "python_language:out_d": "out_d",
     "python_language:out_f": "out_f",
     "python_language:out_gdscript": "out_gdscript",
-    "python_language:out_go": "out_go",
+    "python_language:out_go": "go",
     "python_language:out_javascript": "out_javascript",
     "python_language:out_julia": "out_julia",
     "python_language:out_mojo": "out_mojo",
@@ -1759,7 +1759,7 @@
     "sandbox_computer_security:d7": "sandbox_computer_security:d7",
     "sandbox_computer_security:d8": "sandbox_computer_security:d8",
     "sandbox_computer_security:d9": "sandbox_computer_security:d9",
-    "sandbox_computer_security:dotnet": "sandbox_computer_security:dotnet",
+    "sandbox_computer_security:dotnet": "dotnet_clr",
     "sandbox_computer_security:emulator": "emulator",
     "sandbox_computer_security:ev1993": "ev1993",
     "sandbox_computer_security:ev1996": "ev1996",
@@ -1784,7 +1784,7 @@
     "sandbox_computer_security:isolation": "sandbox_computer_security:isolation",
     "sandbox_computer_security:jail": "jail",
     "sandbox_computer_security:java_applet": "java_applet",
-    "sandbox_computer_security:java_vm": "java_vm",
+    "sandbox_computer_security:java_vm": "jvm",
     "sandbox_computer_security:linux": "sandbox_computer_security:linux",
     "sandbox_computer_security:linux_uid": "linux_uid",
     "sandbox_computer_security:m_android": "m_android",
@@ -2329,7 +2329,7 @@
     "volume_computing:iso9660": "iso9660",
     "volume_computing:kernel": "volume_computing:kernel",
     "volume_computing:label_vs_serial": "label_vs_serial",
-    "volume_computing:linux": "volume_computing:linux",
+    "volume_computing:linux": "linux_os",
     "volume_computing:logical_drive": "logical_drive",
     "volume_computing:logical_volume_manager": "logical_volume_manager",
     "volume_computing:logical_vs_global_id": "logical_vs_global_id",
@@ -2440,7 +2440,7 @@
     "volume_computing:volume_label": "volume_label",
     "volume_computing:volume_serial": "volume_serial",
     "volume_computing:volume_vs_physical_drive": "volume_vs_physical_drive",
-    "volume_computing:windows": "volume_computing:windows",
+    "volume_computing:windows": "windows_os",
     "volume_computing:windows_vs_unix_mount": "windows_vs_unix_mount"
   },
   "sources": [
@@ -5231,12 +5231,12 @@
         {
           "pointer": "/nodes/49",
           "sourceId": "linux",
-          "derivedId": "docker:linux"
+          "derivedId": "linux_os"
         },
         {
           "pointer": "/nodes/50",
           "sourceId": "windows",
-          "derivedId": "docker:windows"
+          "derivedId": "windows_os"
         },
         {
           "pointer": "/nodes/51",
@@ -8634,7 +8634,7 @@
         {
           "pointer": "/nodes/86",
           "sourceId": "go_language",
-          "derivedId": "go_language"
+          "derivedId": "go"
         },
         {
           "pointer": "/nodes/87",
@@ -9797,7 +9797,7 @@
           "sourceId": "rel_00087_k8s_written_in",
           "derivedId": "kubernetes:86",
           "source": "kubernetes",
-          "target": "go_language"
+          "target": "go"
         },
         {
           "pointer": "/relationships/87",
@@ -11498,7 +11498,7 @@
         {
           "pointer": "/nodes/78",
           "sourceId": "linux",
-          "derivedId": "operating_system:linux"
+          "derivedId": "linux_os"
         },
         {
           "pointer": "/nodes/79",
@@ -11508,7 +11508,7 @@
         {
           "pointer": "/nodes/80",
           "sourceId": "windows",
-          "derivedId": "operating_system:windows"
+          "derivedId": "windows_os"
         },
         {
           "pointer": "/nodes/81",
@@ -13904,7 +13904,7 @@
           "sourceId": null,
           "derivedId": "operating_system:100",
           "source": "minix",
-          "target": "operating_system:linux"
+          "target": "linux_os"
         },
         {
           "pointer": "/relationships/101",
@@ -13917,14 +13917,14 @@
           "pointer": "/relationships/102",
           "sourceId": null,
           "derivedId": "operating_system:102",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "datacenter"
         },
         {
           "pointer": "/relationships/103",
           "sourceId": null,
           "derivedId": "operating_system:103",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "operating_system:android"
         },
         {
@@ -13995,14 +13995,14 @@
           "sourceId": null,
           "derivedId": "operating_system:113",
           "source": "microsoft",
-          "target": "operating_system:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/114",
           "sourceId": null,
           "derivedId": "operating_system:114",
           "source": "windows_nt",
-          "target": "operating_system:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/115",
@@ -14015,21 +14015,21 @@
           "pointer": "/relationships/116",
           "sourceId": null,
           "derivedId": "operating_system:116",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "desktop"
         },
         {
           "pointer": "/relationships/117",
           "sourceId": null,
           "derivedId": "operating_system:117",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "server"
         },
         {
           "pointer": "/relationships/118",
           "sourceId": null,
           "derivedId": "operating_system:118",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "server"
         },
         {
@@ -14596,63 +14596,63 @@
           "pointer": "/relationships/199",
           "sourceId": null,
           "derivedId": "operating_system:199",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "operating_system:kernel"
         },
         {
           "pointer": "/relationships/200",
           "sourceId": null,
           "derivedId": "operating_system:200",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "c_language"
         },
         {
           "pointer": "/relationships/201",
           "sourceId": null,
           "derivedId": "operating_system:201",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "preemptive"
         },
         {
           "pointer": "/relationships/202",
           "sourceId": null,
           "derivedId": "operating_system:202",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "network"
         },
         {
           "pointer": "/relationships/203",
           "sourceId": null,
           "derivedId": "operating_system:203",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "posix"
         },
         {
           "pointer": "/relationships/204",
           "sourceId": null,
           "derivedId": "operating_system:204",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "operating_system:gui"
         },
         {
           "pointer": "/relationships/205",
           "sourceId": null,
           "derivedId": "operating_system:205",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "cli"
         },
         {
           "pointer": "/relationships/206",
           "sourceId": null,
           "derivedId": "operating_system:206",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "system_program"
         },
         {
           "pointer": "/relationships/207",
           "sourceId": null,
           "derivedId": "operating_system:207",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "server"
         },
         {
@@ -14660,7 +14660,7 @@
           "sourceId": null,
           "derivedId": "operating_system:208",
           "source": "operating_system:android",
-          "target": "operating_system:linux"
+          "target": "linux_os"
         },
         {
           "pointer": "/relationships/209",
@@ -14680,84 +14680,84 @@
           "pointer": "/relationships/211",
           "sourceId": null,
           "derivedId": "operating_system:211",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "ntfs"
         },
         {
           "pointer": "/relationships/212",
           "sourceId": null,
           "derivedId": "operating_system:212",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "windows_driver_model"
         },
         {
           "pointer": "/relationships/213",
           "sourceId": null,
           "derivedId": "operating_system:213",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "demand_paging"
         },
         {
           "pointer": "/relationships/214",
           "sourceId": null,
           "derivedId": "operating_system:214",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "preemptive"
         },
         {
           "pointer": "/relationships/215",
           "sourceId": null,
           "derivedId": "operating_system:215",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "acl"
         },
         {
           "pointer": "/relationships/216",
           "sourceId": null,
           "derivedId": "operating_system:216",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "integrity_levels"
         },
         {
           "pointer": "/relationships/217",
           "sourceId": null,
           "derivedId": "operating_system:217",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "auth_token"
         },
         {
           "pointer": "/relationships/218",
           "sourceId": null,
           "derivedId": "operating_system:218",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "security_descriptor"
         },
         {
           "pointer": "/relationships/219",
           "sourceId": null,
           "derivedId": "operating_system:219",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "operating_system:hardware"
         },
         {
           "pointer": "/relationships/220",
           "sourceId": null,
           "derivedId": "operating_system:220",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "desktop"
         },
         {
           "pointer": "/relationships/221",
           "sourceId": null,
           "derivedId": "operating_system:221",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "server"
         },
         {
           "pointer": "/relationships/222",
           "sourceId": null,
           "derivedId": "operating_system:222",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "smartphone"
         },
         {
@@ -15471,7 +15471,7 @@
           "pointer": "/relationships/324",
           "sourceId": null,
           "derivedId": "operating_system:324",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "server_os"
         },
         {
@@ -15485,7 +15485,7 @@
           "pointer": "/relationships/326",
           "sourceId": null,
           "derivedId": "operating_system:326",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "desktop_os"
         },
         {
@@ -15891,7 +15891,7 @@
           "pointer": "/rich_semantic_relationships/21",
           "sourceId": "rich_022",
           "derivedId": "operating_system:rich_semantic_relationships:21",
-          "source": "operating_system:windows",
+          "source": "windows_os",
           "target": "security"
         },
         {
@@ -15899,13 +15899,13 @@
           "sourceId": "rich_023",
           "derivedId": "operating_system:rich_semantic_relationships:22",
           "source": "operating_system:android",
-          "target": "operating_system:linux"
+          "target": "linux_os"
         },
         {
           "pointer": "/rich_semantic_relationships/23",
           "sourceId": "rich_024",
           "derivedId": "operating_system:rich_semantic_relationships:23",
-          "source": "operating_system:linux",
+          "source": "linux_os",
           "target": "c_language"
         },
         {
@@ -16459,7 +16459,7 @@
               "text": "linux",
               "status": "resolved",
               "sourceId": "linux",
-              "conceptId": "operating_system:linux",
+              "conceptId": "linux_os",
               "match": "exact source ID"
             }
           ]
@@ -16514,7 +16514,7 @@
               "text": "windows",
               "status": "resolved",
               "sourceId": "windows",
-              "conceptId": "operating_system:windows",
+              "conceptId": "windows_os",
               "match": "exact source ID"
             },
             {
@@ -16569,7 +16569,7 @@
               "text": "linux",
               "status": "resolved",
               "sourceId": "linux",
-              "conceptId": "operating_system:linux",
+              "conceptId": "linux_os",
               "match": "exact source ID"
             }
           ]
@@ -16584,7 +16584,7 @@
               "text": "linux",
               "status": "resolved",
               "sourceId": "linux",
-              "conceptId": "operating_system:linux",
+              "conceptId": "linux_os",
               "match": "exact source ID"
             },
             {
@@ -16639,7 +16639,7 @@
               "text": "windows",
               "status": "resolved",
               "sourceId": "windows",
-              "conceptId": "operating_system:windows",
+              "conceptId": "windows_os",
               "match": "exact source ID"
             },
             {
@@ -16988,7 +16988,7 @@
         {
           "pointer": "/nodes/32",
           "sourceId": "operating_system",
-          "derivedId": "operating_system"
+          "derivedId": "os"
         },
         {
           "pointer": "/nodes/33",
@@ -16998,7 +16998,7 @@
         {
           "pointer": "/nodes/34",
           "sourceId": "linux",
-          "derivedId": "optical_disc_image:linux"
+          "derivedId": "linux_os"
         },
         {
           "pointer": "/nodes/35",
@@ -17008,7 +17008,7 @@
         {
           "pointer": "/nodes/36",
           "sourceId": "windows",
-          "derivedId": "optical_disc_image:windows"
+          "derivedId": "windows_os"
         },
         {
           "pointer": "/nodes/37",
@@ -18292,7 +18292,7 @@
           "sourceId": null,
           "derivedId": "optical_disc_image:54",
           "source": "mount_interface",
-          "target": "operating_system"
+          "target": "os"
         },
         {
           "pointer": "/relationships/55",
@@ -18305,7 +18305,7 @@
           "pointer": "/relationships/56",
           "sourceId": null,
           "derivedId": "optical_disc_image:56",
-          "source": "optical_disc_image:linux",
+          "source": "linux_os",
           "target": "optical_disc_image:unix"
         },
         {
@@ -18320,7 +18320,7 @@
           "sourceId": null,
           "derivedId": "optical_disc_image:58",
           "source": "windows8",
-          "target": "optical_disc_image:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/59",
@@ -21493,7 +21493,7 @@
         {
           "pointer": "/nodes/274",
           "sourceId": "out_go",
-          "derivedId": "out_go"
+          "derivedId": "go"
         },
         {
           "pointer": "/nodes/275",
@@ -22511,7 +22511,7 @@
           "sourceId": null,
           "derivedId": "python_language:21",
           "source": "python",
-          "target": "out_go"
+          "target": "go"
         },
         {
           "pointer": "/relationships/22",
@@ -27414,7 +27414,7 @@
         {
           "pointer": "/nodes/54",
           "sourceId": "java_vm",
-          "derivedId": "java_vm"
+          "derivedId": "jvm"
         },
         {
           "pointer": "/nodes/55",
@@ -27424,7 +27424,7 @@
         {
           "pointer": "/nodes/56",
           "sourceId": "dotnet",
-          "derivedId": "sandbox_computer_security:dotnet"
+          "derivedId": "dotnet_clr"
         },
         {
           "pointer": "/nodes/57",
@@ -28841,28 +28841,28 @@
           "pointer": "/relationships/81",
           "sourceId": null,
           "derivedId": "sandbox_computer_security:81",
-          "source": "java_vm",
+          "source": "jvm",
           "target": "sandbox"
         },
         {
           "pointer": "/relationships/82",
           "sourceId": null,
           "derivedId": "sandbox_computer_security:82",
-          "source": "java_vm",
+          "source": "jvm",
           "target": "java_applet"
         },
         {
           "pointer": "/relationships/83",
           "sourceId": null,
           "derivedId": "sandbox_computer_security:83",
-          "source": "java_vm",
+          "source": "jvm",
           "target": "untrusted_code"
         },
         {
           "pointer": "/relationships/84",
           "sourceId": null,
           "derivedId": "sandbox_computer_security:84",
-          "source": "sandbox_computer_security:dotnet",
+          "source": "dotnet_clr",
           "target": "cas"
         },
         {
@@ -28876,7 +28876,7 @@
           "pointer": "/relationships/86",
           "sourceId": null,
           "derivedId": "sandbox_computer_security:86",
-          "source": "sandbox_computer_security:dotnet",
+          "source": "dotnet_clr",
           "target": "sandbox"
         },
         {
@@ -29751,7 +29751,7 @@
               "text": "java_vm",
               "status": "resolved",
               "sourceId": "java_vm",
-              "conceptId": "java_vm",
+              "conceptId": "jvm",
               "match": "exact source ID"
             },
             {
@@ -29759,7 +29759,7 @@
               "text": "dotnet",
               "status": "resolved",
               "sourceId": "dotnet",
-              "conceptId": "sandbox_computer_security:dotnet",
+              "conceptId": "dotnet_clr",
               "match": "exact source ID"
             },
             {
@@ -35013,7 +35013,7 @@
         {
           "pointer": "/nodes/15",
           "sourceId": "windows",
-          "derivedId": "volume_computing:windows"
+          "derivedId": "windows_os"
         },
         {
           "pointer": "/nodes/16",
@@ -35023,7 +35023,7 @@
         {
           "pointer": "/nodes/17",
           "sourceId": "linux",
-          "derivedId": "volume_computing:linux"
+          "derivedId": "linux_os"
         },
         {
           "pointer": "/nodes/18",
@@ -36021,14 +36021,14 @@
           "pointer": "/relationships/19",
           "sourceId": null,
           "derivedId": "volume_computing:19",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "partition"
         },
         {
           "pointer": "/relationships/20",
           "sourceId": null,
           "derivedId": "volume_computing:20",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "volume_computing:volume"
         },
         {
@@ -36043,13 +36043,13 @@
           "sourceId": null,
           "derivedId": "volume_computing:22",
           "source": "ext4",
-          "target": "volume_computing:linux"
+          "target": "linux_os"
         },
         {
           "pointer": "/relationships/23",
           "sourceId": null,
           "derivedId": "volume_computing:23",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "ext4"
         },
         {
@@ -36099,20 +36099,20 @@
           "sourceId": null,
           "derivedId": "volume_computing:30",
           "source": "disk_management",
-          "target": "volume_computing:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/31",
           "sourceId": null,
           "derivedId": "volume_computing:31",
           "source": "diskpart",
-          "target": "volume_computing:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/32",
           "sourceId": null,
           "derivedId": "volume_computing:32",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "volume_computing:kernel"
         },
         {
@@ -36133,14 +36133,14 @@
           "pointer": "/relationships/35",
           "sourceId": null,
           "derivedId": "volume_computing:35",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "root_directory"
         },
         {
           "pointer": "/relationships/36",
           "sourceId": null,
           "derivedId": "volume_computing:36",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "volume_computing:volume"
         },
         {
@@ -36189,7 +36189,7 @@
           "pointer": "/relationships/43",
           "sourceId": null,
           "derivedId": "volume_computing:43",
-          "source": "volume_computing:windows",
+          "source": "windows_os",
           "target": "drive_letter"
         },
         {
@@ -36715,7 +36715,7 @@
           "sourceId": null,
           "derivedId": "volume_computing:118",
           "source": "volume_computing:c3",
-          "target": "volume_computing:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/119",
@@ -36771,7 +36771,7 @@
           "sourceId": null,
           "derivedId": "volume_computing:126",
           "source": "volume_computing:c4",
-          "target": "volume_computing:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/127",
@@ -36841,7 +36841,7 @@
           "sourceId": null,
           "derivedId": "volume_computing:136",
           "source": "volume_computing:c6",
-          "target": "volume_computing:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/137",
@@ -37233,7 +37233,7 @@
           "sourceId": null,
           "derivedId": "volume_computing:192",
           "source": "windows_vs_unix_mount",
-          "target": "volume_computing:windows"
+          "target": "windows_os"
         },
         {
           "pointer": "/relationships/193",
@@ -38373,7 +38373,6 @@
   ],
   "derivedNodeIds": [
     "python_language:dotnet",
-    "sandbox_computer_security:dotnet",
     "minus",
     "optical_disc_image:m5",
     "img_extension",
@@ -39178,8 +39177,6 @@
     "glue",
     "gpl_components",
     "go",
-    "go_language",
-    "out_go",
     "virtual_machine:ref_200",
     "sandbox_computer_security:r2",
     "google",
@@ -39463,7 +39460,6 @@
     "java_applet",
     "event_1999_hotspot",
     "hotspot",
-    "java_vm",
     "jvm",
     "javascript",
     "out_javascript",
@@ -39553,11 +39549,8 @@
     "lightweight",
     "limbo",
     "linus_torvalds",
-    "docker:linux",
-    "operating_system:linux",
-    "optical_disc_image:linux",
+    "linux_os",
     "p2",
-    "volume_computing:linux",
     "sandbox_computer_security:linux",
     "path15",
     "cgroups",
@@ -39661,8 +39654,7 @@
     "microsoft",
     "azure",
     "sandbox_computer_security:r9",
-    "operating_system:windows",
-    "volume_computing:windows",
+    "windows_os",
     "ev1950s",
     "middleware",
     "dist6",
@@ -39801,7 +39793,6 @@
     "open_source",
     "openshift",
     "openvz",
-    "operating_system",
     "os",
     "os_development",
     "os_kernel",
@@ -40606,8 +40597,6 @@
     "wii",
     "sandbox_computer_security:r6",
     "william_stallings",
-    "docker:windows",
-    "optical_disc_image:windows",
     "optical_disc_image:r4",
     "windows8",
     "mc4",
