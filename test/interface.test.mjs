@@ -1,0 +1,41 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { JSDOM } from 'jsdom';
+
+const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+const atlas = JSON.parse(await readFile(new URL('../data/atlas.json', import.meta.url)));
+const scripts = await Promise.all(['map-key', 'network', 'app'].map(name => readFile(new URL(`../src/${name}.js`, import.meta.url), 'utf8')));
+
+test('map, search, route, source inspector and Escape work without a server', async () => {
+  const dom = new JSDOM(html, { url: 'http://localhost:4173/', runScripts: 'outside-only' });
+  const { window } = dom;
+  const { document } = window;
+  window.fetch = async () => ({ ok: true, json: async () => atlas });
+  window.HTMLElement.prototype.scrollIntoView = () => {};
+  window.HTMLCanvasElement.prototype.getBoundingClientRect = () => ({ width: 960, height: 620, left: 0, top: 0 });
+  window.HTMLCanvasElement.prototype.getContext = () => new Proxy({}, { get: (_, key) => key === 'measureText' ? value => ({ width: value.length * 7 }) : () => {} });
+  window.requestAnimationFrame = callback => { callback(); return 1; };
+  for (const script of scripts) window.eval(script);
+  await new Promise(resolve => setTimeout(resolve, 30));
+  assert.equal(document.querySelector('#metric-concepts').textContent, String(atlas.nodes.length));
+  assert.match(document.querySelector('#map-count').textContent, /776 nodes · 639 links/);
+  assert.match(document.querySelector('#inspector').textContent, /Virtual machines/);
+  document.querySelector('#demo-docker').click();
+  assert.match(document.querySelector('#map-mode').textContent, /DOCKER/);
+  assert.equal(document.querySelector('#map-preview').hidden, false);
+  assert.match(document.querySelector('#inspector').textContent, /Original source records/);
+  assert.ok(document.querySelector('#inspector .source-variant a').href.includes('/data/'));
+  document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  assert.equal(document.querySelector('#map-preview').hidden, true);
+  assert.match(document.querySelector('#map-mode').textContent, /ALL NODES/);
+  const search = document.querySelector('#search');
+  search.value = 'kubernetes';
+  search.dispatchEvent(new window.Event('input', { bubbles: true }));
+  assert.ok(document.querySelectorAll('#search-results [data-concept]').length);
+  document.querySelector('#routes-more').click();
+  assert.equal(document.querySelectorAll('#route-list .route-card').length, atlas.paths.length);
+  document.querySelector('#route-list .route-card').click();
+  assert.equal(document.querySelector('#route-detail').hidden, false);
+  window.close();
+});
