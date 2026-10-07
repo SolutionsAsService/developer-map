@@ -1,0 +1,4790 @@
+{
+  "schema_name": "Dynamic Relationship-Rich Semantic Knowledge Graph",
+  "schema_version": "5.0-computer-science-relationship-first",
+  "domain": [
+    "Computer Science",
+    "Operating Systems",
+    "Virtualization",
+    "Containers",
+    "Cloud Computing",
+    "Distributed Systems"
+  ],
+  "subject": "Containerization",
+  "source_policy": {
+    "source_file": "Pasted text(20261007-062522).txt",
+    "authority": "Supplied source text is authoritative for source-derived claims.",
+    "external_research_used": false,
+    "preservation_rule": "Preserve source terminology, distinctions, examples, standards, taxonomy, use cases, security claims and references without silently correcting or replacing the source.",
+    "source_line_count": 157
+  },
+  "relationship_model": {
+    "first_class_relationships": true,
+    "required_semantic_fields": [
+      "source",
+      "relation",
+      "target",
+      "mechanism",
+      "conditions",
+      "mathematical_form",
+      "effect",
+      "inverse_or_converse",
+      "frame_or_context",
+      "scope",
+      "source_line_range",
+      "semantic_role",
+      "related_equation_ids",
+      "evidence_type"
+    ],
+    "central_system_flows": [
+      "Application + configuration + libraries + dependencies -> container -> isolated processes -> shared OS kernel",
+      "Container image -> image manifest + filesystem layers + configuration -> container runtime -> container lifecycle",
+      "OCI -> Runtime Specification + Image Specification + Distribution Specification -> interoperability",
+      "Application containers -> orchestration -> Kubernetes/Docker Swarm",
+      "Container cluster -> cluster management -> creation/upgrade/repair/balance/scale/log/monitor",
+      "Shared kernel -> security boundary -> possible system-wide security impact"
+    ],
+    "semantic_relation_families": [
+      "taxonomy",
+      "causal",
+      "architecture",
+      "dependency",
+      "isolation",
+      "packaging",
+      "standards",
+      "interoperability",
+      "runtime",
+      "orchestration",
+      "management",
+      "scaling",
+      "observability",
+      "security",
+      "deployment",
+      "portability",
+      "provenance"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "containerization",
+      "label": "Containerization",
+      "type": "concept",
+      "description": "Operating-system-level or application-level virtualization over multiple resources allowing applications to run in isolated user spaces called containers across cloud or non-cloud environments."
+    },
+    {
+      "id": "container",
+      "label": "Container",
+      "type": "runtime_unit",
+      "description": "Isolated user space surrounding an application and bundling related configuration files, libraries and dependencies."
+    },
+    {
+      "id": "container_environment",
+      "label": "Containerized Computing Environment",
+      "type": "environment",
+      "description": "Portable computing environment surrounding an application while remaining independent of parallel environments."
+    },
+    {
+      "id": "application",
+      "label": "Application",
+      "type": "software",
+      "description": "Software workload executed within a container."
+    },
+    {
+      "id": "isolated_user_space",
+      "label": "Isolated User Space",
+      "type": "isolation_boundary",
+      "description": "Execution space in which a containerized application and its processes are isolated from other environments."
+    },
+    {
+      "id": "isolated_process",
+      "label": "Isolated Process",
+      "type": "process",
+      "description": "Process running inside an isolated container environment."
+    },
+    {
+      "id": "container_config",
+      "label": "Container Configuration",
+      "type": "configuration",
+      "description": "Configuration files bundled into a containerized application environment."
+    },
+    {
+      "id": "library",
+      "label": "Application Library",
+      "type": "dependency",
+      "description": "Library dependency bundled into a container environment."
+    },
+    {
+      "id": "dependency",
+      "label": "Application Dependency",
+      "type": "dependency",
+      "description": "Software dependency bundled with an application inside a container."
+    },
+    {
+      "id": "os_kernel",
+      "label": "Operating System Kernel",
+      "type": "kernel",
+      "description": "Common OS kernel shared collectively by multiple containers."
+    },
+    {
+      "id": "shared_kernel",
+      "label": "Shared Operating System Kernel",
+      "type": "kernel_model",
+      "description": "Kernel shared by multiple containers on the same operating-system environment."
+    },
+    {
+      "id": "cloud_environment",
+      "label": "Cloud Environment",
+      "type": "deployment_environment",
+      "description": "Cloud computing environment in which containers can run."
+    },
+    {
+      "id": "noncloud_environment",
+      "label": "Non-cloud Environment",
+      "type": "deployment_environment",
+      "description": "Non-cloud environment in which containers can run."
+    },
+    {
+      "id": "vendor_independence",
+      "label": "Vendor Independence",
+      "type": "property",
+      "description": "Containerization goal of allowing software to run across environments regardless of cloud/non-cloud type or vendor."
+    },
+    {
+      "id": "os_container",
+      "label": "OS Container",
+      "type": "container_type",
+      "description": "Container associated with operating-system-level virtualization."
+    },
+    {
+      "id": "application_container",
+      "label": "Application Container",
+      "type": "container_type",
+      "description": "Container associated with application-level containerization."
+    },
+    {
+      "id": "security_threat",
+      "label": "Container Security Threat",
+      "type": "security_threat",
+      "description": "Security threat that can affect a containerized system through its shared operating-system boundary."
+    },
+    {
+      "id": "security_scanner",
+      "label": "Security Scanner",
+      "type": "security_tool",
+      "description": "Security scanner that generally protects the operating system but may not protect application containers according to the source."
+    },
+    {
+      "id": "container_vulnerability",
+      "label": "Container Vulnerability",
+      "type": "security_issue",
+      "description": "Application-container vulnerability potentially left unaddressed by OS-focused scanning."
+    },
+    {
+      "id": "oci",
+      "label": "Open Container Initiative",
+      "type": "standards_body",
+      "description": "Organization developing open standards for container image formats, runtimes and image distribution."
+    },
+    {
+      "id": "oci_runtime_spec",
+      "label": "OCI Runtime Specification",
+      "type": "standard",
+      "description": "OCI specification defining container configuration, execution environment and lifecycle."
+    },
+    {
+      "id": "oci_image_spec",
+      "label": "OCI Image Specification",
+      "type": "standard",
+      "description": "OCI specification defining container image structure including manifests, filesystem layers and configuration."
+    },
+    {
+      "id": "oci_distribution_spec",
+      "label": "OCI Distribution Specification",
+      "type": "standard",
+      "description": "OCI specification governing distribution of container images."
+    },
+    {
+      "id": "container_image",
+      "label": "Container Image",
+      "type": "artifact",
+      "description": "Packaged container image whose structure is standardized by OCI."
+    },
+    {
+      "id": "image_manifest",
+      "label": "Image Manifest",
+      "type": "image_component",
+      "description": "Manifest component of a container image defined by the OCI Image Specification."
+    },
+    {
+      "id": "filesystem_layer",
+      "label": "Filesystem Layer",
+      "type": "image_component",
+      "description": "Filesystem layer forming part of a container image."
+    },
+    {
+      "id": "runtime_config",
+      "label": "Runtime Configuration",
+      "type": "configuration",
+      "description": "Configuration governing a container runtime execution environment."
+    },
+    {
+      "id": "container_runtime",
+      "label": "Container Runtime",
+      "type": "runtime",
+      "description": "Software responsible for the container execution environment and lifecycle."
+    },
+    {
+      "id": "container_lifecycle",
+      "label": "Container Lifecycle",
+      "type": "lifecycle",
+      "description": "Creation/execution and lifecycle behavior defined by the container runtime specification."
+    },
+    {
+      "id": "interoperability",
+      "label": "Container Interoperability",
+      "type": "property",
+      "description": "Ability for container images and runtimes to interoperate across implementations and tools."
+    },
+    {
+      "id": "container_orchestration",
+      "label": "Container Orchestration",
+      "type": "orchestration",
+      "description": "Management/orchestration of containerized applications, particularly application containers."
+    },
+    {
+      "id": "container_management",
+      "label": "Container Management",
+      "type": "management",
+      "description": "Operational management of containers and containerized applications."
+    },
+    {
+      "id": "container_cluster",
+      "label": "Container Cluster",
+      "type": "cluster",
+      "description": "Cluster of machines/instances running container workloads that requires coordinated management."
+    },
+    {
+      "id": "cluster_management",
+      "label": "Container Cluster Management",
+      "type": "management",
+      "description": "Management layer for creating, upgrading, repairing, scaling, balancing and monitoring container clusters."
+    },
+    {
+      "id": "cluster_creation",
+      "label": "Cluster Creation",
+      "type": "operation",
+      "description": "Creation of a container cluster."
+    },
+    {
+      "id": "cluster_upgrade",
+      "label": "Cluster Upgrade",
+      "type": "operation",
+      "description": "Upgrading software across a container cluster."
+    },
+    {
+      "id": "cluster_repair",
+      "label": "Cluster Repair",
+      "type": "operation",
+      "description": "Repairing cluster software or infrastructure."
+    },
+    {
+      "id": "load_balancing",
+      "label": "Load Balancing",
+      "type": "operation",
+      "description": "Balancing load across existing container instances."
+    },
+    {
+      "id": "scaling",
+      "label": "Container Scaling",
+      "type": "operation",
+      "description": "Starting or stopping instances to adapt capacity to user demand."
+    },
+    {
+      "id": "logging",
+      "label": "Container Logging",
+      "type": "observability",
+      "description": "Logging of cluster/application activities."
+    },
+    {
+      "id": "monitoring",
+      "label": "Container Monitoring",
+      "type": "observability",
+      "description": "Monitoring cluster, application and sensor output."
+    },
+    {
+      "id": "sensor_query",
+      "label": "Sensor Query",
+      "type": "observability",
+      "description": "Querying sensors or application state as part of cluster management."
+    },
+    {
+      "id": "kubernetes",
+      "label": "Kubernetes",
+      "type": "orchestrator",
+      "description": "Container orchestration implementation named by the source."
+    },
+    {
+      "id": "docker_swarm",
+      "label": "Docker Swarm",
+      "type": "orchestrator",
+      "description": "Container orchestration implementation named by the source."
+    },
+    {
+      "id": "okd",
+      "label": "OKD",
+      "type": "cluster_manager",
+      "description": "Open-source container cluster management implementation."
+    },
+    {
+      "id": "rancher",
+      "label": "Rancher",
+      "type": "cluster_manager",
+      "description": "Open-source container cluster management implementation."
+    },
+    {
+      "id": "aws",
+      "label": "Amazon Web Services",
+      "type": "cloud_provider",
+      "description": "Cloud provider identified as adopting containerization."
+    },
+    {
+      "id": "azure",
+      "label": "Microsoft Azure",
+      "type": "cloud_provider",
+      "description": "Cloud provider identified as adopting containerization."
+    },
+    {
+      "id": "gcp",
+      "label": "Google Cloud Platform",
+      "type": "cloud_provider",
+      "description": "Cloud provider identified as adopting containerization."
+    },
+    {
+      "id": "ibm_cloud",
+      "label": "IBM Cloud",
+      "type": "cloud_provider",
+      "description": "Cloud provider identified as adopting containerization."
+    },
+    {
+      "id": "dod",
+      "label": "U.S. Department of Defense",
+      "type": "organization",
+      "description": "Organization identified as pursuing containerization for more rapid software development and fielding."
+    },
+    {
+      "id": "f22",
+      "label": "F-22",
+      "type": "platform",
+      "description": "Platform identified as the first application of the DoD containerization effort in the source."
+    },
+    {
+      "id": "podman",
+      "label": "Podman",
+      "type": "container_manager",
+      "description": "Container manager shown as an example in the source."
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "type": "container_platform",
+      "description": "Container software referenced as related container technology and as an application-container implementation in the surrounding virtualization taxonomy."
+    },
+    {
+      "id": "open_shift",
+      "label": "OpenShift",
+      "type": "orchestrator",
+      "description": "Container orchestration technology listed in the source's orchestration taxonomy."
+    },
+    {
+      "id": "amazon_ecs",
+      "label": "Amazon ECS",
+      "type": "orchestrator",
+      "description": "Container orchestration technology listed in the source."
+    },
+    {
+      "id": "apptainer",
+      "label": "Apptainer",
+      "type": "application_container",
+      "description": "Application container implementation listed in the source."
+    },
+    {
+      "id": "distrobox",
+      "label": "Distrobox",
+      "type": "application_container",
+      "description": "Application container implementation listed in the source."
+    },
+    {
+      "id": "lmctfy",
+      "label": "lmctfy",
+      "type": "application_container",
+      "description": "Application container implementation listed in the source."
+    },
+    {
+      "id": "rkt",
+      "label": "rkt",
+      "type": "application_container",
+      "description": "Application container implementation listed in the source."
+    },
+    {
+      "id": "freebsd_jail",
+      "label": "FreeBSD jail",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "linux_vserver",
+      "label": "Linux-VServer",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "lxc",
+      "label": "LXC",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "openvz",
+      "label": "OpenVZ",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "solaris_containers",
+      "label": "Solaris Containers",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "sysjail",
+      "label": "sysjail",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "virtuozzo",
+      "label": "Virtuozzo",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "workload_partitions",
+      "label": "Workload Partitions",
+      "type": "os_container",
+      "description": "OS container implementation listed in the source."
+    },
+    {
+      "id": "cgroups",
+      "label": "cgroups",
+      "type": "kernel_feature",
+      "description": "Related kernel feature listed in the source."
+    },
+    {
+      "id": "namespaces",
+      "label": "namespaces",
+      "type": "kernel_feature",
+      "description": "Related kernel feature listed in the source."
+    },
+    {
+      "id": "seccomp",
+      "label": "seccomp",
+      "type": "kernel_feature",
+      "description": "Related kernel feature listed in the source."
+    },
+    {
+      "id": "ebpf",
+      "label": "eBPF",
+      "type": "kernel_feature",
+      "description": "Related kernel feature listed in the source."
+    },
+    {
+      "id": "chroot",
+      "label": "chroot",
+      "type": "kernel_feature",
+      "description": "Related kernel feature listed in the source."
+    },
+    {
+      "id": "brandz",
+      "label": "BrandZ",
+      "type": "kernel_feature",
+      "description": "Related kernel feature listed in the source."
+    },
+    {
+      "id": "rump_kernel",
+      "label": "Rump Kernel",
+      "type": "virtual_kernel",
+      "description": "Virtual kernel architecture listed in the source."
+    },
+    {
+      "id": "user_mode_linux",
+      "label": "User-mode Linux",
+      "type": "virtual_kernel",
+      "description": "Virtual kernel architecture listed in the source."
+    },
+    {
+      "id": "vkernel",
+      "label": "vkernel",
+      "type": "virtual_kernel",
+      "description": "Virtual kernel architecture listed in the source."
+    },
+    {
+      "id": "dove",
+      "label": "DOVE",
+      "type": "network_virtualization",
+      "description": "Distributed Overlay Virtual Ethernet listed in the source's network virtualization taxonomy."
+    },
+    {
+      "id": "evpn",
+      "label": "EVPN",
+      "type": "network_virtualization",
+      "description": "Ethernet VPN listed in the source's network virtualization taxonomy."
+    },
+    {
+      "id": "nvgre",
+      "label": "NVGRE",
+      "type": "network_virtualization",
+      "description": "Network virtualization technology listed in the source."
+    },
+    {
+      "id": "open_vswitch",
+      "label": "Open vSwitch",
+      "type": "network_virtualization",
+      "description": "Virtual networking/switching technology listed in the source."
+    },
+    {
+      "id": "virtual_security_switch",
+      "label": "Virtual Security Switch",
+      "type": "network_virtualization",
+      "description": "Virtual security switch listed in the source."
+    },
+    {
+      "id": "vxlan",
+      "label": "VXLAN",
+      "type": "network_virtualization",
+      "description": "Virtual Extensible LAN listed in the source."
+    },
+    {
+      "id": "geneve",
+      "label": "GENEVE",
+      "type": "network_virtualization",
+      "description": "Generic Network Virtualization Encapsulation listed in the source."
+    },
+    {
+      "id": "ref_90",
+      "label": "Bentaleb, Ouafa; Belloum, Adam S. Z.; Sebaa, Abderrazak; El-Maouhab, Aouaouche (8 June 2021). \"Containerization technologies: taxonomies, applications and challenges\". The Journal of Supercomputing. 78: 1144–1181. doi:10.1007/s11227-021-03914-1. S2CID 236220833.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 90
+    },
+    {
+      "id": "ref_91",
+      "label": "Moreau, David; Wiebels, Kristina; Boettiger, Carl (2023). Containers for computational reproducibility. Nature Reviews Methods Primers, 3 (50). https://doi.org/10.1038/s43586-023-00236-9",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 91
+    },
+    {
+      "id": "ref_92",
+      "label": "Watada, Junzo; Roy, Arunava; Kadikar, Ruturaj; Pham, Hoang; Xu, Bing (2019). \"Emerging Trends, Techniques and Open Issues of Containerization: A Review\". IEEE Access. 7: 152443–152472. Bibcode:2019IEEEA...7o2443W. doi:10.1109/ACCESS.2019.2945930. S2CID 204970781.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 92
+    },
+    {
+      "id": "ref_93",
+      "label": "van den Berg, Tom; Siegel, Barry; Cramp, Anthony (April 2017). \"Containerization of high level architecture-based simulations: A case study\". The Journal of Defense Modeling and Simulation: Applications, Methodology, Technology. 14 (2): 115–138. doi:10.1177/1548512916662365. S2CID 64405143.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 93
+    },
+    {
+      "id": "ref_94",
+      "label": "Zhang, Xiao; Tang, Yu; Li, Hao; Liu, Shaotao; Lin, Di (2021). \"Containerization Design for Autonomous and Controllable Cloud Distributed System\". Communications, Signal Processing, and Systems. Lecture Notes in Electrical Engineering. Vol. 654. pp. 30–38. doi:10.1007/978-981-15-8411-4_4. ISBN 978-981-15-8410-7. S2CID 236762442.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 94
+    },
+    {
+      "id": "ref_95",
+      "label": "Odun-Ayo, Isaac; Geteloma, Victor; Eweoya, Ibukun; Ahuja, Ravin (2019). \"Virtualization, Containerization, Composition, and Orchestration of Cloud Computing Services\". Computational Science and Its Applications – ICCSA 2019. Lecture Notes in Computer Science. Vol. 11622. pp. 403–417. doi:10.1007/978-3-030-24305-0_30. ISBN 978-3-030-24304-3. S2CID 195769647.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 95
+    },
+    {
+      "id": "ref_96",
+      "label": "Books",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 96
+    },
+    {
+      "id": "ref_97",
+      "label": "Gabriel N. Schenker, Hideto Saito, Hui-Chuan Chloe Lee, Ke-Jou Carol Hsu, (2019) Getting Started with Containerization: Reduce the operational burden on your system by automating and managing your containers, Packt Publishing, ISBN 978-1-83864-903-6",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 97
+    },
+    {
+      "id": "ref_98",
+      "label": "Jeeva S. Chelladhurai, Vinod Singh, Pethuru Raj (2014), Learning Docker, Packt Publishing, ISBN 978-0-9888202-0-3",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 98
+    },
+    {
+      "id": "ref_99",
+      "label": "References",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 99
+    },
+    {
+      "id": "ref_100",
+      "label": "Scheepers, Mathijs Jeroen (2014). \"Virtualization and Containerization of Application Infrastructure: A Comparison\" (PDF). thijs.ai. Thijs Scheepers. S2CID 18129086. Archived from the original (PDF) on 2024-09-28. Retrieved 2025-09-01.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 100
+    },
+    {
+      "id": "ref_101",
+      "label": "Winn, Duncan C. E. (2017). Cloud Foundry: The Definitive Guide Develop, Deploy, and Scale. O'Reilly Media, Inc. ISBN 9781491932544.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 101
+    },
+    {
+      "id": "ref_102",
+      "label": "\"Concepts: Containers\". Kubernetes.io.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 102
+    },
+    {
+      "id": "ref_103",
+      "label": "\"What is containerization?\". www.redhat.com. RedHat. Archived from the original on 2021-05-08. Retrieved 2021-07-10.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 103
+    },
+    {
+      "id": "ref_104",
+      "label": "Hinck, Tim Maurer, Garrett; Hinck, Tim Maurer, Garrett. \"Cloud Security: A Primer for Policymakers\". Carnegie Endowment for International Peace. Retrieved 2021-07-10.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 104
+    },
+    {
+      "id": "ref_105",
+      "label": "Rubens, Paul (2017-06-27). \"What are containers and why do you need them?\". CIO. Retrieved 2021-07-10.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 105
+    },
+    {
+      "id": "ref_106",
+      "label": "\"Containerization\". www.ibm.com. Retrieved 2021-07-10.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 106
+    },
+    {
+      "id": "ref_107",
+      "label": "December 2019, Jonas P. DeMuro 18 (18 December 2019). \"What is container technology?\". TechRadar India. Retrieved 2021-07-10.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 107
+    },
+    {
+      "id": "ref_108",
+      "label": "\"Flight Test Clears F-22 Fleet To Accept Third-Party Software\". Aviation Week. 30 August 2022.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 108
+    },
+    {
+      "id": "ref_109",
+      "label": "\"Open Container Initiative\". Open Container Initiative. Retrieved 5 October 2026.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 109
+    },
+    {
+      "id": "ref_110",
+      "label": "\"About the Open Container Initiative\". Open Container Initiative. Retrieved 5 October 2026.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 110
+    },
+    {
+      "id": "ref_111",
+      "label": "\"The OpenContainers Runtime Spec\". Open Container Initiative. Retrieved 5 October 2026.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 111
+    },
+    {
+      "id": "ref_112",
+      "label": "\"The OpenContainers Image Spec\". Open Container Initiative. Retrieved 5 October 2026.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 112
+    },
+    {
+      "id": "ref_113",
+      "label": "\"What is Container Orchestration? Definition & Related FAQs\". Avi Networks. Retrieved 2024-04-29.",
+      "type": "reference",
+      "description": "Bibliographic/reference entry from the supplied source.",
+      "source_line": 113
+    },
+    {
+      "id": "scheepers",
+      "label": "Mathijs Jeroen Scheepers",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "winn",
+      "label": "Duncan C. E. Winn",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "bentaleb",
+      "label": "Ouafa Bentaleb",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "belloum",
+      "label": "Adam S. Z. Belloum",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "sebaa",
+      "label": "Abderrazak Sebaa",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "el_maouhab",
+      "label": "Aouaouche El-Maouhab",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "moreau",
+      "label": "David Moreau",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "wiebels",
+      "label": "Kristina Wiebels",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "boettiger",
+      "label": "Carl Boettiger",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "watada",
+      "label": "Junzo Watada",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "roy",
+      "label": "Arunava Roy",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "kadikar",
+      "label": "Ruturaj Kadikar",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "pham",
+      "label": "Hoang Pham",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "xu_bing",
+      "label": "Bing Xu",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "van_den_berg",
+      "label": "Tom van den Berg",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "siegel",
+      "label": "Barry Siegel",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "cramp",
+      "label": "Anthony Cramp",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "zhang",
+      "label": "Xiao Zhang",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "tang",
+      "label": "Yu Tang",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "li_hao",
+      "label": "Hao Li",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "liu_shaotao",
+      "label": "Shaotao Liu",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "lin_di",
+      "label": "Di Lin",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "odun_ayo",
+      "label": "Isaac Odun-Ayo",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "geteloma",
+      "label": "Victor Geteloma",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "eweoya",
+      "label": "Ibukun Eweoya",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "ahuja",
+      "label": "Ravin Ahuja",
+      "type": "researcher",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "schenker",
+      "label": "Gabriel N. Schenker",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "saito",
+      "label": "Hideto Saito",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "lee",
+      "label": "Hui-Chuan Chloe Lee",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "hsu",
+      "label": "Ke-Jou Carol Hsu",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "chelladhurai",
+      "label": "Jeeva S. Chelladhurai",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "singh",
+      "label": "Vinod Singh",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "raj",
+      "label": "Pethuru Raj",
+      "type": "author",
+      "description": "Person named in the supplied bibliography."
+    },
+    {
+      "id": "event_container_adoption",
+      "label": "Containerization became widely adopted by major cloud platforms.",
+      "type": "historical_event",
+      "description": "Containerization became widely adopted by major cloud platforms.",
+      "date": "recent period",
+      "source_line_range": [
+        58
+      ]
+    },
+    {
+      "id": "event_dod",
+      "label": "The U.S. Department of Defense pursued containerization for faster software development and fielding, with first application in the F-22.",
+      "type": "historical_event",
+      "description": "The U.S. Department of Defense pursued containerization for faster software development and fielding, with first application in the F-22.",
+      "date": "recent period",
+      "source_line_range": [
+        58
+      ]
+    },
+    {
+      "id": "event_oci",
+      "label": "OCI maintains Runtime, Image and Distribution specifications for container interoperability.",
+      "type": "historical_event",
+      "description": "OCI maintains Runtime, Image and Distribution specifications for container interoperability.",
+      "date": "current source context",
+      "source_line_range": [
+        67
+      ]
+    },
+    {
+      "id": "claim_01",
+      "label": "Containerization is OS-level or application-level virtualization enabling isolated user spaces across cloud or non-cloud environments.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        53,
+        53
+      ]
+    },
+    {
+      "id": "claim_02",
+      "label": "Containers surround applications, bundle configuration/libraries/dependencies, isolate processes, and collectively share an OS kernel.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        56,
+        56
+      ]
+    },
+    {
+      "id": "claim_03",
+      "label": "Containerization is widely adopted by major cloud platforms and pursued by the U.S. Department of Defense, first applied to the F-22.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        58,
+        58
+      ]
+    },
+    {
+      "id": "claim_04",
+      "label": "Shared OS architecture creates security concerns and OS-focused scanning may leave application containers insufficiently protected.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        64,
+        65
+      ]
+    },
+    {
+      "id": "claim_05",
+      "label": "OCI develops Runtime, Image and Distribution specifications intended to provide interoperability.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        67,
+        69
+      ]
+    },
+    {
+      "id": "claim_06",
+      "label": "Container orchestration/management is mainly used for application containers, with Kubernetes and Docker Swarm named as implementations.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        71,
+        72
+      ]
+    },
+    {
+      "id": "claim_07",
+      "label": "Container cluster management includes creation, upgrade, repair, load balancing, scaling, logging and monitoring.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        75,
+        75
+      ]
+    },
+    {
+      "id": "claim_08",
+      "label": "The source provides journal literature covering containerization technologies, applications, challenges and cloud distributed systems.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        90,
+        95
+      ]
+    },
+    {
+      "id": "claim_09",
+      "label": "The source provides books on containerization and Docker.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        97,
+        98
+      ]
+    },
+    {
+      "id": "claim_10",
+      "label": "The source provides additional references including Kubernetes, Red Hat, IBM, OCI and orchestration resources.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        100,
+        113
+      ]
+    },
+    {
+      "id": "cloud_provider",
+      "label": "Cloud Provider",
+      "type": "infrastructure_category",
+      "description": "Cloud service provider category."
+    },
+    {
+      "id": "container_manager",
+      "label": "Container Manager",
+      "type": "management_category",
+      "description": "Software category for managing containers."
+    },
+    {
+      "id": "virtual_machine",
+      "label": "Virtual Machine",
+      "type": "virtualization_concept",
+      "description": "Virtual machine abstraction used as a comparison point for containerization."
+    },
+    {
+      "id": "portability",
+      "label": "Portability",
+      "type": "property",
+      "description": "Ability to move or run software across different deployment environments."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "e001",
+      "source": "containerization",
+      "relation": "implements",
+      "target": "os_container",
+      "mechanism": "Containerization can operate as OS-level virtualization across resources.",
+      "conditions": "Kernel-based isolation",
+      "mathematical_form": "",
+      "effect": "Creates isolated user spaces.",
+      "inverse_or_converse": "Application-level virtualization is an alternate form named by the source.",
+      "frame_or_context": "virtualization",
+      "scope": "containerization",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e002",
+      "source": "containerization",
+      "relation": "implements",
+      "target": "application_container",
+      "mechanism": "Containerization can operate as application-level virtualization.",
+      "conditions": "Application workload",
+      "mathematical_form": "",
+      "effect": "Creates portable application environments.",
+      "inverse_or_converse": "OS-level virtualization is an alternate form named by the source.",
+      "frame_or_context": "virtualization",
+      "scope": "containerization",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e003",
+      "source": "containerization",
+      "relation": "creates",
+      "target": "isolated_user_space",
+      "mechanism": "Applications run in isolated user spaces called containers.",
+      "conditions": "Container isolation",
+      "mathematical_form": "",
+      "effect": "Separates workloads from parallel environments.",
+      "inverse_or_converse": "",
+      "frame_or_context": "isolation",
+      "scope": "containerization",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "causal",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e004",
+      "source": "container",
+      "relation": "surrounds",
+      "target": "application",
+      "mechanism": "A container surrounds the application with a functional computing environment.",
+      "conditions": "Application packaged with dependencies",
+      "mathematical_form": "",
+      "effect": "Provides a portable execution environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "architecture",
+      "scope": "container",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e005",
+      "source": "container",
+      "relation": "bundles",
+      "target": "container_config",
+      "mechanism": "Related configuration files are bundled with the application.",
+      "conditions": "Application packaging",
+      "mathematical_form": "",
+      "effect": "Makes configuration part of the container environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e006",
+      "source": "container",
+      "relation": "bundles",
+      "target": "library",
+      "mechanism": "Libraries are bundled into the container environment.",
+      "conditions": "Application dependencies included",
+      "mathematical_form": "",
+      "effect": "Reduces dependence on external environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e007",
+      "source": "container",
+      "relation": "bundles",
+      "target": "dependency",
+      "mechanism": "Dependencies are bundled into the container environment.",
+      "conditions": "Application dependencies included",
+      "mathematical_form": "",
+      "effect": "Supports portable execution.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e008",
+      "source": "container",
+      "relation": "runs",
+      "target": "isolated_process",
+      "mechanism": "Container runs isolated processes.",
+      "conditions": "Container execution",
+      "mathematical_form": "",
+      "effect": "Provides process isolation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "execution",
+      "scope": "container",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e009",
+      "source": "container",
+      "relation": "shares",
+      "target": "shared_kernel",
+      "mechanism": "Multiple containers collectively share a common OS kernel.",
+      "conditions": "Same host OS",
+      "mathematical_form": "",
+      "effect": "Reduces need for a separate kernel per container.",
+      "inverse_or_converse": "A system VM normally provides a guest OS abstraction.",
+      "frame_or_context": "architecture",
+      "scope": "containerization",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e010",
+      "source": "shared_kernel",
+      "relation": "is",
+      "target": "os_kernel",
+      "mechanism": "The common kernel is the operating-system kernel shared by containers.",
+      "conditions": "Common OS environment",
+      "mathematical_form": "",
+      "effect": "Provides kernel services to multiple isolated containers.",
+      "inverse_or_converse": "",
+      "frame_or_context": "architecture",
+      "scope": "containerization",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "identity",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e011",
+      "source": "container",
+      "relation": "runs_in",
+      "target": "cloud_environment",
+      "mechanism": "Containers can run in cloud environments.",
+      "conditions": "Cloud infrastructure",
+      "mathematical_form": "",
+      "effect": "Provides cloud portability.",
+      "inverse_or_converse": "",
+      "frame_or_context": "deployment",
+      "scope": "containerization",
+      "source_line_range": [
+        53,
+        56
+      ],
+      "semantic_role": "deployment",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e012",
+      "source": "container",
+      "relation": "runs_in",
+      "target": "noncloud_environment",
+      "mechanism": "Containers can run outside cloud environments.",
+      "conditions": "Non-cloud infrastructure",
+      "mathematical_form": "",
+      "effect": "Extends deployment beyond cloud providers.",
+      "inverse_or_converse": "",
+      "frame_or_context": "deployment",
+      "scope": "containerization",
+      "source_line_range": [
+        53,
+        56
+      ],
+      "semantic_role": "deployment",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e013",
+      "source": "containerization",
+      "relation": "supports",
+      "target": "vendor_independence",
+      "mechanism": "Source describes containerized applications as able to run regardless of environment type or vendor.",
+      "conditions": "Compatible container environment",
+      "mathematical_form": "",
+      "effect": "Promotes deployment portability.",
+      "inverse_or_converse": "",
+      "frame_or_context": "portability",
+      "scope": "containerization",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e014",
+      "source": "cloud_environment",
+      "relation": "contrasts_with",
+      "target": "noncloud_environment",
+      "mechanism": "Source explicitly distinguishes cloud and non-cloud environments as deployment contexts.",
+      "conditions": "Deployment context",
+      "mathematical_form": "",
+      "effect": "Shows containerization spans both contexts.",
+      "inverse_or_converse": "",
+      "frame_or_context": "deployment",
+      "scope": "containerization",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "distinction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e015",
+      "source": "security_threat",
+      "relation": "affects",
+      "target": "containerization",
+      "mechanism": "Shared OS architecture means security threats can affect the whole containerized system.",
+      "conditions": "Shared operating system",
+      "mathematical_form": "",
+      "effect": "A compromise may have broader consequences than a single application boundary.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "containerization",
+      "source_line_range": [
+        64
+      ],
+      "semantic_role": "risk",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e016",
+      "source": "security_scanner",
+      "relation": "protects",
+      "target": "os_kernel",
+      "mechanism": "Source says security scanners generally protect the OS.",
+      "conditions": "Security scanning focus",
+      "mathematical_form": "",
+      "effect": "Provides OS-focused protection.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "containerized system",
+      "source_line_range": [
+        65
+      ],
+      "semantic_role": "protection",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e017",
+      "source": "security_scanner",
+      "relation": "does_not_protect",
+      "target": "application_container",
+      "mechanism": "Source says scanners may not protect application containers.",
+      "conditions": "Scanner coverage limitation",
+      "mathematical_form": "",
+      "effect": "Can leave application-container vulnerabilities.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "containerized system",
+      "source_line_range": [
+        65
+      ],
+      "semantic_role": "gap",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e018",
+      "source": "container_vulnerability",
+      "relation": "results_from",
+      "target": "security_scanner",
+      "mechanism": "Insufficient application-container scanning can add unwanted vulnerability.",
+      "conditions": "Scanner coverage incomplete",
+      "mathematical_form": "",
+      "effect": "Creates an application-layer security gap.",
+      "inverse_or_converse": "Improved application scanning would reduce gap.",
+      "frame_or_context": "security",
+      "scope": "containerized system",
+      "source_line_range": [
+        65
+      ],
+      "semantic_role": "risk",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e019",
+      "source": "oci",
+      "relation": "develops",
+      "target": "oci_runtime_spec",
+      "mechanism": "OCI develops the Runtime Specification as an open standard.",
+      "conditions": "OCI standardization",
+      "mathematical_form": "",
+      "effect": "Standardizes container runtime behavior.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67
+      ],
+      "semantic_role": "standardization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e020",
+      "source": "oci",
+      "relation": "develops",
+      "target": "oci_image_spec",
+      "mechanism": "OCI develops the Image Specification.",
+      "conditions": "OCI standardization",
+      "mathematical_form": "",
+      "effect": "Standardizes container image structure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67
+      ],
+      "semantic_role": "standardization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e021",
+      "source": "oci",
+      "relation": "develops",
+      "target": "oci_distribution_spec",
+      "mechanism": "OCI develops the Distribution Specification.",
+      "conditions": "OCI standardization",
+      "mathematical_form": "",
+      "effect": "Standardizes image distribution.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67
+      ],
+      "semantic_role": "standardization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e022",
+      "source": "oci_runtime_spec",
+      "relation": "defines",
+      "target": "runtime_config",
+      "mechanism": "Runtime Specification defines configuration of a container.",
+      "conditions": "OCI Runtime Specification",
+      "mathematical_form": "",
+      "effect": "Standardizes runtime configuration.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "OCI",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "definition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e023",
+      "source": "oci_runtime_spec",
+      "relation": "defines",
+      "target": "container_runtime",
+      "mechanism": "Runtime Specification defines the execution environment and lifecycle of a container.",
+      "conditions": "OCI Runtime Specification",
+      "mathematical_form": "",
+      "effect": "Standardizes runtime execution/lifecycle.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "OCI",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "definition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e024",
+      "source": "oci_runtime_spec",
+      "relation": "defines",
+      "target": "container_lifecycle",
+      "mechanism": "Runtime Specification defines container lifecycle behavior.",
+      "conditions": "OCI Runtime Specification",
+      "mathematical_form": "",
+      "effect": "Creates interoperable lifecycle semantics.",
+      "inverse_or_converse": "",
+      "frame_or_context": "lifecycle",
+      "scope": "OCI",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "definition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e025",
+      "source": "oci_image_spec",
+      "relation": "defines",
+      "target": "container_image",
+      "mechanism": "Image Specification defines container image structure.",
+      "conditions": "OCI Image Specification",
+      "mathematical_form": "",
+      "effect": "Standardizes image representation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "OCI",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "definition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e026",
+      "source": "container_image",
+      "relation": "contains",
+      "target": "image_manifest",
+      "mechanism": "Image structure includes manifests.",
+      "conditions": "OCI Image Specification",
+      "mathematical_form": "",
+      "effect": "Provides image metadata/description.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container image",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e027",
+      "source": "container_image",
+      "relation": "contains",
+      "target": "filesystem_layer",
+      "mechanism": "Image structure includes filesystem layers.",
+      "conditions": "OCI Image Specification",
+      "mathematical_form": "",
+      "effect": "Provides layered filesystem content.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container image",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e028",
+      "source": "container_image",
+      "relation": "contains",
+      "target": "container_config",
+      "mechanism": "Image structure includes configuration.",
+      "conditions": "OCI Image Specification",
+      "mathematical_form": "",
+      "effect": "Carries configuration for image execution.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container image",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e029",
+      "source": "oci",
+      "relation": "enables",
+      "target": "interoperability",
+      "mechanism": "OCI specifications are intended to allow images and runtimes to interoperate across implementations/tools.",
+      "conditions": "Open standards",
+      "mathematical_form": "",
+      "effect": "Reduces implementation lock-in and compatibility barriers.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e030",
+      "source": "container_orchestration",
+      "relation": "manages",
+      "target": "application_container",
+      "mechanism": "Orchestration is mostly used in the context of application containers.",
+      "conditions": "Application container workloads",
+      "mathematical_form": "",
+      "effect": "Coordinates application container deployment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "orchestration",
+      "scope": "container management",
+      "source_line_range": [
+        71,
+        72
+      ],
+      "semantic_role": "scope",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e031",
+      "source": "container_orchestration",
+      "relation": "implemented_by",
+      "target": "kubernetes",
+      "mechanism": "Kubernetes is an implementation of container orchestration.",
+      "conditions": "Application container orchestration",
+      "mathematical_form": "",
+      "effect": "Provides orchestration capabilities.",
+      "inverse_or_converse": "",
+      "frame_or_context": "orchestration",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        72
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e032",
+      "source": "container_orchestration",
+      "relation": "implemented_by",
+      "target": "docker_swarm",
+      "mechanism": "Docker Swarm is an implementation of container orchestration.",
+      "conditions": "Application container orchestration",
+      "mathematical_form": "",
+      "effect": "Provides orchestration capabilities.",
+      "inverse_or_converse": "",
+      "frame_or_context": "orchestration",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        72
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e033",
+      "source": "container_cluster",
+      "relation": "requires",
+      "target": "cluster_management",
+      "mechanism": "Container clusters need coordinated management.",
+      "conditions": "Multiple instances/machines",
+      "mathematical_form": "",
+      "effect": "Enables cluster lifecycle and workload operations.",
+      "inverse_or_converse": "",
+      "frame_or_context": "management",
+      "scope": "cluster",
+      "source_line_range": [
+        74
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e034",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "cluster_creation",
+      "mechanism": "Cluster management includes cluster creation.",
+      "conditions": "Cluster lifecycle",
+      "mathematical_form": "",
+      "effect": "Creates a usable container cluster.",
+      "inverse_or_converse": "",
+      "frame_or_context": "management",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "operation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e035",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "cluster_upgrade",
+      "mechanism": "Cluster management includes upgrading software.",
+      "conditions": "Cluster lifecycle",
+      "mathematical_form": "",
+      "effect": "Keeps cluster software current.",
+      "inverse_or_converse": "",
+      "frame_or_context": "management",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "operation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e036",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "cluster_repair",
+      "mechanism": "Cluster management includes repairing cluster software/infrastructure.",
+      "conditions": "Cluster failures",
+      "mathematical_form": "",
+      "effect": "Restores operational state.",
+      "inverse_or_converse": "",
+      "frame_or_context": "resilience",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "operation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e037",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "load_balancing",
+      "mechanism": "Cluster management balances load across existing instances.",
+      "conditions": "Multiple instances",
+      "mathematical_form": "",
+      "effect": "Distributes workload among available instances.",
+      "inverse_or_converse": "",
+      "frame_or_context": "scaling",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "operation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e038",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "scaling",
+      "mechanism": "Cluster management starts/stops instances to adapt to user demand.",
+      "conditions": "Changing demand",
+      "mathematical_form": "",
+      "effect": "Adjusts capacity to workload demand.",
+      "inverse_or_converse": "",
+      "frame_or_context": "scaling",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "control",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e039",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "logging",
+      "mechanism": "Cluster management logs activities.",
+      "conditions": "Operational events",
+      "mathematical_form": "",
+      "effect": "Creates operational records.",
+      "inverse_or_converse": "",
+      "frame_or_context": "observability",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "observability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e040",
+      "source": "cluster_management",
+      "relation": "performs",
+      "target": "monitoring",
+      "mechanism": "Cluster management monitors logs, applications or sensors.",
+      "conditions": "Operational telemetry",
+      "mathematical_form": "",
+      "effect": "Provides operational visibility.",
+      "inverse_or_converse": "",
+      "frame_or_context": "observability",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "observability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e041",
+      "source": "cluster_management",
+      "relation": "queries",
+      "target": "sensor_query",
+      "mechanism": "Management can query sensors and application state.",
+      "conditions": "Monitoring interface",
+      "mathematical_form": "",
+      "effect": "Obtains current operational information.",
+      "inverse_or_converse": "",
+      "frame_or_context": "observability",
+      "scope": "cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "observation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e042",
+      "source": "cluster_management",
+      "relation": "implemented_by",
+      "target": "okd",
+      "mechanism": "OKD is listed as an open-source container cluster management implementation.",
+      "conditions": "Open-source management",
+      "mathematical_form": "",
+      "effect": "Provides cluster management capabilities.",
+      "inverse_or_converse": "",
+      "frame_or_context": "management",
+      "scope": "container cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e043",
+      "source": "cluster_management",
+      "relation": "implemented_by",
+      "target": "rancher",
+      "mechanism": "Rancher is listed as an open-source container cluster management implementation.",
+      "conditions": "Open-source management",
+      "mathematical_form": "",
+      "effect": "Provides cluster management capabilities.",
+      "inverse_or_converse": "",
+      "frame_or_context": "management",
+      "scope": "container cluster",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e044",
+      "source": "cloud_provider",
+      "relation": "adopts",
+      "target": "containerization",
+      "mechanism": "Major cloud platforms adopted containerization.",
+      "conditions": "Cloud services",
+      "mathematical_form": "",
+      "effect": "Makes containers available as cloud deployment technology.",
+      "inverse_or_converse": "",
+      "frame_or_context": "adoption",
+      "scope": "cloud ecosystem",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "adoption",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e045",
+      "source": "aws",
+      "relation": "adopts",
+      "target": "containerization",
+      "mechanism": "AWS is named as a cloud platform widely adopting containerization.",
+      "conditions": "Cloud platform",
+      "mathematical_form": "",
+      "effect": "Extends containerization into managed cloud infrastructure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "adoption",
+      "scope": "cloud",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "adoption",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e046",
+      "source": "azure",
+      "relation": "adopts",
+      "target": "containerization",
+      "mechanism": "Microsoft Azure is named as a cloud platform adopting containerization.",
+      "conditions": "Cloud platform",
+      "mathematical_form": "",
+      "effect": "Extends containerization into managed cloud infrastructure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "adoption",
+      "scope": "cloud",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "adoption",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e047",
+      "source": "gcp",
+      "relation": "adopts",
+      "target": "containerization",
+      "mechanism": "Google Cloud Platform is named as a cloud platform adopting containerization.",
+      "conditions": "Cloud platform",
+      "mathematical_form": "",
+      "effect": "Extends containerization into managed cloud infrastructure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "adoption",
+      "scope": "cloud",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "adoption",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e048",
+      "source": "ibm_cloud",
+      "relation": "adopts",
+      "target": "containerization",
+      "mechanism": "IBM Cloud is named as a cloud platform adopting containerization.",
+      "conditions": "Cloud platform",
+      "mathematical_form": "",
+      "effect": "Extends containerization into managed cloud infrastructure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "adoption",
+      "scope": "cloud",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "adoption",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e049",
+      "source": "dod",
+      "relation": "pursues",
+      "target": "containerization",
+      "mechanism": "The U.S. Department of Defense pursued containerization to accelerate development and fielding of software updates.",
+      "conditions": "Defense software delivery",
+      "mathematical_form": "",
+      "effect": "Supports faster software update delivery.",
+      "inverse_or_converse": "",
+      "frame_or_context": "adoption",
+      "scope": "defense computing",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "adoption",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e050",
+      "source": "dod",
+      "relation": "first_applied_to",
+      "target": "f22",
+      "mechanism": "Source identifies the F-22 as the first application of this DoD containerization effort.",
+      "conditions": "Defense platform",
+      "mathematical_form": "",
+      "effect": "Demonstrates operational application.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "defense computing",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e051",
+      "source": "podman",
+      "relation": "is",
+      "target": "container_manager",
+      "mechanism": "Podman is explicitly shown as an example of a container manager.",
+      "conditions": "Container management",
+      "mathematical_form": "",
+      "effect": "Manages container workloads.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        52
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e052",
+      "source": "containerization",
+      "relation": "includes",
+      "target": "os_container",
+      "mechanism": "OS containers are identified as one type of containerization.",
+      "conditions": "Container taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects containerization to OS-level containers.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "containerization",
+      "source_line_range": [
+        60,
+        61
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e053",
+      "source": "containerization",
+      "relation": "includes",
+      "target": "application_container",
+      "mechanism": "Application containers are identified as one type of containerization.",
+      "conditions": "Container taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects containerization to application containers.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "containerization",
+      "source_line_range": [
+        60,
+        62
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e054",
+      "source": "container_runtime",
+      "relation": "implements",
+      "target": "container_lifecycle",
+      "mechanism": "Runtime implements execution/lifecycle semantics defined by the runtime standard.",
+      "conditions": "Runtime specification",
+      "mathematical_form": "",
+      "effect": "Turns standardized lifecycle into executable behavior.",
+      "inverse_or_converse": "",
+      "frame_or_context": "runtime",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e055",
+      "source": "container_image",
+      "relation": "enables",
+      "target": "container",
+      "mechanism": "Container image supplies standardized packaged structure for container execution.",
+      "conditions": "Image available to runtime",
+      "mathematical_form": "",
+      "effect": "Creates repeatable container artifact.",
+      "inverse_or_converse": "",
+      "frame_or_context": "packaging",
+      "scope": "container runtime",
+      "source_line_range": [
+        69
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e056",
+      "source": "oci_distribution_spec",
+      "relation": "supports",
+      "target": "container_image",
+      "mechanism": "Distribution specification governs distribution of container images.",
+      "conditions": "Image distribution",
+      "mathematical_form": "",
+      "effect": "Moves images between registries/implementations conceptually.",
+      "inverse_or_converse": "",
+      "frame_or_context": "distribution",
+      "scope": "OCI",
+      "source_line_range": [
+        67
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e057",
+      "source": "container_image",
+      "relation": "supports",
+      "target": "interoperability",
+      "mechanism": "Standard image structure enables exchange across implementations.",
+      "conditions": "OCI Image Specification",
+      "mathematical_form": "",
+      "effect": "Improves portability of image artifacts.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "OCI",
+      "source_line_range": [
+        67,
+        69
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e058",
+      "source": "container_runtime",
+      "relation": "supports",
+      "target": "interoperability",
+      "mechanism": "Standardized runtime behavior allows runtime interoperability across implementations.",
+      "conditions": "OCI Runtime Specification",
+      "mathematical_form": "",
+      "effect": "Allows tools to target common runtime semantics.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "OCI",
+      "source_line_range": [
+        67,
+        69
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e059",
+      "source": "container",
+      "relation": "depends_on",
+      "target": "os_kernel",
+      "mechanism": "Containers depend on the shared OS kernel model described by containerization.",
+      "conditions": "Kernel services",
+      "mathematical_form": "",
+      "effect": "Provides common operating-system services to isolated processes.",
+      "inverse_or_converse": "System VM instead supplies separate guest OS.",
+      "frame_or_context": "architecture",
+      "scope": "containerization",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e060",
+      "source": "containerization",
+      "relation": "contrasts_with",
+      "target": "virtual_machine",
+      "mechanism": "Containerization is OS/application-level virtualization while VMs can virtualize an entire computer system.",
+      "conditions": "Shared kernel versus guest OS abstraction",
+      "mathematical_form": "",
+      "effect": "Clarifies adjacent but different virtualization models.",
+      "inverse_or_converse": "",
+      "frame_or_context": "semantic_comparison",
+      "scope": "virtualization",
+      "source_line_range": [
+        53,
+        56
+      ],
+      "semantic_role": "distinction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e061",
+      "source": "containerization",
+      "relation": "supports",
+      "target": "portability",
+      "mechanism": "Bundling configuration, libraries and dependencies supports portable environments.",
+      "conditions": "Dependencies included",
+      "mathematical_form": "",
+      "effect": "Reduces environmental variation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "portability",
+      "scope": "containerization",
+      "source_line_range": [
+        56
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e062",
+      "source": "container",
+      "relation": "provides",
+      "target": "vendor_independence",
+      "mechanism": "Containerized application can run across cloud/non-cloud and vendor contexts according to source framing.",
+      "conditions": "Compatible environment",
+      "mathematical_form": "",
+      "effect": "Reduces dependence on infrastructure vendor.",
+      "inverse_or_converse": "",
+      "frame_or_context": "portability",
+      "scope": "containerization",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e063",
+      "source": "cluster_management",
+      "relation": "adapts",
+      "target": "scaling",
+      "mechanism": "Starting/stopping instances adapts cluster capacity to number of users.",
+      "conditions": "Demand changes",
+      "mathematical_form": "",
+      "effect": "Changes available capacity.",
+      "inverse_or_converse": "",
+      "frame_or_context": "control",
+      "scope": "cluster management",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "control",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e064",
+      "source": "cluster_management",
+      "relation": "observes",
+      "target": "monitoring",
+      "mechanism": "Monitoring supplies information about cluster/application behavior.",
+      "conditions": "Telemetry",
+      "mathematical_form": "",
+      "effect": "Enables management decisions.",
+      "inverse_or_converse": "",
+      "frame_or_context": "control_loop",
+      "scope": "cluster management",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "observation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e065",
+      "source": "cluster_management",
+      "relation": "balances",
+      "target": "load_balancing",
+      "mechanism": "Load balancing redistributes work among existing instances.",
+      "conditions": "Available instances",
+      "mathematical_form": "",
+      "effect": "Improves utilization and workload distribution.",
+      "inverse_or_converse": "",
+      "frame_or_context": "control",
+      "scope": "cluster management",
+      "source_line_range": [
+        75
+      ],
+      "semantic_role": "control",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e066",
+      "source": "containerization",
+      "relation": "supports",
+      "target": "cloud_environment",
+      "mechanism": "Containerization is explicitly used in cloud computing platforms.",
+      "conditions": "Cloud adoption",
+      "mathematical_form": "",
+      "effect": "Supports cloud deployment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "deployment",
+      "scope": "cloud computing",
+      "source_line_range": [
+        58
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e067",
+      "source": "containerization",
+      "relation": "supports",
+      "target": "noncloud_environment",
+      "mechanism": "Definition explicitly includes non-cloud environments.",
+      "conditions": "Deployment portability",
+      "mathematical_form": "",
+      "effect": "Supports local/on-premises deployment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "deployment",
+      "scope": "hybrid environments",
+      "source_line_range": [
+        53
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e068",
+      "source": "oci",
+      "relation": "standardizes",
+      "target": "container_image",
+      "mechanism": "OCI Image Specification standardizes image representation.",
+      "conditions": "Open standard",
+      "mathematical_form": "",
+      "effect": "Creates common image structure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67,
+        69
+      ],
+      "semantic_role": "standardization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e069",
+      "source": "oci",
+      "relation": "standardizes",
+      "target": "container_runtime",
+      "mechanism": "OCI Runtime Specification standardizes runtime configuration/execution/lifecycle.",
+      "conditions": "Open standard",
+      "mathematical_form": "",
+      "effect": "Creates common runtime behavior.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67,
+        69
+      ],
+      "semantic_role": "standardization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e070",
+      "source": "oci",
+      "relation": "standardizes",
+      "target": "oci_distribution_spec",
+      "mechanism": "OCI maintains Distribution Specification as one of three main specifications.",
+      "conditions": "Open standards",
+      "mathematical_form": "",
+      "effect": "Standardizes image distribution behavior.",
+      "inverse_or_converse": "",
+      "frame_or_context": "standards",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        67
+      ],
+      "semantic_role": "standardization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t01",
+      "source": "freebsd_jail",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t02",
+      "source": "linux_vserver",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t03",
+      "source": "lxc",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t04",
+      "source": "openvz",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t05",
+      "source": "solaris_containers",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t06",
+      "source": "sysjail",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t07",
+      "source": "virtuozzo",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t08",
+      "source": "workload_partitions",
+      "relation": "is",
+      "target": "os_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t09",
+      "source": "apptainer",
+      "relation": "is",
+      "target": "application_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t10",
+      "source": "distrobox",
+      "relation": "is",
+      "target": "application_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t11",
+      "source": "lmctfy",
+      "relation": "is",
+      "target": "application_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t12",
+      "source": "podman",
+      "relation": "is",
+      "target": "application_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t13",
+      "source": "rkt",
+      "relation": "is",
+      "target": "application_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t14",
+      "source": "docker",
+      "relation": "is",
+      "target": "application_container",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t15",
+      "source": "kubernetes",
+      "relation": "is",
+      "target": "container_orchestration",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t16",
+      "source": "open_shift",
+      "relation": "is",
+      "target": "container_orchestration",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t17",
+      "source": "amazon_ecs",
+      "relation": "is",
+      "target": "container_orchestration",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t18",
+      "source": "kubernetes",
+      "relation": "manages",
+      "target": "container_cluster",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "t19",
+      "source": "docker_swarm",
+      "relation": "manages",
+      "target": "container_cluster",
+      "mechanism": "The source's taxonomy classifies the implementation under this container ecosystem category.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Preserves the source's categorization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        115,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k01",
+      "source": "cgroups",
+      "relation": "supports",
+      "target": "containerization",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k02",
+      "source": "namespaces",
+      "relation": "supports",
+      "target": "containerization",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k03",
+      "source": "seccomp",
+      "relation": "supports",
+      "target": "containerization",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k04",
+      "source": "ebpf",
+      "relation": "supports",
+      "target": "containerization",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k05",
+      "source": "chroot",
+      "relation": "supports",
+      "target": "containerization",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k06",
+      "source": "brandz",
+      "relation": "supports",
+      "target": "containerization",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k07",
+      "source": "rump_kernel",
+      "relation": "relates_to",
+      "target": "os_container",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k08",
+      "source": "user_mode_linux",
+      "relation": "relates_to",
+      "target": "os_container",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k09",
+      "source": "vkernel",
+      "relation": "relates_to",
+      "target": "os_container",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k10",
+      "source": "dove",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k11",
+      "source": "evpn",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k12",
+      "source": "nvgre",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k13",
+      "source": "open_vswitch",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k14",
+      "source": "virtual_security_switch",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k15",
+      "source": "vxlan",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "k16",
+      "source": "geneve",
+      "relation": "supports",
+      "target": "container_cluster",
+      "mechanism": "The source lists the technology in the related kernel, virtual-kernel or network virtualization taxonomy.",
+      "conditions": "Source taxonomy",
+      "mathematical_form": "",
+      "effect": "Connects the component to the containerization ecosystem.",
+      "inverse_or_converse": "",
+      "frame_or_context": "taxonomy",
+      "scope": "container ecosystem",
+      "source_line_range": [
+        134,
+        137,
+        145
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p01",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_90",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        90
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p02",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_91",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        91
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p03",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_92",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        92
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p04",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_93",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        93
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p05",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_94",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        94
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p06",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_95",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        95
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p07",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_96",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        96
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p08",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_97",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        97
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p09",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_98",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        98
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p10",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_99",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        99
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p11",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_100",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        100
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p12",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_101",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        101
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p13",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_102",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        102
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p14",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_103",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        103
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p15",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_104",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        104
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p16",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_105",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        105
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p17",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_106",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        106
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p18",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_107",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        107
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p19",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_108",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        108
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p20",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_109",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        109
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p21",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_110",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        110
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p22",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_111",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        111
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p23",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_112",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        112
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p24",
+      "source": "containerization",
+      "relation": "cites",
+      "target": "ref_113",
+      "mechanism": "Reference appears in the supplied article bibliography.",
+      "conditions": "Bibliographic provenance",
+      "mathematical_form": "",
+      "effect": "Preserves source provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        113
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce01",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_01",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        53,
+        53
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce02",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_02",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        56,
+        56
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce03",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_03",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        58,
+        58
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce04",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_04",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        64,
+        65
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce05",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_05",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        67,
+        69
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce06",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_06",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        71,
+        72
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce07",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_07",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        75,
+        75
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce08",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_08",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        90,
+        95
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce09",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_09",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        97,
+        98
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "ce10",
+      "source": "containerization",
+      "relation": "supported_by",
+      "target": "claim_10",
+      "mechanism": "Claim is grounded in supplied source text.",
+      "conditions": "Source evidence",
+      "mathematical_form": "",
+      "effect": "Preserves claim provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        100,
+        113
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq_container_model",
+      "name": "Container environment model",
+      "expression": "Application + configuration + libraries + dependencies -> container -> isolated processes",
+      "meaning": "Source describes containers as environments surrounding applications and bundling related software dependencies while isolating processes.",
+      "source_line_range": [
+        56
+      ]
+    },
+    {
+      "id": "eq_shared_kernel",
+      "name": "Shared kernel model",
+      "expression": "Container_1 + Container_2 + ... + Container_n -> common OS kernel",
+      "meaning": "Multiple containers collectively share a common operating-system kernel.",
+      "source_line_range": [
+        56
+      ]
+    },
+    {
+      "id": "eq_portability",
+      "name": "Container portability model",
+      "expression": "Bundled application environment + compatible runtime -> cloud/non-cloud deployment across vendors",
+      "meaning": "Containerization is framed as allowing applications to run across cloud or non-cloud environments regardless of vendor.",
+      "source_line_range": [
+        53,
+        56
+      ]
+    },
+    {
+      "id": "eq_oci_interop",
+      "name": "OCI interoperability model",
+      "expression": "Standard image + standard runtime + standard distribution -> interoperability across implementations/tools",
+      "meaning": "OCI specifications are intended to make images and runtimes interoperable across implementations and tools.",
+      "source_line_range": [
+        67
+      ]
+    },
+    {
+      "id": "eq_runtime_lifecycle",
+      "name": "Container runtime lifecycle",
+      "expression": "Runtime configuration -> execution environment -> container lifecycle",
+      "meaning": "OCI Runtime Specification defines configuration, execution environment and lifecycle.",
+      "source_line_range": [
+        69
+      ]
+    },
+    {
+      "id": "eq_image_structure",
+      "name": "Container image structure",
+      "expression": "Image = manifest + filesystem layers + configuration",
+      "meaning": "OCI Image Specification defines these image components.",
+      "source_line_range": [
+        69
+      ]
+    },
+    {
+      "id": "eq_cluster_management",
+      "name": "Container cluster management",
+      "expression": "Cluster management = create + upgrade + repair + balance + scale + log + monitor",
+      "meaning": "Source lists these as cluster management functions.",
+      "source_line_range": [
+        75
+      ]
+    },
+    {
+      "id": "eq_scaling",
+      "name": "Demand-responsive scaling",
+      "expression": "User demand change -> start/stop instances -> adjusted capacity",
+      "meaning": "Cluster management adapts capacity to number of users by starting or stopping instances.",
+      "source_line_range": [
+        75
+      ]
+    },
+    {
+      "id": "eq_security_boundary",
+      "name": "Shared-kernel security boundary",
+      "expression": "Shared OS kernel -> common attack surface -> possible system-wide impact",
+      "meaning": "Source warns that shared OS architecture can allow security threats to affect the whole containerized system.",
+      "source_line_range": [
+        64
+      ]
+    },
+    {
+      "id": "eq_orchestration",
+      "name": "Container orchestration",
+      "expression": "Application containers + orchestration controller -> coordinated container management",
+      "meaning": "Orchestration is mainly used for application containers and includes Kubernetes and Docker Swarm.",
+      "source_line_range": [
+        71,
+        72
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_01",
+      "source_line_range": [
+        53,
+        53
+      ],
+      "claim": "Containerization is OS-level or application-level virtualization enabling isolated user spaces across cloud or non-cloud environments.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_02",
+      "source_line_range": [
+        56,
+        56
+      ],
+      "claim": "Containers surround applications, bundle configuration/libraries/dependencies, isolate processes, and collectively share an OS kernel.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_03",
+      "source_line_range": [
+        58,
+        58
+      ],
+      "claim": "Containerization is widely adopted by major cloud platforms and pursued by the U.S. Department of Defense, first applied to the F-22.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_04",
+      "source_line_range": [
+        64,
+        65
+      ],
+      "claim": "Shared OS architecture creates security concerns and OS-focused scanning may leave application containers insufficiently protected.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_05",
+      "source_line_range": [
+        67,
+        69
+      ],
+      "claim": "OCI develops Runtime, Image and Distribution specifications intended to provide interoperability.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_06",
+      "source_line_range": [
+        71,
+        72
+      ],
+      "claim": "Container orchestration/management is mainly used for application containers, with Kubernetes and Docker Swarm named as implementations.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_07",
+      "source_line_range": [
+        75,
+        75
+      ],
+      "claim": "Container cluster management includes creation, upgrade, repair, load balancing, scaling, logging and monitoring.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_08",
+      "source_line_range": [
+        90,
+        95
+      ],
+      "claim": "The source provides journal literature covering containerization technologies, applications, challenges and cloud distributed systems.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_09",
+      "source_line_range": [
+        97,
+        98
+      ],
+      "claim": "The source provides books on containerization and Docker.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_10",
+      "source_line_range": [
+        100,
+        113
+      ],
+      "claim": "The source provides additional references including Kubernetes, Red Hat, IBM, OCI and orchestration resources.",
+      "evidence_type": "source_text"
+    }
+  ],
+  "people": [
+    {
+      "id": "scheepers",
+      "name": "Mathijs Jeroen Scheepers",
+      "role": "author"
+    },
+    {
+      "id": "winn",
+      "name": "Duncan C. E. Winn",
+      "role": "author"
+    },
+    {
+      "id": "bentaleb",
+      "name": "Ouafa Bentaleb",
+      "role": "researcher"
+    },
+    {
+      "id": "belloum",
+      "name": "Adam S. Z. Belloum",
+      "role": "researcher"
+    },
+    {
+      "id": "sebaa",
+      "name": "Abderrazak Sebaa",
+      "role": "researcher"
+    },
+    {
+      "id": "el_maouhab",
+      "name": "Aouaouche El-Maouhab",
+      "role": "researcher"
+    },
+    {
+      "id": "moreau",
+      "name": "David Moreau",
+      "role": "researcher"
+    },
+    {
+      "id": "wiebels",
+      "name": "Kristina Wiebels",
+      "role": "researcher"
+    },
+    {
+      "id": "boettiger",
+      "name": "Carl Boettiger",
+      "role": "researcher"
+    },
+    {
+      "id": "watada",
+      "name": "Junzo Watada",
+      "role": "researcher"
+    },
+    {
+      "id": "roy",
+      "name": "Arunava Roy",
+      "role": "researcher"
+    },
+    {
+      "id": "kadikar",
+      "name": "Ruturaj Kadikar",
+      "role": "researcher"
+    },
+    {
+      "id": "pham",
+      "name": "Hoang Pham",
+      "role": "researcher"
+    },
+    {
+      "id": "xu_bing",
+      "name": "Bing Xu",
+      "role": "researcher"
+    },
+    {
+      "id": "van_den_berg",
+      "name": "Tom van den Berg",
+      "role": "researcher"
+    },
+    {
+      "id": "siegel",
+      "name": "Barry Siegel",
+      "role": "researcher"
+    },
+    {
+      "id": "cramp",
+      "name": "Anthony Cramp",
+      "role": "researcher"
+    },
+    {
+      "id": "zhang",
+      "name": "Xiao Zhang",
+      "role": "researcher"
+    },
+    {
+      "id": "tang",
+      "name": "Yu Tang",
+      "role": "researcher"
+    },
+    {
+      "id": "li_hao",
+      "name": "Hao Li",
+      "role": "researcher"
+    },
+    {
+      "id": "liu_shaotao",
+      "name": "Shaotao Liu",
+      "role": "researcher"
+    },
+    {
+      "id": "lin_di",
+      "name": "Di Lin",
+      "role": "researcher"
+    },
+    {
+      "id": "odun_ayo",
+      "name": "Isaac Odun-Ayo",
+      "role": "researcher"
+    },
+    {
+      "id": "geteloma",
+      "name": "Victor Geteloma",
+      "role": "researcher"
+    },
+    {
+      "id": "eweoya",
+      "name": "Ibukun Eweoya",
+      "role": "researcher"
+    },
+    {
+      "id": "ahuja",
+      "name": "Ravin Ahuja",
+      "role": "researcher"
+    },
+    {
+      "id": "schenker",
+      "name": "Gabriel N. Schenker",
+      "role": "author"
+    },
+    {
+      "id": "saito",
+      "name": "Hideto Saito",
+      "role": "author"
+    },
+    {
+      "id": "lee",
+      "name": "Hui-Chuan Chloe Lee",
+      "role": "author"
+    },
+    {
+      "id": "hsu",
+      "name": "Ke-Jou Carol Hsu",
+      "role": "author"
+    },
+    {
+      "id": "chelladhurai",
+      "name": "Jeeva S. Chelladhurai",
+      "role": "author"
+    },
+    {
+      "id": "singh",
+      "name": "Vinod Singh",
+      "role": "author"
+    },
+    {
+      "id": "raj",
+      "name": "Pethuru Raj",
+      "role": "author"
+    }
+  ],
+  "historical_events": [
+    {
+      "id": "event_container_adoption",
+      "date": "recent period",
+      "event": "Containerization became widely adopted by major cloud platforms.",
+      "source_line_range": [
+        58
+      ]
+    },
+    {
+      "id": "event_dod",
+      "date": "recent period",
+      "event": "The U.S. Department of Defense pursued containerization for faster software development and fielding, with first application in the F-22.",
+      "source_line_range": [
+        58
+      ]
+    },
+    {
+      "id": "event_oci",
+      "date": "current source context",
+      "event": "OCI maintains Runtime, Image and Distribution specifications for container interoperability.",
+      "source_line_range": [
+        67
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "name": "Container vs Virtual Machine",
+      "description": "Containerization uses OS/application-level virtualization and shared kernels; system VMs can provide whole-machine/guest-OS abstractions.",
+      "relationship_ids": [
+        "e060"
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "OS Container vs Application Container",
+      "description": "Source identifies OS containers and application containers as distinct container types.",
+      "relationship_ids": [
+        "e052",
+        "e053"
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "Container vs Container Image",
+      "description": "Container is an execution environment; image is a packaged artifact whose structure is standardized by OCI.",
+      "relationship_ids": [
+        "e025",
+        "e055"
+      ]
+    },
+    {
+      "id": "d4",
+      "name": "Image vs Runtime",
+      "description": "Image describes packaged filesystem/configuration content; runtime defines execution environment and lifecycle.",
+      "relationship_ids": [
+        "e022",
+        "e025"
+      ]
+    },
+    {
+      "id": "d5",
+      "name": "Runtime Specification vs Image Specification",
+      "description": "Runtime Specification covers execution/lifecycle; Image Specification covers image structure.",
+      "relationship_ids": [
+        "e019",
+        "e020",
+        "e022",
+        "e025"
+      ]
+    },
+    {
+      "id": "d6",
+      "name": "OCI Distribution vs Image Specification",
+      "description": "Distribution concerns image distribution; Image Specification concerns image representation.",
+      "relationship_ids": [
+        "e021",
+        "e025",
+        "e056"
+      ]
+    },
+    {
+      "id": "d7",
+      "name": "Container Management vs Orchestration",
+      "description": "Management encompasses operational functions; orchestration specifically coordinates application containers.",
+      "relationship_ids": [
+        "e030",
+        "e033"
+      ]
+    },
+    {
+      "id": "d8",
+      "name": "Orchestration vs Cluster Management",
+      "description": "Orchestration coordinates application containers; cluster management covers infrastructure/cluster lifecycle, scaling and observability.",
+      "relationship_ids": [
+        "e030",
+        "e033"
+      ]
+    },
+    {
+      "id": "d9",
+      "name": "Shared Kernel vs Separate Guest OS",
+      "description": "Containers share a kernel; system VMs provide guest OS execution.",
+      "relationship_ids": [
+        "e009",
+        "e059"
+      ]
+    },
+    {
+      "id": "d10",
+      "name": "Portability vs Interoperability",
+      "description": "Portability concerns running across environments/vendors; interoperability concerns compatible implementations/tools under common standards.",
+      "relationship_ids": [
+        "e013",
+        "e029"
+      ]
+    },
+    {
+      "id": "d11",
+      "name": "OS Security Scanning vs Application Security",
+      "description": "Protecting the host OS does not necessarily protect application containers.",
+      "relationship_ids": [
+        "e016",
+        "e017"
+      ]
+    },
+    {
+      "id": "d12",
+      "name": "Scaling vs Load Balancing",
+      "description": "Scaling changes the number of instances; load balancing distributes load among existing instances.",
+      "relationship_ids": [
+        "e037",
+        "e038"
+      ]
+    },
+    {
+      "id": "d13",
+      "name": "Logging vs Monitoring",
+      "description": "Logging records activities; monitoring observes logs, applications or sensors.",
+      "relationship_ids": [
+        "e039",
+        "e040"
+      ]
+    },
+    {
+      "id": "d14",
+      "name": "Container Runtime vs Container Manager",
+      "description": "Runtime implements execution/lifecycle; manager/orchestrator manages groups/workloads.",
+      "relationship_ids": [
+        "e023",
+        "e051"
+      ]
+    },
+    {
+      "id": "d15",
+      "name": "Cloud vs Non-cloud Container Deployment",
+      "description": "Containerization explicitly spans both cloud and non-cloud environments.",
+      "relationship_ids": [
+        "e011",
+        "e012",
+        "e014"
+      ]
+    },
+    {
+      "id": "d16",
+      "name": "Container Security Benefit vs Security Risk",
+      "description": "Isolation provides separation, but shared-kernel architecture creates a broader security concern.",
+      "relationship_ids": [
+        "e003",
+        "e015"
+      ]
+    },
+    {
+      "id": "d17",
+      "name": "Cluster Repair vs Upgrade",
+      "description": "Repair restores operational state; upgrade changes software versions/state.",
+      "relationship_ids": [
+        "e035",
+        "e036"
+      ]
+    },
+    {
+      "id": "d18",
+      "name": "Application Dependency vs Kernel Dependency",
+      "description": "Libraries/configuration/dependencies are bundled per application; containers still depend on a shared OS kernel.",
+      "relationship_ids": [
+        "e006",
+        "e007",
+        "e059"
+      ]
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "name": "Containerization Fundamentals",
+      "sequence": [
+        "containerization",
+        "container",
+        "isolated_user_space",
+        "shared_kernel",
+        "os_kernel"
+      ]
+    },
+    {
+      "id": "lp2",
+      "name": "Containers vs VMs",
+      "sequence": [
+        "containerization",
+        "os_container",
+        "application_container",
+        "shared_kernel",
+        "virtual_machine"
+      ]
+    },
+    {
+      "id": "lp3",
+      "name": "Container Packaging",
+      "sequence": [
+        "container",
+        "container_config",
+        "library",
+        "dependency",
+        "container_image"
+      ]
+    },
+    {
+      "id": "lp4",
+      "name": "OCI Standards",
+      "sequence": [
+        "oci",
+        "oci_runtime_spec",
+        "oci_image_spec",
+        "oci_distribution_spec",
+        "interoperability"
+      ]
+    },
+    {
+      "id": "lp5",
+      "name": "Container Runtime",
+      "sequence": [
+        "container_runtime",
+        "runtime_config",
+        "container_lifecycle",
+        "oci_runtime_spec"
+      ]
+    },
+    {
+      "id": "lp6",
+      "name": "Images",
+      "sequence": [
+        "container_image",
+        "image_manifest",
+        "filesystem_layer",
+        "container_config",
+        "oci_image_spec"
+      ]
+    },
+    {
+      "id": "lp7",
+      "name": "Orchestration",
+      "sequence": [
+        "container_orchestration",
+        "kubernetes",
+        "docker_swarm",
+        "application_container"
+      ]
+    },
+    {
+      "id": "lp8",
+      "name": "Cluster Management",
+      "sequence": [
+        "container_cluster",
+        "cluster_management",
+        "cluster_creation",
+        "cluster_upgrade",
+        "cluster_repair"
+      ]
+    },
+    {
+      "id": "lp9",
+      "name": "Scaling and Load",
+      "sequence": [
+        "load_balancing",
+        "scaling",
+        "cluster_management"
+      ]
+    },
+    {
+      "id": "lp10",
+      "name": "Observability",
+      "sequence": [
+        "logging",
+        "monitoring",
+        "sensor_query",
+        "cluster_management"
+      ]
+    },
+    {
+      "id": "lp11",
+      "name": "Container Security",
+      "sequence": [
+        "security_threat",
+        "security_scanner",
+        "container_vulnerability",
+        "shared_kernel"
+      ]
+    },
+    {
+      "id": "lp12",
+      "name": "Container Ecosystem",
+      "sequence": [
+        "docker",
+        "podman",
+        "kubernetes",
+        "open_shift",
+        "amazon_ecs",
+        "okd",
+        "rancher"
+      ]
+    },
+    {
+      "id": "lp13",
+      "name": "Kernel Features",
+      "sequence": [
+        "cgroups",
+        "namespaces",
+        "seccomp",
+        "ebpf",
+        "chroot"
+      ]
+    },
+    {
+      "id": "lp14",
+      "name": "Container Networking",
+      "sequence": [
+        "dove",
+        "evpn",
+        "nvgre",
+        "open_vswitch",
+        "vxlan",
+        "geneve"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "m1",
+      "misconception": "Containers are just small virtual machines.",
+      "correction": "The source frames containers as OS/application-level virtualization and emphasizes shared kernel operation.",
+      "supporting_relationships": [
+        "e001",
+        "e009",
+        "e060"
+      ]
+    },
+    {
+      "id": "m2",
+      "misconception": "Every container has its own operating-system kernel.",
+      "correction": "Multiple containers collectively share a common OS kernel.",
+      "supporting_relationships": [
+        "e009",
+        "e010"
+      ]
+    },
+    {
+      "id": "m3",
+      "misconception": "A container is the same thing as a container image.",
+      "correction": "The image is the packaged artifact; the container is the execution environment.",
+      "supporting_relationships": [
+        "e025",
+        "e055"
+      ]
+    },
+    {
+      "id": "m4",
+      "misconception": "OCI only standardizes container images.",
+      "correction": "OCI maintains Runtime, Image and Distribution specifications.",
+      "supporting_relationships": [
+        "e019",
+        "e020",
+        "e021"
+      ]
+    },
+    {
+      "id": "m5",
+      "misconception": "OCI Runtime Specification defines image layers.",
+      "correction": "Runtime Specification defines configuration/execution/lifecycle; image layers belong to Image Specification.",
+      "supporting_relationships": [
+        "e022",
+        "e025",
+        "e027"
+      ]
+    },
+    {
+      "id": "m6",
+      "misconception": "Orchestration and cluster management are identical.",
+      "correction": "The source distinguishes application-container orchestration from broader cluster management functions.",
+      "supporting_relationships": [
+        "e030",
+        "e033"
+      ]
+    },
+    {
+      "id": "m7",
+      "misconception": "Scaling just means load balancing.",
+      "correction": "Scaling changes instance count; load balancing balances work among existing instances.",
+      "supporting_relationships": [
+        "e037",
+        "e038"
+      ]
+    },
+    {
+      "id": "m8",
+      "misconception": "OS security scanning automatically secures application containers.",
+      "correction": "The source explicitly warns that scanners generally protect the OS but may not protect application containers.",
+      "supporting_relationships": [
+        "e016",
+        "e017"
+      ]
+    },
+    {
+      "id": "m9",
+      "misconception": "Containerization only applies to public cloud.",
+      "correction": "The source explicitly includes non-cloud environments.",
+      "supporting_relationships": [
+        "e011",
+        "e012"
+      ]
+    },
+    {
+      "id": "m10",
+      "misconception": "Containerization eliminates security risk through isolation.",
+      "correction": "The shared OS can allow security threats to affect the whole containerized system.",
+      "supporting_relationships": [
+        "e003",
+        "e015"
+      ]
+    },
+    {
+      "id": "m11",
+      "misconception": "Kubernetes is the only container orchestrator.",
+      "correction": "The source names both Kubernetes and Docker Swarm and its taxonomy also lists OpenShift and Amazon ECS.",
+      "supporting_relationships": [
+        "e031",
+        "e032"
+      ]
+    },
+    {
+      "id": "m12",
+      "misconception": "Container clusters only need scheduling.",
+      "correction": "The source lists creation, upgrades, repair, balancing, scaling, logging and monitoring.",
+      "supporting_relationships": [
+        "e034",
+        "e041"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_01",
+      "question": "How does containerization differ from system virtualization?"
+    },
+    {
+      "id": "q_02",
+      "question": "Why can multiple containers share one operating-system kernel?"
+    },
+    {
+      "id": "q_03",
+      "question": "What exactly is isolated inside a container?"
+    },
+    {
+      "id": "q_04",
+      "question": "What configuration and dependencies are bundled into a container?"
+    },
+    {
+      "id": "q_05",
+      "question": "How do OS containers differ from application containers?"
+    },
+    {
+      "id": "q_06",
+      "question": "What does the OCI Runtime Specification standardize?"
+    },
+    {
+      "id": "q_07",
+      "question": "What does the OCI Image Specification standardize?"
+    },
+    {
+      "id": "q_08",
+      "question": "What does the OCI Distribution Specification standardize?"
+    },
+    {
+      "id": "q_09",
+      "question": "How do OCI standards create interoperability?"
+    },
+    {
+      "id": "q_10",
+      "question": "How does a container image relate to a running container?"
+    },
+    {
+      "id": "q_11",
+      "question": "Why is orchestration primarily associated with application containers?"
+    },
+    {
+      "id": "q_12",
+      "question": "What responsibilities belong to container cluster management?"
+    },
+    {
+      "id": "q_13",
+      "question": "How does scaling differ from load balancing?"
+    },
+    {
+      "id": "q_14",
+      "question": "Why are logging and monitoring separate management functions?"
+    },
+    {
+      "id": "q_15",
+      "question": "What security risks arise from a shared OS kernel?"
+    },
+    {
+      "id": "q_16",
+      "question": "Why can OS-focused security scanners miss application-container vulnerabilities?"
+    },
+    {
+      "id": "q_17",
+      "question": "How do Kubernetes and Docker Swarm fit into container orchestration?"
+    },
+    {
+      "id": "q_18",
+      "question": "How do Docker, Podman, OpenShift and Amazon ECS fit into the ecosystem?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "exp_01",
+      "topic": "Linux namespaces and isolation primitives"
+    },
+    {
+      "id": "exp_02",
+      "topic": "cgroups and container resource control"
+    },
+    {
+      "id": "exp_03",
+      "topic": "seccomp and syscall filtering"
+    },
+    {
+      "id": "exp_04",
+      "topic": "Container image layer/storage internals"
+    },
+    {
+      "id": "exp_05",
+      "topic": "OCI runtime execution lifecycle"
+    },
+    {
+      "id": "exp_06",
+      "topic": "OCI image manifest and content-addressable storage"
+    },
+    {
+      "id": "exp_07",
+      "topic": "Container registries and distribution protocols"
+    },
+    {
+      "id": "exp_08",
+      "topic": "Container networking and virtual network interfaces"
+    },
+    {
+      "id": "exp_09",
+      "topic": "Container security boundaries and escape threats"
+    },
+    {
+      "id": "exp_10",
+      "topic": "Kubernetes control plane/container runtime relationship"
+    },
+    {
+      "id": "exp_11",
+      "topic": "Docker Engine and OCI runtime architecture"
+    },
+    {
+      "id": "exp_12",
+      "topic": "Podman architecture and daemonless containers"
+    },
+    {
+      "id": "exp_13",
+      "topic": "Container orchestration scheduling and reconciliation"
+    },
+    {
+      "id": "exp_14",
+      "topic": "Cluster autoscaling and workload demand"
+    },
+    {
+      "id": "exp_15",
+      "topic": "Container observability/logging architecture"
+    },
+    {
+      "id": "exp_16",
+      "topic": "Containers vs VMs vs microVMs"
+    },
+    {
+      "id": "exp_17",
+      "topic": "Defense and embedded containerization use cases"
+    }
+  ],
+  "why_it_matters": {
+    "core_problem": "Package applications into isolated, portable environments while sharing operating-system resources and coordinating those environments at cluster scale.",
+    "mechanism_chain": "Application dependencies/configuration -> container artifact/runtime -> isolated process environment -> shared kernel -> orchestration -> cluster management -> scaling/observability.",
+    "value_propositions": [
+      "portability",
+      "environment consistency",
+      "dependency packaging",
+      "kernel-level resource sharing",
+      "interoperability",
+      "orchestration",
+      "scaling",
+      "load balancing",
+      "operational observability",
+      "cloud/non-cloud deployment"
+    ],
+    "central_insight": "Containerization is not merely packaging software. In the supplied source it is a layered system spanning virtualization boundaries, application packaging, standardized images/runtimes/distribution, orchestration and cluster operations, with a distinct shared-kernel security model."
+  },
+  "validation": {
+    "duplicate_node_ids": false,
+    "duplicate_relationship_ids": false,
+    "orphan_relationship_endpoints": [],
+    "relationships_missing_semantic_fields": [],
+    "unique_source_claim_ids": true,
+    "unique_equation_ids": true,
+    "unique_reference_ids": true,
+    "clean": true
+  }
+}

@@ -1,0 +1,5228 @@
+{
+  "schema_name": "Dynamic Relationship-Rich Semantic Knowledge Graph",
+  "schema_version": "5.0-computer-science-relationship-first",
+  "domain": [
+    "Computer Science",
+    "Operating Systems",
+    "Virtualization",
+    "Distributed Systems",
+    "Programming Language Runtimes",
+    "Cloud Infrastructure"
+  ],
+  "subject": "Virtual Machine",
+  "source_policy": {
+    "source_file": "Pasted text(20261007-062314).txt",
+    "authority": "Supplied source text is authoritative for source-derived claims.",
+    "external_research_used": false,
+    "preservation_rule": "Preserve source terminology, taxonomy, mechanisms, historical sequence, examples, distinctions and references without silently correcting or replacing the source.",
+    "source_line_count": 235
+  },
+  "relationship_model": {
+    "first_class_relationships": true,
+    "required_semantic_fields": [
+      "source",
+      "relation",
+      "target",
+      "mechanism",
+      "conditions",
+      "mathematical_form",
+      "effect",
+      "inverse_or_converse",
+      "frame_or_context",
+      "scope",
+      "source_line_range",
+      "semantic_role",
+      "related_equation_ids",
+      "evidence_type"
+    ],
+    "central_system_flows": [
+      "Physical hardware -> hypervisor -> isolated system VM -> guest OS",
+      "Host OS -> process VM -> program -> platform-independent execution",
+      "Kernel -> OS-level virtualization -> isolated guest environments sharing kernel",
+      "Docker -> OS-level virtualization",
+      "Snapshot -> overlay layers -> restore",
+      "VM state -> migration -> target host/hypervisor",
+      "Host failure -> backup state -> failover",
+      "Outer hypervisor -> nested VM -> nested hypervisor",
+      "Compiler -> intermediate representation -> process VM -> machine architecture"
+    ],
+    "semantic_relation_families": [
+      "taxonomy",
+      "causal",
+      "architecture",
+      "abstraction",
+      "isolation",
+      "resource_management",
+      "execution",
+      "compiler",
+      "runtime",
+      "history",
+      "storage",
+      "state_management",
+      "mobility",
+      "resilience",
+      "security",
+      "provenance",
+      "semantic_distinction"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "virtual_machine",
+      "label": "Virtual Machine",
+      "type": "concept",
+      "description": "Virtualization or emulation of a computer system based on a computer architecture, providing functionality of a physical computer."
+    },
+    {
+      "id": "system_vm",
+      "label": "System Virtual Machine",
+      "type": "vm_type",
+      "description": "Full/system virtualization VM that substitutes for a real machine and can execute an entire operating system."
+    },
+    {
+      "id": "process_vm",
+      "label": "Process Virtual Machine",
+      "type": "vm_type",
+      "description": "VM designed to execute computer programs in a platform-independent environment, normally as a process within a host OS."
+    },
+    {
+      "id": "host",
+      "label": "Host",
+      "type": "architecture",
+      "description": "Physical or real-world machine running a VM."
+    },
+    {
+      "id": "guest",
+      "label": "Guest",
+      "type": "architecture",
+      "description": "Virtual machine or environment emulated on a host."
+    },
+    {
+      "id": "hypervisor",
+      "label": "Hypervisor",
+      "type": "system_component",
+      "description": "Software layer using native execution to share/manage hardware and isolate multiple environments."
+    },
+    {
+      "id": "hardware",
+      "label": "Physical Hardware",
+      "type": "infrastructure",
+      "description": "Physical computer hardware on which virtualization is implemented."
+    },
+    {
+      "id": "cpu",
+      "label": "Host CPU",
+      "type": "hardware",
+      "description": "Processor providing execution resources and, on modern systems, hardware virtualization assistance."
+    },
+    {
+      "id": "guest_os",
+      "label": "Guest Operating System",
+      "type": "operating_system",
+      "description": "Operating system executing inside a system VM."
+    },
+    {
+      "id": "host_os",
+      "label": "Host Operating System",
+      "type": "operating_system",
+      "description": "Operating system running on the physical host."
+    },
+    {
+      "id": "virtual_hardware",
+      "label": "Virtual Hardware",
+      "type": "virtual_device",
+      "description": "Hardware interface presented to a guest VM."
+    },
+    {
+      "id": "physical_machine",
+      "label": "Physical Machine",
+      "type": "infrastructure",
+      "description": "Real computer corresponding to the physical host."
+    },
+    {
+      "id": "os_level_virtualization",
+      "label": "OS-level Virtualization",
+      "type": "virtualization_technique",
+      "description": "Virtualization at operating-system level that partitions resources through the kernel while sharing the host OS kernel."
+    },
+    {
+      "id": "full_virtualization",
+      "label": "Full Virtualization",
+      "type": "virtualization_technique",
+      "description": "Virtualization providing enough simulated hardware for an unmodified guest OS designed for the same instruction set."
+    },
+    {
+      "id": "hardware_assisted",
+      "label": "Hardware-Assisted Virtualization",
+      "type": "virtualization_technique",
+      "description": "Virtualization using architectural hardware support to facilitate a virtual machine monitor and guest isolation."
+    },
+    {
+      "id": "software_virtualization",
+      "label": "Software Virtualization",
+      "type": "virtualization_technique",
+      "description": "Virtualization techniques implemented primarily in software."
+    },
+    {
+      "id": "virtual_memory",
+      "label": "Virtual Memory",
+      "type": "memory_technique",
+      "description": "Memory abstraction historically preceding and conceptually generalized by system virtualization."
+    },
+    {
+      "id": "time_sharing",
+      "label": "Time-sharing",
+      "type": "historical_concept",
+      "description": "Concurrent use of a computer by switching execution among programs/users and saving/restoring state."
+    },
+    {
+      "id": "isolation",
+      "label": "Isolation",
+      "type": "property",
+      "description": "Separation of VM environments so they can coexist on one physical machine."
+    },
+    {
+      "id": "server_consolidation",
+      "label": "Server Consolidation",
+      "type": "use_case",
+      "description": "Use of multiple VMs on one physical machine to consolidate server workloads."
+    },
+    {
+      "id": "embedded_systems",
+      "label": "Embedded Systems",
+      "type": "use_case",
+      "description": "Systems where VMs can run multiple operating-system environments, including real-time and complex OSs."
+    },
+    {
+      "id": "sandbox",
+      "label": "Software Sandbox",
+      "type": "use_case",
+      "description": "Isolation environment for novel, unproven, or risky software."
+    },
+    {
+      "id": "process",
+      "label": "Process",
+      "type": "os_concept",
+      "description": "Running program instance; process VMs support a single process."
+    },
+    {
+      "id": "platform_independence",
+      "label": "Platform Independence",
+      "type": "property",
+      "description": "Ability for a program to execute consistently across different underlying hardware/OS environments."
+    },
+    {
+      "id": "managed_runtime",
+      "label": "Managed Runtime Environment",
+      "type": "runtime",
+      "description": "Process VM / application VM environment abstracting underlying platform."
+    },
+    {
+      "id": "interpreter",
+      "label": "Interpreter",
+      "type": "runtime_implementation",
+      "description": "Implementation mechanism executing process-VM instructions."
+    },
+    {
+      "id": "jit",
+      "label": "Just-in-time Compilation",
+      "type": "compiler_technique",
+      "description": "Compilation approach that can make interpreted/process-VM execution competitive with compiled performance."
+    },
+    {
+      "id": "program",
+      "label": "Program",
+      "type": "software",
+      "description": "Program executed inside a process VM."
+    },
+    {
+      "id": "programming_language",
+      "label": "Programming Language",
+      "type": "language",
+      "description": "High-level programming language abstracted by a process VM."
+    },
+    {
+      "id": "intermediate_representation",
+      "label": "Intermediate Representation",
+      "type": "compiler_concept",
+      "description": "Intermediate code representation that process VMs can execute or target."
+    },
+    {
+      "id": "machine_code",
+      "label": "Machine Code",
+      "type": "code",
+      "description": "Native instructions executed by physical hardware."
+    },
+    {
+      "id": "instruction_set",
+      "label": "Instruction Set Architecture",
+      "type": "architecture",
+      "description": "Instruction set architecture defining the machine interface a guest or VM targets."
+    },
+    {
+      "id": "cluster",
+      "label": "Computer Cluster",
+      "type": "distributed_system",
+      "description": "Potentially heterogeneous collection of machines whose communication can be abstracted by a cluster-oriented process VM."
+    },
+    {
+      "id": "pvm",
+      "label": "Parallel Virtual Machine",
+      "type": "cluster_vm",
+      "description": "Cluster-oriented virtual-machine system supporting concurrent programming abstraction."
+    },
+    {
+      "id": "mpi",
+      "label": "Message Passing Interface",
+      "type": "cluster_vm",
+      "description": "Cluster communication system named as an example of a process-VM-like abstraction."
+    },
+    {
+      "id": "full_guest_unmodified",
+      "label": "Unmodified Guest OS",
+      "type": "guest_property",
+      "description": "Guest operating system that can execute without modification under full virtualization."
+    },
+    {
+      "id": "qemu",
+      "label": "QEMU",
+      "type": "virtualization_software",
+      "description": "Emulator/virtualization software cited as capable of emulating other architectures."
+    },
+    {
+      "id": "emulator",
+      "label": "Emulator",
+      "type": "virtualization_software",
+      "description": "Software that imitates a different computer architecture or platform."
+    },
+    {
+      "id": "snapshot",
+      "label": "VM Snapshot",
+      "type": "state",
+      "description": "State of a VM and generally its storage devices at an exact point in time."
+    },
+    {
+      "id": "virtual_disk",
+      "label": "Virtual Disk",
+      "type": "storage",
+      "description": "Virtual disk presented to a VM, potentially backed by a host file."
+    },
+    {
+      "id": "overlay_layer",
+      "label": "Snapshot Overlay Layer",
+      "type": "storage_layer",
+      "description": "Overlay file holding changes after a snapshot."
+    },
+    {
+      "id": "snapshot_stack",
+      "label": "Snapshot Stack",
+      "type": "storage_model",
+      "description": "Hierarchy of snapshot overlays representing a coherent virtual disk."
+    },
+    {
+      "id": "ram_state",
+      "label": "VM RAM State",
+      "type": "vm_state",
+      "description": "RAM contents that can be included in a VM snapshot."
+    },
+    {
+      "id": "bios_state",
+      "label": "VM BIOS State",
+      "type": "vm_state",
+      "description": "BIOS settings that can be included in a VM snapshot."
+    },
+    {
+      "id": "vm_config",
+      "label": "VM Configuration State",
+      "type": "vm_state",
+      "description": "VM configuration settings that can be included in snapshots."
+    },
+    {
+      "id": "restore",
+      "label": "Snapshot Restore",
+      "type": "operation",
+      "description": "Restoration that discards/ignores overlay layers created after a selected snapshot and redirects new changes."
+    },
+    {
+      "id": "migration",
+      "label": "VM Migration",
+      "type": "operation",
+      "description": "Moving a VM's snapshot/state to another host/hypervisor and resuming it there."
+    },
+    {
+      "id": "live_migration",
+      "label": "Service-preserving Migration",
+      "type": "operation",
+      "description": "Migration performed with regularly synchronized snapshots and brief interruption to support maintenance."
+    },
+    {
+      "id": "failover",
+      "label": "VM Failover",
+      "type": "resilience",
+      "description": "Continuing VM operation after host failure from the last coherent state supplied to a backup server."
+    },
+    {
+      "id": "backup_server",
+      "label": "Backup Server",
+      "type": "infrastructure",
+      "description": "Server retaining material needed for VM failover."
+    },
+    {
+      "id": "nested_virtualization",
+      "label": "Nested Virtualization",
+      "type": "technique",
+      "description": "Running one or more hypervisors/VMs inside another VM/hypervisor."
+    },
+    {
+      "id": "nested_hypervisor",
+      "label": "Nested Hypervisor",
+      "type": "system_component",
+      "description": "Hypervisor executing inside another hypervisor."
+    },
+    {
+      "id": "outer_hypervisor",
+      "label": "Outer Hypervisor",
+      "type": "system_component",
+      "description": "Hypervisor providing the environment in which a nested hypervisor runs."
+    },
+    {
+      "id": "hardware_support_nested",
+      "label": "Nested Virtualization Hardware Support",
+      "type": "hardware_feature",
+      "description": "Hardware support used to accelerate or enable nested virtualization."
+    },
+    {
+      "id": "vmcs_shadowing",
+      "label": "VMCS Shadowing",
+      "type": "hardware_feature",
+      "description": "Intel technology cited as accelerating nested virtualization on Haswell-era processors."
+    },
+    {
+      "id": "security_isolation",
+      "label": "VM Security Isolation",
+      "type": "security",
+      "description": "Use of VMs to isolate applications from each other for security."
+    },
+    {
+      "id": "malware",
+      "label": "Malware",
+      "type": "security_threat",
+      "description": "Malicious software whose spread can be constrained by compartmentalized VM architectures."
+    },
+    {
+      "id": "qubes",
+      "label": "Qubes OS",
+      "type": "security_system",
+      "description": "Operating system architecture using distinct VMs/AppVMs for compartmentalization."
+    },
+    {
+      "id": "whonix",
+      "label": "Whonix",
+      "type": "security_system",
+      "description": "Security system listed as using VM-based compartmentalization."
+    },
+    {
+      "id": "kicksecure",
+      "label": "Kicksecure",
+      "type": "security_system",
+      "description": "Security system listed as using VM-based compartmentalization."
+    },
+    {
+      "id": "dangerzone",
+      "label": "Dangerzone",
+      "type": "security_system",
+      "description": "Application/system listed as using VM-based compartmentalization."
+    },
+    {
+      "id": "appvm1",
+      "label": "AppVM 1",
+      "type": "vm_domain",
+      "description": "Example isolated VM containing an email/browser workload in the source's Qubes diagram."
+    },
+    {
+      "id": "appvm2",
+      "label": "AppVM 2",
+      "type": "vm_domain",
+      "description": "Example isolated VM containing a password manager in the source's Qubes diagram."
+    },
+    {
+      "id": "privileged_instruction",
+      "label": "Privileged Instruction",
+      "type": "cpu_concept",
+      "description": "Privileged machine instruction whose handling distinguishes system virtualization from ordinary virtual memory."
+    },
+    {
+      "id": "io_device",
+      "label": "Virtual I/O Device",
+      "type": "virtual_device",
+      "description": "Input/output device exposed to a guest VM."
+    },
+    {
+      "id": "memory_overcommitment",
+      "label": "Memory Overcommitment",
+      "type": "resource_management",
+      "description": "Technique for sharing/overcommitting physical memory among VMs."
+    },
+    {
+      "id": "ksm",
+      "label": "Kernel Same-page Merging",
+      "type": "memory_optimization",
+      "description": "Technique mapping identical VM memory pages to a shared physical page, especially useful for read-only pages."
+    },
+    {
+      "id": "read_only_page",
+      "label": "Read-only Memory Page",
+      "type": "memory",
+      "description": "Memory page whose identical contents can be shared safely."
+    },
+    {
+      "id": "windows_guest",
+      "label": "Windows Guest OS",
+      "type": "operating_system",
+      "description": "Example guest operating system."
+    },
+    {
+      "id": "linux_guest",
+      "label": "Linux Guest OS",
+      "type": "operating_system",
+      "description": "Example guest operating system."
+    },
+    {
+      "id": "legacy_os",
+      "label": "Legacy Operating System",
+      "type": "operating_system",
+      "description": "Prior OS versions that can be preserved/rerun through VMs."
+    },
+    {
+      "id": "real_time_os",
+      "label": "Real-time Operating System",
+      "type": "operating_system",
+      "description": "Real-time OS that can run concurrently with another complex OS in embedded systems."
+    },
+    {
+      "id": "compiler",
+      "label": "Compiler",
+      "type": "toolchain",
+      "description": "Compiler producing intermediate representations or machine code."
+    },
+    {
+      "id": "back_end",
+      "label": "Compiler Backend",
+      "type": "compiler_component",
+      "description": "Compiler component that converts an intermediate representation to machine code for a target architecture."
+    },
+    {
+      "id": "portable_code",
+      "label": "Portable Code",
+      "type": "code",
+      "description": "Intermediate code designed to be retargeted to different physical architectures."
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "type": "language",
+      "description": "Programming language associated with the JVM."
+    },
+    {
+      "id": "jvm",
+      "label": "Java Virtual Machine",
+      "type": "process_vm",
+      "description": "Process VM for Java, providing platform abstraction."
+    },
+    {
+      "id": "parrot",
+      "label": "Parrot VM",
+      "type": "process_vm",
+      "description": "Process virtual machine named in the source."
+    },
+    {
+      "id": "dotnet_clr",
+      "label": ".NET Common Language Runtime",
+      "type": "process_vm",
+      "description": "Process VM / managed runtime for .NET."
+    },
+    {
+      "id": "smalltalk",
+      "label": "Smalltalk",
+      "type": "language",
+      "description": "Language whose VM work advanced JIT compilation."
+    },
+    {
+      "id": "self_language",
+      "label": "Self",
+      "type": "language",
+      "description": "Language whose VM research pioneered adaptive optimization and generational garbage collection."
+    },
+    {
+      "id": "hotspot",
+      "label": "Java HotSpot VM",
+      "type": "process_vm",
+      "description": "Java VM implementation that incorporated successful VM optimization techniques."
+    },
+    {
+      "id": "dis_vm",
+      "label": "Dis VM",
+      "type": "process_vm",
+      "description": "Register-based virtual machine associated with Limbo."
+    },
+    {
+      "id": "limbo",
+      "label": "Limbo",
+      "type": "language",
+      "description": "Programming language associated with the Dis VM."
+    },
+    {
+      "id": "pascal",
+      "label": "Pascal",
+      "type": "language",
+      "description": "Language whose p-code systems popularized process VM/intermediate-code execution."
+    },
+    {
+      "id": "pascal_p",
+      "label": "Pascal-P",
+      "type": "historical_implementation",
+      "description": "Pascal p-code system from 1973."
+    },
+    {
+      "id": "pascal_s",
+      "label": "Pascal-S",
+      "type": "historical_implementation",
+      "description": "Pascal compiler system from 1975."
+    },
+    {
+      "id": "ucsd_pascal",
+      "label": "UCSD Pascal",
+      "type": "language_system",
+      "description": "System directly interpreting Pascal p-code through a VM."
+    },
+    {
+      "id": "snobol4",
+      "label": "SNOBOL4",
+      "type": "language",
+      "description": "Language whose implementation used a virtual-machine-oriented intermediate/assembly approach."
+    },
+    {
+      "id": "z_machine",
+      "label": "Z-machine",
+      "type": "process_vm",
+      "description": "General-purpose VM used for portable adventure-game software."
+    },
+    {
+      "id": "meta_ii",
+      "label": "META_II",
+      "type": "compiler_system",
+      "description": "Early compiler-writing system using a virtual machine for syntax description and target-code generation."
+    },
+    {
+      "id": "ocode",
+      "label": "O-code",
+      "type": "intermediate_code",
+      "description": "Object code emitted by the BCPL compiler front end for execution by the O-code machine."
+    },
+    {
+      "id": "ocode_machine",
+      "label": "O-code Machine",
+      "type": "process_vm",
+      "description": "VM executing O-code."
+    },
+    {
+      "id": "euler",
+      "label": "Euler",
+      "type": "language",
+      "description": "Language using a portable intermediate language design similar to p-code."
+    },
+    {
+      "id": "p_code",
+      "label": "P-code",
+      "type": "intermediate_code",
+      "description": "Portable intermediate code used by Pascal and executed by p-code machines."
+    },
+    {
+      "id": "p_code_machine",
+      "label": "P-code Machine",
+      "type": "process_vm",
+      "description": "Virtual machine executing Pascal p-code."
+    },
+    {
+      "id": "sil",
+      "label": "SNOBOL Implementation Language",
+      "type": "intermediate_language",
+      "description": "Assembly language for a virtual machine used by SNOBOL4."
+    },
+    {
+      "id": "physical_architecture",
+      "label": "Physical CPU Architecture",
+      "type": "architecture",
+      "description": "Underlying physical CPU architecture targeted by native execution or compiler backends."
+    },
+    {
+      "id": "ibm_cp_cms",
+      "label": "IBM CP/CMS",
+      "type": "system",
+      "description": "Early time-sharing/system VM environment."
+    },
+    {
+      "id": "ibm_m44x",
+      "label": "IBM M44/44X",
+      "type": "system",
+      "description": "Early partial-virtualization IBM research system."
+    },
+    {
+      "id": "cp40",
+      "label": "IBM CP-40",
+      "type": "system",
+      "description": "Early full-virtualization IBM research system."
+    },
+    {
+      "id": "cp67_cms",
+      "label": "IBM CP-67/CMS",
+      "type": "system",
+      "description": "Widely available early virtual-machine architecture."
+    },
+    {
+      "id": "simmon",
+      "label": "SIMMON",
+      "type": "system",
+      "description": "Early system associated with one-VM-on-host prototyping use."
+    },
+    {
+      "id": "system360",
+      "label": "IBM System/360",
+      "type": "system",
+      "description": "IBM architecture associated with early hardware emulation."
+    },
+    {
+      "id": "vm370",
+      "label": "VM/370",
+      "type": "system",
+      "description": "IBM virtual-machine operating system associated with hardware-assisted virtualization."
+    },
+    {
+      "id": "system370",
+      "label": "IBM System/370",
+      "type": "architecture",
+      "description": "IBM architecture on which official hardware-assisted VM support appeared."
+    },
+    {
+      "id": "ctss",
+      "label": "Compatible Time-Sharing System",
+      "type": "system",
+      "description": "Early time-sharing system from which system VMs grew."
+    },
+    {
+      "id": "freebsd_jails",
+      "label": "FreeBSD jails",
+      "type": "os_virtualization",
+      "description": "Pioneer OS-level virtualization implementation."
+    },
+    {
+      "id": "solaris_containers",
+      "label": "Solaris Containers",
+      "type": "os_virtualization",
+      "description": "OS-level virtualization implementation."
+    },
+    {
+      "id": "openvz",
+      "label": "OpenVZ",
+      "type": "os_virtualization",
+      "description": "OS-level virtualization implementation."
+    },
+    {
+      "id": "linux_vserver",
+      "label": "Linux-VServer",
+      "type": "os_virtualization",
+      "description": "OS-level virtualization implementation."
+    },
+    {
+      "id": "lxc",
+      "label": "LXC",
+      "type": "os_virtualization",
+      "description": "Linux container technology listed as OS-level virtualization."
+    },
+    {
+      "id": "aix_workload_partitions",
+      "label": "AIX Workload Partitions",
+      "type": "os_virtualization",
+      "description": "OS-level virtualization implementation."
+    },
+    {
+      "id": "virtuozzo",
+      "label": "Parallels Virtuozzo Containers",
+      "type": "os_virtualization",
+      "description": "OS-level virtualization implementation."
+    },
+    {
+      "id": "icore_virtual_accounts",
+      "label": "iCore Virtual Accounts",
+      "type": "os_virtualization",
+      "description": "OS-level virtualization implementation."
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "type": "containerization",
+      "description": "Container platform explicitly listed as an OS-level virtualization example."
+    },
+    {
+      "id": "kvm",
+      "label": "KVM",
+      "type": "hypervisor",
+      "description": "Virtualization platform adapted to hardware-assisted virtualization."
+    },
+    {
+      "id": "vmware_workstation",
+      "label": "VMware Workstation",
+      "type": "hypervisor_product",
+      "description": "Virtualization platform listed in hardware-assisted/full virtualization examples."
+    },
+    {
+      "id": "vmware_fusion",
+      "label": "VMware Fusion",
+      "type": "hypervisor_product",
+      "description": "Virtualization platform listed in examples."
+    },
+    {
+      "id": "hyperv",
+      "label": "Hyper-V",
+      "type": "hypervisor",
+      "description": "Microsoft virtualization platform listed in examples."
+    },
+    {
+      "id": "xen",
+      "label": "Xen",
+      "type": "hypervisor",
+      "description": "Virtualization platform listed in hardware-assisted virtualization examples."
+    },
+    {
+      "id": "virtualbox",
+      "label": "VirtualBox",
+      "type": "hypervisor",
+      "description": "Virtualization platform listed in examples."
+    },
+    {
+      "id": "parallels",
+      "label": "Parallels",
+      "type": "hypervisor_product",
+      "description": "Virtualization platform family listed in examples."
+    },
+    {
+      "id": "oracle_vm",
+      "label": "Oracle VM",
+      "type": "hypervisor_product",
+      "description": "Virtualization platform listed in examples."
+    },
+    {
+      "id": "vmware_esxi",
+      "label": "VMware ESXi",
+      "type": "hypervisor",
+      "description": "Hypervisor platform listed in examples."
+    },
+    {
+      "id": "ref_187",
+      "label": "Dittamo, Cristian (2010). On Expressing Different Concurrency Paradigms on Virtual Execution Systems (Ph.D. thesis). University of Pisa. Retrieved 2025-05-12.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 187
+    },
+    {
+      "id": "ref_188",
+      "label": "Popek, Gerald J.; Goldberg, Robert P. (1974). \"Formal requirements for virtualizable third generation architectures\" (PDF). Communications of the ACM. 17 (7): 412–421. doi:10.1145/361011.361073. S2CID 12680060.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 188
+    },
+    {
+      "id": "ref_189",
+      "label": "Smith, James E.; Nair, Ravi (2005). \"The Architecture of Virtual Machines\". Computer. 38 (5): 32–38, 395–396. Bibcode:2005Compr..38e..32S. doi:10.1109/MC.2005.173. S2CID 6578280.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 189
+    },
+    {
+      "id": "ref_190",
+      "label": "Oliphant, Patrick. \"Virtual Machines\". VirtualComputing. Archived from the original on 2016-07-29. Retrieved 2015-09-23. Some people use that capability to set up a separate virtual machine running Windows on a Mac, giving them access to the full range of applications available for both platforms.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 190
+    },
+    {
+      "id": "ref_191",
+      "label": "\"Super Fast Server Reboots – Another reason Virtualization rocks\". vmwarez.com. 2006-05-09. Archived from the original on 2006-06-14. Retrieved 2013-06-14.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 191
+    },
+    {
+      "id": "ref_192",
+      "label": "\"Server Consolidation and Containment With Virtual Infrastructure\" (PDF). VMware. 2007. Archived (PDF) from the original on 2013-12-28. Retrieved 2015-09-29.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 192
+    },
+    {
+      "id": "ref_193",
+      "label": "\"About the Java Technology\". Oracle. Retrieved 2026-05-22.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 193
+    },
+    {
+      "id": "ref_194",
+      "label": "Scott, Michael L. (2009). \"Run-time Program Management\". Programming Language Pragmatics (3rd ed.). Burlington, MA: Morgan Kaufmann. pp. 766, 785. ISBN 978-0-12-374514-9.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 194
+    },
+    {
+      "id": "ref_195",
+      "label": "Pugh, Emerson W. (1995). Building IBM: Shaping an Industry and Its Technology. MIT. p. 274. ISBN 978-0-262-16147-3.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 195
+    },
+    {
+      "id": "ref_196",
+      "label": "Pugh, Emerson W.; et al. (1991). IBM's 360 and Early 370 Systems. MIT. pp. 160–161. ISBN 978-0-262-16123-7.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 196
+    },
+    {
+      "id": "ref_197",
+      "label": "Wirth, Niklaus Emil; Weber, Helmut (1966). EULER: a generalization of ALGOL, and its formal definition: Part II, Communications of the Association for Computing Machinery. Vol. 9. New York: ACM. pp. 89–99.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 197
+    },
+    {
+      "id": "ref_198",
+      "label": "Griswold, Ralph E. The Macro Implementation of SNOBOL4. San Francisco, CA: W. H. Freeman and Company, 1972 (ISBN 0-7167-0447-1), Chapter 1.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 198
+    },
+    {
+      "id": "ref_199",
+      "label": "Nelson, Graham A. \"About Interpreters\". Inform website. Archived from the original on 2009-12-03. Retrieved 2009-11-07.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 199
+    },
+    {
+      "id": "ref_200",
+      "label": "Goldberg, Adele; Robson, David (1983). Smalltalk-80: The Language and its Implementation. Addison-Wesley Series in Computer Science. Addison-Wesley. ISBN 978-0-201-11371-6.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 200
+    },
+    {
+      "id": "ref_201",
+      "label": "Deutsch, L. Peter; Schiffman, Allan M. (1984). \"Efficient implementation of the Smalltalk-80 system\". POPL. Salt Lake City, Utah: ACM. doi:10.1145/800017.800542. ISBN 0-89791-125-3.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 201
+    },
+    {
+      "id": "ref_202",
+      "label": "Aycock, John (2003). \"A brief history of just-in-time\". ACM Comput. Surv. 35 (2): 97–113. doi:10.1145/857076.857077. S2CID 15345671.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 202
+    },
+    {
+      "id": "ref_203",
+      "label": "Ingalls Jr., Daniel \"Dan\" Henry Holmes; Kaehler, Ted; Maloney, John; Wallace, Scott; Kay, Alan Curtis (1997). \"Back to the future: the story of Squeak, a practical Smalltalk written in itself\". OOPSLA '97: Proceedings of the 12th ACM SIGPLAN conference on Object-oriented programming, systems, languages, and applications. New York, NY, US: ACM Press. pp. 318–326. doi:10.1145/263698.263754. ISBN 0-89791-908-4.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 203
+    },
+    {
+      "id": "ref_204",
+      "label": "Bracha, Gilad; Griswold, David (1993). \"Strongtalk: Typechecking Smalltalk in a Production Environment\". Proceedings of the Eighth Annual Conference on Object-oriented Programming Systems, Languages, and Applications. OOPSLA '93. New York, NY, US: ACM. pp. 215–230. doi:10.1145/165854.165893. ISBN 978-0-89791-587-8.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 204
+    },
+    {
+      "id": "ref_205",
+      "label": "Ungar, David Michael; Smith, Randall B. (December 1987). \"Self: The power of simplicity\". ACM SIGPLAN Notices. 22 (12): 227–242. doi:10.1145/38807.38828. ISSN 0362-1340.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 205
+    },
+    {
+      "id": "ref_206",
+      "label": "Hölzle, Urs; Ungar, David Michael (1994). \"Optimizing dynamically-dispatched calls with run-time type feedback\". PLDI. Orlando, Florida, United States: ACM. pp. 326–336. doi:10.1145/178243.178478. ISBN 0-89791-662-X.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 206
+    },
+    {
+      "id": "ref_207",
+      "label": "Paleczny, Michael; Vick, Christopher; Click, Cliff (2001). \"The Java HotSpot server compiler\" (PDF). Proceedings of the Java Virtual Machine Research and Technology Symposium on Java Virtual Machine Research and Technology Symposium. Vol. 1. Monterey, California: USENIX Association.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 207
+    },
+    {
+      "id": "ref_208",
+      "label": "Uhlig, Rich; Neiger, Gil; Rodgers, Dion; Santoni, Amy L.; Martins, Fernando C. M.; Anderson, Andrew V.; Bennett, Steven M.; Kägi, Alain; Leung, Felix H.; Smith, Larry (May 2005). \"Intel virtualization technology\". Computer. 38 (5): 48–56. Bibcode:2005Compr..38e..48U. doi:10.1109/MC.2005.163. S2CID 18514555.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 208
+    },
+    {
+      "id": "ref_209",
+      "label": "Randal, A. (2019). The Ideal Versus the Real: Revisiting the History of Virtual Machines and Containers.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 209
+    },
+    {
+      "id": "ref_210",
+      "label": "Adams, Keith; Agesen, Ole (2006-10-21). A Comparison of Software and Hardware Techniques for x86 Virtualization (PDF). ASPLOS’06 21–25 October 2006. San Jose, California, US. Archived (PDF) from the original on 2010-08-20. Surprisingly, we find that the first-generation hardware support rarely offers performance advantages over existing software techniques. We ascribe this situation to high VMM/guest transition costs and a rigid programming model that leaves little room for software flexibility in managing either the frequency or cost of these transitions.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 210
+    },
+    {
+      "id": "ref_211",
+      "label": "Ackerman, Pascal (2021-10-07). Industrial Cybersecurity: Efficiently monitor the cybersecurity posture of your ICS environment. Packt Publishing Ltd. p. 57. ISBN 978-1-80020-582-6. Retrieved 2025-11-17.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 211
+    },
+    {
+      "id": "ref_212",
+      "label": "Orit Wasserman, Red Hat (2013). \"Nested virtualization: Shadow turtles\" (PDF). KVM forum. Retrieved 2021-05-07.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 212
+    },
+    {
+      "id": "ref_213",
+      "label": "Muli Ben-Yehuda; Michael D. Day; Zvi Dubitzky; Michael Factor; Nadav Har’El; Abel Gordon; Anthony Liguori; Orit Wasserman; Ben-Ami Yassour (2010-09-23). \"The Turtles Project: Design and Implementation of Nested Virtualization\" (PDF). usenix.org. Retrieved 2014-12-16.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 213
+    },
+    {
+      "id": "ref_214",
+      "label": "Alex Fishman; Mike Rapoport; Evgeny Budilovsky; Izik Eidus (2013-06-25). \"HVX: Virtualizing the Cloud\" (PDF). rackcdn.com. Retrieved 2014-12-16.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 214
+    },
+    {
+      "id": "ref_215",
+      "label": "\"4th-Gen Intel Core vPro Processors with Intel VMCS Shadowing\" (PDF). Intel. 2013. Retrieved 2014-12-16.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 215
+    },
+    {
+      "id": "ref_216",
+      "label": "\"Introduction\". Why Qubes OS?.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 216
+    },
+    {
+      "id": "ref_217",
+      "label": "\"When security matters: working with Qubes OS at the Guardian\". The Guardian Engineering Blog.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 217
+    },
+    {
+      "id": "ref_218",
+      "label": "Further reading",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 218
+    },
+    {
+      "id": "ref_219",
+      "label": "James E. Smith, Ravi Nair, Virtual Machines: Versatile Platforms For Systems And Processes, Morgan Kaufmann, May 2005, ISBN 1-55860-910-5, 656 pages (covers both process and system virtual machines)",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 219
+    },
+    {
+      "id": "ref_220",
+      "label": "Craig, Iain D. Virtual Machines. Springer, 2006, ISBN 1-85233-969-1, 269 pages (covers only process virtual machines)",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 220
+    },
+    {
+      "id": "ref_221",
+      "label": "External links",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 221
+    },
+    {
+      "id": "ref_222",
+      "label": "Mendel Rosenblum (2004-08-31). \"The Reincarnation of Virtual Machines\". ACM Queue. Vol. 2, no. 5.",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 222
+    },
+    {
+      "id": "ref_223",
+      "label": "Sandia National Laboratories Runs 1 Million Linux Kernels as Virtual Machines",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 223
+    },
+    {
+      "id": "ref_224",
+      "label": "The design of the Inferno virtual machine by Phil Winterbottom and Rob Pike",
+      "type": "reference",
+      "description": "Reference entry from the supplied source.",
+      "source_line": 224
+    },
+    {
+      "id": "claim_01",
+      "label": "A VM virtualizes or emulates a computer system; system VMs execute whole OSs while process VMs execute programs in platform-independent environments.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        72,
+        76
+      ]
+    },
+    {
+      "id": "claim_02",
+      "label": "System VM architecture includes host/guest terminology, historical time-sharing motivations, memory sharing, embedded uses, sandboxing and server consolidation.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        82,
+        90
+      ]
+    },
+    {
+      "id": "claim_03",
+      "label": "Process VMs are host applications supporting one process and provide platform-independent programming environments; cluster-oriented variants abstract communication.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        96,
+        104
+      ]
+    },
+    {
+      "id": "claim_04",
+      "label": "VM history spans 1960s time-sharing, IBM systems, compiler intermediate representations, p-code, Smalltalk, JIT, Self, HotSpot and register-based VMs.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        110,
+        116
+      ]
+    },
+    {
+      "id": "claim_05",
+      "label": "Full virtualization and hardware-assisted virtualization are distinct techniques with IBM, Intel and AMD historical milestones and many implementation examples.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        123,
+        133
+      ]
+    },
+    {
+      "id": "claim_06",
+      "label": "OS-level virtualization partitions resources through the kernel, shares the host OS kernel and includes Docker and container technologies.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        135,
+        137
+      ]
+    },
+    {
+      "id": "claim_07",
+      "label": "Snapshots capture VM state/storage; overlays form a coherent virtual disk; migration moves VM state; failover uses last-known coherent backup state.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        141,
+        155
+      ]
+    },
+    {
+      "id": "claim_08",
+      "label": "Nested virtualization recursively runs hypervisors/VMs and may rely on hardware support such as VMCS shadowing.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        157,
+        162
+      ]
+    },
+    {
+      "id": "claim_09",
+      "label": "VMs are used for security isolation and compartmentalization architectures can limit malware spread.",
+      "type": "source_claim",
+      "description": "Atomic source-derived claim.",
+      "source_line_range": [
+        168,
+        170
+      ]
+    },
+    {
+      "id": "event_1960s",
+      "label": "System and process virtual machines date to the 1960s; system VMs grew from time-sharing.",
+      "type": "historical_event",
+      "description": "System and process virtual machines date to the 1960s; system VMs grew from time-sharing.",
+      "date": "1960s",
+      "source_line_range": [
+        110,
+        112
+      ]
+    },
+    {
+      "id": "event_1966_cp40",
+      "label": "IBM CP-40 and CP-67 are identified with early/full virtualization.",
+      "type": "historical_event",
+      "description": "IBM CP-40 and CP-67 are identified with early/full virtualization.",
+      "date": "1966",
+      "source_line_range": [
+        112,
+        123
+      ]
+    },
+    {
+      "id": "event_1972_vm370",
+      "label": "Hardware-assisted virtualization was introduced on IBM System/370 for VM/370.",
+      "type": "historical_event",
+      "description": "Hardware-assisted virtualization was introduced on IBM System/370 for VM/370.",
+      "date": "1972",
+      "source_line_range": [
+        129
+      ]
+    },
+    {
+      "id": "event_1970s_pcode",
+      "label": "Pascal p-code systems popularized process virtual machines.",
+      "type": "historical_event",
+      "description": "Pascal p-code systems popularized process virtual machines.",
+      "date": "1970s",
+      "source_line_range": [
+        114
+      ]
+    },
+    {
+      "id": "event_1980s_smalltalk",
+      "label": "Smalltalk-80 VM work advanced JIT compilation.",
+      "type": "historical_event",
+      "description": "Smalltalk-80 VM work advanced JIT compilation.",
+      "date": "1980s",
+      "source_line_range": [
+        116
+      ]
+    },
+    {
+      "id": "event_1999_hotspot",
+      "label": "Java HotSpot incorporated successful VM optimization techniques.",
+      "type": "historical_event",
+      "description": "Java HotSpot incorporated successful VM optimization techniques.",
+      "date": "1999",
+      "source_line_range": [
+        116
+      ]
+    },
+    {
+      "id": "event_2005_hw",
+      "label": "Intel and AMD added additional hardware virtualization support.",
+      "type": "historical_event",
+      "description": "Intel and AMD added additional hardware virtualization support.",
+      "date": "2005-2006",
+      "source_line_range": [
+        131
+      ]
+    },
+    {
+      "id": "event_2013_nested",
+      "label": "Intel Haswell-era VMCS shadowing is cited as accelerating nested virtualization.",
+      "type": "historical_event",
+      "description": "Intel Haswell-era VMCS shadowing is cited as accelerating nested virtualization.",
+      "date": "2013",
+      "source_line_range": [
+        162
+      ]
+    },
+    {
+      "id": "popek",
+      "label": "Gerald J. Popek",
+      "type": "researcher",
+      "description": "Co-author of the formal virtualization requirements work cited by the source."
+    },
+    {
+      "id": "goldberg",
+      "label": "Robert P. Goldberg",
+      "type": "researcher",
+      "description": "Co-author of the formal virtualization requirements work cited by the source."
+    },
+    {
+      "id": "michael_scott",
+      "label": "Michael L. Scott",
+      "type": "author",
+      "description": "Author cited in process-VM/runtime reference."
+    },
+    {
+      "id": "adele_goldberg",
+      "label": "Adele Goldberg",
+      "type": "researcher",
+      "description": "Smalltalk-80 author cited in source references."
+    },
+    {
+      "id": "david_robson",
+      "label": "David Robson",
+      "type": "researcher",
+      "description": "Smalltalk-80 author cited in source references."
+    },
+    {
+      "id": "peter_deutsch",
+      "label": "L. Peter Deutsch",
+      "type": "researcher",
+      "description": "JIT implementation researcher cited by source."
+    },
+    {
+      "id": "allan_schiffman",
+      "label": "Allan M. Schiffman",
+      "type": "researcher",
+      "description": "Smalltalk-80 implementation researcher cited by source."
+    },
+    {
+      "id": "alan_kay",
+      "label": "Alan Kay",
+      "type": "researcher",
+      "description": "Self/Smalltalk lineage researcher cited in source references."
+    },
+    {
+      "id": "urs_holzle",
+      "label": "Urs Hölzle",
+      "type": "researcher",
+      "description": "Adaptive optimization/JIT researcher cited in source references."
+    },
+    {
+      "id": "david_unger",
+      "label": "David Ungar",
+      "type": "researcher",
+      "description": "Self language and optimization researcher cited in source references."
+    },
+    {
+      "id": "d1",
+      "label": "System VM vs Process VM",
+      "type": "semantic_distinction",
+      "description": "System VM provides a whole machine/guest OS abstraction; process VM supports a program/process abstraction.",
+      "relationship_ids": [
+        "e001",
+        "e002"
+      ]
+    },
+    {
+      "id": "d2",
+      "label": "Host vs Guest",
+      "type": "semantic_distinction",
+      "description": "Host is the physical machine; guest is the virtual environment executing on it.",
+      "relationship_ids": [
+        "e005"
+      ]
+    },
+    {
+      "id": "d3",
+      "label": "Full vs Hardware-Assisted Virtualization",
+      "type": "semantic_distinction",
+      "description": "Full virtualization describes the guest-facing virtualization behavior; hardware-assisted virtualization describes architectural support that facilitates the VMM.",
+      "relationship_ids": [
+        "e009",
+        "e008"
+      ]
+    },
+    {
+      "id": "d4",
+      "label": "System VM vs OS-level Virtualization",
+      "type": "semantic_distinction",
+      "description": "System VM can execute a complete guest OS; OS-level environments share the host OS kernel.",
+      "relationship_ids": [
+        "e003",
+        "e011"
+      ]
+    },
+    {
+      "id": "d5",
+      "label": "VM vs Virtual Memory",
+      "type": "semantic_distinction",
+      "description": "Virtual memory abstracts memory; system virtualization generalizes machine abstraction and can include privileged instruction handling.",
+      "relationship_ids": [
+        "e015"
+      ]
+    },
+    {
+      "id": "d6",
+      "label": "Snapshot vs Backup",
+      "type": "semantic_distinction",
+      "description": "Snapshot is a point-in-time VM state; failover may use backup-server material representing a last coherent state.",
+      "relationship_ids": [
+        "e070",
+        "e082"
+      ]
+    },
+    {
+      "id": "d7",
+      "label": "Migration vs Failover",
+      "type": "semantic_distinction",
+      "description": "Migration deliberately moves a VM to another host; failover continues after host failure using last-known coherent state.",
+      "relationship_ids": [
+        "e079",
+        "e082"
+      ]
+    },
+    {
+      "id": "d8",
+      "label": "Namespace-style isolation vs VM isolation",
+      "type": "semantic_distinction",
+      "description": "OS-level virtualization shares a kernel; system VMs isolate through separate guest environments.",
+      "relationship_ids": [
+        "e011",
+        "e007"
+      ]
+    },
+    {
+      "id": "d9",
+      "label": "Process VM vs Interpreter",
+      "type": "semantic_distinction",
+      "description": "A process VM is the runtime abstraction; an interpreter is one implementation mechanism.",
+      "relationship_ids": [
+        "e027",
+        "e032"
+      ]
+    },
+    {
+      "id": "d10",
+      "label": "JIT vs Interpreter",
+      "type": "semantic_distinction",
+      "description": "JIT is an optimization/compilation technique that can improve process-VM performance; interpreter is an execution mechanism.",
+      "relationship_ids": [
+        "e032",
+        "e033"
+      ]
+    },
+    {
+      "id": "d11",
+      "label": "Nested vs ordinary virtualization",
+      "type": "semantic_distinction",
+      "description": "Nested virtualization places a hypervisor inside another hypervisor; ordinary system virtualization does not require recursive layers.",
+      "relationship_ids": [
+        "e084",
+        "e085"
+      ]
+    },
+    {
+      "id": "d12",
+      "label": "KSM vs memory overcommitment",
+      "type": "semantic_distinction",
+      "description": "KSM merges identical pages; memory overcommitment is the broader memory-sharing/resource-management context.",
+      "relationship_ids": [
+        "e023",
+        "e024"
+      ]
+    },
+    {
+      "id": "d13",
+      "label": "Virtual disk vs snapshot overlay",
+      "type": "semantic_distinction",
+      "description": "Virtual disk is the VM storage abstraction; overlay is a snapshot layer storing subsequent changes.",
+      "relationship_ids": [
+        "e071",
+        "e073"
+      ]
+    },
+    {
+      "id": "d14",
+      "label": "Guest OS vs host OS",
+      "type": "semantic_distinction",
+      "description": "Guest OS executes inside VM; host OS is the surrounding OS when applicable.",
+      "relationship_ids": [
+        "e026"
+      ]
+    },
+    {
+      "id": "d15",
+      "label": "Isolation vs Portability",
+      "type": "semantic_distinction",
+      "description": "Isolation separates execution environments; process VMs use abstraction to provide platform independence.",
+      "relationship_ids": [
+        "e007",
+        "e030"
+      ]
+    },
+    {
+      "id": "linux_kernel",
+      "label": "Linux Kernel",
+      "type": "kernel",
+      "description": "Kernel through which OS-level virtualization partitions resources."
+    },
+    {
+      "id": "debugging",
+      "label": "Debugging",
+      "type": "development_capability",
+      "description": "Debugging access cited as an advantage of virtual machines for OS development."
+    },
+    {
+      "id": "intel",
+      "label": "Intel",
+      "type": "company",
+      "description": "Processor manufacturer cited for adding virtualization support."
+    },
+    {
+      "id": "amd",
+      "label": "AMD",
+      "type": "company",
+      "description": "Processor manufacturer cited for adding virtualization support."
+    },
+    {
+      "id": "os_development",
+      "label": "Operating System Development",
+      "type": "development_context",
+      "description": "Development context in which VMs can provide improved debugging access and faster reboots.",
+      "source_line_range": [
+        88
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "e001",
+      "source": "virtual_machine",
+      "relation": "includes",
+      "target": "system_vm",
+      "mechanism": "System VMs substitute for real machines and execute entire OSs.",
+      "conditions": "System virtualization",
+      "mathematical_form": "",
+      "effect": "Provides whole-system execution environment.",
+      "inverse_or_converse": "Process VM provides program-level abstraction.",
+      "frame_or_context": "VM taxonomy",
+      "scope": "system VM",
+      "source_line_range": [
+        72,
+        74
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e002",
+      "source": "virtual_machine",
+      "relation": "includes",
+      "target": "process_vm",
+      "mechanism": "Process VMs execute programs in platform-independent environments.",
+      "conditions": "Process virtualization",
+      "mathematical_form": "",
+      "effect": "Provides application/program abstraction.",
+      "inverse_or_converse": "System VM abstracts a whole machine.",
+      "frame_or_context": "VM taxonomy",
+      "scope": "process VM",
+      "source_line_range": [
+        72,
+        75
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e003",
+      "source": "system_vm",
+      "relation": "runs",
+      "target": "guest_os",
+      "mechanism": "System VM supplies enough machine functionality to execute a complete OS.",
+      "conditions": "System VM",
+      "mathematical_form": "",
+      "effect": "Guest OS executes inside isolated virtual machine.",
+      "inverse_or_converse": "",
+      "frame_or_context": "execution",
+      "scope": "system VM",
+      "source_line_range": [
+        74
+      ],
+      "semantic_role": "execution",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e004",
+      "source": "hypervisor",
+      "relation": "manages",
+      "target": "system_vm",
+      "mechanism": "Hypervisor shares and manages hardware among isolated VM environments.",
+      "conditions": "Hardware virtualization",
+      "mathematical_form": "",
+      "effect": "Allows multiple guests on one host.",
+      "inverse_or_converse": "",
+      "frame_or_context": "resource_management",
+      "scope": "system VM",
+      "source_line_range": [
+        74
+      ],
+      "semantic_role": "control",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e005",
+      "source": "host",
+      "relation": "runs",
+      "target": "guest",
+      "mechanism": "Host is physical machine on which guest VM is emulated.",
+      "conditions": "Host has virtualization support",
+      "mathematical_form": "",
+      "effect": "Multiple guests may share one host.",
+      "inverse_or_converse": "",
+      "frame_or_context": "architecture",
+      "scope": "VM architecture",
+      "source_line_range": [
+        82
+      ],
+      "semantic_role": "containment",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e006",
+      "source": "guest",
+      "relation": "uses",
+      "target": "virtual_hardware",
+      "mechanism": "Guest sees a hardware interface supplied by the VM.",
+      "conditions": "Virtual machine",
+      "mathematical_form": "",
+      "effect": "Allows guest OS execution without requiring identical physical devices.",
+      "inverse_or_converse": "",
+      "frame_or_context": "abstraction",
+      "scope": "system VM",
+      "source_line_range": [
+        82,
+        123
+      ],
+      "semantic_role": "abstraction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e007",
+      "source": "hypervisor",
+      "relation": "isolates",
+      "target": "guest",
+      "mechanism": "Hypervisor provides isolation between multiple environments on same physical machine.",
+      "conditions": "System virtualization",
+      "mathematical_form": "",
+      "effect": "Separates guests while sharing hardware.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "system VM",
+      "source_line_range": [
+        74
+      ],
+      "semantic_role": "isolation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e008",
+      "source": "hardware_assisted",
+      "relation": "uses",
+      "target": "cpu",
+      "mechanism": "Host CPU provides virtualization-specific features assisting the hypervisor.",
+      "conditions": "Supported CPU architecture",
+      "mathematical_form": "",
+      "effect": "Reduces/assists virtualization overhead and implementation complexity.",
+      "inverse_or_converse": "Software virtualization is converse technique.",
+      "frame_or_context": "implementation",
+      "scope": "hardware virtualization",
+      "source_line_range": [
+        74,
+        129
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e009",
+      "source": "full_virtualization",
+      "relation": "supports",
+      "target": "full_guest_unmodified",
+      "mechanism": "Full virtualization simulates enough hardware for an unmodified guest OS.",
+      "conditions": "Same instruction set",
+      "mathematical_form": "",
+      "effect": "Guest can run without modification.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compatibility",
+      "scope": "system VM",
+      "source_line_range": [
+        123
+      ],
+      "semantic_role": "capability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e010",
+      "source": "full_virtualization",
+      "relation": "emulates",
+      "target": "virtual_hardware",
+      "mechanism": "Full virtualization presents sufficient simulated hardware to the guest.",
+      "conditions": "Guest OS designed for same ISA",
+      "mathematical_form": "",
+      "effect": "Guest sees virtual machine hardware.",
+      "inverse_or_converse": "",
+      "frame_or_context": "abstraction",
+      "scope": "system VM",
+      "source_line_range": [
+        123
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e011",
+      "source": "os_level_virtualization",
+      "relation": "shares",
+      "target": "host_os",
+      "mechanism": "Guest environments share the same running OS instance/kernel as host.",
+      "conditions": "OS-level virtualization",
+      "mathematical_form": "",
+      "effect": "Multiple isolated environments use one kernel.",
+      "inverse_or_converse": "Full system VMs provide separate guest OSs.",
+      "frame_or_context": "architecture",
+      "scope": "OS-level virtualization",
+      "source_line_range": [
+        137
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e012",
+      "source": "os_level_virtualization",
+      "relation": "uses",
+      "target": "linux_kernel",
+      "mechanism": "OS-level virtualization partitions resources through the kernel.",
+      "conditions": "Kernel supports partitioning",
+      "mathematical_form": "",
+      "effect": "Creates isolated server-like environments without separate guest kernels.",
+      "inverse_or_converse": "",
+      "frame_or_context": "mechanism",
+      "scope": "OS-level virtualization",
+      "source_line_range": [
+        76,
+        137
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e013",
+      "source": "docker",
+      "relation": "is_example_of",
+      "target": "os_level_virtualization",
+      "mechanism": "Source explicitly lists Docker among OS-level virtualization examples.",
+      "conditions": "Container platform",
+      "mathematical_form": "",
+      "effect": "Connects Docker to VM taxonomy.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "containerization",
+      "source_line_range": [
+        137
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e014",
+      "source": "freebsd_jails",
+      "relation": "pioneered",
+      "target": "os_level_virtualization",
+      "mechanism": "FreeBSD jails are identified as the pioneer implementation.",
+      "conditions": "Historical OS virtualization",
+      "mathematical_form": "",
+      "effect": "Established OS-level virtualization model.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "OS-level virtualization",
+      "source_line_range": [
+        137
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e015",
+      "source": "system_vm",
+      "relation": "generalizes",
+      "target": "virtual_memory",
+      "mechanism": "System VM is described as a generalization of virtual memory in some respects.",
+      "conditions": "Historical conceptual relation",
+      "mathematical_form": "",
+      "effect": "Extends abstraction from memory to machines.",
+      "inverse_or_converse": "",
+      "frame_or_context": "conceptual",
+      "scope": "virtualization theory",
+      "source_line_range": [
+        84
+      ],
+      "semantic_role": "conceptual",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e016",
+      "source": "time_sharing",
+      "relation": "motivated",
+      "target": "system_vm",
+      "mechanism": "Initial motivation for VMs included running multiple OSs through time-sharing.",
+      "conditions": "1960s/system VM history",
+      "mathematical_form": "",
+      "effect": "Multiple users/programs can share physical machine.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "system VM",
+      "source_line_range": [
+        84,
+        112
+      ],
+      "semantic_role": "causal",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e017",
+      "source": "time_sharing",
+      "relation": "switches",
+      "target": "program",
+      "mechanism": "Time-sharing switches execution among programs and saves/restores state.",
+      "conditions": "Concurrent use",
+      "mathematical_form": "",
+      "effect": "Creates illusion of dedicated machine access.",
+      "inverse_or_converse": "",
+      "frame_or_context": "scheduling",
+      "scope": "historical systems",
+      "source_line_range": [
+        112
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e018",
+      "source": "system_vm",
+      "relation": "supports",
+      "target": "server_consolidation",
+      "mechanism": "Multiple VMs can run separate guest OSs on one host for server consolidation.",
+      "conditions": "Server workloads",
+      "mathematical_form": "",
+      "effect": "Consolidates services onto fewer physical systems.",
+      "inverse_or_converse": "",
+      "frame_or_context": "use_case",
+      "scope": "server infrastructure",
+      "source_line_range": [
+        90
+      ],
+      "semantic_role": "use",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e019",
+      "source": "system_vm",
+      "relation": "supports",
+      "target": "embedded_systems",
+      "mechanism": "VMs can run a real-time OS alongside a complex OS in embedded systems.",
+      "conditions": "Embedded hardware",
+      "mathematical_form": "",
+      "effect": "Supports concurrent OS environments.",
+      "inverse_or_converse": "",
+      "frame_or_context": "use_case",
+      "scope": "embedded systems",
+      "source_line_range": [
+        88
+      ],
+      "semantic_role": "use",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e020",
+      "source": "system_vm",
+      "relation": "provides",
+      "target": "sandbox",
+      "mechanism": "VM can isolate novel/unproven software for development/testing.",
+      "conditions": "Risky software",
+      "mathematical_form": "",
+      "effect": "Limits software execution environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "development",
+      "source_line_range": [
+        88
+      ],
+      "semantic_role": "use",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e021",
+      "source": "system_vm",
+      "relation": "supports",
+      "target": "debugging",
+      "mechanism": "VM-based OS development can improve debugging access.",
+      "conditions": "OS development",
+      "mathematical_form": "",
+      "effect": "Provides controlled development environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "development",
+      "scope": "OS development",
+      "source_line_range": [
+        88
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e022",
+      "source": "system_vm",
+      "relation": "supports",
+      "target": "isolation",
+      "mechanism": "System VMs isolate guest environments from each other.",
+      "conditions": "Multiple guests",
+      "mathematical_form": "",
+      "effect": "Compartmentalizes workloads.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "system VM",
+      "source_line_range": [
+        74,
+        168
+      ],
+      "semantic_role": "security",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e023",
+      "source": "memory_overcommitment",
+      "relation": "shares",
+      "target": "virtual_machine",
+      "mechanism": "Memory sharing/overcommitment can manage memory among VMs.",
+      "conditions": "Host memory constrained",
+      "mathematical_form": "",
+      "effect": "Improves physical-memory utilization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "resource_management",
+      "scope": "VM host",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "optimization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e024",
+      "source": "ksm",
+      "relation": "merges",
+      "target": "read_only_page",
+      "mechanism": "Identical memory pages can be mapped to one physical page through KSM.",
+      "conditions": "Identical contents",
+      "mathematical_form": "",
+      "effect": "Reduces duplicate physical memory use.",
+      "inverse_or_converse": "Distinct writable pages must remain separate.",
+      "frame_or_context": "memory_optimization",
+      "scope": "VM host",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e025",
+      "source": "ksm",
+      "relation": "optimizes",
+      "target": "memory_overcommitment",
+      "mechanism": "Same-page merging is a technique useful for memory sharing among VMs.",
+      "conditions": "Identical pages",
+      "mathematical_form": "",
+      "effect": "Increases effective memory density.",
+      "inverse_or_converse": "",
+      "frame_or_context": "resource_management",
+      "scope": "VM host",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "optimization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e026",
+      "source": "guest_os",
+      "relation": "can_differ_from",
+      "target": "host_os",
+      "mechanism": "Guest OS need not be compliant with host hardware.",
+      "conditions": "System virtualization",
+      "mathematical_form": "",
+      "effect": "Allows different OSs to run on same physical machine.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compatibility",
+      "scope": "system VM",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "capability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e027",
+      "source": "process_vm",
+      "relation": "runs_as",
+      "target": "process",
+      "mechanism": "Process VM runs as a normal host-OS application supporting a single process.",
+      "conditions": "Process starts",
+      "mathematical_form": "",
+      "effect": "VM lifetime follows process lifetime.",
+      "inverse_or_converse": "System VM persists as a machine environment.",
+      "frame_or_context": "lifecycle",
+      "scope": "process VM",
+      "source_line_range": [
+        96
+      ],
+      "semantic_role": "execution",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e028",
+      "source": "process_vm",
+      "relation": "created_when",
+      "target": "process",
+      "mechanism": "Process VM is created when its associated process starts.",
+      "conditions": "Process start",
+      "mathematical_form": "",
+      "effect": "Begins process VM lifecycle.",
+      "inverse_or_converse": "",
+      "frame_or_context": "lifecycle",
+      "scope": "process VM",
+      "source_line_range": [
+        96
+      ],
+      "semantic_role": "lifecycle",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e029",
+      "source": "process_vm",
+      "relation": "deleted_when",
+      "target": "process",
+      "mechanism": "Process VM is deleted when its process closes.",
+      "conditions": "Process exit",
+      "mathematical_form": "",
+      "effect": "Ends process VM lifecycle.",
+      "inverse_or_converse": "",
+      "frame_or_context": "lifecycle",
+      "scope": "process VM",
+      "source_line_range": [
+        96
+      ],
+      "semantic_role": "lifecycle",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e030",
+      "source": "process_vm",
+      "relation": "provides",
+      "target": "platform_independence",
+      "mechanism": "Process VM abstracts hardware/OS details so a program can execute similarly across platforms.",
+      "conditions": "Portable runtime",
+      "mathematical_form": "",
+      "effect": "Improves portability.",
+      "inverse_or_converse": "",
+      "frame_or_context": "abstraction",
+      "scope": "process VM",
+      "source_line_range": [
+        96
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e031",
+      "source": "process_vm",
+      "relation": "abstracts",
+      "target": "programming_language",
+      "mechanism": "High-level process VM can abstract a programming-language environment.",
+      "conditions": "Language runtime",
+      "mathematical_form": "",
+      "effect": "Program targets VM abstraction rather than hardware ISA directly.",
+      "inverse_or_converse": "",
+      "frame_or_context": "abstraction",
+      "scope": "process VM",
+      "source_line_range": [
+        98
+      ],
+      "semantic_role": "abstraction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e032",
+      "source": "interpreter",
+      "relation": "implements",
+      "target": "process_vm",
+      "mechanism": "Process VMs can be implemented using an interpreter.",
+      "conditions": "Process VM execution",
+      "mathematical_form": "",
+      "effect": "Executes VM instructions/program representation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "implementation",
+      "scope": "process VM",
+      "source_line_range": [
+        98
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e033",
+      "source": "jit",
+      "relation": "improves",
+      "target": "interpreter",
+      "mechanism": "JIT compilation can provide performance comparable to compiled languages for process VMs.",
+      "conditions": "Hot execution paths",
+      "mathematical_form": "",
+      "effect": "Improves runtime performance.",
+      "inverse_or_converse": "Interpreter-only execution is slower in many cases, but source only states comparable performance can be achieved.",
+      "frame_or_context": "optimization",
+      "scope": "process VM",
+      "source_line_range": [
+        98
+      ],
+      "semantic_role": "optimization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e034",
+      "source": "jvm",
+      "relation": "is",
+      "target": "process_vm",
+      "mechanism": "Java Virtual Machine is a process VM.",
+      "conditions": "Java runtime",
+      "mathematical_form": "",
+      "effect": "Provides Java platform abstraction.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "process VM",
+      "source_line_range": [
+        100
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e035",
+      "source": "java",
+      "relation": "runs_on",
+      "target": "jvm",
+      "mechanism": "Java is implemented using the JVM.",
+      "conditions": "Java runtime",
+      "mathematical_form": "",
+      "effect": "Separates Java programs from underlying platform.",
+      "inverse_or_converse": "",
+      "frame_or_context": "runtime",
+      "scope": "Java",
+      "source_line_range": [
+        100
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e036",
+      "source": "parrot",
+      "relation": "is",
+      "target": "process_vm",
+      "mechanism": "Parrot is listed as a process VM example.",
+      "conditions": "Process VM",
+      "mathematical_form": "",
+      "effect": "Provides language/runtime abstraction.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "process VM",
+      "source_line_range": [
+        100
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e037",
+      "source": "dotnet_clr",
+      "relation": "is",
+      "target": "process_vm",
+      "mechanism": ".NET CLR is listed as a VM runtime.",
+      "conditions": "Managed runtime",
+      "mathematical_form": "",
+      "effect": "Provides platform abstraction for .NET.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "process VM",
+      "source_line_range": [
+        100
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e038",
+      "source": "cluster",
+      "relation": "can_be_abstracted_by",
+      "target": "pvm",
+      "mechanism": "Cluster VM systems abstract communication mechanisms across heterogeneous machines.",
+      "conditions": "Cluster processes",
+      "mathematical_form": "",
+      "effect": "Lets programmers focus more on algorithms than communication mechanisms.",
+      "inverse_or_converse": "Does not hide that communication occurs.",
+      "frame_or_context": "abstraction",
+      "scope": "distributed systems",
+      "source_line_range": [
+        102
+      ],
+      "semantic_role": "abstraction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e039",
+      "source": "cluster",
+      "relation": "can_be_abstracted_by",
+      "target": "mpi",
+      "mechanism": "MPI is named as a cluster-oriented process-VM-like system/example.",
+      "conditions": "Cluster processes",
+      "mathematical_form": "",
+      "effect": "Provides communication abstraction/bindings.",
+      "inverse_or_converse": "",
+      "frame_or_context": "distributed_runtime",
+      "scope": "cluster computing",
+      "source_line_range": [
+        104
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e040",
+      "source": "cluster",
+      "relation": "communicates_over",
+      "target": "physical_architecture",
+      "mechanism": "Cluster VM still spans multiple physical machines rather than presenting one actual machine.",
+      "conditions": "Heterogeneous cluster",
+      "mathematical_form": "",
+      "effect": "Preserves distributed nature.",
+      "inverse_or_converse": "",
+      "frame_or_context": "distributed_system",
+      "scope": "cluster VM",
+      "source_line_range": [
+        102
+      ],
+      "semantic_role": "constraint",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e041",
+      "source": "process_vm",
+      "relation": "does_not_hide",
+      "target": "cluster",
+      "mechanism": "Cluster-oriented process VMs do not attempt to present cluster as a single machine.",
+      "conditions": "Communication remains explicit",
+      "mathematical_form": "",
+      "effect": "Programmer still reasons about distributed communication.",
+      "inverse_or_converse": "",
+      "frame_or_context": "distributed_abstraction",
+      "scope": "cluster VM",
+      "source_line_range": [
+        102
+      ],
+      "semantic_role": "distinction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e042",
+      "source": "meta_ii",
+      "relation": "uses",
+      "target": "intermediate_representation",
+      "mechanism": "META II used a VM as an intermediate representation for syntax description and target code generation.",
+      "conditions": "Compiler system",
+      "mathematical_form": "",
+      "effect": "Supports portable compiler construction.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compiler_history",
+      "scope": "process VM",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e043",
+      "source": "ocode_machine",
+      "relation": "executes",
+      "target": "ocode",
+      "mechanism": "O-code machine executes object code produced by compiler front end.",
+      "conditions": "BCPL compiler",
+      "mathematical_form": "",
+      "effect": "Runs portable intermediate code.",
+      "inverse_or_converse": "",
+      "frame_or_context": "runtime",
+      "scope": "compiler VM",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "execution",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e044",
+      "source": "compiler",
+      "relation": "produces",
+      "target": "ocode",
+      "mechanism": "BCPL compiler front end emits O-code.",
+      "conditions": "Compiler pipeline",
+      "mathematical_form": "",
+      "effect": "Creates portable intermediate representation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compiler",
+      "scope": "process VM history",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "derivation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e045",
+      "source": "back_end",
+      "relation": "compiles",
+      "target": "portable_code",
+      "mechanism": "A new backend can compile existing intermediate code to machine code for a new architecture.",
+      "conditions": "New target architecture",
+      "mathematical_form": "",
+      "effect": "Enables compiler portability.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compiler",
+      "scope": "compiler pipeline",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "causal",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e046",
+      "source": "p_code_machine",
+      "relation": "executes",
+      "target": "p_code",
+      "mechanism": "P-code machines directly execute Pascal p-code.",
+      "conditions": "Pascal VM",
+      "mathematical_form": "",
+      "effect": "Allows direct interpreted execution of portable code.",
+      "inverse_or_converse": "",
+      "frame_or_context": "runtime",
+      "scope": "Pascal",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "execution",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e047",
+      "source": "pascal",
+      "relation": "popularized",
+      "target": "p_code",
+      "mechanism": "Pascal p-code systems popularized process VMs around 1970.",
+      "conditions": "Pascal compiler systems",
+      "mathematical_form": "",
+      "effect": "Influenced later process VMs.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "process VM",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e048",
+      "source": "ucsd_pascal",
+      "relation": "interprets",
+      "target": "p_code",
+      "mechanism": "UCSD Pascal directly interpreted Pascal p-code.",
+      "conditions": "1978",
+      "mathematical_form": "",
+      "effect": "Executes portable intermediate code.",
+      "inverse_or_converse": "",
+      "frame_or_context": "runtime",
+      "scope": "Pascal",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "execution",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e049",
+      "source": "pascal_p",
+      "relation": "produces",
+      "target": "p_code",
+      "mechanism": "Pascal-P produced p-code.",
+      "conditions": "1973",
+      "mathematical_form": "",
+      "effect": "Creates portable VM-targeted code.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compiler_history",
+      "scope": "Pascal",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "derivation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e050",
+      "source": "pascal_s",
+      "relation": "uses",
+      "target": "p_code",
+      "mechanism": "Pascal-S is named as a p-code compiler system.",
+      "conditions": "1975",
+      "mathematical_form": "",
+      "effect": "Continues p-code VM model.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compiler_history",
+      "scope": "Pascal",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e051",
+      "source": "snobol4",
+      "relation": "uses",
+      "target": "sil",
+      "mechanism": "SNOBOL4 used the SNOBOL Implementation Language as VM-oriented assembly language.",
+      "conditions": "1967",
+      "mathematical_form": "",
+      "effect": "Supports targeting physical machines through macro assembly.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compiler_history",
+      "scope": "SNOBOL4",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e052",
+      "source": "z_machine",
+      "relation": "supports",
+      "target": "portable_code",
+      "mechanism": "Z-machine provided a general-purpose portable VM for adventure games.",
+      "conditions": "Portable software",
+      "mathematical_form": "",
+      "effect": "Allowed software to target a VM rather than each physical machine.",
+      "inverse_or_converse": "",
+      "frame_or_context": "portability",
+      "scope": "software history",
+      "source_line_range": [
+        114
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e053",
+      "source": "smalltalk",
+      "relation": "advanced",
+      "target": "jit",
+      "mechanism": "Smalltalk-80 VM implementation pushed JIT compilation forward.",
+      "conditions": "1980s",
+      "mathematical_form": "",
+      "effect": "Advanced dynamic VM execution techniques.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "JIT",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e054",
+      "source": "self_language",
+      "relation": "pioneered",
+      "target": "jit",
+      "mechanism": "Self research contributed adaptive optimization techniques to VM implementation.",
+      "conditions": "VM optimization",
+      "mathematical_form": "",
+      "effect": "Influenced later production VMs.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "VM optimization",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e055",
+      "source": "self_language",
+      "relation": "pioneered",
+      "target": "memory_overcommitment",
+      "mechanism": "Source actually says Self pioneered generational garbage collection, not VM memory overcommitment; preserve relationship instead as GC optimization.",
+      "conditions": "Source wording",
+      "mathematical_form": "",
+      "effect": "Introduces VM runtime optimization lineage.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "language VM",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e056",
+      "source": "hotspot",
+      "relation": "incorporated",
+      "target": "jit",
+      "mechanism": "Java HotSpot incorporated successful VM optimization techniques by 1999.",
+      "conditions": "1999",
+      "mathematical_form": "",
+      "effect": "Commercializes advanced VM optimization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "Java VM",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e057",
+      "source": "dis_vm",
+      "relation": "is",
+      "target": "process_vm",
+      "mechanism": "Dis is a register-based VM for Limbo.",
+      "conditions": "1995",
+      "mathematical_form": "",
+      "effect": "Uses register-based execution abstraction.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "process VM",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e058",
+      "source": "limbo",
+      "relation": "runs_on",
+      "target": "dis_vm",
+      "mechanism": "Limbo is associated with the Dis VM.",
+      "conditions": "Dis runtime",
+      "mathematical_form": "",
+      "effect": "Separates language execution from physical architecture.",
+      "inverse_or_converse": "",
+      "frame_or_context": "runtime",
+      "scope": "Limbo",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e059",
+      "source": "full_virtualization",
+      "relation": "pioneered_by",
+      "target": "cp40",
+      "mechanism": "IBM CP-40 pioneered full virtualization in 1966.",
+      "conditions": "1966",
+      "mathematical_form": "",
+      "effect": "Established full virtualization approach.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "mainframe virtualization",
+      "source_line_range": [
+        123
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e060",
+      "source": "full_virtualization",
+      "relation": "pioneered_by",
+      "target": "cp67_cms",
+      "mechanism": "CP-67/CMS is described as an early/widely available full VM architecture.",
+      "conditions": "Historical IBM systems",
+      "mathematical_form": "",
+      "effect": "Popularized system virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "mainframe virtualization",
+      "source_line_range": [
+        112,
+        123
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e061",
+      "source": "hardware_assisted",
+      "relation": "introduced_on",
+      "target": "system370",
+      "mechanism": "Hardware-assisted virtualization first appeared on IBM System/370 for VM/370.",
+      "conditions": "1972",
+      "mathematical_form": "",
+      "effect": "Hardware architecture began directly assisting VM implementation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "hardware virtualization",
+      "source_line_range": [
+        129
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e062",
+      "source": "system370",
+      "relation": "supported",
+      "target": "vm370",
+      "mechanism": "System/370 hardware support was used for VM/370.",
+      "conditions": "1972",
+      "mathematical_form": "",
+      "effect": "Enabled hardware-assisted virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "IBM virtualization",
+      "source_line_range": [
+        129
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e063",
+      "source": "intel",
+      "relation": "added",
+      "target": "hardware_assisted",
+      "mechanism": "Intel added additional virtualization hardware support in 2005/2006.",
+      "conditions": "2005-2006",
+      "mathematical_form": "",
+      "effect": "Improved hardware support for virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "hardware",
+      "scope": "x86 virtualization",
+      "source_line_range": [
+        131
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e064",
+      "source": "amd",
+      "relation": "added",
+      "target": "hardware_assisted",
+      "mechanism": "AMD added additional virtualization hardware support in 2005/2006.",
+      "conditions": "2005-2006",
+      "mathematical_form": "",
+      "effect": "Improved hardware support for virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "hardware",
+      "scope": "x86 virtualization",
+      "source_line_range": [
+        131
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e065",
+      "source": "full_virtualization",
+      "relation": "implemented_by",
+      "target": "virtualbox",
+      "mechanism": "VirtualBox is listed as a full/hardware-assisted virtualization platform.",
+      "conditions": "Virtualization software",
+      "mathematical_form": "",
+      "effect": "Provides system virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "implementation",
+      "scope": "virtualization",
+      "source_line_range": [
+        125,
+        131
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e066",
+      "source": "hardware_assisted",
+      "relation": "implemented_by",
+      "target": "kvm",
+      "mechanism": "KVM is listed among platforms adapted to hardware-assisted virtualization.",
+      "conditions": "Hardware support available",
+      "mathematical_form": "",
+      "effect": "Uses CPU virtualization features.",
+      "inverse_or_converse": "",
+      "frame_or_context": "implementation",
+      "scope": "virtualization",
+      "source_line_range": [
+        131
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e067",
+      "source": "hardware_assisted",
+      "relation": "implemented_by",
+      "target": "hyperv",
+      "mechanism": "Hyper-V is listed as a platform adapted to hardware-assisted virtualization.",
+      "conditions": "Hardware support available",
+      "mathematical_form": "",
+      "effect": "Uses hardware-assisted virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "implementation",
+      "scope": "virtualization",
+      "source_line_range": [
+        131
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e068",
+      "source": "hardware_assisted",
+      "relation": "implemented_by",
+      "target": "xen",
+      "mechanism": "Xen is listed as a platform adapted to hardware-assisted virtualization.",
+      "conditions": "Hardware support available",
+      "mathematical_form": "",
+      "effect": "Uses hardware-assisted virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "implementation",
+      "scope": "virtualization",
+      "source_line_range": [
+        131
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e069",
+      "source": "os_level_virtualization",
+      "relation": "shares",
+      "target": "guest_os",
+      "mechanism": "OS-level guest environments share the host OS instance rather than each running a separate guest kernel.",
+      "conditions": "OS-level virtualization",
+      "mathematical_form": "",
+      "effect": "Reduces per-environment OS overhead.",
+      "inverse_or_converse": "System VM has separate guest OS.",
+      "frame_or_context": "architecture",
+      "scope": "OS-level virtualization",
+      "source_line_range": [
+        137
+      ],
+      "semantic_role": "distinction",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e070",
+      "source": "snapshot",
+      "relation": "captures",
+      "target": "virtual_machine",
+      "mechanism": "Snapshot captures VM state and generally storage at an exact point in time.",
+      "conditions": "Snapshot operation",
+      "mathematical_form": "",
+      "effect": "Creates restorable VM state.",
+      "inverse_or_converse": "",
+      "frame_or_context": "state_management",
+      "scope": "VM lifecycle",
+      "source_line_range": [
+        141
+      ],
+      "semantic_role": "state",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e071",
+      "source": "snapshot",
+      "relation": "captures",
+      "target": "virtual_disk",
+      "mechanism": "VM snapshots can capture storage state.",
+      "conditions": "Virtual disk used by VM",
+      "mathematical_form": "",
+      "effect": "Enables restoration of disk state.",
+      "inverse_or_converse": "",
+      "frame_or_context": "storage",
+      "scope": "VM snapshots",
+      "source_line_range": [
+        141,
+        143
+      ],
+      "semantic_role": "state",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e072",
+      "source": "virtual_disk",
+      "relation": "backed_by",
+      "target": "overlay_layer",
+      "mechanism": "VM disk can be represented through file/overlay translation in snapshot model.",
+      "conditions": "Snapshot storage",
+      "mathematical_form": "",
+      "effect": "Writes go to newest overlay.",
+      "inverse_or_converse": "",
+      "frame_or_context": "storage",
+      "scope": "snapshot model",
+      "source_line_range": [
+        143
+      ],
+      "semantic_role": "mechanism",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e073",
+      "source": "snapshot",
+      "relation": "creates",
+      "target": "overlay_layer",
+      "mechanism": "Each snapshot creates a new overlay file in the described model.",
+      "conditions": "Snapshot taken",
+      "mathematical_form": "",
+      "effect": "New writes target topmost overlay.",
+      "inverse_or_converse": "",
+      "frame_or_context": "storage",
+      "scope": "snapshot stack",
+      "source_line_range": [
+        143
+      ],
+      "semantic_role": "causal",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e074",
+      "source": "overlay_layer",
+      "relation": "forms",
+      "target": "snapshot_stack",
+      "mechanism": "Snapshot overlays form a hierarchy representing one coherent virtual disk.",
+      "conditions": "Multiple snapshots",
+      "mathematical_form": "",
+      "effect": "Reads may scan overlays to find newest version.",
+      "inverse_or_converse": "",
+      "frame_or_context": "storage",
+      "scope": "snapshot model",
+      "source_line_range": [
+        143
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e075",
+      "source": "restore",
+      "relation": "discards",
+      "target": "overlay_layer",
+      "mechanism": "Restore disregards overlay layers added after selected snapshot.",
+      "conditions": "Restore operation",
+      "mathematical_form": "",
+      "effect": "Reverts VM storage/state to snapshot point.",
+      "inverse_or_converse": "",
+      "frame_or_context": "state_management",
+      "scope": "snapshot",
+      "source_line_range": [
+        147
+      ],
+      "semantic_role": "causal",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e076",
+      "source": "snapshot",
+      "relation": "can_include",
+      "target": "ram_state",
+      "mechanism": "Snapshot can include RAM contents.",
+      "conditions": "Snapshot configuration",
+      "mathematical_form": "",
+      "effect": "Restores memory state as part of VM state.",
+      "inverse_or_converse": "",
+      "frame_or_context": "state",
+      "scope": "VM snapshot",
+      "source_line_range": [
+        145
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e077",
+      "source": "snapshot",
+      "relation": "can_include",
+      "target": "bios_state",
+      "mechanism": "Snapshot can include BIOS settings.",
+      "conditions": "Snapshot configuration",
+      "mathematical_form": "",
+      "effect": "Restores firmware-related VM state.",
+      "inverse_or_converse": "",
+      "frame_or_context": "state",
+      "scope": "VM snapshot",
+      "source_line_range": [
+        145
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e078",
+      "source": "snapshot",
+      "relation": "can_include",
+      "target": "vm_config",
+      "mechanism": "Snapshot can include VM configuration settings.",
+      "conditions": "Snapshot configuration",
+      "mathematical_form": "",
+      "effect": "Preserves configuration state.",
+      "inverse_or_converse": "",
+      "frame_or_context": "state",
+      "scope": "VM snapshot",
+      "source_line_range": [
+        145
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e079",
+      "source": "migration",
+      "relation": "moves",
+      "target": "snapshot",
+      "mechanism": "Migration moves VM snapshot/state to another host hypervisor.",
+      "conditions": "Target host/hypervisor compatible",
+      "mathematical_form": "",
+      "effect": "Allows VM to resume elsewhere.",
+      "inverse_or_converse": "",
+      "frame_or_context": "mobility",
+      "scope": "VM lifecycle",
+      "source_line_range": [
+        151
+      ],
+      "semantic_role": "movement",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e080",
+      "source": "migration",
+      "relation": "requires",
+      "target": "hypervisor",
+      "mechanism": "VM resumes on another host using its hypervisor.",
+      "conditions": "Target virtualization platform",
+      "mathematical_form": "",
+      "effect": "Provides new execution environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "mobility",
+      "scope": "VM migration",
+      "source_line_range": [
+        151
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e081",
+      "source": "live_migration",
+      "relation": "reduces_downtime_of",
+      "target": "migration",
+      "mechanism": "Regularly synchronized snapshots can make migration fast and preserve service with brief interruption.",
+      "conditions": "Snapshots kept synchronized",
+      "mathematical_form": "",
+      "effect": "Supports maintenance without prolonged service interruption.",
+      "inverse_or_converse": "",
+      "frame_or_context": "availability",
+      "scope": "VM migration",
+      "source_line_range": [
+        151
+      ],
+      "semantic_role": "optimization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e082",
+      "source": "failover",
+      "relation": "continues",
+      "target": "virtual_machine",
+      "mechanism": "Failover lets VM continue after host failure from last-known coherent state.",
+      "conditions": "Host failure and backup state available",
+      "mathematical_form": "",
+      "effect": "Provides resilience after host failure.",
+      "inverse_or_converse": "Migration preserves more current state when it succeeds.",
+      "frame_or_context": "resilience",
+      "scope": "VM failover",
+      "source_line_range": [
+        155
+      ],
+      "semantic_role": "recovery",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e083",
+      "source": "backup_server",
+      "relation": "provides",
+      "target": "failover",
+      "mechanism": "Backup server supplies last-known coherent materials used for failover.",
+      "conditions": "Backup material available",
+      "mathematical_form": "",
+      "effect": "Allows VM restart/continuation after failure.",
+      "inverse_or_converse": "",
+      "frame_or_context": "resilience",
+      "scope": "VM failover",
+      "source_line_range": [
+        155
+      ],
+      "semantic_role": "dependency",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e084",
+      "source": "nested_virtualization",
+      "relation": "contains",
+      "target": "nested_hypervisor",
+      "mechanism": "Nested virtualization permits hypervisor(s) inside another hypervisor.",
+      "conditions": "Outer hypervisor supports nesting",
+      "mathematical_form": "",
+      "effect": "Enables VM/hypervisor layers within VM.",
+      "inverse_or_converse": "",
+      "frame_or_context": "virtualization",
+      "scope": "nested virtualization",
+      "source_line_range": [
+        157
+      ],
+      "semantic_role": "composition",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e085",
+      "source": "nested_hypervisor",
+      "relation": "runs_inside",
+      "target": "outer_hypervisor",
+      "mechanism": "Nested hypervisor executes inside outer hypervisor environment.",
+      "conditions": "Nested virtualization enabled",
+      "mathematical_form": "",
+      "effect": "Creates recursive virtualization layers.",
+      "inverse_or_converse": "",
+      "frame_or_context": "virtualization",
+      "scope": "nested virtualization",
+      "source_line_range": [
+        157
+      ],
+      "semantic_role": "containment",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e086",
+      "source": "nested_virtualization",
+      "relation": "depends_on",
+      "target": "hardware_support_nested",
+      "mechanism": "Implementation depends on architecture/hardware support or software techniques.",
+      "conditions": "Architecture constraints",
+      "mathematical_form": "",
+      "effect": "Determines feasibility/performance.",
+      "inverse_or_converse": "Software fallback may be required without hardware support.",
+      "frame_or_context": "implementation",
+      "scope": "nested virtualization",
+      "source_line_range": [
+        162
+      ],
+      "semantic_role": "constraint",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e087",
+      "source": "hardware_support_nested",
+      "relation": "accelerated_by",
+      "target": "vmcs_shadowing",
+      "mechanism": "Intel VMCS shadowing is cited as technology accelerating nested virtualization.",
+      "conditions": "Haswell-era Intel processors",
+      "mathematical_form": "",
+      "effect": "Reduces nested virtualization overhead.",
+      "inverse_or_converse": "",
+      "frame_or_context": "hardware",
+      "scope": "Intel nested virtualization",
+      "source_line_range": [
+        162
+      ],
+      "semantic_role": "optimization",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e088",
+      "source": "virtual_machine",
+      "relation": "supports",
+      "target": "security_isolation",
+      "mechanism": "VMs are frequently used to isolate applications for security.",
+      "conditions": "Security-sensitive workloads",
+      "mathematical_form": "",
+      "effect": "Limits cross-workload compromise propagation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "VM security",
+      "source_line_range": [
+        168
+      ],
+      "semantic_role": "security",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e089",
+      "source": "security_isolation",
+      "relation": "limits",
+      "target": "malware",
+      "mechanism": "VM compartmentalization can prevent malware spread between isolated environments.",
+      "conditions": "Distinct VM domains",
+      "mathematical_form": "",
+      "effect": "A compromised environment is separated from another.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "compartmentalization",
+      "source_line_range": [
+        170
+      ],
+      "semantic_role": "causal",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e090",
+      "source": "qubes",
+      "relation": "uses",
+      "target": "security_isolation",
+      "mechanism": "Qubes OS architecture uses distinct VMs for compartmentalization.",
+      "conditions": "Distinct AppVMs",
+      "mathematical_form": "",
+      "effect": "Separates sensitive workloads.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "Qubes OS",
+      "source_line_range": [
+        167,
+        170
+      ],
+      "semantic_role": "implementation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e091",
+      "source": "appvm1",
+      "relation": "isolates",
+      "target": "appvm2",
+      "mechanism": "Source's Qubes example shows distinct AppVMs separating browser/email from password manager.",
+      "conditions": "Compartmentalized architecture",
+      "mathematical_form": "",
+      "effect": "Reduces direct compromise propagation.",
+      "inverse_or_converse": "",
+      "frame_or_context": "security",
+      "scope": "Qubes example",
+      "source_line_range": [
+        167
+      ],
+      "semantic_role": "isolation",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e092",
+      "source": "docker",
+      "relation": "shares",
+      "target": "linux_kernel",
+      "mechanism": "Docker is an OS-level virtualization example where isolated environments share a kernel.",
+      "conditions": "OS-level virtualization",
+      "mathematical_form": "",
+      "effect": "Connects containers to VM taxonomy.",
+      "inverse_or_converse": "",
+      "frame_or_context": "architecture",
+      "scope": "containerization",
+      "source_line_range": [
+        137
+      ],
+      "semantic_role": "ecosystem_bridge",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e093",
+      "source": "qemu",
+      "relation": "is",
+      "target": "emulator",
+      "mechanism": "QEMU is listed as a VM emulator capable of other architectures.",
+      "conditions": "Emulation use case",
+      "mathematical_form": "",
+      "effect": "Can emulate different CPU/system architectures.",
+      "inverse_or_converse": "",
+      "frame_or_context": "classification",
+      "scope": "emulation",
+      "source_line_range": [
+        76
+      ],
+      "semantic_role": "classification",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e094",
+      "source": "emulator",
+      "relation": "enables",
+      "target": "legacy_os",
+      "mechanism": "Emulation can execute software/OSs written for another CPU architecture.",
+      "conditions": "Architecture mismatch",
+      "mathematical_form": "",
+      "effect": "Extends compatibility across architectures.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compatibility",
+      "scope": "emulation",
+      "source_line_range": [
+        76
+      ],
+      "semantic_role": "capability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e095",
+      "source": "virtual_machine",
+      "relation": "enables",
+      "target": "windows_guest",
+      "mechanism": "VMs allow different operating systems such as Windows to run on one physical computer.",
+      "conditions": "Host supports virtualization",
+      "mathematical_form": "",
+      "effect": "Runs guest OS independently.",
+      "inverse_or_converse": "",
+      "frame_or_context": "use_case",
+      "scope": "system VM",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "capability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e096",
+      "source": "virtual_machine",
+      "relation": "enables",
+      "target": "linux_guest",
+      "mechanism": "VMs allow Linux to run as a guest on physical hardware/host.",
+      "conditions": "System virtualization",
+      "mathematical_form": "",
+      "effect": "Runs Linux guest environment.",
+      "inverse_or_converse": "",
+      "frame_or_context": "use_case",
+      "scope": "system VM",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "capability",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e097",
+      "source": "virtual_machine",
+      "relation": "supports",
+      "target": "legacy_os",
+      "mechanism": "VMs can support future/legacy software by running prior operating systems.",
+      "conditions": "Compatibility requirement",
+      "mathematical_form": "",
+      "effect": "Preserves old software environments.",
+      "inverse_or_converse": "",
+      "frame_or_context": "compatibility",
+      "scope": "system VM",
+      "source_line_range": [
+        86
+      ],
+      "semantic_role": "use",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e098",
+      "source": "embedded_systems",
+      "relation": "can_run",
+      "target": "real_time_os",
+      "mechanism": "VMs can run real-time OS concurrently with complex OS in embedded systems.",
+      "conditions": "Embedded virtualization",
+      "mathematical_form": "",
+      "effect": "Provides mixed OS execution.",
+      "inverse_or_converse": "",
+      "frame_or_context": "use_case",
+      "scope": "embedded systems",
+      "source_line_range": [
+        88
+      ],
+      "semantic_role": "use",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "e099",
+      "source": "virtual_machine",
+      "relation": "supports",
+      "target": "os_development",
+      "mechanism": "VMs provide improved debugging access and faster reboots for OS development.",
+      "conditions": "Development environment",
+      "mathematical_form": "",
+      "effect": "Speeds iterative OS development.",
+      "inverse_or_converse": "",
+      "frame_or_context": "development",
+      "scope": "system VM",
+      "source_line_range": [
+        88
+      ],
+      "semantic_role": "benefit",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p187",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_187",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        187
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p188",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_188",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        188
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p189",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_189",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        189
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p190",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_190",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        190
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p191",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_191",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        191
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p192",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_192",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        192
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p193",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_193",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        193
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p194",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_194",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        194
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p195",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_195",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        195
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p196",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_196",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        196
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p197",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_197",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        197
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p198",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_198",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        198
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p199",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_199",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        199
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p200",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_200",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        200
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p201",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_201",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        201
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p202",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_202",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        202
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p203",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_203",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        203
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p204",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_204",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        204
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p205",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_205",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        205
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p206",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_206",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        206
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p207",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_207",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        207
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p208",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_208",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        208
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p209",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_209",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        209
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p210",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_210",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        210
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p211",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_211",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        211
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p212",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_212",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        212
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p213",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_213",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        213
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p214",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_214",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        214
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p215",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_215",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        215
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p216",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_216",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        216
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p217",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_217",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        217
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p218",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_218",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        218
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p219",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_219",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        219
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p220",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_220",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        220
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p221",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_221",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        221
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p222",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_222",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        222
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p223",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_223",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        223
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "p224",
+      "source": "virtual_machine",
+      "relation": "cites",
+      "target": "ref_224",
+      "mechanism": "Reference listed in the supplied article bibliography.",
+      "conditions": "Source bibliography",
+      "mathematical_form": "",
+      "effect": "Preserves provenance.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        224
+      ],
+      "semantic_role": "provenance",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_1",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_01",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        72,
+        76
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_2",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_02",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        82,
+        90
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_3",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_03",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        96,
+        104
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_4",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_04",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        110,
+        116
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_5",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_05",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        123,
+        133
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_6",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_06",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        135,
+        137
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_7",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_07",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        141,
+        155
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_8",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_08",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        157,
+        162
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "claimedge_9",
+      "source": "virtual_machine",
+      "relation": "supported_by",
+      "target": "claim_09",
+      "mechanism": "Claim is grounded in the supplied source range.",
+      "conditions": "Source text",
+      "mathematical_form": "",
+      "effect": "Preserves source grounding.",
+      "inverse_or_converse": "",
+      "frame_or_context": "provenance",
+      "scope": "source",
+      "source_line_range": [
+        168,
+        170
+      ],
+      "semantic_role": "evidence",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "h1",
+      "source": "ctss",
+      "relation": "influenced",
+      "target": "system_vm",
+      "mechanism": "Time-sharing is described as a root of system VM development.",
+      "conditions": "Historical lineage",
+      "mathematical_form": "",
+      "effect": "Contributed to virtualization model.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "1960s",
+      "source_line_range": [
+        112
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "h2",
+      "source": "ibm_m44x",
+      "relation": "preceded",
+      "target": "cp40",
+      "mechanism": "M44/44X used partial virtualization before CP-40 full virtualization.",
+      "conditions": "Historical IBM systems",
+      "mathematical_form": "",
+      "effect": "Shows progression toward full virtualization.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "IBM",
+      "source_line_range": [
+        112
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "h3",
+      "source": "cp40",
+      "relation": "preceded",
+      "target": "cp67_cms",
+      "mechanism": "CP-40 and CP-67 are early full virtualization systems.",
+      "conditions": "Historical IBM systems",
+      "mathematical_form": "",
+      "effect": "Contributed to widely available VM architecture.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "IBM",
+      "source_line_range": [
+        112
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "h4",
+      "source": "system360",
+      "relation": "enabled",
+      "target": "emulator",
+      "mechanism": "System/360 is cited with early hardware emulation.",
+      "conditions": "1963",
+      "mathematical_form": "",
+      "effect": "Illustrates pre-VM emulation lineage.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "emulation",
+      "source_line_range": [
+        112
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    },
+    {
+      "id": "h5",
+      "source": "smalltalk",
+      "relation": "influenced",
+      "target": "hotspot",
+      "mechanism": "Smalltalk VM innovation helped advance JIT techniques later used commercially in HotSpot.",
+      "conditions": "VM research lineage",
+      "mathematical_form": "",
+      "effect": "Connects research VM techniques to production runtimes.",
+      "inverse_or_converse": "",
+      "frame_or_context": "history",
+      "scope": "JIT",
+      "source_line_range": [
+        116
+      ],
+      "semantic_role": "historical",
+      "related_equation_ids": [],
+      "evidence_type": "source"
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq_system_vm",
+      "name": "System VM abstraction",
+      "expression": "Physical hardware -> Hypervisor -> isolated Guest VM -> Guest OS",
+      "meaning": "System virtualization substitutes for a real machine and permits an entire OS to execute in an isolated environment.",
+      "source_line_range": [
+        74,
+        82
+      ]
+    },
+    {
+      "id": "eq_process_vm",
+      "name": "Process VM abstraction",
+      "expression": "Host OS -> Process VM -> Program",
+      "meaning": "A process VM runs as a normal host application and abstracts the underlying hardware/OS for one process.",
+      "source_line_range": [
+        96,
+        98
+      ]
+    },
+    {
+      "id": "eq_namespace_cgroup",
+      "name": "OS-level virtualization model",
+      "expression": "Shared kernel + isolated resource views + resource limits -> isolated OS environments",
+      "meaning": "OS-level virtualization partitions resources through the kernel while guest environments share the host OS kernel.",
+      "source_line_range": [
+        76,
+        137
+      ]
+    },
+    {
+      "id": "eq_snapshot_restore",
+      "name": "Snapshot restore model",
+      "expression": "VM state(t_snapshot) + overlays_after_snapshot -> discard overlays -> restored state",
+      "meaning": "Restoring a snapshot disregards changes made after the snapshot point and redirects new changes to a new overlay.",
+      "source_line_range": [
+        141,
+        147
+      ]
+    },
+    {
+      "id": "eq_migration",
+      "name": "Migration model",
+      "expression": "VM snapshot/state + target hypervisor -> resumed VM on target host",
+      "meaning": "A VM can be stopped/snapshotted/moved/resumed on another host; synchronized snapshots can reduce interruption.",
+      "source_line_range": [
+        151
+      ]
+    },
+    {
+      "id": "eq_failover",
+      "name": "Failover model",
+      "expression": "Host failure + last coherent backup state -> VM continuation",
+      "meaning": "Failover continues VM operation from the last-known coherent state available to the backup server.",
+      "source_line_range": [
+        155
+      ]
+    },
+    {
+      "id": "eq_nested",
+      "name": "Nested virtualization model",
+      "expression": "Outer hypervisor -> VM -> nested hypervisor -> nested guest VM",
+      "meaning": "Nested virtualization recursively places hypervisors/VMs inside another virtualization layer.",
+      "source_line_range": [
+        157,
+        162
+      ]
+    },
+    {
+      "id": "eq_process_vm_lifecycle",
+      "name": "Process VM lifecycle",
+      "expression": "Process start -> VM creation; process close -> VM deletion",
+      "meaning": "The process VM exists for the lifetime of its associated process.",
+      "source_line_range": [
+        96
+      ]
+    },
+    {
+      "id": "eq_ksm",
+      "name": "Same-page memory sharing",
+      "expression": "Identical read-only VM pages -> one physical page",
+      "meaning": "KSM can merge identical pages to improve physical-memory efficiency.",
+      "source_line_range": [
+        86
+      ]
+    },
+    {
+      "id": "eq_full_virtualization",
+      "name": "Full virtualization condition",
+      "expression": "Simulated hardware sufficient for unmodified guest OS",
+      "meaning": "Full virtualization permits an unmodified guest OS designed for the same instruction set to run in isolation.",
+      "source_line_range": [
+        123
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_01",
+      "source_line_range": [
+        72,
+        76
+      ],
+      "claim": "A VM virtualizes or emulates a computer system; system VMs execute whole OSs while process VMs execute programs in platform-independent environments.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_02",
+      "source_line_range": [
+        82,
+        90
+      ],
+      "claim": "System VM architecture includes host/guest terminology, historical time-sharing motivations, memory sharing, embedded uses, sandboxing and server consolidation.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_03",
+      "source_line_range": [
+        96,
+        104
+      ],
+      "claim": "Process VMs are host applications supporting one process and provide platform-independent programming environments; cluster-oriented variants abstract communication.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_04",
+      "source_line_range": [
+        110,
+        116
+      ],
+      "claim": "VM history spans 1960s time-sharing, IBM systems, compiler intermediate representations, p-code, Smalltalk, JIT, Self, HotSpot and register-based VMs.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_05",
+      "source_line_range": [
+        123,
+        133
+      ],
+      "claim": "Full virtualization and hardware-assisted virtualization are distinct techniques with IBM, Intel and AMD historical milestones and many implementation examples.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_06",
+      "source_line_range": [
+        135,
+        137
+      ],
+      "claim": "OS-level virtualization partitions resources through the kernel, shares the host OS kernel and includes Docker and container technologies.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_07",
+      "source_line_range": [
+        141,
+        155
+      ],
+      "claim": "Snapshots capture VM state/storage; overlays form a coherent virtual disk; migration moves VM state; failover uses last-known coherent backup state.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_08",
+      "source_line_range": [
+        157,
+        162
+      ],
+      "claim": "Nested virtualization recursively runs hypervisors/VMs and may rely on hardware support such as VMCS shadowing.",
+      "evidence_type": "source_text"
+    },
+    {
+      "id": "claim_09",
+      "source_line_range": [
+        168,
+        170
+      ],
+      "claim": "VMs are used for security isolation and compartmentalization architectures can limit malware spread.",
+      "evidence_type": "source_text"
+    }
+  ],
+  "people": [
+    {
+      "id": "popek",
+      "name": "Gerald J. Popek",
+      "role": "researcher",
+      "description": "Co-author of the formal virtualization requirements work cited by the source."
+    },
+    {
+      "id": "goldberg",
+      "name": "Robert P. Goldberg",
+      "role": "researcher",
+      "description": "Co-author of the formal virtualization requirements work cited by the source."
+    },
+    {
+      "id": "michael_scott",
+      "name": "Michael L. Scott",
+      "role": "author",
+      "description": "Author cited in process-VM/runtime reference."
+    },
+    {
+      "id": "adele_goldberg",
+      "name": "Adele Goldberg",
+      "role": "researcher",
+      "description": "Smalltalk-80 author cited in source references."
+    },
+    {
+      "id": "david_robson",
+      "name": "David Robson",
+      "role": "researcher",
+      "description": "Smalltalk-80 author cited in source references."
+    },
+    {
+      "id": "peter_deutsch",
+      "name": "L. Peter Deutsch",
+      "role": "researcher",
+      "description": "JIT implementation researcher cited by source."
+    },
+    {
+      "id": "allan_schiffman",
+      "name": "Allan M. Schiffman",
+      "role": "researcher",
+      "description": "Smalltalk-80 implementation researcher cited by source."
+    },
+    {
+      "id": "alan_kay",
+      "name": "Alan Kay",
+      "role": "researcher",
+      "description": "Self/Smalltalk lineage researcher cited in source references."
+    },
+    {
+      "id": "urs_holzle",
+      "name": "Urs Hölzle",
+      "role": "researcher",
+      "description": "Adaptive optimization/JIT researcher cited in source references."
+    },
+    {
+      "id": "david_unger",
+      "name": "David Ungar",
+      "role": "researcher",
+      "description": "Self language and optimization researcher cited in source references."
+    }
+  ],
+  "historical_events": [
+    {
+      "id": "event_1960s",
+      "date": "1960s",
+      "event": "System and process virtual machines date to the 1960s; system VMs grew from time-sharing.",
+      "source_line_range": [
+        110,
+        112
+      ]
+    },
+    {
+      "id": "event_1966_cp40",
+      "date": "1966",
+      "event": "IBM CP-40 and CP-67 are identified with early/full virtualization.",
+      "source_line_range": [
+        112,
+        123
+      ]
+    },
+    {
+      "id": "event_1972_vm370",
+      "date": "1972",
+      "event": "Hardware-assisted virtualization was introduced on IBM System/370 for VM/370.",
+      "source_line_range": [
+        129
+      ]
+    },
+    {
+      "id": "event_1970s_pcode",
+      "date": "1970s",
+      "event": "Pascal p-code systems popularized process virtual machines.",
+      "source_line_range": [
+        114
+      ]
+    },
+    {
+      "id": "event_1980s_smalltalk",
+      "date": "1980s",
+      "event": "Smalltalk-80 VM work advanced JIT compilation.",
+      "source_line_range": [
+        116
+      ]
+    },
+    {
+      "id": "event_1999_hotspot",
+      "date": "1999",
+      "event": "Java HotSpot incorporated successful VM optimization techniques.",
+      "source_line_range": [
+        116
+      ]
+    },
+    {
+      "id": "event_2005_hw",
+      "date": "2005-2006",
+      "event": "Intel and AMD added additional hardware virtualization support.",
+      "source_line_range": [
+        131
+      ]
+    },
+    {
+      "id": "event_2013_nested",
+      "date": "2013",
+      "event": "Intel Haswell-era VMCS shadowing is cited as accelerating nested virtualization.",
+      "source_line_range": [
+        162
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "name": "System VM vs Process VM",
+      "description": "System VM provides a whole machine/guest OS abstraction; process VM supports a program/process abstraction.",
+      "relationship_ids": [
+        "e001",
+        "e002"
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "Host vs Guest",
+      "description": "Host is the physical machine; guest is the virtual environment executing on it.",
+      "relationship_ids": [
+        "e005"
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "Full vs Hardware-Assisted Virtualization",
+      "description": "Full virtualization describes the guest-facing virtualization behavior; hardware-assisted virtualization describes architectural support that facilitates the VMM.",
+      "relationship_ids": [
+        "e009",
+        "e008"
+      ]
+    },
+    {
+      "id": "d4",
+      "name": "System VM vs OS-level Virtualization",
+      "description": "System VM can execute a complete guest OS; OS-level environments share the host OS kernel.",
+      "relationship_ids": [
+        "e003",
+        "e011"
+      ]
+    },
+    {
+      "id": "d5",
+      "name": "VM vs Virtual Memory",
+      "description": "Virtual memory abstracts memory; system virtualization generalizes machine abstraction and can include privileged instruction handling.",
+      "relationship_ids": [
+        "e015"
+      ]
+    },
+    {
+      "id": "d6",
+      "name": "Snapshot vs Backup",
+      "description": "Snapshot is a point-in-time VM state; failover may use backup-server material representing a last coherent state.",
+      "relationship_ids": [
+        "e070",
+        "e082"
+      ]
+    },
+    {
+      "id": "d7",
+      "name": "Migration vs Failover",
+      "description": "Migration deliberately moves a VM to another host; failover continues after host failure using last-known coherent state.",
+      "relationship_ids": [
+        "e079",
+        "e082"
+      ]
+    },
+    {
+      "id": "d8",
+      "name": "Namespace-style isolation vs VM isolation",
+      "description": "OS-level virtualization shares a kernel; system VMs isolate through separate guest environments.",
+      "relationship_ids": [
+        "e011",
+        "e007"
+      ]
+    },
+    {
+      "id": "d9",
+      "name": "Process VM vs Interpreter",
+      "description": "A process VM is the runtime abstraction; an interpreter is one implementation mechanism.",
+      "relationship_ids": [
+        "e027",
+        "e032"
+      ]
+    },
+    {
+      "id": "d10",
+      "name": "JIT vs Interpreter",
+      "description": "JIT is an optimization/compilation technique that can improve process-VM performance; interpreter is an execution mechanism.",
+      "relationship_ids": [
+        "e032",
+        "e033"
+      ]
+    },
+    {
+      "id": "d11",
+      "name": "Nested vs ordinary virtualization",
+      "description": "Nested virtualization places a hypervisor inside another hypervisor; ordinary system virtualization does not require recursive layers.",
+      "relationship_ids": [
+        "e084",
+        "e085"
+      ]
+    },
+    {
+      "id": "d12",
+      "name": "KSM vs memory overcommitment",
+      "description": "KSM merges identical pages; memory overcommitment is the broader memory-sharing/resource-management context.",
+      "relationship_ids": [
+        "e023",
+        "e024"
+      ]
+    },
+    {
+      "id": "d13",
+      "name": "Virtual disk vs snapshot overlay",
+      "description": "Virtual disk is the VM storage abstraction; overlay is a snapshot layer storing subsequent changes.",
+      "relationship_ids": [
+        "e071",
+        "e073"
+      ]
+    },
+    {
+      "id": "d14",
+      "name": "Guest OS vs host OS",
+      "description": "Guest OS executes inside VM; host OS is the surrounding OS when applicable.",
+      "relationship_ids": [
+        "e026"
+      ]
+    },
+    {
+      "id": "d15",
+      "name": "Isolation vs Portability",
+      "description": "Isolation separates execution environments; process VMs use abstraction to provide platform independence.",
+      "relationship_ids": [
+        "e007",
+        "e030"
+      ]
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "name": "VM Fundamentals",
+      "sequence": [
+        "virtual_machine",
+        "system_vm",
+        "process_vm",
+        "host",
+        "guest",
+        "hypervisor"
+      ]
+    },
+    {
+      "id": "lp2",
+      "name": "System Virtualization",
+      "sequence": [
+        "system_vm",
+        "hypervisor",
+        "guest_os",
+        "full_virtualization",
+        "hardware_assisted"
+      ]
+    },
+    {
+      "id": "lp3",
+      "name": "OS-level Virtualization",
+      "sequence": [
+        "os_level_virtualization",
+        "host_os",
+        "linux_kernel",
+        "docker",
+        "freebsd_jails"
+      ]
+    },
+    {
+      "id": "lp4",
+      "name": "Process VMs",
+      "sequence": [
+        "process_vm",
+        "interpreter",
+        "jit",
+        "jvm",
+        "java",
+        "dotnet_clr"
+      ]
+    },
+    {
+      "id": "lp5",
+      "name": "Compiler/VM History",
+      "sequence": [
+        "intermediate_representation",
+        "ocode",
+        "p_code",
+        "p_code_machine",
+        "pascal",
+        "back_end"
+      ]
+    },
+    {
+      "id": "lp6",
+      "name": "VM Memory",
+      "sequence": [
+        "memory_overcommitment",
+        "ksm",
+        "read_only_page",
+        "virtual_memory"
+      ]
+    },
+    {
+      "id": "lp7",
+      "name": "Snapshots",
+      "sequence": [
+        "snapshot",
+        "virtual_disk",
+        "overlay_layer",
+        "snapshot_stack",
+        "restore"
+      ]
+    },
+    {
+      "id": "lp8",
+      "name": "Mobility and Resilience",
+      "sequence": [
+        "migration",
+        "live_migration",
+        "failover",
+        "backup_server"
+      ]
+    },
+    {
+      "id": "lp9",
+      "name": "Nested Virtualization",
+      "sequence": [
+        "nested_virtualization",
+        "outer_hypervisor",
+        "nested_hypervisor",
+        "hardware_support_nested",
+        "vmcs_shadowing"
+      ]
+    },
+    {
+      "id": "lp10",
+      "name": "VM Security",
+      "sequence": [
+        "security_isolation",
+        "malware",
+        "qubes",
+        "appvm1",
+        "appvm2"
+      ]
+    },
+    {
+      "id": "lp11",
+      "name": "Virtualization History",
+      "sequence": [
+        "ctss",
+        "ibm_m44x",
+        "cp40",
+        "cp67_cms",
+        "system370",
+        "vm370"
+      ]
+    },
+    {
+      "id": "lp12",
+      "name": "VM Ecosystem",
+      "sequence": [
+        "qemu",
+        "kvm",
+        "hyperv",
+        "xen",
+        "virtualbox",
+        "vmware_esxi",
+        "docker"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "m1",
+      "misconception": "A virtual machine always means a full guest operating system.",
+      "correction": "Process VMs execute a single program/process and can exist entirely as a host-OS application.",
+      "supporting_relationships": [
+        "e002",
+        "e027"
+      ]
+    },
+    {
+      "id": "m2",
+      "misconception": "System VMs and process VMs are the same abstraction.",
+      "correction": "They operate at different abstraction levels: whole-machine/OS versus program/process.",
+      "supporting_relationships": [
+        "e001",
+        "e002"
+      ]
+    },
+    {
+      "id": "m3",
+      "misconception": "OS-level virtualization creates a separate kernel for every guest.",
+      "correction": "The source says OS-level guest environments share the host OS kernel.",
+      "supporting_relationships": [
+        "e011",
+        "e069"
+      ]
+    },
+    {
+      "id": "m4",
+      "misconception": "Full virtualization requires modifying the guest OS.",
+      "correction": "The source defines full virtualization as sufficient simulated hardware for an unmodified guest OS.",
+      "supporting_relationships": [
+        "e009"
+      ]
+    },
+    {
+      "id": "m5",
+      "misconception": "Hardware-assisted virtualization is the same thing as full virtualization.",
+      "correction": "Hardware assistance describes architectural support for the VMM; full virtualization describes the guest-visible virtualization model.",
+      "supporting_relationships": [
+        "e003",
+        "e008",
+        "e009"
+      ]
+    },
+    {
+      "id": "m6",
+      "misconception": "A snapshot is just a backup copy of one disk file.",
+      "correction": "Snapshots can include VM storage and other state such as RAM, BIOS and configuration.",
+      "supporting_relationships": [
+        "e070",
+        "e076",
+        "e077",
+        "e078"
+      ]
+    },
+    {
+      "id": "m7",
+      "misconception": "Migration and failover are identical.",
+      "correction": "Migration intentionally moves state; failover responds to host failure from last coherent backup state.",
+      "supporting_relationships": [
+        "e079",
+        "e082"
+      ]
+    },
+    {
+      "id": "m8",
+      "misconception": "Nested virtualization means running containers inside containers.",
+      "correction": "The source defines it as running VMs/hypervisors inside another virtualization layer.",
+      "supporting_relationships": [
+        "e084",
+        "e085"
+      ]
+    },
+    {
+      "id": "m9",
+      "misconception": "Process VMs cannot use JIT compilation.",
+      "correction": "The source explicitly identifies JIT as an implementation/performance technique for process VMs.",
+      "supporting_relationships": [
+        "e032",
+        "e033"
+      ]
+    },
+    {
+      "id": "m10",
+      "misconception": "VMs always hide distributed communication in cluster environments.",
+      "correction": "The source states cluster-oriented process VMs do not hide that communication takes place.",
+      "supporting_relationships": [
+        "e038",
+        "e041"
+      ]
+    },
+    {
+      "id": "m11",
+      "misconception": "KSM and memory overcommitment are identical.",
+      "correction": "KSM is a specific page-merging mechanism within broader memory sharing/overcommitment.",
+      "supporting_relationships": [
+        "e023",
+        "e024"
+      ]
+    },
+    {
+      "id": "m12",
+      "misconception": "Docker is unrelated to virtualization.",
+      "correction": "The source explicitly classifies Docker as an OS-level virtualization example.",
+      "supporting_relationships": [
+        "e013"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_01",
+      "question": "How does a system VM differ from a process VM?"
+    },
+    {
+      "id": "q_02",
+      "question": "How does a hypervisor share hardware among isolated guests?"
+    },
+    {
+      "id": "q_03",
+      "question": "Why can a guest OS differ from the host OS?"
+    },
+    {
+      "id": "q_04",
+      "question": "How does OS-level virtualization differ from system virtualization?"
+    },
+    {
+      "id": "q_05",
+      "question": "How do namespaces/kernel partitioning relate conceptually to containers?"
+    },
+    {
+      "id": "q_06",
+      "question": "How do interpreters and JIT compilation implement process VMs?"
+    },
+    {
+      "id": "q_07",
+      "question": "How did compiler intermediate representations lead to process VM designs?"
+    },
+    {
+      "id": "q_08",
+      "question": "How do snapshots represent VM state and storage?"
+    },
+    {
+      "id": "q_09",
+      "question": "How does snapshot overlay structure support restore?"
+    },
+    {
+      "id": "q_10",
+      "question": "How does migration differ from failover?"
+    },
+    {
+      "id": "q_11",
+      "question": "How does nested virtualization work?"
+    },
+    {
+      "id": "q_12",
+      "question": "Why does nested virtualization benefit from hardware support such as VMCS shadowing?"
+    },
+    {
+      "id": "q_13",
+      "question": "How do VMs provide security compartmentalization?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "exp_01",
+      "topic": "Formal virtualization requirements and Popek–Goldberg model"
+    },
+    {
+      "id": "exp_02",
+      "topic": "Hypervisor architecture: Type 1 vs Type 2"
+    },
+    {
+      "id": "exp_03",
+      "topic": "CPU privilege rings, traps and sensitive instructions"
+    },
+    {
+      "id": "exp_04",
+      "topic": "Hardware virtualization extensions and VM exits"
+    },
+    {
+      "id": "exp_05",
+      "topic": "Memory virtualization, shadow page tables and nested paging"
+    },
+    {
+      "id": "exp_06",
+      "topic": "I/O virtualization and device emulation"
+    },
+    {
+      "id": "exp_07",
+      "topic": "VM networking and virtual switches"
+    },
+    {
+      "id": "exp_08",
+      "topic": "VM storage and copy-on-write internals"
+    },
+    {
+      "id": "exp_09",
+      "topic": "Snapshot consistency and crash-consistent application state"
+    },
+    {
+      "id": "exp_10",
+      "topic": "Live migration pre-copy/post-copy techniques"
+    },
+    {
+      "id": "exp_11",
+      "topic": "VM failover and distributed state replication"
+    },
+    {
+      "id": "exp_12",
+      "topic": "Nested virtualization performance and security"
+    },
+    {
+      "id": "exp_13",
+      "topic": "Containers vs VMs vs microVMs"
+    },
+    {
+      "id": "exp_14",
+      "topic": "Process VM/JIT architecture in modern runtimes"
+    },
+    {
+      "id": "exp_15",
+      "topic": "Security boundaries and VM escape threats"
+    }
+  ],
+  "why_it_matters": {
+    "core_problem": "Provide abstractions that let software execute as though it has a dedicated computer or portable execution environment while sharing physical computing resources.",
+    "central_model": "Physical hardware -> virtualization layer -> isolated system VM/guest OS OR host OS -> process VM -> portable program.",
+    "value_propositions": [
+      "hardware sharing",
+      "isolation",
+      "OS compatibility",
+      "platform independence",
+      "server consolidation",
+      "sandboxing",
+      "embedded mixed-OS execution",
+      "software portability",
+      "snapshot/restore",
+      "migration",
+      "failover",
+      "nested virtualization",
+      "security compartmentalization"
+    ],
+    "central_insight": "Virtual machines are not one single mechanism. The source distinguishes whole-system virtualization from process-level runtime virtualization and OS-level virtualization, then connects them to hardware assistance, compiler/runtime abstraction, state capture, mobility, resilience and security."
+  },
+  "validation": {
+    "duplicate_node_ids": false,
+    "duplicate_relationship_ids": false,
+    "orphan_relationship_endpoints": [],
+    "relationships_missing_semantic_fields": [],
+    "unique_source_claim_ids": true,
+    "unique_equation_ids": true,
+    "clean": true
+  }
+}
