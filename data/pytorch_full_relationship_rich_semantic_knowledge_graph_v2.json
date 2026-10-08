@@ -1,0 +1,3002 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "graph_type": "dynamic_educational_knowledge_graph",
+  "topic": "PyTorch",
+  "source": {
+    "filename": "Pasted text(20261008-053839).txt",
+    "path": "/mnt/data/Pasted text(20261008-053839).txt",
+    "line_count": 220,
+    "authority": "user_supplied_source",
+    "external_research_used": false,
+    "note": "Graph preserves source-derived claims and labels deeper expansion targets separately rather than presenting them as source facts."
+  },
+  "nodes": [
+    {
+      "id": "pytorch",
+      "label": "PyTorch",
+      "type": "library",
+      "description": "Open-source deep learning library providing high-level APIs over optimized low-level deep-learning algorithms and architectures.",
+      "source_line_ranges": [
+        92,
+        96
+      ]
+    },
+    {
+      "id": "meta_ai",
+      "label": "Meta AI",
+      "type": "organization",
+      "description": "Organization that originally developed and operated PyTorch.",
+      "source_line_ranges": [
+        47,
+        92,
+        101
+      ]
+    },
+    {
+      "id": "linux_foundation",
+      "label": "Linux Foundation",
+      "type": "organization",
+      "description": "Foundation associated with current independent governance/support of PyTorch.",
+      "source_line_ranges": [
+        92,
+        101
+      ]
+    },
+    {
+      "id": "pytorch_foundation",
+      "label": "PyTorch Foundation",
+      "type": "organization",
+      "description": "Independent foundation announced by Meta for PyTorch governance under the Linux Foundation.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "gregory_chanan",
+      "label": "Gregory Chanan",
+      "type": "person",
+      "description": "Original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "soumith_chintala",
+      "label": "Soumith Chintala",
+      "type": "person",
+      "description": "Original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "sam_gross",
+      "label": "Sam Gross",
+      "type": "person",
+      "description": "Original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "adam_paszke",
+      "label": "Adam Paszke",
+      "type": "person",
+      "description": "Original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "release_2016",
+      "label": "PyTorch September 2016 release",
+      "type": "historical_event",
+      "description": "Initial PyTorch release timeframe given by the source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "foundation_2022",
+      "label": "PyTorch independent foundation transition",
+      "type": "historical_event",
+      "description": "Meta announced independent PyTorch Foundation governance in September 2022.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "pytorch_2_0",
+      "label": "PyTorch 2.0 release",
+      "type": "historical_event",
+      "description": "PyTorch 2.0 released March 15, 2023 and introduced TorchDynamo.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "stable_2_14_1",
+      "label": "PyTorch 2.14.1",
+      "type": "release",
+      "description": "Stable release identified by the source as September 30, 2026.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "bsd3",
+      "label": "BSD-3-Clause license",
+      "type": "license",
+      "description": "License identified for PyTorch by the source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "pytorch_org",
+      "label": "pytorch.org",
+      "type": "resource",
+      "description": "Official PyTorch website named by the source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "pytorch_github",
+      "label": "PyTorch GitHub repository",
+      "type": "resource",
+      "description": "GitHub development repository identified by the source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "type": "programming_language",
+      "description": "Primary high-level language used by the PyTorch API.",
+      "source_line_ranges": [
+        47,
+        92
+      ]
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "type": "programming_language",
+      "description": "Low-level implementation language used within PyTorch.",
+      "source_line_ranges": [
+        47,
+        92
+      ]
+    },
+    {
+      "id": "cuda",
+      "label": "CUDA",
+      "type": "gpu_platform",
+      "description": "NVIDIA GPU programming and acceleration platform used by PyTorch.",
+      "source_line_ranges": [
+        47,
+        92,
+        107
+      ]
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "type": "library",
+      "description": "Python numerical array library whose array/tensor model is a major point of comparison for PyTorch.",
+      "source_line_ranges": [
+        94,
+        107
+      ]
+    },
+    {
+      "id": "rocm",
+      "label": "AMD ROCm",
+      "type": "gpu_platform",
+      "description": "Alternative GPU platform supported by PyTorch tensors.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "metal",
+      "label": "Apple Metal",
+      "type": "gpu_platform",
+      "description": "Apple GPU backend/platform supported by PyTorch.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "type": "operating_system",
+      "description": "Supported operating system.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "macos",
+      "label": "macOS",
+      "type": "operating_system",
+      "description": "Supported operating system.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "windows",
+      "label": "Windows",
+      "type": "operating_system",
+      "description": "Supported operating system.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "ia32",
+      "label": "IA-32",
+      "type": "architecture",
+      "description": "Supported platform architecture.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "x86_64",
+      "label": "x86-64",
+      "type": "architecture",
+      "description": "Supported platform architecture.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "arm64",
+      "label": "ARM64",
+      "type": "architecture",
+      "description": "Supported platform architecture.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "id": "aten",
+      "label": "ATen",
+      "type": "implementation_layer",
+      "description": "Conceptual low-level tensor/operator implementation layer for deeper PyTorch expansion.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "pytorch_runtime",
+      "label": "PyTorch runtime",
+      "type": "runtime",
+      "description": "Runtime layer that coordinates tensor execution, devices, memory and execution services.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "cpp_frontend",
+      "label": "PyTorch C++ frontend",
+      "type": "api",
+      "description": "C++ interface for using PyTorch functionality outside the Python frontend.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "python_api",
+      "label": "PyTorch Python API",
+      "type": "api",
+      "description": "High-level Python-facing API through which users construct tensors, models and training programs.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "cuda_bindings",
+      "label": "internal CUDA bindings",
+      "type": "binding",
+      "description": "Bindings connecting PyTorch operations to CUDA acceleration.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "tensor",
+      "label": "torch.Tensor",
+      "type": "data_structure",
+      "description": "Fundamental PyTorch type: homogeneous multidimensional rectangular numeric array.",
+      "source_line_ranges": [
+        94,
+        107
+      ]
+    },
+    {
+      "id": "cuda_tensor",
+      "label": "CUDA tensor",
+      "type": "data_structure",
+      "description": "Tensor whose operations can execute on CUDA-capable NVIDIA GPUs.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "dtype",
+      "label": "tensor dtype",
+      "type": "type_system",
+      "description": "Numeric element type associated with tensors.",
+      "source_line_ranges": [
+        119,
+        146
+      ]
+    },
+    {
+      "id": "device",
+      "label": "torch.device",
+      "type": "api_object",
+      "description": "Object/value used to select execution device such as CPU or cuda:0.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "cpu_device",
+      "label": "CPU device",
+      "type": "hardware",
+      "description": "CPU execution target.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "gpu_device",
+      "label": "GPU device",
+      "type": "hardware",
+      "description": "GPU execution target for accelerated tensor operations.",
+      "source_line_ranges": [
+        107,
+        119
+      ]
+    },
+    {
+      "id": "cuda0",
+      "label": "cuda:0",
+      "type": "device",
+      "description": "Example CUDA device selector used in the source.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "randn",
+      "label": "torch.randn",
+      "type": "operation",
+      "description": "Tensor creation operation used in the source examples.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "multiply",
+      "label": "tensor multiplication",
+      "type": "operation",
+      "description": "Elementwise/tensor multiplication example operation.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "sum",
+      "label": "tensor sum",
+      "type": "operation",
+      "description": "Reduction operation used in the source example.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "indexing",
+      "label": "tensor indexing",
+      "type": "operation",
+      "description": "Tensor indexing operation used in the examples.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "max",
+      "label": "tensor max",
+      "type": "operation",
+      "description": "Maximum-value operation used in the source example.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "autograd",
+      "label": "Autograd",
+      "type": "automatic_differentiation",
+      "description": "PyTorch automatic differentiation system that records operations in a DAG during forward computation.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "computation_dag",
+      "label": "computation DAG",
+      "type": "formal_model",
+      "description": "Directed acyclic graph of operations and arguments constructed by Autograd.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "forward_pass",
+      "label": "forward pass",
+      "type": "training_stage",
+      "description": "Forward computation during which Autograd records operations.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "loss",
+      "label": "loss",
+      "type": "training_concept",
+      "description": "Objective quantity whose gradient drives parameter updates during backpropagation.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "backpropagation",
+      "label": "backpropagation",
+      "type": "algorithm",
+      "description": "Backward gradient propagation through the recorded computation graph.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "gradient",
+      "label": "gradient",
+      "type": "mathematical_object",
+      "description": "Derivative information propagated by automatic differentiation.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "sgd",
+      "label": "stochastic gradient descent",
+      "type": "algorithm",
+      "description": "Optimized low-level deep-learning algorithm explicitly named as supported by PyTorch.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "transformer",
+      "label": "Transformer",
+      "type": "architecture",
+      "description": "Deep-learning architecture explicitly named as supported by PyTorch.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "deep_learning",
+      "label": "deep learning",
+      "type": "field",
+      "description": "Primary machine-learning domain served by PyTorch.",
+      "source_line_ranges": [
+        47,
+        92
+      ]
+    },
+    {
+      "id": "neural_network",
+      "label": "neural network",
+      "type": "model",
+      "description": "Trainable computational model represented with PyTorch modules.",
+      "source_line_ranges": [
+        111
+      ]
+    },
+    {
+      "id": "training",
+      "label": "model training",
+      "type": "workflow",
+      "description": "Optimization workflow that uses forward computation, loss and gradient-based updates.",
+      "source_line_ranges": [
+        92,
+        94
+      ]
+    },
+    {
+      "id": "inference",
+      "label": "model inference",
+      "type": "workflow",
+      "description": "Execution of a trained model for prediction or other output.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "automatic_parallelization",
+      "label": "automatic parallelization",
+      "type": "capability",
+      "description": "PyTorch capability described by the source as simplifying parallel execution.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "nn",
+      "label": "torch.nn",
+      "type": "module",
+      "description": "PyTorch module describing neural networks and training with layers and activations.",
+      "source_line_ranges": [
+        111
+      ]
+    },
+    {
+      "id": "nn_module",
+      "label": "nn.Module",
+      "type": "class",
+      "description": "Base class used to construct neural networks by defining a forward method.",
+      "source_line_ranges": [
+        111,
+        147
+      ]
+    },
+    {
+      "id": "nn_linear",
+      "label": "nn.Linear",
+      "type": "layer",
+      "description": "Linear layer used in the source neural-network example.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "id": "nn_relu",
+      "label": "nn.ReLU",
+      "type": "activation",
+      "description": "ReLU activation used in the source neural-network example.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "id": "nn_flatten",
+      "label": "nn.Flatten",
+      "type": "layer",
+      "description": "Flatten layer used in the source neural-network example.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "id": "nn_sequential",
+      "label": "nn.Sequential",
+      "type": "container",
+      "description": "Sequential module used to compose layers in the source example.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "id": "logits",
+      "label": "logits",
+      "type": "model_output",
+      "description": "Raw model outputs returned by the example network's forward method.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "id": "serialization",
+      "label": "PyTorch model serialization",
+      "type": "persistence",
+      "description": "Mechanism for storing model weights and metadata.",
+      "source_line_ranges": [
+        113,
+        114
+      ]
+    },
+    {
+      "id": "zip64",
+      "label": "ZIP64 archive",
+      "type": "file_format",
+      "description": "Archive format used by PyTorch serialization according to the source.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "pickle",
+      "label": "Python pickle",
+      "type": "serialization_format",
+      "description": "Python serialization mechanism used for model weights in the described format.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "byte_order_metadata",
+      "label": "byte-order metadata",
+      "type": "metadata",
+      "description": "Metadata stored alongside serialized model data.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "model_weights",
+      "label": "model weights",
+      "type": "model_artifact",
+      "description": "Learned parameter values persisted by model serialization.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "pt_extension",
+      "label": ".pt",
+      "type": "file_extension",
+      "description": "Common PyTorch model file extension identified by the source.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "pth_extension",
+      "label": ".pth",
+      "type": "file_extension",
+      "description": "Common PyTorch model file extension identified by the source.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "onnx",
+      "label": "ONNX",
+      "type": "interchange_format",
+      "description": "Open model interchange effort created to decouple frameworks from hardware-specific runtimes and enable conversion/optimization.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "microsoft",
+      "label": "Microsoft",
+      "type": "organization",
+      "description": "Organization involved with Meta in creation of ONNX.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "tensorrt",
+      "label": "NVIDIA TensorRT",
+      "type": "inference_runtime",
+      "description": "Hardware/provider-oriented runtime named as an ONNX conversion/optimization target.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "torch",
+      "label": "Torch",
+      "type": "framework",
+      "description": "Predecessor framework from which PyTorch evolved.",
+      "source_line_ranges": [
+        92,
+        98
+      ]
+    },
+    {
+      "id": "idiap",
+      "label": "IDIAP",
+      "type": "organization",
+      "description": "Organization associated with the original Torch work in 2001.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "torch2001",
+      "label": "Torch 2001",
+      "type": "historical_event",
+      "description": "Original Torch development around 2001.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "torch7",
+      "label": "Torch7",
+      "type": "framework",
+      "description": "Later Torch/Lua implementation lineage around 2010.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "luatorch",
+      "label": "LuaTorch",
+      "type": "framework",
+      "description": "Lua-facing Torch7 implementation/frontend.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "lua",
+      "label": "Lua",
+      "type": "programming_language",
+      "description": "Language used as the frontend for Torch7/LuaTorch.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "torch_backend_cpp",
+      "label": "Torch C++ backend",
+      "type": "implementation_layer",
+      "description": "C++ backend of Torch7/LuaTorch.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "torch_cuda",
+      "label": "Torch CUDA",
+      "type": "gpu_backend",
+      "description": "CUDA component/backend in the Torch ecosystem.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "ronan_collobert",
+      "label": "Ronan Collobert",
+      "type": "person",
+      "description": "Contributor named in the Torch7 rewrite.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "clement_farabet",
+      "label": "Clement Farabet",
+      "type": "person",
+      "description": "Contributor named in the Torch7 rewrite.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "koray_kavukcuoglu",
+      "label": "Koray Kavukcuoglu",
+      "type": "person",
+      "description": "Contributor named in the Torch7 rewrite.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "torch_autograd",
+      "label": "torch-autograd",
+      "type": "project",
+      "description": "Autodifferentiation project that influenced PyTorch's design.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "hips_autograd",
+      "label": "HIPS/autograd",
+      "type": "project",
+      "description": "Automatic differentiation project that influenced torch-autograd.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "chainer",
+      "label": "Chainer",
+      "type": "framework",
+      "description": "Framework whose design influenced the PyTorch refactoring.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "caffe2",
+      "label": "Caffe2",
+      "type": "framework",
+      "description": "Meta deep-learning framework later merged into PyTorch.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "caffe2_merge",
+      "label": "Caffe2 merge into PyTorch",
+      "type": "historical_event",
+      "description": "Caffe2 was merged into PyTorch at the end of March 2018.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "torch7_end",
+      "label": "Torch7 end/subsumption",
+      "type": "historical_event",
+      "description": "Torch7 ceased as a separate framework in 2018 and was subsumed by PyTorch.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "torchdynamo",
+      "label": "TorchDynamo",
+      "type": "compiler",
+      "description": "Python-level compiler introduced with PyTorch 2.0.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "torch_compile",
+      "label": "torch.compile",
+      "type": "compiler_api",
+      "description": "Higher-level compilation path associated with the modern PyTorch compiler stack.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "graph_capture",
+      "label": "graph capture",
+      "type": "compiler_stage",
+      "description": "Capturing Python/model execution into a form suitable for compilation.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "optimized_execution",
+      "label": "optimized execution",
+      "type": "execution_mode",
+      "description": "Compiled/optimized execution mode for PyTorch workloads.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "tensorflow",
+      "label": "TensorFlow",
+      "type": "framework",
+      "description": "Alternative deep-learning framework commonly used alongside PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "keras",
+      "label": "Keras",
+      "type": "framework",
+      "description": "High-level deep-learning framework named alongside PyTorch and TensorFlow.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "anaconda",
+      "label": "Anaconda",
+      "type": "distribution",
+      "description": "Distribution through which PyTorch is installable.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "chatgpt",
+      "label": "ChatGPT",
+      "type": "application",
+      "description": "Commercial AI system named by the source as built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "tesla_autopilot",
+      "label": "Tesla Autopilot",
+      "type": "application",
+      "description": "Commercial/autonomous-driving system named by the source as built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "uber_pyro",
+      "label": "Uber Pyro",
+      "type": "application",
+      "description": "Commercial system named by the source as built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "hf_transformers",
+      "label": "Hugging Face Transformers",
+      "type": "library",
+      "description": "Machine-learning library named by the source as built on/using PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "hugging_face",
+      "label": "Hugging Face",
+      "type": "organization",
+      "description": "Organization associated with Transformers.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "dataloader",
+      "label": "DataLoader",
+      "type": "data_pipeline",
+      "description": "Data loading and batching subsystem for model training.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "distributed_training",
+      "label": "distributed training",
+      "type": "training_system",
+      "description": "Scaling model training across multiple processing resources.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "fsdp",
+      "label": "Fully Sharded Data Parallel",
+      "type": "distributed_training",
+      "description": "Parameter/gradient/optimizer sharding approach for distributed PyTorch training.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "ddp",
+      "label": "DistributedDataParallel",
+      "type": "distributed_training",
+      "description": "Distributed data-parallel training mechanism.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "tensor_parallelism",
+      "label": "tensor parallelism",
+      "type": "parallelism",
+      "description": "Splitting tensor/model computation across devices.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "pipeline_parallelism",
+      "label": "pipeline parallelism",
+      "type": "parallelism",
+      "description": "Partitioning model execution into pipeline stages.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "model_parallelism",
+      "label": "model parallelism",
+      "type": "parallelism",
+      "description": "Distributing model components across devices.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "mixed_precision",
+      "label": "mixed precision",
+      "type": "optimization",
+      "description": "Using multiple numeric precisions to improve performance and memory use.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "quantization",
+      "label": "quantization",
+      "type": "optimization",
+      "description": "Reducing numeric precision of model computation or weights.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "checkpointing",
+      "label": "checkpointing",
+      "type": "persistence",
+      "description": "Persisting recoverable model/training state during long-running workflows.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "cuda_streams",
+      "label": "CUDA streams",
+      "type": "execution_model",
+      "description": "Asynchronous CUDA execution streams for overlapping GPU work.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "custom_autograd",
+      "label": "custom autograd",
+      "type": "extension",
+      "description": "User-defined differentiation behavior for custom operations.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "aotautograd",
+      "label": "AOTAutograd",
+      "type": "compiler_component",
+      "description": "Ahead-of-time automatic differentiation component in the modern compiler ecosystem.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "inductor",
+      "label": "TorchInductor",
+      "type": "compiler_backend",
+      "description": "Compiler backend for optimized generated execution.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "fx",
+      "label": "torch.fx",
+      "type": "graph_ir",
+      "description": "Graph transformation/tracing representation for PyTorch programs.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "jit",
+      "label": "TorchScript/JIT",
+      "type": "compiler",
+      "description": "Historical/alternative compilation and deployment path in PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "cuda_allocator",
+      "label": "CUDA memory allocator",
+      "type": "memory_system",
+      "description": "Device memory allocation subsystem.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "cpu_threading",
+      "label": "CPU threading",
+      "type": "execution_model",
+      "description": "CPU-side parallel execution infrastructure.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "mps_backend",
+      "label": "MPS backend",
+      "type": "gpu_backend",
+      "description": "Apple GPU execution backend associated with Metal.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "onnx_export",
+      "label": "ONNX export",
+      "type": "interoperability",
+      "description": "Export path from PyTorch models to ONNX representations.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "torchserve",
+      "label": "TorchServe",
+      "type": "deployment",
+      "description": "Model-serving infrastructure associated with PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "lightning",
+      "label": "PyTorch Lightning",
+      "type": "framework",
+      "description": "Higher-level training framework built around PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "deepspeed",
+      "label": "DeepSpeed",
+      "type": "framework",
+      "description": "Distributed training/optimization framework used with PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "diffusers",
+      "label": "Hugging Face Diffusers",
+      "type": "library",
+      "description": "Generative-model library commonly integrated with PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "torchvision",
+      "label": "torchvision",
+      "type": "library",
+      "description": "Computer-vision ecosystem library associated with PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "torchaudio",
+      "label": "torchaudio",
+      "type": "library",
+      "description": "Audio ecosystem library associated with PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "rl",
+      "label": "reinforcement_learning",
+      "type": "application_domain",
+      "description": "Reinforcement-learning application area for PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "computer_vision",
+      "label": "computer_vision",
+      "type": "application_domain",
+      "description": "Computer-vision application area for PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "nlp",
+      "label": "natural_language_processing",
+      "type": "application_domain",
+      "description": "Natural-language processing application area for PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "llm",
+      "label": "large_language_model",
+      "type": "model_class",
+      "description": "Large language models implemented/trained with PyTorch.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "generative_ai",
+      "label": "generative_ai",
+      "type": "application_domain",
+      "description": "Generative AI application area supported by PyTorch ecosystem.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "profiling",
+      "label": "profiling",
+      "type": "tooling",
+      "description": "Performance measurement and optimization workflow.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "reproducibility",
+      "label": "reproducibility",
+      "type": "engineering_practice",
+      "description": "Practice of preserving conditions needed to reproduce model/training results.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "pickle_security",
+      "label": "pickle_security",
+      "type": "security_concern",
+      "description": "Security concern associated with deserializing Python pickle data.",
+      "source_line_ranges": []
+    },
+    {
+      "id": "edge_deployment",
+      "label": "edge_deployment",
+      "type": "deployment",
+      "description": "Deployment of trained models onto constrained/edge environments.",
+      "source_line_ranges": []
+    }
+  ],
+  "relationships": [
+    {
+      "source": "meta_ai",
+      "target": "pytorch",
+      "relationship": "originally_developed",
+      "mechanism": "Meta AI originally developed PyTorch.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "linux_foundation",
+      "relationship": "supported_by",
+      "mechanism": "Current development/governance is described as receiving Linux Foundation support.",
+      "source_line_ranges": [
+        92,
+        101
+      ]
+    },
+    {
+      "source": "pytorch_foundation",
+      "target": "linux_foundation",
+      "relationship": "operates_under",
+      "mechanism": "PyTorch Foundation governance is associated with the Linux Foundation.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "meta_ai",
+      "target": "pytorch_foundation",
+      "relationship": "established_governance_for",
+      "mechanism": "Meta announced the independent PyTorch Foundation.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "gregory_chanan",
+      "target": "pytorch",
+      "relationship": "original_author",
+      "mechanism": "Named as an original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "soumith_chintala",
+      "target": "pytorch",
+      "relationship": "original_author",
+      "mechanism": "Named as an original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "sam_gross",
+      "target": "pytorch",
+      "relationship": "original_author",
+      "mechanism": "Named as an original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "adam_paszke",
+      "target": "pytorch",
+      "relationship": "original_author",
+      "mechanism": "Named as an original PyTorch author.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "release_2016",
+      "relationship": "released_in",
+      "mechanism": "Source gives September 2016 as release date.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "stable_2_14_1",
+      "relationship": "has_stable_release",
+      "mechanism": "Source identifies 2.14.1 as stable on September 30 2026.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "bsd3",
+      "relationship": "licensed_under",
+      "mechanism": "Source identifies BSD-3 license.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "pytorch_org",
+      "relationship": "documented_at",
+      "mechanism": "Official website named in source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "pytorch_github",
+      "relationship": "developed_at",
+      "mechanism": "GitHub repository named in source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "python",
+      "target": "python_api",
+      "relationship": "provides_language_for",
+      "mechanism": "Python is the high-level language through which PyTorch is commonly used.",
+      "source_line_ranges": [
+        47,
+        92
+      ]
+    },
+    {
+      "source": "cpp",
+      "target": "pytorch",
+      "relationship": "implemented_with",
+      "mechanism": "PyTorch is written in C++ as well as Python/CUDA.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cuda_bindings",
+      "relationship": "provides_acceleration_for",
+      "mechanism": "Internal CUDA bindings connect PyTorch to NVIDIA GPU acceleration.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "cuda_bindings",
+      "target": "pytorch",
+      "relationship": "integrated_into",
+      "mechanism": "Source explicitly describes internal CUDA bindings in PyTorch.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "rocm",
+      "relationship": "supports_backend",
+      "mechanism": "PyTorch tensors support other GPU platforms including AMD ROCm.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "metal",
+      "relationship": "supports_backend",
+      "mechanism": "PyTorch tensors support Apple Metal.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "linux",
+      "relationship": "supports_os",
+      "mechanism": "Supported operating system.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "macos",
+      "relationship": "supports_os",
+      "mechanism": "Supported operating system.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "windows",
+      "relationship": "supports_os",
+      "mechanism": "Supported operating system.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "ia32",
+      "relationship": "supports_architecture",
+      "mechanism": "Architecture listed as supported by source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "x86_64",
+      "relationship": "supports_architecture",
+      "mechanism": "Architecture listed as supported by source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "arm64",
+      "relationship": "supports_architecture",
+      "mechanism": "Architecture listed as supported by source.",
+      "source_line_ranges": [
+        47
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "deep_learning",
+      "relationship": "provides_library_for",
+      "mechanism": "PyTorch is described as a deep-learning library.",
+      "source_line_ranges": [
+        47,
+        92
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "tensor",
+      "relationship": "fundamental_type",
+      "mechanism": "Tensor is the fundamental PyTorch type.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "numpy",
+      "relationship": "similar_to",
+      "mechanism": "Source compares tensors to NumPy arrays.",
+      "source_line_ranges": [
+        94,
+        107
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "cuda_tensor",
+      "relationship": "specializes_to",
+      "mechanism": "A tensor can execute on CUDA-capable NVIDIA GPUs.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "dtype",
+      "relationship": "has_element_type",
+      "mechanism": "Tensor values have numeric element types.",
+      "source_line_ranges": [
+        119,
+        146
+      ]
+    },
+    {
+      "source": "device",
+      "target": "cpu_device",
+      "relationship": "selects",
+      "mechanism": "Device selection can target CPU.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "device",
+      "target": "cuda0",
+      "relationship": "selects",
+      "mechanism": "Source uses cuda:0 as a device example.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "cuda0",
+      "target": "gpu_device",
+      "relationship": "identifies",
+      "mechanism": "cuda:0 identifies a CUDA GPU device.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "python_api",
+      "target": "randn",
+      "relationship": "exposes",
+      "mechanism": "Python API exposes torch.randn.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "randn",
+      "target": "tensor",
+      "relationship": "creates",
+      "mechanism": "torch.randn creates tensors in the source example.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "multiply",
+      "relationship": "supports_operation",
+      "mechanism": "Tensor API supports the operation shown in source examples.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "sum",
+      "relationship": "supports_operation",
+      "mechanism": "Tensor API supports the operation shown in source examples.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "indexing",
+      "relationship": "supports_operation",
+      "mechanism": "Tensor API supports the operation shown in source examples.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "tensor",
+      "target": "max",
+      "relationship": "supports_operation",
+      "mechanism": "Tensor API supports the operation shown in source examples.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "cpu_device",
+      "target": "tensor",
+      "relationship": "executes_operations_on",
+      "mechanism": "Tensor operations may execute on CPU.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "gpu_device",
+      "target": "tensor",
+      "relationship": "executes_operations_on",
+      "mechanism": "Tensor operations may execute on GPU.",
+      "source_line_ranges": [
+        107,
+        119
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "gpu_device",
+      "relationship": "provides_compute_target",
+      "mechanism": "CUDA provides NVIDIA GPU execution.",
+      "source_line_ranges": [
+        92,
+        107
+      ]
+    },
+    {
+      "source": "autograd",
+      "target": "computation_dag",
+      "relationship": "constructs",
+      "mechanism": "Autograd constructs a DAG of operations and arguments during the forward pass.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "forward_pass",
+      "target": "computation_dag",
+      "relationship": "records_operations_into",
+      "mechanism": "Forward computation creates the recorded operation graph.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "computation_dag",
+      "target": "backpropagation",
+      "relationship": "enables",
+      "mechanism": "The recorded graph enables backward gradient propagation.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "loss",
+      "target": "backpropagation",
+      "relationship": "drives",
+      "mechanism": "Loss provides the objective from which gradients are propagated.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "backpropagation",
+      "target": "gradient",
+      "relationship": "computes",
+      "mechanism": "Backpropagation computes gradients through the graph.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "gradient",
+      "target": "training",
+      "relationship": "updates_parameters_for",
+      "mechanism": "Gradients support optimization during training.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "sgd",
+      "target": "training",
+      "relationship": "optimizes",
+      "mechanism": "SGD is an optimization algorithm named in the PyTorch architecture description.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "transformer",
+      "target": "pytorch",
+      "relationship": "supported_architecture",
+      "mechanism": "Transformer is explicitly named as a supported deep-learning architecture.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "automatic_parallelization",
+      "target": "pytorch",
+      "relationship": "provided_by",
+      "mechanism": "Source describes PyTorch as simplifying automatic parallelization.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "training",
+      "target": "pytorch",
+      "relationship": "supported_by",
+      "mechanism": "PyTorch simplifies training.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "inference",
+      "target": "pytorch",
+      "relationship": "supported_by",
+      "mechanism": "PyTorch simplifies inference.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "nn",
+      "target": "neural_network",
+      "relationship": "describes",
+      "mechanism": "torch.nn describes neural networks and training.",
+      "source_line_ranges": [
+        111
+      ]
+    },
+    {
+      "source": "nn",
+      "target": "nn_module",
+      "relationship": "uses",
+      "mechanism": "Neural networks are built by inheriting from nn.Module.",
+      "source_line_ranges": [
+        111
+      ]
+    },
+    {
+      "source": "nn_module",
+      "target": "forward_pass",
+      "relationship": "defines",
+      "mechanism": "A module defines a forward method describing forward computation.",
+      "source_line_ranges": [
+        111,
+        149
+      ]
+    },
+    {
+      "source": "nn_module",
+      "target": "nn_flatten",
+      "relationship": "composes_with",
+      "mechanism": "Source example uses Flatten within a module.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "source": "nn_module",
+      "target": "nn_sequential",
+      "relationship": "composes_with",
+      "mechanism": "Source example uses Sequential to compose layers.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "source": "nn_sequential",
+      "target": "nn_linear",
+      "relationship": "contains",
+      "mechanism": "Source example composes Linear layers.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "source": "nn_sequential",
+      "target": "nn_relu",
+      "relationship": "contains",
+      "mechanism": "Source example composes ReLU activation.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "source": "nn_module",
+      "target": "logits",
+      "relationship": "produces",
+      "mechanism": "Example forward method returns logits.",
+      "source_line_ranges": [
+        149,
+        166
+      ]
+    },
+    {
+      "source": "neural_network",
+      "target": "training",
+      "relationship": "participates_in",
+      "mechanism": "Neural networks are the trainable models described by torch.nn.",
+      "source_line_ranges": [
+        111
+      ]
+    },
+    {
+      "source": "neural_network",
+      "target": "inference",
+      "relationship": "participates_in",
+      "mechanism": "Trained neural networks are used for inference.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "serialization",
+      "relationship": "provides",
+      "mechanism": "PyTorch provides model serialization.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "serialization",
+      "target": "zip64",
+      "relationship": "uses_format",
+      "mechanism": "Source describes serialization as a ZIP64 archive.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "zip64",
+      "target": "model_weights",
+      "relationship": "stores",
+      "mechanism": "Archive contains model weights.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "model_weights",
+      "target": "pickle",
+      "relationship": "serialized_with",
+      "mechanism": "Source states model weights use Python pickle.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "zip64",
+      "target": "byte_order_metadata",
+      "relationship": "contains",
+      "mechanism": "Source states metadata such as byte order is stored.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "serialization",
+      "target": "pt_extension",
+      "relationship": "uses_extension",
+      "mechanism": "The source identifies .pt as a PyTorch model extension.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "serialization",
+      "target": "pth_extension",
+      "relationship": "uses_extension",
+      "mechanism": "The source identifies .pth as a PyTorch model extension.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "torch",
+      "target": "pytorch",
+      "relationship": "predecessor_of",
+      "mechanism": "PyTorch is the successor to Torch.",
+      "source_line_ranges": [
+        92,
+        98
+      ]
+    },
+    {
+      "source": "idiap",
+      "target": "torch2001",
+      "relationship": "associated_with",
+      "mechanism": "IDIAP is associated with original Torch work in 2001.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "torch2001",
+      "target": "torch",
+      "relationship": "originated",
+      "mechanism": "Torch originated around 2001.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "ronan_collobert",
+      "target": "torch7",
+      "relationship": "contributed_to",
+      "mechanism": "Named contributor to the Torch7 rewrite.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "clement_farabet",
+      "target": "torch7",
+      "relationship": "contributed_to",
+      "mechanism": "Named contributor to the Torch7 rewrite.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "koray_kavukcuoglu",
+      "target": "torch7",
+      "relationship": "contributed_to",
+      "mechanism": "Named contributor to the Torch7 rewrite.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "torch7",
+      "target": "luatorch",
+      "relationship": "implemented_as",
+      "mechanism": "Torch7/LuaTorch represents the later Lua-facing Torch lineage.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "luatorch",
+      "target": "lua",
+      "relationship": "uses_frontend_language",
+      "mechanism": "Lua is the frontend language.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "luatorch",
+      "target": "torch_backend_cpp",
+      "relationship": "uses_backend",
+      "mechanism": "C++ was the backend.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "torch_backend_cpp",
+      "target": "torch_cuda",
+      "relationship": "includes",
+      "mechanism": "Torch included CUDA components.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "torch_autograd",
+      "target": "pytorch",
+      "relationship": "influenced_design",
+      "mechanism": "Source says torch-autograd influenced PyTorch.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "hips_autograd",
+      "target": "torch_autograd",
+      "relationship": "influenced",
+      "mechanism": "HIPS/autograd influenced torch-autograd.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "chainer",
+      "target": "pytorch",
+      "relationship": "influenced_design",
+      "mechanism": "Source states Chainer influenced the PyTorch refactoring.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "torch7",
+      "target": "torch7_end",
+      "relationship": "ceased_as_separate_project",
+      "mechanism": "Torch7 ceased/subsumed in 2018.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "torch7_end",
+      "target": "pytorch",
+      "relationship": "subsumed_into",
+      "mechanism": "Torch7 was subsumed by PyTorch.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "source": "meta_ai",
+      "target": "caffe2",
+      "relationship": "operated",
+      "mechanism": "Meta operated both PyTorch and Caffe2 before their merger.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "caffe2",
+      "target": "caffe2_merge",
+      "relationship": "merged_event",
+      "mechanism": "Caffe2 merged into PyTorch at end of March 2018.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "caffe2_merge",
+      "target": "pytorch",
+      "relationship": "merged_into",
+      "mechanism": "The merge made Caffe2 part of PyTorch.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "meta_ai",
+      "target": "onnx",
+      "relationship": "co_created_with",
+      "mechanism": "Meta and Microsoft created ONNX.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "microsoft",
+      "target": "onnx",
+      "relationship": "co_created_with",
+      "mechanism": "Microsoft and Meta created ONNX.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "onnx",
+      "target": "tensorrt",
+      "relationship": "enables_conversion_or_optimization_for",
+      "mechanism": "Source names NVIDIA TensorRT as an ONNX provider/runtime target.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "onnx",
+      "relationship": "can_interoperate_through",
+      "mechanism": "ONNX was created to decouple frameworks from hardware-specific runtimes and enable conversion/optimization.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "pytorch_2_0",
+      "target": "torchdynamo",
+      "relationship": "introduced",
+      "mechanism": "PyTorch 2.0 introduced TorchDynamo.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "torchdynamo",
+      "target": "graph_capture",
+      "relationship": "performs",
+      "mechanism": "TorchDynamo is a Python-level compiler that captures model execution.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "torchdynamo",
+      "target": "optimized_execution",
+      "relationship": "enables",
+      "mechanism": "Source associates PyTorch 2.0/TorchDynamo with faster execution.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "torchdynamo",
+      "target": "torch_compile",
+      "relationship": "predecessor_or_component_of",
+      "mechanism": "TorchDynamo is part of the modern PyTorch compilation lineage.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "tensorflow",
+      "relationship": "used_alongside",
+      "mechanism": "Source says PyTorch is popular alongside TensorFlow.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "keras",
+      "relationship": "used_alongside",
+      "mechanism": "Source names Keras alongside PyTorch and TensorFlow.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "anaconda",
+      "target": "pytorch",
+      "relationship": "installs",
+      "mechanism": "Source says PyTorch is installable with Anaconda.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "chatgpt",
+      "target": "pytorch",
+      "relationship": "built_on",
+      "mechanism": "Source names ChatGPT as a commercial system built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "tesla_autopilot",
+      "target": "pytorch",
+      "relationship": "built_on",
+      "mechanism": "Source names Tesla Autopilot as a commercial system built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "uber_pyro",
+      "target": "pytorch",
+      "relationship": "built_on",
+      "mechanism": "Source names Uber Pyro as a commercial system built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "hf_transformers",
+      "target": "pytorch",
+      "relationship": "built_on_or_integrated_with",
+      "mechanism": "Source names Hugging Face Transformers among systems built on PyTorch.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "hugging_face",
+      "target": "hf_transformers",
+      "relationship": "develops",
+      "mechanism": "Hugging Face is associated with Transformers.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "source": "pytorch",
+      "target": "dataloader",
+      "relationship": "supports_training_data_flow",
+      "mechanism": "loads/batches data for training",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "distributed_training",
+      "relationship": "scales_training",
+      "mechanism": "distributes training across processing resources",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "fsdp",
+      "relationship": "implements_distributed_training",
+      "mechanism": "shards training state across devices",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "ddp",
+      "relationship": "implements_distributed_training",
+      "mechanism": "replicates models and coordinates distributed gradients",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "tensor_parallelism",
+      "relationship": "scales_model_computation",
+      "mechanism": "splits tensor computations across devices",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "pipeline_parallelism",
+      "relationship": "scales_model_computation",
+      "mechanism": "partitions model stages across devices",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "model_parallelism",
+      "relationship": "scales_models",
+      "mechanism": "places model components across devices",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "mixed_precision",
+      "relationship": "optimizes_training",
+      "mechanism": "uses multiple precisions for performance/memory tradeoffs",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "quantization",
+      "relationship": "optimizes_models",
+      "mechanism": "reduces numeric precision",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "checkpointing",
+      "relationship": "supports_training_recovery",
+      "mechanism": "persists recoverable training state",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "cuda_streams",
+      "relationship": "supports_asynchronous_execution",
+      "mechanism": "organizes asynchronous CUDA work",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "custom_autograd",
+      "relationship": "extends_autograd",
+      "mechanism": "defines custom differentiation behavior",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "aotautograd",
+      "relationship": "supports_compilation",
+      "mechanism": "generates differentiated graphs ahead of execution",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "inductor",
+      "relationship": "backend_for_compilation",
+      "mechanism": "generates optimized execution",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "fx",
+      "relationship": "represents_graphs",
+      "mechanism": "provides a graph representation for transformation",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "jit",
+      "relationship": "provides_compilation_path",
+      "mechanism": "compiles/traces models for execution/deployment",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "cuda_allocator",
+      "relationship": "manages_device_memory",
+      "mechanism": "allocates CUDA device memory",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "cpu_threading",
+      "relationship": "supports_cpu_parallelism",
+      "mechanism": "coordinates CPU-side parallel execution",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "mps_backend",
+      "relationship": "targets_metal",
+      "mechanism": "uses Apple Metal for GPU execution",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "onnx_export",
+      "relationship": "exports_to_onnx",
+      "mechanism": "converts PyTorch models to ONNX",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "torchserve",
+      "relationship": "serves_models",
+      "mechanism": "supports model serving",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "lightning",
+      "relationship": "organizes_training",
+      "mechanism": "provides higher-level training abstractions",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "deepspeed",
+      "relationship": "optimizes_distributed_training",
+      "mechanism": "provides large-scale training optimizations",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "diffusers",
+      "relationship": "supports_generative_models",
+      "mechanism": "provides generative-model pipelines",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "torchvision",
+      "relationship": "supports_computer_vision",
+      "mechanism": "provides computer-vision components",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "torchaudio",
+      "relationship": "supports_audio_ml",
+      "mechanism": "provides audio ML components",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "rl",
+      "relationship": "uses_pytorch",
+      "mechanism": "uses PyTorch for reinforcement learning",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "computer_vision",
+      "relationship": "uses_pytorch",
+      "mechanism": "uses PyTorch for vision workloads",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "nlp",
+      "relationship": "uses_pytorch",
+      "mechanism": "uses PyTorch for language workloads",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "llm",
+      "relationship": "uses_pytorch",
+      "mechanism": "uses PyTorch for large language models",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "generative_ai",
+      "relationship": "uses_pytorch",
+      "mechanism": "uses PyTorch for generative AI",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "profiling",
+      "relationship": "optimizes_pytorch",
+      "mechanism": "measures execution for optimization",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "reproducibility",
+      "relationship": "supports_reliable_training",
+      "mechanism": "preserves conditions for repeatable experiments",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "pickle_security",
+      "relationship": "constrains_serialization",
+      "mechanism": "serialization via pickle creates a security consideration",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "edge_deployment",
+      "relationship": "deploys_pytorch_models",
+      "mechanism": "places trained models on constrained/edge targets",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "aten",
+      "relationship": "uses_low_level_layer",
+      "mechanism": "Deep PyTorch implementation work is represented by a low-level tensor/operator layer.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "aten",
+      "target": "cpp",
+      "relationship": "implemented_with",
+      "mechanism": "Low-level operators are implemented in C++.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "aten",
+      "target": "cuda",
+      "relationship": "targets",
+      "mechanism": "CUDA kernels/backends provide GPU execution for tensor operations.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "cpp_frontend",
+      "relationship": "provides",
+      "mechanism": "PyTorch exposes a C++ frontend in addition to its Python-facing API.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "cpp_frontend",
+      "target": "cpp",
+      "relationship": "uses_language",
+      "mechanism": "The C++ frontend is C++ based.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch",
+      "target": "pytorch_runtime",
+      "relationship": "contains_runtime",
+      "mechanism": "PyTorch requires a runtime coordinating execution.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "python_api",
+      "target": "pytorch_runtime",
+      "relationship": "calls_into",
+      "mechanism": "High-level API invokes the runtime.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch_runtime",
+      "target": "aten",
+      "relationship": "dispatches_to",
+      "mechanism": "Runtime dispatches tensor operations to low-level implementations.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch_runtime",
+      "target": "cuda",
+      "relationship": "uses_backend",
+      "mechanism": "Runtime can execute through CUDA.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch_runtime",
+      "target": "rocm",
+      "relationship": "uses_backend",
+      "mechanism": "Runtime can execute through ROCm.",
+      "source_line_ranges": []
+    },
+    {
+      "source": "pytorch_runtime",
+      "target": "mps_backend",
+      "relationship": "uses_backend",
+      "mechanism": "Runtime can execute through the Apple MPS/Metal backend.",
+      "source_line_ranges": []
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "fm_autograd",
+      "name": "Automatic differentiation model",
+      "expression": "forward pass → computation DAG → loss → backward/backpropagation → gradients",
+      "meaning": "PyTorch records operations during forward execution and uses the resulting graph to compute gradients."
+    },
+    {
+      "id": "fm_tensor_execution",
+      "name": "Tensor execution model",
+      "expression": "tensor + operation + device → device-resident result",
+      "meaning": "Tensor operations execute according to the selected CPU/GPU backend."
+    },
+    {
+      "id": "fm_nn_composition",
+      "name": "Neural network composition",
+      "expression": "nn.Module → Sequential/layers/activations → forward() → logits",
+      "meaning": "The source example constructs a network from reusable modules and returns logits."
+    },
+    {
+      "id": "fm_training",
+      "name": "Gradient training loop",
+      "expression": "input → forward → loss → backward → gradient → optimizer update",
+      "meaning": "A conceptual training cycle derived directly from the source's autograd and training description."
+    },
+    {
+      "id": "fm_compilation",
+      "name": "PyTorch compiler path",
+      "expression": "Python/model execution → TorchDynamo graph capture → optimized execution",
+      "meaning": "PyTorch 2.0 introduced a Python-level compiler path centered on TorchDynamo."
+    },
+    {
+      "id": "fm_serialization",
+      "name": "Serialization structure",
+      "expression": "model weights + metadata → ZIP64 archive → .pt/.pth",
+      "meaning": "The source describes PyTorch serialization as ZIP64 containing weights and metadata."
+    },
+    {
+      "id": "fm_interop",
+      "name": "Framework interoperability",
+      "expression": "PyTorch model → ONNX → provider/runtime such as TensorRT",
+      "meaning": "ONNX provides a framework-neutral path for conversion/optimization."
+    },
+    {
+      "id": "fm_backend",
+      "name": "Backend abstraction",
+      "expression": "PyTorch API → runtime → backend → CPU/GPU execution",
+      "meaning": "High-level PyTorch operations map through runtime/backend layers to hardware."
+    },
+    {
+      "id": "fm_history",
+      "name": "Framework lineage",
+      "expression": "Torch → Torch7/LuaTorch → autograd/refactoring influences → PyTorch",
+      "meaning": "The source establishes a historical lineage from Torch into PyTorch."
+    },
+    {
+      "id": "fm_governance",
+      "name": "Governance transition",
+      "expression": "Meta AI → independent PyTorch Foundation → Linux Foundation",
+      "meaning": "The source describes the 2022 governance transition."
+    },
+    {
+      "id": "fm_device",
+      "name": "Device placement",
+      "expression": "torch.device(cuda:0) → CUDA GPU tensor operations",
+      "meaning": "The source example demonstrates explicit device selection."
+    },
+    {
+      "id": "fm_model_artifact",
+      "name": "Model artifact lifecycle",
+      "expression": "trained weights → serialization → file artifact → load/deploy",
+      "meaning": "Connects model training to persistence and later deployment; deployment is an expansion target."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "sc_identity",
+      "claim": "PyTorch metadata identifies original authors, developer, release, stable version, languages, operating systems, architectures, license and official resources.",
+      "source_line_ranges": [
+        47,
+        70
+      ]
+    },
+    {
+      "id": "sc_definition",
+      "claim": "PyTorch is an open-source deep-learning library, successor to Torch, with high-level APIs over optimized low-level algorithms and CUDA bindings.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "sc_tensor_autograd",
+      "claim": "Tensor is fundamental; Autograd constructs a DAG during forward execution and backpropagates from loss.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "sc_ecosystem",
+      "claim": "PyTorch is popular alongside TensorFlow/Keras, installable with Anaconda, and named as the basis of several commercial systems.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "sc_torch_history",
+      "claim": "Torch originated around 2001, evolved through Torch7/LuaTorch, and its refactoring was influenced by torch-autograd, HIPS/autograd and Chainer.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "sc_onnx_caffe2",
+      "claim": "ONNX was created by Meta and Microsoft; Caffe2 later merged into PyTorch; independent foundation governance was announced in 2022.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "sc_pytorch20",
+      "claim": "PyTorch 2.0 introduced TorchDynamo as a Python-level compiler and reported performance improvements.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "sc_backends",
+      "claim": "PyTorch tensors resemble NumPy arrays while supporting CUDA-capable NVIDIA GPUs and other GPU platforms such as AMD ROCm and Apple Metal.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "sc_nn",
+      "claim": "torch.nn provides neural-network/training abstractions; networks inherit from nn.Module and define forward().",
+      "source_line_ranges": [
+        111,
+        112
+      ]
+    },
+    {
+      "id": "sc_serialization",
+      "claim": "Serialization uses ZIP64 with model weights in Python pickle plus metadata such as byte order; .pt and .pth are used.",
+      "source_line_ranges": [
+        113,
+        114
+      ]
+    },
+    {
+      "id": "sc_tensor_examples",
+      "claim": "Source examples demonstrate CPU/cuda:0 devices and tensor creation, multiplication, sum, indexing and max.",
+      "source_line_ranges": [
+        119,
+        146
+      ]
+    },
+    {
+      "id": "sc_nn_example",
+      "claim": "Source neural-network example uses Flatten, Sequential, Linear, ReLU and returns logits.",
+      "source_line_ranges": [
+        147,
+        166
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "term_a": "PyTorch tensor",
+      "term_b": "NumPy array",
+      "distinction": "Similar multidimensional numeric-array abstraction, but PyTorch tensors are integrated with device backends and automatic differentiation."
+    },
+    {
+      "id": "d2",
+      "term_a": "Autograd",
+      "term_b": "backpropagation",
+      "distinction": "Autograd is the automatic differentiation system/graph mechanism; backpropagation is the backward gradient computation enabled by the recorded graph."
+    },
+    {
+      "id": "d3",
+      "term_a": "PyTorch",
+      "term_b": "Torch",
+      "distinction": "PyTorch is the successor to Torch rather than merely a renamed release."
+    },
+    {
+      "id": "d4",
+      "term_a": "Python",
+      "term_b": "C++",
+      "distinction": "Python is the primary high-level API language while C++ participates in the implementation/runtime stack."
+    },
+    {
+      "id": "d5",
+      "term_a": "CUDA",
+      "term_b": "ROCm/Metal",
+      "distinction": "CUDA is NVIDIA's GPU platform; ROCm and Metal represent other supported accelerator backends."
+    },
+    {
+      "id": "d6",
+      "term_a": "training",
+      "term_b": "inference",
+      "distinction": "Training optimizes model parameters; inference executes a trained model for outputs."
+    },
+    {
+      "id": "d7",
+      "term_a": "nn.Module",
+      "term_b": "layer",
+      "distinction": "nn.Module is the compositional base abstraction; layers such as Linear/ReLU are concrete modules."
+    },
+    {
+      "id": "d8",
+      "term_a": "serialization",
+      "term_b": "ONNX interchange",
+      "distinction": "Serialization persists PyTorch model artifacts; ONNX is intended for framework/hardware interoperability."
+    },
+    {
+      "id": "d9",
+      "term_a": "CUDA binding",
+      "term_b": "GPU hardware",
+      "distinction": "Bindings are software integration; the GPU is the hardware execution target."
+    },
+    {
+      "id": "d10",
+      "term_a": "TorchDynamo",
+      "term_b": "Autograd",
+      "distinction": "TorchDynamo is a compiler/graph-capture mechanism; Autograd computes derivatives."
+    },
+    {
+      "id": "d11",
+      "term_a": "PyTorch Foundation",
+      "term_b": "Meta AI",
+      "distinction": "Meta originally developed/operated PyTorch; governance later moved toward an independent foundation."
+    },
+    {
+      "id": "d12",
+      "term_a": "Tensor operation",
+      "term_b": "neural network",
+      "distinction": "Tensor operations are primitive numerical computations; neural networks compose many operations/modules into a trainable model."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "name": "PyTorch foundations",
+      "sequence": [
+        "pytorch",
+        "python",
+        "tensor",
+        "device",
+        "randn",
+        "multiply",
+        "sum",
+        "indexing",
+        "max"
+      ]
+    },
+    {
+      "id": "lp2",
+      "name": "Automatic differentiation",
+      "sequence": [
+        "tensor",
+        "autograd",
+        "forward_pass",
+        "computation_dag",
+        "loss",
+        "backpropagation",
+        "gradient"
+      ]
+    },
+    {
+      "id": "lp3",
+      "name": "Neural networks",
+      "sequence": [
+        "nn",
+        "nn_module",
+        "nn_sequential",
+        "nn_flatten",
+        "nn_linear",
+        "nn_relu",
+        "logits",
+        "training"
+      ]
+    },
+    {
+      "id": "lp4",
+      "name": "GPU acceleration",
+      "sequence": [
+        "device",
+        "cuda0",
+        "cuda",
+        "cuda_tensor",
+        "gpu_device",
+        "automatic_parallelization"
+      ]
+    },
+    {
+      "id": "lp5",
+      "name": "Implementation stack",
+      "sequence": [
+        "python_api",
+        "pytorch_runtime",
+        "aten",
+        "cpp",
+        "cuda_bindings",
+        "cuda"
+      ]
+    },
+    {
+      "id": "lp6",
+      "name": "Framework history",
+      "sequence": [
+        "idiap",
+        "torch",
+        "torch7",
+        "torch_autograd",
+        "chainer",
+        "pytorch"
+      ]
+    },
+    {
+      "id": "lp7",
+      "name": "Interoperability",
+      "sequence": [
+        "pytorch",
+        "onnx",
+        "tensorrt",
+        "onnx_export"
+      ]
+    },
+    {
+      "id": "lp8",
+      "name": "Model persistence",
+      "sequence": [
+        "model_weights",
+        "pickle",
+        "zip64",
+        "serialization",
+        "pt_extension",
+        "pth_extension"
+      ]
+    },
+    {
+      "id": "lp9",
+      "name": "Compiler evolution",
+      "sequence": [
+        "pytorch_2_0",
+        "torchdynamo",
+        "graph_capture",
+        "torch_compile",
+        "inductor"
+      ]
+    },
+    {
+      "id": "lp10",
+      "name": "Alternative accelerators",
+      "sequence": [
+        "pytorch",
+        "rocm",
+        "metal",
+        "mps_backend"
+      ]
+    },
+    {
+      "id": "lp11",
+      "name": "Distributed training",
+      "sequence": [
+        "pytorch",
+        "distributed_training",
+        "ddp",
+        "fsdp",
+        "tensor_parallelism",
+        "pipeline_parallelism"
+      ]
+    },
+    {
+      "id": "lp12",
+      "name": "Application ecosystem",
+      "sequence": [
+        "pytorch",
+        "hf_transformers",
+        "llm",
+        "generative_ai",
+        "computer_vision",
+        "nlp"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "m1",
+      "misconception": "PyTorch is just Python code.",
+      "correction": "The source identifies Python, C++ and CUDA together; the high-level Python API sits over lower-level implementation and acceleration layers."
+    },
+    {
+      "id": "m2",
+      "misconception": "A PyTorch tensor is exactly the same as a NumPy array.",
+      "correction": "The source says tensors are similar to NumPy arrays but additionally support CUDA-capable GPUs and other device backends."
+    },
+    {
+      "id": "m3",
+      "misconception": "Autograd and backpropagation are identical concepts.",
+      "correction": "Autograd records the computation graph and automatic differentiation machinery; backpropagation is the backward gradient computation through that graph."
+    },
+    {
+      "id": "m4",
+      "misconception": "PyTorch only works with NVIDIA GPUs.",
+      "correction": "The source explicitly names AMD ROCm and Apple Metal support in addition to CUDA-capable NVIDIA GPUs."
+    },
+    {
+      "id": "m5",
+      "misconception": "PyTorch has no relationship to Torch.",
+      "correction": "The source explicitly calls PyTorch the successor to Torch and describes the Torch7/LuaTorch lineage."
+    },
+    {
+      "id": "m6",
+      "misconception": "ONNX is PyTorch's native model-file format.",
+      "correction": "PyTorch serialization is described separately using ZIP64/.pt/.pth, while ONNX is an interoperability format."
+    },
+    {
+      "id": "m7",
+      "misconception": "Caffe2 remained a permanently separate Meta framework.",
+      "correction": "The source states that Caffe2 merged into PyTorch at the end of March 2018."
+    },
+    {
+      "id": "m8",
+      "misconception": "PyTorch only provides neural-network layers.",
+      "correction": "The source describes tensors, automatic differentiation, optimized algorithms, architectures, GPU bindings, serialization and broader ecosystem capabilities."
+    },
+    {
+      "id": "m9",
+      "misconception": "TorchDynamo is the automatic differentiation engine.",
+      "correction": "TorchDynamo is described as a Python-level compiler; Autograd is the automatic differentiation system."
+    },
+    {
+      "id": "m10",
+      "misconception": "PyTorch model files are just raw Python objects.",
+      "correction": "The source describes a ZIP64 archive containing weights and metadata, with Python pickle used for the model weights."
+    }
+  ],
+  "questions": [
+    "How does a Python tensor operation reach CUDA hardware?",
+    "What exactly does Autograd record during the forward pass?",
+    "How does the computation DAG enable backpropagation?",
+    "How are loss gradients connected to training?",
+    "Why is a tensor different from a generic NumPy array in PyTorch?",
+    "How does torch.device determine where tensor operations execute?",
+    "What is the relationship between nn.Module and concrete layers?",
+    "How does nn.Sequential compose a network?",
+    "Why does the example network return logits?",
+    "How does PyTorch support GPU acceleration internally?",
+    "What is the role of C++ in PyTorch?",
+    "What is the role of CUDA in PyTorch?",
+    "How do ROCm and Metal fit into the backend model?",
+    "How did Torch lead to PyTorch?",
+    "What role did Torch7/LuaTorch play in the lineage?",
+    "How did torch-autograd influence PyTorch?",
+    "How did HIPS/autograd influence torch-autograd?",
+    "How did Chainer influence the PyTorch refactoring?",
+    "Why was Caffe2 merged into PyTorch?",
+    "What problem was ONNX intended to solve?",
+    "How can ONNX connect PyTorch models to TensorRT?",
+    "What changed with PyTorch 2.0?",
+    "What is TorchDynamo's role in compilation?",
+    "How does graph capture differ from automatic differentiation?",
+    "How are PyTorch model weights serialized?",
+    "What does ZIP64 contribute to PyTorch serialization?",
+    "Why are .pt and .pth separate from ONNX?",
+    "How does PyTorch support training and inference?",
+    "How does automatic parallelization fit into PyTorch?",
+    "What is the relationship between tensors and CUDA tensors?",
+    "How could distributed training extend the basic device model?",
+    "How could FSDP and DDP extend PyTorch training?",
+    "How do mixed precision and quantization affect execution?",
+    "How does PyTorch support LLM and generative-AI workloads?",
+    "How does the PyTorch ecosystem extend into vision and audio?",
+    "How should PyTorch models be deployed and served?"
+  ],
+  "expansion_targets": [
+    "DistributedDataParallel internals",
+    "Fully Sharded Data Parallel",
+    "Tensor/pipeline/model parallelism",
+    "CUDA streams and asynchronous execution",
+    "CUDA memory allocator",
+    "CPU threading and parallel execution",
+    "ATen operator dispatch",
+    "custom C++/CUDA extensions",
+    "custom autograd Functions",
+    "torch.compile end-to-end pipeline",
+    "AOTAutograd",
+    "TorchInductor",
+    "torch.fx graph transformations",
+    "TorchScript historical compiler path",
+    "CUDA graph execution",
+    "automatic mixed precision",
+    "quantization",
+    "checkpointing",
+    "DataLoader and data pipelines",
+    "distributed checkpointing",
+    "ONNX export internals",
+    "TensorRT deployment",
+    "TorchServe",
+    "PyTorch Lightning",
+    "DeepSpeed",
+    "Hugging Face Transformers integration",
+    "Diffusers integration",
+    "torchvision",
+    "torchaudio",
+    "reinforcement learning",
+    "computer vision",
+    "natural language processing",
+    "large language models",
+    "generative AI",
+    "profiling and performance analysis",
+    "reproducibility",
+    "serialization security and pickle risks",
+    "edge deployment",
+    "PyTorch C++ frontend"
+  ],
+  "validation": {
+    "node_count": 138,
+    "relationship_count": 150,
+    "formal_model_count": 12,
+    "source_claim_count": 12,
+    "semantic_distinction_count": 12,
+    "learning_path_count": 12,
+    "misconception_count": 10,
+    "question_count": 36,
+    "expansion_target_count": 39,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}
