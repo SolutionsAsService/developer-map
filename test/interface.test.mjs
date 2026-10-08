@@ -233,7 +233,7 @@ test('all new domains and neutral fallback have colors and featured source trail
     assert.ok(d.querySelector('[data-route="' + graph + ':path:0"]'));
   }
   assert.equal(w.DeveloperMapKey.groupOf({topics:['unknown'],type:'concept'}), 'neutral');
-  assert.equal(d.querySelectorAll('#route-list .route-card').length,10);
+  assert.equal(d.querySelectorAll('#route-list .route-card').length,14);
   for (const id of ['os','python','sandbox','volume_computing:volume','optical_disc_image','system_image']) {
     d.querySelector('[data-start="' + id + '"]').click();
     assert.equal(new URL(w.location.href).searchParams.get('concept'),id);
@@ -281,14 +281,15 @@ test('rich inspector exposes section provenance, mechanism, conditions and effec
 
 test('high degree reselect preserves every incoming outgoing parallel rich edge across overview filters', async () => {
   const dom = await mount(); const w=dom.window, d=w.document;
-  for (const id of ['os','python','virtual_machine','sandbox','metaclass','embedded','realtime']) {
+  for (const legacyId of ['os','python','virtual_machine','sandbox','metaclass','operating_system:embedded','realtime']) {
+    const id = atlas.aliases[legacyId] || legacyId;
     const expected = atlas.edges.filter(edge => edge.source===id || edge.target===id).map(edge=>edge.id).sort();
     w.selectConcept(id);
     const verify = () => {
       assert.deepEqual(JSON.parse(d.querySelector('#network').dataset.incidentEdgeIds).sort(), expected);
       assert.deepEqual([...d.querySelectorAll('[data-relation-id]')].map(el=>el.dataset.relationId).sort(), expected);
       assert.equal(d.querySelector('#network').dataset.selectedConcept,id);
-      for (const entry of d.querySelectorAll('[data-relation-id]')) assert.match(entry.textContent, /Why this connection:/);
+      for (const entry of d.querySelectorAll('[data-relation-id]')) assert.match(entry.textContent, /WHAT · exact source triple:/);
       const headings = [...d.querySelectorAll('#inspector h4')].map(el => el.textContent);
       assert.ok(headings.findIndex(text => text.startsWith('All connections')) < headings.findIndex(text => text.startsWith('Original source records')));
     };
@@ -312,9 +313,9 @@ test('focused neighborhood exposes every endpoint and supports context and back 
   w.selectConcept('os');
   const canvas = d.querySelector('canvas');
   const incident = atlas.edges.filter(e => e.source === 'os' || e.target === 'os');
-  const expected = [...new Set(['os', ...incident.flatMap(e => [e.source,e.target])])].sort();
+  const expected = [...new Set([...atlas.overview.nodeIds, 'os', ...incident.flatMap(e => [e.source,e.target])])].sort();
   assert.deepEqual(JSON.parse(canvas.dataset.visibleNodeIds).sort(), expected);
-  assert.equal(canvas.dataset.viewMode, 'neighborhood');
+  assert.equal(canvas.dataset.viewMode, 'highlight');
   d.querySelector('#neighborhood-view').click();
   assert.equal(canvas.dataset.viewMode, 'context');
   assert.deepEqual(JSON.parse(canvas.dataset.incidentEdgeIds).sort(), incident.map(e=>e.id).sort());
@@ -346,4 +347,34 @@ test('connection browser preserves complete records and filters without hiding g
   assert.equal(canvas.dataset.selectedConcept,'sandbox');
   assert.deepEqual(JSON.parse(canvas.dataset.incidentEdgeIds).sort(),incident.map(e=>e.id).sort());
   dom.window.close();
+});
+
+test('C++ alias search, same global coordinates, independent in-place evidence and reset',async()=>{
+ const dom=await mount(),w=dom.window,d=w.document,c=d.querySelector('canvas');
+ const before=JSON.parse(c.dataset.nodePositions);
+ w.selectConcept('c');let after=JSON.parse(c.dataset.nodePositions);
+ for(const id of atlas.overview.nodeIds)assert.deepEqual(after[id],before[id]);
+ const row=d.querySelector('[data-inspect-edge]');const selected=c.dataset.selectedConcept;row.click();assert.equal(c.dataset.selectedConcept,selected);assert.match(d.querySelector('.in-place-evidence').textContent,/WHAT.*exact triple/);assert.match(d.querySelector('.in-place-evidence').textContent,/WHY/);
+ const search=d.querySelector('#search');search.value='cuda:cpp';search.dispatchEvent(new w.Event('input'));assert.ok(d.querySelector('[data-concept="cpp"]'));
+ c.dispatchEvent(new w.KeyboardEvent('keydown',{key:'+',bubbles:true}));assert.notDeepEqual(JSON.parse(c.dataset.nodePositions).c,after.c);
+ d.querySelector('#reset-map').click();assert.equal(c.dataset.selectedConcept,'');assert.deepEqual(JSON.parse(c.dataset.nodePositions),before);w.close();
+});
+
+test('real lightweight-first contract lazily loads full evidence once without moving canvas',async()=>{
+ const o=JSON.parse(await readFile(new URL('../data/overview.json',import.meta.url)));
+ const dom=new JSDOM(html,{url:'http://localhost:4173/',runScripts:'outside-only'}),w=dom.window,d=w.document,calls=[];
+ w.fetch=async url=>{calls.push(url);return {ok:true,json:async()=>url.includes('overview')?o:atlas};};
+ w.HTMLElement.prototype.scrollIntoView=()=>{};
+ w.HTMLCanvasElement.prototype.getBoundingClientRect=()=>({width:390,height:560,left:0,top:0});
+ w.HTMLCanvasElement.prototype.getContext=()=>new Proxy({},{get:(_,key)=>key==='measureText'?value=>({width:value.length*7}):()=>{}});
+ w.requestAnimationFrame=fn=>{fn();return 1;};for(const script of scripts)w.eval(script);await new Promise(r=>setTimeout(r,30));
+ assert.deepEqual(calls,['./data/overview.json']);const c=d.querySelector('canvas'),before=JSON.parse(c.dataset.nodePositions);w.selectConcept('ruby_on_rails:rails');await new Promise(r=>setTimeout(r,30));
+ assert.deepEqual(calls,['./data/overview.json','./data/atlas.json']);assert.ok(d.querySelector('.in-place-evidence'),d.querySelector('#map-preview').textContent);assert.match(d.querySelector('.in-place-evidence').textContent,/written_in/);for(const id of atlas.overview.nodeIds)assert.deepEqual(JSON.parse(c.dataset.nodePositions)[id],before[id]);
+ w.selectConcept('cuda:cuda');assert.equal(calls.length,2);assert.equal(d.querySelector('#fit-selection').hidden,false);d.querySelector('#reset-map').click();assert.deepEqual(JSON.parse(c.dataset.nodePositions),before);w.close();
+});
+
+test('pointer pan and wheel zoom preserve selection while reset restores stable overview',async()=>{
+ const dom=await mount(),w=dom.window,d=w.document,c=d.querySelector('canvas');const before=JSON.parse(c.dataset.nodePositions);
+ c.dispatchEvent(new w.MouseEvent('pointerdown',{clientX:200,clientY:200,button:0,bubbles:true}));c.dispatchEvent(new w.MouseEvent('pointermove',{clientX:250,clientY:230,bubbles:true}));c.dispatchEvent(new w.MouseEvent('pointerup',{clientX:250,clientY:230,bubbles:true}));assert.notDeepEqual(JSON.parse(c.dataset.nodePositions).c,before.c);
+ c.dispatchEvent(new w.WheelEvent('wheel',{clientX:400,clientY:300,deltaY:-100,cancelable:true}));assert.notDeepEqual(JSON.parse(c.dataset.nodePositions).c,before.c);d.querySelector('#reset-map').click();assert.deepEqual(JSON.parse(c.dataset.nodePositions),before);w.close();
 });

@@ -75,7 +75,14 @@ function relationDescription(edge, id) {
   return { other, direction, relation };
 }
 
+let archivePromise;
+async function ensureArchive() {
+  if (!state.atlas.lightweight) return;
+  if (!archivePromise) archivePromise = fetch('./data/atlas.json').then(response => { if (!response.ok) throw new Error('Could not load evidence archive'); return response.json(); }).then(atlas => { state.atlas=atlas; connectIndexes(atlas); renderRoutes(); renderCatalog(); });
+  await archivePromise;
+}
 function selectConcept(id, { scroll = false, remember = true } = {}) {
+  if (state.atlas.lightweight) { ensureArchive().then(()=>selectConcept(id,{scroll,remember})).catch(error=>{$('#map-preview').hidden=false;$('#map-preview').textContent=error.message;}); return; }
   id = state.atlas.aliases?.[id] || id;
   if (!state.byId.has(id)) return;
   if (remember && state.selected && state.selected !== id) state.selectionHistory.push(state.selected);
@@ -192,10 +199,10 @@ function renderMap() {
   $("#fit-selection").hidden = !state.selected;
   $("#selection-back").disabled = !state.selectionHistory.length;
   $("#neighborhood-view").setAttribute("aria-pressed", String(state.neighborhood));
-  $("#neighborhood-view").textContent = state.neighborhood ? "Neighborhood · on" : "Whole-map context";
+  $("#neighborhood-view").textContent = state.neighborhood ? "Highlight · same map" : "Whole-map context";
   $("#map-mode").textContent = state.selected
     ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()} · ALL INCIDENT LINKS / ALL SOURCES`
-    : "WHOLE FIELD / ALL NODES";
+    : "WHOLE FIELD / ALL NODES ARCHIVED · CONNECTED CONCEPT OVERVIEW";
   $("#map-count").textContent =
     `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${(state.edgesById.get(state.selected) || []).length} incident links · ${network?.counts().connected || 0} direct neighbors · all sources (overview filter does not hide incident links)` : ""}`;
   const directed = (state.edgesById.get(state.selected) || []).filter(
@@ -321,18 +328,18 @@ function renderPreview() {
       " → " +
       escapeHtml(state.byId.get(leading.target)?.label) +
       "</strong><span>" +
-      escapeHtml(humanize(leading.relation)) +
+      escapeHtml(leading.relation) +
       "</span><p>" +
       escapeHtml(
         leading.semantic ||
           leading.record?.mechanism ||
-          "Inspect the complete relationship record below.",
+          "WHY not supplied: source records this predicate without a separate mechanism or rationale.",
       ) +
       "</p><small>" +
       (leading.curated
         ? "Editorial connection · not an original source edge"
         : "Recorded in " + escapeHtml(sourceTitle(leading.document))) +
-      '</small><button type="button" id="active-edge-evidence">Inspect this relationship ↓</button></div>'
+      '</small><div class="in-place-evidence"><strong>WHAT · exact triple</strong><code>' + escapeHtml(leading.source+' — '+leading.relation+' → '+leading.target) + '</code><p>WHY · ' + escapeHtml(leading.semantic || leading.record?.rationale || 'Not supplied by source; no cause inferred from this link.') + '</p><p>' + escapeHtml(leading.kind+' · '+leading.assertionStatus) + '</p><p>' + escapeHtml(leading.document+' · '+(leading.sourcePointer||leading.id)) + '</p>' + renderFields(leading.fields||[]) + (leading.evidence||[]).map(renderClaim).join('') + '<details><summary>Exact raw relationship fields</summary><pre>'+escapeHtml(JSON.stringify(leading.record,null,2))+'</pre></details></div><button type="button" id="active-edge-evidence">Inspect this relationship ↓</button></div>'
     : "";
   host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} relationships</span><span>${sources.length} source documents</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(" · ")) + (sources.length > 2 ? ` · +${sources.length - 2} more` : "") : "No original source record"}</p>${proof}${why ? `<div class="preview-why"><span class="preview-kicker">WHY THESE POINTS CONNECT</span>${why}<p>Showing ${examples.length} of ${connections.length} recorded links. All links and evidence appear in the full entry.</p></div>` : ""}<button type="button" id="preview-read">Read full entry ↓</button>`;
   const oldPreview = host.querySelector('.preview-why');
@@ -457,7 +464,7 @@ function renderInspector() {
   const node = state.selected ? state.byId.get(state.selected) : null;
   if (!node) {
     host.innerHTML =
-      '<div class="inspector-empty"><span class="inspector-orbit" aria-hidden="true">◉</span><p class="eyebrow">YOUR SYSTEMS ATLAS</p><h3>Explore the complete field.</h3><p>Every source concept and relationship stays on the map. Choose a point or search to illuminate its direct connections and read the evidence behind them.</p><div class="starter-links"><button data-concept="virtual_machine">Virtual machines ↗</button><button data-concept="containerization">Containerization ↗</button><button data-concept="docker">Explore Docker ↗</button></div></div>';
+      '<div class="inspector-empty"><span class="inspector-orbit" aria-hidden="true">◉</span><p class="eyebrow">YOUR SYSTEMS ATLAS</p><h3>Explore the complete field.</h3><p>The connected concept overview stays on the map; every original record remains searchable and downloadable. Choose a point or search to illuminate its direct connections and read the evidence behind them.</p><div class="starter-links"><button data-concept="virtual_machine">Virtual machines ↗</button><button data-concept="containerization">Containerization ↗</button><button data-concept="docker">Explore Docker ↗</button></div></div>';
     host
       .querySelectorAll("[data-concept]")
       .forEach((button) =>
@@ -520,10 +527,10 @@ function renderInspector() {
     .map((edge) => {
       const { other, direction, relation } = relationDescription(edge, node.id);
       const style = window.DeveloperMapKey.classify(edge);
-      return `<article class="relation-entry" tabindex="-1" data-relation-id="${escapeHtml(edge.id)}"><button type="button" data-concept="${escapeHtml(other?.id || "")}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>${edge.source === edge.target ? "Self-loop" : edge.source === node.id ? "Outgoing" : "Incoming"} · ${edge.curated ? "Editorial relation" : "Source relation"}: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || "Unknown")}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof"><p><strong>Why this connection:</strong> ${escapeHtml(state.byId.get(edge.source)?.label || edge.source)} → ${escapeHtml(humanize(edge.relation))} → ${escapeHtml(state.byId.get(edge.target)?.label || edge.target)}.</p>${!(edge.fields || []).some(field => /reason|rationale|mechanism|description|explanation|condition|semantic/i.test(field.key)) ? "<p>The source records this relationship but does not provide a separate causal explanation.</p>" : ""}${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ""}<span>${edge.curated ? "Editorial connection ·" : "Recorded in"} ${escapeHtml(sourceTitle(edge.document))}${edge.sourcePointer ? ` · ${escapeHtml(edge.sourcePointer)}` : ""}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ""}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join("")}</div>` : "<p>No claim-level citation supplied for this relationship.</p>"}</div></article>`;
+      return `<article class="relation-entry" tabindex="-1" data-relation-id="${escapeHtml(edge.id)}"><button type="button" data-concept="${escapeHtml(other?.id || "")}"><span class="relation-direction">${direction}</span><span><span class="relation-style">${lineSample(style)}${escapeHtml(style.label)}</span><small>${edge.source === edge.target ? "Self-loop" : edge.source === node.id ? "Outgoing" : "Incoming"} · ${edge.curated ? "Editorial relation" : "Source relation"}: ${escapeHtml(humanize(edge.relation))}</small><strong>${escapeHtml(other?.label || other?.id || "Unknown")}</strong></span><span class="relation-arrow">↗</span></button><div class="relation-proof"><p><strong>WHAT · exact source triple:</strong> ${escapeHtml(state.byId.get(edge.source)?.label || edge.source)} → ${escapeHtml(edge.relation)} → ${escapeHtml(state.byId.get(edge.target)?.label || edge.target)}.</p>${!edge.semantic && !edge.record.rationale && !edge.record.explanation ? "<p>WHY not supplied: the source records this predicate without a separate mechanism or rationale.</p>" : ""}${other?.description ? `<p class="neighbor-description">${escapeHtml(other.description)}</p>` : ""}<span>${edge.curated ? "Editorial connection ·" : "Recorded in"} ${escapeHtml(sourceTitle(edge.document))}${edge.sourcePointer ? ` · ${escapeHtml(edge.sourcePointer)}` : ""}</span>${edge.semantic ? `<p>${escapeHtml(relation)}</p>` : ""}${renderFields(edge.fields || [])}${edge.evidence.length ? `<div class="claim-list"><strong>Supporting claims · ${edge.evidence.length}</strong>${edge.evidence.map(renderClaim).join("")}</div>` : "<p>No claim-level citation supplied for this relationship.</p>"}</div></article>`;
     })
     .join("");
-  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${new Set(node.variants.map((variant) => variant.document)).size} SOURCE DOCUMENTS</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ""}<div class="inspector-section"><h4>Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ""}${node.addedByEditor ? '<p class="provenance-warning">Editorial note added to resolve a source reference; not an original graph node.</p>' : ""}</div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || "<p>No relationships are recorded for this concept yet.</p>"}</div></div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || "<p>No original source record.</p>"}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
+  host.innerHTML = `<div class="inspector-content"><div class="inspector-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><span class="record-number">${connections.length} LINKS · ${new Set(node.variants.map((variant) => variant.document)).size} SOURCE DOCUMENTS</span></div><h3>${escapeHtml(node.label)}</h3><p class="inspector-id">${escapeHtml(node.id)}</p><button type="button" id="clear-focus" class="clear-focus">Clear selection <kbd>Esc</kbd></button>${node.note?.intuition ? `<div class="insight"><span class="insight-icon">✧</span><div><strong>IN PLAIN LANGUAGE · CURATED NOTE</strong><p>${escapeHtml(node.note.intuition)}</p></div></div>` : ""}<div class="inspector-section"><h4>WHAT · Concept overview</h4><p>${escapeHtml(explanation)}</p>${node.note?.example ? `<p class="example"><b>For example</b> · ${escapeHtml(node.note.example)}</p>` : ""}${node.addedByEditor ? '<p class="provenance-warning">Editorial note added to resolve a source reference; not an original graph node.</p>' : ""}</div><div class="inspector-section"><h4>All connections <span>${connections.length}</span></h4><p class="connection-note">Direction, meaning and source evidence are shown for each recorded link. A link without a cited claim has no claim-level citation in the source data.</p><div class="relation-list">${relations || "<p>No relationships are recorded for this concept yet.</p>"}</div></div>${guide}<div class="inspector-section"><h4>Original source records <span>${node.variants.length}</span></h4><div class="source-record-grid">${sourceRecords || "<p>No original source record.</p>"}</div></div><div class="inspector-section"><details class="raw-record"><summary>Inspect complete JSON records <span>↗</span></summary><pre></pre></details></div></div>`;
   host
     .querySelectorAll("[data-concept]")
     .forEach((button) =>
@@ -565,6 +572,7 @@ function renderInspector() {
 }
 
 function renderRoutes() {
+  if (state.atlas.lightweight) { $("#route-list").innerHTML="<p>Source learning paths load when you explore or request all paths.</p>"; return; }
   const featured = state.atlas.documents.map(doc => state.atlas.paths.find(path => path.document === doc.file)).filter(Boolean);
   $("#route-list").innerHTML = (state.routesExpanded ? state.atlas.paths : featured)
     .map(
@@ -685,7 +693,7 @@ function setupMapGestures() {
 
 async function init() {
   try {
-    const response = await fetch("./data/atlas.json");
+    const response = await fetch("./data/overview.json");
     if (!response.ok)
       throw new Error(`Could not load atlas (HTTP ${response.status})`);
     state.atlas = await response.json();
@@ -729,13 +737,16 @@ async function init() {
     $("#demo-docker").addEventListener("click", () => selectConcept("docker"));
     $("#routes-more").addEventListener("click", () => {
       state.routesExpanded = true;
+      ensureArchive().then(renderRoutes).catch(()=>{});
       renderRoutes();
     });
     $("#search").addEventListener("input", (event) => {
       state.query = event.target.value;
       renderSearch();
+      ensureArchive().then(renderSearch).catch(()=>{});
     });
     $("#catalog-search").addEventListener("input", (event) => {
+      ensureArchive().then(renderCatalog).catch(()=>{});
       state.catalogQuery = event.target.value;
       state.catalogLimit = 36;
       renderCatalog();

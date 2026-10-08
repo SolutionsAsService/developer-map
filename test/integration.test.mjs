@@ -8,7 +8,7 @@ const atlas = JSON.parse(await readFile(new URL('../data/atlas.json', import.met
 const manifest = JSON.parse(await readFile(new URL('../docs/integration-manifest.json', import.meta.url)));
 const byId = new Map(atlas.nodes.map(node => [node.id, node]));
 const id = key => atlas.sourceNodeMap[key];
-test('all ten input hashes and exact manifest mappings preserve source records', async () => {
+test('all fourteen input hashes and exact manifest mappings preserve source records', async () => {
   let nodes = 0, edges = 0, claims = 0, paths = 0;
   for (const source of manifest.sources) {
     const bytes = await readFile(new URL('../' + source.file, import.meta.url));
@@ -25,7 +25,7 @@ test('all ten input hashes and exact manifest mappings preserve source records',
     for (const record of source.claims) assert.ok(byId.get(record.derivedId).variants.some(v => JSON.stringify(v.record) === JSON.stringify(pointer(record.pointer)) || v.claims.some(c => JSON.stringify(c) === JSON.stringify(pointer(record.pointer)))));
     nodes += source.nodes.length; edges += source.edges.length; claims += source.claims.length; paths += source.paths.length;
   }
-  assert.deepEqual([nodes, edges, claims, paths], [2317, 2417, 153, 133]);
+  assert.deepEqual([nodes, edges, claims, paths], [3102, 3312, 204, 186]);
   assert.deepEqual(manifest.derivedNodeIds, atlas.nodes.map(n => n.id));
   assert.deepEqual(manifest.derivedEdgeIds, atlas.edges.map(e => e.id));
 });
@@ -66,13 +66,13 @@ test('source evidence connects new domains without invented editorial repairs', 
     assert.equal(edge.target, id(graph + ':' + edge.record.target));
     assert.equal(edge.provenance, 'source');
   }
-  assert.equal(atlas.edges.filter(e => e.curated).length, 5);
+  assert.equal(atlas.edges.filter(e => e.curated).length, 6);
   assert.equal(atlas.edges.find(e => e.id === 'python_language:310').target, atlas.edges.find(e => e.id === 'virtual_machine:33').source);
   assert.equal(atlas.edges.find(e => e.id === 'system_image:3').record.conditions, 'All relevant state must be on disk.');
 });
 test('prose paths preserve unresolved whole segments and never infer graph edges', () => {
   const prose = atlas.paths.filter(p => p.sequenceKind === 'prose');
-  assert.equal(prose.length, 30);
+  assert.equal(prose.length, 42);
   for (const item of prose) {
     assert.equal(item.sequenceText, item.record.sequence);
     assert.ok(item.segments.every(s => ['resolved','unresolved'].includes(s.status)));

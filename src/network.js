@@ -14,7 +14,7 @@
       neighbors.get(edge.source)?.add(edge.target);
       neighbors.get(edge.target)?.add(edge.source);
     }
-    const bounds = nodes.reduce(
+    const bounds = nodes.filter(node => !atlas.overview || atlas.overview.nodeIds.includes(node.id)).reduce(
       (result, node) => ({
         minX: Math.min(result.minX, node.layout.x),
         maxX: Math.max(result.maxX, node.layout.x),
@@ -47,26 +47,15 @@
     let drag = null;
     let scheduled = false;
     let neighborhoodMode = true;
+    const overviewIds = new Set(atlas.overview?.nodeIds || nodes.map(n=>n.id));
+    const overviewEdges = new Set(atlas.overview?.edgeIds || edges.map(e=>e.id));
     let localPositions = new Map();
     let labelTargets = [];
     const incidentById = new Map(nodes.map(node => [node.id, []]));
     for (const edge of edges) for (const id of new Set([edge.source, edge.target])) incidentById.get(id).push(edge);
-    function rebuildNeighborhood() {
-      localPositions = new Map();
-      if (!selected || !neighborhoodMode) return;
-      localPositions.set(selected, {x:0,y:0});
-      const near = [...(neighbors.get(selected) || [])].filter(id => id !== selected).map(id => byId.get(id)).sort((a,b) => mapKey.groupOf(a).localeCompare(mapKey.groupOf(b)) || a.label.localeCompare(b.label) || a.id.localeCompare(b.id));
-      let cursor = 0, ring = 1;
-      while (cursor < near.length) {
-        const count = Math.min(near.length-cursor, ring * 12), radius = ring * 120;
-        for (let i=0;i<count;i++) { const angle = -Math.PI/2 + Math.PI*2*i/count + (ring%2 ? 0 : Math.PI/count); localPositions.set(near[cursor++].id,{x:Math.cos(angle)*radius,y:Math.sin(angle)*radius}); }
-        ring++;
-      }
-    }
-    function basePoint(node) {
-      return localPositions.get(node.id) || {x:(node.layout.x-centerX)*fitScaleX,y:(node.layout.y-centerY)*fitScaleY};
-    }
-    function isVisible(node) { return !selected || !neighborhoodMode || localPositions.has(node.id); }
+    function rebuildNeighborhood() { localPositions.clear(); }
+    function basePoint(node) { return {x:(node.layout.x-centerX)*fitScaleX,y:(node.layout.y-centerY)*fitScaleY}; }
+    function isVisible(node) { return overviewIds.has(node.id) || node.id===selected || neighbors.get(selected)?.has(node.id); }
     function nodeRadius(node) { return node.id === selected ? 10 : Math.max(4, Math.min(8, 3 + Math.sqrt(node.degree || 0)*0.45)); }
 
     function screen(node) {
@@ -144,10 +133,16 @@
           context.stroke();
           if (highlighted && offset) { context.fillStyle = style.color; context.font = '10px ui-monospace, monospace'; context.fillText(String(lane.index + 1), control.x, control.y); }
         }
+        if (edge.source !== edge.target && distance > 75 && (highlighted || zoom >= 2.5)) {
+          const caption = edge.relation;
+          context.font = '11px ui-monospace, monospace';
+          const textWidth = context.measureText(caption).width;
+          if (distance > textWidth + 25 || edge===featuredEdge) { context.fillStyle='#111810'; context.fillRect(control.x-textWidth/2-3,control.y-13,textWidth+6,17); context.fillStyle=style.color; context.globalAlpha=1; context.fillText(caption,control.x-textWidth/2,control.y); }
+        }
         if (highlighted) { renderedIncidentIds.push(edge.id); edgeGeometry.set(edge.id, { start, end, control, loop: edge.source === edge.target, radius: 16 + lane.index * 7 }); }
         if (
           (style.arrow || highlighted) &&
-          (highlighted || (style.id === "orchestration" && !active && inTopic))
+          (highlighted || (zoom >= 2.5 && !active && inTopic))
         ) {
           if (distance > 15) {
             const t = 0.82, u = 1 - t;
@@ -188,7 +183,7 @@
         }
       }
       for (const edge of edges)
-        if ((!selected || !neighborhoodMode) && (!active || (edge.source !== active && edge.target !== active)))
+        if (overviewEdges.has(edge.id) && (!active || (edge.source !== active && edge.target !== active)))
           drawEdge(edge, false);
       if (active)
         for (const edge of incident)
@@ -307,7 +302,7 @@
           dy = to.y - from.y;
         const distance = Math.max(1, Math.hypot(dx, dy));
         const style = styles.get(featuredEdge);
-        const relation = style.label.replace(/\s*→$/, "").toUpperCase();
+        const relation = featuredEdge.relation;
         const formula = String(
           featuredEdge.record?.mathematical_form ||
             featuredEdge.relation.replaceAll("_", " "),
@@ -340,7 +335,7 @@
       context.globalAlpha = 1;
       canvas.dataset.incidentEdgeIds = JSON.stringify(renderedIncidentIds);
       canvas.dataset.selectedConcept = selected || "";
-      canvas.dataset.viewMode = selected && neighborhoodMode ? "neighborhood" : "context";
+      canvas.dataset.viewMode = selected && neighborhoodMode ? "highlight" : "context";
       canvas.dataset.visibleNodeIds = JSON.stringify(nodes.filter(isVisible).map(node=>node.id));
       canvas.dataset.nodePositions = JSON.stringify(Object.fromEntries(nodes.filter(isVisible).map(node=>[node.id,screen(node)])));
       canvas.dataset.labelTargets = JSON.stringify(labelTargets);
@@ -374,7 +369,6 @@
       fitScaleX = (width - 36) / Math.max(1, bounds.maxX - bounds.minX);
       fitScaleY = (height - 36) / Math.max(1, bounds.maxY - bounds.minY);
       rebuildNeighborhood();
-      frameNeighborhood();
       draw();
     }
 
@@ -520,11 +514,11 @@
           : [];
         hovered = null;
         tooltip.hidden = true;
-        if (changed) { rebuildNeighborhood(); frameNeighborhood(); }
+        if (changed) rebuildNeighborhood();
         draw();
       },
       focusEdge(edge) {
-        featuredEdge = edge;
+        featuredEdge = edges.find(item=>item.id===edge.id) || edge;
         draw();
       },
       edgeFocus(value) {
@@ -539,7 +533,7 @@
         zoom = Math.max(0.12, Math.min(12, zoom * factor));
         draw();
       },
-      view(value) { neighborhoodMode = value; rebuildNeighborhood(); frameNeighborhood(); draw(); },
+      view(value) { neighborhoodMode = value; draw(); },
       fitSelection() { if (selected) frameNeighborhood(); else { zoom=1;panX=0;panY=0; } draw(); },
       fit() {
         zoom = 1;

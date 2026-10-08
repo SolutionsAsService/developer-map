@@ -385,3 +385,27 @@ The inventories below are generated from the published audit, not hand-estimated
 - x86_64
 - xu_bing
 - zhang
+
+
+## October 7, 2026 · fourteen-source upgrade
+
+Baseline: clean main d6ec744; authenticated origin fetch revealed user upload commit f080705, safely fast-forwarded. All 14 source files are byte-exact against f080705. The manifest retains their SHA-256 hashes and mappings.
+
+- 3,102 node records and 204 claims → 3,074 canonical records; 24 reviewed alias groups.
+- All 3,312 structured relationships retained, including 44 rich relationships; 6 clearly marked editorial bridges. No dangling endpoints, introduced self-loops or duplicate derived IDs.
+- C++ source repeats 38 relationship IDs (e150 etc.); stable section/index-derived IDs retain all records rather than overwriting them.
+- 55 canonical concepts have different variant descriptions. They are retained as source perspectives, not asserted to agree.
+- 1,896 source relationships have no supplied prose WHY. Empty mechanism is not an explanation.
+- 3,312 links lack explicit claim-ID attachments; this does NOT mean all lack source evidence: source line ranges and embedded references remain raw fields and claim/provenance edges remain archive records. No assertion is promoted to independently verified fact.
+- Full archive: 729 weak components, 698 isolated records; largest component 2,257. Overview: 556 meaningful concepts, 1,125 links, selected by iterative 2-core pruning to >=2 distinct displayed neighbors. No padding links or fake causation.
+- C vs C++; Ruby vs Rails; CUDA platform vs CUDA C/C++ extension, Toolkit, Runtime API and GPU remain distinct. New domain concepts default source-scoped unless explicitly reviewed.
+- Rails → Ruby written_in is source assertion /relationships/0. CUDA C/C++ → nvcc compiled_by remains compilation, not implementation language. C++ → C extends is historical source assertion, not dependency.
+- Newly curated Kamal → Docker uses_for_deployment is OPTIONAL deployment scope, independently checked in official Kamal homepage, Why not just run Capistrano, Kubernetes or Docker Swarm? section, accessed 2026-10-07. The documentation explicitly describes dependencies living in the Docker image, Docker auto-provisioning, and basic Docker commands being called; this is not a universal Rails dependency. URL: https://kamal-deploy.org/.
+
+### Current verification limitations
+
+Browser tool open on http://127.0.0.1:4186 returned **browser navigation blocked by policy**. No CLI/CDP/Playwright bypass attempted. Existing screenshots and integration-browser.json are historical, not proof of this upgrade. JSDOM/Canvas-mocked interaction checks and real HTTP entrypoint/assets/data checks are reported separately. No publication performed by implementation worker.
+
+Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
+
+Verification checkpoint: npm run build + manifest regeneration + npm test exited 0 (34/34). After final overview-bounds camera adjustment, targeted same-coordinate / lazy-mobile / pointer-pan-wheel tests exited 0 (3/3, including the newly added pan test). All JS/MJS node --check and git diff --check exited 0. Final real HTTP smoke served 21 resources (entrypoint, four assets, two derived JSON files, 14 original sources), all HTTP 200. Browser visual proof remains blocked by policy.

@@ -29,7 +29,7 @@ test('ambiguous and narrower concepts are not conflated', () => {
     assert.ok(ids.every(id => byId.has(id)));
   }
   assert.equal(atlas.aliases.host, undefined);
-  assert.deepEqual(atlas.ambiguousAliases.host, ['docker:host', 'virtual_machine:host']);
+  assert.deepEqual(atlas.ambiguousAliases.host, ['cuda:host', 'docker:host', 'virtual_machine:host']);
 });
 
 test('direct meaningful core relations exist with honest provenance', () => {
@@ -68,12 +68,13 @@ test('every endpoint and learning path remaps through its own source identity', 
     for (const [index, record] of source.learning_paths.entries()) {
       const path = atlas.paths.find(path => path.id === doc.graphId + ':path:' + index);
       assert.deepEqual(path.record, record);
-      if (Array.isArray(record.sequence)) assert.deepEqual(path.steps, record.sequence.map(id => atlas.sourceNodeMap[doc.graphId + ':' + id]));
+      if (Array.isArray(record.sequence)) assert.deepEqual(path.steps, record.sequence.map(id => atlas.sourceNodeMap[doc.graphId + ':' + id]).filter(Boolean));
+      else if (record.ordered_nodes) assert.deepEqual(path.steps, record.ordered_nodes.map(id => atlas.sourceNodeMap[doc.graphId + ':' + id]));
       else assert.equal(path.sequenceText, record.sequence);
     }
   }
-  assert.equal(nodeRecords, 2317);
-  assert.equal(edgeRecords, 2373);
+  assert.equal(nodeRecords, 3102);
+  assert.equal(edgeRecords, 3268);
   assert.ok(atlas.edges.every(edge => byId.has(edge.source) && byId.has(edge.target) && (edge.source !== edge.target || edge.record.source === edge.record.target)));
   assert.equal(new Set(atlas.edges.map(edge => edge.id)).size, atlas.edges.length);
   assert.ok(Object.values(atlas.aliases).every(id => byId.has(id)));
@@ -91,11 +92,11 @@ test('claims and references remain isolated identities even without conventional
 
 test('connectivity audit reports disconnected data instead of inventing repairs', () => {
   assert.deepEqual(atlas.audit.connectivity, connectivity(atlas.nodes, atlas.edges));
-  assert.equal(atlas.summary.components, 621);
-  assert.equal(atlas.summary.isolated, 601);
-  assert.equal(atlas.audit.connectivity.componentSizes[0], 1598);
+  assert.equal(atlas.summary.components, 729);
+  assert.equal(atlas.summary.isolated, 698);
+  assert.equal(atlas.audit.connectivity.componentSizes[0], 2257);
   assert.deepEqual(atlas.audit.sourceOnlyConnectivity.componentSizes, atlas.audit.connectivity.componentSizes);
-  assert.equal(atlas.audit.sourceClaimRecords, 153);
+  assert.equal(atlas.audit.sourceClaimRecords, 204);
   assert.deepEqual(atlas.audit.selfLoops, ['operating_system:46', 'operating_system:55', 'python_language:140']);
 });
 

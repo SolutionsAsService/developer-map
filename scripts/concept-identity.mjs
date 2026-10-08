@@ -47,7 +47,7 @@ export function createIdentityResolver(documents, groups = aliasGroups, scopes =
   }
   for (const [key, node] of records) {
     const oldId = /^(claim_|ref_)/.test(node.id) || identities.get(node.id)?.size > 1 ? key : node.id;
-    const id = protectedKeys.has(key) ? key : explicit.get(key) || scopes[key]?.id || (identities.get(node.id)?.size > 1 ? key : node.id);
+    const id = protectedKeys.has(key) ? key : explicit.get(key) || scopes[key]?.id || (['c_language', 'cpp_programming_language', 'cuda', 'ruby_on_rails'].includes(key.split(':')[0]) || identities.get(node.id)?.size > 1 ? key : node.id);
     sourceIds.set(key, id);
     candidate(oldCandidates, oldId, id);
     candidate(bareCandidates, node.id, id);

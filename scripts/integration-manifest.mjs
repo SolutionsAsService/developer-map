@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { claimEntries } from './extract-concepts.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const baseline = '10fb7ab63177eb18a4bb7ff80cd17e10df450b13';
+const baseline = 'f080705';
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const atlas = JSON.parse(await readFile(path.join(root, 'data/atlas.json')));
 const sources = [];
@@ -41,4 +41,4 @@ const manifest = { attribution: 'Pimp My Skill · SolutionsAsService · https://
   derivedNodeIds: atlas.nodes.map(node => node.id), derivedEdgeIds: atlas.edges.map(edge => edge.id), derivedPathIds: atlas.paths.map(item => item.id)
 };
 await writeFile(path.join(root, 'docs/integration-manifest.json'), JSON.stringify(manifest, null, 2) + String.fromCharCode(10));
-console.log('Manifest: 10 unchanged source hashes; exact node/claim/edge/path and metadata mappings.');
+console.log('Manifest: 14 unchanged source hashes; exact node/claim/edge/path and metadata mappings.');

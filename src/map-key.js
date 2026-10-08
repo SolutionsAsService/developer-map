@@ -1,5 +1,9 @@
 (function () {
   const domains = [
+    {id:'c_language',label:'C',color:'#f3bd87'},
+    {id:'cpp_programming_language',label:'C++',color:'#92baff'},
+    {id:'cuda',label:'CUDA / GPU',color:'#a8e86e'},
+    {id:'ruby_on_rails',label:'Ruby on Rails',color:'#fa8f9c'},
     { id: "vm", label: "Virtual machines", color: "#f8bf80" },
     { id: "containerization", label: "Containerization", color: "#75e0d4" },
     { id: "docker", label: "Docker", color: "#86bff5" },
@@ -14,6 +18,13 @@
     { id: "source", label: "Sources / claims", color: "#839ba7" },
   ];
   const relationships = [
+    ...[
+      ['implementation-language','Written in →','#ffc787'],
+      ['compilation','Compilation →','#90bfff'],
+      ['runtime','Runtime compatibility →','#cfb4ff'],
+      ['hardware','Hardware / GPU →','#a8e86e'],
+      ['supports','Supports →','#79d6cb'],
+    ].map(([id,label,color])=>({id,label,color,dash:[],arrow:'open',description:'Reading aid only. Read the exact source predicate and version / conditions; not universal causation.'})),
     {
       id: "workflow",
       label: "Runs / uses →",
@@ -109,8 +120,11 @@
         description:
           "Reviewed semantic connection, not an original source edge.",
       };
+    if (edge.kind === 'uses') return relationshipById.get('workflow');
+    if (edge.kind === 'distinction') return relationshipById.get('comparison');
+    if (relationshipById.has(edge.kind) && edge.kind !== 'other') return relationshipById.get(edge.kind);
     const relation = String(edge.relation || "").toLowerCase();
-    if (/cit|support|source|provenance|bibliograph|document/.test(relation))
+    if (/cit|supports_claim|supported_by_source|source|provenance|bibliograph|document/.test(relation))
       return relationshipById.get("evidence");
     if (/contrast|distingui|compared|versus|differs/.test(relation))
       return relationshipById.get("comparison");

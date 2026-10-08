@@ -1,39 +1,39 @@
 # Developer Map
 
-A static, open-access explorer connecting four infrastructure knowledge graphs: **virtual machines**, **containerization**, **Docker**, and **Kubernetes**. Select any point to highlight its direct neighbors, follow a source learning path, search definitions and claims, or inspect the full original records in the field guide. No login or backend is required.
+A static explorer unifying **all 14 source graphs**: C, C++, CUDA, Ruby on Rails, Python, operating systems, virtual machines, containerization, Docker, Kubernetes, security sandboxes, storage volumes, system images and optical disc images. No backend, account, telemetry or paid service.
 
-## Run
+## Run and deploy
 
 ```sh
 npm ci
 npm run build
+node scripts/integration-manifest.mjs
 npm test
 npm run dev
 ```
 
-Open `http://localhost:4173`. Set `PORT` to use another port. To deploy, publish the repository root as a static site (no framework build step required when `data/atlas.json` is committed). Regenerate the atlas with `npm run build` after updating any source JSON. The server is for local development only.
+Open http://localhost:4173. Set PORT to change the local development port. Deploy the **repository root** to any static host. Keep index.html, src/, data/overview.json, data/atlas.json and every original source JSON together. No framework build or backend is required when generated JSON is committed. Regenerate both derived JSON files with npm run build after source changes; the manifest command regenerates the source-retention audit. The local server is not a production server.
 
-## Provenance and scope
+## Map and evidence
 
-The four original JSON files remain in `data/`. `scripts/build-atlas.mjs` imports their nodes, source claims, original relationships and learning paths into `data/atlas.json`, and stores the full record behind every point and link. Explicit source-qualified identities and conservative matching unify reviewed equivalent concepts. Claims, references, source documents, and conflicting scopes retain separate identities. Eight reviewed alias groups unify equivalent concepts (including K8s/Kubernetes), while ambiguous meanings such as Docker Host/VM Host and Linux/Kubernetes namespaces remain distinct. Five documented editorial semantic links make core relationships explicit, including Docker → Container. Each is marked editorial and includes primary-source evidence; the UI never presents it as an original source edge. See [the complete data audit](docs/DATA-AUDIT.md).
+The default map is the entire meaningful connected-concept overview: **556 concepts and 1,125 original/editorial links**, selected by iterative pruning to at least two distinct displayed neighbors. Bibliography, people, claims, isolated and one-neighbor records remain searchable, inspectable and downloadable rather than becoming artificial concept hubs. The full archive preserves **3,102 original node records, 204 claims, 3,312 structured source relationships and 186 learning paths** as 3,074 canonical records, plus six explicitly marked editorial bridges.
 
-The relation legend groups many source verbs into **reading aids**, not formal ontologies. An arrow reflects source/target direction, **not** necessarily causation, dependency, or chronological order. Open a link to read its exact source verb, semantic description, claim evidence (when supplied) and original fields. Source line references are authors' metadata, not independently verified citations.
+Selection highlights incoming/outgoing neighborhoods **in place on the same large map**. It does not replace the overview or move its coordinates. Fit selection is an explicit camera action; reset returns to the overview. Pan, wheel, zoom buttons, +/- and Home work on the map. / focuses search; Escape clears selection. Mobile controls and a canvas-free text index are retained.
 
-The explorer uses a precomputed D3 layout; it draws the complete graph on Canvas, keeps all nodes visible when filtering/focusing, and provides search, pan/zoom, an accessible text index and full source downloads. No telemetry, sign-in or external API is used; system fonts keep the interface self-contained without external font requests.
+Search includes labels, source-qualified aliases, definitions and the complete archive. Connection search and incoming/outgoing filters affect only the list, never erase graph links. **Emphasize & explain** opens the exact triple, WHAT/WHY, semantic category, assertion status, JSON pointer, source fields, rationale/mechanism, constraints/versions, citations and raw relationship record in the adjacent pane. Neighbor exploration is a separate action. Empty mechanism fields explicitly show WHY not supplied; a predicate is not an invented explanation.
 
-## Validate
+Initial load uses the lighter overview.json; selection, search or source-path browsing fetches the full archive once without remounting the map or changing layout. This remains compatible with static hosting.
 
-`npm test` checks the import invariants, original records, ID scoping, source/bridge distinction, and the map controls. `npm run build` fails on dangling links or missing learning-path steps.
+## Identity and provenance
 
-## Developer workbench
+Reviewed, source-qualified aliases connect C/C++, Ruby/Rails, Python, GCC/Clang/LLVM, CPU/Unix and existing infrastructure concepts without confusing languages with frameworks, compiler toolchains, CUDA platform/extensions/toolkit/runtime or GPU hardware. New-domain non-reviewed IDs stay source-scoped even when their labels match an older domain. Every original source file remains byte-exact against upload revision f080705. No relationship is inferred from co-listing or learning-path order.
 
-- Graph-first dark instrument palette, monospace identifiers, live relationship query, and separate inspector pane.
-- Select a query row to emphasize its exact edge and show the same subject, predicate, target and provenance in the inspector. Toggle **Active edge / Neighborhood** for context.
-- **/** focuses search; **Escape** clears selection. Exact labels rank ahead of text mentions. Native buttons, text index and relationship list provide canvas-free navigation.
-- **Inspect this relationship** moves keyboard focus to the exact relationship record, with clickable primary-source evidence for editorial additions.
-- Old IDs redirect using the generated alias map. Ambiguous Host links ask which scoped concept you intended instead of guessing.
-- The map preserves disconnected records rather than inventing edges: 228 weakly connected components and 213 zero-degree records remain. Details, not a false completeness claim, are in the audit.
+Implementation-language, compilation, runtime compatibility, hardware, dependency, uses, supports and distinction predicates remain separate with the original direction. Source assertions are **not independently fact-checked**; conflicting descriptions and unsupported/uncited edges stay visible in the audit, not silently repaired. The newly added optional Kamal → Docker deployment bridge was checked against the official Kamal homepage, Why not just run Capistrano, Kubernetes or Docker Swarm? section, on October 7, 2026. It does not claim Docker is a universal Rails dependency.
 
-## Design and verification
+See docs/DATA-AUDIT.md and docs/integration-manifest.json for exact hashes and mappings. Existing design credits and historical QA artifacts remain; they are not current visual proof.
 
-[DADA design log](DESIGN-LOG.md), [anchor frontier](docs/design-frontier.md), and [QA report](docs/QA.md) record decisions, critiques, limitations and verification. The design uses Adaptive mode: developer-native character with readable relationships and provenance.
+## Verification
+
+npm test checks retention, complete structured import, scoped identities, aliases, directions, projection, deterministic layout, same-map focus, independent evidence, connection filters and map controls. UI tests use **JSDOM with mocked Canvas**, not real browser rendering. Actual HTTP entrypoint/assets/data smoke is separate. Current visual verification is blocked if browser navigation policy denies local access; do not bypass it through CLI/CDP/Playwright.
+
+Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
