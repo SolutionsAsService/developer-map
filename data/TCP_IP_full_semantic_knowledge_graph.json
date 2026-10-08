@@ -1,0 +1,3235 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "graph_type": "dynamic_educational_knowledge_graph",
+  "topic": "Internet Protocol Suite / TCP-IP",
+  "source": {
+    "filename": "Pasted text(20261008-183547).txt",
+    "path": "/mnt/data/Pasted text(20261008-183547).txt",
+    "line_count": 348,
+    "authority": "user_supplied_source",
+    "external_research_used": false
+  },
+  "nodes": [
+    {
+      "id": "tcpip",
+      "label": "Internet protocol suite (TCP/IP)",
+      "type": "network_architecture",
+      "description": "Framework organizing Internet communication protocols by functional scope.",
+      "source_line_ranges": [
+        68,
+        70
+      ]
+    },
+    {
+      "id": "link",
+      "label": "Link layer",
+      "type": "layer",
+      "description": "Local-link communication within one network segment.",
+      "source_line_ranges": [
+        70,
+        135,
+        137
+      ]
+    },
+    {
+      "id": "internet",
+      "label": "Internet layer",
+      "type": "layer",
+      "description": "Internetworking, IP addressing and routing across network boundaries.",
+      "source_line_ranges": [
+        70,
+        134,
+        144
+      ]
+    },
+    {
+      "id": "transport",
+      "label": "Transport layer",
+      "type": "layer",
+      "description": "Host-to-host and process-channel communication.",
+      "source_line_ranges": [
+        70,
+        133,
+        151
+      ]
+    },
+    {
+      "id": "application",
+      "label": "Application layer",
+      "type": "layer",
+      "description": "Process-to-process application data exchange.",
+      "source_line_ranges": [
+        70,
+        132,
+        177
+      ]
+    },
+    {
+      "id": "tcp",
+      "label": "TCP",
+      "type": "transport_protocol",
+      "description": "Reliable connection-oriented byte-stream transport.",
+      "source_line_ranges": [
+        68,
+        133,
+        157
+      ]
+    },
+    {
+      "id": "udp",
+      "label": "UDP",
+      "type": "transport_protocol",
+      "description": "Connectionless best-effort datagram transport.",
+      "source_line_ranges": [
+        68,
+        133,
+        168
+      ]
+    },
+    {
+      "id": "sctp",
+      "label": "SCTP",
+      "type": "transport_protocol",
+      "description": "Reliable connection-oriented message-stream transport with multihoming.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "id": "quic",
+      "label": "QUIC",
+      "type": "transport_protocol",
+      "description": "Transport protocol carried over UDP.",
+      "source_line_ranges": [
+        174
+      ]
+    },
+    {
+      "id": "ip",
+      "label": "IP",
+      "type": "internet_protocol",
+      "description": "Connectionless internetwork datagram protocol.",
+      "source_line_ranges": [
+        68,
+        83,
+        134
+      ]
+    },
+    {
+      "id": "ipv4",
+      "label": "IPv4",
+      "type": "internet_protocol",
+      "description": "32-bit IP addressing version.",
+      "source_line_ranges": [
+        91,
+        148
+      ]
+    },
+    {
+      "id": "ipv6",
+      "label": "IPv6",
+      "type": "internet_protocol",
+      "description": "128-bit IP successor addressing version.",
+      "source_line_ranges": [
+        116,
+        148
+      ]
+    },
+    {
+      "id": "router",
+      "label": "Router",
+      "type": "network_device",
+      "description": "Device forwarding packets between networks.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "gateway",
+      "label": "Gateway",
+      "type": "network_device",
+      "description": "Historical term for an early router.",
+      "source_line_ranges": [
+        96
+      ]
+    },
+    {
+      "id": "packet",
+      "label": "Packet",
+      "type": "data_unit",
+      "description": "Network data unit forwarded between nodes.",
+      "source_line_ranges": [
+        96,
+        128
+      ]
+    },
+    {
+      "id": "datagram",
+      "label": "Datagram",
+      "type": "data_unit",
+      "description": "Connectionless network/transport data unit.",
+      "source_line_ranges": [
+        85,
+        144,
+        168
+      ]
+    },
+    {
+      "id": "frame",
+      "label": "Frame",
+      "type": "data_unit",
+      "description": "Link-layer transmission unit carrying an IP packet.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "port",
+      "label": "Port",
+      "type": "addressing",
+      "description": "Numbered logical communication channel for an application.",
+      "source_line_ranges": [
+        153,
+        170
+      ]
+    },
+    {
+      "id": "ip_address",
+      "label": "IP address",
+      "type": "addressing",
+      "description": "Network-layer host addressing and location identifier.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "id": "mac",
+      "label": "MAC address",
+      "type": "link_addressing",
+      "description": "Local link-layer address.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "next_hop",
+      "label": "Next-hop router",
+      "type": "routing",
+      "description": "Router selected as next forwarding point.",
+      "source_line_ranges": [
+        134,
+        144
+      ]
+    },
+    {
+      "id": "encapsulation",
+      "label": "Encapsulation",
+      "type": "architecture_principle",
+      "description": "Wrapping data with lower-layer protocol information.",
+      "source_line_ranges": [
+        123,
+        128
+      ]
+    },
+    {
+      "id": "layering",
+      "label": "Protocol layering",
+      "type": "architecture_principle",
+      "description": "Separating communication functions into protocol scopes.",
+      "source_line_ranges": [
+        85,
+        114,
+        128
+      ]
+    },
+    {
+      "id": "end_to_end",
+      "label": "End-to-end principle",
+      "type": "architecture_principle",
+      "description": "Concentrating state/intelligence at network edges.",
+      "source_line_ranges": [
+        89,
+        124
+      ]
+    },
+    {
+      "id": "robustness",
+      "label": "Robustness principle",
+      "type": "architecture_principle",
+      "description": "Conservative sending and liberal receiving principle.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "best_effort",
+      "label": "Best-effort delivery",
+      "type": "service_property",
+      "description": "Delivery without inherent reliable end-to-end guarantees.",
+      "source_line_ranges": [
+        144,
+        168
+      ]
+    },
+    {
+      "id": "hardware_independence",
+      "label": "Hardware independence",
+      "type": "architecture_principle",
+      "description": "Ability to operate over varied hardware/link technologies.",
+      "source_line_ranges": [
+        137,
+        228
+      ]
+    },
+    {
+      "id": "ietf",
+      "label": "IETF",
+      "type": "standards_body",
+      "description": "Organization maintaining Internet protocol technical standards.",
+      "source_line_ranges": [
+        72,
+        112
+      ]
+    },
+    {
+      "id": "osi",
+      "label": "OSI model",
+      "type": "reference_model",
+      "description": "Seven-layer general networking reference framework.",
+      "source_line_ranges": [
+        109,
+        199
+      ]
+    },
+    {
+      "id": "protocol_stack",
+      "label": "Protocol stack",
+      "type": "architecture",
+      "description": "Layered implementation of protocols for an application.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "id": "arp",
+      "label": "ARP",
+      "type": "link_protocol",
+      "description": "Maps Internet addressing to link-layer addresses.",
+      "source_line_ranges": [
+        139,
+        228
+      ]
+    },
+    {
+      "id": "icmp",
+      "label": "ICMP",
+      "type": "internet_support_protocol",
+      "description": "Internet control protocol carried with IP.",
+      "source_line_ranges": [
+        146,
+        228
+      ]
+    },
+    {
+      "id": "icmpv6",
+      "label": "ICMPv6",
+      "type": "internet_support_protocol",
+      "description": "IPv6 control protocol.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "id": "igmp",
+      "label": "IGMP",
+      "type": "internet_support_protocol",
+      "description": "Internet group-management protocol.",
+      "source_line_ranges": [
+        146,
+        228
+      ]
+    },
+    {
+      "id": "ndp",
+      "label": "NDP",
+      "type": "internet_support_protocol",
+      "description": "IPv6 neighbor discovery support protocol.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "id": "ipsec",
+      "label": "IPsec",
+      "type": "security_protocol",
+      "description": "Security layer commonly accompanying IPv6.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "id": "dhcp",
+      "label": "DHCP",
+      "type": "application_protocol",
+      "description": "Dynamic host configuration protocol.",
+      "source_line_ranges": [
+        60,
+        177
+      ]
+    },
+    {
+      "id": "dns",
+      "label": "DNS",
+      "type": "application_protocol",
+      "description": "Name/service resolution support protocol.",
+      "source_line_ranges": [
+        60,
+        168,
+        183
+      ]
+    },
+    {
+      "id": "http",
+      "label": "HTTP",
+      "type": "application_protocol",
+      "description": "Hypertext Transfer Protocol.",
+      "source_line_ranges": [
+        60,
+        132,
+        177
+      ]
+    },
+    {
+      "id": "http3",
+      "label": "HTTP/3",
+      "type": "application_protocol",
+      "description": "HTTP version operating exclusively over QUIC.",
+      "source_line_ranges": [
+        60,
+        174
+      ]
+    },
+    {
+      "id": "https",
+      "label": "HTTPS",
+      "type": "application_protocol",
+      "description": "Secure HTTP protocol.",
+      "source_line_ranges": [
+        60
+      ]
+    },
+    {
+      "id": "ftp",
+      "label": "FTP",
+      "type": "application_protocol",
+      "description": "File Transfer Protocol.",
+      "source_line_ranges": [
+        60,
+        177
+      ]
+    },
+    {
+      "id": "smtp",
+      "label": "SMTP",
+      "type": "application_protocol",
+      "description": "Simple Mail Transfer Protocol.",
+      "source_line_ranges": [
+        60,
+        177
+      ]
+    },
+    {
+      "id": "ssh",
+      "label": "SSH",
+      "type": "application_protocol",
+      "description": "Secure Shell protocol.",
+      "source_line_ranges": [
+        60,
+        132
+      ]
+    },
+    {
+      "id": "telnet",
+      "label": "Telnet",
+      "type": "application_protocol",
+      "description": "Remote terminal protocol.",
+      "source_line_ranges": [
+        60,
+        132,
+        181
+      ]
+    },
+    {
+      "id": "rtp",
+      "label": "RTP",
+      "type": "application_protocol",
+      "description": "Real-time transport protocol carried over UDP.",
+      "source_line_ranges": [
+        168
+      ]
+    },
+    {
+      "id": "rpc",
+      "label": "RPC",
+      "type": "application_protocol",
+      "description": "Remote procedure call protocol.",
+      "source_line_ranges": [
+        213
+      ]
+    },
+    {
+      "id": "xdr",
+      "label": "XDR",
+      "type": "presentation_protocol",
+      "description": "External Data Representation layer in cited NFS stack.",
+      "source_line_ranges": [
+        213
+      ]
+    },
+    {
+      "id": "nfs",
+      "label": "NFS",
+      "type": "application_protocol",
+      "description": "Network File System example using XDR/RPC.",
+      "source_line_ranges": [
+        213
+      ]
+    },
+    {
+      "id": "bgp",
+      "label": "BGP",
+      "type": "routing_protocol",
+      "description": "IETF routing protocol carried over IP.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "id": "ospf",
+      "label": "OSPF",
+      "type": "routing_protocol",
+      "description": "IETF routing protocol carried over IP.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "id": "rip",
+      "label": "RIP",
+      "type": "routing_protocol",
+      "description": "IETF routing protocol carried over IP.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "id": "isis",
+      "label": "IS-IS",
+      "type": "routing_protocol",
+      "description": "OSI-associated routing protocol with its own layer-3 encapsulation.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "id": "gre",
+      "label": "GRE",
+      "type": "tunneling_protocol",
+      "description": "Generic Recursive Encapsulation/tunneling protocol.",
+      "source_line_ranges": [
+        223
+      ]
+    },
+    {
+      "id": "hdlc",
+      "label": "HDLC",
+      "type": "link_protocol",
+      "description": "Reliable data-link protocol that can carry IP.",
+      "source_line_ranges": [
+        166
+      ]
+    },
+    {
+      "id": "slip",
+      "label": "SLIP",
+      "type": "link_protocol",
+      "description": "Serial link protocol used in early home Internet access.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "ppp",
+      "label": "PPP",
+      "type": "link_protocol",
+      "description": "Point-to-Point Protocol used for serial connectivity.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "rsvp",
+      "label": "RSVP",
+      "type": "support_protocol",
+      "description": "Resource Reservation Protocol example.",
+      "source_line_ranges": [
+        185
+      ]
+    },
+    {
+      "id": "flow_control",
+      "label": "Flow control",
+      "type": "transport_mechanism",
+      "description": "Controls transmission relative to receiver capacity.",
+      "source_line_ranges": [
+        133
+      ]
+    },
+    {
+      "id": "congestion_control",
+      "label": "Congestion control",
+      "type": "transport_mechanism",
+      "description": "Controls traffic in response to congestion.",
+      "source_line_ranges": [
+        151,
+        163
+      ]
+    },
+    {
+      "id": "retransmission",
+      "label": "Retransmission",
+      "type": "transport_mechanism",
+      "description": "Resends lost/discarded TCP packets.",
+      "source_line_ranges": [
+        162
+      ]
+    },
+    {
+      "id": "ordering",
+      "label": "Ordered delivery",
+      "type": "transport_property",
+      "description": "TCP delivers data in order.",
+      "source_line_ranges": [
+        159
+      ]
+    },
+    {
+      "id": "duplicate_suppression",
+      "label": "Duplicate suppression",
+      "type": "transport_property",
+      "description": "TCP discards duplicate data.",
+      "source_line_ranges": [
+        161
+      ]
+    },
+    {
+      "id": "checksum",
+      "label": "UDP checksum",
+      "type": "error_detection",
+      "description": "UDP checksum provides error detection.",
+      "source_line_ranges": [
+        168
+      ]
+    },
+    {
+      "id": "connection",
+      "label": "TCP connection",
+      "type": "transport_state",
+      "description": "Connection-oriented state established by TCP.",
+      "source_line_ranges": [
+        133,
+        157
+      ]
+    },
+    {
+      "id": "byte_stream",
+      "label": "Reliable byte stream",
+      "type": "transport_service",
+      "description": "TCP service model.",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "id": "message_stream",
+      "label": "Message stream",
+      "type": "transport_service",
+      "description": "SCTP service model.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "id": "multihoming",
+      "label": "Multihoming",
+      "type": "transport_mechanism",
+      "description": "SCTP endpoint can use multiple IP addresses/interfaces.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "id": "well_known_port",
+      "label": "Well-known port",
+      "type": "port_type",
+      "description": "Standardized service port.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "id": "ephemeral_port",
+      "label": "Ephemeral port",
+      "type": "port_type",
+      "description": "Temporary client-side port.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "id": "port80",
+      "label": "Port 80",
+      "type": "port",
+      "description": "Example HTTP server port.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "id": "port23",
+      "label": "Port 23",
+      "type": "port",
+      "description": "Example Telnet server port.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "id": "user_protocol",
+      "label": "User protocol",
+      "type": "protocol_class",
+      "description": "Application protocol serving user applications.",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "id": "support_protocol",
+      "label": "Support protocol",
+      "type": "protocol_class",
+      "description": "Application protocol supporting network infrastructure.",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "id": "darpa",
+      "label": "DARPA",
+      "type": "organization",
+      "description": "US agency sponsoring foundational networking research.",
+      "source_line_ranges": [
+        68,
+        79
+      ]
+    },
+    {
+      "id": "dod",
+      "label": "US Department of Defense",
+      "type": "organization",
+      "description": "Defense organization that standardized TCP/IP for military networking.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "arpanet",
+      "label": "ARPANET",
+      "type": "network",
+      "description": "Precursor network for modern Internet.",
+      "source_line_ranges": [
+        79,
+        91,
+        99
+      ]
+    },
+    {
+      "id": "ncp",
+      "label": "NCP",
+      "type": "protocol",
+      "description": "Early ARPANET host-to-host protocol.",
+      "source_line_ranges": [
+        81,
+        99
+      ]
+    },
+    {
+      "id": "bbn",
+      "label": "BBN",
+      "type": "organization",
+      "description": "Organization selected to build ARPANET Interface Message Processors.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "kahn",
+      "label": "Robert Kahn",
+      "type": "person",
+      "description": "Major internetworking architect.",
+      "source_line_ranges": [
+        81,
+        83
+      ]
+    },
+    {
+      "id": "cerf",
+      "label": "Vinton Cerf",
+      "type": "person",
+      "description": "Major internetworking architect.",
+      "source_line_ranges": [
+        81,
+        83
+      ]
+    },
+    {
+      "id": "crocker",
+      "label": "Steve Crocker",
+      "type": "person",
+      "description": "Established the Network Working Group.",
+      "source_line_ranges": [
+        81
+      ]
+    },
+    {
+      "id": "dalal",
+      "label": "Yogen Dalal",
+      "type": "person",
+      "description": "Co-author of first TCP specification.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "id": "sunshine",
+      "label": "Carl Sunshine",
+      "type": "person",
+      "description": "Co-author of first TCP specification.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "id": "postel",
+      "label": "Jonathan Postel",
+      "type": "person",
+      "description": "RFC editor and layering advocate.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "id": "metcalfe",
+      "label": "Bob Metcalfe",
+      "type": "person",
+      "description": "Advocate of separating datagram service.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "id": "shoch",
+      "label": "John Shoch",
+      "type": "person",
+      "description": "Xerox PARC layering contributor.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "id": "cohen",
+      "label": "Danny Cohen",
+      "type": "person",
+      "description": "Datagram-service advocate for packet voice.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "id": "pouzin",
+      "label": "Louis Pouzin",
+      "type": "person",
+      "description": "CYCLADES/end-to-end architecture pioneer.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "id": "zimmermann",
+      "label": "Hubert Zimmermann",
+      "type": "person",
+      "description": "CYCLADES contributor.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "id": "davies",
+      "label": "Donald Davies",
+      "type": "person",
+      "description": "Packet-switching pioneer influencing Internet design.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "id": "travers",
+      "label": "Virginia Travers",
+      "type": "person",
+      "description": "Early TCP gateway software implementer.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "id": "lynch",
+      "label": "Dan Lynch",
+      "type": "person",
+      "description": "Founder of Interop conference.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "kirstein",
+      "label": "Peter Kirstein",
+      "type": "person",
+      "description": "Leader of UCL group adopting TCP/IP.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "appelman",
+      "label": "Barry Appelman",
+      "type": "person",
+      "description": "IBM TCP/IP development leader.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "tattam",
+      "label": "Peter Tattam",
+      "type": "person",
+      "description": "Trumpet Winsock developer.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "heart",
+      "label": "Frank Heart",
+      "type": "person",
+      "description": "Leader associated with BBN IMP work.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "imp_event",
+      "label": "1968–1969 BBN IMP deployment",
+      "type": "historical_event",
+      "description": "ARPANET gateway/IMP infrastructure was built and deployed.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "ncp_event",
+      "label": "Early 1970s NCP",
+      "type": "historical_event",
+      "description": "Network Working Group developed NCP.",
+      "source_line_ranges": [
+        81
+      ]
+    },
+    {
+      "id": "kahn_cerf_event",
+      "label": "1973 Kahn-Cerf internetworking design",
+      "type": "historical_event",
+      "description": "Common internetwork protocol and host reliability model.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "id": "tcp_spec_event",
+      "label": "1974 first TCP specification",
+      "type": "historical_event",
+      "description": "Cerf, Dalal and Sunshine specified Transmission Control Program.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "id": "split_event",
+      "label": "1978 TCP/IP split",
+      "type": "historical_event",
+      "description": "Transmission Control Program split into TCP and IP.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "id": "test_event",
+      "label": "1975–1977 IP internetwork tests",
+      "type": "historical_event",
+      "description": "Two- and three-network interoperability tests.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "ipv4_event",
+      "label": "1983 IPv4 ARPANET deployment",
+      "type": "historical_event",
+      "description": "IPv4 installed and TCP/IP became the common name.",
+      "source_line_ranges": [
+        91
+      ]
+    },
+    {
+      "id": "dod_event",
+      "label": "1982 DoD standardization",
+      "type": "historical_event",
+      "description": "DoD declared TCP/IP the military networking standard.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "flag_day",
+      "label": "1983 ARPANET flag day",
+      "type": "historical_event",
+      "description": "ARPANET completed NCP-to-TCP/IP migration.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "berkeley_event",
+      "label": "1989 BSD TCP/IP public release",
+      "type": "historical_event",
+      "description": "Berkeley placed BSD TCP/IP code in public domain.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "commercial_event",
+      "label": "1980s–1990s commercial adoption",
+      "type": "historical_event",
+      "description": "Workshops, Interop and vendor stacks accelerated adoption.",
+      "source_line_ranges": [
+        101,
+        103,
+        107
+      ]
+    },
+    {
+      "id": "ipv6_event",
+      "label": "1998 IPv6 standardization",
+      "type": "historical_event",
+      "description": "IPv6 standardized to address IPv4 exhaustion.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "id": "osi_war",
+      "label": "Late-1980s/early-1990s OSI/TCP-IP standards conflict",
+      "type": "historical_event",
+      "description": "Competing networking architecture approaches were debated.",
+      "source_line_ranges": [
+        109
+      ]
+    },
+    {
+      "id": "implementation",
+      "label": "TCP/IP implementation",
+      "type": "implementation",
+      "description": "Concrete software/hardware realization of the suite.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "id": "network_card",
+      "label": "Network card",
+      "type": "hardware",
+      "description": "Network interface hardware.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "driver",
+      "label": "Network device driver",
+      "type": "software",
+      "description": "Driver controlling link transmission and reception.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "firmware",
+      "label": "Network firmware",
+      "type": "software",
+      "description": "Firmware capable of link-layer functions.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "chipset",
+      "label": "Network chipset",
+      "type": "hardware",
+      "description": "Specialized network hardware implementing link functions.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "medium",
+      "label": "Physical transmission medium",
+      "type": "physical_network",
+      "description": "Physical medium below link-layer abstraction.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "bsd",
+      "label": "BSD UNIX",
+      "type": "operating_system",
+      "description": "UNIX implementation that distributed TCP/IP code.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "windows",
+      "label": "Microsoft Windows",
+      "type": "operating_system",
+      "description": "Platform receiving TCP/IP stacks.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "trumpet",
+      "label": "Trumpet Winsock",
+      "type": "software",
+      "description": "TCP/IP stack important to early Windows home Internet use.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "modem",
+      "label": "Hayes-compatible modem",
+      "type": "hardware",
+      "description": "External modem used for early home access.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "rs232",
+      "label": "RS-232",
+      "type": "interface",
+      "description": "Serial interface used with early modems.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "uart",
+      "label": "8250/16550 UART",
+      "type": "hardware",
+      "description": "UART family used with RS-232 serial communication.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "ibm",
+      "label": "IBM",
+      "type": "company",
+      "description": "Early major TCP/IP adopter.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "att",
+      "label": "AT&T",
+      "type": "company",
+      "description": "Early major TCP/IP adopter.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "dec",
+      "label": "DEC",
+      "type": "company",
+      "description": "Early major TCP/IP adopter.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "ftp_software",
+      "label": "FTP Software",
+      "type": "company",
+      "description": "Early TCP/IP stack vendor.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "wollongong",
+      "label": "Wollongong Group",
+      "type": "company",
+      "description": "Early TCP/IP stack vendor.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "sna",
+      "label": "IBM SNA",
+      "type": "network_architecture",
+      "description": "Competing proprietary networking architecture.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "decnet",
+      "label": "DECnet",
+      "type": "network_protocol",
+      "description": "Competing networking protocol.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "xns",
+      "label": "Xerox Network Systems",
+      "type": "network_protocol",
+      "description": "Competing networking system.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "id": "reliability",
+      "label": "Reliable transport",
+      "type": "service_property",
+      "description": "Transport-level reliability through ordering, retransmission and related mechanisms.",
+      "source_line_ranges": [
+        155,
+        157
+      ]
+    },
+    {
+      "id": "edge_intelligence",
+      "label": "Edge intelligence",
+      "type": "architecture_principle",
+      "description": "Network functions beyond efficient forwarding are placed at endpoints.",
+      "source_line_ranges": [
+        89
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "tcpip",
+      "target": "link",
+      "relationship": "contains_layer",
+      "mechanism": "The suite is organized into four functional layers.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "internet",
+      "relationship": "contains_layer",
+      "mechanism": "The suite is organized into four functional layers.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "transport",
+      "relationship": "contains_layer",
+      "mechanism": "The suite is organized into four functional layers.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "application",
+      "relationship": "contains_layer",
+      "mechanism": "The suite is organized into four functional layers.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "protocol_stack",
+      "relationship": "forms",
+      "mechanism": "A layered implementation for an application forms a protocol stack.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "application",
+      "target": "transport",
+      "relationship": "uses",
+      "mechanism": "Applications use transport services.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "internet",
+      "relationship": "uses",
+      "mechanism": "Transport units are carried by IP.",
+      "source_line_ranges": [
+        146,
+        177
+      ]
+    },
+    {
+      "source": "internet",
+      "target": "link",
+      "relationship": "uses",
+      "mechanism": "IP packets are delivered over local links.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "link",
+      "target": "medium",
+      "relationship": "transmits_over",
+      "mechanism": "Frames travel over a physical medium.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "application",
+      "target": "encapsulation",
+      "relationship": "initiates",
+      "mechanism": "Application data descends through encapsulation.",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "source": "encapsulation",
+      "target": "transport",
+      "relationship": "wraps",
+      "mechanism": "Transport headers/service information are applied.",
+      "source_line_ranges": [
+        128,
+        177
+      ]
+    },
+    {
+      "source": "encapsulation",
+      "target": "internet",
+      "relationship": "wraps",
+      "mechanism": "IP encapsulates transport units.",
+      "source_line_ranges": [
+        177
+      ]
+    },
+    {
+      "source": "encapsulation",
+      "target": "link",
+      "relationship": "wraps",
+      "mechanism": "Link framing encapsulates IP packets.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "packet",
+      "target": "frame",
+      "relationship": "carried_by",
+      "mechanism": "Link frames carry IP packets.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "internet",
+      "target": "ip",
+      "relationship": "uses_as_primary",
+      "mechanism": "IP is the principal Internet-layer protocol.",
+      "source_line_ranges": [
+        134,
+        148
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "tcp",
+      "relationship": "contains_protocol",
+      "mechanism": "TCP operates at transport layer.",
+      "source_line_ranges": [
+        133
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "udp",
+      "relationship": "contains_protocol",
+      "mechanism": "UDP operates at transport layer.",
+      "source_line_ranges": [
+        133
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "sctp",
+      "relationship": "contains_protocol",
+      "mechanism": "SCTP operates at transport layer.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "quic",
+      "relationship": "contains_protocol",
+      "mechanism": "QUIC is an emerging transport protocol.",
+      "source_line_ranges": [
+        174
+      ]
+    },
+    {
+      "source": "application",
+      "target": "http",
+      "relationship": "contains_protocol",
+      "mechanism": "HTTP is an application protocol.",
+      "source_line_ranges": [
+        132,
+        177
+      ]
+    },
+    {
+      "source": "application",
+      "target": "ftp",
+      "relationship": "contains_protocol",
+      "mechanism": "FTP is an application protocol.",
+      "source_line_ranges": [
+        177
+      ]
+    },
+    {
+      "source": "application",
+      "target": "smtp",
+      "relationship": "contains_protocol",
+      "mechanism": "SMTP is an application protocol.",
+      "source_line_ranges": [
+        177
+      ]
+    },
+    {
+      "source": "application",
+      "target": "dns",
+      "relationship": "contains_protocol",
+      "mechanism": "DNS is an application/support protocol.",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "source": "application",
+      "target": "dhcp",
+      "relationship": "contains_protocol",
+      "mechanism": "DHCP is an application/support protocol.",
+      "source_line_ranges": [
+        177
+      ]
+    },
+    {
+      "source": "application",
+      "target": "ssh",
+      "relationship": "contains_protocol",
+      "mechanism": "SSH is an application protocol.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "source": "application",
+      "target": "telnet",
+      "relationship": "contains_protocol",
+      "mechanism": "Telnet is an application protocol.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "best_effort",
+      "relationship": "provides",
+      "mechanism": "IP provides unreliable/best-effort datagram delivery.",
+      "source_line_ranges": [
+        144
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "ip_address",
+      "relationship": "defines",
+      "mechanism": "IP defines addressing systems.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "source": "ipv4",
+      "target": "ip",
+      "relationship": "is_version_of",
+      "mechanism": "IPv4 is an IP version.",
+      "source_line_ranges": [
+        91,
+        148
+      ]
+    },
+    {
+      "source": "ipv6",
+      "target": "ip",
+      "relationship": "is_version_of",
+      "mechanism": "IPv6 is an IP version.",
+      "source_line_ranges": [
+        116,
+        148
+      ]
+    },
+    {
+      "source": "ipv4",
+      "target": "ip_address",
+      "relationship": "uses",
+      "mechanism": "IPv4 uses 32-bit addresses.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "source": "ipv6",
+      "target": "ip_address",
+      "relationship": "uses",
+      "mechanism": "IPv6 uses 128-bit addresses.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "source": "ipv4",
+      "target": "ipv6",
+      "relationship": "succeeded_by",
+      "mechanism": "IPv6 addresses IPv4 address exhaustion.",
+      "source_line_ranges": [
+        116,
+        148
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "router",
+      "relationship": "uses_for_forwarding",
+      "mechanism": "Routers forward IP packets.",
+      "source_line_ranges": [
+        96,
+        144
+      ]
+    },
+    {
+      "source": "router",
+      "target": "next_hop",
+      "relationship": "selects",
+      "mechanism": "Forwarding proceeds through an appropriate next-hop router.",
+      "source_line_ranges": [
+        144
+      ]
+    },
+    {
+      "source": "next_hop",
+      "target": "router",
+      "relationship": "is",
+      "mechanism": "The next hop is a router.",
+      "source_line_ranges": [
+        144
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "next_hop",
+      "relationship": "forwards_to",
+      "mechanism": "IP forwards datagrams toward destination via next hops.",
+      "source_line_ranges": [
+        144
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "icmp",
+      "relationship": "carries",
+      "mechanism": "IP carries ICMP.",
+      "source_line_ranges": [
+        146
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "igmp",
+      "relationship": "carries",
+      "mechanism": "IP carries IGMP.",
+      "source_line_ranges": [
+        146
+      ]
+    },
+    {
+      "source": "ipv6",
+      "target": "ndp",
+      "relationship": "requires",
+      "mechanism": "IPv6 implementations include NDP.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "source": "ipv6",
+      "target": "icmpv6",
+      "relationship": "requires",
+      "mechanism": "IPv6 implementations include ICMPv6.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "source": "ipv6",
+      "target": "ipsec",
+      "relationship": "often_accompanied_by",
+      "mechanism": "IPv6 is often accompanied by IPsec.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "source": "arp",
+      "target": "mac",
+      "relationship": "resolves_to",
+      "mechanism": "ARP translates Internet addressing to MAC addresses.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "arp",
+      "relationship": "uses",
+      "mechanism": "Local IP delivery uses address resolution.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "bgp",
+      "relationship": "carries",
+      "mechanism": "IETF routing protocols are transported over IP.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "ospf",
+      "relationship": "carries",
+      "mechanism": "IETF routing protocols are transported over IP.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "source": "ip",
+      "target": "rip",
+      "relationship": "carries",
+      "mechanism": "IETF routing protocols are transported over IP.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "source": "isis",
+      "target": "ip",
+      "relationship": "differs_from",
+      "mechanism": "IS-IS uses its own layer-3 encapsulation in the source's comparison.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "connection",
+      "relationship": "establishes",
+      "mechanism": "TCP establishes connection-oriented state.",
+      "source_line_ranges": [
+        133,
+        157
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "byte_stream",
+      "relationship": "provides",
+      "mechanism": "TCP provides a reliable byte stream.",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "ordering",
+      "relationship": "provides",
+      "mechanism": "TCP delivers data in order.",
+      "source_line_ranges": [
+        159
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "duplicate_suppression",
+      "relationship": "provides",
+      "mechanism": "TCP discards duplicates.",
+      "source_line_ranges": [
+        161
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "retransmission",
+      "relationship": "provides",
+      "mechanism": "TCP retransmits lost/discarded packets.",
+      "source_line_ranges": [
+        162
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "flow_control",
+      "relationship": "provides",
+      "mechanism": "TCP provides flow control.",
+      "source_line_ranges": [
+        133
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "congestion_control",
+      "relationship": "provides",
+      "mechanism": "TCP includes congestion control.",
+      "source_line_ranges": [
+        163
+      ]
+    },
+    {
+      "source": "udp",
+      "target": "best_effort",
+      "relationship": "provides",
+      "mechanism": "UDP is best-effort and unreliable.",
+      "source_line_ranges": [
+        168
+      ]
+    },
+    {
+      "source": "udp",
+      "target": "checksum",
+      "relationship": "uses",
+      "mechanism": "UDP uses checksums for error detection.",
+      "source_line_ranges": [
+        168
+      ]
+    },
+    {
+      "source": "udp",
+      "target": "dns",
+      "relationship": "used_by",
+      "mechanism": "DNS can use UDP for simple query/response.",
+      "source_line_ranges": [
+        168
+      ]
+    },
+    {
+      "source": "udp",
+      "target": "rtp",
+      "relationship": "carries",
+      "mechanism": "RTP is designed to run over UDP.",
+      "source_line_ranges": [
+        168
+      ]
+    },
+    {
+      "source": "quic",
+      "target": "udp",
+      "relationship": "carried_over",
+      "mechanism": "QUIC is carried via UDP.",
+      "source_line_ranges": [
+        174
+      ]
+    },
+    {
+      "source": "http3",
+      "target": "quic",
+      "relationship": "runs_over",
+      "mechanism": "HTTP/3 works exclusively through QUIC.",
+      "source_line_ranges": [
+        174
+      ]
+    },
+    {
+      "source": "sctp",
+      "target": "message_stream",
+      "relationship": "provides",
+      "mechanism": "SCTP is message-stream oriented.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "source": "sctp",
+      "target": "multihoming",
+      "relationship": "provides",
+      "mechanism": "SCTP supports multiple addresses/interfaces per endpoint.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "source": "sctp",
+      "target": "reliability",
+      "relationship": "provides",
+      "mechanism": "SCTP is reliable and connection-oriented.",
+      "source_line_ranges": [
+        164
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "reliability",
+      "relationship": "provides",
+      "mechanism": "TCP supplies reliable transport over best-effort IP.",
+      "source_line_ranges": [
+        155,
+        157
+      ]
+    },
+    {
+      "source": "hdlc",
+      "target": "ip",
+      "relationship": "carries",
+      "mechanism": "IP can run over reliable data-link protocols such as HDLC.",
+      "source_line_ranges": [
+        166
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "port",
+      "relationship": "provides_process_addressing",
+      "mechanism": "Ports identify communication channels.",
+      "source_line_ranges": [
+        153
+      ]
+    },
+    {
+      "source": "ip_address",
+      "target": "port",
+      "relationship": "forms_endpoint",
+      "mechanism": "Host address plus port identifies a service endpoint.",
+      "source_line_ranges": [
+        148,
+        153
+      ]
+    },
+    {
+      "source": "well_known_port",
+      "target": "port",
+      "relationship": "is_type_of",
+      "mechanism": "Well-known ports are standardized ports.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "ephemeral_port",
+      "target": "port",
+      "relationship": "is_type_of",
+      "mechanism": "Ephemeral ports are temporary ports.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "http",
+      "target": "port80",
+      "relationship": "uses",
+      "mechanism": "HTTP example uses port 80.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "telnet",
+      "target": "port23",
+      "relationship": "uses",
+      "mechanism": "Telnet example uses port 23.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "application",
+      "target": "ephemeral_port",
+      "relationship": "uses_for_clients",
+      "mechanism": "Clients commonly use ephemeral ports.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "application",
+      "target": "well_known_port",
+      "relationship": "uses_for_servers",
+      "mechanism": "Services commonly use well-known ports.",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "ftp",
+      "target": "user_protocol",
+      "relationship": "is",
+      "mechanism": "FTP is a user protocol.",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "source": "dns",
+      "target": "support_protocol",
+      "relationship": "is",
+      "mechanism": "DNS is a support protocol.",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "source": "layering",
+      "target": "encapsulation",
+      "relationship": "implemented_by",
+      "mechanism": "Encapsulation creates abstraction between layers.",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "source": "end_to_end",
+      "target": "tcp",
+      "relationship": "places_reliability_at_endpoints",
+      "mechanism": "Reliability was delegated to hosts rather than the network.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "end_to_end",
+      "target": "edge_intelligence",
+      "relationship": "concentrates",
+      "mechanism": "State/intelligence is concentrated at network edges.",
+      "source_line_ranges": [
+        89,
+        124
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "hardware_independence",
+      "relationship": "characterized_by",
+      "mechanism": "TCP/IP is designed to be hardware independent.",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "source": "robustness",
+      "target": "tcpip",
+      "relationship": "guides",
+      "mechanism": "Robustness is an architectural principle.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "source": "darpa",
+      "target": "arpanet",
+      "relationship": "sponsored",
+      "mechanism": "DARPA sponsored foundational ARPANET research.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "bbn",
+      "target": "imp_event",
+      "relationship": "built",
+      "mechanism": "BBN built ARPANET IMPs.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "heart",
+      "target": "imp_event",
+      "relationship": "led",
+      "mechanism": "Frank Heart led the IMP work.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "arpanet",
+      "target": "ncp",
+      "relationship": "used",
+      "mechanism": "NCP was the early ARPANET host-to-host protocol.",
+      "source_line_ranges": [
+        81
+      ]
+    },
+    {
+      "source": "crocker",
+      "target": "ncp_event",
+      "relationship": "established_group_for",
+      "mechanism": "Crocker established the Network Working Group.",
+      "source_line_ranges": [
+        81
+      ]
+    },
+    {
+      "source": "ncp_event",
+      "target": "ncp",
+      "relationship": "produced",
+      "mechanism": "The group developed NCP.",
+      "source_line_ranges": [
+        81
+      ]
+    },
+    {
+      "source": "kahn",
+      "target": "kahn_cerf_event",
+      "relationship": "co_designed",
+      "mechanism": "Kahn co-designed the internetworking reformulation.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "cerf",
+      "target": "kahn_cerf_event",
+      "relationship": "co_designed",
+      "mechanism": "Cerf co-designed the internetworking reformulation.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "kahn_cerf_event",
+      "target": "end_to_end",
+      "relationship": "advanced",
+      "mechanism": "Design delegated reliability to hosts and hid local-network differences.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "cerf",
+      "target": "tcp_spec_event",
+      "relationship": "co_authored",
+      "mechanism": "Cerf co-authored the first TCP specification.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "dalal",
+      "target": "tcp_spec_event",
+      "relationship": "co_authored",
+      "mechanism": "Dalal co-authored the first TCP specification.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "sunshine",
+      "target": "tcp_spec_event",
+      "relationship": "co_authored",
+      "mechanism": "Sunshine co-authored the first TCP specification.",
+      "source_line_ranges": [
+        83
+      ]
+    },
+    {
+      "source": "split_event",
+      "target": "tcp",
+      "relationship": "created",
+      "mechanism": "The split created TCP as reliable connection-oriented transport.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "source": "split_event",
+      "target": "ip",
+      "relationship": "created",
+      "mechanism": "The split created IP as connectionless internetworking.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "source": "metcalfe",
+      "target": "split_event",
+      "relationship": "advocated",
+      "mechanism": "Metcalfe advocated separation of datagram service.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "source": "cohen",
+      "target": "split_event",
+      "relationship": "advocated",
+      "mechanism": "Cohen advocated datagrams for packet voice.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "source": "postel",
+      "target": "layering",
+      "relationship": "advocated",
+      "mechanism": "Postel advocated protocol layering.",
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "source": "pouzin",
+      "target": "end_to_end",
+      "relationship": "influenced",
+      "mechanism": "CYCLADES influenced end-to-end architecture.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "source": "zimmermann",
+      "target": "end_to_end",
+      "relationship": "influenced",
+      "mechanism": "Zimmermann was associated with CYCLADES design.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "source": "davies",
+      "target": "kahn_cerf_event",
+      "relationship": "influenced",
+      "mechanism": "Davies' packet-switching work influenced Internet design.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "source": "travers",
+      "target": "test_event",
+      "relationship": "implemented_for",
+      "mechanism": "Travers installed gateway software for the internetwork test.",
+      "source_line_ranges": [
+        89
+      ]
+    },
+    {
+      "source": "test_event",
+      "target": "tcpip",
+      "relationship": "validated",
+      "mechanism": "Early tests demonstrated multi-network interoperability.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "source": "ipv4_event",
+      "target": "arpanet",
+      "relationship": "deployed_on",
+      "mechanism": "IPv4 was installed in ARPANET.",
+      "source_line_ranges": [
+        91
+      ]
+    },
+    {
+      "source": "dod_event",
+      "target": "dod",
+      "relationship": "declared_standard",
+      "mechanism": "DoD declared TCP/IP its military standard.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "flag_day",
+      "target": "arpanet",
+      "relationship": "completed_migration_to",
+      "mechanism": "ARPANET migrated from NCP to TCP/IP.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "berkeley_event",
+      "target": "bsd",
+      "relationship": "released",
+      "mechanism": "Berkeley placed BSD TCP/IP code in public domain.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "bsd",
+      "target": "tcpip",
+      "relationship": "implemented",
+      "mechanism": "BSD UNIX carried a TCP/IP implementation.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "commercial_event",
+      "target": "tcpip",
+      "relationship": "accelerated_adoption",
+      "mechanism": "Interoperability workshops and vendor implementations accelerated adoption.",
+      "source_line_ranges": [
+        101,
+        103,
+        107
+      ]
+    },
+    {
+      "source": "lynch",
+      "target": "commercial_event",
+      "relationship": "founded_interop_for",
+      "mechanism": "Lynch founded Interop.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "kirstein",
+      "target": "commercial_event",
+      "relationship": "contributed_to",
+      "mechanism": "UCL adoption contributed to international adoption.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "appelman",
+      "target": "ibm",
+      "relationship": "led_tcpip_development_at",
+      "mechanism": "Appelman led IBM TCP/IP development.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "ibm",
+      "target": "tcpip",
+      "relationship": "adopted",
+      "mechanism": "IBM adopted TCP/IP.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "att",
+      "target": "tcpip",
+      "relationship": "adopted",
+      "mechanism": "AT&T adopted TCP/IP.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "dec",
+      "target": "tcpip",
+      "relationship": "adopted",
+      "mechanism": "DEC adopted TCP/IP.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "tattam",
+      "target": "trumpet",
+      "relationship": "developed",
+      "mechanism": "Tattam developed Trumpet Winsock.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "trumpet",
+      "target": "tcpip",
+      "relationship": "implemented",
+      "mechanism": "Trumpet Winsock provided TCP/IP on Windows.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "trumpet",
+      "target": "slip",
+      "relationship": "supports",
+      "mechanism": "Trumpet Winsock supported SLIP.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "trumpet",
+      "target": "ppp",
+      "relationship": "supports",
+      "mechanism": "Trumpet Winsock supported PPP.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "ipv6_event",
+      "target": "ipv6",
+      "relationship": "standardized",
+      "mechanism": "IPv6 was standardized in 1998.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "source": "osi_war",
+      "target": "osi",
+      "relationship": "competed_with",
+      "mechanism": "OSI competed with TCP/IP.",
+      "source_line_ranges": [
+        109
+      ]
+    },
+    {
+      "source": "osi_war",
+      "target": "tcpip",
+      "relationship": "competed_with",
+      "mechanism": "TCP/IP competed with OSI.",
+      "source_line_ranges": [
+        109
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "osi",
+      "relationship": "predates_and_differs_from",
+      "mechanism": "TCP/IP predates OSI and has a different organization.",
+      "source_line_ranges": [
+        72,
+        114
+      ]
+    },
+    {
+      "source": "application",
+      "target": "osi",
+      "relationship": "roughly_maps_to",
+      "mechanism": "TCP/IP application corresponds roughly to OSI session/presentation/application.",
+      "source_line_ranges": [
+        179,
+        213
+      ]
+    },
+    {
+      "source": "transport",
+      "target": "osi",
+      "relationship": "roughly_maps_to",
+      "mechanism": "TCP/IP transport roughly maps to OSI transport.",
+      "source_line_ranges": [
+        172
+      ]
+    },
+    {
+      "source": "internet",
+      "target": "osi",
+      "relationship": "roughly_maps_to",
+      "mechanism": "TCP/IP Internet layer roughly maps to OSI network functions.",
+      "source_line_ranges": [
+        201,
+        206
+      ]
+    },
+    {
+      "source": "link",
+      "target": "osi",
+      "relationship": "roughly_maps_to",
+      "mechanism": "TCP/IP link corresponds to OSI data-link functions, with physical handling varying by model.",
+      "source_line_ranges": [
+        141,
+        215
+      ]
+    },
+    {
+      "source": "tcpip",
+      "target": "osi",
+      "relationship": "not_strictly_compliant",
+      "mechanism": "IETF does not require strict OSI layering.",
+      "source_line_ranges": [
+        217
+      ]
+    },
+    {
+      "source": "nfs",
+      "target": "xdr",
+      "relationship": "uses",
+      "mechanism": "NFS example uses XDR.",
+      "source_line_ranges": [
+        213
+      ]
+    },
+    {
+      "source": "xdr",
+      "target": "rpc",
+      "relationship": "uses",
+      "mechanism": "XDR is paired with RPC.",
+      "source_line_ranges": [
+        213
+      ]
+    },
+    {
+      "source": "rpc",
+      "target": "udp",
+      "relationship": "can_run_over",
+      "mechanism": "RPC can provide reliable records over UDP in the cited example.",
+      "source_line_ranges": [
+        213
+      ]
+    },
+    {
+      "source": "isis",
+      "target": "osi",
+      "relationship": "is_associated_with",
+      "mechanism": "IS-IS is presented as an OSI routing protocol.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "source": "bgp",
+      "target": "application",
+      "relationship": "categorized_as",
+      "mechanism": "In the cited TCP/IP treatment, routing protocols carried over IP are included in application layer.",
+      "source_line_ranges": [
+        221
+      ]
+    },
+    {
+      "source": "gre",
+      "target": "encapsulation",
+      "relationship": "demonstrates_recursive_tunneling",
+      "mechanism": "GRE demonstrates recursive encapsulation.",
+      "source_line_ranges": [
+        223
+      ]
+    },
+    {
+      "source": "implementation",
+      "target": "tcpip",
+      "relationship": "implements",
+      "mechanism": "Concrete implementations realize the suite.",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "source": "driver",
+      "target": "network_card",
+      "relationship": "controls",
+      "mechanism": "Drivers control network cards.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "driver",
+      "target": "link",
+      "relationship": "implements",
+      "mechanism": "Drivers can implement link functions such as framing.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "firmware",
+      "target": "link",
+      "relationship": "implements",
+      "mechanism": "Firmware can implement link functions.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "chipset",
+      "target": "link",
+      "relationship": "implements",
+      "mechanism": "Chipsets can implement link functions.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "link",
+      "target": "medium",
+      "relationship": "uses",
+      "mechanism": "Link transmits over physical media.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "slip",
+      "target": "modem",
+      "relationship": "runs_over",
+      "mechanism": "SLIP can operate over serial modem connectivity.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "ppp",
+      "target": "modem",
+      "relationship": "runs_over",
+      "mechanism": "PPP can operate over serial modem connectivity.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "modem",
+      "target": "rs232",
+      "relationship": "connects_through",
+      "mechanism": "Early home PCs used modems through RS-232.",
+      "source_line_ranges": [
+        107
+      ]
+    },
+    {
+      "source": "rs232",
+      "target": "uart",
+      "relationship": "uses",
+      "mechanism": "RS-232 systems used 8250/16550 UARTs.",
+      "source_line_ranges": [
+        107
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "fm1",
+      "name": "Four-layer model",
+      "expression": "Application → Transport → Internet → Link",
+      "meaning": "Functional TCP/IP decomposition."
+    },
+    {
+      "id": "fm2",
+      "name": "Encapsulation",
+      "expression": "application data → transport unit → IP datagram → link frame → medium",
+      "meaning": "Data gains protocol context while descending the stack."
+    },
+    {
+      "id": "fm3",
+      "name": "Decapsulation",
+      "expression": "medium → frame → IP datagram → transport data → application",
+      "meaning": "Receiver reverses encapsulation."
+    },
+    {
+      "id": "fm4",
+      "name": "IP forwarding",
+      "expression": "destination IP → routing decision → next hop → repeated forwarding → destination",
+      "meaning": "IP moves datagrams across networks."
+    },
+    {
+      "id": "fm5",
+      "name": "TCP reliability",
+      "expression": "connection + ordering + retransmission + flow control + congestion control",
+      "meaning": "TCP supplies reliable transport over IP."
+    },
+    {
+      "id": "fm6",
+      "name": "UDP service",
+      "expression": "application data → UDP datagram → IP → link",
+      "meaning": "UDP provides connectionless best-effort transport."
+    },
+    {
+      "id": "fm7",
+      "name": "Endpoint addressing",
+      "expression": "IP address + transport port → application endpoint",
+      "meaning": "Host location plus service/channel identity."
+    },
+    {
+      "id": "fm8",
+      "name": "IPv4 to IPv6",
+      "expression": "32-bit IPv4 → exhaustion → 128-bit IPv6",
+      "meaning": "Address-space expansion."
+    },
+    {
+      "id": "fm9",
+      "name": "End-to-end architecture",
+      "expression": "simple forwarding core + intelligent endpoints",
+      "meaning": "Core forwards; endpoints provide broader intelligence/reliability."
+    },
+    {
+      "id": "fm10",
+      "name": "TCP/IP and OSI mapping",
+      "expression": "TCP/IP application≈OSI session+presentation+application; transport≈transport; internet≈network; link≈data-link/physical boundary",
+      "meaning": "Approximate cross-model correspondence."
+    },
+    {
+      "id": "fm11",
+      "name": "HTTP/3 stack",
+      "expression": "HTTP/3 → QUIC → UDP → IP → Link",
+      "meaning": "Modern HTTP/3 transport chain."
+    },
+    {
+      "id": "fm12",
+      "name": "NFS example stack",
+      "expression": "NFS → XDR → RPC → UDP → IP → Link",
+      "meaning": "Source example demonstrating cross-layer composition."
+    },
+    {
+      "id": "fm13",
+      "name": "Implementation stack",
+      "expression": "application → transport → IP → link driver/firmware/chipset → medium",
+      "meaning": "Abstract protocol layers connect to concrete network hardware."
+    },
+    {
+      "id": "fm14",
+      "name": "Historical convergence",
+      "expression": "ARPANET/NCP → internetworking research → TCP/IP → 1983 migration → adoption",
+      "meaning": "Research and deployment produced the dominant Internet suite."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c1",
+      "claim": "TCP/IP organizes communication into four functional layers and specifies packetization, addressing, transmission, routing and reception.",
+      "lines": [
+        68,
+        70
+      ],
+      "source_line_ranges": [
+        68,
+        70
+      ]
+    },
+    {
+      "id": "c2",
+      "claim": "IETF maintains the suite's technical standards and the suite predates OSI.",
+      "lines": [
+        72,
+        112,
+        114
+      ],
+      "source_line_ranges": [
+        72,
+        112,
+        114
+      ]
+    },
+    {
+      "id": "c3",
+      "claim": "DARPA-sponsored ARPANET research and BBN IMPs formed early infrastructure.",
+      "lines": [
+        79
+      ],
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "c4",
+      "claim": "Kahn and Cerf hid differences among local networks and delegated reliability to hosts.",
+      "lines": [
+        81,
+        83
+      ],
+      "source_line_ranges": [
+        81,
+        83
+      ]
+    },
+    {
+      "id": "c5",
+      "claim": "The 1978 reformulation separated TCP and IP into distinct transport and internetwork functions.",
+      "lines": [
+        85
+      ],
+      "source_line_ranges": [
+        85
+      ]
+    },
+    {
+      "id": "c6",
+      "claim": "End-to-end design, encapsulation and layering are central architectural principles.",
+      "lines": [
+        89,
+        123,
+        128
+      ],
+      "source_line_ranges": [
+        89,
+        123,
+        128
+      ]
+    },
+    {
+      "id": "c7",
+      "claim": "IPv4/TCP-IP became active on ARPANET in 1983 and DoD standardized TCP/IP for military networking.",
+      "lines": [
+        91,
+        99
+      ],
+      "source_line_ranges": [
+        91,
+        99
+      ]
+    },
+    {
+      "id": "c8",
+      "claim": "Transport provides channels, ports, reliability, segmentation, flow/congestion control and multiple protocol choices.",
+      "lines": [
+        133,
+        151,
+        164,
+        174
+      ],
+      "source_line_ranges": [
+        133,
+        151,
+        164,
+        174
+      ]
+    },
+    {
+      "id": "c9",
+      "claim": "Application protocols include both user and support protocols and usually treat lower layers as abstractions.",
+      "lines": [
+        177,
+        183,
+        185
+      ],
+      "source_line_ranges": [
+        177,
+        183,
+        185
+      ]
+    },
+    {
+      "id": "c10",
+      "claim": "TCP/IP and OSI use different layer representations and IETF does not require strict OSI compliance.",
+      "lines": [
+        187,
+        217
+      ],
+      "source_line_ranges": [
+        187,
+        217
+      ]
+    },
+    {
+      "id": "c11",
+      "claim": "TCP/IP is hardware independent and has implementations across essentially every computing platform.",
+      "lines": [
+        137,
+        228
+      ],
+      "source_line_ranges": [
+        137,
+        228
+      ]
+    },
+    {
+      "id": "c12",
+      "claim": "Minimal implementations include IP, ARP, ICMP, TCP, UDP and IGMP; IPv6 adds NDP and ICMPv6 among its support protocols.",
+      "lines": [
+        228
+      ],
+      "source_line_ranges": [
+        228
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "term_a": "TCP/IP",
+      "term_b": "OSI",
+      "distinction": "TCP/IP is an Internet architecture; OSI is a seven-layer general reference model."
+    },
+    {
+      "id": "d2",
+      "term_a": "IP",
+      "term_b": "TCP",
+      "distinction": "IP provides internetworking; TCP provides reliable transport."
+    },
+    {
+      "id": "d3",
+      "term_a": "TCP",
+      "term_b": "UDP",
+      "distinction": "TCP is connection-oriented/reliable; UDP is connectionless/best-effort."
+    },
+    {
+      "id": "d4",
+      "term_a": "IP address",
+      "term_b": "port",
+      "distinction": "IP addresses identify hosts/locations; ports identify service channels."
+    },
+    {
+      "id": "d5",
+      "term_a": "packet",
+      "term_b": "frame",
+      "distinction": "IP packets are carried inside local link frames."
+    },
+    {
+      "id": "d6",
+      "term_a": "layering",
+      "term_b": "encapsulation",
+      "distinction": "Layering defines scopes; encapsulation wraps data across those scopes."
+    },
+    {
+      "id": "d7",
+      "term_a": "end-to-end",
+      "term_b": "layering",
+      "distinction": "End-to-end concerns endpoint intelligence; layering concerns functional separation."
+    },
+    {
+      "id": "d8",
+      "term_a": "IPv4",
+      "term_b": "IPv6",
+      "distinction": "IPv6 expands addresses from 32 to 128 bits."
+    },
+    {
+      "id": "d9",
+      "term_a": "router",
+      "term_b": "gateway",
+      "distinction": "Gateway was an earlier term for router."
+    },
+    {
+      "id": "d10",
+      "term_a": "QUIC",
+      "term_b": "UDP",
+      "distinction": "QUIC is a transport protocol carried by UDP."
+    },
+    {
+      "id": "d11",
+      "term_a": "HTTP",
+      "term_b": "HTTP/3",
+      "distinction": "HTTP/3 uses QUIC exclusively."
+    },
+    {
+      "id": "d12",
+      "term_a": "user protocol",
+      "term_b": "support protocol",
+      "distinction": "User protocols serve applications; support protocols serve infrastructure."
+    },
+    {
+      "id": "d13",
+      "term_a": "best-effort",
+      "term_b": "reliable transport",
+      "distinction": "IP/UDP provide best-effort while TCP/SCTP can provide reliability."
+    },
+    {
+      "id": "d14",
+      "term_a": "link",
+      "term_b": "physical layer",
+      "distinction": "TCP/IP link/physical correspondence varies by representation."
+    },
+    {
+      "id": "d15",
+      "term_a": "routing protocol",
+      "term_b": "application layer",
+      "distinction": "IETF routing protocols carried over IP can be categorized as application-layer protocols in the cited TCP/IP treatment."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp1",
+      "name": "Foundations",
+      "sequence": [
+        "tcpip",
+        "link",
+        "internet",
+        "transport",
+        "application"
+      ]
+    },
+    {
+      "id": "lp2",
+      "name": "Data journey",
+      "sequence": [
+        "application",
+        "encapsulation",
+        "transport",
+        "internet",
+        "link",
+        "frame",
+        "medium"
+      ]
+    },
+    {
+      "id": "lp3",
+      "name": "Routing",
+      "sequence": [
+        "ip",
+        "ip_address",
+        "router",
+        "next_hop",
+        "ipv4",
+        "ipv6"
+      ]
+    },
+    {
+      "id": "lp4",
+      "name": "TCP",
+      "sequence": [
+        "tcp",
+        "connection",
+        "byte_stream",
+        "ordering",
+        "retransmission",
+        "flow_control",
+        "congestion_control"
+      ]
+    },
+    {
+      "id": "lp5",
+      "name": "UDP/real-time",
+      "sequence": [
+        "udp",
+        "checksum",
+        "dns",
+        "rtp",
+        "quic",
+        "http3"
+      ]
+    },
+    {
+      "id": "lp6",
+      "name": "Ports",
+      "sequence": [
+        "ip_address",
+        "port",
+        "well_known_port",
+        "ephemeral_port",
+        "http",
+        "telnet"
+      ]
+    },
+    {
+      "id": "lp7",
+      "name": "History",
+      "sequence": [
+        "darpa",
+        "arpanet",
+        "ncp",
+        "kahn_cerf_event",
+        "split_event",
+        "ipv4_event",
+        "flag_day",
+        "commercial_event"
+      ]
+    },
+    {
+      "id": "lp8",
+      "name": "Principles",
+      "sequence": [
+        "end_to_end",
+        "edge_intelligence",
+        "layering",
+        "encapsulation",
+        "robustness"
+      ]
+    },
+    {
+      "id": "lp9",
+      "name": "OSI comparison",
+      "sequence": [
+        "tcpip",
+        "osi",
+        "application",
+        "transport",
+        "internet",
+        "link"
+      ]
+    },
+    {
+      "id": "lp10",
+      "name": "Implementation",
+      "sequence": [
+        "implementation",
+        "driver",
+        "network_card",
+        "link",
+        "medium"
+      ]
+    },
+    {
+      "id": "lp11",
+      "name": "Interoperability",
+      "sequence": [
+        "tcpip",
+        "hardware_independence",
+        "slip",
+        "ppp",
+        "bsd",
+        "windows"
+      ]
+    },
+    {
+      "id": "lp12",
+      "name": "Modern transport",
+      "sequence": [
+        "udp",
+        "quic",
+        "http3",
+        "sctp"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "m1",
+      "misconception": "TCP/IP has seven layers exactly like OSI.",
+      "correction": "TCP/IP's standard four-layer representation differs from OSI."
+    },
+    {
+      "id": "m2",
+      "misconception": "IP guarantees reliable delivery.",
+      "correction": "IP is best-effort; reliability can be added above it."
+    },
+    {
+      "id": "m3",
+      "misconception": "TCP and IP are the same protocol.",
+      "correction": "TCP is transport; IP is internetworking."
+    },
+    {
+      "id": "m4",
+      "misconception": "UDP has no error detection.",
+      "correction": "UDP uses a checksum for error detection."
+    },
+    {
+      "id": "m5",
+      "misconception": "A port is another IP address.",
+      "correction": "A port identifies a logical communication channel/service."
+    },
+    {
+      "id": "m6",
+      "misconception": "Routers normally interpret application payloads.",
+      "correction": "Routers generally forward encapsulated traffic without application interpretation."
+    },
+    {
+      "id": "m7",
+      "misconception": "TCP/IP defines a mandatory separate physical layer.",
+      "correction": "Physical details may be implicit below the link layer."
+    },
+    {
+      "id": "m8",
+      "misconception": "HTTP/3 runs over TCP.",
+      "correction": "HTTP/3 works exclusively through QUIC, which is carried over UDP."
+    },
+    {
+      "id": "m9",
+      "misconception": "IPv6 is just a faster IPv4.",
+      "correction": "The source emphasizes IPv6's expanded 128-bit addressing to address exhaustion."
+    },
+    {
+      "id": "m10",
+      "misconception": "End-to-end means there are no middleboxes.",
+      "correction": "The source explicitly notes firewalls, NATs and caches changed the original assumption."
+    }
+  ],
+  "questions": [
+    "Why does TCP/IP use functional layers?",
+    "How does application data become a link frame?",
+    "What is encapsulation?",
+    "How does a router forward an IP datagram?",
+    "Why is IP best effort?",
+    "How does TCP add reliability?",
+    "What do TCP flow and congestion control accomplish?",
+    "Why use UDP?",
+    "How does QUIC relate to UDP?",
+    "Why does HTTP/3 use QUIC?",
+    "What is a network port?",
+    "How do IP addresses and ports combine?",
+    "What is ARP's role?",
+    "Why does IPv6 need NDP and ICMPv6?",
+    "How did TCP/IP emerge from ARPANET and NCP?",
+    "What did Kahn and Cerf change?",
+    "Why was reliability moved to hosts?",
+    "How did TCP/IP and IP separate in 1978?",
+    "What influence did CYCLADES have?",
+    "What did Postel mean by layering?",
+    "How did the 1983 flag day affect ARPANET?",
+    "Why did BSD TCP/IP matter?",
+    "How did Trumpet Winsock aid adoption?",
+    "Why did TCP/IP displace proprietary protocols?",
+    "How does TCP/IP differ from OSI?",
+    "Why are layer mappings approximate?",
+    "Why can routing protocols appear in different layers?",
+    "How does GRE demonstrate recursive encapsulation?",
+    "How does TCP/IP achieve hardware independence?",
+    "What does a network driver do?",
+    "How does SCTP differ from TCP?",
+    "What is SCTP multihoming?",
+    "How does UDP support real-time traffic?",
+    "What are well-known versus ephemeral ports?",
+    "What is the role of DNS as a support protocol?",
+    "What is the role of DHCP?",
+    "How does HTTP/3's stack differ from HTTP/1.1-style TCP transport?",
+    "What is the NFS/XDR/RPC example demonstrating?",
+    "How does IPv6 solve address exhaustion?",
+    "What belongs in a minimal TCP/IP implementation?",
+    "How do link-layer technologies remain abstracted?",
+    "How do virtual links and tunnels fit TCP/IP?",
+    "How does end-to-end architecture interact with NAT and firewalls?",
+    "Why can applications treat lower layers as black boxes?",
+    "How does IP carry multiple upper-layer protocols?",
+    "What is the difference between packet and frame?",
+    "How did IETF standards shape the suite?",
+    "How did commercial interoperability accelerate adoption?",
+    "How does a concrete TCP/IP stack connect software to hardware?",
+    "How did the OSI standards debate influence representations?",
+    "Why is strict layering not required by IETF?",
+    "How do IPv4 and IPv6 addressing differ?",
+    "How do routers and links divide responsibility?",
+    "How can reliable service be built over unreliable service?",
+    "How do support protocols differ from user protocols?",
+    "What architectural problems did layering solve?",
+    "How did packet-switching research influence Internet architecture?",
+    "What is the historical role of IMPs?",
+    "How did international research affect TCP/IP development?",
+    "What are the main modern expansion areas for TCP/IP study?"
+  ],
+  "expansion_targets": [
+    "IPv4 forwarding and routing tables",
+    "CIDR and longest-prefix matching",
+    "IPv6 subnetting and addressing",
+    "ARP cache behavior",
+    "NDP internals",
+    "ICMP/ICMPv6 message types",
+    "IGMP/MLD multicast",
+    "IP fragmentation and MTU",
+    "TCP handshake and state machine",
+    "TCP sequence/acknowledgment",
+    "TCP retransmission algorithms",
+    "TCP congestion-control algorithms",
+    "TCP receive windows",
+    "UDP checksum details",
+    "SCTP association/state model",
+    "QUIC handshake and TLS",
+    "HTTP/3 architecture",
+    "DNS resolution",
+    "DHCP lifecycle",
+    "HTTPS/TLS",
+    "BGP",
+    "OSPF",
+    "RIP",
+    "IS-IS",
+    "GRE",
+    "VPNs",
+    "NAT",
+    "firewalls",
+    "deep packet inspection",
+    "socket APIs",
+    "BSD sockets",
+    "Linux TCP/IP implementation",
+    "Windows TCP/IP implementation",
+    "network namespaces",
+    "virtual Ethernet",
+    "VXLAN/GENEVE",
+    "container networking",
+    "Kubernetes networking",
+    "service meshes",
+    "path MTU discovery",
+    "Ethernet",
+    "Wi-Fi",
+    "link-layer framing",
+    "physical-layer interfaces",
+    "packet capture",
+    "Wireshark",
+    "network observability",
+    "IETF RFC process",
+    "modern Internet architecture",
+    "routing policy",
+    "multicast",
+    "anycast",
+    "load balancing",
+    "service discovery",
+    "network security",
+    "TCP performance",
+    "UDP-based protocols",
+    "QUIC congestion control",
+    "network virtualization"
+  ],
+  "validation": {
+    "node_count": 132,
+    "relationship_count": 144,
+    "formal_model_count": 14,
+    "source_claim_count": 12,
+    "semantic_distinction_count": 15,
+    "learning_path_count": 12,
+    "misconception_count": 10,
+    "question_count": 60,
+    "expansion_target_count": 59,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}

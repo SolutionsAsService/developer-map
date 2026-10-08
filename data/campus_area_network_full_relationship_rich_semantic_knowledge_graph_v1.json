@@ -1,0 +1,2538 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "graph_type": "dynamic_educational_knowledge_graph",
+  "topic": "Campus Area Network (CAN) / Campus Network",
+  "source": {
+    "filename": "Campus network / Campus Area Network source supplied by user",
+    "authority": "user_supplied_source",
+    "external_research_used": false,
+    "source_line_count_approximate": 17,
+    "note": "Line ranges are normalized to the supplied article sections; the source itself contains Wikipedia-style inline references."
+  },
+  "nodes": [
+    {
+      "id": "campus_area_network",
+      "label": "Campus Area Network (CAN)",
+      "type": "network_scale",
+      "description": "A computer network made up of interconnected LANs within a limited geographical area; larger than a LAN and smaller than a MAN or WAN.",
+      "source_line_ranges": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "campus_network",
+      "label": "Campus Network",
+      "type": "network_scale",
+      "description": "Alternative name for a campus area network serving a university, enterprise, government, or similar campus.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "corporate_area_network",
+      "label": "Corporate Area Network",
+      "type": "network_scale",
+      "description": "Alternative term for a campus network operated across a corporate campus.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "local_area_network",
+      "label": "Local Area Network (LAN)",
+      "type": "network_scale",
+      "description": "A smaller network that forms the constituent local networks interconnected by a CAN.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "metropolitan_area_network",
+      "label": "Metropolitan Area Network (MAN)",
+      "type": "network_scale",
+      "description": "A network scale larger than a CAN and smaller than or distinct from a WAN in the source's scale hierarchy.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "wide_area_network",
+      "label": "Wide Area Network (WAN)",
+      "type": "network_scale",
+      "description": "A network scale larger than a CAN in the source's hierarchy.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "network_by_scale",
+      "label": "Computer Network Types by Scale",
+      "type": "taxonomy",
+      "description": "The source's taxonomy placing CAN among network types ranging from nanonetworks and personal networks to WAN, cloud, Internet, and interplanetary Internet.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "nanonetwork",
+      "label": "Nanonetwork",
+      "type": "network_scale",
+      "description": "Network type listed in the source's scale taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "near_field_communication",
+      "label": "Near-field (NFC)",
+      "type": "network_scale",
+      "description": "Near-field network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "body_area_network",
+      "label": "Body Area Network (BAN)",
+      "type": "network_scale",
+      "description": "Body-scale network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "personal_area_network",
+      "label": "Personal Area Network (PAN)",
+      "type": "network_scale",
+      "description": "Personal-scale network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "near_me_network",
+      "label": "Near-me Network",
+      "type": "network_scale",
+      "description": "Network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "storage_area_network",
+      "label": "Storage Area Network (SAN)",
+      "type": "network_type",
+      "description": "Storage-oriented network type listed alongside CAN.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "wireless_local_area_network",
+      "label": "Wireless LAN (WLAN)",
+      "type": "network_type",
+      "description": "Wireless LAN type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "virtual_local_area_network",
+      "label": "Virtual LAN (VLAN)",
+      "type": "network_type",
+      "description": "Virtual LAN type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "home_area_network",
+      "label": "Home Area Network (HAN)",
+      "type": "network_scale",
+      "description": "Home-scale network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "backbone_network",
+      "label": "Backbone Network",
+      "type": "network_type",
+      "description": "Backbone network type listed between CAN and MAN in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "municipal_wireless_network",
+      "label": "Municipal Wireless Network (MWN)",
+      "type": "network_type",
+      "description": "Municipal wireless network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "wireless_wide_area_network",
+      "label": "Wireless WAN (WWAN)",
+      "type": "network_type",
+      "description": "Wireless wide-area network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "low_power_wide_area_network",
+      "label": "Low-power Wide-area Network (LPWAN)",
+      "type": "network_type",
+      "description": "Low-power wide-area network type listed in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "cloud_network",
+      "label": "Cloud",
+      "type": "network_scale",
+      "description": "Cloud networking category listed after LPWAN in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "internet",
+      "label": "Internet",
+      "type": "network_scale",
+      "description": "Global internetwork listed after cloud in the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "interplanetary_internet",
+      "label": "Interplanetary Internet",
+      "type": "network_scale",
+      "description": "Interplanetary networking category at the broadest end of the source's taxonomy.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "limited_geographical_area",
+      "label": "Limited Geographical Area",
+      "type": "scope",
+      "description": "The bounded geographical scope defining the CAN in the source.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "interconnection_of_lans",
+      "label": "Interconnection of LANs",
+      "type": "architecture",
+      "description": "The defining structural mechanism by which multiple LANs are interconnected into a CAN.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "networking_equipment",
+      "label": "Networking Equipment",
+      "type": "infrastructure",
+      "description": "Campus networking equipment, principally switches and routers in the source.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "switch",
+      "label": "Network Switch",
+      "type": "network_device",
+      "description": "Networking equipment used within the campus network infrastructure.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "router",
+      "label": "Router",
+      "type": "network_device",
+      "description": "Networking equipment used to interconnect and route traffic within campus network infrastructure.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "transmission_media",
+      "label": "Transmission Media",
+      "type": "infrastructure",
+      "description": "Physical media used by the campus network.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "optical_fiber",
+      "label": "Optical Fiber",
+      "type": "transmission_medium",
+      "description": "High-capacity physical medium identified as a CAN transmission medium and used for high-speed campus links.",
+      "source_line_ranges": [
+        3,
+        10
+      ]
+    },
+    {
+      "id": "copper_plant",
+      "label": "Copper Plant",
+      "type": "transmission_medium",
+      "description": "Copper-based transmission infrastructure identified as CAN media.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "cat5_cabling",
+      "label": "Cat5 Cabling",
+      "type": "transmission_medium",
+      "description": "Copper cabling identified in the source as a campus transmission medium.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "campus_tenant_owner",
+      "label": "Campus Tenant / Owner",
+      "type": "ownership",
+      "description": "The enterprise, university, government, or other campus owner that almost entirely owns CAN networking equipment and transmission media according to the source.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "enterprise",
+      "label": "Enterprise",
+      "type": "organization_type",
+      "description": "One class of campus tenant/owner identified by the source.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "university",
+      "label": "University",
+      "type": "organization_type",
+      "description": "A campus tenant/owner and major CAN use case.",
+      "source_line_ranges": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": "government",
+      "label": "Government",
+      "type": "organization_type",
+      "description": "A campus tenant/owner identified by the source.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "campus_building",
+      "label": "Campus Building",
+      "type": "physical_site",
+      "description": "A building interconnected with other buildings by a university or corporate CAN.",
+      "source_line_ranges": [
+        5,
+        9
+      ]
+    },
+    {
+      "id": "administrative_building",
+      "label": "Administrative Building",
+      "type": "university_facility",
+      "description": "University facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "academic_building",
+      "label": "Academic Building",
+      "type": "university_facility",
+      "description": "University facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "laboratory",
+      "label": "Laboratory",
+      "type": "university_facility",
+      "description": "University facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "university_library",
+      "label": "University Library",
+      "type": "university_facility",
+      "description": "University facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "student_center",
+      "label": "Student Center",
+      "type": "university_facility",
+      "description": "University facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "residence_hall",
+      "label": "Residence Hall",
+      "type": "university_facility",
+      "description": "Residential university facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "gymnasium",
+      "label": "Gymnasium",
+      "type": "university_facility",
+      "description": "University facility that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "conference_center",
+      "label": "Conference Center",
+      "type": "university_outlying_structure",
+      "description": "Outlying university structure that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "technology_center",
+      "label": "Technology Center",
+      "type": "university_outlying_structure",
+      "description": "Outlying university structure that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "training_institute",
+      "label": "Training Institute",
+      "type": "university_outlying_structure",
+      "description": "Outlying university structure that can be interconnected by a campus network.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "stanford_university_network",
+      "label": "Stanford University Network (SUNet)",
+      "type": "historical_example",
+      "description": "Early university campus-area networking example at Stanford University.",
+      "source_line_ranges": [
+        6,
+        15
+      ]
+    },
+    {
+      "id": "project_athena",
+      "label": "Project Athena",
+      "type": "historical_example",
+      "description": "Early university networking project at MIT identified as a campus-network example.",
+      "source_line_ranges": [
+        6,
+        16
+      ]
+    },
+    {
+      "id": "andrew_project",
+      "label": "Andrew Project",
+      "type": "historical_example",
+      "description": "Early university networking project at Carnegie Mellon University identified as a campus-network example.",
+      "source_line_ranges": [
+        6,
+        17
+      ]
+    },
+    {
+      "id": "stanford_university_information_technology_services",
+      "label": "Stanford University Information Technology Services",
+      "type": "organization",
+      "description": "Source reference organization for SUNet information.",
+      "source_line_ranges": [
+        15
+      ]
+    },
+    {
+      "id": "mit",
+      "label": "Massachusetts Institute of Technology (MIT)",
+      "type": "organization",
+      "description": "University associated with Project Athena.",
+      "source_line_ranges": [
+        6,
+        16
+      ]
+    },
+    {
+      "id": "carnegie_mellon_university",
+      "label": "Carnegie Mellon University",
+      "type": "organization",
+      "description": "University associated with the Andrew Project.",
+      "source_line_ranges": [
+        6,
+        17
+      ]
+    },
+    {
+      "id": "corporate_campus_network",
+      "label": "Corporate Campus Network",
+      "type": "network_scope",
+      "description": "Campus network serving a corporate campus and connecting its buildings.",
+      "source_line_ranges": [
+        8
+      ]
+    },
+    {
+      "id": "googleplex",
+      "label": "Googleplex",
+      "type": "corporate_campus",
+      "description": "Corporate campus example named in the source.",
+      "source_line_ranges": [
+        9
+      ]
+    },
+    {
+      "id": "microsoft_campus",
+      "label": "Microsoft Campus",
+      "type": "corporate_campus",
+      "description": "Corporate campus example named in the source.",
+      "source_line_ranges": [
+        9
+      ]
+    },
+    {
+      "id": "high_speed_ethernet",
+      "label": "High-speed Ethernet Links",
+      "type": "network_link",
+      "description": "High-speed Ethernet links normally used to interconnect campus networks in the source.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "gigabit_ethernet",
+      "label": "Gigabit Ethernet",
+      "type": "ethernet_technology",
+      "description": "High-speed Ethernet technology identified as a campus link technology.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "ten_gigabit_ethernet",
+      "label": "10 Gigabit Ethernet",
+      "type": "ethernet_technology",
+      "description": "Higher-speed Ethernet technology identified as a campus link technology.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "campus_backbone",
+      "label": "Campus Backbone",
+      "type": "network_architecture",
+      "description": "The high-speed interconnection fabric implied by the source's description of campus-wide Ethernet links joining buildings.",
+      "source_line_ranges": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "same_domain",
+      "label": "Same Domain",
+      "type": "scope_condition",
+      "description": "The source's stated condition for treating connected buildings as a CAN when they share the same domain.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "one_to_five_km",
+      "label": "1–5 km CAN Range",
+      "type": "geographical_range",
+      "description": "The source states a CAN range of 1 to 5 km.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "one_to_three_miles",
+      "label": "1–3 mi CAN Range",
+      "type": "geographical_range",
+      "description": "The source gives the approximate imperial equivalent of the CAN range as 1 to 3 miles.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "high_speed_campus_link",
+      "label": "High-speed Campus Link",
+      "type": "network_link",
+      "description": "The source associates corporate CAN use with high-speed links.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "ccnp_complete_study_guide",
+      "label": "CCNP Complete Study Guide",
+      "type": "reference",
+      "description": "Wade Edwards, Sybex, © 2005.",
+      "source_line_ranges": [
+        13
+      ]
+    },
+    {
+      "id": "ip_network_design",
+      "label": "IP Network Design",
+      "type": "reference",
+      "description": "Cormac Long, McGraw-Hill/Osborne, © 2001.",
+      "source_line_ranges": [
+        13
+      ]
+    },
+    {
+      "id": "network_warrior",
+      "label": "Network Warrior",
+      "type": "reference",
+      "description": "Gary A. Donahue, O'Reilly, June 2007, p. 5.",
+      "source_line_ranges": [
+        13
+      ]
+    },
+    {
+      "id": "sunet_reference",
+      "label": "SUNet Reference",
+      "type": "reference",
+      "description": "Stanford University Information Technology Services, July 16, 2010; archived source cited by the article.",
+      "source_line_ranges": [
+        15
+      ]
+    },
+    {
+      "id": "athena_history_reference",
+      "label": "Athena History Reference",
+      "type": "reference",
+      "description": "MIT Athena history (1983–present) source cited by the article.",
+      "source_line_ranges": [
+        16
+      ]
+    },
+    {
+      "id": "andrew_retrospective",
+      "label": "CMU's Andrew Project: A Retrospective",
+      "type": "reference",
+      "description": "N. S. Borenstein, Communications of the ACM, December 1996, p. 298, DOI 10.1145/272682.272717.",
+      "source_line_ranges": [
+        17
+      ]
+    },
+    {
+      "id": "wade_edwards",
+      "label": "Wade Edwards",
+      "type": "person",
+      "description": "Author associated with CCNP Complete Study Guide.",
+      "source_line_ranges": [
+        13
+      ]
+    },
+    {
+      "id": "cormac_long",
+      "label": "Cormac Long",
+      "type": "person",
+      "description": "Author associated with IP Network Design.",
+      "source_line_ranges": [
+        13
+      ]
+    },
+    {
+      "id": "gary_donahue",
+      "label": "Gary A. Donahue",
+      "type": "person",
+      "description": "Author of Network Warrior.",
+      "source_line_ranges": [
+        13
+      ]
+    },
+    {
+      "id": "n_s_borenstein",
+      "label": "N. S. Borenstein",
+      "type": "person",
+      "description": "Author of the cited retrospective on CMU's Andrew Project.",
+      "source_line_ranges": [
+        17
+      ]
+    },
+    {
+      "id": "stanford",
+      "label": "Stanford University",
+      "type": "organization",
+      "description": "University associated with SUNet.",
+      "source_line_ranges": [
+        6,
+        15
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "campus_area_network",
+      "target": "interconnection_of_lans",
+      "relationship": "is_defined_as",
+      "mechanism": "A CAN is formed by interconnecting multiple LANs within a limited geographic area.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "structural_definition"
+    },
+    {
+      "source": "interconnection_of_lans",
+      "target": "local_area_network",
+      "relationship": "contains",
+      "mechanism": "The constituent networks being interconnected are LANs.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "composition"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "limited_geographical_area",
+      "relationship": "operates_within",
+      "mechanism": "Its defining scope is geographically bounded.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "local_area_network",
+      "relationship": "larger_than",
+      "mechanism": "CAN occupies a larger geographic/network scope than an individual LAN.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "scale_comparison",
+      "effect": "Multiple LANs can span multiple buildings."
+    },
+    {
+      "source": "campus_area_network",
+      "target": "metropolitan_area_network",
+      "relationship": "smaller_than",
+      "mechanism": "The source explicitly places CAN below MAN in scale.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "scale_comparison"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "wide_area_network",
+      "relationship": "smaller_than",
+      "mechanism": "The source explicitly places CAN below WAN in scale.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "scale_comparison"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "campus_network",
+      "relationship": "also_called",
+      "mechanism": "Campus network is an alternative name for CAN.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "terminology"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "corporate_area_network",
+      "relationship": "also_called",
+      "mechanism": "Corporate area network is an alternative name for CAN.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "terminology"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "networking_equipment",
+      "relationship": "uses",
+      "mechanism": "Campus networks use networking equipment such as switches and routers.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "infrastructure"
+    },
+    {
+      "source": "networking_equipment",
+      "target": "switch",
+      "relationship": "includes",
+      "mechanism": "Switches are explicitly named as CAN networking equipment.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "component"
+    },
+    {
+      "source": "networking_equipment",
+      "target": "router",
+      "relationship": "includes",
+      "mechanism": "Routers are explicitly named as CAN networking equipment.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "component"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "transmission_media",
+      "relationship": "uses",
+      "mechanism": "CANs use physical transmission media.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "infrastructure"
+    },
+    {
+      "source": "transmission_media",
+      "target": "optical_fiber",
+      "relationship": "includes",
+      "mechanism": "Optical fiber is named as a CAN medium.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "component"
+    },
+    {
+      "source": "transmission_media",
+      "target": "copper_plant",
+      "relationship": "includes",
+      "mechanism": "Copper plant is named as a CAN medium.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "component"
+    },
+    {
+      "source": "transmission_media",
+      "target": "cat5_cabling",
+      "relationship": "includes",
+      "mechanism": "Cat5 cabling is named as a CAN medium.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "component"
+    },
+    {
+      "source": "campus_tenant_owner",
+      "target": "networking_equipment",
+      "relationship": "owns",
+      "mechanism": "The source states equipment is almost entirely owned by the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "ownership",
+      "conditions": "Campus-owned CAN deployment"
+    },
+    {
+      "source": "campus_tenant_owner",
+      "target": "transmission_media",
+      "relationship": "owns",
+      "mechanism": "The source states transmission media are almost entirely owned by the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "ownership"
+    },
+    {
+      "source": "enterprise",
+      "target": "campus_tenant_owner",
+      "relationship": "can_be",
+      "mechanism": "An enterprise can be the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "organization_role"
+    },
+    {
+      "source": "university",
+      "target": "campus_tenant_owner",
+      "relationship": "can_be",
+      "mechanism": "A university can be the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "organization_role"
+    },
+    {
+      "source": "government",
+      "target": "campus_tenant_owner",
+      "relationship": "can_be",
+      "mechanism": "A government organization can be the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ],
+      "semantic_role": "organization_role"
+    },
+    {
+      "source": "university",
+      "target": "campus_area_network",
+      "relationship": "uses",
+      "mechanism": "University campuses use CANs to interconnect buildings and facilities.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "use_case"
+    },
+    {
+      "source": "corporate_campus_network",
+      "target": "campus_area_network",
+      "relationship": "is_a",
+      "mechanism": "A corporate campus network is a CAN serving a corporate campus.",
+      "source_line_ranges": [
+        8
+      ],
+      "semantic_role": "taxonomy"
+    },
+    {
+      "source": "corporate_campus_network",
+      "target": "campus_building",
+      "relationship": "connects",
+      "mechanism": "Corporate campus networks connect buildings.",
+      "source_line_ranges": [
+        8
+      ],
+      "semantic_role": "connectivity"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "campus_building",
+      "relationship": "connects",
+      "mechanism": "A CAN interconnects campus buildings through the underlying LANs and campus links.",
+      "source_line_ranges": [
+        5,
+        8
+      ],
+      "semantic_role": "connectivity"
+    },
+    {
+      "source": "university",
+      "target": "administrative_building",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "administrative_building",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "academic_building",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "academic_building",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "laboratory",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "laboratory",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "university_library",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "university_library",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "student_center",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "student_center",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "residence_hall",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "residence_hall",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "gymnasium",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "gymnasium",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "conference_center",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "conference_center",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "technology_center",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "technology_center",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "university",
+      "target": "training_institute",
+      "relationship": "may_include",
+      "mechanism": "The source lists this facility as a type of structure that a university CAN can interconnect.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_scope"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "training_institute",
+      "relationship": "can_interconnect",
+      "mechanism": "The campus network can extend connectivity to this facility.",
+      "source_line_ranges": [
+        5
+      ],
+      "semantic_role": "facility_connectivity"
+    },
+    {
+      "source": "stanford_university_network",
+      "target": "stanford",
+      "relationship": "associated_with",
+      "mechanism": "SUNet is identified as an early example at Stanford University.",
+      "source_line_ranges": [
+        6,
+        15
+      ],
+      "semantic_role": "historical_association"
+    },
+    {
+      "source": "project_athena",
+      "target": "mit",
+      "relationship": "associated_with",
+      "mechanism": "Project Athena is identified as an early example at MIT.",
+      "source_line_ranges": [
+        6,
+        16
+      ],
+      "semantic_role": "historical_association"
+    },
+    {
+      "source": "andrew_project",
+      "target": "carnegie_mellon_university",
+      "relationship": "associated_with",
+      "mechanism": "Andrew Project is identified as an early example at Carnegie Mellon University.",
+      "source_line_ranges": [
+        6,
+        17
+      ],
+      "semantic_role": "historical_association"
+    },
+    {
+      "source": "stanford_university_information_technology_services",
+      "target": "stanford_university_network",
+      "relationship": "provides_reference_for",
+      "mechanism": "The cited Stanford IT Services source documents SUNet.",
+      "source_line_ranges": [
+        15
+      ],
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "mit",
+      "target": "project_athena",
+      "relationship": "operated_or_hosted",
+      "mechanism": "MIT is the institutional setting named for Project Athena.",
+      "source_line_ranges": [
+        6,
+        16
+      ],
+      "semantic_role": "institutional_context"
+    },
+    {
+      "source": "carnegie_mellon_university",
+      "target": "andrew_project",
+      "relationship": "operated_or_hosted",
+      "mechanism": "CMU is the institutional setting named for the Andrew Project.",
+      "source_line_ranges": [
+        6,
+        17
+      ],
+      "semantic_role": "institutional_context"
+    },
+    {
+      "source": "googleplex",
+      "target": "corporate_campus_network",
+      "relationship": "exemplifies",
+      "mechanism": "The Googleplex is named as an example of a corporate campus network.",
+      "source_line_ranges": [
+        9
+      ],
+      "semantic_role": "example"
+    },
+    {
+      "source": "microsoft_campus",
+      "target": "corporate_campus_network",
+      "relationship": "exemplifies",
+      "mechanism": "Microsoft's campus is named as an example of a corporate campus network.",
+      "source_line_ranges": [
+        9
+      ],
+      "semantic_role": "example"
+    },
+    {
+      "source": "corporate_campus_network",
+      "target": "high_speed_ethernet",
+      "relationship": "normally_uses",
+      "mechanism": "Corporate campus networks are described as normally interconnected with high-speed Ethernet links.",
+      "source_line_ranges": [
+        10
+      ],
+      "semantic_role": "implementation_pattern"
+    },
+    {
+      "source": "high_speed_ethernet",
+      "target": "optical_fiber",
+      "relationship": "operates_over",
+      "mechanism": "The source says high-speed Ethernet links operate over optical fiber.",
+      "source_line_ranges": [
+        10
+      ],
+      "semantic_role": "physical_transport"
+    },
+    {
+      "source": "high_speed_ethernet",
+      "target": "gigabit_ethernet",
+      "relationship": "includes_example",
+      "mechanism": "Gigabit Ethernet is named as an example of high-speed Ethernet.",
+      "source_line_ranges": [
+        10
+      ],
+      "semantic_role": "technology_example"
+    },
+    {
+      "source": "high_speed_ethernet",
+      "target": "ten_gigabit_ethernet",
+      "relationship": "includes_example",
+      "mechanism": "10 Gigabit Ethernet is named as an example of high-speed Ethernet.",
+      "source_line_ranges": [
+        10
+      ],
+      "semantic_role": "technology_example"
+    },
+    {
+      "source": "campus_backbone",
+      "target": "high_speed_ethernet",
+      "relationship": "uses",
+      "mechanism": "The campus-wide interconnection is represented by the source's high-speed Ethernet links.",
+      "source_line_ranges": [
+        10
+      ],
+      "semantic_role": "backbone_technology"
+    },
+    {
+      "source": "one_to_five_km",
+      "target": "one_to_three_miles",
+      "relationship": "approximately_equals",
+      "mechanism": "The source gives 1–5 km and approximately 1–3 miles as the CAN range.",
+      "source_line_ranges": [
+        11
+      ],
+      "semantic_role": "unit_conversion"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "one_to_five_km",
+      "relationship": "has_stated_range",
+      "mechanism": "The source states a CAN range of 1 to 5 km.",
+      "source_line_ranges": [
+        11
+      ],
+      "semantic_role": "range"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "one_to_three_miles",
+      "relationship": "has_stated_range",
+      "mechanism": "The source states a CAN range of 1 to 3 miles.",
+      "source_line_ranges": [
+        11
+      ],
+      "semantic_role": "range"
+    },
+    {
+      "source": "same_domain",
+      "target": "campus_area_network",
+      "relationship": "is_stated_condition_for",
+      "mechanism": "The source says two buildings sharing the same domain and connected by a network are considered a CAN.",
+      "source_line_ranges": [
+        11
+      ],
+      "semantic_role": "classification_condition"
+    },
+    {
+      "source": "campus_area_network",
+      "target": "high_speed_campus_link",
+      "relationship": "is_associated_with",
+      "mechanism": "The source associates corporate CANs with high-speed links.",
+      "source_line_ranges": [
+        11
+      ],
+      "semantic_role": "performance_characteristic"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "nanonetwork",
+      "relationship": "includes",
+      "mechanism": "Network taxonomy includes nanonetwork.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "near_field_communication",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "body_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "personal_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "near_me_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "local_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "storage_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "wireless_local_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "virtual_local_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "home_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "campus_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "backbone_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "metropolitan_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "municipal_wireless_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "wide_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "wireless_wide_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "low_power_wide_area_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "cloud_network",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "internet",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "network_by_scale",
+      "target": "interplanetary_internet",
+      "relationship": "includes",
+      "mechanism": "The source's computer-network taxonomy lists this category.",
+      "source_line_ranges": [
+        2
+      ],
+      "semantic_role": "taxonomy_membership"
+    },
+    {
+      "source": "ccnp_complete_study_guide",
+      "target": "wade_edwards",
+      "relationship": "authored_by",
+      "mechanism": "Wade Edwards is listed as the author.",
+      "source_line_ranges": [
+        13
+      ],
+      "semantic_role": "bibliographic"
+    },
+    {
+      "source": "ip_network_design",
+      "target": "cormac_long",
+      "relationship": "authored_by",
+      "mechanism": "Cormac Long is listed as the author.",
+      "source_line_ranges": [
+        13
+      ],
+      "semantic_role": "bibliographic"
+    },
+    {
+      "source": "network_warrior",
+      "target": "gary_donahue",
+      "relationship": "authored_by",
+      "mechanism": "Gary A. Donahue is listed as the author.",
+      "source_line_ranges": [
+        13
+      ],
+      "semantic_role": "bibliographic"
+    },
+    {
+      "source": "andrew_retrospective",
+      "target": "n_s_borenstein",
+      "relationship": "authored_by",
+      "mechanism": "N. S. Borenstein is listed as the author.",
+      "source_line_ranges": [
+        17
+      ],
+      "semantic_role": "bibliographic"
+    },
+    {
+      "source": "ccnp_complete_study_guide",
+      "target": "campus_area_network",
+      "relationship": "supports",
+      "mechanism": "The cited networking study guide is a source reference for the article.",
+      "source_line_ranges": [
+        13
+      ],
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "ip_network_design",
+      "target": "campus_area_network",
+      "relationship": "supports",
+      "mechanism": "The cited network-design book is a source reference.",
+      "source_line_ranges": [
+        13
+      ],
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "network_warrior",
+      "target": "campus_area_network",
+      "relationship": "supports",
+      "mechanism": "The cited Network Warrior book is a source reference.",
+      "source_line_ranges": [
+        13
+      ],
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "sunet_reference",
+      "target": "stanford_university_network",
+      "relationship": "documents",
+      "mechanism": "The Stanford IT Services citation documents SUNet.",
+      "source_line_ranges": [
+        15
+      ],
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "athena_history_reference",
+      "target": "project_athena",
+      "relationship": "documents",
+      "mechanism": "The MIT Athena history citation documents Project Athena.",
+      "source_line_ranges": [
+        16
+      ],
+      "semantic_role": "provenance"
+    },
+    {
+      "source": "andrew_retrospective",
+      "target": "andrew_project",
+      "relationship": "documents",
+      "mechanism": "The ACM retrospective documents the Andrew Project.",
+      "source_line_ranges": [
+        17
+      ],
+      "semantic_role": "provenance"
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_can_composition",
+      "name": "CAN composition",
+      "expression": "CAN = interconnected LANs within a limited geographic area",
+      "meaning": "Defines the CAN structurally and geographically.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "model_network_scale_order",
+      "name": "Scale ordering",
+      "expression": "LAN < CAN < MAN < WAN",
+      "meaning": "Captures the source's explicit relative size hierarchy.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "model_campus_ownership",
+      "name": "Campus ownership model",
+      "expression": "Campus tenant/owner → networking equipment + transmission media",
+      "meaning": "Models the source's statement that campus equipment and media are almost entirely owner-controlled.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "model_university_connectivity",
+      "name": "University facility connectivity",
+      "expression": "CAN → buildings/facilities",
+      "meaning": "Represents campus-wide interconnection of administrative, academic, research, residential, recreational, and outlying structures.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "model_corporate_backbone",
+      "name": "Corporate campus backbone",
+      "expression": "Buildings → high-speed Ethernet → optical fiber",
+      "meaning": "Represents the source's described corporate-campus implementation pattern.",
+      "source_line_ranges": [
+        8,
+        10
+      ]
+    },
+    {
+      "id": "model_ethernet_examples",
+      "name": "High-speed Ethernet examples",
+      "expression": "High-speed Ethernet → Gigabit Ethernet / 10 Gigabit Ethernet",
+      "meaning": "Captures the named examples of campus interconnection technologies.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "model_can_range",
+      "name": "CAN stated range",
+      "expression": "1 km ≤ CAN range ≤ 5 km",
+      "meaning": "Represents the source's stated geographic range.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "model_domain_condition",
+      "name": "Same-domain building condition",
+      "expression": "same domain + connected buildings → CAN (source-stated condition)",
+      "meaning": "Captures the article's classification statement without extending it beyond the source.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "model_lan_to_can",
+      "name": "LAN aggregation",
+      "expression": "LAN₁ + LAN₂ + … + LANₙ → CAN",
+      "meaning": "Shows how multiple local networks form the campus-scale network.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "model_media_stack",
+      "name": "Campus physical infrastructure",
+      "expression": "CAN → switches/routers → fiber/copper/Cat5",
+      "meaning": "Maps logical campus networking scope to physical infrastructure named in the source.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "model_university_examples",
+      "name": "Historical university examples",
+      "expression": "Stanford → SUNet; MIT → Athena; CMU → Andrew",
+      "meaning": "Associates early campus networking examples with institutions.",
+      "source_line_ranges": [
+        6
+      ]
+    },
+    {
+      "id": "model_corporate_examples",
+      "name": "Corporate examples",
+      "expression": "Googleplex / Microsoft campus → corporate campus network",
+      "meaning": "Maps the named corporate campuses to the corporate CAN use case.",
+      "source_line_ranges": [
+        9
+      ]
+    },
+    {
+      "id": "model_scale_taxonomy",
+      "name": "Network-scale taxonomy",
+      "expression": "PAN → LAN → CAN → MAN → WAN → Internet",
+      "meaning": "A simplified path through categories explicitly present in the source taxonomy; it is a conceptual ordering, not a claim that every listed category is strictly geographic scale.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "model_owner_operated_infrastructure",
+      "name": "Owner-operated infrastructure",
+      "expression": "enterprise/university/government → owns → campus infrastructure",
+      "meaning": "Captures the ownership relationship emphasized by the source.",
+      "source_line_ranges": [
+        3
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_definition",
+      "claim": "A campus network/CAN is an interconnection of LANs within a limited geographical area.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "claim_relative_scale",
+      "claim": "CAN is larger than LAN and smaller than MAN or WAN.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "claim_ownership",
+      "claim": "Campus networking equipment and transmission media are almost entirely owned by the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "claim_university_facilities",
+      "claim": "University CANs interconnect many categories of buildings and outlying structures.",
+      "source_line_ranges": [
+        5
+      ]
+    },
+    {
+      "id": "claim_early_examples",
+      "claim": "SUNet, Project Athena, and Andrew are cited as early examples.",
+      "source_line_ranges": [
+        6
+      ]
+    },
+    {
+      "id": "claim_corporate",
+      "claim": "Corporate campus networks connect buildings, with Googleplex and Microsoft campus given as examples.",
+      "source_line_ranges": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "claim_high_speed",
+      "claim": "Campus networks are normally interconnected using high-speed Ethernet over optical fiber, including Gigabit and 10 Gigabit Ethernet.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "claim_range",
+      "claim": "The source states a CAN range of 1 to 5 km (1 to 3 miles).",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "claim_domain",
+      "claim": "The source states that connected buildings in the same domain can constitute a CAN.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "claim_references",
+      "claim": "The article cites networking textbooks and institutional/historical references.",
+      "source_line_ranges": [
+        13,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "id": "claim_categories",
+      "claim": "CAN appears in a taxonomy of computer network types by scale and other dimensions.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "claim_high_speed_corporate",
+      "claim": "The source specifically associates corporate CANs with high-speed links.",
+      "source_line_ranges": [
+        10,
+        11
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_can_vs_lan",
+      "a": "CAN",
+      "b": "LAN",
+      "distinction": "CAN interconnects LANs across a limited campus area; LAN is one constituent local network.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "dist_can_vs_man",
+      "a": "CAN",
+      "b": "MAN",
+      "distinction": "The source places CAN below MAN in scale.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "dist_can_vs_wan",
+      "a": "CAN",
+      "b": "WAN",
+      "distinction": "The source places CAN below WAN in scale.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "dist_campus_vs_corporate",
+      "a": "Campus network",
+      "b": "Corporate area network",
+      "distinction": "The source presents these as alternative terms rather than distinct technologies.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "dist_equipment_vs_media",
+      "a": "Networking equipment",
+      "b": "Transmission media",
+      "distinction": "Switches/routers are active networking equipment; fiber/copper/Cat5 are transmission media.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "dist_university_vs_corporate",
+      "a": "University CAN",
+      "b": "Corporate CAN",
+      "distinction": "Both connect buildings, but the source gives different organizational contexts and examples.",
+      "source_line_ranges": [
+        5,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "dist_fiber_vs_copper",
+      "a": "Optical fiber",
+      "b": "Copper plant",
+      "distinction": "Both are named CAN media; fiber is specifically associated with the high-speed Ethernet corporate pattern.",
+      "source_line_ranges": [
+        3,
+        10
+      ]
+    },
+    {
+      "id": "dist_gigabit_vs_10g",
+      "a": "Gigabit Ethernet",
+      "b": "10 Gigabit Ethernet",
+      "distinction": "Both are examples of high-speed Ethernet; the source distinguishes them by named link speed.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "dist_physical_scope_vs_domain",
+      "a": "Geographical range",
+      "b": "Same domain condition",
+      "distinction": "The source provides both a numeric range and a domain/connectivity condition; these are different classification dimensions.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "dist_can_vs_backbone",
+      "a": "CAN",
+      "b": "Backbone network",
+      "distinction": "CAN is a campus network scope; backbone is a network type listed separately in the taxonomy.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "dist_network_scale_vs_network_type",
+      "a": "Network by scale",
+      "b": "Network type",
+      "distinction": "The taxonomy mixes geographic scale categories with categories such as SAN, WLAN, VLAN, and LPWAN.",
+      "source_line_ranges": [
+        2
+      ]
+    },
+    {
+      "id": "dist_owner_vs_provider",
+      "a": "Campus tenant/owner",
+      "b": "External network provider",
+      "distinction": "The source emphasizes campus ownership of infrastructure rather than an externally owned access network.",
+      "source_line_ranges": [
+        3
+      ]
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "path_1",
+      "name": "Understand CAN definition",
+      "sequence": [
+        "local_area_network",
+        "interconnection_of_lans",
+        "campus_area_network",
+        "limited_geographical_area"
+      ]
+    },
+    {
+      "id": "path_2",
+      "name": "Network scale progression",
+      "sequence": [
+        "local_area_network",
+        "campus_area_network",
+        "metropolitan_area_network",
+        "wide_area_network"
+      ]
+    },
+    {
+      "id": "path_3",
+      "name": "Physical campus infrastructure",
+      "sequence": [
+        "campus_area_network",
+        "networking_equipment",
+        "switch",
+        "router",
+        "transmission_media",
+        "optical_fiber"
+      ]
+    },
+    {
+      "id": "path_4",
+      "name": "University campus architecture",
+      "sequence": [
+        "university",
+        "campus_area_network",
+        "campus_building",
+        "academic_building",
+        "laboratory",
+        "residence_hall"
+      ]
+    },
+    {
+      "id": "path_5",
+      "name": "Corporate campus architecture",
+      "sequence": [
+        "corporate_campus_network",
+        "campus_building",
+        "high_speed_ethernet",
+        "optical_fiber",
+        "gigabit_ethernet",
+        "ten_gigabit_ethernet"
+      ]
+    },
+    {
+      "id": "path_6",
+      "name": "CAN ownership",
+      "sequence": [
+        "enterprise",
+        "campus_tenant_owner",
+        "networking_equipment",
+        "transmission_media"
+      ]
+    },
+    {
+      "id": "path_7",
+      "name": "Historical university networking",
+      "sequence": [
+        "stanford",
+        "stanford_university_network",
+        "mit",
+        "project_athena",
+        "carnegie_mellon_university",
+        "andrew_project"
+      ]
+    },
+    {
+      "id": "path_8",
+      "name": "CAN geographic classification",
+      "sequence": [
+        "campus_area_network",
+        "one_to_five_km",
+        "one_to_three_miles",
+        "same_domain"
+      ]
+    },
+    {
+      "id": "path_9",
+      "name": "Corporate examples",
+      "sequence": [
+        "googleplex",
+        "corporate_campus_network",
+        "microsoft_campus"
+      ]
+    },
+    {
+      "id": "path_10",
+      "name": "Ethernet campus backbone",
+      "sequence": [
+        "campus_backbone",
+        "high_speed_ethernet",
+        "gigabit_ethernet",
+        "ten_gigabit_ethernet"
+      ]
+    },
+    {
+      "id": "path_11",
+      "name": "Network taxonomy",
+      "sequence": [
+        "personal_area_network",
+        "local_area_network",
+        "campus_area_network",
+        "metropolitan_area_network",
+        "wide_area_network",
+        "internet"
+      ]
+    },
+    {
+      "id": "path_12",
+      "name": "Source provenance",
+      "sequence": [
+        "campus_area_network",
+        "ccnp_complete_study_guide",
+        "ip_network_design",
+        "network_warrior",
+        "sunet_reference",
+        "athena_history_reference",
+        "andrew_retrospective"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mis_1",
+      "misconception": "CAN is just a larger single LAN.",
+      "correction": "The source defines CAN as an interconnection of LANs, so its defining structure is aggregation/interconnection of local networks.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "mis_2",
+      "misconception": "CAN is larger than a MAN.",
+      "correction": "The source explicitly states CAN is smaller than MAN.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "mis_3",
+      "misconception": "CAN always means wireless networking.",
+      "correction": "The source emphasizes switches, routers, optical fiber, copper plant, and Cat5 cabling; wireless is not required by this definition.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "mis_4",
+      "misconception": "CAN equipment must be externally owned.",
+      "correction": "The source says equipment and transmission media are almost entirely owned by the campus tenant/owner.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "mis_5",
+      "misconception": "Only universities use CANs.",
+      "correction": "The source explicitly includes enterprise, university, and government ownership/use contexts and discusses corporate campuses.",
+      "source_line_ranges": [
+        3,
+        8
+      ]
+    },
+    {
+      "id": "mis_6",
+      "misconception": "A CAN has to use fiber.",
+      "correction": "Fiber is one named medium; copper plant and Cat5 are also explicitly named.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "mis_7",
+      "misconception": "Every campus CAN must use 10 Gigabit Ethernet.",
+      "correction": "10 Gigabit Ethernet is one example of high-speed Ethernet, alongside Gigabit Ethernet.",
+      "source_line_ranges": [
+        10
+      ]
+    },
+    {
+      "id": "mis_8",
+      "misconception": "The 1–5 km figure is an absolute universal standard.",
+      "correction": "The source states this range but marks the associated statement with a citation-needed note; it should be treated as source-provided rather than a universal engineering rule.",
+      "source_line_ranges": [
+        11
+      ]
+    },
+    {
+      "id": "mis_9",
+      "misconception": "Campus network and corporate area network are completely different technologies.",
+      "correction": "The source presents campus network and corporate area network as alternative terminology for CAN.",
+      "source_line_ranges": [
+        3
+      ]
+    },
+    {
+      "id": "mis_10",
+      "misconception": "A CAN is the same thing as the Internet.",
+      "correction": "CAN is a limited-area network interconnecting LANs; the Internet is separately listed as a much broader network category.",
+      "source_line_ranges": [
+        2,
+        3
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_1",
+      "question": "What structural property defines a campus area network?"
+    },
+    {
+      "id": "q_2",
+      "question": "How does a CAN differ from a LAN?"
+    },
+    {
+      "id": "q_3",
+      "question": "How does a CAN differ from a MAN?"
+    },
+    {
+      "id": "q_4",
+      "question": "How does a CAN differ from a WAN?"
+    },
+    {
+      "id": "q_5",
+      "question": "Who typically owns CAN networking equipment according to the source?"
+    },
+    {
+      "id": "q_6",
+      "question": "What networking equipment does the source identify?"
+    },
+    {
+      "id": "q_7",
+      "question": "What transmission media does the source identify?"
+    },
+    {
+      "id": "q_8",
+      "question": "Why is optical fiber important in the corporate-campus example?"
+    },
+    {
+      "id": "q_9",
+      "question": "What are the stated CAN distance limits?"
+    },
+    {
+      "id": "q_10",
+      "question": "What condition involving domain and connected buildings does the source state?"
+    },
+    {
+      "id": "q_11",
+      "question": "What types of university facilities can a CAN interconnect?"
+    },
+    {
+      "id": "q_12",
+      "question": "What are the three early university networking examples named?"
+    },
+    {
+      "id": "q_13",
+      "question": "What institution is associated with SUNet?"
+    },
+    {
+      "id": "q_14",
+      "question": "What institution is associated with Project Athena?"
+    },
+    {
+      "id": "q_15",
+      "question": "What institution is associated with the Andrew Project?"
+    },
+    {
+      "id": "q_16",
+      "question": "What corporate campuses are named?"
+    },
+    {
+      "id": "q_17",
+      "question": "What is the role of high-speed Ethernet in a campus network?"
+    },
+    {
+      "id": "q_18",
+      "question": "What are the two named Ethernet speed examples?"
+    },
+    {
+      "id": "q_19",
+      "question": "What is the relationship between a CAN and a campus backbone?"
+    },
+    {
+      "id": "q_20",
+      "question": "What is the ownership model described for a campus network?"
+    },
+    {
+      "id": "q_21",
+      "question": "Why can a university be a CAN owner?"
+    },
+    {
+      "id": "q_22",
+      "question": "Why can an enterprise be a CAN owner?"
+    },
+    {
+      "id": "q_23",
+      "question": "Why can a government be a CAN owner?"
+    },
+    {
+      "id": "q_24",
+      "question": "What is the difference between networking equipment and transmission media?"
+    },
+    {
+      "id": "q_25",
+      "question": "Why does the source distinguish CAN from MAN and WAN by scale?"
+    },
+    {
+      "id": "q_26",
+      "question": "Does the source require wireless technology for CAN?"
+    },
+    {
+      "id": "q_27",
+      "question": "Does the source require optical fiber for every CAN?"
+    },
+    {
+      "id": "q_28",
+      "question": "How do multiple LANs become a CAN?"
+    },
+    {
+      "id": "q_29",
+      "question": "What is meant by a limited geographical area?"
+    },
+    {
+      "id": "q_30",
+      "question": "How does the source classify a same-domain connected pair of buildings?"
+    },
+    {
+      "id": "q_31",
+      "question": "What role do switches play in the described infrastructure?"
+    },
+    {
+      "id": "q_32",
+      "question": "What role do routers play?"
+    },
+    {
+      "id": "q_33",
+      "question": "How do campus buildings relate to LAN interconnection?"
+    },
+    {
+      "id": "q_34",
+      "question": "What makes a corporate campus network a CAN use case?"
+    },
+    {
+      "id": "q_35",
+      "question": "What makes university residence halls part of campus connectivity?"
+    },
+    {
+      "id": "q_36",
+      "question": "What is the relationship between CAN and Gigabit Ethernet?"
+    },
+    {
+      "id": "q_37",
+      "question": "What is the relationship between CAN and 10 Gigabit Ethernet?"
+    },
+    {
+      "id": "q_38",
+      "question": "How should the 1–5 km figure be interpreted given the citation-needed note?"
+    },
+    {
+      "id": "q_39",
+      "question": "What does the taxonomy reveal about CAN's position among network types?"
+    },
+    {
+      "id": "q_40",
+      "question": "Which listed categories are not strictly geographic scales?"
+    },
+    {
+      "id": "q_41",
+      "question": "Why is WLAN distinct from CAN in the taxonomy?"
+    },
+    {
+      "id": "q_42",
+      "question": "Why is VLAN distinct from CAN in the taxonomy?"
+    },
+    {
+      "id": "q_43",
+      "question": "Why is SAN distinct from CAN in the taxonomy?"
+    },
+    {
+      "id": "q_44",
+      "question": "What references support the article?"
+    },
+    {
+      "id": "q_45",
+      "question": "Who authored Network Warrior?"
+    },
+    {
+      "id": "q_46",
+      "question": "Who authored IP Network Design?"
+    },
+    {
+      "id": "q_47",
+      "question": "Who authored CCNP Complete Study Guide?"
+    },
+    {
+      "id": "q_48",
+      "question": "Who authored the Andrew Project retrospective?"
+    },
+    {
+      "id": "q_49",
+      "question": "What historical projects illustrate early campus networking?"
+    },
+    {
+      "id": "q_50",
+      "question": "How does corporate campus networking differ in context from university networking?"
+    },
+    {
+      "id": "q_51",
+      "question": "What does owner-controlled infrastructure imply operationally?"
+    },
+    {
+      "id": "q_52",
+      "question": "How does high-speed Ethernet support building interconnection?"
+    },
+    {
+      "id": "q_53",
+      "question": "How does optical fiber relate to Ethernet rather than replace Ethernet?"
+    },
+    {
+      "id": "q_54",
+      "question": "How does physical media relate to geographic scope?"
+    },
+    {
+      "id": "q_55",
+      "question": "How does the scale hierarchy help distinguish network architectures?"
+    },
+    {
+      "id": "q_56",
+      "question": "What is the relationship between campus network and corporate area network?"
+    },
+    {
+      "id": "q_57",
+      "question": "Why is a CAN larger than an individual LAN?"
+    },
+    {
+      "id": "q_58",
+      "question": "Why is a CAN smaller than a MAN or WAN?"
+    },
+    {
+      "id": "q_59",
+      "question": "How could a CAN provide connectivity across multiple facility types?"
+    },
+    {
+      "id": "q_60",
+      "question": "How do the source's examples demonstrate the concept?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "expand_1",
+      "target": "Campus core/distribution/access architecture",
+      "reason": "The source identifies switches, routers, and high-speed interconnection but does not detail hierarchical campus design."
+    },
+    {
+      "id": "expand_2",
+      "target": "VLAN and campus segmentation",
+      "reason": "VLAN appears in the taxonomy but is not explained in the article."
+    },
+    {
+      "id": "expand_3",
+      "target": "Routing protocols in campus networks",
+      "reason": "Routers are named, but routing protocols are not described."
+    },
+    {
+      "id": "expand_4",
+      "target": "Ethernet evolution",
+      "reason": "Gigabit and 10 Gigabit Ethernet are named but not technically explained."
+    },
+    {
+      "id": "expand_5",
+      "target": "Fiber campus backbone design",
+      "reason": "Optical fiber is named as a transport medium but physical design is not covered."
+    },
+    {
+      "id": "expand_6",
+      "target": "Wireless campus networks",
+      "reason": "WLAN appears in the taxonomy but CAN wireless architecture is not discussed."
+    },
+    {
+      "id": "expand_7",
+      "target": "Campus network security",
+      "reason": "Security architecture is outside the source scope."
+    },
+    {
+      "id": "expand_8",
+      "target": "Campus IP addressing and DHCP/DNS",
+      "reason": "The source does not detail campus IP services."
+    },
+    {
+      "id": "expand_9",
+      "target": "Redundancy and high availability",
+      "reason": "Campus-scale resilience is not described."
+    },
+    {
+      "id": "expand_10",
+      "target": "University network case studies",
+      "reason": "SUNet, Athena, and Andrew are named but their technical architectures are not detailed."
+    },
+    {
+      "id": "expand_11",
+      "target": "Corporate campus case studies",
+      "reason": "Googleplex and Microsoft campus are named without technical details."
+    },
+    {
+      "id": "expand_12",
+      "target": "CAN vs MAN boundary conditions",
+      "reason": "The source gives relative scale but not detailed boundary criteria."
+    },
+    {
+      "id": "expand_13",
+      "target": "CAN physical distance engineering",
+      "reason": "The 1–5 km range is stated but not technically justified."
+    },
+    {
+      "id": "expand_14",
+      "target": "Campus backbone vs access networks",
+      "reason": "The source implies a backbone but does not explicitly define access/distribution roles."
+    },
+    {
+      "id": "expand_15",
+      "target": "Fiber vs copper engineering tradeoffs",
+      "reason": "Both are named but performance and distance tradeoffs are not explained."
+    },
+    {
+      "id": "expand_16",
+      "target": "Network ownership and operations",
+      "reason": "Ownership is described, but operational responsibility, staffing, and service models are not."
+    },
+    {
+      "id": "expand_17",
+      "target": "Government campus networks",
+      "reason": "Government is listed as an owner but no government case study is given."
+    },
+    {
+      "id": "expand_18",
+      "target": "Inter-campus and multi-campus networking",
+      "reason": "The article concerns a campus area; multiple campuses are not technically detailed."
+    }
+  ],
+  "validation": {
+    "node_count": 75,
+    "relationship_count": 92,
+    "formal_model_count": 14,
+    "source_claim_count": 12,
+    "semantic_distinction_count": 12,
+    "learning_path_count": 12,
+    "misconception_count": 10,
+    "question_count": 60,
+    "expansion_target_count": 18,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}

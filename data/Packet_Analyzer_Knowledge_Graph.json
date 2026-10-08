@@ -1,0 +1,4663 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "dynamic_educational_packet_analyzer_knowledge_graph",
+  "topic": "Packet analyzer",
+  "source": {
+    "title": "Packet analyzer",
+    "authority": "User-supplied Wikipedia article text",
+    "external_research_used": false,
+    "source_file": "Pasted text(20261008-200404).txt",
+    "source_line_count": 162,
+    "source_scope": "Capabilities, uses, capture architecture, wired/wireless visibility, capture modes, storage, decoding, traffic generation/testing, hardware analyzers, operational/security uses, lawful interception, notable tools, references and related concepts."
+  },
+  "design_principles": [
+    "Packet analyzer is a first-class operational tool node.",
+    "Capture, decode, analyze, store, display, generate, and test are modeled as distinct capabilities/processes.",
+    "Capture visibility is modeled as a function of network topology, capture location, interfaces, and modes.",
+    "Full-packet and header-only capture are separate modes with explicit storage/privacy tradeoffs.",
+    "Wired and wireless capture architectures are distinct branches.",
+    "Security, operations, debugging, compliance, and testing uses are represented as downstream applications.",
+    "Notable analyzers are retained as individual nodes rather than collapsed into a generic list.",
+    "Source-derived legal and privacy framing is preserved without adding external legal claims."
+  ],
+  "nodes": [
+    {
+      "id": "packet_analyzer",
+      "label": "Packet analyzer",
+      "type": "network_analysis_tool",
+      "description": "Software or hardware capable of analyzing and logging traffic passing over a computer network or part of a network."
+    },
+    {
+      "id": "packet_sniffer",
+      "label": "Packet sniffer",
+      "type": "network_analysis_tool",
+      "description": "Alternate term for packet analyzer in the supplied source."
+    },
+    {
+      "id": "network_analyzer",
+      "label": "Network analyzer",
+      "type": "network_analysis_tool",
+      "description": "Term frequently used interchangeably with packet analyzer, though it can have broader meanings."
+    },
+    {
+      "id": "protocol_analyzer",
+      "label": "Protocol analyzer",
+      "type": "network_analysis_tool",
+      "description": "Broader analyzer class that can technically include packet analyzers and sniffers."
+    },
+    {
+      "id": "packet_capture",
+      "label": "Packet capture",
+      "type": "process",
+      "description": "Process of intercepting and logging network traffic."
+    },
+    {
+      "id": "network_traffic",
+      "label": "Network traffic",
+      "type": "network_data",
+      "description": "Data streams flowing across a network."
+    },
+    {
+      "id": "packet",
+      "label": "Network packet",
+      "type": "network_data_unit",
+      "description": "Formatted unit of network data observed and analyzed by a packet analyzer."
+    },
+    {
+      "id": "capture",
+      "label": "Traffic capture",
+      "type": "process",
+      "description": "Interception and recording of packets or packet headers."
+    },
+    {
+      "id": "raw_data",
+      "label": "Raw packet data",
+      "type": "data_representation",
+      "description": "Raw digital representation captured from network traffic."
+    },
+    {
+      "id": "packet_decode",
+      "label": "Packet decoding",
+      "type": "analysis_process",
+      "description": "Decoding raw packet data into protocol fields and human-readable information."
+    },
+    {
+      "id": "packet_fields",
+      "label": "Packet fields",
+      "type": "packet_structure",
+      "description": "Individual protocol fields exposed after decoding."
+    },
+    {
+      "id": "packet_content",
+      "label": "Packet content",
+      "type": "packet_data",
+      "description": "Decoded or inspected content carried by network packets."
+    },
+    {
+      "id": "protocol_spec",
+      "label": "RFC or protocol specification",
+      "type": "technical_standard",
+      "description": "Specification used to interpret and analyze captured packet data."
+    },
+    {
+      "id": "analysis",
+      "label": "Packet analysis",
+      "type": "analysis_process",
+      "description": "Interpretation and examination of captured and decoded network traffic."
+    },
+    {
+      "id": "logging",
+      "label": "Traffic logging",
+      "type": "process",
+      "description": "Recording traffic observations for later analysis or monitoring."
+    },
+    {
+      "id": "packet_headers",
+      "label": "Packet headers",
+      "type": "packet_component",
+      "description": "Headers recorded instead of or in addition to complete packet contents."
+    },
+    {
+      "id": "full_packets",
+      "label": "Full packet contents",
+      "type": "packet_capture_mode",
+      "description": "Entire packet contents recorded during capture."
+    },
+    {
+      "id": "header_only_capture",
+      "label": "Header-only capture",
+      "type": "packet_capture_mode",
+      "description": "Capture mode recording packet headers without full contents."
+    },
+    {
+      "id": "storage",
+      "label": "Capture storage",
+      "type": "infrastructure",
+      "description": "Persistent storage for captured packets or headers."
+    },
+    {
+      "id": "privacy",
+      "label": "Privacy considerations",
+      "type": "security_property",
+      "description": "Privacy/legal concerns associated with retaining packet contents."
+    },
+    {
+      "id": "legal_issues",
+      "label": "Privacy/legal issues",
+      "type": "governance_constraint",
+      "description": "Legal and privacy considerations associated with packet interception and storage."
+    },
+    {
+      "id": "human_readable",
+      "label": "Human-readable output",
+      "type": "analysis_output",
+      "description": "Decoded representation engineers can review."
+    },
+    {
+      "id": "engineer",
+      "label": "Network engineer",
+      "type": "role",
+      "description": "Engineer reviewing decoded packet information."
+    },
+    {
+      "id": "wired_network",
+      "label": "Wired network",
+      "type": "network_environment",
+      "description": "Network environment including shared-medium Ethernet, Token Ring, and FDDI."
+    },
+    {
+      "id": "ethernet",
+      "label": "Ethernet",
+      "type": "network_technology",
+      "description": "Wired network technology referenced in capture capabilities."
+    },
+    {
+      "id": "token_ring",
+      "label": "Token Ring",
+      "type": "network_technology",
+      "description": "Wired network technology referenced in capture capabilities."
+    },
+    {
+      "id": "fddi",
+      "label": "FDDI",
+      "type": "network_technology",
+      "description": "Wired network technology referenced in capture capabilities."
+    },
+    {
+      "id": "hub",
+      "label": "Network hub",
+      "type": "network_device",
+      "description": "Shared-medium network device relevant to capture visibility."
+    },
+    {
+      "id": "switch",
+      "label": "Network switch",
+      "type": "network_device",
+      "description": "Switched network device that can provide mirrored traffic."
+    },
+    {
+      "id": "port_mirroring",
+      "label": "Port mirroring",
+      "type": "capture_method",
+      "description": "Switch function that mirrors packets from designated ports to another monitoring port."
+    },
+    {
+      "id": "monitoring_port",
+      "label": "Monitoring port",
+      "type": "capture_interface",
+      "description": "Switch port receiving mirrored traffic."
+    },
+    {
+      "id": "network_tap",
+      "label": "Network tap",
+      "type": "capture_method",
+      "description": "Dedicated traffic-access mechanism described as more reliable than a monitoring port under high traffic loads."
+    },
+    {
+      "id": "packet_drop",
+      "label": "Packet drop",
+      "type": "capture_problem",
+      "description": "Loss of captured packets, particularly possible under high traffic loads."
+    },
+    {
+      "id": "high_traffic_load",
+      "label": "High traffic load",
+      "type": "network_condition",
+      "description": "Traffic condition under which monitoring-port capture may be more likely to drop packets."
+    },
+    {
+      "id": "wireless_lan",
+      "label": "Wireless LAN",
+      "type": "network_environment",
+      "description": "Wireless network environment where capture can be performed on one or multiple channels."
+    },
+    {
+      "id": "wifi_analyzer",
+      "label": "Wi-Fi analyzer",
+      "type": "wireless_analysis_tool",
+      "description": "Packet analyzer specifically designed for Wi-Fi networks."
+    },
+    {
+      "id": "wireless_analyzer",
+      "label": "Wireless analyzer",
+      "type": "wireless_analysis_tool",
+      "description": "Packet analyzer used for intercepting traffic on wireless networks."
+    },
+    {
+      "id": "wireless_channel",
+      "label": "Wireless channel",
+      "type": "radio_resource",
+      "description": "A Wi-Fi radio channel that can be captured."
+    },
+    {
+      "id": "multiple_adapters",
+      "label": "Multiple wireless adapters",
+      "type": "capture_hardware",
+      "description": "Multiple adapters can enable simultaneous capture on several channels."
+    },
+    {
+      "id": "network_adapter",
+      "label": "Network adapter",
+      "type": "network_interface",
+      "description": "Interface used to capture network traffic."
+    },
+    {
+      "id": "promiscuous_mode",
+      "label": "Promiscuous mode",
+      "type": "capture_mode",
+      "description": "Adapter mode enabling capture of unicast traffic between other machines on suitable wired/wireless LANs."
+    },
+    {
+      "id": "service_set",
+      "label": "Wireless service set",
+      "type": "wireless_scope",
+      "description": "Wireless service set to which an adapter is configured."
+    },
+    {
+      "id": "monitor_mode",
+      "label": "Monitor mode",
+      "type": "capture_mode",
+      "description": "Wireless adapter mode needed to see packets not destined for the configured service set."
+    },
+    {
+      "id": "multicast",
+      "label": "Multicast traffic",
+      "type": "traffic_class",
+      "description": "Traffic sent to a multicast group."
+    },
+    {
+      "id": "broadcast",
+      "label": "Broadcast traffic",
+      "type": "traffic_class",
+      "description": "Broadcast traffic visible without special provisions in the source's described context."
+    },
+    {
+      "id": "multicast_group",
+      "label": "Multicast group",
+      "type": "network_scope",
+      "description": "Group monitored by a packet analyzer."
+    },
+    {
+      "id": "decode_capability",
+      "label": "Decode capability",
+      "type": "tool_capability",
+      "description": "Ability of an analyzer to decode raw captured traffic."
+    },
+    {
+      "id": "display_capability",
+      "label": "Display capability",
+      "type": "tool_capability",
+      "description": "Ability to display decoded traffic."
+    },
+    {
+      "id": "analysis_capability",
+      "label": "Analysis capability",
+      "type": "tool_capability",
+      "description": "Ability to analyze decoded traffic."
+    },
+    {
+      "id": "traffic_generator",
+      "label": "Traffic generator",
+      "type": "tool_capability",
+      "description": "Analyzer capability that generates network traffic."
+    },
+    {
+      "id": "protocol_tester",
+      "label": "Protocol tester",
+      "type": "testing_tool",
+      "description": "Analyzer acting as a protocol tester by generating protocol-correct or intentionally faulty traffic."
+    },
+    {
+      "id": "protocol_correct_traffic",
+      "label": "Protocol-correct traffic",
+      "type": "test_traffic",
+      "description": "Traffic generated according to protocol requirements for functional testing."
+    },
+    {
+      "id": "error_injection",
+      "label": "Error injection",
+      "type": "testing_technique",
+      "description": "Deliberately introduced protocol/traffic errors used to test device behavior."
+    },
+    {
+      "id": "device_under_test",
+      "label": "Device under test",
+      "type": "test_target",
+      "description": "Network device whose handling of generated traffic is evaluated."
+    },
+    {
+      "id": "hardware_analyzer",
+      "label": "Hardware packet analyzer",
+      "type": "hardware_tool",
+      "description": "Packet analyzer implemented as dedicated hardware."
+    },
+    {
+      "id": "probe",
+      "label": "Packet capture probe",
+      "type": "hardware_tool",
+      "description": "Hardware probe form of packet analyzer."
+    },
+    {
+      "id": "disk_array",
+      "label": "Disk array",
+      "type": "storage_hardware",
+      "description": "Storage system used by some hardware analyzers to record packets or packet headers."
+    },
+    {
+      "id": "wired_capture_visibility",
+      "label": "Wired capture visibility",
+      "type": "capture_property",
+      "description": "Visibility of traffic depends on physical/network structure such as hub versus switch."
+    },
+    {
+      "id": "wireless_capture_scope",
+      "label": "Wireless capture scope",
+      "type": "capture_property",
+      "description": "Wireless capture is constrained by channels, adapters, and capture mode."
+    },
+    {
+      "id": "capture_location",
+      "label": "Capture location",
+      "type": "deployment_concept",
+      "description": "Network position at which traffic is observed."
+    },
+    {
+      "id": "network_segment",
+      "label": "Network segment",
+      "type": "network_scope",
+      "description": "Part of a network whose traffic may be observed."
+    },
+    {
+      "id": "network_perimeter",
+      "label": "Network perimeter",
+      "type": "security_boundary",
+      "description": "Network boundary whose traffic can be logged for compliance/security."
+    },
+    {
+      "id": "endpoint",
+      "label": "Endpoint",
+      "type": "network_node",
+      "description": "Endpoint system whose traffic may be monitored."
+    },
+    {
+      "id": "wan",
+      "label": "WAN",
+      "type": "network_scope",
+      "description": "Wide-area network whose bandwidth utilization can be monitored."
+    },
+    {
+      "id": "internal_user",
+      "label": "Internal user",
+      "type": "actor",
+      "description": "Internal network user whose activity can be monitored or investigated."
+    },
+    {
+      "id": "external_user",
+      "label": "External user",
+      "type": "actor",
+      "description": "External network user whose traffic may be monitored."
+    },
+    {
+      "id": "software",
+      "label": "Software",
+      "type": "computing_entity",
+      "description": "Software whose network collection/sharing behavior may be analyzed."
+    },
+    {
+      "id": "operating_system",
+      "label": "Operating system",
+      "type": "software_system",
+      "description": "Software whose data collection and sharing behavior can be identified."
+    },
+    {
+      "id": "exploited_system",
+      "label": "Exploited system",
+      "type": "security_state",
+      "description": "System identified for isolation after exploitation."
+    },
+    {
+      "id": "suspect_content",
+      "label": "Suspect network content",
+      "type": "security_indicator",
+      "description": "Potentially suspicious content identified in traffic."
+    },
+    {
+      "id": "login_details",
+      "label": "Login details",
+      "type": "sensitive_data",
+      "description": "Sensitive credentials that can potentially be observed when traffic is not protected."
+    },
+    {
+      "id": "cookies",
+      "label": "Cookies",
+      "type": "web_data",
+      "description": "Web session data that can potentially be collected through packet analysis when encryption does not protect it."
+    },
+    {
+      "id": "encryption",
+      "label": "Content encryption",
+      "type": "security_mechanism",
+      "description": "Encryption that can prevent or limit visibility of packet contents."
+    },
+    {
+      "id": "reverse_engineering",
+      "label": "Protocol reverse engineering",
+      "type": "analysis_use",
+      "description": "Reverse engineering proprietary network protocols."
+    },
+    {
+      "id": "client_server",
+      "label": "Client-server communication",
+      "type": "communication_pattern",
+      "description": "Communication between client and server applications."
+    },
+    {
+      "id": "network_protocol_implementation",
+      "label": "Network protocol implementation",
+      "type": "software_component",
+      "description": "Implementation of a network protocol that can be debugged with packet analysis."
+    },
+    {
+      "id": "network_changes",
+      "label": "Adds moves changes",
+      "type": "network_operations",
+      "description": "Network configuration changes that can be verified with packet analysis."
+    },
+    {
+      "id": "firewall",
+      "label": "Firewall",
+      "type": "security_control",
+      "description": "Network security control whose effectiveness can be verified using packet analysis."
+    },
+    {
+      "id": "access_control",
+      "label": "Access control",
+      "type": "security_control",
+      "description": "Access-control mechanism whose effectiveness can be verified."
+    },
+    {
+      "id": "web_filter",
+      "label": "Web filter",
+      "type": "security_control",
+      "description": "Web filtering control whose effectiveness can be verified."
+    },
+    {
+      "id": "spam_filter",
+      "label": "Spam filter",
+      "type": "security_control",
+      "description": "Spam filtering control whose effectiveness can be verified."
+    },
+    {
+      "id": "proxy",
+      "label": "Proxy",
+      "type": "security_control",
+      "description": "Proxy control whose effectiveness can be verified."
+    },
+    {
+      "id": "network_statistics",
+      "label": "Network statistics",
+      "type": "telemetry",
+      "description": "Statistics derived from observed network traffic."
+    },
+    {
+      "id": "bandwidth_utilization",
+      "label": "Bandwidth utilization",
+      "type": "metric",
+      "description": "Measured WAN/network bandwidth consumption."
+    },
+    {
+      "id": "network_usage",
+      "label": "Network usage",
+      "type": "metric",
+      "description": "Observed use of network resources by users and systems."
+    },
+    {
+      "id": "security_status",
+      "label": "Network/endpoint security status",
+      "type": "security_metric",
+      "description": "Observed security condition of WAN and endpoints."
+    },
+    {
+      "id": "network_monitoring",
+      "label": "Network monitoring",
+      "type": "operations_function",
+      "description": "Ongoing observation of network traffic and status."
+    },
+    {
+      "id": "network_management",
+      "label": "Network management",
+      "type": "operations_function",
+      "description": "Operational management informed by packet analysis."
+    },
+    {
+      "id": "performance_problem",
+      "label": "Network performance problem",
+      "type": "problem",
+      "description": "Performance issue investigated through network data."
+    },
+    {
+      "id": "application",
+      "label": "Application",
+      "type": "software",
+      "description": "Application whose network data can be monitored to troubleshoot performance."
+    },
+    {
+      "id": "regulatory_compliance",
+      "label": "Regulatory compliance",
+      "type": "governance_goal",
+      "description": "Compliance supported by logging perimeter and endpoint traffic."
+    },
+    {
+      "id": "intrusion_attempt",
+      "label": "Network intrusion attempt",
+      "type": "security_event",
+      "description": "Potential intrusion attempt detectable through traffic analysis."
+    },
+    {
+      "id": "network_misuse",
+      "label": "Network misuse",
+      "type": "security_event",
+      "description": "Misuse by internal or external users detectable through packet analysis."
+    },
+    {
+      "id": "law_enforcement",
+      "label": "Law enforcement",
+      "type": "authorized_actor",
+      "description": "Actor that may use legally authorized network interception."
+    },
+    {
+      "id": "warrant",
+      "label": "Warrant",
+      "type": "legal_authorization",
+      "description": "Legal authorization for interception described in the supplied source."
+    },
+    {
+      "id": "wiretap",
+      "label": "Wiretap",
+      "type": "legal_interception",
+      "description": "Authorized interception of network traffic."
+    },
+    {
+      "id": "carriers",
+      "label": "Telecommunications carriers",
+      "type": "service_provider",
+      "description": "Carrier organizations that may be subject to lawful interception requirements."
+    },
+    {
+      "id": "isp",
+      "label": "Internet service provider",
+      "type": "service_provider",
+      "description": "Internet provider referenced in lawful-interception context."
+    },
+    {
+      "id": "voip_provider",
+      "label": "VoIP provider",
+      "type": "service_provider",
+      "description": "VoIP provider referenced in lawful-interception context."
+    },
+    {
+      "id": "caa",
+      "label": "Communications Assistance for Law Enforcement Act",
+      "type": "law",
+      "description": "Law cited in the source for U.S. carrier interception obligations."
+    },
+    {
+      "id": "secure_separate_access",
+      "label": "Secure separate access",
+      "type": "legal_interception_control",
+      "description": "Controlled access to targeted traffic by carriers."
+    },
+    {
+      "id": "targeted_traffic",
+      "label": "Targeted network traffic",
+      "type": "network_data",
+      "description": "Traffic selected for legally authorized interception."
+    },
+    {
+      "id": "end_to_end_encryption",
+      "label": "End-to-end encryption",
+      "type": "security_mechanism",
+      "description": "Encryption described as keeping communications confidential from carriers and legal authorities."
+    },
+    {
+      "id": "arp_spoofing",
+      "label": "ARP spoofing",
+      "type": "traffic_access_technique",
+      "description": "Technique mentioned in the source note as a way to obtain traffic from other systems."
+    },
+    {
+      "id": "traffic_narrowing",
+      "label": "Traffic narrowing by switches",
+      "type": "capture_limitation",
+      "description": "Limitation associated with switched networks when traffic is not otherwise made visible to the analyzer."
+    },
+    {
+      "id": "pcap",
+      "label": "pcap",
+      "type": "capture_format_or_interface",
+      "description": "Packet capture concept/reference listed in See also."
+    },
+    {
+      "id": "packet_generation_model",
+      "label": "Traffic generation model",
+      "type": "network_model",
+      "description": "Model related to generated network traffic."
+    },
+    {
+      "id": "signals_intelligence",
+      "label": "Signals intelligence",
+      "type": "intelligence_domain",
+      "description": "Related concept listed in See also."
+    },
+    {
+      "id": "bus_analyzer",
+      "label": "Bus analyzer",
+      "type": "analysis_tool",
+      "description": "Related analyzer category."
+    },
+    {
+      "id": "logic_analyzer",
+      "label": "Logic analyzer",
+      "type": "analysis_tool",
+      "description": "Related analyzer category."
+    },
+    {
+      "id": "network_detector",
+      "label": "Network detector",
+      "type": "analysis_tool",
+      "description": "Related network analysis category."
+    },
+    {
+      "id": "deep_packet_capture",
+      "label": "Deep packet capture",
+      "type": "capture_category",
+      "description": "Category associated with packet analyzer."
+    },
+    {
+      "id": "tool_1",
+      "label": "Allegro Network Multimeter",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_2",
+      "label": "Capsa Network Analyzer",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_3",
+      "label": "Charles Web Debugging Proxy",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_4",
+      "label": "Carnivore",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_5",
+      "label": "CommView",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_6",
+      "label": "dSniff",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_7",
+      "label": "EndaceProbe Packet Capture Platform",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_8",
+      "label": "ettercap",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_9",
+      "label": "Fiddler",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_10",
+      "label": "Kismet",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_11",
+      "label": "Lanmeter",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_12",
+      "label": "Microsoft Network Monitor",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_13",
+      "label": "NarusInsight",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_14",
+      "label": "NetScout Systems nGenius Infinistream",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_15",
+      "label": "ngrep / Network Grep",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_16",
+      "label": "OmniPeek / Omnipliance",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_17",
+      "label": "SkyGrabber",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_18",
+      "label": "The Sniffer",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_19",
+      "label": "snoop",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_20",
+      "label": "tcpdump",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_21",
+      "label": "Observer Analyzer",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_22",
+      "label": "Wireshark",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "tool_23",
+      "label": "Xplico",
+      "type": "notable_packet_analyzer",
+      "description": "Notable packet analyzer or network analysis tool listed in the supplied article."
+    },
+    {
+      "id": "ethereal",
+      "label": "Ethereal",
+      "type": "packet_analyzer_software",
+      "description": "Former name of Wireshark as stated by the source."
+    },
+    {
+      "id": "wireshark",
+      "label": "Wireshark",
+      "type": "packet_analyzer_software",
+      "description": "Packet/network protocol analyzer shown in the article screenshot and notable-tool list."
+    },
+    {
+      "id": "comparison_of_packet_analyzers",
+      "label": "Comparison of packet analyzers",
+      "type": "reference_resource",
+      "description": "Reference resource for a more comprehensive list of packet analyzers."
+    },
+    {
+      "id": "c01",
+      "label": "Definition and operation",
+      "type": "source_claim",
+      "description": "Packet analyzers can be software or hardware and analyze/log network traffic; packet capture intercepts and logs traffic; packets may be decoded and analyzed against specifications.",
+      "source_section": "Lines 51"
+    },
+    {
+      "id": "c02",
+      "label": "Terminology",
+      "type": "source_claim",
+      "description": "Wireless analyzers and Wi-Fi analyzers are packet analyzers for wireless traffic; protocol analyzer can be broader, though terms are often interchangeable.",
+      "source_section": "Lines 53"
+    },
+    {
+      "id": "c03",
+      "label": "Wired capture",
+      "type": "source_claim",
+      "description": "Hubs/shared media can expose traffic; switches can mirror designated-port traffic; taps are described as more reliable under high traffic.",
+      "source_section": "Lines 56"
+    },
+    {
+      "id": "c04",
+      "label": "Wireless capture",
+      "type": "source_claim",
+      "description": "Wireless capture can operate on one channel or multiple channels with multiple adapters.",
+      "source_section": "Lines 58"
+    },
+    {
+      "id": "c05",
+      "label": "Capture modes",
+      "type": "source_claim",
+      "description": "Promiscuous mode is relevant to unicast capture; wireless monitor mode expands visibility to packets outside the configured service set.",
+      "source_section": "Lines 60"
+    },
+    {
+      "id": "c06",
+      "label": "Capture contents",
+      "type": "source_claim",
+      "description": "Entire packets or only headers can be recorded; header-only capture reduces storage and can reduce some privacy/legal issues.",
+      "source_section": "Lines 62"
+    },
+    {
+      "id": "c07",
+      "label": "Decoding",
+      "type": "source_claim",
+      "description": "Captured raw digital information can be decoded into human-readable form for engineering review.",
+      "source_section": "Lines 64"
+    },
+    {
+      "id": "c08",
+      "label": "Traffic generation",
+      "type": "source_claim",
+      "description": "Some analyzers generate protocol-correct traffic and deliberately inject errors for functional testing.",
+      "source_section": "Lines 66"
+    },
+    {
+      "id": "c09",
+      "label": "Hardware analyzers",
+      "type": "source_claim",
+      "description": "Hardware analyzers may be probes or disk-array-based appliances recording packets or headers.",
+      "source_section": "Lines 68"
+    },
+    {
+      "id": "c10",
+      "label": "Uses",
+      "type": "source_claim",
+      "description": "Packet analyzers support troubleshooting, intrusion detection, compliance, monitoring, statistics, performance analysis, debugging, reverse engineering, and control verification.",
+      "source_section": "Lines 71-93"
+    },
+    {
+      "id": "c11",
+      "label": "Lawful interception",
+      "type": "source_claim",
+      "description": "The source describes lawful packet capture for warrants and U.S. carrier obligations, and distinguishes unauthorized interception as illegal.",
+      "source_section": "Lines 94"
+    },
+    {
+      "id": "c12",
+      "label": "Notable tools",
+      "type": "source_claim",
+      "description": "The article lists numerous packet analyzers including tcpdump and Wireshark.",
+      "source_section": "Lines 96-120"
+    },
+    {
+      "id": "c13",
+      "label": "Traffic access note",
+      "type": "source_claim",
+      "description": "ARP spoofing is mentioned as a method that can avoid traffic narrowing caused by switches.",
+      "source_section": "Lines 129"
+    },
+    {
+      "id": "m1",
+      "label": "Capture pipeline",
+      "type": "formal_model",
+      "description": "Operational pipeline from traffic observation to interpreted analysis.",
+      "expression": "network_traffic → packet_capture → raw_data → packet_decode → packet_fields → analysis"
+    },
+    {
+      "id": "m2",
+      "label": "Header-only capture tradeoff",
+      "type": "formal_model",
+      "description": "Capturing headers can reduce storage requirements and some privacy/legal exposure while retaining diagnostic metadata.",
+      "expression": "header_only_capture → lower_storage/privacy_exposure → reduced_content_visibility"
+    },
+    {
+      "id": "m3",
+      "label": "Full capture pipeline",
+      "type": "formal_model",
+      "description": "Full-packet capture preserves more content for analysis but requires more storage and can increase privacy concerns.",
+      "expression": "full_packets → storage → packet_content → analysis"
+    },
+    {
+      "id": "m4",
+      "label": "Switched Ethernet capture",
+      "type": "formal_model",
+      "description": "Mirrored switch traffic provides a monitoring feed.",
+      "expression": "switch → port_mirroring → monitoring_port → packet_analyzer"
+    },
+    {
+      "id": "m5",
+      "label": "Tap capture",
+      "type": "formal_model",
+      "description": "Source describes taps as less likely to drop packets under high load than monitoring ports.",
+      "expression": "network_tap → packet_analyzer → packet_drop"
+    },
+    {
+      "id": "m6",
+      "label": "Wireless capture",
+      "type": "formal_model",
+      "description": "Wireless visibility depends on channel and adapter capture mode.",
+      "expression": "wireless_lan + wireless_channel + network_adapter → capture_mode → visible_packets"
+    },
+    {
+      "id": "m7",
+      "label": "Promiscuous vs monitor",
+      "type": "formal_model",
+      "description": "The two modes address different capture constraints.",
+      "expression": "promiscuous_mode → wired/unicast_visibility; monitor_mode → wireless visibility beyond configured service set"
+    },
+    {
+      "id": "m8",
+      "label": "Protocol testing",
+      "type": "formal_model",
+      "description": "Analyzer can become a functional protocol tester.",
+      "expression": "traffic_generator → protocol_correct_traffic/error_injection → device_under_test"
+    },
+    {
+      "id": "m9",
+      "label": "Operations loop",
+      "type": "formal_model",
+      "description": "Packet analysis feeds operational decisions.",
+      "expression": "capture → analysis → statistics/security/performance → monitoring/management"
+    },
+    {
+      "id": "m10",
+      "label": "Security investigation",
+      "type": "formal_model",
+      "description": "Traffic evidence can support security detection and containment.",
+      "expression": "capture → intrusion/misuse/suspect_content → isolate_exploited_system"
+    },
+    {
+      "id": "m11",
+      "label": "Lawful interception",
+      "type": "formal_model",
+      "description": "Source describes lawful targeted capture and controlled access.",
+      "expression": "warrant → authorized_wiretap → targeted_traffic → secure_separate_access"
+    },
+    {
+      "id": "m12",
+      "label": "Encryption visibility",
+      "type": "formal_model",
+      "description": "Encryption limits what packet analyzers can see in payload content.",
+      "expression": "end_to_end_encryption → reduced_carrier/intermediary content visibility"
+    },
+    {
+      "id": "m13",
+      "label": "Client/server debugging",
+      "type": "formal_model",
+      "description": "Packet analysis exposes exchanged protocol behavior.",
+      "expression": "capture → decoded packets → client_server exchange → implementation/performance diagnosis"
+    },
+    {
+      "id": "m14",
+      "label": "Control verification",
+      "type": "formal_model",
+      "description": "Packet observations can verify internal control effectiveness.",
+      "expression": "capture → observed traffic → firewall/access_control/web_filter/spam_filter/proxy effectiveness"
+    },
+    {
+      "id": "d1",
+      "label": "Packet analyzer vs protocol analyzer",
+      "type": "semantic_distinction",
+      "description": "Protocol analyzers can be broader, although terminology is often interchangeable."
+    },
+    {
+      "id": "d2",
+      "label": "Packet analyzer vs network analyzer",
+      "type": "semantic_distinction",
+      "description": "Network analyzer may have broader meanings."
+    },
+    {
+      "id": "d3",
+      "label": "Packet capture vs packet analysis",
+      "type": "semantic_distinction",
+      "description": "Capture records traffic; analysis interprets and examines it."
+    },
+    {
+      "id": "d4",
+      "label": "Full packet vs header-only capture",
+      "type": "semantic_distinction",
+      "description": "Full capture preserves content; header-only reduces storage and can reduce privacy exposure."
+    },
+    {
+      "id": "d5",
+      "label": "Port mirroring vs network tap",
+      "type": "semantic_distinction",
+      "description": "Both provide observation access; source describes taps as more reliable under high traffic."
+    },
+    {
+      "id": "d6",
+      "label": "Promiscuous vs monitor mode",
+      "type": "semantic_distinction",
+      "description": "Promiscuous mode addresses unicast visibility; wireless monitor mode is needed to see traffic outside the configured service set."
+    },
+    {
+      "id": "d7",
+      "label": "Wired vs wireless capture",
+      "type": "semantic_distinction",
+      "description": "Wired visibility depends on topology; wireless capture is constrained by channel and adapter."
+    },
+    {
+      "id": "d8",
+      "label": "Software vs hardware analyzer",
+      "type": "semantic_distinction",
+      "description": "Analyzer can be a program or dedicated appliance/probe."
+    },
+    {
+      "id": "d9",
+      "label": "Decode vs display",
+      "type": "semantic_distinction",
+      "description": "Decoding interprets raw data; display presents results for review."
+    },
+    {
+      "id": "d10",
+      "label": "Analyzer vs protocol tester",
+      "type": "semantic_distinction",
+      "description": "Some analyzers only observe; others generate protocol-correct traffic and inject errors."
+    },
+    {
+      "id": "d11",
+      "label": "Monitoring vs intrusion detection",
+      "type": "semantic_distinction",
+      "description": "Monitoring observes network state; intrusion detection identifies suspected hostile activity."
+    },
+    {
+      "id": "d12",
+      "label": "Packet content vs encrypted content",
+      "type": "semantic_distinction",
+      "description": "Encryption can prevent a capture from exposing application content."
+    },
+    {
+      "id": "d13",
+      "label": "Authorized interception vs unauthorized collection",
+      "type": "semantic_distinction",
+      "description": "Source distinguishes legally authorized interception from unlawful collection."
+    },
+    {
+      "id": "d14",
+      "label": "Packet analyzer vs logic/bus analyzer",
+      "type": "semantic_distinction",
+      "description": "Packet analyzers focus on network protocol traffic; bus/logic analyzers operate at different signal/system levels."
+    },
+    {
+      "id": "d15",
+      "label": "Traffic visibility vs traffic existence",
+      "type": "semantic_distinction",
+      "description": "Traffic may exist on a network without being visible at the analyzer's capture point."
+    },
+    {
+      "id": "p1",
+      "label": "Packet analyzer fundamentals",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "packet_analyzer",
+        "packet_capture",
+        "network_traffic",
+        "packet_decode",
+        "analysis"
+      ]
+    },
+    {
+      "id": "p2",
+      "label": "Capture architecture",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "capture_location",
+        "network_segment",
+        "network_adapter",
+        "packet_capture"
+      ]
+    },
+    {
+      "id": "p3",
+      "label": "Wired capture",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "wired_network",
+        "hub",
+        "switch",
+        "port_mirroring",
+        "monitoring_port",
+        "network_tap"
+      ]
+    },
+    {
+      "id": "p4",
+      "label": "Wireless capture",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "wireless_lan",
+        "wireless_channel",
+        "network_adapter",
+        "promiscuous_mode",
+        "monitor_mode"
+      ]
+    },
+    {
+      "id": "p5",
+      "label": "Capture storage",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "full_packets",
+        "header_only_capture",
+        "packet_headers",
+        "storage",
+        "privacy"
+      ]
+    },
+    {
+      "id": "p6",
+      "label": "Packet decoding",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "raw_data",
+        "packet_decode",
+        "packet_fields",
+        "protocol_spec",
+        "human_readable"
+      ]
+    },
+    {
+      "id": "p7",
+      "label": "Protocol testing",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "traffic_generator",
+        "protocol_tester",
+        "protocol_correct_traffic",
+        "error_injection",
+        "device_under_test"
+      ]
+    },
+    {
+      "id": "p8",
+      "label": "Operations",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "network_statistics",
+        "bandwidth_utilization",
+        "network_usage",
+        "network_monitoring",
+        "network_management"
+      ]
+    },
+    {
+      "id": "p9",
+      "label": "Security",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "intrusion_attempt",
+        "network_misuse",
+        "suspect_content",
+        "exploited_system",
+        "firewall"
+      ]
+    },
+    {
+      "id": "p10",
+      "label": "Debugging",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "client_server",
+        "network_protocol_implementation",
+        "performance_problem",
+        "application"
+      ]
+    },
+    {
+      "id": "p11",
+      "label": "Privacy and encryption",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "packet_content",
+        "login_details",
+        "cookies",
+        "encryption",
+        "end_to_end_encryption"
+      ]
+    },
+    {
+      "id": "p12",
+      "label": "Compliance and lawful interception",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "regulatory_compliance",
+        "network_perimeter",
+        "law_enforcement",
+        "warrant",
+        "wiretap"
+      ]
+    },
+    {
+      "id": "p13",
+      "label": "Tool ecosystem",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "packet_analyzer",
+        "wireshark",
+        "tcpdump",
+        "pcap",
+        "comparison_of_packet_analyzers"
+      ]
+    },
+    {
+      "id": "p14",
+      "label": "Capture limitations",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "traffic_narrowing",
+        "switch",
+        "promiscuous_mode",
+        "monitor_mode",
+        "capture_location"
+      ]
+    },
+    {
+      "id": "p15",
+      "label": "Advanced packet analysis",
+      "type": "learning_path",
+      "description": "Ordered learning path through packet-analysis concepts.",
+      "sequence": [
+        "reverse_engineering",
+        "packet_generation_model",
+        "deep_packet_capture",
+        "signals_intelligence"
+      ]
+    },
+    {
+      "id": "x1",
+      "label": "A packet analyzer automatically sees all traffic",
+      "type": "misconception_correction",
+      "description": "Visibility depends on capture location, network topology, mirroring/taps, wireless channel, and capture modes.",
+      "correction": "Visibility depends on capture location, network topology, mirroring/taps, wireless channel, and capture modes."
+    },
+    {
+      "id": "x2",
+      "label": "Promiscuous mode sees every Wi-Fi packet",
+      "type": "misconception_correction",
+      "description": "The source says packets outside the configured wireless service set are usually ignored even in promiscuous mode; monitor mode is needed.",
+      "correction": "The source says packets outside the configured wireless service set are usually ignored even in promiscuous mode; monitor mode is needed."
+    },
+    {
+      "id": "x3",
+      "label": "A switch port behaves like a hub",
+      "type": "misconception_correction",
+      "description": "Switched networks narrow visibility; port mirroring or a tap may be required.",
+      "correction": "Switched networks narrow visibility; port mirroring or a tap may be required."
+    },
+    {
+      "id": "x4",
+      "label": "Port mirroring cannot drop packets",
+      "type": "misconception_correction",
+      "description": "The source describes taps as less likely to drop packets under high traffic loads than monitoring ports.",
+      "correction": "The source describes taps as less likely to drop packets under high traffic loads than monitoring ports."
+    },
+    {
+      "id": "x5",
+      "label": "Packet capture always stores complete packets",
+      "type": "misconception_correction",
+      "description": "Header-only capture is explicitly described as an option.",
+      "correction": "Header-only capture is explicitly described as an option."
+    },
+    {
+      "id": "x6",
+      "label": "Decoding and capturing are the same operation",
+      "type": "misconception_correction",
+      "description": "Capture intercepts/logs; decoding interprets raw digital data.",
+      "correction": "Capture intercepts/logs; decoding interprets raw digital data."
+    },
+    {
+      "id": "x7",
+      "label": "Packet analyzers only observe",
+      "type": "misconception_correction",
+      "description": "Some analyzers can generate protocol-correct traffic and deliberately introduce errors.",
+      "correction": "Some analyzers can generate protocol-correct traffic and deliberately introduce errors."
+    },
+    {
+      "id": "x8",
+      "label": "Encryption makes traffic invisible",
+      "type": "misconception_correction",
+      "description": "Encryption protects content confidentiality but captured encrypted traffic can still exist as observable network traffic.",
+      "correction": "Encryption protects content confidentiality but captured encrypted traffic can still exist as observable network traffic."
+    },
+    {
+      "id": "x9",
+      "label": "Packet analysis is only for troubleshooting",
+      "type": "misconception_correction",
+      "description": "The source lists security, compliance, monitoring, reverse engineering, debugging, and control verification.",
+      "correction": "The source lists security, compliance, monitoring, reverse engineering, debugging, and control verification."
+    },
+    {
+      "id": "x10",
+      "label": "Any traffic interception is lawful",
+      "type": "misconception_correction",
+      "description": "The source describes warrant-based lawful interception and says unauthorized collection can be illegal.",
+      "correction": "The source describes warrant-based lawful interception and says unauthorized collection can be illegal."
+    },
+    {
+      "id": "q01",
+      "label": "What is a packet analyzer?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q02",
+      "label": "What is packet capture?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q03",
+      "label": "How does capture differ from analysis?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q04",
+      "label": "What happens to raw packet data after capture?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q05",
+      "label": "What does an RFC/specification contribute to decoding?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q06",
+      "label": "Why might a packet analyzer record only headers?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q07",
+      "label": "What is the storage tradeoff of full-packet capture?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q08",
+      "label": "How can header-only capture affect privacy/legal exposure?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q09",
+      "label": "How does a hub differ from a switch for traffic visibility?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q10",
+      "label": "What is port mirroring?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q11",
+      "label": "What does a monitoring port receive?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q12",
+      "label": "Why can a network tap be preferable under high traffic?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q13",
+      "label": "What can cause packet drops during capture?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q14",
+      "label": "How is wireless capture constrained by channels?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q15",
+      "label": "How can multiple adapters expand wireless capture?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q16",
+      "label": "What is promiscuous mode?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q17",
+      "label": "What does promiscuous mode enable on wired LANs?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q18",
+      "label": "Why is promiscuous mode insufficient for some Wi-Fi traffic?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q19",
+      "label": "What is monitor mode?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q20",
+      "label": "What is a service set in the source's wireless capture context?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q21",
+      "label": "How are multicast packets captured?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q22",
+      "label": "How are broadcast packets captured?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q23",
+      "label": "What does packet decoding reveal?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q24",
+      "label": "What is human-readable analyzer output?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q25",
+      "label": "Why do analyzers vary in display/analysis capabilities?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q26",
+      "label": "How can an analyzer act as a protocol tester?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q27",
+      "label": "What is protocol-correct test traffic?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q28",
+      "label": "What is error injection?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q29",
+      "label": "What is the device under test?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q30",
+      "label": "How can packet analyzers be implemented as hardware?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q31",
+      "label": "What is a packet capture probe?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q32",
+      "label": "Why might a hardware analyzer use a disk array?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q33",
+      "label": "How can packet analysis diagnose network problems?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q34",
+      "label": "How can it detect intrusion attempts?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q35",
+      "label": "How can it detect internal/external misuse?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q36",
+      "label": "How can logging support regulatory compliance?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q37",
+      "label": "How can packet analysis help isolate exploited systems?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q38",
+      "label": "How can packet analysis identify software data collection/sharing?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q39",
+      "label": "How can WAN bandwidth be monitored?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q40",
+      "label": "How can network usage be measured?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q41",
+      "label": "How can security status be monitored?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q42",
+      "label": "How can packet analyzers gather network statistics?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q43",
+      "label": "How can suspect content be identified?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q44",
+      "label": "How can application performance problems be troubleshot?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q45",
+      "label": "Why can packet analyzers become a primary network monitoring data source?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q46",
+      "label": "How can packet captures expose login details?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q47",
+      "label": "How can packet captures expose cookies?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q48",
+      "label": "How does encryption change analyzer visibility?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q49",
+      "label": "What is protocol reverse engineering?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q50",
+      "label": "How does packet analysis debug client-server communication?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q51",
+      "label": "How does it debug protocol implementations?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q52",
+      "label": "How can packet analysis verify adds, moves, and changes?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q53",
+      "label": "How can it verify firewalls and access controls?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q54",
+      "label": "How can it verify web/spam filters and proxies?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q55",
+      "label": "What is lawful packet interception?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q56",
+      "label": "Why is a warrant relevant in the source?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q57",
+      "label": "What carrier obligations are mentioned?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q58",
+      "label": "How does end-to-end encryption affect carrier/legal-authority visibility?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q59",
+      "label": "What is traffic narrowing by switches?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q60",
+      "label": "What role does ARP spoofing play in the source note?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q61",
+      "label": "What is pcap?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q62",
+      "label": "What is deep packet capture?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "q63",
+      "label": "What are Wireshark and tcpdump in this graph?",
+      "type": "learning_question",
+      "description": "Review/traversal question grounded in the supplied source."
+    },
+    {
+      "id": "e1",
+      "label": "Wireshark deep-dive",
+      "type": "expansion_target",
+      "description": "Wireshark capture filters, display filters, dissectors, streams, exports, statistics."
+    },
+    {
+      "id": "e2",
+      "label": "tcpdump deep-dive",
+      "type": "expansion_target",
+      "description": "Command-line capture, BPF filters, interfaces, output formats, offline analysis."
+    },
+    {
+      "id": "e3",
+      "label": "pcap",
+      "type": "expansion_target",
+      "description": "Packet capture file format/API and capture pipelines."
+    },
+    {
+      "id": "e4",
+      "label": "BPF filtering",
+      "type": "expansion_target",
+      "description": "Filtering architecture for efficient packet capture."
+    },
+    {
+      "id": "e5",
+      "label": "Network TAP architecture",
+      "type": "expansion_target",
+      "description": "Passive/active taps, aggregation, bypass, high-throughput capture."
+    },
+    {
+      "id": "e6",
+      "label": "Switch port mirroring",
+      "type": "expansion_target",
+      "description": "SPAN/RSPAN/ERSPAN-style mirrored capture architecture."
+    },
+    {
+      "id": "e7",
+      "label": "Wi-Fi capture",
+      "type": "expansion_target",
+      "description": "802.11 management/control/data frames, channels, monitor mode."
+    },
+    {
+      "id": "e8",
+      "label": "Promiscuous mode internals",
+      "type": "expansion_target",
+      "description": "NIC and driver behavior and capture-stack implications."
+    },
+    {
+      "id": "e9",
+      "label": "Packet decoding",
+      "type": "expansion_target",
+      "description": "Protocol dissectors, field trees, reassembly, malformed packets."
+    },
+    {
+      "id": "e10",
+      "label": "Deep packet inspection",
+      "type": "expansion_target",
+      "description": "Payload/content analysis and encrypted-traffic limitations."
+    },
+    {
+      "id": "e11",
+      "label": "Network forensics",
+      "type": "expansion_target",
+      "description": "Timeline reconstruction, evidence preservation, indicators, session analysis."
+    },
+    {
+      "id": "e12",
+      "label": "IDS/IPS integration",
+      "type": "expansion_target",
+      "description": "Packet capture feeding detection and prevention systems."
+    },
+    {
+      "id": "e13",
+      "label": "Performance analysis",
+      "type": "expansion_target",
+      "description": "Latency, loss, retransmission, throughput, congestion diagnosis."
+    },
+    {
+      "id": "e14",
+      "label": "Security analysis",
+      "type": "expansion_target",
+      "description": "Intrusion detection, suspicious content, credential exposure, encrypted traffic."
+    },
+    {
+      "id": "e15",
+      "label": "Protocol reverse engineering",
+      "type": "expansion_target",
+      "description": "Inferring proprietary protocol behavior from captures."
+    },
+    {
+      "id": "e16",
+      "label": "Traffic generation",
+      "type": "expansion_target",
+      "description": "Scapy-like generation, protocol testing, fuzzing, error injection."
+    },
+    {
+      "id": "e17",
+      "label": "Capture hardware",
+      "type": "expansion_target",
+      "description": "Dedicated probes, high-speed capture cards, disk arrays."
+    },
+    {
+      "id": "e18",
+      "label": "Lawful interception architecture",
+      "type": "expansion_target",
+      "description": "Authorization, targeting, isolation, retention, audit controls."
+    },
+    {
+      "id": "e19",
+      "label": "Privacy-preserving capture",
+      "type": "expansion_target",
+      "description": "Header-only capture, minimization, retention, access controls."
+    },
+    {
+      "id": "e20",
+      "label": "Packet analyzer comparison",
+      "type": "expansion_target",
+      "description": "Comparative taxonomy of listed software and hardware analyzers."
+    },
+    {
+      "id": "r1",
+      "label": "Chapple, Stewart & Gibson (2018)",
+      "type": "reference",
+      "description": "CISSP Official Study Guide reference defining sniffer/packet analyzer."
+    },
+    {
+      "id": "r2",
+      "label": "Hoque & Bashaw (2020)",
+      "type": "reference",
+      "description": "Reference associating packet sniffing with packet/network/protocol analyzers."
+    },
+    {
+      "id": "r3",
+      "label": "Trost (2009)",
+      "type": "reference",
+      "description": "Reference describing packet sniffers as traffic monitors."
+    },
+    {
+      "id": "r4",
+      "label": "Cyber Law, Privacy, and Security (2019)",
+      "type": "reference",
+      "description": "Reference concerning packet sniffing terminology."
+    },
+    {
+      "id": "r5",
+      "label": "Asrodia & Patel (2012)",
+      "type": "reference",
+      "description": "Reference on packet sniffing tools."
+    },
+    {
+      "id": "r6",
+      "label": "Kaspersky (2018)",
+      "type": "reference",
+      "description": "Reference titled What is a Packet Sniffer?"
+    },
+    {
+      "id": "r7",
+      "label": "Endace (2023)",
+      "type": "reference",
+      "description": "Reference titled What is Network Packet Capture?"
+    },
+    {
+      "id": "r8",
+      "label": "PCMag",
+      "type": "reference",
+      "description": "Reference for network analyzer definition."
+    },
+    {
+      "id": "r9",
+      "label": "Connolly (2003)",
+      "type": "reference",
+      "description": "Internet security and privacy reference."
+    },
+    {
+      "id": "r10",
+      "label": "Sikos (2020)",
+      "type": "reference",
+      "description": "Survey on packet analysis for network forensics."
+    },
+    {
+      "id": "r11",
+      "label": "Poulton (2012)",
+      "type": "reference",
+      "description": "Reference describing protocol analyzers as capture/store/analyze tools."
+    },
+    {
+      "id": "tcpdump",
+      "label": "Tcpdump",
+      "type": "source_mentioned_concept",
+      "description": "Explicit concept required to preserve a source-derived relationship and graph referential integrity."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "packet_analyzer",
+      "target": "tool_1",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_2",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_3",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_4",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_5",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_6",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_7",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_8",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_9",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_10",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_11",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_12",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_13",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_14",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_15",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_16",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_17",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_18",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_19",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_20",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_21",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_22",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "tool_23",
+      "relationship": "includes_example",
+      "mechanism": "Listed as a notable packet analyzer/tool."
+    },
+    {
+      "source": "tool_22",
+      "target": "ethereal",
+      "relationship": "formerly_known_as"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "wireshark",
+      "relationship": "has_example"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "comparison_of_packet_analyzers",
+      "relationship": "has_comparison_resource"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "packet_sniffer",
+      "relationship": "also_known_as"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_analyzer",
+      "relationship": "also_known_as"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "protocol_analyzer",
+      "relationship": "related_term"
+    },
+    {
+      "source": "protocol_analyzer",
+      "target": "packet_analyzer",
+      "relationship": "broader_class_includes"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "packet_capture",
+      "relationship": "performs"
+    },
+    {
+      "source": "packet_capture",
+      "target": "network_traffic",
+      "relationship": "intercepts_and_logs"
+    },
+    {
+      "source": "network_traffic",
+      "target": "packet",
+      "relationship": "contains"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "capture",
+      "relationship": "captures"
+    },
+    {
+      "source": "capture",
+      "target": "raw_data",
+      "relationship": "records"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "packet_decode",
+      "relationship": "performs"
+    },
+    {
+      "source": "raw_data",
+      "target": "packet_decode",
+      "relationship": "is_input_to"
+    },
+    {
+      "source": "packet_decode",
+      "target": "packet_fields",
+      "relationship": "reveals"
+    },
+    {
+      "source": "packet_decode",
+      "target": "human_readable",
+      "relationship": "produces"
+    },
+    {
+      "source": "packet_decode",
+      "target": "protocol_spec",
+      "relationship": "interprets_according_to"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "analysis",
+      "relationship": "performs"
+    },
+    {
+      "source": "analysis",
+      "target": "packet_content",
+      "relationship": "examines"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "logging",
+      "relationship": "performs"
+    },
+    {
+      "source": "logging",
+      "target": "storage",
+      "relationship": "writes_to"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "full_packets",
+      "relationship": "can_record"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "header_only_capture",
+      "relationship": "can_record"
+    },
+    {
+      "source": "header_only_capture",
+      "target": "packet_headers",
+      "relationship": "records"
+    },
+    {
+      "source": "header_only_capture",
+      "target": "storage",
+      "relationship": "reduces_storage_requirements"
+    },
+    {
+      "source": "full_packets",
+      "target": "storage",
+      "relationship": "requires"
+    },
+    {
+      "source": "packet_headers",
+      "target": "privacy",
+      "relationship": "can_reduce_concerns"
+    },
+    {
+      "source": "packet_content",
+      "target": "privacy",
+      "relationship": "can_raise_concerns"
+    },
+    {
+      "source": "capture",
+      "target": "legal_issues",
+      "relationship": "implicates"
+    },
+    {
+      "source": "human_readable",
+      "target": "engineer",
+      "relationship": "supports_review_by"
+    },
+    {
+      "source": "wired_network",
+      "target": "ethernet",
+      "relationship": "includes"
+    },
+    {
+      "source": "wired_network",
+      "target": "token_ring",
+      "relationship": "includes"
+    },
+    {
+      "source": "wired_network",
+      "target": "fddi",
+      "relationship": "includes"
+    },
+    {
+      "source": "wired_network",
+      "target": "hub",
+      "relationship": "may_use"
+    },
+    {
+      "source": "wired_network",
+      "target": "switch",
+      "relationship": "may_use"
+    },
+    {
+      "source": "switch",
+      "target": "port_mirroring",
+      "relationship": "provides"
+    },
+    {
+      "source": "port_mirroring",
+      "target": "monitoring_port",
+      "relationship": "mirrors_to"
+    },
+    {
+      "source": "port_mirroring",
+      "target": "packet",
+      "relationship": "mirrors"
+    },
+    {
+      "source": "network_tap",
+      "target": "packet_capture",
+      "relationship": "provides_traffic_to"
+    },
+    {
+      "source": "network_tap",
+      "target": "port_mirroring",
+      "relationship": "more_reliable_than"
+    },
+    {
+      "source": "high_traffic_load",
+      "target": "packet_drop",
+      "relationship": "can_increase"
+    },
+    {
+      "source": "monitoring_port",
+      "target": "packet_drop",
+      "relationship": "can_experience"
+    },
+    {
+      "source": "wireless_analyzer",
+      "target": "wireless_lan",
+      "relationship": "analyzes"
+    },
+    {
+      "source": "wifi_analyzer",
+      "target": "wireless_analyzer",
+      "relationship": "specializes"
+    },
+    {
+      "source": "wireless_lan",
+      "target": "wireless_channel",
+      "relationship": "uses"
+    },
+    {
+      "source": "wireless_lan",
+      "target": "multiple_adapters",
+      "relationship": "can_use"
+    },
+    {
+      "source": "multiple_adapters",
+      "target": "wireless_channel",
+      "relationship": "captures_multiple_channels"
+    },
+    {
+      "source": "network_adapter",
+      "target": "promiscuous_mode",
+      "relationship": "supports"
+    },
+    {
+      "source": "promiscuous_mode",
+      "target": "wired_capture_visibility",
+      "relationship": "increases"
+    },
+    {
+      "source": "promiscuous_mode",
+      "target": "wireless_lan",
+      "relationship": "does_not_override_service_set_filtering"
+    },
+    {
+      "source": "service_set",
+      "target": "wireless_capture_scope",
+      "relationship": "constrains"
+    },
+    {
+      "source": "monitor_mode",
+      "target": "wireless_lan",
+      "relationship": "expands_capture_visibility"
+    },
+    {
+      "source": "monitor_mode",
+      "target": "network_adapter",
+      "relationship": "configures"
+    },
+    {
+      "source": "multicast",
+      "target": "multicast_group",
+      "relationship": "uses"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "multicast",
+      "relationship": "can_capture"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "broadcast",
+      "relationship": "can_capture"
+    },
+    {
+      "source": "decode_capability",
+      "target": "packet_decode",
+      "relationship": "is_part_of"
+    },
+    {
+      "source": "display_capability",
+      "target": "human_readable",
+      "relationship": "produces"
+    },
+    {
+      "source": "analysis_capability",
+      "target": "analysis",
+      "relationship": "is_part_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "traffic_generator",
+      "relationship": "may_provide"
+    },
+    {
+      "source": "traffic_generator",
+      "target": "protocol_tester",
+      "relationship": "enables"
+    },
+    {
+      "source": "protocol_tester",
+      "target": "protocol_correct_traffic",
+      "relationship": "generates"
+    },
+    {
+      "source": "protocol_tester",
+      "target": "error_injection",
+      "relationship": "can_perform"
+    },
+    {
+      "source": "protocol_correct_traffic",
+      "target": "device_under_test",
+      "relationship": "tests"
+    },
+    {
+      "source": "error_injection",
+      "target": "device_under_test",
+      "relationship": "tests_error_handling_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "hardware_analyzer",
+      "relationship": "may_be"
+    },
+    {
+      "source": "hardware_analyzer",
+      "target": "probe",
+      "relationship": "may_use_form"
+    },
+    {
+      "source": "hardware_analyzer",
+      "target": "disk_array",
+      "relationship": "may_store_to"
+    },
+    {
+      "source": "disk_array",
+      "target": "storage",
+      "relationship": "implements"
+    },
+    {
+      "source": "wired_capture_visibility",
+      "target": "capture_location",
+      "relationship": "depends_on"
+    },
+    {
+      "source": "wireless_capture_scope",
+      "target": "capture_location",
+      "relationship": "depends_on"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_segment",
+      "relationship": "observes"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_perimeter",
+      "relationship": "can_monitor"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "endpoint",
+      "relationship": "can_monitor"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "wan",
+      "relationship": "can_monitor"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_statistics",
+      "relationship": "generates"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "bandwidth_utilization",
+      "relationship": "measures"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_usage",
+      "relationship": "measures"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "security_status",
+      "relationship": "monitors"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_monitoring",
+      "relationship": "supports"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_management",
+      "relationship": "supports"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "intrusion_attempt",
+      "relationship": "detects"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_misuse",
+      "relationship": "detects"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "regulatory_compliance",
+      "relationship": "supports"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "suspect_content",
+      "relationship": "identifies"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "exploited_system",
+      "relationship": "helps_isolate"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "software",
+      "relationship": "analyzes"
+    },
+    {
+      "source": "software",
+      "target": "operating_system",
+      "relationship": "can_be"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "reverse_engineering",
+      "relationship": "supports"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "client_server",
+      "relationship": "debugs"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_protocol_implementation",
+      "relationship": "debugs"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_changes",
+      "relationship": "verifies"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "firewall",
+      "relationship": "verifies_effectiveness_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "access_control",
+      "relationship": "verifies_effectiveness_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "web_filter",
+      "relationship": "verifies_effectiveness_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "spam_filter",
+      "relationship": "verifies_effectiveness_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "proxy",
+      "relationship": "verifies_effectiveness_of"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "performance_problem",
+      "relationship": "troubleshoots"
+    },
+    {
+      "source": "application",
+      "target": "performance_problem",
+      "relationship": "has"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "login_details",
+      "relationship": "can_expose"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "cookies",
+      "relationship": "can_expose"
+    },
+    {
+      "source": "encryption",
+      "target": "login_details",
+      "relationship": "can_protect"
+    },
+    {
+      "source": "encryption",
+      "target": "cookies",
+      "relationship": "can_protect"
+    },
+    {
+      "source": "end_to_end_encryption",
+      "target": "packet_content",
+      "relationship": "limits_visibility_of"
+    },
+    {
+      "source": "end_to_end_encryption",
+      "target": "carriers",
+      "relationship": "protects_confidentiality_from"
+    },
+    {
+      "source": "end_to_end_encryption",
+      "target": "law_enforcement",
+      "relationship": "limits_visibility_to"
+    },
+    {
+      "source": "packet_capture",
+      "target": "wiretap",
+      "relationship": "can_implement_when_authorized"
+    },
+    {
+      "source": "law_enforcement",
+      "target": "warrant",
+      "relationship": "requires_for"
+    },
+    {
+      "source": "warrant",
+      "target": "wiretap",
+      "relationship": "authorizes"
+    },
+    {
+      "source": "isp",
+      "target": "caa",
+      "relationship": "is_subject_to"
+    },
+    {
+      "source": "voip_provider",
+      "target": "caa",
+      "relationship": "is_subject_to"
+    },
+    {
+      "source": "carriers",
+      "target": "secure_separate_access",
+      "relationship": "may_provide"
+    },
+    {
+      "source": "secure_separate_access",
+      "target": "targeted_traffic",
+      "relationship": "controls_access_to"
+    },
+    {
+      "source": "capture",
+      "target": "legal_issues",
+      "relationship": "must_consider"
+    },
+    {
+      "source": "arp_spoofing",
+      "target": "traffic_narrowing",
+      "relationship": "can_bypass"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "pcap",
+      "relationship": "related_to"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "deep_packet_capture",
+      "relationship": "belongs_to_category"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "packet_generation_model",
+      "relationship": "relates_to"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "signals_intelligence",
+      "relationship": "related_to"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "bus_analyzer",
+      "relationship": "contrasts_with"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "logic_analyzer",
+      "relationship": "contrasts_with"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_detector",
+      "relationship": "related_to"
+    },
+    {
+      "source": "c01",
+      "target": "packet_analyzer",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c01",
+      "target": "packet_capture",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c01",
+      "target": "network_traffic",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c01",
+      "target": "packet_decode",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c01",
+      "target": "analysis",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c02",
+      "target": "wireless_analyzer",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c02",
+      "target": "wifi_analyzer",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c02",
+      "target": "protocol_analyzer",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c03",
+      "target": "hub",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c03",
+      "target": "switch",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c03",
+      "target": "port_mirroring",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c03",
+      "target": "network_tap",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c04",
+      "target": "wireless_lan",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c04",
+      "target": "wireless_channel",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c04",
+      "target": "multiple_adapters",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c05",
+      "target": "promiscuous_mode",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c05",
+      "target": "monitor_mode",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c05",
+      "target": "service_set",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c06",
+      "target": "full_packets",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c06",
+      "target": "header_only_capture",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c06",
+      "target": "storage",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c06",
+      "target": "privacy",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c07",
+      "target": "raw_data",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c07",
+      "target": "packet_decode",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c07",
+      "target": "human_readable",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c08",
+      "target": "traffic_generator",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c08",
+      "target": "protocol_tester",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c08",
+      "target": "error_injection",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c09",
+      "target": "hardware_analyzer",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c09",
+      "target": "probe",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c09",
+      "target": "disk_array",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c10",
+      "target": "intrusion_attempt",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c10",
+      "target": "regulatory_compliance",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c10",
+      "target": "network_monitoring",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c10",
+      "target": "network_statistics",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c10",
+      "target": "performance_problem",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c10",
+      "target": "network_protocol_implementation",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c11",
+      "target": "law_enforcement",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c11",
+      "target": "warrant",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c11",
+      "target": "wiretap",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c11",
+      "target": "caa",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c11",
+      "target": "end_to_end_encryption",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c12",
+      "target": "wireshark",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c12",
+      "target": "tool_20",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c12",
+      "target": "tool_22",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c13",
+      "target": "arp_spoofing",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "c13",
+      "target": "traffic_narrowing",
+      "relationship": "supports_source_claim"
+    },
+    {
+      "source": "m1",
+      "target": "packet_capture",
+      "relationship": "models"
+    },
+    {
+      "source": "m1",
+      "target": "packet_decode",
+      "relationship": "models"
+    },
+    {
+      "source": "m2",
+      "target": "header_only_capture",
+      "relationship": "models"
+    },
+    {
+      "source": "m3",
+      "target": "full_packets",
+      "relationship": "models"
+    },
+    {
+      "source": "m4",
+      "target": "port_mirroring",
+      "relationship": "models"
+    },
+    {
+      "source": "m5",
+      "target": "network_tap",
+      "relationship": "models"
+    },
+    {
+      "source": "m6",
+      "target": "wireless_lan",
+      "relationship": "models"
+    },
+    {
+      "source": "m7",
+      "target": "monitor_mode",
+      "relationship": "models"
+    },
+    {
+      "source": "m8",
+      "target": "protocol_tester",
+      "relationship": "models"
+    },
+    {
+      "source": "m9",
+      "target": "network_monitoring",
+      "relationship": "models"
+    },
+    {
+      "source": "m10",
+      "target": "intrusion_attempt",
+      "relationship": "models"
+    },
+    {
+      "source": "m11",
+      "target": "wiretap",
+      "relationship": "models"
+    },
+    {
+      "source": "m12",
+      "target": "end_to_end_encryption",
+      "relationship": "models"
+    },
+    {
+      "source": "m13",
+      "target": "client_server",
+      "relationship": "models"
+    },
+    {
+      "source": "m14",
+      "target": "firewall",
+      "relationship": "models"
+    },
+    {
+      "source": "d1",
+      "target": "packet_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d1",
+      "target": "protocol_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d2",
+      "target": "packet_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d2",
+      "target": "network_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d3",
+      "target": "packet_capture",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d3",
+      "target": "analysis",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d4",
+      "target": "full_packets",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d4",
+      "target": "header_only_capture",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d5",
+      "target": "port_mirroring",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d5",
+      "target": "network_tap",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d6",
+      "target": "promiscuous_mode",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d6",
+      "target": "monitor_mode",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d7",
+      "target": "wired_network",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d7",
+      "target": "wireless_lan",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d8",
+      "target": "packet_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d8",
+      "target": "hardware_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d9",
+      "target": "packet_decode",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d9",
+      "target": "human_readable",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d10",
+      "target": "packet_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d10",
+      "target": "protocol_tester",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d11",
+      "target": "network_monitoring",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d11",
+      "target": "intrusion_attempt",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d12",
+      "target": "packet_content",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d12",
+      "target": "end_to_end_encryption",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d13",
+      "target": "warrant",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d13",
+      "target": "arp_spoofing",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d14",
+      "target": "packet_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d14",
+      "target": "logic_analyzer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d15",
+      "target": "capture_location",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "d15",
+      "target": "network_traffic",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "p1",
+      "target": "packet_analyzer",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p1",
+      "target": "packet_capture",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p1",
+      "target": "packet_capture",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p1",
+      "target": "network_traffic",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p1",
+      "target": "network_traffic",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p1",
+      "target": "packet_decode",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p1",
+      "target": "packet_decode",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p1",
+      "target": "analysis",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p2",
+      "target": "capture_location",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p2",
+      "target": "network_segment",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p2",
+      "target": "network_segment",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p2",
+      "target": "network_adapter",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p2",
+      "target": "network_adapter",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p2",
+      "target": "packet_capture",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p3",
+      "target": "wired_network",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p3",
+      "target": "hub",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p3",
+      "target": "hub",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p3",
+      "target": "switch",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p3",
+      "target": "switch",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p3",
+      "target": "port_mirroring",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p3",
+      "target": "port_mirroring",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p3",
+      "target": "monitoring_port",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p3",
+      "target": "monitoring_port",
+      "relationship": "precedes",
+      "order": 5
+    },
+    {
+      "source": "p3",
+      "target": "network_tap",
+      "relationship": "follows",
+      "order": 5
+    },
+    {
+      "source": "p4",
+      "target": "wireless_lan",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p4",
+      "target": "wireless_channel",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p4",
+      "target": "wireless_channel",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p4",
+      "target": "network_adapter",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p4",
+      "target": "network_adapter",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p4",
+      "target": "promiscuous_mode",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p4",
+      "target": "promiscuous_mode",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p4",
+      "target": "monitor_mode",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p5",
+      "target": "full_packets",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p5",
+      "target": "header_only_capture",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p5",
+      "target": "header_only_capture",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p5",
+      "target": "packet_headers",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p5",
+      "target": "packet_headers",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p5",
+      "target": "storage",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p5",
+      "target": "storage",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p5",
+      "target": "privacy",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p6",
+      "target": "raw_data",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p6",
+      "target": "packet_decode",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p6",
+      "target": "packet_decode",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p6",
+      "target": "packet_fields",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p6",
+      "target": "packet_fields",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p6",
+      "target": "protocol_spec",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p6",
+      "target": "protocol_spec",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p6",
+      "target": "human_readable",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p7",
+      "target": "traffic_generator",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p7",
+      "target": "protocol_tester",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p7",
+      "target": "protocol_tester",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p7",
+      "target": "protocol_correct_traffic",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p7",
+      "target": "protocol_correct_traffic",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p7",
+      "target": "error_injection",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p7",
+      "target": "error_injection",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p7",
+      "target": "device_under_test",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p8",
+      "target": "network_statistics",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p8",
+      "target": "bandwidth_utilization",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p8",
+      "target": "bandwidth_utilization",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p8",
+      "target": "network_usage",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p8",
+      "target": "network_usage",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p8",
+      "target": "network_monitoring",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p8",
+      "target": "network_monitoring",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p8",
+      "target": "network_management",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p9",
+      "target": "intrusion_attempt",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p9",
+      "target": "network_misuse",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p9",
+      "target": "network_misuse",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p9",
+      "target": "suspect_content",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p9",
+      "target": "suspect_content",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p9",
+      "target": "exploited_system",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p9",
+      "target": "exploited_system",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p9",
+      "target": "firewall",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p10",
+      "target": "client_server",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p10",
+      "target": "network_protocol_implementation",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p10",
+      "target": "network_protocol_implementation",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p10",
+      "target": "performance_problem",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p10",
+      "target": "performance_problem",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p10",
+      "target": "application",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p11",
+      "target": "packet_content",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p11",
+      "target": "login_details",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p11",
+      "target": "login_details",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p11",
+      "target": "cookies",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p11",
+      "target": "cookies",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p11",
+      "target": "encryption",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p11",
+      "target": "encryption",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p11",
+      "target": "end_to_end_encryption",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p12",
+      "target": "regulatory_compliance",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p12",
+      "target": "network_perimeter",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p12",
+      "target": "network_perimeter",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p12",
+      "target": "law_enforcement",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p12",
+      "target": "law_enforcement",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p12",
+      "target": "warrant",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p12",
+      "target": "warrant",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p12",
+      "target": "wiretap",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p13",
+      "target": "packet_analyzer",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p13",
+      "target": "wireshark",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p13",
+      "target": "wireshark",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p13",
+      "target": "tcpdump",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p13",
+      "target": "tcpdump",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p13",
+      "target": "pcap",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p13",
+      "target": "pcap",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p13",
+      "target": "comparison_of_packet_analyzers",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p14",
+      "target": "traffic_narrowing",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p14",
+      "target": "switch",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p14",
+      "target": "switch",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p14",
+      "target": "promiscuous_mode",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p14",
+      "target": "promiscuous_mode",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p14",
+      "target": "monitor_mode",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "p14",
+      "target": "monitor_mode",
+      "relationship": "precedes",
+      "order": 4
+    },
+    {
+      "source": "p14",
+      "target": "capture_location",
+      "relationship": "follows",
+      "order": 4
+    },
+    {
+      "source": "p15",
+      "target": "reverse_engineering",
+      "relationship": "precedes",
+      "order": 1
+    },
+    {
+      "source": "p15",
+      "target": "packet_generation_model",
+      "relationship": "follows",
+      "order": 1
+    },
+    {
+      "source": "p15",
+      "target": "packet_generation_model",
+      "relationship": "precedes",
+      "order": 2
+    },
+    {
+      "source": "p15",
+      "target": "deep_packet_capture",
+      "relationship": "follows",
+      "order": 2
+    },
+    {
+      "source": "p15",
+      "target": "deep_packet_capture",
+      "relationship": "precedes",
+      "order": 3
+    },
+    {
+      "source": "p15",
+      "target": "signals_intelligence",
+      "relationship": "follows",
+      "order": 3
+    },
+    {
+      "source": "q01",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q02",
+      "target": "packet_capture",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q03",
+      "target": "packet_capture",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q03",
+      "target": "analysis",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q04",
+      "target": "raw_data",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q04",
+      "target": "packet_decode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q05",
+      "target": "protocol_spec",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q06",
+      "target": "header_only_capture",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q07",
+      "target": "full_packets",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q07",
+      "target": "storage",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q08",
+      "target": "header_only_capture",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q08",
+      "target": "privacy",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q09",
+      "target": "hub",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q09",
+      "target": "switch",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q10",
+      "target": "port_mirroring",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q11",
+      "target": "monitoring_port",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q12",
+      "target": "network_tap",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q13",
+      "target": "packet_drop",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q14",
+      "target": "wireless_channel",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q15",
+      "target": "multiple_adapters",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q16",
+      "target": "promiscuous_mode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q17",
+      "target": "promiscuous_mode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q18",
+      "target": "promiscuous_mode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q18",
+      "target": "monitor_mode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q19",
+      "target": "monitor_mode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q20",
+      "target": "service_set",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q21",
+      "target": "multicast",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q22",
+      "target": "broadcast",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q23",
+      "target": "packet_decode",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q23",
+      "target": "packet_fields",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q24",
+      "target": "human_readable",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q25",
+      "target": "display_capability",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q25",
+      "target": "analysis_capability",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q26",
+      "target": "protocol_tester",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q27",
+      "target": "protocol_correct_traffic",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q28",
+      "target": "error_injection",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q29",
+      "target": "device_under_test",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q30",
+      "target": "hardware_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q31",
+      "target": "probe",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q32",
+      "target": "disk_array",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q33",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q33",
+      "target": "performance_problem",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q34",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q34",
+      "target": "intrusion_attempt",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q35",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q35",
+      "target": "network_misuse",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q36",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q36",
+      "target": "regulatory_compliance",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q37",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q37",
+      "target": "exploited_system",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q38",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q38",
+      "target": "operating_system",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q39",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q39",
+      "target": "bandwidth_utilization",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q40",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q40",
+      "target": "network_usage",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q41",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q41",
+      "target": "security_status",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q42",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q42",
+      "target": "network_statistics",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q43",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q43",
+      "target": "suspect_content",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q44",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q44",
+      "target": "performance_problem",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q44",
+      "target": "application",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q45",
+      "target": "network_monitoring",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q46",
+      "target": "login_details",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q47",
+      "target": "cookies",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q48",
+      "target": "encryption",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q49",
+      "target": "reverse_engineering",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q50",
+      "target": "client_server",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q51",
+      "target": "network_protocol_implementation",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q52",
+      "target": "network_changes",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q53",
+      "target": "firewall",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q53",
+      "target": "access_control",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q54",
+      "target": "web_filter",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q54",
+      "target": "spam_filter",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q54",
+      "target": "proxy",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q55",
+      "target": "wiretap",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q56",
+      "target": "warrant",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q57",
+      "target": "caa",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q57",
+      "target": "carriers",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q58",
+      "target": "end_to_end_encryption",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q59",
+      "target": "traffic_narrowing",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q60",
+      "target": "arp_spoofing",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q61",
+      "target": "pcap",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q62",
+      "target": "deep_packet_capture",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q63",
+      "target": "wireshark",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q63",
+      "target": "tcpdump",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "e1",
+      "target": "wireshark",
+      "relationship": "expands"
+    },
+    {
+      "source": "e2",
+      "target": "tool_20",
+      "relationship": "expands"
+    },
+    {
+      "source": "e3",
+      "target": "pcap",
+      "relationship": "expands"
+    },
+    {
+      "source": "e4",
+      "target": "packet_capture",
+      "relationship": "expands"
+    },
+    {
+      "source": "e5",
+      "target": "network_tap",
+      "relationship": "expands"
+    },
+    {
+      "source": "e6",
+      "target": "port_mirroring",
+      "relationship": "expands"
+    },
+    {
+      "source": "e7",
+      "target": "wireless_lan",
+      "relationship": "expands"
+    },
+    {
+      "source": "e8",
+      "target": "promiscuous_mode",
+      "relationship": "expands"
+    },
+    {
+      "source": "e9",
+      "target": "packet_decode",
+      "relationship": "expands"
+    },
+    {
+      "source": "e10",
+      "target": "packet_content",
+      "relationship": "expands"
+    },
+    {
+      "source": "e11",
+      "target": "packet_capture",
+      "relationship": "expands"
+    },
+    {
+      "source": "e12",
+      "target": "intrusion_attempt",
+      "relationship": "expands"
+    },
+    {
+      "source": "e13",
+      "target": "performance_problem",
+      "relationship": "expands"
+    },
+    {
+      "source": "e14",
+      "target": "security_status",
+      "relationship": "expands"
+    },
+    {
+      "source": "e15",
+      "target": "reverse_engineering",
+      "relationship": "expands"
+    },
+    {
+      "source": "e16",
+      "target": "traffic_generator",
+      "relationship": "expands"
+    },
+    {
+      "source": "e17",
+      "target": "hardware_analyzer",
+      "relationship": "expands"
+    },
+    {
+      "source": "e18",
+      "target": "wiretap",
+      "relationship": "expands"
+    },
+    {
+      "source": "e19",
+      "target": "header_only_capture",
+      "relationship": "expands"
+    },
+    {
+      "source": "e20",
+      "target": "comparison_of_packet_analyzers",
+      "relationship": "expands"
+    },
+    {
+      "source": "r1",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r2",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r3",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r4",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r5",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r6",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r7",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r8",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r9",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r10",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    },
+    {
+      "source": "r11",
+      "target": "packet_analyzer",
+      "relationship": "supports_reference_context"
+    }
+  ],
+  "formal_models": [
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "m5",
+    "m6",
+    "m7",
+    "m8",
+    "m9",
+    "m10",
+    "m11",
+    "m12",
+    "m13",
+    "m14"
+  ],
+  "source_claims": [
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08",
+    "c09",
+    "c10",
+    "c11",
+    "c12",
+    "c13"
+  ],
+  "semantic_distinctions": [
+    "d1",
+    "d2",
+    "d3",
+    "d4",
+    "d5",
+    "d6",
+    "d7",
+    "d8",
+    "d9",
+    "d10",
+    "d11",
+    "d12",
+    "d13",
+    "d14",
+    "d15"
+  ],
+  "learning_paths": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8",
+    "p9",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15"
+  ],
+  "misconceptions": [
+    "x1",
+    "x2",
+    "x3",
+    "x4",
+    "x5",
+    "x6",
+    "x7",
+    "x8",
+    "x9",
+    "x10"
+  ],
+  "questions": [
+    "q01",
+    "q02",
+    "q03",
+    "q04",
+    "q05",
+    "q06",
+    "q07",
+    "q08",
+    "q09",
+    "q10",
+    "q11",
+    "q12",
+    "q13",
+    "q14",
+    "q15",
+    "q16",
+    "q17",
+    "q18",
+    "q19",
+    "q20",
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q30",
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40",
+    "q41",
+    "q42",
+    "q43",
+    "q44",
+    "q45",
+    "q46",
+    "q47",
+    "q48",
+    "q49",
+    "q50",
+    "q51",
+    "q52",
+    "q53",
+    "q54",
+    "q55",
+    "q56",
+    "q57",
+    "q58",
+    "q59",
+    "q60",
+    "q61",
+    "q62",
+    "q63"
+  ],
+  "expansion_targets": [
+    "e1",
+    "e2",
+    "e3",
+    "e4",
+    "e5",
+    "e6",
+    "e7",
+    "e8",
+    "e9",
+    "e10",
+    "e11",
+    "e12",
+    "e13",
+    "e14",
+    "e15",
+    "e16",
+    "e17",
+    "e18",
+    "e19",
+    "e20"
+  ],
+  "references": [
+    "r1",
+    "r2",
+    "r3",
+    "r4",
+    "r5",
+    "r6",
+    "r7",
+    "r8",
+    "r9",
+    "r10",
+    "r11"
+  ],
+  "validation": {
+    "node_count": 300,
+    "relationship_count": 473,
+    "formal_model_count": 14,
+    "source_claim_count": 13,
+    "semantic_distinction_count": 15,
+    "learning_path_count": 15,
+    "misconception_count": 10,
+    "question_count": 63,
+    "expansion_target_count": 20,
+    "reference_count": 11,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}

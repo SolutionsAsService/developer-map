@@ -1,0 +1,6709 @@
+{
+  "schema_version": "5.0-layer-first-dynamic-semantic-provenance",
+  "graph_type": "dynamic_educational_layered_knowledge_graph",
+  "topic": "OSI model",
+  "source": {
+    "filename": "Pasted text(20261008-194124).txt",
+    "authority": "user_supplied_source",
+    "external_research_used": false,
+    "source_line_count": 425
+  },
+  "architecture": {
+    "layer_first": true,
+    "layer_count": 7,
+    "layer_order": [
+      "layer_1",
+      "layer_2",
+      "layer_3",
+      "layer_4",
+      "layer_5",
+      "layer_6",
+      "layer_7"
+    ],
+    "design": "Every OSI layer is an explicit node; protocols, PDUs, functions, mechanisms, parameters and interfaces connect directly to the layer they operate on or cross."
+  },
+  "nodes": [
+    {
+      "id": "layer_1",
+      "label": "Layer 1 — Physical",
+      "type": "osi_layer",
+      "description": "Transmission/reception of raw bit streams and physical signal characteristics.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "layer_2",
+      "label": "Layer 2 — Data Link",
+      "type": "osi_layer",
+      "description": "Node-to-node transfer, framing, error handling, connection and flow control.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "layer_3",
+      "label": "Layer 3 — Network",
+      "type": "osi_layer",
+      "description": "Packet delivery across different networks, addressing, routing, traffic control, fragmentation.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "layer_4",
+      "label": "Layer 4 — Transport",
+      "type": "osi_layer",
+      "description": "Host/application transfer, segmentation, reliability, flow/error control, QoS.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "layer_5",
+      "label": "Layer 5 — Session",
+      "type": "osi_layer",
+      "description": "Management of communication sessions and continuous exchanges.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "layer_6",
+      "label": "Layer 6 — Presentation",
+      "type": "osi_layer",
+      "description": "Data translation, character encoding, compression, encryption/decryption.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "layer_7",
+      "label": "Layer 7 — Application",
+      "type": "osi_layer",
+      "description": "High-level network application services such as resource sharing and remote file access.",
+      "source_line_ranges": [
+        24,
+        25,
+        48
+      ]
+    },
+    {
+      "id": "osi_model",
+      "label": "OSI Reference Model",
+      "type": "reference_model",
+      "description": "Seven-layer reference model for communication systems.",
+      "source_line_ranges": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "iso",
+      "label": "ISO",
+      "type": "organization",
+      "description": "International Organization for Standardization.",
+      "source_line_ranges": [
+        31
+      ]
+    },
+    {
+      "id": "itu_t",
+      "label": "ITU-T",
+      "type": "standards_body",
+      "description": "Telecommunications standardization body publishing X.200.",
+      "source_line_ranges": [
+        32
+      ]
+    },
+    {
+      "id": "iso_7498",
+      "label": "ISO/IEC 7498",
+      "type": "standard",
+      "description": "Basic Reference Model standard.",
+      "source_line_ranges": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "x200",
+      "label": "ITU-T X.200",
+      "type": "standard",
+      "description": "ITU-T version of the OSI reference model.",
+      "source_line_ranges": [
+        32
+      ]
+    },
+    {
+      "id": "host",
+      "label": "Host",
+      "type": "network_entity",
+      "description": "Endpoint participating in communication.",
+      "source_line_ranges": [
+        25,
+        37
+      ]
+    },
+    {
+      "id": "peer_entity",
+      "label": "Layer-N Peer Entity",
+      "type": "network_entity",
+      "description": "Corresponding entity at the same layer on another host.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "id": "protocol",
+      "label": "Communication Protocol",
+      "type": "protocol",
+      "description": "Rules enabling peer entities to communicate.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "id": "service",
+      "label": "Layer Service",
+      "type": "service",
+      "description": "Functionality supplied by a lower layer to the layer above.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "id": "pdu",
+      "label": "Protocol Data Unit",
+      "type": "data_unit",
+      "description": "Layer-specific unit exchanged by peers.",
+      "source_line_ranges": [
+        38
+      ]
+    },
+    {
+      "id": "sdu",
+      "label": "Service Data Unit",
+      "type": "data_unit",
+      "description": "Upper-layer PDU viewed as payload by the lower layer.",
+      "source_line_ranges": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "header",
+      "label": "Protocol Header",
+      "type": "metadata",
+      "description": "Protocol metadata added during encapsulation.",
+      "source_line_ranges": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "footer",
+      "label": "Protocol Footer",
+      "type": "metadata",
+      "description": "Protocol metadata optionally added during encapsulation.",
+      "source_line_ranges": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "encapsulation",
+      "label": "Encapsulation",
+      "type": "mechanism",
+      "description": "Adding headers/footers as data moves downward.",
+      "source_line_ranges": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "decapsulation",
+      "label": "Decapsulation",
+      "type": "mechanism",
+      "description": "Removing headers/footers as data moves upward.",
+      "source_line_ranges": [
+        41
+      ]
+    },
+    {
+      "id": "peer_communication",
+      "label": "Peer Communication",
+      "type": "communication_model",
+      "description": "Equivalent layer entities communicate as protocol peers.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "id": "medium",
+      "label": "Physical Transmission Medium",
+      "type": "medium",
+      "description": "Physical medium carrying signals.",
+      "source_line_ranges": [
+        49,
+        50
+      ]
+    },
+    {
+      "id": "network_address",
+      "label": "Network Address",
+      "type": "addressing",
+      "description": "Address used for network-layer delivery.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "routing",
+      "label": "Routing",
+      "type": "network_function",
+      "description": "Selecting paths through intermediate nodes.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "fragmentation",
+      "label": "Fragmentation",
+      "type": "network_function",
+      "description": "Splitting oversized network messages.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "reassembly",
+      "label": "Reassembly",
+      "type": "network_function",
+      "description": "Reconstructing fragments.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "segmentation",
+      "label": "Segmentation",
+      "type": "transport_function",
+      "description": "Splitting streams/large PDUs into smaller transport units.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "id": "flow_control",
+      "label": "Flow Control",
+      "type": "control_function",
+      "description": "Controls transmission rate between peers.",
+      "source_line_ranges": [
+        55,
+        63
+      ]
+    },
+    {
+      "id": "error_control",
+      "label": "Error Control",
+      "type": "control_function",
+      "description": "Detects/handles transmission errors.",
+      "source_line_ranges": [
+        55,
+        63
+      ]
+    },
+    {
+      "id": "acknowledgment",
+      "label": "Acknowledgment",
+      "type": "control_function",
+      "description": "Confirms sequence/data existence.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "multiplexing",
+      "label": "Multiplexing",
+      "type": "transport_function",
+      "description": "Shares transport service among application flows.",
+      "source_line_ranges": [
+        48
+      ]
+    },
+    {
+      "id": "qos",
+      "label": "Quality of Service",
+      "type": "transport_function",
+      "description": "Transport quality-of-service functions.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "connection_oriented",
+      "label": "Connection-oriented",
+      "type": "service_mode",
+      "description": "Transport service maintaining connection state.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "connectionless",
+      "label": "Connectionless",
+      "type": "service_mode",
+      "description": "Transport service without a persistent connection.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "mtu",
+      "label": "Maximum Transmission Unit",
+      "type": "constraint",
+      "description": "Maximum packet size supported along a path.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "id": "mss",
+      "label": "Maximum Segment Size",
+      "type": "constraint",
+      "description": "Maximum transport segment size after headers.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "id": "rs232",
+      "label": "RS-232",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "rs449",
+      "label": "RS-449",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "vseries",
+      "label": "ITU-T V-Series",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "i430",
+      "label": "I.430",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "i431",
+      "label": "I.431",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "pdh",
+      "label": "PDH",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "sonet_sdh",
+      "label": "SONET/SDH",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "pon",
+      "label": "PON",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "otn",
+      "label": "OTN",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "dsl",
+      "label": "DSL",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ieee802_phy",
+      "label": "IEEE 802 PHY",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ieee1394",
+      "label": "IEEE 1394",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "usb",
+      "label": "USB",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "bluetooth",
+      "label": "Bluetooth PHY",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "x21",
+      "label": "X.21",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "can",
+      "label": "CAN",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "electrical_signal",
+      "label": "Electrical Signal",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "radio_signal",
+      "label": "Radio Signal",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "optical_signal",
+      "label": "Optical Signal",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "voltage",
+      "label": "Voltage Levels",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "signal_timing",
+      "label": "Signal Timing",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "data_rate",
+      "label": "Physical Data Rate",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "distance",
+      "label": "Maximum Transmission Distance",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "modulation",
+      "label": "Modulation Scheme",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "channel_access",
+      "label": "Channel Access",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "connectors",
+      "label": "Physical Connectors",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "pin_layout",
+      "label": "Pin Layout",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "impedance",
+      "label": "Line Impedance",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "frequency",
+      "label": "Wireless Frequency",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "simplex",
+      "label": "Simplex",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "half_duplex",
+      "label": "Half Duplex",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "full_duplex",
+      "label": "Full Duplex",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "emi",
+      "label": "Electromagnetic Interference",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "noise",
+      "label": "Signal Noise",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "termination",
+      "label": "Media Termination",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "nic",
+      "label": "Network Interface Controller",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "hub",
+      "label": "Ethernet Hub",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 1.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ethernet",
+      "label": "Ethernet/IEEE 802.3",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "wifi",
+      "label": "Wi-Fi/IEEE 802.11",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "zigbee",
+      "label": "Zigbee/IEEE 802.15.4",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "mac",
+      "label": "MAC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "llc",
+      "label": "LLC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "arp",
+      "label": "ARP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ppp",
+      "label": "PPP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ghn",
+      "label": "ITU-T G.hn",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "slip",
+      "label": "SLIP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "macsec",
+      "label": "MACsec",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "atm",
+      "label": "ATM",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "sdlc",
+      "label": "SDLC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "hdlc",
+      "label": "HDLC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "frame_relay",
+      "label": "Frame Relay",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "l2tp",
+      "label": "L2TP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "gfp",
+      "label": "GFP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "plip",
+      "label": "PLIP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "802llc",
+      "label": "IEEE 802 LLC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "802mac",
+      "label": "IEEE 802 MAC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "lapf",
+      "label": "Q.922 LAPF",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "error_detection",
+      "label": "Link Error Detection",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "selective_repeat",
+      "label": "Selective-repeat Sliding Window",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 2.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ip",
+      "label": "IP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ipv4",
+      "label": "IPv4",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ipv6",
+      "label": "IPv6",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "icmp",
+      "label": "ICMP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "icmpv6",
+      "label": "ICMPv6",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ipsec",
+      "label": "IPsec",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "igmp",
+      "label": "IGMP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ospf",
+      "label": "OSPF",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "rip",
+      "label": "RIP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "isis",
+      "label": "IS-IS",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ipx",
+      "label": "IPX",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "appletalk",
+      "label": "AppleTalk",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "x25plp",
+      "label": "X.25 PLP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "multicast",
+      "label": "Multicast Group Management",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "network_errors",
+      "label": "Network-layer Error Reporting",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "address_assignment",
+      "label": "Network-layer Address Assignment",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 3.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "tcp",
+      "label": "TCP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "udp",
+      "label": "UDP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "sctp",
+      "label": "SCTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "dccp",
+      "label": "DCCP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "quic",
+      "label": "QUIC",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "spx",
+      "label": "SPX",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "tp0",
+      "label": "TP0",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "tp4",
+      "label": "TP4",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "cltp",
+      "label": "CLTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "cotp",
+      "label": "COTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "transport_reassembly",
+      "label": "Transport Reassembly",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 4.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "named_pipe",
+      "label": "Named Pipe",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "netbios",
+      "label": "NetBIOS",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "sapp",
+      "label": "SAPP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "pptp",
+      "label": "PPTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "rtp",
+      "label": "RTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "socket",
+      "label": "Socket",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "socks",
+      "label": "SOCKS",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "x225",
+      "label": "X.225",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "session_establishment",
+      "label": "Session Establishment",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "session_management",
+      "label": "Session Management",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "session_termination",
+      "label": "Session Termination",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 5.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "mime",
+      "label": "MIME",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "xdr",
+      "label": "XDR",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "asn1",
+      "label": "ASN.1",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ascii",
+      "label": "ASCII",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "tls",
+      "label": "TLS",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "pgp",
+      "label": "PGP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "xml",
+      "label": "XML",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "base64",
+      "label": "Base64",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "compression",
+      "label": "Compression",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "encryption",
+      "label": "Encryption/Decryption",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "character_encoding",
+      "label": "Character Encoding",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 6.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "nntp",
+      "label": "NNTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "sip",
+      "label": "SIP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ssid",
+      "label": "SSID",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "dns",
+      "label": "DNS",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ftp",
+      "label": "FTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "gopher",
+      "label": "Gopher",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "http",
+      "label": "HTTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "http3",
+      "label": "HTTP/3",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "nfs",
+      "label": "NFS",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ntp",
+      "label": "NTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "xmpp",
+      "label": "XMPP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "ssh",
+      "label": "SSH",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "smtp",
+      "label": "SMTP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "snmp",
+      "label": "SNMP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "telnet",
+      "label": "Telnet",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "dhcp",
+      "label": "DHCP",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "netconf",
+      "label": "NETCONF",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "smb",
+      "label": "SMB",
+      "type": "layer_component",
+      "description": "Protocol, mechanism, parameter, device, or example associated with OSI Layer 7.",
+      "source_line_ranges": [
+        1,
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ]
+    },
+    {
+      "id": "network_layer_protocol",
+      "label": "Network-layer Protocol",
+      "type": "protocol_class",
+      "description": "Protocol class identified and encapsulated by LLC.",
+      "source_line_ranges": [
+        55
+      ]
+    },
+    {
+      "id": "cross_layer",
+      "label": "Cross-layer Functions",
+      "type": "cross_layer",
+      "description": "Functions affecting multiple layers.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "security_service",
+      "label": "Security Service",
+      "type": "cross_layer_function",
+      "description": "Security improves confidentiality, integrity and availability.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "management",
+      "label": "Management Functions",
+      "type": "cross_layer_function",
+      "description": "Configure, instantiate, monitor, terminate communication.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "cmip",
+      "label": "CMIP",
+      "type": "management_protocol",
+      "description": "Common Management Information Protocol.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "cmis",
+      "label": "CMIS",
+      "type": "management_service",
+      "description": "Common Management Information Service.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "mpls",
+      "label": "MPLS",
+      "type": "cross_layer_protocol",
+      "description": "Protocol described as 3a/cross-layer.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "mac_phy",
+      "label": "Cross-MAC/PHY Scheduling",
+      "type": "cross_layer_mechanism",
+      "description": "MAC scheduling using PHY channel state.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "channel_state",
+      "label": "Channel State Information",
+      "type": "wireless_state",
+      "description": "PHY-provided channel information.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "ndis",
+      "label": "NDIS",
+      "type": "programming_interface",
+      "description": "Interface between media/link and network protocol.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "odi",
+      "label": "ODI",
+      "type": "programming_interface",
+      "description": "Interface between media/link and network protocol.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "software_interfaces",
+      "label": "Programming Interfaces",
+      "type": "programming_concept",
+      "description": "OSI defines abstract services rather than concrete APIs.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "tcp_ip",
+      "label": "TCP/IP Model",
+      "type": "network_model",
+      "description": "Internet protocol suite model with four broad functional scopes.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "tcpip_app",
+      "label": "TCP/IP Application Layer",
+      "type": "tcpip_layer",
+      "description": "Application scope.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "tcpip_transport",
+      "label": "TCP/IP Transport Layer",
+      "type": "tcpip_layer",
+      "description": "Host-to-host transport scope.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "tcpip_internet",
+      "label": "TCP/IP Internet Layer",
+      "type": "tcpip_layer",
+      "description": "Internetworking scope.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "tcpip_link",
+      "label": "TCP/IP Link Layer",
+      "type": "tcpip_layer",
+      "description": "Direct-link scope.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "layering_harmful",
+      "label": "Layering Considered Harmful",
+      "type": "architecture_principle",
+      "description": "RFC 3439 discussion against overly strict layering.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "isis_modern",
+      "label": "IS-IS Modern Internet Use",
+      "type": "routing_protocol",
+      "description": "OSI-origin protocol adapted for Internet use.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "development_1970s",
+      "label": "Late 1970s OSI Development",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "iso_1977",
+      "label": "1977 ISO Program",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "zimmermann_1978",
+      "label": "1978 Raw OSI Model",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "draft_1980",
+      "label": "1980 Draft",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "merge_1983",
+      "label": "1983 ISO/CCITT Merge",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "publish_1984",
+      "label": "1984 Publication",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "standards_war",
+      "label": "Late 1980s–1990s OSI/TCP-IP Standards Conflict",
+      "type": "historical_event",
+      "description": "Historical milestone in OSI development.",
+      "source_line_ranges": [
+        29,
+        30,
+        31,
+        32,
+        34
+      ]
+    },
+    {
+      "id": "hubert_zimmermann",
+      "label": "Hubert Zimmermann",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "charles_bachman",
+      "label": "Charles Bachman",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "uk_dti",
+      "label": "UK Department of Trade and Industry",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "ccitt",
+      "label": "CCITT",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "npl",
+      "label": "NPL Network",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "arpanet",
+      "label": "ARPANET",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "cyclades",
+      "label": "CYCLADES",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "ein",
+      "label": "EIN",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "ifip",
+      "label": "IFIP WG6.1",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "honeywell",
+      "label": "Honeywell Information Systems",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "ietf",
+      "label": "IETF",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "dod",
+      "label": "U.S. Department of Defense",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "ibm_sna",
+      "label": "IBM Systems Network Architecture",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "decnet",
+      "label": "DECnet",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    },
+    {
+      "id": "x25",
+      "label": "X.25",
+      "type": "historical_actor_or_project",
+      "description": "Person, organization, project, or protocol-suite context in OSI history.",
+      "source_line_ranges": [
+        29,
+        30,
+        35
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "layer_1",
+      "target": "rs232",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "rs449",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "vseries",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "i430",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "i431",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "pdh",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "sonet_sdh",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "pon",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "otn",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "dsl",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "ieee802_phy",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "ieee1394",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "usb",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "bluetooth",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "x21",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "can",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "electrical_signal",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "radio_signal",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "optical_signal",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "voltage",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "signal_timing",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "data_rate",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "distance",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "modulation",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "channel_access",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "connectors",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "pin_layout",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "impedance",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "frequency",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "simplex",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "half_duplex",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "full_duplex",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "emi",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "noise",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "termination",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "nic",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "hub",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "ethernet",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "wifi",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "zigbee",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "mac",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "llc",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "arp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "ppp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "ghn",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "slip",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "macsec",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "atm",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "sdlc",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "hdlc",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "frame_relay",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "l2tp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "gfp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "plip",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "802llc",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "802mac",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "lapf",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "error_detection",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_2",
+      "target": "selective_repeat",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "ip",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "ipv4",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "ipv6",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "icmp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "icmpv6",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "ipsec",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "igmp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "ospf",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "rip",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "isis",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "ipx",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "appletalk",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "x25plp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "multicast",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "network_errors",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_3",
+      "target": "address_assignment",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "tcp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "udp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "sctp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "dccp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "quic",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "spx",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "tp0",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "tp4",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "cltp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "cotp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_4",
+      "target": "transport_reassembly",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "named_pipe",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "netbios",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "sapp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "pptp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "rtp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "socket",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "socks",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "x225",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "session_establishment",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "session_management",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_5",
+      "target": "session_termination",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "mime",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "xdr",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "asn1",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "ascii",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "tls",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "pgp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "json",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "xml",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "base64",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "compression",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "encryption",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_6",
+      "target": "character_encoding",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "nntp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "sip",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "ssid",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "dns",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "ftp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "gopher",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "http",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "http3",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "nfs",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "ntp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "xmpp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "ssh",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "smtp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "snmp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "telnet",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "dhcp",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "netconf",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_7",
+      "target": "smb",
+      "relationship": "owns_or_operates_on",
+      "mechanism": "The explicit OSI layer node is connected directly to the protocol/function/component operating at that layer.",
+      "source_line_ranges": [
+        48,
+        49,
+        55,
+        59,
+        63,
+        66
+      ],
+      "semantic_role": "layer_ownership"
+    },
+    {
+      "source": "layer_1",
+      "target": "layer_2",
+      "relationship": "serves_layer_above",
+      "mechanism": "Layer N provides functionality to layer N+1 and is served by layer N-1.",
+      "source_line_ranges": [
+        25,
+        37
+      ],
+      "semantic_role": "architecture"
+    },
+    {
+      "source": "layer_2",
+      "target": "layer_3",
+      "relationship": "serves_layer_above",
+      "mechanism": "Layer N provides functionality to layer N+1 and is served by layer N-1.",
+      "source_line_ranges": [
+        25,
+        37
+      ],
+      "semantic_role": "architecture"
+    },
+    {
+      "source": "layer_3",
+      "target": "layer_4",
+      "relationship": "serves_layer_above",
+      "mechanism": "Layer N provides functionality to layer N+1 and is served by layer N-1.",
+      "source_line_ranges": [
+        25,
+        37
+      ],
+      "semantic_role": "architecture"
+    },
+    {
+      "source": "layer_4",
+      "target": "layer_5",
+      "relationship": "serves_layer_above",
+      "mechanism": "Layer N provides functionality to layer N+1 and is served by layer N-1.",
+      "source_line_ranges": [
+        25,
+        37
+      ],
+      "semantic_role": "architecture"
+    },
+    {
+      "source": "layer_5",
+      "target": "layer_6",
+      "relationship": "serves_layer_above",
+      "mechanism": "Layer N provides functionality to layer N+1 and is served by layer N-1.",
+      "source_line_ranges": [
+        25,
+        37
+      ],
+      "semantic_role": "architecture"
+    },
+    {
+      "source": "layer_6",
+      "target": "layer_7",
+      "relationship": "serves_layer_above",
+      "mechanism": "Layer N provides functionality to layer N+1 and is served by layer N-1.",
+      "source_line_ranges": [
+        25,
+        37
+      ],
+      "semantic_role": "architecture"
+    },
+    {
+      "source": "osi_model",
+      "target": "iso",
+      "relationship": "standardized_by",
+      "mechanism": "ISO published the model as ISO 7498.",
+      "source_line_ranges": [
+        31
+      ]
+    },
+    {
+      "source": "osi_model",
+      "target": "itu_t",
+      "relationship": "published_by",
+      "mechanism": "ITU-T published X.200.",
+      "source_line_ranges": [
+        32
+      ]
+    },
+    {
+      "source": "iso_7498",
+      "target": "osi_model",
+      "relationship": "specifies",
+      "mechanism": "ISO 7498 contains the Basic Reference Model.",
+      "source_line_ranges": [
+        31,
+        32
+      ]
+    },
+    {
+      "source": "x200",
+      "target": "osi_model",
+      "relationship": "specifies",
+      "mechanism": "X.200 is the ITU-T reference model.",
+      "source_line_ranges": [
+        32
+      ]
+    },
+    {
+      "source": "peer_entity",
+      "target": "protocol",
+      "relationship": "uses",
+      "mechanism": "Layer peers communicate using the layer protocol.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "source": "peer_entity",
+      "target": "peer_communication",
+      "relationship": "participates_in",
+      "mechanism": "Corresponding entities communicate as peers.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "source": "service",
+      "target": "protocol",
+      "relationship": "is_distinct_from",
+      "mechanism": "A service describes functionality; a protocol governs peer communication.",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "source": "pdu",
+      "target": "sdu",
+      "relationship": "contains_as_payload",
+      "mechanism": "A PDU contains payload that becomes an SDU at the lower layer.",
+      "source_line_ranges": [
+        38,
+        39
+      ]
+    },
+    {
+      "source": "encapsulation",
+      "target": "header",
+      "relationship": "adds",
+      "mechanism": "Headers are added during downward processing.",
+      "source_line_ranges": [
+        39
+      ]
+    },
+    {
+      "source": "encapsulation",
+      "target": "footer",
+      "relationship": "may_add",
+      "mechanism": "Footers may be added during downward processing.",
+      "source_line_ranges": [
+        39
+      ]
+    },
+    {
+      "source": "decapsulation",
+      "target": "header",
+      "relationship": "strips",
+      "mechanism": "Headers are stripped upward.",
+      "source_line_ranges": [
+        41
+      ]
+    },
+    {
+      "source": "decapsulation",
+      "target": "footer",
+      "relationship": "strips",
+      "mechanism": "Footers are stripped upward.",
+      "source_line_ranges": [
+        41
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "medium",
+      "relationship": "transmits_over",
+      "mechanism": "Physical layer sends signals through a physical medium.",
+      "source_line_ranges": [
+        49,
+        50
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "electrical_signal",
+      "relationship": "uses",
+      "mechanism": "Electrical signals represent data.",
+      "source_line_ranges": [
+        49,
+        50
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "radio_signal",
+      "relationship": "uses",
+      "mechanism": "Radio signals carry data.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "optical_signal",
+      "relationship": "uses",
+      "mechanism": "Optical signals carry data.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "voltage",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies voltage levels.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "signal_timing",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies timing.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "data_rate",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies physical data rate.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "distance",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies maximum distance.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "modulation",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies modulation.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "connectors",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies connectors.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "pin_layout",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies pin layout.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "impedance",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies line impedance.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "frequency",
+      "relationship": "defines",
+      "mechanism": "Physical layer specifies wireless frequency.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "simplex",
+      "relationship": "defines_mode",
+      "mechanism": "Defines simplex operation.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "half_duplex",
+      "relationship": "defines_mode",
+      "mechanism": "Defines half-duplex operation.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "full_duplex",
+      "relationship": "defines_mode",
+      "mechanism": "Defines full-duplex operation.",
+      "source_line_ranges": [
+        49
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "emi",
+      "relationship": "subject_to",
+      "mechanism": "EMI can cause physical-layer problems.",
+      "source_line_ranges": [
+        51
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "noise",
+      "relationship": "subject_to",
+      "mechanism": "Noise can corrupt physical transmission.",
+      "source_line_ranges": [
+        51
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "nic",
+      "relationship": "interfaces_with",
+      "mechanism": "NIC is a physical-layer device example.",
+      "source_line_ranges": [
+        49,
+        51
+      ]
+    },
+    {
+      "source": "layer_1",
+      "target": "hub",
+      "relationship": "interfaces_with",
+      "mechanism": "Hub is a physical-layer device example.",
+      "source_line_ranges": [
+        49,
+        51
+      ]
+    },
+    {
+      "source": "layer_2",
+      "target": "error_detection",
+      "relationship": "provides",
+      "mechanism": "Data link detects and may correct physical-layer errors.",
+      "source_line_ranges": [
+        55,
+        56
+      ]
+    },
+    {
+      "source": "layer_2",
+      "target": "flow_control",
+      "relationship": "provides",
+      "mechanism": "Data link provides link-level flow control.",
+      "source_line_ranges": [
+        55,
+        56
+      ]
+    },
+    {
+      "source": "layer_2",
+      "target": "mac",
+      "relationship": "contains_sublayer",
+      "mechanism": "IEEE 802 divides data link into MAC and LLC.",
+      "source_line_ranges": [
+        55
+      ]
+    },
+    {
+      "source": "layer_2",
+      "target": "llc",
+      "relationship": "contains_sublayer",
+      "mechanism": "IEEE 802 divides data link into MAC and LLC.",
+      "source_line_ranges": [
+        55
+      ]
+    },
+    {
+      "source": "mac",
+      "target": "channel_access",
+      "relationship": "controls",
+      "mechanism": "MAC controls access to the medium.",
+      "source_line_ranges": [
+        55
+      ]
+    },
+    {
+      "source": "llc",
+      "target": "network_layer_protocol",
+      "relationship": "encapsulates",
+      "mechanism": "LLC identifies and encapsulates network-layer protocols.",
+      "source_line_ranges": [
+        55
+      ]
+    },
+    {
+      "source": "ppp",
+      "target": "layer_1",
+      "relationship": "can_run_over",
+      "mechanism": "PPP can run over different physical layers.",
+      "source_line_ranges": [
+        56
+      ]
+    },
+    {
+      "source": "ghn",
+      "target": "selective_repeat",
+      "relationship": "uses",
+      "mechanism": "G.hn uses selective-repeat sliding-window error correction and flow control.",
+      "source_line_ranges": [
+        56
+      ]
+    },
+    {
+      "source": "layer_3",
+      "target": "network_address",
+      "relationship": "uses",
+      "mechanism": "Network delivery uses addresses.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "source": "layer_3",
+      "target": "routing",
+      "relationship": "provides",
+      "mechanism": "Network layer routes packets through intermediate nodes.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "source": "layer_3",
+      "target": "fragmentation",
+      "relationship": "may_perform",
+      "mechanism": "Network layer may split oversized messages.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "source": "fragmentation",
+      "target": "reassembly",
+      "relationship": "requires",
+      "mechanism": "Fragments are reassembled at the receiver.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "source": "layer_3",
+      "target": "network_errors",
+      "relationship": "provides",
+      "mechanism": "Network layer may report information/errors.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "source": "layer_3",
+      "target": "multicast",
+      "relationship": "provides",
+      "mechanism": "Network layer includes multicast management.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "segmentation",
+      "relationship": "may_perform",
+      "mechanism": "Transport may divide streams/large PDUs.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "source": "segmentation",
+      "target": "mtu",
+      "relationship": "constrained_by",
+      "mechanism": "Segmentation must account for the path MTU.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "flow_control",
+      "relationship": "provides",
+      "mechanism": "Transport provides flow control.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "error_control",
+      "relationship": "provides",
+      "mechanism": "Transport provides error control.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "acknowledgment",
+      "relationship": "uses",
+      "mechanism": "Transport uses acknowledgments.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "multiplexing",
+      "relationship": "provides",
+      "mechanism": "Transport provides multiplexing.",
+      "source_line_ranges": [
+        48
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "qos",
+      "relationship": "provides",
+      "mechanism": "Transport provides QoS functions.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "connection_oriented",
+      "relationship": "supports",
+      "mechanism": "Transport may be connection-oriented.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "source": "layer_4",
+      "target": "connectionless",
+      "relationship": "supports",
+      "mechanism": "Transport may be connectionless.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "segmentation",
+      "relationship": "performs",
+      "mechanism": "TCP performs segmentation/reassembly in the source.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "source": "udp",
+      "target": "segmentation",
+      "relationship": "usually_does_not_perform",
+      "mechanism": "UDP usually does not perform segmentation/reassembly.",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "source": "layer_5",
+      "target": "session_establishment",
+      "relationship": "performs",
+      "mechanism": "Session layer manages session establishment.",
+      "source_line_ranges": [
+        65,
+        67
+      ]
+    },
+    {
+      "source": "layer_5",
+      "target": "session_management",
+      "relationship": "performs",
+      "mechanism": "Session layer manages continuous exchanges.",
+      "source_line_ranges": [
+        65,
+        67
+      ]
+    },
+    {
+      "source": "layer_5",
+      "target": "session_termination",
+      "relationship": "performs",
+      "mechanism": "Session layer manages session termination.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "layer_6",
+      "target": "character_encoding",
+      "relationship": "provides",
+      "mechanism": "Presentation handles character encoding.",
+      "source_line_ranges": [
+        48,
+        66
+      ]
+    },
+    {
+      "source": "layer_6",
+      "target": "compression",
+      "relationship": "provides",
+      "mechanism": "Presentation handles compression.",
+      "source_line_ranges": [
+        48,
+        66
+      ]
+    },
+    {
+      "source": "layer_6",
+      "target": "encryption",
+      "relationship": "provides",
+      "mechanism": "Presentation handles encryption/decryption.",
+      "source_line_ranges": [
+        48,
+        66
+      ]
+    },
+    {
+      "source": "layer_7",
+      "target": "http",
+      "relationship": "provides_service",
+      "mechanism": "HTTP is a high-level application protocol.",
+      "source_line_ranges": [
+        48
+      ]
+    },
+    {
+      "source": "layer_7",
+      "target": "ftp",
+      "relationship": "provides_service",
+      "mechanism": "FTP is a user application protocol.",
+      "source_line_ranges": [
+        1,
+        67
+      ]
+    },
+    {
+      "source": "layer_7",
+      "target": "dns",
+      "relationship": "provides_service",
+      "mechanism": "DNS is a support protocol.",
+      "source_line_ranges": [
+        1,
+        67
+      ]
+    },
+    {
+      "source": "layer_7",
+      "target": "nfs",
+      "relationship": "provides_service",
+      "mechanism": "NFS is an application protocol.",
+      "source_line_ranges": [
+        1,
+        67
+      ]
+    },
+    {
+      "source": "cross_layer",
+      "target": "security_service",
+      "relationship": "includes",
+      "mechanism": "Security is cross-layer.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "cross_layer",
+      "target": "management",
+      "relationship": "includes",
+      "mechanism": "Management is cross-layer.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "cross_layer",
+      "target": "mpls",
+      "relationship": "includes",
+      "mechanism": "MPLS is described as cross-layer/3a.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "management",
+      "target": "cmip",
+      "relationship": "uses",
+      "mechanism": "CMIP implements management functions.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "cmip",
+      "target": "cmis",
+      "relationship": "corresponds_to",
+      "mechanism": "CMIP corresponds to CMIS.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "mac_phy",
+      "target": "channel_state",
+      "relationship": "uses",
+      "mechanism": "MAC scheduling obtains PHY channel state.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "mac_phy",
+      "target": "layer_1",
+      "relationship": "uses_information_from",
+      "mechanism": "Scheduling consumes PHY information.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "mac_phy",
+      "target": "layer_2",
+      "relationship": "influences",
+      "mechanism": "Scheduling influences MAC decisions.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "source": "ndis",
+      "target": "layer_2",
+      "relationship": "interfaces_with",
+      "mechanism": "NDIS interfaces link/media functionality.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "ndis",
+      "target": "layer_3",
+      "relationship": "interfaces_with",
+      "mechanism": "NDIS interfaces network protocol functionality.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "odi",
+      "target": "layer_2",
+      "relationship": "interfaces_with",
+      "mechanism": "ODI interfaces link/media functionality.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "odi",
+      "target": "layer_3",
+      "relationship": "interfaces_with",
+      "mechanism": "ODI interfaces network protocol functionality.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "osi_model",
+      "target": "software_interfaces",
+      "relationship": "does_not_define",
+      "mechanism": "Reference model intentionally leaves programming interfaces implementation-specific.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "tcpip_app",
+      "target": "layer_7",
+      "relationship": "maps_to",
+      "mechanism": "Application scope maps broadly to OSI application, presentation and most session.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "tcpip_transport",
+      "target": "layer_4",
+      "relationship": "maps_to",
+      "mechanism": "Transport maps to OSI transport plus some session behavior.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "tcpip_internet",
+      "target": "layer_3",
+      "relationship": "maps_to",
+      "mechanism": "Internet layer maps to subset of OSI network.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "tcpip_link",
+      "target": "layer_2",
+      "relationship": "maps_to",
+      "mechanism": "Link corresponds to OSI data link.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "tcpip_link",
+      "target": "layer_1",
+      "relationship": "may_include",
+      "mechanism": "Link may include physical functions.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "tcp_ip",
+      "target": "layer_5",
+      "relationship": "does_not_require_separate_layer",
+      "mechanism": "TCP/IP does not distinguish a separate session layer.",
+      "source_line_ranges": [
+        67,
+        68
+      ]
+    },
+    {
+      "source": "tcp_ip",
+      "target": "layer_6",
+      "relationship": "does_not_require_separate_layer",
+      "mechanism": "TCP/IP does not distinguish a separate presentation layer.",
+      "source_line_ranges": [
+        67,
+        68
+      ]
+    },
+    {
+      "source": "layering_harmful",
+      "target": "tcp_ip",
+      "relationship": "informs",
+      "mechanism": "IETF architecture cautions against strict layering.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "isis_modern",
+      "target": "layer_3",
+      "relationship": "operates_at",
+      "mechanism": "IS-IS has OSI network-layer heritage and Internet use.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "source": "iso_1977",
+      "target": "development_1970s",
+      "relationship": "initiated",
+      "mechanism": "ISO began general networking standards work.",
+      "source_line_ranges": [
+        29,
+        30
+      ]
+    },
+    {
+      "source": "hubert_zimmermann",
+      "target": "zimmermann_1978",
+      "relationship": "defined",
+      "mechanism": "Zimmermann defined the raw model.",
+      "source_line_ranges": [
+        31
+      ]
+    },
+    {
+      "source": "zimmermann_1978",
+      "target": "draft_1980",
+      "relationship": "preceded",
+      "mechanism": "Raw model preceded refined draft.",
+      "source_line_ranges": [
+        31
+      ]
+    },
+    {
+      "source": "draft_1980",
+      "target": "merge_1983",
+      "relationship": "preceded",
+      "mechanism": "Draft preceded ISO/CCITT merge.",
+      "source_line_ranges": [
+        31,
+        32
+      ]
+    },
+    {
+      "source": "merge_1983",
+      "target": "publish_1984",
+      "relationship": "led_to",
+      "mechanism": "Merged reference model was published in 1984.",
+      "source_line_ranges": [
+        32
+      ]
+    },
+    {
+      "source": "publish_1984",
+      "target": "osi_model",
+      "relationship": "standardized",
+      "mechanism": "Publication produced ISO 7498/X.200 reference model.",
+      "source_line_ranges": [
+        32
+      ]
+    },
+    {
+      "source": "charles_bachman",
+      "target": "osi_model",
+      "relationship": "contributed_to",
+      "mechanism": "Bachman work contributed to seven-layer concept.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "honeywell",
+      "target": "charles_bachman",
+      "relationship": "employed",
+      "mechanism": "Bachman worked at Honeywell.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "npl",
+      "target": "osi_model",
+      "relationship": "influenced",
+      "mechanism": "NPL experience influenced OSI design.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "arpanet",
+      "target": "osi_model",
+      "relationship": "influenced",
+      "mechanism": "ARPANET experience influenced OSI design.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "cyclades",
+      "target": "osi_model",
+      "relationship": "influenced",
+      "mechanism": "CYCLADES experience influenced OSI design.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "ein",
+      "target": "osi_model",
+      "relationship": "influenced",
+      "mechanism": "EIN experience influenced OSI design.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "ifip",
+      "target": "osi_model",
+      "relationship": "influenced",
+      "mechanism": "IFIP WG6.1 experience influenced OSI design.",
+      "source_line_ranges": [
+        35
+      ]
+    },
+    {
+      "source": "dod",
+      "target": "tcp_ip",
+      "relationship": "funded_primarily",
+      "mechanism": "Source states TCP/IP was primarily DoD funded.",
+      "source_line_ranges": [
+        27
+      ]
+    },
+    {
+      "source": "ietf",
+      "target": "tcp_ip",
+      "relationship": "sponsored_development",
+      "mechanism": "IETF principally sponsored Internet protocol development.",
+      "source_line_ranges": [
+        29
+      ]
+    },
+    {
+      "source": "ibm_sna",
+      "target": "standards_war",
+      "relationship": "contributed_to_context",
+      "mechanism": "Proprietary suites contributed to standards competition.",
+      "source_line_ranges": [
+        29
+      ]
+    },
+    {
+      "source": "decnet",
+      "target": "standards_war",
+      "relationship": "contributed_to_context",
+      "mechanism": "DECnet contributed to standards competition.",
+      "source_line_ranges": [
+        29
+      ]
+    },
+    {
+      "source": "x25",
+      "target": "development_1970s",
+      "relationship": "emerged_during",
+      "mechanism": "X.25 emerged as public data networks developed.",
+      "source_line_ranges": [
+        29
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "pdu_flow",
+      "name": "PDU/SDU encapsulation",
+      "expression": "Layer N PDU → Layer N−1 SDU → add header/footer → Layer N−1 PDU",
+      "source_line_ranges": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "reverse_flow",
+      "name": "Decapsulation",
+      "expression": "received lower PDU → strip metadata → upper SDU",
+      "source_line_ranges": [
+        41
+      ]
+    },
+    {
+      "id": "peer",
+      "name": "Peer communication",
+      "expression": "Layer N peer ↔ Layer N peer",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "id": "service",
+      "name": "Layer service",
+      "expression": "Layer N ← service from Layer N−1",
+      "source_line_ranges": [
+        37
+      ]
+    },
+    {
+      "id": "physical",
+      "name": "Physical signaling",
+      "expression": "bits → electrical/radio/optical signal → medium",
+      "source_line_ranges": [
+        49,
+        50
+      ]
+    },
+    {
+      "id": "link",
+      "name": "Link transfer",
+      "expression": "data → frame → directly connected node",
+      "source_line_ranges": [
+        53,
+        55
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Network delivery",
+      "expression": "address → routing → packet → destination",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "Transport segmentation",
+      "expression": "large data → segment → packet → reassembly",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "id": "mtu_mss",
+      "name": "MTU/MSS example",
+      "expression": "1500 − 20 IPv4 − 20 TCP = 1460 bytes",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "id": "cross_security",
+      "name": "Cross-layer security",
+      "expression": "security → multiple layers → CIA properties",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "tcpip_map",
+      "name": "OSI/TCP-IP mapping",
+      "expression": "TCP/IP app↔OSI 5–7; transport↔4; internet↔3; link↔1–2",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "wireless",
+      "name": "Cross-MAC/PHY scheduling",
+      "expression": "PHY channel state → MAC scheduling → transmission",
+      "source_line_ranges": [
+        67
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_1",
+      "claim": "OSI is a seven-layer reference model.",
+      "source_line_ranges": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "claim_2",
+      "claim": "Each layer serves the layer above and is served by the layer below.",
+      "source_line_ranges": [
+        25,
+        37
+      ]
+    },
+    {
+      "id": "claim_3",
+      "claim": "Layer peers exchange PDUs through layer protocols.",
+      "source_line_ranges": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "claim_4",
+      "claim": "Encapsulation adds headers/footers while moving downward.",
+      "source_line_ranges": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "claim_5",
+      "claim": "Decapsulation strips headers/footers while moving upward.",
+      "source_line_ranges": [
+        41
+      ]
+    },
+    {
+      "id": "claim_6",
+      "claim": "Physical layer defines signal/media properties.",
+      "source_line_ranges": [
+        49,
+        51
+      ]
+    },
+    {
+      "id": "claim_7",
+      "claim": "Data link provides node-to-node transfer and link control.",
+      "source_line_ranges": [
+        53,
+        56
+      ]
+    },
+    {
+      "id": "claim_8",
+      "claim": "Network layer provides multi-network delivery and routing.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "claim_9",
+      "claim": "Transport provides end-to-end/application transfer and QoS functions.",
+      "source_line_ranges": [
+        63,
+        64
+      ]
+    },
+    {
+      "id": "claim_10",
+      "claim": "Security and management are cross-layer functions.",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "claim_11",
+      "claim": "OSI does not define implementation-specific programming APIs.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "claim_12",
+      "claim": "TCP/IP mapping to OSI is approximate.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "id": "claim_13",
+      "claim": "OSI was standardized through ISO/CCITT work and published in 1984.",
+      "source_line_ranges": [
+        29,
+        32
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_1",
+      "a": "Layer",
+      "b": "Protocol",
+      "distinction": "Layer is an architectural scope; protocol implements peer communication.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_2",
+      "a": "PDU",
+      "b": "SDU",
+      "distinction": "A PDU becomes an SDU when passed to the lower layer.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_3",
+      "a": "Encapsulation",
+      "b": "Decapsulation",
+      "distinction": "Sender adds metadata downward; receiver strips it upward.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_4",
+      "a": "Service",
+      "b": "Protocol",
+      "distinction": "Service describes functionality; protocol defines peer behavior.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_5",
+      "a": "Physical",
+      "b": "Data Link",
+      "distinction": "Physical sends signals; link frames and controls directly connected nodes.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_6",
+      "a": "Data Link",
+      "b": "Network",
+      "distinction": "Link is node-to-node; network crosses different networks.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_7",
+      "a": "Network",
+      "b": "Transport",
+      "distinction": "Network routes packets; transport manages application data sequences.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_8",
+      "a": "Session",
+      "b": "Transport",
+      "distinction": "Session manages dialogs; transport manages end-to-end transfer.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_9",
+      "a": "Presentation",
+      "b": "Application",
+      "distinction": "Presentation translates data; application provides high-level services.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_10",
+      "a": "OSI",
+      "b": "TCP/IP",
+      "distinction": "OSI explicitly has seven layers; TCP/IP uses broader functional scopes.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_11",
+      "a": "Layer-specific",
+      "b": "Cross-layer",
+      "distinction": "Some functions, especially security and management, span layers.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_12",
+      "a": "Reference model",
+      "b": "Protocol suite",
+      "distinction": "Conceptual architecture differs from the protocols originally designed for it.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_13",
+      "a": "Bit",
+      "b": "Signal",
+      "distinction": "Bit is logical information; signal is physical representation.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "dist_14",
+      "a": "Connection-oriented",
+      "b": "Connectionless",
+      "distinction": "Transport may maintain connection state or not.",
+      "source_line_ranges": [
+        25,
+        37,
+        48,
+        67,
+        68
+      ]
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "path_1",
+      "name": "Architecture",
+      "sequence": [
+        "layer_1",
+        "layer_2",
+        "layer_3",
+        "layer_4",
+        "layer_5",
+        "layer_6",
+        "layer_7"
+      ]
+    },
+    {
+      "id": "path_2",
+      "name": "Physical",
+      "sequence": [
+        "layer_1",
+        "electrical_signal",
+        "radio_signal",
+        "optical_signal",
+        "medium"
+      ]
+    },
+    {
+      "id": "path_3",
+      "name": "Data Link",
+      "sequence": [
+        "layer_2",
+        "mac",
+        "llc",
+        "ethernet",
+        "wifi",
+        "error_detection",
+        "flow_control"
+      ]
+    },
+    {
+      "id": "path_4",
+      "name": "Network",
+      "sequence": [
+        "layer_3",
+        "ip",
+        "network_address",
+        "routing",
+        "fragmentation",
+        "reassembly"
+      ]
+    },
+    {
+      "id": "path_5",
+      "name": "Transport",
+      "sequence": [
+        "layer_4",
+        "tcp",
+        "udp",
+        "segmentation",
+        "mtu",
+        "flow_control",
+        "acknowledgment"
+      ]
+    },
+    {
+      "id": "path_6",
+      "name": "Session",
+      "sequence": [
+        "layer_5",
+        "session_establishment",
+        "session_management",
+        "session_termination"
+      ]
+    },
+    {
+      "id": "path_7",
+      "name": "Presentation",
+      "sequence": [
+        "layer_6",
+        "mime",
+        "xdr",
+        "asn1",
+        "character_encoding",
+        "compression",
+        "encryption"
+      ]
+    },
+    {
+      "id": "path_8",
+      "name": "Application",
+      "sequence": [
+        "layer_7",
+        "http",
+        "ftp",
+        "dns",
+        "smtp",
+        "nfs"
+      ]
+    },
+    {
+      "id": "path_9",
+      "name": "PDU Flow",
+      "sequence": [
+        "pdu",
+        "sdu",
+        "header",
+        "footer",
+        "encapsulation",
+        "decapsulation"
+      ]
+    },
+    {
+      "id": "path_10",
+      "name": "Cross Layer",
+      "sequence": [
+        "cross_layer",
+        "security_service",
+        "management",
+        "mac_phy"
+      ]
+    },
+    {
+      "id": "path_11",
+      "name": "OSI vs TCP/IP",
+      "sequence": [
+        "osi_model",
+        "tcp_ip",
+        "tcpip_app",
+        "tcpip_transport",
+        "tcpip_internet",
+        "tcpip_link"
+      ]
+    },
+    {
+      "id": "path_12",
+      "name": "History",
+      "sequence": [
+        "development_1970s",
+        "iso_1977",
+        "zimmermann_1978",
+        "merge_1983",
+        "publish_1984",
+        "standards_war"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mis_1",
+      "misconception": "Every protocol fits cleanly in one layer.",
+      "correction": "The source explicitly describes cross-layer functions and approximate mappings.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_2",
+      "misconception": "Every PDU is called a packet.",
+      "correction": "OSI uses data, segment, packet/datagram, frame, and bit/symbol terminology.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_3",
+      "misconception": "Each layer is a separate physical device.",
+      "correction": "Layers are abstractions that may be implemented across software and hardware.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_4",
+      "misconception": "Physical layer only means cables.",
+      "correction": "It includes electrical/radio/optical signals, timing, modulation, connectors, and wireless parameters.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_5",
+      "misconception": "Network layer guarantees delivery.",
+      "correction": "Network delivery need not be reliable.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_6",
+      "misconception": "Transport means TCP.",
+      "correction": "The source includes multiple transport protocols and connection modes.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_7",
+      "misconception": "TCP/IP has a mandatory session layer.",
+      "correction": "TCP/IP does not distinguish a separate session layer.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_8",
+      "misconception": "Presentation only means encryption.",
+      "correction": "It also covers translation, encoding, and compression.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_9",
+      "misconception": "OSI and TCP/IP layers are identical.",
+      "correction": "The source gives approximate mappings and important differences.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "mis_10",
+      "misconception": "OSI protocols became the dominant Internet stack.",
+      "correction": "TCP/IP became widespread while OSI protocols did not gain broad popularity.",
+      "source_line_ranges": [
+        48,
+        59,
+        63,
+        67,
+        68
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_1",
+      "question": "What is the OSI model?"
+    },
+    {
+      "id": "q_2",
+      "question": "Why are there seven layers?"
+    },
+    {
+      "id": "q_3",
+      "question": "What does each layer serve?"
+    },
+    {
+      "id": "q_4",
+      "question": "What is a layer-N peer?"
+    },
+    {
+      "id": "q_5",
+      "question": "What is a PDU?"
+    },
+    {
+      "id": "q_6",
+      "question": "What is an SDU?"
+    },
+    {
+      "id": "q_7",
+      "question": "How does encapsulation work?"
+    },
+    {
+      "id": "q_8",
+      "question": "How does decapsulation work?"
+    },
+    {
+      "id": "q_9",
+      "question": "What does Layer 1 — Physical operate on?"
+    },
+    {
+      "id": "q_10",
+      "question": "Which protocols and mechanisms belong to Layer 1?"
+    },
+    {
+      "id": "q_11",
+      "question": "What is the PDU/function of Layer 1?"
+    },
+    {
+      "id": "q_12",
+      "question": "What does Layer 1 provide to the layer above?"
+    },
+    {
+      "id": "q_13",
+      "question": "What does Layer 1 depend on below?"
+    },
+    {
+      "id": "q_14",
+      "question": "What does Layer 2 — Data Link operate on?"
+    },
+    {
+      "id": "q_15",
+      "question": "Which protocols and mechanisms belong to Layer 2?"
+    },
+    {
+      "id": "q_16",
+      "question": "What is the PDU/function of Layer 2?"
+    },
+    {
+      "id": "q_17",
+      "question": "What does Layer 2 provide to the layer above?"
+    },
+    {
+      "id": "q_18",
+      "question": "What does Layer 2 depend on below?"
+    },
+    {
+      "id": "q_19",
+      "question": "What does Layer 3 — Network operate on?"
+    },
+    {
+      "id": "q_20",
+      "question": "Which protocols and mechanisms belong to Layer 3?"
+    },
+    {
+      "id": "q_21",
+      "question": "What is the PDU/function of Layer 3?"
+    },
+    {
+      "id": "q_22",
+      "question": "What does Layer 3 provide to the layer above?"
+    },
+    {
+      "id": "q_23",
+      "question": "What does Layer 3 depend on below?"
+    },
+    {
+      "id": "q_24",
+      "question": "What does Layer 4 — Transport operate on?"
+    },
+    {
+      "id": "q_25",
+      "question": "Which protocols and mechanisms belong to Layer 4?"
+    },
+    {
+      "id": "q_26",
+      "question": "What is the PDU/function of Layer 4?"
+    },
+    {
+      "id": "q_27",
+      "question": "What does Layer 4 provide to the layer above?"
+    },
+    {
+      "id": "q_28",
+      "question": "What does Layer 4 depend on below?"
+    },
+    {
+      "id": "q_29",
+      "question": "What does Layer 5 — Session operate on?"
+    },
+    {
+      "id": "q_30",
+      "question": "Which protocols and mechanisms belong to Layer 5?"
+    },
+    {
+      "id": "q_31",
+      "question": "What is the PDU/function of Layer 5?"
+    },
+    {
+      "id": "q_32",
+      "question": "What does Layer 5 provide to the layer above?"
+    },
+    {
+      "id": "q_33",
+      "question": "What does Layer 5 depend on below?"
+    },
+    {
+      "id": "q_34",
+      "question": "What does Layer 6 — Presentation operate on?"
+    },
+    {
+      "id": "q_35",
+      "question": "Which protocols and mechanisms belong to Layer 6?"
+    },
+    {
+      "id": "q_36",
+      "question": "What is the PDU/function of Layer 6?"
+    },
+    {
+      "id": "q_37",
+      "question": "What does Layer 6 provide to the layer above?"
+    },
+    {
+      "id": "q_38",
+      "question": "What does Layer 6 depend on below?"
+    },
+    {
+      "id": "q_39",
+      "question": "What does Layer 7 — Application operate on?"
+    },
+    {
+      "id": "q_40",
+      "question": "Which protocols and mechanisms belong to Layer 7?"
+    },
+    {
+      "id": "q_41",
+      "question": "What is the PDU/function of Layer 7?"
+    },
+    {
+      "id": "q_42",
+      "question": "What does Layer 7 provide to the layer above?"
+    },
+    {
+      "id": "q_43",
+      "question": "What does Layer 7 depend on below?"
+    },
+    {
+      "id": "q_44",
+      "question": "What are MAC and LLC?"
+    },
+    {
+      "id": "q_45",
+      "question": "How does routing differ from forwarding?"
+    },
+    {
+      "id": "q_46",
+      "question": "What is fragmentation and reassembly?"
+    },
+    {
+      "id": "q_47",
+      "question": "What are MTU and MSS?"
+    },
+    {
+      "id": "q_48",
+      "question": "How do TCP and UDP differ?"
+    },
+    {
+      "id": "q_49",
+      "question": "What is session management?"
+    },
+    {
+      "id": "q_50",
+      "question": "What does the presentation layer translate?"
+    },
+    {
+      "id": "q_51",
+      "question": "What are cross-layer functions?"
+    },
+    {
+      "id": "q_52",
+      "question": "How does security span layers?"
+    },
+    {
+      "id": "q_53",
+      "question": "What are NDIS and ODI?"
+    },
+    {
+      "id": "q_54",
+      "question": "Does OSI define programming APIs?"
+    },
+    {
+      "id": "q_55",
+      "question": "How does TCP/IP map to OSI?"
+    },
+    {
+      "id": "q_56",
+      "question": "Why is the mapping approximate?"
+    },
+    {
+      "id": "q_57",
+      "question": "What is Layer 2.5?"
+    },
+    {
+      "id": "q_58",
+      "question": "What is cross-MAC/PHY scheduling?"
+    },
+    {
+      "id": "q_59",
+      "question": "What happened in the 1970s OSI development?"
+    },
+    {
+      "id": "q_60",
+      "question": "What did Hubert Zimmermann contribute?"
+    },
+    {
+      "id": "q_61",
+      "question": "What did Charles Bachman contribute?"
+    },
+    {
+      "id": "q_62",
+      "question": "Why did TCP/IP become dominant?"
+    },
+    {
+      "id": "q_63",
+      "question": "How does a message travel down all seven layers?"
+    },
+    {
+      "id": "q_64",
+      "question": "How does it travel back up?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "expand_1",
+      "target": "Detailed OSI protocol state machines",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_2",
+      "target": "Physical-layer electrical engineering",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_3",
+      "target": "Ethernet frame/MAC/PHY internals",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_4",
+      "target": "IPv4/IPv6 headers and forwarding",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_5",
+      "target": "TCP state machine and congestion control",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_6",
+      "target": "UDP semantics",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_7",
+      "target": "Session protocol internals",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_8",
+      "target": "ASN.1/XDR/MIME/TLS internals",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_9",
+      "target": "X.800 security architecture",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_10",
+      "target": "CMIP/CMIS management architecture",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_11",
+      "target": "MPLS internals",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_12",
+      "target": "Wireless MAC/PHY algorithms",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_13",
+      "target": "NDIS/ODI driver architecture",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_14",
+      "target": "Modern TCP/IP mapping",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_15",
+      "target": "IS-IS OSI origin and modern use",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_16",
+      "target": "Cloud/virtual networking OSI mapping",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_17",
+      "target": "QUIC/HTTP3/TLS modern-layer analysis",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_18",
+      "target": "Kernel sockets and programming APIs",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_19",
+      "target": "MTU/MSS/performance engineering",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    },
+    {
+      "id": "expand_20",
+      "target": "Formal verification of layered protocols",
+      "reason": "Referenced, implied, or adjacent to the source but not fully developed at implementation depth."
+    }
+  ],
+  "validation": {
+    "node_count": 206,
+    "relationship_count": 240,
+    "layer_node_count": 7,
+    "formal_model_count": 12,
+    "source_claim_count": 13,
+    "semantic_distinction_count": 14,
+    "learning_path_count": 12,
+    "misconception_count": 10,
+    "question_count": 64,
+    "expansion_target_count": 20,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}

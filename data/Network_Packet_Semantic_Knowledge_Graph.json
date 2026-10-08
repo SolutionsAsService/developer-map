@@ -1,0 +1,4323 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "dynamic_educational_network_packet_knowledge_graph",
+  "topic": "Network packet",
+  "source": {
+    "title": "Network packet",
+    "authority": "User-supplied Wikipedia article text",
+    "external_research_used": false,
+    "source_scope": "Terminology, architecture, framing, packet contents, Internet protocol, NASA Deep Space Network, MPEG packetized stream, NICAM, references and related concepts as supplied."
+  },
+  "design_principles": [
+    "Network packet is modeled as a first-class dynamic data object.",
+    "Packet components, fields, lifecycle operations, protocol layers, and examples are separate nodes.",
+    "Relationships encode mechanisms and direction rather than generic relatedness.",
+    "Strict OSI terminology is preserved separately from broader networking usage.",
+    "Nested encapsulation is represented explicitly.",
+    "Examples are connected to the general packet model without replacing the source's framing."
+  ],
+  "nodes": [
+    {
+      "id": "network_packet",
+      "label": "Network packet",
+      "type": "network_data_unit",
+      "description": "A formatted unit of data carried by a packet-switched network; composed of control information and user data/payload."
+    },
+    {
+      "id": "packet_switching",
+      "label": "Packet switching",
+      "type": "networking_method",
+      "description": "A networking method in which transmission-medium bandwidth is shared among multiple communication sessions."
+    },
+    {
+      "id": "circuit_switching",
+      "label": "Circuit switching",
+      "type": "networking_method",
+      "description": "A networking method in which circuits are preallocated for a session and data is typically sent as a continuous bit stream."
+    },
+    {
+      "id": "control_information",
+      "label": "Control information",
+      "type": "packet_control",
+      "description": "Information used to deliver, validate, classify, sequence, prioritize, or otherwise process packet payload."
+    },
+    {
+      "id": "payload",
+      "label": "Payload",
+      "type": "packet_component",
+      "description": "User data carried on behalf of an application."
+    },
+    {
+      "id": "header",
+      "label": "Header",
+      "type": "packet_component",
+      "description": "Control-information region conventionally placed at the beginning of a packet."
+    },
+    {
+      "id": "trailer",
+      "label": "Trailer",
+      "type": "packet_component",
+      "description": "Control-information region conventionally placed at the end of a packet."
+    },
+    {
+      "id": "packet_format",
+      "label": "Packet format",
+      "type": "structure",
+      "description": "The protocol-defined organization and representation of packet fields."
+    },
+    {
+      "id": "protocol_data_unit",
+      "label": "Protocol data unit (PDU)",
+      "type": "network_abstraction",
+      "description": "A layer-specific data unit; the source distinguishes packet strictly as a Layer 3 PDU."
+    },
+    {
+      "id": "osi_layer_2",
+      "label": "OSI Layer 2 / Data Link",
+      "type": "osi_layer",
+      "description": "Data-link layer where the source terminology uses frame for the PDU."
+    },
+    {
+      "id": "osi_layer_3",
+      "label": "OSI Layer 3 / Network",
+      "type": "osi_layer",
+      "description": "Network layer where packet strictly denotes the PDU."
+    },
+    {
+      "id": "osi_layer_4",
+      "label": "OSI Layer 4 / Transport",
+      "type": "osi_layer",
+      "description": "Transport layer where TCP data is called a segment and UDP-style data a datagram."
+    },
+    {
+      "id": "frame",
+      "label": "Frame",
+      "type": "layer2_pdu",
+      "description": "Data-link layer data unit."
+    },
+    {
+      "id": "segment",
+      "label": "Segment",
+      "type": "layer4_pdu",
+      "description": "Transport-layer data unit associated here with TCP."
+    },
+    {
+      "id": "datagram",
+      "label": "Datagram",
+      "type": "layer4_pdu",
+      "description": "Transport-layer data unit associated here with datagram-oriented transport."
+    },
+    {
+      "id": "tcp",
+      "label": "Transmission Control Protocol (TCP)",
+      "type": "transport_protocol",
+      "description": "Reliable transport protocol commonly layered above IP packet service."
+    },
+    {
+      "id": "ip",
+      "label": "Internet Protocol (IP)",
+      "type": "network_protocol",
+      "description": "Packet-based network protocol whose packets contain header and payload and provide best-effort delivery."
+    },
+    {
+      "id": "ethernet",
+      "label": "Ethernet",
+      "type": "link_protocol",
+      "description": "Link technology whose frames carry IP packets as payload."
+    },
+    {
+      "id": "tcp_ip",
+      "label": "TCP/IP",
+      "type": "protocol_suite",
+      "description": "Protocol architecture used as the source's principal example of layered packet communication."
+    },
+    {
+      "id": "end_to_end",
+      "label": "End-to-end principle",
+      "type": "network_principle",
+      "description": "Network-layer service does not itself guarantee delivery, non-duplication, or ordering; reliable transport may provide these properties."
+    },
+    {
+      "id": "postal_analogy",
+      "label": "Postal-letter analogy",
+      "type": "conceptual_model",
+      "description": "Packet header is compared with an envelope, payload with its contents, and footer/trailer with a signature at the bottom."
+    },
+    {
+      "id": "error_detection",
+      "label": "Error detection",
+      "type": "network_function",
+      "description": "Detection of transmission or packet errors."
+    },
+    {
+      "id": "error_correction",
+      "label": "Error correction",
+      "type": "network_function",
+      "description": "Correction of detected errors where the protocol and circumstances permit it."
+    },
+    {
+      "id": "multiple_host_addressing",
+      "label": "Multiple-host addressing",
+      "type": "network_function",
+      "description": "Ability to identify sending and receiving hosts through network addresses."
+    },
+    {
+      "id": "source_address",
+      "label": "Source network address",
+      "type": "address_field",
+      "description": "Network address identifying the sending host."
+    },
+    {
+      "id": "destination_address",
+      "label": "Destination network address",
+      "type": "address_field",
+      "description": "Network address identifying the receiving host."
+    },
+    {
+      "id": "checksum",
+      "label": "Checksum",
+      "type": "error_control_field",
+      "description": "Computed value used to detect discrepancies between transmitted and received data."
+    },
+    {
+      "id": "parity_bits",
+      "label": "Parity bits",
+      "type": "error_control_field",
+      "description": "Error-detection bits that may be included in packet-related formats."
+    },
+    {
+      "id": "crc",
+      "label": "Cyclic redundancy check (CRC)",
+      "type": "error_control_field",
+      "description": "Error-detection code that may be carried by a packet or its enclosing data-link frame."
+    },
+    {
+      "id": "sequence_information",
+      "label": "Sequencing information",
+      "type": "control_field",
+      "description": "Control information used to represent ordering/sequence."
+    },
+    {
+      "id": "transmission_calculation",
+      "label": "Transmitter calculation",
+      "type": "processing_step",
+      "description": "Checksum or similar error-control value calculated before transmission."
+    },
+    {
+      "id": "receiver_recalculation",
+      "label": "Receiver recalculation",
+      "type": "processing_step",
+      "description": "Receiver recomputes an error-control value and compares it with the transmitted value."
+    },
+    {
+      "id": "packet_correction",
+      "label": "Packet correction",
+      "type": "error_handling",
+      "description": "Possible correction of a packet when discrepancies are detected and the protocol supports correction."
+    },
+    {
+      "id": "packet_discard",
+      "label": "Packet discard",
+      "type": "error_handling",
+      "description": "Dropping a packet when it cannot or should not be accepted/corrected."
+    },
+    {
+      "id": "packet_loss",
+      "label": "Packet loss",
+      "type": "network_event",
+      "description": "Loss resulting from packet discard or other network behavior."
+    },
+    {
+      "id": "protocol_recovery",
+      "label": "Protocol recovery",
+      "type": "transport_or_network_behavior",
+      "description": "Protocol mechanisms that deal with packet loss, including reliable transport behavior."
+    },
+    {
+      "id": "ttl",
+      "label": "Time to live (TTL)",
+      "type": "hop_control_field",
+      "description": "A field decreased by one at each network hop to bound packet circulation."
+    },
+    {
+      "id": "hop_limit",
+      "label": "Hop limit",
+      "type": "hop_control_field",
+      "description": "Hop-count mechanism analogous to TTL for limiting packet lifetime."
+    },
+    {
+      "id": "network_hop",
+      "label": "Network hop",
+      "type": "routing_event",
+      "description": "A forwarding step through a network node/router."
+    },
+    {
+      "id": "routing_loop",
+      "label": "Routing loop",
+      "type": "failure_condition",
+      "description": "Closed forwarding circuit through which packets may circulate."
+    },
+    {
+      "id": "congestion",
+      "label": "Network congestion",
+      "type": "network_condition",
+      "description": "Condition where offered traffic overwhelms available forwarding/transmission capacity."
+    },
+    {
+      "id": "broadcast_storm",
+      "label": "Broadcast storm",
+      "type": "failure_condition",
+      "description": "Severe network traffic condition associated in the source with switching loops and Ethernet's lack of TTL."
+    },
+    {
+      "id": "ethernet_ttl_absence",
+      "label": "Ethernet lacks TTL",
+      "type": "protocol_property",
+      "description": "Ethernet packets have no TTL field according to the source."
+    },
+    {
+      "id": "packet_length",
+      "label": "Packet length",
+      "type": "control_field",
+      "description": "Field that may specify overall packet length; in some networks length is implied by transmission duration."
+    },
+    {
+      "id": "protocol_identifier",
+      "label": "Protocol identifier",
+      "type": "control_field",
+      "description": "Field identifying the protocol carried so the protocol stack can process multiple packet types."
+    },
+    {
+      "id": "priority",
+      "label": "Packet priority",
+      "type": "qos_field",
+      "description": "Field used by some networks to select a priority queue."
+    },
+    {
+      "id": "qos",
+      "label": "Quality of service (QoS)",
+      "type": "network_function",
+      "description": "Mechanism for differentiating treatment of traffic, including prioritization under congestion."
+    },
+    {
+      "id": "packet_queue",
+      "label": "Packet queue",
+      "type": "network_structure",
+      "description": "Queue from which packets are processed; higher-priority queues may be serviced faster under congestion."
+    },
+    {
+      "id": "variable_payload",
+      "label": "Variable-length payload",
+      "type": "payload_property",
+      "description": "Payload is generally variable length up to protocol/equipment limits."
+    },
+    {
+      "id": "maximum_payload",
+      "label": "Maximum packet/payload size",
+      "type": "size_constraint",
+      "description": "Upper size limit imposed by a network protocol and sometimes equipment along the route."
+    },
+    {
+      "id": "fragmentation",
+      "label": "Packet fragmentation",
+      "type": "network_function",
+      "description": "Breaking a larger packet into smaller packets when required by the network."
+    },
+    {
+      "id": "reassembly",
+      "label": "Packet reassembly",
+      "type": "network_function",
+      "description": "Combining fragmented packet pieces back into the original logical data unit."
+    },
+    {
+      "id": "routing",
+      "label": "Packet routing",
+      "type": "network_function",
+      "description": "Forwarding packets toward their destination based on addressing and network topology."
+    },
+    {
+      "id": "network_addressing",
+      "label": "Network addressing",
+      "type": "network_function",
+      "description": "Use of source and destination addresses to support packet routing."
+    },
+    {
+      "id": "framing",
+      "label": "Framing",
+      "type": "data_link_function",
+      "description": "Protocol conventions for distinguishing and formatting packet elements."
+    },
+    {
+      "id": "byte_delimiting",
+      "label": "Byte-level delimiting",
+      "type": "framing_method",
+      "description": "Formatting based on 8-bit bytes and special delimiter characters, as described for PPP."
+    },
+    {
+      "id": "location_based_framing",
+      "label": "Location-based framing",
+      "type": "framing_method",
+      "description": "Protocol convention where header/data boundaries are established by location relative to packet start."
+    },
+    {
+      "id": "bit_level_formatting",
+      "label": "Bit-level formatting",
+      "type": "framing_method",
+      "description": "Formatting protocol information at bit rather than byte granularity."
+    },
+    {
+      "id": "ppp",
+      "label": "Point-to-Point Protocol (PPP)",
+      "type": "link_protocol",
+      "description": "Example protocol that formats packets in 8-bit bytes and uses special characters to delimit elements."
+    },
+    {
+      "id": "ip_packet",
+      "label": "IP packet",
+      "type": "network_pdu",
+      "description": "IP packet consisting of header and payload, with fixed and optional header fields."
+    },
+    {
+      "id": "ip_header",
+      "label": "IP header",
+      "type": "packet_header",
+      "description": "Header of an IP packet containing fixed and optional fields."
+    },
+    {
+      "id": "ip_payload",
+      "label": "IP payload",
+      "type": "packet_payload",
+      "description": "Data immediately following an IP header; no IP trailer."
+    },
+    {
+      "id": "ip_no_trailer",
+      "label": "IP has no trailer",
+      "type": "protocol_property",
+      "description": "The source explicitly states that an IP packet has no trailer."
+    },
+    {
+      "id": "ethernet_frame",
+      "label": "Ethernet frame",
+      "type": "link_pdu",
+      "description": "Ethernet frame that can encapsulate an IP packet in its payload."
+    },
+    {
+      "id": "ethernet_header",
+      "label": "Ethernet header",
+      "type": "frame_component",
+      "description": "Ethernet frame header."
+    },
+    {
+      "id": "ethernet_trailer",
+      "label": "Ethernet trailer",
+      "type": "frame_component",
+      "description": "Ethernet frame trailer."
+    },
+    {
+      "id": "tcp_segment",
+      "label": "TCP segment",
+      "type": "transport_pdu",
+      "description": "Transport-layer TCP segment carried by IP."
+    },
+    {
+      "id": "tcp_reliability",
+      "label": "TCP reliability",
+      "type": "transport_property",
+      "description": "TCP can provide delivery protection, duplicate suppression, and in-order delivery over IP's best-effort packet service."
+    },
+    {
+      "id": "tcp_retransmission",
+      "label": "TCP retransmission",
+      "type": "transport_mechanism",
+      "description": "Reliable transport response to lost packets/segments."
+    },
+    {
+      "id": "delivery_guarantee",
+      "label": "Delivery guarantee",
+      "type": "service_property",
+      "description": "Guarantee of delivery; not provided by IP itself per the source."
+    },
+    {
+      "id": "non_duplication",
+      "label": "Non-duplication",
+      "type": "service_property",
+      "description": "Guarantee that data is not duplicated; not provided by IP itself per the source."
+    },
+    {
+      "id": "in_order_delivery",
+      "label": "In-order delivery",
+      "type": "service_property",
+      "description": "Guarantee of ordered delivery; not provided by IP itself per the source."
+    },
+    {
+      "id": "ccsds",
+      "label": "Consultative Committee for Space Data Systems (CCSDS)",
+      "type": "standardization_body",
+      "description": "Standards body associated with the deep-space packet telemetry example."
+    },
+    {
+      "id": "deep_space_network",
+      "label": "NASA Deep Space Network",
+      "type": "network",
+      "description": "Deep-space communications environment in the source's packet telemetry example."
+    },
+    {
+      "id": "packet_telemetry",
+      "label": "Packet telemetry",
+      "type": "telemetry_system",
+      "description": "CCSDS packet telemetry used to transmit spacecraft instrument data."
+    },
+    {
+      "id": "spacecraft_instrument",
+      "label": "Spacecraft instrument",
+      "type": "data_source",
+      "description": "Instrument generating image or other data sent through the deep-space channel."
+    },
+    {
+      "id": "instrument_data",
+      "label": "Instrument data",
+      "type": "payload_data",
+      "description": "Image or other data produced by a spacecraft instrument."
+    },
+    {
+      "id": "mpeg",
+      "label": "MPEG-2",
+      "type": "media_standard",
+      "description": "Media standard associated with packetized elementary streams."
+    },
+    {
+      "id": "pes",
+      "label": "Packetized Elementary Stream (PES)",
+      "type": "media_packetization",
+      "description": "Specification allowing an elementary stream to be divided into packets."
+    },
+    {
+      "id": "elementary_stream",
+      "label": "Elementary stream",
+      "type": "media_stream",
+      "description": "Sequential media data bytes before PES packetization."
+    },
+    {
+      "id": "pes_header",
+      "label": "PES packet header",
+      "type": "packet_header",
+      "description": "Header used to delimit encapsulated portions of an elementary stream."
+    },
+    {
+      "id": "mpeg_ts",
+      "label": "MPEG transport stream (TS)",
+      "type": "media_transport",
+      "description": "Transport stream containing PES packets."
+    },
+    {
+      "id": "mpeg_ps",
+      "label": "MPEG program stream (PS)",
+      "type": "media_transport",
+      "description": "Program stream that can carry PES packets."
+    },
+    {
+      "id": "atsc",
+      "label": "ATSC",
+      "type": "broadcast_standard",
+      "description": "Broadcasting technique cited for MPEG transport-stream transmission."
+    },
+    {
+      "id": "dvb",
+      "label": "DVB",
+      "type": "broadcast_standard",
+      "description": "Broadcasting technique cited for MPEG transport-stream transmission."
+    },
+    {
+      "id": "nicam",
+      "label": "NICAM",
+      "type": "broadcast_audio_system",
+      "description": "Digital audio transmission system using packetization and scrambling."
+    },
+    {
+      "id": "subcarrier",
+      "label": "Subcarrier",
+      "type": "radio_signal",
+      "description": "Carrier used by NICAM alongside the sound carrier."
+    },
+    {
+      "id": "sound_carrier",
+      "label": "Sound carrier",
+      "type": "radio_signal",
+      "description": "Regular FM/AM mono sound carrier retained for monaural receiver compatibility."
+    },
+    {
+      "id": "mono_compatibility",
+      "label": "Mono compatibility",
+      "type": "compatibility_property",
+      "description": "NICAM design property allowing regular mono receivers to continue using the sound carrier."
+    },
+    {
+      "id": "nicam_packet",
+      "label": "NICAM packet",
+      "type": "audio_packet",
+      "description": "NICAM packet whose non-header portion is scrambled before transmission."
+    },
+    {
+      "id": "prbs9",
+      "label": "Nine-bit pseudo-random bit generator",
+      "type": "scrambling_mechanism",
+      "description": "Pseudo-random generator used to scramble NICAM packet data."
+    },
+    {
+      "id": "white_noise",
+      "label": "White-noise-like bitstream",
+      "type": "signal_property",
+      "description": "NICAM scrambling makes the bitstream resemble white noise to reduce adjacent-channel patterning."
+    },
+    {
+      "id": "adjacent_channel_patterning",
+      "label": "Adjacent-channel patterning",
+      "type": "interference_effect",
+      "description": "Signal patterning on adjacent TV channels that NICAM scrambling helps reduce."
+    },
+    {
+      "id": "packet_analyzer",
+      "label": "Packet analyzer",
+      "type": "network_tool",
+      "description": "Tool category for inspecting network packets."
+    },
+    {
+      "id": "packet_generation_model",
+      "label": "Packet generation model",
+      "type": "network_model",
+      "description": "Model/category concerning generation of network packets."
+    },
+    {
+      "id": "anti_replay",
+      "label": "Anti-replay",
+      "type": "security_function",
+      "description": "Security mechanism associated with packet handling."
+    },
+    {
+      "id": "fast_packet_switching",
+      "label": "Fast packet switching",
+      "type": "switching_method",
+      "description": "Packet-switching technique listed by the source."
+    },
+    {
+      "id": "mangled_packet",
+      "label": "Mangled packet",
+      "type": "packet_condition",
+      "description": "Packet condition/category listed by the source."
+    },
+    {
+      "id": "statistical_tdm",
+      "label": "Statistical time-division multiplexing",
+      "type": "multiplexing",
+      "description": "Sharing transmission capacity dynamically among traffic."
+    },
+    {
+      "id": "tail_drop",
+      "label": "Tail drop",
+      "type": "queue_management",
+      "description": "Queue-management behavior listed by the source."
+    },
+    {
+      "id": "network_packet_category",
+      "label": "Units of information / packets",
+      "type": "taxonomy",
+      "description": "Source category placement for the article."
+    },
+    {
+      "id": "ref_stallings_2001",
+      "label": "Stallings 2001",
+      "type": "reference",
+      "description": "Business Data Communication glossary definition of packet as data plus control information, generally Layer 3 PDU."
+    },
+    {
+      "id": "ref_osi_model",
+      "label": "OSI Model",
+      "type": "reference",
+      "description": "Reference cited for layer-specific terminology."
+    },
+    {
+      "id": "ref_tcpip_guide",
+      "label": "The TCP/IP Guide",
+      "type": "reference",
+      "description": "Analogy between packet components and a postal letter."
+    },
+    {
+      "id": "ref_uk_link_layer",
+      "label": "Chapter 5 Link Layer",
+      "type": "reference",
+      "description": "Reference cited for link-layer terminology."
+    },
+    {
+      "id": "ref_cnp3",
+      "label": "Computer Networking: Principles, Protocols and Practice",
+      "type": "reference",
+      "description": "Reference cited for packet contents and networking details."
+    },
+    {
+      "id": "ref_network_encyclopedia",
+      "label": "Network Encyclopedia",
+      "type": "reference",
+      "description": "Reference cited for network packet content."
+    },
+    {
+      "id": "hist_1",
+      "label": "Packet switching concept",
+      "type": "historical_or_context_event",
+      "description": "Packet switching is presented as sharing a transmission medium among multiple communication sessions."
+    },
+    {
+      "id": "hist_2",
+      "label": "OSI terminology context",
+      "type": "historical_or_context_event",
+      "description": "OSI layer terminology distinguishes packet, frame, segment, and datagram."
+    },
+    {
+      "id": "hist_3",
+      "label": "TCP/IP example",
+      "type": "historical_or_context_event",
+      "description": "TCP over IP over Ethernet demonstrates nested protocol data units."
+    },
+    {
+      "id": "hist_4",
+      "label": "Deep-space packet telemetry",
+      "type": "historical_or_context_event",
+      "description": "CCSDS packet telemetry illustrates packetization of spacecraft instrument data."
+    },
+    {
+      "id": "hist_5",
+      "label": "MPEG packetization",
+      "type": "historical_or_context_event",
+      "description": "MPEG-2 PES illustrates media elementary streams divided into packets."
+    },
+    {
+      "id": "hist_6",
+      "label": "NICAM packet scrambling",
+      "type": "historical_or_context_event",
+      "description": "NICAM illustrates packet scrambling to shape the transmitted signal spectrum."
+    },
+    {
+      "id": "model_packet_structure",
+      "label": "Packet structure",
+      "type": "formal_model",
+      "description": "Defines packet as control information plus user data/payload.",
+      "expression": "packet = control_information + payload"
+    },
+    {
+      "id": "model_header_trailer",
+      "label": "Header/trailer placement",
+      "type": "formal_model",
+      "description": "Control information is typically found in header/trailer regions.",
+      "expression": "packet = header + payload + optional trailer"
+    },
+    {
+      "id": "model_encapsulation",
+      "label": "TCP/IP encapsulation",
+      "type": "formal_model",
+      "description": "A TCP segment is carried in IP packet(s), which are carried in Ethernet frame(s).",
+      "expression": "TCP segment → IP packet → Ethernet frame"
+    },
+    {
+      "id": "model_decapsulation",
+      "label": "Reverse decapsulation",
+      "type": "formal_model",
+      "description": "Receiver unwraps nested protocol data units.",
+      "expression": "Ethernet frame → IP packet → TCP segment → application data"
+    },
+    {
+      "id": "model_routing",
+      "label": "Address-driven routing",
+      "type": "formal_model",
+      "description": "Addresses support delivery across network hops.",
+      "expression": "source_address + destination_address → routing → network_hop"
+    },
+    {
+      "id": "model_error_check",
+      "label": "Checksum validation",
+      "type": "formal_model",
+      "description": "Receiver recomputes and compares.",
+      "expression": "checksum(tx) == checksum(rx) ⇒ accepted; mismatch ⇒ correction/discard path"
+    },
+    {
+      "id": "model_ttl",
+      "label": "TTL loop control",
+      "type": "formal_model",
+      "description": "Zero TTL leads to discard and bounds loops.",
+      "expression": "TTL_next = TTL_current − 1 per hop"
+    },
+    {
+      "id": "model_qos",
+      "label": "Priority queueing",
+      "type": "formal_model",
+      "description": "Higher-priority queue can be emptied more quickly.",
+      "expression": "priority → queue selection → service order under congestion"
+    },
+    {
+      "id": "model_fragmentation",
+      "label": "Fragmentation/reassembly",
+      "type": "formal_model",
+      "description": "Larger packet can be broken into smaller packets when necessary.",
+      "expression": "large_packet → fragments → reassembly → logical_packet"
+    },
+    {
+      "id": "model_ip_service",
+      "label": "IP best effort",
+      "type": "formal_model",
+      "description": "IP does not itself guarantee these properties.",
+      "expression": "IP ⇏ delivery ∧ IP ⇏ nonduplication ∧ IP ⇏ ordering"
+    },
+    {
+      "id": "model_tcp_service",
+      "label": "TCP reliability overlay",
+      "type": "formal_model",
+      "description": "Reliable transport is layered above packet service.",
+      "expression": "IP best effort + TCP → reliable ordered transport"
+    },
+    {
+      "id": "model_pes",
+      "label": "MPEG PES packetization",
+      "type": "formal_model",
+      "description": "Sequential bytes are encapsulated between PES headers.",
+      "expression": "elementary stream bytes → PES packets → TS/PS"
+    },
+    {
+      "id": "packet_vs_frame",
+      "label": "Packet vs frame",
+      "type": "semantic_distinction",
+      "description": "Packet is Layer 3 terminology in the cited OSI framing; frame is Layer 2."
+    },
+    {
+      "id": "packet_vs_segment",
+      "label": "Packet vs segment",
+      "type": "semantic_distinction",
+      "description": "Packet is associated with network layer; segment is associated here with TCP transport."
+    },
+    {
+      "id": "packet_vs_datagram",
+      "label": "Packet vs datagram",
+      "type": "semantic_distinction",
+      "description": "The source distinguishes Layer 3 packets from Layer 4 datagrams."
+    },
+    {
+      "id": "header_vs_payload",
+      "label": "Header vs payload",
+      "type": "semantic_distinction",
+      "description": "Header carries control information; payload carries user/application data."
+    },
+    {
+      "id": "header_vs_trailer",
+      "label": "Header vs trailer",
+      "type": "semantic_distinction",
+      "description": "Both can carry control information but occupy different packet positions."
+    },
+    {
+      "id": "packet_switching_vs_circuit",
+      "label": "Packet switching vs circuit switching",
+      "type": "semantic_distinction",
+      "description": "Shared bandwidth and packetization contrast with preallocated circuits."
+    },
+    {
+      "id": "error_detection_vs_correction",
+      "label": "Error detection vs correction",
+      "type": "semantic_distinction",
+      "description": "Detection identifies discrepancy; correction attempts to repair where supported."
+    },
+    {
+      "id": "ttl_vs_ethernet",
+      "label": "TTL vs Ethernet forwarding",
+      "type": "semantic_distinction",
+      "description": "IP-style TTL bounds hop circulation; Ethernet packets lack TTL in the source."
+    },
+    {
+      "id": "priority_vs_payload",
+      "label": "Priority vs payload",
+      "type": "semantic_distinction",
+      "description": "Priority affects queue treatment; payload is carried application data."
+    },
+    {
+      "id": "ip_vs_tcp",
+      "label": "IP vs TCP",
+      "type": "semantic_distinction",
+      "description": "IP provides best-effort packet service; TCP can add reliable ordered transport."
+    },
+    {
+      "id": "fragmentation_vs_reassembly",
+      "label": "Fragmentation vs reassembly",
+      "type": "semantic_distinction",
+      "description": "Fragmentation divides a large packet; reassembly reconstructs the logical unit."
+    },
+    {
+      "id": "packet_vs_protocol",
+      "label": "Packet vs protocol",
+      "type": "semantic_distinction",
+      "description": "A packet is a formatted data unit; a protocol defines conventions for creating/processing such units."
+    },
+    {
+      "id": "osi_term_vs_general_usage",
+      "label": "Strict OSI packet terminology vs general usage",
+      "type": "semantic_distinction",
+      "description": "The source notes strict Layer 3 terminology even though packet is used more broadly in networking."
+    },
+    {
+      "id": "ip_trailer_vs_ethernet_trailer",
+      "label": "IP trailer vs Ethernet trailer",
+      "type": "semantic_distinction",
+      "description": "IP packet has no trailer; enclosing Ethernet frame has a trailer."
+    },
+    {
+      "id": "path_packet_basics",
+      "label": "Packet fundamentals",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "network_packet",
+        "control_information",
+        "payload",
+        "header",
+        "trailer",
+        "packet_format"
+      ]
+    },
+    {
+      "id": "path_switching",
+      "label": "Packet vs circuit switching",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "packet_switching",
+        "circuit_switching",
+        "network_packet"
+      ]
+    },
+    {
+      "id": "path_osi_terms",
+      "label": "OSI data-unit terminology",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "osi_layer_2",
+        "frame",
+        "osi_layer_3",
+        "network_packet",
+        "osi_layer_4",
+        "segment",
+        "datagram"
+      ]
+    },
+    {
+      "id": "path_packet_fields",
+      "label": "Packet fields",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "source_address",
+        "destination_address",
+        "checksum",
+        "ttl",
+        "packet_length",
+        "protocol_identifier",
+        "priority",
+        "payload"
+      ]
+    },
+    {
+      "id": "path_routing",
+      "label": "Routing lifecycle",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "source_address",
+        "destination_address",
+        "routing",
+        "network_hop",
+        "ttl",
+        "packet_discard"
+      ]
+    },
+    {
+      "id": "path_errors",
+      "label": "Error handling",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "checksum",
+        "transmission_calculation",
+        "receiver_recalculation",
+        "error_detection",
+        "packet_correction",
+        "packet_discard",
+        "packet_loss"
+      ]
+    },
+    {
+      "id": "path_qos",
+      "label": "QoS and priority",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "priority",
+        "packet_queue",
+        "qos",
+        "congestion"
+      ]
+    },
+    {
+      "id": "path_size",
+      "label": "Payload size and fragmentation",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "variable_payload",
+        "maximum_payload",
+        "fragmentation",
+        "reassembly"
+      ]
+    },
+    {
+      "id": "path_framing",
+      "label": "Framing methods",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "framing",
+        "ppp",
+        "byte_delimiting",
+        "location_based_framing",
+        "bit_level_formatting"
+      ]
+    },
+    {
+      "id": "path_tcp_ip",
+      "label": "TCP/IP packet encapsulation",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "tcp_segment",
+        "ip_packet",
+        "ethernet_frame",
+        "tcp",
+        "ip",
+        "ethernet"
+      ]
+    },
+    {
+      "id": "path_space",
+      "label": "Deep-space packet telemetry",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "spacecraft_instrument",
+        "instrument_data",
+        "packet_telemetry",
+        "ccsds",
+        "deep_space_network"
+      ]
+    },
+    {
+      "id": "path_media",
+      "label": "MPEG packetization",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "elementary_stream",
+        "pes",
+        "mpeg_ts",
+        "mpeg_ps",
+        "atsc",
+        "dvb"
+      ]
+    },
+    {
+      "id": "path_nicam",
+      "label": "NICAM packet transmission",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "nicam",
+        "nicam_packet",
+        "prbs9",
+        "white_noise",
+        "adjacent_channel_patterning"
+      ]
+    },
+    {
+      "id": "path_end_to_end",
+      "label": "End-to-end reliability",
+      "type": "learning_path",
+      "description": "Ordered concept path for studying the topic.",
+      "sequence": [
+        "end_to_end",
+        "ip",
+        "tcp",
+        "tcp_reliability",
+        "tcp_retransmission"
+      ]
+    },
+    {
+      "id": "m1",
+      "label": "Every network data unit is a packet",
+      "type": "misconception_correction",
+      "description": "The source's strict OSI terminology distinguishes Layer 2 frames and Layer 4 segments/datagrams from Layer 3 packets.",
+      "correction": "The source's strict OSI terminology distinguishes Layer 2 frames and Layer 4 segments/datagrams from Layer 3 packets."
+    },
+    {
+      "id": "m2",
+      "label": "Packets always have both a header and trailer",
+      "type": "misconception_correction",
+      "description": "Control information is typically in headers and trailers, but IP packets explicitly have no trailer.",
+      "correction": "Control information is typically in headers and trailers, but IP packets explicitly have no trailer."
+    },
+    {
+      "id": "m3",
+      "label": "IP guarantees delivery",
+      "type": "misconception_correction",
+      "description": "The source states IP does not provide delivery guarantees.",
+      "correction": "The source states IP does not provide delivery guarantees."
+    },
+    {
+      "id": "m4",
+      "label": "IP prevents duplicates",
+      "type": "misconception_correction",
+      "description": "Non-duplication is not guaranteed by IP itself.",
+      "correction": "Non-duplication is not guaranteed by IP itself."
+    },
+    {
+      "id": "m5",
+      "label": "IP preserves ordering",
+      "type": "misconception_correction",
+      "description": "In-order delivery is not guaranteed by IP itself.",
+      "correction": "In-order delivery is not guaranteed by IP itself."
+    },
+    {
+      "id": "m6",
+      "label": "TCP and IP are the same layer/function",
+      "type": "misconception_correction",
+      "description": "TCP is a reliable transport protocol layered above IP packet service.",
+      "correction": "TCP is a reliable transport protocol layered above IP packet service."
+    },
+    {
+      "id": "m7",
+      "label": "TTL is present in Ethernet packets",
+      "type": "misconception_correction",
+      "description": "The source explicitly says Ethernet packets have no TTL field.",
+      "correction": "The source explicitly says Ethernet packets have no TTL field."
+    },
+    {
+      "id": "m8",
+      "label": "Every network encodes packet boundaries in bytes",
+      "type": "misconception_correction",
+      "description": "Protocols may delimit by bytes, position, or bits.",
+      "correction": "Protocols may delimit by bytes, position, or bits."
+    },
+    {
+      "id": "m9",
+      "label": "A larger packet can always be transmitted unchanged",
+      "type": "misconception_correction",
+      "description": "Some networks can break larger packets into smaller packets.",
+      "correction": "Some networks can break larger packets into smaller packets."
+    },
+    {
+      "id": "m10",
+      "label": "Priority changes the payload",
+      "type": "misconception_correction",
+      "description": "Priority selects queue treatment; it does not represent the application payload itself.",
+      "correction": "Priority selects queue treatment; it does not represent the application payload itself."
+    },
+    {
+      "id": "q01",
+      "label": "Define a network packet in the source's terminology.",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q02",
+      "label": "What are the two broad parts of a packet?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q03",
+      "label": "What is the payload?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q04",
+      "label": "What is control information?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q05",
+      "label": "Where is control information typically located?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q06",
+      "label": "How does packet switching differ from circuit switching?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q07",
+      "label": "What does packet mean strictly in the seven-layer OSI model?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q08",
+      "label": "What is the Layer 2 term corresponding to packet?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q09",
+      "label": "What are TCP and datagram transport data units called here?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q10",
+      "label": "How does a TCP segment become carried by Ethernet?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q11",
+      "label": "What does the postal-letter analogy explain?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q12",
+      "label": "How do packets support multiple-host addressing?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q13",
+      "label": "What are source and destination network addresses used for?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q14",
+      "label": "What are checksum, parity bits, and CRC used for?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q15",
+      "label": "Why does the receiver recalculate a checksum?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q16",
+      "label": "What can happen when error-control values disagree?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q17",
+      "label": "How can packet loss arise from error handling?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q18",
+      "label": "What problem does TTL address?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q19",
+      "label": "What happens when TTL reaches zero?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q20",
+      "label": "Why can routing loops cause congestion?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q21",
+      "label": "Why are Ethernet switching loops especially associated with broadcast storms in the source?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q22",
+      "label": "What is packet length?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q23",
+      "label": "When can packet length be implied by transmission duration?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q24",
+      "label": "What is a protocol identifier?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q25",
+      "label": "How can priority affect packet handling?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q26",
+      "label": "What happens to priority queues under congestion?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q27",
+      "label": "What constrains payload size?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q28",
+      "label": "When might fragmentation occur?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q29",
+      "label": "What is reassembly?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q30",
+      "label": "How does PPP delimit packet elements?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q31",
+      "label": "How does Ethernet establish header/data boundaries according to the source?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q32",
+      "label": "What does bit-level formatting mean?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q33",
+      "label": "What are the main structural components of an IP packet?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q34",
+      "label": "Does an IP packet have a trailer?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q35",
+      "label": "What does an Ethernet frame add around an IP packet?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q36",
+      "label": "What guarantees does IP not provide?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q37",
+      "label": "How does TCP compensate for IP's best-effort service?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q38",
+      "label": "What is the end-to-end principle's relevance here?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q39",
+      "label": "How does TCP retransmission relate to packet loss?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q40",
+      "label": "How does CCSDS use packets in deep-space telemetry?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q41",
+      "label": "How does spacecraft instrument data enter packet telemetry?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q42",
+      "label": "What is PES?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q43",
+      "label": "How are elementary streams packetized into PES packets?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q44",
+      "label": "How can PES packets be carried in MPEG TS or PS?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q45",
+      "label": "How can MPEG TS be broadcast?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q46",
+      "label": "What is NICAM packet scrambling intended to accomplish?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q47",
+      "label": "What does the nine-bit pseudo-random generator do in NICAM?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q48",
+      "label": "Why make the NICAM bitstream resemble white noise?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q49",
+      "label": "What is the relationship between packetization and signal transmission?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q50",
+      "label": "What is a packet analyzer used for?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q51",
+      "label": "What is fast packet switching?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q52",
+      "label": "What is statistical time-division multiplexing?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q53",
+      "label": "What is tail drop?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q54",
+      "label": "What is anti-replay?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q55",
+      "label": "What is a mangled packet?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q56",
+      "label": "Why is packet format protocol-dependent?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q57",
+      "label": "Why can a packet contain both routing metadata and application data?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q58",
+      "label": "Why can checksums need recalculation during routing?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q59",
+      "label": "How can packet nesting occur across layers?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q60",
+      "label": "How does packet terminology differ between strict OSI usage and general networking usage?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "q61",
+      "label": "Why is packetization useful in shared communication media?",
+      "type": "learning_question",
+      "description": "Question for review or graph traversal."
+    },
+    {
+      "id": "expand_ipv4",
+      "label": "IPv4 packet field-level expansion",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_ipv6",
+      "label": "IPv6 packet and extension-header expansion",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_tcp",
+      "label": "TCP segment header, sequence, ACK, retransmission, congestion-control expansion",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_udp",
+      "label": "UDP datagram structure and service expansion",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_ethernet",
+      "label": "Ethernet frame fields, MAC addressing, FCS, VLAN, MTU expansion",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_routing",
+      "label": "Router forwarding tables and routing protocols",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_fragmentation",
+      "label": "IPv4/IPv6 fragmentation and path MTU behavior",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_qos",
+      "label": "DSCP, queues, scheduling, congestion management",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_packet_capture",
+      "label": "Packet capture/analyzer workflow",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_security",
+      "label": "IPsec, anti-replay, integrity/authentication packet fields",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_quic",
+      "label": "QUIC packet structure and UDP encapsulation",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_http3",
+      "label": "HTTP/3 → QUIC → UDP relationship",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_mtu",
+      "label": "MTU, MSS, fragmentation, PMTUD",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_wire",
+      "label": "On-wire byte/bit layout",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_nic",
+      "label": "NIC transmit/receive path",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_switch",
+      "label": "Ethernet switch forwarding and broadcast domains",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_router",
+      "label": "Router ingress/egress pipeline",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_ccsds",
+      "label": "CCSDS packet telemetry fields and spacecraft link stack",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_mpeg",
+      "label": "MPEG PES/TS packet headers and timing",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "expand_nicam",
+      "label": "NICAM framing/scrambling details",
+      "type": "expansion_target",
+      "description": "Suggested next graph expansion target."
+    },
+    {
+      "id": "claim01",
+      "label": "Packet definition",
+      "type": "source_claim",
+      "description": "A network packet is a formatted unit of data carried by a packet-switched network; it contains control information and payload.",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "id": "claim02",
+      "label": "Control information",
+      "type": "source_claim",
+      "description": "Control information supports delivery and is typically located in headers and trailers.",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "id": "claim03",
+      "label": "Switching distinction",
+      "type": "source_claim",
+      "description": "Packet switching shares transmission-medium bandwidth while circuit switching preallocates circuits.",
+      "source_section": "opening switching paragraph"
+    },
+    {
+      "id": "claim04",
+      "label": "OSI terminology",
+      "type": "source_claim",
+      "description": "Strictly in the seven-layer OSI model, packet is Layer 3; Layer 2 uses frame and Layer 4 uses segment/datagram.",
+      "source_section": "Terminology section"
+    },
+    {
+      "id": "claim05",
+      "label": "Addressing",
+      "type": "source_claim",
+      "description": "Source and destination network addresses support packet routing.",
+      "source_section": "Contents > Addresses"
+    },
+    {
+      "id": "claim06",
+      "label": "Error handling",
+      "type": "source_claim",
+      "description": "Packets may contain checksums, parity bits, or CRCs; mismatches may lead to correction or discard.",
+      "source_section": "Contents > Error detection and correction"
+    },
+    {
+      "id": "claim07",
+      "label": "TTL",
+      "type": "source_claim",
+      "description": "TTL decreases at each network hop and reaching zero causes discard.",
+      "source_section": "Contents > Hop limit"
+    },
+    {
+      "id": "claim08",
+      "label": "Other fields",
+      "type": "source_claim",
+      "description": "Packets may contain length, protocol identifier, priority, and variable-length payload fields.",
+      "source_section": "Contents > Length / Protocol identifier / Priority / Payload"
+    },
+    {
+      "id": "claim09",
+      "label": "Framing",
+      "type": "source_claim",
+      "description": "Protocols use byte delimiters, positional conventions, or bit-level formatting to distinguish packet elements.",
+      "source_section": "Framing section"
+    },
+    {
+      "id": "claim10",
+      "label": "IP/TCP/Ethernet",
+      "type": "source_claim",
+      "description": "TCP segments can be carried in IP packets, which can be carried in Ethernet frames.",
+      "source_section": "Terminology and Internet protocol example"
+    },
+    {
+      "id": "claim11",
+      "label": "IP service",
+      "type": "source_claim",
+      "description": "IP does not guarantee delivery, non-duplication, or in-order delivery.",
+      "source_section": "Internet protocol example"
+    },
+    {
+      "id": "claim12",
+      "label": "Examples",
+      "type": "source_claim",
+      "description": "CCSDS, MPEG PES, and NICAM illustrate packetization in spacecraft telemetry, media transport, and digital audio.",
+      "source_section": "Examples section"
+    },
+    {
+      "id": "claim13",
+      "label": "NICAM",
+      "type": "source_claim",
+      "description": "NICAM scrambles packet data with a nine-bit pseudo-random generator to reduce adjacent-channel signal patterning.",
+      "source_section": "NICAM example"
+    },
+    {
+      "id": "historical_1",
+      "label": "Historical 1",
+      "type": "source_mentioned_concept",
+      "description": "Concept referenced by the supplied source material or by an explicit relationship in the graph; retained as a distinct node for referential integrity."
+    },
+    {
+      "id": "historical_2",
+      "label": "Historical 2",
+      "type": "source_mentioned_concept",
+      "description": "Concept referenced by the supplied source material or by an explicit relationship in the graph; retained as a distinct node for referential integrity."
+    },
+    {
+      "id": "historical_3",
+      "label": "Historical 3",
+      "type": "source_mentioned_concept",
+      "description": "Concept referenced by the supplied source material or by an explicit relationship in the graph; retained as a distinct node for referential integrity."
+    },
+    {
+      "id": "historical_4",
+      "label": "Historical 4",
+      "type": "source_mentioned_concept",
+      "description": "Concept referenced by the supplied source material or by an explicit relationship in the graph; retained as a distinct node for referential integrity."
+    },
+    {
+      "id": "historical_5",
+      "label": "Historical 5",
+      "type": "source_mentioned_concept",
+      "description": "Concept referenced by the supplied source material or by an explicit relationship in the graph; retained as a distinct node for referential integrity."
+    },
+    {
+      "id": "historical_6",
+      "label": "Historical 6",
+      "type": "source_mentioned_concept",
+      "description": "Concept referenced by the supplied source material or by an explicit relationship in the graph; retained as a distinct node for referential integrity."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "network_packet",
+      "target": "packet_switching",
+      "relationship": "is_unit_carried_by",
+      "mechanism": "Packets are the formatted data units carried by packet-switched networks."
+    },
+    {
+      "source": "packet_switching",
+      "target": "circuit_switching",
+      "relationship": "contrasts_with",
+      "mechanism": "Packet switching shares bandwidth among sessions; circuit switching preallocates circuits."
+    },
+    {
+      "source": "network_packet",
+      "target": "control_information",
+      "relationship": "contains",
+      "mechanism": "Control information supports delivery and processing."
+    },
+    {
+      "source": "network_packet",
+      "target": "payload",
+      "relationship": "contains",
+      "mechanism": "Payload is user/application data carried by the packet."
+    },
+    {
+      "source": "network_packet",
+      "target": "header",
+      "relationship": "contains",
+      "mechanism": "Control information is typically placed in headers."
+    },
+    {
+      "source": "network_packet",
+      "target": "trailer",
+      "relationship": "may_contain",
+      "mechanism": "Control information may also be placed in trailers."
+    },
+    {
+      "source": "header",
+      "target": "control_information",
+      "relationship": "carries"
+    },
+    {
+      "source": "trailer",
+      "target": "control_information",
+      "relationship": "carries"
+    },
+    {
+      "source": "network_packet",
+      "target": "postal_analogy",
+      "relationship": "explained_by",
+      "mechanism": "Header/envelope, payload/content, trailer/signature analogy."
+    },
+    {
+      "source": "network_packet",
+      "target": "error_detection",
+      "relationship": "enables",
+      "mechanism": "Packet structure can support error detection."
+    },
+    {
+      "source": "network_packet",
+      "target": "multiple_host_addressing",
+      "relationship": "enables",
+      "mechanism": "Source/destination addressing enables delivery among multiple hosts."
+    },
+    {
+      "source": "network_packet",
+      "target": "packet_format",
+      "relationship": "conforms_to",
+      "mechanism": "A packet is formatted according to protocol conventions."
+    },
+    {
+      "source": "protocol_data_unit",
+      "target": "network_packet",
+      "relationship": "specializes_as",
+      "mechanism": "Packet is a layer-specific PDU in the strict Layer 3 terminology."
+    },
+    {
+      "source": "osi_layer_3",
+      "target": "network_packet",
+      "relationship": "defines_terminology",
+      "mechanism": "In OSI terminology packet strictly refers to a Layer 3 PDU."
+    },
+    {
+      "source": "osi_layer_2",
+      "target": "frame",
+      "relationship": "uses_pdu_term"
+    },
+    {
+      "source": "osi_layer_4",
+      "target": "segment",
+      "relationship": "uses_pdu_term"
+    },
+    {
+      "source": "osi_layer_4",
+      "target": "datagram",
+      "relationship": "uses_pdu_term"
+    },
+    {
+      "source": "tcp_ip",
+      "target": "osi_layer_3",
+      "relationship": "implements_network_layer_example"
+    },
+    {
+      "source": "tcp_ip",
+      "target": "osi_layer_4",
+      "relationship": "implements_transport_layer_example"
+    },
+    {
+      "source": "network_packet",
+      "target": "source_address",
+      "relationship": "contains"
+    },
+    {
+      "source": "network_packet",
+      "target": "destination_address",
+      "relationship": "contains"
+    },
+    {
+      "source": "source_address",
+      "target": "routing",
+      "relationship": "supports"
+    },
+    {
+      "source": "destination_address",
+      "target": "routing",
+      "relationship": "determines_target_for"
+    },
+    {
+      "source": "network_addressing",
+      "target": "source_address",
+      "relationship": "uses"
+    },
+    {
+      "source": "network_addressing",
+      "target": "destination_address",
+      "relationship": "uses"
+    },
+    {
+      "source": "network_packet",
+      "target": "routing",
+      "relationship": "is_subject_to"
+    },
+    {
+      "source": "routing",
+      "target": "network_hop",
+      "relationship": "uses"
+    },
+    {
+      "source": "network_hop",
+      "target": "ttl",
+      "relationship": "decrements",
+      "mechanism": "TTL decreases by one at each network hop."
+    },
+    {
+      "source": "ttl",
+      "target": "routing_loop",
+      "relationship": "limits_effects_of",
+      "mechanism": "A decreasing TTL prevents indefinite circulation."
+    },
+    {
+      "source": "routing_loop",
+      "target": "congestion",
+      "relationship": "can_cause",
+      "mechanism": "Closed packet circuits can cause packet buildup and congestion."
+    },
+    {
+      "source": "ttl",
+      "target": "packet_discard",
+      "relationship": "can_trigger",
+      "mechanism": "Packet is discarded when TTL reaches zero."
+    },
+    {
+      "source": "ethernet",
+      "target": "ethernet_ttl_absence",
+      "relationship": "has_property"
+    },
+    {
+      "source": "ethernet_ttl_absence",
+      "target": "broadcast_storm",
+      "relationship": "increases_risk_of",
+      "mechanism": "Without a TTL field, switching loops can produce broadcast storms."
+    },
+    {
+      "source": "network_packet",
+      "target": "checksum",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "network_packet",
+      "target": "parity_bits",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "network_packet",
+      "target": "crc",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "checksum",
+      "target": "error_detection",
+      "relationship": "supports"
+    },
+    {
+      "source": "transmission_calculation",
+      "target": "checksum",
+      "relationship": "computes"
+    },
+    {
+      "source": "transmission_calculation",
+      "target": "network_packet",
+      "relationship": "precedes_transmission_of"
+    },
+    {
+      "source": "receiver_recalculation",
+      "target": "checksum",
+      "relationship": "recomputes"
+    },
+    {
+      "source": "receiver_recalculation",
+      "target": "transmission_calculation",
+      "relationship": "compares_against"
+    },
+    {
+      "source": "receiver_recalculation",
+      "target": "packet_correction",
+      "relationship": "can_trigger"
+    },
+    {
+      "source": "receiver_recalculation",
+      "target": "packet_discard",
+      "relationship": "can_trigger"
+    },
+    {
+      "source": "packet_discard",
+      "target": "packet_loss",
+      "relationship": "causes"
+    },
+    {
+      "source": "packet_loss",
+      "target": "protocol_recovery",
+      "relationship": "is_handled_by"
+    },
+    {
+      "source": "error_detection",
+      "target": "error_correction",
+      "relationship": "can_lead_to",
+      "mechanism": "Detection can precede correction where supported."
+    },
+    {
+      "source": "error_detection",
+      "target": "packet_discard",
+      "relationship": "can_lead_to",
+      "mechanism": "Detected corruption may cause discard."
+    },
+    {
+      "source": "network_packet",
+      "target": "sequence_information",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "network_packet",
+      "target": "packet_length",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "packet_length",
+      "target": "packet_format",
+      "relationship": "describes"
+    },
+    {
+      "source": "network_packet",
+      "target": "protocol_identifier",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "protocol_identifier",
+      "target": "protocol_data_unit",
+      "relationship": "identifies"
+    },
+    {
+      "source": "network_packet",
+      "target": "priority",
+      "relationship": "may_contain"
+    },
+    {
+      "source": "priority",
+      "target": "packet_queue",
+      "relationship": "selects"
+    },
+    {
+      "source": "priority",
+      "target": "qos",
+      "relationship": "supports"
+    },
+    {
+      "source": "qos",
+      "target": "congestion",
+      "relationship": "acts_during"
+    },
+    {
+      "source": "packet_queue",
+      "target": "congestion",
+      "relationship": "processes_under"
+    },
+    {
+      "source": "network_packet",
+      "target": "variable_payload",
+      "relationship": "has_property"
+    },
+    {
+      "source": "variable_payload",
+      "target": "maximum_payload",
+      "relationship": "bounded_by"
+    },
+    {
+      "source": "maximum_payload",
+      "target": "fragmentation",
+      "relationship": "can_trigger"
+    },
+    {
+      "source": "fragmentation",
+      "target": "network_packet",
+      "relationship": "creates_smaller_instances_of"
+    },
+    {
+      "source": "fragmentation",
+      "target": "reassembly",
+      "relationship": "requires_for_logical_restoration"
+    },
+    {
+      "source": "reassembly",
+      "target": "network_packet",
+      "relationship": "reconstructs_logical_unit"
+    },
+    {
+      "source": "framing",
+      "target": "packet_format",
+      "relationship": "defines"
+    },
+    {
+      "source": "ppp",
+      "target": "byte_delimiting",
+      "relationship": "uses"
+    },
+    {
+      "source": "byte_delimiting",
+      "target": "framing",
+      "relationship": "is_method_of"
+    },
+    {
+      "source": "location_based_framing",
+      "target": "framing",
+      "relationship": "is_method_of"
+    },
+    {
+      "source": "bit_level_formatting",
+      "target": "framing",
+      "relationship": "is_method_of"
+    },
+    {
+      "source": "ppp",
+      "target": "network_packet",
+      "relationship": "formats"
+    },
+    {
+      "source": "ethernet",
+      "target": "location_based_framing",
+      "relationship": "uses"
+    },
+    {
+      "source": "network_packet",
+      "target": "framing",
+      "relationship": "can_be_subject_to"
+    },
+    {
+      "source": "ip",
+      "target": "ip_packet",
+      "relationship": "defines"
+    },
+    {
+      "source": "ip_packet",
+      "target": "ip_header",
+      "relationship": "contains"
+    },
+    {
+      "source": "ip_packet",
+      "target": "ip_payload",
+      "relationship": "contains"
+    },
+    {
+      "source": "ip_packet",
+      "target": "ip_no_trailer",
+      "relationship": "has_property"
+    },
+    {
+      "source": "ip_packet",
+      "target": "network_packet",
+      "relationship": "specializes_as"
+    },
+    {
+      "source": "ip_packet",
+      "target": "ethernet_frame",
+      "relationship": "is_encapsulated_in"
+    },
+    {
+      "source": "ethernet_frame",
+      "target": "ethernet_header",
+      "relationship": "contains"
+    },
+    {
+      "source": "ethernet_frame",
+      "target": "ethernet_trailer",
+      "relationship": "contains"
+    },
+    {
+      "source": "ethernet_frame",
+      "target": "ip_packet",
+      "relationship": "carries_as_payload"
+    },
+    {
+      "source": "tcp",
+      "target": "tcp_segment",
+      "relationship": "defines"
+    },
+    {
+      "source": "tcp_segment",
+      "target": "ip_packet",
+      "relationship": "is_carried_by"
+    },
+    {
+      "source": "tcp_segment",
+      "target": "ip_payload",
+      "relationship": "occupies"
+    },
+    {
+      "source": "tcp_ip",
+      "target": "tcp",
+      "relationship": "uses"
+    },
+    {
+      "source": "tcp_ip",
+      "target": "ip",
+      "relationship": "uses"
+    },
+    {
+      "source": "tcp_ip",
+      "target": "ethernet",
+      "relationship": "example_link"
+    },
+    {
+      "source": "tcp",
+      "target": "tcp_reliability",
+      "relationship": "provides"
+    },
+    {
+      "source": "tcp_reliability",
+      "target": "delivery_guarantee",
+      "relationship": "supports"
+    },
+    {
+      "source": "tcp_reliability",
+      "target": "non_duplication",
+      "relationship": "supports"
+    },
+    {
+      "source": "tcp_reliability",
+      "target": "in_order_delivery",
+      "relationship": "supports"
+    },
+    {
+      "source": "tcp",
+      "target": "tcp_retransmission",
+      "relationship": "uses"
+    },
+    {
+      "source": "tcp_retransmission",
+      "target": "packet_loss",
+      "relationship": "responds_to"
+    },
+    {
+      "source": "ip",
+      "target": "delivery_guarantee",
+      "relationship": "does_not_guarantee"
+    },
+    {
+      "source": "ip",
+      "target": "non_duplication",
+      "relationship": "does_not_guarantee"
+    },
+    {
+      "source": "ip",
+      "target": "in_order_delivery",
+      "relationship": "does_not_guarantee"
+    },
+    {
+      "source": "end_to_end",
+      "target": "ip",
+      "relationship": "characterizes_service_of"
+    },
+    {
+      "source": "end_to_end",
+      "target": "tcp",
+      "relationship": "permits_reliability_above"
+    },
+    {
+      "source": "ip_packet",
+      "target": "tcp_segment",
+      "relationship": "can_carry_as_payload"
+    },
+    {
+      "source": "tcp_segment",
+      "target": "ip_packet",
+      "relationship": "becomes_payload_of"
+    },
+    {
+      "source": "ip_packet",
+      "target": "network_packet",
+      "relationship": "is_a"
+    },
+    {
+      "source": "ccsds",
+      "target": "packet_telemetry",
+      "relationship": "standardizes"
+    },
+    {
+      "source": "deep_space_network",
+      "target": "packet_telemetry",
+      "relationship": "uses"
+    },
+    {
+      "source": "packet_telemetry",
+      "target": "network_packet",
+      "relationship": "uses"
+    },
+    {
+      "source": "spacecraft_instrument",
+      "target": "instrument_data",
+      "relationship": "produces"
+    },
+    {
+      "source": "instrument_data",
+      "target": "packet_telemetry",
+      "relationship": "is_transmitted_by"
+    },
+    {
+      "source": "packet_telemetry",
+      "target": "deep_space_network",
+      "relationship": "transmits_over"
+    },
+    {
+      "source": "instrument_data",
+      "target": "network_packet",
+      "relationship": "becomes_payload_in"
+    },
+    {
+      "source": "mpeg",
+      "target": "pes",
+      "relationship": "specifies"
+    },
+    {
+      "source": "elementary_stream",
+      "target": "pes",
+      "relationship": "is_packetized_into"
+    },
+    {
+      "source": "pes",
+      "target": "pes_header",
+      "relationship": "uses"
+    },
+    {
+      "source": "pes",
+      "target": "mpeg_ts",
+      "relationship": "can_be_encapsulated_in"
+    },
+    {
+      "source": "pes",
+      "target": "mpeg_ps",
+      "relationship": "can_be_encapsulated_in"
+    },
+    {
+      "source": "mpeg_ts",
+      "target": "atsc",
+      "relationship": "can_be_transmitted_by"
+    },
+    {
+      "source": "mpeg_ts",
+      "target": "dvb",
+      "relationship": "can_be_transmitted_by"
+    },
+    {
+      "source": "mpeg",
+      "target": "elementary_stream",
+      "relationship": "processes"
+    },
+    {
+      "source": "pes",
+      "target": "network_packet",
+      "relationship": "is_packetized_data_unit"
+    },
+    {
+      "source": "nicam",
+      "target": "mono_compatibility",
+      "relationship": "provides"
+    },
+    {
+      "source": "nicam",
+      "target": "subcarrier",
+      "relationship": "uses"
+    },
+    {
+      "source": "nicam",
+      "target": "sound_carrier",
+      "relationship": "leaves_unchanged"
+    },
+    {
+      "source": "nicam",
+      "target": "nicam_packet",
+      "relationship": "transmits"
+    },
+    {
+      "source": "nicam_packet",
+      "target": "prbs9",
+      "relationship": "is_scrambled_by"
+    },
+    {
+      "source": "prbs9",
+      "target": "white_noise",
+      "relationship": "makes_bitstream_resemble"
+    },
+    {
+      "source": "white_noise",
+      "target": "adjacent_channel_patterning",
+      "relationship": "reduces"
+    },
+    {
+      "source": "nicam_packet",
+      "target": "network_packet",
+      "relationship": "is_packetized_signal_data"
+    },
+    {
+      "source": "packet_analyzer",
+      "target": "network_packet",
+      "relationship": "inspects"
+    },
+    {
+      "source": "packet_generation_model",
+      "target": "network_packet",
+      "relationship": "models"
+    },
+    {
+      "source": "anti_replay",
+      "target": "network_packet",
+      "relationship": "protects_against_reuse_of"
+    },
+    {
+      "source": "fast_packet_switching",
+      "target": "packet_switching",
+      "relationship": "specializes"
+    },
+    {
+      "source": "mangled_packet",
+      "target": "network_packet",
+      "relationship": "describes_corrupted_or_misformed"
+    },
+    {
+      "source": "statistical_tdm",
+      "target": "packet_switching",
+      "relationship": "supports_capacity_sharing"
+    },
+    {
+      "source": "tail_drop",
+      "target": "packet_queue",
+      "relationship": "operates_on"
+    },
+    {
+      "source": "network_packet_category",
+      "target": "network_packet",
+      "relationship": "categorizes"
+    },
+    {
+      "source": "ref_stallings_2001",
+      "target": "network_packet",
+      "relationship": "provides_reference_for"
+    },
+    {
+      "source": "ref_osi_model",
+      "target": "network_packet",
+      "relationship": "provides_reference_for"
+    },
+    {
+      "source": "ref_tcpip_guide",
+      "target": "network_packet",
+      "relationship": "provides_reference_for"
+    },
+    {
+      "source": "ref_uk_link_layer",
+      "target": "network_packet",
+      "relationship": "provides_reference_for"
+    },
+    {
+      "source": "ref_cnp3",
+      "target": "network_packet",
+      "relationship": "provides_reference_for"
+    },
+    {
+      "source": "ref_network_encyclopedia",
+      "target": "network_packet",
+      "relationship": "provides_reference_for"
+    },
+    {
+      "source": "historical_1",
+      "target": "packet_switching",
+      "relationship": "contextualizes"
+    },
+    {
+      "source": "historical_2",
+      "target": "osi_layer_3",
+      "relationship": "contextualizes"
+    },
+    {
+      "source": "historical_3",
+      "target": "tcp_ip",
+      "relationship": "illustrates"
+    },
+    {
+      "source": "historical_4",
+      "target": "packet_telemetry",
+      "relationship": "illustrates"
+    },
+    {
+      "source": "historical_5",
+      "target": "pes",
+      "relationship": "illustrates"
+    },
+    {
+      "source": "historical_6",
+      "target": "nicam",
+      "relationship": "illustrates"
+    },
+    {
+      "source": "model_packet_structure",
+      "target": "network_packet",
+      "relationship": "models"
+    },
+    {
+      "source": "model_header_trailer",
+      "target": "network_packet",
+      "relationship": "models"
+    },
+    {
+      "source": "model_encapsulation",
+      "target": "tcp_segment",
+      "relationship": "models"
+    },
+    {
+      "source": "model_encapsulation",
+      "target": "ip_packet",
+      "relationship": "contains_stage"
+    },
+    {
+      "source": "model_encapsulation",
+      "target": "ethernet_frame",
+      "relationship": "contains_stage"
+    },
+    {
+      "source": "model_decapsulation",
+      "target": "ethernet_frame",
+      "relationship": "starts_with"
+    },
+    {
+      "source": "model_decapsulation",
+      "target": "tcp_segment",
+      "relationship": "ends_with"
+    },
+    {
+      "source": "model_routing",
+      "target": "network_packet",
+      "relationship": "models"
+    },
+    {
+      "source": "model_error_check",
+      "target": "checksum",
+      "relationship": "models"
+    },
+    {
+      "source": "model_ttl",
+      "target": "ttl",
+      "relationship": "models"
+    },
+    {
+      "source": "model_qos",
+      "target": "priority",
+      "relationship": "models"
+    },
+    {
+      "source": "model_fragmentation",
+      "target": "fragmentation",
+      "relationship": "models"
+    },
+    {
+      "source": "model_fragmentation",
+      "target": "reassembly",
+      "relationship": "models"
+    },
+    {
+      "source": "model_ip_service",
+      "target": "ip",
+      "relationship": "models"
+    },
+    {
+      "source": "model_tcp_service",
+      "target": "tcp",
+      "relationship": "models"
+    },
+    {
+      "source": "model_pes",
+      "target": "pes",
+      "relationship": "models"
+    },
+    {
+      "source": "packet_vs_frame",
+      "target": "network_packet",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_frame",
+      "target": "frame",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_segment",
+      "target": "network_packet",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_segment",
+      "target": "segment",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_datagram",
+      "target": "network_packet",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_datagram",
+      "target": "datagram",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "header_vs_payload",
+      "target": "header",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "header_vs_payload",
+      "target": "payload",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "header_vs_trailer",
+      "target": "header",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "header_vs_trailer",
+      "target": "trailer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_switching_vs_circuit",
+      "target": "packet_switching",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_switching_vs_circuit",
+      "target": "circuit_switching",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "error_detection_vs_correction",
+      "target": "error_detection",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "error_detection_vs_correction",
+      "target": "error_correction",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "ttl_vs_ethernet",
+      "target": "ttl",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "ttl_vs_ethernet",
+      "target": "ethernet_ttl_absence",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "priority_vs_payload",
+      "target": "priority",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "priority_vs_payload",
+      "target": "payload",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "ip_vs_tcp",
+      "target": "ip",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "ip_vs_tcp",
+      "target": "tcp",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "fragmentation_vs_reassembly",
+      "target": "fragmentation",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "fragmentation_vs_reassembly",
+      "target": "reassembly",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_protocol",
+      "target": "network_packet",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "packet_vs_protocol",
+      "target": "packet_format",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "osi_term_vs_general_usage",
+      "target": "protocol_data_unit",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "osi_term_vs_general_usage",
+      "target": "network_packet",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "ip_trailer_vs_ethernet_trailer",
+      "target": "ip_no_trailer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "ip_trailer_vs_ethernet_trailer",
+      "target": "ethernet_trailer",
+      "relationship": "distinguishes"
+    },
+    {
+      "source": "path_packet_basics",
+      "target": "network_packet",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_packet_basics",
+      "target": "control_information",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_packet_basics",
+      "target": "payload",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_packet_basics",
+      "target": "header",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_packet_basics",
+      "target": "trailer",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_switching",
+      "target": "packet_switching",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_switching",
+      "target": "circuit_switching",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_osi_terms",
+      "target": "osi_layer_2",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_osi_terms",
+      "target": "frame",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_osi_terms",
+      "target": "osi_layer_3",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_osi_terms",
+      "target": "network_packet",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_osi_terms",
+      "target": "osi_layer_4",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_osi_terms",
+      "target": "segment",
+      "relationship": "teaches_before",
+      "order": 6
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "source_address",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "destination_address",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "checksum",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "ttl",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "packet_length",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "protocol_identifier",
+      "relationship": "teaches_before",
+      "order": 6
+    },
+    {
+      "source": "path_packet_fields",
+      "target": "priority",
+      "relationship": "teaches_before",
+      "order": 7
+    },
+    {
+      "source": "path_routing",
+      "target": "source_address",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_routing",
+      "target": "destination_address",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_routing",
+      "target": "routing",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_routing",
+      "target": "network_hop",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_routing",
+      "target": "ttl",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_errors",
+      "target": "checksum",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_errors",
+      "target": "transmission_calculation",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_errors",
+      "target": "receiver_recalculation",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_errors",
+      "target": "error_detection",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_errors",
+      "target": "packet_correction",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_errors",
+      "target": "packet_discard",
+      "relationship": "teaches_before",
+      "order": 6
+    },
+    {
+      "source": "path_qos",
+      "target": "priority",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_qos",
+      "target": "packet_queue",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_qos",
+      "target": "qos",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_size",
+      "target": "variable_payload",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_size",
+      "target": "maximum_payload",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_size",
+      "target": "fragmentation",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_framing",
+      "target": "framing",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_framing",
+      "target": "ppp",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_framing",
+      "target": "byte_delimiting",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_framing",
+      "target": "location_based_framing",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_tcp_ip",
+      "target": "tcp_segment",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_tcp_ip",
+      "target": "ip_packet",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_tcp_ip",
+      "target": "ethernet_frame",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_tcp_ip",
+      "target": "tcp",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_tcp_ip",
+      "target": "ip",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_space",
+      "target": "spacecraft_instrument",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_space",
+      "target": "instrument_data",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_space",
+      "target": "packet_telemetry",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_space",
+      "target": "ccsds",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_media",
+      "target": "elementary_stream",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_media",
+      "target": "pes",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_media",
+      "target": "mpeg_ts",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_media",
+      "target": "mpeg_ps",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_media",
+      "target": "atsc",
+      "relationship": "teaches_before",
+      "order": 5
+    },
+    {
+      "source": "path_nicam",
+      "target": "nicam",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_nicam",
+      "target": "nicam_packet",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_nicam",
+      "target": "prbs9",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_nicam",
+      "target": "white_noise",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "path_end_to_end",
+      "target": "end_to_end",
+      "relationship": "teaches_before",
+      "order": 1
+    },
+    {
+      "source": "path_end_to_end",
+      "target": "ip",
+      "relationship": "teaches_before",
+      "order": 2
+    },
+    {
+      "source": "path_end_to_end",
+      "target": "tcp",
+      "relationship": "teaches_before",
+      "order": 3
+    },
+    {
+      "source": "path_end_to_end",
+      "target": "tcp_reliability",
+      "relationship": "teaches_before",
+      "order": 4
+    },
+    {
+      "source": "m1",
+      "target": "protocol_data_unit",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m2",
+      "target": "ip_no_trailer",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m3",
+      "target": "ip",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m4",
+      "target": "ip",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m5",
+      "target": "ip",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m6",
+      "target": "tcp",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m7",
+      "target": "ethernet_ttl_absence",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m8",
+      "target": "framing",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m9",
+      "target": "fragmentation",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "m10",
+      "target": "priority",
+      "relationship": "corrected_by"
+    },
+    {
+      "source": "expand_ipv4",
+      "target": "ip_packet",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_ipv6",
+      "target": "ip_packet",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_tcp",
+      "target": "tcp_segment",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_udp",
+      "target": "datagram",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_ethernet",
+      "target": "ethernet_frame",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_routing",
+      "target": "routing",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_fragmentation",
+      "target": "fragmentation",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_qos",
+      "target": "qos",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_packet_capture",
+      "target": "packet_analyzer",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_security",
+      "target": "anti_replay",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_quic",
+      "target": "tcp_ip",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_http3",
+      "target": "tcp_ip",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_mtu",
+      "target": "maximum_payload",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_wire",
+      "target": "framing",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_nic",
+      "target": "network_packet",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_switch",
+      "target": "ethernet",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_router",
+      "target": "routing",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_ccsds",
+      "target": "packet_telemetry",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_mpeg",
+      "target": "pes",
+      "relationship": "expands"
+    },
+    {
+      "source": "expand_nicam",
+      "target": "nicam",
+      "relationship": "expands"
+    },
+    {
+      "source": "claim01",
+      "target": "network_packet",
+      "relationship": "supports_claim",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "source": "claim01",
+      "target": "control_information",
+      "relationship": "supports_claim",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "source": "claim01",
+      "target": "payload",
+      "relationship": "supports_claim",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "source": "claim02",
+      "target": "control_information",
+      "relationship": "supports_claim",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "source": "claim02",
+      "target": "header",
+      "relationship": "supports_claim",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "source": "claim02",
+      "target": "trailer",
+      "relationship": "supports_claim",
+      "source_section": "opening definition paragraph"
+    },
+    {
+      "source": "claim03",
+      "target": "packet_switching",
+      "relationship": "supports_claim",
+      "source_section": "opening switching paragraph"
+    },
+    {
+      "source": "claim03",
+      "target": "circuit_switching",
+      "relationship": "supports_claim",
+      "source_section": "opening switching paragraph"
+    },
+    {
+      "source": "claim04",
+      "target": "osi_layer_2",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim04",
+      "target": "osi_layer_3",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim04",
+      "target": "osi_layer_4",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim04",
+      "target": "frame",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim04",
+      "target": "network_packet",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim04",
+      "target": "segment",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim04",
+      "target": "datagram",
+      "relationship": "supports_claim",
+      "source_section": "Terminology section"
+    },
+    {
+      "source": "claim05",
+      "target": "source_address",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Addresses"
+    },
+    {
+      "source": "claim05",
+      "target": "destination_address",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Addresses"
+    },
+    {
+      "source": "claim05",
+      "target": "routing",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Addresses"
+    },
+    {
+      "source": "claim06",
+      "target": "checksum",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Error detection and correction"
+    },
+    {
+      "source": "claim06",
+      "target": "parity_bits",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Error detection and correction"
+    },
+    {
+      "source": "claim06",
+      "target": "crc",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Error detection and correction"
+    },
+    {
+      "source": "claim06",
+      "target": "error_detection",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Error detection and correction"
+    },
+    {
+      "source": "claim06",
+      "target": "packet_discard",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Error detection and correction"
+    },
+    {
+      "source": "claim07",
+      "target": "ttl",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Hop limit"
+    },
+    {
+      "source": "claim07",
+      "target": "network_hop",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Hop limit"
+    },
+    {
+      "source": "claim07",
+      "target": "packet_discard",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Hop limit"
+    },
+    {
+      "source": "claim08",
+      "target": "packet_length",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Length / Protocol identifier / Priority / Payload"
+    },
+    {
+      "source": "claim08",
+      "target": "protocol_identifier",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Length / Protocol identifier / Priority / Payload"
+    },
+    {
+      "source": "claim08",
+      "target": "priority",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Length / Protocol identifier / Priority / Payload"
+    },
+    {
+      "source": "claim08",
+      "target": "variable_payload",
+      "relationship": "supports_claim",
+      "source_section": "Contents > Length / Protocol identifier / Priority / Payload"
+    },
+    {
+      "source": "claim09",
+      "target": "framing",
+      "relationship": "supports_claim",
+      "source_section": "Framing section"
+    },
+    {
+      "source": "claim09",
+      "target": "ppp",
+      "relationship": "supports_claim",
+      "source_section": "Framing section"
+    },
+    {
+      "source": "claim09",
+      "target": "location_based_framing",
+      "relationship": "supports_claim",
+      "source_section": "Framing section"
+    },
+    {
+      "source": "claim09",
+      "target": "bit_level_formatting",
+      "relationship": "supports_claim",
+      "source_section": "Framing section"
+    },
+    {
+      "source": "claim10",
+      "target": "tcp_segment",
+      "relationship": "supports_claim",
+      "source_section": "Terminology and Internet protocol example"
+    },
+    {
+      "source": "claim10",
+      "target": "ip_packet",
+      "relationship": "supports_claim",
+      "source_section": "Terminology and Internet protocol example"
+    },
+    {
+      "source": "claim10",
+      "target": "ethernet_frame",
+      "relationship": "supports_claim",
+      "source_section": "Terminology and Internet protocol example"
+    },
+    {
+      "source": "claim11",
+      "target": "ip",
+      "relationship": "supports_claim",
+      "source_section": "Internet protocol example"
+    },
+    {
+      "source": "claim11",
+      "target": "delivery_guarantee",
+      "relationship": "supports_claim",
+      "source_section": "Internet protocol example"
+    },
+    {
+      "source": "claim11",
+      "target": "non_duplication",
+      "relationship": "supports_claim",
+      "source_section": "Internet protocol example"
+    },
+    {
+      "source": "claim11",
+      "target": "in_order_delivery",
+      "relationship": "supports_claim",
+      "source_section": "Internet protocol example"
+    },
+    {
+      "source": "claim11",
+      "target": "tcp",
+      "relationship": "supports_claim",
+      "source_section": "Internet protocol example"
+    },
+    {
+      "source": "claim12",
+      "target": "ccsds",
+      "relationship": "supports_claim",
+      "source_section": "Examples section"
+    },
+    {
+      "source": "claim12",
+      "target": "packet_telemetry",
+      "relationship": "supports_claim",
+      "source_section": "Examples section"
+    },
+    {
+      "source": "claim12",
+      "target": "pes",
+      "relationship": "supports_claim",
+      "source_section": "Examples section"
+    },
+    {
+      "source": "claim12",
+      "target": "nicam",
+      "relationship": "supports_claim",
+      "source_section": "Examples section"
+    },
+    {
+      "source": "claim13",
+      "target": "nicam_packet",
+      "relationship": "supports_claim",
+      "source_section": "NICAM example"
+    },
+    {
+      "source": "claim13",
+      "target": "prbs9",
+      "relationship": "supports_claim",
+      "source_section": "NICAM example"
+    },
+    {
+      "source": "claim13",
+      "target": "white_noise",
+      "relationship": "supports_claim",
+      "source_section": "NICAM example"
+    },
+    {
+      "source": "claim13",
+      "target": "adjacent_channel_patterning",
+      "relationship": "supports_claim",
+      "source_section": "NICAM example"
+    },
+    {
+      "source": "q01",
+      "target": "network_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q02",
+      "target": "network_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q02",
+      "target": "control_information",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q02",
+      "target": "payload",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q03",
+      "target": "payload",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q04",
+      "target": "control_information",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q05",
+      "target": "header",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q05",
+      "target": "trailer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q06",
+      "target": "packet_switching",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q06",
+      "target": "circuit_switching",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q07",
+      "target": "osi_layer_3",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q07",
+      "target": "network_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q08",
+      "target": "osi_layer_2",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q08",
+      "target": "frame",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q09",
+      "target": "osi_layer_4",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q09",
+      "target": "segment",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q09",
+      "target": "datagram",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q10",
+      "target": "tcp_segment",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q10",
+      "target": "ip_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q10",
+      "target": "ethernet_frame",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q11",
+      "target": "postal_analogy",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q12",
+      "target": "multiple_host_addressing",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q13",
+      "target": "source_address",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q13",
+      "target": "destination_address",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q14",
+      "target": "checksum",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q14",
+      "target": "parity_bits",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q14",
+      "target": "crc",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q15",
+      "target": "receiver_recalculation",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q15",
+      "target": "checksum",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q16",
+      "target": "packet_correction",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q16",
+      "target": "packet_discard",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q17",
+      "target": "packet_loss",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q18",
+      "target": "ttl",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q19",
+      "target": "ttl",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q19",
+      "target": "packet_discard",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q20",
+      "target": "routing_loop",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q20",
+      "target": "congestion",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q21",
+      "target": "ethernet_ttl_absence",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q21",
+      "target": "broadcast_storm",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q22",
+      "target": "packet_length",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q23",
+      "target": "packet_length",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q24",
+      "target": "protocol_identifier",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q25",
+      "target": "priority",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q25",
+      "target": "packet_queue",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q26",
+      "target": "priority",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q26",
+      "target": "qos",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q26",
+      "target": "congestion",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q27",
+      "target": "variable_payload",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q27",
+      "target": "maximum_payload",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q28",
+      "target": "fragmentation",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q29",
+      "target": "reassembly",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q30",
+      "target": "ppp",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q30",
+      "target": "byte_delimiting",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q31",
+      "target": "ethernet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q31",
+      "target": "location_based_framing",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q32",
+      "target": "bit_level_formatting",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q33",
+      "target": "ip_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q33",
+      "target": "ip_header",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q33",
+      "target": "ip_payload",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q34",
+      "target": "ip_no_trailer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q35",
+      "target": "ethernet_frame",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q35",
+      "target": "ethernet_header",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q35",
+      "target": "ethernet_trailer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q36",
+      "target": "ip",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q36",
+      "target": "delivery_guarantee",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q36",
+      "target": "non_duplication",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q36",
+      "target": "in_order_delivery",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q37",
+      "target": "tcp",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q37",
+      "target": "tcp_reliability",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q38",
+      "target": "end_to_end",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q39",
+      "target": "tcp_retransmission",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q39",
+      "target": "packet_loss",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q40",
+      "target": "ccsds",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q40",
+      "target": "packet_telemetry",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q40",
+      "target": "deep_space_network",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q41",
+      "target": "spacecraft_instrument",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q41",
+      "target": "instrument_data",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q42",
+      "target": "pes",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q43",
+      "target": "elementary_stream",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q43",
+      "target": "pes",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q44",
+      "target": "pes",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q44",
+      "target": "mpeg_ts",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q44",
+      "target": "mpeg_ps",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q45",
+      "target": "mpeg_ts",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q45",
+      "target": "atsc",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q45",
+      "target": "dvb",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q46",
+      "target": "nicam_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q46",
+      "target": "prbs9",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q47",
+      "target": "prbs9",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q47",
+      "target": "white_noise",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q48",
+      "target": "white_noise",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q48",
+      "target": "adjacent_channel_patterning",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q49",
+      "target": "nicam_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q49",
+      "target": "network_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q50",
+      "target": "packet_analyzer",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q51",
+      "target": "fast_packet_switching",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q52",
+      "target": "statistical_tdm",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q53",
+      "target": "tail_drop",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q54",
+      "target": "anti_replay",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q55",
+      "target": "mangled_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q56",
+      "target": "packet_format",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q57",
+      "target": "source_address",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q57",
+      "target": "destination_address",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q57",
+      "target": "payload",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q58",
+      "target": "checksum",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q58",
+      "target": "routing",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q59",
+      "target": "tcp_segment",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q59",
+      "target": "ip_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q59",
+      "target": "ethernet_frame",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q60",
+      "target": "osi_layer_3",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "q60",
+      "target": "network_packet",
+      "relationship": "tests_knowledge_of"
+    },
+    {
+      "source": "network_packet",
+      "target": "control_information",
+      "relationship": "has_semantic_part"
+    },
+    {
+      "source": "network_packet",
+      "target": "payload",
+      "relationship": "has_semantic_part"
+    },
+    {
+      "source": "control_information",
+      "target": "source_address",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "destination_address",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "checksum",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "ttl",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "protocol_identifier",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "priority",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "packet_length",
+      "relationship": "may_include"
+    },
+    {
+      "source": "control_information",
+      "target": "sequence_information",
+      "relationship": "may_include"
+    }
+  ],
+  "formal_models": [
+    "model_packet_structure",
+    "model_header_trailer",
+    "model_encapsulation",
+    "model_decapsulation",
+    "model_routing",
+    "model_error_check",
+    "model_ttl",
+    "model_qos",
+    "model_fragmentation",
+    "model_ip_service",
+    "model_tcp_service",
+    "model_pes"
+  ],
+  "source_claims": [
+    "claim01",
+    "claim02",
+    "claim03",
+    "claim04",
+    "claim05",
+    "claim06",
+    "claim07",
+    "claim08",
+    "claim09",
+    "claim10",
+    "claim11",
+    "claim12",
+    "claim13"
+  ],
+  "semantic_distinctions": [
+    "packet_vs_frame",
+    "packet_vs_segment",
+    "packet_vs_datagram",
+    "header_vs_payload",
+    "header_vs_trailer",
+    "packet_switching_vs_circuit",
+    "error_detection_vs_correction",
+    "ttl_vs_ethernet",
+    "priority_vs_payload",
+    "ip_vs_tcp",
+    "fragmentation_vs_reassembly",
+    "packet_vs_protocol",
+    "osi_term_vs_general_usage",
+    "ip_trailer_vs_ethernet_trailer"
+  ],
+  "learning_paths": [
+    "path_packet_basics",
+    "path_switching",
+    "path_osi_terms",
+    "path_packet_fields",
+    "path_routing",
+    "path_errors",
+    "path_qos",
+    "path_size",
+    "path_framing",
+    "path_tcp_ip",
+    "path_space",
+    "path_media",
+    "path_nicam",
+    "path_end_to_end"
+  ],
+  "misconceptions": [
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "m5",
+    "m6",
+    "m7",
+    "m8",
+    "m9",
+    "m10"
+  ],
+  "questions": [
+    "q01",
+    "q02",
+    "q03",
+    "q04",
+    "q05",
+    "q06",
+    "q07",
+    "q08",
+    "q09",
+    "q10",
+    "q11",
+    "q12",
+    "q13",
+    "q14",
+    "q15",
+    "q16",
+    "q17",
+    "q18",
+    "q19",
+    "q20",
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q30",
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40",
+    "q41",
+    "q42",
+    "q43",
+    "q44",
+    "q45",
+    "q46",
+    "q47",
+    "q48",
+    "q49",
+    "q50",
+    "q51",
+    "q52",
+    "q53",
+    "q54",
+    "q55",
+    "q56",
+    "q57",
+    "q58",
+    "q59",
+    "q60",
+    "q61"
+  ],
+  "expansion_targets": [
+    "expand_ipv4",
+    "expand_ipv6",
+    "expand_tcp",
+    "expand_udp",
+    "expand_ethernet",
+    "expand_routing",
+    "expand_fragmentation",
+    "expand_qos",
+    "expand_packet_capture",
+    "expand_security",
+    "expand_quic",
+    "expand_http3",
+    "expand_mtu",
+    "expand_wire",
+    "expand_nic",
+    "expand_switch",
+    "expand_router",
+    "expand_ccsds",
+    "expand_mpeg",
+    "expand_nicam"
+  ],
+  "references": [
+    "ref_stallings_2001",
+    "ref_osi_model",
+    "ref_tcpip_guide",
+    "ref_uk_link_layer",
+    "ref_cnp3",
+    "ref_network_encyclopedia"
+  ],
+  "historical_context": [
+    "hist_1",
+    "hist_2",
+    "hist_3",
+    "hist_4",
+    "hist_5",
+    "hist_6"
+  ],
+  "validation": {
+    "node_count": 263,
+    "relationship_count": 452,
+    "formal_model_count": 12,
+    "source_claim_count": 13,
+    "semantic_distinction_count": 14,
+    "learning_path_count": 14,
+    "misconception_count": 10,
+    "question_count": 61,
+    "expansion_target_count": 20,
+    "reference_count": 6,
+    "historical_context_count": 6,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}
