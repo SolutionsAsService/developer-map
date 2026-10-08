@@ -1,0 +1,5580 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "graph_type": "dynamic_educational_knowledge_graph",
+  "topic": "Ruby on Rails",
+  "source": {
+    "filename": "Pasted text(20261008-035122).txt",
+    "line_count": 341,
+    "authority": "user-supplied source text",
+    "external_research_used": false
+  },
+  "nodes": [
+    {
+      "id": "rails",
+      "label": "Ruby on Rails",
+      "type": "web_application_framework",
+      "description": "Server-side web application framework written in Ruby under MIT; MVC with database, web-service and webpage structures.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "ruby",
+      "label": "Ruby",
+      "type": "programming_language",
+      "description": "Language Rails is written in and whose runtime/ecosystem it depends on.",
+      "source_line_ranges": [
+        [
+          69,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "mvc",
+      "label": "Model-view-controller",
+      "type": "architecture_pattern",
+      "description": "Fundamental Rails application organization pattern.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "id": "model",
+      "label": "Model",
+      "type": "mvc_component",
+      "description": "Rails model maps by convention to a database table and Ruby file."
+    },
+    {
+      "id": "view",
+      "label": "View",
+      "type": "mvc_component",
+      "description": "Default Rails view is ERB evaluated into HTML at runtime."
+    },
+    {
+      "id": "controller",
+      "label": "Controller",
+      "type": "mvc_component",
+      "description": "Server-side component responding to requests and selecting views."
+    },
+    {
+      "id": "database",
+      "label": "Database",
+      "type": "infrastructure",
+      "description": "Persistent application data store used by Rails models."
+    },
+    {
+      "id": "web_server",
+      "label": "Web server",
+      "type": "infrastructure",
+      "description": "Front-end HTTP server commonly placed before Rails."
+    },
+    {
+      "id": "http",
+      "label": "HTTP",
+      "type": "protocol",
+      "description": "Web request/response protocol Rails applications serve through a front-end server."
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "type": "web_standard",
+      "description": "Standard interface/output format for web pages."
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "type": "web_standard",
+      "description": "Styling language used by Rails applications."
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "type": "programming_language",
+      "description": "Client-side scripting ecosystem integrated with Rails."
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "type": "data_format",
+      "description": "Web data-transfer format encouraged by Rails."
+    },
+    {
+      "id": "xml",
+      "label": "XML",
+      "type": "data_format",
+      "description": "Standard Rails output format since Rails 2.0; used for RESTful services."
+    },
+    {
+      "id": "rest",
+      "label": "REST",
+      "type": "architecture_style",
+      "description": "Rails encourages RESTful routes and web services."
+    },
+    {
+      "id": "coc",
+      "label": "Convention over Configuration",
+      "type": "design_principle",
+      "description": "Specify only deviations from established Rails conventions."
+    },
+    {
+      "id": "dry",
+      "label": "Dont Repeat Yourself",
+      "type": "design_principle",
+      "description": "Keep information in one unambiguous place."
+    },
+    {
+      "id": "active_record",
+      "label": "Active Record",
+      "type": "orm",
+      "description": "Rails object-relational mapping/database access package."
+    },
+    {
+      "id": "action_pack",
+      "label": "Action Pack",
+      "type": "framework_component",
+      "description": "Rails package containing request/controller/view-related facilities."
+    },
+    {
+      "id": "active_support",
+      "label": "Active Support",
+      "type": "framework_component",
+      "description": "Rails framework package."
+    },
+    {
+      "id": "action_mailer",
+      "label": "Action Mailer",
+      "type": "framework_component",
+      "description": "Rails package for email handling."
+    },
+    {
+      "id": "active_resource",
+      "label": "Active Resource",
+      "type": "framework_component",
+      "description": "Successor/replacement to early Action Web Service package."
+    },
+    {
+      "id": "action_cable",
+      "label": "Action Cable",
+      "type": "framework_component",
+      "description": "Rails 5.0 real-time framework component."
+    },
+    {
+      "id": "active_job",
+      "label": "Active Job",
+      "type": "framework_component",
+      "description": "Rails job abstraction introduced in 4.2."
+    },
+    {
+      "id": "active_storage",
+      "label": "Active Storage",
+      "type": "framework_component",
+      "description": "File/storage feature introduced in Rails 5.2."
+    },
+    {
+      "id": "action_mailbox",
+      "label": "Action Mailbox",
+      "type": "framework_component",
+      "description": "Mailbox routing introduced in Rails 6.0."
+    },
+    {
+      "id": "action_text",
+      "label": "Action Text",
+      "type": "framework_component",
+      "description": "Online rich-text editor functionality introduced in Rails 6.0."
+    },
+    {
+      "id": "hotwire",
+      "label": "Hotwire",
+      "type": "web_framework",
+      "description": "Rails 7 default JavaScript family combining Turbo and Stimulus."
+    },
+    {
+      "id": "turbo",
+      "label": "Turbo",
+      "type": "web_framework_component",
+      "description": "Part of Hotwire replacing Turbolinks in Rails 7."
+    },
+    {
+      "id": "stimulus",
+      "label": "Stimulus",
+      "type": "web_framework_component",
+      "description": "Part of Hotwire in Rails 7."
+    },
+    {
+      "id": "turbolinks",
+      "label": "Turbolinks",
+      "type": "web_framework_component",
+      "description": "Rails navigation technology introduced earlier and replaced by Turbo in Rails 7."
+    },
+    {
+      "id": "stimulus2",
+      "label": "Rails UJS",
+      "type": "javascript_integration",
+      "description": "Rails unobtrusive JavaScript layer rewritten to vanilla JavaScript in 5.1."
+    },
+    {
+      "id": "erb",
+      "label": "ERB",
+      "type": "template_engine",
+      "description": "Embedded Ruby template system used by default for HTML views."
+    },
+    {
+      "id": "haml",
+      "label": "HAML",
+      "type": "template_engine",
+      "description": "Alternative Rails view templating system."
+    },
+    {
+      "id": "mustache",
+      "label": "Mustache",
+      "type": "template_engine",
+      "description": "Alternative Rails view templating system."
+    },
+    {
+      "id": "sass",
+      "label": "Sass",
+      "type": "css_preprocessor",
+      "description": "CSS templating introduced as standard in Rails 3.1."
+    },
+    {
+      "id": "coffeescript",
+      "label": "CoffeeScript",
+      "type": "programming_language",
+      "description": "Introduced into Rails 3.1 stack."
+    },
+    {
+      "id": "jquery",
+      "label": "jQuery",
+      "type": "javascript_library",
+      "description": "Default JavaScript library in Rails 3.1."
+    },
+    {
+      "id": "prototype",
+      "label": "Prototype",
+      "type": "javascript_library",
+      "description": "Historically used extensively with Rails for Ajax actions."
+    },
+    {
+      "id": "scriptaculous",
+      "label": "script.aculo.us",
+      "type": "javascript_library",
+      "description": "Historically used extensively with Rails for Ajax actions."
+    },
+    {
+      "id": "rack",
+      "label": "Rack",
+      "type": "web_interface",
+      "description": "Web server interface integrated into Rails 2.3."
+    },
+    {
+      "id": "rake",
+      "label": "Rake",
+      "type": "build_tool",
+      "description": "Ruby build system distributed as a gem and included in Rails development environment."
+    },
+    {
+      "id": "webrick",
+      "label": "WEBrick",
+      "type": "web_server",
+      "description": "Simple Ruby web server distributed with Ruby."
+    },
+    {
+      "id": "passenger",
+      "label": "Phusion Passenger",
+      "type": "application_server",
+      "description": "Web application server/module historically common with Rails."
+    },
+    {
+      "id": "rubygems",
+      "label": "RubyGems",
+      "type": "package_manager",
+      "description": "Package manager used to install Rails and dependencies."
+    },
+    {
+      "id": "gems",
+      "label": "Ruby gems",
+      "type": "package_ecosystem",
+      "description": "Packaging mechanism used to extend Rails."
+    },
+    {
+      "id": "plugins",
+      "label": "Rails plugins",
+      "type": "extension_mechanism",
+      "description": "Earlier Rails extension mechanism later deprecated in favor of gems."
+    },
+    {
+      "id": "scaffolding",
+      "label": "Scaffolding",
+      "type": "development_tool",
+      "description": "Generates basic models/views/application skeleton."
+    },
+    {
+      "id": "engines",
+      "label": "Rails Engines",
+      "type": "extension_mechanism",
+      "description": "Reusable application pieces with routes, view paths and models."
+    },
+    {
+      "id": "templates",
+      "label": "Rails Templates",
+      "type": "development_tool",
+      "description": "Generate skeleton applications with custom gems/configuration."
+    },
+    {
+      "id": "routes",
+      "label": "routes.rb",
+      "type": "configuration",
+      "description": "Route configuration mapping incoming requests to controller actions."
+    },
+    {
+      "id": "action",
+      "label": "Controller action",
+      "type": "mvc_component",
+      "description": "Basic unit describing response to a specific external request."
+    },
+    {
+      "id": "migration",
+      "label": "Database migration",
+      "type": "database_mechanism",
+      "description": "Versioned schema change mechanism; reversible migrations highlighted in Rails 3.1."
+    },
+    {
+      "id": "cache",
+      "label": "Caching",
+      "type": "performance_mechanism",
+      "description": "Rails caching subsystem; Russian Doll caching introduced in 4.0."
+    },
+    {
+      "id": "redis",
+      "label": "Redis",
+      "type": "data_store",
+      "description": "Built-in Redis cache store introduced in Rails 5.2."
+    },
+    {
+      "id": "multi_db",
+      "label": "Multiple databases",
+      "type": "database_architecture",
+      "description": "Rails 6.0 support and later per-database switching/sharding."
+    },
+    {
+      "id": "sharding",
+      "label": "Horizontal database sharding",
+      "type": "database_architecture",
+      "description": "Rails 6.1 feature."
+    },
+    {
+      "id": "zeitwerk",
+      "label": "Zeitwerk",
+      "type": "code_loader",
+      "description": "Exclusive Rails 7 code loader."
+    },
+    {
+      "id": "importmaps",
+      "label": "Import maps",
+      "type": "javascript_management",
+      "description": "Default JS management approach in Rails 7 replacing Node/Webpack default."
+    },
+    {
+      "id": "webpack",
+      "label": "Webpack",
+      "type": "javascript_build_tool",
+      "description": "Default in Rails 6.0 and optional in 5.1."
+    },
+    {
+      "id": "yarn",
+      "label": "Yarn",
+      "type": "package_manager",
+      "description": "JavaScript dependency management from npm ecosystem in Rails 5.1."
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "type": "package_manager",
+      "description": "JavaScript package ecosystem used via Yarn integration."
+    },
+    {
+      "id": "bun",
+      "label": "Bun",
+      "type": "javascript_runtime",
+      "description": "Rails 7.1 support."
+    },
+    {
+      "id": "dockerfiles",
+      "label": "Dockerfiles",
+      "type": "deployment_artifact",
+      "description": "Rails 7.1 deployment support via Kamal-oriented Dockerfiles."
+    },
+    {
+      "id": "kamal",
+      "label": "Kamal",
+      "type": "deployment_tool",
+      "description": "Deployment tooling referenced with Rails 7.1."
+    },
+    {
+      "id": "api_mode",
+      "label": "API mode",
+      "type": "rails_mode",
+      "description": "Rails 5.0 API-focused application mode."
+    },
+    {
+      "id": "system_tests",
+      "label": "System tests",
+      "type": "testing",
+      "description": "Capybara-backed system testing introduced in Rails 5.1."
+    },
+    {
+      "id": "capybara",
+      "label": "Capybara",
+      "type": "testing_library",
+      "description": "System testing library used by Rails 5.1."
+    },
+    {
+      "id": "credentials",
+      "label": "Rails Credentials",
+      "type": "security_config",
+      "description": "Encrypted/configuration credential mechanism evolved through Rails releases."
+    },
+    {
+      "id": "csp",
+      "label": "Content Security Policy",
+      "type": "security",
+      "description": "Rails 5.2 configuration DSL for CSP."
+    },
+    {
+      "id": "encryption",
+      "label": "Active Record encryption",
+      "type": "security_feature",
+      "description": "At-rest encryption feature highlighted in Rails 7."
+    },
+    {
+      "id": "security",
+      "label": "Rails security",
+      "type": "security_domain",
+      "description": "Security practices and vulnerabilities are part of Rails evolution."
+    },
+    {
+      "id": "basecamp",
+      "label": "Basecamp",
+      "type": "application",
+      "description": "Project-management tool from which Rails was extracted."
+    },
+    {
+      "id": "37signals",
+      "label": "37signals",
+      "type": "company",
+      "description": "Web application company where Basecamp and Rails originated."
+    },
+    {
+      "id": "dhh",
+      "label": "David Heinemeier Hansson",
+      "type": "person",
+      "description": "Original author/creator of Rails; extracted it from Basecamp work."
+    },
+    {
+      "id": "merb",
+      "label": "Merb",
+      "type": "web_application_framework",
+      "description": "Ruby web framework merged into Rails 3."
+    },
+    {
+      "id": "rails3",
+      "label": "Rails 3",
+      "type": "release",
+      "description": "Major release incorporating Merb ideas/code/community."
+    },
+    {
+      "id": "rails8",
+      "label": "Rails 8",
+      "type": "release",
+      "description": "Major release emphasizing independent self-hosting."
+    },
+    {
+      "id": "rails81",
+      "label": "Rails 8.1",
+      "type": "release",
+      "description": "Release with job continuations, structured events, local CI and Markdown rendering."
+    },
+    {
+      "id": "one_person",
+      "label": "One-person framework",
+      "type": "philosophy",
+      "description": "Rails 7-era approach emphasizing a single developer managing a full application."
+    },
+    {
+      "id": "conceptual_compression",
+      "label": "Conceptual compression",
+      "type": "design_philosophy",
+      "description": "Rails philosophy that hides lower-level complexity where possible."
+    },
+    {
+      "id": "fat_models",
+      "label": "Fat models, skinny controllers",
+      "type": "design_pattern",
+      "description": "Rails design guidance to put most application logic in models."
+    },
+    {
+      "id": "robust_security",
+      "label": "Robust security",
+      "type": "design_philosophy",
+      "description": "Rails 7 doctrine emphasis."
+    },
+    {
+      "id": "html_over_wire",
+      "label": "HTML Over The Wire",
+      "type": "design_philosophy",
+      "description": "Rails 7/Hotwire approach to delivering HTML over the network."
+    },
+    {
+      "id": "mit",
+      "label": "MIT License",
+      "type": "license",
+      "description": "License under which Rails is released."
+    },
+    {
+      "id": "macos",
+      "label": "Mac OS X Leopard",
+      "type": "operating_system",
+      "description": "Apple OS X 10.5 announced to ship Rails."
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "type": "application",
+      "description": "Well-known site using Rails."
+    },
+    {
+      "id": "gitlab",
+      "label": "GitLab",
+      "type": "application",
+      "description": "Well-known Rails-based web application/site."
+    },
+    {
+      "id": "airbnb",
+      "label": "Airbnb",
+      "type": "application",
+      "description": "High-profile Rails site."
+    },
+    {
+      "id": "ao3",
+      "label": "Archive of Our Own",
+      "type": "application",
+      "description": "Well-known site using Rails."
+    },
+    {
+      "id": "crunchbase",
+      "label": "Crunchbase",
+      "type": "application",
+      "description": "Well-known site using Rails."
+    },
+    {
+      "id": "dribbble",
+      "label": "Dribbble",
+      "type": "application",
+      "description": "Well-known site using Rails."
+    },
+    {
+      "id": "twitch",
+      "label": "Twitch",
+      "type": "application",
+      "description": "Well-known site using Rails."
+    },
+    {
+      "id": "shopify",
+      "label": "Shopify",
+      "type": "application",
+      "description": "Well-known site using Rails."
+    },
+    {
+      "id": "cookpad",
+      "label": "Cookpad",
+      "type": "application",
+      "description": "High-profile Rails site noted in scalability discussion."
+    },
+    {
+      "id": "scribd",
+      "label": "Scribd",
+      "type": "application",
+      "description": "High-profile Rails site noted in scalability discussion."
+    },
+    {
+      "id": "twitter",
+      "label": "Twitter",
+      "type": "application",
+      "description": "Historically used Rails heavily; later moved some middleware/UX components due to scaling/performance concerns."
+    },
+    {
+      "id": "scala",
+      "label": "Scala",
+      "type": "programming_language",
+      "description": "JVM language used by Twitter for queueing/middleware and later UI."
+    },
+    {
+      "id": "database_mysql",
+      "label": "MySQL",
+      "type": "database",
+      "description": "Database server commonly deployed with Rails."
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "type": "database",
+      "description": "Database server commonly deployed with Rails."
+    },
+    {
+      "id": "apache",
+      "label": "Apache",
+      "type": "web_server",
+      "description": "Front-end web server commonly used with Rails."
+    },
+    {
+      "id": "nginx",
+      "label": "Nginx",
+      "type": "web_server",
+      "description": "Front-end web server supported by Rails deployments."
+    },
+    {
+      "id": "lighttpd",
+      "label": "lighttpd",
+      "type": "web_server",
+      "description": "Web server supported by Rails."
+    },
+    {
+      "id": "cherokee",
+      "label": "Cherokee",
+      "type": "web_server",
+      "description": "Web server supported by Rails."
+    },
+    {
+      "id": "hiawatha",
+      "label": "Hiawatha",
+      "type": "web_server",
+      "description": "Web server supported by Rails."
+    },
+    {
+      "id": "ibmi",
+      "label": "IBM i",
+      "type": "platform",
+      "description": "Platform with native Ruby support mentioned by source."
+    },
+    {
+      "id": "space",
+      "label": "Space",
+      "type": "security_analysis_tool",
+      "description": "Data debugger that analyzes Rails data access against access restrictions."
+    },
+    {
+      "id": "daniel_jackson",
+      "label": "Daniel Jackson",
+      "type": "person",
+      "description": "Researcher involved in Space."
+    },
+    {
+      "id": "joseph_near",
+      "label": "Joseph Near",
+      "type": "person",
+      "description": "Researcher involved in Space."
+    },
+    {
+      "id": "egor_homakov",
+      "label": "Egor Homakov",
+      "type": "person",
+      "description": "Security researcher who discovered mass-assignment vulnerability."
+    },
+    {
+      "id": "apple",
+      "label": "Apple",
+      "type": "organization",
+      "description": "Announced Rails shipping with Mac OS X Leopard."
+    },
+    {
+      "id": "gpt",
+      "label": "Rails Doctrine",
+      "type": "design_philosophy",
+      "description": "Enduring guide to Rails philosophy, design and implementation."
+    },
+    {
+      "id": "trademarks",
+      "label": "Rails trademarks",
+      "type": "legal",
+      "description": "Trademark applications for Ruby on Rails, Rails and logo; logo trademark later cancelled."
+    },
+    {
+      "id": "uspto",
+      "label": "USPTO",
+      "type": "organization",
+      "description": "Trademark authority referenced in source."
+    },
+    {
+      "id": "v1",
+      "label": "Rails 1.0",
+      "type": "rails_release",
+      "description": "Release date 13 Dec 2005; source compatibility table lists Ruby 1.8.6.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v12",
+      "label": "Rails 1.2",
+      "type": "rails_release",
+      "description": "Release date 19 Jan 2007; source compatibility table lists Ruby 1.8.6.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v2",
+      "label": "Rails 2.0",
+      "type": "rails_release",
+      "description": "Release date 7 Dec 2007; source compatibility table lists Ruby 1.8.6.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v21",
+      "label": "Rails 2.1",
+      "type": "rails_release",
+      "description": "Release date 31 May 2008; source compatibility table lists Ruby 1.8.6.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v22",
+      "label": "Rails 2.2",
+      "type": "rails_release",
+      "description": "Release date 21 Nov 2008; source compatibility table lists Ruby 1.8.7 recommended; 1.8.6 possible.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v23",
+      "label": "Rails 2.3",
+      "type": "rails_release",
+      "description": "Release date 16 Mar 2009; source compatibility table lists Ruby 1.8.7 recommended; 1.8.6/1.9.1 possible.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v30",
+      "label": "Rails 3.0",
+      "type": "rails_release",
+      "description": "Release date 29 Aug 2010; source compatibility table lists Ruby 1.9.3 recommended; 1.8.7/1.9.2 possible.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v31",
+      "label": "Rails 3.1",
+      "type": "rails_release",
+      "description": "Release date 31 Aug 2011; source compatibility table lists Ruby 1.9.3 recommended; 1.8.7/1.9.2 possible.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v32",
+      "label": "Rails 3.2",
+      "type": "rails_release",
+      "description": "Release date 20 Jan 2012; source compatibility table lists Ruby 1.9.3 recommended; 1.8.7/1.9.2 possible.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v40",
+      "label": "Rails 4.0",
+      "type": "rails_release",
+      "description": "Release date 25 Jun 2013; source compatibility table lists Ruby 2.0 preferred; 1.9.3+ required.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v41",
+      "label": "Rails 4.1",
+      "type": "rails_release",
+      "description": "Release date 8 Apr 2014; source compatibility table lists Ruby 2.0 preferred; 1.9.3+ required.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v42",
+      "label": "Rails 4.2",
+      "type": "rails_release",
+      "description": "Release date 19 Dec 2014; source compatibility table lists Ruby 2.0 preferred; 1.9.3+ required.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v50",
+      "label": "Rails 5.0",
+      "type": "rails_release",
+      "description": "Release date 30 Jun 2016; source compatibility table lists Ruby 2.2.2+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v51",
+      "label": "Rails 5.1",
+      "type": "rails_release",
+      "description": "Release date 10 May 2017; source compatibility table lists Ruby 2.2.2+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v52",
+      "label": "Rails 5.2",
+      "type": "rails_release",
+      "description": "Release date 9 Apr 2018; source compatibility table lists Ruby 2.2.2+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v60",
+      "label": "Rails 6.0",
+      "type": "rails_release",
+      "description": "Release date 16 Aug 2019; source compatibility table lists Ruby 2.5+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v61",
+      "label": "Rails 6.1",
+      "type": "rails_release",
+      "description": "Release date 9 Dec 2020; source compatibility table lists Ruby 2.5+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v70",
+      "label": "Rails 7.0",
+      "type": "rails_release",
+      "description": "Release date 15 Dec 2021; source compatibility table lists Ruby 2.7+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v71",
+      "label": "Rails 7.1",
+      "type": "rails_release",
+      "description": "Release date 5 Oct 2023; source compatibility table lists Ruby 2.7+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v72",
+      "label": "Rails 7.2",
+      "type": "rails_release",
+      "description": "Release date 10 Aug 2024; source compatibility table lists Ruby 3.1+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v80",
+      "label": "Rails 8.0",
+      "type": "rails_release",
+      "description": "Release date 7 Nov 2024; source compatibility table lists Ruby 3.2+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "v81",
+      "label": "Rails 8.1",
+      "type": "rails_release",
+      "description": "Release date 24 Oct 2025; source compatibility table lists Ruby 3.2+.",
+      "source_line_ranges": [
+        [
+          123,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "catalyst",
+      "label": "Catalyst",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "laravel",
+      "label": "Laravel",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "cakephp",
+      "label": "CakePHP",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "yii",
+      "label": "Yii",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "grails",
+      "label": "Grails",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "phoenix",
+      "label": "Phoenix",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "play_scala",
+      "label": "Play",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "sailsjs",
+      "label": "Sails.js",
+      "type": "web_framework",
+      "description": "Framework identified as influenced by Rails.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "c1",
+      "label": "Identity and purpose",
+      "type": "source_claim",
+      "description": "Rails is a Ruby server-side MVC web application framework under MIT with default structures for database, web service and web pages.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "c2",
+      "label": "Influence",
+      "type": "source_claim",
+      "description": "Rails influenced Django, Catalyst, Laravel, CakePHP, Yii, Grails, Phoenix, Play and Sails.js.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "c3",
+      "label": "Named users",
+      "type": "source_claim",
+      "description": "Source names Airbnb, Archive of Our Own, Crunchbase, Dribbble, GitHub, Twitch and Shopify.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "id": "c4",
+      "label": "Origin",
+      "type": "source_claim",
+      "description": "DHH extracted Rails from Basecamp at 37signals and released it open source in July 2004.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "c5",
+      "label": "Rails 2.3",
+      "type": "source_claim",
+      "description": "Templates, Engines, Rack and Metal expanded Rails extensibility and optimized routing.",
+      "source_line_ranges": [
+        [
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "id": "c6",
+      "label": "Merb",
+      "type": "source_claim",
+      "description": "Rails and Merb collaborated and Merb merged into Rails 3.",
+      "source_line_ranges": [
+        [
+          87,
+          87
+        ]
+      ]
+    },
+    {
+      "id": "c7",
+      "label": "Rails evolution",
+      "type": "source_claim",
+      "description": "Rails 3.1 through 8.1 progressively changed JS, jobs, storage, database, deployment, code loading and self-hosting.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "id": "c8",
+      "label": "MVC mechanics",
+      "type": "source_claim",
+      "description": "Models map to tables/files, controllers handle requests/actions, routes map requests to actions, and views render HTML.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "id": "c9",
+      "label": "Deployment",
+      "type": "source_claim",
+      "description": "Rails commonly sits behind Apache/Nginx/Passenger and uses MySQL or PostgreSQL.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "id": "c10",
+      "label": "Philosophy",
+      "type": "source_claim",
+      "description": "CoC, DRY, fat models/skinny controllers, Rails Doctrine, conceptual compression and robust security shape Rails design.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "id": "c11",
+      "label": "Scalability",
+      "type": "source_claim",
+      "description": "Source documents historical Rails scaling criticism and emphasizes architecture choices such as database, cache and servers.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "id": "c12",
+      "label": "Security",
+      "type": "source_claim",
+      "description": "Source documents mass assignment, CookieStore persistence and Space analysis findings.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    },
+    {
+      "id": "ref1",
+      "label": "Ruby on Rails release 8.1.3",
+      "type": "reference",
+      "description": "Rails/GitHub release reference"
+    },
+    {
+      "id": "ref2",
+      "label": "Getting Started with Rails",
+      "type": "reference",
+      "description": "Official Rails guide reference"
+    },
+    {
+      "id": "ref3",
+      "label": "Rails 3.0 Release Notes",
+      "type": "reference",
+      "description": "Rails release notes"
+    },
+    {
+      "id": "ref4",
+      "label": "Rails 3.1 Release Notes",
+      "type": "reference",
+      "description": "Rails release notes"
+    },
+    {
+      "id": "ref5",
+      "label": "Rails 4.0 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref6",
+      "label": "Rails 5.0 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref7",
+      "label": "Rails 6.0 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref8",
+      "label": "Rails 7.0 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref9",
+      "label": "Rails 7.1 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref10",
+      "label": "Rails 8.0 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref11",
+      "label": "Rails 8.1 Release",
+      "type": "reference",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref12",
+      "label": "Rails Doctrine",
+      "type": "reference",
+      "description": "Rails philosophy reference"
+    },
+    {
+      "id": "ref13",
+      "label": "Why we are sticking with Ruby on Rails",
+      "type": "reference",
+      "description": "GitLab scaling/use reference"
+    },
+    {
+      "id": "ref14",
+      "label": "Twitter on Scala",
+      "type": "reference",
+      "description": "Twitter migration reference"
+    },
+    {
+      "id": "ref15",
+      "label": "Patching up Web applications",
+      "type": "reference",
+      "description": "MIT News / security reference"
+    },
+    {
+      "id": "ev2004",
+      "label": "Rails open-sourced",
+      "type": "historical_event",
+      "description": "July 2004"
+    },
+    {
+      "id": "ev2005",
+      "label": "Rails 1.0 era",
+      "type": "historical_event",
+      "description": "December 2005"
+    },
+    {
+      "id": "ev2006",
+      "label": "Apple Leopard announcement",
+      "type": "historical_event",
+      "description": "August 2006"
+    },
+    {
+      "id": "ev2008",
+      "label": "Merb collaboration announced",
+      "type": "historical_event",
+      "description": "December 2008"
+    },
+    {
+      "id": "ev2011",
+      "label": "Rails 3.1 release",
+      "type": "historical_event",
+      "description": "August 2011"
+    },
+    {
+      "id": "ev2016",
+      "label": "Rails 5.0 release",
+      "type": "historical_event",
+      "description": "June 2016"
+    },
+    {
+      "id": "ev2021",
+      "label": "Rails 7.0 release",
+      "type": "historical_event",
+      "description": "December 2021"
+    },
+    {
+      "id": "ev2024",
+      "label": "Rails 8.0 release",
+      "type": "historical_event",
+      "description": "November 2024"
+    },
+    {
+      "id": "ev2025",
+      "label": "Rails 8.1 release",
+      "type": "historical_event",
+      "description": "October 2025"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "rails",
+      "target": "ruby",
+      "relationship": "written_in",
+      "semantic_role": "semantic",
+      "mechanism": "Rails implementation is written in Ruby"
+    },
+    {
+      "source": "rails",
+      "target": "mit",
+      "relationship": "licensed_under",
+      "semantic_role": "semantic",
+      "mechanism": "Rails is released under MIT"
+    },
+    {
+      "source": "rails",
+      "target": "mvc",
+      "relationship": "uses_architecture",
+      "semantic_role": "semantic",
+      "mechanism": "MVC organizes Rails applications"
+    },
+    {
+      "source": "rails",
+      "target": "coc",
+      "relationship": "emphasizes",
+      "semantic_role": "semantic",
+      "mechanism": "Conventions reduce configuration"
+    },
+    {
+      "source": "rails",
+      "target": "dry",
+      "relationship": "emphasizes",
+      "semantic_role": "semantic",
+      "mechanism": "Single sources of truth reduce repetition"
+    },
+    {
+      "source": "rails",
+      "target": "active_record",
+      "relationship": "includes_component",
+      "semantic_role": "semantic",
+      "mechanism": "ORM/database access"
+    },
+    {
+      "source": "rails",
+      "target": "action_pack",
+      "relationship": "includes_component",
+      "semantic_role": "semantic",
+      "mechanism": "Request/controller/view facilities"
+    },
+    {
+      "source": "rails",
+      "target": "active_support",
+      "relationship": "includes_component",
+      "semantic_role": "semantic",
+      "mechanism": "Core Rails support package"
+    },
+    {
+      "source": "rails",
+      "target": "action_mailer",
+      "relationship": "includes_component",
+      "semantic_role": "semantic",
+      "mechanism": "Mail handling"
+    },
+    {
+      "source": "rails",
+      "target": "scaffolding",
+      "relationship": "provides",
+      "semantic_role": "semantic",
+      "mechanism": "Generates application skeletons"
+    },
+    {
+      "source": "rails",
+      "target": "rake",
+      "relationship": "uses",
+      "semantic_role": "semantic",
+      "mechanism": "Build/task automation"
+    },
+    {
+      "source": "rails",
+      "target": "rubygems",
+      "relationship": "installed_with",
+      "semantic_role": "semantic",
+      "mechanism": "Rails commonly installed with RubyGems"
+    },
+    {
+      "source": "rails",
+      "target": "engines",
+      "relationship": "supports_extension",
+      "semantic_role": "semantic",
+      "mechanism": "Reusable app pieces"
+    },
+    {
+      "source": "rails",
+      "target": "gems",
+      "relationship": "extends_through",
+      "semantic_role": "semantic",
+      "mechanism": "Gems are the standard extension mechanism"
+    },
+    {
+      "source": "rails",
+      "target": "rack",
+      "relationship": "uses_interface",
+      "semantic_role": "semantic",
+      "mechanism": "Rack provides web server interface"
+    },
+    {
+      "source": "rails",
+      "target": "http",
+      "relationship": "serves",
+      "semantic_role": "semantic",
+      "mechanism": "Rails handles web requests/responses"
+    },
+    {
+      "source": "rails",
+      "target": "rest",
+      "relationship": "encourages",
+      "semantic_role": "semantic",
+      "mechanism": "Rails encourages RESTful routes"
+    },
+    {
+      "source": "rails",
+      "target": "json",
+      "relationship": "supports_output",
+      "semantic_role": "semantic",
+      "mechanism": "JSON web data transfer"
+    },
+    {
+      "source": "rails",
+      "target": "xml",
+      "relationship": "supports_output",
+      "semantic_role": "semantic",
+      "mechanism": "XML output and RESTful services"
+    },
+    {
+      "source": "rails",
+      "target": "html",
+      "relationship": "generates",
+      "semantic_role": "semantic",
+      "mechanism": "Views produce HTML"
+    },
+    {
+      "source": "rails",
+      "target": "css",
+      "relationship": "uses",
+      "semantic_role": "semantic",
+      "mechanism": "CSS styles interfaces"
+    },
+    {
+      "source": "rails",
+      "target": "javascript",
+      "relationship": "integrates",
+      "semantic_role": "semantic",
+      "mechanism": "Client-side behavior"
+    },
+    {
+      "source": "rails",
+      "target": "basecamp",
+      "relationship": "extracted_from",
+      "semantic_role": "semantic",
+      "mechanism": "Rails originated from Basecamp work"
+    },
+    {
+      "source": "basecamp",
+      "target": "37signals",
+      "relationship": "owned_by",
+      "semantic_role": "semantic",
+      "mechanism": "Basecamp originated at 37signals"
+    },
+    {
+      "source": "dhh",
+      "target": "rails",
+      "relationship": "created",
+      "semantic_role": "semantic",
+      "mechanism": "DHH extracted and released Rails"
+    },
+    {
+      "source": "merb",
+      "target": "rails3",
+      "relationship": "merged_into",
+      "semantic_role": "semantic",
+      "mechanism": "Merb merged into Rails 3"
+    },
+    {
+      "source": "rails3",
+      "target": "merb",
+      "relationship": "incorporated_ideas_from",
+      "semantic_role": "semantic",
+      "mechanism": "Rails 3 brought Merb ideas into Rails"
+    },
+    {
+      "source": "rails",
+      "target": "macos",
+      "relationship": "shipped_with",
+      "semantic_role": "semantic",
+      "mechanism": "Apple announced Rails would ship with Leopard"
+    },
+    {
+      "source": "rails",
+      "target": "github",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "GitHub uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "airbnb",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Airbnb uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "ao3",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Archive of Our Own uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "crunchbase",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Crunchbase uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "dribbble",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Dribbble uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "twitch",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Twitch uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "shopify",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Shopify uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "gitlab",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "GitLab uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "cookpad",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Cookpad uses Rails"
+    },
+    {
+      "source": "rails",
+      "target": "scribd",
+      "relationship": "used_by",
+      "semantic_role": "semantic",
+      "mechanism": "Scribd uses Rails"
+    },
+    {
+      "source": "twitter",
+      "target": "rails",
+      "relationship": "used",
+      "semantic_role": "semantic",
+      "mechanism": "Twitter used Rails heavily"
+    },
+    {
+      "source": "twitter",
+      "target": "scala",
+      "relationship": "migrated_component_to",
+      "semantic_role": "semantic",
+      "mechanism": "Some queueing/middleware and later UI moved to Scala"
+    },
+    {
+      "source": "rails",
+      "target": "scala",
+      "relationship": "performance_comparison_context",
+      "semantic_role": "semantic",
+      "mechanism": "Twitter used Scala for some workloads amid Rails scaling concerns"
+    },
+    {
+      "source": "model",
+      "target": "database",
+      "relationship": "maps_to",
+      "semantic_role": "semantic",
+      "mechanism": "Default model class maps by convention to database table",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "model",
+      "target": "ruby",
+      "relationship": "represented_by",
+      "semantic_role": "semantic",
+      "mechanism": "Model is a Ruby file/class",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "model",
+      "target": "active_record",
+      "relationship": "implemented_by",
+      "semantic_role": "semantic",
+      "mechanism": "Active Record supplies ORM behavior",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "controller",
+      "target": "http",
+      "relationship": "responds_to",
+      "semantic_role": "semantic",
+      "mechanism": "Controller handles external web requests",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "controller",
+      "target": "model",
+      "relationship": "queries",
+      "semantic_role": "semantic",
+      "mechanism": "Controller may query one or more models",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "controller",
+      "target": "view",
+      "relationship": "passes_data_to",
+      "semantic_role": "semantic",
+      "mechanism": "Controller supplies selected model data to view",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "routes",
+      "target": "action",
+      "relationship": "maps_to",
+      "semantic_role": "semantic",
+      "mechanism": "routes.rb maps routes to controller actions",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "action",
+      "target": "controller",
+      "relationship": "belongs_to",
+      "semantic_role": "semantic",
+      "mechanism": "Actions are controller response units",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "action",
+      "target": "view",
+      "relationship": "selects",
+      "semantic_role": "semantic",
+      "mechanism": "Controller action can determine view to render",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "view",
+      "target": "erb",
+      "relationship": "implemented_by",
+      "semantic_role": "semantic",
+      "mechanism": "Default views use ERB",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "erb",
+      "target": "html",
+      "relationship": "renders_to",
+      "semantic_role": "semantic",
+      "mechanism": "ERB evaluates into HTML",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "routes",
+      "target": "rest",
+      "relationship": "implements",
+      "semantic_role": "semantic",
+      "mechanism": "RESTful route conventions include CRUD-like actions",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "routes",
+      "relationship": "configures_through",
+      "semantic_role": "semantic",
+      "mechanism": "routes.rb configures request mapping",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "web_server",
+      "relationship": "fronted_by",
+      "semantic_role": "semantic",
+      "mechanism": "Usually sits behind a front-end web server",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "web_server",
+      "target": "rails",
+      "relationship": "forwards_requests_to",
+      "semantic_role": "semantic",
+      "mechanism": "Front-end server connects Internet traffic to Rails",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "apache",
+      "target": "passenger",
+      "relationship": "can_use_module",
+      "semantic_role": "semantic",
+      "mechanism": "Apache can use Phusion Passenger",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "nginx",
+      "target": "passenger",
+      "relationship": "can_use_module",
+      "semantic_role": "semantic",
+      "mechanism": "Nginx can use Passenger",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "passenger",
+      "relationship": "deployed_with",
+      "semantic_role": "semantic",
+      "mechanism": "Passenger became common Rails application server",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "nginx",
+      "relationship": "supported_by",
+      "semantic_role": "semantic",
+      "mechanism": "Rails can run behind Nginx",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "apache",
+      "relationship": "supported_by",
+      "semantic_role": "semantic",
+      "mechanism": "Rails can run behind Apache",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "lighttpd",
+      "relationship": "supported_by",
+      "semantic_role": "semantic",
+      "mechanism": "Rails can run with lighttpd",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "cherokee",
+      "relationship": "supported_by",
+      "semantic_role": "semantic",
+      "mechanism": "Rails can run with Cherokee",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "hiawatha",
+      "relationship": "supported_by",
+      "semantic_role": "semantic",
+      "mechanism": "Rails can run with Hiawatha",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "ibmi",
+      "relationship": "supported_on",
+      "semantic_role": "semantic",
+      "mechanism": "Ruby supported natively on IBM i",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "database_mysql",
+      "relationship": "commonly_deployed_with",
+      "semantic_role": "semantic",
+      "mechanism": "MySQL common deployment database",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "postgresql",
+      "relationship": "commonly_deployed_with",
+      "semantic_role": "semantic",
+      "mechanism": "PostgreSQL common deployment database",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "rack",
+      "relationship": "integrates",
+      "semantic_role": "semantic",
+      "mechanism": "Rack web interface"
+    },
+    {
+      "source": "v23",
+      "target": "rack",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Rails 2.3 included Rack"
+    },
+    {
+      "source": "v23",
+      "target": "engines",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Rails 2.3 introduced Engines"
+    },
+    {
+      "source": "v23",
+      "target": "templates",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Rails 2.3 introduced templates"
+    },
+    {
+      "source": "v31",
+      "target": "migration",
+      "relationship": "introduced_feature",
+      "semantic_role": "semantic",
+      "mechanism": "Reversible migrations"
+    },
+    {
+      "source": "v31",
+      "target": "sass",
+      "relationship": "introduced_feature",
+      "semantic_role": "semantic",
+      "mechanism": "Sass into stack"
+    },
+    {
+      "source": "v31",
+      "target": "jquery",
+      "relationship": "introduced_feature",
+      "semantic_role": "semantic",
+      "mechanism": "jQuery default JS library"
+    },
+    {
+      "source": "v31",
+      "target": "coffeescript",
+      "relationship": "introduced_feature",
+      "semantic_role": "semantic",
+      "mechanism": "CoffeeScript into stack"
+    },
+    {
+      "source": "v32",
+      "target": "cache",
+      "relationship": "improved",
+      "semantic_role": "semantic",
+      "mechanism": "Faster development mode and routing engine"
+    },
+    {
+      "source": "v40",
+      "target": "turbolinks",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Rails 4.0 introduced Turbolinks"
+    },
+    {
+      "source": "v40",
+      "target": "cache",
+      "relationship": "introduced_feature",
+      "semantic_role": "semantic",
+      "mechanism": "Russian Doll caching"
+    },
+    {
+      "source": "v41",
+      "target": "active_job",
+      "relationship": "related_feature",
+      "semantic_role": "semantic",
+      "mechanism": "Release introduced several framework conveniences"
+    },
+    {
+      "source": "v42",
+      "target": "active_job",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Active Job"
+    },
+    {
+      "source": "v50",
+      "target": "action_cable",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Action Cable"
+    },
+    {
+      "source": "v50",
+      "target": "api_mode",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "API mode"
+    },
+    {
+      "source": "v51",
+      "target": "yarn",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "JS dependency management via Yarn"
+    },
+    {
+      "source": "v51",
+      "target": "webpack",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Optional JS compilation with Webpack"
+    },
+    {
+      "source": "v51",
+      "target": "capybara",
+      "relationship": "uses_for",
+      "semantic_role": "semantic",
+      "mechanism": "System tests"
+    },
+    {
+      "source": "v51",
+      "target": "credentials",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Encrypted secrets"
+    },
+    {
+      "source": "v52",
+      "target": "active_storage",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Active Storage"
+    },
+    {
+      "source": "v52",
+      "target": "redis",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Built-in Redis cache store"
+    },
+    {
+      "source": "v52",
+      "target": "csp",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "CSP configuration DSL"
+    },
+    {
+      "source": "v60",
+      "target": "webpack",
+      "relationship": "made_default",
+      "semantic_role": "semantic",
+      "mechanism": "Webpack default"
+    },
+    {
+      "source": "v60",
+      "target": "action_mailbox",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Mailbox routing"
+    },
+    {
+      "source": "v60",
+      "target": "action_text",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Rich text editor"
+    },
+    {
+      "source": "v60",
+      "target": "multi_db",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Multiple DB support"
+    },
+    {
+      "source": "v61",
+      "target": "multi_db",
+      "relationship": "expanded",
+      "semantic_role": "semantic",
+      "mechanism": "Per-database switching"
+    },
+    {
+      "source": "v61",
+      "target": "sharding",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Horizontal database sharding"
+    },
+    {
+      "source": "v70",
+      "target": "importmaps",
+      "relationship": "made_default",
+      "semantic_role": "semantic",
+      "mechanism": "Import maps default for JS management"
+    },
+    {
+      "source": "v70",
+      "target": "webpack",
+      "relationship": "replaced_by",
+      "semantic_role": "semantic",
+      "mechanism": "Default JS management moved away from Webpack"
+    },
+    {
+      "source": "v70",
+      "target": "turbolinks",
+      "relationship": "replaced_by",
+      "semantic_role": "semantic",
+      "mechanism": "Turbo/Stimulus replaced Turbolinks"
+    },
+    {
+      "source": "v70",
+      "target": "turbo",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Turbo part of Hotwire"
+    },
+    {
+      "source": "v70",
+      "target": "stimulus",
+      "relationship": "introduced",
+      "semantic_role": "semantic",
+      "mechanism": "Stimulus part of Hotwire"
+    },
+    {
+      "source": "v70",
+      "target": "zeitwerk",
+      "relationship": "made_exclusive",
+      "semantic_role": "semantic",
+      "mechanism": "Zeitwerk exclusive code loader"
+    },
+    {
+      "source": "v71",
+      "target": "dockerfiles",
+      "relationship": "supports",
+      "semantic_role": "semantic",
+      "mechanism": "Dockerfiles support"
+    },
+    {
+      "source": "v71",
+      "target": "kamal",
+      "relationship": "supports",
+      "semantic_role": "semantic",
+      "mechanism": "Kamal deployment support"
+    },
+    {
+      "source": "v71",
+      "target": "bun",
+      "relationship": "supports",
+      "semantic_role": "semantic",
+      "mechanism": "Bun support"
+    },
+    {
+      "source": "v80",
+      "target": "one_person",
+      "relationship": "enables",
+      "semantic_role": "semantic",
+      "mechanism": "Self-hosting/independent operation emphasis"
+    },
+    {
+      "source": "v81",
+      "target": "rails81",
+      "relationship": "is",
+      "semantic_role": "semantic",
+      "mechanism": "Rails 8.1 feature set"
+    },
+    {
+      "source": "coc",
+      "target": "model",
+      "relationship": "governs_naming",
+      "semantic_role": "semantic",
+      "mechanism": "Class/table/file conventions",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "dry",
+      "target": "active_record",
+      "relationship": "reduces_duplication",
+      "semantic_role": "semantic",
+      "mechanism": "Column metadata can be inferred from DB",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "fat_models",
+      "target": "model",
+      "relationship": "places_logic_in",
+      "semantic_role": "semantic",
+      "mechanism": "Most application logic in model",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "fat_models",
+      "target": "controller",
+      "relationship": "keeps_light",
+      "semantic_role": "semantic",
+      "mechanism": "Controllers remain thin",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "conceptual_compression",
+      "target": "rails",
+      "relationship": "guides_design",
+      "semantic_role": "semantic",
+      "mechanism": "Rails hides lower-level complexity",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "html_over_wire",
+      "target": "hotwire",
+      "relationship": "expressed_by",
+      "semantic_role": "semantic",
+      "mechanism": "HTML delivery strategy",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "hotwire",
+      "target": "turbo",
+      "relationship": "contains",
+      "semantic_role": "semantic",
+      "mechanism": "Hotwire includes Turbo",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "hotwire",
+      "target": "stimulus",
+      "relationship": "contains",
+      "semantic_role": "semantic",
+      "mechanism": "Hotwire includes Stimulus",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "robust_security",
+      "target": "rails",
+      "relationship": "guides_security",
+      "semantic_role": "semantic",
+      "mechanism": "Security is a Rails design emphasis",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "security",
+      "target": "rails",
+      "relationship": "is_domain_of",
+      "semantic_role": "semantic",
+      "mechanism": "Rails has security features and vulnerabilities",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "egor_homakov",
+      "target": "rails",
+      "relationship": "identified_vulnerability_in",
+      "semantic_role": "semantic",
+      "mechanism": "Mass-assignment vulnerability",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "space",
+      "target": "rails",
+      "relationship": "analyzes",
+      "semantic_role": "semantic",
+      "mechanism": "Space analyzes Rails data access",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "daniel_jackson",
+      "target": "space",
+      "relationship": "co_developed",
+      "semantic_role": "semantic",
+      "mechanism": "Researcher involved in Space",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "joseph_near",
+      "target": "space",
+      "relationship": "co_developed",
+      "semantic_role": "semantic",
+      "mechanism": "Researcher involved in Space",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "twitter",
+      "target": "scala",
+      "relationship": "adopted_for",
+      "semantic_role": "semantic",
+      "mechanism": "Queueing/middleware moved to Scala",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "cache",
+      "relationship": "supports_scaling_with",
+      "semantic_role": "semantic",
+      "mechanism": "Caching is an architectural scaling technique",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "database_mysql",
+      "relationship": "scales_with_architecture",
+      "semantic_role": "semantic",
+      "mechanism": "Source notes database-engine choice as scaling lever",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "postgresql",
+      "relationship": "scales_with_architecture",
+      "semantic_role": "semantic",
+      "mechanism": "Source notes database-engine choice as scaling lever",
+      "source_line_ranges": [
+        [
+          195,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v1",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v12",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v2",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v21",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v22",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v23",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v30",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v31",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v32",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v40",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v41",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v42",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v50",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v51",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v52",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v60",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v61",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v70",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v71",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v72",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v80",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "v81",
+      "relationship": "has_release",
+      "semantic_role": "semantic",
+      "mechanism": "Version history entry",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v1",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v12",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v21",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v22",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v23",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v30",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v31",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v32",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v40",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v41",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v42",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v50",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v51",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v52",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v60",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v61",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v70",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v71",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v72",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v80",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "v81",
+      "target": "ruby",
+      "relationship": "requires_compatible_runtime",
+      "semantic_role": "compatibility",
+      "mechanism": "Compatibility is listed in source version table",
+      "source_line_ranges": [
+        [
+          122,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "dhh",
+      "target": "basecamp",
+      "relationship": "worked_on",
+      "semantic_role": "historical_origin",
+      "mechanism": "Rails extracted from DHH work on Basecamp",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "37signals",
+      "target": "basecamp",
+      "relationship": "developed",
+      "semantic_role": "historical_origin",
+      "mechanism": "Basecamp at web application company 37signals",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "apple",
+      "target": "macos",
+      "relationship": "announced_shipping",
+      "semantic_role": "historical_event",
+      "mechanism": "Apple announced Rails would ship with Leopard",
+      "source_line_ranges": [
+        [
+          83,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "merb",
+      "target": "rails",
+      "relationship": "collaborated_with",
+      "semantic_role": "historical_integration",
+      "mechanism": "Communities agreed to bring Merb ideas into Rails 3",
+      "source_line_ranges": [
+        [
+          87,
+          87
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "django",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "catalyst",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "laravel",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "cakephp",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "yii",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "grails",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "phoenix",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "play_scala",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "sailsjs",
+      "relationship": "influenced",
+      "semantic_role": "historical_influence",
+      "mechanism": "Rails influenced the framework.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "c1",
+      "target": "rails",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "source": "c1",
+      "target": "ruby",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "source": "c1",
+      "target": "mvc",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "source": "c1",
+      "target": "mit",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "source": "c2",
+      "target": "rails",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "rails",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "airbnb",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "ao3",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "crunchbase",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "dribbble",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "github",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "twitch",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c3",
+      "target": "shopify",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "c4",
+      "target": "dhh",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "c4",
+      "target": "rails",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "c4",
+      "target": "basecamp",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "c4",
+      "target": "37signals",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "c5",
+      "target": "v23",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "source": "c5",
+      "target": "templates",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "source": "c5",
+      "target": "engines",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "source": "c5",
+      "target": "rack",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "source": "c6",
+      "target": "merb",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          87,
+          87
+        ]
+      ]
+    },
+    {
+      "source": "c6",
+      "target": "rails3",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          87,
+          87
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "rails",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v31",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v40",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v42",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v50",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v51",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v52",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v60",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v61",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v70",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v71",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v80",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c7",
+      "target": "v81",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "mvc",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "model",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "controller",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "routes",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "action",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "view",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c8",
+      "target": "erb",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "source": "c9",
+      "target": "rails",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "c9",
+      "target": "apache",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "c9",
+      "target": "nginx",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "c9",
+      "target": "passenger",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "c9",
+      "target": "database_mysql",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "c9",
+      "target": "postgresql",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "source": "c10",
+      "target": "coc",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "source": "c10",
+      "target": "dry",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "source": "c10",
+      "target": "fat_models",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "source": "c10",
+      "target": "gpt",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "source": "c10",
+      "target": "conceptual_compression",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "source": "c10",
+      "target": "robust_security",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "source": "c11",
+      "target": "twitter",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "source": "c11",
+      "target": "scala",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "source": "c11",
+      "target": "cache",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "source": "c11",
+      "target": "database_mysql",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "source": "c11",
+      "target": "postgresql",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "source": "c12",
+      "target": "security",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "c12",
+      "target": "egor_homakov",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "c12",
+      "target": "space",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "c12",
+      "target": "daniel_jackson",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "c12",
+      "target": "joseph_near",
+      "relationship": "supports_claim",
+      "semantic_role": "provenance",
+      "mechanism": "Source claim is grounded in the cited source lines.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    },
+    {
+      "source": "rails",
+      "target": "ref1",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref2",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref3",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref4",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref5",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref6",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref7",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref8",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref9",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref10",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref11",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref12",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref13",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref14",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "rails",
+      "target": "ref15",
+      "relationship": "documented_by",
+      "semantic_role": "provenance",
+      "mechanism": "Reference listed in source bibliography/references."
+    },
+    {
+      "source": "ev2004",
+      "target": "rails",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2005",
+      "target": "v1",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2006",
+      "target": "macos",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2008",
+      "target": "merb",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2011",
+      "target": "v31",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2016",
+      "target": "v50",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2021",
+      "target": "v70",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2024",
+      "target": "v80",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "ev2025",
+      "target": "v81",
+      "relationship": "marks_event",
+      "semantic_role": "historical",
+      "mechanism": "Historical release/origin event"
+    },
+    {
+      "source": "v1",
+      "target": "v12",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v12",
+      "target": "v2",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "v21",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v21",
+      "target": "v22",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v22",
+      "target": "v23",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v23",
+      "target": "v30",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v30",
+      "target": "v31",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v31",
+      "target": "v32",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v32",
+      "target": "v40",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v40",
+      "target": "v41",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v41",
+      "target": "v42",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v42",
+      "target": "v50",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v50",
+      "target": "v51",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v51",
+      "target": "v52",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v52",
+      "target": "v60",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v60",
+      "target": "v61",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v61",
+      "target": "v70",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v70",
+      "target": "v71",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v71",
+      "target": "v72",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v72",
+      "target": "v80",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "v80",
+      "target": "v81",
+      "relationship": "precedes",
+      "semantic_role": "historical",
+      "mechanism": "Release evolution",
+      "source_line_ranges": [
+        [
+          121,
+          151
+        ]
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "m1",
+      "name": "Rails request flow",
+      "expression": "HTTP request → route → controller action → model query → view → HTML response",
+      "description": "Core MVC request path described by source.",
+      "source_line_ranges": [
+        [
+          159,
+          163
+        ]
+      ]
+    },
+    {
+      "id": "m2",
+      "name": "Convention mapping",
+      "expression": "ModelClass User → user.rb → users table",
+      "description": "Default naming convention links code, file and database.",
+      "source_line_ranges": [
+        [
+          159,
+          159
+        ]
+      ]
+    },
+    {
+      "id": "m3",
+      "name": "REST route mapping",
+      "expression": "request → routes.rb → controller#action",
+      "description": "External reachability requires route mapping.",
+      "source_line_ranges": [
+        [
+          161,
+          161
+        ]
+      ]
+    },
+    {
+      "id": "m4",
+      "name": "ERB rendering",
+      "expression": "ERB + model data → evaluated template → HTML",
+      "description": "Default Rails view rendering mechanism.",
+      "source_line_ranges": [
+        [
+          163,
+          163
+        ]
+      ]
+    },
+    {
+      "id": "m5",
+      "name": "Deployment path",
+      "expression": "Internet → front-end server → Rails → database",
+      "description": "Typical deployment architecture.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "id": "m6",
+      "name": "CoC inference",
+      "expression": "convention → omitted configuration → less code",
+      "description": "Rails reduces explicit naming/configuration when conventions apply.",
+      "source_line_ranges": [
+        [
+          195,
+          202
+        ]
+      ]
+    },
+    {
+      "id": "m7",
+      "name": "DRY metadata",
+      "expression": "model class → DB metadata → inferred columns",
+      "description": "Active Record avoids repeating database column declarations.",
+      "source_line_ranges": [
+        [
+          200,
+          202
+        ]
+      ]
+    },
+    {
+      "id": "m8",
+      "name": "Scaling architecture",
+      "expression": "Rails app + DB + cache + servers → scalable system",
+      "description": "Source frames scaling as system architecture.",
+      "source_line_ranges": [
+        [
+          216,
+          219
+        ]
+      ]
+    },
+    {
+      "id": "m9",
+      "name": "Security analysis",
+      "expression": "Rails program → Space → data-access analysis → access-rule findings",
+      "description": "Space analyzes Rails data access.",
+      "source_line_ranges": [
+        [
+          224,
+          226
+        ]
+      ]
+    },
+    {
+      "id": "m10",
+      "name": "Release evolution",
+      "expression": "Rails release → new defaults/features → changed stack",
+      "description": "Rails evolves by adopting/replacing technologies.",
+      "source_line_ranges": [
+        [
+          153,
+          154
+        ]
+      ]
+    },
+    {
+      "id": "m11",
+      "name": "Version compatibility",
+      "expression": "Rails release → compatible Ruby versions",
+      "description": "Source version table records compatibility.",
+      "source_line_ranges": [
+        [
+          121,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "m12",
+      "name": "Extension model",
+      "expression": "Rails → gems/engines → reusable functionality",
+      "description": "Standard extension mechanisms.",
+      "source_line_ranges": [
+        [
+          85,
+          188
+        ]
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c1",
+      "title": "Identity and purpose",
+      "summary": "Rails is a Ruby server-side MVC web application framework under MIT with default structures for database, web service and web pages.",
+      "source_line_ranges": [
+        [
+          63,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Influence",
+      "summary": "Rails influenced Django, Catalyst, Laravel, CakePHP, Yii, Grails, Phoenix, Play and Sails.js.",
+      "source_line_ranges": [
+        [
+          78,
+          78
+        ]
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "Named users",
+      "summary": "Source names Airbnb, Archive of Our Own, Crunchbase, Dribbble, GitHub, Twitch and Shopify.",
+      "source_line_ranges": [
+        [
+          80,
+          80
+        ]
+      ]
+    },
+    {
+      "id": "c4",
+      "title": "Origin",
+      "summary": "DHH extracted Rails from Basecamp at 37signals and released it open source in July 2004.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "c5",
+      "title": "Rails 2.3",
+      "summary": "Templates, Engines, Rack and Metal expanded Rails extensibility and optimized routing.",
+      "source_line_ranges": [
+        [
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "id": "c6",
+      "title": "Merb",
+      "summary": "Rails and Merb collaborated and Merb merged into Rails 3.",
+      "source_line_ranges": [
+        [
+          87,
+          87
+        ]
+      ]
+    },
+    {
+      "id": "c7",
+      "title": "Rails evolution",
+      "summary": "Rails 3.1 through 8.1 progressively changed JS, jobs, storage, database, deployment, code loading and self-hosting.",
+      "source_line_ranges": [
+        [
+          89,
+          119
+        ]
+      ]
+    },
+    {
+      "id": "c8",
+      "title": "MVC mechanics",
+      "summary": "Models map to tables/files, controllers handle requests/actions, routes map requests to actions, and views render HTML.",
+      "source_line_ranges": [
+        [
+          156,
+          163
+        ]
+      ]
+    },
+    {
+      "id": "c9",
+      "title": "Deployment",
+      "summary": "Rails commonly sits behind Apache/Nginx/Passenger and uses MySQL or PostgreSQL.",
+      "source_line_ranges": [
+        [
+          167,
+          193
+        ]
+      ]
+    },
+    {
+      "id": "c10",
+      "title": "Philosophy",
+      "summary": "CoC, DRY, fat models/skinny controllers, Rails Doctrine, conceptual compression and robust security shape Rails design.",
+      "source_line_ranges": [
+        [
+          195,
+          206
+        ]
+      ]
+    },
+    {
+      "id": "c11",
+      "title": "Scalability",
+      "summary": "Source documents historical Rails scaling criticism and emphasizes architecture choices such as database, cache and servers.",
+      "source_line_ranges": [
+        [
+          215,
+          219
+        ]
+      ]
+    },
+    {
+      "id": "c12",
+      "title": "Security",
+      "summary": "Source documents mass assignment, CookieStore persistence and Space analysis findings.",
+      "source_line_ranges": [
+        [
+          221,
+          226
+        ]
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Ruby on Rails release 8.1.3",
+      "description": "Rails/GitHub release reference"
+    },
+    {
+      "id": "ref2",
+      "title": "Getting Started with Rails",
+      "description": "Official Rails guide reference"
+    },
+    {
+      "id": "ref3",
+      "title": "Rails 3.0 Release Notes",
+      "description": "Rails release notes"
+    },
+    {
+      "id": "ref4",
+      "title": "Rails 3.1 Release Notes",
+      "description": "Rails release notes"
+    },
+    {
+      "id": "ref5",
+      "title": "Rails 4.0 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref6",
+      "title": "Rails 5.0 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref7",
+      "title": "Rails 6.0 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref8",
+      "title": "Rails 7.0 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref9",
+      "title": "Rails 7.1 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref10",
+      "title": "Rails 8.0 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref11",
+      "title": "Rails 8.1 Release",
+      "description": "Rails release announcement"
+    },
+    {
+      "id": "ref12",
+      "title": "Rails Doctrine",
+      "description": "Rails philosophy reference"
+    },
+    {
+      "id": "ref13",
+      "title": "Why we are sticking with Ruby on Rails",
+      "description": "GitLab scaling/use reference"
+    },
+    {
+      "id": "ref14",
+      "title": "Twitter on Scala",
+      "description": "Twitter migration reference"
+    },
+    {
+      "id": "ref15",
+      "title": "Patching up Web applications",
+      "description": "MIT News / security reference"
+    }
+  ],
+  "people": [
+    {
+      "id": "dhh",
+      "name": "David Heinemeier Hansson",
+      "role": "Original author/creator of Rails; extracted it from Basecamp work."
+    },
+    {
+      "id": "egor_homakov",
+      "name": "Egor Homakov",
+      "role": "Security researcher who discovered mass-assignment vulnerability."
+    },
+    {
+      "id": "daniel_jackson",
+      "name": "Daniel Jackson",
+      "role": "Researcher involved in Space."
+    },
+    {
+      "id": "joseph_near",
+      "name": "Joseph Near",
+      "role": "Researcher involved in Space."
+    }
+  ],
+  "historical_events": [
+    {
+      "id": "ev2004",
+      "label": "Rails open-sourced",
+      "date": "July 2004"
+    },
+    {
+      "id": "ev2005",
+      "label": "Rails 1.0 era",
+      "date": "December 2005"
+    },
+    {
+      "id": "ev2006",
+      "label": "Apple Leopard announcement",
+      "date": "August 2006"
+    },
+    {
+      "id": "ev2008",
+      "label": "Merb collaboration announced",
+      "date": "December 2008"
+    },
+    {
+      "id": "ev2011",
+      "label": "Rails 3.1 release",
+      "date": "August 2011"
+    },
+    {
+      "id": "ev2016",
+      "label": "Rails 5.0 release",
+      "date": "June 2016"
+    },
+    {
+      "id": "ev2021",
+      "label": "Rails 7.0 release",
+      "date": "December 2021"
+    },
+    {
+      "id": "ev2024",
+      "label": "Rails 8.0 release",
+      "date": "November 2024"
+    },
+    {
+      "id": "ev2025",
+      "label": "Rails 8.1 release",
+      "date": "October 2025"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d1",
+      "contrast": [
+        "Ruby",
+        "Ruby on Rails"
+      ],
+      "distinction": "Ruby is the language; Rails is the framework written in Ruby."
+    },
+    {
+      "id": "d2",
+      "contrast": [
+        "MVC model",
+        "Active Record model"
+      ],
+      "distinction": "MVC model is architectural role; Active Record supplies ORM behavior."
+    },
+    {
+      "id": "d3",
+      "contrast": [
+        "controller",
+        "action"
+      ],
+      "distinction": "Controller is component; action is a response unit within controller."
+    },
+    {
+      "id": "d4",
+      "contrast": [
+        "route",
+        "action"
+      ],
+      "distinction": "Route maps an external request to an action; action does not itself define public reachability."
+    },
+    {
+      "id": "d5",
+      "contrast": [
+        "ERB",
+        "Rails"
+      ],
+      "distinction": "ERB is a template engine; Rails is the application framework."
+    },
+    {
+      "id": "d6",
+      "contrast": [
+        "Rails",
+        "Rack"
+      ],
+      "distinction": "Rails is framework; Rack is web-server interface."
+    },
+    {
+      "id": "d7",
+      "contrast": [
+        "Rails",
+        "web server"
+      ],
+      "distinction": "Rails commonly sits behind a front-end server rather than directly on Internet."
+    },
+    {
+      "id": "d8",
+      "contrast": [
+        "Rails",
+        "Hotwire"
+      ],
+      "distinction": "Hotwire is client/web interaction family integrated as Rails 7 default."
+    },
+    {
+      "id": "d9",
+      "contrast": [
+        "Turbolinks",
+        "Turbo"
+      ],
+      "distinction": "Turbo replaced Turbolinks in Rails 7."
+    },
+    {
+      "id": "d10",
+      "contrast": [
+        "plugins",
+        "gems"
+      ],
+      "distinction": "Older Rails plugins were deprecated in favor of standard gems."
+    },
+    {
+      "id": "d11",
+      "contrast": [
+        "scaling",
+        "framework choice"
+      ],
+      "distinction": "Scaling depends on broader system architecture, not only framework."
+    },
+    {
+      "id": "d12",
+      "contrast": [
+        "security feature",
+        "security flaw"
+      ],
+      "distinction": "Framework security mechanisms coexist with application/configuration vulnerabilities."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "path_1",
+      "name": "Rails foundations",
+      "ordered_nodes": [
+        "ruby",
+        "rails",
+        "mvc",
+        "model",
+        "controller",
+        "view"
+      ]
+    },
+    {
+      "id": "path_2",
+      "name": "Request lifecycle",
+      "ordered_nodes": [
+        "http",
+        "routes",
+        "action",
+        "controller",
+        "model",
+        "active_record",
+        "view",
+        "erb"
+      ]
+    },
+    {
+      "id": "path_3",
+      "name": "Database development",
+      "ordered_nodes": [
+        "active_record",
+        "database",
+        "migration",
+        "database_mysql",
+        "postgresql"
+      ]
+    },
+    {
+      "id": "path_4",
+      "name": "Frontend evolution",
+      "ordered_nodes": [
+        "javascript",
+        "prototype",
+        "jquery",
+        "coffeescript",
+        "webpack",
+        "importmaps",
+        "hotwire",
+        "turbo",
+        "stimulus"
+      ]
+    },
+    {
+      "id": "path_5",
+      "name": "Extensibility",
+      "ordered_nodes": [
+        "gems",
+        "engines",
+        "templates",
+        "rack",
+        "plugins"
+      ]
+    },
+    {
+      "id": "path_6",
+      "name": "Deployment",
+      "ordered_nodes": [
+        "web_server",
+        "nginx",
+        "apache",
+        "passenger",
+        "rails"
+      ]
+    },
+    {
+      "id": "path_7",
+      "name": "Scaling",
+      "ordered_nodes": [
+        "cache",
+        "redis",
+        "multi_db",
+        "sharding",
+        "postgresql"
+      ]
+    },
+    {
+      "id": "path_8",
+      "name": "Security",
+      "ordered_nodes": [
+        "credentials",
+        "csp",
+        "encryption",
+        "security",
+        "space"
+      ]
+    },
+    {
+      "id": "path_9",
+      "name": "Rails history",
+      "ordered_nodes": [
+        "dhh",
+        "basecamp",
+        "v23",
+        "merb",
+        "rails3",
+        "v31",
+        "v40",
+        "v50",
+        "v60",
+        "v70",
+        "v80",
+        "v81"
+      ]
+    },
+    {
+      "id": "path_10",
+      "name": "Rails applications",
+      "ordered_nodes": [
+        "github",
+        "gitlab",
+        "shopify",
+        "airbnb",
+        "twitter",
+        "basecamp"
+      ]
+    },
+    {
+      "id": "path_11",
+      "name": "Philosophy",
+      "ordered_nodes": [
+        "coc",
+        "dry",
+        "fat_models",
+        "conceptual_compression",
+        "html_over_wire",
+        "one_person"
+      ]
+    },
+    {
+      "id": "path_12",
+      "name": "Ruby connection",
+      "ordered_nodes": [
+        "ruby",
+        "rails",
+        "rubygems",
+        "gems",
+        "rack",
+        "rake"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mc1",
+      "claim": "Rails is a programming language",
+      "correction": "Rails is a Ruby framework."
+    },
+    {
+      "id": "mc2",
+      "claim": "Every Rails request is directly handled by Rails from the Internet",
+      "correction": "Rails commonly sits behind a front-end web server."
+    },
+    {
+      "id": "mc3",
+      "claim": "MVC model is identical to Active Record",
+      "correction": "Active Record is the ORM implementation used for model/database behavior."
+    },
+    {
+      "id": "mc4",
+      "claim": "A controller action is automatically public",
+      "correction": "A route must map an external request to the controller action."
+    },
+    {
+      "id": "mc5",
+      "claim": "Rails scaling is only a framework problem",
+      "correction": "Source emphasizes database, cache, server and architecture choices."
+    },
+    {
+      "id": "mc6",
+      "claim": "Rails always uses Webpack",
+      "correction": "Rails 7 made import maps the default and moved away from Webpack as default."
+    },
+    {
+      "id": "mc7",
+      "claim": "Turbolinks is the Rails 7 default",
+      "correction": "Rails 7 replaced Turbolinks with Turbo + Stimulus."
+    },
+    {
+      "id": "mc8",
+      "claim": "Rails extensions are primarily custom plugins",
+      "correction": "Rails 3.2 deprecated custom plugin framework in favor of gems."
+    },
+    {
+      "id": "mc9",
+      "claim": "Ruby and Rails are interchangeable names",
+      "correction": "Ruby is the language; Rails is written in Ruby."
+    },
+    {
+      "id": "mc10",
+      "claim": "Rails has no security model",
+      "correction": "Source documents encryption, CSP, security work and security vulnerabilities."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Why is Rails written in Ruby?"
+    },
+    {
+      "id": "q2",
+      "question": "How does MVC map to Rails files and database tables?"
+    },
+    {
+      "id": "q3",
+      "question": "How does routes.rb expose controller actions?"
+    },
+    {
+      "id": "q4",
+      "question": "How does Active Record implement ORM behavior?"
+    },
+    {
+      "id": "q5",
+      "question": "Why does Convention over Configuration reduce code?"
+    },
+    {
+      "id": "q6",
+      "question": "How does DRY interact with database metadata?"
+    },
+    {
+      "id": "q7",
+      "question": "How does Rails sit behind Rack and front-end servers?"
+    },
+    {
+      "id": "q8",
+      "question": "Why did Rails adopt Hotwire?"
+    },
+    {
+      "id": "q9",
+      "question": "How did Rails move from jQuery/Webpack toward import maps?"
+    },
+    {
+      "id": "q10",
+      "question": "What did Merb contribute to Rails 3?"
+    },
+    {
+      "id": "q11",
+      "question": "How do Engines extend Rails applications?"
+    },
+    {
+      "id": "q12",
+      "question": "How do gems replace older plugins?"
+    },
+    {
+      "id": "q13",
+      "question": "How do migrations evolve database schemas?"
+    },
+    {
+      "id": "q14",
+      "question": "How do Active Job and Action Cable fit the framework?"
+    },
+    {
+      "id": "q15",
+      "question": "How does Rails support multiple databases and sharding?"
+    },
+    {
+      "id": "q16",
+      "question": "How can Rails applications scale architecturally?"
+    },
+    {
+      "id": "q17",
+      "question": "What security vulnerabilities have historically affected Rails applications?"
+    },
+    {
+      "id": "q18",
+      "question": "Which major products/sites use Rails?"
+    },
+    {
+      "id": "q19",
+      "question": "Why did Twitter move some workloads to Scala?"
+    },
+    {
+      "id": "q20",
+      "question": "How does Rails philosophy enable a one-person framework?"
+    },
+    {
+      "id": "q21",
+      "question": "What is conceptual compression in Rails?"
+    },
+    {
+      "id": "q22",
+      "question": "What is the relationship between Rails and RubyGems?"
+    },
+    {
+      "id": "q23",
+      "question": "What is the role of Rack?"
+    },
+    {
+      "id": "q24",
+      "question": "What is the deployment relationship among Rails, Nginx, Apache and Passenger?"
+    },
+    {
+      "id": "q25",
+      "question": "How does ERB become HTML?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "exp_1",
+      "target": "Active Record internals",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_2",
+      "target": "Action View",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_3",
+      "target": "Action Controller",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_4",
+      "target": "Action Mailer",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_5",
+      "target": "Active Job",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_6",
+      "target": "Action Cable",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_7",
+      "target": "Active Storage",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_8",
+      "target": "Action Text",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_9",
+      "target": "Action Mailbox",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_10",
+      "target": "Hotwire/Turbo/Stimulus",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_11",
+      "target": "Rack middleware stack",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_12",
+      "target": "Rails routing internals",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_13",
+      "target": "Rails security architecture",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_14",
+      "target": "Rails authentication ecosystem",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_15",
+      "target": "Rails authorization ecosystem",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_16",
+      "target": "Rails testing ecosystem",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_17",
+      "target": "RSpec",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_18",
+      "target": "Minitest",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_19",
+      "target": "Sidekiq",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_20",
+      "target": "Redis integration",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_21",
+      "target": "PostgreSQL scaling",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_22",
+      "target": "MySQL scaling",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_23",
+      "target": "Kamal deployment",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_24",
+      "target": "Dockerized Rails",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_25",
+      "target": "Kubernetes Rails deployment",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_26",
+      "target": "Ruby VM/runtime interaction",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_27",
+      "target": "YJIT and Rails",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_28",
+      "target": "JRuby Rails",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_29",
+      "target": "TruffleRuby Rails",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_30",
+      "target": "Rails API-only applications",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_31",
+      "target": "Rails Engines deep dive",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_32",
+      "target": "Rails plugin/gem architecture",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_33",
+      "target": "Rails 8 self-hosting",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_34",
+      "target": "Rails 8.1 job continuations",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_35",
+      "target": "GitHub Rails architecture",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_36",
+      "target": "Shopify Rails architecture",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_37",
+      "target": "Basecamp Rails architecture",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_38",
+      "target": "GitLab Rails architecture",
+      "reason": "Natural next expansion from source graph."
+    },
+    {
+      "id": "exp_39",
+      "target": "Airbnb Rails history",
+      "reason": "Natural next expansion from source graph."
+    }
+  ],
+  "validation": {
+    "node_count": 181,
+    "relationship_count": 291,
+    "formal_model_count": 12,
+    "source_claim_count": 12,
+    "reference_count": 15,
+    "person_count": 4,
+    "historical_event_count": 9,
+    "semantic_distinction_count": 12,
+    "learning_path_count": 12,
+    "misconception_count": 10,
+    "question_count": 25,
+    "expansion_target_count": 39,
+    "dangling_relationships": 0,
+    "duplicate_relationships": 0,
+    "status": "clean"
+  }
+}

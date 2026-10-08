@@ -1,0 +1,2878 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "graph_type": "dynamic_educational_knowledge_graph",
+  "topic": "C++ programming language",
+  "source": {
+    "filename": "Pasted text(20261007-220224).txt",
+    "line_count": 411,
+    "authority": "user-supplied source",
+    "external_research_used": false
+  },
+  "nodes": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "type": "programming_language",
+      "description": "High-level general-purpose multi-paradigm language.",
+      "source_line_ranges": "L63-L75"
+    },
+    {
+      "id": "c",
+      "label": "C",
+      "type": "programming_language",
+      "description": "Primary language family and direct hardware-access foundation.",
+      "source_line_ranges": "L64-L65"
+    },
+    {
+      "id": "stroustrup",
+      "label": "Bjarne Stroustrup",
+      "type": "person",
+      "description": "Creator and principal designer of C++.",
+      "source_line_ranges": "L65,L102-L103"
+    },
+    {
+      "id": "bell_labs",
+      "label": "Bell Labs",
+      "type": "organization",
+      "description": "Development environment where Stroustrup began C++ work.",
+      "source_line_ranges": "L98"
+    },
+    {
+      "id": "c_with_classes",
+      "label": "C with Classes",
+      "type": "language_predecessor",
+      "description": "Predecessor extending C with classes and related features.",
+      "source_line_ranges": "L103"
+    },
+    {
+      "id": "cfront",
+      "label": "Cfront",
+      "type": "compiler",
+      "description": "Early C++ compiler front end designed by Stroustrup.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "wg21",
+      "label": "ISO JTC1/SC22/WG21",
+      "type": "standards_body",
+      "description": "ISO working group responsible for C++ standardization.",
+      "source_line_ranges": "L66,L154"
+    },
+    {
+      "id": "iso",
+      "label": "ISO",
+      "type": "organization",
+      "description": "Standards organization publishing C++ standards.",
+      "source_line_ranges": "L98,L154"
+    },
+    {
+      "id": "cpp_standard",
+      "label": "ISO/IEC 14882",
+      "type": "standard",
+      "description": "C++ language and library standard family.",
+      "source_line_ranges": "L98,L154"
+    },
+    {
+      "id": "cpp98",
+      "label": "C++98",
+      "type": "standard_revision",
+      "description": "First standardized C++ revision.",
+      "source_line_ranges": "L113,L146"
+    },
+    {
+      "id": "cpp03",
+      "label": "C++03",
+      "type": "standard_revision",
+      "description": "Minor revision fixing C++98 issues.",
+      "source_line_ranges": "L147,L158"
+    },
+    {
+      "id": "cpp11",
+      "label": "C++11",
+      "type": "standard_revision",
+      "description": "Major revision adding many language/library features.",
+      "source_line_ranges": "L115,L148,L160"
+    },
+    {
+      "id": "cpp14",
+      "label": "C++14",
+      "type": "standard_revision",
+      "description": "Minor C++11 extension.",
+      "source_line_ranges": "L149,L162"
+    },
+    {
+      "id": "cpp17",
+      "label": "C++17",
+      "type": "standard_revision",
+      "description": "Major revision completed in 2017.",
+      "source_line_ranges": "L150,L164"
+    },
+    {
+      "id": "cpp20",
+      "label": "C++20",
+      "type": "standard_revision",
+      "description": "Major revision published in 2020.",
+      "source_line_ranges": "L151,L115"
+    },
+    {
+      "id": "cpp23",
+      "label": "C++23",
+      "type": "standard_revision",
+      "description": "Revision published as ISO/IEC 14882:2024 in source.",
+      "source_line_ranges": "L69,L152"
+    },
+    {
+      "id": "cpp26",
+      "label": "C++26",
+      "type": "standard_revision",
+      "description": "Next revision under development in source.",
+      "source_line_ranges": "L71,L153-L154"
+    },
+    {
+      "id": "stdlib",
+      "label": "C++ Standard Library",
+      "type": "standard_library",
+      "description": "Standard library specified alongside core language.",
+      "source_line_ranges": "L209-L215"
+    },
+    {
+      "id": "stl",
+      "label": "Standard Template Library",
+      "type": "library",
+      "description": "Generic containers/iterators/algorithms model incorporated into standard library.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "stepanov",
+      "label": "Alexander Stepanov",
+      "type": "person",
+      "description": "STL proponent/designer.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "meng_lee",
+      "label": "Meng Lee",
+      "type": "person",
+      "description": "STL proponent/designer.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "templates",
+      "label": "Templates",
+      "type": "language_feature",
+      "description": "Generic programming mechanism.",
+      "source_line_ranges": "L94,L217"
+    },
+    {
+      "id": "generic",
+      "label": "Generic programming",
+      "type": "paradigm",
+      "description": "Paradigm supported by templates.",
+      "source_line_ranges": "L63,L94"
+    },
+    {
+      "id": "oop",
+      "label": "Object-oriented programming",
+      "type": "paradigm",
+      "description": "OOP support added during early C++ development.",
+      "source_line_ranges": "L63,L94"
+    },
+    {
+      "id": "functional",
+      "label": "Functional programming",
+      "type": "paradigm",
+      "description": "Functional facilities supported by C++.",
+      "source_line_ranges": "L63,L94"
+    },
+    {
+      "id": "procedural",
+      "label": "Procedural programming",
+      "type": "paradigm",
+      "description": "Procedural style inherited from C.",
+      "source_line_ranges": "L63"
+    },
+    {
+      "id": "imperative",
+      "label": "Imperative programming",
+      "type": "paradigm",
+      "description": "Imperative programming supported.",
+      "source_line_ranges": "L63"
+    },
+    {
+      "id": "modular",
+      "label": "Modular programming",
+      "type": "paradigm",
+      "description": "Facilities for separating/combining program parts.",
+      "source_line_ranges": "L63,L135"
+    },
+    {
+      "id": "reflection",
+      "label": "Reflection",
+      "type": "feature",
+      "description": "Reflective programming support/technical work.",
+      "source_line_ranges": "L63,L184"
+    },
+    {
+      "id": "dbc",
+      "label": "Design by contract",
+      "type": "paradigm",
+      "description": "Listed as supported paradigm.",
+      "source_line_ranges": "L63"
+    },
+    {
+      "id": "static",
+      "label": "Static typing",
+      "type": "type_system",
+      "description": "Static typing discipline.",
+      "source_line_ranges": "L72"
+    },
+    {
+      "id": "strong",
+      "label": "Strong typing",
+      "type": "type_system",
+      "description": "Strong typing discipline.",
+      "source_line_ranges": "L72,L136"
+    },
+    {
+      "id": "nominative",
+      "label": "Nominative typing",
+      "type": "type_system",
+      "description": "Nominative typing discipline.",
+      "source_line_ranges": "L72"
+    },
+    {
+      "id": "inference",
+      "label": "Partial type inference",
+      "type": "type_system",
+      "description": "Partial inference.",
+      "source_line_ranges": "L72"
+    },
+    {
+      "id": "hardware",
+      "label": "Direct hardware mapping",
+      "type": "design_model",
+      "description": "Direct mapping of hardware features, primarily via C.",
+      "source_line_ranges": "L189-L191"
+    },
+    {
+      "id": "zero_overhead",
+      "label": "Zero-overhead abstractions",
+      "type": "design_principle",
+      "description": "Abstraction goal without unnecessary runtime/executable cost.",
+      "source_line_ranges": "L189-L191"
+    },
+    {
+      "id": "memory_control",
+      "label": "Low-level/manual memory control",
+      "type": "capability",
+      "description": "Programmer-controlled memory manipulation and allocation.",
+      "source_line_ranges": "L94,L107,L141"
+    },
+    {
+      "id": "new",
+      "label": "new",
+      "type": "language_feature",
+      "description": "Free-store allocation.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "delete",
+      "label": "delete",
+      "type": "language_feature",
+      "description": "Free-store deallocation.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "classes",
+      "label": "Classes",
+      "type": "language_feature",
+      "description": "Core user-defined abstraction.",
+      "source_line_ranges": "L103,L107"
+    },
+    {
+      "id": "inheritance",
+      "label": "Derived classes/inheritance",
+      "type": "language_feature",
+      "description": "Inheritance capability.",
+      "source_line_ranges": "L103"
+    },
+    {
+      "id": "virtual",
+      "label": "Virtual functions",
+      "type": "language_feature",
+      "description": "Virtual dispatch capability.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "overload",
+      "label": "Function/operator overloading",
+      "type": "language_feature",
+      "description": "Overloading capability.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "references",
+      "label": "References",
+      "type": "language_feature",
+      "description": "Reference feature.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "const",
+      "label": "const",
+      "type": "language_feature",
+      "description": "Const qualification.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "multiple_inheritance",
+      "label": "Multiple inheritance",
+      "type": "language_feature",
+      "description": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "abstract",
+      "label": "Abstract classes",
+      "type": "language_feature",
+      "description": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "static_members",
+      "label": "Static member functions",
+      "type": "language_feature",
+      "description": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "protected",
+      "label": "Protected members",
+      "type": "language_feature",
+      "description": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "exceptions",
+      "label": "Exceptions",
+      "type": "language_feature",
+      "description": "Later C++ feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "namespaces",
+      "label": "Namespaces",
+      "type": "language_feature",
+      "description": "Later C++ feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "casts",
+      "label": "New casts",
+      "type": "language_feature",
+      "description": "Later C++ feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "bool",
+      "label": "Boolean type",
+      "type": "language_feature",
+      "description": "Later C++ feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "source",
+      "label": "C++ source",
+      "type": "artifact",
+      "description": "C++ program source representation."
+    },
+    {
+      "id": "compiler",
+      "label": "C++ compiler",
+      "type": "toolchain",
+      "description": "Compiler implementation.",
+      "source_line_ranges": "L94,L76-L77"
+    },
+    {
+      "id": "object",
+      "label": "Object code",
+      "type": "artifact",
+      "description": "Compiler-produced object code.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "linker",
+      "label": "Linker",
+      "type": "tool",
+      "description": "Links object code/libraries."
+    },
+    {
+      "id": "exe",
+      "label": "Executable",
+      "type": "artifact",
+      "description": "Linked executable artifact."
+    },
+    {
+      "id": "machine",
+      "label": "Machine code",
+      "type": "artifact",
+      "description": "Processor-level instructions."
+    },
+    {
+      "id": "assembly",
+      "label": "Assembly language",
+      "type": "language",
+      "description": "Low-level language usable with C++.",
+      "source_line_ranges": "L139,L237-L247"
+    },
+    {
+      "id": "inline_asm",
+      "label": "Inline assembly",
+      "type": "integration",
+      "description": "Embedded compiler-specific assembly.",
+      "source_line_ranges": "L237-L247"
+    },
+    {
+      "id": "standalone_asm",
+      "label": "Standalone assembly",
+      "type": "integration",
+      "description": "Separate assembly linked with C++.",
+      "source_line_ranges": "L247"
+    },
+    {
+      "id": "abi",
+      "label": "C++ ABI",
+      "type": "interface",
+      "description": "Implementation-specific binary compatibility behavior.",
+      "source_line_ranges": "L226-L227"
+    },
+    {
+      "id": "mangling",
+      "label": "Name mangling",
+      "type": "abi_detail",
+      "description": "Implementation-specific symbol naming.",
+      "source_line_ranges": "L227,L235"
+    },
+    {
+      "id": "excabi",
+      "label": "Exception ABI",
+      "type": "abi_detail",
+      "description": "Implementation-specific exception ABI.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "itanium",
+      "label": "Itanium C++ ABI",
+      "type": "abi",
+      "description": "ABI implemented by GCC and Clang in source.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "extern_c",
+      "label": "extern C / C linkage",
+      "type": "interop",
+      "description": "C linkage for mixed C/C++ functions.",
+      "source_line_ranges": "L235"
+    },
+    {
+      "id": "core_guidelines",
+      "label": "C++ Core Guidelines",
+      "type": "guidelines",
+      "description": "Modern C++ best-practice initiative focused on type/resource safety.",
+      "source_line_ranges": "L219-L224"
+    },
+    {
+      "id": "sutter",
+      "label": "Herb Sutter",
+      "type": "person",
+      "description": "Leader/chair associated with Core Guidelines.",
+      "source_line_ranges": "L220"
+    },
+    {
+      "id": "gsl",
+      "label": "Guideline Support Library",
+      "type": "library",
+      "description": "Header-only support library for Core Guidelines.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "smart",
+      "label": "Smart pointers",
+      "type": "library_feature",
+      "description": "GSL feature later integrated into standard ecosystem.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "span",
+      "label": "std::span",
+      "type": "library_feature",
+      "description": "GSL feature later integrated.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "byte",
+      "label": "std::byte",
+      "type": "library_feature",
+      "description": "GSL feature later integrated.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "staticcheck",
+      "label": "Static checking tools",
+      "type": "tooling",
+      "description": "Tools for catching bad practices.",
+      "source_line_ranges": "L220-L224"
+    },
+    {
+      "id": "safety",
+      "label": "Type/resource safety",
+      "type": "design_goal",
+      "description": "Safety target of Core Guidelines.",
+      "source_line_ranges": "L220"
+    },
+    {
+      "id": "headers",
+      "label": "Standard headers",
+      "type": "library_interface",
+      "description": "Traditional standard library access.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "header_units",
+      "label": "Header units",
+      "type": "module_mechanism",
+      "description": "Importable standard library headers since C++20.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "modules",
+      "label": "Modules",
+      "type": "language_feature",
+      "description": "Module support; std/std.compat in C++23.",
+      "source_line_ranges": "L182,L202-L215"
+    },
+    {
+      "id": "std_module",
+      "label": "std module",
+      "type": "module",
+      "description": "C++23 named standard library module.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "std_compat",
+      "label": "std.compat module",
+      "type": "module",
+      "description": "C++23 named compatibility module.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "containers",
+      "label": "Containers",
+      "type": "library_area",
+      "description": "Standard library containers.",
+      "source_line_ranges": "L213,L217"
+    },
+    {
+      "id": "iterators",
+      "label": "Iterators",
+      "type": "library_area",
+      "description": "Iterator facilities.",
+      "source_line_ranges": "L213,L217"
+    },
+    {
+      "id": "ranges",
+      "label": "Ranges",
+      "type": "library_area",
+      "description": "Ranges facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "algorithms",
+      "label": "Algorithms",
+      "type": "library_area",
+      "description": "Generic algorithms.",
+      "source_line_ranges": "L213,L217"
+    },
+    {
+      "id": "strings",
+      "label": "Strings/text",
+      "type": "library_area",
+      "description": "String/text facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "numerics",
+      "label": "Numerics",
+      "type": "library_area",
+      "description": "Numerical facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "io",
+      "label": "Input/output",
+      "type": "library_area",
+      "description": "I/O facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "concurrency",
+      "label": "Concurrency",
+      "type": "library_area",
+      "description": "Concurrency support.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "memory",
+      "label": "Memory management",
+      "type": "library_area",
+      "description": "Memory-management facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "meta",
+      "label": "Metaprogramming",
+      "type": "library_area",
+      "description": "Metaprogramming facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "diagnostics",
+      "label": "Diagnostics",
+      "type": "library_area",
+      "description": "Diagnostic facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "time",
+      "label": "Time",
+      "type": "library_area",
+      "description": "Time facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "lang_support",
+      "label": "Language support",
+      "type": "library_area",
+      "description": "Language support facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "utils",
+      "label": "General utilities",
+      "type": "library_area",
+      "description": "General utilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "text",
+      "label": "Text processing",
+      "type": "library_area",
+      "description": "Text-processing facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "c_lib",
+      "label": "C standard library facilities",
+      "type": "library_area",
+      "description": "C library facilities exposed through C++ headers.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "buffer",
+      "label": "Buffer overflow risk",
+      "type": "security_issue",
+      "description": "Security risk that can result from misuse of manual memory management.",
+      "source_line_ranges": "L121"
+    },
+    {
+      "id": "windows",
+      "label": "Microsoft Windows",
+      "type": "software_system",
+      "description": "System whose creation/maintenance used C++.",
+      "source_line_ranges": "L94"
+    },
+    {
+      "id": "systems",
+      "label": "Systems programming",
+      "type": "domain",
+      "description": "Major design/use domain.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "embedded",
+      "label": "Embedded/resource-constrained",
+      "type": "domain",
+      "description": "Embedded and resource-constrained software.",
+      "source_line_ranges": "L96,L168"
+    },
+    {
+      "id": "desktop",
+      "label": "Desktop applications",
+      "type": "domain",
+      "description": "Application domain.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "games",
+      "label": "Video games",
+      "type": "domain",
+      "description": "Application domain.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "servers",
+      "label": "Servers",
+      "type": "domain",
+      "description": "E-commerce, web search, database servers.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "perf",
+      "label": "Performance-critical applications",
+      "type": "domain",
+      "description": "Telephone switches, space probes, etc.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "gcc",
+      "label": "GCC",
+      "type": "compiler",
+      "description": "Major C++ implementation: GCC.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "clang",
+      "label": "LLVM Clang",
+      "type": "compiler",
+      "description": "Major C++ implementation: LLVM Clang.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "msvc",
+      "label": "Microsoft Visual C++",
+      "type": "compiler",
+      "description": "Major C++ implementation: Microsoft Visual C++.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "cxxbuilder",
+      "label": "Embarcadero C++Builder",
+      "type": "compiler",
+      "description": "Major C++ implementation: Embarcadero C++Builder.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "intel",
+      "label": "Intel C++ Compiler",
+      "type": "compiler",
+      "description": "Major C++ implementation: Intel C++ Compiler.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "ibm",
+      "label": "IBM XL C++",
+      "type": "compiler",
+      "description": "Major C++ implementation: IBM XL C++.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "edg",
+      "label": "EDG",
+      "type": "compiler",
+      "description": "Major C++ implementation: EDG.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "infl_ada",
+      "label": "Ada",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_algol_68",
+      "label": "ALGOL 68",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_bcpl",
+      "label": "BCPL",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_clu",
+      "label": "CLU",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_f",
+      "label": "F#",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_ml",
+      "label": "ML",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_mesa",
+      "label": "Mesa",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_modula_2",
+      "label": "Modula-2",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_simula",
+      "label": "Simula",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "infl_smalltalk",
+      "label": "Smalltalk",
+      "type": "programming_language",
+      "description": "Language listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "down_ada_95",
+      "label": "Ada 95",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_c",
+      "label": "C#",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_c99",
+      "label": "C99",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_carbon",
+      "label": "Carbon",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_chapel",
+      "label": "Chapel",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_clojure",
+      "label": "Clojure",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_d",
+      "label": "D",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_java",
+      "label": "Java",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_js",
+      "label": "JS++",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_lua",
+      "label": "Lua",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_nim",
+      "label": "Nim",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_objective_c",
+      "label": "Objective-C++",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_perl",
+      "label": "Perl",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_php",
+      "label": "PHP",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_python",
+      "label": "Python",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "down_rust",
+      "label": "Rust",
+      "type": "programming_language",
+      "description": "Language listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "cpp20_coroutines",
+      "label": "Coroutines",
+      "type": "language_feature",
+      "description": "Coroutines integrated into C++20.",
+      "source_line_ranges": "L180"
+    },
+    {
+      "id": "concepts",
+      "label": "Concepts",
+      "type": "language_feature",
+      "description": "Concepts integrated into C++20.",
+      "source_line_ranges": "L176"
+    },
+    {
+      "id": "filesystem",
+      "label": "Filesystem library",
+      "type": "library_feature",
+      "description": "Filesystem library integrated into C++17.",
+      "source_line_ranges": "L172"
+    },
+    {
+      "id": "parallel_algorithms",
+      "label": "Parallel algorithms",
+      "type": "library_feature",
+      "description": "Parallel standard-library algorithm facilities.",
+      "source_line_ranges": "L173"
+    },
+    {
+      "id": "technical_reports",
+      "label": "C++ technical reports/specifications",
+      "type": "standards_artifact",
+      "description": "Technical reports/specifications contributing to C++ evolution.",
+      "source_line_ranges": "L166-L186"
+    },
+    {
+      "id": "embedded_tr",
+      "label": "Embedded C++ performance technical report",
+      "type": "technical_report",
+      "description": "Technical report on embedded systems and performance implications.",
+      "source_line_ranges": "L168"
+    },
+    {
+      "id": "networking_ts",
+      "label": "Networking library TS",
+      "type": "technical_specification",
+      "description": "Networking library technical specification.",
+      "source_line_ranges": "L181"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "e1",
+      "source": "bell_labs",
+      "target": "c_with_classes",
+      "relationship": "hosted_development",
+      "mechanism": "Stroustrup began C with Classes work at Bell Labs.",
+      "source_line_ranges": "L98,L103"
+    },
+    {
+      "id": "e2",
+      "source": "stroustrup",
+      "target": "c_with_classes",
+      "relationship": "created",
+      "mechanism": "Created the C++ predecessor.",
+      "source_line_ranges": "L103"
+    },
+    {
+      "id": "e3",
+      "source": "c_with_classes",
+      "target": "c",
+      "relationship": "extends",
+      "mechanism": "Extended C.",
+      "source_line_ranges": "L103"
+    },
+    {
+      "id": "e4",
+      "source": "cpp",
+      "target": "c_with_classes",
+      "relationship": "evolved_from",
+      "mechanism": "C++ evolved from C with Classes.",
+      "source_line_ranges": "L103"
+    },
+    {
+      "id": "e5",
+      "source": "cpp",
+      "target": "c",
+      "relationship": "extends",
+      "mechanism": "First released as an extension of C.",
+      "source_line_ranges": "L94,L98"
+    },
+    {
+      "id": "e6",
+      "source": "cpp",
+      "target": "stroustrup",
+      "relationship": "created_by",
+      "mechanism": "Created by Bjarne Stroustrup.",
+      "source_line_ranges": "L65,L94"
+    },
+    {
+      "id": "e7",
+      "source": "cfront",
+      "target": "cpp",
+      "relationship": "compiles",
+      "mechanism": "Early C++ compiler front end.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e8",
+      "source": "cpp",
+      "target": "oop",
+      "relationship": "supports",
+      "mechanism": "Supports OOP.",
+      "source_line_ranges": "L63,L94"
+    },
+    {
+      "id": "e9",
+      "source": "cpp",
+      "target": "functional",
+      "relationship": "supports",
+      "mechanism": "Supports functional programming features.",
+      "source_line_ranges": "L63,L94"
+    },
+    {
+      "id": "e10",
+      "source": "cpp",
+      "target": "generic",
+      "relationship": "supports",
+      "mechanism": "Supports generic programming.",
+      "source_line_ranges": "L63,L94"
+    },
+    {
+      "id": "e11",
+      "source": "cpp",
+      "target": "procedural",
+      "relationship": "supports",
+      "mechanism": "Supports procedural style.",
+      "source_line_ranges": "L63"
+    },
+    {
+      "id": "e12",
+      "source": "cpp",
+      "target": "imperative",
+      "relationship": "supports",
+      "mechanism": "Supports imperative programming.",
+      "source_line_ranges": "L63"
+    },
+    {
+      "id": "e13",
+      "source": "cpp",
+      "target": "modular",
+      "relationship": "supports",
+      "mechanism": "Supports modular organization.",
+      "source_line_ranges": "L63,L135"
+    },
+    {
+      "id": "e14",
+      "source": "cpp",
+      "target": "reflection",
+      "relationship": "supports",
+      "mechanism": "Reflection listed as paradigm/feature.",
+      "source_line_ranges": "L63,L184"
+    },
+    {
+      "id": "e15",
+      "source": "cpp",
+      "target": "dbc",
+      "relationship": "supports",
+      "mechanism": "Design by contract listed as paradigm.",
+      "source_line_ranges": "L63"
+    },
+    {
+      "id": "e16",
+      "source": "cpp",
+      "target": "static",
+      "relationship": "uses_type_system",
+      "mechanism": "Static typing.",
+      "source_line_ranges": "L72"
+    },
+    {
+      "id": "e17",
+      "source": "cpp",
+      "target": "strong",
+      "relationship": "uses_type_system",
+      "mechanism": "Strong typing.",
+      "source_line_ranges": "L72,L136"
+    },
+    {
+      "id": "e18",
+      "source": "cpp",
+      "target": "nominative",
+      "relationship": "uses_type_system",
+      "mechanism": "Nominative typing.",
+      "source_line_ranges": "L72"
+    },
+    {
+      "id": "e19",
+      "source": "cpp",
+      "target": "inference",
+      "relationship": "uses_type_system",
+      "mechanism": "Partial type inference.",
+      "source_line_ranges": "L72"
+    },
+    {
+      "id": "e20",
+      "source": "cpp",
+      "target": "hardware",
+      "relationship": "provides",
+      "mechanism": "Direct hardware mapping.",
+      "source_line_ranges": "L189-L191"
+    },
+    {
+      "id": "e21",
+      "source": "cpp",
+      "target": "zero_overhead",
+      "relationship": "designed_around",
+      "mechanism": "Zero-overhead abstractions.",
+      "source_line_ranges": "L189-L191"
+    },
+    {
+      "id": "e22",
+      "source": "cpp",
+      "target": "memory_control",
+      "relationship": "provides",
+      "mechanism": "Low-level/manual memory control.",
+      "source_line_ranges": "L94,L141"
+    },
+    {
+      "id": "e23",
+      "source": "memory_control",
+      "target": "new",
+      "relationship": "implements",
+      "mechanism": "Allocation mechanism.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e24",
+      "source": "memory_control",
+      "target": "delete",
+      "relationship": "implements",
+      "mechanism": "Deallocation mechanism.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e25",
+      "source": "memory_control",
+      "target": "buffer",
+      "relationship": "can_cause",
+      "mechanism": "Misuse can create buffer-overflow security risk.",
+      "source_line_ranges": "L121"
+    },
+    {
+      "id": "e26",
+      "source": "cpp",
+      "target": "classes",
+      "relationship": "provides",
+      "mechanism": "Classes are central user-defined abstractions.",
+      "source_line_ranges": "L103,L107"
+    },
+    {
+      "id": "e27",
+      "source": "classes",
+      "target": "inheritance",
+      "relationship": "supports",
+      "mechanism": "Classes support derived classes/inheritance.",
+      "source_line_ranges": "L103"
+    },
+    {
+      "id": "e28",
+      "source": "cpp",
+      "target": "virtual",
+      "relationship": "provides",
+      "mechanism": "Virtual functions.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e29",
+      "source": "cpp",
+      "target": "overload",
+      "relationship": "provides",
+      "mechanism": "Function/operator overloading.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e30",
+      "source": "cpp",
+      "target": "references",
+      "relationship": "provides",
+      "mechanism": "References.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e31",
+      "source": "cpp",
+      "target": "const",
+      "relationship": "provides",
+      "mechanism": "Const.",
+      "source_line_ranges": "L107"
+    },
+    {
+      "id": "e32",
+      "source": "cpp",
+      "target": "multiple_inheritance",
+      "relationship": "supports",
+      "mechanism": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e33",
+      "source": "cpp",
+      "target": "abstract",
+      "relationship": "supports",
+      "mechanism": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e34",
+      "source": "cpp",
+      "target": "static_members",
+      "relationship": "supports",
+      "mechanism": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e35",
+      "source": "cpp",
+      "target": "protected",
+      "relationship": "supports",
+      "mechanism": "C++2.0 feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e36",
+      "source": "cpp",
+      "target": "exceptions",
+      "relationship": "supports",
+      "mechanism": "Later feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e37",
+      "source": "cpp",
+      "target": "namespaces",
+      "relationship": "supports",
+      "mechanism": "Later feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e38",
+      "source": "cpp",
+      "target": "casts",
+      "relationship": "supports",
+      "mechanism": "Later feature.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e39",
+      "source": "cpp",
+      "target": "bool",
+      "relationship": "supports",
+      "mechanism": "Boolean type.",
+      "source_line_ranges": "L111"
+    },
+    {
+      "id": "e40",
+      "source": "cpp",
+      "target": "templates",
+      "relationship": "provides",
+      "mechanism": "Templates enable generic programming.",
+      "source_line_ranges": "L94"
+    },
+    {
+      "id": "e41",
+      "source": "templates",
+      "target": "generic",
+      "relationship": "enables",
+      "mechanism": "Templates enable generic programming.",
+      "source_line_ranges": "L94"
+    },
+    {
+      "id": "e42",
+      "source": "generic",
+      "target": "stl",
+      "relationship": "underpins",
+      "mechanism": "STL model is generic programming based.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "e43",
+      "source": "stepanov",
+      "target": "stl",
+      "relationship": "proposed",
+      "mechanism": "Proposed STL model.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "e44",
+      "source": "meng_lee",
+      "target": "stl",
+      "relationship": "proposed_with",
+      "mechanism": "Co-proposed STL model.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "e45",
+      "source": "stl",
+      "target": "stdlib",
+      "relationship": "integrated_into",
+      "mechanism": "STL containers/iterators/algorithms model became part of standard library.",
+      "source_line_ranges": "L217"
+    },
+    {
+      "id": "e46",
+      "source": "stdlib",
+      "target": "cpp_standard",
+      "relationship": "specified_by",
+      "mechanism": "Standard library specified by C++ standard.",
+      "source_line_ranges": "L211"
+    },
+    {
+      "id": "e47",
+      "source": "cpp_standard",
+      "target": "wg21",
+      "relationship": "maintained_by",
+      "mechanism": "WG21 standardizes/maintains revisions.",
+      "source_line_ranges": "L154"
+    },
+    {
+      "id": "e48",
+      "source": "iso",
+      "target": "wg21",
+      "relationship": "contains",
+      "mechanism": "WG21 is an ISO working group.",
+      "source_line_ranges": "L154"
+    },
+    {
+      "id": "e49",
+      "source": "cpp",
+      "target": "cpp_standard",
+      "relationship": "standardized_by",
+      "mechanism": "C++ standardized by ISO.",
+      "source_line_ranges": "L98"
+    },
+    {
+      "id": "e50",
+      "source": "wg21",
+      "target": "cpp_standard",
+      "relationship": "standardizes",
+      "mechanism": "WG21 standardizes C++.",
+      "source_line_ranges": "L154"
+    },
+    {
+      "id": "e51",
+      "source": "cpp",
+      "target": "systems",
+      "relationship": "used_for",
+      "mechanism": "Systems programming.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "e52",
+      "source": "cpp",
+      "target": "embedded",
+      "relationship": "used_for",
+      "mechanism": "Embedded/resource-constrained software.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "e53",
+      "source": "cpp",
+      "target": "desktop",
+      "relationship": "used_for",
+      "mechanism": "Desktop applications.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "e54",
+      "source": "cpp",
+      "target": "games",
+      "relationship": "used_for",
+      "mechanism": "Video games.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "e55",
+      "source": "cpp",
+      "target": "servers",
+      "relationship": "used_for",
+      "mechanism": "Servers.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "e56",
+      "source": "cpp",
+      "target": "perf",
+      "relationship": "used_for",
+      "mechanism": "Performance-critical applications.",
+      "source_line_ranges": "L96"
+    },
+    {
+      "id": "e57",
+      "source": "cpp",
+      "target": "windows",
+      "relationship": "used_in",
+      "mechanism": "Windows creation/maintenance.",
+      "source_line_ranges": "L94"
+    },
+    {
+      "id": "e58",
+      "source": "cpp",
+      "target": "compiler",
+      "relationship": "implemented_by",
+      "mechanism": "Usually implemented by compilers.",
+      "source_line_ranges": "L94"
+    },
+    {
+      "id": "e59",
+      "source": "cpp",
+      "target": "gcc",
+      "relationship": "implemented_by",
+      "mechanism": "GCC is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e60",
+      "source": "cpp",
+      "target": "clang",
+      "relationship": "implemented_by",
+      "mechanism": "LLVM Clang is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e61",
+      "source": "cpp",
+      "target": "msvc",
+      "relationship": "implemented_by",
+      "mechanism": "Microsoft Visual C++ is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e62",
+      "source": "cpp",
+      "target": "cxxbuilder",
+      "relationship": "implemented_by",
+      "mechanism": "Embarcadero C++Builder is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e63",
+      "source": "cpp",
+      "target": "intel",
+      "relationship": "implemented_by",
+      "mechanism": "Intel C++ Compiler is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e64",
+      "source": "cpp",
+      "target": "ibm",
+      "relationship": "implemented_by",
+      "mechanism": "IBM XL C++ is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e65",
+      "source": "cpp",
+      "target": "edg",
+      "relationship": "implemented_by",
+      "mechanism": "EDG is listed as a major C++ implementation.",
+      "source_line_ranges": "L76-L77"
+    },
+    {
+      "id": "e117",
+      "source": "cpp",
+      "target": "source",
+      "relationship": "represented_as",
+      "mechanism": "C++ programs are represented as source code."
+    },
+    {
+      "id": "e118",
+      "source": "source",
+      "target": "compiler",
+      "relationship": "processed_by",
+      "mechanism": "Source is processed by compiler."
+    },
+    {
+      "id": "e119",
+      "source": "compiler",
+      "target": "object",
+      "relationship": "produces",
+      "mechanism": "Compiler produces object code."
+    },
+    {
+      "id": "e120",
+      "source": "object",
+      "target": "linker",
+      "relationship": "consumed_by",
+      "mechanism": "Object code is linked."
+    },
+    {
+      "id": "e121",
+      "source": "linker",
+      "target": "exe",
+      "relationship": "produces",
+      "mechanism": "Linker produces executable."
+    },
+    {
+      "id": "e122",
+      "source": "exe",
+      "target": "machine",
+      "relationship": "contains",
+      "mechanism": "Executable contains machine instructions."
+    },
+    {
+      "id": "e123",
+      "source": "cpp",
+      "target": "assembly",
+      "relationship": "works_with",
+      "mechanism": "C++ works alongside assembly.",
+      "source_line_ranges": "L139,L246-L247"
+    },
+    {
+      "id": "e124",
+      "source": "cpp",
+      "target": "inline_asm",
+      "relationship": "supports",
+      "mechanism": "Supports asm declarations.",
+      "source_line_ranges": "L237"
+    },
+    {
+      "id": "e125",
+      "source": "cpp",
+      "target": "standalone_asm",
+      "relationship": "supports",
+      "mechanism": "Supports separate assembly integration.",
+      "source_line_ranges": "L247"
+    },
+    {
+      "id": "e126",
+      "source": "inline_asm",
+      "target": "compiler",
+      "relationship": "depends_on",
+      "mechanism": "Inline assembly varies by compiler/architecture.",
+      "source_line_ranges": "L240-L245"
+    },
+    {
+      "id": "e127",
+      "source": "cpp",
+      "target": "abi",
+      "relationship": "has",
+      "mechanism": "Object-code compatibility depends on ABI choices.",
+      "source_line_ranges": "L226-L227"
+    },
+    {
+      "id": "e128",
+      "source": "abi",
+      "target": "mangling",
+      "relationship": "includes",
+      "mechanism": "Name mangling is implementation-specific.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "e129",
+      "source": "abi",
+      "target": "excabi",
+      "relationship": "includes",
+      "mechanism": "Exception ABI is implementation-specific.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "e130",
+      "source": "itanium",
+      "target": "gcc",
+      "relationship": "implemented_by",
+      "mechanism": "Implemented by GCC.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "e131",
+      "source": "itanium",
+      "target": "clang",
+      "relationship": "implemented_by",
+      "mechanism": "Implemented by Clang.",
+      "source_line_ranges": "L227"
+    },
+    {
+      "id": "e132",
+      "source": "cpp",
+      "target": "extern_c",
+      "relationship": "uses_for",
+      "mechanism": "C linkage enables C/C++ interoperability.",
+      "source_line_ranges": "L235"
+    },
+    {
+      "id": "e133",
+      "source": "cpp",
+      "target": "headers",
+      "relationship": "uses",
+      "mechanism": "Traditional standard library access.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "e134",
+      "source": "cpp",
+      "target": "header_units",
+      "relationship": "supports",
+      "mechanism": "Importable header units since C++20.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "e135",
+      "source": "cpp",
+      "target": "modules",
+      "relationship": "supports",
+      "mechanism": "Modules are supported.",
+      "source_line_ranges": "L182,L202-L215"
+    },
+    {
+      "id": "e136",
+      "source": "cpp23",
+      "target": "std_module",
+      "relationship": "adds",
+      "mechanism": "C++23 adds std module.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "e137",
+      "source": "cpp23",
+      "target": "std_compat",
+      "relationship": "adds",
+      "mechanism": "C++23 adds std.compat.",
+      "source_line_ranges": "L215"
+    },
+    {
+      "id": "e138",
+      "source": "stdlib",
+      "target": "containers",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e139",
+      "source": "stdlib",
+      "target": "iterators",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e140",
+      "source": "stdlib",
+      "target": "ranges",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e141",
+      "source": "stdlib",
+      "target": "algorithms",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e142",
+      "source": "stdlib",
+      "target": "strings",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e143",
+      "source": "stdlib",
+      "target": "numerics",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e144",
+      "source": "stdlib",
+      "target": "io",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e145",
+      "source": "stdlib",
+      "target": "concurrency",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e146",
+      "source": "stdlib",
+      "target": "memory",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e147",
+      "source": "stdlib",
+      "target": "meta",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e148",
+      "source": "stdlib",
+      "target": "diagnostics",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e149",
+      "source": "stdlib",
+      "target": "time",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e150",
+      "source": "stdlib",
+      "target": "lang_support",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e151",
+      "source": "stdlib",
+      "target": "utils",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e152",
+      "source": "stdlib",
+      "target": "text",
+      "relationship": "contains",
+      "mechanism": "Library area.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e153",
+      "source": "stdlib",
+      "target": "c_lib",
+      "relationship": "contains",
+      "mechanism": "C library facilities.",
+      "source_line_ranges": "L213"
+    },
+    {
+      "id": "e154",
+      "source": "core_guidelines",
+      "target": "safety",
+      "relationship": "targets",
+      "mechanism": "Type/resource safety.",
+      "source_line_ranges": "L220"
+    },
+    {
+      "id": "e155",
+      "source": "stroustrup",
+      "target": "core_guidelines",
+      "relationship": "leads",
+      "mechanism": "Leads Core Guidelines initiative.",
+      "source_line_ranges": "L220"
+    },
+    {
+      "id": "e156",
+      "source": "sutter",
+      "target": "core_guidelines",
+      "relationship": "leads",
+      "mechanism": "Associated with leadership/chairing.",
+      "source_line_ranges": "L220"
+    },
+    {
+      "id": "e157",
+      "source": "core_guidelines",
+      "target": "gsl",
+      "relationship": "accompanied_by",
+      "mechanism": "Guideline Support Library.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e158",
+      "source": "gsl",
+      "target": "smart",
+      "relationship": "provides",
+      "mechanism": "Provides smart pointers.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e159",
+      "source": "gsl",
+      "target": "span",
+      "relationship": "provides",
+      "mechanism": "Provides span.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e160",
+      "source": "gsl",
+      "target": "byte",
+      "relationship": "provides",
+      "mechanism": "Provides byte.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e161",
+      "source": "core_guidelines",
+      "target": "staticcheck",
+      "relationship": "supports",
+      "mechanism": "Static checking tooling.",
+      "source_line_ranges": "L220-L224"
+    },
+    {
+      "id": "e162",
+      "source": "smart",
+      "target": "stdlib",
+      "relationship": "later_integrated_into",
+      "mechanism": "Later integrated into standard ecosystem.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e163",
+      "source": "span",
+      "target": "stdlib",
+      "relationship": "later_integrated_into",
+      "mechanism": "Later integrated.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e164",
+      "source": "byte",
+      "target": "stdlib",
+      "relationship": "later_integrated_into",
+      "mechanism": "Later integrated.",
+      "source_line_ranges": "L224"
+    },
+    {
+      "id": "e150",
+      "source": "cpp98",
+      "target": "cpp03",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e151",
+      "source": "cpp03",
+      "target": "cpp11",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e152",
+      "source": "cpp11",
+      "target": "cpp14",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e153",
+      "source": "cpp14",
+      "target": "cpp17",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e154",
+      "source": "cpp17",
+      "target": "cpp20",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e155",
+      "source": "cpp20",
+      "target": "cpp23",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e156",
+      "source": "cpp23",
+      "target": "cpp26",
+      "relationship": "precedes",
+      "mechanism": "Successive C++ standard revision."
+    },
+    {
+      "id": "e121",
+      "source": "infl_ada",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e122",
+      "source": "infl_algol_68",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e123",
+      "source": "infl_bcpl",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e124",
+      "source": "infl_clu",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e125",
+      "source": "infl_f",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e126",
+      "source": "infl_ml",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e127",
+      "source": "infl_mesa",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e128",
+      "source": "infl_modula_2",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e129",
+      "source": "infl_simula",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e130",
+      "source": "infl_smalltalk",
+      "target": "cpp",
+      "relationship": "influences",
+      "mechanism": "Listed as an influence on C++.",
+      "source_line_ranges": "L79"
+    },
+    {
+      "id": "e131",
+      "source": "cpp",
+      "target": "down_ada_95",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e132",
+      "source": "cpp",
+      "target": "down_c",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e133",
+      "source": "cpp",
+      "target": "down_c99",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e134",
+      "source": "cpp",
+      "target": "down_carbon",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e135",
+      "source": "cpp",
+      "target": "down_chapel",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e136",
+      "source": "cpp",
+      "target": "down_clojure",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e137",
+      "source": "cpp",
+      "target": "down_d",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e138",
+      "source": "cpp",
+      "target": "down_java",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e139",
+      "source": "cpp",
+      "target": "down_js",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e140",
+      "source": "cpp",
+      "target": "down_lua",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e141",
+      "source": "cpp",
+      "target": "down_nim",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e142",
+      "source": "cpp",
+      "target": "down_objective_c",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e143",
+      "source": "cpp",
+      "target": "down_perl",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e144",
+      "source": "cpp",
+      "target": "down_php",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e145",
+      "source": "cpp",
+      "target": "down_python",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e146",
+      "source": "cpp",
+      "target": "down_rust",
+      "relationship": "influenced",
+      "mechanism": "Listed as influenced by C++.",
+      "source_line_ranges": "L80-L81"
+    },
+    {
+      "id": "e170",
+      "source": "cpp11",
+      "target": "templates",
+      "relationship": "expanded_or_modernized",
+      "mechanism": "C++11 expanded language/library capabilities.",
+      "source_line_ranges": "L115,L160"
+    },
+    {
+      "id": "e171",
+      "source": "cpp17",
+      "target": "stdlib",
+      "relationship": "expanded",
+      "mechanism": "C++17 expanded the standard library.",
+      "source_line_ranges": "L164"
+    },
+    {
+      "id": "e172",
+      "source": "cpp20",
+      "target": "cpp",
+      "relationship": "expanded",
+      "mechanism": "C++20 expanded core/library facilities.",
+      "source_line_ranges": "L115,L151"
+    },
+    {
+      "id": "e173",
+      "source": "cpp20",
+      "target": "modules",
+      "relationship": "standardized_or_extended",
+      "mechanism": "Modules participated in standard evolution.",
+      "source_line_ranges": "L182"
+    },
+    {
+      "id": "e174",
+      "source": "cpp20",
+      "target": "concurrency",
+      "relationship": "expanded",
+      "mechanism": "Concurrency extensions were associated with C++20.",
+      "source_line_ranges": "L177"
+    },
+    {
+      "id": "e175",
+      "source": "cpp20",
+      "target": "concepts",
+      "relationship": "integrated",
+      "mechanism": "Concepts integrated into C++20.",
+      "source_line_ranges": "L176"
+    },
+    {
+      "id": "e176",
+      "source": "cpp20",
+      "target": "cpp20_coroutines",
+      "relationship": "integrated",
+      "mechanism": "Coroutines integrated into C++20.",
+      "source_line_ranges": "L180"
+    },
+    {
+      "id": "e177",
+      "source": "cpp17",
+      "target": "filesystem",
+      "relationship": "integrated",
+      "mechanism": "Filesystem library integrated into C++17.",
+      "source_line_ranges": "L172"
+    },
+    {
+      "id": "e178",
+      "source": "cpp17",
+      "target": "parallel_algorithms",
+      "relationship": "integrated",
+      "mechanism": "Parallel standard-library algorithm facilities.",
+      "source_line_ranges": "L173"
+    },
+    {
+      "id": "e179",
+      "source": "cpp",
+      "target": "technical_reports",
+      "relationship": "evolves_through",
+      "mechanism": "Technical reports/specifications contributed to C++ evolution.",
+      "source_line_ranges": "L166-L186"
+    },
+    {
+      "id": "e180",
+      "source": "embedded",
+      "target": "embedded_tr",
+      "relationship": "addressed_by",
+      "mechanism": "Embedded use/performance addressed by TR 18015.",
+      "source_line_ranges": "L168"
+    },
+    {
+      "id": "e181",
+      "source": "cpp",
+      "target": "networking_ts",
+      "relationship": "extended_by",
+      "mechanism": "Networking library technical specification.",
+      "source_line_ranges": "L181"
+    },
+    {
+      "id": "e182",
+      "source": "cpp",
+      "target": "reflection",
+      "relationship": "extended_by",
+      "mechanism": "Reflection technical work.",
+      "source_line_ranges": "L184"
+    },
+    {
+      "id": "e160",
+      "source": "cpp98",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    },
+    {
+      "id": "e161",
+      "source": "cpp03",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    },
+    {
+      "id": "e162",
+      "source": "cpp11",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    },
+    {
+      "id": "e163",
+      "source": "cpp14",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    },
+    {
+      "id": "e164",
+      "source": "cpp17",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    },
+    {
+      "id": "e165",
+      "source": "cpp20",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    },
+    {
+      "id": "e166",
+      "source": "cpp23",
+      "target": "cpp",
+      "relationship": "revision_of",
+      "mechanism": "Revision of the C++ language standard."
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_01",
+      "name": "Compilation pipeline",
+      "expression": "C++ source → compiler → object code → linker + libraries → executable → machine code",
+      "meaning": "Conceptual compilation/linking path."
+    },
+    {
+      "id": "model_02",
+      "name": "Generic programming",
+      "expression": "templates → generic programming → containers + iterators + algorithms",
+      "meaning": "Relationship between templates and the STL model."
+    },
+    {
+      "id": "model_03",
+      "name": "C interoperability",
+      "expression": "C/C++ function → extern \"C\" → C linkage",
+      "meaning": "Interoperability path for mixed C/C++ functions."
+    },
+    {
+      "id": "model_04",
+      "name": "ABI compatibility",
+      "expression": "compiler → name mangling/exception ABI → object-code compatibility",
+      "meaning": "Implementation-specific ABI choices affect binary compatibility."
+    },
+    {
+      "id": "model_05",
+      "name": "Manual-memory risk",
+      "expression": "manual memory control → programmer responsibility → misuse → buffer overflow risk",
+      "meaning": "Security relationship explicitly stated by source."
+    },
+    {
+      "id": "model_06",
+      "name": "Library access evolution",
+      "expression": "headers → header units → named modules (std/std.compat)",
+      "meaning": "Evolution of standard-library access mechanisms."
+    },
+    {
+      "id": "model_07",
+      "name": "Modern C++ safety loop",
+      "expression": "Core Guidelines → GSL/static checking → type/resource safety practices",
+      "meaning": "Guidance/tooling ecosystem."
+    },
+    {
+      "id": "model_08",
+      "name": "Assembly integration",
+      "expression": "C++ → inline assembly OR standalone assembly → linked program",
+      "meaning": "Two assembly integration routes described by source."
+    },
+    {
+      "id": "model_09",
+      "name": "Standard revision chain",
+      "expression": "C++98 → C++03 → C++11 → C++14 → C++17 → C++20 → C++23 → C++26",
+      "meaning": "Revision progression in source."
+    },
+    {
+      "id": "model_10",
+      "name": "C++ design model",
+      "expression": "C hardware mapping + high-level abstractions + programmer control → performance/flexibility",
+      "meaning": "Source's stated design philosophy."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_01",
+      "statement": "C++ originated as an extension of C and evolved into a multi-paradigm language.",
+      "source_line_ranges": [
+        "L94-L96"
+      ]
+    },
+    {
+      "id": "claim_02",
+      "statement": "Stroustrup began C with Classes at Bell Labs in 1979.",
+      "source_line_ranges": [
+        "L98",
+        "L103"
+      ]
+    },
+    {
+      "id": "claim_03",
+      "statement": "C++ combines direct hardware mapping with zero-overhead abstractions.",
+      "source_line_ranges": [
+        "L189-L191"
+      ]
+    },
+    {
+      "id": "claim_04",
+      "statement": "C++ is standardized by ISO WG21 and has successive revisions.",
+      "source_line_ranges": [
+        "L142-L154"
+      ]
+    },
+    {
+      "id": "claim_05",
+      "statement": "The standard library spans containers, iterators, ranges, algorithms, numerics, I/O, memory, metaprogramming, diagnostics and concurrency.",
+      "source_line_ranges": [
+        "L211-L215"
+      ]
+    },
+    {
+      "id": "claim_06",
+      "statement": "The STL model of containers, iterators and generic algorithms became part of the standard library.",
+      "source_line_ranges": [
+        "L217"
+      ]
+    },
+    {
+      "id": "claim_07",
+      "statement": "C++ is not strictly a superset of C.",
+      "source_line_ranges": [
+        "L229-L235"
+      ]
+    },
+    {
+      "id": "claim_08",
+      "statement": "extern C enables C linkage for mixed C/C++ functions.",
+      "source_line_ranges": [
+        "L235"
+      ]
+    },
+    {
+      "id": "claim_09",
+      "statement": "Assembly integration varies by compiler and architecture.",
+      "source_line_ranges": [
+        "L237-L247"
+      ]
+    },
+    {
+      "id": "claim_10",
+      "statement": "Core Guidelines target type/resource safety but are not ISO consensus.",
+      "source_line_ranges": [
+        "L219-L224",
+        "L343"
+      ]
+    },
+    {
+      "id": "claim_11",
+      "statement": "Manual memory misuse can introduce security risks such as buffer overflow.",
+      "source_line_ranges": [
+        "L121"
+      ]
+    },
+    {
+      "id": "claim_12",
+      "statement": "C++ influenced a broad set of later languages.",
+      "source_line_ranges": [
+        "L80-L81"
+      ]
+    }
+  ],
+  "references_resources": [
+    {
+      "id": "ref_01",
+      "label": "ISO/IEC 14882 C++ standard",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_02",
+      "label": "ISO JTC1/SC22/WG21",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_03",
+      "label": "C++ Core Guidelines",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_04",
+      "label": "Guideline Support Library",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_05",
+      "label": "Stroustrup: A History of C++: 1979–1991",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_06",
+      "label": "The C++ Programming Language",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_07",
+      "label": "The Design and Evolution of C++",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_08",
+      "label": "Standard Template Library",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_09",
+      "label": "C++ ABI Summary",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_10",
+      "label": "cppreference asm declaration",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_11",
+      "label": "C++ technical reports/specifications",
+      "type": "reference_or_resource"
+    },
+    {
+      "id": "ref_12",
+      "label": "C++ Further Reading bibliography",
+      "type": "reference_or_resource"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_01",
+      "distinction": "C++ vs C",
+      "explanation": "C++ shares most C syntax but is not a strict superset."
+    },
+    {
+      "id": "dist_02",
+      "distinction": "Language vs implementation",
+      "explanation": "C++ is the standardized language; GCC/Clang/MSVC/etc. are implementations."
+    },
+    {
+      "id": "dist_03",
+      "distinction": "Standard vs Core Guidelines",
+      "explanation": "ISO defines the language/library; Core Guidelines are external guidance."
+    },
+    {
+      "id": "dist_04",
+      "distinction": "Header vs module",
+      "explanation": "Headers are traditional inclusion; modules provide importable/named mechanisms."
+    },
+    {
+      "id": "dist_05",
+      "distinction": "Inline vs standalone assembly",
+      "explanation": "Inline is compiler-specific embedded assembly; standalone is separate and linked."
+    },
+    {
+      "id": "dist_06",
+      "distinction": "Source vs object code",
+      "explanation": "Source is program text; object code is compiled binary output."
+    },
+    {
+      "id": "dist_07",
+      "distinction": "Source compatibility vs ABI compatibility",
+      "explanation": "Similar source does not guarantee binary compatibility across compilers."
+    },
+    {
+      "id": "dist_08",
+      "distinction": "Templates vs virtual dispatch",
+      "explanation": "Templates provide generic programming; virtual functions provide dynamic dispatch."
+    },
+    {
+      "id": "dist_09",
+      "distinction": "C linkage vs C++ linkage",
+      "explanation": "extern C selects C linkage for interoperating functions."
+    },
+    {
+      "id": "dist_10",
+      "distinction": "STL vs standard library",
+      "explanation": "STL's core generic model is part of a larger standard library."
+    },
+    {
+      "id": "dist_11",
+      "distinction": "Manual control vs safety",
+      "explanation": "Manual memory is a capability whose misuse can create risks."
+    },
+    {
+      "id": "dist_12",
+      "distinction": "Standard revision vs compiler version",
+      "explanation": "C++23/C++26 are language revisions, not compiler names."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "01",
+      "title": "Origins",
+      "sequence": "C → C with Classes → C++"
+    },
+    {
+      "id": "02",
+      "title": "Core philosophy",
+      "sequence": "hardware mapping → zero-overhead abstractions"
+    },
+    {
+      "id": "03",
+      "title": "Object model",
+      "sequence": "classes → inheritance → virtual → overloading"
+    },
+    {
+      "id": "04",
+      "title": "Generic programming",
+      "sequence": "templates → generic programming → STL"
+    },
+    {
+      "id": "05",
+      "title": "Library model",
+      "sequence": "containers → iterators → algorithms → ranges"
+    },
+    {
+      "id": "06",
+      "title": "Memory",
+      "sequence": "new/delete → manual control → safety risk"
+    },
+    {
+      "id": "07",
+      "title": "Toolchain",
+      "sequence": "source → compiler → object → linker → executable"
+    },
+    {
+      "id": "08",
+      "title": "ABI",
+      "sequence": "name mangling → exception ABI → binary compatibility"
+    },
+    {
+      "id": "09",
+      "title": "Interop",
+      "sequence": "C → extern C → mixed C/C++"
+    },
+    {
+      "id": "10",
+      "title": "Standards",
+      "sequence": "C++98 → C++03 → C++11 → C++14 → C++17 → C++20 → C++23 → C++26"
+    },
+    {
+      "id": "11",
+      "title": "Modern C++",
+      "sequence": "Core Guidelines → GSL → static checking"
+    },
+    {
+      "id": "12",
+      "title": "Assembly",
+      "sequence": "C++ → inline/standalone assembly"
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mis_01",
+      "claim": "C++ is just C with classes",
+      "correction": "It expanded into generic, functional, object-oriented, modular and other capabilities."
+    },
+    {
+      "id": "mis_02",
+      "claim": "C++ is a strict superset of C",
+      "correction": "The source explicitly identifies incompatibilities."
+    },
+    {
+      "id": "mis_03",
+      "claim": "STL is the whole standard library",
+      "correction": "STL's model became part of a larger standard library."
+    },
+    {
+      "id": "mis_04",
+      "claim": "Templates are only containers",
+      "correction": "Templates are a general generic-programming mechanism."
+    },
+    {
+      "id": "mis_05",
+      "claim": "All C++ compilers have compatible object code",
+      "correction": "ABI implementation choices can make object code incompatible."
+    },
+    {
+      "id": "mis_06",
+      "claim": "Inline assembly is portable",
+      "correction": "Its syntax and availability vary by compiler and architecture."
+    },
+    {
+      "id": "mis_07",
+      "claim": "Core Guidelines are the ISO standard",
+      "correction": "The source says they are not ISO consensus."
+    },
+    {
+      "id": "mis_08",
+      "claim": "Manual memory always causes bugs",
+      "correction": "The source says misuse can introduce risks; manual control is a capability."
+    },
+    {
+      "id": "mis_09",
+      "claim": "C++ lacks high-level abstractions",
+      "correction": "Zero-overhead abstractions are a central design goal."
+    },
+    {
+      "id": "mis_10",
+      "claim": "C and C++ can always be mixed directly",
+      "correction": "Cross-boundary functions may require C linkage."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_01",
+      "question": "How did C with Classes evolve into C++?"
+    },
+    {
+      "id": "q_02",
+      "question": "Why does C++ combine hardware mapping with abstraction?"
+    },
+    {
+      "id": "q_03",
+      "question": "What does zero-overhead abstraction mean in the source?"
+    },
+    {
+      "id": "q_04",
+      "question": "How do templates enable generic programming?"
+    },
+    {
+      "id": "q_05",
+      "question": "How did STL become part of the standard library?"
+    },
+    {
+      "id": "q_06",
+      "question": "Why is C++ not a strict superset of C?"
+    },
+    {
+      "id": "q_07",
+      "question": "How does extern C enable C interoperability?"
+    },
+    {
+      "id": "q_08",
+      "question": "Why can different C++ compilers produce incompatible object code?"
+    },
+    {
+      "id": "q_09",
+      "question": "What is the role of name mangling?"
+    },
+    {
+      "id": "q_10",
+      "question": "How do inline and standalone assembly differ?"
+    },
+    {
+      "id": "q_11",
+      "question": "What are the major standard-library areas?"
+    },
+    {
+      "id": "q_12",
+      "question": "How did headers evolve toward modules?"
+    },
+    {
+      "id": "q_13",
+      "question": "What changed with C++11?"
+    },
+    {
+      "id": "q_14",
+      "question": "What role do Core Guidelines and GSL play?"
+    },
+    {
+      "id": "q_15",
+      "question": "How can manual memory misuse become a security issue?"
+    },
+    {
+      "id": "q_16",
+      "question": "Which domains use C++?"
+    },
+    {
+      "id": "q_17",
+      "question": "Which languages are listed as influenced by C++?"
+    },
+    {
+      "id": "q_18",
+      "question": "How does C++ standardization work?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "expand_01",
+      "topic": "RAII and deterministic resource management"
+    },
+    {
+      "id": "expand_02",
+      "topic": "Move semantics and value categories"
+    },
+    {
+      "id": "expand_03",
+      "topic": "Templates, concepts and compile-time programming"
+    },
+    {
+      "id": "expand_04",
+      "topic": "STL containers/iterators/algorithms/ranges"
+    },
+    {
+      "id": "expand_05",
+      "topic": "C++ object model and vtables"
+    },
+    {
+      "id": "expand_06",
+      "topic": "Multiple-inheritance object layout"
+    },
+    {
+      "id": "expand_07",
+      "topic": "Exception safety and ABI"
+    },
+    {
+      "id": "expand_08",
+      "topic": "Concurrency and memory model"
+    },
+    {
+      "id": "expand_09",
+      "topic": "Coroutines"
+    },
+    {
+      "id": "expand_10",
+      "topic": "Modules and build systems"
+    },
+    {
+      "id": "expand_11",
+      "topic": "Allocators and memory resources"
+    },
+    {
+      "id": "expand_12",
+      "topic": "Smart pointers and ownership"
+    },
+    {
+      "id": "expand_13",
+      "topic": "Static analysis and sanitizers"
+    },
+    {
+      "id": "expand_14",
+      "topic": "Game-engine C++"
+    },
+    {
+      "id": "expand_15",
+      "topic": "Embedded C++"
+    },
+    {
+      "id": "expand_16",
+      "topic": "Operating-system/kernel C++"
+    },
+    {
+      "id": "expand_17",
+      "topic": "CUDA C++"
+    },
+    {
+      "id": "expand_18",
+      "topic": "Python/C++ interoperability"
+    },
+    {
+      "id": "expand_19",
+      "topic": "Rust/C++ interoperability"
+    },
+    {
+      "id": "expand_20",
+      "topic": "Modern C++ build systems"
+    }
+  ],
+  "validation": {
+    "node_count": 144,
+    "relationship_count": 166,
+    "dangling_relationships": 0,
+    "duplicate_relationships": 0,
+    "status": "clean"
+  }
+}

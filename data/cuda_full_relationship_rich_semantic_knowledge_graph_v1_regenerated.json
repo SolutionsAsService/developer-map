@@ -1,0 +1,4270 @@
+{
+  "schema_version": "4.0-relationship-rich-semantic-provenance",
+  "graph_type": "dynamic_educational_knowledge_graph",
+  "topic": "CUDA",
+  "source": {
+    "filename": "Pasted text(20261007-210906).txt",
+    "line_count": 843,
+    "authority": "user-provided source",
+    "external_research_used": false
+  },
+  "nodes": [
+    {
+      "id": "cuda",
+      "label": "CUDA",
+      "type": "platform",
+      "description": "NVIDIA proprietary parallel-computing platform/API for general-purpose GPU computing.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "id": "nvidia",
+      "label": "NVIDIA",
+      "type": "company",
+      "description": "Developer of CUDA.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "id": "ian_buck",
+      "label": "Ian Buck",
+      "type": "person",
+      "description": "Original CUDA author; developed Brook and later helped transform it into CUDA.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "john_nickolls",
+      "label": "John Nickolls",
+      "type": "person",
+      "description": "NVIDIA GPU-computing architecture leader who worked with Ian Buck on CUDA.",
+      "source_line_ranges": [
+        [
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "brook",
+      "label": "Brook",
+      "type": "gpu_language",
+      "description": "GPU general-purpose programming language developed by Ian Buck before CUDA.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "darpa",
+      "label": "DARPA",
+      "type": "organization",
+      "description": "Organization that supported Buck's GPU computing work.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "gpu",
+      "label": "GPU",
+      "type": "processor",
+      "description": "Highly parallel processor specialized for graphics and large-block parallel computation.",
+      "source_line_ranges": [
+        [
+          47,
+          51
+        ]
+      ]
+    },
+    {
+      "id": "cpu",
+      "label": "CPU",
+      "type": "processor",
+      "description": "General-purpose processor contrasted with GPU parallel throughput.",
+      "source_line_ranges": [
+        [
+          47,
+          51
+        ]
+      ]
+    },
+    {
+      "id": "gpgpu",
+      "label": "GPGPU",
+      "type": "computing_model",
+      "description": "General-purpose computation on graphics processing units.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "id": "ai",
+      "label": "Artificial intelligence",
+      "type": "application_domain",
+      "description": "Major CUDA acceleration domain.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "id": "hpc",
+      "label": "High-performance computing",
+      "type": "application_domain",
+      "description": "Major CUDA acceleration domain.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "id": "ml",
+      "label": "Machine learning",
+      "type": "application_domain",
+      "description": "CUDA focus expanded toward ML/ANN workloads.",
+      "source_line_ranges": [
+        [
+          57,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "cuda_c",
+      "label": "CUDA C/C++",
+      "type": "language_extension",
+      "description": "CUDA programming extensions to C/C++; source now processed using C++ syntax rules.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          78,
+          84
+        ]
+      ]
+    },
+    {
+      "id": "c",
+      "label": "C",
+      "type": "programming_language",
+      "description": "Base language identified by the source for CUDA; CUDA's platform is written in C and its early source syntax was C-based.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          78,
+          79
+        ]
+      ]
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "type": "programming_language",
+      "description": "Current syntax basis for CUDA source and host/device CUDA C++ programming.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          78,
+          84
+        ]
+      ]
+    },
+    {
+      "id": "fortran",
+      "label": "Fortran",
+      "type": "programming_language",
+      "description": "CUDA Fortran interface.",
+      "source_line_ranges": [
+        [
+          60,
+          66
+        ]
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "type": "programming_language",
+      "description": "CUDA-accessible through libraries and wrappers such as cuPyNumeric/PyCUDA/CuPy.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          60,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "julia",
+      "label": "Julia",
+      "type": "programming_language",
+      "description": "CUDA-accessible through wrappers/interfaces.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "nvcc",
+      "label": "nvcc",
+      "type": "compiler",
+      "description": "NVIDIA LLVM-based C/C++ CUDA compiler producing PTX.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "id": "clang",
+      "label": "Clang",
+      "type": "compiler",
+      "description": "Compiler that can compile CUDA C/C++ and generate CUDA/PTX targets.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "id": "llvm",
+      "label": "LLVM",
+      "type": "compiler_infrastructure",
+      "description": "Compiler infrastructure used by nvcc/Clang and GPU-oriented implementations.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "id": "ptx",
+      "label": "PTX",
+      "type": "intermediate_representation",
+      "description": "Parallel Thread Execution intermediate instruction representation.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "id": "sass",
+      "label": "SASS",
+      "type": "machine_instruction",
+      "description": "GPU machine instruction representation executed by NVIDIA GPU hardware.",
+      "source_line_ranges": [
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "driver_api",
+      "label": "CUDA Driver API",
+      "type": "api",
+      "description": "Lower-level non-single-source CUDA API.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "runtime_api",
+      "label": "CUDA Runtime API",
+      "type": "api",
+      "description": "Higher-level single-source CUDA API.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "driver",
+      "label": "NVIDIA GPU driver",
+      "type": "software_component",
+      "description": "Driver layer enabling host software to control supported GPUs.",
+      "source_line_ranges": [
+        [
+          42,
+          44
+        ],
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "toolkit",
+      "label": "CUDA Toolkit",
+      "type": "software_platform",
+      "description": "CUDA compilers, libraries and developer tools.",
+      "source_line_ranges": [
+        [
+          42,
+          46
+        ],
+        [
+          71,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "kernel",
+      "label": "CUDA kernel",
+      "type": "program_unit",
+      "description": "GPU routine launched by host code and executed in parallel.",
+      "source_line_ranges": [
+        [
+          55,
+          60
+        ],
+        [
+          86,
+          91
+        ]
+      ]
+    },
+    {
+      "id": "host",
+      "label": "Host",
+      "type": "execution_domain",
+      "description": "CPU-side execution and memory domain.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          47,
+          51
+        ]
+      ]
+    },
+    {
+      "id": "device",
+      "label": "Device",
+      "type": "execution_domain",
+      "description": "GPU-side execution and memory domain.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "host_memory",
+      "label": "Host/RAM memory",
+      "type": "memory",
+      "description": "CPU/main memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "device_memory",
+      "label": "Device/VRAM memory",
+      "type": "memory",
+      "description": "GPU global memory/VRAM.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "copy_h2d",
+      "label": "Host-to-device transfer",
+      "type": "data_movement",
+      "description": "Copy input data from main memory to GPU memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "copy_d2h",
+      "label": "Device-to-host transfer",
+      "type": "data_movement",
+      "description": "Copy results from GPU memory back to main memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "dma",
+      "label": "GPU DMA engine",
+      "type": "hardware_engine",
+      "description": "Can handle asynchronous memory transfers.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "grid",
+      "label": "Grid",
+      "type": "execution_hierarchy",
+      "description": "Collection of blocks representing simultaneous calls of the same subroutine.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "block",
+      "label": "Block",
+      "type": "execution_hierarchy",
+      "description": "Group of threads executing a kernel.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "thread",
+      "label": "Thread",
+      "type": "execution_hierarchy",
+      "description": "Individual GPU execution context.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "warp",
+      "label": "Warp",
+      "type": "execution_group",
+      "description": "Group of 32 threads executing SIMD-style.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "sm",
+      "label": "Streaming Multiprocessor",
+      "type": "gpu_compute_unit",
+      "description": "GPU compute unit executing blocks/warps.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "cuda_core",
+      "label": "CUDA core",
+      "type": "execution_unit",
+      "description": "Scalar execution terminology in the source; deprecated terminology for thread-level execution units.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "simd",
+      "label": "SIMD",
+      "type": "execution_model",
+      "description": "Single-instruction style execution across parallel lanes.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "register",
+      "label": "GPU register",
+      "type": "memory",
+      "description": "Very low-level per-thread storage.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "l0",
+      "label": "GPU L0 cache",
+      "type": "cache",
+      "description": "Low-level instruction/cache structure shown in ontology.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "l1",
+      "label": "GPU L1 cache",
+      "type": "cache",
+      "description": "Fast cache associated with SM execution.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "l2",
+      "label": "GPU L2 cache",
+      "type": "cache",
+      "description": "GPU-wide cache associated with device memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "shared_memory",
+      "label": "Shared memory",
+      "type": "memory",
+      "description": "Fast programmer-managed memory shared among threads in a block.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "global_memory",
+      "label": "Global memory",
+      "type": "memory",
+      "description": "Device-wide GPU memory accessible by kernels.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "const_memory",
+      "label": "Constant memory",
+      "type": "memory",
+      "description": "CUDA memory/scoping class.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "texture_memory",
+      "label": "Texture memory",
+      "type": "memory",
+      "description": "Texture-oriented CUDA memory/scoping class.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "local_memory",
+      "label": "Local memory",
+      "type": "memory",
+      "description": "CUDA local variable/storage class.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "unified_virtual_memory",
+      "label": "Unified Virtual Memory",
+      "type": "memory_model",
+      "description": "CUDA 4.0+ memory abstraction.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "unified_memory",
+      "label": "Unified Memory",
+      "type": "memory_model",
+      "description": "CUDA 6.0+ memory abstraction.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "scattered_reads",
+      "label": "Scattered reads",
+      "type": "memory_capability",
+      "description": "Kernel code can read arbitrary memory addresses.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "texture_lookup",
+      "label": "Texture lookup",
+      "type": "memory_access",
+      "description": "Texture-based memory access compared with shared memory/user-managed caching.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "single_source",
+      "label": "Single-source programming",
+      "type": "programming_model",
+      "description": "Host and device code can coexist in a common CUDA source model.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "async_transfer",
+      "label": "Asynchronous transfer",
+      "type": "optimization",
+      "description": "Asynchronous host/device copies can reduce transfer overhead.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "bandwidth_latency",
+      "label": "Bus bandwidth and latency",
+      "type": "limitation",
+      "description": "Host/device copying can incur performance costs.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "warp_divergence",
+      "label": "Warp divergence",
+      "type": "limitation",
+      "description": "Different execution paths within a warp reduce SIMD efficiency.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "branch_uniformity",
+      "label": "Uniform branch paths",
+      "type": "optimization",
+      "description": "Branches are less harmful when all threads in a 32-thread warp follow the same path.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "rtti",
+      "label": "C++ RTTI",
+      "type": "language_feature",
+      "description": "Supported in host code, not device code.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "exceptions",
+      "label": "C++ exceptions",
+      "type": "language_feature",
+      "description": "C++ exception handling supported in host code, not device code.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "compute_capability",
+      "label": "CUDA compute capability",
+      "type": "hardware_compatibility",
+      "description": "Versioned GPU capability model identifying supported architecture features.",
+      "source_line_ranges": [
+        [
+          105,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "sm_xy",
+      "label": "SMXY notation",
+      "type": "notation",
+      "description": "Compute capability X.Y may be represented as SMXY/sm_XY.",
+      "source_line_ranges": [
+        [
+          105,
+          106
+        ]
+      ]
+    },
+    {
+      "id": "g8x",
+      "label": "G8x and later GPUs",
+      "type": "gpu_generation",
+      "description": "CUDA initially supported NVIDIA G8x-series and later GPU families.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "geforce",
+      "label": "GeForce",
+      "type": "gpu_product_line",
+      "description": "Supported NVIDIA GPU family.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "quadro",
+      "label": "Quadro",
+      "type": "gpu_product_line",
+      "description": "Supported NVIDIA GPU family.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "tesla",
+      "label": "Tesla",
+      "type": "gpu_product_line",
+      "description": "Supported NVIDIA GPU family.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "tensor_cores",
+      "label": "Tensor Cores",
+      "type": "gpu_accelerator",
+      "description": "Specialized GPU units for matrix/tensor operations.",
+      "source_line_ranges": [
+        [
+          108,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "raytracing_cores",
+      "label": "Ray-tracing cores",
+      "type": "gpu_accelerator",
+      "description": "Specialized GPU units represented in architecture tables.",
+      "source_line_ranges": [
+        [
+          108,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "mig",
+      "label": "Multi-Instance GPU",
+      "type": "gpu_feature",
+      "description": "CUDA-era support for GPU partitioning into multiple instances.",
+      "source_line_ranges": [
+        [
+          76,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "float",
+      "label": "Floating-point types",
+      "type": "numeric_model",
+      "description": "CUDA GPU floating-point support varies by architecture/compute capability.",
+      "source_line_ranges": [
+        [
+          91,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "fp32",
+      "label": "FP32",
+      "type": "numeric_type",
+      "description": "32-bit floating-point arithmetic.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "fp64",
+      "label": "FP64",
+      "type": "numeric_type",
+      "description": "64-bit floating-point arithmetic.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "fp16",
+      "label": "FP16",
+      "type": "numeric_type",
+      "description": "16-bit floating-point arithmetic.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "bfloat16",
+      "label": "bfloat16",
+      "type": "numeric_type",
+      "description": "Floating-point format appearing in CUDA GPU support.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "tf32",
+      "label": "TF32",
+      "type": "numeric_type",
+      "description": "Tensor-oriented floating-point format in supported NVIDIA architectures.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "int_ops",
+      "label": "Integer and bitwise operations",
+      "type": "capability",
+      "description": "CUDA supports integer/bitwise operations including integer texture lookups.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "fma",
+      "label": "Fused multiply-add",
+      "type": "instruction_operation",
+      "description": "GPU operation documented across architectures.",
+      "source_line_ranges": [
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "cublas",
+      "label": "cuBLAS",
+      "type": "library",
+      "description": "CUDA Basic Linear Algebra Subroutines.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cufft",
+      "label": "cuFFT",
+      "type": "library",
+      "description": "CUDA Fast Fourier Transform library.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "curand",
+      "label": "cuRAND",
+      "type": "library",
+      "description": "CUDA random-number generation library.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cusolver",
+      "label": "cuSOLVER",
+      "type": "library",
+      "description": "Dense/sparse direct solver collection.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cusparse",
+      "label": "cuSPARSE",
+      "type": "library",
+      "description": "Sparse matrix library.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "npp",
+      "label": "NPP",
+      "type": "library",
+      "description": "NVIDIA Performance Primitives.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "nvgraph",
+      "label": "nvGRAPH",
+      "type": "library",
+      "description": "NVIDIA graph analytics library.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "nvml",
+      "label": "NVML",
+      "type": "library",
+      "description": "NVIDIA Management Library.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "nvrtc",
+      "label": "NVRTC",
+      "type": "library",
+      "description": "CUDA C++ runtime compilation library.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cutlass",
+      "label": "CUTLASS",
+      "type": "library",
+      "description": "Custom linear-algebra algorithm library.",
+      "source_line_ranges": [
+        [
+          75,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "nvjpeg",
+      "label": "nvJPEG",
+      "type": "library",
+      "description": "Hybrid CPU/GPU JPEG processing.",
+      "source_line_ranges": [
+        [
+          75,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cub",
+      "label": "CUB",
+      "type": "library",
+      "description": "Supported C++ GPU library.",
+      "source_line_ranges": [
+        [
+          76,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "physx",
+      "label": "PhysX",
+      "type": "physics_engine",
+      "description": "GPU-accelerated physics engine example.",
+      "source_line_ranges": [
+        [
+          68,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "bullet",
+      "label": "Bullet",
+      "type": "physics_engine",
+      "description": "Physics engine used in game/physics computation contexts.",
+      "source_line_ranges": [
+        [
+          68,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "cupynumeric",
+      "label": "cuPyNumeric",
+      "type": "python_library",
+      "description": "Python interface for GPU acceleration.",
+      "source_line_ranges": [
+        [
+          60,
+          63
+        ]
+      ]
+    },
+    {
+      "id": "pycuda",
+      "label": "PyCUDA",
+      "type": "python_binding",
+      "description": "Python bindings allowing embedded CUDA C/C++ kernels.",
+      "source_line_ranges": [
+        [
+          94,
+          100
+        ]
+      ]
+    },
+    {
+      "id": "pycublas",
+      "label": "pycublas",
+      "type": "python_binding",
+      "description": "Python interface for cuBLAS matrix operations.",
+      "source_line_ranges": [
+        [
+          101,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "cupy",
+      "label": "CuPy",
+      "type": "python_library",
+      "description": "NumPy-like Python library that runs arrays on CUDA GPUs.",
+      "source_line_ranges": [
+        [
+          104,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "type": "python_library",
+      "description": "Python numerical array ecosystem referenced by CUDA wrappers.",
+      "source_line_ranges": [
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "openacc",
+      "label": "OpenACC",
+      "type": "directive_model",
+      "description": "Compiler directive model supported with CUDA-enabled GPUs.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          60,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "openmp",
+      "label": "OpenMP",
+      "type": "parallel_framework",
+      "description": "Parallel programming framework supported by CUDA-capable GPUs.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ]
+      ]
+    },
+    {
+      "id": "opencl",
+      "label": "OpenCL",
+      "type": "gpu_api",
+      "description": "Khronos GPU compute API supported as an alternative interface.",
+      "source_line_ranges": [
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "directcompute",
+      "label": "DirectCompute",
+      "type": "gpu_api",
+      "description": "Microsoft GPU compute interface.",
+      "source_line_ranges": [
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "opengl_compute",
+      "label": "OpenGL Compute Shader",
+      "type": "gpu_api",
+      "description": "OpenGL compute interface.",
+      "source_line_ranges": [
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "cpp_amp",
+      "label": "C++ AMP",
+      "type": "gpu_api",
+      "description": "C++ accelerated-computing interface.",
+      "source_line_ranges": [
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "sycl",
+      "label": "SYCL",
+      "type": "gpu_api",
+      "description": "Open standard modern C++ single-source heterogeneous compute API.",
+      "source_line_ranges": [
+        [
+          134,
+          135
+        ]
+      ]
+    },
+    {
+      "id": "vulkan",
+      "label": "Vulkan",
+      "type": "gpu_api",
+      "description": "Low-level high-performance graphics/compute API.",
+      "source_line_ranges": [
+        [
+          134,
+          135
+        ]
+      ]
+    },
+    {
+      "id": "oneapi",
+      "label": "Intel oneAPI",
+      "type": "gpu_stack",
+      "description": "Open-oriented heterogeneous accelerator software stack.",
+      "source_line_ranges": [
+        [
+          128,
+          132
+        ]
+      ]
+    },
+    {
+      "id": "uxl",
+      "label": "Unified Acceleration Foundation",
+      "type": "organization",
+      "description": "Consortium pursuing open accelerator standards as alternatives to CUDA.",
+      "source_line_ranges": [
+        [
+          130,
+          132
+        ]
+      ]
+    },
+    {
+      "id": "rocm",
+      "label": "AMD ROCm",
+      "type": "gpu_stack",
+      "description": "Open-source AMD GPU programming software stack.",
+      "source_line_ranges": [
+        [
+          132,
+          133
+        ]
+      ]
+    },
+    {
+      "id": "hip",
+      "label": "HIP",
+      "type": "gpu_abstraction",
+      "description": "Portability layer over CUDA/ROCm with CUDA source conversion tooling.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "zluda",
+      "label": "ZLUDA",
+      "type": "compatibility_layer",
+      "description": "CUDA-compatible implementation targeting non-NVIDIA GPUs.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "chipstar",
+      "label": "ChipStar",
+      "type": "compatibility_layer",
+      "description": "Compiler/runtime approach for CUDA/HIP on OpenCL 3.0/Level Zero.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "scale",
+      "label": "SCALE",
+      "type": "compatibility_toolkit",
+      "description": "AOT CUDA-compatible toolkit targeting AMD GPUs.",
+      "source_line_ranges": [
+        [
+          83,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "coriander",
+      "label": "Coriander",
+      "type": "compatibility_tool",
+      "description": "Converts CUDA C++ to OpenCL C.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "cu2cl",
+      "label": "CU2CL",
+      "type": "compatibility_tool",
+      "description": "Converts CUDA C++ to OpenCL C.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "id": "applications",
+      "label": "CUDA applications",
+      "type": "application_category",
+      "description": "Broad GPU-accelerated applications.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "bioinformatics",
+      "label": "Bioinformatics",
+      "type": "application_domain",
+      "description": "CUDA application domain including DNA sequencing.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "cryptography",
+      "label": "Cryptography",
+      "type": "application_domain",
+      "description": "CUDA acceleration domain.",
+      "source_line_ranges": [
+        [
+          49,
+          51
+        ],
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "molecular_dynamics",
+      "label": "Molecular dynamics",
+      "type": "application_domain",
+      "description": "CUDA acceleration domain.",
+      "source_line_ranges": [
+        [
+          49,
+          51
+        ],
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "fluid_dynamics",
+      "label": "Fluid dynamics",
+      "type": "application_domain",
+      "description": "CUDA physical-simulation domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "llm_inference",
+      "label": "LLM inference",
+      "type": "application_domain",
+      "description": "CUDA GPU inference workload.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "face_recognition",
+      "label": "Face recognition",
+      "type": "application_domain",
+      "description": "CUDA application domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "video",
+      "label": "Video processing",
+      "type": "application_domain",
+      "description": "Video conversion/processing workload.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "rendering",
+      "label": "3D graphics rendering",
+      "type": "application_domain",
+      "description": "GPU graphics workload.",
+      "source_line_ranges": [
+        [
+          47,
+          51
+        ],
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "structure_motion",
+      "label": "Structure from motion",
+      "type": "application_domain",
+      "description": "CUDA application domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "crypto_mining",
+      "label": "Cryptocurrency mining",
+      "type": "application_domain",
+      "description": "CUDA application domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "seti",
+      "label": "SETI@home/BOINC",
+      "type": "application_domain",
+      "description": "Volunteer/distributed computing using GPUs.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "cuda_created",
+      "label": "CUDA created 2004",
+      "type": "historical_event",
+      "description": "CUDA development began in 2004.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ],
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "cuda_release",
+      "label": "CUDA official release 2007",
+      "type": "historical_event",
+      "description": "CUDA was officially released in 2007.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ],
+        [
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "id": "sdk_2007",
+      "label": "CUDA SDK public release",
+      "type": "historical_event",
+      "description": "Initial CUDA SDK was made public for Windows and Linux in February 2007.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "mac_support",
+      "label": "CUDA 2.0 Mac OS X support",
+      "type": "historical_event",
+      "description": "Mac OS X support was added in CUDA 2.0.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "cuda4",
+      "label": "CUDA 4.0",
+      "type": "version",
+      "description": "Unified Virtual Memory was introduced in CUDA 4.0.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cuda6",
+      "label": "CUDA 6.0",
+      "type": "version",
+      "description": "Unified Memory was introduced in CUDA 6.0.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cuda8",
+      "label": "CUDA 8.0",
+      "type": "version",
+      "description": "Source lists major CUDA libraries in this release family.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cuda9",
+      "label": "CUDA 9.x",
+      "type": "version",
+      "description": "Source lists CUTLASS and related component evolution.",
+      "source_line_ranges": [
+        [
+          75,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cuda10",
+      "label": "CUDA 10",
+      "type": "version",
+      "description": "Source lists nvJPEG among components.",
+      "source_line_ranges": [
+        [
+          75,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cuda11",
+      "label": "CUDA 11.x",
+      "type": "version",
+      "description": "Source lists CUB and MIG among components.",
+      "source_line_ranges": [
+        [
+          76,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "cuda13",
+      "label": "CUDA 13.4.1",
+      "type": "version",
+      "description": "Stable release stated in source as of September 2026.",
+      "source_line_ranges": [
+        [
+          38,
+          38
+        ]
+      ]
+    },
+    {
+      "id": "model_pipeline",
+      "label": "CUDA execution pipeline",
+      "type": "formal_model",
+      "description": "Typical CPU/GPU data movement and execution flow.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "model_hierarchy",
+      "label": "CUDA execution hierarchy",
+      "type": "formal_model",
+      "description": "Kernel execution hierarchy.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "model_compile",
+      "label": "CUDA compilation chain",
+      "type": "formal_model",
+      "description": "Language-to-device compilation path.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ],
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "model_memory",
+      "label": "CUDA memory hierarchy",
+      "type": "formal_model",
+      "description": "Approximate source ontology of memory layers.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "model_api",
+      "label": "CUDA API stack",
+      "type": "formal_model",
+      "description": "High-level to low-level control path.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "model_python",
+      "label": "Python CUDA path",
+      "type": "formal_model",
+      "description": "Python access to CUDA through bindings/libraries.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "model_portability",
+      "label": "Accelerator-stack landscape",
+      "type": "formal_model",
+      "description": "CUDA's competitive/portability ecosystem.",
+      "source_line_ranges": [
+        [
+          64,
+          70
+        ],
+        [
+          128,
+          135
+        ]
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "nvidia",
+      "target": "cuda",
+      "relationship": "developed",
+      "mechanism": "NVIDIA developed CUDA.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "source": "cuda_created",
+      "target": "cuda",
+      "relationship": "originated",
+      "mechanism": "CUDA development began in 2004.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ],
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "cuda_release",
+      "target": "cuda",
+      "relationship": "released_as",
+      "mechanism": "CUDA officially released in 2007.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ],
+        [
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "ian_buck",
+      "target": "brook",
+      "relationship": "created",
+      "mechanism": "Buck developed Brook for GPGPU.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "brook",
+      "target": "cuda",
+      "relationship": "transformed_into",
+      "mechanism": "Buck and Nickolls transformed Brook into CUDA at NVIDIA.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "ian_buck",
+      "target": "cuda",
+      "relationship": "co_created",
+      "mechanism": "Buck worked on transforming Brook into CUDA.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "john_nickolls",
+      "target": "cuda",
+      "relationship": "co_created",
+      "mechanism": "Nickolls joined Buck in the CUDA effort.",
+      "source_line_ranges": [
+        [
+          54,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "darpa",
+      "target": "brook",
+      "relationship": "supported",
+      "mechanism": "DARPA supported Buck's GPU computing work.",
+      "source_line_ranges": [
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "source": "gpu",
+      "target": "gpgpu",
+      "relationship": "enables",
+      "mechanism": "Highly parallel GPUs enable general-purpose computation beyond graphics.",
+      "source_line_ranges": [
+        [
+          47,
+          51
+        ]
+      ]
+    },
+    {
+      "source": "gpu",
+      "target": "cuda",
+      "relationship": "targeted_by",
+      "mechanism": "CUDA exposes NVIDIA GPUs for general-purpose computation.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "ai",
+      "relationship": "accelerates",
+      "mechanism": "CUDA accelerates AI workloads.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "hpc",
+      "relationship": "accelerates",
+      "mechanism": "CUDA accelerates high-performance computing.",
+      "source_line_ranges": [
+        [
+          38,
+          46
+        ]
+      ]
+    },
+    {
+      "source": "c",
+      "target": "cuda_c",
+      "relationship": "provides_syntax_base",
+      "mechanism": "CUDA is described as written in C and historically used C syntax rules.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          78,
+          79
+        ]
+      ]
+    },
+    {
+      "source": "cpp",
+      "target": "cuda_c",
+      "relationship": "provides_current_syntax",
+      "mechanism": "Current CUDA source is processed according to C++ syntax rules.",
+      "source_line_ranges": [
+        [
+          78,
+          80
+        ]
+      ]
+    },
+    {
+      "source": "cuda_c",
+      "target": "nvcc",
+      "relationship": "compiled_by",
+      "mechanism": "CUDA C/C++ is compiled by nvcc.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "source": "nvcc",
+      "target": "llvm",
+      "relationship": "built_on",
+      "mechanism": "nvcc is described as NVIDIA's LLVM-based C/C++ compiler.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "source": "clang",
+      "target": "cuda_c",
+      "relationship": "compiles",
+      "mechanism": "Clang can compile CUDA C/C++.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "source": "cuda_c",
+      "target": "ptx",
+      "relationship": "compiled_to",
+      "mechanism": "CUDA C/C++ compilation produces PTX.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ]
+      ]
+    },
+    {
+      "source": "ptx",
+      "target": "sass",
+      "relationship": "lowered_to",
+      "mechanism": "PTX is lowered toward GPU hardware machine instructions.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ],
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "sass",
+      "target": "gpu",
+      "relationship": "executes_on",
+      "mechanism": "GPU hardware executes machine-level instructions.",
+      "source_line_ranges": [
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "cpp",
+      "target": "rtti",
+      "relationship": "supports_host_only",
+      "mechanism": "C++ RTTI is supported in host code, not device code.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "cpp",
+      "target": "exceptions",
+      "relationship": "supports_host_only",
+      "mechanism": "C++ exceptions are supported in host code, not device code.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "cuda_c",
+      "target": "single_source",
+      "relationship": "supports",
+      "mechanism": "CUDA Runtime API provides a single-source programming model.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "host",
+      "target": "cpu",
+      "relationship": "runs_on",
+      "mechanism": "Host code executes on CPU.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "device",
+      "target": "gpu",
+      "relationship": "runs_on",
+      "mechanism": "Device code executes on GPU.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "host",
+      "target": "kernel",
+      "relationship": "launches",
+      "mechanism": "CPU-side host code initiates GPU kernels.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "kernel",
+      "target": "device",
+      "relationship": "executes_on",
+      "mechanism": "Kernels execute on GPU device.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "host_memory",
+      "target": "copy_h2d",
+      "relationship": "source_of",
+      "mechanism": "Host memory supplies GPU inputs.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "copy_h2d",
+      "target": "device_memory",
+      "relationship": "writes_to",
+      "mechanism": "Input data moves into GPU memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "device_memory",
+      "target": "copy_d2h",
+      "relationship": "source_of",
+      "mechanism": "GPU results are copied back.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "copy_d2h",
+      "target": "host_memory",
+      "relationship": "writes_to",
+      "mechanism": "Results return to main memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "bandwidth_latency",
+      "target": "copy_h2d",
+      "relationship": "limits",
+      "mechanism": "Bus bandwidth/latency can penalize host/device transfer.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "async_transfer",
+      "target": "copy_h2d",
+      "relationship": "optimizes",
+      "mechanism": "Asynchronous transfers can mitigate transfer overhead.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "dma",
+      "target": "async_transfer",
+      "relationship": "implements",
+      "mechanism": "GPU DMA can handle asynchronous memory transfers.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "kernel",
+      "target": "grid",
+      "relationship": "launches",
+      "mechanism": "A kernel launch creates a grid of blocks.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "grid",
+      "target": "block",
+      "relationship": "contains",
+      "mechanism": "A grid contains blocks.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "block",
+      "target": "thread",
+      "relationship": "contains",
+      "mechanism": "A block contains threads.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "thread",
+      "target": "warp",
+      "relationship": "grouped_into",
+      "mechanism": "Threads execute in groups of 32 called warps.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "block",
+      "target": "sm",
+      "relationship": "scheduled_on",
+      "mechanism": "Blocks execute on streaming multiprocessors.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "warp",
+      "target": "simd",
+      "relationship": "executes_as",
+      "mechanism": "Warp execution follows SIMD-style parallelism.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "warp_divergence",
+      "target": "warp",
+      "relationship": "constrains",
+      "mechanism": "Divergent branch paths reduce SIMD efficiency.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "branch_uniformity",
+      "target": "warp",
+      "relationship": "improves_efficiency",
+      "mechanism": "Uniform branch paths preserve efficient SIMD execution.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "source": "grid",
+      "target": "kernel",
+      "relationship": "represents_parallel_calls",
+      "mechanism": "Grid represents simultaneous calls of the same subroutine on many processors.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "block",
+      "target": "kernel",
+      "relationship": "represents_grouped_calls",
+      "mechanism": "Block represents a grouped execution unit.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "thread",
+      "target": "kernel",
+      "relationship": "represents_instance",
+      "mechanism": "Thread represents an individual execution instance.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "host_memory",
+      "target": "cpu",
+      "relationship": "attached_to",
+      "mechanism": "RAM is host-side memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "device_memory",
+      "target": "gpu",
+      "relationship": "attached_to",
+      "mechanism": "VRAM/device memory is GPU-side memory.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "global_memory",
+      "target": "device",
+      "relationship": "part_of",
+      "mechanism": "Global memory is device memory accessible to kernels.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "const_memory",
+      "target": "device",
+      "relationship": "part_of",
+      "mechanism": "Constant memory is a CUDA device-memory class.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "texture_memory",
+      "target": "device",
+      "relationship": "part_of",
+      "mechanism": "Texture memory is a CUDA device-memory class.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "local_memory",
+      "target": "thread",
+      "relationship": "associated_with",
+      "mechanism": "Local storage is associated with execution threads.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "register",
+      "target": "thread",
+      "relationship": "owned_by",
+      "mechanism": "Registers provide per-thread storage.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "source": "shared_memory",
+      "target": "block",
+      "relationship": "shared_by",
+      "mechanism": "Shared memory is shared among threads of a block.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "shared_memory",
+      "target": "texture_lookup",
+      "relationship": "compared_with",
+      "mechanism": "Shared memory can act as a user-managed cache with high bandwidth.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "scattered_reads",
+      "target": "global_memory",
+      "relationship": "uses",
+      "mechanism": "CUDA allows reads from arbitrary memory addresses.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda4",
+      "target": "unified_virtual_memory",
+      "relationship": "introduces",
+      "mechanism": "CUDA 4.0 introduced Unified Virtual Memory.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda6",
+      "target": "unified_memory",
+      "relationship": "introduces",
+      "mechanism": "CUDA 6.0 introduced Unified Memory.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "driver_api",
+      "relationship": "provides",
+      "mechanism": "CUDA exposes a low-level Driver API.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "runtime_api",
+      "relationship": "provides",
+      "mechanism": "CUDA exposes a higher-level Runtime API.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "driver_api",
+      "target": "driver",
+      "relationship": "uses",
+      "mechanism": "Driver API controls CUDA through the NVIDIA driver.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "runtime_api",
+      "target": "driver_api",
+      "relationship": "abstracts",
+      "mechanism": "Runtime API provides a higher-level layer over lower-level driver operations.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cublas",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cufft",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "curand",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cusolver",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cusparse",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "npp",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "nvgraph",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "nvml",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "nvrtc",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cutlass",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "nvjpeg",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cub",
+      "relationship": "includes_or_supports",
+      "mechanism": "CUDA ecosystem includes this library/component.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "nvrtc",
+      "target": "cuda_c",
+      "relationship": "runtime_compiles",
+      "mechanism": "NVRTC provides runtime compilation for CUDA C++.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cublas",
+      "target": "applications",
+      "relationship": "accelerates",
+      "mechanism": "cuBLAS supplies optimized linear algebra.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cufft",
+      "target": "applications",
+      "relationship": "accelerates",
+      "mechanism": "cuFFT supplies FFT computation.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cusparse",
+      "target": "applications",
+      "relationship": "accelerates",
+      "mechanism": "cuSPARSE supplies sparse matrix computation.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "python",
+      "target": "cupynumeric",
+      "relationship": "accesses_cuda",
+      "mechanism": "Python can access CUDA through this library/binding.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "python",
+      "target": "pycuda",
+      "relationship": "accesses_cuda",
+      "mechanism": "Python can access CUDA through this library/binding.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "python",
+      "target": "cupy",
+      "relationship": "accesses_cuda",
+      "mechanism": "Python can access CUDA through this library/binding.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "python",
+      "target": "pycublas",
+      "relationship": "accesses_cuda",
+      "mechanism": "Python can access CUDA through this library/binding.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "python",
+      "target": "numpy",
+      "relationship": "accesses_cuda",
+      "mechanism": "Python can access CUDA through this library/binding.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "julia",
+      "target": "cuda",
+      "relationship": "accesses",
+      "mechanism": "Source lists Julia as a CUDA-accessible language.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "pycuda",
+      "target": "cuda_c",
+      "relationship": "embeds",
+      "mechanism": "PyCUDA can compile/use CUDA C/C++ kernel source from Python.",
+      "source_line_ranges": [
+        [
+          94,
+          100
+        ]
+      ]
+    },
+    {
+      "source": "cupy",
+      "target": "numpy",
+      "relationship": "mirrors",
+      "mechanism": "CuPy provides a NumPy-like array model on CUDA.",
+      "source_line_ranges": [
+        [
+          104,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "openmp",
+      "relationship": "coexists_with",
+      "mechanism": "CUDA-capable GPUs support or coexist with this computational interface.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "openacc",
+      "relationship": "coexists_with",
+      "mechanism": "CUDA-capable GPUs support or coexist with this computational interface.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "opencl",
+      "relationship": "coexists_with",
+      "mechanism": "CUDA-capable GPUs support or coexist with this computational interface.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "directcompute",
+      "relationship": "coexists_with",
+      "mechanism": "CUDA-capable GPUs support or coexist with this computational interface.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "opengl_compute",
+      "relationship": "coexists_with",
+      "mechanism": "CUDA-capable GPUs support or coexist with this computational interface.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cpp_amp",
+      "relationship": "coexists_with",
+      "mechanism": "CUDA-capable GPUs support or coexist with this computational interface.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          64,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "rocm",
+      "relationship": "competes_with",
+      "mechanism": "CUDA competes with AMD ROCm.",
+      "source_line_ranges": [
+        [
+          128,
+          133
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "oneapi",
+      "relationship": "competes_with",
+      "mechanism": "CUDA competes with Intel oneAPI.",
+      "source_line_ranges": [
+        [
+          128,
+          132
+        ]
+      ]
+    },
+    {
+      "source": "uxl",
+      "target": "cuda",
+      "relationship": "offers_alternative_to",
+      "mechanism": "UXL seeks open alternatives to CUDA.",
+      "source_line_ranges": [
+        [
+          130,
+          132
+        ]
+      ]
+    },
+    {
+      "source": "rocm",
+      "target": "hip",
+      "relationship": "supports",
+      "mechanism": "HIP is associated with CUDA/ROCm portability.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "hip",
+      "target": "cuda",
+      "relationship": "imports_or_converts",
+      "mechanism": "HIP includes CUDA source import/conversion tooling.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "coriander",
+      "target": "cuda",
+      "relationship": "implements_compatibility_with",
+      "mechanism": "Provides some form of CUDA compatibility/conversion on non-NVIDIA targets.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "cu2cl",
+      "target": "cuda",
+      "relationship": "implements_compatibility_with",
+      "mechanism": "Provides some form of CUDA compatibility/conversion on non-NVIDIA targets.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "zluda",
+      "target": "cuda",
+      "relationship": "implements_compatibility_with",
+      "mechanism": "Provides some form of CUDA compatibility/conversion on non-NVIDIA targets.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "chipstar",
+      "target": "cuda",
+      "relationship": "implements_compatibility_with",
+      "mechanism": "Provides some form of CUDA compatibility/conversion on non-NVIDIA targets.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "scale",
+      "target": "cuda",
+      "relationship": "implements_compatibility_with",
+      "mechanism": "Provides some form of CUDA compatibility/conversion on non-NVIDIA targets.",
+      "source_line_ranges": [
+        [
+          82,
+          83
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "cryptography",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "ml",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "molecular_dynamics",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "fluid_dynamics",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "llm_inference",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "face_recognition",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "video",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "rendering",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "structure_motion",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "crypto_mining",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "bioinformatics",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "seti",
+      "relationship": "accelerates",
+      "mechanism": "Source lists this as a CUDA workload/domain.",
+      "source_line_ranges": [
+        [
+          115,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "physx",
+      "relationship": "accelerates",
+      "mechanism": "CUDA/GPU computing can accelerate game physics.",
+      "source_line_ranges": [
+        [
+          68,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "bullet",
+      "relationship": "supports_acceleration_of",
+      "mechanism": "GPU computing can accelerate physics engines.",
+      "source_line_ranges": [
+        [
+          68,
+          70
+        ]
+      ]
+    },
+    {
+      "source": "compute_capability",
+      "target": "cuda",
+      "relationship": "governs_compatibility",
+      "mechanism": "Compute capability identifies architecture feature support.",
+      "source_line_ranges": [
+        [
+          105,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "compute_capability",
+      "target": "sm_xy",
+      "relationship": "represented_as",
+      "mechanism": "X.Y capability may be written SMXY/sm_XY.",
+      "source_line_ranges": [
+        [
+          105,
+          106
+        ]
+      ]
+    },
+    {
+      "source": "tensor_cores",
+      "target": "compute_capability",
+      "relationship": "depends_on",
+      "mechanism": "Tensor Core capabilities vary by GPU generation.",
+      "source_line_ranges": [
+        [
+          108,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "raytracing_cores",
+      "target": "compute_capability",
+      "relationship": "depends_on",
+      "mechanism": "Ray-tracing support varies by architecture.",
+      "source_line_ranges": [
+        [
+          108,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "cuda11",
+      "target": "mig",
+      "relationship": "supports",
+      "mechanism": "MIG support appears in CUDA 11-era components.",
+      "source_line_ranges": [
+        [
+          76,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "float",
+      "target": "fp16",
+      "relationship": "includes_type",
+      "mechanism": "CUDA GPU numerical support includes architecture-dependent floating formats.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "float",
+      "target": "fp32",
+      "relationship": "includes_type",
+      "mechanism": "CUDA GPU numerical support includes architecture-dependent floating formats.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "float",
+      "target": "fp64",
+      "relationship": "includes_type",
+      "mechanism": "CUDA GPU numerical support includes architecture-dependent floating formats.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "float",
+      "target": "bfloat16",
+      "relationship": "includes_type",
+      "mechanism": "CUDA GPU numerical support includes architecture-dependent floating formats.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "float",
+      "target": "tf32",
+      "relationship": "includes_type",
+      "mechanism": "CUDA GPU numerical support includes architecture-dependent floating formats.",
+      "source_line_ranges": [
+        [
+          91,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "fma",
+      "target": "gpu",
+      "relationship": "executes_on",
+      "mechanism": "Fused multiply-add executes on GPU hardware.",
+      "source_line_ranges": [
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "source": "cuda4",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda6",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda8",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda9",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda10",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda11",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "source": "cuda13",
+      "target": "cuda",
+      "relationship": "is_version_of",
+      "mechanism": "Version of the CUDA platform.",
+      "source_line_ranges": [
+        [
+          38,
+          38
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "geforce",
+      "relationship": "supports_gpu_family",
+      "mechanism": "Source identifies this NVIDIA product family as CUDA-supported.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "quadro",
+      "relationship": "supports_gpu_family",
+      "mechanism": "Source identifies this NVIDIA product family as CUDA-supported.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "cuda",
+      "target": "tesla",
+      "relationship": "supports_gpu_family",
+      "mechanism": "Source identifies this NVIDIA product family as CUDA-supported.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "source": "g8x",
+      "target": "cuda",
+      "relationship": "supported_from",
+      "mechanism": "CUDA support begins with NVIDIA G8x and later according to the source.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_pipeline",
+      "name": "CUDA execution pipeline",
+      "expression": "host_data → H2D_copy → kernel_launch → grid(blocks(threads)) → GPU_execution → D2H_copy",
+      "meaning": "Typical CPU/GPU data movement and execution flow.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "model_hierarchy",
+      "name": "CUDA execution hierarchy",
+      "expression": "grid → block → warp(32 threads) → thread",
+      "meaning": "Kernel execution hierarchy.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "model_compile",
+      "name": "CUDA compilation chain",
+      "expression": "CUDA C/C++ → nvcc/Clang → PTX → SASS/machine instructions → NVIDIA GPU",
+      "meaning": "Language-to-device compilation path.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ],
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "model_memory",
+      "name": "CUDA memory hierarchy",
+      "expression": "register/local → shared/L1 → L2 → global/VRAM",
+      "meaning": "Approximate source ontology of memory layers.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "model_api",
+      "name": "CUDA API stack",
+      "expression": "application → Runtime API → Driver API → NVIDIA driver → GPU",
+      "meaning": "High-level to low-level control path.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "model_python",
+      "name": "Python CUDA path",
+      "expression": "Python → PyCUDA/CuPy/cuPyNumeric → CUDA → GPU",
+      "meaning": "Python access to CUDA through bindings/libraries.",
+      "source_line_ranges": [
+        [
+          60,
+          70
+        ],
+        [
+          94,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "model_portability",
+      "name": "Accelerator-stack landscape",
+      "expression": "CUDA ↔ ROCm/HIP ↔ oneAPI/SYCL ↔ OpenCL",
+      "meaning": "CUDA's competitive/portability ecosystem.",
+      "source_line_ranges": [
+        [
+          64,
+          70
+        ],
+        [
+          128,
+          135
+        ]
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_01",
+      "topic": "identity_and_scope",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        38,
+        46
+      ]
+    },
+    {
+      "id": "claim_02",
+      "topic": "GPU_and_GPGPU",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        47,
+        51
+      ]
+    },
+    {
+      "id": "claim_03",
+      "topic": "Buck_Brook_Nickolls_history",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        52,
+        57
+      ]
+    },
+    {
+      "id": "claim_04",
+      "topic": "CUDA_ontology",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        55,
+        58
+      ]
+    },
+    {
+      "id": "claim_05",
+      "topic": "programming_languages_compilers_interfaces",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        60,
+        70
+      ]
+    },
+    {
+      "id": "claim_06",
+      "topic": "APIs_libraries_versions",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        71,
+        77
+      ]
+    },
+    {
+      "id": "claim_07",
+      "topic": "advantages_limitations",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        78,
+        84
+      ]
+    },
+    {
+      "id": "claim_08",
+      "topic": "examples_and_Python_bindings",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        86,
+        104
+      ]
+    },
+    {
+      "id": "claim_09",
+      "topic": "compute_capability_architecture",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        105,
+        114
+      ]
+    },
+    {
+      "id": "claim_10",
+      "topic": "applications",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        115,
+        126
+      ]
+    },
+    {
+      "id": "claim_11",
+      "topic": "competitors_alternatives",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        128,
+        135
+      ]
+    },
+    {
+      "id": "claim_12",
+      "topic": "references_further_reading",
+      "source_file": "Pasted text(20261007-210906).txt",
+      "line_range": [
+        136,
+        843
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_c_cuda",
+      "title": "C vs CUDA C/C++",
+      "description": "C/C++ is the language base; CUDA adds GPU execution, memory and API extensions.",
+      "source_line_ranges": [
+        [
+          40,
+          43
+        ],
+        [
+          60,
+          62
+        ],
+        [
+          78,
+          84
+        ]
+      ]
+    },
+    {
+      "id": "dist_host_device",
+      "title": "Host vs device",
+      "description": "Host code runs on CPU; device kernels run on GPU.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "dist_runtime_driver",
+      "title": "Runtime API vs Driver API",
+      "description": "Runtime is higher-level/single-source; Driver API is lower-level/non-single-source.",
+      "source_line_ranges": [
+        [
+          71,
+          72
+        ]
+      ]
+    },
+    {
+      "id": "dist_grid_block",
+      "title": "Grid vs block vs thread",
+      "description": "Grid contains blocks; blocks contain threads; warps group 32 threads.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ]
+      ]
+    },
+    {
+      "id": "dist_shared_global",
+      "title": "Shared vs global memory",
+      "description": "Shared memory is block-shared/user-managed; global memory is device-wide.",
+      "source_line_ranges": [
+        [
+          55,
+          58
+        ],
+        [
+          73,
+          77
+        ]
+      ]
+    },
+    {
+      "id": "dist_ptx_sass",
+      "title": "PTX vs SASS",
+      "description": "PTX is intermediate representation; SASS is hardware machine instruction representation.",
+      "source_line_ranges": [
+        [
+          60,
+          62
+        ],
+        [
+          112,
+          112
+        ]
+      ]
+    },
+    {
+      "id": "dist_cuda_rocm",
+      "title": "CUDA vs ROCm",
+      "description": "CUDA is proprietary NVIDIA software; ROCm is open-source AMD software.",
+      "source_line_ranges": [
+        [
+          128,
+          133
+        ]
+      ]
+    },
+    {
+      "id": "dist_cuda_oneapi",
+      "title": "CUDA vs oneAPI",
+      "description": "CUDA is NVIDIA-specific; oneAPI targets multiple architectures through open specifications.",
+      "source_line_ranges": [
+        [
+          128,
+          132
+        ]
+      ]
+    },
+    {
+      "id": "dist_warp",
+      "title": "Uniform vs divergent warp control flow",
+      "description": "Uniform branches preserve SIMD efficiency; divergence reduces it.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "dist_transfer",
+      "title": "Computation vs transfer cost",
+      "description": "Host/device transfers can limit end-to-end acceleration.",
+      "source_line_ranges": [
+        [
+          80,
+          81
+        ]
+      ]
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp01",
+      "title": "CUDA foundations",
+      "sequence": [
+        "cuda",
+        "gpu",
+        "gpgpu",
+        "cuda_c",
+        "kernel"
+      ]
+    },
+    {
+      "id": "lp02",
+      "title": "C → CUDA compilation",
+      "sequence": [
+        "c",
+        "cpp",
+        "cuda_c",
+        "nvcc",
+        "ptx",
+        "sass",
+        "gpu"
+      ]
+    },
+    {
+      "id": "lp03",
+      "title": "Host/device model",
+      "sequence": [
+        "host",
+        "cpu",
+        "device",
+        "gpu",
+        "host_memory",
+        "copy_h2d",
+        "kernel",
+        "copy_d2h"
+      ]
+    },
+    {
+      "id": "lp04",
+      "title": "Execution hierarchy",
+      "sequence": [
+        "kernel",
+        "grid",
+        "block",
+        "warp",
+        "thread",
+        "sm",
+        "simd"
+      ]
+    },
+    {
+      "id": "lp05",
+      "title": "CUDA memory",
+      "sequence": [
+        "register",
+        "local_memory",
+        "shared_memory",
+        "l1",
+        "l2",
+        "global_memory",
+        "unified_memory"
+      ]
+    },
+    {
+      "id": "lp06",
+      "title": "CUDA APIs",
+      "sequence": [
+        "runtime_api",
+        "driver_api",
+        "driver",
+        "toolkit"
+      ]
+    },
+    {
+      "id": "lp07",
+      "title": "CUDA libraries",
+      "sequence": [
+        "cublas",
+        "cufft",
+        "curand",
+        "cusolver",
+        "cusparse",
+        "nvrtc"
+      ]
+    },
+    {
+      "id": "lp08",
+      "title": "Python + CUDA",
+      "sequence": [
+        "python",
+        "pycuda",
+        "cupy",
+        "cupynumeric",
+        "numpy"
+      ]
+    },
+    {
+      "id": "lp09",
+      "title": "Performance",
+      "sequence": [
+        "warp_divergence",
+        "branch_uniformity",
+        "async_transfer",
+        "dma",
+        "shared_memory",
+        "scattered_reads"
+      ]
+    },
+    {
+      "id": "lp10",
+      "title": "GPU architecture",
+      "sequence": [
+        "sm",
+        "tensor_cores",
+        "raytracing_cores",
+        "compute_capability",
+        "fp16",
+        "fp32",
+        "fp64"
+      ]
+    },
+    {
+      "id": "lp11",
+      "title": "CUDA ecosystem",
+      "sequence": [
+        "cuda",
+        "opencl",
+        "openacc",
+        "openmp",
+        "sycl",
+        "rocm",
+        "oneapi",
+        "hip"
+      ]
+    },
+    {
+      "id": "lp12",
+      "title": "CUDA history",
+      "sequence": [
+        "ian_buck",
+        "brook",
+        "john_nickolls",
+        "cuda_created",
+        "cuda_release",
+        "ml"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mis01",
+      "claim": "CUDA is just C",
+      "correction": "CUDA C/C++ adds GPU kernels, execution hierarchy, memory APIs and a CUDA compilation/runtime model.",
+      "linked_concept": "dist_c_cuda"
+    },
+    {
+      "id": "mis02",
+      "claim": "CUDA runs all code on the GPU",
+      "correction": "Host code remains CPU-side while kernels execute on the GPU.",
+      "linked_concept": "dist_host_device"
+    },
+    {
+      "id": "mis03",
+      "claim": "A block is a GPU core",
+      "correction": "A block is a logical group of threads scheduled onto streaming multiprocessors.",
+      "linked_concept": "dist_grid_block"
+    },
+    {
+      "id": "mis04",
+      "claim": "A thread is a CUDA core",
+      "correction": "Threads are logical execution contexts; hardware execution is organized through warps and SMs.",
+      "linked_concept": "dist_grid_block"
+    },
+    {
+      "id": "mis05",
+      "claim": "PTX is final machine code",
+      "correction": "PTX is an intermediate representation that is lowered toward GPU machine instructions.",
+      "linked_concept": "dist_ptx_sass"
+    },
+    {
+      "id": "mis06",
+      "claim": "More threads always means faster",
+      "correction": "Warp divergence, memory movement, architecture and occupancy constraints can dominate.",
+      "linked_concept": "dist_warp"
+    },
+    {
+      "id": "mis07",
+      "claim": "Shared memory is VRAM",
+      "correction": "Shared memory is a distinct fast user-managed region shared by block threads.",
+      "linked_concept": "dist_shared_global"
+    },
+    {
+      "id": "mis08",
+      "claim": "CUDA runs natively on every GPU vendor",
+      "correction": "CUDA is proprietary/NVIDIA-specific; compatibility and alternative stacks exist for other vendors.",
+      "linked_concept": "dist_cuda_rocm"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What exactly is CUDA beyond the C language?"
+    },
+    {
+      "id": "q02",
+      "question": "How does ordinary C/C++ become CUDA C/C++?"
+    },
+    {
+      "id": "q03",
+      "question": "What does nvcc compile and where does PTX fit?"
+    },
+    {
+      "id": "q04",
+      "question": "How does PTX become GPU machine instructions?"
+    },
+    {
+      "id": "q05",
+      "question": "What is the difference between host and device code?"
+    },
+    {
+      "id": "q06",
+      "question": "How does a kernel launch become a grid of blocks and threads?"
+    },
+    {
+      "id": "q07",
+      "question": "Why are warps 32 threads?"
+    },
+    {
+      "id": "q08",
+      "question": "Why does warp divergence hurt performance?"
+    },
+    {
+      "id": "q09",
+      "question": "How do SMs, blocks, warps and threads map onto one another?"
+    },
+    {
+      "id": "q10",
+      "question": "How do registers, local, shared, L1, L2 and global memory relate?"
+    },
+    {
+      "id": "q11",
+      "question": "Why can host/device transfers erase GPU speedups?"
+    },
+    {
+      "id": "q12",
+      "question": "When should shared memory be used as a user-managed cache?"
+    },
+    {
+      "id": "q13",
+      "question": "What do CUDA Runtime and Driver APIs each do?"
+    },
+    {
+      "id": "q14",
+      "question": "How do cuBLAS, cuFFT, cuRAND, cuSOLVER and cuSPARSE fit into CUDA?"
+    },
+    {
+      "id": "q15",
+      "question": "How does Python reach CUDA through PyCUDA and CuPy?"
+    },
+    {
+      "id": "q16",
+      "question": "How does CUDA C++ differ from ordinary C++?"
+    },
+    {
+      "id": "q17",
+      "question": "Why are RTTI and exceptions restricted in device code?"
+    },
+    {
+      "id": "q18",
+      "question": "What does compute capability determine?"
+    },
+    {
+      "id": "q19",
+      "question": "How do Tensor Cores change CUDA workloads?"
+    },
+    {
+      "id": "q20",
+      "question": "How did Brook lead to CUDA?"
+    },
+    {
+      "id": "q21",
+      "question": "Why did CUDA become strategically important for NVIDIA and machine learning?"
+    },
+    {
+      "id": "q22",
+      "question": "How does CUDA compare with ROCm and oneAPI?"
+    },
+    {
+      "id": "q23",
+      "question": "How do HIP, ZLUDA, ChipStar and SCALE address portability?"
+    },
+    {
+      "id": "q24",
+      "question": "What workloads are particularly suited to CUDA?"
+    },
+    {
+      "id": "q25",
+      "question": "How do CUDA versions map to GPU architectures?"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "expand_c_cuda",
+      "topic": "CUDA C/C++ language mechanics",
+      "priority": "critical",
+      "reason": "Deepen qualifiers, built-ins, kernel syntax, compilation units and host/device restrictions."
+    },
+    {
+      "id": "expand_arch",
+      "topic": "NVIDIA GPU architecture",
+      "priority": "critical",
+      "reason": "Map SM partitions, schedulers, execution units, caches and architecture generations."
+    },
+    {
+      "id": "expand_memory",
+      "topic": "CUDA memory model",
+      "priority": "critical",
+      "reason": "Deepen allocation, access patterns, coalescing, shared-memory behavior and synchronization."
+    },
+    {
+      "id": "expand_ptx",
+      "topic": "PTX and SASS",
+      "priority": "high",
+      "reason": "Deepen source → compiler → PTX → SASS → hardware execution."
+    },
+    {
+      "id": "expand_tensor",
+      "topic": "Tensor Cores",
+      "priority": "high",
+      "reason": "Map matrix instructions, numeric formats and ML acceleration."
+    },
+    {
+      "id": "expand_libraries",
+      "topic": "CUDA libraries",
+      "priority": "high",
+      "reason": "Map CUDA libraries into linear algebra, FFT, sparse math, AI and inference."
+    },
+    {
+      "id": "expand_python",
+      "topic": "Python CUDA ecosystem",
+      "priority": "high",
+      "reason": "Deepen PyCUDA, CuPy, cuPyNumeric and related framework connections."
+    },
+    {
+      "id": "expand_portability",
+      "topic": "CUDA portability",
+      "priority": "medium",
+      "reason": "Map CUDA → HIP/ROCm, oneAPI, SYCL, OpenCL and compatibility layers."
+    }
+  ],
+  "validation": {
+    "node_count": 145,
+    "relationship_count": 137,
+    "formal_model_count": 7,
+    "source_claim_count": 12,
+    "semantic_distinction_count": 10,
+    "learning_path_count": 12,
+    "misconception_count": 8,
+    "question_count": 25,
+    "expansion_target_count": 8,
+    "dangling_relationships": 0,
+    "duplicate_relationships": 0,
+    "duplicate_node_ids": 0,
+    "validation_status": "clean"
+  }
+}
