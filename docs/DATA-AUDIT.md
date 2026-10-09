@@ -1,411 +1,88 @@
-# Focused interaction and identity audit · 2026-10-07
-
-Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
-
-This section supersedes the totals in the historical checkpoints below. The original ten JSON inputs remain unchanged. Reviewed source identities now also unify general Operating System, Linux OS/platform, Microsoft Windows, Go, .NET CLR, and the sandbox source's JVM record. Implementation-specific sandboxes, Python's VM, kernels, filesystem variants, and product-specific volumes remain distinct. No new editorial relationships were invented.
-
-Current generated atlas: **2,267 concepts, 2,422 relationships (2,417 source + 5 existing editorial), 53 cross-document concepts, 15 explicit alias groups**. All 2,317 source node records, 153 claims, 133 paths and 44 rich relationships remain preserved. There are 621 components and 601 isolated records; the largest component has 1,598 nodes. Zero dangling endpoints. Original loops and parallel records remain intact.
-
-Selected concepts now have a focused radial neighborhood containing every incident edge and endpoint, reversible whole-map context, Fit connections and Back. The adjacent connection browser supports text and direction filters without removing graph edges. Parallel source records are identified rather than discarded. Visible canvas labels take hit-test priority over nearby node hit areas so clicking a label selects its concept.
-
-Verification evidence is recorded in `docs/QA.md`, `docs/integration-browser.json` and `docs/qa/integration-tests.txt` (repository-relative paths).
-
----
-
-# Ten-source integration audit · 2026-10-07
-
-Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
-
-## Current verified totals
-
-- 10 original JSON datasets; placeholder is not a dataset. All ten source SHA-256 hashes match upload commit 10fb7ab63177eb18a4bb7ff80cd17e10df450b13.
-- 2,317 original node records, 153 claims, 133 learning paths, and all document metadata preserved.
-- 2,373 base + 44 rich source relationships = 2,417 source edges; the five pre-existing editorial edges remain separately labeled. No new editorial edge was manufactured.
-- 2,278 displayed concepts, 2,422 edges, 48 cross-document concepts, 10 explicit alias groups.
-- 623 weak components, largest 1,607 nodes, 603 graph-isolated records. This is not a claim that the whole map is transitively connected.
-- Three original loops retained: operating_system:46, operating_system:55, python_language:140. Zero dangling endpoints or merge-created loops.
-- 30 prose paths retain 116 whole segments: 60 resolved and 56 explicitly unresolved. All 103 ID-array paths retain their source-scoped steps. No relationships come from path order.
-
-## Evidence and identity
-
-The full exact record mapping and unchanged hashes are in [integration-manifest.json](integration-manifest.json). Every source node/claim, relationship section/index, learning-path record/segment, and metadata section maps to the derived atlas. The nonlinear [task graph](data-integration.mmd) connects sources, requirements, normalization, curation, UI, tests and publication. Seven workflow anchors retain their original literary authors; none serves as domain evidence.
-
-New explicit identities: OS/security Sandbox; Java VM/JVM (Python edge 310 → existing VM edge 33); sandbox Linux cgroups/namespaces with existing infrastructure; OS cross-domain Kubernetes and generic VM; sandbox VM implementation with generic VM. Source cgroups/namespaces context is sandbox relationships 25–27. OS edges 313/314/316 connect sandbox/containerization/VM. Original parallel rich edges retain distinct IDs such as operating_system:rich_semantic_relationships:0 and sourcePointer /rich_semantic_relationships/0.
-
-Declined: Python VM ≠ generic/system VM; OS vm ≠ OS virtual_machine (edge 317 same_concept_family must remain); Linux application sandboxing ≠ Linux OS/kernel; general volume ≠ Docker/Kubernetes volume; optical filesystem ≠ generic filesystem; all image types remain distinct. System-image edge 3 remains conditional on all relevant state being on disk. Generic filesystem/kernel label differences remain source-qualified conservatively. Sandbox isolation and iOS sandbox implementation were additionally separated from VM isolation and the OS product despite matching labels.
-
-Bare vm, linux, kernel, filesystem and namespace URLs now offer explicit choices rather than guessing. Qualified source links remain exact; jvm and sandbox are canonical. Prior bare vm/namespace automatic redirects are intentionally replaced by ambiguity choices when new source meanings arrive. No fuzzy matching, blanket singularization or external knowledge repairs are added.
-
-## Path normalization
-
-String arrows delimit display segments, not concept IDs or edges. Only whole exact local IDs or unambiguous local labels resolve; claims/references are not guessed from labels. Slashes, comparisons, unsupported phrases and composite sequences stay intact. Python Compilation has zero resolved concepts and remains fully readable without a broken Explore action. Full original prose and record always remain available. Source titles use top-level, metadata.title, or source.title; OS/sandbox path label is supported.
-
-## Complete incident neighborhoods
-
-Every selection and re-selection restores all recorded incident edges in both directions across all sources, regardless of overview filters. Parallel base/rich edges are distinct curves, source loops are drawn explicitly, and source/target direction is shown with arrows plus Incoming/Outgoing/Self-loop labels in the complete relationship list. The full incident set is uncapped; the preview is explicitly a sample, not the complete list. Hover/focus does not displace a pinned selection. Selected neighborhoods are framed as a whole rather than zooming into one edge. Edge emphasis never hides other incident edges. The canvas exposes the actual drawn edge IDs for exact set-comparison tests.
-
-## Verification scope
-
-26 Node/jsdom tests pass at the integration checkpoint, including every source record/hash, deterministic rebuild, ambiguity/compatibility, rich metadata and high-degree repeated selection with cross-source filters and original loops. Actual test output: docs/qa/integration-tests.txt. Browser-policy blocker and current browser verification status are recorded separately in [QA.md](QA.md); historical screenshots below do not prove this larger integration.
-
----
-
-The earlier audit follows intact for historical evidence, source credits and the unchanged five editorial relations. Its metrics and bare-URL behavior are superseded by the current section above.
-
-# Historical four-source identity audit (superseded totals)
-
-Reviewed 2026-10-07. Scope: all four supplied JSON graphs, their definitions, relationships, claims, metadata and learning paths. This is an identity/provenance and navigability audit, **not independent verification of every source assertion**. Original source files are unchanged.
-
-## Reproducible totals
-
-| Measure | Previous atlas | Audited atlas |
-| --- | ---: | ---: |
-| Source documents | 4 | 4 |
-| Original node records | 771 | 771 |
-| Original relationship records | 638 | 638 |
-| Original claim records | 52 | 52 |
-| Recorded learning paths | 50 | 50 |
-| Display nodes, including claims/references | 776 | 768 |
-| Cross-document display nodes | 16 | 21 |
-| Editorial edges | 1 identity bridge | 5 semantic relations |
-| Total edges | 639 | 643 |
-| Weakly connected components | 229 | 228 |
-| Largest component | 514 nodes | 507 nodes |
-| Zero-degree nodes | 214 | 213 |
-| Dangling endpoints / merge-created self-loops | 0 / 0 | 0 / 0 |
-
-Source counts: containerization 158 nodes / 139 relationships; Docker 230 / 194; Kubernetes 173 / 154; virtual machine 210 / 151. There are 795 retained node variants: 771 original nodes plus 24 Kubernetes claims that were not separate original nodes. The other 28 claim records remain attached to their original claim-node variants. All 52 claim objects and all document metadata survive. There are 188 protected identities (claims, references and source documents), never merged across documents.
-
-Eight explicit alias groups collapse nine former display nodes; splitting the previously conflated Host adds one, for a net reduction of eight. Kubernetes now has one shared neighborhood, not two platform nodes joined by an identity edge. The removed editorial identity bridge was not an original source record.
-
-## Identity policy
-
-No fuzzy matching, stemming or blanket singularization. Source-qualified members opt into reviewed explicit groups; new documents cannot join these groups simply because labels resemble them. Existing equal-ID/equal-normalized-label sharing is retained for reviewed non-protected records, except scope overrides. Original types and descriptions remain in variants rather than becoming fabricated consensus records.
-
-The thirteen retained equal-ID/equal-label shared concepts are Apache License 2.0, Application, Container, Container Orchestration, Container Runtime, Docker, IBM Cloud, Linux Kernel, Linux-VServer, LXC, OCI, OpenVZ and Solaris Containers. Definitions were inspected in each source. This compatibility rule is not a substitute for reviewing future inputs.
-
-Kubernetes Namespace is explicitly source-scoped, separate from Linux namespaces. Docker Host and VM Host are separate despite identical original labels. Different-label ID collisions remain source-qualified unless explicitly accepted in the inventory below.
-
-## Direct relationships and primary evidence
-
-All five additions have curated=true, provenance=editorial, document=curated, an editorial record, rationale, evidence URLs, checked date, and scope where needed. They do not masquerade as original relationships. Evidence was fetched from the primary documentation on 2026-10-07:
-
-1. **Docker → Container: runs and manages.** Makes the requested relationship direct. Evidence: Docker's container running, listing and stopping walkthrough.
-2. **Virtual Machine → Container: can host.** VM plus container runtime can run containers; coexistence, not identity or a universal requirement. Evidence: the same guide's “Using VMs and containers together” section.
-   Evidence URL: https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/
-3. **Docker Image → Container Image: is a.** Connects a product-specific artifact to the broader category without merging their scopes. Evidence: Docker's container-image explanation and Docker Desktop walkthrough.
-   Evidence URL: https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/
-4. **Container → Linux Namespaces: uses for isolation.** Scoped to Linux containers, not Kubernetes namespaces or a complete security boundary.
-5. **Container → Linux cgroups: uses for resource limits.** Scoped to Linux containers. Evidence for 4–5: the Kernel namespaces and Control groups sections of Docker Engine security.
-   Evidence URL: https://docs.docker.com/engine/security/
-
-The K8s abbreviation was checked in the official Kubernetes overview: https://kubernetes.io/docs/concepts/overview/. Other alias decisions use original record definitions, not new historical/product claims.
-
-Already-recorded useful edges remain source edges: Kubernetes orchestrates Container; Pod contains Container; Container Runtime runs Container; Docker Image templates Container; Hypervisor manages System VM. No redundant editorial versions were added. The broader VM node also includes process VMs, so an unqualified “Hypervisor manages Virtual Machine” addition was declined in favor of the more precise existing System VM relation. No relation was invented simply to make every node connected.
-
-## Provenance and old-link compatibility
-
-Schema 1.1 is additive/UI-compatible: existing nodes, edges, paths, documents, variants, fields, record and summary keys remain. Every original node record is retained verbatim in a variant with sourceId/sourceKey. Every original edge retains its exact record, including original endpoint IDs; only display endpoints are canonicalized. Parallel source edges are deliberately **not deduplicated**. Paths retain exact original records while display steps remap through document-qualified identity. Document metadata is unchanged, including local references and caveats.
-
-- sourceNodeMap resolves every source-qualified node/claim identity.
-- aliases supplies 679 unambiguous one-hop redirects, including k8s, vm, old scoped cgroups/namespaces IDs, and namespace. Canonical IDs take precedence. The consuming UI must apply this mapping for old links.
-- ambiguousAliases exposes candidate targets instead of guessing. The old bare host link cannot unambiguously redirect after fixing its conflation; candidates are Docker Host and VM Host. Qualified links remain exact.
-- originalIds includes every contributing original ID. Legacy originalId remains the first source record ID for compatibility, not a complete identity inventory.
-
-## Connectivity and limits
-
-Components use the undirected projection of explicit edges and include all node kinds. Metadata mentions, attached evidence and learning-path sequences are **not** edges. “Isolated” means no explicit relationship, not no contextual information. Full component membership and isolated IDs are in atlas.audit, alongside source-only connectivity and decisions.
-
-The distribution is **507, 9, 6, 5, 4, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2**, plus **213 singletons**. Editorial relations connect nodes already in the largest component: source-only component sizes are identical. These additions clarify useful neighborhoods rather than pretending to improve coverage. The smaller largest component reflects identity consolidation, not missing original records. One fewer isolated node comes from portability consolidation.
-
-Important gaps: containerd is in a three-node release fragment; controller_manager is isolated; all 24 extracted Kubernetes claims are graph-isolated although used as evidence. Several releases, historical records, authors, distinctions, misconceptions and expansion targets remain disconnected. Turning every text mention or learning step into a semantic edge would invent unsupported relations and was not done. Questionable/historical source edges (Docker “feeds” Kubernetes; Container “is_docker_object” pointing at Image) retain their original qualifiers. Retention does not endorse them, and this audit makes no claim that Kubernetes requires Docker.
-
-## Verification
-
-Commands: node scripts/build-atlas.mjs; node --test test/atlas.test.mjs test/data-unification.test.mjs. Ten data-scope tests pass: published equality; exact record retention; explicit aliases; scope exclusions; direct relations and editorial evidence markers; all source-qualified endpoints and path steps; protected claims/references including nonstandard IDs; zero dangling endpoints/self-loops; connectivity totals; byte-for-byte repeated build equality including layout. No dependency installed.
-
-The inventories below are generated from the published audit, not hand-estimated.
-
-## Accepted explicit alias inventory
-
-- **kubernetes** ← containerization:kubernetes, docker:kubernetes, kubernetes:k8s. All three source definitions identify the Kubernetes platform; K8s is its abbreviation.
-- **virtual_machine** ← containerization:virtual_machine, docker:vm, virtual_machine:virtual_machine. The Docker abbreviation and both full-name records refer to the VM concept, not to a particular VM instance.
-- **namespaces** ← containerization:namespaces, docker:namespaces. Both records describe the Linux kernel isolation mechanism; Kubernetes resource namespaces are excluded.
-- **cgroups** ← containerization:cgroups, docker:cgroups. Both records describe the Linux kernel control-group mechanism.
-- **dependency** ← containerization:dependency, docker:dependencies. Singular/plural records describe software dependencies bundled with an application; the library subtype remains separate.
-- **openshift** ← containerization:open_shift, docker:openshift. Spelling variants identify the same named OpenShift platform in both source definitions.
-- **freebsd_jail** ← containerization:freebsd_jail, virtual_machine:freebsd_jails. Singular/plural records identify the same named FreeBSD jail technology.
-- **portability** ← containerization:portability, docker:portability, kubernetes:container_portability. Definitions all describe moving packaged applications between execution environments; infrastructure/API portability remains distinct.
-
-## Declined merge inventory
-
-- image, container_image: Docker image is a product-specific artifact; the other record is OCI-oriented and generic. Keep the narrower/broader distinction and add a typed editorial edge.
-- docker_swarm, swarm, swarm_cluster: The source distinguishes orchestration technology from a cooperating-daemon cluster and a cluster grouping. Do not erase that distinction based on the shared Docker Swarm label.
-- workload_partitions, aix_workload_partitions: The generic source record does not explicitly identify AIX; insufficient evidence for an identity merge.
-- containerization:virtuozzo, virtual_machine:virtuozzo: Generic Virtuozzo versus specifically branded Parallels Virtuozzo Containers may carry product/version scope; retain both.
-- docker:service, kubernetes:service: Docker service is an orchestration abstraction; Kubernetes Service is a network abstraction.
-- docker:volume, kubernetes:volume: Product-specific storage objects have different scopes and lifecycles.
-- namespaces, kubernetes:namespace: Linux kernel process isolation and Kubernetes API resource grouping are different concepts.
-- docker:host, virtual_machine:host: Identical labels hide different physical/virtual host scopes; split the previous automatic merge.
-- container_cluster, kubernetes:cluster, virtual_machine:cluster: Container, Kubernetes, and general computer-cluster scopes are not identical.
-- os_kernel, linux_kernel, shared_kernel, kernel_sharing: General kernel, Linux implementation, shared-kernel model, and sharing mechanism are not identities.
-- portability, kubernetes:portability, platform_independence: Application portability, infrastructure/API portability, and process-VM platform independence are different scopes.
-- containerization:load_balancing, kubernetes:load_balancing, containerization:scaling, kubernetes:scaling, containerization:logging, kubernetes:logging, containerization:monitoring, kubernetes:monitoring: Keep generic activities separate from Kubernetes-specific mechanisms or example workloads.
-- container, image, pod, virtual_machine, system_vm, process_vm, container_runtime, docker_engine, containerd: Runtime unit, image artifact, Pod grouping, VM abstraction/subtypes, runtime category and implementations are not synonyms.
-
-## Non-singleton components outside the main component
-
-- 9: amd, cpu, hardware_assisted, hyperv, intel, kvm, system370, vm370, xen
-- 6: p_code, p_code_machine, pascal, pascal_p, pascal_s, ucsd_pascal
-- 5: hardware_support_nested, nested_hypervisor, nested_virtualization, outer_hypervisor, vmcs_shadowing
-- 4: docker_desktop_441, docker_model_runner, event_2025_desktop441, nvidia_gpu
-- 3: back_end, portable_code, z_machine
-- 3: compiler, ocode, ocode_machine
-- 3: containerd, docker_engine_29, event_2025_engine29
-- 3: docker_context, docker_secret, remote_management
-- 2: appvm1, appvm2
-- 2: event_2026_visualdock, visualdock_server
-- 2: garbage_collection, owner_refs
-- 2: intermediate_representation, meta_ii
-- 2: resource_supply, workload_demand
-- 2: sil, snobol4
-
-## Complete zero-degree inventory (213)
-
-- acm_retrospective
-- adele_goldberg
-- ahuja
-- aix_workload_partitions
-- alan_kay
-- allan_schiffman
-- anti_affinity
-- arm
-- belloum
-- bentaleb
-- boettiger
-- build_context
-- chelladhurai
-- cloud_native
-- cloud_onprem
-- compose_build
-- compose_multi_command
-- compose_scale
-- compose_start
-- container_environment
-- container_management
-- controller_manager
-- cpu_limit
-- cramp
-- d1
-- d10
-- d11
-- d12
-- d13
-- d14
-- d15
-- d2
-- d3
-- d4
-- d5
-- d6
-- d7
-- d8
-- d9
-- dangerzone
-- database
-- david_oppenheimer
-- david_robson
-- david_unger
-- dist_compose_swarm
-- dist_container_portability
-- dist_container_runtime
-- dist_container_vm
-- dist_context_stack
-- dist_docker_linux_macos
-- dist_dockerd_cli
-- dist_dockerfile_image
-- dist_engine_api
-- dist_engine_desktop
-- dist_image_container
-- dist_namespaces_cgroups
-- dist_push_pull
-- dist_registry_image
-- dist_secret_volume
-- dist_service_container
-- dist_swarm_service
-- dist_volume_container
-- docker_desktop_license
-- docker_mac_beta
-- docker_windows_beta
-- el_maouhab
-- euler
-- event_1960s
-- event_1966_cp40
-- event_1970s_pcode
-- event_1972_vm370
-- event_1980s_smalltalk
-- event_1999_hotspot
-- event_2005_hw
-- event_2013_nested
-- event_container_adoption
-- event_dod
-- event_oci
-- eweoya
-- expand_cluster_api
-- expand_control_loops
-- expand_control_plane
-- expand_etcd
-- expand_networking
-- expand_observability
-- expand_operators
-- expand_production
-- expand_runtime
-- expand_scheduler
-- expand_security
-- expand_storage
-- geteloma
-- goldberg
-- gpl_components
-- hardware
-- high_availability
-- hsu
-- ibm_cp_cms
-- icore_virtual_accounts
-- instruction_set
-- io_device
-- john_wilkes
-- kadikar
-- kafka
-- kicksecure
-- kubernetes:claim_api
-- kubernetes:claim_api_objects
-- kubernetes:claim_architecture
-- kubernetes:claim_cluster
-- kubernetes:claim_cluster_api
-- kubernetes:claim_config
-- kubernetes:claim_controller
-- kubernetes:claim_criticism
-- kubernetes:claim_etcd
-- kubernetes:claim_extensions
-- kubernetes:claim_history
-- kubernetes:claim_identity
-- kubernetes:claim_kubelet
-- kubernetes:claim_namespaces
-- kubernetes:claim_pods
-- kubernetes:claim_proxy
-- kubernetes:claim_releases
-- kubernetes:claim_runtime
-- kubernetes:claim_scheduler
-- kubernetes:claim_security
-- kubernetes:claim_services
-- kubernetes:claim_storage
-- kubernetes:claim_use
-- kubernetes:claim_workloads
-- kubernetes:load_balancing
-- kubernetes:portability
-- kubernetes:scaling
-- kubernetes:source_kubernetes_article
-- labels
-- lee
-- li_hao
-- lin_di
-- linux
-- liu_shaotao
-- machine_code
-- macos
-- managed_runtime
-- memory_limit
-- metadata
-- michael_scott
-- mis_controller_scheduler
-- mis_crd_controller
-- mis_etcd_runtime
-- mis_k8s_vm
-- mis_kubelet_scheduler
-- mis_namespace_security
-- mis_pod_container
-- mis_pod_ip_stable
-- mis_reconciliation_once
-- mis_secret_encrypted
-- mis_service_ip
-- mis_statefulset_db_magic
-- moreau
-- mount_view
-- name_metadata
-- namespace_metadata
-- network_view
-- odun_ayo
-- oracle_vm
-- parallels
-- peter_deutsch
-- pham
-- physical_machine
-- pod_failure
-- popek
-- ppc64le
-- privileged_instruction
-- process_tree
-- raj
-- raspberry_pi
-- registry_pull
-- registry_push
-- replication_controller
-- roy
-- s390x
-- saito
-- scheepers
-- schenker
-- sebaa
-- service_discovery
-- service_scale
-- siegel
-- simmon
-- singh
-- software_virtualization
-- stateless_workload
-- swarm_cluster
-- swarm_discovery
-- tang
-- testcontainers
-- uid_metadata
-- urs_holzle
-- user_id_view
-- van_den_berg
-- virtual_machine:virtuozzo
-- vmware_esxi
-- vmware_fusion
-- vmware_workstation
-- watada
-- web_ui
-- whonix
-- wiebels
-- windows
-- windows_native
-- winn
-- x86_64
-- xu_bing
-- zhang
-
-
-## October 7, 2026 · fourteen-source upgrade
-
-Baseline: clean main d6ec744; authenticated origin fetch revealed user upload commit f080705, safely fast-forwarded. All 14 source files are byte-exact against f080705. The manifest retains their SHA-256 hashes and mappings.
-
-- 3,102 node records and 204 claims → 3,074 canonical records; 24 reviewed alias groups.
-- All 3,312 structured relationships retained, including 44 rich relationships; 6 clearly marked editorial bridges. No dangling endpoints, introduced self-loops or duplicate derived IDs.
-- C++ source repeats 38 relationship IDs (e150 etc.); stable section/index-derived IDs retain all records rather than overwriting them.
-- 55 canonical concepts have different variant descriptions. They are retained as source perspectives, not asserted to agree.
-- 1,896 source relationships have no supplied prose WHY. Empty mechanism is not an explanation.
-- 3,312 links lack explicit claim-ID attachments; this does NOT mean all lack source evidence: source line ranges and embedded references remain raw fields and claim/provenance edges remain archive records. No assertion is promoted to independently verified fact.
-- Full archive: 729 weak components, 698 isolated records; largest component 2,257. Overview: 556 meaningful concepts, 1,125 links, selected by iterative 2-core pruning to >=2 distinct displayed neighbors. No padding links or fake causation.
-- C vs C++; Ruby vs Rails; CUDA platform vs CUDA C/C++ extension, Toolkit, Runtime API and GPU remain distinct. New domain concepts default source-scoped unless explicitly reviewed.
-- Rails → Ruby written_in is source assertion /relationships/0. CUDA C/C++ → nvcc compiled_by remains compilation, not implementation language. C++ → C extends is historical source assertion, not dependency.
-- Newly curated Kamal → Docker uses_for_deployment is OPTIONAL deployment scope, independently checked in official Kamal homepage, Why not just run Capistrano, Kubernetes or Docker Swarm? section, accessed 2026-10-07. The documentation explicitly describes dependencies living in the Docker image, Docker auto-provisioning, and basic Docker commands being called; this is not a universal Rails dependency. URL: https://kamal-deploy.org/.
-
-### Current verification limitations
-
-Browser tool open on http://127.0.0.1:4186 returned **browser navigation blocked by policy**. No CLI/CDP/Playwright bypass attempted. Existing screenshots and integration-browser.json are historical, not proof of this upgrade. JSDOM/Canvas-mocked interaction checks and real HTTP entrypoint/assets/data checks are reported separately. No publication performed by implementation worker.
-
-Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
-
-Verification checkpoint: npm run build + manifest regeneration + npm test exited 0 (34/34). After final overview-bounds camera adjustment, targeted same-coordinate / lazy-mobile / pointer-pan-wheel tests exited 0 (3/3, including the newly added pan test). All JS/MJS node --check and git diff --check exited 0. Final real HTTP smoke served 21 resources (entrypoint, four assets, two derived JSON files, 14 original sources), all HTTP 200. Browser visual proof remains blocked by policy.
+# Source integration audit — 2026-10-09
+
+Baseline: 3dec97f1cf764ddd3ea12672978f889d2b29feda (live main at task start). All source bytes remain unchanged. Generated atlas.json and overview.json and the non-JSON placeholder are excluded from source discovery. No malformed source was omitted.
+
+## Totals
+
+37 source graphs; 7,812 source node records; 526 source claim records (some reference existing nodes); 8,604 structured source relationships; 522 learning paths. 7,908 canonical records, 16 editorial edges (10 new), 1,529 overview concepts and 2,928 overview links. All 37 documents have concepts in the visible overview.
+
+1,754 connected components and 1,604 isolated archived records are honestly retained. 73 unresolved learning-path segments remain in place. No edge is inferred from path order. Six original self-loops are retained; no merge-created loops or dangling endpoints. Duplicate IDs are checked.
+
+## Complete source coverage
+
+| Source file | Nodes | Relationships | Paths | SHA-256 |
+|---|---:|---:|---:|---|
+| CSS.json | 135 | 117 | 16 | 8deec230052ef6050d0da59871fd1fe00ca0c87952549c6f13983e56659c4aa1 |
+| Cloud_Computing.json | 212 | 214 | 12 | e1dca7ec9a49614960a730ce6c6e1988652b018ae3271a889230e158371dc192 |
+| HTTP_regenerated.json | 183 | 251 | 18 | adb76aa09928152d18d46306dd32e186d965c15170d1921ecfd771e2d3a346a6 |
+| IPv6.json | 337 | 380 | 12 | cba492e014ccbded312bbb6ccb15d583b99bbe15f1cdb270037f765586fa29b1 |
+| Internet_Protocol.json | 247 | 252 | 21 | 75b411ba0896d11e4431e33a24cdf9fdd66857c6d78e116dbcc9c5efc99c821c |
+| JavaScript.json | 158 | 204 | 16 | 510de4f2cbc18222f07a247bb564624f9332fead9f4af5eb189bd5539ffa0e3e |
+| Lua.json | 364 | 513 | 18 | 93cf5bf13a4bedf38d9ff438cba188834b8e07643b5ad161726e41bfc7a52e68 |
+| Network_Packet_Semantic_Knowledge_Graph.json | 263 | 452 | 14 | 2da768522d13b14f4bd14a6721caa20800ff7a3a08eba9d3e28e83892cff650a |
+| Network_Switch.json | 232 | 177 | 21 | ea945d25cafc64d3bf2a1965ecf83d98f36bb7953d9926902e85fdb21ad0f74e |
+| Next.js.json | 276 | 284 | 0 | a145f339141ada6d184b6003f00e5ce3dac0cda09eb9c827f2bd2b9316e3a182 |
+| Packet_Analyzer_Knowledge_Graph.json | 300 | 473 | 15 | 2de8a294df00cb7621ca9f0eaf5567a8fb3613f5edc71eddcf7dd0e2b66dd5ae |
+| React_Graph.json | 285 | 261 | 18 | a40db572fdc987d319b7821983e1fae721cfb09edae28c1bb937a5c5c7f57819 |
+| React_Native.json | 194 | 195 | 18 | 6939426a53d9f4b410949fc9406a5b4b08a342c83967671f309916d02795b99c |
+| Router_Graph.json | 163 | 144 | 21 | 2a15d42d231f934600f4911cecbe9b728e00722ac40b600064f2f45d176c566d |
+| Routing.json | 157 | 135 | 18 | 20c202e9de20d4a513acc01e57236c2d9d4a133fe7539ba607ddeb18742383a7 |
+| TCP_IP_full_semantic_knowledge_graph.json | 132 | 144 | 12 | eed89c2bf275eb000422b68e4c97ee894533544f31f482817c6eb9f352febe90 |
+| Web_Framework.json | 205 | 190 | 18 | 482c9e3915979660779134f49c955d4e6993036e666567b062e53d8aeb891eb6 |
+| c_language_full_relationship_rich_semantic_knowledge_graph_v1.json | 315 | 301 | 17 | 4e3e3d2c6444b0cf4ffd423bd30be064bffd911743d79e598ac21838218d4fc8 |
+| campus_area_network_full_relationship_rich_semantic_knowledge_graph_v1.json | 75 | 92 | 12 | 5a609c7e517187e2a352f0dbd3c38a24fbf4a4e61c1b75252b76c3cb4e36eb47 |
+| containerization_full_relationship_rich_semantic_knowledge_graph_v1.json | 158 | 139 | 14 | 0e33f282999ba981ffdda79f5df09dc0e1a1a5b04a4f2100a0689a81b74978cf |
+| cpp_programming_language_full_relationship_rich_semantic_knowledge_graph_v1.json | 144 | 166 | 12 | 21f640d9b2f9dc45671cc07d32704647877b28e65c8af8e2449d09f739fbdce5 |
+| cuda_full_relationship_rich_semantic_knowledge_graph_v1_regenerated.json | 145 | 137 | 12 | d6d3bfbfc336e7e328300a4576a65f078c1f297022ff9dfa119b6312fcd24b0d |
+| docker_full_relationship_rich_semantic_knowledge_graph_v1.json | 230 | 194 | 12 | be82c8488a0e7511e0ce9fb56b799c1e631763effd38ec3616bcc29719338672 |
+| firewall_full_relationship_rich_semantic_knowledge_graph_v1.json | 195 | 163 | 12 | a50c9fadaae398902658eacb2305634444b02ccd36b20250e7b3f46122ee795d |
+| go_programming_language_full_relationship_rich_semantic_knowledge_graph_v1.json | 168 | 155 | 12 | 67b6aaed94bed1f0a7a6cd331e78437fd7c5f5758ef860142fd4832ac7080d9c |
+| kubernetes_full_relationship_rich_semantic_knowledge_graph_v2_verified.json | 173 | 154 | 12 | e7275d7ed5309502d09120b9838b2021353b492dacdd397e0df85984b5c717ff |
+| operating_system_full_relationship_rich_semantic_knowledge_graph_v2.json | 388 | 389 | 18 | 7977863e4d7c3e5b5ca1c9725a63893199c254280cb4652f2bfb3c93a736d5dc |
+| optical_disc_image_full_relationship_rich_semantic_knowledge_graph_v1.json | 206 | 227 | 11 | 17af3759f04dd72ff116e1336b72d83d5a8cd060c6edccf963985c5f29c0816a |
+| osi_model_full_layered_dynamic_semantic_knowledge_graph_v1.json | 206 | 240 | 12 | 7911fe5922c40b8e32ba2d8098bc44b6988a875fc5accf8927b901c6cfba55ef |
+| python_language_full_relationship_rich_semantic_knowledge_graph_v2.json | 428 | 576 | 18 | 9e837cc826e63f04fcf26facc90af0db9649b5a02c72b06bb8c312bed6781e4a |
+| pytorch_full_relationship_rich_semantic_knowledge_graph_v2.json | 138 | 150 | 12 | 94395edc7de56991f55cbc84e1aa817209b4bd05258e806b816c1e657d350073 |
+| ruby_on_rails_full_relationship_rich_semantic_knowledge_graph_v1.json | 181 | 291 | 12 | 2dbe795ef2d31ff45b1d784c06af35c9fd925ce67564a9a4c0b2cc32a8da43a4 |
+| sandbox_computer_security_full_relationship_rich_semantic_knowledge_graph_v1.json | 205 | 170 | 14 | 7d260c895ed40b3a139866388e9bb3e879bc770fc0f6d74541d32c9aba26b5a0 |
+| system_image_full_relationship_rich_semantic_knowledge_graph_v1.json | 140 | 132 | 10 | 516796a296b538588f83f0b5de3109df7bc50f4862f4b3b79d826f92886e44d5 |
+| virtual_machine_full_relationship_rich_semantic_knowledge_graph_v1.json | 210 | 151 | 12 | ddb2ebaaf4b9b6e97d5d01959066ca3c187ee33d5d132b710076d1d7840d98b5 |
+| volume_computing_full_relationship_rich_semantic_knowledge_graph_v3.json | 179 | 285 | 12 | ca6a984d0b000eb4ad957dbfcf9552598a47bf38cc45b3b837abf334c7f3b063 |
+| wifi_graph.json | 85 | 106 | 8 | 76c5ddc8316eebcd9e68ffd831d8598c69c93fd5c70066c3abd569b450733dce |
+
+## Identity and provenance
+
+Frozen baseline identity assignments prevent a new upload from re-keying old concepts. New records default to source-qualified IDs, even when their labels match. Explicitly reviewed groups unify named protocols, technologies and languages. Previous IDs redirect when a reviewed group changes its canonical target. All original records, metadata, references, source assertions and directions remain inspectable.
+
+React URL routing is not network routing; IPv6-router specialization is not a generic router; Python HTTP support is not the HTTP protocol; CSS-like native styles are not browser CSS; CUDA is not GPU hardware. The existing storage-image-volume and VM/runtime distinctions remain.
+
+Source evidence is retained, not independently endorsed. Some uploads contain historical, version-sensitive, uncited or expansion-only assertions. Editorial documentation does not validate those original assertions.
+
+Schema adapters cover relation/relationship/type predicates; sequence/ordered_nodes/steps/prose paths; paths and claims referenced by node ID; string/object titles. Manifest records exact JSON pointers, normalized IDs and SHA-256 hashes. Invalid references fail the build with their source endpoint.
+
+## Added editorial connections
+
+Each connection has direction, predicate, scope, rationale, documentation section and evidence-check date; no statistical/fuzzy inference is used.
+- editorial:tcp-ip-transport: TCP_IP:tcp — uses_network_service → Internet_Protocol.json:ip. TCP carries its segments through IP; reliable byte-stream transport and best-effort network datagrams are distinct layers. Scope: TCP over IPv4 or IPv6; not identity of TCP with IP. Evidence: https://www.rfc-editor.org/rfc/rfc9293.html (2.2 Key TCP Concepts and 3.1 Header Format).
+- editorial:http-tcp-version-scope: ruby_on_rails:http — uses_transport_in_versions → TCP_IP:tcp. HTTP/1.x commonly uses TCP and HTTP/2 uses TCP transport. HTTP/3 maps HTTP to QUIC instead, so TCP is not a universal HTTP dependency. Scope: HTTP/1.x and HTTP/2 only; HTTP/3 excluded. Evidence: https://www.rfc-editor.org/rfc/rfc9113.html, https://www.rfc-editor.org/rfc/rfc9114.html (RFC 9113 section 2; RFC 9114 introduction).
+- editorial:next-web-framework: Next.js.json:nextjs — is_a → Web_Framework.json:web_framework. Next.js supplies full-stack web application framework capabilities around React components. This classifies Next.js, not React itself or React Native. Scope: Web application framework category. Evidence: https://nextjs.org/docs (What is Next.js?).
+- editorial:next-css: Next.js.json:nextjs — supports_styling_with → ruby_on_rails:css. Next.js supports CSS Modules and global CSS, connecting application framework features to the separate Web styling language. Scope: CSS support is not framework implementation language. Evidence: https://nextjs.org/docs/app/getting-started/css (CSS Modules and Global CSS).
+- editorial:native-css-distinction: React_Native.json:react_native — distinguishes_native_styles_from → ruby_on_rails:css. React Native uses JavaScript style objects with CSS-like names and native platform views. Similar styling vocabulary is not browser CSS rendering. Scope: Core Android/iOS native components; not an assertion about React Native Web. Evidence: https://reactnative.dev/docs/style, https://reactnative.dev/docs/intro-react-native-components (Style and Native Components).
+- editorial:cloud-vm-option: cloud_computing — can_provision → virtual_machine. Cloud infrastructure can supply virtual machines: Amazon EC2 documents virtual servers as cloud compute instances. This is one concrete service model, not a definition of all cloud services. Scope: Optional IaaS deployment; cloud can also use bare metal and managed services. Evidence: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html (What is Amazon EC2?).
+- editorial:cloud-firewall-option: Cloud_Computing.json:security — can_use → firewall:firewall. Cloud VM security can include virtual firewalls; EC2 security groups provide protocol, port and address controls. Firewalling is one control, not the entire cloud-security model. Scope: EC2 security groups as a concrete example, not mandatory architecture for every cloud. Evidence: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html (Features: Security groups).
+- editorial:wifi-physical: wifi_graph.json:ieee80211 — specifies_layer → osi_model:layer_1. IEEE 802.11 specifies wireless LAN physical-layer behavior as well as MAC behavior; radio signaling belongs to the physical layer. Scope: Standard-to-layer direction, not a claim that Wi-Fi is only Layer 1. Evidence: https://www.ieee802.org/11/abt80211.html (IEEE 802.11 scope: MAC and PHY specifications).
+- editorial:wifi-link: wifi_graph.json:ieee80211 — specifies_mac_sublayer → osi_model:layer_2. IEEE 802.11 specifies medium access control, part of the data-link layer, alongside separate physical-layer specifications. Scope: MAC sublayer, not the whole OSI layer and not IP routing. Evidence: https://www.ieee802.org/11/abt80211.html (IEEE 802.11 scope: MAC and PHY specifications).
+- editorial:lua-c-embedding: Lua.json:lua_c_api — provides_embedding_api_for → c. The Lua manual defines a C API by which a host program exchanges values with Lua and invokes Lua functions. An embedding interface is not a claim that every Lua application is written in C. Scope: Lua 5.4 C API. Evidence: https://www.lua.org/manual/5.4/manual.html (4 The Application Program Interface).
+
+## Verification limitations
+
+Browser tool was running, but opening http://localhost:4175/#explorer was denied: browser navigation blocked by policy. No CLI/CDP bypass or global configuration change was attempted. Therefore real rendering, interaction usability and console-error absence are NOT verified. JSDOM/mock-Canvas and HTTP checks are separate evidence, not visual proof. GitHub Actions API reported zero configured workflows; no CI is not a pass. Historical QA images and design diagrams are retained as historical artifacts, not current proof.
+
+## Example traversals (not dependency chains)
+
+- Network packet ← specializes_as — IP packet ← defines — IP; source edges Network_Packet_Semantic_Knowledge_Graph.json:75 and :71. Follow incoming TCP uses_network_service to IP, then version-scoped HTTP uses_transport_in_versions to TCP. HTTP constrains_architecture_of Web framework is original Web_Framework.json:79. Traversal can follow either direction; displayed arrows never reverse the assertion.
+- Next.js extends React (Next.js.json:0) and is_framework_for React (React_Graph.json:165) remain parallel source records.
+- Network switch can_connect_to Router (Network_Switch.json:46) joins the reviewed campus/router records.
+- PyTorch contains_runtime PyTorch runtime (pytorch:144); Python API calls_into runtime (pytorch:145); Python provides_language_for API (pytorch:13). CUDA provides_acceleration_for internal CUDA bindings (pytorch:15), which are integrated_into PyTorch (pytorch:16). These source directions remain intact.
+
+The source-claim-reference evidence list is empty for all 8,604 relationships; original source-line ranges, provenance objects and bibliography metadata are nevertheless preserved in raw fields. This is not a claim that all source relationships lack provenance, nor that any were independently verified.

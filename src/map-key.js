@@ -151,7 +151,11 @@
     return relationshipById.get("related");
   }
 
+  function registerDocuments(documents) {
+    documents.forEach((doc,index) => { if(domainById.has(doc.graphId)) return; const domain={id:doc.graphId,label:doc.title,color:`hsl(${Math.round(index*137.508)%360} 65% 72%)`}; domains.splice(domains.length-2,0,domain); domainById.set(domain.id,domain); });
+  }
   window.DeveloperMapKey = {
+    registerDocuments,
     domains,
     relationships,
     domainById,

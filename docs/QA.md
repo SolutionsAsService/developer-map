@@ -1,3 +1,22 @@
+# October 9, 2026 expansion verification
+
+- Baseline: live main 3dec97f1cf764ddd3ea12672978f889d2b29feda; GitHub identity SolutionsAsService via existing gh authentication.
+- Test verification: sequential full suite ran 41 tests: 40 passed, one exposed negative-zero layout serialization. Fixed layout normalization; affected atlas suite reran 3/3 passing. New schema suite reran 5/5 and targeted search/selector suite 2/2 passing. Thus every test has passing final applicable evidence; no claim of a single all-green full-suite run after the fix.
+- Final npm run build and manifest regeneration: exit 0. SHA-256 comparison against previous generated atlas, overview and manifest: all three byte-identical (no timestamps excluded).
+- git diff --check and JS syntax checks: exit 0.
+- npm ci --ignore-scripts: exit 0, existing 43 packages, no added dependency.
+- 37 of 37 source graphs imported. Exact original bytes audited against baseline; per-record mapping and hashes in integration-manifest.json.
+- Local HTTP entrypoint, app/network/map-key scripts, stylesheet and both generated JSON: HTTP 200. Payloads report 37 sources, 7,908 canonical records and 8,620 links.
+- Browser tool status: running Chromium. Local navigation denied by policy. No real browser interaction, screenshot, rendered usability or console-error pass is claimed. No bypass or configuration change attempted.
+- GitHub Actions workflow count: 0 (unavailable, not passed).
+- Atlas SHA-256: 4a72629bc02a905fb30ea8f04a0befeabd77c06d1a0f13bd98e0c428e131f39e.
+- Overview SHA-256: da359b603af4ff8b05b084c1656735988feba2aae1963c37261dabf01ff0349b.
+- Manifest SHA-256: dfd6e96f05452364e6f6fc15dca9988a75b9ff1044c7dd134a29a443ed14dcc1.
+
+The previous QA record below is historical, not evidence for this expansion.
+
+---
+
 # Focused interaction verification · 2026-10-07
 
 All 28 Node/jsdom tests passed after the final code edit; atlas build and whitespace checks passed. Current-pass results are recorded in `integration-browser.json` and `qa/integration-tests.txt`. Earlier verification below is historical, not proof of the current working tree. The current browser runner explicitly tests connection search, edge explanation, neighborhood/context toggle, Fit, actual canvas label clicks and Back for seven entry concepts at 1440, 390 and 320 px. It also compares full incident-edge sets before and after controls, checks rich metadata, all 133 paths, exact search, page errors and overflow.

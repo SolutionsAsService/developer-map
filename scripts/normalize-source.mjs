@@ -1,12 +1,21 @@
 // Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
 // Source evidence, not workflow literature, determines graph relationships.
-export const documentTitle = (data, fallback) => data.subject || data.title || data.topic || data.metadata?.title || data.source?.title || fallback;
+export const isSourceFile = file => file.endsWith('.json') && !['atlas.json', 'overview.json'].includes(file);
+export const documentTitle = (data, fallback) => { const title = data.subject || data.title || data.topic || data.metadata?.title || data.source?.title || fallback; return typeof title === 'string' ? title : title.label || title.name || title.title || fallback; };
+export const relationshipPredicate = record => record.relation || record.relationship || record.type || 'related to';
+export function pathRecord(record, data) {
+  if (typeof record !== 'string') return record;
+  const target = data.nodes.find(node => node.id === record && node.type === 'learning_path');
+  if (!target) throw new Error('Unknown learning-path reference: ' + record);
+  return target;
+}
 export function relationshipEntries(data) {
   return ['edges', 'relationships', 'rich_semantic_relationships'].flatMap(section =>
-    (data[section] || []).map((record, index) => ({ section, index, record })));
+    (() => { if (data[section] != null && !Array.isArray(data[section])) throw new Error('Expected relationship array at /' + section); return (data[section] || []).map((record, index) => ({ section, index, record })); })());
 }
 export function normalizePath(record, data, resolve) {
-  const sequence = record.sequence ?? record.ordered_nodes;
+  record = pathRecord(record, data);
+  const sequence = record.sequence ?? record.ordered_nodes ?? record.steps;
   const isArray = Array.isArray(sequence);
   if (!isArray && typeof sequence !== 'string') throw new Error('Unsupported path sequence: ' + record.id);
   // Arrows delimit prose segments only. Slashes, versus and descriptions remain intact.

@@ -123,15 +123,16 @@ function renderFilters() {
     { id: "all", label: "All sources" },
     ...state.atlas.documents.map((doc) => ({
       id: doc.graphId,
-      label: humanize(doc.graphId),
+      label: doc.title,
     })),
   ];
-  $("#topic-filters").innerHTML = filters
+  $("#topic-filters").innerHTML = `<label class="source-select-label">Dataset <select id="source-select" aria-label="Choose source dataset">${filters.map(item => `<option value="${escapeHtml(item.id)}" ${item.id === state.topic ? "selected" : ""}>${escapeHtml(item.label)}</option>`).join("")}</select></label><span id="source-filter-summary">${state.atlas.documents.length} sources · dimmed context retained</span>` + `<div class="source-filter-buttons">` + filters
     .map(
       (item) =>
         `<button type="button" class="filter ${item.id === state.topic ? "active" : ""}" data-topic="${escapeHtml(item.id)}" aria-pressed="${item.id === state.topic}">${escapeHtml(item.label)}</button>`,
     )
-    .join("");
+    .join("") + "</div>";
+  $("#source-select").addEventListener("change", event => { state.topic=event.target.value; renderFilters(); renderSearch(); renderMap(); renderCatalog(); });
   $("#topic-filters")
     .querySelectorAll("button")
     .forEach((button) =>
@@ -151,7 +152,9 @@ function inTopic(node) {
 function filteredNodes(query) {
   const term = query.trim().toLowerCase();
   const rank = (node) =>
-    node.id.toLowerCase() === term || node.label.toLowerCase() === term
+    node.id.toLowerCase() === term
+      ? -1
+      : node.label.toLowerCase() === term
       ? 0
       : node.label.toLowerCase().startsWith(term)
         ? 1
@@ -204,7 +207,7 @@ function renderMap() {
     ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()} · ALL INCIDENT LINKS / ALL SOURCES`
     : "WHOLE FIELD / ALL NODES ARCHIVED · CONNECTED CONCEPT OVERVIEW";
   $("#map-count").textContent =
-    `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links${state.selected ? ` · ${(state.edgesById.get(state.selected) || []).length} incident links · ${network?.counts().connected || 0} direct neighbors · all sources (overview filter does not hide incident links)` : ""}`;
+    `${state.atlas.overview.nodeIds.length.toLocaleString()} overview nodes · ${state.atlas.overview.edgeIds.length.toLocaleString()} overview links / ${state.atlas.nodes.length.toLocaleString()} archived nodes · ${state.atlas.edges.length.toLocaleString()} archived links${state.selected ? ` · ${(state.edgesById.get(state.selected) || []).length} incident links · ${network?.counts().connected || 0} direct neighbors · all sources (overview filter does not hide incident links)` : ""}`;
   const directed = (state.edgesById.get(state.selected) || []).filter(
     (edge) => window.DeveloperMapKey.classify(edge).arrow,
   );
@@ -686,9 +689,10 @@ function setupMapGestures() {
   $("#network").addEventListener("keydown",event=>{ if(['+','=','-','Home'].includes(event.key)){event.preventDefault();if(event.key==='Home')network.fitSelection();else network.zoom(event.key==='-'?1/1.3:1.3);} });
   $("#zoom-in").addEventListener("click", () => network.zoom(1.3));
   $("#zoom-out").addEventListener("click", () => network.zoom(1 / 1.3));
-  $("#reset-map").addEventListener("click", () =>
-    clearSelection({ fit: true }),
-  );
+  $("#reset-map").addEventListener("click", () => {
+    state.topic="all"; state.query=""; state.catalogQuery=""; $("#search").value=""; $("#catalog-search").value="";
+    clearSelection({ fit: true }); renderFilters(); renderSearch(); renderCatalog();
+  });
 }
 
 async function init() {
@@ -697,6 +701,7 @@ async function init() {
     if (!response.ok)
       throw new Error(`Could not load atlas (HTTP ${response.status})`);
     state.atlas = await response.json();
+    window.DeveloperMapKey.registerDocuments(state.atlas.documents);
     connectIndexes(state.atlas);
     $("#metric-concepts").textContent =
       state.atlas.summary.concepts.toLocaleString();

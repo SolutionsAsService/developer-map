@@ -3033,3 +3033,10 @@ input::placeholder {
 .in-place-evidence { border-top: 1px solid #4b6046; margin-top:12px; padding-top:12px; overflow-wrap:anywhere; }
 .in-place-evidence code { display:block; margin:8px 0; color:#d5ff70; }
 .in-place-evidence pre { white-space:pre-wrap; max-height:220px; overflow:auto; font-size:11px; }
+
+/* A native selector scales to all source documents without a wall of chips. */
+.source-filter-buttons { display: none; }
+.source-select-label { display:flex; align-items:center; gap:12px; max-width:100%; }
+#source-select { max-width:min(480px, 65vw); padding:10px; background:#18201e; color:#e8f2ed; border:1px solid #5b756a; border-radius:5px; }
+#source-filter-summary { font-size:12px; color:#b4c7bd; }
+#node-key { max-height:130px; overflow:auto; }

@@ -1,3 +1,4 @@
+import legacy from './legacy-identities.json' with { type: 'json' };
 import { claimEntries } from './extract-concepts.mjs';
 import { aliasGroups, forcedScopes } from './concept-curation.mjs';
 export const graphIdFor = file => file.split('_full_')[0];
@@ -47,9 +48,10 @@ export function createIdentityResolver(documents, groups = aliasGroups, scopes =
   }
   for (const [key, node] of records) {
     const oldId = /^(claim_|ref_)/.test(node.id) || identities.get(node.id)?.size > 1 ? key : node.id;
-    const id = protectedKeys.has(key) ? key : explicit.get(key) || scopes[key]?.id || (['c_language', 'cpp_programming_language', 'cuda', 'ruby_on_rails'].includes(key.split(':')[0]) || identities.get(node.id)?.size > 1 ? key : node.id);
+    const id = protectedKeys.has(key) ? key : explicit.get(key) || scopes[key]?.id || legacy.sourceNodeMap[key] || key;
     sourceIds.set(key, id);
     candidate(oldCandidates, oldId, id);
+    if (legacy.sourceNodeMap[key]) candidate(oldCandidates, legacy.sourceNodeMap[key], id);
     candidate(bareCandidates, node.id, id);
     if (scopes[key]) canonicalLabels.set(id, scopes[key].label);
   }

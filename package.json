@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build-atlas.mjs",
-    "test": "node --test"
+    "test": "node --test --test-concurrency=1"
   },
   "devDependencies": {
     "d3-force": "^3.0.0",

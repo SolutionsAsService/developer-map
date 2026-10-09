@@ -5,10 +5,10 @@ import { execFileSync } from 'node:child_process';
 import { overviewProjection, meaningful } from '../scripts/semantic-model.mjs';
 const a=JSON.parse(await readFile(new URL('../data/atlas.json',import.meta.url)));
 const id=key=>a.sourceNodeMap[key];
-test('all four uploads and all existing sources retain exact git bytes and structured coverage',async()=>{
- assert.equal(a.documents.length,14);
+test('all uploads and all existing sources retain exact git bytes and structured coverage',async()=>{
+ assert.equal(a.documents.length,37);
  for(const prefix of ['c_language','cpp_programming_language','cuda','ruby_on_rails']) assert.ok(a.documents.some(d=>d.graphId===prefix));
- for(const d of a.documents) assert.deepEqual(await readFile(new URL('../data/'+d.file,import.meta.url)),execFileSync('git',['show','f080705:data/'+d.file],{maxBuffer:10000000}));
+ for(const d of a.documents) assert.deepEqual(await readFile(new URL('../data/'+d.file,import.meta.url)),execFileSync('git',['show','3dec97f:data/'+d.file],{maxBuffer:10000000}));
  for(const c of a.audit.coverage) {assert.equal(c.inputNodes,c.importedNodeVariants);assert.equal(c.duplicateNodeIds.length,0);for(const s of c.sections)assert.equal(s.input,s.imported);}
  assert.equal(new Set(a.nodes.map(n=>n.id)).size,a.nodes.length);
 });

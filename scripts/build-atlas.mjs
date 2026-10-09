@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { documentTitle, relationshipEntries, normalizePath } from './normalize-source.mjs';
+import { documentTitle, relationshipEntries, relationshipPredicate, normalizePath, pathRecord, isSourceFile } from './normalize-source.mjs';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,10 +15,14 @@ const dataDirectory = path.join(root, 'data');
 const slug = file => path.basename(file).split('_full_')[0];
 
 export async function buildAtlas() {
-  const files = (await readdir(dataDirectory)).filter(file => file.endsWith('.json') && !['atlas.json', 'overview.json'].includes(file)).sort();
-  const sources = await Promise.all(files.map(async file => ({ file, data: JSON.parse(await readFile(path.join(dataDirectory, file), 'utf8')), sha256: createHash('sha256').update(await readFile(path.join(dataDirectory, file))).digest('hex') })));
+  const files = (await readdir(dataDirectory)).filter(isSourceFile).sort();
+  const sources = await Promise.all(files.map(async file => {
+    const bytes = await readFile(path.join(dataDirectory, file));
+    try { return { file, data: JSON.parse(bytes), sha256: createHash('sha256').update(bytes).digest('hex') }; }
+    catch (error) { throw new Error(`Malformed source JSON ${file}: ${error.message}`); }
+  }));
   const documents = sources.filter(({ data }) => Array.isArray(data.nodes) && (Array.isArray(data.edges) || Array.isArray(data.relationships)));
-  if (documents.length !== sources.length) throw new Error('Unsupported JSON source schema; refusing silent omission');
+  if (documents.length !== sources.length) throw new Error('Unsupported JSON source schema (expected nodes and relationships/edges arrays): ' + sources.filter(source => !documents.includes(source)).map(source => source.file).join(', '));
   const identity = createIdentityResolver(documents);
   const scopedId = identity.resolve;
   const nodes = new Map();
@@ -55,18 +59,18 @@ export async function buildAtlas() {
     }
     relationships.forEach(({ record: original, section, index }) => {
       if (!original.source || !original.target) throw new Error(`Incomplete edge ${file}:${index}`);
-      edges.push({ id: section === 'rich_semantic_relationships' || (section === 'edges' && data.relationships) ? `${graphId}:${section}:${index}` : `${graphId}:${index}`, section, sourceIndex: index, sourcePointer: `/${section}/${index}`, source: scopedId(file, original.source), target: scopedId(file, original.target), relation: original.relation || original.relationship || 'related to', kind: relationKind(original.relation || original.relationship || ''), assertionStatus: 'Source assertion; not independently fact-checked', semantic: original.semantic || original.description || original.mechanism || '', ...explainEdge(original, file, claimsById), provenance: 'source', curated: false });
+      edges.push({ id: section === 'rich_semantic_relationships' || (section === 'edges' && data.relationships) ? `${graphId}:${section}:${index}` : `${graphId}:${index}`, section, sourceIndex: index, sourcePointer: `/${section}/${index}`, source: scopedId(file, original.source), target: scopedId(file, original.target), relation: relationshipPredicate(original), kind: relationKind(relationshipPredicate(original)), assertionStatus: 'Source assertion; not independently fact-checked', semantic: original.semantic || original.description || original.mechanism || original.meaning || '', ...explainEdge(original, file, claimsById), provenance: 'source', curated: false });
     });
     for (const [index, learningPath] of (data.learning_paths || []).entries()) {
-      paths.push({ id: `${graphId}:path:${index}`, title: learningPath.title || learningPath.name || learningPath.label || learningPath.id, subtitle: `From the ${title} source graph`, color: graphId, description: 'Original source learning suggestion; consecutive ideas need not have a recorded edge.', ...normalizePath(learningPath, data, id => scopedId(file, id)), document: file, sourcePointer: `/learning_paths/${index}`, record: learningPath });
+      paths.push({ id: `${graphId}:path:${index}`, title: pathRecord(learningPath, data).title || pathRecord(learningPath, data).name || pathRecord(learningPath, data).label || pathRecord(learningPath, data).id, subtitle: `From the ${title} source graph`, color: graphId, description: 'Original source learning suggestion; consecutive ideas need not have a recorded edge.', ...normalizePath(learningPath, data, id => scopedId(file, id)), document: file, sourcePointer: `/learning_paths/${index}`, record: learningPath });
     }
   }
 
   for (const relation of editorialRelations) {
-    const record = { ...relation, provenance: 'Editorial semantic relation; not an original source edge.', evidenceChecked: '2026-10-07' };
+    const record = { ...relation, provenance: 'Editorial semantic relation; not an original source edge.', evidenceChecked: relation.evidenceChecked || '2026-10-07' };
     edges.push({ ...relation, kind: relationKind(relation.relation), assertionStatus: 'Editorial bridge checked against linked primary documentation', semantic: relation.rationale, document: 'curated', curated: true, provenance: 'editorial',
       fields: [{ key: 'provenance', label: 'Provenance', value: record.provenance }, { key: 'rationale', label: 'Editorial rationale', value: relation.rationale }, { key: 'scope', label: 'Scope', value: relation.scope || 'Conceptual relationship' }, { key: 'evidenceUrls', label: 'Primary-source evidence', value: relation.evidenceUrls }],
-      evidence: relation.evidenceUrls.map((url, index) => ({ id: relation.id + ':evidence:' + index, url, source: url, statement: relation.rationale, kind: 'editorial primary-source evidence', checked: '2026-10-07' })), record });
+      evidence: relation.evidenceUrls.map((url, index) => ({ id: relation.id + ':evidence:' + index, url, source: url, statement: relation.rationale, kind: 'editorial primary-source evidence', checked: record.evidenceChecked })), record });
   }
   for (const edge of edges) {
     if (edge.source === edge.target && (edge.curated || edge.record.source !== edge.record.target)) throw new Error('Identity merge introduced self-loop: ' + edge.id);

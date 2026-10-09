@@ -11,7 +11,12 @@ const titles = {
 
 export function claimEntries(document) {
   const value = document.claims || document.source_claims || [];
-  if (Array.isArray(value)) return value;
+  if (Array.isArray(value)) return value.map(claim => {
+    if (typeof claim !== 'string') return claim;
+    const record = document.nodes.find(node => node.id === claim);
+    if (!record) throw new Error('Unknown source-claim reference: ' + claim);
+    return record;
+  });
   return Object.entries(value).map(([key, claim]) => ({ id: claim.id || key, ...claim }));
 }
 

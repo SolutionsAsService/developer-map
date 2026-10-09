@@ -50,7 +50,7 @@ test("map, search, route, source inspector and Escape work without a server", as
   );
   assert.equal(
     document.querySelector("#map-count").textContent,
-    `${atlas.nodes.length.toLocaleString()} nodes · ${atlas.edges.length.toLocaleString()} links`,
+    `${atlas.overview.nodeIds.length.toLocaleString()} overview nodes · ${atlas.overview.edgeIds.length.toLocaleString()} overview links / ${atlas.nodes.length.toLocaleString()} archived nodes · ${atlas.edges.length.toLocaleString()} archived links`,
   );
   assert.match(
     document.querySelector("#inspector").textContent,
@@ -233,7 +233,7 @@ test('all new domains and neutral fallback have colors and featured source trail
     assert.ok(d.querySelector('[data-route="' + graph + ':path:0"]'));
   }
   assert.equal(w.DeveloperMapKey.groupOf({topics:['unknown'],type:'concept'}), 'neutral');
-  assert.equal(d.querySelectorAll('#route-list .route-card').length,14);
+  assert.equal(d.querySelectorAll('#route-list .route-card').length,36);
   for (const id of ['os','python','sandbox','volume_computing:volume','optical_disc_image','system_image']) {
     d.querySelector('[data-start="' + id + '"]').click();
     assert.equal(new URL(w.location.href).searchParams.get('concept'),id);
@@ -377,4 +377,17 @@ test('pointer pan and wheel zoom preserve selection while reset restores stable 
  const dom=await mount(),w=dom.window,d=w.document,c=d.querySelector('canvas');const before=JSON.parse(c.dataset.nodePositions);
  c.dispatchEvent(new w.MouseEvent('pointerdown',{clientX:200,clientY:200,button:0,bubbles:true}));c.dispatchEvent(new w.MouseEvent('pointermove',{clientX:250,clientY:230,bubbles:true}));c.dispatchEvent(new w.MouseEvent('pointerup',{clientX:250,clientY:230,bubbles:true}));assert.notDeepEqual(JSON.parse(c.dataset.nodePositions).c,before.c);
  c.dispatchEvent(new w.WheelEvent('wheel',{clientX:400,clientY:300,deltaY:-100,cancelable:true}));assert.notDeepEqual(JSON.parse(c.dataset.nodePositions).c,before.c);d.querySelector('#reset-map').click();assert.deepEqual(JSON.parse(c.dataset.nodePositions),before);w.close();
+});
+
+test('expanded dataset selector, search, editorial rationale and reset work in mocked Canvas', async()=>{
+ const dom=await mount();const w=dom.window,d=w.document;
+ assert.equal(d.querySelector('#source-select').options.length,38);
+ let select=d.querySelector('#source-select');select.value='Next.js.json';select.dispatchEvent(new w.Event('change',{bubbles:true}));
+ const search=d.querySelector('#search');search.value='Next.js';search.dispatchEvent(new w.Event('input',{bubbles:true}));
+ d.querySelector('#search-results [data-concept="Next.js.json:nextjs"]').click();
+ const edge=d.querySelector('[data-relation-id="editorial:next-web-framework"]');assert.ok(edge);assert.match(edge.textContent,/full-stack web application/);assert.ok(edge.querySelector('a[href="https://nextjs.org/docs"]'));
+ assert.match(d.querySelector('#map-count').textContent,/overview.*archived/);
+ d.querySelector('#zoom-in').click();d.querySelector('#zoom-out').click();d.querySelector('#reset-map').click();
+ assert.equal(d.querySelector('#source-select').value,'all');assert.equal(search.value,'');assert.match(d.querySelector('#map-mode').textContent,/WHOLE FIELD/);
+ for(const doc of atlas.documents)assert.ok(w.DeveloperMapKey.domainById.has(doc.graphId));dom.window.close();
 });

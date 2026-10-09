@@ -32,7 +32,8 @@ export function layoutGraph(nodes, edges, documents) {
   simulation.tick(180);
   for (const node of nodes) {
     const position = byId.get(node.id);
-    node.layout = { x: Math.round(position.x * 10) / 10, y: Math.round(position.y * 10) / 10 };
+    // JSON serializes -0 as 0; normalize here so in-memory and published layouts agree.
+    node.layout = { x: Math.round(position.x * 10) / 10 || 0, y: Math.round(position.y * 10) / 10 || 0 };
     node.degree = position.degree;
   }
 }
