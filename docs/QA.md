@@ -10,10 +10,10 @@ This section supersedes historical counts and environment claims below.
 - Targeted exact-edge/state/focus regressions: 3/3 passed after correcting a test's unsupported direct access to script lexical state; tests now observe renderer state/DOM.
 - Local HTTP smoke: 156 resources pass with --exact; 37 original source downloads, 7,908 canonical records, 8,623 edges and 111 SHA-256/size-verified detail shards. Scripts, CSS, HTML, overview and manifest included.
 - Existing hosted site at https://developer-map.shadw.app/: HTTP/MIME/all-shard smoke **passed** for 156 resources. Initial faster run hit HTTP 429; runner now paces remote batches and honors bounded Retry-After, and the paced run passed. This verifies the old deployed revision, NOT publication of this change.
-- Before editing, hosted src/app.js SHA-256 matched cf27415: 84bb596519b604be53552a5f9ab1205f2521ea539fae2c40597c95fad31a78d2. No stale-deployment assertion is made at baseline.
-- Browser tool open failed: “No supported browser found (Chrome/Brave/Edge/Chromium on macOS, Linux, or Windows).” No browser was installed, no navigation policy bypass attempted. Real rendering, screenshots, mobile usability, assistive technology and console-error absence remain UNVERIFIED.
-- The old optional browser runner had obsolete path counts, invisible topic-chip clicks, a removed clear-focus selector, fixed machine paths and fixed evidence date. Updated to current controls/dynamic totals, explicit approved browser path and separate current-run output; syntax checked, not executed.
-- GitHub identity tool: credential unavailable and git author unset. Actual git push --dry-run origin HEAD:main failed exit 128: “could not read Username for 'https://github.com': No such device or address.” No push or new deployment is claimed. No provider/workflow configuration was found; no paid service or deployment resource was provisioned.
+- Final pre-push hosted asset check at 2026-10-09T22:54:56.541Z: HTML, app.js and CSS returned HTTP 200 with correct MIME but all differed from this checkout. Hosted app.js still matched baseline cf27415 (SHA-256 84bb596519b604be53552a5f9ab1205f2521ea539fae2c40597c95fad31a78d2); local app.js is 3cea1faf9b085d91ac5e6f928ba6130b85572927ccfee50f6dcacb44c5d6cebf. Requests were sequential and spaced 1.5 seconds. Full asset hashes are in `qa/current/hosted-final-assets.json`. Publishing Git main is not proof that the external host has refreshed; no configured deployment workflow or host control is available in this checkout.
+- Initial browser-tool open failed because no supported browser was found. This initial limitation was subsequently resolved for local QA with user-cache Chromium 153 and temporary unprivileged library extraction; sandboxing remained enabled. The real run passed at 2026-10-09T22:47:21.990Z: seven entry concepts at 1440/390/320 px, exact incident edges, search/source filters, emphasis/context/Fit, actual canvas click and Back, rich metadata, 522 paths, no page errors and no horizontal overflow. Evidence: `qa/current/report.json` and seven current PNG captures. This does not certify assistive technology or the hosted deployment.
+- The old optional browser runner had obsolete path counts, invisible topic-chip clicks, a removed clear-focus selector, fixed machine paths and fixed evidence date. Updated to current controls/dynamic totals, explicit browser path and separate current-run output; executed successfully as recorded above. The final browser pass also checks narrow map-footer overflow after the CSS wrapping fix.
+- The initial identity-tool/dry-run authentication failure is historical: existing `gh` authentication now resolves SolutionsAsService, and authenticated fetch succeeds. Final commits retain the existing OpenClaw author identity using command-scoped settings rather than changing user identity. Push verification is separate from deployment; no provider/workflow configuration was found, and no paid service or deployment resource was provisioned.
 
 ---
 
@@ -90,3 +90,17 @@ Commit 813a8b2 deployed through the existing automatic pipeline. Public browser 
 Real mobile QA also caught the expanded legend squeezing the canvas to zero height. The follow-up CSS gives the canvas a non-shrinking minimum, bounds legends and permits automatic panel height. This issue was invisible to mocked Canvas tests and is checked on the deployed page after the follow-up push.
 
 Follow-up affected UI suites: **26 passed, 0 failed**, exit 0 (63.9 seconds). Full 50-test suite/build evidence above remains valid for unchanged data and JavaScript.
+
+
+## Reusing the local Chromium QA environment
+
+These verified host-specific paths are temporary tooling, not repository dependencies. Start `npm run dev` separately, then:
+
+```sh
+CHROMIUM_PATH=/home/openclaw/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome \
+PLAYWRIGHT_MODULE=/home/openclaw/.openclaw/tools/node-v24.19.0/lib/node_modules/openclaw/node_modules/playwright-core \
+LD_LIBRARY_PATH=/tmp/developer-map-browser-libs/root/usr/lib/x86_64-linux-gnu \
+node scripts/qa-integration.cjs
+```
+
+Chromium sandboxing is explicitly enabled. The temporary library directory supplies libasound2t64, libnspr4 and libnss3; it can disappear after cleanup/reboot. Screenshots cover home and Next.js → CSS evidence at 1440/390 px plus integration states at 1440/390/320 px. No new accessibility scan or independent critic panel was run. Historical sections above retain their original execution-time limitations; the current continuation record supersedes them.

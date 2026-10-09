@@ -236,8 +236,13 @@ flowchart LR
   I[Inclusion: keyboard and text parity] -->|checks| D
   D -.->|return after hydration| S
   S --> Q[Automated interaction regression]
-  Q -.->|not visual proof| V[Real browser review: no browser binary]
+  Q -.->|not visual proof| V[Real Chromium review: local screenshots and interactions]
 ~~~
 
 ### Verification boundaries
-Mock-Canvas regressions cover exact-edge reload, unrelated-edge rejection, source-filter continuity, list scroll, focus and delayed evidence. Original source data is unchanged. New read-only deployment smoke checks HTTP/MIME and every immutable shard's SHA-256 instead of assuming homepage availability implies healthy evidence. Rate limits are retry signals, not permission for tight loops. Browser-tool launch fails because no supported browser is installed. Current visual convergence remains **open**, not an invented round of PASS verdicts. See docs/QA.md for final command outcomes.
+Mock-Canvas regressions cover exact-edge reload, unrelated-edge rejection, source-filter continuity, list scroll, focus and delayed evidence. Original source data is unchanged. New read-only deployment smoke checks HTTP/MIME and every immutable shard's SHA-256 instead of assuming homepage availability implies healthy evidence. Rate limits are retry signals, not permission for tight loops. The initial browser-tool launch failed because no supported browser was installed; the later real Chromium review below supersedes that environment limitation. Full visual convergence remains **open**, not an invented round of independent PASS verdicts. See docs/QA.md for final command outcomes.
+
+
+### Follow-up rendered review — October 9, 2026
+
+The missing-binary blocker was resolved with user-cache Chromium and unprivileged temporary Ubuntu library extraction; sandboxing stayed enabled. Actual desktop/mobile home and Next.js → CSS exact-edge captures were inspected. The compact introduction, source/editorial markers, mobile navigation, evidence before connection filters, expandable source fields and exact-edge permalink are visibly present. Desktop overview remains intentionally dense; some foreground node/caption crowding and repeated predicate wording are a remaining refinement, not a claim of perfect graph legibility. Mobile evidence is readable in a single column. These are integrator observations, not a fabricated independent five-critic DADA panel. Interaction results are recorded in docs/QA.md and docs/qa/current/report.json.

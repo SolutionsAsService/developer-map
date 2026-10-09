@@ -3110,3 +3110,6 @@ select:focus-visible, summary:focus-visible { outline: 2px solid var(--mint); ou
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Keep archived/overview distinctions readable inside narrow map footers. */
+.map-footer .map-count { white-space: normal; overflow-wrap: anywhere; max-width: 100%; min-width: 0; }

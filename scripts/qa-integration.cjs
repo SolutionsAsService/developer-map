@@ -13,7 +13,7 @@ fs.mkdirSync(output, {recursive:true});
 fs.writeFileSync(path.join(output,'report.json'),JSON.stringify({status:'running',date:new Date().toISOString()},null,2));
 const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
 (async () => {
-  const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH, headless:true});
+  const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH, headless:true, chromiumSandbox:true});
   const checks=[], errors=[], runs=[];
   try {
     for (const width of [1440,390,320]) {
@@ -23,7 +23,8 @@ const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
       await page.goto(process.env.QA_URL || 'http://127.0.0.1:4173/');
       await page.waitForFunction(expected => document.querySelector('#metric-concepts').textContent.replaceAll(',', '') === String(expected), atlas.nodes.length);
       const loadMs=Date.now()-before;
-      assert.equal(await page.locator('#route-list .route-card').count(),Math.min(36,atlas.paths.length));
+      assert.equal(await page.locator('#route-list .route-card').count(),0);
+      assert.match(await page.locator('#route-list').textContent(),/load when/);
       const entryTimings=[];
       for (const id of ['os','python','sandbox','volume_computing:volume','optical_disc_image','system_image','virtual_machine']) {
         const start=Date.now();
@@ -71,6 +72,7 @@ const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
         await page.locator('#reset-map').click(); await entry.click(); await verify();
         assert.equal(await page.locator('#edge-focus').getAttribute('aria-pressed'),'false');
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+        assert.equal(await page.locator('#map-count').evaluate(el=>el.scrollWidth>el.clientWidth+1),false);
         entryTimings.push({id,incident,totalInteractionMs:Date.now()-start});
       }
       await page.locator('#source-select').selectOption('all');
