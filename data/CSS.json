@@ -1,0 +1,2228 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "relationship_rich_semantic_knowledge_graph",
+  "topic": "CSS",
+  "source": {
+    "filename": "Pasted text(20261009-012955).txt",
+    "line_count": 662,
+    "authority": "user-supplied Wikipedia article text",
+    "external_research_used": false,
+    "source_note": "Source-derived graph; no outside verification or correction applied."
+  },
+  "entry_schema": {
+    "nodes": "First-class concepts, constructs, standards, people, tools, layout models, and methodologies.",
+    "relationships": "Directional semantic edges with mechanism descriptions.",
+    "formal_models": "Compact structural models of CSS syntax, cascading, layout, delivery, and compatibility.",
+    "provenance": "Source-derived section coverage; line-specific provenance is not populated for every entry."
+  },
+  "nodes": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "type": "style_sheet_language",
+      "description": "Language for specifying presentation of markup documents."
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "type": "markup_language",
+      "description": "Defines document structure and content."
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "type": "programming_language",
+      "description": "Defines behavior and application logic in Web pages."
+    },
+    {
+      "id": "xml",
+      "label": "XML",
+      "type": "markup_language",
+      "description": "Markup format that can be styled by CSS."
+    },
+    {
+      "id": "svg",
+      "label": "SVG",
+      "type": "markup_language",
+      "description": "Vector graphics format that can be styled by CSS."
+    },
+    {
+      "id": "xhtml",
+      "label": "XHTML",
+      "type": "markup_language",
+      "description": "XML-compatible HTML variant styled by CSS."
+    },
+    {
+      "id": "mathml",
+      "label": "MathML",
+      "type": "markup_language",
+      "description": "Markup for mathematical notation."
+    },
+    {
+      "id": "w3c",
+      "label": "W3C",
+      "type": "standards_organization",
+      "description": "Maintains CSS specifications and CSS snapshots."
+    },
+    {
+      "id": "whatwg",
+      "label": "WHATWG",
+      "type": "standards_organization",
+      "description": "Web standards community working on related document and browser standards."
+    },
+    {
+      "id": "browser",
+      "label": "Web browser",
+      "type": "software",
+      "description": "Loads documents, parses styles, and renders pages."
+    },
+    {
+      "id": "render_engine",
+      "label": "Rendering engine",
+      "type": "software_component",
+      "description": "Applies parsed style rules to document structures and produces rendered output."
+    },
+    {
+      "id": "dom",
+      "label": "Document Object Model",
+      "type": "web_api",
+      "description": "Tree representation of document elements."
+    },
+    {
+      "id": "cssom",
+      "label": "CSS Object Model",
+      "type": "web_api",
+      "description": "Structured representation of CSS rules and style information."
+    },
+    {
+      "id": "stylesheet",
+      "label": "Style sheet",
+      "type": "css_construct",
+      "description": "List of CSS rules embedded in a document or supplied separately."
+    },
+    {
+      "id": "rule",
+      "label": "Style rule",
+      "type": "css_construct",
+      "description": "Selectors paired with a declaration block."
+    },
+    {
+      "id": "selector",
+      "label": "Selector",
+      "type": "css_construct",
+      "description": "Pattern that matches document elements or contextual states."
+    },
+    {
+      "id": "declaration_block",
+      "label": "Declaration block",
+      "type": "css_construct",
+      "description": "Braced set of CSS declarations."
+    },
+    {
+      "id": "declaration",
+      "label": "Declaration",
+      "type": "css_construct",
+      "description": "Property-value pair."
+    },
+    {
+      "id": "property",
+      "label": "CSS property",
+      "type": "css_construct",
+      "description": "Named presentation characteristic."
+    },
+    {
+      "id": "value",
+      "label": "CSS value",
+      "type": "css_construct",
+      "description": "Keyword, number, dimension, color, percentage, or other property value."
+    },
+    {
+      "id": "cascade",
+      "label": "Cascade",
+      "type": "css_algorithm",
+      "description": "Priority resolution selecting which matching declaration applies."
+    },
+    {
+      "id": "specificity",
+      "label": "Specificity",
+      "type": "css_algorithm",
+      "description": "Selector weight used to resolve competing declarations."
+    },
+    {
+      "id": "source_order",
+      "label": "Source order",
+      "type": "css_algorithm",
+      "description": "Rule ordering used as a tie-breaker."
+    },
+    {
+      "id": "important",
+      "label": "!important",
+      "type": "css_priority",
+      "description": "Annotation changing declaration priority."
+    },
+    {
+      "id": "inheritance",
+      "label": "Inheritance",
+      "type": "css_algorithm",
+      "description": "Some properties inherit through ancestor-descendant relationships."
+    },
+    {
+      "id": "computed_style",
+      "label": "Computed style",
+      "type": "rendering_state",
+      "description": "Resolved property values after style resolution."
+    },
+    {
+      "id": "author_sheet",
+      "label": "Author style sheet",
+      "type": "css_source",
+      "description": "Styles provided by the page author."
+    },
+    {
+      "id": "user_sheet",
+      "label": "User style sheet",
+      "type": "css_source",
+      "description": "User-defined styles for preferences and accessibility."
+    },
+    {
+      "id": "ua_sheet",
+      "label": "User-agent style sheet",
+      "type": "css_source",
+      "description": "Browser default styling."
+    },
+    {
+      "id": "inline",
+      "label": "Inline style",
+      "type": "deployment_pattern",
+      "description": "Declarations supplied through an element's style attribute."
+    },
+    {
+      "id": "internal",
+      "label": "Internal style sheet",
+      "type": "deployment_pattern",
+      "description": "CSS embedded in a style element."
+    },
+    {
+      "id": "external",
+      "label": "External style sheet",
+      "type": "deployment_pattern",
+      "description": "Separate .css file linked from one or more documents."
+    },
+    {
+      "id": "cache",
+      "label": "Browser cache",
+      "type": "browser_subsystem",
+      "description": "Stores reusable CSS resources to reduce repeat downloads."
+    },
+    {
+      "id": "text_css",
+      "label": "text/css",
+      "type": "mime_type",
+      "description": "Registered media type for CSS."
+    },
+    {
+      "id": "rfc2318",
+      "label": "RFC 2318",
+      "type": "standard",
+      "description": "Registers the CSS MIME type."
+    },
+    {
+      "id": "validator",
+      "label": "W3C CSS Validator",
+      "type": "validation_tool",
+      "description": "Checks CSS documents against CSS specifications."
+    },
+    {
+      "id": "type_sel",
+      "label": "Type selector",
+      "type": "selector_type",
+      "description": "Matches elements by tag/type."
+    },
+    {
+      "id": "class_sel",
+      "label": "Class selector",
+      "type": "selector_type",
+      "description": "Matches elements carrying a named class."
+    },
+    {
+      "id": "id_sel",
+      "label": "ID selector",
+      "type": "selector_type",
+      "description": "Matches the document element identified by an ID."
+    },
+    {
+      "id": "attr_sel",
+      "label": "Attribute selector",
+      "type": "selector_type",
+      "description": "Matches elements by attribute presence or value."
+    },
+    {
+      "id": "pseudo_class",
+      "label": "Pseudo-class",
+      "type": "selector_type",
+      "description": "Matches contextual state such as hover, focus, or sibling position."
+    },
+    {
+      "id": "pseudo_element",
+      "label": "Pseudo-element",
+      "type": "selector_type",
+      "description": "Targets generated or partial element content."
+    },
+    {
+      "id": "combinator",
+      "label": "Selector combinator",
+      "type": "selector_construct",
+      "description": "Expresses relationships such as descendant, child, and sibling."
+    },
+    {
+      "id": "hover",
+      "label": " :hover",
+      "type": "pseudo_class",
+      "description": "Matches an element while a pointing device hovers over it."
+    },
+    {
+      "id": "focus",
+      "label": " :focus",
+      "type": "pseudo_class",
+      "description": "Matches an element receiving focus."
+    },
+    {
+      "id": "nth_child",
+      "label": ":nth-child()",
+      "type": "pseudo_class",
+      "description": "Selects elements by sibling position."
+    },
+    {
+      "id": "has",
+      "label": ":has()",
+      "type": "pseudo_class",
+      "description": "Matches an element based on a contained matching element."
+    },
+    {
+      "id": "before",
+      "label": "::before",
+      "type": "pseudo_element",
+      "description": "Targets generated content before an element's content."
+    },
+    {
+      "id": "after",
+      "label": "::after",
+      "type": "pseudo_element",
+      "description": "Targets generated content after an element's content."
+    },
+    {
+      "id": "first_line",
+      "label": "::first-line",
+      "type": "pseudo_element",
+      "description": "Targets the first formatted line."
+    },
+    {
+      "id": "first_letter",
+      "label": "::first-letter",
+      "type": "pseudo_element",
+      "description": "Targets the first formatted letter."
+    },
+    {
+      "id": "color",
+      "label": "Color values",
+      "type": "css_value",
+      "description": "Supports named, hexadecimal, RGB/RGBA, and HSL/HSLA colors."
+    },
+    {
+      "id": "units",
+      "label": "Length units",
+      "type": "css_value",
+      "description": "Includes px, em, ex, cm, in, mm, pt, pc, rem, viewport units, ch, and Q."
+    },
+    {
+      "id": "absolute_units",
+      "label": "Absolute units",
+      "type": "css_value",
+      "description": "Units such as cm, in, mm, pt, and pc."
+    },
+    {
+      "id": "relative_units",
+      "label": "Relative units",
+      "type": "css_value",
+      "description": "Units based on font, viewport, or context."
+    },
+    {
+      "id": "percentage",
+      "label": "Percentage",
+      "type": "css_value",
+      "description": "Value relative to a relevant reference context."
+    },
+    {
+      "id": "box_model",
+      "label": "Box model",
+      "type": "layout_model",
+      "description": "Element geometry consists of content, padding, border, and margin."
+    },
+    {
+      "id": "margin",
+      "label": "Margin",
+      "type": "css_property_group",
+      "description": "Outer spacing around a box."
+    },
+    {
+      "id": "padding",
+      "label": "Padding",
+      "type": "css_property_group",
+      "description": "Space between content and border."
+    },
+    {
+      "id": "border",
+      "label": "Border",
+      "type": "css_property_group",
+      "description": "Boundary surrounding content and padding."
+    },
+    {
+      "id": "width_height",
+      "label": "Width and height",
+      "type": "css_property_group",
+      "description": "Dimensions affecting layout."
+    },
+    {
+      "id": "display",
+      "label": "display",
+      "type": "css_property",
+      "description": "Controls formatting/layout behavior."
+    },
+    {
+      "id": "position",
+      "label": "Positioning",
+      "type": "layout_model",
+      "description": "Rules for placing elements in layout."
+    },
+    {
+      "id": "z_index",
+      "label": "z-index",
+      "type": "css_property",
+      "description": "Controls stacking order within applicable stacking contexts."
+    },
+    {
+      "id": "flexbox",
+      "label": "Flexbox",
+      "type": "layout_model",
+      "description": "Flexible one-dimensional layout model."
+    },
+    {
+      "id": "grid",
+      "label": "CSS Grid",
+      "type": "layout_model",
+      "description": "Two-dimensional grid layout model."
+    },
+    {
+      "id": "typography",
+      "label": "Typography",
+      "type": "design_domain",
+      "description": "Fonts, size, emphasis, alignment, and line presentation."
+    },
+    {
+      "id": "background",
+      "label": "Background",
+      "type": "css_property_group",
+      "description": "Controls background presentation."
+    },
+    {
+      "id": "transforms",
+      "label": "Transforms",
+      "type": "css_feature",
+      "description": "Visual transformation of rendered elements."
+    },
+    {
+      "id": "transitions",
+      "label": "Transitions",
+      "type": "css_feature",
+      "description": "Interpolates property changes over time."
+    },
+    {
+      "id": "animations",
+      "label": "Animations",
+      "type": "css_feature",
+      "description": "Timed/keyframe-based visual changes."
+    },
+    {
+      "id": "media_queries",
+      "label": "Media queries",
+      "type": "css_feature",
+      "description": "Apply conditional styles based on device or output characteristics."
+    },
+    {
+      "id": "responsive",
+      "label": "Responsive design",
+      "type": "design_approach",
+      "description": "Adapts presentation to viewport, device, and orientation."
+    },
+    {
+      "id": "print",
+      "label": "Print styles",
+      "type": "css_feature",
+      "description": "Tailors presentation for printed output."
+    },
+    {
+      "id": "aural",
+      "label": "Aural styling",
+      "type": "accessibility_feature",
+      "description": "Non-visual styling concepts for speech-based readers."
+    },
+    {
+      "id": "braille",
+      "label": "Braille output",
+      "type": "rendering_medium",
+      "description": "Tactile presentation medium mentioned in the source."
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility",
+      "type": "quality_attribute",
+      "description": "Usability across assistive technologies and user needs."
+    },
+    {
+      "id": "separation",
+      "label": "Separation of content and presentation",
+      "type": "architecture_principle",
+      "description": "Markup defines content while CSS controls its presentation."
+    },
+    {
+      "id": "presentational_html",
+      "label": "HTML presentational markup",
+      "type": "legacy_approach",
+      "description": "Older practice embedding color/font/layout instructions directly into markup."
+    },
+    {
+      "id": "theme",
+      "label": "CSS theming",
+      "type": "design_pattern",
+      "description": "Reusable rules alter design details without changing content structure."
+    },
+    {
+      "id": "custom_props",
+      "label": "CSS custom properties",
+      "type": "css_feature",
+      "description": "Named reusable CSS values useful for themes and design tokens."
+    },
+    {
+      "id": "supports",
+      "label": "@supports feature queries",
+      "type": "css_feature",
+      "description": "Conditionally applies rules based on feature support."
+    },
+    {
+      "id": "fallback",
+      "label": "Fallback styling",
+      "type": "compatibility_pattern",
+      "description": "Supported styles preserve usable output where newer features are unavailable."
+    },
+    {
+      "id": "compatibility",
+      "label": "Browser compatibility",
+      "type": "quality_attribute",
+      "description": "Consistency of styling across browsers and versions."
+    },
+    {
+      "id": "vendor_prefix",
+      "label": "Vendor prefixes",
+      "type": "compatibility_technique",
+      "description": "Historical browser-specific prefixes for experimental functionality."
+    },
+    {
+      "id": "hacks",
+      "label": "CSS hacks and filters",
+      "type": "compatibility_technique",
+      "description": "Workarounds for browser-specific parsing or implementation differences."
+    },
+    {
+      "id": "polyfills",
+      "label": "JavaScript polyfills",
+      "type": "compatibility_technique",
+      "description": "JavaScript code that can emulate unsupported Web behavior."
+    },
+    {
+      "id": "browserstack",
+      "label": "BrowserStack",
+      "type": "testing_service",
+      "description": "Cross-browser and cross-platform testing service."
+    },
+    {
+      "id": "caniuse",
+      "label": "Can I Use",
+      "type": "compatibility_resource",
+      "description": "Browser support tables for Web features."
+    },
+    {
+      "id": "mdn",
+      "label": "MDN Web Docs",
+      "type": "documentation_resource",
+      "description": "CSS reference and compatibility documentation."
+    },
+    {
+      "id": "sass",
+      "label": "Sass",
+      "type": "stylesheet_preprocessor",
+      "description": "Stylesheet language/preprocessor compiling to CSS."
+    },
+    {
+      "id": "less",
+      "label": "Less",
+      "type": "stylesheet_preprocessor",
+      "description": "Stylesheet language/preprocessor compiling to CSS."
+    },
+    {
+      "id": "stylus",
+      "label": "Stylus",
+      "type": "stylesheet_preprocessor",
+      "description": "Stylesheet language/preprocessor compiling to CSS."
+    },
+    {
+      "id": "framework",
+      "label": "CSS framework",
+      "type": "framework",
+      "description": "Prepared reusable stylesheet patterns and layout options."
+    },
+    {
+      "id": "bootstrap",
+      "label": "Bootstrap",
+      "type": "css_framework",
+      "description": "CSS framework named in the source."
+    },
+    {
+      "id": "foundation",
+      "label": "Foundation",
+      "type": "css_framework",
+      "description": "CSS framework named in the source."
+    },
+    {
+      "id": "tailwind",
+      "label": "Tailwind CSS",
+      "type": "css_framework",
+      "description": "CSS framework named in the source."
+    },
+    {
+      "id": "blueprint",
+      "label": "Blueprint",
+      "type": "css_framework",
+      "description": "CSS framework named in the source."
+    },
+    {
+      "id": "materialize",
+      "label": "Materialize",
+      "type": "css_framework",
+      "description": "CSS framework named in the source."
+    },
+    {
+      "id": "oocss",
+      "label": "OOCSS",
+      "type": "css_methodology",
+      "description": "Object-oriented CSS methodology."
+    },
+    {
+      "id": "acss",
+      "label": "Atomic CSS",
+      "type": "css_methodology",
+      "description": "Methodology using small atomic styling units."
+    },
+    {
+      "id": "smacss",
+      "label": "SMACSS",
+      "type": "css_methodology",
+      "description": "Scalable and modular architecture for CSS."
+    },
+    {
+      "id": "bem",
+      "label": "BEM",
+      "type": "css_methodology",
+      "description": "Block, Element, Modifier methodology."
+    },
+    {
+      "id": "css_in_js",
+      "label": "CSS-in-JS",
+      "type": "styling_approach",
+      "description": "Approach integrating styles with JavaScript."
+    },
+    {
+      "id": "flash_unstyled",
+      "label": "Flash of unstyled content",
+      "type": "rendering_issue",
+      "description": "Content temporarily appears before styling is applied."
+    },
+    {
+      "id": "css1",
+      "label": "CSS Level 1",
+      "type": "standard",
+      "description": "First CSS recommendation, released in December 1996."
+    },
+    {
+      "id": "css2",
+      "label": "CSS Level 2",
+      "type": "standard",
+      "description": "Second major CSS level, published in 1998."
+    },
+    {
+      "id": "css21",
+      "label": "CSS 2.1",
+      "type": "standard",
+      "description": "Revision that became a widely used reference baseline."
+    },
+    {
+      "id": "css3",
+      "label": "CSS 3",
+      "type": "standardization_model",
+      "description": "CSS development organized into multiple independent modules."
+    },
+    {
+      "id": "snapshots",
+      "label": "CSS Snapshots",
+      "type": "standardization_process",
+      "description": "Periodic summaries of CSS module status."
+    },
+    {
+      "id": "csswg",
+      "label": "CSS Working Group",
+      "type": "standards_group",
+      "description": "Group coordinating CSS specifications."
+    },
+    {
+      "id": "lie",
+      "label": "Håkon Wium Lie",
+      "type": "person",
+      "description": "Proposed cascading HTML style sheets at CERN in 1994."
+    },
+    {
+      "id": "bos",
+      "label": "Bert Bos",
+      "type": "person",
+      "description": "CSS contributor and co-author on CSS history."
+    },
+    {
+      "id": "cern",
+      "label": "CERN",
+      "type": "organization",
+      "description": "Institution where the early CSS proposal was made."
+    },
+    {
+      "id": "internet_explorer",
+      "label": "Internet Explorer",
+      "type": "browser",
+      "description": "Browser cited as a case of delayed CSS feature support."
+    },
+    {
+      "id": "stylish",
+      "label": "Stylish",
+      "type": "browser_extension",
+      "description": "Extension for managing user style sheets."
+    },
+    {
+      "id": "stylus_ext",
+      "label": "Stylus browser extension",
+      "type": "browser_extension",
+      "description": "Extension for managing user style sheets."
+    },
+    {
+      "id": "css_zen",
+      "label": "CSS Zen Garden",
+      "type": "demonstration_project",
+      "description": "Demonstrates different presentation designs over common content."
+    },
+    {
+      "id": "css_limit_scope",
+      "label": "Scoping limitation",
+      "type": "language_limitation",
+      "description": "Source describes limitations around independently declaring scope and position/z-index coupling."
+    },
+    {
+      "id": "css_limit_rule_name",
+      "label": "Rule naming limitation",
+      "type": "language_limitation",
+      "description": "Source says CSS rules cannot be named for stable script references."
+    },
+    {
+      "id": "css_limit_compose",
+      "label": "Rule composition limitation",
+      "type": "language_limitation",
+      "description": "Source describes limited direct reuse of one rule's declarations inside another."
+    },
+    {
+      "id": "css_limit_text",
+      "label": "Text-range targeting limitation",
+      "type": "language_limitation",
+      "description": "Source notes limits targeting arbitrary text ranges without extra markup."
+    },
+    {
+      "id": "css_limit_hover",
+      "label": "Dynamic pseudo-class limitation",
+      "type": "language_limitation",
+      "description": "Source describes limited ways to disable or constrain dynamic hover effects."
+    },
+    {
+      "id": "media_type",
+      "label": "Media type",
+      "type": "css_concept",
+      "description": "Output device or medium for which styles are tailored."
+    },
+    {
+      "id": "screen",
+      "label": "Screen output",
+      "type": "rendering_medium",
+      "description": "Visual display presentation."
+    },
+    {
+      "id": "voice",
+      "label": "Speech output",
+      "type": "rendering_medium",
+      "description": "Speech-based browser or screen reader presentation."
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile layout",
+      "type": "responsive_pattern",
+      "description": "Presentation adapted to mobile devices."
+    },
+    {
+      "id": "external_reuse",
+      "label": "Cross-document stylesheet reuse",
+      "type": "architecture_benefit",
+      "description": "Shared external CSS lets multiple documents use consistent styling."
+    },
+    {
+      "id": "css_file_cache",
+      "label": "Cached stylesheet",
+      "type": "performance_benefit",
+      "description": "A browser can reuse an external stylesheet across pages."
+    },
+    {
+      "id": "computed_value",
+      "label": "Computed value",
+      "type": "rendering_state",
+      "description": "Resolved property value after cascade and inheritance."
+    },
+    {
+      "id": "initial_value",
+      "label": "Initial value",
+      "type": "rendering_state",
+      "description": "Specification-defined starting value where applicable."
+    },
+    {
+      "id": "conflicts",
+      "label": "Conflicting declarations",
+      "type": "cascade_case",
+      "description": "Multiple matching declarations set the same property."
+    },
+    {
+      "id": "progressive",
+      "label": "Progressive enhancement",
+      "type": "design_approach",
+      "description": "Content remains available while styling and newer features enhance presentation."
+    },
+    {
+      "id": "tableless",
+      "label": "Tableless web design",
+      "type": "design_approach",
+      "description": "Uses CSS layout rather than presentational HTML tables."
+    },
+    {
+      "id": "rachel_method",
+      "label": "CSS methodologies",
+      "type": "design_domain",
+      "description": "Shared naming/organization approaches for maintainable CSS projects."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "css",
+      "target": "html",
+      "relationship": "styles",
+      "mechanism": "HTML structures content; CSS defines presentation."
+    },
+    {
+      "source": "css",
+      "target": "javascript",
+      "relationship": "complements",
+      "mechanism": "CSS controls appearance while JavaScript supplies behavior."
+    },
+    {
+      "source": "css",
+      "target": "xml",
+      "relationship": "styles",
+      "mechanism": "CSS can style XML documents."
+    },
+    {
+      "source": "css",
+      "target": "svg",
+      "relationship": "styles",
+      "mechanism": "CSS can style SVG."
+    },
+    {
+      "source": "css",
+      "target": "xhtml",
+      "relationship": "styles",
+      "mechanism": "CSS can style XHTML."
+    },
+    {
+      "source": "css",
+      "target": "mathml",
+      "relationship": "styles",
+      "mechanism": "CSS can style MathML."
+    },
+    {
+      "source": "css",
+      "target": "w3c",
+      "relationship": "maintained_by",
+      "mechanism": "W3C maintains CSS specifications."
+    },
+    {
+      "source": "w3c",
+      "target": "csswg",
+      "relationship": "coordinates",
+      "mechanism": "The CSS Working Group coordinates specification development."
+    },
+    {
+      "source": "css",
+      "target": "text_css",
+      "relationship": "uses_mime_type",
+      "mechanism": "text/css is the registered media type."
+    },
+    {
+      "source": "text_css",
+      "target": "rfc2318",
+      "relationship": "registered_by",
+      "mechanism": "RFC 2318 registers text/css."
+    },
+    {
+      "source": "w3c",
+      "target": "validator",
+      "relationship": "provides",
+      "mechanism": "W3C provides a CSS validation service."
+    },
+    {
+      "source": "stylesheet",
+      "target": "rule",
+      "relationship": "contains",
+      "mechanism": "A style sheet consists of rules."
+    },
+    {
+      "source": "rule",
+      "target": "selector",
+      "relationship": "contains",
+      "mechanism": "Selectors identify elements to which a rule applies."
+    },
+    {
+      "source": "rule",
+      "target": "declaration_block",
+      "relationship": "contains",
+      "mechanism": "A rule contains a declaration block."
+    },
+    {
+      "source": "declaration_block",
+      "target": "declaration",
+      "relationship": "contains",
+      "mechanism": "Declaration blocks contain property-value declarations."
+    },
+    {
+      "source": "declaration",
+      "target": "property",
+      "relationship": "assigns",
+      "mechanism": "A declaration names a property."
+    },
+    {
+      "source": "declaration",
+      "target": "value",
+      "relationship": "assigns_value",
+      "mechanism": "A declaration assigns a value."
+    },
+    {
+      "source": "selector",
+      "target": "dom",
+      "relationship": "matches_against",
+      "mechanism": "Selectors match document elements and attributes."
+    },
+    {
+      "source": "browser",
+      "target": "render_engine",
+      "relationship": "uses",
+      "mechanism": "Browser rendering engines process document and style information."
+    },
+    {
+      "source": "render_engine",
+      "target": "dom",
+      "relationship": "uses",
+      "mechanism": "Styles are applied to DOM elements."
+    },
+    {
+      "source": "render_engine",
+      "target": "cssom",
+      "relationship": "uses",
+      "mechanism": "Structured CSS rules participate in style resolution."
+    },
+    {
+      "source": "render_engine",
+      "target": "computed_style",
+      "relationship": "produces",
+      "mechanism": "Style resolution produces computed values."
+    },
+    {
+      "source": "cascade",
+      "target": "specificity",
+      "relationship": "uses",
+      "mechanism": "Specificity helps resolve competing declarations."
+    },
+    {
+      "source": "cascade",
+      "target": "source_order",
+      "relationship": "uses_as_tiebreaker",
+      "mechanism": "Source order can resolve remaining ties."
+    },
+    {
+      "source": "cascade",
+      "target": "important",
+      "relationship": "considers",
+      "mechanism": "Importance changes declaration priority."
+    },
+    {
+      "source": "cascade",
+      "target": "author_sheet",
+      "relationship": "considers",
+      "mechanism": "Author styles are a cascade source."
+    },
+    {
+      "source": "cascade",
+      "target": "user_sheet",
+      "relationship": "considers",
+      "mechanism": "User styles can customize presentation."
+    },
+    {
+      "source": "cascade",
+      "target": "ua_sheet",
+      "relationship": "considers",
+      "mechanism": "Browser defaults supply default styles."
+    },
+    {
+      "source": "inheritance",
+      "target": "computed_style",
+      "relationship": "contributes_to",
+      "mechanism": "Eligible values can pass from ancestors to descendants."
+    },
+    {
+      "source": "author_sheet",
+      "target": "external",
+      "relationship": "can_be",
+      "mechanism": "Author styles can be in an external file."
+    },
+    {
+      "source": "author_sheet",
+      "target": "internal",
+      "relationship": "can_be",
+      "mechanism": "Author styles can be embedded in a style element."
+    },
+    {
+      "source": "author_sheet",
+      "target": "inline",
+      "relationship": "can_be",
+      "mechanism": "Author styles can be attached to elements."
+    },
+    {
+      "source": "external",
+      "target": "html",
+      "relationship": "linked_from",
+      "mechanism": "HTML links to external stylesheets."
+    },
+    {
+      "source": "external",
+      "target": "cache",
+      "relationship": "can_be_stored_in",
+      "mechanism": "External CSS can be cached."
+    },
+    {
+      "source": "external",
+      "target": "external_reuse",
+      "relationship": "enables",
+      "mechanism": "One stylesheet can style many documents."
+    },
+    {
+      "source": "external_reuse",
+      "target": "separation",
+      "relationship": "supports",
+      "mechanism": "Shared styling decouples content from presentation."
+    },
+    {
+      "source": "presentational_html",
+      "target": "separation",
+      "relationship": "contrasts_with",
+      "mechanism": "CSS reduces repeated presentation instructions in markup."
+    },
+    {
+      "source": "css",
+      "target": "separation",
+      "relationship": "implements",
+      "mechanism": "CSS separates structure/content from presentation."
+    },
+    {
+      "source": "responsive",
+      "target": "media_queries",
+      "relationship": "uses",
+      "mechanism": "Media queries conditionally adapt layout."
+    },
+    {
+      "source": "media_queries",
+      "target": "media_type",
+      "relationship": "conditions_on",
+      "mechanism": "Rules can target screen, print, or other media."
+    },
+    {
+      "source": "print",
+      "target": "media_type",
+      "relationship": "targets",
+      "mechanism": "Print styles target printed output."
+    },
+    {
+      "source": "aural",
+      "target": "voice",
+      "relationship": "targets",
+      "mechanism": "Aural styles address speech output."
+    },
+    {
+      "source": "accessibility",
+      "target": "responsive",
+      "relationship": "benefits_from",
+      "mechanism": "Adaptable layouts support usability across devices."
+    },
+    {
+      "source": "accessibility",
+      "target": "user_sheet",
+      "relationship": "benefits_from",
+      "mechanism": "User styles can improve readability."
+    },
+    {
+      "source": "box_model",
+      "target": "margin",
+      "relationship": "includes",
+      "mechanism": "Margin is outer spacing."
+    },
+    {
+      "source": "box_model",
+      "target": "padding",
+      "relationship": "includes",
+      "mechanism": "Padding is space inside the border."
+    },
+    {
+      "source": "box_model",
+      "target": "border",
+      "relationship": "includes",
+      "mechanism": "Border surrounds padding and content."
+    },
+    {
+      "source": "box_model",
+      "target": "width_height",
+      "relationship": "affected_by",
+      "mechanism": "Dimensions influence layout geometry."
+    },
+    {
+      "source": "css",
+      "target": "flexbox",
+      "relationship": "supports_layout_model",
+      "mechanism": "Flexbox is a CSS layout model."
+    },
+    {
+      "source": "css",
+      "target": "grid",
+      "relationship": "supports_layout_model",
+      "mechanism": "Grid is a CSS layout model."
+    },
+    {
+      "source": "position",
+      "target": "z_index",
+      "relationship": "interacts_with",
+      "mechanism": "Positioning and stacking contexts affect z-index behavior."
+    },
+    {
+      "source": "units",
+      "target": "absolute_units",
+      "relationship": "includes",
+      "mechanism": "CSS includes absolute units."
+    },
+    {
+      "source": "units",
+      "target": "relative_units",
+      "relationship": "includes",
+      "mechanism": "CSS includes relative units."
+    },
+    {
+      "source": "value",
+      "target": "percentage",
+      "relationship": "includes_form",
+      "mechanism": "Percentages are a CSS value form."
+    },
+    {
+      "source": "value",
+      "target": "color",
+      "relationship": "includes_form",
+      "mechanism": "Color notations are CSS value forms."
+    },
+    {
+      "source": "selector",
+      "target": "type_sel",
+      "relationship": "includes",
+      "mechanism": "Type selectors match element names."
+    },
+    {
+      "source": "selector",
+      "target": "class_sel",
+      "relationship": "includes",
+      "mechanism": "Class selectors match class attributes."
+    },
+    {
+      "source": "selector",
+      "target": "id_sel",
+      "relationship": "includes",
+      "mechanism": "ID selectors match IDs."
+    },
+    {
+      "source": "selector",
+      "target": "attr_sel",
+      "relationship": "includes",
+      "mechanism": "Attribute selectors match attribute presence or values."
+    },
+    {
+      "source": "selector",
+      "target": "pseudo_class",
+      "relationship": "includes",
+      "mechanism": "Pseudo-classes match state or context."
+    },
+    {
+      "source": "selector",
+      "target": "pseudo_element",
+      "relationship": "includes",
+      "mechanism": "Pseudo-elements select partial/generated content."
+    },
+    {
+      "source": "selector",
+      "target": "combinator",
+      "relationship": "supports",
+      "mechanism": "Combinators express structural relationships."
+    },
+    {
+      "source": "pseudo_class",
+      "target": "hover",
+      "relationship": "includes",
+      "mechanism": "Hover is a pseudo-class state."
+    },
+    {
+      "source": "pseudo_class",
+      "target": "focus",
+      "relationship": "includes",
+      "mechanism": "Focus is a pseudo-class state."
+    },
+    {
+      "source": "pseudo_class",
+      "target": "nth_child",
+      "relationship": "includes",
+      "mechanism": "nth-child selects by sibling position."
+    },
+    {
+      "source": "pseudo_class",
+      "target": "has",
+      "relationship": "includes",
+      "mechanism": "has selects based on a contained matching element."
+    },
+    {
+      "source": "pseudo_element",
+      "target": "before",
+      "relationship": "includes",
+      "mechanism": "before targets generated content before content."
+    },
+    {
+      "source": "pseudo_element",
+      "target": "after",
+      "relationship": "includes",
+      "mechanism": "after targets generated content after content."
+    },
+    {
+      "source": "pseudo_element",
+      "target": "first_line",
+      "relationship": "includes",
+      "mechanism": "first-line targets the first formatted line."
+    },
+    {
+      "source": "pseudo_element",
+      "target": "first_letter",
+      "relationship": "includes",
+      "mechanism": "first-letter targets the first formatted letter."
+    },
+    {
+      "source": "css",
+      "target": "typography",
+      "relationship": "controls",
+      "mechanism": "CSS controls fonts, size, emphasis, and alignment."
+    },
+    {
+      "source": "css",
+      "target": "background",
+      "relationship": "controls",
+      "mechanism": "CSS controls backgrounds."
+    },
+    {
+      "source": "css",
+      "target": "transforms",
+      "relationship": "supports",
+      "mechanism": "CSS supports visual transformations."
+    },
+    {
+      "source": "css",
+      "target": "transitions",
+      "relationship": "supports",
+      "mechanism": "CSS supports transitions."
+    },
+    {
+      "source": "css",
+      "target": "animations",
+      "relationship": "supports",
+      "mechanism": "CSS supports animations."
+    },
+    {
+      "source": "css",
+      "target": "theme",
+      "relationship": "supports",
+      "mechanism": "Reusable styles can create themes."
+    },
+    {
+      "source": "custom_props",
+      "target": "theme",
+      "relationship": "supports",
+      "mechanism": "Custom properties centralize reusable theme values."
+    },
+    {
+      "source": "supports",
+      "target": "fallback",
+      "relationship": "supports",
+      "mechanism": "Feature queries can select newer rules while preserving fallbacks."
+    },
+    {
+      "source": "compatibility",
+      "target": "internet_explorer",
+      "relationship": "historical_example",
+      "mechanism": "The source cites slow IE support as a compatibility challenge."
+    },
+    {
+      "source": "compatibility",
+      "target": "browserstack",
+      "relationship": "tested_with",
+      "mechanism": "BrowserStack helps test across environments."
+    },
+    {
+      "source": "compatibility",
+      "target": "caniuse",
+      "relationship": "documented_by",
+      "mechanism": "Can I Use publishes support tables."
+    },
+    {
+      "source": "compatibility",
+      "target": "mdn",
+      "relationship": "documented_by",
+      "mechanism": "MDN documents CSS features and compatibility."
+    },
+    {
+      "source": "vendor_prefix",
+      "target": "compatibility",
+      "relationship": "historically_addressed",
+      "mechanism": "Vendor prefixes were used for browser-specific features."
+    },
+    {
+      "source": "hacks",
+      "target": "compatibility",
+      "relationship": "historically_addressed",
+      "mechanism": "CSS hacks targeted browser differences."
+    },
+    {
+      "source": "polyfills",
+      "target": "fallback",
+      "relationship": "can_support",
+      "mechanism": "JavaScript polyfills may emulate unsupported Web behavior."
+    },
+    {
+      "source": "progressive",
+      "target": "fallback",
+      "relationship": "uses",
+      "mechanism": "Fallbacks preserve usability on older browsers."
+    },
+    {
+      "source": "sass",
+      "target": "css",
+      "relationship": "compiles_to",
+      "mechanism": "Sass compiles to CSS."
+    },
+    {
+      "source": "less",
+      "target": "css",
+      "relationship": "compiles_to",
+      "mechanism": "Less compiles to CSS."
+    },
+    {
+      "source": "stylus",
+      "target": "css",
+      "relationship": "compiles_to",
+      "mechanism": "Stylus compiles to CSS."
+    },
+    {
+      "source": "framework",
+      "target": "stylesheet",
+      "relationship": "provides",
+      "mechanism": "Frameworks provide prepared reusable stylesheet patterns."
+    },
+    {
+      "source": "bootstrap",
+      "target": "framework",
+      "relationship": "example_of",
+      "mechanism": "Bootstrap is a CSS framework."
+    },
+    {
+      "source": "foundation",
+      "target": "framework",
+      "relationship": "example_of",
+      "mechanism": "Foundation is a CSS framework."
+    },
+    {
+      "source": "tailwind",
+      "target": "framework",
+      "relationship": "example_of",
+      "mechanism": "Tailwind CSS is a framework."
+    },
+    {
+      "source": "blueprint",
+      "target": "framework",
+      "relationship": "example_of",
+      "mechanism": "Blueprint is a framework."
+    },
+    {
+      "source": "materialize",
+      "target": "framework",
+      "relationship": "example_of",
+      "mechanism": "Materialize is a framework."
+    },
+    {
+      "source": "oocss",
+      "target": "rachel_method",
+      "relationship": "methodology_example",
+      "mechanism": "OOCSS is a CSS organization methodology."
+    },
+    {
+      "source": "acss",
+      "target": "rachel_method",
+      "relationship": "methodology_example",
+      "mechanism": "Atomic CSS is a CSS organization methodology."
+    },
+    {
+      "source": "smacss",
+      "target": "rachel_method",
+      "relationship": "methodology_example",
+      "mechanism": "SMACSS is a modular CSS methodology."
+    },
+    {
+      "source": "bem",
+      "target": "rachel_method",
+      "relationship": "methodology_example",
+      "mechanism": "BEM organizes styles around block, element, modifier."
+    },
+    {
+      "source": "css",
+      "target": "css_in_js",
+      "relationship": "related_to",
+      "mechanism": "CSS-in-JS integrates styling with JavaScript."
+    },
+    {
+      "source": "css",
+      "target": "flash_unstyled",
+      "relationship": "can_contribute_to",
+      "mechanism": "Stylesheet loading timing can cause a flash of unstyled content."
+    },
+    {
+      "source": "css",
+      "target": "css_limit_scope",
+      "relationship": "has_source_described_limitation",
+      "mechanism": "Source describes scoping limitations."
+    },
+    {
+      "source": "css",
+      "target": "css_limit_rule_name",
+      "relationship": "has_source_described_limitation",
+      "mechanism": "Source describes rule naming limitations."
+    },
+    {
+      "source": "css",
+      "target": "css_limit_compose",
+      "relationship": "has_source_described_limitation",
+      "mechanism": "Source describes rule composition limitations."
+    },
+    {
+      "source": "css",
+      "target": "css_limit_text",
+      "relationship": "has_source_described_limitation",
+      "mechanism": "Source describes text-range targeting limitations."
+    },
+    {
+      "source": "css",
+      "target": "css_limit_hover",
+      "relationship": "has_source_described_limitation",
+      "mechanism": "Source describes limitations controlling dynamic hover effects."
+    },
+    {
+      "source": "css",
+      "target": "css1",
+      "relationship": "standardized_as",
+      "mechanism": "CSS Level 1 was released in December 1996."
+    },
+    {
+      "source": "css",
+      "target": "css2",
+      "relationship": "evolved_to",
+      "mechanism": "CSS Level 2 was published in 1998."
+    },
+    {
+      "source": "css",
+      "target": "css21",
+      "relationship": "revised_as",
+      "mechanism": "CSS 2.1 revised CSS 2."
+    },
+    {
+      "source": "css",
+      "target": "css3",
+      "relationship": "modularized_as",
+      "mechanism": "CSS 3 is developed as separate modules."
+    },
+    {
+      "source": "css3",
+      "target": "snapshots",
+      "relationship": "summarized_by",
+      "mechanism": "Snapshots summarize module status."
+    },
+    {
+      "source": "lie",
+      "target": "css",
+      "relationship": "proposed",
+      "mechanism": "Håkon Wium Lie proposed cascading style sheets in 1994."
+    },
+    {
+      "source": "cern",
+      "target": "lie",
+      "relationship": "associated_with_proposal",
+      "mechanism": "The proposal was made at CERN."
+    },
+    {
+      "source": "bos",
+      "target": "css",
+      "relationship": "contributed_to",
+      "mechanism": "Bert Bos contributed to CSS development."
+    },
+    {
+      "source": "stylish",
+      "target": "user_sheet",
+      "relationship": "manages",
+      "mechanism": "Stylish manages user stylesheets."
+    },
+    {
+      "source": "stylus_ext",
+      "target": "user_sheet",
+      "relationship": "manages",
+      "mechanism": "Stylus manages user stylesheets."
+    },
+    {
+      "source": "css_zen",
+      "target": "separation",
+      "relationship": "demonstrates",
+      "mechanism": "CSS Zen Garden demonstrates alternate presentation over shared content."
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "m_rule",
+      "name": "CSS rule structure",
+      "expression": "stylesheet → rule → selector(s) + declaration block → property:value",
+      "mechanism": "Selectors determine targets; declarations assign values."
+    },
+    {
+      "id": "m_cascade",
+      "name": "Cascade resolution",
+      "expression": "matching declarations → priority/importance → specificity → source order → selected value",
+      "mechanism": "The cascade resolves competing declarations using priority and tie-break rules."
+    },
+    {
+      "id": "m_selector",
+      "name": "Selector matching",
+      "expression": "selector + DOM structure/attributes/state → matching elements",
+      "mechanism": "Selectors can use element type, IDs, classes, attributes, relationships, pseudo-classes, and pseudo-elements."
+    },
+    {
+      "id": "m_inheritance",
+      "name": "Inheritance",
+      "expression": "ancestor value → eligible descendant property",
+      "mechanism": "Some properties inherit from ancestors when not overridden."
+    },
+    {
+      "id": "m_box",
+      "name": "Box model",
+      "expression": "content + padding + border + margin → box geometry",
+      "mechanism": "Element dimensions and surrounding spacing determine layout geometry."
+    },
+    {
+      "id": "m_external",
+      "name": "External stylesheet reuse",
+      "expression": "HTML → link stylesheet → shared CSS → rules applied across pages",
+      "mechanism": "A common stylesheet reduces repetition and can be cached."
+    },
+    {
+      "id": "m_responsive",
+      "name": "Responsive presentation",
+      "expression": "viewport/device/media → media query → selected rules → adapted layout",
+      "mechanism": "Conditional styling changes presentation across screens, orientations, and output media."
+    },
+    {
+      "id": "m_compat",
+      "name": "Browser compatibility workflow",
+      "expression": "feature → support data → cross-browser test → @supports/fallback → resilient output",
+      "mechanism": "Compatibility information and fallbacks reduce browser-specific failures."
+    },
+    {
+      "id": "m_preprocessor",
+      "name": "Preprocessor compilation",
+      "expression": "Sass/Less/Stylus source → compiler → CSS → browser rendering",
+      "mechanism": "Preprocessors provide authoring abstractions but the browser receives CSS."
+    },
+    {
+      "id": "m_accessibility",
+      "name": "Multi-medium presentation",
+      "expression": "semantic markup → user/media-specific styles → screen/print/speech/Braille output",
+      "mechanism": "Separation permits the same content to be presented in different forms."
+    },
+    {
+      "id": "m_framework",
+      "name": "Framework styling",
+      "expression": "framework stylesheet → reusable patterns → page layout",
+      "mechanism": "Frameworks accelerate common design tasks but may introduce unused CSS overhead."
+    },
+    {
+      "id": "m_migration",
+      "name": "Presentational markup migration",
+      "expression": "repeated HTML formatting → shared CSS rules → simpler markup",
+      "mechanism": "Moving style declarations out of markup reduces duplication and maintenance effort."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c_definition",
+      "claim": "CSS specifies presentation of markup documents and is a core Web technology alongside HTML and JavaScript."
+    },
+    {
+      "id": "c_separation",
+      "claim": "CSS separates content/structure from presentation, enabling reuse, maintainability, caching, accessibility, and alternate media."
+    },
+    {
+      "id": "c_syntax",
+      "claim": "CSS rules pair selectors with declaration blocks containing property-value declarations."
+    },
+    {
+      "id": "c_selectors",
+      "claim": "Selectors match elements by type, ID, class, attributes, relationships, state, and partial/generated content."
+    },
+    {
+      "id": "c_cascade",
+      "claim": "The cascade resolves competing declarations using priority, specificity, order, inheritance, and defaults."
+    },
+    {
+      "id": "c_layout",
+      "claim": "CSS controls layout, dimensions, spacing, borders, typography, responsive design, and visual effects."
+    },
+    {
+      "id": "c_media",
+      "claim": "CSS can provide distinct presentation for screen, print, speech, Braille, and mobile contexts."
+    },
+    {
+      "id": "c_history",
+      "claim": "CSS originated in 1990s style-sheet proposals and CSS Level 1 was released in December 1996."
+    },
+    {
+      "id": "c_modular",
+      "claim": "CSS 3 is developed as separate modules and summarized in periodic snapshots."
+    },
+    {
+      "id": "c_compat",
+      "claim": "Browser differences are addressed with testing, feature queries, support tables, and fallbacks."
+    },
+    {
+      "id": "c_limits",
+      "claim": "The source describes limitations involving scope, pseudo-class control, rule naming/composition, and arbitrary text targeting."
+    },
+    {
+      "id": "c_ecosystem",
+      "claim": "The ecosystem includes preprocessors, frameworks, extensions, and organization methodologies."
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "concept_a": "HTML",
+      "concept_b": "CSS",
+      "distinction": "HTML defines structure/content; CSS defines presentation."
+    },
+    {
+      "concept_a": "CSS",
+      "concept_b": "JavaScript",
+      "distinction": "CSS controls styling/layout; JavaScript supplies behavior."
+    },
+    {
+      "concept_a": "selector",
+      "concept_b": "declaration",
+      "distinction": "Selectors choose targets; declarations set property values."
+    },
+    {
+      "concept_a": "pseudo-class",
+      "concept_b": "pseudo-element",
+      "distinction": "Pseudo-classes describe state/context; pseudo-elements target generated or partial content."
+    },
+    {
+      "concept_a": "ID selector",
+      "concept_b": "class selector",
+      "distinction": "An ID identifies a single document element; classes can be reused."
+    },
+    {
+      "concept_a": "cascade",
+      "concept_b": "inheritance",
+      "distinction": "Cascade resolves competing declarations; inheritance passes eligible values from ancestors."
+    },
+    {
+      "concept_a": "specificity",
+      "concept_b": "source order",
+      "distinction": "Specificity compares selector weights; source order is a tie-breaker."
+    },
+    {
+      "concept_a": "inline style",
+      "concept_b": "external stylesheet",
+      "distinction": "Inline declarations attach to one element; external CSS centralizes reusable rules."
+    },
+    {
+      "concept_a": "absolute units",
+      "concept_b": "relative units",
+      "distinction": "Absolute units use fixed reference measures; relative units depend on context."
+    },
+    {
+      "concept_a": "responsive design",
+      "concept_b": "fixed layout",
+      "distinction": "Responsive styles adapt to viewport/device context."
+    },
+    {
+      "concept_a": "CSS 3",
+      "concept_b": "CSS 4",
+      "distinction": "CSS 3 is modular; the source rejects a single monolithic CSS 4 release."
+    },
+    {
+      "concept_a": "native CSS",
+      "concept_b": "preprocessor",
+      "distinction": "Sass, Less, and Stylus add authoring abstractions and compile to CSS."
+    },
+    {
+      "concept_a": "framework",
+      "concept_b": "handcrafted CSS",
+      "distinction": "Frameworks speed development but can add unused features and overhead."
+    },
+    {
+      "concept_a": "vendor prefix",
+      "concept_b": "feature query",
+      "distinction": "Prefixes historically targeted browser-specific behavior; @supports tests support conditions."
+    },
+    {
+      "concept_a": "visual styling",
+      "concept_b": "semantic content",
+      "distinction": "Separating presentation lets the same content be adapted to different media."
+    },
+    {
+      "concept_a": "CSS limitation",
+      "concept_b": "preprocessor capability",
+      "distinction": "Some style-reuse limitations can be addressed by languages compiling to CSS."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "path_01",
+      "name": "Foundations",
+      "sequence": [
+        "html",
+        "css",
+        "stylesheet",
+        "rule",
+        "selector",
+        "declaration_block",
+        "declaration",
+        "property",
+        "value"
+      ]
+    },
+    {
+      "id": "path_02",
+      "name": "Browser style pipeline",
+      "sequence": [
+        "browser",
+        "render_engine",
+        "dom",
+        "cssom",
+        "computed_style"
+      ]
+    },
+    {
+      "id": "path_03",
+      "name": "Cascade debugging",
+      "sequence": [
+        "conflicts",
+        "cascade",
+        "important",
+        "specificity",
+        "source_order",
+        "inheritance",
+        "computed_style"
+      ]
+    },
+    {
+      "id": "path_04",
+      "name": "Selector mastery",
+      "sequence": [
+        "selector",
+        "type_sel",
+        "class_sel",
+        "id_sel",
+        "attr_sel",
+        "pseudo_class",
+        "pseudo_element",
+        "combinator"
+      ]
+    },
+    {
+      "id": "path_05",
+      "name": "Layout",
+      "sequence": [
+        "box_model",
+        "margin",
+        "padding",
+        "border",
+        "width_height",
+        "display",
+        "position",
+        "flexbox",
+        "grid"
+      ]
+    },
+    {
+      "id": "path_06",
+      "name": "Responsive styling",
+      "sequence": [
+        "responsive",
+        "media_queries",
+        "media_type",
+        "mobile",
+        "fallback"
+      ]
+    },
+    {
+      "id": "path_07",
+      "name": "Accessibility",
+      "sequence": [
+        "separation",
+        "accessibility",
+        "user_sheet",
+        "print",
+        "aural",
+        "braille"
+      ]
+    },
+    {
+      "id": "path_08",
+      "name": "Stylesheet architecture",
+      "sequence": [
+        "external",
+        "html",
+        "external_reuse",
+        "cache",
+        "css_file_cache"
+      ]
+    },
+    {
+      "id": "path_09",
+      "name": "History and standards",
+      "sequence": [
+        "lie",
+        "bos",
+        "css1",
+        "css2",
+        "css21",
+        "css3",
+        "snapshots",
+        "csswg"
+      ]
+    },
+    {
+      "id": "path_10",
+      "name": "Compatibility",
+      "sequence": [
+        "compatibility",
+        "caniuse",
+        "mdn",
+        "browserstack",
+        "supports",
+        "fallback"
+      ]
+    },
+    {
+      "id": "path_11",
+      "name": "Tooling",
+      "sequence": [
+        "sass",
+        "less",
+        "stylus",
+        "css",
+        "framework",
+        "bem",
+        "smacss"
+      ]
+    },
+    {
+      "id": "path_12",
+      "name": "Frameworks and methods",
+      "sequence": [
+        "framework",
+        "bootstrap",
+        "foundation",
+        "tailwind",
+        "oocss",
+        "acss",
+        "bem",
+        "smacss"
+      ]
+    },
+    {
+      "id": "path_13",
+      "name": "Theming",
+      "sequence": [
+        "custom_props",
+        "theme",
+        "cascade",
+        "external"
+      ]
+    },
+    {
+      "id": "path_14",
+      "name": "Legacy cleanup",
+      "sequence": [
+        "presentational_html",
+        "separation",
+        "external",
+        "external_reuse"
+      ]
+    },
+    {
+      "id": "path_15",
+      "name": "Visual effects",
+      "sequence": [
+        "background",
+        "transforms",
+        "transitions",
+        "animations"
+      ]
+    },
+    {
+      "id": "path_16",
+      "name": "Limits and extensions",
+      "sequence": [
+        "css_limit_scope",
+        "css_limit_rule_name",
+        "css_limit_compose",
+        "sass",
+        "less",
+        "stylus"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "misconception": "CSS defines document structure.",
+      "correction": "HTML defines structure; CSS specifies presentation."
+    },
+    {
+      "misconception": "A CSS class is itself a CSS subsystem feature.",
+      "correction": "The class attribute belongs to the markup model; CSS selectors match its value."
+    },
+    {
+      "misconception": "Pseudo-classes and pseudo-elements are identical.",
+      "correction": "Pseudo-classes match state/context; pseudo-elements target generated or partial content."
+    },
+    {
+      "misconception": "The last CSS rule always wins.",
+      "correction": "Importance and specificity can take precedence over source order."
+    },
+    {
+      "misconception": "Specificity works like decimal arithmetic.",
+      "correction": "Specificity components are compared as separate weights."
+    },
+    {
+      "misconception": "Every CSS property inherits automatically.",
+      "correction": "Only properties that inherit by their rules receive ancestor values."
+    },
+    {
+      "misconception": "ID and class selectors are interchangeable.",
+      "correction": "IDs identify a document element; classes can be reused."
+    },
+    {
+      "misconception": "CSS is only for screen visuals.",
+      "correction": "CSS can tailor print and source-described speech/Braille contexts."
+    },
+    {
+      "misconception": "CSS 4 is one unified version after CSS 3.",
+      "correction": "The source describes CSS 3 as modules rather than a monolithic CSS 4."
+    },
+    {
+      "misconception": "Vendor prefixes guarantee interoperability.",
+      "correction": "Browser-specific prefixes do not eliminate testing or fallback needs."
+    },
+    {
+      "misconception": "Framework CSS is always smaller than handcrafted CSS.",
+      "correction": "Frameworks may include unused styles and add download/maintenance overhead."
+    },
+    {
+      "misconception": "Preprocessors replace browser CSS.",
+      "correction": "Sass, Less, and Stylus compile to CSS processed by browsers."
+    },
+    {
+      "misconception": "Inline styles are best for site-wide consistency.",
+      "correction": "External stylesheets centralize reusable rules and can be cached."
+    },
+    {
+      "misconception": "Responsive design just shrinks content.",
+      "correction": "Responsive styles adapt layout to device, viewport, and orientation."
+    },
+    {
+      "misconception": "JavaScript polyfills are native CSS.",
+      "correction": "Polyfills are JavaScript code that may emulate unsupported Web behavior."
+    },
+    {
+      "misconception": "CSS has no limitations.",
+      "correction": "The source lists scoping, rule naming/composition, hover-control, and text-targeting limitations."
+    }
+  ],
+  "questions": [
+    "What does CSS specify, and how does it complement HTML and JavaScript?",
+    "Why separate content from presentation?",
+    "What does a style sheet contain?",
+    "What is the difference between a selector and a declaration?",
+    "How do CSS properties and values relate?",
+    "How does the browser match selectors against a document?",
+    "How do ID and class selectors differ?",
+    "How do attribute selectors work?",
+    "How do descendant, child, adjacent-sibling, and general-sibling combinators differ?",
+    "What is the difference between a pseudo-class and a pseudo-element?",
+    "How do :hover, :focus, :nth-child(), and :has() work?",
+    "What is the purpose of ::before and ::after?",
+    "How does the cascade resolve conflicting declarations?",
+    "What role does !important play?",
+    "How does specificity work?",
+    "When does source order determine the winning declaration?",
+    "How does inheritance work?",
+    "What is the difference between specified and computed style?",
+    "How do inline, internal, and external stylesheets differ?",
+    "Why are external stylesheets reusable and cacheable?",
+    "What is the CSS box model?",
+    "How do margin, padding, border, width, and height affect layout?",
+    "What are Flexbox and Grid used for?",
+    "How do positioning and z-index interact?",
+    "What are absolute and relative CSS units?",
+    "What color notations does CSS support?",
+    "How does responsive design use media queries?",
+    "How can CSS provide different screen and print layouts?",
+    "How can CSS support accessibility and user customization?",
+    "What is text/css?",
+    "What role does RFC 2318 play?",
+    "Who proposed CSS, and when?",
+    "When was CSS Level 1 released?",
+    "How did CSS 2 and CSS 2.1 evolve?",
+    "Why is CSS 3 modular?",
+    "What do CSS snapshots summarize?",
+    "How do browser differences affect CSS development?",
+    "How do @supports feature queries help?",
+    "What are vendor prefixes and CSS hacks?",
+    "How do support tables and cross-browser testing help?",
+    "What is progressive enhancement?",
+    "What are Sass, Less, and Stylus?",
+    "What are the tradeoffs of CSS frameworks?",
+    "What are OOCSS, Atomic CSS, SMACSS, and BEM?",
+    "How can custom properties support themes?",
+    "What limitations does the source describe for CSS scoping?",
+    "Why does the source describe limitations in rule composition?",
+    "How can preprocessors help with reuse?",
+    "What is the flash of unstyled content?",
+    "How does CSS reduce repeated HTML presentational markup?",
+    "How does CSS support screen readers and Braille devices?",
+    "What is the relationship between CSS and the DOM?",
+    "What is the relationship between CSS parsing and rendering?",
+    "How does a user stylesheet improve control?",
+    "Why can framework CSS add maintenance or bandwidth overhead?",
+    "How can older browsers still display content?",
+    "What is CSS-in-JS?",
+    "Why can CSS class terminology cause confusion?",
+    "What is the role of the CSS Working Group?",
+    "How do screen, print, voice, and mobile output differ?",
+    "How can a global stylesheet improve consistency?",
+    "How can CSS validation help?"
+  ],
+  "expansion_targets": [
+    "CSS Syntax Module Level 3",
+    "Selectors Level 4 and 5",
+    "Cascade and Inheritance Level 5",
+    "CSSOM and style recalculation",
+    "Computed value resolution",
+    "Cascade origins and layers",
+    "Specificity edge cases",
+    "CSS scoping",
+    "CSS custom properties",
+    "CSS nesting",
+    "Container queries",
+    "Media query ranges",
+    "Viewport and container units",
+    "Box sizing and intrinsic sizing",
+    "Flexbox sizing algorithm",
+    "Grid track sizing algorithm",
+    "Subgrid",
+    "Positioned layout",
+    "Stacking contexts",
+    "Containing blocks",
+    "Formatting contexts",
+    "Block formatting context",
+    "Inline formatting",
+    "Margin collapsing",
+    "Logical properties and writing modes",
+    "CSS Color 4/5",
+    "Color spaces and gamut mapping",
+    "CSS typography and font loading",
+    "Variable fonts",
+    "Text layout and line breaking",
+    "CSS transforms matrices",
+    "Transitions and reduced motion",
+    "Keyframes and animation timelines",
+    "Scroll-driven animations",
+    "Anchor positioning",
+    "View transitions",
+    "CSS containment",
+    "content-visibility",
+    "CSS rendering performance",
+    "Style recalculation profiling",
+    "Critical CSS and render-blocking stylesheets",
+    "CSS code splitting",
+    "CSS minification",
+    "Source maps for preprocessors",
+    "PostCSS plugins",
+    "Sass architecture",
+    "Less architecture",
+    "Stylus architecture",
+    "CSS Modules",
+    "CSS-in-JS runtime vs compile-time approaches",
+    "Tailwind utility generation",
+    "Bootstrap component styles",
+    "Design tokens",
+    "Theme architecture",
+    "Dark mode and prefers-color-scheme",
+    "Accessibility and forced-colors mode",
+    "prefers-reduced-motion",
+    "Print stylesheet design",
+    "Speech and accessibility standards",
+    "CSS validation tooling",
+    "Browser compatibility and Baseline",
+    "Vendor prefix history",
+    "CSS feature queries",
+    "Cross-browser regression testing",
+    "CSS security and untrusted styles",
+    "CSS injection risks",
+    "HTML presentational markup migration",
+    "BEM methodology",
+    "SMACSS methodology",
+    "OOCSS methodology",
+    "Atomic CSS methodology",
+    "CSS Zen Garden design history",
+    "CSS Working Group process"
+  ],
+  "references": [
+    "W3C CSS Specifications and CSS Snapshot",
+    "W3C CSS Validator",
+    "RFC 2318: The text/css Media Type",
+    "MDN CSS Reference",
+    "MDN Getting Started with CSS",
+    "CSS Syntax Module Level 3",
+    "Selectors Level 3 Specification",
+    "CSS 2.1 Specification",
+    "CSS Flexible Box Layout Module Level 1",
+    "CSS Values and Units Module Level 3",
+    "CSS Color Module",
+    "CSS Cascade and Inheritance",
+    "Håkon Wium Lie and Bert Bos, Cascading Style Sheets: Designing for the Web",
+    "Eric A. Meyer, Cascading Style Sheets: The Definitive Guide, Fifth Edition",
+    "Keith J. Grant, CSS in Depth",
+    "Can I Use CSS support tables",
+    "WHATWG Compatibility Standard",
+    "CSS Snapshot 2023",
+    "CSS Snapshot 2024",
+    "CSS Snapshot 2025",
+    "CSS Snapshot 2026",
+    "BrowserStack cross-browser testing resources",
+    "W3C CSS Working Group"
+  ],
+  "historical_context": [
+    {
+      "year": "1994",
+      "event": "Cascading HTML style sheets proposal",
+      "significance": "Håkon Wium Lie proposed cascading HTML style sheets at CERN."
+    },
+    {
+      "year": "1995",
+      "event": "Early stylesheet proposals",
+      "significance": "Simple and stream-based stylesheet proposals contributed to CSS design."
+    },
+    {
+      "year": "1996-12-17",
+      "event": "CSS Level 1 initial release",
+      "significance": "First CSS specification release."
+    },
+    {
+      "year": "1998",
+      "event": "CSS Level 2",
+      "significance": "Second major CSS level."
+    },
+    {
+      "year": "1998-03",
+      "event": "RFC 2318",
+      "significance": "Registered text/css as a media type."
+    },
+    {
+      "year": "2000s",
+      "event": "CSS 2.1 and interoperability",
+      "significance": "CSS 2.1 became a widely used reference as browser behavior evolved."
+    },
+    {
+      "year": "2007-2026",
+      "event": "CSS snapshots",
+      "significance": "Periodic snapshots summarize module/specification status."
+    },
+    {
+      "year": "2024-12",
+      "event": "CSS logo updated",
+      "significance": "Source metadata identifies the official logo since December 2024."
+    }
+  ],
+  "validation": {
+    "node_count": 135,
+    "relationship_count": 117,
+    "formal_model_count": 12,
+    "source_claim_count": 12,
+    "semantic_distinction_count": 16,
+    "learning_path_count": 16,
+    "misconception_count": 16,
+    "question_count": 62,
+    "expansion_target_count": 73,
+    "reference_count": 23,
+    "historical_event_count": 8,
+    "duplicate_node_ids": 0,
+    "dangling_relationships": 0,
+    "duplicate_relationships": 0,
+    "status": "CLEAN"
+  }
+}

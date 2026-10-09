@@ -1,0 +1,5444 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "comprehensive_explainer_entry_relationship_rich_knowledge_graph",
+  "topic": "HTTP",
+  "entry_schema": {
+    "purpose": "Comprehensive machine-readable explainer preserving definitions, protocol mechanisms, message structures, method semantics, transport relationships, versions, history, security, standards and provenance.",
+    "source_fidelity": "The uploaded source is authoritative for source-derived content. Expansion targets identify subjects not fully explained by the source rather than silently importing facts.",
+    "relationship_policy": "Directional relationships preserve mechanism, semantic role, and source provenance where supported."
+  },
+  "source": {
+    "filename": "Pasted text(20261008-210435).txt",
+    "source_type": "User-uploaded Wikipedia HTTP article text",
+    "line_count": 556,
+    "authority": "User-supplied source",
+    "external_research_used": false
+  },
+  "nodes": [
+    {
+      "id": "http",
+      "label": "HTTP",
+      "type": "protocol",
+      "description": "Hypertext Transfer Protocol; an application-layer protocol in the Internet protocol suite for distributed, collaborative, hypermedia information systems.",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "id": "http_full",
+      "label": "Hypertext Transfer Protocol",
+      "type": "protocol_name",
+      "description": "Expanded name of HTTP.",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "id": "app_layer",
+      "label": "Application layer",
+      "type": "network_layer",
+      "description": "Layer in the Internet protocol suite where HTTP operates.",
+      "source_line_ranges": [
+        85,
+        95
+      ]
+    },
+    {
+      "id": "internet_suite",
+      "label": "Internet protocol suite",
+      "type": "network_architecture",
+      "description": "Protocol suite containing HTTP and its underlying transport/network/link layers.",
+      "source_line_ranges": [
+        85,
+        95
+      ]
+    },
+    {
+      "id": "www",
+      "label": "World Wide Web",
+      "type": "system",
+      "description": "HTTP is described as the foundation of data communication for the World Wide Web.",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "id": "hypertext",
+      "label": "Hypertext",
+      "type": "content_model",
+      "description": "Documents containing hyperlinks to other resources.",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "id": "hypermedia",
+      "label": "Hypermedia information systems",
+      "type": "information_system",
+      "description": "Distributed, collaborative systems for hypermedia information."
+    },
+    {
+      "id": "client",
+      "label": "Client",
+      "type": "network_role",
+      "description": "Participant that submits an HTTP request and receives a response.",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "id": "server",
+      "label": "Server",
+      "type": "network_role",
+      "description": "Participant that receives HTTP requests and returns HTTP responses.",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "id": "request",
+      "label": "HTTP request",
+      "type": "message",
+      "description": "Message submitted by a client to a server.",
+      "source_line_ranges": [
+        97,
+        224
+      ]
+    },
+    {
+      "id": "response",
+      "label": "HTTP response",
+      "type": "message",
+      "description": "Message returned by a server describing disposition and optionally containing a requested resource.",
+      "source_line_ranges": [
+        97,
+        298
+      ]
+    },
+    {
+      "id": "request_response",
+      "label": "Request-response protocol",
+      "type": "protocol_model",
+      "description": "HTTP transaction model in which a client request is followed by a server response.",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "id": "user_agent",
+      "label": "User agent",
+      "type": "software_role",
+      "description": "Software acting on behalf of a user to access, consume, or display web content.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "browser",
+      "label": "Web browser",
+      "type": "user_agent",
+      "description": "Example of a user agent and common HTTP client.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "web_server",
+      "label": "Web server",
+      "type": "server_software",
+      "description": "Server hosting one or more websites and acting as an HTTP server.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "crawler",
+      "label": "Web crawler",
+      "type": "user_agent",
+      "description": "Indexing software used by search providers; an HTTP user agent.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "voice_browser",
+      "label": "Voice browser",
+      "type": "user_agent",
+      "description": "Voice-oriented HTTP user agent.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "mobile_app",
+      "label": "Mobile app",
+      "type": "user_agent",
+      "description": "Software that can access, consume, or display web content.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "resource",
+      "label": "Web resource",
+      "type": "web_resource",
+      "description": "Resource addressed and transferred through HTTP.",
+      "source_line_ranges": [
+        105,
+        232
+      ]
+    },
+    {
+      "id": "url",
+      "label": "URL",
+      "type": "identifier",
+      "description": "Uniform Resource Locator used to locate a web resource.",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "id": "uri",
+      "label": "URI",
+      "type": "identifier",
+      "description": "Uniform Resource Identifier; HTTP resources are located through URI schemes http and https.",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "id": "http_scheme",
+      "label": "http URI scheme",
+      "type": "uri_scheme",
+      "description": "URI scheme used for HTTP resources.",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "id": "https_scheme",
+      "label": "https URI scheme",
+      "type": "uri_scheme",
+      "description": "URI scheme used for secure HTTP resources.",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "type": "content_format",
+      "description": "Hypertext markup format used in examples and historically returned by early HTTP.",
+      "source_line_ranges": [
+        371,
+        373
+      ]
+    },
+    {
+      "id": "hyperlink",
+      "label": "Hyperlink",
+      "type": "content_structure",
+      "description": "Link from one resource/document to another.",
+      "source_line_ranges": [
+        95,
+        105
+      ]
+    },
+    {
+      "id": "intermediary",
+      "label": "Intermediate network element",
+      "type": "network_role",
+      "description": "Network element positioned between clients and servers to improve or enable communication.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "cache",
+      "label": "Web cache",
+      "type": "network_service",
+      "description": "Intermediate cache that can deliver content on behalf of upstream servers.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "browser_cache",
+      "label": "Browser cache",
+      "type": "client_cache",
+      "description": "Client-side cache for previously accessed web resources.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "proxy",
+      "label": "HTTP proxy",
+      "type": "intermediary",
+      "description": "Proxy server that relays HTTP messages between clients and external servers.",
+      "source_line_ranges": [
+        101,
+        103
+      ]
+    },
+    {
+      "id": "private_boundary",
+      "label": "Private network boundary",
+      "type": "network_boundary",
+      "description": "Boundary where a proxy can relay traffic for clients lacking globally routable addresses.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "upstream",
+      "label": "Upstream server",
+      "type": "server_role",
+      "description": "Origin/upstream server on behalf of which a cache may deliver content.",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "id": "hop_by_hop",
+      "label": "Hop-by-hop header",
+      "type": "header_scope",
+      "description": "HTTP header managed by intermediate nodes for each hop.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "end_to_end",
+      "label": "End-to-end header",
+      "type": "header_scope",
+      "description": "HTTP header managed only by source client and target web server.",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "id": "v09",
+      "label": "HTTP/0.9",
+      "type": "http_version",
+      "description": "Early HTTP version; obsolete."
+    },
+    {
+      "id": "v10",
+      "label": "HTTP/1.0",
+      "type": "http_version",
+      "description": "HTTP version finalized in 1996; obsolete."
+    },
+    {
+      "id": "v11",
+      "label": "HTTP/1.1",
+      "type": "http_version",
+      "description": "Standard HTTP version with persistent connections and other enhancements."
+    },
+    {
+      "id": "v2",
+      "label": "HTTP/2",
+      "type": "http_version",
+      "description": "Standard version adding binary representation, multiplexed streams, and other performance features."
+    },
+    {
+      "id": "v3",
+      "label": "HTTP/3",
+      "type": "http_version",
+      "description": "Standard version using QUIC over UDP rather than TCP."
+    },
+    {
+      "id": "version_model",
+      "label": "HTTP version model",
+      "type": "protocol_evolution",
+      "description": "A version is identified as HTTP/# according to the source.",
+      "source_line_ranges": [
+        109
+      ]
+    },
+    {
+      "id": "tcp",
+      "label": "TCP",
+      "type": "transport_protocol",
+      "description": "Transmission Control Protocol used by HTTP before HTTP/3 and for HTTP/1.x and HTTP/2.",
+      "source_line_ranges": [
+        137,
+        141
+      ]
+    },
+    {
+      "id": "udp",
+      "label": "UDP",
+      "type": "transport_protocol",
+      "description": "User Datagram Protocol used as the transport substrate for QUIC and by HTTP/3.",
+      "source_line_ranges": [
+        127,
+        137
+      ]
+    },
+    {
+      "id": "quic",
+      "label": "QUIC",
+      "type": "transport_protocol",
+      "description": "Transport used by HTTP/3; provides reliability over UDP.",
+      "source_line_ranges": [
+        127,
+        137,
+        158
+      ]
+    },
+    {
+      "id": "reliable_transport",
+      "label": "Reliable transport",
+      "type": "transport_property",
+      "description": "Transport reliability required by HTTP's normal data exchange model.",
+      "source_line_ranges": [
+        137,
+        141
+      ]
+    },
+    {
+      "id": "tls",
+      "label": "TLS",
+      "type": "security_protocol",
+      "description": "Transport Layer Security used for encrypted HTTP connections and HTTP/2 deployment.",
+      "source_line_ranges": [
+        130,
+        187
+      ]
+    },
+    {
+      "id": "https",
+      "label": "HTTPS",
+      "type": "secure_protocol",
+      "description": "Secure variant of HTTP using encrypted HTTP connections.",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "id": "alpn",
+      "label": "ALPN",
+      "type": "negotiation_extension",
+      "description": "Application-Layer Protocol Negotiation extension used with TLS to negotiate HTTP versions/protocols.",
+      "source_line_ranges": [
+        130
+      ]
+    },
+    {
+      "id": "holb",
+      "label": "Head-of-line blocking",
+      "type": "performance_issue",
+      "description": "Blocking phenomenon discussed for TCP streams and HTTP multiplexing.",
+      "source_line_ranges": [
+        125,
+        127
+      ]
+    },
+    {
+      "id": "streams",
+      "label": "Bidirectional streams",
+      "type": "http2_structure",
+      "description": "Multiple bidirectional streams within an HTTP/2 TCP connection.",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "id": "multiplex",
+      "label": "Multiplexing",
+      "type": "transport_feature",
+      "description": "Concurrent HTTP requests/responses carried through shared connection resources.",
+      "source_line_ranges": [
+        121,
+        156
+      ]
+    },
+    {
+      "id": "binary",
+      "label": "Binary representation",
+      "type": "encoding",
+      "description": "HTTP/2 and HTTP/3 use binary protocol representations.",
+      "source_line_ranges": [
+        123,
+        193
+      ]
+    },
+    {
+      "id": "hpack",
+      "label": "HPACK",
+      "type": "compression",
+      "description": "Header compression mechanism for HTTP/2.",
+      "source_line_ranges": [
+        62,
+        193
+      ]
+    },
+    {
+      "id": "qpack",
+      "label": "QPACK",
+      "type": "compression",
+      "description": "Header compression mechanism for HTTP/3.",
+      "source_line_ranges": [
+        67,
+        193
+      ]
+    },
+    {
+      "id": "push",
+      "label": "Server push",
+      "type": "http_feature",
+      "description": "HTTP/2 capability for server applications to send data without periodic client polling.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "connection",
+      "label": "HTTP connection",
+      "type": "connection",
+      "description": "Real or virtual connection established between client and server for HTTP exchange.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "port80",
+      "label": "Port 80",
+      "type": "port",
+      "description": "Typical port for unencrypted HTTP.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "port443",
+      "label": "Port 443",
+      "type": "port",
+      "description": "Typical port for encrypted HTTP/HTTPS.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "handshake",
+      "label": "TCP 3-way handshake",
+      "type": "transport_mechanism",
+      "description": "TCP connection establishment overhead avoided on reused persistent connections.",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "id": "slowstart",
+      "label": "TCP slow start",
+      "type": "transport_mechanism",
+      "description": "TCP mechanism referenced as contributing to connection performance over time.",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "id": "keepalive",
+      "label": "HTTP keep-alive",
+      "type": "http_feature",
+      "description": "HTTP/1.1 mechanism allowing connection reuse across multiple request/response pairs.",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "id": "pipeline",
+      "label": "HTTP pipelining",
+      "type": "http_feature",
+      "description": "HTTP/1.1 optimization allowing multiple requests before waiting for responses; later removed from most browsers.",
+      "source_line_ranges": [
+        154
+      ]
+    },
+    {
+      "id": "tcp_congestion",
+      "label": "TCP connection congestion",
+      "type": "performance_issue",
+      "description": "TCP congestion can temporarily block or slow data flow across streams.",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "id": "message",
+      "label": "HTTP message",
+      "type": "message",
+      "description": "At highest level, an HTTP message consists of a header followed by an optional body.",
+      "source_line_ranges": [
+        193,
+        195
+      ]
+    },
+    {
+      "id": "header",
+      "label": "HTTP header",
+      "type": "message_component",
+      "description": "Header metadata associated with an HTTP message.",
+      "source_line_ranges": [
+        195,
+        197
+      ]
+    },
+    {
+      "id": "body",
+      "label": "HTTP body",
+      "type": "message_component",
+      "description": "Optional data portion of an HTTP message.",
+      "source_line_ranges": [
+        195,
+        205
+      ]
+    },
+    {
+      "id": "start_line",
+      "label": "Start line",
+      "type": "message_component",
+      "description": "Structured first line whose form differs between request and response.",
+      "source_line_ranges": [
+        200
+      ]
+    },
+    {
+      "id": "header_fields",
+      "label": "Header fields",
+      "type": "message_component",
+      "description": "Zero or more header-field lines in HTTP/1.1, with Host required in requests.",
+      "source_line_ranges": [
+        202,
+        228
+      ]
+    },
+    {
+      "id": "empty_line",
+      "label": "Empty line",
+      "type": "message_delimiter",
+      "description": "Blank line marking end of HTTP/1.1 headers.",
+      "source_line_ranges": [
+        204
+      ]
+    },
+    {
+      "id": "crlf",
+      "label": "CRLF",
+      "type": "syntax",
+      "description": "Carriage-return and line-feed sequence terminating HTTP/1.1 header lines.",
+      "source_line_ranges": [
+        198,
+        333
+      ]
+    },
+    {
+      "id": "ascii",
+      "label": "ASCII",
+      "type": "character_encoding",
+      "description": "Encoding used by HTTP/1.1 header lines.",
+      "source_line_ranges": [
+        198
+      ]
+    },
+    {
+      "id": "content_type",
+      "label": "Content-Type",
+      "type": "header_field",
+      "description": "Header specifying Internet media type of conveyed data.",
+      "source_line_ranges": [
+        207,
+        335
+      ]
+    },
+    {
+      "id": "content_length",
+      "label": "Content-Length",
+      "type": "header_field",
+      "description": "Header specifying body length in bytes when known.",
+      "source_line_ranges": [
+        167,
+        335
+      ]
+    },
+    {
+      "id": "content_encoding",
+      "label": "Content-Encoding",
+      "type": "header_field",
+      "description": "Header specifying content compression/encoding such as gzip.",
+      "source_line_ranges": [
+        166,
+        339
+      ]
+    },
+    {
+      "id": "transfer_encoding",
+      "label": "Transfer-Encoding",
+      "type": "header_field",
+      "description": "HTTP/1.1 header that can indicate chunked transfer encoding.",
+      "source_line_ranges": [
+        337
+      ]
+    },
+    {
+      "id": "etag",
+      "label": "ETag",
+      "type": "header_field",
+      "description": "Entity tag used to determine whether cached content matches current server content.",
+      "source_line_ranges": [
+        335
+      ]
+    },
+    {
+      "id": "last_modified",
+      "label": "Last-Modified",
+      "type": "header_field",
+      "description": "Header describing last modification time of a resource.",
+      "source_line_ranges": [
+        165,
+        345
+      ]
+    },
+    {
+      "id": "accept_ranges",
+      "label": "Accept-Ranges",
+      "type": "header_field",
+      "description": "Header indicating server support for byte-range requests.",
+      "source_line_ranges": [
+        335,
+        348
+      ]
+    },
+    {
+      "id": "connection_close",
+      "label": "Connection close",
+      "type": "header_field",
+      "description": "Header value indicating the server will close the TCP connection after transfer.",
+      "source_line_ranges": [
+        335
+      ]
+    },
+    {
+      "id": "host",
+      "label": "Host",
+      "type": "header_field",
+      "description": "Request header distinguishing DNS names sharing an IP address and enabling name-based virtual hosting.",
+      "source_line_ranges": [
+        228,
+        324
+      ]
+    },
+    {
+      "id": "user_agent_header",
+      "label": "User-Agent",
+      "type": "header_field",
+      "description": "Header identifying client software/user-agent information.",
+      "source_line_ranges": [
+        328
+      ]
+    },
+    {
+      "id": "accept_language",
+      "label": "Accept-Language",
+      "type": "header_field",
+      "description": "Example request header indicating preferred languages.",
+      "source_line_ranges": [
+        329
+      ]
+    },
+    {
+      "id": "accept_encoding",
+      "label": "Accept-Encoding",
+      "type": "header_field",
+      "description": "Example request header indicating supported content encodings.",
+      "source_line_ranges": [
+        330
+      ]
+    },
+    {
+      "id": "cookie",
+      "label": "Cookie",
+      "type": "header_field",
+      "description": "HTTP header mechanism associated with application/session state and client identification.",
+      "source_line_ranges": [
+        77,
+        173,
+        214
+      ]
+    },
+    {
+      "id": "referer",
+      "label": "HTTP Referer",
+      "type": "header_field",
+      "description": "Header listed in the source's metadata/header field examples.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "dnt",
+      "label": "DNT",
+      "type": "header_field",
+      "description": "Do-Not-Track header example.",
+      "source_line_ranges": [
+        77,
+        214
+      ]
+    },
+    {
+      "id": "x_forwarded_for",
+      "label": "X-Forwarded-For",
+      "type": "header_field",
+      "description": "Header listed among HTTP header fields.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "gpc",
+      "label": "Global Privacy Control",
+      "type": "header_field",
+      "description": "Privacy-related signal referenced as a header-field example.",
+      "source_line_ranges": [
+        214
+      ]
+    },
+    {
+      "id": "get",
+      "label": "GET",
+      "type": "http_method",
+      "description": "retrieve a representation of a resource without intended server-state modification",
+      "source_line_ranges": [
+        241,
+        265
+      ]
+    },
+    {
+      "id": "head",
+      "label": "HEAD",
+      "type": "http_method",
+      "description": "like GET but without representation data in the response body",
+      "source_line_ranges": [
+        243,
+        266
+      ]
+    },
+    {
+      "id": "post",
+      "label": "POST",
+      "type": "http_method",
+      "description": "process a resource in some way",
+      "source_line_ranges": [
+        245,
+        267
+      ]
+    },
+    {
+      "id": "put",
+      "label": "PUT",
+      "type": "http_method",
+      "description": "create or update a resource using the state supplied in the request",
+      "source_line_ranges": [
+        247,
+        268
+      ]
+    },
+    {
+      "id": "delete",
+      "label": "DELETE",
+      "type": "http_method",
+      "description": "delete a resource",
+      "source_line_ranges": [
+        248,
+        269
+      ]
+    },
+    {
+      "id": "connect",
+      "label": "CONNECT",
+      "type": "http_method",
+      "description": "ask an intermediary to establish a TCP/IP tunnel to an origin server",
+      "source_line_ranges": [
+        250,
+        270
+      ]
+    },
+    {
+      "id": "options",
+      "label": "OPTIONS",
+      "type": "http_method",
+      "description": "request information about methods supported for a resource",
+      "source_line_ranges": [
+        252,
+        271
+      ]
+    },
+    {
+      "id": "trace",
+      "label": "TRACE",
+      "type": "http_method",
+      "description": "ask the server to return the received request in the response body for debugging",
+      "source_line_ranges": [
+        255,
+        272
+      ]
+    },
+    {
+      "id": "patch",
+      "label": "PATCH",
+      "type": "http_method",
+      "description": "modify a resource according to partial state in the request",
+      "source_line_ranges": [
+        257,
+        273
+      ]
+    },
+    {
+      "id": "query",
+      "label": "QUERY",
+      "type": "http_method",
+      "description": "process enclosed content safely/idempotently and return the result",
+      "source_line_ranges": [
+        259,
+        274
+      ]
+    },
+    {
+      "id": "safe",
+      "label": "Safe method",
+      "type": "method_property",
+      "description": "A method whose request has no intended effect on server state; source defines GET, HEAD, OPTIONS, TRACE, QUERY as safe.",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "id": "idempotent",
+      "label": "Idempotent method",
+      "type": "method_property",
+      "description": "A method for which multiple identical requests have the same effect as one such request.",
+      "source_line_ranges": [
+        284,
+        286
+      ]
+    },
+    {
+      "id": "cacheable",
+      "label": "Cacheable method",
+      "type": "method_property",
+      "description": "A method whose responses may be stored for future reuse.",
+      "source_line_ranges": [
+        292,
+        294
+      ]
+    },
+    {
+      "id": "method_name",
+      "label": "Method name",
+      "type": "syntax",
+      "description": "HTTP method names are case-sensitive.",
+      "source_line_ranges": [
+        238
+      ]
+    },
+    {
+      "id": "method_rfc",
+      "label": "Method RFC mapping",
+      "type": "standards",
+      "description": "Source table mapping methods to RFCs and payload/safety/idempotence/cacheability properties.",
+      "source_line_ranges": [
+        261,
+        274
+      ]
+    },
+    {
+      "id": "request_uri",
+      "label": "Request URI",
+      "type": "request_component",
+      "description": "URI identifying the target resource in an HTTP request.",
+      "source_line_ranges": [
+        225
+      ]
+    },
+    {
+      "id": "resource_state",
+      "label": "Resource state",
+      "type": "application_state",
+      "description": "State associated with a resource and modified by state-changing methods.",
+      "source_line_ranges": [
+        247
+      ]
+    },
+    {
+      "id": "representation",
+      "label": "Resource representation",
+      "type": "content_model",
+      "description": "Representation of a resource requested by methods such as GET.",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "id": "dynamic_resource",
+      "label": "Dynamic resource",
+      "type": "resource_type",
+      "description": "Resource whose content is generated dynamically by server execution.",
+      "source_line_ranges": [
+        232,
+        167
+      ]
+    },
+    {
+      "id": "file_resource",
+      "label": "File resource",
+      "type": "resource_type",
+      "description": "Common implementation of a server resource.",
+      "source_line_ranges": [
+        232
+      ]
+    },
+    {
+      "id": "executable_output",
+      "label": "Executable output",
+      "type": "resource_type",
+      "description": "Output of an executable running on the server can constitute a resource.",
+      "source_line_ranges": [
+        232
+      ]
+    },
+    {
+      "id": "query_string",
+      "label": "Query string",
+      "type": "uri_component",
+      "description": "URL query component relevant to safe/idempotent GET usage examples.",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "id": "virtual_hosting",
+      "label": "Name-based virtual hosting",
+      "type": "server_feature",
+      "description": "Hosting multiple DNS names on a shared IP distinguished by Host.",
+      "source_line_ranges": [
+        324
+      ]
+    },
+    {
+      "id": "dns_name",
+      "label": "DNS name",
+      "type": "identifier",
+      "description": "DNS hostname carried in Host for virtual hosting.",
+      "source_line_ranges": [
+        324
+      ]
+    },
+    {
+      "id": "status_code",
+      "label": "HTTP status code",
+      "type": "response_component",
+      "description": "Three-digit decimal integer describing the disposition of a server attempt to satisfy a request.",
+      "source_line_ranges": [
+        304,
+        306
+      ]
+    },
+    {
+      "id": "reason_phrase",
+      "label": "Reason phrase",
+      "type": "response_component",
+      "description": "Human-readable phrase associated with a response status; standard phrases are recommendations.",
+      "source_line_ranges": [
+        298,
+        318
+      ]
+    },
+    {
+      "id": "status_1xx",
+      "label": "1xx Informational",
+      "type": "status_class",
+      "description": "Request received; processing continues.",
+      "source_line_ranges": [
+        308
+      ]
+    },
+    {
+      "id": "status_2xx",
+      "label": "2xx Successful",
+      "type": "status_class",
+      "description": "Request successfully received, understood, and accepted.",
+      "source_line_ranges": [
+        310
+      ]
+    },
+    {
+      "id": "status_3xx",
+      "label": "3xx Redirection",
+      "type": "status_class",
+      "description": "Further action is needed to complete the request.",
+      "source_line_ranges": [
+        312
+      ]
+    },
+    {
+      "id": "status_4xx",
+      "label": "4xx Client Error",
+      "type": "status_class",
+      "description": "Request cannot be fulfilled due to an issue the client might control.",
+      "source_line_ranges": [
+        314
+      ]
+    },
+    {
+      "id": "status_5xx",
+      "label": "5xx Server Error",
+      "type": "status_class",
+      "description": "Server failed to fulfill an apparently valid request.",
+      "source_line_ranges": [
+        316
+      ]
+    },
+    {
+      "id": "status_400",
+      "label": "400 Bad Request",
+      "type": "status_code_example",
+      "description": "Example HTTP/1.1 error response.",
+      "source_line_ranges": [
+        299,
+        301
+      ]
+    },
+    {
+      "id": "status_200",
+      "label": "200 OK",
+      "type": "status_code_example",
+      "description": "Example successful HTTP/1.1 response.",
+      "source_line_ranges": [
+        341
+      ]
+    },
+    {
+      "id": "redirect301",
+      "label": "301 Moved Permanently",
+      "type": "status_code_example",
+      "description": "Redirect status code listed in source metadata.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "redirect302",
+      "label": "302 Found",
+      "type": "status_code_example",
+      "description": "Redirect status code listed in source metadata.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "redirect303",
+      "label": "303 See Other",
+      "type": "status_code_example",
+      "description": "Redirect status code listed in source metadata.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "forbidden403",
+      "label": "403 Forbidden",
+      "type": "status_code_example",
+      "description": "Client access status code listed in source metadata.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "notfound404",
+      "label": "404 Not Found",
+      "type": "status_code_example",
+      "description": "Missing-resource status code listed in source metadata.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "legal451",
+      "label": "451 Unavailable for Legal Reasons",
+      "type": "status_code_example",
+      "description": "Legal-restriction status code listed in source metadata.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "caching",
+      "label": "HTTP caching",
+      "type": "http_feature",
+      "description": "Mechanisms allowing clients/caches to reuse previously retrieved resources.",
+      "source_line_ranges": [
+        101,
+        163,
+        170
+      ]
+    },
+    {
+      "id": "conditional_get",
+      "label": "Conditional GET",
+      "type": "http_feature",
+      "description": "GET request behavior allowing retrieval conditioned on known/current resource state.",
+      "source_line_ranges": [
+        163,
+        165
+      ]
+    },
+    {
+      "id": "conditional_headers",
+      "label": "Conditional retrieval headers",
+      "type": "header_group",
+      "description": "Headers used to manage conditional retrieval of cached resources.",
+      "source_line_ranges": [
+        170
+      ]
+    },
+    {
+      "id": "chunked",
+      "label": "Chunked transfer encoding",
+      "type": "transfer_encoding",
+      "description": "HTTP/1.1 mechanism for streaming content in chunks when size is not known in advance.",
+      "source_line_ranges": [
+        171,
+        337
+      ]
+    },
+    {
+      "id": "byte_range",
+      "label": "Byte-range serving",
+      "type": "http_feature",
+      "description": "Client requests portions of a resource by byte range.",
+      "source_line_ranges": [
+        172,
+        335
+      ]
+    },
+    {
+      "id": "resume",
+      "label": "Interrupted download resume",
+      "type": "use_case",
+      "description": "Byte ranges can help resume interrupted downloads.",
+      "source_line_ranges": [
+        172
+      ]
+    },
+    {
+      "id": "compression",
+      "label": "HTTP compression",
+      "type": "content_encoding",
+      "description": "Compression of returned content indicated through Content-Encoding.",
+      "source_line_ranges": [
+        166
+      ]
+    },
+    {
+      "id": "gzip",
+      "label": "gzip",
+      "type": "compression_algorithm",
+      "description": "Compression algorithm used in the source's example response.",
+      "source_line_ranges": [
+        339
+      ]
+    },
+    {
+      "id": "partial_body",
+      "label": "Partial body",
+      "type": "failure_state",
+      "description": "Condition possible when HTTP/1.0 closes early without a known Content-Length.",
+      "source_line_ranges": [
+        167
+      ]
+    },
+    {
+      "id": "stateless",
+      "label": "Stateless protocol",
+      "type": "protocol_property",
+      "description": "HTTP does not require servers to retain information/status about each user across multiple requests.",
+      "source_line_ranges": [
+        173
+      ]
+    },
+    {
+      "id": "app_session",
+      "label": "Application session",
+      "type": "application_state",
+      "description": "Application-level session implemented outside HTTP's stateless core using cookies, hidden variables, or other mechanisms.",
+      "source_line_ranges": [
+        173
+      ]
+    },
+    {
+      "id": "login",
+      "label": "Interactive login",
+      "type": "authentication_flow",
+      "description": "Typical application-session starting action.",
+      "source_line_ranges": [
+        176
+      ]
+    },
+    {
+      "id": "logout",
+      "label": "Logout",
+      "type": "authentication_flow",
+      "description": "Typical application-session ending action.",
+      "source_line_ranges": [
+        176
+      ]
+    },
+    {
+      "id": "http_auth",
+      "label": "HTTP authentication",
+      "type": "authentication",
+      "description": "HTTP-level authentication framework distinct from application-session login.",
+      "source_line_ranges": [
+        178,
+        183
+      ]
+    },
+    {
+      "id": "basic_auth",
+      "label": "Basic access authentication",
+      "type": "authentication_scheme",
+      "description": "HTTP challenge-response authentication scheme.",
+      "source_line_ranges": [
+        178
+      ]
+    },
+    {
+      "id": "digest_auth",
+      "label": "Digest access authentication",
+      "type": "authentication_scheme",
+      "description": "HTTP challenge-response authentication scheme.",
+      "source_line_ranges": [
+        178
+      ]
+    },
+    {
+      "id": "challenge_response",
+      "label": "Challenge-response",
+      "type": "authentication_mechanism",
+      "description": "Server challenges client before serving protected content; client supplies authentication information.",
+      "source_line_ranges": [
+        178,
+        181
+      ]
+    },
+    {
+      "id": "realm",
+      "label": "Authentication realm",
+      "type": "authentication_scope",
+      "description": "Implementation-specific division of resources under a root URI.",
+      "source_line_ranges": [
+        185
+      ]
+    },
+    {
+      "id": "protection_space",
+      "label": "Protection space",
+      "type": "authentication_scope",
+      "description": "Scope formed from realm and canonical root URI.",
+      "source_line_ranges": [
+        185
+      ]
+    },
+    {
+      "id": "http_security",
+      "label": "HTTP security",
+      "type": "security",
+      "description": "Security/access-control concepts associated with HTTP.",
+      "source_line_ranges": [
+        80,
+        187
+      ]
+    },
+    {
+      "id": "https_security",
+      "label": "HTTPS encryption",
+      "type": "security_mechanism",
+      "description": "Encrypted HTTP connection using HTTPS.",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "id": "tls_upgrade",
+      "label": "HTTP Upgrade to TLS",
+      "type": "security_mechanism",
+      "description": "HTTP/1.1 Upgrade mechanism for establishing TLS.",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "id": "secure_http",
+      "label": "Secure Hypertext Transfer Protocol",
+      "type": "secure_protocol",
+      "description": "Alternative encrypted HTTP method mentioned in source.",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "id": "header_injection",
+      "label": "HTTP header injection",
+      "type": "vulnerability",
+      "description": "Security vulnerability listed in source.",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "id": "request_smuggling",
+      "label": "HTTP request smuggling",
+      "type": "vulnerability",
+      "description": "Security vulnerability listed in source.",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "id": "response_splitting",
+      "label": "HTTP response splitting",
+      "type": "vulnerability",
+      "description": "Security vulnerability listed in source.",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "id": "parameter_pollution",
+      "label": "HTTP parameter pollution",
+      "type": "vulnerability",
+      "description": "Security vulnerability listed in source.",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "id": "cern",
+      "label": "CERN",
+      "type": "organization",
+      "description": "Organization where HTTP was initially developed.",
+      "source_line_ranges": [
+        68,
+        369
+      ]
+    },
+    {
+      "id": "ietf",
+      "label": "IETF",
+      "type": "organization",
+      "description": "Standards organization responsible for HTTP standards work and current specifications.",
+      "source_line_ranges": [
+        68,
+        369
+      ]
+    },
+    {
+      "id": "w3c",
+      "label": "W3C",
+      "type": "organization",
+      "description": "Organization involved in HTTP development and World Wide Web standards.",
+      "source_line_ranges": [
+        68,
+        369
+      ]
+    },
+    {
+      "id": "tim_berners_lee",
+      "label": "Tim Berners-Lee",
+      "type": "person",
+      "description": "Inventor/creator credited with HTTP, HTML, web server, and browser technology in the source.",
+      "source_line_ranges": [
+        368,
+        369
+      ]
+    },
+    {
+      "id": "dave_raggett",
+      "label": "Dave Raggett",
+      "type": "person",
+      "description": "Leader of the W3C HTTP Working Group constituted in 1995.",
+      "source_line_ranges": [
+        379
+      ]
+    },
+    {
+      "id": "roy_fielding",
+      "label": "Roy Fielding",
+      "type": "person",
+      "description": "Author/editor associated with HTTP RFCs in the references.",
+      "source_line_ranges": [
+        463,
+        465,
+        466,
+        496
+      ]
+    },
+    {
+      "id": "mark_nottingham",
+      "label": "Mark Nottingham",
+      "type": "person",
+      "description": "HTTP standards author/editor appearing in references.",
+      "source_line_ranges": [
+        463,
+        466,
+        480
+      ]
+    },
+    {
+      "id": "julian_reschke",
+      "label": "Julian Reschke",
+      "type": "person",
+      "description": "HTTP standards author/editor appearing in references.",
+      "source_line_ranges": [
+        463,
+        466,
+        480
+      ]
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "type": "organization",
+      "description": "Developer of SPDY and participant in HTTP/2 evolution.",
+      "source_line_ranges": [
+        405,
+        406
+      ]
+    },
+    {
+      "id": "chromium",
+      "label": "Chromium",
+      "type": "software_project",
+      "description": "Browser project into which SPDY was integrated.",
+      "source_line_ranges": [
+        406
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "label": "Cloudflare",
+      "type": "organization",
+      "description": "Service/company that added HTTP/3 support in 2019 according to cited history.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "id": "chrome",
+      "label": "Chrome",
+      "type": "browser",
+      "description": "Browser that added HTTP/3 support in 2019 according to source.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "id": "firefox",
+      "label": "Firefox",
+      "type": "browser",
+      "description": "Browser that enabled HTTP/3 support according to source.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "id": "spdy",
+      "label": "SPDY",
+      "type": "protocol",
+      "description": "Google-developed binary protocol intended to speed web traffic; ideas influenced HTTP/2.",
+      "source_line_ranges": [
+        362,
+        405,
+        408
+      ]
+    },
+    {
+      "id": "gopher",
+      "label": "Gopher",
+      "type": "protocol",
+      "description": "Content delivery protocol displaced by HTTP in early 1990s.",
+      "source_line_ranges": [
+        359,
+        361
+      ]
+    },
+    {
+      "id": "gemini",
+      "label": "Gemini",
+      "type": "protocol",
+      "description": "Gopher-inspired protocol mandating privacy-related features.",
+      "source_line_ranges": [
+        364,
+        365
+      ]
+    },
+    {
+      "id": "httpng",
+      "label": "HTTP-NG",
+      "type": "protocol_project",
+      "description": "Planned next-generation HTTP project that was never completed.",
+      "source_line_ranges": [
+        384,
+        398,
+        399
+      ]
+    },
+    {
+      "id": "rfc1945",
+      "label": "RFC 1945 HTTP/1.0",
+      "type": "standard",
+      "description": "HTTP/1.0 specification",
+      "source_line_ranges": [
+        57
+      ]
+    },
+    {
+      "id": "rfc9110",
+      "label": "RFC 9110 HTTP Semantics",
+      "type": "standard",
+      "description": "HTTP semantics",
+      "source_line_ranges": [
+        58
+      ]
+    },
+    {
+      "id": "rfc9111",
+      "label": "RFC 9111 HTTP Caching",
+      "type": "standard",
+      "description": "HTTP caching",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "rfc9112",
+      "label": "RFC 9112 HTTP/1.1",
+      "type": "standard",
+      "description": "HTTP/1.1",
+      "source_line_ranges": [
+        60
+      ]
+    },
+    {
+      "id": "rfc9113",
+      "label": "RFC 9113 HTTP/2",
+      "type": "standard",
+      "description": "HTTP/2",
+      "source_line_ranges": [
+        61
+      ]
+    },
+    {
+      "id": "rfc7541",
+      "label": "RFC 7541 HPACK",
+      "type": "standard",
+      "description": "HTTP/2 header compression",
+      "source_line_ranges": [
+        62
+      ]
+    },
+    {
+      "id": "rfc8164",
+      "label": "RFC 8164 Opportunistic Security",
+      "type": "standard",
+      "description": "HTTP/2 opportunistic security",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "rfc8336",
+      "label": "RFC 8336 ORIGIN Frame",
+      "type": "standard",
+      "description": "HTTP/2 ORIGIN frame",
+      "source_line_ranges": [
+        64
+      ]
+    },
+    {
+      "id": "rfc8441",
+      "label": "RFC 8441 WebSockets bootstrap",
+      "type": "standard",
+      "description": "WebSockets with HTTP/2",
+      "source_line_ranges": [
+        65
+      ]
+    },
+    {
+      "id": "rfc9114",
+      "label": "RFC 9114 HTTP/3",
+      "type": "standard",
+      "description": "HTTP/3",
+      "source_line_ranges": [
+        66
+      ]
+    },
+    {
+      "id": "rfc9204",
+      "label": "RFC 9204 QPACK",
+      "type": "standard",
+      "description": "HTTP/3 header compression",
+      "source_line_ranges": [
+        67
+      ]
+    },
+    {
+      "id": "server_state",
+      "label": "Server state",
+      "type": "application_state",
+      "description": "State that can be modified by HTTP requests.",
+      "source_line_ranges": [
+        276,
+        278
+      ]
+    },
+    {
+      "id": "bookmark",
+      "label": "Bookmarking",
+      "type": "web_use",
+      "description": "Ability to save/share GET URLs.",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "id": "google_accelerator",
+      "label": "Google Web Accelerator",
+      "type": "historical_event",
+      "description": "Short-lived beta that prefetched arbitrary URLs and caused unintended state changes.",
+      "source_line_ranges": [
+        282
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "http",
+      "target": "app_layer",
+      "relationship": "operates_at",
+      "mechanism": "HTTP is an application-layer protocol.",
+      "semantic_role": "layer",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "source": "http",
+      "target": "internet_suite",
+      "relationship": "belongs_to",
+      "mechanism": "HTTP is part of the Internet protocol suite.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "source": "http",
+      "target": "www",
+      "relationship": "foundational_to",
+      "mechanism": "HTTP is described as the foundation of Web data communication.",
+      "semantic_role": "system_role",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "source": "www",
+      "target": "hypertext",
+      "relationship": "uses",
+      "mechanism": "Web documents include hypertext and hyperlinks.",
+      "semantic_role": "content",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "source": "hypertext",
+      "target": "hyperlink",
+      "relationship": "contains",
+      "mechanism": "Hypertext documents contain hyperlinks.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "source": "http",
+      "target": "request_response",
+      "relationship": "implements",
+      "mechanism": "HTTP uses request-response client-server transactions.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "source": "client",
+      "target": "request",
+      "relationship": "submits",
+      "mechanism": "Client sends request to server.",
+      "semantic_role": "data_flow",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "source": "server",
+      "target": "response",
+      "relationship": "returns",
+      "mechanism": "Server returns response describing disposition and possibly resource.",
+      "semantic_role": "data_flow",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "client",
+      "relationship": "acts_as",
+      "mechanism": "Web browser is a common HTTP client.",
+      "semantic_role": "role",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "user_agent",
+      "relationship": "is_a",
+      "mechanism": "Browser is an example of user agent.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "web_server",
+      "target": "server",
+      "relationship": "acts_as",
+      "mechanism": "Web server acts as HTTP server.",
+      "semantic_role": "role",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "crawler",
+      "target": "user_agent",
+      "relationship": "is_a",
+      "mechanism": "Crawler is a user agent.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "voice_browser",
+      "target": "user_agent",
+      "relationship": "is_a",
+      "mechanism": "Voice browser is a user agent.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "mobile_app",
+      "target": "user_agent",
+      "relationship": "is_a",
+      "mechanism": "Mobile app can act as a user agent.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "source": "http",
+      "target": "intermediary",
+      "relationship": "supports",
+      "mechanism": "HTTP permits intermediaries to improve/enable communication.",
+      "semantic_role": "architecture",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "cache",
+      "target": "intermediary",
+      "relationship": "is_a",
+      "mechanism": "Web cache is an intermediate network element.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "cache",
+      "target": "upstream",
+      "relationship": "serves_on_behalf_of",
+      "mechanism": "Cache can deliver content on behalf of upstream server.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "browser_cache",
+      "target": "resource",
+      "relationship": "caches",
+      "mechanism": "Browser cache reuses previously accessed resources.",
+      "semantic_role": "optimization",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "intermediary",
+      "relationship": "is_a",
+      "mechanism": "HTTP proxy is an intermediary.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "private_boundary",
+      "relationship": "operates_at",
+      "mechanism": "Proxy can relay traffic at private network boundary.",
+      "semantic_role": "network_role",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "proxy",
+      "target": "client",
+      "relationship": "relays_for",
+      "mechanism": "Proxy facilitates communication for clients lacking globally routable addresses.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "hop_by_hop",
+      "target": "intermediary",
+      "relationship": "managed_by",
+      "mechanism": "Some headers are managed hop-by-hop.",
+      "semantic_role": "header_scope",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "end_to_end",
+      "target": "client",
+      "relationship": "managed_by",
+      "mechanism": "End-to-end headers are managed by source client.",
+      "semantic_role": "header_scope",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "end_to_end",
+      "target": "server",
+      "relationship": "managed_by",
+      "mechanism": "End-to-end headers are managed by target server.",
+      "semantic_role": "header_scope",
+      "source_line_ranges": [
+        103
+      ]
+    },
+    {
+      "source": "resource",
+      "target": "url",
+      "relationship": "located_by",
+      "mechanism": "A web resource is located by URL.",
+      "semantic_role": "addressing",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "source": "url",
+      "target": "uri",
+      "relationship": "is_a",
+      "mechanism": "URL is an identifier within URI concepts.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "source": "http_scheme",
+      "target": "uri",
+      "relationship": "is_scheme_of",
+      "mechanism": "http is a URI scheme.",
+      "semantic_role": "identifier",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "source": "https_scheme",
+      "target": "uri",
+      "relationship": "is_scheme_of",
+      "mechanism": "https is a URI scheme.",
+      "semantic_role": "identifier",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "source": "uri",
+      "target": "hyperlink",
+      "relationship": "encoded_as",
+      "mechanism": "URIs are encoded as hyperlinks in HTML.",
+      "semantic_role": "content",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "source": "version_model",
+      "target": "http",
+      "relationship": "identifies_versions_of",
+      "mechanism": "HTTP versions use HTTP/# notation.",
+      "semantic_role": "versioning",
+      "source_line_ranges": [
+        109
+      ]
+    },
+    {
+      "source": "http",
+      "target": "v09",
+      "relationship": "has_version",
+      "mechanism": "HTTP has the listed version.",
+      "semantic_role": "version",
+      "source_line_ranges": [
+        112
+      ]
+    },
+    {
+      "source": "http",
+      "target": "v10",
+      "relationship": "has_version",
+      "mechanism": "HTTP has the listed version.",
+      "semantic_role": "version",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "http",
+      "target": "v11",
+      "relationship": "has_version",
+      "mechanism": "HTTP has the listed version.",
+      "semantic_role": "version",
+      "source_line_ranges": [
+        114
+      ]
+    },
+    {
+      "source": "http",
+      "target": "v2",
+      "relationship": "has_version",
+      "mechanism": "HTTP has the listed version.",
+      "semantic_role": "version",
+      "source_line_ranges": [
+        115
+      ]
+    },
+    {
+      "source": "http",
+      "target": "v3",
+      "relationship": "has_version",
+      "mechanism": "HTTP has the listed version.",
+      "semantic_role": "version",
+      "source_line_ranges": [
+        116
+      ]
+    },
+    {
+      "source": "v09",
+      "target": "v10",
+      "relationship": "preceded",
+      "mechanism": "HTTP/0.9 preceded HTTP/1.0.",
+      "semantic_role": "semantic"
+    },
+    {
+      "source": "v10",
+      "target": "v11",
+      "relationship": "preceded",
+      "mechanism": "HTTP/1.0 preceded HTTP/1.1.",
+      "semantic_role": "semantic"
+    },
+    {
+      "source": "v11",
+      "target": "v2",
+      "relationship": "preceded",
+      "mechanism": "HTTP/1.1 preceded HTTP/2.",
+      "semantic_role": "semantic"
+    },
+    {
+      "source": "v2",
+      "target": "v3",
+      "relationship": "preceded",
+      "mechanism": "HTTP/2 preceded HTTP/3.",
+      "semantic_role": "semantic"
+    },
+    {
+      "source": "v09",
+      "target": "http",
+      "relationship": "status_obsolete",
+      "mechanism": "Source lists 0.9 obsolete.",
+      "semantic_role": "status",
+      "source_line_ranges": [
+        112
+      ]
+    },
+    {
+      "source": "v10",
+      "target": "http",
+      "relationship": "status_obsolete",
+      "mechanism": "Source lists 1.0 obsolete.",
+      "semantic_role": "status",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "v11",
+      "target": "http",
+      "relationship": "status_standard",
+      "mechanism": "Source lists 1.1 standard.",
+      "semantic_role": "status",
+      "source_line_ranges": [
+        114
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "http",
+      "relationship": "status_standard",
+      "mechanism": "Source lists 2 standard.",
+      "semantic_role": "status",
+      "source_line_ranges": [
+        115
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "http",
+      "relationship": "status_standard",
+      "mechanism": "Source lists 3 standard.",
+      "semantic_role": "status",
+      "source_line_ranges": [
+        116
+      ]
+    },
+    {
+      "source": "v10",
+      "target": "tcp",
+      "relationship": "uses",
+      "mechanism": "HTTP/1.0 creates a separate TCP connection per resource request.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        117
+      ]
+    },
+    {
+      "source": "v11",
+      "target": "tcp",
+      "relationship": "reuses",
+      "mechanism": "HTTP/1.1 can reuse a TCP connection for multiple resource requests.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "v11",
+      "target": "keepalive",
+      "relationship": "introduced",
+      "mechanism": "HTTP/1.1 officially introduced keep-alive.",
+      "semantic_role": "feature",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "tcp",
+      "relationship": "uses",
+      "mechanism": "HTTP/2 uses a TCP/IP connection per accessed server domain in the source's model.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        124
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "multiplex",
+      "relationship": "supports",
+      "mechanism": "HTTP/2 multiplexes concurrent requests/responses.",
+      "semantic_role": "feature",
+      "source_line_ranges": [
+        121,
+        156
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "binary",
+      "relationship": "uses",
+      "mechanism": "HTTP/2 uses compressed binary metadata representation.",
+      "semantic_role": "encoding",
+      "source_line_ranges": [
+        123
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "hpack",
+      "relationship": "uses",
+      "mechanism": "HTTP/2 uses HPACK for header compression.",
+      "semantic_role": "compression",
+      "source_line_ranges": [
+        193
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "streams",
+      "relationship": "uses",
+      "mechanism": "HTTP/2 uses bidirectional streams within a TCP/IP connection.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "source": "streams",
+      "target": "holb",
+      "relationship": "reduces",
+      "mechanism": "HTTP/2 streams are described as helping solve HOLB.",
+      "semantic_role": "performance",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "push",
+      "relationship": "supports",
+      "mechanism": "HTTP/2 includes server push.",
+      "semantic_role": "feature",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "quic",
+      "relationship": "uses",
+      "mechanism": "HTTP/3 uses QUIC over UDP.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        127,
+        137,
+        158
+      ]
+    },
+    {
+      "source": "quic",
+      "target": "udp",
+      "relationship": "runs_over",
+      "mechanism": "QUIC runs over UDP.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "source": "quic",
+      "target": "reliable_transport",
+      "relationship": "provides",
+      "mechanism": "QUIC provides reliability over UDP.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "tcp",
+      "relationship": "does_not_use",
+      "mechanism": "HTTP/3 uses QUIC rather than TCP.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        127,
+        158
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "qpack",
+      "relationship": "uses",
+      "mechanism": "HTTP/3 uses QPACK for header compression.",
+      "semantic_role": "compression",
+      "source_line_ranges": [
+        193
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "holb",
+      "relationship": "reduces_transport_form_of",
+      "mechanism": "HTTP/3 avoids a TCP connection congestion form of HOLB.",
+      "semantic_role": "performance",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "source": "http",
+      "target": "tcp",
+      "relationship": "presumes",
+      "mechanism": "HTTP presumes an underlying reliable transport; TCP is the standard before HTTP/3.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "source": "http",
+      "target": "reliable_transport",
+      "relationship": "requires",
+      "mechanism": "HTTP data exchange requires reliable transport in the described model.",
+      "semantic_role": "transport",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "http",
+      "target": "port80",
+      "relationship": "typically_uses",
+      "mechanism": "Unencrypted HTTP typically uses port 80.",
+      "semantic_role": "endpoint",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "https",
+      "target": "port443",
+      "relationship": "typically_uses",
+      "mechanism": "Encrypted HTTP typically uses port 443.",
+      "semantic_role": "endpoint",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "v11",
+      "target": "connection",
+      "relationship": "can_reuse",
+      "mechanism": "Persistent connections reduce repeated TCP setup.",
+      "semantic_role": "performance",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "source": "keepalive",
+      "target": "handshake",
+      "relationship": "avoids_repeated",
+      "mechanism": "Keep-alive avoids renegotiating TCP three-way handshake for each request.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "source": "keepalive",
+      "target": "slowstart",
+      "relationship": "benefits_from",
+      "mechanism": "Source notes connection can become faster over time due to TCP slow start.",
+      "semantic_role": "performance",
+      "source_line_ranges": [
+        152
+      ]
+    },
+    {
+      "source": "pipeline",
+      "target": "v11",
+      "relationship": "belongs_to",
+      "mechanism": "HTTP pipelining was an HTTP/1.1 optimization.",
+      "semantic_role": "feature",
+      "source_line_ranges": [
+        154
+      ]
+    },
+    {
+      "source": "pipeline",
+      "target": "proxy",
+      "relationship": "can_fail_with",
+      "mechanism": "Many proxies did not handle pipelined requests properly.",
+      "semantic_role": "compatibility",
+      "source_line_ranges": [
+        154
+      ]
+    },
+    {
+      "source": "pipeline",
+      "target": "v2",
+      "relationship": "superseded_by",
+      "mechanism": "Pipelining was removed in relation to HTTP/2 adoption.",
+      "semantic_role": "evolution",
+      "source_line_ranges": [
+        154
+      ]
+    },
+    {
+      "source": "tcp",
+      "target": "tcp_congestion",
+      "relationship": "can_experience",
+      "mechanism": "TCP can experience connection congestion affecting streams.",
+      "semantic_role": "failure_mode",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "source": "http",
+      "target": "message",
+      "relationship": "uses",
+      "mechanism": "HTTP exchanges request/response messages.",
+      "semantic_role": "message",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "source": "request",
+      "target": "header",
+      "relationship": "contains",
+      "mechanism": "Request contains headers.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        195,
+        224
+      ]
+    },
+    {
+      "source": "request",
+      "target": "body",
+      "relationship": "may_contain",
+      "mechanism": "Request body is optional depending on method.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        205,
+        261
+      ]
+    },
+    {
+      "source": "response",
+      "target": "header",
+      "relationship": "contains",
+      "mechanism": "Response contains headers.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        298,
+        302
+      ]
+    },
+    {
+      "source": "response",
+      "target": "body",
+      "relationship": "may_contain",
+      "mechanism": "Response can contain body.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        205,
+        298
+      ]
+    },
+    {
+      "source": "message",
+      "target": "header",
+      "relationship": "consists_of",
+      "mechanism": "HTTP message consists of header followed by body.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        195
+      ]
+    },
+    {
+      "source": "message",
+      "target": "body",
+      "relationship": "may_have",
+      "mechanism": "Body is optional.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        195,
+        207
+      ]
+    },
+    {
+      "source": "header",
+      "target": "start_line",
+      "relationship": "begins_with",
+      "mechanism": "HTTP/1.1 header section starts with start line.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        200
+      ]
+    },
+    {
+      "source": "header",
+      "target": "header_fields",
+      "relationship": "contains",
+      "mechanism": "Header contains header fields.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        202
+      ]
+    },
+    {
+      "source": "header",
+      "target": "empty_line",
+      "relationship": "ends_with",
+      "mechanism": "Empty line marks end of headers.",
+      "semantic_role": "delimiter",
+      "source_line_ranges": [
+        204
+      ]
+    },
+    {
+      "source": "header",
+      "target": "ascii",
+      "relationship": "uses",
+      "mechanism": "HTTP/1.1 header lines are ASCII text.",
+      "semantic_role": "encoding",
+      "source_line_ranges": [
+        198
+      ]
+    },
+    {
+      "source": "header",
+      "target": "crlf",
+      "relationship": "uses",
+      "mechanism": "Header lines terminate with CRLF.",
+      "semantic_role": "syntax",
+      "source_line_ranges": [
+        198
+      ]
+    },
+    {
+      "source": "body",
+      "target": "content_type",
+      "relationship": "constrained_by",
+      "mechanism": "Body format must match Content-Type when present.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        207
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "content_encoding",
+      "relationship": "can_specify",
+      "mechanism": "Content-Encoding specifies encoding/compression.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        166
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "content_length",
+      "relationship": "can_specify",
+      "mechanism": "Content-Length can specify body size.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        167
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "etag",
+      "relationship": "can_specify",
+      "mechanism": "ETag supports cache identity checks.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        335
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "last_modified",
+      "relationship": "can_specify",
+      "mechanism": "Last-Modified provides modification time.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        165
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "accept_ranges",
+      "relationship": "can_specify",
+      "mechanism": "Accept-Ranges indicates byte-range support.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        335
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "host",
+      "relationship": "contains",
+      "mechanism": "Host is a request header.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        228
+      ]
+    },
+    {
+      "source": "host",
+      "target": "dns_name",
+      "relationship": "identifies",
+      "mechanism": "Host identifies DNS names for virtual hosting.",
+      "semantic_role": "virtual_hosting",
+      "source_line_ranges": [
+        324
+      ]
+    },
+    {
+      "source": "host",
+      "target": "virtual_hosting",
+      "relationship": "enables",
+      "mechanism": "Host distinguishes multiple DNS names sharing an IP.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        324
+      ]
+    },
+    {
+      "source": "request",
+      "target": "request_uri",
+      "relationship": "contains",
+      "mechanism": "Request start line includes request URI.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        225
+      ]
+    },
+    {
+      "source": "request",
+      "target": "method_name",
+      "relationship": "contains",
+      "mechanism": "Request start line contains method name.",
+      "semantic_role": "syntax",
+      "source_line_ranges": [
+        225
+      ]
+    },
+    {
+      "source": "method_name",
+      "target": "request",
+      "relationship": "classifies",
+      "mechanism": "Method identifies desired action.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        235
+      ]
+    },
+    {
+      "source": "request_uri",
+      "target": "resource",
+      "relationship": "targets",
+      "mechanism": "Request URI identifies resource target.",
+      "semantic_role": "addressing",
+      "source_line_ranges": [
+        225,
+        232
+      ]
+    },
+    {
+      "source": "resource",
+      "target": "file_resource",
+      "relationship": "can_be",
+      "mechanism": "Resource often corresponds to a file.",
+      "semantic_role": "implementation",
+      "source_line_ranges": [
+        232
+      ]
+    },
+    {
+      "source": "resource",
+      "target": "dynamic_resource",
+      "relationship": "can_be",
+      "mechanism": "Resource may be dynamically generated.",
+      "semantic_role": "implementation",
+      "source_line_ranges": [
+        232
+      ]
+    },
+    {
+      "source": "resource",
+      "target": "executable_output",
+      "relationship": "can_be",
+      "mechanism": "Resource may be executable output.",
+      "semantic_role": "implementation",
+      "source_line_ranges": [
+        232
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "binary",
+      "relationship": "replaces_textual_representation_with",
+      "mechanism": "HTTP/2 uses binary representation rather than textual HTTP/1.x representation.",
+      "semantic_role": "evolution",
+      "source_line_ranges": [
+        193
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "binary",
+      "relationship": "uses",
+      "mechanism": "HTTP/3 uses binary framing and encoded headers.",
+      "semantic_role": "encoding",
+      "source_line_ranges": [
+        193
+      ]
+    },
+    {
+      "source": "http",
+      "target": "get",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "head",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "post",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "put",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "delete",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "connect",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "options",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "trace",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "patch",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "http",
+      "target": "query",
+      "relationship": "defines_method",
+      "mechanism": "HTTP defines the request method.",
+      "semantic_role": "method"
+    },
+    {
+      "source": "get",
+      "target": "representation",
+      "relationship": "requests",
+      "mechanism": "GET requests a representation of a resource.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "source": "get",
+      "target": "resource_state",
+      "relationship": "does_not_intend_to_modify",
+      "mechanism": "GET should only retrieve data.",
+      "semantic_role": "safety",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "source": "head",
+      "target": "get",
+      "relationship": "is_like_without_body",
+      "mechanism": "HEAD is like GET without representation data in response body.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        243
+      ]
+    },
+    {
+      "source": "post",
+      "target": "resource",
+      "relationship": "processes",
+      "mechanism": "POST asks server to process resource.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        245
+      ]
+    },
+    {
+      "source": "put",
+      "target": "resource_state",
+      "relationship": "creates_or_updates",
+      "mechanism": "PUT creates/updates resource state with state in request.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        247
+      ]
+    },
+    {
+      "source": "put",
+      "target": "resource",
+      "relationship": "targets_at_client_location",
+      "mechanism": "Client specifies target location with PUT.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        247
+      ]
+    },
+    {
+      "source": "delete",
+      "target": "resource",
+      "relationship": "deletes",
+      "mechanism": "DELETE requests deletion of resource.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        248
+      ]
+    },
+    {
+      "source": "connect",
+      "target": "proxy",
+      "relationship": "asks_to_tunnel",
+      "mechanism": "CONNECT asks intermediary to establish TCP/IP tunnel.",
+      "semantic_role": "tunneling",
+      "source_line_ranges": [
+        250
+      ]
+    },
+    {
+      "source": "connect",
+      "target": "tls",
+      "relationship": "supports",
+      "mechanism": "CONNECT is often used to secure connections through proxies with TLS.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        251
+      ]
+    },
+    {
+      "source": "options",
+      "target": "resource",
+      "relationship": "queries_supported_methods",
+      "mechanism": "OPTIONS reports methods supported for a resource.",
+      "semantic_role": "capability_discovery",
+      "source_line_ranges": [
+        252
+      ]
+    },
+    {
+      "source": "trace",
+      "target": "request",
+      "relationship": "echoes",
+      "mechanism": "TRACE returns received request in response body for debugging.",
+      "semantic_role": "diagnostic",
+      "source_line_ranges": [
+        255
+      ]
+    },
+    {
+      "source": "patch",
+      "target": "resource_state",
+      "relationship": "partially_modifies",
+      "mechanism": "PATCH modifies resource according to partial state.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        257
+      ]
+    },
+    {
+      "source": "patch",
+      "target": "put",
+      "relationship": "differs_by_partial_state",
+      "mechanism": "PATCH can send only part of representation, potentially saving bandwidth.",
+      "semantic_role": "distinction",
+      "source_line_ranges": [
+        257
+      ]
+    },
+    {
+      "source": "query",
+      "target": "resource",
+      "relationship": "processes_enclosed_content",
+      "mechanism": "QUERY processes enclosed content and returns result.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        259
+      ]
+    },
+    {
+      "source": "get",
+      "target": "safe",
+      "relationship": "is_safe",
+      "mechanism": "Source defines these as safe methods.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "source": "head",
+      "target": "safe",
+      "relationship": "is_safe",
+      "mechanism": "Source defines these as safe methods.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "source": "options",
+      "target": "safe",
+      "relationship": "is_safe",
+      "mechanism": "Source defines these as safe methods.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "source": "trace",
+      "target": "safe",
+      "relationship": "is_safe",
+      "mechanism": "Source defines these as safe methods.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "source": "query",
+      "target": "safe",
+      "relationship": "is_safe",
+      "mechanism": "Source defines these as safe methods.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "source": "put",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "delete",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "get",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "head",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "options",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "trace",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "query",
+      "target": "idempotent",
+      "relationship": "is_idempotent",
+      "mechanism": "Source defines these methods as idempotent.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "post",
+      "target": "idempotent",
+      "relationship": "not_necessarily_idempotent",
+      "mechanism": "Repeated identical requests may have further effects.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        288
+      ]
+    },
+    {
+      "source": "connect",
+      "target": "idempotent",
+      "relationship": "not_necessarily_idempotent",
+      "mechanism": "Repeated identical requests may have further effects.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        288
+      ]
+    },
+    {
+      "source": "patch",
+      "target": "idempotent",
+      "relationship": "not_necessarily_idempotent",
+      "mechanism": "Repeated identical requests may have further effects.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        288
+      ]
+    },
+    {
+      "source": "get",
+      "target": "cacheable",
+      "relationship": "is_cacheable",
+      "mechanism": "Source defines responses to these methods as cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        294
+      ]
+    },
+    {
+      "source": "head",
+      "target": "cacheable",
+      "relationship": "is_cacheable",
+      "mechanism": "Source defines responses to these methods as cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        294
+      ]
+    },
+    {
+      "source": "post",
+      "target": "cacheable",
+      "relationship": "is_cacheable",
+      "mechanism": "Source defines responses to these methods as cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        294
+      ]
+    },
+    {
+      "source": "put",
+      "target": "cacheable",
+      "relationship": "not_defined_cacheable",
+      "mechanism": "Source lists these as not cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        296
+      ]
+    },
+    {
+      "source": "delete",
+      "target": "cacheable",
+      "relationship": "not_defined_cacheable",
+      "mechanism": "Source lists these as not cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        296
+      ]
+    },
+    {
+      "source": "connect",
+      "target": "cacheable",
+      "relationship": "not_defined_cacheable",
+      "mechanism": "Source lists these as not cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        296
+      ]
+    },
+    {
+      "source": "options",
+      "target": "cacheable",
+      "relationship": "not_defined_cacheable",
+      "mechanism": "Source lists these as not cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        296
+      ]
+    },
+    {
+      "source": "trace",
+      "target": "cacheable",
+      "relationship": "not_defined_cacheable",
+      "mechanism": "Source lists these as not cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        296
+      ]
+    },
+    {
+      "source": "patch",
+      "target": "cacheable",
+      "relationship": "not_defined_cacheable",
+      "mechanism": "Source lists these as not cacheable.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        296
+      ]
+    },
+    {
+      "source": "method_name",
+      "target": "method_rfc",
+      "relationship": "has_properties",
+      "mechanism": "Methods have RFC, payload, safety, idempotence, and cacheability metadata.",
+      "semantic_role": "standards",
+      "source_line_ranges": [
+        261,
+        274
+      ]
+    },
+    {
+      "source": "method_name",
+      "target": "http",
+      "relationship": "is_case_sensitive",
+      "mechanism": "Method names must match case-sensitively.",
+      "semantic_role": "syntax",
+      "source_line_ranges": [
+        238
+      ]
+    },
+    {
+      "source": "header_fields",
+      "target": "http",
+      "relationship": "are_case_insensitive",
+      "mechanism": "Header field names are matched ignoring case.",
+      "semantic_role": "syntax",
+      "source_line_ranges": [
+        238
+      ]
+    },
+    {
+      "source": "safe",
+      "target": "idempotent",
+      "relationship": "implies",
+      "mechanism": "Safe methods are trivially idempotent in the source's explanation.",
+      "semantic_role": "logical",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "safe",
+      "target": "server_state",
+      "relationship": "does_not_intend_to_modify",
+      "mechanism": "Safe methods are intended read-only.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        276
+      ]
+    },
+    {
+      "source": "post",
+      "target": "server_state",
+      "relationship": "may_modify",
+      "mechanism": "POST may modify server state or have other effects.",
+      "semantic_role": "side_effect",
+      "source_line_ranges": [
+        278
+      ]
+    },
+    {
+      "source": "put",
+      "target": "server_state",
+      "relationship": "may_modify",
+      "mechanism": "PUT can change resource state.",
+      "semantic_role": "side_effect",
+      "source_line_ranges": [
+        247,
+        278
+      ]
+    },
+    {
+      "source": "delete",
+      "target": "server_state",
+      "relationship": "may_modify",
+      "mechanism": "DELETE can modify server state.",
+      "semantic_role": "side_effect",
+      "source_line_ranges": [
+        278
+      ]
+    },
+    {
+      "source": "connect",
+      "target": "server_state",
+      "relationship": "may_have_effects",
+      "mechanism": "CONNECT is not safe.",
+      "semantic_role": "side_effect",
+      "source_line_ranges": [
+        278
+      ]
+    },
+    {
+      "source": "patch",
+      "target": "server_state",
+      "relationship": "may_modify",
+      "mechanism": "PATCH modifies resource state.",
+      "semantic_role": "side_effect",
+      "source_line_ranges": [
+        257,
+        278
+      ]
+    },
+    {
+      "source": "get",
+      "target": "server_state",
+      "relationship": "should_not_modify",
+      "mechanism": "GET is intended not to modify state.",
+      "semantic_role": "safety",
+      "source_line_ranges": [
+        241,
+        276
+      ]
+    },
+    {
+      "source": "get",
+      "target": "caching",
+      "relationship": "supports",
+      "mechanism": "GET responses can be cached.",
+      "semantic_role": "caching",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "source": "get",
+      "target": "bookmark",
+      "relationship": "supports",
+      "mechanism": "GET can be addressed through URL, enabling bookmarking/sharing.",
+      "semantic_role": "web_use",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "source": "get",
+      "target": "bookmark",
+      "relationship": "enables",
+      "mechanism": "GET URL addressing enables bookmarking and sharing.",
+      "semantic_role": "web_use",
+      "source_line_ranges": [
+        241
+      ]
+    },
+    {
+      "source": "get",
+      "target": "server_state",
+      "relationship": "can_still_modify_in_bad_implementation",
+      "mechanism": "The source warns HTTP does not technically prevent a GET implementation from causing changes.",
+      "semantic_role": "caution",
+      "source_line_ranges": [
+        280
+      ]
+    },
+    {
+      "source": "google_accelerator",
+      "target": "get",
+      "relationship": "prefetched",
+      "mechanism": "It prefetched arbitrary URLs.",
+      "semantic_role": "behavior",
+      "source_line_ranges": [
+        282
+      ]
+    },
+    {
+      "source": "google_accelerator",
+      "target": "server_state",
+      "relationship": "caused_unintended_changes_to",
+      "mechanism": "Prefetching unsafe GET URLs caused records to be altered/deleted in the source's example.",
+      "semantic_role": "failure",
+      "source_line_ranges": [
+        282
+      ]
+    },
+    {
+      "source": "put",
+      "target": "idempotent",
+      "relationship": "means_repeated_effect_same",
+      "mechanism": "Repeated identical PUT has same intended effect as one.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "delete",
+      "target": "idempotent",
+      "relationship": "means_repeated_effect_same",
+      "mechanism": "Repeated identical DELETE has same intended effect as one.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        286
+      ]
+    },
+    {
+      "source": "post",
+      "target": "idempotent",
+      "relationship": "not_guaranteed",
+      "mechanism": "Repeated POST can produce repeated effects such as multiple emails.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        288
+      ]
+    },
+    {
+      "source": "patch",
+      "target": "idempotent",
+      "relationship": "not_guaranteed",
+      "mechanism": "Repeated PATCH is not necessarily idempotent.",
+      "semantic_role": "semantics",
+      "source_line_ranges": [
+        288
+      ]
+    },
+    {
+      "source": "response",
+      "target": "status_code",
+      "relationship": "contains",
+      "mechanism": "Response start line contains status code.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        298,
+        306
+      ]
+    },
+    {
+      "source": "response",
+      "target": "reason_phrase",
+      "relationship": "may_contain",
+      "mechanism": "Response start line optionally contains reason phrase.",
+      "semantic_role": "structure",
+      "source_line_ranges": [
+        298
+      ]
+    },
+    {
+      "source": "status_code",
+      "target": "status_1xx",
+      "relationship": "classified_by_first_digit",
+      "mechanism": "1xx is informational.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        306,
+        308
+      ]
+    },
+    {
+      "source": "status_code",
+      "target": "status_2xx",
+      "relationship": "classified_by_first_digit",
+      "mechanism": "2xx is successful.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        306,
+        310
+      ]
+    },
+    {
+      "source": "status_code",
+      "target": "status_3xx",
+      "relationship": "classified_by_first_digit",
+      "mechanism": "3xx is redirection.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        306,
+        312
+      ]
+    },
+    {
+      "source": "status_code",
+      "target": "status_4xx",
+      "relationship": "classified_by_first_digit",
+      "mechanism": "4xx is client error.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        306,
+        314
+      ]
+    },
+    {
+      "source": "status_code",
+      "target": "status_5xx",
+      "relationship": "classified_by_first_digit",
+      "mechanism": "5xx is server error.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        306,
+        316
+      ]
+    },
+    {
+      "source": "status_4xx",
+      "target": "status_400",
+      "relationship": "includes",
+      "mechanism": "400 is a 4xx example.",
+      "semantic_role": "example",
+      "source_line_ranges": [
+        299
+      ]
+    },
+    {
+      "source": "status_2xx",
+      "target": "status_200",
+      "relationship": "includes",
+      "mechanism": "200 is a 2xx example.",
+      "semantic_role": "example",
+      "source_line_ranges": [
+        341
+      ]
+    },
+    {
+      "source": "status_code",
+      "target": "reason_phrase",
+      "relationship": "machine_readable_vs_human_readable",
+      "mechanism": "Status codes are machine-readable; reason phrases are human-readable.",
+      "semantic_role": "distinction",
+      "source_line_ranges": [
+        319
+      ]
+    },
+    {
+      "source": "caching",
+      "target": "browser_cache",
+      "relationship": "implemented_by",
+      "mechanism": "Browsers cache resources.",
+      "semantic_role": "implementation",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "caching",
+      "target": "cache",
+      "relationship": "implemented_by",
+      "mechanism": "Web caches deliver cached content.",
+      "semantic_role": "implementation",
+      "source_line_ranges": [
+        101
+      ]
+    },
+    {
+      "source": "v10",
+      "target": "conditional_get",
+      "relationship": "introduced",
+      "mechanism": "HTTP/1.0 added headers for conditional GET.",
+      "semantic_role": "evolution",
+      "source_line_ranges": [
+        163
+      ]
+    },
+    {
+      "source": "conditional_get",
+      "target": "last_modified",
+      "relationship": "uses",
+      "mechanism": "Conditional retrieval can depend on last-modified state.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        165
+      ]
+    },
+    {
+      "source": "conditional_get",
+      "target": "etag",
+      "relationship": "uses",
+      "mechanism": "ETag can determine whether cached representation matches server.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        335
+      ]
+    },
+    {
+      "source": "chunked",
+      "target": "content_length",
+      "relationship": "alternative_to",
+      "mechanism": "Chunked transfer can send content without known Content-Length.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        171,
+        337
+      ]
+    },
+    {
+      "source": "chunked",
+      "target": "transfer_encoding",
+      "relationship": "indicated_by",
+      "mechanism": "Transfer-Encoding can indicate chunked transfer.",
+      "semantic_role": "header",
+      "source_line_ranges": [
+        337
+      ]
+    },
+    {
+      "source": "byte_range",
+      "target": "resource",
+      "relationship": "requests_portion_of",
+      "mechanism": "Byte-range serving retrieves only portions of a resource.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        172
+      ]
+    },
+    {
+      "source": "byte_range",
+      "target": "resume",
+      "relationship": "supports",
+      "mechanism": "Byte ranges can resume interrupted downloads.",
+      "semantic_role": "use_case",
+      "source_line_ranges": [
+        172
+      ]
+    },
+    {
+      "source": "content_encoding",
+      "target": "compression",
+      "relationship": "indicates",
+      "mechanism": "Content-Encoding can indicate compression.",
+      "semantic_role": "metadata",
+      "source_line_ranges": [
+        166
+      ]
+    },
+    {
+      "source": "gzip",
+      "target": "content_encoding",
+      "relationship": "example_of",
+      "mechanism": "gzip is an example of content encoding in the response.",
+      "semantic_role": "example",
+      "source_line_ranges": [
+        339
+      ]
+    },
+    {
+      "source": "content_length",
+      "target": "partial_body",
+      "relationship": "can_prevent_or_detect",
+      "mechanism": "Known length lets client distinguish complete transfer; premature close can otherwise appear complete.",
+      "semantic_role": "reliability",
+      "source_line_ranges": [
+        167
+      ]
+    },
+    {
+      "source": "http",
+      "target": "stateless",
+      "relationship": "is",
+      "mechanism": "HTTP is stateless at protocol level.",
+      "semantic_role": "property",
+      "source_line_ranges": [
+        173
+      ]
+    },
+    {
+      "source": "stateless",
+      "target": "app_session",
+      "relationship": "requires_application_layer_for",
+      "mechanism": "Applications needing sessions implement them via cookies, hidden variables, or other mechanisms.",
+      "semantic_role": "architecture",
+      "source_line_ranges": [
+        173
+      ]
+    },
+    {
+      "source": "cookie",
+      "target": "app_session",
+      "relationship": "can_implement",
+      "mechanism": "Cookies can implement application session state.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        173
+      ]
+    },
+    {
+      "source": "login",
+      "target": "app_session",
+      "relationship": "starts",
+      "mechanism": "Interactive login typically starts an application session.",
+      "semantic_role": "flow",
+      "source_line_ranges": [
+        176
+      ]
+    },
+    {
+      "source": "logout",
+      "target": "app_session",
+      "relationship": "ends",
+      "mechanism": "Logout typically ends an application session.",
+      "semantic_role": "flow",
+      "source_line_ranges": [
+        176
+      ]
+    },
+    {
+      "source": "http_auth",
+      "target": "http",
+      "relationship": "is_part_of",
+      "mechanism": "HTTP authentication mechanisms belong to HTTP.",
+      "semantic_role": "scope",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "source": "http_auth",
+      "target": "app_session",
+      "relationship": "is_distinct_from",
+      "mechanism": "HTTP authentication is distinct from application-session login/logout.",
+      "semantic_role": "distinction",
+      "source_line_ranges": [
+        183
+      ]
+    },
+    {
+      "source": "basic_auth",
+      "target": "challenge_response",
+      "relationship": "uses",
+      "mechanism": "Basic authentication operates via challenge-response in source description.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        178
+      ]
+    },
+    {
+      "source": "digest_auth",
+      "target": "challenge_response",
+      "relationship": "uses",
+      "mechanism": "Digest authentication operates via challenge-response.",
+      "semantic_role": "mechanism",
+      "source_line_ranges": [
+        178
+      ]
+    },
+    {
+      "source": "challenge_response",
+      "target": "server",
+      "relationship": "initiated_by",
+      "mechanism": "Server issues challenge.",
+      "semantic_role": "flow",
+      "source_line_ranges": [
+        178,
+        181
+      ]
+    },
+    {
+      "source": "challenge_response",
+      "target": "client",
+      "relationship": "answered_by",
+      "mechanism": "Client provides authentication information.",
+      "semantic_role": "flow",
+      "source_line_ranges": [
+        181
+      ]
+    },
+    {
+      "source": "realm",
+      "target": "protection_space",
+      "relationship": "defines",
+      "mechanism": "Realm combined with canonical root URI forms protection space.",
+      "semantic_role": "scope",
+      "source_line_ranges": [
+        185
+      ]
+    },
+    {
+      "source": "http",
+      "target": "http_security",
+      "relationship": "has",
+      "mechanism": "HTTP has security/access-control mechanisms and vulnerabilities.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        80,
+        82
+      ]
+    },
+    {
+      "source": "https",
+      "target": "http",
+      "relationship": "is_secure_variant_of",
+      "mechanism": "HTTPS is secure variant of HTTP.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "source": "https",
+      "target": "tls",
+      "relationship": "commonly_uses",
+      "mechanism": "HTTPS is the popular encrypted HTTP mechanism.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "source": "tls_upgrade",
+      "target": "tls",
+      "relationship": "upgrades_to",
+      "mechanism": "HTTP/1.1 Upgrade can specify TLS.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "source": "secure_http",
+      "target": "http",
+      "relationship": "is_encrypted_variant",
+      "mechanism": "Secure HTTP is another encrypted connection method.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "source": "http",
+      "target": "header_injection",
+      "relationship": "has_vulnerability",
+      "mechanism": "Source lists this as an HTTP security vulnerability.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "source": "http",
+      "target": "request_smuggling",
+      "relationship": "has_vulnerability",
+      "mechanism": "Source lists this as an HTTP security vulnerability.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "source": "http",
+      "target": "response_splitting",
+      "relationship": "has_vulnerability",
+      "mechanism": "Source lists this as an HTTP security vulnerability.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "source": "http",
+      "target": "parameter_pollution",
+      "relationship": "has_vulnerability",
+      "mechanism": "Source lists this as an HTTP security vulnerability.",
+      "semantic_role": "security",
+      "source_line_ranges": [
+        82
+      ]
+    },
+    {
+      "source": "tim_berners_lee",
+      "target": "http",
+      "relationship": "credited_with_inventing",
+      "mechanism": "Source credits Berners-Lee and team at CERN with inventing HTTP.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        369
+      ]
+    },
+    {
+      "source": "cern",
+      "target": "http",
+      "relationship": "initial_development_site",
+      "mechanism": "HTTP initially developed at CERN.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        68,
+        369
+      ]
+    },
+    {
+      "source": "ietf",
+      "target": "http",
+      "relationship": "standardizes",
+      "mechanism": "HTTP standards work is coordinated through IETF.",
+      "semantic_role": "governance",
+      "source_line_ranges": [
+        68,
+        369
+      ]
+    },
+    {
+      "source": "w3c",
+      "target": "http",
+      "relationship": "co_develops",
+      "mechanism": "W3C participated in HTTP development/standardization.",
+      "semantic_role": "governance",
+      "source_line_ranges": [
+        68,
+        369
+      ]
+    },
+    {
+      "source": "tim_berners_lee",
+      "target": "www",
+      "relationship": "initiated",
+      "mechanism": "WorldWideWeb project was proposed in 1989.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        369
+      ]
+    },
+    {
+      "source": "http",
+      "target": "www",
+      "relationship": "supports",
+      "mechanism": "HTTP was designed to support the World Wide Web.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        369
+      ]
+    },
+    {
+      "source": "http",
+      "target": "html",
+      "relationship": "historically_returns",
+      "mechanism": "Early HTTP returned HTML pages.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        371,
+        373
+      ]
+    },
+    {
+      "source": "v09",
+      "target": "get",
+      "relationship": "supports_only",
+      "mechanism": "HTTP/0.9 supported only GET.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        373
+      ]
+    },
+    {
+      "source": "v09",
+      "target": "html",
+      "relationship": "returns",
+      "mechanism": "HTTP/0.9 response was always an HTML page.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        371,
+        373
+      ]
+    },
+    {
+      "source": "v09",
+      "target": "v10",
+      "relationship": "evolved_into",
+      "mechanism": "HTTP/0.9 evolved into HTTP/1.0.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        373,
+        376
+      ]
+    },
+    {
+      "source": "v10",
+      "target": "rfc1945",
+      "relationship": "specified_by",
+      "mechanism": "Final HTTP/1.0 was published as RFC 1945.",
+      "semantic_role": "standard",
+      "source_line_ranges": [
+        387
+      ]
+    },
+    {
+      "source": "v11",
+      "target": "rfc9112",
+      "relationship": "specified_by",
+      "mechanism": "Current HTTP/1.1 is represented by RFC 9112.",
+      "semantic_role": "standard",
+      "source_line_ranges": [
+        442
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "rfc9113",
+      "relationship": "specified_by",
+      "mechanism": "HTTP/2 is represented by RFC 9113.",
+      "semantic_role": "standard",
+      "source_line_ranges": [
+        443
+      ]
+    },
+    {
+      "source": "v3",
+      "target": "rfc9114",
+      "relationship": "specified_by",
+      "mechanism": "HTTP/3 is represented by RFC 9114.",
+      "semantic_role": "standard",
+      "source_line_ranges": [
+        444
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9110",
+      "relationship": "semantics_specified_by",
+      "mechanism": "HTTP semantics are specified by RFC 9110.",
+      "semantic_role": "standard",
+      "source_line_ranges": [
+        440
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9111",
+      "relationship": "caching_specified_by",
+      "mechanism": "HTTP caching is specified by RFC 9111.",
+      "semantic_role": "standard",
+      "source_line_ranges": [
+        441
+      ]
+    },
+    {
+      "source": "v2",
+      "target": "spdy",
+      "relationship": "derived_from_ideas",
+      "mechanism": "HTTP/2 was derived from SPDY ideas.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        408
+      ]
+    },
+    {
+      "source": "google",
+      "target": "spdy",
+      "relationship": "developed",
+      "mechanism": "Google developed SPDY.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        405
+      ]
+    },
+    {
+      "source": "spdy",
+      "target": "v2",
+      "relationship": "influenced",
+      "mechanism": "SPDY influenced HTTP/2.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        408
+      ]
+    },
+    {
+      "source": "cloudflare",
+      "target": "v3",
+      "relationship": "supported_in_2019",
+      "mechanism": "Source says HTTP/3 support was added to Cloudflare in 2019.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "source": "chrome",
+      "target": "v3",
+      "relationship": "supported_in_2019",
+      "mechanism": "Source says Chrome added HTTP/3 support in 2019.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "source": "firefox",
+      "target": "v3",
+      "relationship": "enabled_in_2019",
+      "mechanism": "Source says Firefox enabled HTTP/3 support.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "source": "httpng",
+      "target": "v2",
+      "relationship": "influenced_context",
+      "mechanism": "HTTP-NG explored multiplexing but was never completed; later work informed HTTP evolution.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        384,
+        399
+      ]
+    },
+    {
+      "source": "dave_raggett",
+      "target": "w3c",
+      "relationship": "led_http_working_group",
+      "mechanism": "Raggett led the W3C HTTP Working Group in 1995.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        379
+      ]
+    },
+    {
+      "source": "gopher",
+      "target": "http",
+      "relationship": "was_displaced_by",
+      "mechanism": "Gopher was displaced by HTTP in early 1990s.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        361
+      ]
+    },
+    {
+      "source": "spdy",
+      "target": "http",
+      "relationship": "alternative_to",
+      "mechanism": "SPDY was an alternative protocol for faster web traffic.",
+      "semantic_role": "classification",
+      "source_line_ranges": [
+        362,
+        405
+      ]
+    },
+    {
+      "source": "gemini",
+      "target": "gopher",
+      "relationship": "inspired_by",
+      "mechanism": "Gemini is described as Gopher-inspired.",
+      "semantic_role": "history",
+      "source_line_ranges": [
+        364
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc1945",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9110",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9111",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9112",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9113",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc7541",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc8164",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc8336",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc8441",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9114",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "source": "http",
+      "target": "rfc9204",
+      "relationship": "documented_by",
+      "mechanism": "Source lists this HTTP-related RFC/standard.",
+      "semantic_role": "provenance",
+      "source_line_ranges": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "m_request_response",
+      "name": "Request-response model",
+      "expression": "client -> request -> server -> response -> client",
+      "meaning": "Core HTTP transaction flow."
+    },
+    {
+      "id": "m_resource",
+      "name": "Resource addressing model",
+      "expression": "URI/URL -> resource -> representation",
+      "meaning": "Resources are identified through URI/URL and represented in messages."
+    },
+    {
+      "id": "m_http1",
+      "name": "HTTP/1.1 message model",
+      "expression": "start-line + header-fields + CRLF delimiter + optional body",
+      "meaning": "HTTP/1.1 message structure described in the source."
+    },
+    {
+      "id": "m_http2",
+      "name": "HTTP/2 multiplexing model",
+      "expression": "one TCP/IP connection -> multiple bidirectional streams -> concurrent requests/responses",
+      "meaning": "HTTP/2 shares a connection across streams."
+    },
+    {
+      "id": "m_http3",
+      "name": "HTTP/3 transport model",
+      "expression": "HTTP/3 -> QUIC -> UDP -> IP",
+      "meaning": "HTTP/3 replaces TCP transport with QUIC over UDP."
+    },
+    {
+      "id": "m_cache",
+      "name": "Caching model",
+      "expression": "request -> cache lookup -> reuse or conditional retrieval -> response",
+      "meaning": "Caches and conditional requests reduce repeated network transfer."
+    },
+    {
+      "id": "m_auth",
+      "name": "HTTP authentication model",
+      "expression": "server challenge -> client credentials -> access decision",
+      "meaning": "Basic/Digest authentication use challenge-response."
+    },
+    {
+      "id": "m_status",
+      "name": "Status classification model",
+      "expression": "status_code first digit -> 1xx/2xx/3xx/4xx/5xx",
+      "meaning": "Response disposition is classified by status-code class."
+    },
+    {
+      "id": "m_method",
+      "name": "Method semantics model",
+      "expression": "method -> intended action + safety + idempotence + cacheability",
+      "meaning": "HTTP methods have defined semantic properties."
+    },
+    {
+      "id": "m_persistent",
+      "name": "Persistent connection model",
+      "expression": "one TCP connection -> multiple HTTP requests/responses",
+      "meaning": "HTTP/1.1 keep-alive reduces repeated TCP setup."
+    },
+    {
+      "id": "m_range",
+      "name": "Range retrieval model",
+      "expression": "resource -> byte range -> partial response",
+      "meaning": "Byte serving retrieves selected portions and can resume interrupted downloads."
+    },
+    {
+      "id": "m_session",
+      "name": "Application session model",
+      "expression": "stateless HTTP + cookie/hidden variable/etc. -> application session",
+      "meaning": "Sessions are implemented above HTTP's stateless protocol semantics."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "c01",
+      "statement": "HTTP is an application-layer protocol in the Internet protocol suite for distributed, collaborative hypermedia information systems.",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "id": "c02",
+      "statement": "HTTP is foundational to World Wide Web data communication.",
+      "source_line_ranges": [
+        95
+      ]
+    },
+    {
+      "id": "c03",
+      "statement": "HTTP uses request-response in the client-server model.",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "id": "c04",
+      "statement": "Browsers, crawlers, voice browsers, mobile apps and other software can act as user agents.",
+      "source_line_ranges": [
+        99
+      ]
+    },
+    {
+      "id": "c05",
+      "statement": "HTTP supports intermediate caches and proxies; some headers are hop-by-hop and others end-to-end.",
+      "source_line_ranges": [
+        101,
+        103
+      ]
+    },
+    {
+      "id": "c06",
+      "statement": "Web resources are located through URL/URI schemes http and https.",
+      "source_line_ranges": [
+        105
+      ]
+    },
+    {
+      "id": "c07",
+      "statement": "HTTP/0.9, 1.0, 1.1, 2 and 3 are the versions listed with their introduction years/statuses.",
+      "source_line_ranges": [
+        109,
+        112,
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "id": "c08",
+      "statement": "HTTP/1.0 used a separate TCP connection per resource; HTTP/1.1 introduced reusable persistent connections.",
+      "source_line_ranges": [
+        117,
+        119,
+        152
+      ]
+    },
+    {
+      "id": "c09",
+      "statement": "HTTP/2 adds binary header representation, multiplexed streams, and server push.",
+      "source_line_ranges": [
+        121,
+        123,
+        125,
+        126
+      ]
+    },
+    {
+      "id": "c10",
+      "statement": "HTTP/3 uses QUIC over UDP rather than TCP.",
+      "source_line_ranges": [
+        127,
+        137,
+        158
+      ]
+    },
+    {
+      "id": "c11",
+      "statement": "HTTP data exchange uses reliable transport; TCP is the pre-HTTP/3 standard choice.",
+      "source_line_ranges": [
+        137,
+        141
+      ]
+    },
+    {
+      "id": "c12",
+      "statement": "HTTP/1.1 messages have start line, header fields, blank line, and optional body.",
+      "source_line_ranges": [
+        193,
+        197,
+        205
+      ]
+    },
+    {
+      "id": "c13",
+      "statement": "HTTP methods classify requested actions and have safety, idempotence, and cacheability properties.",
+      "source_line_ranges": [
+        235,
+        261,
+        274,
+        276,
+        286,
+        294
+      ]
+    },
+    {
+      "id": "c14",
+      "statement": "GET is intended to retrieve without modifying server state, while other methods can modify state.",
+      "source_line_ranges": [
+        241,
+        278
+      ]
+    },
+    {
+      "id": "c15",
+      "statement": "Safe methods are GET, HEAD, OPTIONS, TRACE and QUERY in the supplied source.",
+      "source_line_ranges": [
+        275,
+        276
+      ]
+    },
+    {
+      "id": "c16",
+      "statement": "Idempotent methods include PUT, DELETE and safe methods; POST, CONNECT and PATCH are not necessarily idempotent.",
+      "source_line_ranges": [
+        286,
+        288
+      ]
+    },
+    {
+      "id": "c17",
+      "statement": "GET, HEAD and POST are defined as cacheable in the source table.",
+      "source_line_ranges": [
+        292,
+        294
+      ]
+    },
+    {
+      "id": "c18",
+      "statement": "HTTP response status codes are three-digit classes 1xx through 5xx.",
+      "source_line_ranges": [
+        304,
+        306,
+        308,
+        310,
+        312,
+        314,
+        316
+      ]
+    },
+    {
+      "id": "c19",
+      "statement": "HTTP is stateless; application sessions can be implemented with cookies, hidden variables or other mechanisms.",
+      "source_line_ranges": [
+        173
+      ]
+    },
+    {
+      "id": "c20",
+      "statement": "HTTP provides Basic and Digest authentication through challenge-response.",
+      "source_line_ranges": [
+        178,
+        181
+      ]
+    },
+    {
+      "id": "c21",
+      "statement": "HTTPS is the popular encrypted form of HTTP.",
+      "source_line_ranges": [
+        187
+      ]
+    },
+    {
+      "id": "c22",
+      "statement": "HTTP/1.1 message headers use ASCII lines terminated by CRLF.",
+      "source_line_ranges": [
+        197,
+        198
+      ]
+    },
+    {
+      "id": "c23",
+      "statement": "HTTP/1.1 supports conditional retrieval, chunked transfer and byte-range serving.",
+      "source_line_ranges": [
+        163,
+        171,
+        172
+      ]
+    },
+    {
+      "id": "c24",
+      "statement": "Tim Berners-Lee and CERN are credited with HTTP's invention/development.",
+      "source_line_ranges": [
+        368,
+        369
+      ]
+    },
+    {
+      "id": "c25",
+      "statement": "HTTP/0.9 supported only GET and returned HTML pages.",
+      "source_line_ranges": [
+        371,
+        373
+      ]
+    },
+    {
+      "id": "c26",
+      "statement": "SPDY influenced HTTP/2 and was developed by Google.",
+      "source_line_ranges": [
+        405,
+        408
+      ]
+    },
+    {
+      "id": "c27",
+      "statement": "HTTP/2 was published in 2015 and HTTP/3 was standardized in 2022.",
+      "source_line_ranges": [
+        115,
+        116,
+        410,
+        435
+      ]
+    },
+    {
+      "id": "c28",
+      "statement": "RFC 9110/9111/9112/9113/9114 are the current semantic/caching/version documents listed by the source.",
+      "source_line_ranges": [
+        440,
+        441,
+        442,
+        443,
+        444
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "d01",
+      "term_a": "HTTP",
+      "term_b": "HTTPS",
+      "difference": "HTTPS is the secure variant of HTTP."
+    },
+    {
+      "id": "d02",
+      "term_a": "HTTP/1.0",
+      "term_b": "HTTP/1.1",
+      "difference": "HTTP/1.1 supports reusable persistent connections; HTTP/1.0 normally closed after response."
+    },
+    {
+      "id": "d03",
+      "term_a": "HTTP/1.1",
+      "term_b": "HTTP/2",
+      "difference": "HTTP/2 uses binary framing and multiplexed streams rather than HTTP/1.1's textual message exchange."
+    },
+    {
+      "id": "d04",
+      "term_a": "HTTP/2",
+      "term_b": "HTTP/3",
+      "difference": "HTTP/2 uses TCP; HTTP/3 uses QUIC over UDP."
+    },
+    {
+      "id": "d05",
+      "term_a": "hop-by-hop",
+      "term_b": "end-to-end",
+      "difference": "Hop-by-hop headers can be managed by intermediaries; end-to-end headers are managed only by endpoints."
+    },
+    {
+      "id": "d06",
+      "term_a": "safe",
+      "term_b": "idempotent",
+      "difference": "Safe means no intended server-state effect; idempotent means repeated identical requests have the same intended effect."
+    },
+    {
+      "id": "d07",
+      "term_a": "cacheable",
+      "term_b": "safe",
+      "difference": "Cacheability is whether responses may be stored; it is distinct from safety."
+    },
+    {
+      "id": "d08",
+      "term_a": "GET",
+      "term_b": "POST",
+      "difference": "GET retrieves a representation and is safe/cacheable; POST processes a resource and is not safe/idempotent by definition."
+    },
+    {
+      "id": "d09",
+      "term_a": "PUT",
+      "term_b": "PATCH",
+      "difference": "PUT supplies state for create/update at client-specified target; PATCH applies partial state."
+    },
+    {
+      "id": "d10",
+      "term_a": "HTTP authentication",
+      "term_b": "application session login",
+      "difference": "HTTP authentication belongs to protocol access control; application login/session is application-level."
+    },
+    {
+      "id": "d11",
+      "term_a": "resource",
+      "term_b": "representation",
+      "difference": "A resource is the target concept; a representation is the data form returned for it."
+    },
+    {
+      "id": "d12",
+      "term_a": "header field name",
+      "term_b": "method name",
+      "difference": "Header names are case-insensitive; method names are case-sensitive."
+    },
+    {
+      "id": "d13",
+      "term_a": "status code",
+      "term_b": "reason phrase",
+      "difference": "Status codes are machine-readable; reason phrases are human-readable recommendations."
+    },
+    {
+      "id": "d14",
+      "term_a": "persistent connection",
+      "term_b": "pipelining",
+      "difference": "Persistent reuse keeps a connection open; pipelining sends multiple requests before responses and had interoperability problems."
+    },
+    {
+      "id": "d15",
+      "term_a": "chunked transfer",
+      "term_b": "Content-Length",
+      "difference": "Chunked transfer supports unknown-length streaming; Content-Length explicitly states known length."
+    },
+    {
+      "id": "d16",
+      "term_a": "full response",
+      "term_b": "byte-range response",
+      "difference": "Byte ranges retrieve only selected portions."
+    },
+    {
+      "id": "d17",
+      "term_a": "TCP",
+      "term_b": "QUIC",
+      "difference": "TCP is the traditional reliable transport; QUIC provides reliability over UDP for HTTP/3."
+    },
+    {
+      "id": "d18",
+      "term_a": "HTTP/0.9",
+      "term_b": "modern HTTP",
+      "difference": "HTTP/0.9 was extremely minimal, with only GET and HTML responses."
+    },
+    {
+      "id": "d19",
+      "term_a": "SPDY",
+      "term_b": "HTTP/2",
+      "difference": "SPDY was an alternative Google protocol whose ideas influenced HTTP/2."
+    },
+    {
+      "id": "d20",
+      "term_a": "Gopher",
+      "term_b": "HTTP",
+      "difference": "The source describes HTTP as displacing Gopher for content delivery in the early 1990s."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "l01",
+      "name": "HTTP fundamentals",
+      "sequence": [
+        "http",
+        "app_layer",
+        "internet_suite",
+        "www"
+      ]
+    },
+    {
+      "id": "l02",
+      "name": "Client-server flow",
+      "sequence": [
+        "client",
+        "request",
+        "server",
+        "response",
+        "request_response"
+      ]
+    },
+    {
+      "id": "l03",
+      "name": "Web addressing",
+      "sequence": [
+        "uri",
+        "url",
+        "resource",
+        "hyperlink",
+        "html"
+      ]
+    },
+    {
+      "id": "l04",
+      "name": "Intermediaries",
+      "sequence": [
+        "intermediary",
+        "proxy",
+        "cache",
+        "browser_cache",
+        "hop_by_hop",
+        "end_to_end"
+      ]
+    },
+    {
+      "id": "l05",
+      "name": "HTTP versions",
+      "sequence": [
+        "v09",
+        "v10",
+        "v11",
+        "v2",
+        "v3"
+      ]
+    },
+    {
+      "id": "l06",
+      "name": "HTTP/1.1 transport",
+      "sequence": [
+        "v11",
+        "tcp",
+        "keepalive",
+        "handshake",
+        "pipeline"
+      ]
+    },
+    {
+      "id": "l07",
+      "name": "HTTP/2",
+      "sequence": [
+        "v2",
+        "binary",
+        "streams",
+        "multiplex",
+        "hpack",
+        "push"
+      ]
+    },
+    {
+      "id": "l08",
+      "name": "HTTP/3",
+      "sequence": [
+        "v3",
+        "quic",
+        "udp",
+        "qpack",
+        "holb"
+      ]
+    },
+    {
+      "id": "l09",
+      "name": "Message structure",
+      "sequence": [
+        "message",
+        "header",
+        "start_line",
+        "header_fields",
+        "empty_line",
+        "body"
+      ]
+    },
+    {
+      "id": "l10",
+      "name": "Request methods",
+      "sequence": [
+        "request",
+        "get",
+        "head",
+        "post",
+        "put",
+        "delete",
+        "connect",
+        "options",
+        "trace",
+        "patch",
+        "query"
+      ]
+    },
+    {
+      "id": "l11",
+      "name": "Method semantics",
+      "sequence": [
+        "safe",
+        "idempotent",
+        "cacheable",
+        "server_state"
+      ]
+    },
+    {
+      "id": "l12",
+      "name": "Responses",
+      "sequence": [
+        "response",
+        "status_code",
+        "status_1xx",
+        "status_2xx",
+        "status_3xx",
+        "status_4xx",
+        "status_5xx"
+      ]
+    },
+    {
+      "id": "l13",
+      "name": "Caching and transfer",
+      "sequence": [
+        "caching",
+        "conditional_get",
+        "chunked",
+        "byte_range",
+        "compression"
+      ]
+    },
+    {
+      "id": "l14",
+      "name": "Sessions and authentication",
+      "sequence": [
+        "stateless",
+        "app_session",
+        "cookie",
+        "http_auth",
+        "challenge_response",
+        "realm"
+      ]
+    },
+    {
+      "id": "l15",
+      "name": "HTTPS and security",
+      "sequence": [
+        "https",
+        "tls",
+        "tls_upgrade",
+        "http_security",
+        "header_injection",
+        "request_smuggling"
+      ]
+    },
+    {
+      "id": "l16",
+      "name": "HTTP history",
+      "sequence": [
+        "tim_berners_lee",
+        "cern",
+        "v09",
+        "v10",
+        "v11",
+        "spdy",
+        "v2",
+        "v3"
+      ]
+    },
+    {
+      "id": "l17",
+      "name": "Standards",
+      "sequence": [
+        "rfc1945",
+        "rfc9110",
+        "rfc9111",
+        "rfc9112",
+        "rfc9113",
+        "rfc9114"
+      ]
+    },
+    {
+      "id": "l18",
+      "name": "Protocol troubleshooting",
+      "sequence": [
+        "request",
+        "response",
+        "status_code",
+        "header_fields",
+        "content_length",
+        "transfer_encoding",
+        "connection_close"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "x01",
+      "misconception": "HTTP itself is TCP.",
+      "correction": "HTTP is an application protocol; TCP is a traditional underlying transport, while HTTP/3 uses QUIC over UDP."
+    },
+    {
+      "id": "x02",
+      "misconception": "HTTP/3 is just HTTP/2 with a different version number.",
+      "correction": "HTTP/3 changes the transport model to QUIC over UDP."
+    },
+    {
+      "id": "x03",
+      "misconception": "HTTP is stateful because websites have logins.",
+      "correction": "HTTP itself is stateless; application sessions add state above HTTP."
+    },
+    {
+      "id": "x04",
+      "misconception": "Safe means idempotent and idempotent means safe.",
+      "correction": "They overlap for several methods but describe different semantic properties."
+    },
+    {
+      "id": "x05",
+      "misconception": "GET can never cause side effects.",
+      "correction": "The source says implementations can misuse GET; safe describes intended semantics, not technical enforcement."
+    },
+    {
+      "id": "x06",
+      "misconception": "POST is idempotent.",
+      "correction": "The source explicitly says POST is not necessarily idempotent."
+    },
+    {
+      "id": "x07",
+      "misconception": "All HTTP methods are cacheable.",
+      "correction": "The source defines only GET, HEAD and POST as cacheable."
+    },
+    {
+      "id": "x08",
+      "misconception": "HTTP/1.1 always opens a new TCP connection for every resource.",
+      "correction": "HTTP/1.1 can reuse persistent connections."
+    },
+    {
+      "id": "x09",
+      "misconception": "HTTP/2 sends multiple independent TCP connections for every request.",
+      "correction": "The source describes multiplexed streams over a shared TCP/IP connection."
+    },
+    {
+      "id": "x10",
+      "misconception": "HTTP/3 uses TCP underneath QUIC.",
+      "correction": "QUIC runs over UDP."
+    },
+    {
+      "id": "x11",
+      "misconception": "Header field names and method names use the same case rules.",
+      "correction": "Methods are case-sensitive; header field names are case-insensitive."
+    },
+    {
+      "id": "x12",
+      "misconception": "A response body is always present.",
+      "correction": "The body is optional."
+    },
+    {
+      "id": "x13",
+      "misconception": "A resource is always a static file.",
+      "correction": "The source says resources may be files or dynamically generated/executable output."
+    },
+    {
+      "id": "x14",
+      "misconception": "Authentication and application login are the same HTTP mechanism.",
+      "correction": "The source distinguishes HTTP authentication from application-session login."
+    },
+    {
+      "id": "x15",
+      "misconception": "HTTP/0.9 supported POST and arbitrary content formats.",
+      "correction": "The source says HTTP/0.9 supported only GET and returned HTML pages."
+    },
+    {
+      "id": "x16",
+      "misconception": "HTTP/2 made HTTP/1.1 obsolete.",
+      "correction": "The source describes HTTP/2 as an evolution while HTTP/1.1 remains a standard version."
+    },
+    {
+      "id": "x17",
+      "misconception": "HTTPS is a different application protocol unrelated to HTTP.",
+      "correction": "HTTPS is described as the secure variant of HTTP."
+    },
+    {
+      "id": "x18",
+      "misconception": "Byte-range serving always downloads the whole resource.",
+      "correction": "It retrieves selected portions and can resume interrupted downloads."
+    },
+    {
+      "id": "x19",
+      "misconception": "Chunked transfer requires Content-Length.",
+      "correction": "Chunked transfer is specifically useful when length is not known in advance."
+    },
+    {
+      "id": "x20",
+      "misconception": "Status reason phrases are the machine-readable part of responses.",
+      "correction": "Status codes are machine-readable; reason phrases are human-readable."
+    }
+  ],
+  "questions": [
+    "What is HTTP?",
+    "At which layer of the Internet protocol suite does HTTP operate?",
+    "Why is HTTP foundational to the World Wide Web?",
+    "What is the HTTP client-server model?",
+    "What is an HTTP request?",
+    "What is an HTTP response?",
+    "What is a user agent?",
+    "How does a browser act as a user agent?",
+    "What are caches and proxies used for?",
+    "What is the difference between hop-by-hop and end-to-end headers?",
+    "How are web resources identified?",
+    "What are the HTTP URI schemes listed?",
+    "What changed from HTTP/0.9 to HTTP/1.0?",
+    "What changed from HTTP/1.0 to HTTP/1.1?",
+    "Why do persistent connections reduce latency?",
+    "What is HTTP pipelining?",
+    "Why was HTTP pipelining problematic?",
+    "What did HTTP/2 add?",
+    "What is HTTP/2 multiplexing?",
+    "What is head-of-line blocking?",
+    "What is server push?",
+    "What transport does HTTP/3 use?",
+    "Why does HTTP/3 use QUIC over UDP?",
+    "What is the highest-level HTTP message structure?",
+    "What is an HTTP start line?",
+    "What are header fields?",
+    "What terminates HTTP/1.1 header lines?",
+    "What is the role of Content-Type?",
+    "What is Content-Length?",
+    "What is Transfer-Encoding?",
+    "What is chunked transfer encoding?",
+    "What is byte-range serving?",
+    "What is ETag used for?",
+    "What is Last-Modified used for?",
+    "What is GET?",
+    "What is HEAD?",
+    "What is POST?",
+    "What is PUT?",
+    "What is DELETE?",
+    "What is CONNECT?",
+    "What is OPTIONS?",
+    "What is TRACE?",
+    "What is PATCH?",
+    "What is QUERY?",
+    "What makes a method safe?",
+    "What makes a method idempotent?",
+    "What makes a method cacheable?",
+    "Which methods are safe in the source?",
+    "Which methods are idempotent?",
+    "Which methods are cacheable?",
+    "Why can a badly implemented GET still change server state?",
+    "What happened with Google Web Accelerator?",
+    "What are HTTP response status classes?",
+    "What is a 4xx response?",
+    "What is a 5xx response?",
+    "What is the difference between status code and reason phrase?",
+    "Is HTTP stateful?",
+    "How can applications implement sessions?",
+    "What is Basic authentication?",
+    "What is Digest authentication?",
+    "What is challenge-response authentication?",
+    "What is an authentication realm?",
+    "What is HTTPS?",
+    "How can HTTP/1.1 be upgraded to TLS?",
+    "What HTTP security vulnerabilities are listed?",
+    "Who is credited with inventing HTTP?",
+    "Where was HTTP initially developed?",
+    "What was HTTP/0.9 designed to do?",
+    "What role did the W3C HTTP Working Group play?",
+    "What was HTTP-NG?",
+    "What was SPDY?",
+    "How did SPDY influence HTTP/2?",
+    "When was HTTP/2 published?",
+    "When was HTTP/3 standardized?",
+    "What RFCs define current HTTP semantics and versions?"
+  ],
+  "expansion_targets": [
+    "HTTP/1.1 RFC 9112 semantics and message grammar",
+    "RFC 9110 method semantics",
+    "HTTP caching RFC 9111",
+    "HTTP/2 frame layer and stream state machine",
+    "HPACK dynamic table and header compression",
+    "HTTP/3 frame layer and QPACK",
+    "QUIC connection/stream architecture",
+    "QUIC loss recovery and congestion control",
+    "TLS 1.2/1.3 and ALPN negotiation",
+    "HTTP/2 priority and prioritization",
+    "HTTP/3 extensible prioritization",
+    "HTTP connection pooling",
+    "Browser networking architecture",
+    "DNS resolution before HTTP",
+    "TLS handshake before HTTPS request",
+    "HTTP proxy modes and CONNECT tunneling",
+    "Reverse proxies and load balancers",
+    "CDN and edge caching",
+    "Cache-Control and validation headers",
+    "ETag conditional requests",
+    "Range requests and resumable downloads",
+    "Content negotiation",
+    "MIME types and Content-Type",
+    "Transfer-Encoding and framing",
+    "HTTP cookies and cookie security",
+    "Web sessions and authentication architecture",
+    "Basic vs Digest authentication",
+    "Modern authentication schemes beyond supplied source",
+    "HTTP security vulnerabilities",
+    "Request smuggling mechanics",
+    "Header injection mechanics",
+    "Response splitting",
+    "Parameter pollution",
+    "CSRF and related web security",
+    "CORS and browser security model",
+    "WebSockets over HTTP/1.1 and HTTP/2",
+    "Server-Sent Events",
+    "HTTP CONNECT and proxy tunneling",
+    "HTTP/0.9 to HTTP/3 protocol evolution",
+    "SPDY to HTTP/2 history",
+    "HTTP-NG history",
+    "HTTP standards governance",
+    "HTTP/3 deployment architecture",
+    "HTTP observability and packet capture",
+    "HTTP performance benchmarking",
+    "HTTP/2 vs HTTP/3 latency",
+    "Head-of-line blocking at transport vs application layers",
+    "HTTP method safety and idempotency in API design",
+    "REST resource semantics",
+    "API versioning and backward compatibility",
+    "HTTP status code design",
+    "HTTP content compression",
+    "HTTP/2/3 binary wire formats",
+    "HTTP test suites and conformance"
+  ],
+  "references": [
+    {
+      "id": "ref_rfc9110",
+      "title": "HTTP Semantics",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc9111",
+      "title": "HTTP Caching",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9111",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc9112",
+      "title": "HTTP/1.1",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9112",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc9113",
+      "title": "HTTP/2",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9113",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc9114",
+      "title": "HTTP/3",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9114",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc1945",
+      "title": "Hypertext Transfer Protocol -- HTTP/1.0",
+      "publisher": "IETF",
+      "date": "May 1996",
+      "url": "https://www.rfc-editor.org/rfc/rfc1945",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc5789",
+      "title": "PATCH Method for HTTP",
+      "publisher": "IETF",
+      "date": "March 2010",
+      "url": "https://www.rfc-editor.org/rfc/rfc5789",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_rfc10008",
+      "title": "The HTTP QUERY Method",
+      "publisher": "IETF",
+      "date": "June 2026",
+      "url": "https://www.rfc-editor.org/rfc/rfc10008",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_http2",
+      "title": "HTTP/2",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9113",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_qpack",
+      "title": "QPACK: Field Compression for HTTP/3",
+      "publisher": "IETF",
+      "date": "June 2022",
+      "url": "https://www.rfc-editor.org/rfc/rfc9204",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_alpn",
+      "title": "TLS Application-Layer Protocol Negotiation Extension",
+      "publisher": "IETF",
+      "date": "July 2014",
+      "url": "https://www.rfc-editor.org/rfc/rfc7301",
+      "source_role": "cited by supplied source"
+    },
+    {
+      "id": "ref_http_original",
+      "title": "The Original HTTP as defined in 1991",
+      "publisher": "W3C",
+      "date": "1991",
+      "url": "https://www.w3.org/Protocols/HTTP/AsImplemented.html",
+      "source_role": "cited by supplied source"
+    }
+  ],
+  "historical_context": [
+    {
+      "id": "h01",
+      "event": "WorldWideWeb project proposed",
+      "date": "1989",
+      "description": "Source says Berners-Lee proposed the WorldWideWeb project in 1989.",
+      "source_line_ranges": [
+        369
+      ]
+    },
+    {
+      "id": "h02",
+      "event": "First web server went live",
+      "date": "1990",
+      "description": "Source says the first web server went live in 1990.",
+      "source_line_ranges": [
+        371
+      ]
+    },
+    {
+      "id": "h03",
+      "event": "HTTP/0.9",
+      "date": "1991",
+      "description": "First documented official HTTP version, supporting only GET and HTML retrieval.",
+      "source_line_ranges": [
+        373
+      ]
+    },
+    {
+      "id": "h04",
+      "event": "HTTP/1.0 RFC",
+      "date": "1996",
+      "description": "RFC 1945 finalized HTTP/1.0 in May 1996.",
+      "source_line_ranges": [
+        386,
+        387
+      ]
+    },
+    {
+      "id": "h05",
+      "event": "HTTP/1.1 RFC",
+      "date": "1997",
+      "description": "RFC 2068 officially released HTTP/1.1 in January 1997.",
+      "source_line_ranges": [
+        391,
+        394
+      ]
+    },
+    {
+      "id": "h06",
+      "event": "HTTP/1.1 revision",
+      "date": "1999",
+      "description": "RFC 2616 consolidated improvements and updates.",
+      "source_line_ranges": [
+        396
+      ]
+    },
+    {
+      "id": "h07",
+      "event": "SPDY",
+      "date": "2009",
+      "description": "Google announced SPDY as a binary protocol for faster web traffic.",
+      "source_line_ranges": [
+        405
+      ]
+    },
+    {
+      "id": "h08",
+      "event": "HTTP/2",
+      "date": "2015",
+      "description": "HTTP/2 published in May 2015 as RFC 7540.",
+      "source_line_ranges": [
+        408,
+        410
+      ]
+    },
+    {
+      "id": "h09",
+      "event": "HTTP/3",
+      "date": "2022",
+      "description": "HTTP/3 standardized by IETF as RFC 9114 on 6 June 2022.",
+      "source_line_ranges": [
+        433,
+        435
+      ]
+    },
+    {
+      "id": "h10",
+      "event": "HTTP semantics refactoring",
+      "date": "2022",
+      "description": "HTTP semantics/caching/version documents were refactored into RFC 9110-9114 family.",
+      "source_line_ranges": [
+        437,
+        445
+      ]
+    }
+  ],
+  "validation": {
+    "node_count": 183,
+    "relationship_count": 251,
+    "formal_model_count": 12,
+    "source_claim_count": 28,
+    "semantic_distinction_count": 20,
+    "learning_path_count": 18,
+    "misconception_count": 20,
+    "question_count": 75,
+    "expansion_target_count": 54,
+    "reference_count": 12,
+    "historical_context_count": 10,
+    "dangling_relationship_count": 0,
+    "duplicate_relationship_count": 0,
+    "status": "clean"
+  }
+}

@@ -1,0 +1,5609 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "relationship_rich_semantic_knowledge_graph",
+  "topic": "JavaScript",
+  "source": {
+    "filename": "Pasted text(20261008-220419).txt",
+    "line_count": 638,
+    "authority": "user-supplied Wikipedia article text",
+    "external_research_used": false,
+    "source_note": "Source-derived graph; no outside verification or correction applied."
+  },
+  "entry_schema": {
+    "nodes": "First-class concepts, technologies, people, organizations, standards, security mechanisms, runtime components, language features, and historical entities.",
+    "relationships": "Directional semantic edges with mechanism and source provenance.",
+    "formal_models": "Compact causal/execution/semantic models derived from source statements.",
+    "provenance": "Source line ranges retained where relationships/concepts are grounded."
+  },
+  "nodes": [
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "type": "programming_language",
+      "description": "High-level, dynamic, multi-paradigm programming language and core Web technology conforming to ECMAScript.",
+      "source_line_ranges": [
+        [
+          61,
+          94
+        ]
+      ]
+    },
+    {
+      "id": "ecmascript",
+      "label": "ECMAScript",
+      "type": "language_standard",
+      "description": "Standard specification family maintained by Ecma International TC39.",
+      "source_line_ranges": [
+        [
+          67,
+          79
+        ],
+        [
+          116,
+          142
+        ]
+      ]
+    },
+    {
+      "id": "tc39",
+      "label": "TC39",
+      "type": "standards_committee",
+      "description": "Technical committee responsible for maintaining the JavaScript/ECMAScript language standard.",
+      "source_line_ranges": [
+        [
+          64,
+          79
+        ],
+        [
+          142,
+          142
+        ]
+      ]
+    },
+    {
+      "id": "web_platform",
+      "label": "Web platform",
+      "type": "platform",
+      "description": "HTML, CSS, browser APIs, and related standards within which JavaScript commonly operates.",
+      "source_line_ranges": [
+        [
+          88,
+          94
+        ],
+        [
+          153,
+          167
+        ]
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "type": "web_technology",
+      "description": "Markup technology into which JavaScript may be embedded or from which scripts are included.",
+      "source_line_ranges": [
+        [
+          153,
+          154
+        ]
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "type": "web_technology",
+      "description": "Web styling technology historically developed alongside JavaScript and browser scripting.",
+      "source_line_ranges": [
+        [
+          109,
+          111
+        ]
+      ]
+    },
+    {
+      "id": "dom",
+      "label": "Document Object Model",
+      "type": "web_api",
+      "description": "Object model JavaScript uses to interact with documents in browsers.",
+      "source_line_ranges": [
+        [
+          92,
+          94
+        ],
+        [
+          153,
+          156
+        ]
+      ]
+    },
+    {
+      "id": "web_apis",
+      "label": "Web APIs",
+      "type": "api_layer",
+      "description": "Browser/runtime APIs providing capabilities outside ECMAScript itself, including networking, storage, graphics, and DOM access.",
+      "source_line_ranges": [
+        [
+          92,
+          94
+        ],
+        [
+          191,
+          192
+        ]
+      ]
+    },
+    {
+      "id": "nodejs",
+      "label": "Node.js",
+      "type": "runtime",
+      "description": "Standalone JavaScript runtime combining V8, an event loop, and I/O APIs.",
+      "source_line_ranges": [
+        [
+          140,
+          142
+        ],
+        [
+          189,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "deno",
+      "label": "Deno",
+      "type": "runtime",
+      "description": "Standalone JavaScript runtime identified alongside Node.js and Bun.",
+      "source_line_ranges": [
+        [
+          196,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "bun",
+      "label": "Bun",
+      "type": "runtime",
+      "description": "Standalone JavaScript runtime identified alongside Node.js and Deno.",
+      "source_line_ranges": [
+        [
+          196,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "v8",
+      "label": "V8",
+      "type": "javascript_engine",
+      "description": "JavaScript engine used by Chrome and as a core component of Node.js.",
+      "source_line_ranges": [
+        [
+          131,
+          140
+        ],
+        [
+          189,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "javascriptcore",
+      "label": "JavaScriptCore",
+      "type": "javascript_engine",
+      "description": "Major JavaScript engine listed in the source.",
+      "source_line_ranges": [
+        [
+          80,
+          82
+        ]
+      ]
+    },
+    {
+      "id": "spidermonkey",
+      "label": "SpiderMonkey",
+      "type": "javascript_engine",
+      "description": "Major JavaScript engine listed in the source.",
+      "source_line_ranges": [
+        [
+          80,
+          82
+        ]
+      ]
+    },
+    {
+      "id": "chakra",
+      "label": "Chakra",
+      "type": "javascript_engine",
+      "description": "Former major JavaScript engine, now deprecated.",
+      "source_line_ranges": [
+        [
+          80,
+          82
+        ]
+      ]
+    },
+    {
+      "id": "browser",
+      "label": "web_browser",
+      "type": "runtime_host",
+      "description": "Runtime host containing a JavaScript engine and browser capabilities.",
+      "source_line_ranges": [
+        [
+          90,
+          94
+        ],
+        [
+          156,
+          192
+        ]
+      ]
+    },
+    {
+      "id": "runtime_system",
+      "label": "runtime_system",
+      "type": "execution_environment",
+      "description": "Host environment embedding a JavaScript engine and supplying I/O and environment APIs.",
+      "source_line_ranges": [
+        [
+          191,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "event_loop",
+      "label": "event_loop",
+      "type": "concurrency_mechanism",
+      "description": "Runtime mechanism processing queued messages one at a time and enabling non-blocking event-driven I/O.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "call_stack",
+      "label": "call_stack",
+      "type": "execution_structure",
+      "description": "Stack of execution frames containing function arguments and local variables.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "id": "message_queue",
+      "label": "message_queue",
+      "type": "runtime_structure",
+      "description": "Queue from which the runtime processes messages/events one at a time.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "id": "garbage_collection",
+      "label": "garbage_collection",
+      "type": "memory_management",
+      "description": "Automatic memory management characteristic of JavaScript implementations.",
+      "source_line_ranges": [
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "jit",
+      "label": "just_in_time_compilation",
+      "type": "execution_optimization",
+      "description": "Compilation technique used by modern JavaScript engines to improve execution performance.",
+      "source_line_ranges": [
+        [
+          92,
+          92
+        ],
+        [
+          131,
+          131
+        ],
+        [
+          189,
+          189
+        ]
+      ]
+    },
+    {
+      "id": "wasm",
+      "label": "WebAssembly",
+      "type": "runtime_technology",
+      "description": "Bytecode-oriented technology designed to complement JavaScript, especially for performance-critical code, executing in the same sandbox.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "type": "data_format",
+      "description": "Data format derived from JavaScript object/array literal syntax.",
+      "source_line_ranges": [
+        [
+          324,
+          326
+        ],
+        [
+          463,
+          464
+        ]
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "type": "language",
+      "description": "Language that transpiles to JavaScript and is described as statically typed/strict about types in the source.",
+      "source_line_ranges": [
+        [
+          88,
+          88
+        ],
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "id": "coffeescript",
+      "label": "CoffeeScript",
+      "type": "language",
+      "description": "Language that transpiles to JavaScript.",
+      "source_line_ranges": [
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "id": "ajax",
+      "label": "Ajax",
+      "type": "web_technique",
+      "description": "Technique coined by Jesse James Garrett for background data loading without full page reloads, using JavaScript as its backbone.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "websocket",
+      "label": "WebSocket",
+      "type": "web_api",
+      "description": "Browser/network technology cited as enabling new content without page reloads.",
+      "source_line_ranges": [
+        [
+          158,
+          159
+        ]
+      ]
+    },
+    {
+      "id": "jquery",
+      "label": "jQuery",
+      "type": "library",
+      "description": "Widely used JavaScript library.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ],
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "type": "library_framework",
+      "description": "Notable JavaScript library/framework listed among client-side technologies.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "angular",
+      "label": "Angular",
+      "type": "framework",
+      "description": "Notable client-side JavaScript framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "vue",
+      "label": "Vue",
+      "type": "framework",
+      "description": "Notable client-side JavaScript framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "bootstrap",
+      "label": "Bootstrap",
+      "type": "library_framework",
+      "description": "Notable client-side library/framework that can be combined with JavaScript libraries such as jQuery.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "lodash",
+      "label": "Lodash",
+      "type": "library",
+      "description": "Notable JavaScript library.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "modernizr",
+      "label": "Modernizr",
+      "type": "library",
+      "description": "Notable JavaScript library.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "underscore",
+      "label": "Underscore",
+      "type": "library",
+      "description": "Notable JavaScript library.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "id": "vanilla_js",
+      "label": "Vanilla JS",
+      "type": "term",
+      "description": "Term for websites using standard JavaScript without libraries or frameworks.",
+      "source_line_ranges": [
+        [
+          173,
+          173
+        ]
+      ]
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "type": "package_manager",
+      "description": "JavaScript package management ecosystem referenced in the source.",
+      "source_line_ranges": [
+        [
+          140,
+          140
+        ],
+        [
+          422,
+          423
+        ]
+      ]
+    },
+    {
+      "id": "bower",
+      "label": "Bower",
+      "type": "package_manager",
+      "description": "JavaScript package manager referenced in the dependency security discussion.",
+      "source_line_ranges": [
+        [
+          422,
+          423
+        ]
+      ]
+    },
+    {
+      "id": "eslint",
+      "label": "ESLint",
+      "type": "static_analysis_tool",
+      "description": "Static program analysis/linting tool for JavaScript conformance and guidelines.",
+      "source_line_ranges": [
+        [
+          448,
+          453
+        ]
+      ]
+    },
+    {
+      "id": "jslint",
+      "label": "JSLint",
+      "type": "static_analysis_tool",
+      "description": "Static JavaScript analysis tool.",
+      "source_line_ranges": [
+        [
+          451,
+          452
+        ]
+      ]
+    },
+    {
+      "id": "browser_devtools",
+      "label": "browser_developer_tools",
+      "type": "development_tool",
+      "description": "Built-in browser tools including JavaScript debugging facilities.",
+      "source_line_ranges": [
+        [
+          448,
+          454
+        ]
+      ]
+    },
+    {
+      "id": "profiler",
+      "label": "javascript_profiler",
+      "type": "development_tool",
+      "description": "Browser and standalone profiling tools for performance analysis.",
+      "source_line_ranges": [
+        [
+          451,
+          453
+        ]
+      ]
+    },
+    {
+      "id": "benchmarkjs",
+      "label": "Benchmark.js",
+      "type": "benchmark_tool",
+      "description": "Standalone JavaScript benchmarking library.",
+      "source_line_ranges": [
+        [
+          453,
+          453
+        ],
+        [
+          595,
+          596
+        ]
+      ]
+    },
+    {
+      "id": "jsbench",
+      "label": "JSBench",
+      "type": "benchmark_tool",
+      "description": "Standalone JavaScript benchmarking playground/tool.",
+      "source_line_ranges": [
+        [
+          453,
+          453
+        ],
+        [
+          595,
+          596
+        ]
+      ]
+    },
+    {
+      "id": "dynamic_typing",
+      "label": "Dynamic typing",
+      "type": "type_system",
+      "description": "Types are associated with values rather than expressions; variables can be rebound to values of different types.",
+      "source_line_ranges": [
+        [
+          75,
+          75
+        ],
+        [
+          232,
+          236
+        ]
+      ]
+    },
+    {
+      "id": "weak_typing",
+      "label": "Weak typing",
+      "type": "type_system",
+      "description": "Certain operations implicitly cast values according to operator semantics.",
+      "source_line_ranges": [
+        [
+          205,
+          220
+        ]
+      ]
+    },
+    {
+      "id": "duck_typing",
+      "label": "Duck typing",
+      "type": "type_system",
+      "description": "Source identifies duck typing as one way JavaScript can test/use object types.",
+      "source_line_ranges": [
+        [
+          235,
+          236
+        ]
+      ]
+    },
+    {
+      "id": "lexical_scope",
+      "label": "Lexical scope",
+      "type": "scope_model",
+      "description": "JavaScript uses lexical scoping; block scoping was added with let and const.",
+      "source_line_ranges": [
+        [
+          77,
+          77
+        ],
+        [
+          201,
+          203
+        ]
+      ]
+    },
+    {
+      "id": "prototype_object_model",
+      "label": "Prototype-based object orientation",
+      "type": "object_model",
+      "description": "Object-oriented model based on mutable objects and prototype delegation/inheritance.",
+      "source_line_ranges": [
+        [
+          92,
+          92
+        ],
+        [
+          242,
+          251
+        ]
+      ]
+    },
+    {
+      "id": "first_class_functions",
+      "label": "First-class functions",
+      "type": "functional_feature",
+      "description": "Functions are objects and can have properties/methods, enabling higher-order programming.",
+      "source_line_ranges": [
+        [
+          92,
+          92
+        ],
+        [
+          291,
+          294
+        ]
+      ]
+    },
+    {
+      "id": "closures",
+      "label": "Lexical closures",
+      "type": "functional_feature",
+      "description": "Nested functions retain access to the outer lexical environment as part of their internal state.",
+      "source_line_ranges": [
+        [
+          295,
+          299
+        ]
+      ]
+    },
+    {
+      "id": "delegation",
+      "label": "Delegation",
+      "type": "object_model",
+      "description": "Explicit and implicit delegation mechanisms, including prototype-chain method lookup.",
+      "source_line_ranges": [
+        [
+          305,
+          315
+        ]
+      ]
+    },
+    {
+      "id": "traits_mixins",
+      "label": "Traits and mixins",
+      "type": "object_composition",
+      "description": "Function-based patterns for adding behavior through call/apply and delegation.",
+      "source_line_ranges": [
+        [
+          309,
+          311
+        ]
+      ]
+    },
+    {
+      "id": "imperative_programming",
+      "label": "Imperative programming",
+      "type": "paradigm",
+      "description": "Supported programming paradigm using statements and mutable state.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ],
+        [
+          201,
+          203
+        ]
+      ]
+    },
+    {
+      "id": "functional_programming",
+      "label": "Functional programming",
+      "type": "paradigm",
+      "description": "Supported multi-paradigm style enabled by first-class functions and closures.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ],
+        [
+          291,
+          299
+        ]
+      ]
+    },
+    {
+      "id": "procedural_programming",
+      "label": "Procedural programming",
+      "type": "paradigm",
+      "description": "Supported programming paradigm.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ]
+      ]
+    },
+    {
+      "id": "object_oriented_programming",
+      "label": "Object-oriented programming",
+      "type": "paradigm",
+      "description": "Supported through prototypes and class syntax over the prototype mechanism.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ],
+        [
+          242,
+          251
+        ]
+      ]
+    },
+    {
+      "id": "event_driven_programming",
+      "label": "Event-driven programming",
+      "type": "paradigm",
+      "description": "Supported through event-loop/message-queue execution and asynchronous APIs.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ],
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "zero_based_indexing",
+      "label": "Zero-based indexing",
+      "type": "language_feature",
+      "description": "Arrays/indexed structures use zero-based numbering.",
+      "source_line_ranges": [
+        [
+          316,
+          318
+        ]
+      ]
+    },
+    {
+      "id": "variadic_functions",
+      "label": "Variadic functions",
+      "type": "language_feature",
+      "description": "Functions can accept an indefinite number of parameters through formal parameters or arguments/bind mechanisms.",
+      "source_line_ranges": [
+        [
+          320,
+          322
+        ]
+      ]
+    },
+    {
+      "id": "regex",
+      "label": "Regular expressions",
+      "type": "language_feature",
+      "description": "Built-in support for regular expressions for text searching and manipulation.",
+      "source_line_ranges": [
+        [
+          328,
+          330
+        ]
+      ]
+    },
+    {
+      "id": "promises",
+      "label": "Promise",
+      "type": "async_abstraction",
+      "description": "Built-in object representing an asynchronous action's eventual result, with combinators.",
+      "source_line_ranges": [
+        [
+          332,
+          334
+        ]
+      ]
+    },
+    {
+      "id": "async_await",
+      "label": "async_await",
+      "type": "async_syntax",
+      "description": "Syntax for structuring asynchronous non-blocking code similarly to synchronous code.",
+      "source_line_ranges": [
+        [
+          336,
+          338
+        ]
+      ]
+    },
+    {
+      "id": "automatic_semicolon_insertion",
+      "label": "Automatic semicolon insertion",
+      "type": "syntax_feature",
+      "description": "JavaScript syntax rule allowing certain statement terminators to be omitted.",
+      "source_line_ranges": [
+        [
+          201,
+          203
+        ]
+      ]
+    },
+    {
+      "id": "var",
+      "label": "var",
+      "type": "variable_declaration",
+      "description": "Function-scoped variable declaration form.",
+      "source_line_ranges": [
+        [
+          203,
+          203
+        ],
+        [
+          346,
+          358
+        ]
+      ]
+    },
+    {
+      "id": "let",
+      "label": "let",
+      "type": "variable_declaration",
+      "description": "Block-scoped variable declaration introduced in ECMAScript 2015.",
+      "source_line_ranges": [
+        [
+          203,
+          203
+        ],
+        [
+          363,
+          365
+        ]
+      ]
+    },
+    {
+      "id": "const",
+      "label": "const",
+      "type": "variable_declaration",
+      "description": "Block-scoped declaration requiring initialization and preventing reassignment of the binding.",
+      "source_line_ranges": [
+        [
+          367,
+          373
+        ]
+      ]
+    },
+    {
+      "id": "arrow_functions",
+      "label": "Arrow functions",
+      "type": "syntax_feature",
+      "description": "Concise anonymous function syntax introduced in ECMAScript 2015.",
+      "source_line_ranges": [
+        [
+          348,
+          350
+        ]
+      ]
+    },
+    {
+      "id": "eval",
+      "label": "eval",
+      "type": "language_feature",
+      "description": "Runtime evaluation facility capable of executing statements supplied as strings.",
+      "source_line_ranges": [
+        [
+          238,
+          240
+        ]
+      ]
+    },
+    {
+      "id": "class_syntax",
+      "label": "class",
+      "type": "syntax_feature",
+      "description": "ECMAScript 2015 class syntax providing a conventional interface over prototype inheritance.",
+      "source_line_ranges": [
+        [
+          249,
+          251
+        ]
+      ]
+    },
+    {
+      "id": "inheritance",
+      "label": "Prototype inheritance",
+      "type": "object_model",
+      "description": "Inheritance via prototype chains, with class/extends/super syntax layered over it.",
+      "source_line_ranges": [
+        [
+          249,
+          251
+        ]
+      ]
+    },
+    {
+      "id": "function_constructor",
+      "label": "Function constructors",
+      "type": "object_model",
+      "description": "Functions can act as constructors when invoked with new, producing instances tied to a constructor prototype.",
+      "source_line_ranges": [
+        [
+          270,
+          285
+        ]
+      ]
+    },
+    {
+      "id": "this_binding",
+      "label": "this",
+      "type": "language_semantics",
+      "description": "Invocation-dependent binding that points to the receiver when a function is called as a method.",
+      "source_line_ranges": [
+        [
+          287,
+          289
+        ]
+      ]
+    },
+    {
+      "id": "property_access",
+      "label": "Object property access",
+      "type": "object_model",
+      "description": "Object properties can be accessed with dot or bracket notation and changed at runtime.",
+      "source_line_ranges": [
+        [
+          247,
+          247
+        ]
+      ]
+    },
+    {
+      "id": "type_coercion",
+      "label": "Type coercion",
+      "type": "language_semantics",
+      "description": "Implicit conversions performed by operators and conversion algorithms.",
+      "source_line_ranges": [
+        [
+          205,
+          220
+        ]
+      ]
+    },
+    {
+      "id": "nan",
+      "label": "NaN",
+      "type": "primitive_value",
+      "description": "Numeric result representing an invalid numeric conversion, illustrated by string subtraction.",
+      "source_line_ranges": [
+        [
+          223,
+          229
+        ]
+      ]
+    },
+    {
+      "id": "undefined",
+      "label": "undefined",
+      "type": "primitive_value",
+      "description": "Special value assigned to uninitialized variables and usable explicitly.",
+      "source_line_ranges": [
+        [
+          354,
+          373
+        ]
+      ]
+    },
+    {
+      "id": "object_literals",
+      "label": "Object literals",
+      "type": "syntax_feature",
+      "description": "Concise object construction syntax forming part of the basis for JSON.",
+      "source_line_ranges": [
+        [
+          324,
+          326
+        ]
+      ]
+    },
+    {
+      "id": "array_literals",
+      "label": "Array literals",
+      "type": "syntax_feature",
+      "description": "Concise array construction syntax forming part of the basis for JSON.",
+      "source_line_ranges": [
+        [
+          324,
+          326
+        ]
+      ]
+    },
+    {
+      "id": "memory_management",
+      "label": "Memory management",
+      "type": "runtime_feature",
+      "description": "JavaScript implementations use garbage collection for memory management.",
+      "source_line_ranges": [
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    {
+      "id": "browser_sandbox",
+      "label": "Browser sandbox",
+      "type": "security_boundary",
+      "description": "Browser restriction intended to confine scripts to web-related actions rather than arbitrary system operations.",
+      "source_line_ranges": [
+        [
+          390,
+          394
+        ]
+      ]
+    },
+    {
+      "id": "same_origin_policy",
+      "label": "Same-origin policy",
+      "type": "security_policy",
+      "description": "Restricts scripts from one site from accessing information associated with another site.",
+      "source_line_ranges": [
+        [
+          390,
+          394
+        ]
+      ]
+    },
+    {
+      "id": "csp",
+      "label": "Content Security Policy",
+      "type": "security_policy",
+      "description": "Primary intended browser mechanism described for ensuring only trusted code is executed on a page.",
+      "source_line_ranges": [
+        [
+          394,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "xss",
+      "label": "Cross-site scripting",
+      "type": "vulnerability",
+      "description": "Attack where malicious script is caused to execute in a victim-facing page with the victim's privileges.",
+      "source_line_ranges": [
+        [
+          398,
+          404
+        ]
+      ]
+    },
+    {
+      "id": "html_sanitization",
+      "label": "HTML sanitization",
+      "type": "mitigation",
+      "description": "Important mitigation for XSS by sanitizing untrusted HTML/content.",
+      "source_line_ranges": [
+        [
+          398,
+          402
+        ]
+      ]
+    },
+    {
+      "id": "csrf",
+      "label": "Cross-site request forgery",
+      "type": "vulnerability",
+      "description": "Attack in which an attacker's site induces a victim browser to perform unintended actions against a target site.",
+      "source_line_ranges": [
+        [
+          406,
+          413
+        ]
+      ]
+    },
+    {
+      "id": "csrf_token",
+      "label": "CSRF authentication token",
+      "type": "mitigation",
+      "description": "Additional authentication value used beyond cookies to authenticate requests with lasting effects.",
+      "source_line_ranges": [
+        [
+          408,
+          412
+        ]
+      ]
+    },
+    {
+      "id": "referrer_check",
+      "label": "HTTP Referrer checking",
+      "type": "mitigation",
+      "description": "Additional CSRF defense mentioned by the source.",
+      "source_line_ranges": [
+        [
+          408,
+          408
+        ]
+      ]
+    },
+    {
+      "id": "client_untrusted",
+      "label": "Untrusted client",
+      "type": "security_principle",
+      "description": "Client-side JavaScript must not be trusted to enforce security or conceal secrets.",
+      "source_line_ranges": [
+        [
+          413,
+          419
+        ]
+      ]
+    },
+    {
+      "id": "obfuscation",
+      "label": "Code obfuscation",
+      "type": "security_technique",
+      "description": "Technique that can make source harder to read but can be reverse-engineered.",
+      "source_line_ranges": [
+        [
+          416,
+          416
+        ]
+      ]
+    },
+    {
+      "id": "prototype_pollution",
+      "label": "Prototype pollution",
+      "type": "vulnerability",
+      "description": "Runtime vulnerability where attackers overwrite arbitrary properties in an object's prototype.",
+      "source_line_ranges": [
+        [
+          420,
+          420
+        ]
+      ]
+    },
+    {
+      "id": "dependency_risk",
+      "label": "Dependency supply-chain risk",
+      "type": "security_risk",
+      "description": "Risk from trusted third-party package dependencies becoming vulnerable, stale, malicious, or unavailable.",
+      "source_line_ranges": [
+        [
+          421,
+          423
+        ]
+      ]
+    },
+    {
+      "id": "browser_memory_corruption",
+      "label": "Browser/plugin memory corruption",
+      "type": "vulnerability",
+      "description": "Browser/plugin implementation flaws such as buffer overflows can enable arbitrary code execution.",
+      "source_line_ranges": [
+        [
+          424,
+          432
+        ]
+      ]
+    },
+    {
+      "id": "sandbox_escape",
+      "label": "Sandbox implementation error",
+      "type": "vulnerability",
+      "description": "Incorrect privilege handling can allow web JavaScript to execute outside intended sandbox restrictions.",
+      "source_line_ranges": [
+        [
+          434,
+          439
+        ]
+      ]
+    },
+    {
+      "id": "rowhammer_js",
+      "label": "Rowhammer.js",
+      "type": "hardware_attack",
+      "description": "JavaScript proof-of-concept implementation of a Rowhammer attack described in 2015.",
+      "source_line_ranges": [
+        [
+          441,
+          442
+        ],
+        [
+          588,
+          591
+        ]
+      ]
+    },
+    {
+      "id": "aslr_cache",
+      "label": "ASLR⊕Cache / AnC",
+      "type": "hardware_attack",
+      "description": "2017 browser-based JavaScript attack demonstrated to bypass ASLR.",
+      "source_line_ranges": [
+        [
+          444,
+          444
+        ],
+        [
+          592,
+          593
+        ]
+      ]
+    },
+    {
+      "id": "spectre_js",
+      "label": "Spectre JavaScript implementation",
+      "type": "hardware_attack",
+      "description": "JavaScript implementation associated with the Spectre speculative-execution attack disclosure.",
+      "source_line_ranges": [
+        [
+          446,
+          446
+        ],
+        [
+          594,
+          594
+        ]
+      ]
+    },
+    {
+      "id": "brendan_eich",
+      "label": "Brendan Eich",
+      "type": "person",
+      "description": "Creator of JavaScript at Netscape and major contributor to ECMAScript standardization.",
+      "source_line_ranges": [
+        [
+          69,
+          70
+        ],
+        [
+          102,
+          116
+        ],
+        [
+          151,
+          151
+        ]
+      ]
+    },
+    {
+      "id": "netscape",
+      "label": "Netscape",
+      "type": "organization",
+      "description": "Browser company that created JavaScript for Navigator.",
+      "source_line_ranges": [
+        [
+          99,
+          106
+        ]
+      ]
+    },
+    {
+      "id": "netscape_navigator",
+      "label": "Netscape Navigator",
+      "type": "browser",
+      "description": "Netscape browser into which JavaScript was initially embedded.",
+      "source_line_ranges": [
+        [
+          100,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "mosaic",
+      "label": "Mosaic",
+      "type": "browser",
+      "description": "Early popular graphical web browser that preceded Netscape Navigator.",
+      "source_line_ranges": [
+        [
+          99,
+          102
+        ]
+      ]
+    },
+    {
+      "id": "sun_microsystems",
+      "label": "Sun Microsystems",
+      "type": "organization",
+      "description": "Java developer that Netscape initially considered partnering with for browser language integration.",
+      "source_line_ranges": [
+        [
+          102,
+          106
+        ]
+      ]
+    },
+    {
+      "id": "microsoft",
+      "label": "Microsoft",
+      "type": "organization",
+      "description": "Browser vendor that created JScript and participated in the browser war and ECMAScript standardization period.",
+      "source_line_ranges": [
+        [
+          108,
+          122
+        ]
+      ]
+    },
+    {
+      "id": "internet_explorer",
+      "label": "Internet Explorer",
+      "type": "browser",
+      "description": "Microsoft browser whose JScript implementation contributed to browser incompatibilities.",
+      "source_line_ranges": [
+        [
+          108,
+          122
+        ]
+      ]
+    },
+    {
+      "id": "jscript",
+      "label": "JScript",
+      "type": "language_implementation",
+      "description": "Microsoft's JavaScript-compatible interpreter/implementation.",
+      "source_line_ranges": [
+        [
+          109,
+          120
+        ]
+      ]
+    },
+    {
+      "id": "ecma_international",
+      "label": "Ecma International",
+      "type": "standards_organization",
+      "description": "Standards organization receiving JavaScript from Netscape as the basis for ECMAScript.",
+      "source_line_ranges": [
+        [
+          116,
+          118
+        ]
+      ]
+    },
+    {
+      "id": "mozilla",
+      "label": "Mozilla",
+      "type": "organization",
+      "description": "Open-source browser organization whose Firefox and JavaScript work helped restart ecosystem momentum.",
+      "source_line_ranges": [
+        [
+          124,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "firefox",
+      "label": "Firefox",
+      "type": "browser",
+      "description": "Mozilla browser whose 2004 release helped break Internet Explorer dominance.",
+      "source_line_ranges": [
+        [
+          124,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "jesse_james_garrett",
+      "label": "Jesse James Garrett",
+      "type": "person",
+      "description": "Author who coined Ajax in a 2005 white paper.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "type": "organization",
+      "description": "Company that debuted Chrome and V8 in 2008 and contributed to the later JavaScript performance/standardization resurgence.",
+      "source_line_ranges": [
+        [
+          131,
+          133
+        ]
+      ]
+    },
+    {
+      "id": "chrome",
+      "label": "Chrome",
+      "type": "browser",
+      "description": "Google browser introduced in 2008 with the V8 JavaScript engine.",
+      "source_line_ranges": [
+        [
+          131,
+          131
+        ]
+      ]
+    },
+    {
+      "id": "ryan_dahl",
+      "label": "Ryan Dahl",
+      "type": "person",
+      "description": "Creator of Node.js in 2009.",
+      "source_line_ranges": [
+        [
+          140,
+          140
+        ],
+        [
+          151,
+          151
+        ]
+      ]
+    },
+    {
+      "id": "w3c",
+      "label": "W3C",
+      "type": "standards_organization",
+      "description": "Organization maintaining related Web APIs alongside WHATWG.",
+      "source_line_ranges": [
+        [
+          88,
+          88
+        ]
+      ]
+    },
+    {
+      "id": "whatwg",
+      "label": "WHATWG",
+      "type": "standards_organization",
+      "description": "Organization maintaining related Web APIs alongside W3C.",
+      "source_line_ranges": [
+        [
+          88,
+          88
+        ]
+      ]
+    },
+    {
+      "id": "oracle",
+      "label": "Oracle",
+      "type": "company",
+      "description": "Owner of the JavaScript trademark after acquiring Sun Microsystems; provider of historical Java/JVM JavaScript technologies.",
+      "source_line_ranges": [
+        [
+          148,
+          151
+        ],
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "adobe",
+      "label": "Adobe Systems",
+      "type": "company",
+      "description": "Organization involved in E4X/ActionScript 3 work and owner of technologies using JavaScript.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ],
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "macromedia",
+      "label": "Macromedia",
+      "type": "company",
+      "description": "Organization that worked with Mozilla on E4X and was later acquired by Adobe Systems.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "tamarin",
+      "label": "Tamarin",
+      "type": "implementation",
+      "description": "Open-source implementation associated with ActionScript 3/E4X standardization efforts.",
+      "source_line_ranges": [
+        [
+          127,
+          127
+        ]
+      ]
+    },
+    {
+      "id": "actionscript",
+      "label": "ActionScript 3",
+      "type": "language",
+      "description": "ECMAScript-derived language involved in the attempted ECMAScript 4 standardization.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "ecmascript4",
+      "label": "ECMAScript 4",
+      "type": "language_standard",
+      "description": "Ambitious ECMAScript standard effort that was eventually mothballed.",
+      "source_line_ranges": [
+        [
+          118,
+          122
+        ],
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "id": "ecmascript5",
+      "label": "ECMAScript 5",
+      "type": "language_standard",
+      "description": "ECMAScript standard resulting from the 2008 Oslo convergence, released December 2009.",
+      "source_line_ranges": [
+        [
+          133,
+          133
+        ]
+      ]
+    },
+    {
+      "id": "ecmascript6",
+      "label": "ECMAScript 6",
+      "type": "language_standard",
+      "description": "2015 edition containing extensive additions and refinements.",
+      "source_line_ranges": [
+        [
+          137,
+          138
+        ]
+      ]
+    },
+    {
+      "id": "ecmascript2015",
+      "label": "ECMAScript 2015",
+      "type": "language_standard",
+      "description": "Edition introducing features including let, const, classes, and arrow functions.",
+      "source_line_ranges": [
+        [
+          249,
+          251
+        ],
+        [
+          350,
+          350
+        ]
+      ]
+    },
+    {
+      "id": "annual_release_process",
+      "label": "Annual ECMAScript release process",
+      "type": "standards_process",
+      "description": "Regular annual snapshots of the ECMAScript draft/specification, with features tracked individually through proposals.",
+      "source_line_ranges": [
+        [
+          142,
+          142
+        ]
+      ]
+    },
+    {
+      "id": "tc39_proposals",
+      "label": "TC39 proposal process",
+      "type": "standards_process",
+      "description": "Process by which potential JavaScript language revisions are vetted.",
+      "source_line_ranges": [
+        [
+          142,
+          142
+        ]
+      ]
+    },
+    {
+      "id": "javascript_trademark",
+      "label": "JavaScript trademark",
+      "type": "trademark",
+      "description": "Trademark held by Oracle in the United States, originally issued to Sun Microsystems in 1997.",
+      "source_line_ranges": [
+        [
+          148,
+          151
+        ]
+      ]
+    },
+    {
+      "id": "trademark_free_js_campaign",
+      "label": "Free JavaScript trademark initiative",
+      "type": "community_initiative",
+      "description": "2024 letter calling on Oracle to free the JavaScript trademark, spearheaded by Ryan Dahl and supported by Brendan Eich.",
+      "source_line_ranges": [
+        [
+          151,
+          151
+        ]
+      ]
+    },
+    {
+      "id": "electron",
+      "label": "Electron",
+      "type": "application_framework",
+      "description": "Framework for building applications with JavaScript behavior.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "cordova",
+      "label": "Cordova",
+      "type": "application_framework",
+      "description": "Application framework enabling JavaScript-based applications.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "react_native",
+      "label": "React Native",
+      "type": "application_framework",
+      "description": "Application framework used to build applications with JavaScript behavior.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "acrobat_js",
+      "label": "Adobe Acrobat JavaScript",
+      "type": "embedded_scripting",
+      "description": "JavaScript scripting support for PDF documents.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "gnome_shell",
+      "label": "GNOME Shell extensions",
+      "type": "desktop_scripting",
+      "description": "Non-browser JavaScript use in GNOME Shell extensions.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "nashorn",
+      "label": "Nashorn",
+      "type": "javascript_engine",
+      "description": "Oracle Java/JDK JavaScript interpreter removed from JDK 15.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "graaljs",
+      "label": "GraalJS",
+      "type": "javascript_engine",
+      "description": "Oracle-offered replacement for Nashorn, usable with OpenJDK and Java interoperability.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "openjdk",
+      "label": "OpenJDK",
+      "type": "runtime_platform",
+      "description": "Java runtime/platform with which GraalJS can interoperate.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "embedded_systems",
+      "label": "Embedded systems",
+      "type": "application_domain",
+      "description": "JavaScript use in some embedded systems, often leveraging Node.js.",
+      "source_line_ranges": [
+        [
+          184,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "server_side_js",
+      "label": "Server-side JavaScript",
+      "type": "application_domain",
+      "description": "Use of JavaScript engines in server-side website deployments and applications.",
+      "source_line_ranges": [
+        [
+          175,
+          180
+        ]
+      ]
+    },
+    {
+      "id": "single_page_apps",
+      "label": "Single-page applications",
+      "type": "application_architecture",
+      "description": "JavaScript-heavy application style contributing to transpiler and ecosystem growth.",
+      "source_line_ranges": [
+        [
+          144,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "transpilers",
+      "label": "JavaScript transpilers",
+      "type": "toolchain",
+      "description": "Tools converting code from other languages into JavaScript.",
+      "source_line_ranges": [
+        [
+          144,
+          144
+        ],
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "id": "livescript",
+      "label": "LiveScript",
+      "type": "historical_name",
+      "description": "Initial name used for the language in the September 1995 Navigator beta.",
+      "source_line_ranges": [
+        [
+          104,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "type": "programming_language",
+      "description": "Programming language developed by James Gosling at Sun Microsystems, contrasted with JavaScript.",
+      "source_line_ranges": [
+        [
+          102,
+          106
+        ],
+        [
+          455,
+          461
+        ]
+      ]
+    },
+    {
+      "id": "scheme",
+      "label": "Scheme",
+      "type": "programming_language",
+      "description": "Language that influenced JavaScript's design through Eich's initial Netscape work.",
+      "source_line_ranges": [
+        [
+          102,
+          104
+        ],
+        [
+          461,
+          461
+        ]
+      ]
+    },
+    {
+      "id": "self",
+      "label": "Self",
+      "type": "programming_language",
+      "description": "Language listed as an influence on JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "awk",
+      "label": "AWK",
+      "type": "programming_language",
+      "description": "Language listed as an influence on JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "hypertalk",
+      "label": "HyperTalk",
+      "type": "programming_language",
+      "description": "Language listed as an influence on JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "single_threaded_execution",
+      "label": "Single-threaded execution",
+      "type": "execution_model",
+      "description": "JavaScript is described in the source as single-threaded; the runtime processes messages one at a time.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "id": "concurrency_model",
+      "label": "JavaScript concurrency model",
+      "type": "execution_model",
+      "description": "Message-queue/event-loop model in which each message runs to completion while I/O can be handled asynchronously.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "asmjs",
+      "label": "asm.js",
+      "type": "javascript_subset",
+      "description": "Subset of JavaScript described as a forerunner of WebAssembly.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    },
+    {
+      "id": "arkts",
+      "label": "ArkTS",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "assemblyscript",
+      "label": "AssemblyScript",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "coffeescript2",
+      "label": "CoffeeScript",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "dart",
+      "label": "Dart",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "haxe",
+      "label": "Haxe",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "jspp",
+      "label": "JS++",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "opa",
+      "label": "Opa",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "typescript2",
+      "label": "TypeScript",
+      "type": "language",
+      "description": "Language listed by the source as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "javascript_engine",
+      "label": "JavaScript engine",
+      "type": "execution_component",
+      "description": "Engine that executes JavaScript/ECMAScript code.",
+      "source_line_ranges": [
+        [
+          187,
+          192
+        ]
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "javascript",
+      "target": "ecmascript",
+      "relationship": "conforms_to",
+      "mechanism": "JavaScript language behavior is specified through the ECMAScript standard.",
+      "source_line_ranges": [
+        [
+          88,
+          94
+        ]
+      ]
+    },
+    {
+      "source": "tc39",
+      "target": "ecmascript",
+      "relationship": "maintains",
+      "mechanism": "TC39 maintains the JavaScript language standard.",
+      "source_line_ranges": [
+        [
+          64,
+          79
+        ],
+        [
+          116,
+          142
+        ]
+      ]
+    },
+    {
+      "source": "ecma_international",
+      "target": "tc39",
+      "relationship": "hosts_committee",
+      "mechanism": "TC39 is the technical committee within Ecma International.",
+      "source_line_ranges": [
+        [
+          64,
+          79
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "web_platform",
+      "relationship": "operates_with",
+      "mechanism": "JavaScript is a core Web technology alongside HTML and CSS.",
+      "source_line_ranges": [
+        [
+          88,
+          94
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "html",
+      "relationship": "embeds_in",
+      "mechanism": "Scripts may be embedded in or included from HTML documents.",
+      "source_line_ranges": [
+        [
+          153,
+          154
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "css",
+      "relationship": "coexists_with",
+      "mechanism": "JavaScript participates in the Web stack alongside CSS.",
+      "source_line_ranges": [
+        [
+          88,
+          88
+        ],
+        [
+          109,
+          111
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "dom",
+      "relationship": "manipulates",
+      "mechanism": "Browser JavaScript interacts with documents through the DOM.",
+      "source_line_ranges": [
+        [
+          92,
+          94
+        ],
+        [
+          153,
+          156
+        ]
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "javascript_engine",
+      "relationship": "contains",
+      "mechanism": "Major browsers contain dedicated JavaScript engines.",
+      "source_line_ranges": [
+        [
+          90,
+          90
+        ],
+        [
+          156,
+          156
+        ]
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "web_apis",
+      "relationship": "provides",
+      "mechanism": "Browser runtimes provide APIs for I/O and other environment capabilities.",
+      "source_line_ranges": [
+        [
+          94,
+          94
+        ],
+        [
+          191,
+          192
+        ]
+      ]
+    },
+    {
+      "source": "javascript_engine",
+      "target": "javascript",
+      "relationship": "executes",
+      "mechanism": "JavaScript engines execute ECMAScript/JavaScript code.",
+      "source_line_ranges": [
+        [
+          90,
+          92
+        ],
+        [
+          187,
+          189
+        ]
+      ]
+    },
+    {
+      "source": "runtime_system",
+      "target": "javascript_engine",
+      "relationship": "embeds",
+      "mechanism": "A JavaScript engine must be embedded in a runtime system.",
+      "source_line_ranges": [
+        [
+          191,
+          192
+        ]
+      ]
+    },
+    {
+      "source": "runtime_system",
+      "target": "web_apis",
+      "relationship": "provides_environment_apis",
+      "mechanism": "The runtime supplies networking, storage, graphics, and script-import capabilities absent from ECMAScript itself.",
+      "source_line_ranges": [
+        [
+          191,
+          192
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript",
+      "target": "web_apis",
+      "relationship": "excludes_io",
+      "mechanism": "The ECMAScript standard itself does not specify networking, storage, or graphics I/O.",
+      "source_line_ranges": [
+        [
+          94,
+          94
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "runtime_system",
+      "relationship": "depends_on_for_io",
+      "mechanism": "JavaScript requires its host runtime for broader environment I/O capabilities.",
+      "source_line_ranges": [
+        [
+          94,
+          94
+        ],
+        [
+          191,
+          192
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "garbage_collection",
+      "relationship": "uses",
+      "mechanism": "JavaScript implementations use garbage-collected memory management.",
+      "source_line_ranges": [
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    {
+      "source": "javascript_engine",
+      "target": "jit",
+      "relationship": "uses",
+      "mechanism": "Modern engines use JIT compilation to improve performance.",
+      "source_line_ranges": [
+        [
+          189,
+          189
+        ]
+      ]
+    },
+    {
+      "source": "v8",
+      "target": "jit",
+      "relationship": "uses",
+      "mechanism": "V8 introduced a JIT performance approach that influenced other browser engines.",
+      "source_line_ranges": [
+        [
+          131,
+          131
+        ]
+      ]
+    },
+    {
+      "source": "google",
+      "target": "chrome",
+      "relationship": "created",
+      "mechanism": "Google debuted Chrome in 2008.",
+      "source_line_ranges": [
+        [
+          131,
+          131
+        ]
+      ]
+    },
+    {
+      "source": "chrome",
+      "target": "v8",
+      "relationship": "uses",
+      "mechanism": "Chrome debuted with the V8 JavaScript engine.",
+      "source_line_ranges": [
+        [
+          131,
+          131
+        ]
+      ]
+    },
+    {
+      "source": "v8",
+      "target": "nodejs",
+      "relationship": "core_component",
+      "mechanism": "V8 is a core component of Node.js.",
+      "source_line_ranges": [
+        [
+          189,
+          189
+        ]
+      ]
+    },
+    {
+      "source": "nodejs",
+      "target": "event_loop",
+      "relationship": "combines_with",
+      "mechanism": "Node.js combines V8 with an event loop and I/O APIs.",
+      "source_line_ranges": [
+        [
+          140,
+          140
+        ]
+      ]
+    },
+    {
+      "source": "nodejs",
+      "target": "web_apis",
+      "relationship": "provides_io_apis",
+      "mechanism": "Node provides standalone runtime I/O APIs.",
+      "source_line_ranges": [
+        [
+          140,
+          140
+        ]
+      ]
+    },
+    {
+      "source": "nodejs",
+      "target": "server_side_js",
+      "relationship": "enables",
+      "mechanism": "Node.js drove major growth in server-side JavaScript.",
+      "source_line_ranges": [
+        [
+          178,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "nodejs",
+      "target": "embedded_systems",
+      "relationship": "used_in",
+      "mechanism": "The source notes embedded-system use leveraging Node.js.",
+      "source_line_ranges": [
+        [
+          184,
+          184
+        ]
+      ]
+    },
+    {
+      "source": "deno",
+      "target": "runtime_system",
+      "relationship": "is",
+      "mechanism": "Deno is a standalone JavaScript runtime.",
+      "source_line_ranges": [
+        [
+          196,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "bun",
+      "target": "runtime_system",
+      "relationship": "is",
+      "mechanism": "Bun is a standalone JavaScript runtime.",
+      "source_line_ranges": [
+        [
+          196,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "netscape",
+      "target": "brendan_eich",
+      "relationship": "hired",
+      "mechanism": "Netscape hired Eich to devise a scripting language for Navigator.",
+      "source_line_ranges": [
+        [
+          102,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "brendan_eich",
+      "target": "javascript",
+      "relationship": "created",
+      "mechanism": "Eich created JavaScript in 1995.",
+      "source_line_ranges": [
+        [
+          69,
+          70
+        ],
+        [
+          102,
+          106
+        ]
+      ]
+    },
+    {
+      "source": "netscape",
+      "target": "javascript",
+      "relationship": "created_at",
+      "mechanism": "JavaScript was created at Netscape for Navigator.",
+      "source_line_ranges": [
+        [
+          99,
+          106
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "livescript",
+      "relationship": "renamed_from",
+      "mechanism": "The language shipped under the LiveScript name in a Navigator beta before official release as JavaScript.",
+      "source_line_ranges": [
+        [
+          104,
+          106
+        ]
+      ]
+    },
+    {
+      "source": "livescript",
+      "target": "javascript",
+      "relationship": "renamed_to",
+      "mechanism": "LiveScript was renamed JavaScript for the official December 1995 release.",
+      "source_line_ranges": [
+        [
+          104,
+          106
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "java",
+      "relationship": "distinct_from",
+      "mechanism": "Despite name/syntax similarities, JavaScript and Java are distinct languages.",
+      "source_line_ranges": [
+        [
+          96,
+          96
+        ],
+        [
+          455,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "scheme",
+      "target": "javascript",
+      "relationship": "influenced",
+      "mechanism": "Eich was initially hired to embed Scheme, influencing the new language's design.",
+      "source_line_ranges": [
+        [
+          102,
+          104
+        ]
+      ]
+    },
+    {
+      "source": "java",
+      "target": "javascript",
+      "relationship": "influenced_syntax_and_naming",
+      "mechanism": "Java influenced JavaScript syntax and naming/marketing context.",
+      "source_line_ranges": [
+        [
+          104,
+          106
+        ],
+        [
+          455,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "self",
+      "target": "javascript",
+      "relationship": "influenced",
+      "mechanism": "Listed as a language influence.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "awk",
+      "target": "javascript",
+      "relationship": "influenced",
+      "mechanism": "Listed as a language influence.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "hypertalk",
+      "target": "javascript",
+      "relationship": "influenced",
+      "mechanism": "Listed as a language influence.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "mosaic",
+      "target": "netscape",
+      "relationship": "preceded",
+      "mechanism": "Netscape's founders had led Mosaic development.",
+      "source_line_ranges": [
+        [
+          99,
+          102
+        ]
+      ]
+    },
+    {
+      "source": "netscape_navigator",
+      "target": "javascript",
+      "relationship": "hosts",
+      "mechanism": "JavaScript was shipped as part of Netscape Navigator.",
+      "source_line_ranges": [
+        [
+          100,
+          106
+        ]
+      ]
+    },
+    {
+      "source": "microsoft",
+      "target": "internet_explorer",
+      "relationship": "created",
+      "mechanism": "Microsoft debuted Internet Explorer in 1995.",
+      "source_line_ranges": [
+        [
+          108,
+          109
+        ]
+      ]
+    },
+    {
+      "source": "microsoft",
+      "target": "jscript",
+      "relationship": "created",
+      "mechanism": "Microsoft created JScript as its own interpreter.",
+      "source_line_ranges": [
+        [
+          108,
+          111
+        ]
+      ]
+    },
+    {
+      "source": "jscript",
+      "target": "javascript",
+      "relationship": "implements_compatible_model",
+      "mechanism": "JScript provided Microsoft's JavaScript-compatible client-side implementation.",
+      "source_line_ranges": [
+        [
+          109,
+          120
+        ]
+      ]
+    },
+    {
+      "source": "netscape",
+      "target": "javascript",
+      "relationship": "submitted_to_ecma",
+      "mechanism": "Netscape submitted JavaScript to Ecma in November 1996 as the basis for standardization.",
+      "source_line_ranges": [
+        [
+          116,
+          116
+        ]
+      ]
+    },
+    {
+      "source": "ecma_international",
+      "target": "ecmascript",
+      "relationship": "standardized",
+      "mechanism": "Ecma released the first ECMAScript specification in June 1997.",
+      "source_line_ranges": [
+        [
+          116,
+          118
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript",
+      "target": "ecmascript4",
+      "relationship": "evolved_through",
+      "mechanism": "ECMAScript 4 was an ambitious later standardization effort.",
+      "source_line_ranges": [
+        [
+          118,
+          122
+        ]
+      ]
+    },
+    {
+      "source": "microsoft",
+      "target": "ecmascript4",
+      "relationship": "contributed_to_mothballing",
+      "mechanism": "Lack of cooperation and browser dominance undermined ECMAScript 4.",
+      "source_line_ranges": [
+        [
+          120,
+          122
+        ],
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript4",
+      "target": "ecmascript5",
+      "relationship": "preceded",
+      "mechanism": "ECMAScript 4 was mothballed before the later convergence producing ECMAScript 5.",
+      "source_line_ranges": [
+        [
+          122,
+          133
+        ]
+      ]
+    },
+    {
+      "source": "mozilla",
+      "target": "firefox",
+      "relationship": "released",
+      "mechanism": "Mozilla released Firefox in 2004.",
+      "source_line_ranges": [
+        [
+          124,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "firefox",
+      "target": "browser",
+      "relationship": "is_browser",
+      "mechanism": "Firefox is a web browser.",
+      "source_line_ranges": [
+        [
+          124,
+          126
+        ]
+      ]
+    },
+    {
+      "source": "firefox",
+      "target": "javascript",
+      "relationship": "revitalized_ecosystem",
+      "mechanism": "Firefox helped break Internet Explorer dominance and restart browser competition.",
+      "source_line_ranges": [
+        [
+          124,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "jesse_james_garrett",
+      "target": "ajax",
+      "relationship": "coined",
+      "mechanism": "Garrett coined the term Ajax in 2005.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "ajax",
+      "target": "javascript",
+      "relationship": "uses_as_backbone",
+      "mechanism": "Ajax used JavaScript as the backbone for background data loading without full page reloads.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "jquery",
+      "relationship": "ecosystem_enabled",
+      "mechanism": "The Ajax renaissance led to libraries including jQuery.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "google",
+      "target": "javascript",
+      "relationship": "accelerated_performance",
+      "mechanism": "Chrome/V8's JIT performance accelerated browser-engine competition.",
+      "source_line_ranges": [
+        [
+          131,
+          133
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript5",
+      "target": "javascript",
+      "relationship": "standardized_language",
+      "mechanism": "ECMAScript 5 became the standardized language snapshot resulting from the 2009 convergence.",
+      "source_line_ranges": [
+        [
+          133,
+          133
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript6",
+      "target": "javascript",
+      "relationship": "expanded_language",
+      "mechanism": "ECMAScript 6 formalized extensive additions and refinements in 2015.",
+      "source_line_ranges": [
+        [
+          137,
+          138
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "annual_release_process",
+      "relationship": "uses",
+      "mechanism": "The specification moved to regular annual snapshots.",
+      "source_line_ranges": [
+        [
+          142,
+          142
+        ]
+      ]
+    },
+    {
+      "source": "tc39",
+      "target": "tc39_proposals",
+      "relationship": "governs",
+      "mechanism": "Potential revisions are vetted through the TC39 proposal process.",
+      "source_line_ranges": [
+        [
+          142,
+          142
+        ]
+      ]
+    },
+    {
+      "source": "tc39_proposals",
+      "target": "javascript",
+      "relationship": "evolves",
+      "mechanism": "Accepted proposals become language features in future ECMAScript editions.",
+      "source_line_ranges": [
+        [
+          142,
+          142
+        ]
+      ]
+    },
+    {
+      "source": "oracle",
+      "target": "javascript_trademark",
+      "relationship": "owns",
+      "mechanism": "Oracle holds the JavaScript trademark in the United States.",
+      "source_line_ranges": [
+        [
+          148,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "sun_microsystems",
+      "target": "javascript_trademark",
+      "relationship": "originally_held",
+      "mechanism": "Trademark was originally issued to Sun Microsystems in 1997.",
+      "source_line_ranges": [
+        [
+          148,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "oracle",
+      "target": "sun_microsystems",
+      "relationship": "acquired",
+      "mechanism": "Oracle acquired Sun in 2009, receiving the trademark.",
+      "source_line_ranges": [
+        [
+          148,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "ryan_dahl",
+      "target": "trademark_free_js_campaign",
+      "relationship": "spearheaded",
+      "mechanism": "Ryan Dahl spearheaded the 2024 initiative.",
+      "source_line_ranges": [
+        [
+          151,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "brendan_eich",
+      "target": "trademark_free_js_campaign",
+      "relationship": "supported",
+      "mechanism": "Brendan Eich was among signatories.",
+      "source_line_ranges": [
+        [
+          151,
+          151
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "dynamic_typing",
+      "relationship": "has",
+      "mechanism": "A type is associated with a value rather than an expression.",
+      "source_line_ranges": [
+        [
+          75,
+          75
+        ],
+        [
+          232,
+          236
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "weak_typing",
+      "relationship": "has",
+      "mechanism": "Certain operations implicitly cast operands according to operator semantics.",
+      "source_line_ranges": [
+        [
+          205,
+          220
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "duck_typing",
+      "relationship": "supports",
+      "mechanism": "The source identifies duck typing as a way to test/use objects.",
+      "source_line_ranges": [
+        [
+          235,
+          236
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "lexical_scope",
+      "relationship": "uses",
+      "mechanism": "JavaScript uses lexical scope; block scoping was added with let/const.",
+      "source_line_ranges": [
+        [
+          77,
+          77
+        ],
+        [
+          203,
+          203
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "prototype_object_model",
+      "relationship": "uses",
+      "mechanism": "JavaScript uses prototype-based object orientation.",
+      "source_line_ranges": [
+        [
+          92,
+          92
+        ],
+        [
+          242,
+          251
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "first_class_functions",
+      "relationship": "supports",
+      "mechanism": "Functions are first-class objects.",
+      "source_line_ranges": [
+        [
+          291,
+          294
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "functional_programming",
+      "relationship": "supports",
+      "mechanism": "First-class functions and closures support functional programming.",
+      "source_line_ranges": [
+        [
+          291,
+          299
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "imperative_programming",
+      "relationship": "supports",
+      "mechanism": "JavaScript supports imperative/structured programming syntax.",
+      "source_line_ranges": [
+        [
+          201,
+          203
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "procedural_programming",
+      "relationship": "supports",
+      "mechanism": "Procedural programming is listed as a paradigm.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "object_oriented_programming",
+      "relationship": "supports",
+      "mechanism": "Prototype-based object orientation and class syntax support OOP.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ],
+        [
+          242,
+          251
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "event_driven_programming",
+      "relationship": "supports",
+      "mechanism": "Event-loop and callback execution support event-driven programming.",
+      "source_line_ranges": [
+        [
+          67,
+          67
+        ],
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "garbage_collection",
+      "relationship": "provides",
+      "mechanism": "Garbage collection is the stated memory management approach.",
+      "source_line_ranges": [
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "zero_based_indexing",
+      "relationship": "uses",
+      "mechanism": "JavaScript uses zero-based numbering.",
+      "source_line_ranges": [
+        [
+          317,
+          318
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "variadic_functions",
+      "relationship": "supports",
+      "mechanism": "Functions can receive an indefinite number of parameters.",
+      "source_line_ranges": [
+        [
+          320,
+          322
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "regex",
+      "relationship": "supports",
+      "mechanism": "JavaScript supports regular expressions.",
+      "source_line_ranges": [
+        [
+          328,
+          330
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "promises",
+      "relationship": "provides",
+      "mechanism": "Promise is a built-in asynchronous abstraction.",
+      "source_line_ranges": [
+        [
+          332,
+          334
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "async_await",
+      "relationship": "provides",
+      "mechanism": "Async/await structures non-blocking asynchronous code.",
+      "source_line_ranges": [
+        [
+          336,
+          338
+        ]
+      ]
+    },
+    {
+      "source": "promises",
+      "target": "async_await",
+      "relationship": "supports",
+      "mechanism": "Async/await provides structured syntax for asynchronous operations represented by promises.",
+      "source_line_ranges": [
+        [
+          332,
+          338
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "eval",
+      "relationship": "provides",
+      "mechanism": "JavaScript includes eval for runtime string evaluation.",
+      "source_line_ranges": [
+        [
+          238,
+          240
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "prototype_object_model",
+      "relationship": "permits_mutation",
+      "mechanism": "Objects and prototype properties can be added, rebound, or deleted at runtime.",
+      "source_line_ranges": [
+        [
+          247,
+          247
+        ],
+        [
+          270,
+          285
+        ]
+      ]
+    },
+    {
+      "source": "prototype_object_model",
+      "target": "inheritance",
+      "relationship": "implements",
+      "mechanism": "Prototype chains provide inheritance/delegation.",
+      "source_line_ranges": [
+        [
+          249,
+          251
+        ],
+        [
+          313,
+          315
+        ]
+      ]
+    },
+    {
+      "source": "class_syntax",
+      "target": "prototype_object_model",
+      "relationship": "abstracts",
+      "mechanism": "class/extends/super syntax is syntactic sugar over the underlying prototype system.",
+      "source_line_ranges": [
+        [
+          249,
+          251
+        ]
+      ]
+    },
+    {
+      "source": "function_constructor",
+      "target": "prototype_object_model",
+      "relationship": "creates_instances_with",
+      "mechanism": "new creates an instance associated with a constructor's prototype.",
+      "source_line_ranges": [
+        [
+          270,
+          285
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "this_binding",
+      "relationship": "uses",
+      "mechanism": "Method calls bind this to the receiver for that invocation.",
+      "source_line_ranges": [
+        [
+          287,
+          289
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "closures",
+      "relationship": "supports",
+      "mechanism": "Nested functions form lexical closures over outer state.",
+      "source_line_ranges": [
+        [
+          295,
+          299
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "delegation",
+      "relationship": "supports",
+      "mechanism": "JavaScript supports explicit and implicit delegation.",
+      "source_line_ranges": [
+        [
+          305,
+          315
+        ]
+      ]
+    },
+    {
+      "source": "prototype_object_model",
+      "target": "delegation",
+      "relationship": "performs",
+      "mechanism": "Prototype-chain lookup implements implicit delegation.",
+      "source_line_ranges": [
+        [
+          313,
+          315
+        ]
+      ]
+    },
+    {
+      "source": "traits_mixins",
+      "target": "delegation",
+      "relationship": "uses",
+      "mechanism": "Traits/mixins can be implemented through function-based delegation and call/apply.",
+      "source_line_ranges": [
+        [
+          309,
+          311
+        ]
+      ]
+    },
+    {
+      "source": "array_literals",
+      "target": "json",
+      "relationship": "basis_for",
+      "mechanism": "Array literal syntax contributes to the basis of JSON.",
+      "source_line_ranges": [
+        [
+          324,
+          326
+        ]
+      ]
+    },
+    {
+      "source": "object_literals",
+      "target": "json",
+      "relationship": "basis_for",
+      "mechanism": "Object literal syntax contributes to the basis of JSON.",
+      "source_line_ranges": [
+        [
+          324,
+          326
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "json",
+      "relationship": "inspired",
+      "mechanism": "JSON is derived from JavaScript notation.",
+      "source_line_ranges": [
+        [
+          463,
+          464
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "automatic_semicolon_insertion",
+      "relationship": "uses",
+      "mechanism": "JavaScript permits omission of semicolons under automatic insertion rules.",
+      "source_line_ranges": [
+        [
+          201,
+          203
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "var",
+      "relationship": "supports_declaration",
+      "mechanism": "var provides function-scoped variable declarations.",
+      "source_line_ranges": [
+        [
+          346,
+          358
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "let",
+      "relationship": "supports_declaration",
+      "mechanism": "let provides block-scoped declarations.",
+      "source_line_ranges": [
+        [
+          363,
+          365
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "const",
+      "relationship": "supports_declaration",
+      "mechanism": "const provides block-scoped non-reassignable bindings.",
+      "source_line_ranges": [
+        [
+          367,
+          373
+        ]
+      ]
+    },
+    {
+      "source": "let",
+      "target": "lexical_scope",
+      "relationship": "implements_block_scope",
+      "mechanism": "let is block-scoped.",
+      "source_line_ranges": [
+        [
+          363,
+          365
+        ]
+      ]
+    },
+    {
+      "source": "const",
+      "target": "lexical_scope",
+      "relationship": "implements_block_scope",
+      "mechanism": "const is block-scoped.",
+      "source_line_ranges": [
+        [
+          367,
+          373
+        ]
+      ]
+    },
+    {
+      "source": "var",
+      "target": "lexical_scope",
+      "relationship": "differs_from",
+      "mechanism": "var originally provided function scoping rather than block scoping.",
+      "source_line_ranges": [
+        [
+          201,
+          203
+        ],
+        [
+          354,
+          358
+        ]
+      ]
+    },
+    {
+      "source": "arrow_functions",
+      "target": "first_class_functions",
+      "relationship": "provides_concise_form",
+      "mechanism": "Arrow functions provide concise function syntax.",
+      "source_line_ranges": [
+        [
+          348,
+          350
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript2015",
+      "target": "arrow_functions",
+      "relationship": "introduced",
+      "mechanism": "Arrow functions were introduced in ECMAScript 2015.",
+      "source_line_ranges": [
+        [
+          350,
+          350
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript2015",
+      "target": "let",
+      "relationship": "introduced",
+      "mechanism": "let was introduced in ECMAScript 2015.",
+      "source_line_ranges": [
+        [
+          363,
+          365
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript2015",
+      "target": "const",
+      "relationship": "introduced",
+      "mechanism": "const was introduced in ECMAScript 2015.",
+      "source_line_ranges": [
+        [
+          367,
+          369
+        ]
+      ]
+    },
+    {
+      "source": "ecmascript2015",
+      "target": "class_syntax",
+      "relationship": "introduced",
+      "mechanism": "Class syntax was introduced in ECMAScript 2015.",
+      "source_line_ranges": [
+        [
+          249,
+          251
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "type_coercion",
+      "relationship": "performs",
+      "mechanism": "Operators implicitly convert operands based on operation.",
+      "source_line_ranges": [
+        [
+          205,
+          220
+        ]
+      ]
+    },
+    {
+      "source": "type_coercion",
+      "target": "nan",
+      "relationship": "can_produce",
+      "mechanism": "Invalid numeric conversions can produce NaN.",
+      "source_line_ranges": [
+        [
+          223,
+          229
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "undefined",
+      "relationship": "uses",
+      "mechanism": "Uninitialized variables receive undefined and it can be assigned explicitly.",
+      "source_line_ranges": [
+        [
+          354,
+          373
+        ]
+      ]
+    },
+    {
+      "source": "runtime_system",
+      "target": "event_loop",
+      "relationship": "contains",
+      "mechanism": "The runtime processes queued messages through the event loop.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "event_loop",
+      "target": "message_queue",
+      "relationship": "consumes",
+      "mechanism": "The event loop processes messages from the queue one at a time.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "source": "event_loop",
+      "target": "call_stack",
+      "relationship": "uses",
+      "mechanism": "Each message invokes a function and creates a call-stack frame.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "source": "event_loop",
+      "target": "javascript",
+      "relationship": "executes_sequentially",
+      "mechanism": "Messages are processed one at a time and each runs to completion before the next is considered.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "event_loop",
+      "relationship": "uses",
+      "mechanism": "JavaScript's concurrency model uses an event loop.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "event_loop",
+      "relationship": "non_blocking_io_model",
+      "mechanism": "I/O is performed through events/callbacks while execution proceeds to other events.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "single_threaded_execution",
+      "relationship": "has",
+      "mechanism": "Language execution is described as single-threaded.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "source": "event_loop",
+      "target": "single_threaded_execution",
+      "relationship": "implements",
+      "mechanism": "The event loop processes one message at a time.",
+      "source_line_ranges": [
+        [
+          194,
+          194
+        ]
+      ]
+    },
+    {
+      "source": "single_threaded_execution",
+      "target": "concurrency_model",
+      "relationship": "is_basis_of",
+      "mechanism": "Single-threaded execution is paired with an event-driven non-blocking concurrency model.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "concurrency_model",
+      "relationship": "uses",
+      "mechanism": "JavaScript's runtime concurrency model uses event-loop/message processing.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "source": "promises",
+      "target": "concurrency_model",
+      "relationship": "models_async_results",
+      "mechanism": "Promises represent eventual results of asynchronous actions.",
+      "source_line_ranges": [
+        [
+          332,
+          334
+        ]
+      ]
+    },
+    {
+      "source": "async_await",
+      "target": "concurrency_model",
+      "relationship": "structures_nonblocking_code",
+      "mechanism": "async/await structures asynchronous non-blocking operations.",
+      "source_line_ranges": [
+        [
+          336,
+          338
+        ]
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "browser_sandbox",
+      "relationship": "enforces",
+      "mechanism": "Browsers confine scripts to web-related actions through a sandbox.",
+      "source_line_ranges": [
+        [
+          390,
+          394
+        ]
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "same_origin_policy",
+      "relationship": "enforces",
+      "mechanism": "Browsers restrict cross-origin information access using same-origin policy.",
+      "source_line_ranges": [
+        [
+          390,
+          394
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "browser_sandbox",
+      "relationship": "runs_within",
+      "mechanism": "Web JavaScript normally runs within a browser sandbox.",
+      "source_line_ranges": [
+        [
+          390,
+          394
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "same_origin_policy",
+      "relationship": "constrained_by",
+      "mechanism": "Web JavaScript is constrained by same-origin policy.",
+      "source_line_ranges": [
+        [
+          390,
+          394
+        ]
+      ]
+    },
+    {
+      "source": "csp",
+      "target": "javascript",
+      "relationship": "restricts_execution_of",
+      "mechanism": "CSP is described as the main intended method for ensuring only trusted code executes.",
+      "source_line_ranges": [
+        [
+          394,
+          396
+        ]
+      ]
+    },
+    {
+      "source": "xss",
+      "target": "same_origin_policy",
+      "relationship": "violates",
+      "mechanism": "XSS is described as a violation of same-origin policy.",
+      "source_line_ranges": [
+        [
+          398,
+          400
+        ]
+      ]
+    },
+    {
+      "source": "xss",
+      "target": "client_untrusted",
+      "relationship": "exploits",
+      "mechanism": "XSS demonstrates the risk of code executing with victim privileges.",
+      "source_line_ranges": [
+        [
+          398,
+          400
+        ]
+      ]
+    },
+    {
+      "source": "html_sanitization",
+      "target": "xss",
+      "relationship": "mitigates",
+      "mechanism": "Sanitization is identified as an important XSS solution.",
+      "source_line_ranges": [
+        [
+          400,
+          402
+        ]
+      ]
+    },
+    {
+      "source": "csrf",
+      "target": "javascript",
+      "relationship": "exploits_browser_behavior",
+      "mechanism": "Attacker-controlled code can induce a victim browser to make unintended authenticated requests.",
+      "source_line_ranges": [
+        [
+          406,
+          410
+        ]
+      ]
+    },
+    {
+      "source": "csrf",
+      "target": "csrf_token",
+      "relationship": "mitigated_by",
+      "mechanism": "Additional authentication tokens can prevent reliance solely on cookies.",
+      "source_line_ranges": [
+        [
+          408,
+          412
+        ]
+      ]
+    },
+    {
+      "source": "csrf",
+      "target": "referrer_check",
+      "relationship": "can_be_mitigated_by",
+      "mechanism": "Referrer checks can help defend against CSRF.",
+      "source_line_ranges": [
+        [
+          408,
+          408
+        ]
+      ]
+    },
+    {
+      "source": "client_untrusted",
+      "target": "javascript",
+      "relationship": "warns_against_trusting",
+      "mechanism": "Client JavaScript can be disabled, modified, inspected, or bypassed.",
+      "source_line_ranges": [
+        [
+          413,
+          419
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "obfuscation",
+      "relationship": "can_use",
+      "mechanism": "Code can be obfuscated but remains reverse-engineerable.",
+      "source_line_ranges": [
+        [
+          416,
+          416
+        ]
+      ]
+    },
+    {
+      "source": "prototype_pollution",
+      "target": "prototype_object_model",
+      "relationship": "targets",
+      "mechanism": "Prototype pollution attacks object prototype properties.",
+      "source_line_ranges": [
+        [
+          420,
+          420
+        ]
+      ]
+    },
+    {
+      "source": "npm",
+      "target": "dependency_risk",
+      "relationship": "creates_dependency_surface",
+      "mechanism": "Package management makes it easy to depend on third-party libraries.",
+      "source_line_ranges": [
+        [
+          421,
+          423
+        ]
+      ]
+    },
+    {
+      "source": "bower",
+      "target": "dependency_risk",
+      "relationship": "creates_dependency_surface",
+      "mechanism": "Bower is included in the source's third-party dependency discussion.",
+      "source_line_ranges": [
+        [
+          422,
+          423
+        ]
+      ]
+    },
+    {
+      "source": "dependency_risk",
+      "target": "javascript",
+      "relationship": "can_compromise",
+      "mechanism": "Vulnerable, stale, malicious, or removed dependencies can affect applications.",
+      "source_line_ranges": [
+        [
+          421,
+          423
+        ]
+      ]
+    },
+    {
+      "source": "browser_memory_corruption",
+      "target": "browser",
+      "relationship": "targets",
+      "mechanism": "Browser/plugin flaws can enable arbitrary code execution.",
+      "source_line_ranges": [
+        [
+          424,
+          432
+        ]
+      ]
+    },
+    {
+      "source": "sandbox_escape",
+      "target": "browser_sandbox",
+      "relationship": "bypasses",
+      "mechanism": "Implementation errors can incorrectly grant JavaScript privileges outside the sandbox.",
+      "source_line_ranges": [
+        [
+          434,
+          439
+        ]
+      ]
+    },
+    {
+      "source": "rowhammer_js",
+      "target": "javascript",
+      "relationship": "demonstrates_hardware_attack",
+      "mechanism": "JavaScript was used for a Rowhammer proof of concept.",
+      "source_line_ranges": [
+        [
+          441,
+          442
+        ]
+      ]
+    },
+    {
+      "source": "aslr_cache",
+      "target": "javascript",
+      "relationship": "demonstrates_browser_attack",
+      "mechanism": "JavaScript was used in an ASLR-bypass browser attack.",
+      "source_line_ranges": [
+        [
+          444,
+          444
+        ]
+      ]
+    },
+    {
+      "source": "spectre_js",
+      "target": "javascript",
+      "relationship": "demonstrates_side_channel_attack",
+      "mechanism": "JavaScript implementation was associated with Spectre.",
+      "source_line_ranges": [
+        [
+          446,
+          446
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "npm",
+      "relationship": "ecosystem_uses",
+      "mechanism": "npm is a major JavaScript package ecosystem.",
+      "source_line_ranges": [
+        [
+          140,
+          140
+        ],
+        [
+          422,
+          423
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "jquery",
+      "relationship": "has_library_ecosystem",
+      "mechanism": "jQuery is a major third-party JavaScript library.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "angular",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "bootstrap",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "lodash",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "modernizr",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "react",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "underscore",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "vue",
+      "relationship": "ecosystem_includes",
+      "mechanism": "Listed notable JavaScript library/framework.",
+      "source_line_ranges": [
+        [
+          169,
+          171
+        ]
+      ]
+    },
+    {
+      "source": "vanilla_js",
+      "target": "javascript",
+      "relationship": "means_standard_only",
+      "mechanism": "Vanilla JS means using standard JavaScript without libraries/frameworks.",
+      "source_line_ranges": [
+        [
+          173,
+          173
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "single_page_apps",
+      "relationship": "powers",
+      "mechanism": "JavaScript-heavy single-page applications contribute to ecosystem growth.",
+      "source_line_ranges": [
+        [
+          144,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "transpilers",
+      "relationship": "drives",
+      "mechanism": "JavaScript-heavy sites have led to use of transpilers.",
+      "source_line_ranges": [
+        [
+          144,
+          144
+        ]
+      ]
+    },
+    {
+      "source": "typescript",
+      "target": "transpilers",
+      "relationship": "targets",
+      "mechanism": "TypeScript transpiles to JavaScript.",
+      "source_line_ranges": [
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "source": "coffeescript",
+      "target": "transpilers",
+      "relationship": "targets",
+      "mechanism": "CoffeeScript transpiles to JavaScript.",
+      "source_line_ranges": [
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "source": "transpilers",
+      "target": "javascript",
+      "relationship": "produces",
+      "mechanism": "Transpilers can convert source from other languages into JavaScript.",
+      "source_line_ranges": [
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "source": "wasm",
+      "target": "javascript",
+      "relationship": "complements",
+      "mechanism": "WebAssembly complements JavaScript for performance-critical portions of web scripts.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    },
+    {
+      "source": "javascript_engine",
+      "target": "wasm",
+      "relationship": "executes",
+      "mechanism": "Major JavaScript engines can execute WebAssembly.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    },
+    {
+      "source": "wasm",
+      "target": "browser_sandbox",
+      "relationship": "runs_within",
+      "mechanism": "WebAssembly runs in the same sandbox as regular JavaScript.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    },
+    {
+      "source": "asmjs",
+      "target": "wasm",
+      "relationship": "preceded",
+      "mechanism": "asm.js served as the forerunner of WebAssembly.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    },
+    {
+      "source": "electron",
+      "target": "javascript",
+      "relationship": "uses",
+      "mechanism": "Electron applications can implement behavior in JavaScript.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "cordova",
+      "target": "javascript",
+      "relationship": "uses",
+      "mechanism": "Cordova applications can implement behavior in JavaScript.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "react_native",
+      "target": "javascript",
+      "relationship": "uses",
+      "mechanism": "React Native applications can implement behavior in JavaScript.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "acrobat_js",
+      "target": "javascript",
+      "relationship": "uses",
+      "mechanism": "Adobe Acrobat supports JavaScript scripting for PDF documents.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "gnome_shell",
+      "target": "javascript",
+      "relationship": "uses",
+      "mechanism": "GNOME Shell extensions can be written in JavaScript.",
+      "source_line_ranges": [
+        [
+          180,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "nashorn",
+      "target": "javascript_engine",
+      "relationship": "is",
+      "mechanism": "Nashorn is a JavaScript interpreter/engine.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "source": "nashorn",
+      "target": "openjdk",
+      "relationship": "removed_from",
+      "mechanism": "Nashorn was removed from JDK 15.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "source": "graaljs",
+      "target": "nashorn",
+      "relationship": "replaces",
+      "mechanism": "Oracle offered GraalJS as a replacement for Nashorn.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "source": "graaljs",
+      "target": "openjdk",
+      "relationship": "integrates_with",
+      "mechanism": "GraalJS can be used with OpenJDK and interoperate with Java.",
+      "source_line_ranges": [
+        [
+          182,
+          184
+        ]
+      ]
+    },
+    {
+      "source": "server_side_js",
+      "target": "javascript",
+      "relationship": "uses_engines",
+      "mechanism": "Server-side JavaScript embeds JavaScript engines in server/application systems.",
+      "source_line_ranges": [
+        [
+          175,
+          180
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "actionscript",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "arkts",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "assemblyscript",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "coffeescript2",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "dart",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "haxe",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "jspp",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "opa",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "typescript2",
+      "relationship": "influenced",
+      "mechanism": "The source lists the language as influenced by JavaScript.",
+      "source_line_ranges": [
+        [
+          83,
+          86
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "typescript",
+      "relationship": "related_to",
+      "mechanism": "TypeScript is described as strict/statically typed relative to JavaScript and as transpiling to JavaScript.",
+      "source_line_ranges": [
+        [
+          88,
+          88
+        ],
+        [
+          466,
+          469
+        ]
+      ]
+    },
+    {
+      "source": "java",
+      "target": "javascript",
+      "relationship": "shares_c_like_syntax",
+      "mechanism": "Both have C-like syntax, while their designs differ substantially.",
+      "source_line_ranges": [
+        [
+          455,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "java",
+      "target": "javascript",
+      "relationship": "differs_in_typing",
+      "mechanism": "Java is statically typed while JavaScript's typing is dynamic.",
+      "source_line_ranges": [
+        [
+          461,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "java",
+      "target": "javascript",
+      "relationship": "differs_in_object_model",
+      "mechanism": "Java is class-based while JavaScript is prototype-based.",
+      "source_line_ranges": [
+        [
+          461,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "java",
+      "target": "javascript",
+      "relationship": "differs_in_loading",
+      "mechanism": "Java loads compiled bytecode while JavaScript is loaded as human-readable source code.",
+      "source_line_ranges": [
+        [
+          461,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "java",
+      "relationship": "has_functional_programming_earlier",
+      "mechanism": "JavaScript supported functional programming from the beginning; the source contrasts this with Java's later support.",
+      "source_line_ranges": [
+        [
+          461,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "java",
+      "relationship": "borrowed_naming_and_library_conventions",
+      "mechanism": "Original JavaScript reserved Java keywords and followed Java naming conventions; Math and Date were based on Java 1.0 classes.",
+      "source_line_ranges": [
+        [
+          457,
+          461
+        ]
+      ]
+    },
+    {
+      "source": "mozilla",
+      "target": "ecmascript4",
+      "relationship": "worked_on",
+      "mechanism": "Mozilla participated in E4X/ECMAScript 4 related work.",
+      "source_line_ranges": [
+        [
+          125,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "macromedia",
+      "target": "actionscript",
+      "relationship": "implemented",
+      "mechanism": "Macromedia was implementing E4X in ActionScript 3.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "adobe",
+      "target": "macromedia",
+      "relationship": "acquired",
+      "mechanism": "Macromedia was later acquired by Adobe Systems.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "adobe",
+      "target": "tamarin",
+      "relationship": "released_as_open_source",
+      "mechanism": "Adobe released Tamarin as an open-source project.",
+      "source_line_ranges": [
+        [
+          127,
+          127
+        ]
+      ]
+    },
+    {
+      "source": "tamarin",
+      "target": "ecmascript4",
+      "relationship": "supported_attempt",
+      "mechanism": "Tamarin was associated with the ECMAScript 4 standardization effort.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "actionscript",
+      "target": "ecmascript4",
+      "relationship": "based_on_draft",
+      "mechanism": "ActionScript 3 was based on an ECMAScript 4 draft.",
+      "source_line_ranges": [
+        [
+          127,
+          129
+        ]
+      ]
+    },
+    {
+      "source": "microsoft",
+      "target": "ecmascript",
+      "relationship": "participated_in",
+      "mechanism": "Microsoft initially participated in ECMAScript standardization.",
+      "source_line_ranges": [
+        [
+          120,
+          122
+        ]
+      ]
+    },
+    {
+      "source": "microsoft",
+      "target": "ecmascript4",
+      "relationship": "withdrew_cooperation",
+      "mechanism": "Microsoft eventually stopped collaborating on ECMA work, contributing to ECMAScript 4 being mothballed.",
+      "source_line_ranges": [
+        [
+          120,
+          122
+        ]
+      ]
+    },
+    {
+      "source": "google",
+      "target": "ecmascript5",
+      "relationship": "contributed_to_convergence",
+      "mechanism": "The 2008 Oslo convergence combined relevant work and led to ECMAScript 5.",
+      "source_line_ranges": [
+        [
+          131,
+          133
+        ]
+      ]
+    },
+    {
+      "source": "browser_devtools",
+      "target": "javascript",
+      "relationship": "debugs",
+      "mechanism": "Every major browser provides built-in JavaScript debugging tools.",
+      "source_line_ranges": [
+        [
+          451,
+          451
+        ]
+      ]
+    },
+    {
+      "source": "eslint",
+      "target": "javascript",
+      "relationship": "analyzes",
+      "mechanism": "ESLint statically analyzes JavaScript.",
+      "source_line_ranges": [
+        [
+          452,
+          452
+        ]
+      ]
+    },
+    {
+      "source": "jslint",
+      "target": "javascript",
+      "relationship": "analyzes",
+      "mechanism": "JSLint statically analyzes JavaScript.",
+      "source_line_ranges": [
+        [
+          452,
+          452
+        ]
+      ]
+    },
+    {
+      "source": "profiler",
+      "target": "javascript",
+      "relationship": "profiles",
+      "mechanism": "Profilers analyze JavaScript performance.",
+      "source_line_ranges": [
+        [
+          453,
+          453
+        ]
+      ]
+    },
+    {
+      "source": "benchmarkjs",
+      "target": "javascript",
+      "relationship": "benchmarks",
+      "mechanism": "Benchmark.js benchmarks JavaScript.",
+      "source_line_ranges": [
+        [
+          453,
+          453
+        ]
+      ]
+    },
+    {
+      "source": "jsbench",
+      "target": "javascript",
+      "relationship": "benchmarks",
+      "mechanism": "JSBench provides JavaScript performance benchmarking.",
+      "source_line_ranges": [
+        [
+          453,
+          453
+        ]
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_runtime_pipeline",
+      "name": "Runtime execution pipeline",
+      "expression": "source → JavaScript engine → execution frames/call stack → event loop/message processing → host APIs/I/O",
+      "mechanism": "The engine executes JavaScript inside a host runtime; the runtime supplies APIs and schedules messages.",
+      "source_line_ranges": [
+        [
+          186,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "model_event_loop",
+      "name": "Event-loop processing",
+      "expression": "message_queue → event_loop → call_stack_frame → run_to_completion → next_message",
+      "mechanism": "Messages are processed one at a time; each message runs to completion before the next is considered.",
+      "source_line_ranges": [
+        [
+          194,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "model_dynamic_binding",
+      "name": "Dynamic value typing",
+      "expression": "variable → value(type A) → reassignment → value(type B)",
+      "mechanism": "Type is associated with the value rather than the variable/expression.",
+      "source_line_ranges": [
+        [
+          232,
+          236
+        ],
+        [
+          379,
+          385
+        ]
+      ]
+    },
+    {
+      "id": "model_coercion",
+      "name": "Operator-dependent coercion",
+      "expression": "operands + operator → coercion rules → result",
+      "mechanism": "Binary + may concatenate after string coercion, while - converts operands to numbers.",
+      "source_line_ranges": [
+        [
+          205,
+          229
+        ]
+      ]
+    },
+    {
+      "id": "model_prototype_lookup",
+      "name": "Prototype delegation",
+      "expression": "object.property → own property? → prototype chain lookup → inherited method/property",
+      "mechanism": "Property lookup walks prototype relationships when a property is not directly owned.",
+      "source_line_ranges": [
+        [
+          247,
+          251
+        ],
+        [
+          313,
+          315
+        ]
+      ]
+    },
+    {
+      "id": "model_closure",
+      "name": "Lexical closure",
+      "expression": "outer lexical environment + nested function → retained internal state",
+      "mechanism": "A nested function retains access to outer bindings after the outer function finishes.",
+      "source_line_ranges": [
+        [
+          295,
+          299
+        ]
+      ]
+    },
+    {
+      "id": "model_async",
+      "name": "Promise/async model",
+      "expression": "async operation → Promise → handlers / await → eventual result",
+      "mechanism": "Promises represent eventual results; async/await structures non-blocking asynchronous code.",
+      "source_line_ranges": [
+        [
+          332,
+          338
+        ]
+      ]
+    },
+    {
+      "id": "model_browser_security",
+      "name": "Browser security boundary",
+      "expression": "Web script → sandbox + same-origin policy + CSP → constrained execution",
+      "mechanism": "Browser restrictions limit system capabilities and cross-origin data access, while CSP constrains trusted executable content.",
+      "source_line_ranges": [
+        [
+          390,
+          396
+        ]
+      ]
+    },
+    {
+      "id": "model_xss",
+      "name": "XSS attack chain",
+      "expression": "attacker-controlled input → malicious script in target page → victim privileges → data/action compromise",
+      "mechanism": "The malicious script executes in the target application's security context.",
+      "source_line_ranges": [
+        [
+          398,
+          404
+        ]
+      ]
+    },
+    {
+      "id": "model_csrf",
+      "name": "CSRF attack chain",
+      "expression": "attacker page → victim browser → authenticated target request → unintended state change",
+      "mechanism": "Cookie-based authentication can cause cross-site requests to carry valid credentials.",
+      "source_line_ranges": [
+        [
+          406,
+          413
+        ]
+      ]
+    },
+    {
+      "id": "model_ecma_evolution",
+      "name": "ECMAScript standardization evolution",
+      "expression": "Netscape JavaScript → Ecma submission → ECMAScript editions → annual proposal process",
+      "mechanism": "Standardization moved from browser-specific implementations toward a shared evolving language specification.",
+      "source_line_ranges": [
+        [
+          116,
+          142
+        ]
+      ]
+    },
+    {
+      "id": "model_js_to_wasm",
+      "name": "JavaScript/WebAssembly execution complement",
+      "expression": "JavaScript → performance-critical region → WebAssembly → same engine sandbox",
+      "mechanism": "WebAssembly complements JavaScript for performance-critical portions while remaining inside the engine's sandbox.",
+      "source_line_ranges": [
+        [
+          471,
+          474
+        ]
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_identity",
+      "claim": "JavaScript is a core Web technology, alongside HTML and CSS, and conforms to ECMAScript.",
+      "source_line_ranges": [
+        [
+          88,
+          94
+        ]
+      ]
+    },
+    {
+      "id": "claim_runtime",
+      "claim": "Browsers contain dedicated JavaScript engines; engines are also used in servers and applications, with Node.js a major non-browser runtime.",
+      "source_line_ranges": [
+        [
+          90,
+          94
+        ]
+      ]
+    },
+    {
+      "id": "claim_execution",
+      "claim": "Modern engines use JIT compilation and a runtime/event-loop model for non-blocking I/O.",
+      "source_line_ranges": [
+        [
+          186,
+          196
+        ]
+      ]
+    },
+    {
+      "id": "claim_history",
+      "claim": "JavaScript originated at Netscape in 1995 and was standardized as ECMAScript beginning in 1997.",
+      "source_line_ranges": [
+        [
+          99,
+          118
+        ]
+      ]
+    },
+    {
+      "id": "claim_ecma_evolution",
+      "claim": "ECMAScript 4 was mothballed; ECMAScript 5 emerged from a 2008 convergence and ECMAScript 6 arrived in 2015.",
+      "source_line_ranges": [
+        [
+          118,
+          138
+        ]
+      ]
+    },
+    {
+      "id": "claim_node",
+      "claim": "Node.js combined V8, an event loop, and I/O APIs, driving major non-browser JavaScript adoption.",
+      "source_line_ranges": [
+        [
+          140,
+          142
+        ]
+      ]
+    },
+    {
+      "id": "claim_web_usage",
+      "claim": "JavaScript dominates client-side Web scripting and is widely used through libraries/frameworks.",
+      "source_line_ranges": [
+        [
+          153,
+          173
+        ]
+      ]
+    },
+    {
+      "id": "claim_language_semantics",
+      "claim": "JavaScript is dynamically and weakly typed, prototype-based, multi-paradigm, and supports first-class functions and closures.",
+      "source_line_ranges": [
+        [
+          67,
+          77
+        ],
+        [
+          201,
+          338
+        ]
+      ]
+    },
+    {
+      "id": "claim_security",
+      "claim": "Browser sandboxing and same-origin policy constrain JavaScript, while XSS, CSRF, prototype pollution, dependency risks, and browser flaws are security concerns.",
+      "source_line_ranges": [
+        [
+          390,
+          446
+        ]
+      ]
+    },
+    {
+      "id": "claim_ecosystem",
+      "claim": "JavaScript extends beyond browsers through Node.js, Electron, Cordova, React Native, Acrobat, GNOME Shell, and embedded systems.",
+      "source_line_ranges": [
+        [
+          175,
+          184
+        ]
+      ]
+    },
+    {
+      "id": "claim_tools",
+      "claim": "Browser developer tools, linters, profilers, and benchmark tools support JavaScript development.",
+      "source_line_ranges": [
+        [
+          448,
+          454
+        ]
+      ]
+    },
+    {
+      "id": "claim_related",
+      "claim": "JavaScript influenced and was influenced by other languages/technologies and is complemented by JSON, transpilers, and WebAssembly.",
+      "source_line_ranges": [
+        [
+          455,
+          474
+        ]
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "concept_a": "JavaScript",
+      "concept_b": "ECMAScript",
+      "distinction": "JavaScript is the language/ecosystem as used in practice; ECMAScript is the standardized language specification."
+    },
+    {
+      "concept_a": "JavaScript",
+      "concept_b": "Java",
+      "distinction": "Despite name/syntax similarities, JavaScript is dynamically typed and prototype-based while Java is statically typed and class-based."
+    },
+    {
+      "concept_a": "language",
+      "concept_b": "runtime",
+      "distinction": "ECMAScript defines language semantics but not I/O; a runtime supplies networking, storage, graphics, and host APIs."
+    },
+    {
+      "concept_a": "dynamic typing",
+      "concept_b": "weak typing",
+      "distinction": "Dynamic typing concerns when/how types are associated with values; weak typing concerns implicit coercion across operations."
+    },
+    {
+      "concept_a": "prototype inheritance",
+      "concept_b": "class syntax",
+      "distinction": "JavaScript's underlying inheritance remains prototype-based even when class/extends/super syntax is used."
+    },
+    {
+      "concept_a": "function",
+      "concept_b": "method",
+      "distinction": "The source states there is no distinct definition form; invocation context determines whether a function acts as a method via this."
+    },
+    {
+      "concept_a": "event loop",
+      "concept_b": "multithreading",
+      "distinction": "The source describes JavaScript execution as single-threaded with queued messages and non-blocking I/O."
+    },
+    {
+      "concept_a": "promise",
+      "concept_b": "async/await",
+      "distinction": "Promise is an asynchronous result abstraction; async/await is syntax for structuring asynchronous operations."
+    },
+    {
+      "concept_a": "browser sandbox",
+      "concept_b": "same-origin policy",
+      "distinction": "Sandbox limits system capabilities; same-origin policy limits cross-origin information access."
+    },
+    {
+      "concept_a": "XSS",
+      "concept_b": "CSRF",
+      "distinction": "XSS executes attacker-controlled script in a target page; CSRF induces a victim browser to send an unintended authenticated request."
+    },
+    {
+      "concept_a": "client validation",
+      "concept_b": "server security",
+      "distinction": "Client-side validation improves user experience but cannot be the sole security enforcement point."
+    },
+    {
+      "concept_a": "obfuscation",
+      "concept_b": "secrecy",
+      "distinction": "Obfuscation can hinder inspection but does not make client-side code or embedded secrets confidential."
+    },
+    {
+      "concept_a": "library",
+      "concept_b": "framework",
+      "distinction": "The source lists both but does not define a strict semantic boundary between them."
+    },
+    {
+      "concept_a": "JavaScript",
+      "concept_b": "TypeScript",
+      "distinction": "TypeScript is presented as a statically typed/strict language that transpiles to JavaScript."
+    },
+    {
+      "concept_a": "JavaScript",
+      "concept_b": "WebAssembly",
+      "distinction": "WebAssembly complements JavaScript for performance-critical portions and runs in the same sandbox."
+    },
+    {
+      "concept_a": "Vanilla JS",
+      "concept_b": "library ecosystem",
+      "distinction": "Vanilla JS means standard JavaScript without third-party libraries/frameworks."
+    },
+    {
+      "concept_a": "server-side JavaScript",
+      "concept_b": "browser JavaScript",
+      "distinction": "Both use JavaScript engines, but their host runtimes expose different environment APIs."
+    },
+    {
+      "concept_a": "source code",
+      "concept_b": "compiled bytecode",
+      "distinction": "The source contrasts Java's compiled-bytecode loading with JavaScript being loaded as human-readable source code."
+    },
+    {
+      "concept_a": "var",
+      "concept_b": "let/const",
+      "distinction": "var is function-scoped; let and const are block-scoped."
+    },
+    {
+      "concept_a": "const",
+      "concept_b": "immutability",
+      "distinction": "const prevents reassignment of the binding; the source does not state that referenced objects become deeply immutable."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "path_01",
+      "name": "Identity → standard",
+      "sequence": [
+        "javascript",
+        "ecmascript",
+        "tc39",
+        "annual_release_process"
+      ]
+    },
+    {
+      "id": "path_02",
+      "name": "Browser execution",
+      "sequence": [
+        "browser",
+        "javascript_engine",
+        "jit",
+        "runtime_system",
+        "web_apis"
+      ]
+    },
+    {
+      "id": "path_03",
+      "name": "Event loop",
+      "sequence": [
+        "message_queue",
+        "event_loop",
+        "call_stack",
+        "single_threaded_execution",
+        "concurrency_model"
+      ]
+    },
+    {
+      "id": "path_04",
+      "name": "Language typing",
+      "sequence": [
+        "dynamic_typing",
+        "weak_typing",
+        "type_coercion",
+        "nan"
+      ]
+    },
+    {
+      "id": "path_05",
+      "name": "Object model",
+      "sequence": [
+        "javascript",
+        "prototype_object_model",
+        "delegation",
+        "inheritance",
+        "class_syntax"
+      ]
+    },
+    {
+      "id": "path_06",
+      "name": "Functional model",
+      "sequence": [
+        "first_class_functions",
+        "closures",
+        "promises",
+        "async_await"
+      ]
+    },
+    {
+      "id": "path_07",
+      "name": "Web application",
+      "sequence": [
+        "javascript",
+        "dom",
+        "ajax",
+        "websocket",
+        "web_apis"
+      ]
+    },
+    {
+      "id": "path_08",
+      "name": "Server JavaScript",
+      "sequence": [
+        "javascript",
+        "v8",
+        "nodejs",
+        "event_loop",
+        "server_side_js"
+      ]
+    },
+    {
+      "id": "path_09",
+      "name": "Security",
+      "sequence": [
+        "browser_sandbox",
+        "same_origin_policy",
+        "csp",
+        "xss",
+        "csrf",
+        "client_untrusted"
+      ]
+    },
+    {
+      "id": "path_10",
+      "name": "Supply chain",
+      "sequence": [
+        "javascript",
+        "npm",
+        "dependency_risk",
+        "prototype_pollution"
+      ]
+    },
+    {
+      "id": "path_11",
+      "name": "Performance",
+      "sequence": [
+        "javascript_engine",
+        "jit",
+        "v8",
+        "wasm",
+        "benchmarkjs"
+      ]
+    },
+    {
+      "id": "path_12",
+      "name": "Ecosystem",
+      "sequence": [
+        "javascript",
+        "npm",
+        "jquery",
+        "react",
+        "typescript",
+        "transpilers"
+      ]
+    },
+    {
+      "id": "path_13",
+      "name": "History",
+      "sequence": [
+        "netscape",
+        "brendan_eich",
+        "javascript",
+        "ecma_international",
+        "ecmascript5",
+        "ecmascript6"
+      ]
+    },
+    {
+      "id": "path_14",
+      "name": "Cross-language",
+      "sequence": [
+        "scheme",
+        "java",
+        "javascript",
+        "typescript",
+        "wasm"
+      ]
+    },
+    {
+      "id": "path_15",
+      "name": "Development tooling",
+      "sequence": [
+        "browser_devtools",
+        "eslint",
+        "profiler",
+        "benchmarkjs"
+      ]
+    },
+    {
+      "id": "path_16",
+      "name": "Beyond browser",
+      "sequence": [
+        "javascript",
+        "nodejs",
+        "electron",
+        "cordova",
+        "react_native",
+        "embedded_systems"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "misconception": "JavaScript is Java.",
+      "correction": "They are distinct languages with substantially different typing, object models, loading models, and histories.",
+      "source_line_ranges": [
+        [
+          96,
+          96
+        ],
+        [
+          455,
+          461
+        ]
+      ]
+    },
+    {
+      "misconception": "ECMAScript and JavaScript are completely separate languages.",
+      "correction": "JavaScript conforms to the ECMAScript standard; ECMAScript specifies the core language while hosts provide APIs."
+    },
+    {
+      "misconception": "Dynamic typing means JavaScript has no types.",
+      "correction": "Types exist on values; variables can be rebound to values of different types."
+    },
+    {
+      "misconception": "Weak typing means JavaScript is dynamically typed.",
+      "correction": "Dynamic typing and weak typing describe different properties: value-associated typing versus implicit coercion."
+    },
+    {
+      "misconception": "JavaScript inheritance is class-based underneath.",
+      "correction": "The source states class syntax abstracts an underlying prototype inheritance mechanism."
+    },
+    {
+      "misconception": "const makes an object immutable.",
+      "correction": "The source states const prevents reassignment of the binding; it does not define deep object immutability."
+    },
+    {
+      "misconception": "Client-side JavaScript can securely enforce validation.",
+      "correction": "Client validation is convenience; security enforcement must also occur on the server."
+    },
+    {
+      "misconception": "Obfuscating JavaScript hides secrets.",
+      "correction": "Client source can be extracted and obfuscation can be reverse-engineered."
+    },
+    {
+      "misconception": "CSP alone fixes all JavaScript security problems.",
+      "correction": "CSP is one control; XSS, CSRF, dependency, browser, and sandbox issues remain distinct."
+    },
+    {
+      "misconception": "XSS and CSRF are the same attack.",
+      "correction": "XSS executes malicious script in a target context; CSRF abuses a victim browser to make an unintended authenticated request."
+    },
+    {
+      "misconception": "JavaScript is single-threaded, therefore it cannot perform concurrent I/O.",
+      "correction": "The event-loop model permits non-blocking I/O while messages are processed sequentially."
+    },
+    {
+      "misconception": "Web APIs are part of ECMAScript itself.",
+      "correction": "The source explicitly separates ECMAScript language facilities from host-provided I/O and Web APIs."
+    },
+    {
+      "misconception": "WebAssembly replaces JavaScript.",
+      "correction": "The source presents WebAssembly as complementary, especially for performance-critical portions."
+    },
+    {
+      "misconception": "Vanilla JS is a separate programming language.",
+      "correction": "It is a term for using standard JavaScript without libraries/frameworks."
+    },
+    {
+      "misconception": "JavaScript only runs in browsers.",
+      "correction": "It runs in Node.js, Deno, Bun, application frameworks, JVM contexts, and some embedded systems."
+    },
+    {
+      "misconception": "A function and a method are different language constructs in JavaScript.",
+      "correction": "The source says the distinction occurs during invocation; method calls bind this to the receiver."
+    },
+    {
+      "misconception": "All JavaScript engines interpret source without compilation.",
+      "correction": "Modern engines commonly use JIT compilation to improve performance."
+    },
+    {
+      "misconception": "Prototype pollution is ordinary prototype inheritance.",
+      "correction": "Prototype pollution is a runtime vulnerability involving attacker modification of prototype properties."
+    },
+    {
+      "misconception": "Third-party package dependencies are automatically trustworthy.",
+      "correction": "The source highlights stale, vulnerable, malicious, or removed dependencies as a supply-chain risk."
+    },
+    {
+      "misconception": "Browser sandbox bugs are only theoretical.",
+      "correction": "The source cites historical cases where incorrect privilege handling enabled vulnerabilities."
+    }
+  ],
+  "questions": [
+    "How does JavaScript relate to ECMAScript?",
+    "Why does JavaScript need a host runtime for networking and storage?",
+    "What role does the JavaScript engine play?",
+    "How does JIT compilation affect execution?",
+    "Why did V8 influence the browser-engine ecosystem?",
+    "What are the roles of the event loop, message queue, and call stack?",
+    "How can single-threaded JavaScript perform non-blocking I/O?",
+    "What is the difference between dynamic and weak typing?",
+    "How does operator-dependent type coercion work?",
+    "Why can + produce string concatenation while - produces numeric conversion?",
+    "What is NaN and how can coercion produce it?",
+    "What is lexical scope?",
+    "How do var, let, and const differ?",
+    "What is the prototype chain?",
+    "How does class syntax relate to prototypes?",
+    "How do constructor functions and new work?",
+    "How does this binding depend on invocation?",
+    "What is a lexical closure?",
+    "How are traits and mixins implemented with functions?",
+    "What are first-class functions?",
+    "What are promises and what do their combinators do?",
+    "How does async/await structure asynchronous code?",
+    "What is automatic semicolon insertion?",
+    "Why are arrays and objects relevant to JSON?",
+    "What does Vanilla JS mean?",
+    "How did JavaScript move beyond browser scripting?",
+    "What did Node.js change?",
+    "How do Deno and Bun fit into the runtime ecosystem?",
+    "How does JavaScript interact with the DOM?",
+    "What is Ajax and why was it important?",
+    "How did JavaScript libraries and frameworks change development?",
+    "How does TypeScript relate to JavaScript?",
+    "What role do transpilers play?",
+    "How does WebAssembly complement JavaScript?",
+    "How did Netscape and Brendan Eich shape JavaScript?",
+    "Why was JavaScript renamed from LiveScript?",
+    "Why was the JavaScript name confused with Java?",
+    "How did Microsoft JScript create browser compatibility problems?",
+    "Why was ECMAScript standardization necessary?",
+    "Why was ECMAScript 4 mothballed?",
+    "What was the significance of ECMAScript 5?",
+    "What did ECMAScript 6 formalize?",
+    "How does TC39 evolve JavaScript today?",
+    "How did Firefox and Chrome affect JavaScript's development?",
+    "What was the role of Ajax in the JavaScript renaissance?",
+    "How does browser sandboxing protect users?",
+    "What does same-origin policy restrict?",
+    "What is Content Security Policy?",
+    "How does XSS work?",
+    "How does CSRF differ from XSS?",
+    "Why is client-side validation insufficient for security?",
+    "Why are secrets in JavaScript exposed?",
+    "What is prototype pollution?",
+    "Why are npm/Bower dependencies a security risk?",
+    "How can browser/plugin memory corruption affect JavaScript?",
+    "What is a sandbox escape?",
+    "What does Rowhammer.js demonstrate?",
+    "What does the Spectre JavaScript implementation demonstrate?",
+    "What development tools are built into browsers?",
+    "How do ESLint and JSLint differ conceptually from profilers?",
+    "What is the JavaScript trademark history?",
+    "Which languages influenced JavaScript?",
+    "Which languages were influenced by JavaScript?",
+    "Why is WebAssembly sandboxed alongside JavaScript?"
+  ],
+  "expansion_targets": [
+    "ECMAScript specification semantics",
+    "TC39 proposal stages and annual releases",
+    "V8 architecture and JIT tiers",
+    "SpiderMonkey architecture",
+    "JavaScriptCore architecture",
+    "Garbage collector designs",
+    "JavaScript bytecode/interpreter pipelines",
+    "event loop implementation differences across runtimes",
+    "browser task vs microtask queues",
+    "Promises and microtasks",
+    "DOM and Web IDL bindings",
+    "Web APIs and browser security architecture",
+    "Node.js internals",
+    "Deno architecture",
+    "Bun architecture",
+    "module systems: CommonJS and ESM",
+    "JavaScript module resolution",
+    "npm package resolution and lockfiles",
+    "JavaScript dependency supply-chain security",
+    "prototype pollution case studies",
+    "XSS variants and browser defenses",
+    "CSRF defenses including SameSite cookies",
+    "Content Security Policy directives",
+    "browser sandbox architecture",
+    "site isolation and process models",
+    "JavaScript engine fuzzing",
+    "JIT compiler security",
+    "speculative execution side channels",
+    "WebAssembly execution model",
+    "WebAssembly component model",
+    "TypeScript compiler pipeline",
+    "transpiler source maps",
+    "React/Angular/Vue architecture",
+    "Ajax/fetch evolution",
+    "WebSocket protocol integration",
+    "Service Workers",
+    "Web Workers and parallelism",
+    "SharedArrayBuffer and Atomics",
+    "IndexedDB and browser storage",
+    "JavaScript internationalization APIs",
+    "regular expression engine internals",
+    "BigInt semantics",
+    "Number and IEEE-754",
+    "Symbols and iterators",
+    "generators",
+    "async iterators",
+    "metaprogramming and Proxy",
+    "Reflect API",
+    "private class fields",
+    "decorators",
+    "JSON parsing/stringification",
+    "JavaScript serialization security",
+    "Electron security",
+    "JavaScript in embedded systems",
+    "JVM JavaScript engines and GraalJS",
+    "JavaScript trademark governance"
+  ],
+  "references": [
+    "ECMAScript 2024 Language Specification",
+    "ECMAScript 2025 Language Specification",
+    "TC39 - Specifying JavaScript",
+    "MDN JavaScript technologies overview",
+    "GitHub Octoverse 2025",
+    "Stack Overflow Developer Survey 2025",
+    "Speaking JavaScript history chapters",
+    "David Flanagan, JavaScript: The Definitive Guide",
+    "Marijn Haverbeke, Eloquent JavaScript",
+    "Douglas Crockford, Prototypal Inheritance in JavaScript",
+    "David Herman, Effective JavaScript",
+    "Yehuda Katz, Understanding Prototypes",
+    "MDN JavaScript data types and data structures",
+    "MDN Concurrency model and Event Loop",
+    "NDSS 2017 study of outdated JavaScript libraries",
+    "Rowhammer.js research"
+  ],
+  "historical_context": [
+    {
+      "year": "1993",
+      "event": "Mosaic released",
+      "significance": "Early popular graphical web browser preceding Netscape Navigator.",
+      "source_line_ranges": [
+        [
+          99,
+          102
+        ]
+      ]
+    },
+    {
+      "year": "1994",
+      "event": "Netscape Navigator released",
+      "significance": "Netscape's browser became highly popular and hosted JavaScript.",
+      "source_line_ranges": [
+        [
+          100,
+          104
+        ]
+      ]
+    },
+    {
+      "year": "1995",
+      "event": "JavaScript created",
+      "significance": "Netscape hired Brendan Eich; LiveScript shipped in beta and was renamed JavaScript for the December release.",
+      "source_line_ranges": [
+        [
+          102,
+          106
+        ]
+      ]
+    },
+    {
+      "year": "1995",
+      "event": "Internet Explorer introduced",
+      "significance": "Microsoft's browser competition led to JScript and implementation divergence.",
+      "source_line_ranges": [
+        [
+          108,
+          111
+        ]
+      ]
+    },
+    {
+      "year": "1996",
+      "event": "Netscape submits JavaScript to Ecma",
+      "significance": "Started formal standardization leading to ECMAScript.",
+      "source_line_ranges": [
+        [
+          116,
+          116
+        ]
+      ]
+    },
+    {
+      "year": "1997",
+      "event": "ECMAScript 1",
+      "significance": "First official ECMAScript specification.",
+      "source_line_ranges": [
+        [
+          116,
+          118
+        ]
+      ]
+    },
+    {
+      "year": "1998",
+      "event": "ECMAScript 2",
+      "significance": "Second ECMAScript edition.",
+      "source_line_ranges": [
+        [
+          118,
+          118
+        ]
+      ]
+    },
+    {
+      "year": "1999",
+      "event": "ECMAScript 3",
+      "significance": "Third ECMAScript edition.",
+      "source_line_ranges": [
+        [
+          118,
+          118
+        ]
+      ]
+    },
+    {
+      "year": "2000s",
+      "event": "ECMAScript 4 effort stalls",
+      "significance": "Market dominance and lack of cooperation contributed to ECMAScript 4 being mothballed.",
+      "source_line_ranges": [
+        [
+          120,
+          122
+        ]
+      ]
+    },
+    {
+      "year": "2004",
+      "event": "Firefox release",
+      "significance": "Mozilla's Firefox helped break Internet Explorer dominance.",
+      "source_line_ranges": [
+        [
+          124,
+          126
+        ]
+      ]
+    },
+    {
+      "year": "2005",
+      "event": "Ajax renaissance",
+      "significance": "Jesse James Garrett coined Ajax with JavaScript as its backbone.",
+      "source_line_ranges": [
+        [
+          129,
+          129
+        ]
+      ]
+    },
+    {
+      "year": "2008",
+      "event": "Chrome and V8",
+      "significance": "Google debuted Chrome with V8 and JIT performance.",
+      "source_line_ranges": [
+        [
+          131,
+          131
+        ]
+      ]
+    },
+    {
+      "year": "2009",
+      "event": "ECMAScript 5",
+      "significance": "Oslo-era convergence produced ECMAScript 5.",
+      "source_line_ranges": [
+        [
+          133,
+          133
+        ]
+      ]
+    },
+    {
+      "year": "2009",
+      "event": "Node.js",
+      "significance": "Ryan Dahl created Node.js, expanding JavaScript outside browsers.",
+      "source_line_ranges": [
+        [
+          140,
+          140
+        ]
+      ]
+    },
+    {
+      "year": "2015",
+      "event": "ECMAScript 6",
+      "significance": "Major additions and refinements were formalized.",
+      "source_line_ranges": [
+        [
+          137,
+          138
+        ]
+      ]
+    },
+    {
+      "year": "2024",
+      "event": "Trademark initiative",
+      "significance": "Ryan Dahl spearheaded a letter asking Oracle to free the JavaScript trademark.",
+      "source_line_ranges": [
+        [
+          151,
+          151
+        ]
+      ]
+    },
+    {
+      "year": "2025",
+      "event": "Usage context",
+      "significance": "Source reports extensive JavaScript Web/GitHub usage and notes TypeScript's GitHub ranking under its cited measurement.",
+      "source_line_ranges": [
+        [
+          88,
+          88
+        ],
+        [
+          146,
+          146
+        ]
+      ]
+    }
+  ],
+  "validation": {
+    "node_count": 158,
+    "relationship_count": 204,
+    "formal_model_count": 12,
+    "source_claim_count": 12,
+    "semantic_distinction_count": 20,
+    "learning_path_count": 16,
+    "misconception_count": 20,
+    "question_count": 64,
+    "expansion_target_count": 56,
+    "reference_count": 16,
+    "historical_event_count": 17,
+    "duplicate_node_ids": 0,
+    "dangling_relationships": 0,
+    "duplicate_relationships_removed": 0,
+    "status": "CLEAN"
+  }
+}

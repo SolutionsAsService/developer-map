@@ -1,0 +1,6411 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "Next.js_full_dynamic_relationship_rich_semantic_knowledge_graph",
+  "topic": "Next.js",
+  "entry_schema": {
+    "node": "id,label,type,description,source_line_ranges plus structured metadata",
+    "relationship": "source,target,relationship,mechanism,source_line_ranges plus structured metadata",
+    "principle": "Preserve directional semantics, mechanisms, chronology, architecture, dependencies, provenance and distinctions."
+  },
+  "source": {
+    "filename": "Pasted text(20261008-215745).txt",
+    "line_count": 212,
+    "authority": "User-provided source text; supplied Wikipedia Next.js article.",
+    "external_research_used": false,
+    "source_last_edited": "11 July 2026 according to supplied article",
+    "source_note": "The graph preserves the supplied source's claims and chronology without silently reconciling them with outside information."
+  },
+  "nodes": [
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "type": "framework",
+      "description": "Open-source full-stack web development framework for React-based web applications, supporting server-side and static rendering.",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "id": "vercel",
+      "label": "Vercel",
+      "type": "company",
+      "description": "Private company maintaining and leading open-source Next.js development and owning its copyright/trademarks.",
+      "source_line_ranges": [
+        51,
+        68
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "type": "library",
+      "description": "JavaScript library traditionally used to build browser-rendered web applications.",
+      "source_line_ranges": [
+        66,
+        71
+      ]
+    },
+    {
+      "id": "nodejs",
+      "label": "Node.js",
+      "type": "runtime",
+      "description": "Runtime required by Next.js and used as the basis for server-rendered JavaScript applications.",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "type": "language",
+      "description": "Primary programming language used throughout the framework and its original design principles.",
+      "source_line_ranges": [
+        57,
+        76
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "type": "language",
+      "description": "Language supported by Next.js and one of the languages in which Next.js itself is written.",
+      "source_line_ranges": [
+        57,
+        103
+      ]
+    },
+    {
+      "id": "rust",
+      "label": "Rust",
+      "type": "language",
+      "description": "Language used in major Next.js compiler/tooling components according to the supplied source.",
+      "source_line_ranges": [
+        57,
+        90,
+        98
+      ]
+    },
+    {
+      "id": "web_platform",
+      "label": "Web platform",
+      "type": "platform",
+      "description": "Platform identified for Next.js.",
+      "source_line_ranges": [
+        58,
+        59
+      ]
+    },
+    {
+      "id": "fullstack",
+      "label": "Full-stack web framework",
+      "type": "framework_type",
+      "description": "Framework category covering both server and client/web application concerns.",
+      "source_line_ranges": [
+        59,
+        64
+      ]
+    },
+    {
+      "id": "mit",
+      "label": "MIT License",
+      "type": "license",
+      "description": "Open-source license identified for Next.js.",
+      "source_line_ranges": [
+        60,
+        60
+      ]
+    },
+    {
+      "id": "server_rendering",
+      "label": "Server-side rendering",
+      "type": "rendering_model",
+      "description": "Rendering application content on the server before sending it to the client/browser.",
+      "source_line_ranges": [
+        64,
+        71,
+        105
+      ]
+    },
+    {
+      "id": "static_rendering",
+      "label": "Static rendering",
+      "type": "rendering_model",
+      "description": "Rendering/building content into static output that can be served without dynamic per-request rendering.",
+      "source_line_ranges": [
+        64,
+        71,
+        107
+      ]
+    },
+    {
+      "id": "client_rendering",
+      "label": "Client-side rendering",
+      "type": "rendering_model",
+      "description": "Traditional React model in which application content is rendered in the browser with JavaScript.",
+      "source_line_ranges": [
+        66,
+        71
+      ]
+    },
+    {
+      "id": "react_server_components",
+      "label": "React Server Components",
+      "type": "architecture",
+      "description": "React component model supported by the App Router.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "app_router",
+      "label": "App Router",
+      "type": "routing_system",
+      "description": "Next.js routing pattern introduced in beta in Next.js 13 and stabilized in 13.4.",
+      "source_line_ranges": [
+        92,
+        94
+      ]
+    },
+    {
+      "id": "pages_routing",
+      "label": "Page-based routing",
+      "type": "routing_system",
+      "description": "Next.js routing model described as a developer-convenience feature with dynamic routing support.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "dynamic_routing",
+      "label": "Dynamic routing",
+      "type": "routing_feature",
+      "description": "Routing support for dynamically determined paths.",
+      "source_line_ranges": [
+        80,
+        105
+      ]
+    },
+    {
+      "id": "layouts",
+      "label": "Layouts",
+      "type": "app_router_feature",
+      "description": "App Router capability for composing application layouts.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "streaming",
+      "label": "Streaming",
+      "type": "rendering_feature",
+      "description": "App Router capability for streaming rendered content.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "data_fetching",
+      "label": "Data fetching",
+      "type": "framework_feature",
+      "description": "Configurable/data-fetching mechanisms provided by Next.js.",
+      "source_line_ranges": [
+        76,
+        92
+      ]
+    },
+    {
+      "id": "code_splitting",
+      "label": "Automatic code splitting",
+      "type": "optimization",
+      "description": "Only code necessary to load a page is included, reducing browser loading burden.",
+      "source_line_ranges": [
+        76,
+        105
+      ]
+    },
+    {
+      "id": "prefetching",
+      "label": "Page prefetching",
+      "type": "optimization",
+      "description": "Prefetching intended to reduce load time.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "hot_reloading",
+      "label": "Hot reloading",
+      "type": "development_feature",
+      "description": "Detects changes and re-renders appropriate pages without requiring a server restart.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "hmr",
+      "label": "Hot-module replacement",
+      "type": "development_feature",
+      "description": "Modules can be replaced live during development.",
+      "source_line_ranges": [
+        78,
+        105
+      ]
+    },
+    {
+      "id": "deployment",
+      "label": "Deployment",
+      "type": "operational_concern",
+      "description": "Next.js emphasizes simplifying deployment and supports multiple deployment approaches.",
+      "source_line_ranges": [
+        76,
+        100
+      ]
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "type": "package_manager",
+      "description": "Terminal/package tool used to initialize and operate Next.js applications and its toolchain.",
+      "source_line_ranges": [
+        71,
+        103
+      ]
+    },
+    {
+      "id": "swc",
+      "label": "SWC",
+      "type": "compiler",
+      "description": "Open-source transpiler used by Next.js to transform and compile code into browser-usable JavaScript.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "webpack",
+      "label": "Webpack",
+      "type": "bundler",
+      "description": "Open-source module bundler used by Next.js, described as being replaced by Turbopack.",
+      "source_line_ranges": [
+        80,
+        103
+      ]
+    },
+    {
+      "id": "turbopack",
+      "label": "Turbopack",
+      "type": "bundler",
+      "description": "Bundler/tooling successor to Webpack, introduced in the Next.js tooling evolution.",
+      "source_line_ranges": [
+        92,
+        98,
+        103
+      ]
+    },
+    {
+      "id": "turborepo",
+      "label": "Turborepo",
+      "type": "build_system",
+      "description": "Incremental build-system tool announced alongside the Turbo toolchain.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "turbo",
+      "label": "Turbo",
+      "type": "toolchain",
+      "description": "Vercel front-end development toolchain containing Turbopack and Turborepo.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "rust_compiler",
+      "label": "Rust compiler",
+      "type": "compiler",
+      "description": "Rust-based compiler introduced with Next.js 12 for faster compilation.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "edge_functions",
+      "label": "Edge Functions",
+      "type": "runtime_feature",
+      "description": "Edge execution capability introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "middleware",
+      "label": "Middleware",
+      "type": "runtime_feature",
+      "description": "Middleware capability introduced alongside Edge Functions in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "native_esm",
+      "label": "Native ESM",
+      "type": "module_system",
+      "description": "Native ECMAScript module support introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "url_imports",
+      "label": "URL Imports",
+      "type": "module_feature",
+      "description": "URL import support introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "sass",
+      "label": "Sass",
+      "type": "styling_technology",
+      "description": "Precompiled Sass/SCSS styling supported by Next.js.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "type": "styling_technology",
+      "description": "CSS styling supported by Next.js.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "css_modules",
+      "label": "CSS Modules",
+      "type": "styling_technology",
+      "description": "CSS Modules supported by Next.js, with global CSS/CSS-module support noted in Next.js 9.3.",
+      "source_line_ranges": [
+        84,
+        103
+      ]
+    },
+    {
+      "id": "css_in_js",
+      "label": "CSS-in-JS",
+      "type": "styling_technology",
+      "description": "CSS-in-JS styling approach supported by Next.js.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "styled_jsx",
+      "label": "styled-jsx",
+      "type": "styling_technology",
+      "description": "Styling approach supported by Next.js.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "avif",
+      "label": "AVIF",
+      "type": "image_format",
+      "description": "AVIF support introduced with Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "serverless",
+      "label": "Serverless deployment",
+      "type": "deployment_model",
+      "description": "Next.js 8 capability splitting application code into on-demand lambda functions.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "id": "lambda",
+      "label": "Lambda function",
+      "type": "execution_unit",
+      "description": "On-demand function execution unit used by the described serverless deployment model.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "id": "static_export",
+      "label": "Static export",
+      "type": "deployment_feature",
+      "description": "Static-site export process improved in Next.js 8.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "id": "isr",
+      "label": "Incremental Static Regeneration",
+      "type": "rendering_model",
+      "description": "Next.js feature added in 9.5 allowing incremental regeneration of static content.",
+      "source_line_ranges": [
+        86,
+        107
+      ]
+    },
+    {
+      "id": "rewrites",
+      "label": "Rewrites",
+      "type": "routing_feature",
+      "description": "Request/URL rewrite capability added in Next.js 9.5.",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "id": "redirects",
+      "label": "Redirects",
+      "type": "routing_feature",
+      "description": "Redirect support added in Next.js 9.5.",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "id": "sass_global",
+      "label": "Global Sass/CSS Modules",
+      "type": "styling_feature",
+      "description": "Global Sass and CSS Modules support introduced in Next.js 9.3.",
+      "source_line_ranges": [
+        84,
+        84
+      ]
+    },
+    {
+      "id": "react_context",
+      "label": "React Context API",
+      "type": "react_feature",
+      "description": "React Context API support for dynamic route handling was added in Next.js 7.",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "id": "webpack4",
+      "label": "Webpack 4",
+      "type": "bundler_version",
+      "description": "Webpack 4 was the first Webpack upgrade in Next.js 7.",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "id": "webpack5",
+      "label": "Webpack 5",
+      "type": "bundler_version",
+      "description": "Webpack 5 support introduced in Next.js 11.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "id": "react19",
+      "label": "React 19",
+      "type": "react_version",
+      "description": "React 19 support introduced with Next.js 15 according to the source.",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "id": "async_request_apis",
+      "label": "Asynchronous request APIs",
+      "type": "framework_feature",
+      "description": "Asynchronous request APIs introduced with Next.js 15.",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "id": "build_adapters",
+      "label": "Build Adapters API",
+      "type": "deployment_api",
+      "description": "Next.js 16 API enabling easier integration with hosting providers having custom requirements.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "self_deployment",
+      "label": "Self-deployment",
+      "type": "deployment_model",
+      "description": "Next.js has supported self-deployment since 2016 according to the source.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "next_live",
+      "label": "Next.js Live",
+      "type": "collaboration_feature",
+      "description": "Preview of real-time collaborative coding functionality introduced in Next.js 11.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "id": "cra_migration",
+      "label": "Create React App Migration",
+      "type": "migration_feature",
+      "description": "Experimental Next.js 11 functionality for automatic conversion from Create React App.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "id": "next_build",
+      "label": "Next.js build",
+      "type": "build_process",
+      "description": "Compilation/build process producing deployable application output.",
+      "source_line_ranges": [
+        107,
+        103
+      ]
+    },
+    {
+      "id": "next_folder",
+      "label": ".next folder",
+      "type": "build_artifact",
+      "description": "Directory where the compiled website is usually saved during build time.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "static_html",
+      "label": "Pre-built static HTML",
+      "type": "artifact",
+      "description": "Static HTML pages produced during build time for static generation.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "cache",
+      "label": "Cache",
+      "type": "delivery_mechanism",
+      "description": "Cached pre-built static version served in response to requests.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "browser",
+      "label": "Web browser",
+      "type": "client",
+      "description": "Client that receives rendered/static content and can execute browser-side JavaScript.",
+      "source_line_ranges": [
+        66,
+        105
+      ]
+    },
+    {
+      "id": "first_visit",
+      "label": "First-time visitor",
+      "type": "request_context",
+      "description": "Scenario where server-side rendering can reduce the burden before the browser has downloaded assets.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "assets",
+      "label": "Site assets",
+      "type": "web_assets",
+      "description": "JavaScript/CSS/other resources that the browser downloads for the application.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "seo",
+      "label": "Search engine optimization",
+      "type": "web_property",
+      "description": "Site discoverability/optimization concern affected by rendering strategy.",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "id": "page_load",
+      "label": "Page load time",
+      "type": "performance_metric",
+      "description": "Time required to load/render content in the browser.",
+      "source_line_ranges": [
+        71,
+        105,
+        107
+      ]
+    },
+    {
+      "id": "browser_burden",
+      "label": "Browser workload",
+      "type": "performance_concern",
+      "description": "Client-side computational/loading burden that server rendering can reduce.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "security_benefit",
+      "label": "Rendering-related security benefit",
+      "type": "security_property",
+      "description": "Source attributes enhanced security in part to server-side rendering.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "release_2016",
+      "label": "Initial release — 25 Oct 2016",
+      "type": "historical_event",
+      "description": "Next.js first released as an open-source GitHub project.",
+      "source_line_ranges": [
+        52,
+        76
+      ]
+    },
+    {
+      "id": "v2_2017",
+      "label": "Next.js 2.0 — March 2017",
+      "type": "release",
+      "description": "Improvements for small websites, build efficiency and HMR scalability.",
+      "source_line_ranges": [
+        78,
+        78
+      ]
+    },
+    {
+      "id": "v7_2018",
+      "label": "Next.js 7 — September 2018",
+      "type": "release",
+      "description": "Improved error handling, React Context API support, first Webpack 4 upgrade.",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "id": "v8_2019",
+      "label": "Next.js 8 — February 2019",
+      "type": "release",
+      "description": "First serverless deployment, improved static exports and prefetching.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "id": "v93_2020",
+      "label": "Next.js 9.3 — March 2020",
+      "type": "release",
+      "description": "Optimizations and global Sass/CSS Modules support.",
+      "source_line_ranges": [
+        84,
+        84
+      ]
+    },
+    {
+      "id": "v95_2020",
+      "label": "Next.js 9.5 — July 2020",
+      "type": "release",
+      "description": "Incremental Static Regeneration, rewrites and redirects.",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "id": "v11_2021",
+      "label": "Next.js 11 — June 2021",
+      "type": "release",
+      "description": "Webpack 5, Next.js Live preview and experimental CRA migration.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "id": "v12_2021",
+      "label": "Next.js 12 — October 2021",
+      "type": "release",
+      "description": "Rust compiler, AVIF, Edge Functions, Middleware, native ESM and URL imports.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "v13_2022",
+      "label": "Next.js 13 — October 2022",
+      "type": "release",
+      "description": "App Router beta, layouts, React Server Components, streaming, new data-fetching methods, Turbo toolchain.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "v134_2023",
+      "label": "Next.js 13.4 — May 2023",
+      "type": "release",
+      "description": "App Router became stable for production use.",
+      "source_line_ranges": [
+        94,
+        94
+      ]
+    },
+    {
+      "id": "v14_2023",
+      "label": "Next.js 14 — October 2023",
+      "type": "release",
+      "description": "Source attributes improved memory management using edge runtime.",
+      "source_line_ranges": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "v15_2024",
+      "label": "Next.js 15 — October 2024",
+      "type": "release",
+      "description": "Rust-based Turbopack, React 19 support and asynchronous request APIs.",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "id": "v16_2025",
+      "label": "Next.js 16 — October 2025",
+      "type": "release",
+      "description": "Build Adapters API introduced.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "stable_164",
+      "label": "Next.js 16.4.0",
+      "type": "release",
+      "description": "Stable release listed as 16.4.0 dated 7 October 2026.",
+      "source_line_ranges": [
+        52,
+        54
+      ]
+    },
+    {
+      "id": "preview_163",
+      "label": "Next.js 16.3.0-preview.3",
+      "type": "release",
+      "description": "Preview release listed in the supplied source.",
+      "source_line_ranges": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "google_contrib",
+      "label": "Google contributions — 2019",
+      "type": "historical_event",
+      "description": "Google contributed 43 pull requests to Next.js in 2019.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "vercel_funding",
+      "label": "Vercel Series A — 2020",
+      "type": "historical_event",
+      "description": "Vercel raised $21 million in Series A funding to support software improvements.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "guillermo_rauch",
+      "label": "Guillermo Rauch",
+      "type": "person",
+      "description": "Original author of Next.js and CEO of Vercel according to the supplied source.",
+      "source_line_ranges": [
+        50,
+        73
+      ]
+    },
+    {
+      "id": "tim_neutkens",
+      "label": "Tim Neutkens",
+      "type": "person",
+      "description": "Original author and project lead maintainer of Next.js.",
+      "source_line_ranges": [
+        50,
+        73
+      ]
+    },
+    {
+      "id": "naoyuki_kanezawa",
+      "label": "Naoyuki Kanezawa",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "arunoda_susiripala",
+      "label": "Arunoda Susiripala",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "tony_kovanen",
+      "label": "Tony Kovanen",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "dan_zajdband",
+      "label": "Dan Zajdband",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "lachlan_davidson",
+      "label": "Lachlan Davidson",
+      "type": "person",
+      "description": "Security researcher who reported the React Server Component deserialization vulnerability described in the source.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "type": "platform",
+      "description": "Repository/project hosting platform where Next.js was first released as open source and where its repository is hosted.",
+      "source_line_ranges": [
+        63,
+        76
+      ]
+    },
+    {
+      "id": "open_source_community",
+      "label": "Open-source community",
+      "type": "community",
+      "description": "Community participating in Next.js development.",
+      "source_line_ranges": [
+        51,
+        51
+      ]
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "type": "organization",
+      "description": "Contributor to Next.js, including 43 pull requests in 2019.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "walmart",
+      "label": "Walmart",
+      "type": "organization",
+      "description": "Large website named as using Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "apple",
+      "label": "Apple",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "nike",
+      "label": "Nike",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "netflix",
+      "label": "Netflix",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "tiktok",
+      "label": "TikTok",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "uber",
+      "label": "Uber",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "lyft",
+      "label": "Lyft",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "starbucks",
+      "label": "Starbucks",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "spotify",
+      "label": "Spotify",
+      "type": "organization",
+      "description": "Large website named as using Next.js.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "rsc_deserialization",
+      "label": "React Server Component deserialization protocol",
+      "type": "security_mechanism",
+      "description": "Protocol involved in the vulnerability that allowed unauthenticated remote code execution.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "rce",
+      "label": "Unauthenticated remote code execution",
+      "type": "vulnerability_impact",
+      "description": "Impact described for the React Server Component vulnerability.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "cve_2025_55182",
+      "label": "CVE-2025-55182 / React2Shell",
+      "type": "vulnerability",
+      "description": "React Server Component vulnerability publicly disclosed with CVSS 10.0.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "cve_2025_66478",
+      "label": "CVE-2025-66478",
+      "type": "vulnerability",
+      "description": "Downstream Next.js vulnerability affecting Next.js 15.x and 16.x with susceptible default App Router configuration.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "cvss10",
+      "label": "CVSS 10.0",
+      "type": "severity",
+      "description": "Severity score assigned to CVE-2025-55182 in the supplied source.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "app_router_default",
+      "label": "Default App Router configuration",
+      "type": "configuration",
+      "description": "Default App Router configuration described as susceptible to the downstream CVE.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "amazon_threat_intel",
+      "label": "Amazon threat intelligence teams",
+      "type": "security_org",
+      "description": "Threat intelligence teams observing exploitation attempts.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "china_nexus_groups",
+      "label": "Chinese state-nexus threat groups",
+      "type": "threat_actor",
+      "description": "Threat groups the source says attempted exploitation shortly after disclosure.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "cisa_kev",
+      "label": "CISA Known Exploited Vulnerabilities catalog",
+      "type": "security_registry",
+      "description": "Catalog to which the source says the vulnerability was added on December 5, 2025.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "fix_react2shell_next",
+      "label": "fix-react2shell-next",
+      "type": "security_fix",
+      "description": "Vercel npm package released to update affected versions with the security fix.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "npm_fix",
+      "label": "npm security fix",
+      "type": "remediation",
+      "description": "Distribution/update mechanism for the security fix.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "ref_github",
+      "label": "vercel/next.js — GitHub",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        121,
+        123
+      ]
+    },
+    {
+      "id": "ref_next164",
+      "label": "Next.js 16.4.0 release",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        124
+      ]
+    },
+    {
+      "id": "ref_preview",
+      "label": "Next.js 16.3.0-preview.3",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "id": "ref_react_toolchains",
+      "label": "React Recommended Toolchains",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "ref_brand",
+      "label": "Next.js Brand Guidelines",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "id": "ref_vercel",
+      "label": "Vercel",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "id": "ref_smashing_ssr",
+      "label": "Differences Between Static Generated Sites And Server-Side Rendered Apps",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        129
+      ]
+    },
+    {
+      "id": "ref_thakkar_ssr",
+      "label": "Building React Apps with Server-Side Rendering",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        130,
+        131
+      ]
+    },
+    {
+      "id": "ref_techrep_google",
+      "label": "Google contributions to Next.js",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        134
+      ]
+    },
+    {
+      "id": "ref_techrep_next",
+      "label": "How Next.js aims to simplify front-end development",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        136
+      ]
+    },
+    {
+      "id": "ref_stackoverflow",
+      "label": "Static site generation with single page app functionality",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "id": "ref_infoworld_history",
+      "label": "InfoWorld Next.js release coverage",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        138,
+        143
+      ]
+    },
+    {
+      "id": "ref_next11",
+      "label": "Next.js 11",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        144
+      ]
+    },
+    {
+      "id": "ref_next12",
+      "label": "Next.js 12",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "id": "ref_next13",
+      "label": "Next.js 13",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        146
+      ]
+    },
+    {
+      "id": "ref_next134",
+      "label": "Next.js 13.4",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        147
+      ]
+    },
+    {
+      "id": "ref_next14",
+      "label": "Next.js 14",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "id": "ref_next15",
+      "label": "Next.js 15",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        149,
+        150
+      ]
+    },
+    {
+      "id": "ref_next16",
+      "label": "Next.js 16",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        151,
+        152
+      ]
+    },
+    {
+      "id": "ref_compiler",
+      "label": "Next.js Compiler Architecture",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        154
+      ]
+    },
+    {
+      "id": "ref_turbopack",
+      "label": "Turbopack Architecture",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        155
+      ]
+    },
+    {
+      "id": "ref_isr",
+      "label": "Incremental Static Regeneration with Next.js",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "id": "ref_react_security",
+      "label": "React Critical Security Vulnerability",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        158
+      ]
+    },
+    {
+      "id": "ref_cve",
+      "label": "CVE-2025-55182",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        159
+      ]
+    },
+    {
+      "id": "ref_aws_security",
+      "label": "China-nexus groups exploit React2Shell",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        160
+      ]
+    },
+    {
+      "id": "ref_cisa",
+      "label": "CISA KEV entry",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        161
+      ]
+    },
+    {
+      "id": "ref_next_security",
+      "label": "Security Advisory CVE-2025-66478",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        162
+      ]
+    },
+    {
+      "id": "model_rendering",
+      "label": "Rendering choice",
+      "type": "formal_model",
+      "description": "rendering_mode ∈ {client, server, static}",
+      "source_line_ranges": [
+        64,
+        71
+      ],
+      "expression": "rendering_mode ∈ {client, server, static}",
+      "meaning": "Next.js expands React's client-rendering model with server/static rendering."
+    },
+    {
+      "id": "model_build_cache",
+      "label": "Static delivery flow",
+      "type": "formal_model",
+      "description": "source → build → .next → static HTML → cache → browser",
+      "source_line_ranges": [
+        107,
+        107
+      ],
+      "expression": "source → build → .next → static HTML → cache → browser",
+      "meaning": "Build-time static generation produces artifacts that can be cached and served."
+    },
+    {
+      "id": "model_code_split",
+      "label": "Automatic code splitting",
+      "type": "formal_model",
+      "description": "page_request → required_code_only",
+      "source_line_ranges": [
+        105,
+        105
+      ],
+      "expression": "page_request → required_code_only",
+      "meaning": "Only code necessary to load a page is included."
+    },
+    {
+      "id": "model_serverless",
+      "label": "Serverless execution",
+      "type": "formal_model",
+      "description": "application_code → lambda_functions → on_demand_execution",
+      "source_line_ranges": [
+        82,
+        82
+      ],
+      "expression": "application_code → lambda_functions → on_demand_execution",
+      "meaning": "Next.js 8 split code into on-demand lambda functions."
+    },
+    {
+      "id": "model_app_router",
+      "label": "App Router architecture",
+      "type": "formal_model",
+      "description": "route → layout + server_component + stream + data_fetching",
+      "source_line_ranges": [
+        92,
+        92
+      ],
+      "expression": "route → layout + server_component + stream + data_fetching",
+      "meaning": "App Router combines layouts, React Server Components, streaming and new data fetching."
+    },
+    {
+      "id": "model_toolchain",
+      "label": "Compilation toolchain",
+      "type": "formal_model",
+      "description": "source → SWC/compiler → bundler → browser/deployment",
+      "source_line_ranges": [
+        103,
+        103
+      ],
+      "expression": "source → SWC/compiler → bundler → browser/deployment",
+      "meaning": "Next.js uses compiler/transpiler and bundling stages."
+    },
+    {
+      "id": "model_hmr",
+      "label": "Development update loop",
+      "type": "formal_model",
+      "description": "code_change → detect → rerender/replace_module → browser",
+      "source_line_ranges": [
+        105,
+        105
+      ],
+      "expression": "code_change → detect → rerender/replace_module → browser",
+      "meaning": "Hot reload/HMR provides immediate development feedback."
+    },
+    {
+      "id": "model_isr",
+      "label": "Incremental regeneration",
+      "type": "formal_model",
+      "description": "static_output + later_regeneration",
+      "source_line_ranges": [
+        86,
+        107
+      ],
+      "expression": "static_output + later_regeneration",
+      "meaning": "ISR extends static generation with incremental regeneration."
+    },
+    {
+      "id": "model_routing",
+      "label": "Routing",
+      "type": "formal_model",
+      "description": "URL/path → routing_system → page/component",
+      "source_line_ranges": [
+        92,
+        105
+      ],
+      "expression": "URL/path → routing_system → page/component",
+      "meaning": "Next.js provides page-based and dynamic routing plus App Router."
+    },
+    {
+      "id": "model_security",
+      "label": "Security update chain",
+      "type": "formal_model",
+      "description": "vulnerability → CVE → affected_versions → fix_package → updated_version",
+      "source_line_ranges": [
+        110,
+        110
+      ],
+      "expression": "vulnerability → CVE → affected_versions → fix_package → updated_version",
+      "meaning": "Source describes a React vulnerability propagating downstream to Next.js and being fixed through an npm package."
+    },
+    {
+      "id": "dist_server_vs_client",
+      "label": "Server-side vs client-side rendering",
+      "type": "semantic_distinction",
+      "description": "Server rendering occurs before content is sent to the browser; traditional React client rendering occurs in the browser.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "dist_static_vs_dynamic",
+      "label": "Static vs dynamic rendering",
+      "type": "semantic_distinction",
+      "description": "Static output is built/cached ahead of requests; interactive/changing sites may not fit pure static generation.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "dist_ssr_vs_isr",
+      "label": "SSR vs ISR",
+      "type": "semantic_distinction",
+      "description": "SSR renders on the server; ISR retains static output while supporting incremental regeneration.",
+      "source_line_ranges": [
+        105,
+        107
+      ]
+    },
+    {
+      "id": "dist_app_vs_pages",
+      "label": "App Router vs page-based routing",
+      "type": "semantic_distinction",
+      "description": "App Router is the newer routing architecture with layouts/RSC/streaming; page-based routing is the older routing model described by the source.",
+      "source_line_ranges": [
+        92,
+        105
+      ]
+    },
+    {
+      "id": "dist_webpack_vs_turbopack",
+      "label": "Webpack vs Turbopack",
+      "type": "semantic_distinction",
+      "description": "Webpack was the established bundler; Turbopack is described as its successor/replacement.",
+      "source_line_ranges": [
+        92,
+        103
+      ]
+    },
+    {
+      "id": "dist_swc_vs_bundler",
+      "label": "Compiler/transpiler vs bundler",
+      "type": "semantic_distinction",
+      "description": "SWC transforms/compiles code while Webpack/Turbopack bundle modules.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "dist_code_split_vs_prefetch",
+      "label": "Code splitting vs prefetching",
+      "type": "semantic_distinction",
+      "description": "Code splitting reduces shipped code; prefetching anticipates resources to reduce load time.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "dist_hot_reload_vs_hmr",
+      "label": "Hot reload vs HMR",
+      "type": "semantic_distinction",
+      "description": "Both provide rapid development updates; HMR specifically replaces modules live.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "dist_dual_runtime",
+      "label": "Node/server vs browser runtime",
+      "type": "semantic_distinction",
+      "description": "Next.js spans server/runtime execution and browser delivery rather than being purely client-side.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "dist_serverless_vs_selfhost",
+      "label": "Serverless vs self-deployment",
+      "type": "semantic_distinction",
+      "description": "Serverless uses on-demand functions; self-deployment is separately supported.",
+      "source_line_ranges": [
+        82,
+        100
+      ]
+    },
+    {
+      "id": "dist_next_vs_react",
+      "label": "Next.js vs React",
+      "type": "semantic_distinction",
+      "description": "React is the underlying UI library; Next.js is a framework adding application architecture and rendering/deployment capabilities.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "dist_edge_vs_server",
+      "label": "Edge runtime vs traditional server rendering",
+      "type": "semantic_distinction",
+      "description": "Edge capabilities are a deployment/runtime feature; server rendering is an application rendering model.",
+      "source_line_ranges": [
+        90,
+        96
+      ]
+    },
+    {
+      "id": "dist_framework_vs_toolchain",
+      "label": "Framework vs toolchain",
+      "type": "semantic_distinction",
+      "description": "Next.js is the framework; Turbo/Turbopack/Turborepo are supporting development/build tools.",
+      "source_line_ranges": [
+        92,
+        103
+      ]
+    },
+    {
+      "id": "dist_security_vuln_vs_fix",
+      "label": "Vulnerability vs remediation",
+      "type": "semantic_distinction",
+      "description": "CVE records identify vulnerabilities; fix-react2shell-next is the remediation package described by the source.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "id": "mis1",
+      "label": "Next.js is just React",
+      "type": "misconception_correction",
+      "description": "Next.js is described as a full-stack framework built around React, adding server/static rendering, routing, data fetching, bundling and deployment capabilities.",
+      "concepts": [
+        "nextjs",
+        "react"
+      ]
+    },
+    {
+      "id": "mis2",
+      "label": "Next.js only renders on the server",
+      "type": "misconception_correction",
+      "description": "Next.js supports server rendering, static rendering, and client-side React behavior.",
+      "concepts": [
+        "server_rendering",
+        "static_rendering",
+        "client_rendering"
+      ]
+    },
+    {
+      "id": "mis3",
+      "label": "Static generation works for every site",
+      "type": "misconception_correction",
+      "description": "The source explicitly notes static output is not suitable for every site, particularly highly interactive sites with frequent changes/user input.",
+      "concepts": [
+        "static_rendering",
+        "isr"
+      ]
+    },
+    {
+      "id": "mis4",
+      "label": "SSR and static generation are identical",
+      "type": "misconception_correction",
+      "description": "The source distinguishes server-side rendering from build-time static generation and caching.",
+      "concepts": [
+        "server_rendering",
+        "static_rendering"
+      ]
+    },
+    {
+      "id": "mis5",
+      "label": "App Router was always the Next.js routing system",
+      "type": "misconception_correction",
+      "description": "App Router was introduced in Next.js 13 and stabilized in 13.4.",
+      "concepts": [
+        "app_router",
+        "pages_routing"
+      ]
+    },
+    {
+      "id": "mis6",
+      "label": "Turbopack and SWC do the same thing",
+      "type": "misconception_correction",
+      "description": "SWC is described as a transpiler/compiler; Turbopack is a bundler.",
+      "concepts": [
+        "swc",
+        "turbopack"
+      ]
+    },
+    {
+      "id": "mis7",
+      "label": "Hot reload means the server must restart",
+      "type": "misconception_correction",
+      "description": "Hot reloading is specifically described as avoiding server restart while reflecting code changes.",
+      "concepts": [
+        "hot_reloading"
+      ]
+    },
+    {
+      "id": "mis8",
+      "label": "Next.js cannot deploy without Vercel",
+      "type": "misconception_correction",
+      "description": "The source says Next.js has supported self-deployment since 2016 and Next.js 16 adds Build Adapters for hosting integration.",
+      "concepts": [
+        "self_deployment",
+        "build_adapters"
+      ]
+    },
+    {
+      "id": "mis9",
+      "label": "Next.js 13.4 only added another experimental router",
+      "type": "misconception_correction",
+      "description": "The source says 13.4 made App Router stable for production.",
+      "concepts": [
+        "v134_2023",
+        "app_router"
+      ]
+    },
+    {
+      "id": "mis10",
+      "label": "Server rendering automatically makes every application secure",
+      "type": "misconception_correction",
+      "description": "The source attributes an enhanced-security benefit to server rendering but separately documents a severe Next.js/React vulnerability.",
+      "concepts": [
+        "security_benefit",
+        "cve_2025_66478"
+      ]
+    },
+    {
+      "id": "mis11",
+      "label": "Next.js versions have no architectural evolution",
+      "type": "misconception_correction",
+      "description": "The source documents a progression from page routing/server rendering through App Router, RSC, streaming, Rust tooling and Build Adapters.",
+      "concepts": [
+        "v13_2022",
+        "v16_2025"
+      ]
+    },
+    {
+      "id": "mis12",
+      "label": "Webpack is the only bundler Next.js uses",
+      "type": "misconception_correction",
+      "description": "The source describes Webpack and its replacement/evolution toward Turbopack.",
+      "concepts": [
+        "webpack",
+        "turbopack"
+      ]
+    },
+    {
+      "id": "q1",
+      "label": "What is Next.js and how does it extend React?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q2",
+      "label": "What rendering models does Next.js support?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q3",
+      "label": "Why does Next.js use server-side rendering?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q4",
+      "label": "What limitations of client-only React rendering are described?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q5",
+      "label": "What role does Node.js play in Next.js?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q6",
+      "label": "What is the App Router?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q7",
+      "label": "When was App Router introduced?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q8",
+      "label": "When did App Router become stable?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q9",
+      "label": "What are React Server Components in the Next.js architecture?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q10",
+      "label": "What is streaming in the App Router?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q11",
+      "label": "How does page-based routing differ from App Router?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q12",
+      "label": "What is dynamic routing?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q13",
+      "label": "What is automatic code splitting?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q14",
+      "label": "What is page prefetching?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q15",
+      "label": "What is hot reloading?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q16",
+      "label": "What is hot-module replacement?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q17",
+      "label": "What is Incremental Static Regeneration?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q18",
+      "label": "When was ISR introduced?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q19",
+      "label": "How does static generation work in the supplied description?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q20",
+      "label": "What is the .next folder?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q21",
+      "label": "What is the static-delivery cache flow?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q22",
+      "label": "What is serverless deployment in Next.js 8?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q23",
+      "label": "How do lambda functions relate to Next.js serverless deployment?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q24",
+      "label": "What are rewrites?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q25",
+      "label": "What are redirects?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q26",
+      "label": "What styling systems does Next.js support?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q27",
+      "label": "What is SWC?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q28",
+      "label": "What is Webpack's role?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q29",
+      "label": "What is Turbopack's role?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q30",
+      "label": "What is Turborepo?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q31",
+      "label": "What is the Turbo toolchain?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q32",
+      "label": "When did Next.js add a Rust compiler?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q33",
+      "label": "What did Next.js 12 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q34",
+      "label": "What did Next.js 13 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q35",
+      "label": "What did Next.js 15 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q36",
+      "label": "What did Next.js 16 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q37",
+      "label": "What is the Build Adapters API?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q38",
+      "label": "How does Next.js support self-deployment?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q39",
+      "label": "Who originally authored Next.js?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q40",
+      "label": "Who leads its maintenance?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q41",
+      "label": "What role does Vercel play?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q42",
+      "label": "What role did Google play in the project?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q43",
+      "label": "What major websites are listed as Next.js users?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q44",
+      "label": "What was Next.js's initial design philosophy?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q45",
+      "label": "What happened in Next.js 2.0?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q46",
+      "label": "What changed in Next.js 7?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q47",
+      "label": "What changed in Next.js 8?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q48",
+      "label": "What changed in Next.js 9.3?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q49",
+      "label": "What changed in Next.js 9.5?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q50",
+      "label": "What changed in Next.js 11?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q51",
+      "label": "What is CVE-2025-55182 / React2Shell?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q52",
+      "label": "How did the React vulnerability affect Next.js?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q53",
+      "label": "What is CVE-2025-66478?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q54",
+      "label": "What was the impact score reported?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q55",
+      "label": "What exploitation activity does the source describe?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q56",
+      "label": "What is CISA KEV?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q57",
+      "label": "What remediation package did Vercel release?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q58",
+      "label": "How does the Next.js toolchain transform source code?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q59",
+      "label": "How does rendering strategy affect browser workload?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q60",
+      "label": "Why can static generation be unsuitable for highly interactive sites?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q61",
+      "label": "How does Next.js combine framework, runtime, rendering and deployment concerns?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "exp1",
+      "label": "Next.js App Router architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp2",
+      "label": "React Server Components in Next.js",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp3",
+      "label": "Next.js rendering pipeline",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp4",
+      "label": "Server-side rendering internals",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp5",
+      "label": "Static generation internals",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp6",
+      "label": "Incremental Static Regeneration internals",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp7",
+      "label": "Next.js routing and dynamic segments",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp8",
+      "label": "Next.js data fetching architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp9",
+      "label": "Next.js middleware and Edge runtime",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp10",
+      "label": "SWC compiler architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp11",
+      "label": "Turbopack architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp12",
+      "label": "Turborepo incremental builds",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp13",
+      "label": "Webpack-to-Turbopack migration",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp14",
+      "label": "Next.js deployment adapters",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp15",
+      "label": "Self-hosting Next.js",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp16",
+      "label": "Serverless Next.js deployment",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp17",
+      "label": "Next.js caching model",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp18",
+      "label": "Next.js prefetching",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp19",
+      "label": "Automatic code splitting",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp20",
+      "label": "Hot reload and HMR",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp21",
+      "label": "Next.js styling systems",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp22",
+      "label": "TypeScript integration",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp23",
+      "label": "React 19 and Next.js 15",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp24",
+      "label": "Next.js 16 architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp25",
+      "label": "Next.js security architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp26",
+      "label": "React Server Component security",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp27",
+      "label": "CVE-2025-55182 technical analysis",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp28",
+      "label": "CVE-2025-66478 technical analysis",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp29",
+      "label": "Next.js supply-chain/update security",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp30",
+      "label": "Next.js production observability",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "claim_identity",
+      "label": "Next.js identity",
+      "type": "source_claim",
+      "description": "Next.js is an open-source full-stack React-based web framework maintained by Vercel and the open-source community.",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "id": "claim_rendering",
+      "label": "Rendering",
+      "type": "source_claim",
+      "description": "Next.js extends traditional React client rendering with server-side and static rendering.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "claim_history",
+      "label": "Development history",
+      "type": "source_claim",
+      "description": "The source documents releases from 2016 through 2026 and a progression of routing, rendering, tooling and deployment capabilities.",
+      "source_line_ranges": [
+        75,
+        100
+      ]
+    },
+    {
+      "id": "claim_toolchain",
+      "label": "Toolchain",
+      "type": "source_claim",
+      "description": "Next.js uses compiler/transpiler and bundler tooling including SWC, Webpack and increasingly Turbopack.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "claim_features",
+      "label": "Features",
+      "type": "source_claim",
+      "description": "Routing, code splitting, prefetching, hot reload/HMR, ISR, styling and data fetching are core framework capabilities.",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "id": "claim_security",
+      "label": "Security",
+      "type": "source_claim",
+      "description": "The source describes a severe React Server Component vulnerability and downstream Next.js impact in 2025.",
+      "source_line_ranges": [
+        109,
+        110
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "nextjs",
+      "target": "react",
+      "relationship": "extends",
+      "mechanism": "Next.js adds framework capabilities around React, including server-side/static rendering.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "vercel",
+      "relationship": "maintained_by",
+      "mechanism": "Vercel maintains and leads open-source Next.js development.",
+      "source_line_ranges": [
+        51,
+        68
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "open_source_community",
+      "relationship": "developed_with",
+      "mechanism": "The source identifies the open-source community as participating in development.",
+      "source_line_ranges": [
+        51,
+        51
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "nodejs",
+      "relationship": "requires",
+      "mechanism": "Next.js requires Node.js.",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "npm",
+      "relationship": "initialized_with",
+      "mechanism": "Next.js can be initialized using npm.",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "javascript",
+      "relationship": "uses",
+      "mechanism": "JavaScript is central to Next.js's original design principles.",
+      "source_line_ranges": [
+        57,
+        76
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "typescript",
+      "relationship": "supports",
+      "mechanism": "Next.js has TypeScript support.",
+      "source_line_ranges": [
+        57,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "rust",
+      "relationship": "uses_for_tooling",
+      "mechanism": "Rust is used in compiler/tooling components.",
+      "source_line_ranges": [
+        57,
+        90,
+        98
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "web_platform",
+      "relationship": "targets",
+      "mechanism": "The platform is identified as the web platform.",
+      "source_line_ranges": [
+        58,
+        58
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "fullstack",
+      "relationship": "is_type",
+      "mechanism": "Next.js is described as a full-stack web framework.",
+      "source_line_ranges": [
+        59,
+        59
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "mit",
+      "relationship": "licensed_under",
+      "mechanism": "The source lists the MIT License.",
+      "source_line_ranges": [
+        60,
+        60
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "server_rendering",
+      "relationship": "provides",
+      "mechanism": "Server-side rendering is a core Next.js capability.",
+      "source_line_ranges": [
+        64,
+        71,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "static_rendering",
+      "relationship": "provides",
+      "mechanism": "Static rendering is a core Next.js capability.",
+      "source_line_ranges": [
+        64,
+        71,
+        107
+      ]
+    },
+    {
+      "source": "react",
+      "target": "client_rendering",
+      "relationship": "traditionally_uses",
+      "mechanism": "Traditional React usage is described as browser/client-side rendering.",
+      "source_line_ranges": [
+        66,
+        71
+      ]
+    },
+    {
+      "source": "server_rendering",
+      "target": "browser_burden",
+      "relationship": "reduces",
+      "mechanism": "Server rendering can reduce browser workload.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "server_rendering",
+      "target": "page_load",
+      "relationship": "can_improve",
+      "mechanism": "The source associates rendering strategies with page-load performance.",
+      "source_line_ranges": [
+        71,
+        105
+      ]
+    },
+    {
+      "source": "server_rendering",
+      "target": "seo",
+      "relationship": "can_improve",
+      "mechanism": "Server-side rendering is described as addressing SEO concerns associated with client-only rendering.",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "source": "server_rendering",
+      "target": "security_benefit",
+      "relationship": "provides",
+      "mechanism": "The source attributes enhanced security to server-side rendering.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "app_router",
+      "relationship": "provides",
+      "mechanism": "Next.js 13 introduced the App Router as a new routing pattern.",
+      "source_line_ranges": [
+        92,
+        94
+      ]
+    },
+    {
+      "source": "app_router",
+      "target": "layouts",
+      "relationship": "supports",
+      "mechanism": "App Router supports layouts.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "app_router",
+      "target": "react_server_components",
+      "relationship": "supports",
+      "mechanism": "App Router supports React Server Components.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "app_router",
+      "target": "streaming",
+      "relationship": "supports",
+      "mechanism": "App Router supports streaming.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "app_router",
+      "target": "data_fetching",
+      "relationship": "introduces_methods_for",
+      "mechanism": "App Router introduced a new set of data-fetching methods.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "pages_routing",
+      "relationship": "provides",
+      "mechanism": "Next.js supports page-based routing.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "pages_routing",
+      "target": "dynamic_routing",
+      "relationship": "supports",
+      "mechanism": "Page-based routing includes dynamic routing.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "code_splitting",
+      "relationship": "provides",
+      "mechanism": "Automatic code splitting is a Next.js feature.",
+      "source_line_ranges": [
+        76,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "prefetching",
+      "relationship": "provides",
+      "mechanism": "Page prefetching is a Next.js feature.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "hot_reloading",
+      "relationship": "provides",
+      "mechanism": "Next.js supports hot reloading.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "hmr",
+      "relationship": "provides",
+      "mechanism": "Next.js supports hot-module replacement.",
+      "source_line_ranges": [
+        78,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "deployment",
+      "relationship": "simplifies",
+      "mechanism": "Simplifying deployment was one of the original principles.",
+      "source_line_ranges": [
+        76,
+        76
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "swc",
+      "relationship": "uses",
+      "mechanism": "SWC transforms/compiles Next.js code for browser use.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "webpack",
+      "relationship": "uses",
+      "mechanism": "Webpack was used as a module bundler.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "turbopack",
+      "relationship": "uses",
+      "mechanism": "Turbopack is replacing Webpack in the tooling evolution described.",
+      "source_line_ranges": [
+        92,
+        103
+      ]
+    },
+    {
+      "source": "turbo",
+      "target": "turbopack",
+      "relationship": "contains",
+      "mechanism": "Turbo toolchain includes Turbopack.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "turbo",
+      "target": "turborepo",
+      "relationship": "contains",
+      "mechanism": "Turbo toolchain includes Turborepo.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "turbo",
+      "relationship": "adopts_toolchain",
+      "mechanism": "Next.js 13 announced the Turbo tooling ecosystem.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "rust_compiler",
+      "target": "nextjs",
+      "relationship": "accelerates",
+      "mechanism": "Next.js 12 introduced a Rust compiler to improve compilation speed.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "edge_functions",
+      "relationship": "supports",
+      "mechanism": "Edge Functions were introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "middleware",
+      "relationship": "supports",
+      "mechanism": "Middleware was introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "native_esm",
+      "relationship": "supports",
+      "mechanism": "Native ESM support was introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "url_imports",
+      "relationship": "supports",
+      "mechanism": "URL Imports were introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "avif",
+      "relationship": "supports",
+      "mechanism": "AVIF support was introduced in Next.js 12.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "sass",
+      "relationship": "supports",
+      "mechanism": "Next.js supports Sass/SCSS.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "css",
+      "relationship": "supports",
+      "mechanism": "Next.js supports CSS.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "css_modules",
+      "relationship": "supports",
+      "mechanism": "Next.js supports CSS Modules.",
+      "source_line_ranges": [
+        84,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "css_in_js",
+      "relationship": "supports",
+      "mechanism": "Next.js supports CSS-in-JS.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "styled_jsx",
+      "relationship": "supports",
+      "mechanism": "Next.js supports styled-jsx.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "serverless",
+      "target": "lambda",
+      "relationship": "executes_as",
+      "mechanism": "Serverless deployment splits code into on-demand lambda functions.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "serverless",
+      "relationship": "supports",
+      "mechanism": "Next.js 8 introduced serverless deployment.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "static_export",
+      "relationship": "supports",
+      "mechanism": "Next.js 8 improved static export.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "isr",
+      "relationship": "supports",
+      "mechanism": "Incremental Static Regeneration was introduced in 9.5.",
+      "source_line_ranges": [
+        86,
+        107
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "rewrites",
+      "relationship": "supports",
+      "mechanism": "Rewrites were added in 9.5.",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "redirects",
+      "relationship": "supports",
+      "mechanism": "Redirects were added in 9.5.",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "sass_global",
+      "relationship": "supports",
+      "mechanism": "Global Sass and CSS Modules support was added in 9.3.",
+      "source_line_ranges": [
+        84,
+        84
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "react_context",
+      "relationship": "supports",
+      "mechanism": "Next.js 7 supported React Context API for dynamic route handling.",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "webpack4",
+      "relationship": "first_upgraded_to",
+      "mechanism": "Next.js 7 was the first version to upgrade to Webpack 4.",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "webpack5",
+      "relationship": "supports_since",
+      "mechanism": "Webpack 5 support arrived in Next.js 11.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "react19",
+      "relationship": "supports_since",
+      "mechanism": "React 19 support arrived in Next.js 15.",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "async_request_apis",
+      "relationship": "supports_since",
+      "mechanism": "Asynchronous request APIs arrived in Next.js 15.",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "build_adapters",
+      "relationship": "provides",
+      "mechanism": "Next.js 16 introduced Build Adapters API.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "source": "build_adapters",
+      "target": "deployment",
+      "relationship": "integrates_with",
+      "mechanism": "Build Adapters API eases integration with hosting providers having custom requirements.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "self_deployment",
+      "relationship": "supports",
+      "mechanism": "Source states self-deployment has been supported since 2016.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "next_live",
+      "relationship": "previews",
+      "mechanism": "Next.js 11 previewed real-time collaborative coding functionality.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "cra_migration",
+      "relationship": "supports_experimentally",
+      "mechanism": "Next.js 11 included experimental CRA migration.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "next_build",
+      "relationship": "produces",
+      "mechanism": "Build process produces compiled application output.",
+      "source_line_ranges": [
+        103,
+        107
+      ]
+    },
+    {
+      "source": "next_build",
+      "target": "next_folder",
+      "relationship": "writes_to",
+      "mechanism": "Compiled website is usually saved in .next.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "next_folder",
+      "target": "static_html",
+      "relationship": "contains",
+      "mechanism": "Static output can contain pre-built static HTML pages.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "static_html",
+      "target": "cache",
+      "relationship": "is_cached_as",
+      "mechanism": "Pre-built static pages are cached for requests.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "cache",
+      "target": "browser",
+      "relationship": "serves_to",
+      "mechanism": "Cached static pages are sent to requesting users.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "assets",
+      "relationship": "downloads",
+      "mechanism": "Browser downloads application assets.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "first_visit",
+      "target": "server_rendering",
+      "relationship": "benefits_from",
+      "mechanism": "Server rendering can reduce burden for first-time visitors before assets are downloaded.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "deployment",
+      "relationship": "has_history",
+      "mechanism": "Deployment simplification was an original design principle.",
+      "source_line_ranges": [
+        76,
+        76
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "github",
+      "relationship": "hosted_on",
+      "mechanism": "Repository is hosted on GitHub.",
+      "source_line_ranges": [
+        63,
+        76
+      ]
+    },
+    {
+      "source": "github",
+      "target": "release_2016",
+      "relationship": "hosted",
+      "mechanism": "First open-source release was on GitHub.",
+      "source_line_ranges": [
+        76,
+        76
+      ]
+    },
+    {
+      "source": "release_2016",
+      "target": "nextjs",
+      "relationship": "marks_release",
+      "mechanism": "Initial Next.js release occurred 25 October 2016.",
+      "source_line_ranges": [
+        52,
+        76
+      ]
+    },
+    {
+      "source": "release_2016",
+      "target": "v2_2017",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v2_2017",
+      "target": "v7_2018",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v7_2018",
+      "target": "v8_2019",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v8_2019",
+      "target": "v93_2020",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v93_2020",
+      "target": "v95_2020",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v95_2020",
+      "target": "v11_2021",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v11_2021",
+      "target": "v12_2021",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v12_2021",
+      "target": "v13_2022",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v13_2022",
+      "target": "v134_2023",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v134_2023",
+      "target": "v14_2023",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v14_2023",
+      "target": "v15_2024",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v15_2024",
+      "target": "v16_2025",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v16_2025",
+      "target": "stable_164",
+      "relationship": "preceded",
+      "mechanism": "Release sequence described by the source."
+    },
+    {
+      "source": "v2_2017",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v7_2018",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v8_2019",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v93_2020",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v95_2020",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v11_2021",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v12_2021",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v13_2022",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v134_2023",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v14_2023",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v15_2024",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "v16_2025",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "stable_164",
+      "target": "nextjs",
+      "relationship": "is_release_of"
+    },
+    {
+      "source": "preview_163",
+      "target": "nextjs",
+      "relationship": "is_preview_release_of"
+    },
+    {
+      "source": "guillermo_rauch",
+      "target": "nextjs",
+      "relationship": "original_author_of"
+    },
+    {
+      "source": "tim_neutkens",
+      "target": "nextjs",
+      "relationship": "original_author_of"
+    },
+    {
+      "source": "naoyuki_kanezawa",
+      "target": "nextjs",
+      "relationship": "original_author_of"
+    },
+    {
+      "source": "arunoda_susiripala",
+      "target": "nextjs",
+      "relationship": "original_author_of"
+    },
+    {
+      "source": "tony_kovanen",
+      "target": "nextjs",
+      "relationship": "original_author_of"
+    },
+    {
+      "source": "dan_zajdband",
+      "target": "nextjs",
+      "relationship": "original_author_of"
+    },
+    {
+      "source": "guillermo_rauch",
+      "target": "vercel",
+      "relationship": "is_ceo_of"
+    },
+    {
+      "source": "tim_neutkens",
+      "target": "nextjs",
+      "relationship": "lead_maintainer_of"
+    },
+    {
+      "source": "google",
+      "target": "nextjs",
+      "relationship": "contributed_to",
+      "mechanism": "43 pull requests in 2019.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "walmart",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "apple",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "nike",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "netflix",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "tiktok",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "uber",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "lyft",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "starbucks",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "spotify",
+      "target": "nextjs",
+      "relationship": "reported_user_of",
+      "mechanism": "Source states these large websites used Next.js as of October 2024.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "vercel",
+      "target": "vercel_funding",
+      "relationship": "raised",
+      "mechanism": "$21 million Series A described as supporting improvements to the software.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "google_contrib",
+      "target": "google",
+      "relationship": "documents_contribution"
+    },
+    {
+      "source": "google_contrib",
+      "target": "nextjs",
+      "relationship": "marks_contribution"
+    },
+    {
+      "source": "lachlan_davidson",
+      "target": "rsc_deserialization",
+      "relationship": "reported_vulnerability_in",
+      "mechanism": "Reported the vulnerability to the React team.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "rsc_deserialization",
+      "target": "rce",
+      "relationship": "enabled",
+      "mechanism": "The source says the flaw allowed unauthenticated remote code execution.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "rce",
+      "target": "cve_2025_55182",
+      "relationship": "describes_impact_of",
+      "mechanism": "CVE-2025-55182 / React2Shell.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cve_2025_55182",
+      "target": "cvss10",
+      "relationship": "has_severity",
+      "mechanism": "CVSS score 10.0.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cve_2025_55182",
+      "target": "cve_2025_66478",
+      "relationship": "led_to_downstream_tracking",
+      "mechanism": "Next.js tracked the downstream impact separately.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cve_2025_66478",
+      "target": "nextjs",
+      "relationship": "affected",
+      "mechanism": "Next.js 15.x and 16.x were affected.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cve_2025_66478",
+      "target": "app_router_default",
+      "relationship": "affects_configuration",
+      "mechanism": "Default App Router configuration was susceptible.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "amazon_threat_intel",
+      "target": "china_nexus_groups",
+      "relationship": "observed_exploitation_by",
+      "mechanism": "Observed exploitation attempts by the described threat groups.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "china_nexus_groups",
+      "target": "cve_2025_55182",
+      "relationship": "attempted_exploitation_of",
+      "mechanism": "Source states exploitation attempts occurred within hours of disclosure.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cisa_kev",
+      "target": "cve_2025_55182",
+      "relationship": "lists",
+      "mechanism": "Source states CISA added the vulnerability to KEV.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "fix_react2shell_next",
+      "target": "cve_2025_55182",
+      "relationship": "fixes",
+      "mechanism": "Package released with the security fix.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "fix_react2shell_next",
+      "target": "nextjs",
+      "relationship": "updates",
+      "mechanism": "Used to update Next.js versions with the security fix applied.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "npm_fix",
+      "target": "fix_react2shell_next",
+      "relationship": "distributes",
+      "mechanism": "Fix distributed as an npm package.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "ref_github",
+      "target": "nextjs",
+      "relationship": "repository_reference"
+    },
+    {
+      "source": "ref_react_toolchains",
+      "target": "nextjs",
+      "relationship": "toolchain_reference"
+    },
+    {
+      "source": "ref_compiler",
+      "target": "swc",
+      "relationship": "architecture_reference"
+    },
+    {
+      "source": "ref_turbopack",
+      "target": "turbopack",
+      "relationship": "architecture_reference"
+    },
+    {
+      "source": "ref_isr",
+      "target": "isr",
+      "relationship": "feature_reference"
+    },
+    {
+      "source": "ref_react_security",
+      "target": "cve_2025_55182",
+      "relationship": "security_reference"
+    },
+    {
+      "source": "ref_cve",
+      "target": "cve_2025_55182",
+      "relationship": "cve_reference"
+    },
+    {
+      "source": "ref_aws_security",
+      "target": "china_nexus_groups",
+      "relationship": "threat_reference"
+    },
+    {
+      "source": "ref_cisa",
+      "target": "cisa_kev",
+      "relationship": "registry_reference"
+    },
+    {
+      "source": "ref_next_security",
+      "target": "cve_2025_66478",
+      "relationship": "security_advisory"
+    },
+    {
+      "source": "ref_next16",
+      "target": "stable_164",
+      "relationship": "release_reference"
+    },
+    {
+      "source": "ref_preview",
+      "target": "preview_163",
+      "relationship": "release_reference"
+    },
+    {
+      "source": "claim_identity",
+      "target": "nextjs",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "source": "claim_identity",
+      "target": "vercel",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "source": "claim_identity",
+      "target": "open_source_community",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "source": "claim_rendering",
+      "target": "server_rendering",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "source": "claim_rendering",
+      "target": "static_rendering",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "source": "claim_rendering",
+      "target": "client_rendering",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "source": "claim_history",
+      "target": "release_2016",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        75,
+        100
+      ]
+    },
+    {
+      "source": "claim_history",
+      "target": "v13_2022",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        75,
+        100
+      ]
+    },
+    {
+      "source": "claim_history",
+      "target": "v16_2025",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        75,
+        100
+      ]
+    },
+    {
+      "source": "claim_toolchain",
+      "target": "swc",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "claim_toolchain",
+      "target": "webpack",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "claim_toolchain",
+      "target": "turbopack",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "claim_features",
+      "target": "app_router",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "source": "claim_features",
+      "target": "code_splitting",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "source": "claim_features",
+      "target": "prefetching",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "source": "claim_features",
+      "target": "hot_reloading",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "source": "claim_features",
+      "target": "isr",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "source": "claim_security",
+      "target": "cve_2025_55182",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        109,
+        110
+      ]
+    },
+    {
+      "source": "claim_security",
+      "target": "cve_2025_66478",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        109,
+        110
+      ]
+    },
+    {
+      "source": "claim_security",
+      "target": "fix_react2shell_next",
+      "relationship": "asserts",
+      "source_line_ranges": [
+        109,
+        110
+      ]
+    },
+    {
+      "source": "nextjs",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "source": "vercel",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        51,
+        68
+      ]
+    },
+    {
+      "source": "react",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        66,
+        71
+      ]
+    },
+    {
+      "source": "nodejs",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "source": "javascript",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        57,
+        76
+      ]
+    },
+    {
+      "source": "typescript",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        57,
+        103
+      ]
+    },
+    {
+      "source": "rust",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        57,
+        90,
+        98
+      ]
+    },
+    {
+      "source": "web_platform",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        58,
+        59
+      ]
+    },
+    {
+      "source": "fullstack",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        59,
+        64
+      ]
+    },
+    {
+      "source": "mit",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        60,
+        60
+      ]
+    },
+    {
+      "source": "server_rendering",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        64,
+        71,
+        105
+      ]
+    },
+    {
+      "source": "static_rendering",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        64,
+        71,
+        107
+      ]
+    },
+    {
+      "source": "client_rendering",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        66,
+        71
+      ]
+    },
+    {
+      "source": "react_server_components",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "app_router",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        94
+      ]
+    },
+    {
+      "source": "pages_routing",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "dynamic_routing",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        80,
+        105
+      ]
+    },
+    {
+      "source": "layouts",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "streaming",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "data_fetching",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        76,
+        92
+      ]
+    },
+    {
+      "source": "code_splitting",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        76,
+        105
+      ]
+    },
+    {
+      "source": "prefetching",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "hot_reloading",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "hmr",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        78,
+        105
+      ]
+    },
+    {
+      "source": "deployment",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        76,
+        100
+      ]
+    },
+    {
+      "source": "npm",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        71,
+        103
+      ]
+    },
+    {
+      "source": "swc",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "webpack",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        80,
+        103
+      ]
+    },
+    {
+      "source": "turbopack",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        98,
+        103
+      ]
+    },
+    {
+      "source": "turborepo",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "turbo",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "rust_compiler",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "edge_functions",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "middleware",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "native_esm",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "url_imports",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "sass",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "css",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "css_modules",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        84,
+        103
+      ]
+    },
+    {
+      "source": "css_in_js",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "styled_jsx",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "source": "avif",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "serverless",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "lambda",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "static_export",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "isr",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        86,
+        107
+      ]
+    },
+    {
+      "source": "rewrites",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "source": "redirects",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "source": "sass_global",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        84,
+        84
+      ]
+    },
+    {
+      "source": "react_context",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "source": "webpack4",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "source": "webpack5",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "react19",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "source": "async_request_apis",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "source": "build_adapters",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "source": "self_deployment",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "source": "next_live",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "cra_migration",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "next_build",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        107,
+        103
+      ]
+    },
+    {
+      "source": "next_folder",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "static_html",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "cache",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "source": "browser",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        66,
+        105
+      ]
+    },
+    {
+      "source": "first_visit",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "assets",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "seo",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        71,
+        71
+      ]
+    },
+    {
+      "source": "page_load",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        71,
+        105,
+        107
+      ]
+    },
+    {
+      "source": "browser_burden",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "security_benefit",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "source": "release_2016",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        52,
+        76
+      ]
+    },
+    {
+      "source": "v2_2017",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        78,
+        78
+      ]
+    },
+    {
+      "source": "v7_2018",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "source": "v8_2019",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "source": "v93_2020",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        84,
+        84
+      ]
+    },
+    {
+      "source": "v95_2020",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "source": "v11_2021",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "source": "v12_2021",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "source": "v13_2022",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "source": "v134_2023",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        94,
+        94
+      ]
+    },
+    {
+      "source": "v14_2023",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        96,
+        96
+      ]
+    },
+    {
+      "source": "v15_2024",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "source": "v16_2025",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "source": "stable_164",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        52,
+        54
+      ]
+    },
+    {
+      "source": "preview_163",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        55,
+        56
+      ]
+    },
+    {
+      "source": "google_contrib",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "vercel_funding",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "guillermo_rauch",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        50,
+        73
+      ]
+    },
+    {
+      "source": "tim_neutkens",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        50,
+        73
+      ]
+    },
+    {
+      "source": "naoyuki_kanezawa",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "source": "arunoda_susiripala",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "source": "tony_kovanen",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "source": "dan_zajdband",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "source": "lachlan_davidson",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "github",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        63,
+        76
+      ]
+    },
+    {
+      "source": "open_source_community",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        51,
+        51
+      ]
+    },
+    {
+      "source": "google",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "walmart",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "apple",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "nike",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "netflix",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "tiktok",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "uber",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "lyft",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "starbucks",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "spotify",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "source": "rsc_deserialization",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "rce",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cve_2025_55182",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cve_2025_66478",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cvss10",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "app_router_default",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "amazon_threat_intel",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "china_nexus_groups",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "cisa_kev",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "fix_react2shell_next",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    },
+    {
+      "source": "npm_fix",
+      "target": "nextjs",
+      "relationship": "source_context",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_rendering",
+      "label": "Rendering choice",
+      "type": "formal_model",
+      "description": "rendering_mode ∈ {client, server, static}",
+      "source_line_ranges": [
+        64,
+        71
+      ],
+      "expression": "rendering_mode ∈ {client, server, static}",
+      "meaning": "Next.js expands React's client-rendering model with server/static rendering."
+    },
+    {
+      "id": "model_build_cache",
+      "label": "Static delivery flow",
+      "type": "formal_model",
+      "description": "source → build → .next → static HTML → cache → browser",
+      "source_line_ranges": [
+        107,
+        107
+      ],
+      "expression": "source → build → .next → static HTML → cache → browser",
+      "meaning": "Build-time static generation produces artifacts that can be cached and served."
+    },
+    {
+      "id": "model_code_split",
+      "label": "Automatic code splitting",
+      "type": "formal_model",
+      "description": "page_request → required_code_only",
+      "source_line_ranges": [
+        105,
+        105
+      ],
+      "expression": "page_request → required_code_only",
+      "meaning": "Only code necessary to load a page is included."
+    },
+    {
+      "id": "model_serverless",
+      "label": "Serverless execution",
+      "type": "formal_model",
+      "description": "application_code → lambda_functions → on_demand_execution",
+      "source_line_ranges": [
+        82,
+        82
+      ],
+      "expression": "application_code → lambda_functions → on_demand_execution",
+      "meaning": "Next.js 8 split code into on-demand lambda functions."
+    },
+    {
+      "id": "model_app_router",
+      "label": "App Router architecture",
+      "type": "formal_model",
+      "description": "route → layout + server_component + stream + data_fetching",
+      "source_line_ranges": [
+        92,
+        92
+      ],
+      "expression": "route → layout + server_component + stream + data_fetching",
+      "meaning": "App Router combines layouts, React Server Components, streaming and new data fetching."
+    },
+    {
+      "id": "model_toolchain",
+      "label": "Compilation toolchain",
+      "type": "formal_model",
+      "description": "source → SWC/compiler → bundler → browser/deployment",
+      "source_line_ranges": [
+        103,
+        103
+      ],
+      "expression": "source → SWC/compiler → bundler → browser/deployment",
+      "meaning": "Next.js uses compiler/transpiler and bundling stages."
+    },
+    {
+      "id": "model_hmr",
+      "label": "Development update loop",
+      "type": "formal_model",
+      "description": "code_change → detect → rerender/replace_module → browser",
+      "source_line_ranges": [
+        105,
+        105
+      ],
+      "expression": "code_change → detect → rerender/replace_module → browser",
+      "meaning": "Hot reload/HMR provides immediate development feedback."
+    },
+    {
+      "id": "model_isr",
+      "label": "Incremental regeneration",
+      "type": "formal_model",
+      "description": "static_output + later_regeneration",
+      "source_line_ranges": [
+        86,
+        107
+      ],
+      "expression": "static_output + later_regeneration",
+      "meaning": "ISR extends static generation with incremental regeneration."
+    },
+    {
+      "id": "model_routing",
+      "label": "Routing",
+      "type": "formal_model",
+      "description": "URL/path → routing_system → page/component",
+      "source_line_ranges": [
+        92,
+        105
+      ],
+      "expression": "URL/path → routing_system → page/component",
+      "meaning": "Next.js provides page-based and dynamic routing plus App Router."
+    },
+    {
+      "id": "model_security",
+      "label": "Security update chain",
+      "type": "formal_model",
+      "description": "vulnerability → CVE → affected_versions → fix_package → updated_version",
+      "source_line_ranges": [
+        110,
+        110
+      ],
+      "expression": "vulnerability → CVE → affected_versions → fix_package → updated_version",
+      "meaning": "Source describes a React vulnerability propagating downstream to Next.js and being fixed through an npm package."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_identity",
+      "label": "Next.js identity",
+      "type": "source_claim",
+      "description": "Next.js is an open-source full-stack React-based web framework maintained by Vercel and the open-source community.",
+      "source_line_ranges": [
+        47,
+        64
+      ]
+    },
+    {
+      "id": "claim_rendering",
+      "label": "Rendering",
+      "type": "source_claim",
+      "description": "Next.js extends traditional React client rendering with server-side and static rendering.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "claim_history",
+      "label": "Development history",
+      "type": "source_claim",
+      "description": "The source documents releases from 2016 through 2026 and a progression of routing, rendering, tooling and deployment capabilities.",
+      "source_line_ranges": [
+        75,
+        100
+      ]
+    },
+    {
+      "id": "claim_toolchain",
+      "label": "Toolchain",
+      "type": "source_claim",
+      "description": "Next.js uses compiler/transpiler and bundler tooling including SWC, Webpack and increasingly Turbopack.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "claim_features",
+      "label": "Features",
+      "type": "source_claim",
+      "description": "Routing, code splitting, prefetching, hot reload/HMR, ISR, styling and data fetching are core framework capabilities.",
+      "source_line_ranges": [
+        84,
+        107
+      ]
+    },
+    {
+      "id": "claim_security",
+      "label": "Security",
+      "type": "source_claim",
+      "description": "The source describes a severe React Server Component vulnerability and downstream Next.js impact in 2025.",
+      "source_line_ranges": [
+        109,
+        110
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_server_vs_client",
+      "label": "Server-side vs client-side rendering",
+      "type": "semantic_distinction",
+      "description": "Server rendering occurs before content is sent to the browser; traditional React client rendering occurs in the browser.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "dist_static_vs_dynamic",
+      "label": "Static vs dynamic rendering",
+      "type": "semantic_distinction",
+      "description": "Static output is built/cached ahead of requests; interactive/changing sites may not fit pure static generation.",
+      "source_line_ranges": [
+        107,
+        107
+      ]
+    },
+    {
+      "id": "dist_ssr_vs_isr",
+      "label": "SSR vs ISR",
+      "type": "semantic_distinction",
+      "description": "SSR renders on the server; ISR retains static output while supporting incremental regeneration.",
+      "source_line_ranges": [
+        105,
+        107
+      ]
+    },
+    {
+      "id": "dist_app_vs_pages",
+      "label": "App Router vs page-based routing",
+      "type": "semantic_distinction",
+      "description": "App Router is the newer routing architecture with layouts/RSC/streaming; page-based routing is the older routing model described by the source.",
+      "source_line_ranges": [
+        92,
+        105
+      ]
+    },
+    {
+      "id": "dist_webpack_vs_turbopack",
+      "label": "Webpack vs Turbopack",
+      "type": "semantic_distinction",
+      "description": "Webpack was the established bundler; Turbopack is described as its successor/replacement.",
+      "source_line_ranges": [
+        92,
+        103
+      ]
+    },
+    {
+      "id": "dist_swc_vs_bundler",
+      "label": "Compiler/transpiler vs bundler",
+      "type": "semantic_distinction",
+      "description": "SWC transforms/compiles code while Webpack/Turbopack bundle modules.",
+      "source_line_ranges": [
+        103,
+        103
+      ]
+    },
+    {
+      "id": "dist_code_split_vs_prefetch",
+      "label": "Code splitting vs prefetching",
+      "type": "semantic_distinction",
+      "description": "Code splitting reduces shipped code; prefetching anticipates resources to reduce load time.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "dist_hot_reload_vs_hmr",
+      "label": "Hot reload vs HMR",
+      "type": "semantic_distinction",
+      "description": "Both provide rapid development updates; HMR specifically replaces modules live.",
+      "source_line_ranges": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": "dist_dual_runtime",
+      "label": "Node/server vs browser runtime",
+      "type": "semantic_distinction",
+      "description": "Next.js spans server/runtime execution and browser delivery rather than being purely client-side.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "dist_serverless_vs_selfhost",
+      "label": "Serverless vs self-deployment",
+      "type": "semantic_distinction",
+      "description": "Serverless uses on-demand functions; self-deployment is separately supported.",
+      "source_line_ranges": [
+        82,
+        100
+      ]
+    },
+    {
+      "id": "dist_next_vs_react",
+      "label": "Next.js vs React",
+      "type": "semantic_distinction",
+      "description": "React is the underlying UI library; Next.js is a framework adding application architecture and rendering/deployment capabilities.",
+      "source_line_ranges": [
+        64,
+        71
+      ]
+    },
+    {
+      "id": "dist_edge_vs_server",
+      "label": "Edge runtime vs traditional server rendering",
+      "type": "semantic_distinction",
+      "description": "Edge capabilities are a deployment/runtime feature; server rendering is an application rendering model.",
+      "source_line_ranges": [
+        90,
+        96
+      ]
+    },
+    {
+      "id": "dist_framework_vs_toolchain",
+      "label": "Framework vs toolchain",
+      "type": "semantic_distinction",
+      "description": "Next.js is the framework; Turbo/Turbopack/Turborepo are supporting development/build tools.",
+      "source_line_ranges": [
+        92,
+        103
+      ]
+    },
+    {
+      "id": "dist_security_vuln_vs_fix",
+      "label": "Vulnerability vs remediation",
+      "type": "semantic_distinction",
+      "description": "CVE records identify vulnerabilities; fix-react2shell-next is the remediation package described by the source.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    }
+  ],
+  "learning_paths": [],
+  "misconceptions": [
+    {
+      "id": "mis1",
+      "label": "Next.js is just React",
+      "type": "misconception_correction",
+      "description": "Next.js is described as a full-stack framework built around React, adding server/static rendering, routing, data fetching, bundling and deployment capabilities.",
+      "concepts": [
+        "nextjs",
+        "react"
+      ]
+    },
+    {
+      "id": "mis2",
+      "label": "Next.js only renders on the server",
+      "type": "misconception_correction",
+      "description": "Next.js supports server rendering, static rendering, and client-side React behavior.",
+      "concepts": [
+        "server_rendering",
+        "static_rendering",
+        "client_rendering"
+      ]
+    },
+    {
+      "id": "mis3",
+      "label": "Static generation works for every site",
+      "type": "misconception_correction",
+      "description": "The source explicitly notes static output is not suitable for every site, particularly highly interactive sites with frequent changes/user input.",
+      "concepts": [
+        "static_rendering",
+        "isr"
+      ]
+    },
+    {
+      "id": "mis4",
+      "label": "SSR and static generation are identical",
+      "type": "misconception_correction",
+      "description": "The source distinguishes server-side rendering from build-time static generation and caching.",
+      "concepts": [
+        "server_rendering",
+        "static_rendering"
+      ]
+    },
+    {
+      "id": "mis5",
+      "label": "App Router was always the Next.js routing system",
+      "type": "misconception_correction",
+      "description": "App Router was introduced in Next.js 13 and stabilized in 13.4.",
+      "concepts": [
+        "app_router",
+        "pages_routing"
+      ]
+    },
+    {
+      "id": "mis6",
+      "label": "Turbopack and SWC do the same thing",
+      "type": "misconception_correction",
+      "description": "SWC is described as a transpiler/compiler; Turbopack is a bundler.",
+      "concepts": [
+        "swc",
+        "turbopack"
+      ]
+    },
+    {
+      "id": "mis7",
+      "label": "Hot reload means the server must restart",
+      "type": "misconception_correction",
+      "description": "Hot reloading is specifically described as avoiding server restart while reflecting code changes.",
+      "concepts": [
+        "hot_reloading"
+      ]
+    },
+    {
+      "id": "mis8",
+      "label": "Next.js cannot deploy without Vercel",
+      "type": "misconception_correction",
+      "description": "The source says Next.js has supported self-deployment since 2016 and Next.js 16 adds Build Adapters for hosting integration.",
+      "concepts": [
+        "self_deployment",
+        "build_adapters"
+      ]
+    },
+    {
+      "id": "mis9",
+      "label": "Next.js 13.4 only added another experimental router",
+      "type": "misconception_correction",
+      "description": "The source says 13.4 made App Router stable for production.",
+      "concepts": [
+        "v134_2023",
+        "app_router"
+      ]
+    },
+    {
+      "id": "mis10",
+      "label": "Server rendering automatically makes every application secure",
+      "type": "misconception_correction",
+      "description": "The source attributes an enhanced-security benefit to server rendering but separately documents a severe Next.js/React vulnerability.",
+      "concepts": [
+        "security_benefit",
+        "cve_2025_66478"
+      ]
+    },
+    {
+      "id": "mis11",
+      "label": "Next.js versions have no architectural evolution",
+      "type": "misconception_correction",
+      "description": "The source documents a progression from page routing/server rendering through App Router, RSC, streaming, Rust tooling and Build Adapters.",
+      "concepts": [
+        "v13_2022",
+        "v16_2025"
+      ]
+    },
+    {
+      "id": "mis12",
+      "label": "Webpack is the only bundler Next.js uses",
+      "type": "misconception_correction",
+      "description": "The source describes Webpack and its replacement/evolution toward Turbopack.",
+      "concepts": [
+        "webpack",
+        "turbopack"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "label": "What is Next.js and how does it extend React?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q2",
+      "label": "What rendering models does Next.js support?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q3",
+      "label": "Why does Next.js use server-side rendering?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q4",
+      "label": "What limitations of client-only React rendering are described?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q5",
+      "label": "What role does Node.js play in Next.js?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q6",
+      "label": "What is the App Router?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q7",
+      "label": "When was App Router introduced?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q8",
+      "label": "When did App Router become stable?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q9",
+      "label": "What are React Server Components in the Next.js architecture?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q10",
+      "label": "What is streaming in the App Router?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q11",
+      "label": "How does page-based routing differ from App Router?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q12",
+      "label": "What is dynamic routing?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q13",
+      "label": "What is automatic code splitting?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q14",
+      "label": "What is page prefetching?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q15",
+      "label": "What is hot reloading?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q16",
+      "label": "What is hot-module replacement?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q17",
+      "label": "What is Incremental Static Regeneration?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q18",
+      "label": "When was ISR introduced?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q19",
+      "label": "How does static generation work in the supplied description?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q20",
+      "label": "What is the .next folder?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q21",
+      "label": "What is the static-delivery cache flow?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q22",
+      "label": "What is serverless deployment in Next.js 8?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q23",
+      "label": "How do lambda functions relate to Next.js serverless deployment?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q24",
+      "label": "What are rewrites?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q25",
+      "label": "What are redirects?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q26",
+      "label": "What styling systems does Next.js support?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q27",
+      "label": "What is SWC?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q28",
+      "label": "What is Webpack's role?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q29",
+      "label": "What is Turbopack's role?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q30",
+      "label": "What is Turborepo?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q31",
+      "label": "What is the Turbo toolchain?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q32",
+      "label": "When did Next.js add a Rust compiler?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q33",
+      "label": "What did Next.js 12 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q34",
+      "label": "What did Next.js 13 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q35",
+      "label": "What did Next.js 15 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q36",
+      "label": "What did Next.js 16 add?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q37",
+      "label": "What is the Build Adapters API?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q38",
+      "label": "How does Next.js support self-deployment?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q39",
+      "label": "Who originally authored Next.js?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q40",
+      "label": "Who leads its maintenance?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q41",
+      "label": "What role does Vercel play?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q42",
+      "label": "What role did Google play in the project?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q43",
+      "label": "What major websites are listed as Next.js users?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q44",
+      "label": "What was Next.js's initial design philosophy?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q45",
+      "label": "What happened in Next.js 2.0?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q46",
+      "label": "What changed in Next.js 7?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q47",
+      "label": "What changed in Next.js 8?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q48",
+      "label": "What changed in Next.js 9.3?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q49",
+      "label": "What changed in Next.js 9.5?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q50",
+      "label": "What changed in Next.js 11?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q51",
+      "label": "What is CVE-2025-55182 / React2Shell?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q52",
+      "label": "How did the React vulnerability affect Next.js?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q53",
+      "label": "What is CVE-2025-66478?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q54",
+      "label": "What was the impact score reported?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q55",
+      "label": "What exploitation activity does the source describe?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q56",
+      "label": "What is CISA KEV?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q57",
+      "label": "What remediation package did Vercel release?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q58",
+      "label": "How does the Next.js toolchain transform source code?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q59",
+      "label": "How does rendering strategy affect browser workload?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q60",
+      "label": "Why can static generation be unsuitable for highly interactive sites?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    },
+    {
+      "id": "q61",
+      "label": "How does Next.js combine framework, runtime, rendering and deployment concerns?",
+      "type": "question",
+      "description": "Learning/review question derived from the supplied source."
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "exp1",
+      "label": "Next.js App Router architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp2",
+      "label": "React Server Components in Next.js",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp3",
+      "label": "Next.js rendering pipeline",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp4",
+      "label": "Server-side rendering internals",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp5",
+      "label": "Static generation internals",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp6",
+      "label": "Incremental Static Regeneration internals",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp7",
+      "label": "Next.js routing and dynamic segments",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp8",
+      "label": "Next.js data fetching architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp9",
+      "label": "Next.js middleware and Edge runtime",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp10",
+      "label": "SWC compiler architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp11",
+      "label": "Turbopack architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp12",
+      "label": "Turborepo incremental builds",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp13",
+      "label": "Webpack-to-Turbopack migration",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp14",
+      "label": "Next.js deployment adapters",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp15",
+      "label": "Self-hosting Next.js",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp16",
+      "label": "Serverless Next.js deployment",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp17",
+      "label": "Next.js caching model",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp18",
+      "label": "Next.js prefetching",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp19",
+      "label": "Automatic code splitting",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp20",
+      "label": "Hot reload and HMR",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp21",
+      "label": "Next.js styling systems",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp22",
+      "label": "TypeScript integration",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp23",
+      "label": "React 19 and Next.js 15",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp24",
+      "label": "Next.js 16 architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp25",
+      "label": "Next.js security architecture",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp26",
+      "label": "React Server Component security",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp27",
+      "label": "CVE-2025-55182 technical analysis",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp28",
+      "label": "CVE-2025-66478 technical analysis",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp29",
+      "label": "Next.js supply-chain/update security",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    },
+    {
+      "id": "exp30",
+      "label": "Next.js production observability",
+      "type": "expansion_target",
+      "description": "Deeper topic indicated by the supplied source for future graph expansion."
+    }
+  ],
+  "references": [
+    {
+      "id": "ref_github",
+      "label": "vercel/next.js — GitHub",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        121,
+        123
+      ]
+    },
+    {
+      "id": "ref_next164",
+      "label": "Next.js 16.4.0 release",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        124
+      ]
+    },
+    {
+      "id": "ref_preview",
+      "label": "Next.js 16.3.0-preview.3",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "id": "ref_react_toolchains",
+      "label": "React Recommended Toolchains",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "ref_brand",
+      "label": "Next.js Brand Guidelines",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "id": "ref_vercel",
+      "label": "Vercel",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "id": "ref_smashing_ssr",
+      "label": "Differences Between Static Generated Sites And Server-Side Rendered Apps",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        129
+      ]
+    },
+    {
+      "id": "ref_thakkar_ssr",
+      "label": "Building React Apps with Server-Side Rendering",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        130,
+        131
+      ]
+    },
+    {
+      "id": "ref_techrep_google",
+      "label": "Google contributions to Next.js",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        134
+      ]
+    },
+    {
+      "id": "ref_techrep_next",
+      "label": "How Next.js aims to simplify front-end development",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        136
+      ]
+    },
+    {
+      "id": "ref_stackoverflow",
+      "label": "Static site generation with single page app functionality",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "id": "ref_infoworld_history",
+      "label": "InfoWorld Next.js release coverage",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        138,
+        143
+      ]
+    },
+    {
+      "id": "ref_next11",
+      "label": "Next.js 11",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        144
+      ]
+    },
+    {
+      "id": "ref_next12",
+      "label": "Next.js 12",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "id": "ref_next13",
+      "label": "Next.js 13",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        146
+      ]
+    },
+    {
+      "id": "ref_next134",
+      "label": "Next.js 13.4",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        147
+      ]
+    },
+    {
+      "id": "ref_next14",
+      "label": "Next.js 14",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        148
+      ]
+    },
+    {
+      "id": "ref_next15",
+      "label": "Next.js 15",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        149,
+        150
+      ]
+    },
+    {
+      "id": "ref_next16",
+      "label": "Next.js 16",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        151,
+        152
+      ]
+    },
+    {
+      "id": "ref_compiler",
+      "label": "Next.js Compiler Architecture",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        154
+      ]
+    },
+    {
+      "id": "ref_turbopack",
+      "label": "Turbopack Architecture",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        155
+      ]
+    },
+    {
+      "id": "ref_isr",
+      "label": "Incremental Static Regeneration with Next.js",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "id": "ref_react_security",
+      "label": "React Critical Security Vulnerability",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        158
+      ]
+    },
+    {
+      "id": "ref_cve",
+      "label": "CVE-2025-55182",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        159
+      ]
+    },
+    {
+      "id": "ref_aws_security",
+      "label": "China-nexus groups exploit React2Shell",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        160
+      ]
+    },
+    {
+      "id": "ref_cisa",
+      "label": "CISA KEV entry",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        161
+      ]
+    },
+    {
+      "id": "ref_next_security",
+      "label": "Security Advisory CVE-2025-66478",
+      "type": "reference",
+      "description": "Reference listed by the supplied source.",
+      "source_line_ranges": [
+        162
+      ]
+    }
+  ],
+  "historical_context": [
+    {
+      "id": "release_2016",
+      "label": "Initial release — 25 Oct 2016",
+      "type": "historical_event",
+      "description": "Next.js first released as an open-source GitHub project.",
+      "source_line_ranges": [
+        52,
+        76
+      ]
+    },
+    {
+      "id": "v2_2017",
+      "label": "Next.js 2.0 — March 2017",
+      "type": "release",
+      "description": "Improvements for small websites, build efficiency and HMR scalability.",
+      "source_line_ranges": [
+        78,
+        78
+      ]
+    },
+    {
+      "id": "v7_2018",
+      "label": "Next.js 7 — September 2018",
+      "type": "release",
+      "description": "Improved error handling, React Context API support, first Webpack 4 upgrade.",
+      "source_line_ranges": [
+        80,
+        80
+      ]
+    },
+    {
+      "id": "v8_2019",
+      "label": "Next.js 8 — February 2019",
+      "type": "release",
+      "description": "First serverless deployment, improved static exports and prefetching.",
+      "source_line_ranges": [
+        82,
+        82
+      ]
+    },
+    {
+      "id": "v93_2020",
+      "label": "Next.js 9.3 — March 2020",
+      "type": "release",
+      "description": "Optimizations and global Sass/CSS Modules support.",
+      "source_line_ranges": [
+        84,
+        84
+      ]
+    },
+    {
+      "id": "v95_2020",
+      "label": "Next.js 9.5 — July 2020",
+      "type": "release",
+      "description": "Incremental Static Regeneration, rewrites and redirects.",
+      "source_line_ranges": [
+        86,
+        86
+      ]
+    },
+    {
+      "id": "v11_2021",
+      "label": "Next.js 11 — June 2021",
+      "type": "release",
+      "description": "Webpack 5, Next.js Live preview and experimental CRA migration.",
+      "source_line_ranges": [
+        88,
+        88
+      ]
+    },
+    {
+      "id": "v12_2021",
+      "label": "Next.js 12 — October 2021",
+      "type": "release",
+      "description": "Rust compiler, AVIF, Edge Functions, Middleware, native ESM and URL imports.",
+      "source_line_ranges": [
+        90,
+        90
+      ]
+    },
+    {
+      "id": "v13_2022",
+      "label": "Next.js 13 — October 2022",
+      "type": "release",
+      "description": "App Router beta, layouts, React Server Components, streaming, new data-fetching methods, Turbo toolchain.",
+      "source_line_ranges": [
+        92,
+        92
+      ]
+    },
+    {
+      "id": "v134_2023",
+      "label": "Next.js 13.4 — May 2023",
+      "type": "release",
+      "description": "App Router became stable for production use.",
+      "source_line_ranges": [
+        94,
+        94
+      ]
+    },
+    {
+      "id": "v14_2023",
+      "label": "Next.js 14 — October 2023",
+      "type": "release",
+      "description": "Source attributes improved memory management using edge runtime.",
+      "source_line_ranges": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "v15_2024",
+      "label": "Next.js 15 — October 2024",
+      "type": "release",
+      "description": "Rust-based Turbopack, React 19 support and asynchronous request APIs.",
+      "source_line_ranges": [
+        98,
+        98
+      ]
+    },
+    {
+      "id": "v16_2025",
+      "label": "Next.js 16 — October 2025",
+      "type": "release",
+      "description": "Build Adapters API introduced.",
+      "source_line_ranges": [
+        100,
+        100
+      ]
+    },
+    {
+      "id": "stable_164",
+      "label": "Next.js 16.4.0",
+      "type": "release",
+      "description": "Stable release listed as 16.4.0 dated 7 October 2026.",
+      "source_line_ranges": [
+        52,
+        54
+      ]
+    },
+    {
+      "id": "preview_163",
+      "label": "Next.js 16.3.0-preview.3",
+      "type": "release",
+      "description": "Preview release listed in the supplied source.",
+      "source_line_ranges": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "google_contrib",
+      "label": "Google contributions — 2019",
+      "type": "historical_event",
+      "description": "Google contributed 43 pull requests to Next.js in 2019.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    },
+    {
+      "id": "vercel_funding",
+      "label": "Vercel Series A — 2020",
+      "type": "historical_event",
+      "description": "Vercel raised $21 million in Series A funding to support software improvements.",
+      "source_line_ranges": [
+        73,
+        73
+      ]
+    }
+  ],
+  "people": [
+    {
+      "id": "guillermo_rauch",
+      "label": "Guillermo Rauch",
+      "type": "person",
+      "description": "Original author of Next.js and CEO of Vercel according to the supplied source.",
+      "source_line_ranges": [
+        50,
+        73
+      ]
+    },
+    {
+      "id": "tim_neutkens",
+      "label": "Tim Neutkens",
+      "type": "person",
+      "description": "Original author and project lead maintainer of Next.js.",
+      "source_line_ranges": [
+        50,
+        73
+      ]
+    },
+    {
+      "id": "naoyuki_kanezawa",
+      "label": "Naoyuki Kanezawa",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "arunoda_susiripala",
+      "label": "Arunoda Susiripala",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "tony_kovanen",
+      "label": "Tony Kovanen",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "dan_zajdband",
+      "label": "Dan Zajdband",
+      "type": "person",
+      "description": "Original author of Next.js.",
+      "source_line_ranges": [
+        50,
+        50
+      ]
+    },
+    {
+      "id": "lachlan_davidson",
+      "label": "Lachlan Davidson",
+      "type": "person",
+      "description": "Security researcher who reported the React Server Component deserialization vulnerability described in the source.",
+      "source_line_ranges": [
+        110,
+        110
+      ]
+    }
+  ],
+  "validation": {
+    "node_count": 276,
+    "relationship_count": 284,
+    "formal_model_count": 10,
+    "source_claim_count": 6,
+    "semantic_distinction_count": 14,
+    "misconception_count": 12,
+    "question_count": 61,
+    "expansion_target_count": 30,
+    "reference_count": 27,
+    "historical_event_count": 17,
+    "people_count": 7,
+    "dangling_relationships": 0,
+    "duplicate_relationship_keys": 0,
+    "duplicate_node_ids": 0,
+    "status": "clean"
+  }
+}
