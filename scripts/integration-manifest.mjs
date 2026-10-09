@@ -26,7 +26,7 @@ for (const doc of atlas.documents) {
 }
 const artifacts = {
   N: ['scripts/normalize-source.mjs'], I: ['scripts/concept-curation.mjs'], B: ['scripts/build-atlas.mjs'],
-  U: ['src/app.js', 'src/map-key.js', 'src/styles.css', 'index.html'], A: ['data/atlas.json'],
+  U: ['src/app.js', 'src/map-key.js', 'src/styles.css', 'index.html', 'favicon.svg'], A: ['data/atlas.json'],
   G: ['scripts/integration-manifest.mjs'], M: ['docs/integration-manifest.json'],
   X: ['test/atlas.test.mjs', 'test/data-unification.test.mjs', 'test/interface.test.mjs', 'test/integration.test.mjs'],
   Q: ['docs/QA.md', 'docs/integration-browser.json', 'scripts/qa-integration.cjs', 'docs/qa/integration-desktop.png', 'docs/qa/integration-mobile.png'],

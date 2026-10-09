@@ -43,7 +43,7 @@ test('empty 200 archive is never fetched: search click shows immediate complete 
  const before=d.querySelector('canvas').dataset.nodePositions;
  const input=d.querySelector('#search');input.value='Next.js';input.dispatchEvent(new w.Event('input'));
  d.querySelector('#search-results [data-concept="Next.js.json:nextjs"]').click();
- assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Next.js.json:nextjs');assert.match(d.querySelector('#map-preview').textContent,/Loading full evidence/);assert.match(d.querySelector('#inspector').textContent,/partial record/);
+ assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Next.js.json:nextjs');assert.match(d.querySelector('#map-preview').textContent,/Loading full evidence/);assert.match(d.querySelector('#inspector').textContent,/record is incomplete/);
  assert.equal(d.querySelectorAll('[data-connection-id]').length,atlas.edges.filter(e=>e.source==='Next.js.json:nextjs'||e.target==='Next.js.json:nextjs').length);
  release();await until(()=>d.querySelector('.detail-status.ready'));
  assert.match(d.querySelector('#inspector').textContent,/Original source records/);assert.ok(d.querySelector('[data-relation-id="editorial:next-web-framework"] a'));

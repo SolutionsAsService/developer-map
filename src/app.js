@@ -82,9 +82,9 @@ const detailStates = new Map();
 let pathsPromise;
 function detailStatus(id) { return !state.atlas.lightweight ? 'ready' : detailStates.get(id)?.status || 'loading'; }
 function statusMarkup(id) {
-  if (detailStatus(id) === 'ready') return '<p class="detail-status ready" role="status">Evidence loaded · all recorded incident relationships</p>';
+  if (detailStatus(id) === 'ready') return '<p class="detail-status ready" role="status">Evidence loaded · all recorded incoming and outgoing links</p>';
   const error = detailStates.get(id)?.error;
-  return '<div class="detail-status" role="status"><strong>' + (error ? 'Evidence unavailable · overview retained' : 'Loading full evidence…') + '</strong><p>All recorded incoming/outgoing links are visible. Original fields, citations and source context are not yet loaded; this is a partial record.</p>' + (error ? '<p>' + escapeHtml(error) + '</p><button type="button" data-retry-details>Retry evidence</button>' : '') + '</div>';
+  return '<div class="detail-status" role="status"><strong>' + (error ? 'Evidence unavailable · overview retained' : 'Loading full evidence…') + '</strong><p>All recorded incoming and outgoing links are visible. Source fields and citations have not loaded yet; this record is incomplete.</p>' + (error ? '<p>' + escapeHtml(error) + '</p><button type="button" data-retry-details>Retry evidence</button>' : '') + '</div>';
 }
 function refreshSelectedDetails() {
   const host = $('#map-preview'), priorScroll = host.scrollTop;
@@ -433,7 +433,7 @@ function renderPreview() {
       const repeated = signatureCounts.get(JSON.stringify([edge.source,edge.target,edge.relation]));
       const heading = !index || orderedMatches[index-1].kind !== edge.kind ? '<h5 class="connection-group">'+escapeHtml(humanize((edge.kind||'other').replaceAll('-',' ')))+'</h5>' : '';
       return heading + '<article class="connection-card" data-connection-id="'+escapeHtml(edge.id)+'"><button type="button" class="connection-neighbor" data-neighbor="'+escapeHtml(other.id)+'">'+escapeHtml(direction+' '+other.label)+'</button><p><b>'+escapeHtml(humanize(edge.relation))+'</b></p><p>'+escapeHtml(reason ? (typeof reason==='string'?reason:JSON.stringify(reason)) : 'Recorded source relationship; no separate causal explanation supplied.')+'</p><small>'+escapeHtml((edge.curated?'Editorial · ':'Source · ')+sourceTitle(edge.document)+' · '+(edge.sourcePointer||edge.id))+'</small>'+(repeated>1?'<small class="duplicate-note">'+repeated+' source records share these endpoints and predicate; details are preserved.</small>':'')+'<button type="button" data-inspect-edge="'+escapeHtml(edge.id)+'" aria-pressed="'+String(state.featuredEdge?.id===edge.id)+'">Emphasize &amp; explain</button></article>';
-    }).join('') || '<p>No matching connections. Clear the search or choose all directions.</p>';
+    }).join('') || '<p>No matching connections. Reset the connection filters to see all links.</p>';
     panel.querySelectorAll('[data-neighbor]').forEach(button => button.addEventListener('click',()=>selectConcept(button.dataset.neighbor)));
     panel.querySelectorAll('[data-inspect-edge]').forEach(button => button.addEventListener('click',()=>{
       selectEdge(button.dataset.inspectEdge, {focus:true});
@@ -522,7 +522,7 @@ function renderInspector() {
   const node = state.selected ? state.byId.get(state.selected) : null;
   if (!node) {
     host.innerHTML =
-      '<div class="inspector-empty"><span class="inspector-orbit" aria-hidden="true">◉</span><p class="eyebrow">YOUR SYSTEMS ATLAS</p><h3>Explore the complete field.</h3><p>The connected concept overview stays on the map; every original record remains searchable and downloadable. Choose a point or search to illuminate its direct connections and read the evidence behind them.</p><div class="starter-links"><button data-concept="virtual_machine">Virtual machines ↗</button><button data-concept="containerization">Containerization ↗</button><button data-concept="docker">Explore Docker ↗</button></div></div>';
+      '<div class="inspector-empty"><span class="inspector-orbit" aria-hidden="true">◉</span><p class="eyebrow">CONCEPT DETAILS</p><h3>Select a concept to read its sources.</h3><p>Use the map, search or source index to open a record. Its connections, source fields and citations appear here.</p><div class="starter-links"><button data-concept="virtual_machine">Virtual machines ↗</button><button data-concept="containerization">Containerization ↗</button><button data-concept="docker">Explore Docker ↗</button></div></div>';
     host
       .querySelectorAll("[data-concept]")
       .forEach((button) =>
@@ -571,7 +571,7 @@ function renderInspector() {
     .map((edge) => ({ edge, ...relationDescription(edge, node.id) }))
     .filter((item) => item.other?.description)
     .slice(0, 5);
-  const guide = `<div class="inspector-section"><h4>Source-backed field guide</h4><div class="perspectives-grid">${perspectives || "<p>No prose explanation was provided by the source graphs for this concept.</p>"}</div>${connectedDefinitions.length ? `<h5>Connected definitions · first ${connectedDefinitions.length} of ${connections.length} links</h5>${connectedDefinitions.map(({ edge, other, relation }) => `<button type="button" class="perspective-link" data-concept="${escapeHtml(other.id)}"><b>${escapeHtml(other.label)}</b> · ${escapeHtml(relation)}<small>${escapeHtml(other.description)} · ${escapeHtml(sourceTitle(edge.document))}</small></button>`).join("")}` : ""}</div>`;
+  const guide = `<div class="inspector-section"><h4>Definitions from the sources</h4><div class="perspectives-grid">${perspectives || "<p>No prose explanation was provided by the source graphs for this concept.</p>"}</div>${connectedDefinitions.length ? `<h5>Connected definitions · first ${connectedDefinitions.length} of ${connections.length} links</h5>${connectedDefinitions.map(({ edge, other, relation }) => `<button type="button" class="perspective-link" data-concept="${escapeHtml(other.id)}"><b>${escapeHtml(other.label)}</b> · ${escapeHtml(relation)}<small>${escapeHtml(other.description)} · ${escapeHtml(sourceTitle(edge.document))}</small></button>`).join("")}` : ""}</div>`;
   const sourceRecords = node.variants
     .map((variant) => {
       const document = state.atlas.documents.find(
@@ -635,7 +635,7 @@ function renderInspector() {
 }
 
 function renderRoutes() {
-  if (state.atlas.lightweight && !state.pathsLoaded) { $("#route-list").innerHTML="<p>Source learning paths load when you explore or request all paths.</p>"; return; }
+  if (state.atlas.lightweight && !state.pathsLoaded) { $("#route-list").innerHTML="<p>Learning paths load when you choose “Show all paths”.</p>"; return; }
   const featured = state.atlas.documents.map(doc => state.atlas.paths.find(path => path.document === doc.file)).filter(Boolean);
   $("#route-list").innerHTML = (state.routesExpanded ? state.atlas.paths : featured)
     .map(
@@ -712,7 +712,7 @@ function renderCatalog() {
           `<button type="button" data-concept="${escapeHtml(node.id)}"><span class="result-dot ${category(node)}"></span><span><strong>${escapeHtml(node.label)}</strong><small>${escapeHtml(node.type.replaceAll("_", " "))}${node.variants.length > 1 ? ` · ${node.variants.length} source records` : ""}</small></span><span aria-hidden="true">↗</span></button>`,
       )
       .join("") ||
-    '<p class="search-empty">No concepts found in this source. Try another filter.</p>';
+    '<p class="search-empty">No matching records. Clear the search or choose another source.</p>';
   $("#catalog-more").hidden = filtered.length <= state.catalogLimit;
   $("#catalog-items")
     .querySelectorAll("[data-concept]")
@@ -875,7 +875,7 @@ async function init() {
     } else if (initial) selectConcept(initial, {edgeId:new URL(location.href).searchParams.get("edge")});
   } catch (error) {
     $("#inspector").innerHTML =
-      `<div class="inspector-empty"><h3>Atlas unavailable</h3><p>${escapeHtml(error.message)}. Serve this folder over HTTP so the JSON can load.</p></div>`;
+      `<div class="inspector-empty"><h3>Map data could not load</h3><p>Reload the page to try again. If you opened a local file, use the project’s HTTP server.</p><p>${escapeHtml(error.message)}</p></div>`;
     $("#map-mode").textContent = "ATLAS UNAVAILABLE";
   }
 }

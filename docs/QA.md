@@ -1,3 +1,18 @@
+# October 9, 2026 — favicon and concise copy polish
+
+- Reused the saved bounded changes on main at `e7f45a0`; no redesign, dependency additions, source-record edits or application-logic changes.
+- Added a self-contained 373-byte SVG graph favicon, HTML declaration, local-server allowlist entry, deployment smoke check, manifest entry and deployment instructions. GET/HEAD return the SVG MIME type; unrelated files remain blocked.
+- Shortened introductory, inspector, loading and empty-state copy while preserving source/editorial distinctions. Corrected the learning-path hint to name the actual explicit action: “Show all paths”; selecting a concept does not load paths.
+- Affected details/interface/static-assets suites: **32 passed, 0 failed/skipped**, 259.7 seconds. Final standalone static-assets/copy assertions also passed 2/2. No new full-suite or accessibility certification is claimed.
+- `npm run build`, manifest regeneration, application/changed-script syntax and `git diff --check` passed. All original and generated data remain byte-identical to the starting revision; the manifest changes only to list the favicon.
+- Exact local HTTP smoke passed **157 resources**, including the SVG favicon, 37 originals and all 111 verified detail shards (7,908 concepts / 8,623 relationships).
+- Sandboxed Chromium 153 integration passed seven entry concepts at **1440/390/320 px**, exact incident-edge sets, search/filter/emphasis/context/Fit/canvas-click/Back, rich metadata and 522 paths; zero page errors or horizontal overflow. A separate final-copy check passed at 1440/390 px after correcting the path hint.
+- Favicon rendered and visually inspected at actual **16/32 px**; home and selected-concept screenshots reviewed on desktop/mobile. Evidence is in `qa/favicon-polish/`; historical evidence remains untouched.
+- GM read/write probes succeeded. Prior-worker history showed a long bash admission starvation (`dispatch_starved_waiting_for_admission`, not executed); long tests/browser/build used native process-managed execution to avoid that degraded path. No GM repair, new worker, install, directory migration or global configuration change was attempted. Comment review stayed bounded; existing legal, rationale and tooling comments were retained.
+- Local verification is not deployment proof. This task does not modify hosting; pushing main does not establish that the external site refreshed.
+
+---
+
 # October 9, 2026 — continuation audit (baseline cf27415690d4c4cca38bd7f3336f3d2be46202f1)
 
 This section supersedes historical counts and environment claims below.

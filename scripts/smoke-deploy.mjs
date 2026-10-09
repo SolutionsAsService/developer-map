@@ -42,6 +42,9 @@ const html = (await get('index.html', 'text/html')).toString('utf8');
 for (const match of html.matchAll(/(?:src|href)="\.\/(src\/[^"?#]+)"/g)) {
   await get(match[1], match[1].endsWith('.css') ? 'text/css' : 'javascript');
 }
+assert.match(html, /<link\s+rel="icon"\s+type="image\/svg\+xml"\s+href="\.\/favicon\.svg"\s*\/>/, 'SVG favicon declaration');
+await get('favicon.svg', 'image/svg+xml');
+
 const overview = decode(await get('data/overview.json', 'application/json'));
 assert.ok(overview.nodes.length && overview.edges.length && overview.documents.length);
 const manifestBytes = await get('data/' + overview.details.file, 'application/json');

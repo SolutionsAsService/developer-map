@@ -14,7 +14,7 @@ npm run dev
 npm run smoke:deploy -- http://localhost:4173/ --exact
 ```
 
-Open http://localhost:4173. Set PORT to change the local development port. Deploy the **repository root** to any static host. Keep index.html, src/, data/overview.json, the entire data/details/ directory, data/atlas.json and every original source JSON together. No framework build or backend is required when generated JSON is committed. Regenerate the derived archive, overview and content-addressed detail shards with npm run build after source changes; the manifest command regenerates the source-retention audit. The local server is not a production server.
+Open http://localhost:4173. Set PORT to change the local development port. Deploy the **repository root** to any static host. Keep index.html, favicon.svg, src/, data/overview.json, the entire data/details/ directory, data/atlas.json and every original source JSON together. No framework build or backend is required when generated JSON is committed. Regenerate the derived archive, overview and content-addressed detail shards with npm run build after source changes; the manifest command regenerates the source-retention audit. The local server is not a production server.
 
 ## Map and evidence
 
@@ -38,7 +38,7 @@ Use **Link to this exact relationship** to share both the selected concept and o
 
 ### Deployment verification
 
-Run `npm run smoke:deploy -- https://your-host.example/` against a static deployment (subdirectory URLs are supported). Add `--exact` to require all checked files to match this checkout, not merely form a self-consistent deployment. The check validates HTML, scripts, CSS, overview, manifest and **all 111 detail shards**, plus the 37 original source downloads. It checks MIME types, SHA-256 and size limits, spaces public requests, and respects bounded Retry-After waits. It is read-only and does not provision a host, publish files, or certify browser rendering. Public evidence loading requires HTTPS. No hosting credentials or automatic deployment pipeline are configured in this checkout.
+Run `npm run smoke:deploy -- https://your-host.example/` against a static deployment (subdirectory URLs are supported). Add `--exact` to require all checked files to match this checkout, not merely form a self-consistent deployment. The check validates HTML, the SVG favicon, scripts, CSS, overview, manifest and **all 111 detail shards**, plus the 37 original source downloads. It checks MIME types, SHA-256 and size limits, spaces public requests, and respects bounded Retry-After waits. It is read-only and does not provision a host, publish files, or certify browser rendering. Public evidence loading requires HTTPS. No hosting credentials or automatic deployment pipeline are configured in this checkout.
 
 ### Real browser QA (separate from smoke)
 
