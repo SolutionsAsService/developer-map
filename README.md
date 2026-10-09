@@ -66,3 +66,7 @@ Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
 - Cloud → optional VMs and cloud security → firewall controls join existing VM/container/Kubernetes/storage paths without universal dependencies. Go/Python/CUDA/Lua identities connect the PyTorch and toolchain records.
 
 All original nodes, paths and metadata remain downloadable. 73 unresolved path segments and 1,604 isolated records are reported, not connected with fabricated links. Ten new editorial links include primary documentation, rationale, scope and the October 9 evidence date. Full per-file coverage and hashes are in docs/DATA-AUDIT.md and docs/integration-manifest.json.
+
+## Repository-owned workflow skills
+
+See [the skill-source guide](docs/skills/README.md) for **FAIKU** and **PIMP MY SKILL**, the preserved request and adaptation ledger, literature-anchor Mermaid graph and coding-agent prompt. These are repository Markdown sources under `.agents/skills/`, not automatically registered global tools, and adding them does not execute their maintenance branches or change the application knowledge graph. Host discovery and GM availability must be verified separately.
