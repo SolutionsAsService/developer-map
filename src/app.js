@@ -17,6 +17,7 @@ const state = {
   selectionHistory: [],
   relationQuery: "",
   relationDirection: "all",
+  relationKind: "all",
 };
 const $ = (selector) => document.querySelector(selector);
 const escapeHtml = (value) =>
@@ -75,20 +76,55 @@ function relationDescription(edge, id) {
   return { other, direction, relation };
 }
 
-let archivePromise;
-async function ensureArchive() {
-  if (!state.atlas.lightweight) return;
-  if (!archivePromise) archivePromise = fetch('./data/atlas.json').then(response => { if (!response.ok) throw new Error('Could not load evidence archive'); return response.json(); }).then(atlas => { state.atlas=atlas; connectIndexes(atlas); renderRoutes(); renderCatalog(); });
-  await archivePromise;
+let detailsLoader;
+let selectionGeneration = 0;
+const detailStates = new Map();
+let pathsPromise;
+function detailStatus(id) { return !state.atlas.lightweight ? 'ready' : detailStates.get(id)?.status || 'loading'; }
+function statusMarkup(id) {
+  if (detailStatus(id) === 'ready') return '<p class="detail-status ready" role="status">Evidence loaded · all recorded incident relationships</p>';
+  const error = detailStates.get(id)?.error;
+  return '<div class="detail-status" role="status"><strong>' + (error ? 'Evidence unavailable · overview retained' : 'Loading full evidence…') + '</strong><p>All recorded incoming/outgoing links are visible. Original fields, citations and source context are not yet loaded; this is a partial record.</p>' + (error ? '<p>' + escapeHtml(error) + '</p><button type="button" data-retry-details>Retry evidence</button>' : '') + '</div>';
+}
+function refreshSelectedDetails() {
+  const host = $('#map-preview'), priorScroll = host.scrollTop;
+  const active = document.activeElement, activeId = active?.id;
+  const start = active?.selectionStart, end = active?.selectionEnd;
+  renderPreview(); renderInspector(); host.scrollTop = priorScroll;
+  if (activeId && host.querySelector('#' + activeId)) {
+    const replacement = host.querySelector('#' + activeId); replacement.focus({preventScroll:true});
+    if (start != null && replacement.setSelectionRange) replacement.setSelectionRange(start,end);
+  }
+}
+async function loadSelectionDetails(id, generation) {
+  if (!state.atlas.lightweight || detailStatus(id) === 'ready') return;
+  detailStates.set(id, {status:'loading'});
+  try {
+    const result = await detailsLoader.concept(id, state.edgesById.get(id) || []);
+    Object.assign(state.byId.get(id), result.node);
+    const edgeMap = new Map(state.atlas.edges.map(e => [e.id,e]));
+    for (const edge of result.edges) Object.assign(edgeMap.get(edge.id), edge);
+    for (const doc of result.documents) Object.assign(state.atlas.documents.find(d => d.file === doc.file), doc);
+    detailStates.set(id, {status:'ready'});
+  } catch (error) {
+    detailStates.set(id, {status:'error', error: error.name === 'AbortError' ? 'Request timed out. Try again.' : error.message});
+  }
+  if (state.selected === id && generation === selectionGeneration) refreshSelectedDetails();
+}
+async function ensurePaths() {
+  if (!state.atlas.lightweight || state.pathsLoaded) return;
+  if (!pathsPromise) pathsPromise = detailsLoader.paths().then(paths => {state.atlas.paths=paths;state.pathsLoaded=true;}).catch(error => {pathsPromise=null;throw error;});
+  await pathsPromise;
 }
 function selectConcept(id, { scroll = false, remember = true } = {}) {
-  if (state.atlas.lightweight) { ensureArchive().then(()=>selectConcept(id,{scroll,remember})).catch(error=>{$('#map-preview').hidden=false;$('#map-preview').textContent=error.message;}); return; }
   id = state.atlas.aliases?.[id] || id;
   if (!state.byId.has(id)) return;
   if (remember && state.selected && state.selected !== id) state.selectionHistory.push(state.selected);
   state.relationQuery = "";
   state.relationDirection = "all";
+  state.relationKind = "all";
   state.selected = id;
+  const generation = ++selectionGeneration;
   state.edgeFocus = false;
   network?.edgeFocus(false);
   $("#edge-focus").setAttribute("aria-pressed", "false");
@@ -96,6 +132,7 @@ function selectConcept(id, { scroll = false, remember = true } = {}) {
   renderMap();
   renderPreview();
   renderInspector();
+  loadSelectionDetails(id, generation);
   if (scroll) $("#explorer").scrollIntoView({ behavior: "smooth" });
   history.replaceState(
     null,
@@ -108,6 +145,7 @@ function clearSelection({ fit = false } = {}) {
   if (!state.selected && !fit) return;
   const wasFocused = Boolean(state.featuredEdge);
   state.selected = null;
+  selectionGeneration++;
   state.featuredEdge = null;
   if (fit || wasFocused) network.fit();
   renderMap();
@@ -181,7 +219,7 @@ function renderSearch() {
   const matches = filteredNodes(state.query);
   const results = matches.slice(0, 9);
   host.hidden = false;
-  host.innerHTML = `<div class="search-meta">${matches.length} matches in ${state.topic === "all" ? "the full atlas" : "this source"}</div>${results.map((node) => `<button type="button" data-concept="${escapeHtml(node.id)}"><span class="result-dot ${category(node)}"></span><span><strong>${escapeHtml(node.label)}</strong><small>${escapeHtml(node.description || node.note?.intuition || "Source reference")}</small></span><span class="result-arrow">↗</span></button>`).join("") || '<p class="search-empty">No matching concepts. Try a broader term or another source.</p>'}`;
+  host.innerHTML = `<div class="search-meta">${matches.length} matches in ${state.topic === "all" ? "the full concept index" : "this source"} · names, aliases, descriptions &amp; link summaries</div>${results.map((node) => `<button type="button" data-concept="${escapeHtml(node.id)}"><span class="result-dot ${category(node)}"></span><span><strong>${escapeHtml(node.label)}</strong><small>${escapeHtml(node.description || node.note?.intuition || "No description supplied")}</small></span><span class="result-arrow">↗</span></button>`).join("") || '<p class="search-empty">No matching concepts. Try a broader term or another source.</p>'}`;
   host.querySelectorAll("[data-concept]").forEach((button) =>
     button.addEventListener("click", () => {
       selectConcept(button.dataset.concept);
@@ -289,7 +327,7 @@ function renderPreview() {
       ? "CURATED TEACHING NOTE"
       : "CONNECTION-ONLY RECORD";
   const sources = [
-    ...new Set(node.variants.map((variant) => sourceTitle(variant.document))),
+    ...new Set(node.topics.map((topic) => state.atlas.documents.find(doc => doc.graphId === topic)?.title || topic)),
   ];
   const connections = state.edgesById.get(node.id) || [];
   const examples = [];
@@ -344,12 +382,23 @@ function renderPreview() {
         : "Recorded in " + escapeHtml(sourceTitle(leading.document))) +
       '</small><div class="in-place-evidence"><strong>WHAT · exact triple</strong><code>' + escapeHtml(leading.source+' — '+leading.relation+' → '+leading.target) + '</code><p>WHY · ' + escapeHtml(leading.semantic || leading.record?.rationale || 'Not supplied by source; no cause inferred from this link.') + '</p><p>' + escapeHtml(leading.kind+' · '+leading.assertionStatus) + '</p><p>' + escapeHtml(leading.document+' · '+(leading.sourcePointer||leading.id)) + '</p>' + renderFields(leading.fields||[]) + (leading.evidence||[]).map(renderClaim).join('') + '<details><summary>Exact raw relationship fields</summary><pre>'+escapeHtml(JSON.stringify(leading.record,null,2))+'</pre></details></div><button type="button" id="active-edge-evidence">Inspect this relationship ↓</button></div>'
     : "";
-  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} relationships</span><span>${sources.length} source documents</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(" · ")) + (sources.length > 2 ? ` · +${sources.length - 2} more` : "") : "No original source record"}</p>${proof}${why ? `<div class="preview-why"><span class="preview-kicker">WHY THESE POINTS CONNECT</span>${why}<p>Showing ${examples.length} of ${connections.length} recorded links. All links and evidence appear in the full entry.</p></div>` : ""}<button type="button" id="preview-read">Read full entry ↓</button>`;
+  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} relationships</span><span>${sources.length} source documents</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(" · ")) + (sources.length > 2 ? ` · +${sources.length - 2} more` : "") : "No original source record"}</p>${statusMarkup(node.id)}${proof}${why ? `<div class="preview-why"><span class="preview-kicker">WHY THESE POINTS CONNECT</span>${why}<p>Showing ${examples.length} of ${connections.length} recorded links. All links and evidence appear in the full entry.</p></div>` : ""}<button type="button" id="preview-read">Read full entry ↓</button>`;
+  host.querySelector('[data-retry-details]')?.addEventListener('click', () => { const generation = ++selectionGeneration; loadSelectionDetails(node.id,generation); refreshSelectedDetails(); });
   const oldPreview = host.querySelector('.preview-why');
   if (oldPreview) oldPreview.remove();
   const panel = document.createElement('section'); panel.className = 'connection-browser';
   panel.innerHTML = '<h4>All connections &amp; why</h4><label>Find a connection<input id="connection-search" type="search" placeholder="Name, relation, explanation, source…" /></label><label>Direction<select id="connection-direction"><option value="all">All directions</option><option value="outgoing">Outgoing</option><option value="incoming">Incoming</option><option value="loop">Self-loops</option></select></label><p id="connection-match-count" role="status"></p><div id="connection-results"></div>';
-  host.querySelector('#preview-read').before(panel);
+  const proofBlock=host.querySelector('.dynamic-proof');
+  if(proofBlock) proofBlock.before(panel);else host.querySelector('#preview-read').before(panel);
+  const kinds = [...new Set(connections.map(edge => edge.kind || 'other'))].sort();
+  const kindControl = document.createElement('label');
+  kindControl.innerHTML = 'Connection type<select id="connection-kind"><option value="all">All connection types</option>' + kinds.map(kind => '<option value="'+escapeHtml(kind)+'">'+escapeHtml(humanize(kind.replaceAll('-',' ')))+' ('+connections.filter(e=>(e.kind||'other')===kind).length+')</option>').join('') + '</select>';
+  panel.querySelector('#connection-match-count').before(kindControl);
+  const help = document.createElement('details'); help.className='relation-help';
+  help.innerHTML='<summary>How to read these connections</summary><p>Arrows keep the exact source direction: → outgoing, ← incoming. Written in / implemented in describes software implementation; uses language does not. Runs on is a runtime relationship; implements spec is conformance, not an implementation language. Compilation targets, libraries, dependencies and related-to links remain distinct. Source claims are preserved, not universally verified. No supplied link means unknown, not impossible.</p>';
+  kindControl.after(help);
+  const reset = document.createElement('button');reset.id='connection-reset';reset.type='button';reset.textContent='Reset connection filters';help.after(reset);
+  const kindSelect=panel.querySelector('#connection-kind');kindSelect.value=state.relationKind;
   const input = panel.querySelector('#connection-search'), directionSelect = panel.querySelector('#connection-direction');
   input.value = state.relationQuery; directionSelect.value = state.relationDirection;
   const signatureCounts = new Map();
@@ -357,6 +406,7 @@ function renderPreview() {
   const renderConnections = () => {
     const query = state.relationQuery.trim().toLowerCase();
     const matches = connections.filter(edge => {
+      if(state.relationKind!=='all' && (edge.kind||'other')!==state.relationKind)return false;
       const loop = edge.source === edge.target;
       if (state.relationDirection==='outgoing' && (loop || edge.source !== node.id)) return false;
       if (state.relationDirection==='incoming' && (loop || edge.target !== node.id)) return false;
@@ -365,11 +415,13 @@ function renderPreview() {
       return !query || haystack.includes(query);
     });
     panel.querySelector('#connection-match-count').textContent = matches.length + ' of ' + connections.length + ' records · graph always shows all links';
-    panel.querySelector('#connection-results').innerHTML = matches.map(edge => {
+    const orderedMatches = [...matches].sort((a,b)=>(a.kind||'other').localeCompare(b.kind||'other'));
+    panel.querySelector('#connection-results').innerHTML = orderedMatches.map((edge,index) => {
       const {other,direction,relation} = relationDescription(edge,node.id);
       const reason = edge.record?.rationale || edge.record?.mechanism || edge.semantic || '';
       const repeated = signatureCounts.get(JSON.stringify([edge.source,edge.target,edge.relation]));
-      return '<article class="connection-card" data-connection-id="'+escapeHtml(edge.id)+'"><button type="button" class="connection-neighbor" data-neighbor="'+escapeHtml(other.id)+'">'+escapeHtml(direction+' '+other.label)+'</button><p><b>'+escapeHtml(humanize(edge.relation))+'</b></p><p>'+escapeHtml(reason ? (typeof reason==='string'?reason:JSON.stringify(reason)) : 'Recorded source relationship; no separate causal explanation supplied.')+'</p><small>'+escapeHtml((edge.curated?'Editorial · ':'Source · ')+sourceTitle(edge.document)+' · '+(edge.sourcePointer||edge.id))+'</small>'+(repeated>1?'<small class="duplicate-note">'+repeated+' source records share these endpoints and predicate; details are preserved.</small>':'')+'<button type="button" data-inspect-edge="'+escapeHtml(edge.id)+'" aria-pressed="'+String(state.featuredEdge?.id===edge.id)+'">Emphasize &amp; explain</button></article>';
+      const heading = !index || orderedMatches[index-1].kind !== edge.kind ? '<h5 class="connection-group">'+escapeHtml(humanize((edge.kind||'other').replaceAll('-',' ')))+'</h5>' : '';
+      return heading + '<article class="connection-card" data-connection-id="'+escapeHtml(edge.id)+'"><button type="button" class="connection-neighbor" data-neighbor="'+escapeHtml(other.id)+'">'+escapeHtml(direction+' '+other.label)+'</button><p><b>'+escapeHtml(humanize(edge.relation))+'</b></p><p>'+escapeHtml(reason ? (typeof reason==='string'?reason:JSON.stringify(reason)) : 'Recorded source relationship; no separate causal explanation supplied.')+'</p><small>'+escapeHtml((edge.curated?'Editorial · ':'Source · ')+sourceTitle(edge.document)+' · '+(edge.sourcePointer||edge.id))+'</small>'+(repeated>1?'<small class="duplicate-note">'+repeated+' source records share these endpoints and predicate; details are preserved.</small>':'')+'<button type="button" data-inspect-edge="'+escapeHtml(edge.id)+'" aria-pressed="'+String(state.featuredEdge?.id===edge.id)+'">Emphasize &amp; explain</button></article>';
     }).join('') || '<p>No matching connections. Clear the search or choose all directions.</p>';
     panel.querySelectorAll('[data-neighbor]').forEach(button => button.addEventListener('click',()=>selectConcept(button.dataset.neighbor)));
     panel.querySelectorAll('[data-inspect-edge]').forEach(button => button.addEventListener('click',()=>{
@@ -379,6 +431,8 @@ function renderPreview() {
       const priorScroll=host.scrollTop; renderPreview(); host.scrollTop=priorScroll;
     }));
   };
+  kindSelect.addEventListener('change',()=>{state.relationKind=kindSelect.value;renderConnections();});
+  reset.addEventListener('click',()=>{state.relationKind='all';state.relationQuery='';state.relationDirection='all';kindSelect.value='all';input.value='';directionSelect.value='all';renderConnections();});
   input.addEventListener('input',()=>{state.relationQuery=input.value;renderConnections();});
   directionSelect.addEventListener('change',()=>{state.relationDirection=directionSelect.value;renderConnections();});
   renderConnections();
@@ -477,6 +531,11 @@ function renderInspector() {
       );
     return;
   }
+  if (detailStatus(node.id) !== 'ready') {
+    host.innerHTML = '<div class="inspector-content"><h3>' + escapeHtml(node.label) + '</h3><p>' + escapeHtml(node.description || 'No prose definition supplied.') + '</p>' + statusMarkup(node.id) + '<p>Explore the complete recorded connection list in the selection pane while evidence loads.</p></div>';
+    host.querySelector('[data-retry-details]')?.addEventListener('click', () => {loadSelectionDetails(node.id,++selectionGeneration);refreshSelectedDetails();});
+    return;
+  }
   const connections = state.edgesById.get(node.id) || [];
   const explanation =
     node.description ||
@@ -522,7 +581,7 @@ function renderInspector() {
         .map(encodeURIComponent)
         .join("/");
       const context =
-        document?.metadata.source || document?.metadata.source_policy || null;
+        document?.metadata?.source || document?.metadata?.source_policy || null;
       return `<article class="source-variant"><h5>${escapeHtml(sourceTitle(variant.document))}</h5><p class="source-file">${escapeHtml(variant.document)} · <a href="./data/${encodedFile}" download>Download source JSON ↓</a></p>${renderFields(variant.fields) || "<p>No descriptive fields supplied in this record.</p>"}${variant.claims.length ? `<div class="claim-list"><strong>Supporting claims · ${variant.claims.length}</strong>${variant.claims.map(renderClaim).join("")}</div>` : ""}${renderStudyMaterial(variant.related || [], variant.document)}${context ? `<div class="source-field"><strong>Source policy / origin</strong>${displayValue(context)}</div>` : ""}${document ? `<details class="document-context" data-file="${escapeHtml(variant.document)}"><summary>Source context, references &amp; complete metadata ↗</summary><div class="document-fields"></div><details class="document-raw"><summary>Full source metadata JSON</summary><pre></pre></details></details>` : ""}</article>`;
     })
     .join("");
@@ -575,7 +634,7 @@ function renderInspector() {
 }
 
 function renderRoutes() {
-  if (state.atlas.lightweight) { $("#route-list").innerHTML="<p>Source learning paths load when you explore or request all paths.</p>"; return; }
+  if (state.atlas.lightweight && !state.pathsLoaded) { $("#route-list").innerHTML="<p>Source learning paths load when you explore or request all paths.</p>"; return; }
   const featured = state.atlas.documents.map(doc => state.atlas.paths.find(path => path.document === doc.file)).filter(Boolean);
   $("#route-list").innerHTML = (state.routesExpanded ? state.atlas.paths : featured)
     .map(
@@ -690,7 +749,7 @@ function setupMapGestures() {
   $("#zoom-in").addEventListener("click", () => network.zoom(1.3));
   $("#zoom-out").addEventListener("click", () => network.zoom(1 / 1.3));
   $("#reset-map").addEventListener("click", () => {
-    state.topic="all"; state.query=""; state.catalogQuery=""; $("#search").value=""; $("#catalog-search").value="";
+    state.topic="all"; state.query=""; state.catalogQuery=""; state.relationQuery=""; state.relationDirection="all"; state.relationKind="all"; state.selectionHistory=[]; $("#search").value=""; $("#catalog-search").value="";
     clearSelection({ fit: true }); renderFilters(); renderSearch(); renderCatalog();
   });
 }
@@ -703,6 +762,7 @@ async function init() {
     state.atlas = await response.json();
     window.DeveloperMapKey.registerDocuments(state.atlas.documents);
     connectIndexes(state.atlas);
+    if (state.atlas.lightweight) detailsLoader = window.DeveloperDetails.create(state.atlas);
     $("#metric-concepts").textContent =
       state.atlas.summary.concepts.toLocaleString();
     $("#search").placeholder =
@@ -742,16 +802,18 @@ async function init() {
     $("#demo-docker").addEventListener("click", () => selectConcept("docker"));
     $("#routes-more").addEventListener("click", () => {
       state.routesExpanded = true;
-      ensureArchive().then(renderRoutes).catch(()=>{});
+      if (state.atlas.lightweight && !state.pathsLoaded) ensurePaths().then(renderRoutes).catch(error=>{$('#route-list').textContent='Learning paths unavailable: '+error.message+' Select Show all paths to retry.';});
       renderRoutes();
     });
     $("#search").addEventListener("input", (event) => {
       state.query = event.target.value;
       renderSearch();
-      ensureArchive().then(renderSearch).catch(()=>{});
+    });
+    $('#search').addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown') {event.preventDefault();$('#search-results [data-concept]')?.focus();}
+      if (event.key === 'Enter') {event.preventDefault();$('#search-results [data-concept]')?.click();}
     });
     $("#catalog-search").addEventListener("input", (event) => {
-      ensureArchive().then(renderCatalog).catch(()=>{});
       state.catalogQuery = event.target.value;
       state.catalogLimit = 36;
       renderCatalog();

@@ -360,19 +360,6 @@ test('C++ alias search, same global coordinates, independent in-place evidence a
  d.querySelector('#reset-map').click();assert.equal(c.dataset.selectedConcept,'');assert.deepEqual(JSON.parse(c.dataset.nodePositions),before);w.close();
 });
 
-test('real lightweight-first contract lazily loads full evidence once without moving canvas',async()=>{
- const o=JSON.parse(await readFile(new URL('../data/overview.json',import.meta.url)));
- const dom=new JSDOM(html,{url:'http://localhost:4173/',runScripts:'outside-only'}),w=dom.window,d=w.document,calls=[];
- w.fetch=async url=>{calls.push(url);return {ok:true,json:async()=>url.includes('overview')?o:atlas};};
- w.HTMLElement.prototype.scrollIntoView=()=>{};
- w.HTMLCanvasElement.prototype.getBoundingClientRect=()=>({width:390,height:560,left:0,top:0});
- w.HTMLCanvasElement.prototype.getContext=()=>new Proxy({},{get:(_,key)=>key==='measureText'?value=>({width:value.length*7}):()=>{}});
- w.requestAnimationFrame=fn=>{fn();return 1;};for(const script of scripts)w.eval(script);await new Promise(r=>setTimeout(r,30));
- assert.deepEqual(calls,['./data/overview.json']);const c=d.querySelector('canvas'),before=JSON.parse(c.dataset.nodePositions);w.selectConcept('ruby_on_rails:rails');await new Promise(r=>setTimeout(r,30));
- assert.deepEqual(calls,['./data/overview.json','./data/atlas.json']);assert.ok(d.querySelector('.in-place-evidence'),d.querySelector('#map-preview').textContent);assert.match(d.querySelector('.in-place-evidence').textContent,/written_in/);for(const id of atlas.overview.nodeIds)assert.deepEqual(JSON.parse(c.dataset.nodePositions)[id],before[id]);
- w.selectConcept('cuda:cuda');assert.equal(calls.length,2);assert.equal(d.querySelector('#fit-selection').hidden,false);d.querySelector('#reset-map').click();assert.deepEqual(JSON.parse(c.dataset.nodePositions),before);w.close();
-});
-
 test('pointer pan and wheel zoom preserve selection while reset restores stable overview',async()=>{
  const dom=await mount(),w=dom.window,d=w.document,c=d.querySelector('canvas');const before=JSON.parse(c.dataset.nodePositions);
  c.dispatchEvent(new w.MouseEvent('pointerdown',{clientX:200,clientY:200,button:0,bubbles:true}));c.dispatchEvent(new w.MouseEvent('pointermove',{clientX:250,clientY:230,bubbles:true}));c.dispatchEvent(new w.MouseEvent('pointerup',{clientX:250,clientY:230,bubbles:true}));assert.notDeepEqual(JSON.parse(c.dataset.nodePositions).c,before.c);

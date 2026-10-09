@@ -1,3 +1,4 @@
+import { writeDetails } from './build-details.mjs';
 import { createHash } from 'node:crypto';
 import { documentTitle, relationshipEntries, relationshipPredicate, normalizePath, pathRecord, isSourceFile } from './normalize-source.mjs';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
@@ -104,8 +105,9 @@ export async function buildAtlas() {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const atlas = await buildAtlas();
   await writeFile(path.join(dataDirectory, 'atlas.json'), JSON.stringify(atlas));
-  // Lightweight first paint; full archive is loaded only for selection or catalog/search.
-  const overview = { ...atlas, documents: atlas.documents.map(({metadata,fields,...doc})=>doc), nodes: atlas.nodes.map(({variants,...node})=>({...node,variants:[]})), edges: atlas.edges.map(({record,fields,evidence,...edge})=>({...edge, record:{source:edge.source,target:edge.target},fields:[],evidence:[]})), paths:[], audit:{}, lightweight:true };
+  // Full records load through content-addressed, bounded detail shards.
+  const details = await writeDetails(atlas, dataDirectory);
+  const overview = { ...atlas, details, documents: atlas.documents.map(({metadata,fields,...doc})=>doc), nodes: atlas.nodes.map(({variants,...node})=>({...node,variants:[]})), edges: atlas.edges.map(({record,fields,evidence,...edge})=>({...edge, record:{source:edge.source,target:edge.target},fields:[],evidence:[]})), paths:[], audit:{}, lightweight:true };
   await writeFile(path.join(dataDirectory, 'overview.json'), JSON.stringify(overview));
   console.log(`Built ${atlas.summary.concepts} concepts from ${atlas.documents.length} source graphs, ${atlas.summary.sourceRelationships} source relationships, ${atlas.summary.bridges} curated bridges`);
 }

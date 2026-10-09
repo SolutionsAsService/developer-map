@@ -54,3 +54,12 @@ Axe WCAG 2 A/AA and 2.1 AA scans cover home and selected-Docker states at four w
 - 213 graph-isolated records remain; no unsupported relations manufactured to inflate connectedness.
 - Browser results validate local behavior, not a deployed hosting environment.
 - GitHub authentication is required to publish; remote push status will be recorded after the attempt.
+
+
+## October 9, 2026 — selection/shard regression (supersedes historical counts above)
+
+Build succeeds and source-retention manifest confirms all 37 original hashes. New JSDOM tests exercise immediate search selection, empty-200 full-archive independence, empty/malformed/missing/stale detail responses and retry, late-selection race guards, qualified deep links, cross-source incoming/outgoing relationships, typed implementation filters, neighbor/back/reset, keyboard Enter, full learning paths, bounded concurrency and request deduplication. Exact shard coverage, byte bounds, SHA-256 and deterministic generation are checked. Existing tests retain source identities, source bytes, all predicates and camera positions; the old mandatory-full-archive test is replaced by the stronger real lightweight-plus-shards contract.
+
+No new library/service: native fetch/Web Crypto plus the existing Node test/JSDOM stack. Local browser navigation remains prohibited by the earlier browser policy; no alternate host, transport or config bypass was used. Real public browser checks are recorded separately after normal main push/autodeploy. No GitHub Actions workflow is configured; CI is unavailable, not passed.
+
+Final `npm test`: **50 passed, 0 failed**, exit 0 (286.4 seconds). Full regeneration and the source manifest command both exited 0.

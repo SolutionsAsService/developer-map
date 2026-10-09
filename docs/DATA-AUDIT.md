@@ -86,3 +86,14 @@ Browser tool was running, but opening http://localhost:4175/#explorer was denied
 - PyTorch contains_runtime PyTorch runtime (pytorch:144); Python API calls_into runtime (pytorch:145); Python provides_language_for API (pytorch:13). CUDA provides_acceleration_for internal CUDA bindings (pytorch:15), which are integrated_into PyTorch (pytorch:16). These source directions remain intact.
 
 The source-claim-reference evidence list is empty for all 8,604 relationships; original source-line ranges, provenance objects and bibliography metadata are nevertheless preserved in raw fields. This is not a claim that all source relationships lack provenance, nor that any were independently verified.
+
+
+## October 9, 2026 — reliable detail selection
+
+All 37 original uploads retain their exact hashes and bytes; all 7,908 canonical records, 8,604 source edges and 522 learning paths remain. Three separate editorial relations now describe CPython → C (implemented_in), V8 → C++ (written_in), and V8 → ECMAScript (implements_spec). Evidence is the Python Language Reference, Alternate Implementations, and the V8 project's What is V8? page, retrieved October 9. This explicitly distinguishes named implementations from language specifications; it does not alter historical source assertions or auto-merge matching labels.
+
+Total: 8,623 edges (19 editorial), with 1,529 nodes / 2,930 edges in the overview. Every predicate and parallel edge remains available in the full incoming/outgoing selection list, independent of overview/topic filters. New semantic facets are reading aids, not rewritten source triples.
+
+The interactive detail archive is partitioned into 111 deterministic content-addressed shards, each at most 196,547 bytes (192 KiB cap), plus a 514,668-byte manifest. Manifest SHA-256: b25e78fc8489bdcc51de2c4da715fee67cfc4dabe4697ab75a0d1cdf39493ba5. Every node, edge, document and path has exact one-shard coverage. Each selected node loads its full variants, every incident edge (both directions, every source), and its source metadata. Neighbor overview records remain immediately navigable. The downloadable full atlas is retained but never fetched by interactive selection/search/paths.
+
+Cold detail payloads are approximately 1.65 MB for Next.js, 3.12 MB for C, 2.36 MB for Python and 1.20 MB for CPython including the manifest, instead of a mandatory 22.8 MB full archive. Shared shards are cached and concurrent requests capped at three. Initial overview remains approximately 8.26 MB; this change removes the broken detail dependency, not every possible first-load optimization. Source evidence may remain incomplete; no universal knowledge-graph completeness is claimed.

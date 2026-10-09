@@ -1,7 +1,11 @@
 // Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
 // Classification is a reading aid; exact predicates and source assertions are never rewritten.
 export function relationKind(predicate) {
-  if (/written_in|implemented_in|implementation_language/.test(predicate)) return 'implementation-language';
+  if (/^(implements_spec|specified_by|semantics_specified_by)$/.test(predicate)) return 'specification';
+  if (/^(uses_language|uses_frontend_language|provides_language_for)$/.test(predicate)) return 'language-use';
+  if (/^(library_of|is_library_of|is_major_library_for|provides_library_for)$/.test(predicate)) return 'library';
+  if (/reference_implementation_of|is_named_implementation_of/.test(predicate)) return 'implementation-of';
+  if (/written_in|implemented_in$|implementation_language|reference_implementation_uses/.test(predicate)) return 'implementation-language';
   if (/compil|transpil|target_language/.test(predicate)) return 'compilation';
   if (/requires_compatible_runtime|runs_on|runtime/.test(predicate)) return 'runtime';
   if (/gpu_family|hardware|processor|compute_capability/.test(predicate)) return 'hardware';

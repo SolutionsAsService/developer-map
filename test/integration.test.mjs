@@ -66,7 +66,7 @@ test('source evidence connects new domains without invented editorial repairs', 
     assert.equal(edge.target, id(graph + ':' + edge.record.target));
     assert.equal(edge.provenance, 'source');
   }
-  assert.equal(atlas.edges.filter(e => e.curated).length, 16);
+  assert.equal(atlas.edges.filter(e => e.curated).length, 19);
   assert.equal(atlas.edges.find(e => e.id === 'python_language:310').target, atlas.edges.find(e => e.id === 'virtual_machine:33').source);
   assert.equal(atlas.edges.find(e => e.id === 'system_image:3').record.conditions, 'All relevant state must be on disk.');
 });

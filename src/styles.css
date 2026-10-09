@@ -3040,3 +3040,32 @@ input::placeholder {
 #source-select { max-width:min(480px, 65vw); padding:10px; background:#18201e; color:#e8f2ed; border:1px solid #5b756a; border-radius:5px; }
 #source-filter-summary { font-size:12px; color:#b4c7bd; }
 #node-key { max-height:130px; overflow:auto; }
+
+/* Progressive details: connections first, explicit evidence state, usable touch targets. */
+.detail-status { margin: 14px 0; padding: 12px; border: 1px solid #a88d53; border-radius: 6px; background: #28261b; color: #eee0b6; font-size: 12px; line-height: 1.5; }
+.detail-status p { margin: 6px 0; }
+.detail-status.ready { border-color: #425b41; color: #cbe6b9; background: #1b281c; }
+.detail-status button, #connection-reset { min-height: 42px; border: 1px solid #7b936a; border-radius: 4px; padding: 8px 12px; color: #e8ffd9; background: #243420; cursor: pointer; }
+.connection-group { position: sticky; top: 0; z-index: 1; margin: 0; padding: 10px 8px; color: #d2fb83; background: #18221a; font-size: 12px; }
+.relation-help { color: #c0ceba; font-size: 12px; line-height: 1.6; margin: 12px 0; }
+.relation-help summary { cursor: pointer; padding: 6px 0; }
+.connection-card button { min-height: 44px; }
+.connection-pane, .map-preview, .explorer-grid > * { min-width: 0; }
+.dynamic-proof { margin-top: 20px; }
+.preview-preface { max-height: 150px; overflow: auto; }
+#map-preview { overflow-anchor: none; }
+@media (max-width: 900px) {
+  .explorer-grid { display: flex; flex-direction: column; }
+  .connection-pane { width: 100%; max-height: none; }
+  .map-preview { max-height: none; overflow: visible; }
+  .connection-browser { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 0 12px; }
+  .connection-browser h4, .connection-browser > label:first-of-type, .relation-help, #connection-reset, #connection-match-count, #connection-results { grid-column: 1 / -1; }
+  #connection-results { max-height: 55vh; }
+  .map-canvas { height: 420px; }
+}
+@media (max-width: 420px) {
+  .connection-browser { display: block; }
+  #source-select { max-width: 68vw; }
+  .map-canvas { height: 340px; }
+  .preview-heading, .preview-meta { flex-wrap: wrap; }
+}
