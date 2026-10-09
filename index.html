@@ -36,15 +36,13 @@
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-copy">
             <p class="eyebrow">
-              <span class="terminal-prompt">&gt;_</span> INFRASTRUCTURE, WITHOUT
-              THE SILOS
+              <span class="terminal-prompt">&gt;_</span> DEVELOPER KNOWLEDGE / SOURCE EXPLORER
             </p>
             <h1 id="hero-title">
-              Know the stack.<br /><em>Trace the connections.</em>
+              Trace a relationship.<br /><em>Check its source.</em>
             </h1>
             <p class="hero-lead">
-              An explorable map of networks, languages, Web frameworks, cloud and infrastructure. Find
-              the concept. Follow the edge. Read the evidence.
+              Explore networks, languages and infrastructure through recorded connections—not a generated dependency diagram. Inspect the exact assertion, with original and editorial links clearly distinguished.
             </p>
             <div class="hero-actions">
               <a class="button primary" id="demo-docker" href="#explorer"
@@ -56,17 +54,14 @@
           </div>
           <div class="terminal-card" aria-label="Relationship quick start">
             <div class="terminal-title">
-              <span><i></i> relationship.query</span><span>READ ONLY</span>
+              <span>START WITH A REAL CONNECTION</span><span>DOCKER</span>
             </div>
             <div class="terminal-body">
               <p class="code-comment">
-                // Start with a relationship, not a silo.
+                Three recorded connections. Editorial additions are labeled.
               </p>
               <p class="query-line">
-                <span class="code-keyword">match</span> (docker)—[<span
-                  class="code-accent"
-                  >relation</span
-                >]—(concept)
+                Docker <span aria-hidden="true">→</span> connected concepts
               </p>
               <div id="quick-relations" class="quick-relations">
                 <span>Loading graph relationships…</span>
@@ -107,7 +102,7 @@
           <div class="section-top">
             <div>
               <p class="eyebrow">01 / WORKSPACE</p>
-              <h2 id="explorer-heading">Your infrastructure, connected.</h2>
+              <h2 id="explorer-heading">The relationship workbench.</h2>
               <p>
                 Select a node to trace its neighborhood. Search and the text
                 index provide the same concepts without using the canvas.
@@ -161,7 +156,7 @@
                     Emphasize one edge</button
                   ><button id="details-jump" type="button" hidden>
                     Read entry ↓</button
-                  ><button id="reset-map" type="button">Fit all</button
+                  ><button id="reset-map" type="button">Reset map</button
                   ><button id="zoom-out" type="button" aria-label="Zoom out">
                     −</button
                   ><button id="zoom-in" type="button" aria-label="Zoom in">

@@ -210,3 +210,34 @@ Both final rounds assessed the rendered artifact and recorded QA evidence; panel
 | Craft / Bringhurst | PASS: coherent hierarchy and selected relationship contrast | PASS: endpoint labels remain foregrounded and readable; metadata density is an optional refinement | None / no |
 
 Artist question: does active-edge focus improve understanding without disguising provenance or erasing the neighborhood? Both rounds accepted the reversible focus and evidence handoff. Optional opinions above were not converted into mandatory work; no unresolved blocking objection remained.
+
+
+## October 9, 2026 — continuation: relationship continuity, not more decoration
+
+This pass reopens historical convergence for the expanded 37-source artifact. Previous panel screenshots and PASS labels are not evidence for this revision. No installed DADA tool/skill or new independent visual panel is claimed.
+
+### Audit and decision records
+- **Evidence / Tufte:** dataset filtering called renderMap, replacing the active edge while leaving the old explanation on screen. KEEP exact-triple correspondence; ADAPT the state transition so source filters retain the selected edge and emphasis.
+- **Usability / Krug:** “Emphasize & explain” rebuilt its button, reset nested result scrolling, and placed the answer after the entire scrolling list. ADAPT to active evidence before connections; focus that answer while retaining list position. Async hydration preserves search text, caret and focused edge control.
+- **Craft / Bringhurst:** the terminal mock-query and promotional headline compete with the workbench. ADAPT to a compact, plain-language source explorer. Use real Docker relationships as the introduction; no fake command interface, remote fonts, new framework or illustrative filler.
+- **Progressive disclosure:** fields/citations and raw JSON remain accessible in native details elements; the exact triple, assertion provenance and supplied rationale remain visible. No field is discarded. Remove dead preview-card generation that was immediately removed from the DOM.
+- **Inclusion / Holmes:** retain canvas-free connections, native selectors and visible focus; add reduced-motion CSS. Keyboard evidence handoff is covered by JSDOM; manual assistive technology and real rendered layout still require review.
+
+### Nonlinear traversal / reopened frontier
+
+~~~mermaid
+flowchart LR
+  E[Evidence: graph / triple / source agreement] -->|constrains| S[Stable relationship selection]
+  S -->|enables| P[Permalink to exact source edge]
+  P -->|returns to| E
+  U[Usability: discover the next action] -->|reorders| D[Progressive evidence disclosure]
+  D -->|must preserve| E
+  C[Craft: hierarchy serves reading] -->|reduces| H[Promotional and terminal ornament]
+  I[Inclusion: keyboard and text parity] -->|checks| D
+  D -.->|return after hydration| S
+  S --> Q[Automated interaction regression]
+  Q -.->|not visual proof| V[Real browser review: no browser binary]
+~~~
+
+### Verification boundaries
+Mock-Canvas regressions cover exact-edge reload, unrelated-edge rejection, source-filter continuity, list scroll, focus and delayed evidence. Original source data is unchanged. New read-only deployment smoke checks HTTP/MIME and every immutable shard's SHA-256 instead of assuming homepage availability implies healthy evidence. Rate limits are retry signals, not permission for tight loops. Browser-tool launch fails because no supported browser is installed. Current visual convergence remains **open**, not an invented round of PASS verdicts. See docs/QA.md for final command outcomes.

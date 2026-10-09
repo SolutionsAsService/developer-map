@@ -88,9 +88,13 @@ function statusMarkup(id) {
 }
 function refreshSelectedDetails() {
   const host = $('#map-preview'), priorScroll = host.scrollTop;
+  const listScroll = $("#connection-results")?.scrollTop || 0;
   const active = document.activeElement, activeId = active?.id;
+  const activeEdge = active?.dataset?.inspectEdge;
   const start = active?.selectionStart, end = active?.selectionEnd;
   renderPreview(); renderInspector(); host.scrollTop = priorScroll;
+  if ($("#connection-results")) $("#connection-results").scrollTop = listScroll;
+  if (activeEdge) [...host.querySelectorAll("[data-inspect-edge]")].find(button => button.dataset.inspectEdge === activeEdge)?.focus({preventScroll:true});
   if (activeId && host.querySelector('#' + activeId)) {
     const replacement = host.querySelector('#' + activeId); replacement.focus({preventScroll:true});
     if (start != null && replacement.setSelectionRange) replacement.setSelectionRange(start,end);
@@ -116,7 +120,7 @@ async function ensurePaths() {
   if (!pathsPromise) pathsPromise = detailsLoader.paths().then(paths => {state.atlas.paths=paths;state.pathsLoaded=true;}).catch(error => {pathsPromise=null;throw error;});
   await pathsPromise;
 }
-function selectConcept(id, { scroll = false, remember = true } = {}) {
+function selectConcept(id, { scroll = false, remember = true, edgeId = null } = {}) {
   id = state.atlas.aliases?.[id] || id;
   if (!state.byId.has(id)) return;
   if (remember && state.selected && state.selected !== id) state.selectionHistory.push(state.selected);
@@ -124,6 +128,7 @@ function selectConcept(id, { scroll = false, remember = true } = {}) {
   state.relationDirection = "all";
   state.relationKind = "all";
   state.selected = id;
+  state.featuredEdge = (state.edgesById.get(id) || []).find(edge => edge.id === edgeId) || null;
   const generation = ++selectionGeneration;
   state.edgeFocus = false;
   network?.edgeFocus(false);
@@ -134,11 +139,8 @@ function selectConcept(id, { scroll = false, remember = true } = {}) {
   renderInspector();
   loadSelectionDetails(id, generation);
   if (scroll) $("#explorer").scrollIntoView({ behavior: "smooth" });
-  history.replaceState(
-    null,
-    "",
-    `${location.pathname}?concept=${encodeURIComponent(id)}#explorer`,
-  );
+  updateSelectionUrl();
+  if (edgeId && state.featuredEdge?.id === edgeId) selectEdge(edgeId);
 }
 
 function clearSelection({ fit = false } = {}) {
@@ -147,12 +149,15 @@ function clearSelection({ fit = false } = {}) {
   state.selected = null;
   selectionGeneration++;
   state.featuredEdge = null;
+  state.edgeFocus = false;
+  if (fit) { state.neighborhood = true; network.view(true); }
   if (fit || wasFocused) network.fit();
   renderMap();
   renderPreview();
   renderInspector();
   const url = new URL(location.href);
   url.searchParams.delete("concept");
+  url.searchParams.delete("edge");
   history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
@@ -251,6 +256,7 @@ function renderMap() {
   );
   const connections = state.edgesById.get(state.selected) || [];
   state.featuredEdge =
+    connections.find(edge => edge.id === state.featuredEdge?.id) ||
     connections.find(
       (edge) =>
         [edge.source, edge.target].includes("container") &&
@@ -263,6 +269,43 @@ function renderMap() {
     connections[0] ||
     null;
   if (state.featuredEdge) network?.focusEdge(state.featuredEdge);
+  network?.edgeFocus(state.edgeFocus);
+  $("#edge-focus").setAttribute("aria-pressed", String(state.edgeFocus));
+  $("#edge-focus").textContent = state.edgeFocus ? "Edge emphasized · all links shown" : "Emphasize one edge";
+}
+
+// One transition keeps the canvas, evidence, pressed state and permalink in sync.
+function updateSelectionUrl() {
+  const url = new URL(location.href);
+  url.searchParams.set('concept', state.selected);
+  if (state.edgeFocus && state.featuredEdge) url.searchParams.set('edge', state.featuredEdge.id);
+  else url.searchParams.delete('edge');
+  url.hash = 'explorer';
+  history.replaceState(null, '', url.pathname + url.search + url.hash);
+}
+function selectEdge(id, { focus = false } = {}) {
+  const edge = (state.edgesById.get(state.selected) || []).find(edge => edge.id === id);
+  if (!edge) return false;
+  state.featuredEdge = edge;
+  state.edgeFocus = true;
+  network.focusEdge(edge);
+  network.edgeFocus(true);
+  $('#edge-focus').setAttribute('aria-pressed', 'true');
+  $('#edge-focus').textContent = 'Edge emphasized · all links shown';
+  updateSelectionUrl();
+  refreshSelectedDetails();
+  if (focus) {
+    $('#active-relationship').focus({preventScroll:true});
+    $('#active-relationship').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  return true;
+}
+function relationshipUrl(edge) {
+  const url = new URL(location.href);
+  url.searchParams.set('concept', state.selected);
+  url.searchParams.set('edge', edge.id);
+  url.hash = 'explorer';
+  return url.pathname + url.search + url.hash;
 }
 
 function sourceTitle(file) {
@@ -330,39 +373,9 @@ function renderPreview() {
     ...new Set(node.topics.map((topic) => state.atlas.documents.find(doc => doc.graphId === topic)?.title || topic)),
   ];
   const connections = state.edgesById.get(node.id) || [];
-  const examples = [];
-  const seen = new Set();
-  const ordered = [...connections].sort((left, right) => {
-    if (left === state.featuredEdge) return -1;
-    if (right === state.featuredEdge) return 1;
-    const rank = (edge) =>
-      ({ orchestration: 0, workflow: 1, dependency: 2, structure: 3 })[
-        window.DeveloperMapKey.classify(edge).id
-      ] ?? 4;
-    return rank(left) - rank(right);
-  });
-  for (const edge of ordered) {
-    const family = window.DeveloperMapKey.classify(edge).id;
-    if (!seen.has(family) && examples.length < 4) {
-      examples.push(edge);
-      seen.add(family);
-    }
-  }
-  for (const edge of ordered) {
-    if (examples.length >= 4) break;
-    if (!examples.includes(edge)) examples.push(edge);
-  }
-  const why = examples
-    .map((edge) => {
-      const { other, direction } = relationDescription(edge, node.id);
-      if (!other) return "";
-      const style = window.DeveloperMapKey.classify(edge);
-      return `<button type="button" class="preview-link" data-concept="${escapeHtml(other.id)}"><span class="preview-link-top">${lineSample(style)}<span>${escapeHtml(style.label)}</span></span><strong>${direction} ${escapeHtml(other.label)}</strong><span class="preview-link-reason">${escapeHtml(humanize(edge.relation))}${edge.semantic ? ` · ${escapeHtml(edge.semantic)}` : ""}</span><small>${escapeHtml(sourceTitle(edge.document))}</small></button>`;
-    })
-    .join("");
   const leading = state.featuredEdge;
   const proof = leading
-    ? '<div class="dynamic-proof"><span class="preview-kicker">ACTIVE EDGE / ' +
+    ? '<div class="dynamic-proof" id="active-relationship" tabindex="-1" aria-label="Active relationship evidence"><span class="preview-kicker">ACTIVE EDGE / ' +
       (leading.curated ? "EDITORIAL" : "SOURCE") +
       "</span><strong>" +
       escapeHtml(state.byId.get(leading.source)?.label) +
@@ -380,16 +393,14 @@ function renderPreview() {
       (leading.curated
         ? "Editorial connection · not an original source edge"
         : "Recorded in " + escapeHtml(sourceTitle(leading.document))) +
-      '</small><div class="in-place-evidence"><strong>WHAT · exact triple</strong><code>' + escapeHtml(leading.source+' — '+leading.relation+' → '+leading.target) + '</code><p>WHY · ' + escapeHtml(leading.semantic || leading.record?.rationale || 'Not supplied by source; no cause inferred from this link.') + '</p><p>' + escapeHtml(leading.kind+' · '+leading.assertionStatus) + '</p><p>' + escapeHtml(leading.document+' · '+(leading.sourcePointer||leading.id)) + '</p>' + renderFields(leading.fields||[]) + (leading.evidence||[]).map(renderClaim).join('') + '<details><summary>Exact raw relationship fields</summary><pre>'+escapeHtml(JSON.stringify(leading.record,null,2))+'</pre></details></div><button type="button" id="active-edge-evidence">Inspect this relationship ↓</button></div>'
+      '</small><div class="in-place-evidence"><strong>WHAT · exact triple</strong><code>' + escapeHtml(leading.source+' — '+leading.relation+' → '+leading.target) + '</code><p>WHY · ' + escapeHtml(leading.semantic || leading.record?.rationale || 'Not supplied by source; no cause inferred from this link.') + '</p><p>' + escapeHtml(leading.kind+' · '+leading.assertionStatus) + '</p><p>' + escapeHtml(leading.document+' · '+(leading.sourcePointer||leading.id)) + '</p><details class="evidence-fields"><summary>Source fields &amp; citations</summary>' + renderFields(leading.fields||[]) + (leading.evidence||[]).map(renderClaim).join('') + '</details><details><summary>Exact raw relationship fields</summary><pre>'+escapeHtml(leading.record ? JSON.stringify(leading.record,null,2) : 'Full source record has not loaded yet.')+'</pre></details></div><button type="button" id="active-edge-evidence">Inspect this relationship ↓</button><a class="relationship-permalink" href="' + escapeHtml(relationshipUrl(leading)) + '">Link to this exact relationship ↗</a></div>'
     : "";
-  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} relationships</span><span>${sources.length} source documents</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(" · ")) + (sources.length > 2 ? ` · +${sources.length - 2} more` : "") : "No original source record"}</p>${statusMarkup(node.id)}${proof}${why ? `<div class="preview-why"><span class="preview-kicker">WHY THESE POINTS CONNECT</span>${why}<p>Showing ${examples.length} of ${connections.length} recorded links. All links and evidence appear in the full entry.</p></div>` : ""}<button type="button" id="preview-read">Read full entry ↓</button>`;
+  host.innerHTML = `<div class="preview-heading"><span class="label-chip ${category(node)}">${escapeHtml(humanize(node.type))}</span><button type="button" id="preview-close" aria-label="Clear concept selection">×</button></div><p class="preview-kicker">${provenance}</p><h3>${escapeHtml(node.label)}</h3><p class="preview-id">${escapeHtml(node.id)}</p><p class="preview-preface">${escapeHtml(preface)}</p><div class="preview-meta"><span>${connections.length} relationships</span><span>${sources.length} source documents</span></div><p class="preview-sources">${sources.length ? escapeHtml(sources.slice(0, 2).join(" · ")) + (sources.length > 2 ? ` · +${sources.length - 2} more` : "") : "No original source record"}</p>${statusMarkup(node.id)}${proof}<button type="button" id="preview-read">Read full entry ↓</button>`;
   host.querySelector('[data-retry-details]')?.addEventListener('click', () => { const generation = ++selectionGeneration; loadSelectionDetails(node.id,generation); refreshSelectedDetails(); });
-  const oldPreview = host.querySelector('.preview-why');
-  if (oldPreview) oldPreview.remove();
   const panel = document.createElement('section'); panel.className = 'connection-browser';
   panel.innerHTML = '<h4>All connections &amp; why</h4><label>Find a connection<input id="connection-search" type="search" placeholder="Name, relation, explanation, source…" /></label><label>Direction<select id="connection-direction"><option value="all">All directions</option><option value="outgoing">Outgoing</option><option value="incoming">Incoming</option><option value="loop">Self-loops</option></select></label><p id="connection-match-count" role="status"></p><div id="connection-results"></div>';
   const proofBlock=host.querySelector('.dynamic-proof');
-  if(proofBlock) proofBlock.before(panel);else host.querySelector('#preview-read').before(panel);
+  if(proofBlock) proofBlock.after(panel);else host.querySelector('#preview-read').before(panel);
   const kinds = [...new Set(connections.map(edge => edge.kind || 'other'))].sort();
   const kindControl = document.createElement('label');
   kindControl.innerHTML = 'Connection type<select id="connection-kind"><option value="all">All connection types</option>' + kinds.map(kind => '<option value="'+escapeHtml(kind)+'">'+escapeHtml(humanize(kind.replaceAll('-',' ')))+' ('+connections.filter(e=>(e.kind||'other')===kind).length+')</option>').join('') + '</select>';
@@ -425,10 +436,7 @@ function renderPreview() {
     }).join('') || '<p>No matching connections. Clear the search or choose all directions.</p>';
     panel.querySelectorAll('[data-neighbor]').forEach(button => button.addEventListener('click',()=>selectConcept(button.dataset.neighbor)));
     panel.querySelectorAll('[data-inspect-edge]').forEach(button => button.addEventListener('click',()=>{
-      state.featuredEdge=connections.find(edge=>edge.id===button.dataset.inspectEdge); state.edgeFocus=true;
-      network.focusEdge(state.featuredEdge); network.edgeFocus(true);
-      $('#edge-focus').setAttribute('aria-pressed','true'); $('#edge-focus').textContent='Edge emphasized · all links shown';
-      const priorScroll=host.scrollTop; renderPreview(); host.scrollTop=priorScroll;
+      selectEdge(button.dataset.inspectEdge, {focus:true});
     }));
   };
   kindSelect.addEventListener('change',()=>{state.relationKind=kindSelect.value;renderConnections();});
@@ -448,13 +456,6 @@ function renderPreview() {
   $("#preview-read").addEventListener("click", () =>
     $("#inspector").scrollIntoView({ behavior: "smooth", block: "start" }),
   );
-  host
-    .querySelectorAll(".preview-link")
-    .forEach((button) =>
-      button.addEventListener("click", () =>
-        selectConcept(button.dataset.concept),
-      ),
-    );
 }
 
 function displayValue(value) {
@@ -739,8 +740,7 @@ function setupMapGestures() {
     $("#edge-focus").textContent = state.edgeFocus
       ? "Edge emphasized · all links shown"
       : "Emphasize one edge";
-    $("#map-count").textContent =
-      `${state.atlas.nodes.length.toLocaleString()} nodes · ${state.atlas.edges.length.toLocaleString()} links · ${network?.counts().connected || 0} direct neighbors${state.edgeFocus ? " · edge emphasized; all incident links shown" : " · all incident links shown"}`;
+    updateSelectionUrl();
   });
   $("#selection-back").addEventListener("click",()=>{ const id=state.selectionHistory.pop(); if(id)selectConcept(id,{remember:false}); });
   $("#neighborhood-view").addEventListener("click",()=>{state.neighborhood=!state.neighborhood;network.view(state.neighborhood);$("#neighborhood-view").setAttribute("aria-pressed",String(state.neighborhood));$("#neighborhood-view").textContent=state.neighborhood?"Neighborhood · on":"Whole-map context";});
@@ -789,7 +789,7 @@ async function init() {
     $("#provenance-summary").textContent =
       `${state.atlas.summary.sourceRelationships} source links + ${state.atlas.summary.bridges} labeled editorial links. Originals preserved.`;
     setupMapGestures();
-    $("#network").addEventListener("edgeinspect", event => { state.featuredEdge = state.atlas.edges.find(edge => edge.id === event.detail.id); state.edgeFocus = true; $("#edge-focus").setAttribute("aria-pressed", "true"); $("#edge-focus").textContent = "Edge emphasized · all links shown"; renderPreview(); });
+    $("#network").addEventListener("edgeinspect", event => selectEdge(event.detail.id));
     document.addEventListener("focusin", event => { const button = event.target.closest?.("[data-concept], [data-start]"); if (button) network.highlight(state.atlas.aliases?.[button.dataset.concept || button.dataset.start] || button.dataset.concept || button.dataset.start); });
     document.addEventListener("focusout", () => network.highlight(null));
     renderMapKey();
@@ -872,7 +872,7 @@ async function init() {
             $("#search-results").hidden = true;
           }),
         );
-    } else if (initial) selectConcept(initial);
+    } else if (initial) selectConcept(initial, {edgeId:new URL(location.href).searchParams.get("edge")});
   } catch (error) {
     $("#inspector").innerHTML =
       `<div class="inspector-empty"><h3>Atlas unavailable</h3><p>${escapeHtml(error.message)}. Serve this folder over HTTP so the JSON can load.</p></div>`;
@@ -933,11 +933,7 @@ function renderQuickRelations() {
     .forEach((button) =>
       button.addEventListener("click", () => {
         selectConcept("docker", { scroll: true });
-        state.featuredEdge = connections.find(
-          (edge) => edge.id === button.dataset.edge,
-        );
-        network.focusEdge(state.featuredEdge);
-        renderPreview();
+        selectEdge(button.dataset.edge);
       }),
     );
 }

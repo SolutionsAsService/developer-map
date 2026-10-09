@@ -378,3 +378,59 @@ test('expanded dataset selector, search, editorial rationale and reset work in m
  assert.equal(d.querySelector('#source-select').value,'all');assert.equal(search.value,'');assert.match(d.querySelector('#map-mode').textContent,/WHOLE FIELD/);
  for(const doc of atlas.documents)assert.ok(w.DeveloperMapKey.domainById.has(doc.graphId));dom.window.close();
 });
+
+
+test('exact relationship survives dataset filtering and shares a reloadable URL', async () => {
+  const dom = await mount('http://localhost:4173/?campaign=kept&concept=docker');
+  const w = dom.window, d = w.document;
+  const edge = atlas.edges.find(e => (e.source === 'docker' || e.target === 'docker') && e.id !== 'editorial:docker-runs-container');
+  const button = [...d.querySelectorAll('[data-inspect-edge]')].find(el => el.dataset.inspectEdge === edge.id);
+  d.querySelector('#connection-results').scrollTop = 160;
+  button.click();
+  assert.equal(d.activeElement.id, 'active-relationship');
+  assert.equal(d.querySelector('#connection-results').scrollTop, 160);
+  assert.equal(new URL(w.location.href).searchParams.get('edge'), edge.id);
+  assert.equal(new URL(w.location.href).searchParams.get('campaign'), 'kept');
+  const proof = d.querySelector('.dynamic-proof').textContent;
+  const source = d.querySelector('#source-select'); source.value = 'python_language';
+  source.dispatchEvent(new w.Event('change', {bubbles:true}));
+  assert.equal(d.querySelector('.dynamic-proof').textContent, proof);
+  assert.equal(d.querySelector('#edge-focus').getAttribute('aria-pressed'), 'true');
+  assert.equal(d.querySelector('#network').dataset.activeEdge, edge.id);
+  assert.equal(d.querySelector('[data-inspect-edge][aria-pressed="true"]').dataset.inspectEdge, edge.id);
+  const url = d.querySelector('.relationship-permalink').href;
+  const fresh = await mount(url);
+  assert.equal(fresh.window.document.querySelector('#network').dataset.activeEdge, edge.id);
+  assert.equal(fresh.window.document.querySelector('#edge-focus').getAttribute('aria-pressed'), 'true');
+  assert.ok(d.querySelector('.dynamic-proof').compareDocumentPosition(d.querySelector('.connection-browser')) & w.Node.DOCUMENT_POSITION_FOLLOWING);
+  d.querySelector('#neighborhood-view').click();
+  d.querySelector('#reset-map').click();
+  assert.equal(new URL(w.location.href).searchParams.has('edge'), false);
+  assert.equal(d.querySelector('#neighborhood-view').getAttribute('aria-pressed'), 'true');
+  fresh.window.close(); w.close();
+});
+
+test('unrelated or invalid relationship URLs never display a false triple', async () => {
+  for (const edge of ['not-an-edge', 'editorial:next-css']) {
+    const dom = await mount('http://localhost:4173/?concept=docker&edge=' + edge);
+    assert.equal(new URL(dom.window.location.href).searchParams.has('edge'), false);
+    assert.equal(dom.window.document.querySelector('#edge-focus').getAttribute('aria-pressed'), 'false');
+    dom.window.close();
+  }
+});
+
+test('evidence refresh preserves list position and keyboard focus', async () => {
+  const dom = await mount('http://localhost:4173/?concept=docker');
+  const w = dom.window, d = w.document;
+  const button = d.querySelector('[data-inspect-edge]');
+  button.focus();
+  const id = button.dataset.inspectEdge;
+  d.querySelector('#connection-results').scrollTop = 230;
+  w.refreshSelectedDetails();
+  assert.equal(d.activeElement.dataset.inspectEdge, id);
+  assert.equal(d.querySelector('#connection-results').scrollTop, 230);
+  const counts = d.querySelector('#map-count').textContent;
+  d.querySelector('#edge-focus').click();
+  assert.equal(d.querySelector('#map-count').textContent, counts);
+  w.close();
+});

@@ -10,6 +10,8 @@ npm run build
 node scripts/integration-manifest.mjs
 node --test --test-concurrency=1
 npm run dev
+# In another terminal, verify every served asset and evidence shard:
+npm run smoke:deploy -- http://localhost:4173/ --exact
 ```
 
 Open http://localhost:4173. Set PORT to change the local development port. Deploy the **repository root** to any static host. Keep index.html, src/, data/overview.json, the entire data/details/ directory, data/atlas.json and every original source JSON together. No framework build or backend is required when generated JSON is committed. Regenerate the derived archive, overview and content-addressed detail shards with npm run build after source changes; the manifest command regenerates the source-retention audit. The local server is not a production server.
@@ -27,6 +29,20 @@ Initial load uses overview.json. Selecting by click, tap, Enter, neighbor or dee
 The manifest checks every payload's byte count, SHA-256, schema, record IDs and edge endpoints; paths are immutable so older overview pages cannot silently mix new evidence. Raw shard cache is bounded to 32; requests are deduplicated, failed requests are evicted, and each network request times out after 15 seconds. Keep previous content-addressed shards when deploying so cached pages remain usable. SHA-256 requires a secure browser context (HTTPS or localhost). No hosting/provider configuration changes or extra dependencies are needed.
 
 Connections are grouped and filterable by semantic type and direction, with a separate reset. Implementation language, implementation-of, language use, specification, compilation target, library, dependency and runtime meanings remain distinct; exact source predicates are never rewritten. Reviewed CPython → C and V8 → C++ / ECMAScript links carry primary documentation, scope and October 9, 2026 evidence dates. They do not claim Python or JavaScript themselves are written in those languages.
+
+## Exact relationship workbench
+
+The active relationship now stays synchronized with its highlighted graph edge when changing datasets. “Emphasize & explain” moves keyboard focus to the evidence **above** the connection list without losing your place in the results. Full fields and citations use native expandable sections, preserving raw evidence without overwhelming the first reading. The compact introduction uses real imported connections instead of a simulated command interface.
+
+Use **Link to this exact relationship** to share both the selected concept and original edge ID. Reloading restores the same directed triple; invalid or unrelated edge IDs never select a different concept or assert a fabricated relationship. Search text/caret and connection-list position survive delayed evidence hydration. Reset restores the overview and clears concept/edge URL state.
+
+### Deployment verification
+
+Run `npm run smoke:deploy -- https://your-host.example/` against a static deployment (subdirectory URLs are supported). Add `--exact` to require all checked files to match this checkout, not merely form a self-consistent deployment. The check validates HTML, scripts, CSS, overview, manifest and **all 111 detail shards**, plus the 37 original source downloads. It checks MIME types, SHA-256 and size limits, spaces public requests, and respects bounded Retry-After waits. It is read-only and does not provision a host, publish files, or certify browser rendering. Public evidence loading requires HTTPS. No hosting credentials or automatic deployment pipeline are configured in this checkout.
+
+### Real browser QA (separate from smoke)
+
+The existing `scripts/qa-integration.cjs` now uses the current 37-source interface and reads path totals from the archive. It no longer hardcodes an old OpenClaw installation, old browser cache, missing controls or obsolete 133-path count. In an environment permitting browser automation, set `CHROMIUM_PATH` to an installed approved Chromium and optionally `PLAYWRIGHT_MODULE` to an existing playwright-core module, then run `node scripts/qa-integration.cjs` while the local server is running. `QA_URL` overrides the target; `QA_OUTPUT` overrides the default `docs/qa/current` output. No dependencies are installed and sandbox protections are not disabled by the runner. Current-run screenshots/report never overwrite historical QA evidence. This revision has syntax verification only; no browser binary is available here.
 
 ## Identity and provenance
 

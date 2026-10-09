@@ -67,6 +67,8 @@
 
     function draw() {
       scheduled = false;
+      canvas.dataset.activeEdge = featuredEdge?.id || "";
+      canvas.dataset.edgeEmphasized = String(edgeOnly);
       const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       context.clearRect(0, 0, width, height);

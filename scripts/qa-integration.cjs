@@ -1,15 +1,19 @@
 // Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService
 // Run only in an environment whose browser policy permits local-page QA.
-// Existing Playwright/Mermaid assets are reused; no dependency installation.
+// Requires an existing Playwright installation and explicitly selected browser.
+// This script does not install browsers, bypass browser policy or disable the sandbox.
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
-const install = process.env.OPENCLAW_INSTALL || '/home/openclaw/.openclaw/tools/node-v24.19.0/lib/node_modules/openclaw';
-const { chromium } = require(path.join(install, 'node_modules/playwright-core'));
+if (!process.env.CHROMIUM_PATH) throw new Error('Set CHROMIUM_PATH to an approved installed browser. No browser is installed by this script.');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright-core');
+const output = path.resolve(process.env.QA_OUTPUT || path.join(root, 'docs/qa/current'));
+fs.mkdirSync(output, {recursive:true});
+fs.writeFileSync(path.join(output,'report.json'),JSON.stringify({status:'running',date:new Date().toISOString()},null,2));
 const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
 (async () => {
-  const browser = await chromium.launch({executablePath: process.env.CHROMIUM_PATH || '/home/openclaw/.cache/ms-playwright/chromium-1243/chrome-linux64/chrome', headless:true, args:['--no-sandbox'], env:{...process.env, LD_LIBRARY_PATH: process.env.LD_LIBRARY_PATH || '/tmp/pimp-my-skill-render-libs/root/usr/lib/x86_64-linux-gnu'}});
+  const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH, headless:true});
   const checks=[], errors=[], runs=[];
   try {
     for (const width of [1440,390,320]) {
@@ -19,12 +23,13 @@ const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
       await page.goto(process.env.QA_URL || 'http://127.0.0.1:4173/');
       await page.waitForFunction(expected => document.querySelector('#metric-concepts').textContent.replaceAll(',', '') === String(expected), atlas.nodes.length);
       const loadMs=Date.now()-before;
-      assert.equal(await page.locator('#route-list .route-card').count(),10);
+      assert.equal(await page.locator('#route-list .route-card').count(),Math.min(36,atlas.paths.length));
       const entryTimings=[];
       for (const id of ['os','python','sandbox','volume_computing:volume','optical_disc_image','system_image','virtual_machine']) {
         const start=Date.now();
-        if (await page.locator('#clear-focus').count()) await page.locator('#clear-focus').click();
+        await page.locator('#reset-map').click();
         const entry=page.locator('[data-start="'+id+'"]'); await entry.click();
+        await page.locator('#map-preview .detail-status.ready').waitFor();
         const verify=async()=>{
           const actual=await page.evaluate(()=>({draw:JSON.parse(document.querySelector('#network').dataset.incidentEdgeIds).sort(),list:[...document.querySelectorAll('[data-relation-id]')].map(e=>e.dataset.relationId).sort()}));
           const expected=atlas.edges.filter(e=>e.source===id||e.target===id).map(e=>e.id).sort();
@@ -37,7 +42,14 @@ const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
         assert.equal(await page.locator('#connection-results [data-connection-id]').count(),0);
         await verify();
         await page.locator('#connection-search').fill('');
-        await page.locator('#connection-results [data-inspect-edge]').first().click(); await verify();
+        const explain=page.locator('#connection-results [data-inspect-edge]').first();
+        const edgeId=await explain.getAttribute('data-inspect-edge');
+        await explain.click(); await verify();
+        assert.equal(await page.evaluate(()=>document.activeElement.id),'active-relationship');
+        assert.equal(new URL(page.url()).searchParams.get('edge'),edgeId);
+        await page.locator('#source-select').selectOption('docker');
+        assert.equal(await page.locator('#network').getAttribute('data-active-edge'),edgeId);
+        assert.equal(await page.locator('#network').getAttribute('data-edge-emphasized'),'true');
         await page.locator('#neighborhood-view').click();
         assert.equal(await page.locator('#network').getAttribute('data-view-mode'),'context'); await verify();
         await page.locator('#neighborhood-view').click();
@@ -45,7 +57,8 @@ const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
         await page.locator('#network').scrollIntoViewIfNeeded();
         await page.waitForFunction(()=>{const c=document.querySelector('#network'),r=c.getBoundingClientRect();return Math.abs(c.height/Math.min(devicePixelRatio||1,2)-r.height)<1;});
         const labels=await page.locator('#network').evaluate(el=>JSON.parse(el.dataset.labelTargets));
-        const label=labels.find(l=>l.id!==id && l.x>0 && l.y>0);
+        const size=await page.locator('#network').boundingBox();
+        const label=labels.find(l=>l.id!==id && l.x>=0 && l.y>=0 && l.x+l.w<size.width && l.y+l.h<size.height);
         assert.ok(label,'a neighbor label is available');
         const box=await page.locator('#network').boundingBox();
         await page.mouse.click(box.x+label.x+label.w/2,box.y+label.y+label.h/2);
@@ -54,43 +67,43 @@ const atlas = JSON.parse(fs.readFileSync(path.join(root, 'data/atlas.json')));
         assert.equal(picked,label.id);
         await page.locator('#selection-back').click(); await verify();
         await page.locator('#edge-focus').click(); await verify();
-        await page.locator('[data-topic="docker"]').click(); await verify();
-        await page.locator('#clear-focus').click(); await entry.click(); await verify();
+        await page.locator('#source-select').selectOption('docker'); await verify();
+        await page.locator('#reset-map').click(); await entry.click(); await verify();
         assert.equal(await page.locator('#edge-focus').getAttribute('aria-pressed'),'false');
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
         entryTimings.push({id,incident,totalInteractionMs:Date.now()-start});
       }
-      await page.locator('[data-topic="all"]').click();
+      await page.locator('#source-select').selectOption('all');
       await page.locator('#search').fill('python');
       assert.equal(await page.locator('#search-results [data-concept]').first().getAttribute('data-concept'),'python');
       await page.locator('#search').fill('');
       await page.locator('#routes-more').click();
-      assert.equal(await page.locator('#route-list .route-card').count(),133);
+      await page.waitForFunction(count=>document.querySelectorAll('#route-list .route-card').length===count,atlas.paths.length);
       await page.locator('[data-route="python_language:path:13"]').click();
       assert.match(await page.locator('#route-detail').textContent(),/Unresolved source segment/);
       assert.equal(await page.locator('#route-explore').count(),0);
       await page.locator('#route-next').click();
       await page.keyboard.press('Escape');
-      if (await page.locator('#clear-focus').count()) await page.locator('#clear-focus').click();
+      await page.locator('#reset-map').click();
       await page.locator('[data-start="os"]').click();
+      await page.locator('#map-preview .detail-status.ready').waitFor();
       const rich=page.locator('[data-relation-id="operating_system:rich_semantic_relationships:0"]');
       assert.match(await rich.textContent(),/Conditions/);
       await page.locator('#explorer').scrollIntoViewIfNeeded();
-      const screenshot='docs/qa/integration-'+(width===1440?'desktop':width===390?'mobile':'narrow')+'.png';
-      await page.screenshot({path:path.join(root,screenshot)});
+      const screenshot='integration-'+(width===1440?'desktop':width===390?'mobile':'narrow')+'.png';
+      await page.screenshot({path:path.join(output,screenshot)});
       runs.push({width,loadMs,entryTimings,screenshot,noHorizontalOverflow:true});
       await page.close();
     }
     assert.deepEqual(errors,[]);
-    checks.push('All ten domains and 133 paths','seven new/core entries per viewport','all incident edge IDs equal atlas and inspector after select, emphasis, unrelated filter and reselect','connection search, edge inspection, context toggle, fit, canvas label picking and Back','rich metadata','prose-only path safely unresolved','exact Python search','no page errors or overflow');
-    const assetRoot='/home/openclaw/.openclaw/cache/control-ui-assets'; let bundle;
-    for(const dir of fs.readdirSync(assetRoot)){const assets=path.join(assetRoot,dir,'assets');if(!fs.existsSync(assets))continue;const file=fs.readdirSync(assets).find(f=>f.startsWith('mermaid.min-')&&f.endsWith('.js'));if(file){bundle=path.join(assets,file);break;}}
-    assert.ok(bundle);
-    const renderPage=await browser.newPage();await renderPage.setContent('<html><body></body></html>');await renderPage.addScriptTag({path:bundle});
-    const graph=fs.readFileSync(path.join(root,'docs/data-integration.mmd'),'utf8');
-    const rendered=await renderPage.evaluate(async graph=>{mermaid.initialize({startOnLoad:false,securityLevel:'strict'});await mermaid.parse(graph);return (await mermaid.render('dataIntegration',graph)).svg;},graph);
-    fs.writeFileSync(path.join(root,'docs/integration-graph.svg'),rendered);await renderPage.close();
-    const result={attribution:'Pimp My Skill · SolutionsAsService · https://github.com/SolutionsAsService',date:'2026-10-07',browser:await browser.version(),checks,errors,runs,mermaid:{parsed:true,rendered:true,svgBytes:Buffer.byteLength(rendered)}};
-    fs.writeFileSync(path.join(root,'docs/integration-browser.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));
+    checks.push('All '+atlas.documents.length+' source domains and '+atlas.paths.length+' paths','seven entries per viewport','incident edges match source archive','connection search, source select, emphasis, context, fit, canvas click and Back','rich metadata','unresolved path preserved','no page errors or horizontal overflow');
+    const result={status:'passed',date:new Date().toISOString(),browser:await browser.version(),checks,errors,runs};
+    fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));
+  } catch (error) {
+    fs.writeFileSync(path.join(output,'report.json'),JSON.stringify({status:'failed',date:new Date().toISOString(),error:error.message,checks,errors,runs},null,2));
+    throw error;
   } finally {await browser.close();}
-})().catch(error=>{console.error(error);process.exitCode=1;});
+})().catch(error=>{
+  fs.writeFileSync(path.join(output,'report.json'),JSON.stringify({status:'failed',date:new Date().toISOString(),error:error.message},null,2));
+  console.error(error);process.exitCode=1;
+});

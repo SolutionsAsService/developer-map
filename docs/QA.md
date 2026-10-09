@@ -1,3 +1,22 @@
+# October 9, 2026 — continuation audit (baseline cf27415690d4c4cca38bd7f3336f3d2be46202f1)
+
+This section supersedes historical counts and environment claims below.
+
+- Clean clone of actual default branch main; no mainths branch. No pre-existing user edits.
+- npm ci: exit 0; 43 dependencies installed, 0 reported vulnerabilities; no new dependency.
+- Baseline suite: 50/50 passed in one run (262.9 s). Final full suite: **54/54 passed**, zero failed/skipped, in 300.6 s. Final dead-handler removal is covered by a separate **19/19 interface rerun** (104.1 s). Final text-only intro corrections and smoke parsing guard passed the subsequent exact local smoke.
+- npm run build and node scripts/integration-manifest.mjs: exit 0. All original and derived data plus integration manifest remain byte-identical to baseline; no fabricated graph links or altered source records.
+- Syntax: app/network/details/map-key and both QA runners passed node --check; git diff --check passed. No separate lint or typecheck is configured. Raw command evidence is retained under docs/qa/current/.
+- Targeted exact-edge/state/focus regressions: 3/3 passed after correcting a test's unsupported direct access to script lexical state; tests now observe renderer state/DOM.
+- Local HTTP smoke: 156 resources pass with --exact; 37 original source downloads, 7,908 canonical records, 8,623 edges and 111 SHA-256/size-verified detail shards. Scripts, CSS, HTML, overview and manifest included.
+- Existing hosted site at https://developer-map.shadw.app/: HTTP/MIME/all-shard smoke **passed** for 156 resources. Initial faster run hit HTTP 429; runner now paces remote batches and honors bounded Retry-After, and the paced run passed. This verifies the old deployed revision, NOT publication of this change.
+- Before editing, hosted src/app.js SHA-256 matched cf27415: 84bb596519b604be53552a5f9ab1205f2521ea539fae2c40597c95fad31a78d2. No stale-deployment assertion is made at baseline.
+- Browser tool open failed: “No supported browser found (Chrome/Brave/Edge/Chromium on macOS, Linux, or Windows).” No browser was installed, no navigation policy bypass attempted. Real rendering, screenshots, mobile usability, assistive technology and console-error absence remain UNVERIFIED.
+- The old optional browser runner had obsolete path counts, invisible topic-chip clicks, a removed clear-focus selector, fixed machine paths and fixed evidence date. Updated to current controls/dynamic totals, explicit approved browser path and separate current-run output; syntax checked, not executed.
+- GitHub identity tool: credential unavailable and git author unset. Actual git push --dry-run origin HEAD:main failed exit 128: “could not read Username for 'https://github.com': No such device or address.” No push or new deployment is claimed. No provider/workflow configuration was found; no paid service or deployment resource was provisioned.
+
+---
+
 # October 9, 2026 expansion verification
 
 - Baseline: live main 3dec97f1cf764ddd3ea12672978f889d2b29feda; GitHub identity SolutionsAsService via existing gh authentication.

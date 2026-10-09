@@ -87,3 +87,25 @@ test('semantic facets do not conflate implementations, languages, runtimes, spec
  for(const [predicate,kind] of Object.entries({written_in:'implementation-language',implemented_in:'implementation-language',uses_language:'language-use',runs_on:'runtime',implements_spec:'specification',compiles_to:'compilation',library_of:'library',depends_on:'dependency',related_to:'other',reference_implementation_of:'implementation-of',implements_incremental_work_for:'other'}))assert.equal(relationKind(predicate),kind,predicate);
  const edges=atlas.edges.filter(e=>e.curated);assert.ok(!edges.some(e=>e.source==='python'&&e.relation==='written_in'));assert.ok(!edges.some(e=>e.source==='javascript'&&e.relation==='written_in'));
 });
+
+
+test('exact edge deep link remains synchronized through delayed evidence and dataset changes', async () => {
+ let release;const gate=new Promise(resolve=>release=resolve);
+ const id='editorial:next-css';
+ const {w,d}=await mount({url:'https://example.test/?concept=Next.js.json:nextjs&edge='+id,delay:url=>url.includes('details/')?gate:undefined});
+ assert.equal(d.querySelector('canvas').dataset.activeEdge,id);
+ const filter=d.querySelector('#source-select');filter.value='docker';filter.dispatchEvent(new w.Event('change'));
+ assert.equal(d.querySelector('canvas').dataset.activeEdge,id);
+ assert.equal(d.querySelector('canvas').dataset.edgeEmphasized,'true');
+ const input=d.querySelector('#connection-search');input.value='CSS';input.dispatchEvent(new w.Event('input'));input.focus();input.setSelectionRange(1,2);
+ d.querySelector('#connection-results').scrollTop=110;
+ release();await until(()=>d.querySelector('.detail-status.ready'));
+ assert.equal(d.querySelector('canvas').dataset.activeEdge,id);
+ assert.equal(new URL(w.location.href).searchParams.get('edge'),id);
+ assert.equal(d.activeElement.id,'connection-search');
+ assert.equal(d.activeElement.value,'CSS');assert.equal(d.activeElement.selectionStart,1);
+ assert.equal(d.querySelector('#connection-results').scrollTop,110);
+ assert.match(d.querySelector('.dynamic-proof').textContent,/supports_styling_with/);
+ assert.ok(d.querySelector('.dynamic-proof a[href="https://nextjs.org/docs/app/getting-started/css"]'));
+ w.close();
+});

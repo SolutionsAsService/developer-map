@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build-atlas.mjs",
-    "test": "node --test --test-concurrency=1"
+    "test": "node --test --test-concurrency=1",
+    "check:syntax": "node --check src/app.js && node --check src/network.js && node --check src/details.js && node --check src/map-key.js",
+    "smoke:deploy": "node scripts/smoke-deploy.mjs"
   },
   "devDependencies": {
     "d3-force": "^3.0.0",
