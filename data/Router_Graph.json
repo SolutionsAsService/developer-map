@@ -1,0 +1,5481 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "router_full_detail_semantic_knowledge_graph",
+  "topic": {
+    "id": "router",
+    "label": "Router (computing)",
+    "definition": "A networking device that forwards packets between networks using Layer-3 addressing and routing/forwarding information.",
+    "scope": [
+      "Layer 3 forwarding",
+      "control plane and forwarding plane",
+      "routing table and FIB",
+      "static/dynamic/default routes",
+      "policy routing and redistribution",
+      "hardware and software implementations",
+      "network topology and ISP roles",
+      "BGP/MPLS",
+      "congestion and QoS",
+      "security features",
+      "integrated home gateways",
+      "history",
+      "source provenance and synthesis boundaries"
+    ]
+  },
+  "source": {
+    "filename": "Pasted text(20261009-162450).txt",
+    "source_type": "user_supplied_article_text",
+    "line_count": 243,
+    "authority": "User-supplied article is authoritative for source-derived claims.",
+    "external_research_used": false,
+    "limitations": [
+      "The article does not deeply specify longest-prefix-match implementation, MTU/fragmentation mechanics, specific routing algorithms, ASIC microarchitecture, or full security configuration.",
+      "Relationships marked provenance=synthesis are explanatory engineering context, not direct source claims."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "router",
+      "label": "Router",
+      "type": "device",
+      "description": "Computer/networking device forwarding packets between networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        57,
+        64
+      ]
+    },
+    {
+      "id": "packet",
+      "label": "Data packet",
+      "type": "data_object",
+      "description": "Unit of data forwarded hop by hop through an internetwork.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        60
+      ]
+    },
+    {
+      "id": "ip_packet",
+      "label": "IP packet",
+      "type": "data_object",
+      "description": "Network-layer packet whose destination IP guides forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "ip_header",
+      "label": "IP header",
+      "type": "structure",
+      "description": "Header containing destination address and other forwarding-relevant fields.",
+      "provenance": "source",
+      "source_line_ranges": [
+        60,
+        135
+      ]
+    },
+    {
+      "id": "destination_ip",
+      "label": "Destination IP address",
+      "type": "field",
+      "description": "Primary address matched against route/FIB entries.",
+      "provenance": "source",
+      "source_line_ranges": [
+        60,
+        135
+      ]
+    },
+    {
+      "id": "payload",
+      "label": "Packet payload",
+      "type": "data",
+      "description": "Content beyond the network-layer header; normally not inspected for pure IP forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "network",
+      "label": "Computer network",
+      "type": "system",
+      "description": "Connected devices and links; routers interconnect distinct IP networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        60
+      ]
+    },
+    {
+      "id": "internetwork",
+      "label": "Internetwork",
+      "type": "system",
+      "description": "Multiple interconnected networks across which packets traverse routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        60
+      ]
+    },
+    {
+      "id": "internet",
+      "label": "Internet",
+      "type": "system",
+      "description": "Global internetwork whose traffic is directed by routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        60,
+        125
+      ]
+    },
+    {
+      "id": "interface",
+      "label": "Network interface",
+      "type": "hardware_interface",
+      "description": "Physical or logical connection used to receive/transmit packets.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        93
+      ]
+    },
+    {
+      "id": "ingress",
+      "label": "Ingress processing",
+      "type": "process",
+      "description": "Reception and initial parsing of an incoming packet.",
+      "provenance": "source",
+      "source_line_ranges": [
+        87,
+        135
+      ]
+    },
+    {
+      "id": "egress",
+      "label": "Egress processing",
+      "type": "process",
+      "description": "Transmission through selected outgoing interface.",
+      "provenance": "source",
+      "source_line_ranges": [
+        87,
+        135
+      ]
+    },
+    {
+      "id": "incoming_interface",
+      "label": "Incoming interface",
+      "type": "hardware_interface",
+      "description": "Interface on which a packet arrives.",
+      "provenance": "source",
+      "source_line_ranges": [
+        87,
+        135
+      ]
+    },
+    {
+      "id": "outgoing_interface",
+      "label": "Outgoing interface",
+      "type": "hardware_interface",
+      "description": "Interface selected for the next transmission.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        87,
+        135
+      ]
+    },
+    {
+      "id": "physical_medium",
+      "label": "Physical transmission medium",
+      "type": "hardware",
+      "description": "Copper, fiber-optic, or wireless medium attached through interfaces.",
+      "provenance": "source",
+      "source_line_ranges": [
+        92,
+        93
+      ]
+    },
+    {
+      "id": "copper",
+      "label": "Copper cable/link",
+      "type": "physical_link",
+      "description": "Physical medium supported by router interfaces.",
+      "provenance": "source",
+      "source_line_ranges": [
+        92,
+        93
+      ]
+    },
+    {
+      "id": "fiber",
+      "label": "Fiber-optic link",
+      "type": "physical_link",
+      "description": "High-capacity optical medium used by backbone routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        62,
+        92
+      ]
+    },
+    {
+      "id": "wireless_link",
+      "label": "Wireless link",
+      "type": "physical_link",
+      "description": "Wireless transmission supported by interfaces and Wi-Fi routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        93,
+        131
+      ]
+    },
+    {
+      "id": "ethernet",
+      "label": "Ethernet",
+      "type": "technology",
+      "description": "Common wired LAN technology for home/office router connections.",
+      "provenance": "source",
+      "source_line_ranges": [
+        57,
+        90,
+        131
+      ]
+    },
+    {
+      "id": "dsl",
+      "label": "Digital Subscriber Line (DSL)",
+      "type": "technology",
+      "description": "Broadband access technology used by some home routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        90,
+        131
+      ]
+    },
+    {
+      "id": "t1",
+      "label": "T1 serial connection",
+      "type": "technology",
+      "description": "Legacy WAN connection accessible through data service units and serial ports.",
+      "provenance": "source",
+      "source_line_ranges": [
+        97
+      ]
+    },
+    {
+      "id": "routing",
+      "label": "Routing",
+      "type": "process",
+      "description": "Computing/maintaining paths toward destination networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        81,
+        86,
+        135
+      ]
+    },
+    {
+      "id": "forwarding",
+      "label": "Packet forwarding",
+      "type": "process",
+      "description": "Per-packet action that directs an incoming packet to an outgoing interface.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        87,
+        135
+      ]
+    },
+    {
+      "id": "route_table",
+      "label": "Routing table",
+      "type": "data_structure",
+      "description": "Routes from static configuration, routing protocols, and other sources.",
+      "provenance": "source",
+      "source_line_ranges": [
+        81,
+        86,
+        137
+      ]
+    },
+    {
+      "id": "fib",
+      "label": "Forwarding Information Base (FIB)",
+      "type": "data_structure",
+      "description": "Forwarding-optimized table built from routing information and used by forwarding plane.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "control_plane",
+      "label": "Control plane",
+      "type": "subsystem",
+      "description": "Maintains route information and builds the FIB.",
+      "provenance": "source",
+      "source_line_ranges": [
+        84,
+        86
+      ]
+    },
+    {
+      "id": "forwarding_plane",
+      "label": "Forwarding plane",
+      "type": "subsystem",
+      "description": "Reads packet headers and forwards using FIB entries.",
+      "provenance": "source",
+      "source_line_ranges": [
+        84,
+        87
+      ]
+    },
+    {
+      "id": "routing_protocol",
+      "label": "Routing protocol",
+      "type": "protocol",
+      "description": "Mechanism routers use to exchange destination/route information.",
+      "provenance": "source",
+      "source_line_ranges": [
+        81,
+        86
+      ]
+    },
+    {
+      "id": "static_route",
+      "label": "Static route",
+      "type": "configuration",
+      "description": "Manually configured route.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "id": "dynamic_route",
+      "label": "Dynamic route",
+      "type": "configuration",
+      "description": "Route learned using a routing protocol.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "id": "default_route",
+      "label": "Default route",
+      "type": "configuration",
+      "description": "Route used when no more-specific destination entry is available.",
+      "provenance": "source",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "id": "dhcp",
+      "label": "Dynamic Host Configuration Protocol (DHCP)",
+      "type": "protocol",
+      "description": "May provide a default route; a router may also act as DHCP client/server.",
+      "provenance": "source",
+      "source_line_ranges": [
+        137,
+        158
+      ]
+    },
+    {
+      "id": "route_policy",
+      "label": "Routing policy",
+      "type": "policy",
+      "description": "Administrative rules affecting route selection/forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        60,
+        145
+      ]
+    },
+    {
+      "id": "policy_routing",
+      "label": "Policy-based routing",
+      "type": "mechanism",
+      "description": "Special rules that override routing-table-derived forwarding decisions.",
+      "provenance": "source",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "id": "route_lookup",
+      "label": "Route lookup / best match",
+      "type": "algorithm",
+      "description": "Matches destination IP against route entries to select a route.",
+      "provenance": "source",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "next_hop",
+      "label": "Next hop",
+      "type": "concept",
+      "description": "Next router/network along the packet's path.",
+      "provenance": "source",
+      "source_line_ranges": [
+        60
+      ]
+    },
+    {
+      "id": "layer2",
+      "label": "OSI Layer 2 / Data Link",
+      "type": "network_layer",
+      "description": "Layer used for outgoing frame encapsulation.",
+      "provenance": "source",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "layer3",
+      "label": "OSI Layer 3 / Network",
+      "type": "network_layer",
+      "description": "Layer at which destination IP guides router forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        135
+      ]
+    },
+    {
+      "id": "frame",
+      "label": "Data-link frame",
+      "type": "data_object",
+      "description": "Layer-2 container used to transmit an IP packet on a link.",
+      "provenance": "source",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "encapsulation",
+      "label": "Outgoing frame encapsulation",
+      "type": "process",
+      "description": "Places packet in the data-link frame appropriate to egress interface.",
+      "provenance": "source",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "subnet",
+      "label": "IP subnet",
+      "type": "network",
+      "description": "Logical network with a unique network prefix.",
+      "provenance": "source",
+      "source_line_ranges": [
+        93
+      ]
+    },
+    {
+      "id": "prefix",
+      "label": "Network prefix",
+      "type": "addressing",
+      "description": "Prefix identifying an IP network or route destination range.",
+      "provenance": "source",
+      "source_line_ranges": [
+        93,
+        135
+      ]
+    },
+    {
+      "id": "lan",
+      "label": "Local area network (LAN)",
+      "type": "network",
+      "description": "Local network connected to external networks by a router/gateway.",
+      "provenance": "source",
+      "source_line_ranges": [
+        113,
+        131
+      ]
+    },
+    {
+      "id": "wan",
+      "label": "Wide area network (WAN)",
+      "type": "network",
+      "description": "Wide-area network that routers connect/route across.",
+      "provenance": "source",
+      "source_line_ranges": [
+        106,
+        113
+      ]
+    },
+    {
+      "id": "isp",
+      "label": "Internet service provider (ISP)",
+      "type": "organization",
+      "description": "Operates networks and routers connecting customers, peers, and transit.",
+      "provenance": "source",
+      "source_line_ranges": [
+        95,
+        119,
+        125
+      ]
+    },
+    {
+      "id": "as",
+      "label": "Autonomous System (AS)",
+      "type": "network_domain",
+      "description": "Routing domain with internal routing and inter-domain peering.",
+      "provenance": "source",
+      "source_line_ranges": [
+        123,
+        124
+      ]
+    },
+    {
+      "id": "bgp",
+      "label": "Border Gateway Protocol (BGP)",
+      "type": "protocol",
+      "description": "Used by ISPs and major enterprises to exchange routing information.",
+      "provenance": "source",
+      "source_line_ranges": [
+        117,
+        119,
+        124
+      ]
+    },
+    {
+      "id": "ebgp",
+      "label": "External BGP (eBGP)",
+      "type": "protocol",
+      "description": "BGP peering between distinct routing domains or provider/customer edges.",
+      "provenance": "source",
+      "source_line_ranges": [
+        119,
+        122
+      ]
+    },
+    {
+      "id": "ibgp",
+      "label": "Internal BGP (iBGP)",
+      "type": "protocol",
+      "description": "BGP used among routers within an ISP autonomous system.",
+      "provenance": "source",
+      "source_line_ranges": [
+        124
+      ]
+    },
+    {
+      "id": "mpls",
+      "label": "Multiprotocol Label Switching (MPLS)",
+      "type": "technology",
+      "description": "Label-switched provider network technology.",
+      "provenance": "source",
+      "source_line_ranges": [
+        120,
+        125
+      ]
+    },
+    {
+      "id": "lsp",
+      "label": "Label-switched path",
+      "type": "network_path",
+      "description": "MPLS path between provider-edge routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        120
+      ]
+    },
+    {
+      "id": "edge_router",
+      "label": "Edge router",
+      "type": "router_role",
+      "description": "ISP-boundary router peering with upstream transit, IXPs, or private peers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "provider_router",
+      "label": "Provider router (P)",
+      "type": "router_role",
+      "description": "MPLS transit router carrying traffic between provider-edge routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        120
+      ]
+    },
+    {
+      "id": "provider_edge",
+      "label": "Provider edge router (PE)",
+      "type": "router_role",
+      "description": "Provider-side access router connecting CE routers and offering VPN services.",
+      "provenance": "source",
+      "source_line_ranges": [
+        121
+      ]
+    },
+    {
+      "id": "customer_edge",
+      "label": "Customer edge router (CE)",
+      "type": "router_role",
+      "description": "Customer-side router connected to a provider-edge router.",
+      "provenance": "source",
+      "source_line_ranges": [
+        122
+      ]
+    },
+    {
+      "id": "core_router",
+      "label": "Core router",
+      "type": "router_role",
+      "description": "Backbone router carrying traffic between edge routers or distribution tiers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        108,
+        123,
+        125
+      ]
+    },
+    {
+      "id": "distribution_router",
+      "label": "Distribution router",
+      "type": "router_role",
+      "description": "Aggregates access traffic and may enforce WAN QoS.",
+      "provenance": "source",
+      "source_line_ranges": [
+        106
+      ]
+    },
+    {
+      "id": "access_router",
+      "label": "Access router",
+      "type": "router_role",
+      "description": "Customer/site router optimized for low-cost connectivity.",
+      "provenance": "source",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "id": "border_router",
+      "label": "Border/gateway router",
+      "type": "router_role",
+      "description": "Connects LAN to Internet/WAN.",
+      "provenance": "source",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "interior_router",
+      "label": "Interior router",
+      "type": "router_role",
+      "description": "Router operating inside an organization's network.",
+      "provenance": "source",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "exterior_router",
+      "label": "Exterior router",
+      "type": "router_role",
+      "description": "Router operating in an external/backbone routing domain.",
+      "provenance": "source",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "id": "switch",
+      "label": "Network switch",
+      "type": "device",
+      "description": "Primarily bridges frames at Layer 2 using MAC addresses.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        100
+      ]
+    },
+    {
+      "id": "multilayer_switch",
+      "label": "Multilayer switch",
+      "type": "device",
+      "description": "Switch with Layer-3 routing capability and potentially higher-layer functions.",
+      "provenance": "source",
+      "source_line_ranges": [
+        58,
+        128
+      ]
+    },
+    {
+      "id": "wireless_router",
+      "label": "Wi-Fi router",
+      "type": "combined_device",
+      "description": "Combines router, switch, and wireless access point; may be part of a residential gateway.",
+      "provenance": "source",
+      "source_line_ranges": [
+        57,
+        129,
+        131
+      ]
+    },
+    {
+      "id": "access_point",
+      "label": "Wireless access point",
+      "type": "device",
+      "description": "Provides Wi-Fi access and is often integrated in home routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "id": "modem",
+      "label": "Modem / broadband modem",
+      "type": "device",
+      "description": "Interfaces with access technology used to connect to ISP.",
+      "provenance": "source",
+      "source_line_ranges": [
+        57,
+        90,
+        131,
+        150
+      ]
+    },
+    {
+      "id": "residential_gateway",
+      "label": "Residential gateway",
+      "type": "device",
+      "description": "Combined home networking device that may integrate router, switch, AP, and modem.",
+      "provenance": "source",
+      "source_line_ranges": [
+        57,
+        131,
+        152
+      ]
+    },
+    {
+      "id": "nat",
+      "label": "Network Address Translation (NAT)",
+      "type": "mechanism",
+      "description": "Maps addressing/connection information, commonly between private IPv4 and public IPv4.",
+      "provenance": "source",
+      "source_line_ranges": [
+        110,
+        126
+      ]
+    },
+    {
+      "id": "port_forwarding",
+      "label": "Port forwarding",
+      "type": "mechanism",
+      "description": "Maps selected inbound external connections to an internal host.",
+      "provenance": "source",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "firewall",
+      "label": "Firewall",
+      "type": "security_function",
+      "description": "Security filtering may be integrated into router or provided separately.",
+      "provenance": "source",
+      "source_line_ranges": [
+        110
+      ]
+    },
+    {
+      "id": "vpn",
+      "label": "Virtual private network (VPN)",
+      "type": "network_service",
+      "description": "Network isolation/secure connectivity that may be handled by router or separate equipment.",
+      "provenance": "source",
+      "source_line_ranges": [
+        110,
+        121
+      ]
+    },
+    {
+      "id": "ipsec",
+      "label": "IPsec",
+      "type": "security_protocol",
+      "description": "Network-layer security function that may be hardware-accelerated.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79,
+        110
+      ]
+    },
+    {
+      "id": "end_to_end",
+      "label": "End-to-end principle",
+      "type": "architecture_principle",
+      "description": "Reliable delivery is left to endpoint hosts rather than guaranteed by connectionless gateways.",
+      "provenance": "source",
+      "source_line_ranges": [
+        71,
+        73,
+        175
+      ]
+    },
+    {
+      "id": "host",
+      "label": "Host computer",
+      "type": "device",
+      "description": "Endpoint that originates/consumes data and implements reliability when needed.",
+      "provenance": "source",
+      "source_line_ranges": [
+        71,
+        175
+      ]
+    },
+    {
+      "id": "connectionless",
+      "label": "Connectionless forwarding",
+      "type": "property",
+      "description": "Basic router forwarding does not guarantee delivery and minimizes per-packet history.",
+      "provenance": "source",
+      "source_line_ranges": [
+        71,
+        135
+      ]
+    },
+    {
+      "id": "reliability",
+      "label": "Reliable delivery",
+      "type": "property",
+      "description": "Delivery guarantee/recovery is not supplied by basic router forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        71,
+        175
+      ]
+    },
+    {
+      "id": "qos",
+      "label": "Quality of Service (QoS)",
+      "type": "mechanism",
+      "description": "Classifies/prioritizes packets; important for latency-sensitive VoIP.",
+      "provenance": "source",
+      "source_line_ranges": [
+        106,
+        143
+      ]
+    },
+    {
+      "id": "traffic_classification",
+      "label": "Traffic classification",
+      "type": "process",
+      "description": "Categorizes packets to determine processing priority.",
+      "provenance": "source",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "congestion",
+      "label": "Router congestion",
+      "type": "condition",
+      "description": "Packets arrive faster than router can process/transmit them.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "buffer",
+      "label": "Packet buffer",
+      "type": "hardware_resource",
+      "description": "Temporary packet storage used while waiting for processing or egress.",
+      "provenance": "source",
+      "source_line_ranges": [
+        104,
+        141
+      ]
+    },
+    {
+      "id": "packet_queue",
+      "label": "Packet queue",
+      "type": "data_structure",
+      "description": "Packets waiting for processing/transmission.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141,
+        143
+      ]
+    },
+    {
+      "id": "tail_drop",
+      "label": "Tail drop",
+      "type": "queue_management",
+      "description": "Drops new packets when buffer space is exhausted.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "red",
+      "label": "Random Early Detection (RED)",
+      "type": "queue_management",
+      "description": "Probabilistically drops packets when queue passes configured thresholds.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "wred",
+      "label": "Weighted RED (WRED)",
+      "type": "queue_management",
+      "description": "RED variant that can drop more readily depending on traffic type.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "packet_loss",
+      "label": "Packet loss",
+      "type": "failure_mode",
+      "description": "Packets are dropped, including by queue management under congestion.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "latency",
+      "label": "Latency",
+      "type": "performance_metric",
+      "description": "Delay from processing, scheduling, and queueing.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141,
+        143
+      ]
+    },
+    {
+      "id": "voip",
+      "label": "Voice over IP (VoIP)",
+      "type": "application",
+      "description": "Latency-sensitive voice traffic.",
+      "provenance": "source",
+      "source_line_ranges": [
+        127,
+        143
+      ]
+    },
+    {
+      "id": "asic",
+      "label": "Application-specific integrated circuit (ASIC)",
+      "type": "hardware",
+      "description": "Specialized silicon accelerating forwarding, filtering, and firewall functions.",
+      "provenance": "source",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ]
+    },
+    {
+      "id": "cpu",
+      "label": "CPU / general-purpose processor",
+      "type": "hardware",
+      "description": "Runs software forwarding and handles special packets/functions.",
+      "provenance": "source",
+      "source_line_ranges": [
+        64,
+        147
+      ]
+    },
+    {
+      "id": "network_processor",
+      "label": "Network processor",
+      "type": "hardware",
+      "description": "Specialized processor used in high-speed routing systems.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "ram",
+      "label": "Router memory / RAM",
+      "type": "hardware_resource",
+      "description": "Memory used for route state, packet buffering, and processing; distribution routers may have substantial memory.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        106,
+        141
+      ]
+    },
+    {
+      "id": "line_card",
+      "label": "Line card / interface module",
+      "type": "hardware",
+      "description": "Modular interface component in carrier routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "power_supply",
+      "label": "Power supply",
+      "type": "hardware",
+      "description": "Carrier-class routers may have redundant power modules.",
+      "provenance": "source",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "fan_module",
+      "label": "Cooling fan module",
+      "type": "hardware",
+      "description": "Carrier-class routers may have redundant fan modules.",
+      "provenance": "source",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "fast_path",
+      "label": "Hardware fast path",
+      "type": "process",
+      "description": "Common forwarding functions accelerated by ASIC/network processor.",
+      "provenance": "source",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ]
+    },
+    {
+      "id": "slow_path",
+      "label": "Software/CPU exception path",
+      "type": "process",
+      "description": "Special packets or functions requiring attention may be handled by CPU.",
+      "provenance": "source",
+      "source_line_ranges": [
+        147
+      ]
+    },
+    {
+      "id": "packet_header_parse",
+      "label": "Packet-header parsing",
+      "type": "process",
+      "description": "Reads destination IP and optional QoS hints.",
+      "provenance": "source",
+      "source_line_ranges": [
+        60,
+        87,
+        135
+      ]
+    },
+    {
+      "id": "route_selection",
+      "label": "Route selection",
+      "type": "process",
+      "description": "Chooses the applicable route using destination, route entries, and policy.",
+      "provenance": "source",
+      "source_line_ranges": [
+        60,
+        135,
+        145
+      ]
+    },
+    {
+      "id": "packet_counter",
+      "label": "Route/forwarding counter",
+      "type": "telemetry",
+      "description": "Optional counter associated with route entry for statistical data.",
+      "provenance": "source",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "id": "network_security",
+      "label": "Network security strategy",
+      "type": "security_concept",
+      "description": "Security planning for local networks connected to external networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        110
+      ]
+    },
+    {
+      "id": "security_zone",
+      "label": "Security zone",
+      "type": "network_security",
+      "description": "Logical trust boundary; routing and filtering between zones are distinct functions.",
+      "provenance": "source",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "id": "internet_exchange",
+      "label": "Internet exchange point (IXP)",
+      "type": "infrastructure",
+      "description": "Peering location/fabric used by networks/ISPs.",
+      "provenance": "source",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "pni",
+      "label": "Private Network Interconnect (PNI)",
+      "type": "infrastructure",
+      "description": "Private peering connection between networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "transit_provider",
+      "label": "Upstream IP transit provider",
+      "type": "organization_role",
+      "description": "Provider offering reachability beyond an ISP's own routes/peers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "dfz",
+      "label": "Default-free zone (DFZ)",
+      "type": "routing_concept",
+      "description": "Internet routing context mentioned alongside distributed backbone systems.",
+      "provenance": "source",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "id": "l2vpn",
+      "label": "Layer 2 VPN",
+      "type": "network_service",
+      "description": "VPN service provided by MPLS provider-edge routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        121,
+        122
+      ]
+    },
+    {
+      "id": "l3vpn",
+      "label": "Layer 3 VPN",
+      "type": "network_service",
+      "description": "Routed VPN service where CE/PE may exchange routes.",
+      "provenance": "source",
+      "source_line_ranges": [
+        122,
+        125
+      ]
+    },
+    {
+      "id": "voice_gateway",
+      "label": "Voice gateway / access server",
+      "type": "device",
+      "description": "Gateway processing voice, data, video, and fax traffic.",
+      "provenance": "source",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "label": "Hierarchical internetworking model",
+      "type": "architecture",
+      "description": "Enterprise model with access, distribution, and core layers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        102,
+        104,
+        106,
+        108
+      ]
+    },
+    {
+      "id": "router_os",
+      "label": "Router operating system",
+      "type": "software",
+      "description": "Software platform implementing routing, forwarding coordination, and management.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "type": "software",
+      "description": "Used for software routing and alternative firmware.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79,
+        104
+      ]
+    },
+    {
+      "id": "unix",
+      "label": "Unix",
+      "type": "software",
+      "description": "Base for some router operating systems.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "cisco_ios",
+      "label": "Cisco IOS",
+      "type": "software",
+      "description": "Router operating system described as independently designed.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "junos",
+      "label": "Junos",
+      "type": "software",
+      "description": "Router OS described as extensively modified Unix software.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "nxos",
+      "label": "NX-OS",
+      "type": "software",
+      "description": "Router OS described as extensively modified Unix software.",
+      "provenance": "source",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "openwrt",
+      "label": "OpenWrt",
+      "type": "software",
+      "description": "Linux-based alternative firmware for some SOHO routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "id": "tomato",
+      "label": "Tomato firmware",
+      "type": "software",
+      "description": "Alternative Linux-based firmware named in source.",
+      "provenance": "source",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "id": "ddwrt",
+      "label": "DD-WRT",
+      "type": "software",
+      "description": "Alternative Linux-based firmware named in source.",
+      "provenance": "source",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "id": "ip",
+      "label": "Internet Protocol (IP)",
+      "type": "protocol",
+      "description": "Network-layer protocol whose destination address guides forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77,
+        135
+      ]
+    },
+    {
+      "id": "ipv4",
+      "label": "IPv4",
+      "type": "protocol",
+      "description": "IP version discussed in NAT/port forwarding and legacy networking.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77,
+        126
+      ]
+    },
+    {
+      "id": "ipv6",
+      "label": "IPv6",
+      "type": "protocol",
+      "description": "Modern routers commonly handle IPv4 and IPv6.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "mtu",
+      "label": "Maximum Transmission Unit (MTU)",
+      "type": "network_parameter",
+      "description": "Relevant link constraint not explained in detail in the source.",
+      "provenance": "source"
+    },
+    {
+      "id": "route_metric",
+      "label": "Route metric/attribute",
+      "type": "routing_attribute",
+      "description": "Protocol-specific route attribute; article does not enumerate exact metrics.",
+      "provenance": "source",
+      "source_line_ranges": [
+        81,
+        137
+      ]
+    },
+    {
+      "id": "routing_redistribution",
+      "label": "Route redistribution",
+      "type": "mechanism",
+      "description": "Selective sharing of routes between multiple routing protocols on one router.",
+      "provenance": "source",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "internet_backbone",
+      "label": "Internet backbone/core",
+      "type": "network_region",
+      "description": "Distributed high-capacity interconnection of major ISP networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        62,
+        125
+      ]
+    },
+    {
+      "id": "packet_service_rate",
+      "label": "Packet processing/transmission rate",
+      "type": "performance_metric",
+      "description": "Router service rate; congestion occurs when arrivals exceed processing/transmission capacity.",
+      "provenance": "source",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "packet_scheduling",
+      "label": "Packet scheduling",
+      "type": "process",
+      "description": "Determines which queued packet is processed first, often according to QoS.",
+      "provenance": "source",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "gateway",
+      "label": "Gateway",
+      "type": "network_role",
+      "description": "Historical term for early routers and a role connecting networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        71,
+        113
+      ]
+    },
+    {
+      "id": "packet_switching",
+      "label": "Packet switching",
+      "type": "networking_method",
+      "description": "Network communication using packets forwarded through switching nodes.",
+      "provenance": "source",
+      "source_line_ranges": [
+        68,
+        70,
+        71
+      ]
+    },
+    {
+      "id": "npl_network",
+      "label": "NPL network",
+      "type": "network",
+      "description": "UK packet network associated with Donald Davies' interface-computer proposal.",
+      "provenance": "source",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "id": "imp",
+      "label": "Interface Message Processor (IMP)",
+      "type": "device",
+      "description": "Early ARPANET packet-switching interface computer with router-like functionality.",
+      "provenance": "source",
+      "source_line_ranges": [
+        68,
+        70
+      ]
+    },
+    {
+      "id": "arpanet",
+      "label": "ARPANET",
+      "type": "network",
+      "description": "Early packet network using IMPs beginning in 1969.",
+      "provenance": "source",
+      "source_line_ranges": [
+        68,
+        70,
+        73
+      ]
+    },
+    {
+      "id": "cyclades",
+      "label": "CYCLADES",
+      "type": "network",
+      "description": "Louis Pouzin's early datagram network program (1972–1973).",
+      "provenance": "source",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "id": "parc_packet",
+      "label": "PARC Universal Packet",
+      "type": "network_architecture",
+      "description": "Xerox PARC internetworking system associated with early Xerox routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "id": "darpa",
+      "label": "DARPA",
+      "type": "organization",
+      "description": "Program sponsor whose internetworking effort helped create TCP/IP.",
+      "provenance": "source",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "id": "bbn",
+      "label": "BBN",
+      "type": "organization",
+      "description": "Organization where Ginny Travers developed an early true IP router according to source.",
+      "provenance": "source",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "donald_davies",
+      "label": "Donald Davies",
+      "type": "person",
+      "description": "Proposed interface-computer/switching-node ideas for packet networks.",
+      "provenance": "source",
+      "source_line_ranges": [
+        70,
+        71
+      ]
+    },
+    {
+      "id": "wesley_clark",
+      "label": "Wesley Clark",
+      "type": "person",
+      "description": "Conceived a similar interface-computer idea for ARPANET.",
+      "provenance": "source",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "id": "louis_pouzin",
+      "label": "Louis Pouzin",
+      "type": "person",
+      "description": "Led the CYCLADES network program.",
+      "provenance": "source",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "id": "ginny_travers",
+      "label": "Ginny Travers",
+      "type": "person",
+      "description": "Credited by source with developing first true IP router at BBN in 1975–1976.",
+      "provenance": "source",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "mike_brecia",
+      "label": "Mike Brecia",
+      "type": "person",
+      "description": "Recognized with Ginny Travers and Bob Hinden for early IP routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "bob_hinden",
+      "label": "Bob Hinden",
+      "type": "person",
+      "description": "Recognized with Mike Brecia and Ginny Travers for early IP routers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "william_yeager",
+      "label": "William Yeager",
+      "type": "person",
+      "description": "Led Stanford's 1981 multiprotocol router program.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "noel_chiappa",
+      "label": "Noel Chiappa",
+      "type": "person",
+      "description": "Led MIT's 1981 multiprotocol router program.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "honeywell516",
+      "label": "Honeywell 516",
+      "type": "hardware_platform",
+      "description": "Platform used to build early interface computers.",
+      "provenance": "source",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "id": "pdp11",
+      "label": "PDP-11",
+      "type": "hardware_platform",
+      "description": "Platform used by early IP routers and multiprotocol router programs.",
+      "provenance": "source",
+      "source_line_ranges": [
+        75,
+        77
+      ]
+    },
+    {
+      "id": "tcpip",
+      "label": "TCP/IP architecture",
+      "type": "network_architecture",
+      "description": "Internet architecture emerging from DARPA internetworking work.",
+      "provenance": "source",
+      "source_line_ranges": [
+        73,
+        77
+      ]
+    },
+    {
+      "id": "multiprotocol",
+      "label": "Multiprotocol router",
+      "type": "device",
+      "description": "Early router that handled protocols beyond TCP/IP, including legacy protocols.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "apple_talk",
+      "label": "AppleTalk",
+      "type": "protocol",
+      "description": "Legacy protocol mentioned in early multiprotocol router context.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "decnet",
+      "label": "DECnet",
+      "type": "protocol",
+      "description": "Legacy protocol mentioned in early multiprotocol router context.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "ipx",
+      "label": "IPX",
+      "type": "protocol",
+      "description": "Legacy protocol mentioned in early multiprotocol router context.",
+      "provenance": "source",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "rfc4098",
+      "label": "RFC 4098",
+      "type": "standard",
+      "description": "Reference defining BGP router types/benchmarking terminology.",
+      "provenance": "source",
+      "source_line_ranges": [
+        117,
+        215
+      ]
+    },
+    {
+      "id": "rfc3654",
+      "label": "RFC 3654",
+      "type": "standard",
+      "description": "Requirements for separation of IP control and forwarding.",
+      "provenance": "source",
+      "source_line_ranges": [
+        198
+      ]
+    },
+    {
+      "id": "software_router",
+      "label": "Software-based router",
+      "type": "architecture",
+      "description": "Router implemented on general-purpose computer/CPU with routing software.",
+      "provenance": "source",
+      "source_line_ranges": [
+        64,
+        79
+      ]
+    },
+    {
+      "id": "wan_interface",
+      "label": "WAN interface",
+      "type": "hardware_interface",
+      "description": "Interface connecting router to WAN/upstream provider.",
+      "provenance": "source",
+      "source_line_ranges": [
+        106,
+        119
+      ]
+    },
+    {
+      "id": "lan_interface",
+      "label": "LAN interface",
+      "type": "hardware_interface",
+      "description": "Interface connecting router to local subnet/devices.",
+      "provenance": "source",
+      "source_line_ranges": [
+        90,
+        131
+      ]
+    },
+    {
+      "id": "public_ipv4",
+      "label": "Public IPv4 address",
+      "type": "addressing",
+      "description": "External IPv4 endpoint used in NAT/port-forwarding description.",
+      "provenance": "source",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "private_ipv4",
+      "label": "Private IPv4 address space",
+      "type": "addressing",
+      "description": "Internal IPv4 space behind NAT box.",
+      "provenance": "source",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "route_entry",
+      "label": "Route-table entry",
+      "type": "data_structure",
+      "description": "Route maps destination information to forwarding choice/interface.",
+      "provenance": "source",
+      "source_line_ranges": [
+        86,
+        135,
+        137
+      ]
+    },
+    {
+      "id": "management_plane",
+      "label": "Management plane",
+      "type": "subsystem",
+      "description": "Operational configuration/observation functions; explicit split from data forwarding is synthesis.",
+      "provenance": "source"
+    },
+    {
+      "id": "routing_algorithm",
+      "label": "Routing algorithm",
+      "type": "algorithm",
+      "description": "Algorithm used by routing protocol/route selection; specific algorithms are not detailed.",
+      "provenance": "source"
+    },
+    {
+      "id": "router_failure",
+      "label": "Router/link failure",
+      "type": "failure_mode",
+      "description": "Failure can interrupt a hop; recovery mechanics are not detailed by article.",
+      "provenance": "source"
+    },
+    {
+      "id": "software_security_debate",
+      "label": "Open-source security debate",
+      "type": "claim",
+      "description": "Source reports arguments for open-source router security, but does not establish a universal result.",
+      "provenance": "source",
+      "source_line_ranges": [
+        110,
+        212,
+        213
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "router",
+      "target": "network",
+      "relationship": "connects_distinct_networks",
+      "mechanism": "Interfaces attach the router to two or more IP networks.",
+      "provenance": "source",
+      "conditions": "At least two network-facing interfaces/networks.",
+      "effect": "Enables inter-network communication.",
+      "inverse_or_limitation": "A Layer-2 switch primarily bridges within a link-layer domain.",
+      "source_line_ranges": [
+        58,
+        60
+      ]
+    },
+    {
+      "source": "router",
+      "target": "packet",
+      "relationship": "forwards",
+      "mechanism": "Reads the network address in the packet header and directs the packet toward the next network.",
+      "provenance": "source",
+      "conditions": "Packet arrives on an interface.",
+      "effect": "Moves packet one hop toward destination.",
+      "inverse_or_limitation": "Does not guarantee end-to-end delivery.",
+      "source_line_ranges": [
+        60,
+        135
+      ]
+    },
+    {
+      "source": "router",
+      "target": "layer3",
+      "relationship": "primarily_operates_at",
+      "mechanism": "Primary forwarding decision uses destination IP in Layer-3 packet.",
+      "provenance": "source",
+      "conditions": "IP routing/forwarding.",
+      "effect": "Makes router a Layer-3 device.",
+      "inverse_or_limitation": "Multilayer switches can also route.",
+      "source_line_ranges": [
+        58,
+        135
+      ]
+    },
+    {
+      "source": "packet",
+      "target": "ip_header",
+      "relationship": "contains",
+      "mechanism": "The header supplies the destination address used for lookup.",
+      "provenance": "source",
+      "conditions": "IP packet is being forwarded.",
+      "effect": "Provides forwarding key.",
+      "source_line_ranges": [
+        60,
+        135
+      ]
+    },
+    {
+      "source": "ip_header",
+      "target": "destination_ip",
+      "relationship": "contains_field",
+      "mechanism": "Destination address is extracted from the network-layer header.",
+      "provenance": "source",
+      "conditions": "Router parses packet header.",
+      "effect": "Enables route lookup.",
+      "inverse_or_limitation": "Other header information may inform QoS.",
+      "source_line_ranges": [
+        60,
+        135
+      ]
+    },
+    {
+      "source": "destination_ip",
+      "target": "route_lookup",
+      "relationship": "is_matched_against",
+      "mechanism": "Router searches route entries for the best match to destination IP.",
+      "provenance": "source",
+      "conditions": "Packet arrives and route state exists.",
+      "effect": "Selects forwarding route.",
+      "inverse_or_limitation": "Policy-based routing can override ordinary table-derived choice.",
+      "source_line_ranges": [
+        135,
+        145
+      ]
+    },
+    {
+      "source": "route_table",
+      "target": "fib",
+      "relationship": "is_compiled_into",
+      "mechanism": "Control-plane logic strips non-essential directives and builds the FIB from route state.",
+      "provenance": "source",
+      "conditions": "Routes have been installed/learned.",
+      "effect": "Creates forwarding-optimized lookup data.",
+      "inverse_or_limitation": "Routing table and FIB are related but distinct.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "source": "control_plane",
+      "target": "route_table",
+      "relationship": "maintains",
+      "mechanism": "Stores static and dynamically learned routes.",
+      "provenance": "source",
+      "conditions": "Router is configured or participates in routing.",
+      "effect": "Supplies route choices.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "source": "control_plane",
+      "target": "fib",
+      "relationship": "builds",
+      "mechanism": "Derives forwarding information base from route table.",
+      "provenance": "source",
+      "conditions": "Control-plane route processing.",
+      "effect": "Provides forwarding plane with efficient entries.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "source": "forwarding_plane",
+      "target": "fib",
+      "relationship": "consults",
+      "mechanism": "Matches packet destination against FIB entries.",
+      "provenance": "source",
+      "conditions": "Each packet is processed.",
+      "effect": "Identifies outgoing network/interface.",
+      "inverse_or_limitation": "Special packets may be handled by CPU.",
+      "source_line_ranges": [
+        87
+      ]
+    },
+    {
+      "source": "forwarding_plane",
+      "target": "packet",
+      "relationship": "forwards_using",
+      "mechanism": "Reads packet header and uses FIB entry to direct packet to outgoing interface.",
+      "provenance": "source",
+      "conditions": "Packet arrives at ingress.",
+      "effect": "Transmits toward next hop.",
+      "inverse_or_limitation": "Forwarding does not ensure final delivery.",
+      "source_line_ranges": [
+        87
+      ]
+    },
+    {
+      "source": "routing_protocol",
+      "target": "route_table",
+      "relationship": "contributes_routes_to",
+      "mechanism": "Routers exchange destination information and install learned routes.",
+      "provenance": "source",
+      "conditions": "Dynamic routing is enabled.",
+      "effect": "Supports reachability across networks.",
+      "inverse_or_limitation": "Static/default routes can exist without a routing protocol.",
+      "source_line_ranges": [
+        81,
+        86,
+        137
+      ]
+    },
+    {
+      "source": "static_route",
+      "target": "route_table",
+      "relationship": "is_manually_installed_in",
+      "mechanism": "Administrator configures route directive.",
+      "provenance": "source",
+      "conditions": "Static route configured.",
+      "effect": "Adds a route without protocol learning.",
+      "inverse_or_limitation": "May require manual update after topology change.",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "source": "dynamic_route",
+      "target": "route_table",
+      "relationship": "is_learned_into",
+      "mechanism": "Routing protocol supplies route information.",
+      "provenance": "source",
+      "conditions": "Protocol peers exchange information.",
+      "effect": "Adapts routes dynamically.",
+      "inverse_or_limitation": "Not required for small/simple networks.",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "source": "default_route",
+      "target": "route_table",
+      "relationship": "handles_unmatched_destinations",
+      "mechanism": "Used when no more-specific destination entry is present.",
+      "provenance": "source",
+      "conditions": "No more-specific route matches.",
+      "effect": "Sends non-local traffic toward ISP/upstream.",
+      "inverse_or_limitation": "Does not describe the entire end-to-end path.",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "source": "dhcp",
+      "target": "default_route",
+      "relationship": "may_supply",
+      "mechanism": "Article states a default route may be obtained through DHCP.",
+      "provenance": "source",
+      "conditions": "DHCP supplies network configuration.",
+      "effect": "Automates default-gateway configuration.",
+      "inverse_or_limitation": "Can also be static or dynamically learned.",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "source": "router",
+      "target": "next_hop",
+      "relationship": "forwards_toward",
+      "mechanism": "A packet passes from one router to another until it reaches its destination.",
+      "provenance": "source",
+      "conditions": "Destination is remote or path is multi-hop.",
+      "effect": "Supports hop-by-hop internetwork delivery.",
+      "inverse_or_limitation": "Next hop is not necessarily the endpoint.",
+      "source_line_ranges": [
+        60
+      ]
+    },
+    {
+      "source": "outgoing_interface",
+      "target": "encapsulation",
+      "relationship": "determines_link_format_for",
+      "mechanism": "Packet is wrapped in the Layer-2 frame appropriate to the selected egress interface.",
+      "provenance": "source",
+      "conditions": "Route/FIB selects egress.",
+      "effect": "Makes packet transmissible on outgoing link.",
+      "inverse_or_limitation": "Link technologies may use different frame formats.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "source": "encapsulation",
+      "target": "frame",
+      "relationship": "creates_or_uses",
+      "mechanism": "Router encapsulates IP packet in a Layer-2 frame for the outgoing interface.",
+      "provenance": "source",
+      "conditions": "Egress interface selected.",
+      "effect": "Provides link-local transmission.",
+      "inverse_or_limitation": "Frame and IP packet are different protocol-layer objects.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "source": "frame",
+      "target": "outgoing_interface",
+      "relationship": "is_transmitted_through",
+      "mechanism": "Frame exits on selected interface.",
+      "provenance": "source",
+      "conditions": "Egress processing complete.",
+      "effect": "Carries packet to next link.",
+      "source_line_ranges": [
+        87,
+        135
+      ]
+    },
+    {
+      "source": "incoming_interface",
+      "target": "ingress",
+      "relationship": "feeds",
+      "mechanism": "Packet arrives through an incoming interface.",
+      "provenance": "source",
+      "conditions": "Link delivers a frame/packet.",
+      "effect": "Starts router processing pipeline.",
+      "source_line_ranges": [
+        87,
+        135
+      ]
+    },
+    {
+      "source": "ingress",
+      "target": "packet_header_parse",
+      "relationship": "performs",
+      "mechanism": "Router reads the header of each arriving packet.",
+      "provenance": "source",
+      "conditions": "Packet arrives.",
+      "effect": "Extracts destination and optional QoS hints.",
+      "inverse_or_limitation": "Pure IP forwarding typically does not inspect payload.",
+      "source_line_ranges": [
+        87,
+        135
+      ]
+    },
+    {
+      "source": "packet_header_parse",
+      "target": "route_lookup",
+      "relationship": "provides_inputs_to",
+      "mechanism": "Parsed destination is compared against route/FIB entries.",
+      "provenance": "source",
+      "conditions": "IP forwarding path.",
+      "effect": "Enables route selection.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "source": "route_lookup",
+      "target": "route_selection",
+      "relationship": "supports",
+      "mechanism": "Destination is matched to route entries and policy.",
+      "provenance": "source",
+      "conditions": "Routing state available.",
+      "effect": "Chooses a route.",
+      "inverse_or_limitation": "Policy-based routing may override table-derived decision.",
+      "source_line_ranges": [
+        135,
+        145
+      ]
+    },
+    {
+      "source": "route_selection",
+      "target": "outgoing_interface",
+      "relationship": "selects",
+      "mechanism": "Route entry identifies the outgoing interface.",
+      "provenance": "source",
+      "conditions": "Route selected.",
+      "effect": "Determines egress network path.",
+      "source_line_ranges": [
+        86,
+        87,
+        135
+      ]
+    },
+    {
+      "source": "forwarding",
+      "target": "encapsulation",
+      "relationship": "precedes_transmission_via",
+      "mechanism": "Packet is placed in an outgoing link frame after forwarding choice.",
+      "provenance": "source",
+      "conditions": "Outgoing interface known.",
+      "effect": "Allows link-layer transmission.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "source": "router",
+      "target": "payload",
+      "relationship": "typically_does_not_inspect_for_basic_forwarding",
+      "mechanism": "Pure IP forwarding uses Layer-3 addresses and optional header hints.",
+      "provenance": "source",
+      "conditions": "Ordinary IP forwarding path.",
+      "effect": "Keeps forwarding decision focused on header.",
+      "inverse_or_limitation": "Firewall/DPI/service gateway may inspect higher layers.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "source": "router",
+      "target": "connectionless",
+      "relationship": "uses",
+      "mechanism": "Early gateway concept was connectionless; pure IP forwarding minimizes per-packet historical state.",
+      "provenance": "source",
+      "conditions": "Basic IP forwarding.",
+      "effect": "Supports simple hop-by-hop packet handling.",
+      "inverse_or_limitation": "NAT/QoS/counters and other features can maintain state.",
+      "source_line_ranges": [
+        71,
+        135,
+        157
+      ]
+    },
+    {
+      "source": "connectionless",
+      "target": "end_to_end",
+      "relationship": "supports",
+      "mechanism": "Routers do not guarantee reliable delivery; endpoint hosts provide reliability when required.",
+      "provenance": "source",
+      "conditions": "End-to-end service requires reliability.",
+      "effect": "Keeps forwarding distinct from delivery assurance.",
+      "source_line_ranges": [
+        71,
+        175
+      ]
+    },
+    {
+      "source": "end_to_end",
+      "target": "host",
+      "relationship": "places_reliability_responsibility_on",
+      "mechanism": "Hosts detect missing data and provide error/recovery control where required.",
+      "provenance": "source",
+      "conditions": "Application/transport needs reliable delivery.",
+      "effect": "Reliability is provided at endpoints.",
+      "inverse_or_limitation": "Router forwarding alone is insufficient.",
+      "source_line_ranges": [
+        71,
+        175
+      ]
+    },
+    {
+      "source": "router",
+      "target": "routing_redistribution",
+      "relationship": "may_perform",
+      "mechanism": "A router running several routing protocols may selectively share information between them.",
+      "provenance": "source",
+      "conditions": "Multiple protocols coexist.",
+      "effect": "Enables route exchange across protocol boundaries.",
+      "inverse_or_limitation": "Redistribution must be selective.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "router",
+      "target": "policy_routing",
+      "relationship": "may_apply",
+      "mechanism": "Special rules can override route-table-derived decisions.",
+      "provenance": "source",
+      "conditions": "Policy configured and matches traffic.",
+      "effect": "Selects a policy-specific path.",
+      "inverse_or_limitation": "May differ from ordinary route choice.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "source": "route_policy",
+      "target": "route_selection",
+      "relationship": "influences",
+      "mechanism": "Policy alters route preference or packet path.",
+      "provenance": "source",
+      "conditions": "Policy applies.",
+      "effect": "Changes route selection/forwarding.",
+      "source_line_ranges": [
+        60,
+        145
+      ]
+    },
+    {
+      "source": "router",
+      "target": "route_metric",
+      "relationship": "may_consider",
+      "mechanism": "Routing protocol route selection can depend on protocol-specific route attributes; article does not enumerate exact metrics.",
+      "provenance": "synthesis",
+      "conditions": "Protocol/policy uses attributes.",
+      "effect": "Helps choose among routes.",
+      "inverse_or_limitation": "Exact algorithm is outside source detail.",
+      "source_line_ranges": [
+        81,
+        137
+      ]
+    },
+    {
+      "source": "router",
+      "target": "congestion",
+      "relationship": "must_manage_when_overloaded",
+      "mechanism": "Packets arrive faster than router can process/transmit them.",
+      "provenance": "source",
+      "conditions": "Arrival rate exceeds service capacity.",
+      "effect": "Queues grow and packets may drop.",
+      "inverse_or_limitation": "Queue policy cannot guarantee loss-free operation.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "congestion",
+      "target": "buffer",
+      "relationship": "fills",
+      "mechanism": "Packets wait in finite buffer when output/service cannot keep pace.",
+      "provenance": "source",
+      "conditions": "Traffic demand exceeds immediate capacity.",
+      "effect": "Queueing delay and occupancy rise.",
+      "inverse_or_limitation": "Finite buffer eventually exhausts.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "buffer",
+      "target": "tail_drop",
+      "relationship": "triggers",
+      "mechanism": "Tail drop drops new incoming packets once buffer space is exhausted.",
+      "provenance": "source",
+      "conditions": "Buffer full.",
+      "effect": "Causes packet loss.",
+      "inverse_or_limitation": "RED/WRED may drop before full.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "buffer",
+      "target": "red",
+      "relationship": "is_monitored_by",
+      "mechanism": "RED probabilistically drops when queue passes configured thresholds.",
+      "provenance": "source",
+      "conditions": "Queue exceeds configured portion of buffer.",
+      "effect": "Can signal congestion before full-buffer exhaustion.",
+      "inverse_or_limitation": "Exact thresholds/probabilities are configuration-specific.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "red",
+      "target": "wred",
+      "relationship": "is_extended_by_traffic_weighting",
+      "mechanism": "WRED can drop packets more readily depending on traffic type.",
+      "provenance": "source",
+      "conditions": "Traffic classes are configured.",
+      "effect": "Differentiates congestion response.",
+      "inverse_or_limitation": "Specific weights are not stated.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "packet_loss",
+      "target": "tail_drop",
+      "relationship": "can_be_caused_by",
+      "mechanism": "New packets are discarded when buffer is exhausted.",
+      "provenance": "source",
+      "conditions": "Queue full.",
+      "effect": "Packet is lost at router.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "packet_loss",
+      "target": "red",
+      "relationship": "can_be_intentionally_induced_by",
+      "mechanism": "RED probabilistically drops packets above queue threshold.",
+      "provenance": "source",
+      "conditions": "Queue crosses threshold.",
+      "effect": "Signals congestion/controls queue growth.",
+      "inverse_or_limitation": "Does not guarantee zero loss.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "packet_loss",
+      "target": "wred",
+      "relationship": "can_be_differentiated_by_class",
+      "mechanism": "WRED may drop certain traffic more readily.",
+      "provenance": "source",
+      "conditions": "WRED configured with traffic classes.",
+      "effect": "Applies differentiated drop behavior.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "router",
+      "target": "qos",
+      "relationship": "implements",
+      "mechanism": "Traffic classification determines which packet should be processed first.",
+      "provenance": "source",
+      "conditions": "QoS configured.",
+      "effect": "Can prioritize latency-sensitive traffic.",
+      "inverse_or_limitation": "Does not create additional capacity.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "source": "traffic_classification",
+      "target": "qos",
+      "relationship": "feeds_priority_decision",
+      "mechanism": "Classified traffic informs processing priority.",
+      "provenance": "source",
+      "conditions": "QoS policy enabled.",
+      "effect": "Differentiates traffic handling.",
+      "inverse_or_limitation": "Exact classifier/scheduler implementation varies.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "source": "qos",
+      "target": "voip",
+      "relationship": "helps_limit_excessive_latency_for",
+      "mechanism": "QoS is critical for VoIP to avoid excessive latency.",
+      "provenance": "source",
+      "conditions": "Voice traffic shares constrained network.",
+      "effect": "Can improve voice quality.",
+      "inverse_or_limitation": "Cannot eliminate all congestion or delay.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "source": "router",
+      "target": "asic",
+      "relationship": "may_use_for_forwarding_and_filtering",
+      "mechanism": "ASICs accelerate common forwarding and specialized filtering/firewall functions.",
+      "provenance": "source",
+      "conditions": "Hardware supports those operations.",
+      "effect": "Reduces CPU scheduling overhead and raises throughput.",
+      "inverse_or_limitation": "Not all packets/functions are hardware-handled.",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ]
+    },
+    {
+      "source": "router",
+      "target": "cpu",
+      "relationship": "may_use_for_software_forwarding_or_exceptions",
+      "mechanism": "Early routers used CPU-based forwarding; special packets may need CPU attention.",
+      "provenance": "source",
+      "conditions": "Software router or slow path.",
+      "effect": "Offers flexible processing.",
+      "inverse_or_limitation": "CPU can be a bottleneck under heavy exception traffic.",
+      "source_line_ranges": [
+        64,
+        147
+      ]
+    },
+    {
+      "source": "router",
+      "target": "network_processor",
+      "relationship": "may_use",
+      "mechanism": "Modern high-speed routers can use network processors/specialized computers.",
+      "provenance": "source",
+      "conditions": "High-performance device.",
+      "effect": "Accelerates common network operations.",
+      "inverse_or_limitation": "Architecture varies by platform.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "asic",
+      "target": "fast_path",
+      "relationship": "accelerates",
+      "mechanism": "ASIC performs common packet forwarding/filtering in hardware.",
+      "provenance": "source",
+      "conditions": "Function maps to hardware pipeline.",
+      "effect": "High throughput and lower CPU overhead.",
+      "inverse_or_limitation": "Exceptions may still use CPU.",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ]
+    },
+    {
+      "source": "cpu",
+      "target": "slow_path",
+      "relationship": "handles",
+      "mechanism": "Packets/functions requiring special attention may be handled in CPU software.",
+      "provenance": "source",
+      "conditions": "ASIC cannot handle or packet needs special treatment.",
+      "effect": "Supports complex/exception processing.",
+      "inverse_or_limitation": "CPU resources are finite.",
+      "source_line_ranges": [
+        147
+      ]
+    },
+    {
+      "source": "router",
+      "target": "ram",
+      "relationship": "uses_for_routes_and_buffering",
+      "mechanism": "Route state and packet buffering require memory; distribution routers may have considerable memory.",
+      "provenance": "source",
+      "conditions": "Routing and queueing load exists.",
+      "effect": "Supports routing/QoS and buffering.",
+      "inverse_or_limitation": "Memory is finite.",
+      "source_line_ranges": [
+        86,
+        106,
+        141
+      ]
+    },
+    {
+      "source": "router",
+      "target": "line_card",
+      "relationship": "may_use_modular_interfaces_in",
+      "mechanism": "Carrier-class devices may contain network modules/line cards.",
+      "provenance": "source",
+      "conditions": "Modular chassis design.",
+      "effect": "Adds interface capacity/modularity.",
+      "inverse_or_limitation": "Not all routers are chassis-based.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "router",
+      "target": "power_supply",
+      "relationship": "may_have_redundant",
+      "mechanism": "Carrier-class router may have redundant power modules.",
+      "provenance": "source",
+      "conditions": "High-availability device design.",
+      "effect": "Improves resilience to power-module failure.",
+      "inverse_or_limitation": "Does not remove every power failure mode.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "router",
+      "target": "fan_module",
+      "relationship": "may_have_redundant",
+      "mechanism": "Carrier-class router may have redundant fan modules.",
+      "provenance": "source",
+      "conditions": "High-availability device design.",
+      "effect": "Supports cooling continuity.",
+      "inverse_or_limitation": "Thermal design remains platform-specific.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "router",
+      "target": "physical_medium",
+      "relationship": "connects_through",
+      "mechanism": "Interfaces connect copper, fiber-optic, or wireless transmission systems.",
+      "provenance": "source",
+      "conditions": "Compatible interface/transceiver present.",
+      "effect": "Carries packets between network types.",
+      "inverse_or_limitation": "Physical link limits capacity/distance.",
+      "source_line_ranges": [
+        92,
+        93
+      ]
+    },
+    {
+      "source": "router",
+      "target": "fiber",
+      "relationship": "supports_backbone_connectivity_over",
+      "mechanism": "High-capacity routers forward data along optical-fiber Internet backbone links.",
+      "provenance": "source",
+      "conditions": "Carrier/backbone deployment.",
+      "effect": "Supports long-distance high-bandwidth links.",
+      "inverse_or_limitation": "Rates depend on installed optics/interface.",
+      "source_line_ranges": [
+        62,
+        92
+      ]
+    },
+    {
+      "source": "router",
+      "target": "mtu",
+      "relationship": "must_respect_interface_constraints_of",
+      "mechanism": "Link MTU is an engineering constraint relevant to packet transmission, but the article does not detail it.",
+      "provenance": "synthesis",
+      "conditions": "Link technology and packet size impose constraints.",
+      "effect": "May affect packet sizing/fragmentation behavior.",
+      "inverse_or_limitation": "This is synthesis, not a detailed source claim."
+    },
+    {
+      "source": "router",
+      "target": "packet_counter",
+      "relationship": "may_update",
+      "mechanism": "Some implementations increment a counter associated with a route entry.",
+      "provenance": "source",
+      "conditions": "Statistics feature implemented.",
+      "effect": "Supports traffic statistics.",
+      "inverse_or_limitation": "Optional, not universal.",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "source": "router",
+      "target": "packet_scheduling",
+      "relationship": "performs",
+      "mechanism": "Router decides which packet should be processed first.",
+      "provenance": "source",
+      "conditions": "Traffic competes for processing/transmission.",
+      "effect": "Affects latency and QoS.",
+      "inverse_or_limitation": "Algorithm not detailed in source.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "source": "packet_scheduling",
+      "target": "qos",
+      "relationship": "implements_policy_for",
+      "mechanism": "Priority policy determines processing order.",
+      "provenance": "source",
+      "conditions": "QoS enabled.",
+      "effect": "Prioritizes traffic classes.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "source": "packet_service_rate",
+      "target": "congestion",
+      "relationship": "compared_to_arrival_rate_for",
+      "mechanism": "Congestion occurs when arrival rate exceeds processing/transmission rate.",
+      "provenance": "source",
+      "conditions": "Arrival rate greater than service rate.",
+      "effect": "Queueing and drops may follow.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "router",
+      "target": "latency",
+      "relationship": "can_introduce",
+      "mechanism": "Processing, queueing, and scheduling contribute to packet delay.",
+      "provenance": "synthesis",
+      "conditions": "Traffic is forwarded under load.",
+      "effect": "Latency may rise under congestion.",
+      "inverse_or_limitation": "QoS can prioritize but not remove all delay.",
+      "source_line_ranges": [
+        141,
+        143
+      ]
+    },
+    {
+      "source": "hierarchy",
+      "target": "access_router",
+      "relationship": "includes_layer",
+      "mechanism": "Access layer provides customer/site connectivity.",
+      "provenance": "source",
+      "conditions": "Enterprise hierarchy used.",
+      "effect": "Connects hosts/sites to network.",
+      "inverse_or_limitation": "Small networks may collapse roles.",
+      "source_line_ranges": [
+        102,
+        104
+      ]
+    },
+    {
+      "source": "hierarchy",
+      "target": "distribution_router",
+      "relationship": "includes_layer",
+      "mechanism": "Distribution aggregates traffic and may enforce WAN QoS.",
+      "provenance": "source",
+      "conditions": "Enterprise hierarchy used.",
+      "effect": "Aggregates access paths/policy.",
+      "inverse_or_limitation": "Not all networks have distinct tiers.",
+      "source_line_ranges": [
+        102,
+        106
+      ]
+    },
+    {
+      "source": "hierarchy",
+      "target": "core_router",
+      "relationship": "includes_layer",
+      "mechanism": "Core interconnects distribution tiers/sites with high bandwidth.",
+      "provenance": "source",
+      "conditions": "Large enterprise/campus.",
+      "effect": "Provides backbone transit.",
+      "inverse_or_limitation": "Core may omit edge-specific features.",
+      "source_line_ranges": [
+        102,
+        108
+      ]
+    },
+    {
+      "source": "access_router",
+      "target": "distribution_router",
+      "relationship": "feeds_traffic_to",
+      "mechanism": "Distribution routers aggregate traffic from multiple access routers.",
+      "provenance": "source",
+      "conditions": "Hierarchical design.",
+      "effect": "Scales access connectivity.",
+      "source_line_ranges": [
+        104,
+        106
+      ]
+    },
+    {
+      "source": "distribution_router",
+      "target": "core_router",
+      "relationship": "connects_up_to",
+      "mechanism": "Core can interconnect distribution routers across buildings/sites.",
+      "provenance": "source",
+      "conditions": "Hierarchical design.",
+      "effect": "Provides campus/enterprise backbone.",
+      "source_line_ranges": [
+        106,
+        108
+      ]
+    },
+    {
+      "source": "edge_router",
+      "target": "isp",
+      "relationship": "operates_at_boundary_of",
+      "mechanism": "Edge router peers with upstream transit, IXP peers, or private peers.",
+      "provenance": "source",
+      "conditions": "ISP edge deployment.",
+      "effect": "Provides external reachability.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "edge_router",
+      "target": "ebgp",
+      "relationship": "uses_for_external_peering",
+      "mechanism": "eBGP is used to peer with transit providers, IXPs, and private peers.",
+      "provenance": "source",
+      "conditions": "BGP session configured.",
+      "effect": "Exchanges inter-domain routes.",
+      "inverse_or_limitation": "Policy determines accepted/advertised routes.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "ibgp",
+      "target": "as",
+      "relationship": "exchanges_routes_within",
+      "mechanism": "ISP routers use iBGP to communicate within the same AS.",
+      "provenance": "source",
+      "conditions": "ISP internal routing domain.",
+      "effect": "Distributes BGP reachability.",
+      "source_line_ranges": [
+        124
+      ]
+    },
+    {
+      "source": "ebgp",
+      "target": "as",
+      "relationship": "exchanges_routes_between",
+      "mechanism": "External BGP connects different routing domains or customer/provider edges.",
+      "provenance": "source",
+      "conditions": "Inter-domain peering configured.",
+      "effect": "Shares route reachability.",
+      "source_line_ranges": [
+        119,
+        122
+      ]
+    },
+    {
+      "source": "provider_router",
+      "target": "mpls",
+      "relationship": "operates_inside",
+      "mechanism": "P routers are transit routers inside an MPLS network.",
+      "provenance": "source",
+      "conditions": "MPLS provider network.",
+      "effect": "Carries labeled traffic through core.",
+      "source_line_ranges": [
+        120
+      ]
+    },
+    {
+      "source": "provider_router",
+      "target": "lsp",
+      "relationship": "forwards_along",
+      "mechanism": "P routers establish/carry label-switched paths between PE routers.",
+      "provenance": "source",
+      "conditions": "MPLS state configured.",
+      "effect": "Transports traffic across provider core.",
+      "inverse_or_limitation": "Label distribution details not covered.",
+      "source_line_ranges": [
+        120
+      ]
+    },
+    {
+      "source": "provider_edge",
+      "target": "customer_edge",
+      "relationship": "connects_to",
+      "mechanism": "PE router connects with CE router and provides L2/L3 VPN services.",
+      "provenance": "source",
+      "conditions": "Provider/customer network edge.",
+      "effect": "Links customer to provider service.",
+      "source_line_ranges": [
+        121,
+        122
+      ]
+    },
+    {
+      "source": "provider_edge",
+      "target": "l2vpn",
+      "relationship": "provides",
+      "mechanism": "PE may provide Layer-2 VPN services.",
+      "provenance": "source",
+      "conditions": "MPLS service deployed.",
+      "effect": "Connects customer L2 networks.",
+      "source_line_ranges": [
+        121,
+        122
+      ]
+    },
+    {
+      "source": "provider_edge",
+      "target": "l3vpn",
+      "relationship": "provides",
+      "mechanism": "PE may provide Layer-3 VPN services and exchange routes with CE.",
+      "provenance": "source",
+      "conditions": "L3VPN service deployed.",
+      "effect": "Provides routed VPN connectivity.",
+      "source_line_ranges": [
+        122,
+        125
+      ]
+    },
+    {
+      "source": "core_router",
+      "target": "edge_router",
+      "relationship": "carries_traffic_between",
+      "mechanism": "Core router carries traffic between edge routers within an AS.",
+      "provenance": "source",
+      "conditions": "ISP core network.",
+      "effect": "Provides high-bandwidth transit.",
+      "source_line_ranges": [
+        123,
+        125
+      ]
+    },
+    {
+      "source": "router",
+      "target": "subnet",
+      "relationship": "connects",
+      "mechanism": "Interfaces may connect logical groups/subnets with unique prefixes.",
+      "provenance": "source",
+      "conditions": "Multiple IP subnets attached.",
+      "effect": "Allows inter-subnet traffic.",
+      "inverse_or_limitation": "Policy may limit reachability.",
+      "source_line_ranges": [
+        93,
+        135
+      ]
+    },
+    {
+      "source": "router",
+      "target": "lan",
+      "relationship": "connects_to_wan",
+      "mechanism": "Border/gateway routers connect a LAN to the Internet or WAN.",
+      "provenance": "source",
+      "conditions": "Network edge deployment.",
+      "effect": "Provides external connectivity.",
+      "source_line_ranges": [
+        113
+      ]
+    },
+    {
+      "source": "router",
+      "target": "internet_exchange",
+      "relationship": "may_peer_through",
+      "mechanism": "ISP edge router may peer through an IXP.",
+      "provenance": "source",
+      "conditions": "Peering arrangement exists.",
+      "effect": "Exchanges traffic directly with networks.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "router",
+      "target": "pni",
+      "relationship": "may_peer_through",
+      "mechanism": "Edge routers may use private network interconnects.",
+      "provenance": "source",
+      "conditions": "Private peering exists.",
+      "effect": "Direct network interconnection.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "source": "router",
+      "target": "internet_backbone",
+      "relationship": "interconnects",
+      "mechanism": "Major ISP routers collectively provide high-capacity Internet core interconnection.",
+      "provenance": "source",
+      "conditions": "Provider/core deployment.",
+      "effect": "Carries high-volume traffic between networks.",
+      "inverse_or_limitation": "No single centralized backbone router.",
+      "source_line_ranges": [
+        62,
+        95,
+        125
+      ]
+    },
+    {
+      "source": "router",
+      "target": "as",
+      "relationship": "operates_within_or_between",
+      "mechanism": "Interior routers operate within an organization; border/exterior routers connect broader routing domains.",
+      "provenance": "source",
+      "conditions": "Role depends on deployment.",
+      "effect": "Supports local and inter-domain routing.",
+      "inverse_or_limitation": "Terminology varies by context.",
+      "source_line_ranges": [
+        113,
+        123,
+        124
+      ]
+    },
+    {
+      "source": "router",
+      "target": "routing_protocol",
+      "relationship": "can_run_multiple",
+      "mechanism": "A router may run multiple protocols when serving as a border between different routing domains.",
+      "provenance": "source",
+      "conditions": "Multiple protocols configured.",
+      "effect": "Allows mixed routing environments.",
+      "inverse_or_limitation": "May require selective redistribution.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "source": "router",
+      "target": "route_policy",
+      "relationship": "uses",
+      "mechanism": "Routing table or routing policy directs packet toward the next network.",
+      "provenance": "source",
+      "conditions": "Forwarding decision occurs.",
+      "effect": "Allows administrative path selection.",
+      "source_line_ranges": [
+        60
+      ]
+    },
+    {
+      "source": "wireless_router",
+      "target": "router",
+      "relationship": "combines_function_of",
+      "mechanism": "Wi-Fi router combines routing, switching, and wireless AP functions.",
+      "provenance": "source",
+      "conditions": "Residential/small office device.",
+      "effect": "Offers wired and wireless access.",
+      "inverse_or_limitation": "A modem may be integrated or separate.",
+      "source_line_ranges": [
+        57,
+        129,
+        131
+      ]
+    },
+    {
+      "source": "wireless_router",
+      "target": "switch",
+      "relationship": "combines_function_of",
+      "mechanism": "Integrated home router commonly includes Ethernet switch ports.",
+      "provenance": "source",
+      "conditions": "Residential integrated device.",
+      "effect": "Connects wired LAN devices.",
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "source": "wireless_router",
+      "target": "access_point",
+      "relationship": "combines_function_of",
+      "mechanism": "Integrated Wi-Fi AP supplies wireless connectivity.",
+      "provenance": "source",
+      "conditions": "Wi-Fi router.",
+      "effect": "Connects wireless clients.",
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "source": "residential_gateway",
+      "target": "modem",
+      "relationship": "may_integrate",
+      "mechanism": "Home routers often combine modem and other functions into one unit.",
+      "provenance": "source",
+      "conditions": "Broadband gateway product.",
+      "effect": "Reduces separate device count.",
+      "inverse_or_limitation": "Not all routers include modem.",
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "source": "router",
+      "target": "nat",
+      "relationship": "may_implement",
+      "mechanism": "Routers often use NAT in IPv4 home networks.",
+      "provenance": "source",
+      "conditions": "NAT-enabled gateway.",
+      "effect": "Translates address/connection information.",
+      "inverse_or_limitation": "Not universally accepted as a security feature.",
+      "source_line_ranges": [
+        110,
+        126
+      ]
+    },
+    {
+      "source": "nat",
+      "target": "port_forwarding",
+      "relationship": "supports",
+      "mechanism": "Port forwarding maps selected external connections to internal private IPv4 host.",
+      "provenance": "source",
+      "conditions": "NAT box configured.",
+      "effect": "Allows selected inbound service access.",
+      "inverse_or_limitation": "May expose internal services.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "source": "private_ipv4",
+      "target": "nat",
+      "relationship": "is_translated_by",
+      "mechanism": "NAT maps private IPv4 connectivity toward public addressing.",
+      "provenance": "source",
+      "conditions": "Private IPv4 LAN and public IPv4 WAN.",
+      "effect": "Allows internal hosts to share/map external address.",
+      "inverse_or_limitation": "NAT is not a full firewall.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "source": "public_ipv4",
+      "target": "port_forwarding",
+      "relationship": "is_external_endpoint_for",
+      "mechanism": "Port-forwarding rule uses public IPv4 endpoint/port to reach internal host.",
+      "provenance": "synthesis",
+      "conditions": "Rule configured.",
+      "effect": "Makes selected internal service reachable externally.",
+      "inverse_or_limitation": "Exposure can increase risk.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "source": "router",
+      "target": "firewall",
+      "relationship": "may_integrate",
+      "mechanism": "Router may include firewall or rely on separate security devices.",
+      "provenance": "source",
+      "conditions": "Feature exists/configured.",
+      "effect": "Filters traffic by policy.",
+      "inverse_or_limitation": "Routing alone is not firewalling.",
+      "source_line_ranges": [
+        110
+      ]
+    },
+    {
+      "source": "router",
+      "target": "vpn",
+      "relationship": "may_handle",
+      "mechanism": "VPN functionality may be implemented by router or separate device.",
+      "provenance": "source",
+      "conditions": "VPN support/configuration exists.",
+      "effect": "Provides logical secure connectivity.",
+      "inverse_or_limitation": "Depends on protocol and configuration.",
+      "source_line_ranges": [
+        110,
+        121
+      ]
+    },
+    {
+      "source": "router",
+      "target": "ipsec",
+      "relationship": "may_accelerate",
+      "mechanism": "High-speed routers may add hardware acceleration for IPsec encryption.",
+      "provenance": "source",
+      "conditions": "IPsec enabled and supported.",
+      "effect": "Improves secure packet-processing performance.",
+      "inverse_or_limitation": "Algorithms/configuration not specified.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "router",
+      "target": "network_security",
+      "relationship": "must_consider_external_networks_as_part_of",
+      "mechanism": "External networks must be considered in local security strategy.",
+      "provenance": "source",
+      "conditions": "Router connects trust domains.",
+      "effect": "Encourages boundary controls.",
+      "inverse_or_limitation": "Router/NAT alone is not complete security.",
+      "source_line_ranges": [
+        110
+      ]
+    },
+    {
+      "source": "router",
+      "target": "security_zone",
+      "relationship": "may_route_between",
+      "mechanism": "L3 devices may interconnect subnets within a zone; higher-layer filtering may be needed between zones.",
+      "provenance": "source",
+      "conditions": "Segmented enterprise network.",
+      "effect": "Provides inter-subnet connectivity.",
+      "inverse_or_limitation": "Routing does not imply inspection/filtering.",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "source": "router",
+      "target": "software_security_debate",
+      "relationship": "is_subject_of",
+      "mechanism": "Source reports arguments that open-source routers may be more secure due to visibility of flaws, but this is presented as a debated view.",
+      "provenance": "source_claim",
+      "conditions": "Security comparison discussion.",
+      "effect": "Preserves source's qualified framing.",
+      "inverse_or_limitation": "Open-source status does not guarantee security.",
+      "source_line_ranges": [
+        110,
+        212,
+        213
+      ]
+    },
+    {
+      "source": "router",
+      "target": "ipv4",
+      "relationship": "supports",
+      "mechanism": "Modern routers commonly support IPv4; NAT/port forwarding examples use IPv4.",
+      "provenance": "source",
+      "conditions": "IPv4 network configured.",
+      "effect": "Enables IPv4 routing.",
+      "source_line_ranges": [
+        77,
+        126
+      ]
+    },
+    {
+      "source": "router",
+      "target": "ipv6",
+      "relationship": "supports",
+      "mechanism": "Modern routers commonly handle IPv4 and IPv6.",
+      "provenance": "source",
+      "conditions": "IPv6 configured.",
+      "effect": "Enables IPv6 routing.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "router",
+      "target": "ip",
+      "relationship": "forwards_using",
+      "mechanism": "Destination IP address is the primary forwarding key.",
+      "provenance": "source",
+      "conditions": "IP packet arrives.",
+      "effect": "Enables network-layer routing.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "source": "router",
+      "target": "router_os",
+      "relationship": "runs",
+      "mechanism": "Router software implements routing and forwarding coordination.",
+      "provenance": "source",
+      "conditions": "Device powered/initialized.",
+      "effect": "Provides protocols, configuration, and services.",
+      "inverse_or_limitation": "Platforms differ.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "linux",
+      "target": "router_os",
+      "relationship": "is_used_as_basis_for",
+      "mechanism": "Linux/Unix software-based routing and alternative firmware are used in research and SOHO routers.",
+      "provenance": "source",
+      "conditions": "Software routing/compatible device.",
+      "effect": "Provides software platform.",
+      "source_line_ranges": [
+        79,
+        104
+      ]
+    },
+    {
+      "source": "router_os",
+      "target": "cisco_ios",
+      "relationship": "has_example",
+      "mechanism": "Cisco IOS is described as independently designed router OS.",
+      "provenance": "source",
+      "conditions": "Platform selected.",
+      "effect": "Implements router behavior.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "router_os",
+      "target": "junos",
+      "relationship": "has_example",
+      "mechanism": "Junos is described as extensively modified Unix software.",
+      "provenance": "source",
+      "conditions": "Platform selected.",
+      "effect": "Implements router behavior.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "router_os",
+      "target": "nxos",
+      "relationship": "has_example",
+      "mechanism": "NX-OS is described as extensively modified Unix software.",
+      "provenance": "source",
+      "conditions": "Platform selected.",
+      "effect": "Implements router behavior.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "source": "openwrt",
+      "target": "linux",
+      "relationship": "is_linux_based_firmware",
+      "mechanism": "OpenWrt is described as free Linux-based firmware for some SOHO routers.",
+      "provenance": "source",
+      "conditions": "Compatible hardware.",
+      "effect": "Offers alternative router software.",
+      "inverse_or_limitation": "Compatibility is device-specific.",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "source": "tomato",
+      "target": "linux",
+      "relationship": "is_linux_based_firmware",
+      "mechanism": "Tomato is named as alternative free Linux-based firmware.",
+      "provenance": "source",
+      "conditions": "Compatible hardware.",
+      "effect": "Offers alternative firmware.",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "source": "ddwrt",
+      "target": "linux",
+      "relationship": "is_linux_based_firmware",
+      "mechanism": "DD-WRT is named as alternative free Linux-based firmware.",
+      "provenance": "source",
+      "conditions": "Compatible hardware.",
+      "effect": "Offers alternative firmware.",
+      "source_line_ranges": [
+        104
+      ]
+    },
+    {
+      "source": "router",
+      "target": "wan",
+      "relationship": "may_connect_to",
+      "mechanism": "Router connects enterprises, customers, ISPs, and WANs.",
+      "provenance": "source",
+      "conditions": "WAN interface/network present.",
+      "effect": "Carries wide-area traffic.",
+      "source_line_ranges": [
+        95,
+        106,
+        113
+      ]
+    },
+    {
+      "source": "router",
+      "target": "voice_gateway",
+      "relationship": "may_be_specialized_as",
+      "mechanism": "Some gateways process voice, data, video, fax traffic.",
+      "provenance": "source",
+      "conditions": "Specialized service gateway.",
+      "effect": "Combines routing with service processing.",
+      "inverse_or_limitation": "Not all routers process media.",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "source": "voice_gateway",
+      "target": "voip",
+      "relationship": "processes",
+      "mechanism": "Since 2005 most long-distance calls are described as processed as IP/VoIP traffic.",
+      "provenance": "source",
+      "conditions": "IP voice service.",
+      "effect": "Carries voice over IP networks.",
+      "inverse_or_limitation": "Source's statement is a broad historical generalization.",
+      "source_line_ranges": [
+        127
+      ]
+    },
+    {
+      "source": "router",
+      "target": "management_plane",
+      "relationship": "is_configured_and_observed_through",
+      "mechanism": "Management plane represents configuration/observation functions; explicit router management-plane detail is synthesis.",
+      "provenance": "synthesis",
+      "conditions": "Device has management access.",
+      "effect": "Enables operations and troubleshooting.",
+      "inverse_or_limitation": "Article does not enumerate router management protocols."
+    },
+    {
+      "source": "router",
+      "target": "mtu",
+      "relationship": "source_detail_is_limited_for",
+      "mechanism": "The article mentions interfaces/encapsulation but does not explain MTU/fragmentation mechanics.",
+      "provenance": "synthesis",
+      "conditions": "Source-grounding boundary.",
+      "effect": "Marks a future expansion topic.",
+      "inverse_or_limitation": "Do not infer exact MTU behavior from this article."
+    },
+    {
+      "source": "router",
+      "target": "packet_loss",
+      "relationship": "may_cause_under_congestion",
+      "mechanism": "Tail drop, RED, and WRED can drop packets under queue conditions.",
+      "provenance": "source",
+      "conditions": "Congestion/threshold conditions.",
+      "effect": "Can lose packets before next hop.",
+      "inverse_or_limitation": "Endpoint recovery is separate.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "source": "router",
+      "target": "tcpip",
+      "relationship": "supports_modern_architecture",
+      "mechanism": "DARPA's program helped create TCP/IP architecture used today.",
+      "provenance": "source",
+      "conditions": "IP internetworking.",
+      "effect": "Enables interoperable routing.",
+      "inverse_or_limitation": "Multiple historical influences are noted.",
+      "source_line_ranges": [
+        73,
+        77
+      ]
+    },
+    {
+      "source": "router",
+      "target": "packet_switching",
+      "relationship": "is_device_for",
+      "mechanism": "Router forwards packets between networks in packet-switched internetworks.",
+      "provenance": "source",
+      "conditions": "Packet-switched network.",
+      "effect": "Supports multi-hop communication.",
+      "source_line_ranges": [
+        58,
+        68,
+        70
+      ]
+    },
+    {
+      "source": "router",
+      "target": "internet",
+      "relationship": "enables_internetworking",
+      "mechanism": "Routers forward packets across multiple networks and hops.",
+      "provenance": "source",
+      "conditions": "Routes and physical links exist.",
+      "effect": "Enables global connectivity.",
+      "inverse_or_limitation": "Each router makes local forwarding decisions.",
+      "source_line_ranges": [
+        58,
+        60
+      ]
+    },
+    {
+      "source": "router",
+      "target": "route_entry",
+      "relationship": "uses",
+      "mechanism": "A route entry maps destination information to a forwarding choice/interface.",
+      "provenance": "source",
+      "conditions": "FIB has matching entry.",
+      "effect": "Selects egress path.",
+      "source_line_ranges": [
+        86,
+        87,
+        135
+      ]
+    },
+    {
+      "source": "route_entry",
+      "target": "outgoing_interface",
+      "relationship": "identifies",
+      "mechanism": "Route/forwarding entry identifies physical interface for next transmission.",
+      "provenance": "source",
+      "conditions": "Route installed.",
+      "effect": "Provides egress interface.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "source": "router",
+      "target": "packet_counter",
+      "relationship": "may_support_statistics_through",
+      "mechanism": "Some implementations increment counters associated with route entries.",
+      "provenance": "source",
+      "conditions": "Counter feature implemented.",
+      "effect": "Provides operational statistics.",
+      "inverse_or_limitation": "Optional implementation detail.",
+      "source_line_ranges": [
+        157
+      ]
+    },
+    {
+      "source": "router",
+      "target": "router_failure",
+      "relationship": "can_be_resilient_to_through_redundancy",
+      "mechanism": "Carrier routers may have redundant processor/power/fan modules; resilience implication is synthesis.",
+      "provenance": "synthesis",
+      "conditions": "High-availability platform.",
+      "effect": "Can reduce impact of component failures.",
+      "inverse_or_limitation": "Redundancy does not remove all failure modes.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "source": "router",
+      "target": "internet_backbone",
+      "relationship": "uses_high_speed_interfaces_for",
+      "mechanism": "Carrier routers may use 10G/40G/100G interfaces and optical fiber.",
+      "provenance": "source",
+      "conditions": "Carrier/core deployment.",
+      "effect": "Supports high-volume backbone traffic.",
+      "inverse_or_limitation": "Rates are source examples, not universal.",
+      "source_line_ranges": [
+        62,
+        92
+      ]
+    },
+    {
+      "source": "router",
+      "target": "multiprotocol",
+      "relationship": "historically_supported",
+      "mechanism": "Early multiprotocol routers processed AppleTalk, DECnet, IPX, and Xerox protocols in addition to TCP/IP.",
+      "provenance": "source",
+      "conditions": "Legacy networking era.",
+      "effect": "Shows protocol diversity.",
+      "inverse_or_limitation": "Modern IPv4/IPv6 routers are described as simpler multiprotocol devices.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "multiprotocol",
+      "target": "apple_talk",
+      "relationship": "could_forward",
+      "mechanism": "AppleTalk is named among legacy protocols supported by early multiprotocol routers.",
+      "provenance": "source",
+      "conditions": "Legacy multiprotocol device.",
+      "effect": "Interconnects networks using different protocol families.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "multiprotocol",
+      "target": "decnet",
+      "relationship": "could_forward",
+      "mechanism": "DECnet is named among legacy protocols supported by early multiprotocol routers.",
+      "provenance": "source",
+      "conditions": "Legacy multiprotocol device.",
+      "effect": "Interconnects legacy networks.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "multiprotocol",
+      "target": "ipx",
+      "relationship": "could_forward",
+      "mechanism": "IPX is named among legacy protocols supported by early multiprotocol routers.",
+      "provenance": "source",
+      "conditions": "Legacy multiprotocol device.",
+      "effect": "Interconnects legacy networks.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "donald_davies",
+      "target": "npl_network",
+      "relationship": "proposed_interface_computer_for",
+      "mechanism": "Davies proposed a software switching node/interface computer for the NPL network.",
+      "provenance": "source",
+      "conditions": "1966 proposal.",
+      "effect": "Contributed to packet switching/router concepts.",
+      "inverse_or_limitation": "Proposal differs from later deployed systems.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "wesley_clark",
+      "target": "imp",
+      "relationship": "conceived_interface_computer_for",
+      "mechanism": "Clark conceived a similar interface-computer idea for ARPANET, called IMPs.",
+      "provenance": "source",
+      "conditions": "1967 concept.",
+      "effect": "Influenced early ARPANET architecture.",
+      "inverse_or_limitation": "Not sole origin of all router concepts.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "imp",
+      "target": "arpanet",
+      "relationship": "was_deployed_in",
+      "mechanism": "First IMP delivered to UCLA on 30 Aug 1969 and went online 29 Oct 1969.",
+      "provenance": "source",
+      "conditions": "1969 deployment.",
+      "effect": "Provided router-like packet switching functions.",
+      "inverse_or_limitation": "Historical IMP is precursor, not identical to modern router.",
+      "source_line_ranges": [
+        68,
+        70
+      ]
+    },
+    {
+      "source": "honeywell516",
+      "target": "imp",
+      "relationship": "was_hardware_platform_for",
+      "mechanism": "Early NPL/ARPANET interface computers used Honeywell 516.",
+      "provenance": "source",
+      "conditions": "Early 1969 systems.",
+      "effect": "Shows early router-like functions on general-purpose computers.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "source": "cyclades",
+      "target": "end_to_end",
+      "relationship": "influenced",
+      "mechanism": "CYCLADES was an early datagram-network program and contributed to end-to-end architecture according to historical discussion.",
+      "provenance": "source",
+      "conditions": "1972–1973 program.",
+      "effect": "Influenced Internet design principles.",
+      "inverse_or_limitation": "DARPA also drew on other programs.",
+      "source_line_ranges": [
+        73,
+        178,
+        179
+      ]
+    },
+    {
+      "source": "parc_packet",
+      "target": "router",
+      "relationship": "was_part_of_early_internetworking_research",
+      "mechanism": "Xerox PARC Universal Packet work led to early Xerox routers.",
+      "provenance": "source",
+      "conditions": "Early 1970s/1974.",
+      "effect": "Contributed to internetworking experiments.",
+      "inverse_or_limitation": "Corporate IP concerns limited external attention.",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "source": "darpa",
+      "target": "tcpip",
+      "relationship": "program_helped_create",
+      "mechanism": "DARPA program drew on earlier research and created the TCP/IP architecture in use today.",
+      "provenance": "source",
+      "conditions": "1973–1974 onward.",
+      "effect": "Produced core Internet architecture.",
+      "inverse_or_limitation": "Not the sole influence.",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "source": "ginny_travers",
+      "target": "router",
+      "relationship": "developed_first_true_ip_router_at_bbn",
+      "mechanism": "Source credits Ginny Travers with developing the first true IP router during 1975–1976.",
+      "provenance": "source",
+      "conditions": "DARPA-initiated effort.",
+      "effect": "Advanced experimental Internet routing.",
+      "inverse_or_limitation": "Historically source-attributed claim.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "source": "bbn",
+      "target": "ginny_travers",
+      "relationship": "hosted_work_by",
+      "mechanism": "Travers developed the router at BBN according to article.",
+      "provenance": "source",
+      "conditions": "1975–1976.",
+      "effect": "Links contribution and organization.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "source": "pdp11",
+      "target": "router",
+      "relationship": "provided_platform_for_early_ip_routers",
+      "mechanism": "Three PDP-11-based routers were in service by end of 1976.",
+      "provenance": "source",
+      "conditions": "Prototype Internet.",
+      "effect": "Shows transition from general-purpose computer to router role.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "source": "william_yeager",
+      "target": "multiprotocol",
+      "relationship": "led_stanford_program_for",
+      "mechanism": "Yeager led Stanford multiprotocol router program in 1981.",
+      "provenance": "source",
+      "conditions": "1981.",
+      "effect": "Extended protocol support.",
+      "inverse_or_limitation": "MIT effort was independent.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "noel_chiappa",
+      "target": "multiprotocol",
+      "relationship": "led_mit_program_for",
+      "mechanism": "Chiappa led MIT multiprotocol router program in 1981.",
+      "provenance": "source",
+      "conditions": "1981.",
+      "effect": "Extended protocol support.",
+      "inverse_or_limitation": "Stanford effort was independent.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "source": "rfc4098",
+      "target": "bgp",
+      "relationship": "categorizes_router_roles_for",
+      "mechanism": "RFC 4098 is cited for BGP router types/benchmarking terminology.",
+      "provenance": "source",
+      "conditions": "BGP routing context.",
+      "effect": "Standardizes terminology.",
+      "source_line_ranges": [
+        117,
+        215
+      ]
+    },
+    {
+      "source": "rfc3654",
+      "target": "control_plane",
+      "relationship": "documents_separation_of",
+      "mechanism": "RFC 3654 reference concerns separation of IP control and forwarding.",
+      "provenance": "source",
+      "conditions": "Router architecture.",
+      "effect": "Provides standards context.",
+      "source_line_ranges": [
+        198
+      ]
+    },
+    {
+      "source": "internet",
+      "target": "dfz",
+      "relationship": "is_discussed_in_context_of",
+      "mechanism": "Article notes no single clearly identifiable backbone and references the default-free zone.",
+      "provenance": "source",
+      "conditions": "Modern inter-domain routing.",
+      "effect": "Frames backbone as distributed ISP systems.",
+      "inverse_or_limitation": "Does not imply physical core infrastructure is absent.",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "source": "router",
+      "target": "software_security_debate",
+      "relationship": "is_subject_of_qualified_claim",
+      "mechanism": "Article reports some experts argue open-source routers may be more secure due to visibility of flaws; claim is debated.",
+      "provenance": "source_claim",
+      "conditions": "Security comparison.",
+      "effect": "Preserves qualification.",
+      "inverse_or_limitation": "Not a universal proof.",
+      "source_line_ranges": [
+        110,
+        212,
+        213
+      ]
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_forwarding_pipeline",
+      "name": "Router forwarding pipeline",
+      "steps": [
+        "packet arrives on incoming interface",
+        "parse Layer-3 header",
+        "extract destination IP and optional QoS hints",
+        "match destination against route/FIB entries",
+        "apply policy if applicable",
+        "select outgoing interface/network",
+        "encapsulate packet in outgoing Layer-2 frame",
+        "transmit toward next hop"
+      ],
+      "source_line_ranges": [
+        60,
+        86,
+        87,
+        135,
+        145
+      ]
+    },
+    {
+      "id": "model_control_fib",
+      "name": "Control plane to FIB",
+      "steps": [
+        "static routes and dynamic protocols supply route information",
+        "control plane maintains routing table",
+        "control plane removes non-essential directives",
+        "control plane builds FIB",
+        "forwarding plane consults FIB per packet"
+      ],
+      "source_line_ranges": [
+        81,
+        86,
+        87
+      ]
+    },
+    {
+      "id": "model_route_sources",
+      "name": "Route source model",
+      "sources": [
+        "static routes",
+        "dynamic routing protocols",
+        "default route",
+        "DHCP-provided default route"
+      ],
+      "result": "routing table and derived FIB",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "id": "model_default_route",
+      "name": "Default route",
+      "condition": "No more-specific destination route is present",
+      "action": "Use default route toward ISP/upstream",
+      "common_context": "home and small business networks",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "id": "model_congestion",
+      "name": "Congestion and queue management",
+      "condition": "Packet arrival rate exceeds processing/transmission capacity",
+      "responses": [
+        "buffer packets temporarily",
+        "tail drop new packets when buffer full",
+        "RED probabilistically drops above threshold",
+        "WRED differentiates drop behavior by traffic type"
+      ],
+      "effects": [
+        "queueing delay",
+        "packet loss",
+        "traffic-class-dependent drops"
+      ],
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "model_qos",
+      "name": "QoS processing priority",
+      "steps": [
+        "classify traffic",
+        "apply QoS policy",
+        "choose which packet to process first",
+        "prioritize latency-sensitive traffic such as VoIP"
+      ],
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "model_hardware",
+      "name": "Router implementation model",
+      "architectures": [
+        {
+          "name": "software router",
+          "components": [
+            "general-purpose CPU",
+            "routing software",
+            "network interfaces"
+          ]
+        },
+        {
+          "name": "high-performance router",
+          "components": [
+            "network processor and/or ASIC acceleration",
+            "packet buffers",
+            "interfaces/line cards",
+            "redundant power/cooling where designed"
+          ]
+        }
+      ],
+      "source_line_ranges": [
+        64,
+        79,
+        92,
+        147
+      ],
+      "provenance": "source-derived plus explicitly marked synthesis"
+    },
+    {
+      "id": "model_enterprise_hierarchy",
+      "name": "Enterprise routing hierarchy",
+      "layers": [
+        {
+          "name": "access",
+          "function": "customer/site connectivity"
+        },
+        {
+          "name": "distribution",
+          "function": "aggregate access traffic and possibly enforce WAN QoS"
+        },
+        {
+          "name": "core",
+          "function": "high-bandwidth backbone between distribution tiers/sites"
+        }
+      ],
+      "source_line_ranges": [
+        102,
+        104,
+        106,
+        108
+      ]
+    },
+    {
+      "id": "model_isp_roles",
+      "name": "ISP and MPLS router roles",
+      "roles": [
+        "edge/inter-AS border",
+        "provider P",
+        "provider edge PE",
+        "customer edge CE",
+        "core",
+        "internal BGP router"
+      ],
+      "source_line_ranges": [
+        117,
+        125
+      ]
+    },
+    {
+      "id": "model_residential_gateway",
+      "name": "Residential gateway",
+      "components": [
+        "Layer-3 router",
+        "Ethernet switch",
+        "wireless access point",
+        "optional modem"
+      ],
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "id": "model_nat_gateway",
+      "name": "NAT and port forwarding",
+      "steps": [
+        "internal hosts use private IPv4 space",
+        "router connects LAN to ISP/public IPv4",
+        "NAT translates address/connection information",
+        "port forwarding maps selected inbound connections to internal host"
+      ],
+      "source_line_ranges": [
+        110,
+        126
+      ]
+    },
+    {
+      "id": "model_end_to_end",
+      "name": "End-to-end reliability boundary",
+      "steps": [
+        "router forwards connectionless packets hop by hop",
+        "congestion or downstream failures may lose packets",
+        "hosts provide reliability/recovery where required"
+      ],
+      "source_line_ranges": [
+        71,
+        135,
+        141,
+        175
+      ]
+    },
+    {
+      "id": "model_peering",
+      "name": "ISP peering",
+      "steps": [
+        "edge router attaches to ISP boundary",
+        "eBGP peers with transit provider, IXP peer, or private peer",
+        "routes exchanged according to policy",
+        "core carries traffic between edge routers"
+      ],
+      "source_line_ranges": [
+        119,
+        123,
+        125
+      ]
+    },
+    {
+      "id": "model_redistribution",
+      "name": "Route redistribution",
+      "condition": "Router runs more than one routing protocol",
+      "action": "Selectively share route information between protocols",
+      "caveat": "Specific safeguards/algorithms are not detailed by the article",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "model_security_boundary",
+      "name": "Router security boundary",
+      "components": [
+        "network boundary",
+        "optional firewall",
+        "optional VPN/IPsec",
+        "optional NAT/port forwarding",
+        "separate inspection/policy devices as needed"
+      ],
+      "warning": "Routing, NAT, firewalling, and VPN are distinct capabilities; security depends on configuration.",
+      "source_line_ranges": [
+        110,
+        126,
+        128
+      ]
+    },
+    {
+      "id": "model_state",
+      "name": "Forwarding state and observability",
+      "basic_model": "Pure IP forwarding minimizes per-packet historical state",
+      "exceptions": [
+        "optional route counters",
+        "NAT state",
+        "QoS/queue state",
+        "special handling"
+      ],
+      "source_line_ranges": [
+        135,
+        157
+      ]
+    },
+    {
+      "id": "model_fast_slow",
+      "name": "Hardware fast path versus CPU exception path",
+      "fast_path": "ASIC/network processor handles common forwarding/filtering",
+      "slow_path": "CPU handles functions requiring special attention",
+      "tradeoff": "Hardware accelerates common operations; software provides flexibility for exceptions",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ]
+    },
+    {
+      "id": "model_history",
+      "name": "Historical development sequence",
+      "events": [
+        "1966 Donald Davies proposes interface computer/switching node for NPL",
+        "1967 Wesley Clark conceives ARPANET interface computer/IMP idea",
+        "1969 NPL/ARPANET interface computers deployed",
+        "1972–1973 CYCLADES program",
+        "1973–1974 DARPA internetworking program",
+        "around 1974 Xerox routers become operational",
+        "1975–1976 Ginny Travers develops first true IP router at BBN according to source",
+        "1976 three PDP-11 prototype Internet routers",
+        "1981 MIT and Stanford multiprotocol router programs"
+      ],
+      "source_line_ranges": [
+        68,
+        70,
+        73,
+        75,
+        77
+      ]
+    },
+    {
+      "id": "model_router_switch",
+      "name": "Router versus switch",
+      "router": "Uses Layer-3 destination IP/prefix to forward between IP networks",
+      "switch": "Uses Layer-2 MAC addresses to bridge frames",
+      "overlap": "Multilayer switches can also perform Layer-3 routing",
+      "source_line_ranges": [
+        58,
+        100,
+        128,
+        135
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_definition",
+      "claim": "A router forwards packets between computer networks using network-layer destination information and routing information/policy.",
+      "source_line_ranges": [
+        57,
+        60
+      ],
+      "type": "definition"
+    },
+    {
+      "id": "claim_layer3",
+      "claim": "A router is a Layer-3 device because its primary forwarding decision is based on the destination IP address.",
+      "source_line_ranges": [
+        58,
+        135
+      ],
+      "type": "architecture"
+    },
+    {
+      "id": "claim_planes",
+      "claim": "The control plane maintains routing information and builds a FIB; the forwarding plane consults the FIB to forward packets.",
+      "source_line_ranges": [
+        84,
+        87
+      ],
+      "type": "mechanism"
+    },
+    {
+      "id": "claim_routes",
+      "claim": "Routing tables may include static, dynamic, and default routes; a default route may also be obtained by DHCP.",
+      "source_line_ranges": [
+        86,
+        137
+      ],
+      "type": "configuration"
+    },
+    {
+      "id": "claim_end_to_end",
+      "claim": "Connectionless router/gateway design does not assure reliable delivery; reliability is left to hosts.",
+      "source_line_ranges": [
+        71,
+        73,
+        175
+      ],
+      "type": "architecture_principle"
+    },
+    {
+      "id": "claim_congestion",
+      "claim": "Tail drop, RED, and WRED are queue-management policies used when packets arrive faster than a router can process/transmit them.",
+      "source_line_ranges": [
+        141
+      ],
+      "type": "congestion"
+    },
+    {
+      "id": "claim_qos",
+      "claim": "QoS classifies traffic and affects processing priority; it is important for latency-sensitive VoIP traffic.",
+      "source_line_ranges": [
+        143
+      ],
+      "type": "performance"
+    },
+    {
+      "id": "claim_hardware",
+      "claim": "Router implementations range from CPU/software forwarding to network processors and ASIC-accelerated hardware.",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ],
+      "type": "hardware"
+    },
+    {
+      "id": "claim_roles",
+      "claim": "Router roles include access, distribution, core, edge, provider, provider-edge, customer-edge, interior, exterior, and border/gateway.",
+      "source_line_ranges": [
+        102,
+        108,
+        113,
+        119,
+        125
+      ],
+      "type": "topology"
+    },
+    {
+      "id": "claim_security",
+      "claim": "Routers may integrate firewall, VPN, and NAT features, but NAT is not universally recognized as a security feature.",
+      "source_line_ranges": [
+        110,
+        126
+      ],
+      "type": "security"
+    },
+    {
+      "id": "claim_home",
+      "claim": "Wi-Fi routers combine router, switch, and wireless access point functions, and residential gateways may also integrate a modem.",
+      "source_line_ranges": [
+        57,
+        131
+      ],
+      "type": "device_integration"
+    },
+    {
+      "id": "claim_history",
+      "claim": "The article traces router precursors from NPL/ARPANET interface computers to CYCLADES, Xerox PARC, DARPA, BBN, and 1981 multiprotocol router programs.",
+      "source_line_ranges": [
+        68,
+        77
+      ],
+      "type": "history"
+    },
+    {
+      "id": "claim_redistribution",
+      "claim": "Routers running multiple routing protocols may selectively redistribute routes between them.",
+      "source_line_ranges": [
+        139
+      ],
+      "type": "routing"
+    },
+    {
+      "id": "claim_payload",
+      "claim": "Pure IP forwarding usually uses Layer-3 addresses and optional header hints, not payload inspection.",
+      "source_line_ranges": [
+        135
+      ],
+      "type": "forwarding"
+    },
+    {
+      "id": "claim_limits",
+      "claim": "The source does not deeply specify ASIC microarchitecture, MTU/fragmentation mechanics, or specific routing algorithms.",
+      "source_line_ranges": [
+        64,
+        79,
+        92,
+        135,
+        137
+      ],
+      "type": "source_scope"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "term_a": "routing",
+      "term_b": "forwarding",
+      "distinction": "Routing computes/maintains route choices; forwarding applies a selected FIB entry to a packet.",
+      "source_line_ranges": [
+        81,
+        86,
+        87,
+        135
+      ]
+    },
+    {
+      "term_a": "routing table",
+      "term_b": "FIB",
+      "distinction": "Routing table holds route information; FIB is a forwarding-optimized structure derived from it.",
+      "source_line_ranges": [
+        86,
+        87
+      ]
+    },
+    {
+      "term_a": "router",
+      "term_b": "Layer-2 switch",
+      "distinction": "Router primarily uses Layer-3 destination IP; switch bridges using Layer-2 MAC addresses.",
+      "source_line_ranges": [
+        58,
+        100,
+        135
+      ]
+    },
+    {
+      "term_a": "router",
+      "term_b": "multilayer switch",
+      "distinction": "Multilayer switches can route between subnets, so capabilities overlap.",
+      "source_line_ranges": [
+        58,
+        128
+      ]
+    },
+    {
+      "term_a": "connectionless forwarding",
+      "term_b": "reliable delivery",
+      "distinction": "Basic forwarding does not guarantee delivery; endpoints provide reliability where needed.",
+      "source_line_ranges": [
+        71,
+        175
+      ]
+    },
+    {
+      "term_a": "NAT",
+      "term_b": "firewall",
+      "distinction": "NAT maps addressing/connection information; the source says it is not universally regarded as a security feature.",
+      "source_line_ranges": [
+        110,
+        126
+      ]
+    },
+    {
+      "term_a": "control plane",
+      "term_b": "forwarding plane",
+      "distinction": "Control plane computes route state/FIB; forwarding plane applies FIB to packets.",
+      "source_line_ranges": [
+        84,
+        87
+      ]
+    },
+    {
+      "term_a": "static route",
+      "term_b": "dynamic route",
+      "distinction": "Static route is manually configured; dynamic route is learned through a protocol.",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "term_a": "default route",
+      "term_b": "specific route",
+      "distinction": "Default route is used when no more-specific destination entry matches.",
+      "source_line_ranges": [
+        135,
+        137
+      ]
+    },
+    {
+      "term_a": "access router",
+      "term_b": "distribution router",
+      "distinction": "Access serves customer/site connectivity; distribution aggregates traffic and may enforce WAN QoS.",
+      "source_line_ranges": [
+        104,
+        106
+      ]
+    },
+    {
+      "term_a": "distribution router",
+      "term_b": "core router",
+      "distinction": "Distribution aggregates/policies traffic; core provides high-bandwidth backbone transit.",
+      "source_line_ranges": [
+        106,
+        108
+      ]
+    },
+    {
+      "term_a": "edge router",
+      "term_b": "core router",
+      "distinction": "Edge peers at network boundaries; core carries traffic between edge routers within an AS.",
+      "source_line_ranges": [
+        119,
+        123
+      ]
+    },
+    {
+      "term_a": "P router",
+      "term_b": "PE router",
+      "distinction": "P is provider transit; PE connects CE and provides VPN services.",
+      "source_line_ranges": [
+        120,
+        121
+      ]
+    },
+    {
+      "term_a": "PE router",
+      "term_b": "CE router",
+      "distinction": "PE is provider-side; CE is customer-side edge.",
+      "source_line_ranges": [
+        121,
+        122
+      ]
+    },
+    {
+      "term_a": "tail drop",
+      "term_b": "RED/WRED",
+      "distinction": "Tail drop waits for a full buffer; RED/WRED can drop earlier, with WRED differentiating traffic types.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "term_a": "ASIC fast path",
+      "term_b": "CPU exception path",
+      "distinction": "ASIC accelerates common operations; CPU handles packets/functions requiring special attention.",
+      "source_line_ranges": [
+        64,
+        79,
+        147
+      ]
+    },
+    {
+      "term_a": "Wi-Fi router",
+      "term_b": "dedicated router",
+      "distinction": "Wi-Fi router integrates routing, switching, and AP; a residential gateway may also integrate a modem.",
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "term_a": "router hardware",
+      "term_b": "router software",
+      "distinction": "Interfaces, processors, buffers, and accelerators execute work; OS/routing code supplies behavior/configuration.",
+      "source_line_ranges": [
+        64,
+        79,
+        92
+      ]
+    },
+    {
+      "term_a": "packet header",
+      "term_b": "packet payload",
+      "distinction": "Basic IP forwarding uses header addressing and usually not payload.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "term_a": "routing domain",
+      "term_b": "physical network",
+      "distinction": "AS is a routing/policy domain; physical interfaces/links are the transmission substrate.",
+      "source_line_ranges": [
+        93,
+        119,
+        124
+      ]
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp_01",
+      "title": "Router fundamentals",
+      "sequence": [
+        "router",
+        "network",
+        "packet",
+        "ip_packet",
+        "ip_header",
+        "destination_ip",
+        "routing",
+        "forwarding"
+      ]
+    },
+    {
+      "id": "lp_02",
+      "title": "Packet forwarding pipeline",
+      "sequence": [
+        "incoming_interface",
+        "ingress",
+        "packet_header_parse",
+        "route_lookup",
+        "fib",
+        "outgoing_interface",
+        "encapsulation",
+        "frame",
+        "egress"
+      ]
+    },
+    {
+      "id": "lp_03",
+      "title": "Control plane and FIB",
+      "sequence": [
+        "routing_protocol",
+        "route_table",
+        "control_plane",
+        "fib",
+        "forwarding_plane",
+        "forwarding"
+      ]
+    },
+    {
+      "id": "lp_04",
+      "title": "Static, dynamic, and default routes",
+      "sequence": [
+        "static_route",
+        "dynamic_route",
+        "default_route",
+        "route_table",
+        "route_selection",
+        "next_hop"
+      ]
+    },
+    {
+      "id": "lp_05",
+      "title": "Router versus switch",
+      "sequence": [
+        "layer2",
+        "switch",
+        "layer3",
+        "router",
+        "multilayer_switch",
+        "subnet"
+      ]
+    },
+    {
+      "id": "lp_06",
+      "title": "Router hardware",
+      "sequence": [
+        "cpu",
+        "network_processor",
+        "asic",
+        "fast_path",
+        "slow_path",
+        "buffer",
+        "interface",
+        "physical_medium"
+      ]
+    },
+    {
+      "id": "lp_07",
+      "title": "Congestion and queues",
+      "sequence": [
+        "packet_service_rate",
+        "congestion",
+        "buffer",
+        "packet_queue",
+        "tail_drop",
+        "red",
+        "wred",
+        "packet_loss"
+      ]
+    },
+    {
+      "id": "lp_08",
+      "title": "QoS and latency",
+      "sequence": [
+        "traffic_classification",
+        "qos",
+        "packet_scheduling",
+        "latency",
+        "voip"
+      ]
+    },
+    {
+      "id": "lp_09",
+      "title": "Home gateway",
+      "sequence": [
+        "wireless_router",
+        "switch",
+        "access_point",
+        "modem",
+        "residential_gateway",
+        "lan",
+        "wan",
+        "nat",
+        "port_forwarding"
+      ]
+    },
+    {
+      "id": "lp_10",
+      "title": "Router security",
+      "sequence": [
+        "router",
+        "security_zone",
+        "firewall",
+        "vpn",
+        "ipsec",
+        "nat",
+        "network_security"
+      ]
+    },
+    {
+      "id": "lp_11",
+      "title": "ISP routing roles",
+      "sequence": [
+        "access_router",
+        "distribution_router",
+        "core_router",
+        "edge_router",
+        "as",
+        "bgp",
+        "ebgp",
+        "ibgp"
+      ]
+    },
+    {
+      "id": "lp_12",
+      "title": "MPLS and provider VPNs",
+      "sequence": [
+        "provider_router",
+        "mpls",
+        "lsp",
+        "provider_edge",
+        "customer_edge",
+        "l2vpn",
+        "l3vpn"
+      ]
+    },
+    {
+      "id": "lp_13",
+      "title": "ISP peering and transit",
+      "sequence": [
+        "edge_router",
+        "internet_exchange",
+        "pni",
+        "transit_provider",
+        "ebgp",
+        "isp",
+        "internet_backbone"
+      ]
+    },
+    {
+      "id": "lp_14",
+      "title": "End-to-end principle",
+      "sequence": [
+        "connectionless",
+        "router",
+        "host",
+        "reliability",
+        "packet_loss",
+        "internet"
+      ]
+    },
+    {
+      "id": "lp_15",
+      "title": "Router history",
+      "sequence": [
+        "donald_davies",
+        "npl_network",
+        "wesley_clark",
+        "imp",
+        "arpanet",
+        "cyclades",
+        "parc_packet",
+        "darpa",
+        "ginny_travers",
+        "pdp11",
+        "multiprotocol"
+      ]
+    },
+    {
+      "id": "lp_16",
+      "title": "Router operating systems",
+      "sequence": [
+        "router_os",
+        "linux",
+        "unix",
+        "cisco_ios",
+        "junos",
+        "nxos",
+        "openwrt",
+        "tomato",
+        "ddwrt"
+      ]
+    },
+    {
+      "id": "lp_17",
+      "title": "Physical connectivity",
+      "sequence": [
+        "router",
+        "interface",
+        "copper",
+        "fiber",
+        "wireless_link",
+        "ethernet",
+        "dsl",
+        "t1",
+        "line_card"
+      ]
+    },
+    {
+      "id": "lp_18",
+      "title": "Routing policy and redistribution",
+      "sequence": [
+        "route_table",
+        "route_policy",
+        "route_selection",
+        "policy_routing",
+        "routing_redistribution",
+        "routing_protocol"
+      ]
+    },
+    {
+      "id": "lp_19",
+      "title": "Observability",
+      "sequence": [
+        "packet_counter",
+        "route_table",
+        "management_plane",
+        "router_os",
+        "congestion",
+        "packet_loss"
+      ]
+    },
+    {
+      "id": "lp_20",
+      "title": "LAN to Internet scale",
+      "sequence": [
+        "lan",
+        "subnet",
+        "border_router",
+        "isp",
+        "edge_router",
+        "core_router",
+        "internet_backbone",
+        "internet"
+      ]
+    },
+    {
+      "id": "lp_21",
+      "title": "Architecture tradeoffs",
+      "sequence": [
+        "software_router",
+        "cpu",
+        "asic",
+        "fast_path",
+        "slow_path",
+        "buffer",
+        "qos",
+        "latency"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "id": "mis_01",
+      "misconception": "A router guarantees packets reach the final destination.",
+      "correction": "A router forwards hop by hop; basic connectionless routing does not guarantee delivery.",
+      "source_line_ranges": [
+        71,
+        135,
+        175
+      ]
+    },
+    {
+      "id": "mis_02",
+      "misconception": "Routing and forwarding are the same operation.",
+      "correction": "Routing maintains/selects routes and builds the FIB; forwarding uses the FIB for each packet.",
+      "source_line_ranges": [
+        84,
+        86,
+        87
+      ]
+    },
+    {
+      "id": "mis_03",
+      "misconception": "A router normally chooses routes by reading the application payload.",
+      "correction": "Pure IP forwarding primarily uses destination IP and optional header hints, not payload.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "mis_04",
+      "misconception": "The routing table and FIB are identical.",
+      "correction": "The FIB is derived from route information and optimized for forwarding.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "mis_05",
+      "misconception": "NAT is a complete security control.",
+      "correction": "NAT is not universally recognized as a security feature; firewalling and policy are distinct.",
+      "source_line_ranges": [
+        110,
+        126
+      ]
+    },
+    {
+      "id": "mis_06",
+      "misconception": "All routers are ASIC appliances.",
+      "correction": "Routers range from software/CPU systems to network processors and ASIC-assisted devices.",
+      "source_line_ranges": [
+        64,
+        79
+      ]
+    },
+    {
+      "id": "mis_07",
+      "misconception": "Every router needs separate Wi-Fi AP and switch hardware.",
+      "correction": "Home Wi-Fi routers commonly integrate router, switch, and AP functions, sometimes with modem.",
+      "source_line_ranges": [
+        57,
+        131
+      ]
+    },
+    {
+      "id": "mis_08",
+      "misconception": "The default route is the only route in a router.",
+      "correction": "Route tables can contain specific static/dynamic routes and a default route for unmatched destinations.",
+      "source_line_ranges": [
+        86,
+        137
+      ]
+    },
+    {
+      "id": "mis_09",
+      "misconception": "A router and Layer-3 switch are wholly separate capabilities.",
+      "correction": "Multilayer switches can route between subnets.",
+      "source_line_ranges": [
+        58,
+        128
+      ]
+    },
+    {
+      "id": "mis_10",
+      "misconception": "More buffering removes congestion.",
+      "correction": "Buffers are finite; queues can increase latency and queue-management policies may drop packets.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "mis_11",
+      "misconception": "QoS creates additional bandwidth.",
+      "correction": "QoS prioritizes traffic but does not create capacity.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "mis_12",
+      "misconception": "The Internet has one centrally controlled router backbone.",
+      "correction": "Major ISP systems collectively form a distributed backbone core; there is no single central backbone router.",
+      "source_line_ranges": [
+        125
+      ]
+    },
+    {
+      "id": "mis_13",
+      "misconception": "Open-source router software is automatically more secure.",
+      "correction": "The article reports a debated argument about visibility of flaws, not a universal proof.",
+      "source_line_ranges": [
+        110,
+        212,
+        213
+      ]
+    },
+    {
+      "id": "mis_14",
+      "misconception": "Control plane and forwarding plane must be separate physical boxes.",
+      "correction": "The article describes functional units operating simultaneously; physical separation is not required by that statement.",
+      "source_line_ranges": [
+        84,
+        86,
+        87
+      ]
+    },
+    {
+      "id": "mis_15",
+      "misconception": "A route entry guarantees end-to-end reachability.",
+      "correction": "A route informs a local forwarding decision; downstream failures and congestion can still interrupt delivery.",
+      "source_line_ranges": [
+        60,
+        135,
+        141
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_001",
+      "question": "What is a router and why is it considered a Layer-3 device?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_002",
+      "question": "How does a router use a destination IP address to select a route?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_003",
+      "question": "What is the difference between routing and forwarding?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_004",
+      "question": "How does the control plane build a FIB?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_005",
+      "question": "Why is a FIB distinct from a routing table?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_006",
+      "question": "What information can a routing table contain?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_007",
+      "question": "How do static and dynamic routes differ?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_008",
+      "question": "When does a router use a default route?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_009",
+      "question": "How can DHCP provide a default route?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_010",
+      "question": "What happens when a packet arrives for a remote network?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_011",
+      "question": "Why does a router encapsulate an IP packet in a new Layer-2 frame?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_012",
+      "question": "How does a router differ from a Layer-2 switch?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_013",
+      "question": "How can a multilayer switch perform router-like functions?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_014",
+      "question": "Why does basic router forwarding not guarantee delivery?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_015",
+      "question": "What does the end-to-end principle mean for routers?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_016",
+      "question": "What causes router congestion?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_017",
+      "question": "How do tail drop, RED, and WRED differ?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_018",
+      "question": "Why is QoS important for VoIP?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_019",
+      "question": "What roles do ASICs play in high-speed routers?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_020",
+      "question": "When might a packet be handled by CPU instead of hardware fast path?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_021",
+      "question": "Which hardware modules may be present in carrier routers?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_022",
+      "question": "How do copper, fiber, and wireless interfaces affect connectivity?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_023",
+      "question": "What functions are integrated into a Wi-Fi router?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_024",
+      "question": "What is the difference between residential gateway and dedicated router?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_025",
+      "question": "What does NAT do, and why is it not the same as a firewall?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_026",
+      "question": "What is port forwarding?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_027",
+      "question": "What are access, distribution, and core routers?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_028",
+      "question": "What is an ISP edge router?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_029",
+      "question": "How do eBGP and iBGP differ in the source's description?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_030",
+      "question": "What are P, PE, and CE routers in MPLS?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_031",
+      "question": "How do PE routers support L2VPN and L3VPN?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_032",
+      "question": "What is route redistribution?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_033",
+      "question": "What does policy-based routing override?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_034",
+      "question": "How do route counters support monitoring?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_035",
+      "question": "Why can routing changes affect reachability?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_036",
+      "question": "How did IMPs relate to modern routers?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_037",
+      "question": "What roles did Donald Davies and Wesley Clark play?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_038",
+      "question": "What did CYCLADES contribute to networking history?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_039",
+      "question": "How did DARPA's program contribute to TCP/IP?",
+      "topic_id": "router"
+    },
+    {
+      "id": "q_040",
+      "question": "What details about MTU and ASIC internals are not established by the supplied article?",
+      "topic_id": "router"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "expand_001",
+      "topic": "Longest-prefix match and trie/TCAM implementations",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_002",
+      "topic": "IPv4 versus IPv6 forwarding differences",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_003",
+      "topic": "ARP and Neighbor Discovery on outgoing links",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_004",
+      "topic": "TTL/Hop Limit decrement and ICMP errors",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_005",
+      "topic": "MTU, fragmentation, Path MTU Discovery and MSS",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_006",
+      "topic": "BGP, OSPF, IS-IS and RIP internals",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_007",
+      "topic": "Route metrics, preference and longest-prefix selection",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_008",
+      "topic": "BGP policy, route filtering, communities and security",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_009",
+      "topic": "Control-plane protection and route processor architecture",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_010",
+      "topic": "ASIC pipelines, TCAM, SRAM, packet buffers and switching fabrics",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_011",
+      "topic": "Programmable data planes and network processors",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_012",
+      "topic": "ECMP hashing and multipath forwarding",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_013",
+      "topic": "QoS schedulers, shaping, policing and strict priority",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_014",
+      "topic": "Queue management beyond RED/WRED: CoDel, PIE and ECN",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_015",
+      "topic": "Router telemetry: SNMP, streaming telemetry, NetFlow/IPFIX",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_016",
+      "topic": "Failure detection, BFD, fast reroute and convergence",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_017",
+      "topic": "High availability and redundant supervisors",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_018",
+      "topic": "Firewall versus router versus NAT gateway",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_019",
+      "topic": "VPN/IPsec tunnel processing and acceleration",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_020",
+      "topic": "DOCSIS, DSL, GPON, ONT and integrated residential gateways",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_021",
+      "topic": "Wi-Fi routing and AP bridging",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_022",
+      "topic": "MPLS label distribution and traffic engineering",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_023",
+      "topic": "VRFs and multi-tenant routing",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_024",
+      "topic": "Segment routing and SR-MPLS/SRv6",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_025",
+      "topic": "Cloud virtual routers and software-defined networking",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_026",
+      "topic": "Linux routing stack, nftables, eBPF and FRRouting",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_027",
+      "topic": "Router configuration management and automation APIs",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_028",
+      "topic": "Secure boot, signed firmware and router patching",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_029",
+      "topic": "NAT state tables and connection tracking",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_030",
+      "topic": "Port-forwarding threat models",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_031",
+      "topic": "Route leaks, prefix hijacking, RPKI and BGP security",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_032",
+      "topic": "Benchmarking throughput, packets per second, latency and jitter",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_033",
+      "topic": "Line-rate forwarding and packet-size effects",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_034",
+      "topic": "Optical transceivers, coherent optics, CPO and silicon photonics",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_035",
+      "topic": "Carrier chassis, line cards, redundancy, cooling and power",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_036",
+      "topic": "Network topology and access-distribution-core design",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_037",
+      "topic": "IXPs, transit, peering and private interconnects",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_038",
+      "topic": "Packet capture on routers and traffic mirroring",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_039",
+      "topic": "End-to-end principle and transport-layer recovery",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_040",
+      "topic": "Historical router architectures and packet-switching networks",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_041",
+      "topic": "Router versus bridge versus gateway terminology",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_042",
+      "topic": "Control/forwarding separation and RFC 3654",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_043",
+      "topic": "BGP convergence benchmarking and RFC 4098",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_044",
+      "topic": "Multicast routing and IGMP/PIM",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_045",
+      "topic": "Policy-based routing and service chaining",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_046",
+      "topic": "QoS for voice/video",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_047",
+      "topic": "Failure domains and redundant paths",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_048",
+      "topic": "Logs, counters, flow records and troubleshooting",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_049",
+      "topic": "Network segmentation and inter-zone policy",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_050",
+      "topic": "Hardware versus software versus virtual routers",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_051",
+      "topic": "Router power continuity and UPS design",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_052",
+      "topic": "CPU slow-path performance and exception traffic",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_053",
+      "topic": "Open versus closed router firmware security",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    },
+    {
+      "id": "expand_054",
+      "topic": "Route redistribution loops and filtering safeguards",
+      "status": "future_deep_dive_not_fully_developed_in_source"
+    }
+  ],
+  "references": [
+    {
+      "id": "ref_8021d",
+      "title": "IEEE 802.1D",
+      "kind": "standard",
+      "context": "Adjacent Layer-2 bridge/switch reference."
+    },
+    {
+      "id": "ref_4098",
+      "title": "RFC 4098 — Terminology for Benchmarking BGP Device Convergence in the Control Plane",
+      "kind": "standard",
+      "context": "BGP router types and convergence terminology."
+    },
+    {
+      "id": "ref_3654",
+      "title": "RFC 3654 — Requirements for Separation of IP Control and Forwarding",
+      "kind": "standard",
+      "context": "Control/forwarding plane separation."
+    },
+    {
+      "id": "ref_davies",
+      "title": "Donald Davies (1966), Proposal for a Digital Communication Network",
+      "kind": "historical_paper",
+      "context": "Early packet network/interface computer concept."
+    },
+    {
+      "id": "ref_cerf_kahn",
+      "title": "Cerf and Kahn (1974), A Protocol for Packet Network Intercommunication",
+      "kind": "historical_paper",
+      "context": "Internetwork protocol architecture."
+    },
+    {
+      "id": "ref_rfc1087",
+      "title": "RFC 1087 — Ethics and the Internet",
+      "kind": "standard",
+      "context": "Historical Internet reference cited by article."
+    },
+    {
+      "id": "ref_rfc2555",
+      "title": "RFC 2555 — 30 Years of RFCs",
+      "kind": "standard",
+      "context": "Historical reflection on early Internet routing/gateways."
+    },
+    {
+      "id": "ref_mpls_vpn",
+      "title": "BGP/MPLS IP Virtual Private Networks",
+      "kind": "technical_reference",
+      "context": "Provider-edge/customer-edge and L2/L3 VPN roles."
+    },
+    {
+      "id": "ref_medhi",
+      "title": "Medhi and Ramasamy (2007), Network Routing: Algorithms, Protocols, and Architectures",
+      "kind": "book",
+      "context": "Routing architecture/protocol background."
+    },
+    {
+      "id": "ref_oppenheimer",
+      "title": "Oppenheimer (2004), Top-Down Network Design",
+      "kind": "book",
+      "context": "Enterprise network hierarchy."
+    },
+    {
+      "id": "ref_cisco",
+      "title": "Cisco Networking Academy, Introduction to Routing Dynamically",
+      "kind": "technical_reference",
+      "context": "Dynamic route learning."
+    },
+    {
+      "id": "ref_router_security",
+      "title": "Schudel and Smith (2007), Router Security Strategies",
+      "kind": "book",
+      "context": "Router security and traffic planes."
+    },
+    {
+      "id": "ref_cyclades",
+      "title": "Russell and Schafer (2014), In the Shadow of ARPANET and Internet: Louis Pouzin and the CYCLADES Network in the 1970s",
+      "kind": "historical_study",
+      "context": "CYCLADES history and influence."
+    },
+    {
+      "id": "ref_npl",
+      "title": "Scantlebury (2001), A Brief History of the NPL Network",
+      "kind": "historical_study",
+      "context": "Early packet-network development."
+    },
+    {
+      "id": "ref_ieee_award",
+      "title": "IEEE Internet Award recipients",
+      "kind": "reference",
+      "context": "Recognition for early IP router work."
+    },
+    {
+      "id": "ref_rfc2613",
+      "title": "RFC 2613 — Remote Network Monitoring MIB Extensions for Switched Networks",
+      "kind": "standard",
+      "context": "Adjacent monitoring reference."
+    }
+  ],
+  "historical_context": {
+    "events": [
+      {
+        "date": "1966",
+        "event": "Donald Davies proposes an interface computer/switching node for the NPL network.",
+        "people": [
+          "donald_davies"
+        ],
+        "source_line_ranges": [
+          70,
+          166
+        ]
+      },
+      {
+        "date": "1967",
+        "event": "Wesley Clark conceives an interface-computer idea for ARPANET, associated with IMPs.",
+        "people": [
+          "wesley_clark"
+        ],
+        "source_line_ranges": [
+          70
+        ]
+      },
+      {
+        "date": "1969-08-30",
+        "event": "First ARPANET IMP delivered to UCLA.",
+        "people": [],
+        "source_line_ranges": [
+          68
+        ]
+      },
+      {
+        "date": "1969-10-29",
+        "event": "First ARPANET IMP went online; early NPL interface computers also appeared in 1969.",
+        "people": [],
+        "source_line_ranges": [
+          68,
+          70
+        ]
+      },
+      {
+        "date": "1972–1973",
+        "event": "Louis Pouzin's CYCLADES program explores datagram networking.",
+        "people": [
+          "louis_pouzin"
+        ],
+        "source_line_ranges": [
+          73
+        ]
+      },
+      {
+        "date": "1973–1974",
+        "event": "DARPA internetworking program draws on earlier work and helps create TCP/IP.",
+        "people": [],
+        "source_line_ranges": [
+          73
+        ]
+      },
+      {
+        "date": "around 1974",
+        "event": "Xerox PARC Universal Packet work leads to early Xerox routers becoming operational.",
+        "people": [],
+        "source_line_ranges": [
+          73
+        ]
+      },
+      {
+        "date": "1975–1976",
+        "event": "Ginny Travers develops the first true IP router at BBN according to the article.",
+        "people": [
+          "ginny_travers"
+        ],
+        "source_line_ranges": [
+          75
+        ]
+      },
+      {
+        "date": "1976",
+        "event": "Three PDP-11-based routers are in service in the experimental prototype Internet.",
+        "people": [],
+        "source_line_ranges": [
+          75
+        ]
+      },
+      {
+        "date": "1981",
+        "event": "MIT and Stanford researchers independently create multiprotocol router programs.",
+        "people": [
+          "william_yeager",
+          "noel_chiappa"
+        ],
+        "source_line_ranges": [
+          77
+        ]
+      }
+    ],
+    "people": [
+      {
+        "id": "donald_davies",
+        "label": "Donald Davies",
+        "source_line_ranges": [
+          70,
+          71
+        ]
+      },
+      {
+        "id": "wesley_clark",
+        "label": "Wesley Clark",
+        "source_line_ranges": [
+          70
+        ]
+      },
+      {
+        "id": "louis_pouzin",
+        "label": "Louis Pouzin",
+        "source_line_ranges": [
+          73
+        ]
+      },
+      {
+        "id": "ginny_travers",
+        "label": "Ginny Travers",
+        "source_line_ranges": [
+          75
+        ]
+      },
+      {
+        "id": "mike_brecia",
+        "label": "Mike Brecia",
+        "source_line_ranges": [
+          75
+        ]
+      },
+      {
+        "id": "bob_hinden",
+        "label": "Bob Hinden",
+        "source_line_ranges": [
+          75
+        ]
+      },
+      {
+        "id": "william_yeager",
+        "label": "William Yeager",
+        "source_line_ranges": [
+          77
+        ]
+      },
+      {
+        "id": "noel_chiappa",
+        "label": "Noel Chiappa",
+        "source_line_ranges": [
+          77
+        ]
+      }
+    ]
+  },
+  "entry_schema": {
+    "node_required_fields": [
+      "id",
+      "label",
+      "type",
+      "description",
+      "provenance"
+    ],
+    "relationship_required_fields": [
+      "source",
+      "target",
+      "relationship",
+      "mechanism",
+      "provenance"
+    ],
+    "optional_relationship_fields": [
+      "conditions",
+      "effect",
+      "inverse_or_limitation",
+      "source_line_ranges"
+    ],
+    "principle": "Relationships are directional and typed; mechanisms, conditions, effects, limitations, and provenance are preserved where useful. Avoid generic related_to edges."
+  },
+  "validation": {
+    "node_count": 163,
+    "relationship_count": 144,
+    "formal_model_count": 19,
+    "source_claim_count": 15,
+    "semantic_distinction_count": 20,
+    "learning_path_count": 21,
+    "misconception_count": 15,
+    "question_count": 40,
+    "expansion_target_count": 54,
+    "reference_count": 16,
+    "historical_event_count": 10,
+    "duplicate_node_ids": 0,
+    "dangling_relationships": 0,
+    "duplicate_relationships": 0,
+    "status": "CLEAN"
+  }
+}

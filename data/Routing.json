@@ -1,0 +1,4575 @@
+{
+  "schema_version": "6.0-layered_dynamic_relationship_rich_semantic_provenance",
+  "graph_type": "dynamic_semantic_knowledge_graph",
+  "topic": "Routing",
+  "source": {
+    "filename": "Pasted text(20261009-164613).txt",
+    "source_type": "user_supplied_article_extract",
+    "authority": "The supplied article is authoritative for source-grounded claims.",
+    "line_count": 220,
+    "external_research_used": false,
+    "provenance_note": "Source line ranges refer to the line markers shown in the supplied extracted article; explanatory synthesis is distinguished from source claims."
+  },
+  "overview": "A relationship-rich semantic graph of network routing: path selection, routing algorithms, delivery schemes, protocol families, metrics, multi-agent policies, congestion, hardware/software implementation, history, and route analytics.",
+  "nodes": [
+    {
+      "id": "routing",
+      "label": "Routing",
+      "type": "core_concept",
+      "description": "Selecting paths for traffic through a network or across interconnected networks; higher-level path decisions are distinct from per-hop packet forwarding.",
+      "source_line_ranges": [
+        56,
+        63
+      ],
+      "source_section": "Overview"
+    },
+    {
+      "id": "packet_switching",
+      "label": "Packet switching",
+      "type": "network_model",
+      "description": "Traffic is carried as packets through intermediate nodes.",
+      "source_line_ranges": [
+        56,
+        59
+      ]
+    },
+    {
+      "id": "packet_forwarding",
+      "label": "Packet forwarding",
+      "type": "mechanism",
+      "description": "Moves a received packet from an incoming interface to an outgoing interface; it implements the next-hop action selected by routing.",
+      "source_line_ranges": [
+        59,
+        135
+      ]
+    },
+    {
+      "id": "route",
+      "label": "Route",
+      "type": "data_structure",
+      "description": "A destination paired with reachability/path information or attributes.",
+      "source_line_ranges": [
+        61,
+        110
+      ]
+    },
+    {
+      "id": "routing_table",
+      "label": "Routing table",
+      "type": "data_structure",
+      "description": "Records routes to network destinations and supports forwarding decisions.",
+      "source_line_ranges": [
+        61,
+        86,
+        137
+      ]
+    },
+    {
+      "id": "fib",
+      "label": "Forwarding information base (FIB)",
+      "type": "data_structure",
+      "description": "Forwarding-optimized table built from control-plane routing information and consulted by the forwarding plane.",
+      "source_line_ranges": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "control_plane",
+      "label": "Control plane",
+      "type": "system_component",
+      "description": "Computes and distributes route information and derives the FIB.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "forwarding_plane",
+      "label": "Forwarding plane",
+      "type": "system_component",
+      "description": "Examines packet headers, matches destinations against the FIB, and forwards packets to outgoing interfaces.",
+      "source_line_ranges": [
+        87
+      ]
+    },
+    {
+      "id": "router",
+      "label": "Router",
+      "type": "hardware",
+      "description": "Intermediate network node that routes IP packets between networks.",
+      "source_line_ranges": [
+        59,
+        61
+      ]
+    },
+    {
+      "id": "gateway",
+      "label": "Gateway",
+      "type": "hardware",
+      "description": "Interconnects different networks; historically used as a term for router-like devices.",
+      "source_line_ranges": [
+        71,
+        113
+      ]
+    },
+    {
+      "id": "switch",
+      "label": "Switch",
+      "type": "hardware",
+      "description": "Forwards traffic within networks; Layer-3 switches can also interconnect subnets using routing.",
+      "source_line_ranges": [
+        59,
+        63,
+        128
+      ]
+    },
+    {
+      "id": "firewall",
+      "label": "Firewall",
+      "type": "hardware_or_function",
+      "description": "May be an intermediate forwarding node and may impose filtering/security policy.",
+      "source_line_ranges": [
+        59,
+        110
+      ]
+    },
+    {
+      "id": "network_node",
+      "label": "Network node",
+      "type": "entity",
+      "description": "A device or logical point participating in a network and routing/forwarding.",
+      "source_line_ranges": [
+        59,
+        92
+      ]
+    },
+    {
+      "id": "network_interface",
+      "label": "Network interface",
+      "type": "hardware_component",
+      "description": "Physical or logical attachment through which packets enter or leave a network device.",
+      "source_line_ranges": [
+        86,
+        92,
+        135
+      ]
+    },
+    {
+      "id": "destination_address",
+      "label": "Destination address",
+      "type": "packet_field",
+      "description": "Address used to identify the target network or endpoint; structured IP prefixes enable aggregate routes.",
+      "source_line_ranges": [
+        63,
+        135
+      ]
+    },
+    {
+      "id": "ip_address",
+      "label": "IP address",
+      "type": "addressing",
+      "description": "Network-layer address used by IP routing decisions.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "prefix",
+      "label": "Network prefix",
+      "type": "addressing",
+      "description": "Structured portion of an address that identifies a network/subnet and permits aggregate route entries.",
+      "source_line_ranges": [
+        63,
+        119
+      ]
+    },
+    {
+      "id": "subnet",
+      "label": "Subnet",
+      "type": "network_concept",
+      "description": "Logical network with a unique network prefix; routers connect subnets.",
+      "source_line_ranges": [
+        92,
+        128
+      ]
+    },
+    {
+      "id": "next_hop",
+      "label": "Next hop",
+      "type": "routing_concept",
+      "description": "The adjacent router/interface or node to which a packet is sent toward its destination.",
+      "source_line_ranges": [
+        92,
+        130
+      ]
+    },
+    {
+      "id": "topology",
+      "label": "Network topology",
+      "type": "model",
+      "description": "Graph of nodes and connections; dynamic topology changes make manual routes impractical at scale.",
+      "source_line_ranges": [
+        84,
+        98,
+        126,
+        130
+      ]
+    },
+    {
+      "id": "link",
+      "label": "Network link",
+      "type": "network_component",
+      "description": "Connection between nodes; algorithms may assign it a cost.",
+      "source_line_ranges": [
+        90,
+        98
+      ]
+    },
+    {
+      "id": "link_cost",
+      "label": "Link cost",
+      "type": "metric",
+      "description": "Numeric cost assigned to a link and accumulated across a path by distance-vector or shortest-path algorithms.",
+      "source_line_ranges": [
+        90,
+        98
+      ]
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "type": "network_concept",
+      "description": "Sequence of links/nodes or routing domains that traffic traverses toward a destination.",
+      "source_line_ranges": [
+        56,
+        110
+      ]
+    },
+    {
+      "id": "metric",
+      "label": "Routing metric",
+      "type": "selection_criterion",
+      "description": "Protocol-specific measure used to compare routes; may reflect bandwidth, delay, hops, cost, load, MTU, reliability, or communication cost.",
+      "source_line_ranges": [
+        115,
+        120
+      ]
+    },
+    {
+      "id": "bandwidth",
+      "label": "Bandwidth",
+      "type": "metric",
+      "description": "Available or rated transmission capacity; one possible path-selection metric.",
+      "source_line_ranges": [
+        115,
+        136
+      ]
+    },
+    {
+      "id": "latency",
+      "label": "Latency",
+      "type": "metric",
+      "description": "Delay experienced along a path; can be optimized for interactive requests but may conflict with policy/cost objectives.",
+      "source_line_ranges": [
+        115,
+        136,
+        147
+      ]
+    },
+    {
+      "id": "hop_count",
+      "label": "Hop count",
+      "type": "metric",
+      "description": "Number of routing hops on a path; one possible metric.",
+      "source_line_ranges": [
+        115
+      ]
+    },
+    {
+      "id": "reliability_metric",
+      "label": "Reliability",
+      "type": "metric",
+      "description": "A possible route-selection metric describing link/path reliability.",
+      "source_line_ranges": [
+        115
+      ]
+    },
+    {
+      "id": "mtu",
+      "label": "Maximum transmission unit (MTU)",
+      "type": "metric",
+      "description": "Maximum packet size supported by a path/interface; listed as a possible routing metric in the source.",
+      "source_line_ranges": [
+        115
+      ]
+    },
+    {
+      "id": "static_routing",
+      "label": "Static routing",
+      "type": "routing_type",
+      "description": "Manually configured routes; useful in small or stable networks and can provide host-specific control.",
+      "source_line_ranges": [
+        84,
+        124,
+        137
+      ]
+    },
+    {
+      "id": "dynamic_routing",
+      "label": "Dynamic routing",
+      "type": "routing_type",
+      "description": "Automatically updates route tables using routing-protocol information as topology changes.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "distance_vector",
+      "label": "Distance-vector routing",
+      "type": "routing_algorithm_family",
+      "description": "Routers share destination reachability and costs with neighbors; the Bellman–Ford approach is used in the source description.",
+      "source_line_ranges": [
+        90,
+        92,
+        94
+      ]
+    },
+    {
+      "id": "bellman_ford",
+      "label": "Bellman–Ford algorithm",
+      "type": "algorithm",
+      "description": "Computes least-cost paths through iterative distance/cost updates; underlies distance-vector routing as described in the article.",
+      "source_line_ranges": [
+        90,
+        92
+      ]
+    },
+    {
+      "id": "link_state",
+      "label": "Link-state routing",
+      "type": "routing_algorithm_family",
+      "description": "Nodes disseminate link-state information, build topology maps, and independently calculate shortest paths.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "dijkstra",
+      "label": "Dijkstra algorithm",
+      "type": "algorithm",
+      "description": "Shortest-path algorithm used on a link-state topology map to compute least-cost paths from a root node.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "olsr",
+      "label": "Optimized Link State Routing (OLSR)",
+      "type": "protocol",
+      "description": "Proactive link-state protocol for mobile ad hoc networks using Hello and Topology Control messages and multipoint relays.",
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "hello_messages",
+      "label": "Hello messages",
+      "type": "protocol_message",
+      "description": "OLSR messages used to discover one-hop and two-hop neighborhood information.",
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "tc_messages",
+      "label": "Topology Control (TC) messages",
+      "type": "protocol_message",
+      "description": "OLSR messages used to disseminate link-state/topology information.",
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "mpr",
+      "label": "Multipoint relays (MPRs)",
+      "type": "routing_mechanism",
+      "description": "Selected OLSR nodes that help disseminate topology information efficiently.",
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "path_vector",
+      "label": "Path-vector routing",
+      "type": "routing_algorithm_family",
+      "description": "Inter-domain routing approach where speakers advertise destination reachability together with path/domain descriptions.",
+      "source_line_ranges": [
+        108,
+        110
+      ]
+    },
+    {
+      "id": "bgp",
+      "label": "Border Gateway Protocol (BGP)",
+      "type": "protocol",
+      "description": "Inter-domain routing protocol used to select AS-level paths between autonomous systems.",
+      "source_line_ranges": [
+        119,
+        145
+      ]
+    },
+    {
+      "id": "autonomous_system",
+      "label": "Autonomous system (AS)",
+      "type": "network_domain",
+      "description": "Network domain administered as a routing unit; Internet inter-domain paths traverse ASs.",
+      "source_line_ranges": [
+        108,
+        145
+      ]
+    },
+    {
+      "id": "speaker_node",
+      "label": "Speaker node",
+      "type": "routing_role",
+      "description": "Node representing an AS for exchanging path-vector reachability with neighboring AS speakers.",
+      "source_line_ranges": [
+        108
+      ]
+    },
+    {
+      "id": "as_path",
+      "label": "AS path",
+      "type": "path_attribute",
+      "description": "Sequence of routing domains traversed by reachability information; a path-vector attribute.",
+      "source_line_ranges": [
+        110,
+        145
+      ]
+    },
+    {
+      "id": "intra_domain",
+      "label": "Intra-domain routing",
+      "type": "routing_scope",
+      "description": "Routing within a single autonomous system; distance-vector and link-state protocols are described as intra-domain.",
+      "source_line_ranges": [
+        106
+      ]
+    },
+    {
+      "id": "inter_domain",
+      "label": "Inter-domain routing",
+      "type": "routing_scope",
+      "description": "Routing between autonomous systems; path-vector routing is used for this scale.",
+      "source_line_ranges": [
+        106,
+        108
+      ]
+    },
+    {
+      "id": "rip",
+      "label": "Routing Information Protocol (RIP)",
+      "type": "protocol",
+      "description": "Example of a dynamic routing protocol based on distance-vector routing.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "ospf",
+      "label": "Open Shortest Path First (OSPF)",
+      "type": "protocol",
+      "description": "Example of a dynamic routing protocol using link-state ideas.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "eigrp",
+      "label": "Enhanced Interior Gateway Routing Protocol (EIGRP)",
+      "type": "protocol",
+      "description": "Example dynamic routing protocol listed in the source.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "unicast",
+      "label": "Unicast",
+      "type": "delivery_scheme",
+      "description": "One-to-one delivery to a specific receiver.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "broadcast",
+      "label": "Broadcast",
+      "type": "delivery_scheme",
+      "description": "One-to-all delivery within the applicable broadcast scope, with network replication as needed.",
+      "source_line_ranges": [
+        78
+      ]
+    },
+    {
+      "id": "multicast",
+      "label": "Multicast",
+      "type": "delivery_scheme",
+      "description": "Delivery to a defined interested group rather than all nodes.",
+      "source_line_ranges": [
+        79
+      ]
+    },
+    {
+      "id": "anycast",
+      "label": "Anycast",
+      "type": "delivery_scheme",
+      "description": "One-of-many delivery to one member of a group sharing an address, typically selected by routing cost/distance.",
+      "source_line_ranges": [
+        80
+      ]
+    },
+    {
+      "id": "prefix_match",
+      "label": "Longest-prefix match",
+      "type": "route_selection_rule",
+      "description": "Among matching entries, a longer prefix is more specific and is preferred.",
+      "source_line_ranges": [
+        119
+      ]
+    },
+    {
+      "id": "administrative_distance",
+      "label": "Administrative distance",
+      "type": "route_selection_rule",
+      "description": "External preference value for comparing route sources/protocols in implementations such as Cisco; lower values are preferred.",
+      "source_line_ranges": [
+        121,
+        122
+      ]
+    },
+    {
+      "id": "route_redistribution",
+      "label": "Route redistribution",
+      "type": "routing_mechanism",
+      "description": "Selective sharing of routes between multiple routing protocols running on the same router.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "default_route",
+      "label": "Default route",
+      "type": "route_type",
+      "description": "Route used when no more specific destination route matches; commonly sends non-local traffic to an ISP.",
+      "source_line_ranges": [
+        137
+      ]
+    },
+    {
+      "id": "host_route",
+      "label": "Host-specific route",
+      "type": "route_type",
+      "description": "Route targeting a particular host, used for control, testing, or security.",
+      "source_line_ranges": [
+        124
+      ]
+    },
+    {
+      "id": "ecmp",
+      "label": "Equal-cost multipath (ECMP)",
+      "type": "routing_technique",
+      "description": "Uses multiple alternative paths when route costs are equal.",
+      "source_line_ranges": [
+        112
+      ]
+    },
+    {
+      "id": "multipath",
+      "label": "Multipath routing",
+      "type": "routing_technique",
+      "description": "Uses multiple available paths rather than a single path.",
+      "source_line_ranges": [
+        112
+      ]
+    },
+    {
+      "id": "centralized_routing",
+      "label": "Centralized routing",
+      "type": "routing_architecture",
+      "description": "A logically centralized controller can optimize forwarding state for network-wide objectives, including in SDN-style systems.",
+      "source_line_ranges": [
+        156,
+        158
+      ]
+    },
+    {
+      "id": "sdn",
+      "label": "Software-defined networking (SDN)",
+      "type": "network_architecture",
+      "description": "Architecture allowing logically centralized control over forwarding state.",
+      "source_line_ranges": [
+        156
+      ]
+    },
+    {
+      "id": "next_hop_routing",
+      "label": "Next-hop routing",
+      "type": "routing_strategy",
+      "description": "Each node chooses the next hop instead of requiring one device to calculate an entire end-to-end path for every packet.",
+      "source_line_ranges": [
+        130
+      ]
+    },
+    {
+      "id": "deterministic_routing",
+      "label": "Deterministic routing",
+      "type": "routing_strategy",
+      "description": "Chooses the same path to a destination until new information changes the preference.",
+      "source_line_ranges": [
+        132
+      ]
+    },
+    {
+      "id": "randomized_routing",
+      "label": "Randomized routing",
+      "type": "routing_strategy",
+      "description": "Uses random choices to avoid congestion hot spots in some packet networks.",
+      "source_line_ranges": [
+        134
+      ]
+    },
+    {
+      "id": "valiant_routing",
+      "label": "Valiant routing paradigm",
+      "type": "algorithm",
+      "description": "Routes first to a randomly chosen intermediate destination, then to the true destination.",
+      "source_line_ranges": [
+        134
+      ]
+    },
+    {
+      "id": "a_star",
+      "label": "A* search",
+      "type": "algorithm",
+      "description": "A graph-search algorithm that can be used by a planner with sufficient topology knowledge to find a path.",
+      "source_line_ranges": [
+        126
+      ]
+    },
+    {
+      "id": "circuit_switching",
+      "label": "Circuit switching",
+      "type": "network_model",
+      "description": "Historical/high-speed approach that establishes a path for a flow/circuit and reuses it until teardown.",
+      "source_line_ranges": [
+        128
+      ]
+    },
+    {
+      "id": "hot_potato",
+      "label": "Hot-potato routing",
+      "type": "routing_policy",
+      "description": "An AS forwards traffic out of its own network at the nearest/lowest internal-cost exit, even if this increases end-to-end latency.",
+      "source_line_ranges": [
+        145,
+        147
+      ]
+    },
+    {
+      "id": "route_analytics",
+      "label": "Route analytics",
+      "type": "operations",
+      "description": "Monitoring route state and network routing posture to detect incorrect routing, flapping, performance degradation, or downtime.",
+      "source_line_ranges": [
+        153,
+        155
+      ]
+    },
+    {
+      "id": "route_flapping",
+      "label": "Route flapping",
+      "type": "failure_mode",
+      "description": "Repeated route changes that can cause performance degradation or downtime.",
+      "source_line_ranges": [
+        153
+      ]
+    },
+    {
+      "id": "black_hole",
+      "label": "Black-hole routing/failure",
+      "type": "failure_mode",
+      "description": "A route/path that causes traffic to be discarded or fail to reach its destination; listed as a related topic.",
+      "source_line_ranges": [
+        161,
+        162
+      ]
+    },
+    {
+      "id": "congestion",
+      "label": "Congestion",
+      "type": "network_condition",
+      "description": "Packet arrival rate exceeds processing/service capacity, requiring queue and drop management.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "tail_drop",
+      "label": "Tail drop",
+      "type": "queue_policy",
+      "description": "Drops newly arriving packets once buffer space is exhausted.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "red",
+      "label": "Random Early Detection (RED)",
+      "type": "queue_policy",
+      "description": "Probabilistically drops packets before the buffer is full as a congestion-avoidance mechanism.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "wred",
+      "label": "Weighted RED (WRED)",
+      "type": "queue_policy",
+      "description": "RED variant that can drop different traffic types with different aggressiveness.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "qos",
+      "label": "Quality of Service (QoS)",
+      "type": "traffic_management",
+      "description": "Traffic classification and scheduling policy that prioritizes packets, especially important for latency-sensitive VoIP.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "traffic_classification",
+      "label": "Traffic classification",
+      "type": "mechanism",
+      "description": "Classifies packets to decide processing priority.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "flow_completion_time",
+      "label": "Flow completion time",
+      "type": "performance_metric",
+      "description": "Time required to complete a traffic flow; a global optimization objective in data-center WAN routing.",
+      "source_line_ranges": [
+        136,
+        159
+      ]
+    },
+    {
+      "id": "network_utilization",
+      "label": "Network utilization",
+      "type": "performance_metric",
+      "description": "Degree to which available network capacity is used; a global routing optimization objective.",
+      "source_line_ranges": [
+        159
+      ]
+    },
+    {
+      "id": "business_policy",
+      "label": "Business relationship/policy",
+      "type": "routing_policy",
+      "description": "Inter-AS route selection may reflect peering and commercial relationships rather than latency or path quality.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "id": "road_network",
+      "label": "Road network analogy",
+      "type": "analogy",
+      "description": "A distributed routing example where drivers choose paths to minimize personal travel time.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "braess_paradox",
+      "label": "Braess’s paradox",
+      "type": "network_phenomenon",
+      "description": "Adding a road can increase travel time for all users under selfish route selection.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "agv",
+      "label": "Automated guided vehicle (AGV) routing",
+      "type": "application",
+      "description": "A single-agent/reservation model can reserve infrastructure sections to prevent simultaneous conflicting use.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "reservation_routing",
+      "label": "Reservation/context-aware routing",
+      "type": "routing_strategy",
+      "description": "Uses reservations for infrastructure resources to avoid simultaneous conflicts.",
+      "source_line_ranges": [
+        143
+      ]
+    },
+    {
+      "id": "cellular_routing",
+      "label": "Cellular network routing",
+      "type": "application",
+      "description": "Path selection can consider latency and packet error rate across links with varying spectral efficiency.",
+      "source_line_ranges": [
+        149
+      ]
+    },
+    {
+      "id": "sdn_global_wan",
+      "label": "Centralized private WAN optimization",
+      "type": "application",
+      "description": "Large private WANs can optimize global performance using centralized routing approaches.",
+      "source_line_ranges": [
+        156,
+        158
+      ]
+    },
+    {
+      "id": "packet_loss",
+      "label": "Packet loss",
+      "type": "network_effect",
+      "description": "Packets may be dropped under congestion or route failure.",
+      "source_line_ranges": [
+        141,
+        153
+      ]
+    },
+    {
+      "id": "route_convergence",
+      "label": "Route convergence",
+      "type": "network_process",
+      "description": "Distributed routers update route information after topology or reachability changes until a consistent usable state emerges.",
+      "source_line_ranges": [
+        94,
+        153
+      ]
+    },
+    {
+      "id": "network_graph",
+      "label": "Network graph",
+      "type": "formal_model",
+      "description": "Graph of nodes and links used for shortest-path and global optimization problems.",
+      "source_line_ranges": [
+        98,
+        126,
+        159
+      ]
+    },
+    {
+      "id": "route_policy",
+      "label": "Routing policy",
+      "type": "policy",
+      "description": "Rules that constrain or influence route choice beyond simple shortest path or a single metric.",
+      "source_line_ranges": [
+        119,
+        122,
+        145
+      ]
+    },
+    {
+      "id": "bridging",
+      "label": "Bridging",
+      "type": "network_mechanism",
+      "description": "Layer-2 forwarding contrasted with IP routing; useful within LANs but less scalable for large structured networks.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "psth",
+      "label": "Public switched telephone network (PSTN)",
+      "type": "network_type",
+      "description": "Circuit-switched network where precomputed routes and fallback routes are widely used.",
+      "source_line_ranges": [
+        56,
+        84
+      ]
+    },
+    {
+      "id": "ad_hoc_network",
+      "label": "Mobile ad hoc network",
+      "type": "network_type",
+      "description": "Infrastructure-light network targeted by OLSR.",
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "wan",
+      "label": "Wide area network (WAN)",
+      "type": "network_type",
+      "description": "Network spanning broad geography; routing may optimize QoS and aggregate traffic.",
+      "source_line_ranges": [
+        106,
+        136
+      ]
+    },
+    {
+      "id": "isp",
+      "label": "Internet service provider (ISP)",
+      "type": "organization_type",
+      "description": "Autonomous system operator exchanging routes and selecting inter-domain and intra-domain paths.",
+      "source_line_ranges": [
+        145,
+        147
+      ]
+    },
+    {
+      "id": "edge_path",
+      "label": "Router-level path",
+      "type": "routing_concept",
+      "description": "Path through individual routers inside/among networks, distinct from the AS-level path.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "id": "as_level_path",
+      "label": "AS-level path",
+      "type": "routing_concept",
+      "description": "Sequence of autonomous systems chosen by BGP.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "id": "latency_inflation",
+      "label": "Path latency inflation",
+      "type": "network_effect",
+      "description": "End-to-end latency above an alternative path’s latency due to policy choices such as hot-potato routing.",
+      "source_line_ranges": [
+        147,
+        151
+      ]
+    },
+    {
+      "id": "traffic_engineering",
+      "label": "Traffic engineering",
+      "type": "network_goal",
+      "description": "Selecting paths to balance load, improve throughput, or meet latency/completion-time goals.",
+      "source_line_ranges": [
+        136,
+        158
+      ]
+    },
+    {
+      "id": "flooding",
+      "label": "Link-state flooding",
+      "type": "mechanism",
+      "description": "Disseminates topology information across the network so each router can build a topology map.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "topology_database",
+      "label": "Topology database",
+      "type": "data_structure",
+      "description": "Stores topology information used by link-state algorithms; can preserve more information than the selected-route table.",
+      "source_line_ranges": [
+        98,
+        115
+      ]
+    },
+    {
+      "id": "distance_table",
+      "label": "Distance table",
+      "type": "data_structure",
+      "description": "Per-node destinations, estimated total costs, and next hops used by distance-vector algorithms.",
+      "source_line_ranges": [
+        92
+      ]
+    },
+    {
+      "id": "route_cost",
+      "label": "Total route cost",
+      "type": "metric",
+      "description": "Sum of link costs along a path in distance-vector/least-cost routing.",
+      "source_line_ranges": [
+        90,
+        92
+      ]
+    },
+    {
+      "id": "network_failure",
+      "label": "Network/link failure",
+      "type": "failure_mode",
+      "description": "Node/link failure can invalidate next-hop entries and trigger route updates.",
+      "source_line_ranges": [
+        94
+      ]
+    },
+    {
+      "id": "packet_header",
+      "label": "Packet header",
+      "type": "packet_field",
+      "description": "Contains destination information used for route lookup; routing generally avoids inspecting payload.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "payload",
+      "label": "Packet payload",
+      "type": "packet_field",
+      "description": "Content generally not inspected for pure IP routing decisions.",
+      "source_line_ranges": [
+        135
+      ]
+    },
+    {
+      "id": "interface_queue",
+      "label": "Interface queue/buffer",
+      "type": "hardware_component",
+      "description": "Buffers packets when arrival rates exceed processing or output capacity.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "cpu_forwarding",
+      "label": "CPU-based forwarding",
+      "type": "implementation",
+      "description": "General-purpose processors can route/forward packets but may be less optimized than specialized hardware.",
+      "source_line_ranges": [
+        59,
+        64,
+        147
+      ]
+    },
+    {
+      "id": "asic_forwarding",
+      "label": "ASIC-accelerated forwarding",
+      "type": "implementation",
+      "description": "ASICs perform packet processing functions to avoid CPU scheduling overhead for common fast-path operations.",
+      "source_line_ranges": [
+        147
+      ]
+    },
+    {
+      "id": "routing_software",
+      "label": "Routing software",
+      "type": "software_component",
+      "description": "Software implementing route calculation, protocols, policy, and control-plane behavior.",
+      "source_line_ranges": [
+        59,
+        79,
+        86
+      ]
+    },
+    {
+      "id": "global_optimization",
+      "label": "Global routing optimization",
+      "type": "optimization_goal",
+      "description": "Network-wide objective such as utilization, deadline delivery, flow completion times, and queue placement.",
+      "source_line_ranges": [
+        158,
+        159
+      ]
+    },
+    {
+      "id": "route_selection",
+      "label": "Path selection",
+      "type": "process",
+      "description": "Applies route metrics and policy to select one or more routes from candidates.",
+      "source_line_ranges": [
+        112,
+        115
+      ]
+    },
+    {
+      "id": "source_node",
+      "label": "Source node",
+      "type": "network_role",
+      "description": "Origin of traffic whose route is selected.",
+      "source_line_ranges": [
+        56,
+        77
+      ]
+    },
+    {
+      "id": "destination_node",
+      "label": "Destination node",
+      "type": "network_role",
+      "description": "Target node or network of traffic.",
+      "source_line_ranges": [
+        56,
+        77
+      ]
+    },
+    {
+      "id": "intermediate_node",
+      "label": "Intermediate node",
+      "type": "network_role",
+      "description": "Router/gateway/switch or other node forwarding traffic along the path.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "fallback_route",
+      "label": "Fallback route",
+      "type": "route_type",
+      "description": "Alternative precomputed route used when the preferred route is blocked, as in PSTN examples.",
+      "source_line_ranges": [
+        84
+      ]
+    },
+    {
+      "id": "route_advertisement",
+      "label": "Route advertisement",
+      "type": "protocol_action",
+      "description": "Sharing reachability/path information with neighbors or peers.",
+      "source_line_ranges": [
+        92,
+        108,
+        110
+      ]
+    },
+    {
+      "id": "route_source",
+      "label": "Route source",
+      "type": "route_attribute",
+      "description": "Origin of route information, such as static configuration or a routing protocol.",
+      "source_line_ranges": [
+        121,
+        122
+      ]
+    },
+    {
+      "id": "administrative_control",
+      "label": "Administrative control",
+      "type": "governance",
+      "description": "Local administrators can configure static/host routes and route policy.",
+      "source_line_ranges": [
+        61,
+        124
+      ]
+    },
+    {
+      "id": "global_controller",
+      "label": "Central routing controller",
+      "type": "system_component",
+      "description": "Logical central control component that can compute network-wide forwarding state.",
+      "source_line_ranges": [
+        156,
+        158
+      ]
+    },
+    {
+      "id": "multiprotocol",
+      "label": "Multiple routing protocols",
+      "type": "capability",
+      "description": "A router may run multiple protocols and redistribute selected information between them.",
+      "source_line_ranges": [
+        139
+      ]
+    },
+    {
+      "id": "routing_stability",
+      "label": "Routing stability",
+      "type": "property",
+      "description": "Ability of a routing system to avoid oscillation/instability and converge after changes.",
+      "source_line_ranges": [
+        94,
+        106,
+        153
+      ]
+    },
+    {
+      "id": "routing_scale",
+      "label": "Routing scalability",
+      "type": "property",
+      "description": "Ability of routing algorithms to operate with large topology and frequent changes; per-node global knowledge does not scale.",
+      "source_line_ranges": [
+        106,
+        130
+      ]
+    },
+    {
+      "id": "routing_security",
+      "label": "Routing correctness/security",
+      "type": "security_concept",
+      "description": "Incorrect routing can degrade performance or cause downtime; route policy and host-specific routes can support control/security.",
+      "source_line_ranges": [
+        124,
+        153
+      ]
+    },
+    {
+      "id": "donald_davies",
+      "label": "Donald Davies",
+      "type": "person",
+      "description": "Proposed interface computers and contributed to the end-to-end principle and packet-network design.",
+      "source_line_ranges": [
+        71,
+        165,
+        175
+      ]
+    },
+    {
+      "id": "wesley_clark",
+      "label": "Wesley Clark",
+      "type": "person",
+      "description": "Conceived a similar interface-computer idea for ARPANET in 1967.",
+      "source_line_ranges": [
+        71
+      ]
+    },
+    {
+      "id": "louis_pouzin",
+      "label": "Louis Pouzin",
+      "type": "person",
+      "description": "Led the CYCLADES network program, an influential datagram-network experiment.",
+      "source_line_ranges": [
+        73,
+        176,
+        179
+      ]
+    },
+    {
+      "id": "ginny_travers",
+      "label": "Ginny Travers",
+      "type": "person",
+      "description": "Developed the first true IP router at BBN as part of the DARPA effort in 1975–1976.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "mike_brecia",
+      "label": "Mike Brecia",
+      "type": "person",
+      "description": "Recognized alongside Ginny Travers and Bob Hinden for early IP routers.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "bob_hinden",
+      "label": "Bob Hinden",
+      "type": "person",
+      "description": "Recognized alongside Mike Brecia and Ginny Travers for early IP routers.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "william_yeager",
+      "label": "William Yeager",
+      "type": "person",
+      "description": "Led Stanford’s 1981 multiprotocol router program.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "noel_chiappa",
+      "label": "Noel Chiappa",
+      "type": "person",
+      "description": "Led MIT’s 1981 multiprotocol router program.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "id": "inwg",
+      "label": "International Network Working Group (INWG)",
+      "type": "organization",
+      "description": "International group of networking researchers who developed early gateway concepts.",
+      "source_line_ranges": [
+        71,
+        173,
+        174
+      ]
+    },
+    {
+      "id": "darpa",
+      "label": "DARPA",
+      "type": "organization",
+      "description": "Initiated the 1973–1974 internetworking program that contributed to the TCP/IP architecture.",
+      "source_line_ranges": [
+        73,
+        75
+      ]
+    },
+    {
+      "id": "bbn",
+      "label": "BBN",
+      "type": "organization",
+      "description": "Organization associated with early IP router development.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "arpanet",
+      "label": "ARPANET",
+      "type": "network_project",
+      "description": "Early packet-switched network whose Interface Message Processors had router-like functionality.",
+      "source_line_ranges": [
+        68,
+        70
+      ]
+    },
+    {
+      "id": "npl_network",
+      "label": "NPL network",
+      "type": "network_project",
+      "description": "Donald Davies’s packet network concept and early interface-computer implementation at the UK National Physical Laboratory.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "id": "cyclades",
+      "label": "CYCLADES",
+      "type": "network_project",
+      "description": "Datagram-network research program designed by Louis Pouzin during 1972–1973.",
+      "source_line_ranges": [
+        73,
+        176,
+        179
+      ]
+    },
+    {
+      "id": "xerox_parc",
+      "label": "Xerox PARC",
+      "type": "organization",
+      "description": "Produced the PARC Universal Packet system and early operational Xerox routers.",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "id": "tcp_ip",
+      "label": "TCP/IP architecture",
+      "type": "network_architecture",
+      "description": "Protocol architecture created through the DARPA internetworking effort and now widely used.",
+      "source_line_ranges": [
+        73,
+        77
+      ]
+    },
+    {
+      "id": "ieee_award",
+      "label": "IEEE Internet Award (2008)",
+      "type": "historical_event",
+      "description": "Award recognition for early IP router work by Mike Brecia, Ginny Travers, and Bob Hinden.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "id": "imp",
+      "label": "Interface Message Processor (IMP)",
+      "type": "historical_technology",
+      "description": "Early ARPANET interface computer with functionality fundamentally similar to modern routers.",
+      "source_line_ranges": [
+        68,
+        70
+      ]
+    },
+    {
+      "id": "honeywell_516",
+      "label": "Honeywell 516",
+      "type": "hardware",
+      "description": "Computer platform used for early interface computers and IMPs.",
+      "source_line_ranges": [
+        70
+      ]
+    },
+    {
+      "id": "pdp11",
+      "label": "PDP-11",
+      "type": "hardware",
+      "description": "Computer platform used for early IP and multiprotocol routers.",
+      "source_line_ranges": [
+        75,
+        77
+      ]
+    },
+    {
+      "id": "valiant_research",
+      "label": "Valiant randomized routing research",
+      "type": "research_topic",
+      "description": "Randomized intermediate-destination routing proposed to avoid congestion hot spots.",
+      "source_line_ranges": [
+        134,
+        180,
+        181
+      ]
+    },
+    {
+      "id": "route_inflation_study",
+      "label": "Path inflation measurement study (2003)",
+      "type": "research_study",
+      "description": "Study reported inflated latency on a substantial share of paths between neighboring ISPs.",
+      "source_line_ranges": [
+        151,
+        187
+      ]
+    },
+    {
+      "id": "private_wan",
+      "label": "Private data-center WAN",
+      "type": "network_architecture",
+      "description": "Private optical WANs can use centralized routing and global traffic engineering.",
+      "source_line_ranges": [
+        156,
+        158
+      ]
+    },
+    {
+      "id": "rfc4098",
+      "label": "RFC 4098",
+      "type": "standard",
+      "description": "Terminology for benchmarking BGP device convergence in the control plane; cited for BGP router roles.",
+      "source_line_ranges": [
+        117,
+        215
+      ]
+    },
+    {
+      "id": "rfc3626",
+      "label": "RFC 3626",
+      "type": "standard",
+      "description": "Reference associated with OLSR.",
+      "source_line_ranges": [
+        177
+      ]
+    },
+    {
+      "id": "bellman_reference",
+      "label": "Bellman–Ford routing foundation",
+      "type": "reference_topic",
+      "description": "Algorithmic foundation for distance-vector routing in the article.",
+      "source_line_ranges": [
+        90
+      ]
+    },
+    {
+      "id": "dijkstra_reference",
+      "label": "Shortest-path algorithm foundation",
+      "type": "reference_topic",
+      "description": "Dijkstra’s algorithm is named as the link-state shortest-path method.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "routing_metrics_survey",
+      "label": "Survey on Routing Metrics (2007)",
+      "type": "reference",
+      "description": "Survey cited for the variety of routing metrics.",
+      "source_line_ranges": [
+        115,
+        179
+      ]
+    },
+    {
+      "id": "bgp_policy_paper",
+      "label": "BGP routing policies in ISP networks",
+      "type": "reference",
+      "description": "Research on inter-domain route policy and ISP behavior.",
+      "source_line_ranges": [
+        145,
+        185
+      ]
+    },
+    {
+      "id": "global_wan_microsoft",
+      "label": "Microsoft Global WAN",
+      "type": "example_system",
+      "description": "Example of a large centralized private WAN routing system.",
+      "source_line_ranges": [
+        156,
+        191
+      ]
+    },
+    {
+      "id": "facebook_express",
+      "label": "Facebook Express Backbone",
+      "type": "example_system",
+      "description": "Example of a centralized private backbone network.",
+      "source_line_ranges": [
+        156,
+        192
+      ]
+    },
+    {
+      "id": "google_b4",
+      "label": "Google B4",
+      "type": "example_system",
+      "description": "Example of software-defined global WAN routing.",
+      "source_line_ranges": [
+        156,
+        193
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "routing",
+      "target": "route_selection",
+      "relationship": "performs",
+      "mechanism": "Routing compares candidate paths using route-selection rules and metrics.",
+      "source_line_ranges": [
+        112,
+        115
+      ],
+      "effect": "Selects one or more preferred routes.",
+      "semantic_role": "process",
+      "id": "rel_0001"
+    },
+    {
+      "source": "routing",
+      "target": "packet_forwarding",
+      "relationship": "determines",
+      "mechanism": "Routing chooses a path or next-hop policy; forwarding executes per-packet transit between interfaces.",
+      "source_line_ranges": [
+        59,
+        135
+      ],
+      "effect": "Separates path decision from packet movement.",
+      "semantic_role": "architectural_separation",
+      "id": "rel_0002"
+    },
+    {
+      "source": "route_selection",
+      "target": "routing_table",
+      "relationship": "populates",
+      "mechanism": "Selected routes are installed into the routing table.",
+      "source_line_ranges": [
+        86,
+        115,
+        119
+      ],
+      "effect": "Makes selected route information available for forwarding.",
+      "semantic_role": "dataflow",
+      "id": "rel_0003"
+    },
+    {
+      "source": "control_plane",
+      "target": "routing_table",
+      "relationship": "maintains",
+      "mechanism": "Static configuration and routing protocols supply candidate routes that the control plane stores and evaluates.",
+      "source_line_ranges": [
+        86,
+        137
+      ],
+      "semantic_role": "dataflow",
+      "id": "rel_0004"
+    },
+    {
+      "source": "control_plane",
+      "target": "fib",
+      "relationship": "builds",
+      "mechanism": "The control plane removes non-forwarding directives and compiles usable route entries into the FIB.",
+      "source_line_ranges": [
+        86
+      ],
+      "effect": "Creates a forwarding-optimized lookup structure.",
+      "semantic_role": "compilation",
+      "id": "rel_0005"
+    },
+    {
+      "source": "fib",
+      "target": "forwarding_plane",
+      "relationship": "supplies",
+      "mechanism": "The FIB provides destination-to-egress decisions to the forwarding plane.",
+      "source_line_ranges": [
+        86,
+        87
+      ],
+      "semantic_role": "dataflow",
+      "id": "rel_0006"
+    },
+    {
+      "source": "forwarding_plane",
+      "target": "packet_header",
+      "relationship": "reads",
+      "mechanism": "Forwarding parses the packet header and extracts destination information.",
+      "source_line_ranges": [
+        87,
+        135
+      ],
+      "semantic_role": "mechanism",
+      "id": "rel_0007"
+    },
+    {
+      "source": "packet_header",
+      "target": "destination_address",
+      "relationship": "contains",
+      "mechanism": "The destination address is part of the network-layer header used for lookup.",
+      "source_line_ranges": [
+        135
+      ],
+      "semantic_role": "containment",
+      "id": "rel_0008"
+    },
+    {
+      "source": "forwarding_plane",
+      "target": "destination_address",
+      "relationship": "matches_against",
+      "mechanism": "The forwarding plane matches the destination address against FIB entries.",
+      "source_line_ranges": [
+        87,
+        135
+      ],
+      "semantic_role": "lookup",
+      "id": "rel_0009"
+    },
+    {
+      "source": "fib",
+      "target": "network_interface",
+      "relationship": "selects",
+      "mechanism": "A matching FIB entry identifies the outgoing interface/next network.",
+      "source_line_ranges": [
+        86,
+        87
+      ],
+      "semantic_role": "decision",
+      "id": "rel_0010"
+    },
+    {
+      "source": "packet_forwarding",
+      "target": "network_interface",
+      "relationship": "moves_between",
+      "mechanism": "A packet transits from an incoming interface to an outgoing interface.",
+      "source_line_ranges": [
+        59,
+        87
+      ],
+      "semantic_role": "mechanism",
+      "id": "rel_0011"
+    },
+    {
+      "source": "packet_forwarding",
+      "target": "next_hop",
+      "relationship": "uses",
+      "mechanism": "Forwarding sends the packet to the selected adjacent next hop.",
+      "source_line_ranges": [
+        92,
+        130,
+        135
+      ],
+      "semantic_role": "mechanism",
+      "id": "rel_0012"
+    },
+    {
+      "source": "packet_forwarding",
+      "target": "payload",
+      "relationship": "normally_does_not_inspect",
+      "mechanism": "Pure IP forwarding uses layer-3 addressing and optional header hints rather than application payload content.",
+      "source_line_ranges": [
+        135
+      ],
+      "conditions": "Pure IP forwarding; security/inspection features may differ.",
+      "effect": "Reduces per-packet state and avoids application-payload dependence.",
+      "semantic_role": "scope",
+      "id": "rel_0013"
+    },
+    {
+      "source": "routing",
+      "target": "bridging",
+      "relationship": "contrasts_with",
+      "mechanism": "IP routing uses structured network addresses; bridging forwards at Layer 2 and remains common inside LANs.",
+      "source_line_ranges": [
+        63
+      ],
+      "semantic_role": "distinction",
+      "id": "rel_0014"
+    },
+    {
+      "source": "prefix",
+      "target": "routing_table",
+      "relationship": "aggregates_destinations_in",
+      "mechanism": "Structured prefixes let a single table entry represent a group of devices.",
+      "source_line_ranges": [
+        63
+      ],
+      "semantic_role": "scalability",
+      "id": "rel_0015"
+    },
+    {
+      "source": "router",
+      "target": "subnet",
+      "relationship": "connects",
+      "mechanism": "Routers connect logical subnets with distinct network prefixes.",
+      "source_line_ranges": [
+        92,
+        128
+      ],
+      "semantic_role": "connectivity",
+      "id": "rel_0016"
+    },
+    {
+      "source": "router",
+      "target": "network_interface",
+      "relationship": "has",
+      "mechanism": "Routers expose interfaces across copper, fiber, and wireless media.",
+      "source_line_ranges": [
+        92
+      ],
+      "semantic_role": "hardware",
+      "id": "rel_0017"
+    },
+    {
+      "source": "topology",
+      "target": "routing",
+      "relationship": "constrains",
+      "mechanism": "Available links and node connectivity determine feasible paths.",
+      "source_line_ranges": [
+        98,
+        126,
+        130
+      ],
+      "semantic_role": "constraint",
+      "id": "rel_0018"
+    },
+    {
+      "source": "link",
+      "target": "link_cost",
+      "relationship": "has_metric",
+      "mechanism": "Distance-vector and shortest-path algorithms assign numeric costs to links.",
+      "source_line_ranges": [
+        90
+      ],
+      "semantic_role": "metric",
+      "id": "rel_0019"
+    },
+    {
+      "source": "link_cost",
+      "target": "route_cost",
+      "relationship": "contributes_to",
+      "mechanism": "Total path cost is the sum of constituent link costs.",
+      "source_line_ranges": [
+        90,
+        92
+      ],
+      "semantic_role": "aggregation",
+      "id": "rel_0020"
+    },
+    {
+      "source": "route_cost",
+      "target": "route_selection",
+      "relationship": "influences",
+      "mechanism": "The least total cost is selected under the algorithm’s cost model.",
+      "source_line_ranges": [
+        90,
+        98
+      ],
+      "semantic_role": "selection",
+      "id": "rel_0021"
+    },
+    {
+      "source": "network_failure",
+      "target": "route_convergence",
+      "relationship": "triggers",
+      "mechanism": "A failed node or link invalidates routes that depended on it and causes updates to propagate.",
+      "source_line_ranges": [
+        94
+      ],
+      "semantic_role": "causal",
+      "id": "rel_0022"
+    },
+    {
+      "source": "route_convergence",
+      "target": "routing_table",
+      "relationship": "updates",
+      "mechanism": "Nodes revise next hops and route costs after receiving updated reachability information.",
+      "source_line_ranges": [
+        94
+      ],
+      "semantic_role": "state_transition",
+      "id": "rel_0023"
+    },
+    {
+      "source": "routing_software",
+      "target": "control_plane",
+      "relationship": "implements",
+      "mechanism": "Software implements route computation, protocol exchange, and control logic.",
+      "source_line_ranges": [
+        79,
+        86
+      ],
+      "semantic_role": "implementation",
+      "id": "rel_0024"
+    },
+    {
+      "source": "cpu_forwarding",
+      "target": "packet_forwarding",
+      "relationship": "can_implement",
+      "mechanism": "General-purpose computers can forward packets, though they may lack specialized acceleration.",
+      "source_line_ranges": [
+        59,
+        64
+      ],
+      "semantic_role": "implementation",
+      "id": "rel_0025"
+    },
+    {
+      "source": "asic_forwarding",
+      "target": "packet_forwarding",
+      "relationship": "accelerates",
+      "mechanism": "ASICs perform common forwarding functions without scheduling CPU time for each operation.",
+      "source_line_ranges": [
+        147
+      ],
+      "semantic_role": "hardware_acceleration",
+      "id": "rel_0026"
+    },
+    {
+      "source": "interface_queue",
+      "target": "congestion",
+      "relationship": "exhibits",
+      "mechanism": "Queue pressure arises when incoming packet rate exceeds processing or output capacity.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "causal",
+      "id": "rel_0027"
+    },
+    {
+      "source": "congestion",
+      "target": "tail_drop",
+      "relationship": "managed_by",
+      "mechanism": "Tail drop discards arrivals once buffer capacity is exhausted.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "mitigation",
+      "id": "rel_0028"
+    },
+    {
+      "source": "congestion",
+      "target": "red",
+      "relationship": "managed_by",
+      "mechanism": "RED probabilistically drops packets before buffers reach their maximum.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "mitigation",
+      "id": "rel_0029"
+    },
+    {
+      "source": "congestion",
+      "target": "wred",
+      "relationship": "managed_by",
+      "mechanism": "WRED can vary drop aggressiveness according to traffic type.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "mitigation",
+      "id": "rel_0030"
+    },
+    {
+      "source": "traffic_classification",
+      "target": "qos",
+      "relationship": "feeds",
+      "mechanism": "Traffic classes guide packet processing order and priority.",
+      "source_line_ranges": [
+        143
+      ],
+      "semantic_role": "dataflow",
+      "id": "rel_0031"
+    },
+    {
+      "source": "qos",
+      "target": "latency",
+      "relationship": "targets",
+      "mechanism": "QoS can reduce delay for latency-sensitive traffic such as VoIP.",
+      "source_line_ranges": [
+        143
+      ],
+      "semantic_role": "optimization",
+      "id": "rel_0032"
+    },
+    {
+      "source": "packet_loss",
+      "target": "flow_completion_time",
+      "relationship": "can_increase",
+      "mechanism": "Loss and congestion can delay successful completion of traffic flows.",
+      "source_line_ranges": [
+        141,
+        136
+      ],
+      "semantic_role": "performance_effect",
+      "id": "rel_0033"
+    },
+    {
+      "source": "routing",
+      "target": "unicast",
+      "relationship": "supports",
+      "mechanism": "One sender delivers to one specific destination.",
+      "source_line_ranges": [
+        77
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0034"
+    },
+    {
+      "source": "routing",
+      "target": "broadcast",
+      "relationship": "supports",
+      "mechanism": "One sender reaches all nodes within the applicable broadcast scope.",
+      "source_line_ranges": [
+        78
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0035"
+    },
+    {
+      "source": "routing",
+      "target": "multicast",
+      "relationship": "supports",
+      "mechanism": "One transmission targets an interested subset of receivers.",
+      "source_line_ranges": [
+        79
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0036"
+    },
+    {
+      "source": "routing",
+      "target": "anycast",
+      "relationship": "supports",
+      "mechanism": "One member of a group sharing an address is selected using routing cost/distance.",
+      "source_line_ranges": [
+        80
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0037"
+    },
+    {
+      "source": "unicast",
+      "target": "destination_node",
+      "relationship": "targets",
+      "mechanism": "Unicast identifies one receiver endpoint.",
+      "source_line_ranges": [
+        77
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0038"
+    },
+    {
+      "source": "broadcast",
+      "target": "network_node",
+      "relationship": "targets_all_within_scope",
+      "mechanism": "Broadcast replicates delivery to all nodes within the relevant subnet/scope.",
+      "source_line_ranges": [
+        78
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0039"
+    },
+    {
+      "source": "multicast",
+      "target": "network_node",
+      "relationship": "targets_group_of",
+      "mechanism": "Multicast targets only members of an interested group.",
+      "source_line_ranges": [
+        79
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0040"
+    },
+    {
+      "source": "anycast",
+      "target": "route_selection",
+      "relationship": "delegates_receiver_choice_to",
+      "mechanism": "The routing algorithm selects one group member based on distance/cost.",
+      "source_line_ranges": [
+        80
+      ],
+      "semantic_role": "delivery_semantics",
+      "id": "rel_0041"
+    },
+    {
+      "source": "static_routing",
+      "target": "routing_table",
+      "relationship": "configures",
+      "mechanism": "Administrator manually specifies entries.",
+      "source_line_ranges": [
+        84,
+        137
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0042"
+    },
+    {
+      "source": "dynamic_routing",
+      "target": "routing_table",
+      "relationship": "constructs_and_updates",
+      "mechanism": "Protocols distribute information so route tables adapt to changing topology.",
+      "source_line_ranges": [
+        86
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0043"
+    },
+    {
+      "source": "distance_vector",
+      "target": "bellman_ford",
+      "relationship": "uses",
+      "mechanism": "The source identifies Bellman–Ford as the distance-vector foundation.",
+      "source_line_ranges": [
+        90
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0044"
+    },
+    {
+      "source": "distance_vector",
+      "target": "rip",
+      "relationship": "family_example",
+      "mechanism": "RIP is listed among dynamic routing protocols.",
+      "source_line_ranges": [
+        86
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0045"
+    },
+    {
+      "source": "link_state",
+      "target": "dijkstra",
+      "relationship": "uses",
+      "mechanism": "Each router builds a map and computes least-cost paths with a shortest-path algorithm.",
+      "source_line_ranges": [
+        98
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0046"
+    },
+    {
+      "source": "link_state",
+      "target": "ospf",
+      "relationship": "family_example",
+      "mechanism": "OSPF is listed as a dynamic routing protocol.",
+      "source_line_ranges": [
+        86
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0047"
+    },
+    {
+      "source": "dynamic_routing",
+      "target": "eigrp",
+      "relationship": "includes_example",
+      "mechanism": "EIGRP is listed as a dynamic routing protocol.",
+      "source_line_ranges": [
+        86
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0048"
+    },
+    {
+      "source": "olsr",
+      "target": "hello_messages",
+      "relationship": "uses",
+      "mechanism": "Hello messages discover one-hop/two-hop neighborhoods.",
+      "source_line_ranges": [
+        102
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0049"
+    },
+    {
+      "source": "olsr",
+      "target": "tc_messages",
+      "relationship": "uses",
+      "mechanism": "TC messages disseminate link-state information.",
+      "source_line_ranges": [
+        102
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0050"
+    },
+    {
+      "source": "olsr",
+      "target": "mpr",
+      "relationship": "elects",
+      "mechanism": "OLSR elects multipoint relays to support topology dissemination.",
+      "source_line_ranges": [
+        102
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0051"
+    },
+    {
+      "source": "link_state",
+      "target": "flooding",
+      "relationship": "disseminates_via",
+      "mechanism": "Link-state information is flooded so each node can build a topology map.",
+      "source_line_ranges": [
+        98
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0052"
+    },
+    {
+      "source": "flooding",
+      "target": "topology_database",
+      "relationship": "populates",
+      "mechanism": "Flooded link-state information becomes the local topology database/map.",
+      "source_line_ranges": [
+        98,
+        115
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0053"
+    },
+    {
+      "source": "topology_database",
+      "target": "dijkstra",
+      "relationship": "input_to",
+      "mechanism": "Dijkstra computes shortest paths from the local node over the topology map.",
+      "source_line_ranges": [
+        98
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0054"
+    },
+    {
+      "source": "dijkstra",
+      "target": "routing_table",
+      "relationship": "produces_next_hops_for",
+      "mechanism": "Shortest-path tree results are used to derive next-hop entries.",
+      "source_line_ranges": [
+        98
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0055"
+    },
+    {
+      "source": "path_vector",
+      "target": "bgp",
+      "relationship": "implemented_by_example",
+      "mechanism": "BGP is the source’s example for AS-level path selection.",
+      "source_line_ranges": [
+        119,
+        145
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0056"
+    },
+    {
+      "source": "path_vector",
+      "target": "speaker_node",
+      "relationship": "uses",
+      "mechanism": "An AS speaker advertises routes to neighboring AS speakers.",
+      "source_line_ranges": [
+        108
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0057"
+    },
+    {
+      "source": "speaker_node",
+      "target": "as_path",
+      "relationship": "advertises",
+      "mechanism": "Path-vector announcements include domain/path descriptions.",
+      "source_line_ranges": [
+        110
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0058"
+    },
+    {
+      "source": "as_path",
+      "target": "route",
+      "relationship": "attributes",
+      "mechanism": "A route pairs a destination with attributes describing the path.",
+      "source_line_ranges": [
+        110
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0059"
+    },
+    {
+      "source": "intra_domain",
+      "target": "distance_vector",
+      "relationship": "uses_family",
+      "mechanism": "Distance-vector protocols are described as intra-domain.",
+      "source_line_ranges": [
+        106
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0060"
+    },
+    {
+      "source": "intra_domain",
+      "target": "link_state",
+      "relationship": "uses_family",
+      "mechanism": "Link-state protocols are described as intra-domain.",
+      "source_line_ranges": [
+        106
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0061"
+    },
+    {
+      "source": "inter_domain",
+      "target": "path_vector",
+      "relationship": "uses_family",
+      "mechanism": "Path-vector routing is used between autonomous systems.",
+      "source_line_ranges": [
+        106,
+        108
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0062"
+    },
+    {
+      "source": "bgp",
+      "target": "autonomous_system",
+      "relationship": "selects_paths_between",
+      "mechanism": "BGP chooses AS-level paths through a sequence of autonomous systems.",
+      "source_line_ranges": [
+        145
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0063"
+    },
+    {
+      "source": "bgp",
+      "target": "as_level_path",
+      "relationship": "produces",
+      "mechanism": "AS-level paths are selected using BGP.",
+      "source_line_ranges": [
+        145
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0064"
+    },
+    {
+      "source": "as_level_path",
+      "target": "edge_path",
+      "relationship": "maps_to",
+      "mechanism": "A selected AS path may correspond to several router-level paths.",
+      "source_line_ranges": [
+        145
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0065"
+    },
+    {
+      "source": "multiprotocol",
+      "target": "route_redistribution",
+      "relationship": "may_use",
+      "mechanism": "Routers running several protocols may selectively share route information.",
+      "source_line_ranges": [
+        139
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0066"
+    },
+    {
+      "source": "route_redistribution",
+      "target": "routing_table",
+      "relationship": "shares_entries_into",
+      "mechanism": "Selected information from one routing protocol may be shared with another.",
+      "source_line_ranges": [
+        139
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0067"
+    },
+    {
+      "source": "default_route",
+      "target": "routing_table",
+      "relationship": "is_entry_in",
+      "mechanism": "Default routes handle destinations without a more specific match.",
+      "source_line_ranges": [
+        137
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0068"
+    },
+    {
+      "source": "host_route",
+      "target": "routing_table",
+      "relationship": "adds_specific_control_to",
+      "mechanism": "Host routes allow fine-grained control for debugging, testing, and security.",
+      "source_line_ranges": [
+        124
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0069"
+    },
+    {
+      "source": "fallback_route",
+      "target": "psth",
+      "relationship": "supports_resilience_in",
+      "mechanism": "PSTN routing commonly uses precomputed routes with fallback options.",
+      "source_line_ranges": [
+        84
+      ],
+      "semantic_role": "algorithm_or_protocol",
+      "id": "rel_0070"
+    },
+    {
+      "source": "route_selection",
+      "target": "prefix_match",
+      "relationship": "applies_priority_rule",
+      "mechanism": "A matching route with a longer prefix is more specific and preferred.",
+      "source_line_ranges": [
+        119
+      ],
+      "effect": "Chooses the most specific matching destination range.",
+      "semantic_role": "selection_rule",
+      "id": "rel_0071"
+    },
+    {
+      "source": "route_selection",
+      "target": "metric",
+      "relationship": "compares",
+      "mechanism": "Metrics compare candidate routes within a protocol’s comparison rules.",
+      "source_line_ranges": [
+        115,
+        120
+      ],
+      "semantic_role": "selection_rule",
+      "id": "rel_0072"
+    },
+    {
+      "source": "metric",
+      "target": "bandwidth",
+      "relationship": "may_measure",
+      "mechanism": "Bandwidth is listed as a possible routing metric.",
+      "source_line_ranges": [
+        115
+      ],
+      "semantic_role": "metric_example",
+      "id": "rel_0073"
+    },
+    {
+      "source": "metric",
+      "target": "latency",
+      "relationship": "may_measure",
+      "mechanism": "Network delay is listed as a possible routing metric.",
+      "source_line_ranges": [
+        115
+      ],
+      "semantic_role": "metric_example",
+      "id": "rel_0074"
+    },
+    {
+      "source": "metric",
+      "target": "hop_count",
+      "relationship": "may_measure",
+      "mechanism": "Hop count is listed as a possible routing metric.",
+      "source_line_ranges": [
+        115
+      ],
+      "semantic_role": "metric_example",
+      "id": "rel_0075"
+    },
+    {
+      "source": "metric",
+      "target": "mtu",
+      "relationship": "may_measure",
+      "mechanism": "Maximum transmission unit is listed among possible path metrics.",
+      "source_line_ranges": [
+        115
+      ],
+      "semantic_role": "metric_example",
+      "id": "rel_0076"
+    },
+    {
+      "source": "metric",
+      "target": "reliability_metric",
+      "relationship": "may_measure",
+      "mechanism": "Reliability is listed as a possible routing metric.",
+      "source_line_ranges": [
+        115
+      ],
+      "semantic_role": "metric_example",
+      "id": "rel_0077"
+    },
+    {
+      "source": "route_selection",
+      "target": "administrative_distance",
+      "relationship": "uses_when_comparing_sources",
+      "mechanism": "When comparing routes from different sources, implementation-specific administrative distance may be used.",
+      "source_line_ranges": [
+        121,
+        122
+      ],
+      "conditions": "Implementation-specific; values from different protocol metrics are not directly comparable.",
+      "semantic_role": "selection_rule",
+      "id": "rel_0078"
+    },
+    {
+      "source": "route_selection",
+      "target": "route_policy",
+      "relationship": "constrained_by",
+      "mechanism": "Route selection may reflect policy and business relationships, not only shortest latency.",
+      "source_line_ranges": [
+        145
+      ],
+      "semantic_role": "policy",
+      "id": "rel_0079"
+    },
+    {
+      "source": "route_selection",
+      "target": "ecmp",
+      "relationship": "may_install_multiple_paths",
+      "mechanism": "Equal-cost multipath allows multiple equal-cost alternatives.",
+      "source_line_ranges": [
+        112
+      ],
+      "semantic_role": "multipath",
+      "id": "rel_0080"
+    },
+    {
+      "source": "multipath",
+      "target": "traffic_engineering",
+      "relationship": "supports",
+      "mechanism": "Multiple paths can distribute load or improve throughput.",
+      "source_line_ranges": [
+        112,
+        136
+      ],
+      "semantic_role": "optimization",
+      "id": "rel_0081"
+    },
+    {
+      "source": "static_routing",
+      "target": "administrative_control",
+      "relationship": "depends_on",
+      "mechanism": "Static routes are configured by an administrator.",
+      "source_line_ranges": [
+        84,
+        124,
+        137
+      ],
+      "semantic_role": "governance",
+      "id": "rel_0082"
+    },
+    {
+      "source": "dynamic_routing",
+      "target": "route_convergence",
+      "relationship": "depends_on",
+      "mechanism": "Dynamic routing updates route state as reachability/topology changes.",
+      "source_line_ranges": [
+        86,
+        94
+      ],
+      "semantic_role": "adaptation",
+      "id": "rel_0083"
+    },
+    {
+      "source": "business_policy",
+      "target": "bgp",
+      "relationship": "influences",
+      "mechanism": "Inter-AS route decisions may correlate with commercial relationships among neighboring ASs.",
+      "source_line_ranges": [
+        145
+      ],
+      "semantic_role": "policy_influence",
+      "id": "rel_0084"
+    },
+    {
+      "source": "hot_potato",
+      "target": "latency_inflation",
+      "relationship": "can_cause",
+      "mechanism": "Choosing the nearest exit from one ISP may increase total end-to-end latency.",
+      "source_line_ranges": [
+        145,
+        147
+      ],
+      "semantic_role": "causal",
+      "id": "rel_0085"
+    },
+    {
+      "source": "route_inflation_study",
+      "target": "latency_inflation",
+      "relationship": "measured",
+      "mechanism": "The cited 2003 study measured inflated latency on paths between neighboring ISPs.",
+      "source_line_ranges": [
+        151,
+        187
+      ],
+      "semantic_role": "empirical_evidence",
+      "id": "rel_0086"
+    },
+    {
+      "source": "route_policy",
+      "target": "hot_potato",
+      "relationship": "can_produce",
+      "mechanism": "Local cost minimization can prioritize leaving one network quickly over minimizing end-to-end delay.",
+      "source_line_ranges": [
+        145,
+        147
+      ],
+      "semantic_role": "policy_effect",
+      "id": "rel_0087"
+    },
+    {
+      "source": "road_network",
+      "target": "braess_paradox",
+      "relationship": "illustrates",
+      "mechanism": "Selfish path choices can produce equilibrium routes longer than globally optimal routes.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "analogy",
+      "id": "rel_0088"
+    },
+    {
+      "source": "braess_paradox",
+      "target": "routing",
+      "relationship": "illustrates_multi_agent_effects_in",
+      "mechanism": "Adding a road can increase travel time when users independently optimize their own route.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "analogy",
+      "id": "rel_0089"
+    },
+    {
+      "source": "reservation_routing",
+      "target": "agv",
+      "relationship": "used_for",
+      "mechanism": "Reservations prevent simultaneous use of the same infrastructure section by automated guided vehicles.",
+      "source_line_ranges": [
+        143
+      ],
+      "semantic_role": "application",
+      "id": "rel_0090"
+    },
+    {
+      "source": "cellular_routing",
+      "target": "latency",
+      "relationship": "considers",
+      "mechanism": "Cellular path selection considers latency.",
+      "source_line_ranges": [
+        149
+      ],
+      "semantic_role": "metric",
+      "id": "rel_0091"
+    },
+    {
+      "source": "cellular_routing",
+      "target": "packet_loss",
+      "relationship": "considers_error_rate_related_to",
+      "mechanism": "The source describes packet error rate as a path-selection factor in cellular networks.",
+      "source_line_ranges": [
+        149
+      ],
+      "semantic_role": "metric",
+      "id": "rel_0092"
+    },
+    {
+      "source": "centralized_routing",
+      "target": "sdn",
+      "relationship": "can_be_enabled_by",
+      "mechanism": "A logically centralized control plane can optimize forwarding state.",
+      "source_line_ranges": [
+        156
+      ],
+      "semantic_role": "architecture",
+      "id": "rel_0093"
+    },
+    {
+      "source": "global_controller",
+      "target": "global_optimization",
+      "relationship": "optimizes",
+      "mechanism": "Centralized systems can optimize utilization, flow completion times, and deadline delivery.",
+      "source_line_ranges": [
+        158,
+        159
+      ],
+      "semantic_role": "optimization",
+      "id": "rel_0094"
+    },
+    {
+      "source": "sdn_global_wan",
+      "target": "global_wan_microsoft",
+      "relationship": "example_instance",
+      "mechanism": "The source names this private WAN as an example of centralized/global routing.",
+      "source_line_ranges": [
+        156,
+        191,
+        192,
+        193
+      ],
+      "semantic_role": "example",
+      "id": "rel_0095"
+    },
+    {
+      "source": "sdn_global_wan",
+      "target": "facebook_express",
+      "relationship": "example_instance",
+      "mechanism": "The source names this private WAN as an example of centralized/global routing.",
+      "source_line_ranges": [
+        156,
+        191,
+        192,
+        193
+      ],
+      "semantic_role": "example",
+      "id": "rel_0096"
+    },
+    {
+      "source": "sdn_global_wan",
+      "target": "google_b4",
+      "relationship": "example_instance",
+      "mechanism": "The source names this private WAN as an example of centralized/global routing.",
+      "source_line_ranges": [
+        156,
+        191,
+        192,
+        193
+      ],
+      "semantic_role": "example",
+      "id": "rel_0097"
+    },
+    {
+      "source": "network_utilization",
+      "target": "global_optimization",
+      "relationship": "is_objective_of",
+      "mechanism": "Maximizing utilization is a listed global objective.",
+      "source_line_ranges": [
+        159
+      ],
+      "semantic_role": "objective",
+      "id": "rel_0098"
+    },
+    {
+      "source": "flow_completion_time",
+      "target": "global_optimization",
+      "relationship": "is_objective_of",
+      "mechanism": "Reducing flow completion time is a listed global objective.",
+      "source_line_ranges": [
+        136,
+        159
+      ],
+      "semantic_role": "objective",
+      "id": "rel_0099"
+    },
+    {
+      "source": "traffic_engineering",
+      "target": "global_optimization",
+      "relationship": "pursues",
+      "mechanism": "Traffic engineering selects paths to improve aggregate network performance.",
+      "source_line_ranges": [
+        136,
+        158
+      ],
+      "semantic_role": "objective",
+      "id": "rel_0100"
+    },
+    {
+      "source": "next_hop_routing",
+      "target": "routing_scale",
+      "relationship": "improves",
+      "mechanism": "Large networks use next-hop decisions because no node can know every connection and compute every complete path.",
+      "source_line_ranges": [
+        130
+      ],
+      "semantic_role": "scalability",
+      "id": "rel_0101"
+    },
+    {
+      "source": "randomized_routing",
+      "target": "valiant_routing",
+      "relationship": "includes",
+      "mechanism": "Valiant’s paradigm chooses a random intermediate destination before the true destination.",
+      "source_line_ranges": [
+        134
+      ],
+      "semantic_role": "algorithm",
+      "id": "rel_0102"
+    },
+    {
+      "source": "valiant_routing",
+      "target": "congestion",
+      "relationship": "aims_to_avoid",
+      "mechanism": "Randomized intermediate routing is described as a way to avoid congestion hot spots.",
+      "source_line_ranges": [
+        134
+      ],
+      "semantic_role": "optimization",
+      "id": "rel_0103"
+    },
+    {
+      "source": "a_star",
+      "target": "network_graph",
+      "relationship": "searches",
+      "mechanism": "A* can find a path when the planner has sufficient network topology knowledge.",
+      "source_line_ranges": [
+        126
+      ],
+      "semantic_role": "algorithm",
+      "id": "rel_0104"
+    },
+    {
+      "source": "circuit_switching",
+      "target": "path",
+      "relationship": "establishes_before_transfer",
+      "mechanism": "Circuit systems establish a path once and reuse it until teardown.",
+      "source_line_ranges": [
+        128
+      ],
+      "semantic_role": "contrast",
+      "id": "rel_0105"
+    },
+    {
+      "source": "routing",
+      "target": "route_analytics",
+      "relationship": "is_monitored_by",
+      "mechanism": "Analytics monitor routing posture and detect incorrect routing, flapping, performance degradation, and downtime.",
+      "source_line_ranges": [
+        153,
+        155
+      ],
+      "semantic_role": "observability",
+      "id": "rel_0106"
+    },
+    {
+      "source": "route_analytics",
+      "target": "route_flapping",
+      "relationship": "detects",
+      "mechanism": "Route analytics can monitor flapping and routing issues.",
+      "source_line_ranges": [
+        153
+      ],
+      "semantic_role": "diagnostics",
+      "id": "rel_0107"
+    },
+    {
+      "source": "routing_security",
+      "target": "route_analytics",
+      "relationship": "benefits_from",
+      "mechanism": "Monitoring routing state can expose incorrect routing and downtime causes.",
+      "source_line_ranges": [
+        153
+      ],
+      "semantic_role": "operations",
+      "id": "rel_0108"
+    },
+    {
+      "source": "router",
+      "target": "cpu_forwarding",
+      "relationship": "may_use",
+      "mechanism": "Early/software routers used CPU-based forwarding.",
+      "source_line_ranges": [
+        64,
+        79
+      ],
+      "semantic_role": "implementation",
+      "id": "rel_0109"
+    },
+    {
+      "source": "router",
+      "target": "asic_forwarding",
+      "relationship": "may_use",
+      "mechanism": "More sophisticated routers use ASICs for performance and specialized processing.",
+      "source_line_ranges": [
+        64,
+        79
+      ],
+      "semantic_role": "implementation",
+      "id": "rel_0110"
+    },
+    {
+      "source": "router",
+      "target": "routing_software",
+      "relationship": "runs",
+      "mechanism": "Routers execute software for routing protocols and forwarding/control logic.",
+      "source_line_ranges": [
+        79,
+        86
+      ],
+      "semantic_role": "software_hardware",
+      "id": "rel_0111"
+    },
+    {
+      "source": "network_interface",
+      "target": "link",
+      "relationship": "terminates",
+      "mechanism": "Interfaces attach routers/nodes to physical or logical network links.",
+      "source_line_ranges": [
+        92
+      ],
+      "semantic_role": "connectivity",
+      "id": "rel_0112"
+    },
+    {
+      "source": "interface_queue",
+      "target": "packet_loss",
+      "relationship": "can_cause",
+      "mechanism": "Queue exhaustion policies drop packets.",
+      "source_line_ranges": [
+        141
+      ],
+      "semantic_role": "causal",
+      "id": "rel_0113"
+    },
+    {
+      "source": "asic_forwarding",
+      "target": "qos",
+      "relationship": "may_accelerate",
+      "mechanism": "Specialized hardware may accelerate common packet processing; the source states some functions are ASIC-handled.",
+      "source_line_ranges": [
+        147
+      ],
+      "semantic_role": "hardware_acceleration",
+      "id": "rel_0114"
+    },
+    {
+      "source": "packet_switching",
+      "target": "routing",
+      "relationship": "uses",
+      "mechanism": "Routing makes higher-level path choices in packet-switched networks.",
+      "source_line_ranges": [
+        59
+      ],
+      "semantic_role": "architecture",
+      "id": "rel_0115"
+    },
+    {
+      "source": "intermediate_node",
+      "target": "packet_forwarding",
+      "relationship": "performs",
+      "mechanism": "Intermediate nodes forward traffic along the chosen path.",
+      "source_line_ranges": [
+        59
+      ],
+      "semantic_role": "mechanism",
+      "id": "rel_0116"
+    },
+    {
+      "source": "routing",
+      "target": "network_graph",
+      "relationship": "can_be_modeled_as",
+      "mechanism": "Path selection and global optimization can be formulated as graph problems.",
+      "source_line_ranges": [
+        126,
+        159
+      ],
+      "semantic_role": "formalization",
+      "id": "rel_0117"
+    },
+    {
+      "source": "donald_davies",
+      "target": "npl_network",
+      "relationship": "proposed",
+      "mechanism": "Davies proposed interface computers for the NPL packet network.",
+      "source_line_ranges": [
+        70,
+        165,
+        166
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0118"
+    },
+    {
+      "source": "wesley_clark",
+      "target": "imp",
+      "relationship": "proposed_for",
+      "mechanism": "Clark independently conceived an interface computer for ARPANET.",
+      "source_line_ranges": [
+        70,
+        71
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0119"
+    },
+    {
+      "source": "arpanet",
+      "target": "imp",
+      "relationship": "used",
+      "mechanism": "The first ARPANET router-like system was an IMP.",
+      "source_line_ranges": [
+        68,
+        70
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0120"
+    },
+    {
+      "source": "imp",
+      "target": "honeywell_516",
+      "relationship": "implemented_on",
+      "mechanism": "Early interface computers/IMPs used Honeywell 516 computers.",
+      "source_line_ranges": [
+        70
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0121"
+    },
+    {
+      "source": "darpa",
+      "target": "tcp_ip",
+      "relationship": "contributed_to_creation_of",
+      "mechanism": "The DARPA internetworking program drew on earlier work and created the TCP/IP architecture.",
+      "source_line_ranges": [
+        73
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0122"
+    },
+    {
+      "source": "louis_pouzin",
+      "target": "cyclades",
+      "relationship": "led",
+      "mechanism": "Pouzin led the CYCLADES program in 1972–1973.",
+      "source_line_ranges": [
+        73,
+        176
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0123"
+    },
+    {
+      "source": "cyclades",
+      "target": "routing",
+      "relationship": "influenced_datagram_end_to_end_design_of",
+      "mechanism": "CYCLADES simplified packet switching and influenced end-to-end design.",
+      "source_line_ranges": [
+        73,
+        178,
+        179
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0124"
+    },
+    {
+      "source": "xerox_parc",
+      "target": "routing",
+      "relationship": "explored_through",
+      "mechanism": "PARC Universal Packet work produced early operational Xerox routers.",
+      "source_line_ranges": [
+        73
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0125"
+    },
+    {
+      "source": "ginny_travers",
+      "target": "bbn",
+      "relationship": "worked_on",
+      "mechanism": "The first true IP router was developed by Travers at BBN.",
+      "source_line_ranges": [
+        75
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0126"
+    },
+    {
+      "source": "ginny_travers",
+      "target": "ieee_award",
+      "relationship": "recognized_by",
+      "mechanism": "Travers was among the early IP-router contributors recognized in 2008.",
+      "source_line_ranges": [
+        75
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0127"
+    },
+    {
+      "source": "mike_brecia",
+      "target": "ieee_award",
+      "relationship": "recognized_by",
+      "mechanism": "Brecia was recognized for early IP routers.",
+      "source_line_ranges": [
+        75
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0128"
+    },
+    {
+      "source": "bob_hinden",
+      "target": "ieee_award",
+      "relationship": "recognized_by",
+      "mechanism": "Hinden was recognized for early IP routers.",
+      "source_line_ranges": [
+        75
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0129"
+    },
+    {
+      "source": "william_yeager",
+      "target": "pdp11",
+      "relationship": "used_platform_for",
+      "mechanism": "Stanford’s early multiprotocol router was based on PDP-11.",
+      "source_line_ranges": [
+        77
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0130"
+    },
+    {
+      "source": "noel_chiappa",
+      "target": "pdp11",
+      "relationship": "used_platform_for",
+      "mechanism": "MIT’s early multiprotocol router was based on PDP-11.",
+      "source_line_ranges": [
+        77
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0131"
+    },
+    {
+      "source": "inwg",
+      "target": "gateway",
+      "relationship": "developed_concept_of",
+      "mechanism": "INWG researchers considered simple gateways to interconnect dissimilar packet networks.",
+      "source_line_ranges": [
+        71,
+        173,
+        174
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0132"
+    },
+    {
+      "source": "routing",
+      "target": "route_inflation_study",
+      "relationship": "studied_by",
+      "mechanism": "The 2003 study analyzed path inflation among neighboring ISPs.",
+      "source_line_ranges": [
+        151,
+        187
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0133"
+    },
+    {
+      "source": "bgp",
+      "target": "rfc4098",
+      "relationship": "terminology_reference",
+      "mechanism": "RFC 4098 is cited for BGP router roles and convergence benchmarking terminology.",
+      "source_line_ranges": [
+        117,
+        215
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0134"
+    },
+    {
+      "source": "olsr",
+      "target": "rfc3626",
+      "relationship": "reference",
+      "mechanism": "RFC 3626 appears in the article’s references for OLSR.",
+      "source_line_ranges": [
+        102,
+        177
+      ],
+      "semantic_role": "historical_or_provenance",
+      "id": "rel_0135"
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_routing_vs_forwarding",
+      "name": "Routing versus forwarding",
+      "inputs": [
+        "routing_table",
+        "fib",
+        "packet_header"
+      ],
+      "steps": [
+        "learn/configure candidate routes",
+        "select route according to protocol and policy",
+        "compile selected route into FIB",
+        "match each packet destination against FIB",
+        "send packet through selected interface"
+      ],
+      "outputs": [
+        "next_hop",
+        "network_interface"
+      ],
+      "conditions": [
+        "routing is control/path selection; forwarding is per-packet transit"
+      ],
+      "source_line_ranges": [
+        59,
+        86,
+        87,
+        135
+      ]
+    },
+    {
+      "id": "model_distance_vector",
+      "name": "Distance-vector update",
+      "inputs": [
+        "distance_table",
+        "link_cost",
+        "route_advertisement"
+      ],
+      "steps": [
+        "initialize direct-neighbor costs",
+        "advertise known destination costs to neighbors",
+        "compare received estimates with current estimates",
+        "install improved cost and next hop",
+        "repeat after updates/failures"
+      ],
+      "outputs": [
+        "routing_table",
+        "next_hop",
+        "route_cost"
+      ],
+      "conditions": [
+        "distributed neighbor exchange; Bellman–Ford style"
+      ],
+      "source_line_ranges": [
+        90,
+        92,
+        94
+      ]
+    },
+    {
+      "id": "model_link_state",
+      "name": "Link-state shortest path",
+      "inputs": [
+        "flooding",
+        "topology_database",
+        "network_graph"
+      ],
+      "steps": [
+        "discover adjacent nodes",
+        "flood link-state information",
+        "build local topology map",
+        "run Dijkstra from local router",
+        "derive best next hops and routing table"
+      ],
+      "outputs": [
+        "routing_table",
+        "path"
+      ],
+      "conditions": [
+        "each router computes its own shortest-path tree"
+      ],
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "model_path_vector",
+      "name": "Path-vector inter-domain route",
+      "inputs": [
+        "autonomous_system",
+        "speaker_node",
+        "as_path"
+      ],
+      "steps": [
+        "speaker learns destination reachability",
+        "advertise destination plus path attributes",
+        "neighbor speaker evaluates advertised path",
+        "select an AS-level route under policy"
+      ],
+      "outputs": [
+        "as_level_path",
+        "route"
+      ],
+      "conditions": [
+        "inter-domain; AS speakers exchange path descriptions"
+      ],
+      "source_line_ranges": [
+        108,
+        110,
+        145
+      ]
+    },
+    {
+      "id": "model_route_precedence",
+      "name": "Route precedence",
+      "inputs": [
+        "prefix_match",
+        "metric",
+        "administrative_distance"
+      ],
+      "steps": [
+        "identify routes matching destination",
+        "prefer longest matching prefix",
+        "compare metrics within same protocol",
+        "compare route sources using implementation-specific preference"
+      ],
+      "outputs": [
+        "route_selection",
+        "routing_table"
+      ],
+      "conditions": [
+        "metric comparison across protocols is not directly meaningful; administrative distance is implementation-specific"
+      ],
+      "source_line_ranges": [
+        117,
+        119,
+        120,
+        121,
+        122
+      ]
+    },
+    {
+      "id": "model_delivery_schemes",
+      "name": "Message delivery schemes",
+      "inputs": [
+        "unicast",
+        "broadcast",
+        "multicast",
+        "anycast"
+      ],
+      "steps": [
+        "identify delivery semantics",
+        "choose a single receiver, all nodes, an interested group, or one group member",
+        "apply address and routing behavior appropriate to scheme"
+      ],
+      "outputs": [
+        "destination_node",
+        "route_selection"
+      ],
+      "conditions": [
+        "broadcast scope depends on network/subnet; anycast chooses one member"
+      ],
+      "source_line_ranges": [
+        75,
+        80
+      ]
+    },
+    {
+      "id": "model_congestion",
+      "name": "Queue congestion and packet drops",
+      "inputs": [
+        "interface_queue",
+        "congestion"
+      ],
+      "steps": [
+        "compare arrival rate with service rate",
+        "queue packets in available buffer",
+        "apply tail drop, RED, or WRED when queue thresholds/capacity are reached",
+        "observe packet loss and possible flow delay"
+      ],
+      "outputs": [
+        "packet_loss",
+        "flow_completion_time"
+      ],
+      "conditions": [
+        "exact thresholds and policies depend on implementation/configuration"
+      ],
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "id": "model_olsr",
+      "name": "OLSR proactive neighbor discovery",
+      "inputs": [
+        "hello_messages",
+        "tc_messages",
+        "mpr"
+      ],
+      "steps": [
+        "discover one-hop/two-hop neighbors with Hello",
+        "select multipoint relays",
+        "disseminate topology through TC messages",
+        "maintain routing knowledge proactively"
+      ],
+      "outputs": [
+        "topology_database",
+        "routing_table"
+      ],
+      "conditions": [
+        "mobile ad hoc networks"
+      ],
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "model_hot_potato",
+      "name": "Hot-potato route choice",
+      "inputs": [
+        "business_policy",
+        "latency",
+        "edge_path",
+        "as_level_path"
+      ],
+      "steps": [
+        "choose an AS-level path under BGP policy",
+        "select the lowest internal-cost exit",
+        "hand traffic to neighboring AS at that exit",
+        "compare end-to-end latency with alternative paths"
+      ],
+      "outputs": [
+        "latency_inflation"
+      ],
+      "conditions": [
+        "local optimization can conflict with global latency optimization"
+      ],
+      "source_line_ranges": [
+        145,
+        147
+      ]
+    },
+    {
+      "id": "model_centralized",
+      "name": "Centralized WAN optimization",
+      "inputs": [
+        "global_controller",
+        "network_graph",
+        "network_utilization",
+        "flow_completion_time"
+      ],
+      "steps": [
+        "collect topology/traffic state",
+        "formulate network-wide objectives",
+        "compute or approximate forwarding choices",
+        "push forwarding state to devices",
+        "measure aggregate performance"
+      ],
+      "outputs": [
+        "global_optimization",
+        "traffic_engineering"
+      ],
+      "conditions": [
+        "logically centralized control; example private data-center WANs"
+      ],
+      "source_line_ranges": [
+        156,
+        158,
+        159
+      ]
+    },
+    {
+      "id": "model_route_convergence",
+      "name": "Distributed convergence after failure",
+      "inputs": [
+        "network_failure",
+        "route_advertisement",
+        "routing_table"
+      ],
+      "steps": [
+        "detect or learn failed reachability",
+        "invalidate affected next-hop entries",
+        "advertise changed reachability",
+        "neighbors recompute routes",
+        "propagate updates until usable alternatives settle"
+      ],
+      "outputs": [
+        "route_convergence",
+        "routing_table"
+      ],
+      "conditions": [
+        "convergence time and stability depend on protocol/topology"
+      ],
+      "source_line_ranges": [
+        94,
+        153
+      ]
+    },
+    {
+      "id": "model_metric_objective",
+      "name": "Metric-based path selection",
+      "inputs": [
+        "bandwidth",
+        "latency",
+        "hop_count",
+        "mtu",
+        "reliability_metric"
+      ],
+      "steps": [
+        "define traffic objective",
+        "collect/estimate candidate path metrics",
+        "apply protocol metric and policy",
+        "select path or multipath set",
+        "evaluate actual end-to-end outcome"
+      ],
+      "outputs": [
+        "route_selection",
+        "traffic_engineering"
+      ],
+      "conditions": [
+        "best path depends on objective; one metric does not universally optimize all goals"
+      ],
+      "source_line_ranges": [
+        115,
+        136
+      ]
+    },
+    {
+      "id": "model_randomized",
+      "name": "Randomized intermediate routing",
+      "inputs": [
+        "source_node",
+        "destination_node",
+        "valiant_routing"
+      ],
+      "steps": [
+        "select a random intermediate node",
+        "route source traffic to intermediate",
+        "route intermediate traffic to final destination"
+      ],
+      "outputs": [
+        "path"
+      ],
+      "conditions": [
+        "described as an approach to reduce congestion hot spots in some packet systems"
+      ],
+      "source_line_ranges": [
+        134
+      ]
+    },
+    {
+      "id": "model_next_hop",
+      "name": "Next-hop routing at scale",
+      "inputs": [
+        "topology",
+        "next_hop",
+        "routing_table"
+      ],
+      "steps": [
+        "maintain local reachability/route knowledge",
+        "choose next hop for destination",
+        "forward to adjacent node",
+        "repeat at each intermediate node"
+      ],
+      "outputs": [
+        "path"
+      ],
+      "conditions": [
+        "no single device needs to calculate or know the complete end-to-end path"
+      ],
+      "source_line_ranges": [
+        130
+      ]
+    },
+    {
+      "id": "model_route_policy",
+      "name": "Policy-aware route choice",
+      "inputs": [
+        "route_policy",
+        "business_policy",
+        "metric"
+      ],
+      "steps": [
+        "collect candidate routes",
+        "apply route-source and prefix rules",
+        "apply administrative and business policy",
+        "select permitted/preferred route"
+      ],
+      "outputs": [
+        "routing_table"
+      ],
+      "conditions": [
+        "commercial policy can choose a path that is not lowest-latency"
+      ],
+      "source_line_ranges": [
+        119,
+        121,
+        145
+      ]
+    },
+    {
+      "id": "model_static_dynamic",
+      "name": "Static versus dynamic routing",
+      "inputs": [
+        "static_routing",
+        "dynamic_routing",
+        "topology"
+      ],
+      "steps": [
+        "choose manual configuration for small/stable topology or protocol learning for changing topology",
+        "install routes",
+        "update or maintain routes as conditions change"
+      ],
+      "outputs": [
+        "routing_table"
+      ],
+      "conditions": [
+        "the source contrasts manually configured small networks with dynamic large networks"
+      ],
+      "source_line_ranges": [
+        84,
+        86
+      ]
+    },
+    {
+      "id": "model_multipath",
+      "name": "Multipath and ECMP",
+      "inputs": [
+        "route_selection",
+        "multipath",
+        "ecmp"
+      ],
+      "steps": [
+        "identify alternative candidate paths",
+        "compare path costs",
+        "install equal-cost alternatives where supported",
+        "use multiple paths for traffic"
+      ],
+      "outputs": [
+        "traffic_engineering",
+        "network_utilization"
+      ],
+      "conditions": [
+        "the source says many algorithms use one path, while ECMP/multipath allow alternatives"
+      ],
+      "source_line_ranges": [
+        112
+      ]
+    },
+    {
+      "id": "model_as_router_layers",
+      "name": "AS-level and router-level path selection",
+      "inputs": [
+        "bgp",
+        "as_level_path",
+        "edge_path",
+        "hot_potato"
+      ],
+      "steps": [
+        "select a sequence of ASs using BGP",
+        "identify router-level paths between ASs",
+        "apply each ISP’s internal path/exit policy",
+        "observe end-to-end latency and policy effects"
+      ],
+      "outputs": [
+        "path",
+        "latency_inflation"
+      ],
+      "conditions": [
+        "multiple router-level paths may correspond to one AS-level path"
+      ],
+      "source_line_ranges": [
+        145,
+        147
+      ]
+    },
+    {
+      "id": "model_routing_observability",
+      "name": "Route analytics loop",
+      "inputs": [
+        "route_analytics",
+        "route_flapping",
+        "routing_security"
+      ],
+      "steps": [
+        "collect route posture and state",
+        "detect incorrect routes, flapping, and downtime signals",
+        "diagnose topology/protocol/policy issues",
+        "adjust routes or policy and observe changes"
+      ],
+      "outputs": [
+        "routing_stability",
+        "route_convergence"
+      ],
+      "conditions": [
+        "source describes monitoring of routing posture and failure/performance issues"
+      ],
+      "source_line_ranges": [
+        153,
+        155
+      ]
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_1",
+      "claim": "Routing selects a path; forwarding moves packets between interfaces.",
+      "source_line_ranges": [
+        59
+      ]
+    },
+    {
+      "id": "claim_2",
+      "claim": "Routing decisions usually rely on routing tables populated manually or with protocol assistance.",
+      "source_line_ranges": [
+        61
+      ]
+    },
+    {
+      "id": "claim_3",
+      "claim": "Structured IP addresses allow route aggregation and scale better than unstructured bridging in large networks.",
+      "source_line_ranges": [
+        63
+      ]
+    },
+    {
+      "id": "claim_4",
+      "claim": "Unicast, broadcast, multicast, and anycast represent distinct delivery semantics.",
+      "source_line_ranges": [
+        75,
+        80
+      ]
+    },
+    {
+      "id": "claim_5",
+      "claim": "Dynamic routing updates route tables using protocol information and dominates the Internet.",
+      "source_line_ranges": [
+        86
+      ]
+    },
+    {
+      "id": "claim_6",
+      "claim": "Distance-vector routing uses Bellman–Ford-style iterative neighbor cost exchange.",
+      "source_line_ranges": [
+        90,
+        94
+      ]
+    },
+    {
+      "id": "claim_7",
+      "claim": "Link-state routers flood topology information and independently calculate least-cost paths.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "id": "claim_8",
+      "claim": "OLSR uses Hello, TC, and multipoint relay mechanisms for proactive ad hoc routing.",
+      "source_line_ranges": [
+        102
+      ]
+    },
+    {
+      "id": "claim_9",
+      "claim": "Path-vector routing advertises path/domain descriptions for inter-domain reachability.",
+      "source_line_ranges": [
+        106,
+        110
+      ]
+    },
+    {
+      "id": "claim_10",
+      "claim": "Route selection may consider prefix length, protocol-specific metric, and administrative distance.",
+      "source_line_ranges": [
+        117,
+        122
+      ]
+    },
+    {
+      "id": "claim_11",
+      "claim": "Path selection metrics can include bandwidth, delay, hops, cost, load, MTU, reliability, and communication cost.",
+      "source_line_ranges": [
+        115
+      ]
+    },
+    {
+      "id": "claim_12",
+      "claim": "Congestion may be managed using tail drop, RED, and WRED; QoS prioritizes traffic.",
+      "source_line_ranges": [
+        141,
+        143
+      ]
+    },
+    {
+      "id": "claim_13",
+      "claim": "Inter-AS route choices can reflect commercial relationships and hot-potato policies rather than global latency.",
+      "source_line_ranges": [
+        145,
+        147
+      ]
+    },
+    {
+      "id": "claim_14",
+      "claim": "Centralized routing can optimize network-wide performance objectives in private WANs.",
+      "source_line_ranges": [
+        156,
+        159
+      ]
+    },
+    {
+      "id": "claim_15",
+      "claim": "Incorrect routing and route flapping can cause performance degradation or downtime.",
+      "source_line_ranges": [
+        153,
+        155
+      ]
+    },
+    {
+      "id": "claim_16",
+      "claim": "Early router concepts emerged from NPL, ARPANET, CYCLADES, Xerox PARC, and DARPA-related work.",
+      "source_line_ranges": [
+        68,
+        75
+      ]
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "concept_a": "routing",
+      "concept_b": "packet_forwarding",
+      "dimension": "decision_vs_execution",
+      "distinction": "Routing selects a path/next hop; forwarding transits each packet between interfaces."
+    },
+    {
+      "concept_a": "routing",
+      "concept_b": "bridging",
+      "dimension": "network_layer_vs_data_link",
+      "distinction": "IP routing uses structured network-layer addresses; bridging is Layer-2 forwarding."
+    },
+    {
+      "concept_a": "static_routing",
+      "concept_b": "dynamic_routing",
+      "dimension": "manual_vs_adaptive",
+      "distinction": "Static routes are configured manually; dynamic routes are learned/updated through protocols."
+    },
+    {
+      "concept_a": "distance_vector",
+      "concept_b": "link_state",
+      "dimension": "neighbor_costs_vs_topology_map",
+      "distinction": "Distance vector exchanges destination costs with neighbors; link state floods topology information and computes paths locally."
+    },
+    {
+      "concept_a": "path_vector",
+      "concept_b": "distance_vector",
+      "dimension": "path_attributes_vs_cost",
+      "distinction": "Path vector advertises domain/path descriptions; distance vector advertises destination costs."
+    },
+    {
+      "concept_a": "intra_domain",
+      "concept_b": "inter_domain",
+      "dimension": "routing_scope",
+      "distinction": "Intra-domain routing operates within an AS; inter-domain routing connects ASs."
+    },
+    {
+      "concept_a": "unicast",
+      "concept_b": "broadcast",
+      "dimension": "one_vs_all",
+      "distinction": "Unicast targets one receiver; broadcast targets all nodes in scope."
+    },
+    {
+      "concept_a": "multicast",
+      "concept_b": "broadcast",
+      "dimension": "group_vs_all",
+      "distinction": "Multicast targets an interested subset; broadcast targets all nodes within scope."
+    },
+    {
+      "concept_a": "anycast",
+      "concept_b": "unicast",
+      "dimension": "one_member_of_group_vs_named_endpoint",
+      "distinction": "Anycast chooses one of several receivers sharing an address; unicast targets a specific receiver."
+    },
+    {
+      "concept_a": "routing_table",
+      "concept_b": "fib",
+      "dimension": "control_data_structure_vs_fast_path",
+      "distinction": "The routing table holds route information; the FIB is optimized for forwarding lookups."
+    },
+    {
+      "concept_a": "metric",
+      "concept_b": "administrative_distance",
+      "dimension": "within_protocol_vs_between_sources",
+      "distinction": "Metrics compare routes under a protocol; administrative distance can compare sources in an implementation-specific way."
+    },
+    {
+      "concept_a": "ecmp",
+      "concept_b": "single_path_routing",
+      "dimension": "multiple_equal_cost_paths_vs_one",
+      "distinction": "ECMP uses multiple equal-cost paths instead of only one route."
+    },
+    {
+      "concept_a": "hot_potato",
+      "concept_b": "global_latency_optimization",
+      "dimension": "local_exit_cost_vs_end_to_end_delay",
+      "distinction": "Hot-potato routing minimizes an ISP’s internal distance to exit, potentially increasing end-to-end latency."
+    },
+    {
+      "concept_a": "centralized_routing",
+      "concept_b": "distributed_routing",
+      "dimension": "global_control_vs_local_protocols",
+      "distinction": "Centralized routing can optimize global state; distributed protocols exchange local route/topology information."
+    },
+    {
+      "concept_a": "deterministic_routing",
+      "concept_b": "randomized_routing",
+      "dimension": "stable_choice_vs_random_intermediate",
+      "distinction": "Deterministic routing repeats a preferred path until information changes; randomized routing can choose an intermediate destination."
+    },
+    {
+      "concept_a": "tail_drop",
+      "concept_b": "red",
+      "dimension": "buffer_full_vs_early_probabilistic_drop",
+      "distinction": "Tail drop waits for buffer exhaustion; RED begins probabilistic drops earlier."
+    },
+    {
+      "concept_a": "red",
+      "concept_b": "wred",
+      "dimension": "uniform_vs_traffic_weighted_drop",
+      "distinction": "WRED varies drop behavior by traffic type."
+    },
+    {
+      "concept_a": "as_level_path",
+      "concept_b": "edge_path",
+      "dimension": "inter_domain_vs_router_level",
+      "distinction": "An AS sequence can map to multiple concrete router-level paths."
+    },
+    {
+      "concept_a": "routing_metric",
+      "concept_b": "routing_policy",
+      "dimension": "optimization_measure_vs_constraints",
+      "distinction": "Metrics quantify path attributes; policies can override a metric-optimal path for business or administrative reasons."
+    },
+    {
+      "concept_a": "route_convergence",
+      "concept_b": "route_selection",
+      "dimension": "state_stabilization_vs_candidate_choice",
+      "distinction": "Convergence is the network settling after updates; route selection chooses among candidates at a given moment."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "lp_1",
+      "title": "Routing fundamentals",
+      "sequence": [
+        "routing",
+        "packet_forwarding",
+        "router",
+        "routing_table",
+        "next_hop",
+        "fib",
+        "forwarding_plane"
+      ]
+    },
+    {
+      "id": "lp_2",
+      "title": "Addressing and route aggregation",
+      "sequence": [
+        "ip_address",
+        "prefix",
+        "subnet",
+        "prefix_match",
+        "routing_table"
+      ]
+    },
+    {
+      "id": "lp_3",
+      "title": "Static versus dynamic routing",
+      "sequence": [
+        "static_routing",
+        "dynamic_routing",
+        "route_advertisement",
+        "route_convergence"
+      ]
+    },
+    {
+      "id": "lp_4",
+      "title": "Distance-vector algorithms",
+      "sequence": [
+        "distance_vector",
+        "bellman_ford",
+        "distance_table",
+        "route_cost",
+        "routing_table"
+      ]
+    },
+    {
+      "id": "lp_5",
+      "title": "Link-state algorithms",
+      "sequence": [
+        "link_state",
+        "flooding",
+        "topology_database",
+        "dijkstra",
+        "routing_table"
+      ]
+    },
+    {
+      "id": "lp_6",
+      "title": "OLSR for ad hoc networks",
+      "sequence": [
+        "ad_hoc_network",
+        "olsr",
+        "hello_messages",
+        "mpr",
+        "tc_messages"
+      ]
+    },
+    {
+      "id": "lp_7",
+      "title": "Inter-domain routing and BGP",
+      "sequence": [
+        "autonomous_system",
+        "path_vector",
+        "bgp",
+        "as_path",
+        "as_level_path"
+      ]
+    },
+    {
+      "id": "lp_8",
+      "title": "Route selection and policy",
+      "sequence": [
+        "prefix_match",
+        "metric",
+        "administrative_distance",
+        "route_policy",
+        "route_selection"
+      ]
+    },
+    {
+      "id": "lp_9",
+      "title": "Delivery schemes",
+      "sequence": [
+        "unicast",
+        "broadcast",
+        "multicast",
+        "anycast"
+      ]
+    },
+    {
+      "id": "lp_10",
+      "title": "Multipath and traffic engineering",
+      "sequence": [
+        "multipath",
+        "ecmp",
+        "traffic_engineering",
+        "network_utilization",
+        "flow_completion_time"
+      ]
+    },
+    {
+      "id": "lp_11",
+      "title": "Congestion and queue management",
+      "sequence": [
+        "congestion",
+        "interface_queue",
+        "tail_drop",
+        "red",
+        "wred",
+        "packet_loss"
+      ]
+    },
+    {
+      "id": "lp_12",
+      "title": "QoS for latency-sensitive traffic",
+      "sequence": [
+        "traffic_classification",
+        "qos",
+        "latency",
+        "flow_completion_time"
+      ]
+    },
+    {
+      "id": "lp_13",
+      "title": "Hot-potato routing and ISP policy",
+      "sequence": [
+        "business_policy",
+        "bgp",
+        "hot_potato",
+        "latency_inflation"
+      ]
+    },
+    {
+      "id": "lp_14",
+      "title": "Centralized software-defined routing",
+      "sequence": [
+        "sdn",
+        "centralized_routing",
+        "global_controller",
+        "global_optimization"
+      ]
+    },
+    {
+      "id": "lp_15",
+      "title": "Randomized routing",
+      "sequence": [
+        "randomized_routing",
+        "valiant_routing",
+        "congestion",
+        "network_graph"
+      ]
+    },
+    {
+      "id": "lp_16",
+      "title": "Routing analytics and failures",
+      "sequence": [
+        "network_failure",
+        "route_convergence",
+        "route_flapping",
+        "route_analytics"
+      ]
+    },
+    {
+      "id": "lp_17",
+      "title": "Routing history",
+      "sequence": [
+        "donald_davies",
+        "npl_network",
+        "arpanet",
+        "imp",
+        "cyclades",
+        "darpa",
+        "tcp_ip",
+        "ginny_travers"
+      ]
+    },
+    {
+      "id": "lp_18",
+      "title": "Graph optimization for networks",
+      "sequence": [
+        "network_graph",
+        "a_star",
+        "dijkstra",
+        "route_selection",
+        "global_optimization"
+      ]
+    }
+  ],
+  "misconceptions": [
+    {
+      "misconception": "Routing and forwarding are the same operation.",
+      "correction": "Routing selects path/next-hop state; forwarding applies the FIB to individual packets.",
+      "source_line_ranges": [
+        59,
+        86,
+        87
+      ]
+    },
+    {
+      "misconception": "Every router computes the entire end-to-end path for each packet.",
+      "correction": "Large networks generally use next-hop routing; each node forwards toward the next hop.",
+      "source_line_ranges": [
+        128,
+        130
+      ]
+    },
+    {
+      "misconception": "The lowest latency route is always selected.",
+      "correction": "Metrics and policies vary; BGP decisions may reflect business relationships or hot-potato routing.",
+      "source_line_ranges": [
+        115,
+        145
+      ]
+    },
+    {
+      "misconception": "A routing metric can be compared directly across all protocols.",
+      "correction": "The source says metrics cannot be compared across routes learned from different protocols; implementations may use administrative distance.",
+      "source_line_ranges": [
+        120,
+        122
+      ]
+    },
+    {
+      "misconception": "Multicast is the same as broadcast.",
+      "correction": "Multicast targets an interested subset; broadcast targets all nodes within its scope.",
+      "source_line_ranges": [
+        78,
+        79
+      ]
+    },
+    {
+      "misconception": "Anycast delivers to every node sharing an address.",
+      "correction": "Anycast selects one member of the group, usually based on routing distance/cost.",
+      "source_line_ranges": [
+        80
+      ]
+    },
+    {
+      "misconception": "Static routing is suitable for any rapidly changing large topology.",
+      "correction": "The source notes manual table construction becomes infeasible for large, rapidly changing networks.",
+      "source_line_ranges": [
+        84,
+        86
+      ]
+    },
+    {
+      "misconception": "Link-state routing simply shares a single final route.",
+      "correction": "Nodes flood link-state information, construct topology maps, and independently compute shortest-path trees.",
+      "source_line_ranges": [
+        98
+      ]
+    },
+    {
+      "misconception": "Path-vector routing advertises only a scalar distance.",
+      "correction": "Path-vector announcements include destination reachability and path/domain descriptions.",
+      "source_line_ranges": [
+        108,
+        110
+      ]
+    },
+    {
+      "misconception": "Adding a network link always improves every user’s route.",
+      "correction": "Under selfish multi-agent route choices, Braess’s paradox shows an added road can increase travel time.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "misconception": "A full buffer is the only way to manage congestion.",
+      "correction": "The source describes RED/WRED early drop behavior in addition to tail drop.",
+      "source_line_ranges": [
+        141
+      ]
+    },
+    {
+      "misconception": "A shortest AS-level path uniquely determines the router-level path.",
+      "correction": "Multiple router-level paths may correspond to a selected AS-level path.",
+      "source_line_ranges": [
+        145
+      ]
+    },
+    {
+      "misconception": "Centralized routing is limited to a single small network.",
+      "correction": "The source describes centralized optimization across geographically distributed private data-center WANs.",
+      "source_line_ranges": [
+        156,
+        158
+      ]
+    },
+    {
+      "misconception": "Dynamic routing prevents all routing failures.",
+      "correction": "Dynamic routing adapts to failures, but incorrect routing, flapping, degradation, and downtime remain possible.",
+      "source_line_ranges": [
+        86,
+        153
+      ]
+    },
+    {
+      "misconception": "A router must inspect application payloads to choose an IP route.",
+      "correction": "Pure IP forwarding typically uses Layer-3 addresses and optional header hints, not packet payload content.",
+      "source_line_ranges": [
+        135
+      ]
+    }
+  ],
+  "questions": [
+    "How does routing differ from packet forwarding?",
+    "What information is stored in a routing table?",
+    "Why is the FIB separated from the control-plane routing table?",
+    "How do structured prefixes make routing scalable?",
+    "What distinguishes unicast, broadcast, multicast, and anycast?",
+    "When is static routing appropriate?",
+    "How does dynamic routing adapt to topology changes?",
+    "How does Bellman–Ford support distance-vector routing?",
+    "Why can distance-vector routing become unstable at larger hop counts?",
+    "How does link-state flooding create a topology map?",
+    "How does Dijkstra produce a shortest-path tree?",
+    "What roles do Hello, TC, and MPR play in OLSR?",
+    "Why is path-vector routing suited to inter-domain routing?",
+    "What information is carried in an AS path?",
+    "How does longest-prefix matching work?",
+    "Why can administrative distance be needed?",
+    "Which route metrics might optimize latency versus bulk throughput?",
+    "How does ECMP differ from single-path routing?",
+    "How can route redistribution create interactions between protocols?",
+    "What is the role of a default route?",
+    "How can policy-based path selection differ from minimum latency?",
+    "How does hot-potato routing inflate end-to-end latency?",
+    "What is Braess’s paradox in a routing context?",
+    "How do reservations support AGV routing?",
+    "How do RED and WRED differ from tail drop?",
+    "Why is QoS important for VoIP?",
+    "What can route analytics detect?",
+    "How does centralized routing optimize a private WAN?",
+    "Why do large networks rely on next-hop routing?",
+    "What historical ideas linked NPL, CYCLADES, ARPANET, and TCP/IP?",
+    "How do CPU forwarding and ASIC forwarding differ?",
+    "Why can a route be optimal for one ISP but suboptimal end-to-end?",
+    "What is the distinction between AS-level and router-level paths?",
+    "How can multiple routing agents create conflicting objectives?",
+    "What is route convergence and why does it matter?",
+    "How can routing policy and metrics interact?",
+    "Why does multicast not simply mean broadcast?",
+    "What does a routing table retain after a packet is forwarded?",
+    "How can a path metric misrepresent application performance?",
+    "Which routing properties should be monitored in a production network?"
+  ],
+  "expansion_targets": [
+    "IPv4 route lookup and longest-prefix matching",
+    "IPv6 routing and prefix aggregation",
+    "BGP path attributes and policy",
+    "BGP route leaks and hijacks",
+    "OSPF areas and link-state database",
+    "RIP timers and count-to-infinity",
+    "EIGRP metrics and DUAL",
+    "IS-IS routing",
+    "MPLS label-switched paths",
+    "Segment routing",
+    "Policy-based routing implementation",
+    "Route redistribution loops",
+    "ECMP hashing and flow polarization",
+    "Anycast deployment and failure modes",
+    "Multicast routing protocols",
+    "PIM and IGMP/MLD interactions",
+    "Congestion control versus queue management",
+    "RED/WRED configuration",
+    "QoS classification and scheduling",
+    "Routing convergence benchmarking",
+    "Route analytics and telemetry",
+    "Network digital twins and topology discovery",
+    "SDN controller architecture",
+    "WAN traffic engineering",
+    "Data-center routing and Clos fabrics",
+    "Hot-potato routing and peering economics",
+    "BGP communities and local preference",
+    "Routing security and RPKI",
+    "Network failure simulation",
+    "Route black holes and loops"
+  ],
+  "references": [
+    {
+      "id": "ref_routing_article",
+      "title": "Routing",
+      "kind": "source_article",
+      "details": "User-supplied Wikipedia article extract; used as the authoritative source for source-grounded claims.",
+      "source_line_ranges": [
+        56,
+        217
+      ]
+    },
+    {
+      "id": "ref_rfc4098",
+      "title": "RFC 4098 — Terminology for Benchmarking BGP Device Convergence in the Control Plane",
+      "kind": "standard",
+      "source_line_ranges": [
+        117,
+        215
+      ]
+    },
+    {
+      "id": "ref_rfc3626",
+      "title": "RFC 3626 — Optimized Link State Routing Protocol",
+      "kind": "standard",
+      "source_line_ranges": [
+        102,
+        177
+      ]
+    },
+    {
+      "id": "ref_davies_1966",
+      "title": "Donald Davies, Proposal for a Digital Communication Network (1966)",
+      "kind": "historical_paper",
+      "source_line_ranges": [
+        165,
+        166
+      ]
+    },
+    {
+      "id": "ref_cerf_kahn_1974",
+      "title": "Cerf and Kahn, A Protocol for Packet Network Intercommunication (1974)",
+      "kind": "research_paper",
+      "source_line_ranges": [
+        182
+      ]
+    },
+    {
+      "id": "ref_metric_survey",
+      "title": "A Survey on Routing Metrics (2007)",
+      "kind": "research_paper",
+      "source_line_ranges": [
+        115,
+        179
+      ]
+    },
+    {
+      "id": "ref_path_inflation",
+      "title": "Spring, Mahajan, and Anderson, Quantifying the Causes of Path Inflation (2003)",
+      "kind": "research_paper",
+      "source_line_ranges": [
+        151,
+        187
+      ]
+    },
+    {
+      "id": "ref_bgp_policy",
+      "title": "Caesar and Rexford, BGP Routing Policies in ISP Networks (2005)",
+      "kind": "research_paper",
+      "source_line_ranges": [
+        145,
+        185
+      ]
+    },
+    {
+      "id": "ref_traffic_control",
+      "title": "Datacenter Traffic Control: Understanding Techniques and Tradeoffs (2018)",
+      "kind": "research_paper",
+      "source_line_ranges": [
+        194
+      ]
+    },
+    {
+      "id": "ref_global_wan",
+      "title": "Centralized routing examples: Microsoft Global WAN, Facebook Express Backbone, Google B4",
+      "kind": "example_collection",
+      "source_line_ranges": [
+        156,
+        193
+      ]
+    },
+    {
+      "id": "ref_medhi_ramasamy",
+      "title": "Medhi and Ramasamy, Network Routing: Algorithms, Protocols, and Architectures",
+      "kind": "book",
+      "source_line_ranges": [
+        162,
+        202
+      ]
+    },
+    {
+      "id": "ref_doyle_carroll",
+      "title": "Doyle and Carroll, Routing TCP/IP, Volumes I and II",
+      "kind": "book",
+      "source_line_ranges": [
+        198,
+        199
+      ]
+    },
+    {
+      "id": "ref_ash",
+      "title": "Ash, Dynamic Routing in Telecommunication Networks (1997)",
+      "kind": "book",
+      "source_line_ranges": [
+        197
+      ]
+    },
+    {
+      "id": "ref_kurose_ross",
+      "title": "Kurose and Ross, Computer Networking",
+      "kind": "book",
+      "source_line_ranges": [
+        201
+      ]
+    },
+    {
+      "id": "ref_routing_optimization",
+      "title": "Research on minimizing flow completion time and data-center WAN routing",
+      "kind": "research_topic",
+      "source_line_ranges": [
+        182,
+        183,
+        194,
+        195
+      ]
+    },
+    {
+      "id": "ref_inwg",
+      "title": "INWG Note No. 1 on communication system requirements",
+      "kind": "historical_document",
+      "source_line_ranges": [
+        173,
+        174
+      ]
+    }
+  ],
+  "historical_context": [
+    {
+      "year": "1966",
+      "event": "Donald Davies proposes a digital packet communication network and interface computer",
+      "actors": [
+        "donald_davies",
+        "npl_network"
+      ],
+      "significance": "Early conceptual basis for packet switching and router-like interface computers.",
+      "source_line_ranges": [
+        70,
+        165,
+        166
+      ]
+    },
+    {
+      "year": "1967",
+      "event": "Wesley Clark conceives interface computers for ARPANET",
+      "actors": [
+        "wesley_clark",
+        "arpanet"
+      ],
+      "significance": "A similar design concept is developed for ARPANET.",
+      "source_line_ranges": [
+        70,
+        71
+      ]
+    },
+    {
+      "year": "1969-08-30",
+      "event": "First ARPANET IMP delivered to UCLA",
+      "actors": [
+        "arpanet",
+        "imp"
+      ],
+      "significance": "Early network interface computer hardware with router-like functionality.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "year": "1969-10-29",
+      "event": "ARPANET IMP goes online",
+      "actors": [
+        "arpanet",
+        "imp"
+      ],
+      "significance": "Operational milestone for early packet network routing hardware.",
+      "source_line_ranges": [
+        68
+      ]
+    },
+    {
+      "year": "1972-1973",
+      "event": "CYCLADES designed and developed",
+      "actors": [
+        "louis_pouzin",
+        "cyclades"
+      ],
+      "significance": "Datagram and end-to-end design influenced later internetworking concepts.",
+      "source_line_ranges": [
+        73,
+        176,
+        179
+      ]
+    },
+    {
+      "year": "1973-1974",
+      "event": "DARPA internetworking program begins",
+      "actors": [
+        "darpa",
+        "tcp_ip"
+      ],
+      "significance": "Program draws on earlier work and contributes to TCP/IP architecture.",
+      "source_line_ranges": [
+        73
+      ]
+    },
+    {
+      "year": "1974",
+      "event": "Cerf and Kahn publish internetworking protocol paper",
+      "actors": [
+        "tcp_ip"
+      ],
+      "significance": "Research on intercommunication between packet networks.",
+      "source_line_ranges": [
+        182
+      ]
+    },
+    {
+      "year": "1975-1976",
+      "event": "First true IP router developed by Ginny Travers at BBN",
+      "actors": [
+        "ginny_travers",
+        "bbn"
+      ],
+      "significance": "Milestone in experimental prototype Internet routing.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "year": "1976",
+      "event": "Three PDP-11-based routers operate in experimental prototype Internet",
+      "actors": [
+        "pdp11"
+      ],
+      "significance": "Early operational IP routing implementation.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "year": "1981",
+      "event": "MIT and Stanford independently create multiprotocol routers",
+      "actors": [
+        "william_yeager",
+        "noel_chiappa",
+        "pdp11"
+      ],
+      "significance": "Multiprotocol routing developed while non-TCP/IP protocols were still in use.",
+      "source_line_ranges": [
+        77
+      ]
+    },
+    {
+      "year": "2003",
+      "event": "Study quantifies path inflation between neighboring ISPs",
+      "actors": [
+        "route_inflation_study"
+      ],
+      "significance": "Empirical work highlights latency effects of inter-domain route choices.",
+      "source_line_ranges": [
+        151,
+        187
+      ]
+    },
+    {
+      "year": "2008",
+      "event": "IEEE Internet Award recognizes early IP router contributors",
+      "actors": [
+        "mike_brecia",
+        "ginny_travers",
+        "bob_hinden"
+      ],
+      "significance": "Recognition for early IP router development.",
+      "source_line_ranges": [
+        75
+      ]
+    },
+    {
+      "year": "2017",
+      "event": "Large software-defined private WAN examples discussed",
+      "actors": [
+        "global_wan_microsoft",
+        "facebook_express",
+        "google_b4"
+      ],
+      "significance": "Centralized routing and global traffic optimization at data-center scale.",
+      "source_line_ranges": [
+        191,
+        192,
+        193
+      ]
+    }
+  ],
+  "entry_schema": {
+    "node_required_fields": [
+      "id",
+      "label",
+      "type",
+      "description"
+    ],
+    "relationship_required_fields": [
+      "id",
+      "source",
+      "target",
+      "relationship",
+      "mechanism"
+    ],
+    "relationship_optional_fields": [
+      "source_line_ranges",
+      "conditions",
+      "effect",
+      "semantic_role"
+    ],
+    "relationship_semantics": "Relationships are directed. source is the origin/concept influencing or acting on target. Mechanism explains how the relation works; conditions qualify its scope; effect states the consequence."
+  },
+  "validation": {
+    "node_count": 157,
+    "relationship_count": 135,
+    "formal_model_count": 19,
+    "source_claim_count": 16,
+    "semantic_distinction_count": 20,
+    "learning_path_count": 18,
+    "misconception_count": 15,
+    "question_count": 40,
+    "expansion_target_count": 30,
+    "reference_count": 16,
+    "historical_event_count": 13,
+    "duplicate_node_ids": 0,
+    "duplicate_relationship_ids": 0,
+    "dangling_relationships": 0,
+    "duplicate_relationships": 0,
+    "status": "CLEAN"
+  }
+}
