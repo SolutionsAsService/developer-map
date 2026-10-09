@@ -1,0 +1,3941 @@
+{
+  "metadata": {
+    "title": "Wi-Fi and IEEE 802.11 — Combined Semantic Knowledge Graph",
+    "filename": "Wi-Fi.json",
+    "version": "1.0.0",
+    "created_date": "2026-10-09",
+    "language": "en",
+    "purpose": "Combined entry that clarifies the relationship between Wi-Fi and IEEE 802.11 while preserving details from both supplied Simple English Wikipedia extracts.",
+    "scope": "Rich semantic graph with directional relationships, mechanisms, conditions, source claims, historical context, models, learning paths, distinctions, questions, misconceptions, and expansion targets.",
+    "source_policy": "The supplied extracts are authoritative for source-derived claims. No external research was performed. Explanatory synthesis is marked as such.",
+    "provenance_note": "The pasted extract has no stable line numbering; provenance is recorded by article and section rather than inventing line ranges.",
+    "source_articles": [
+      {
+        "title": "IEEE 802.11",
+        "url": "https://simple.wikipedia.org/wiki/IEEE_802.11",
+        "date_note": "Footer says last changed 2 July 2024."
+      },
+      {
+        "title": "Wi-Fi",
+        "url": "https://simple.wikipedia.org/wiki/Wi-Fi",
+        "date_note": "Includes historical statements framed as of 2007 and 2013."
+      }
+    ],
+    "license_note": "The supplied Wi-Fi page footer states CC BY-SA 4.0 and mentions GFDL."
+  },
+  "schema": {
+    "node_fields": [
+      "id",
+      "label",
+      "type",
+      "description",
+      "provenance"
+    ],
+    "relationship_fields": [
+      "id",
+      "source",
+      "target",
+      "type",
+      "meaning",
+      "mechanism",
+      "conditions",
+      "effect",
+      "directionality",
+      "evidence_class",
+      "provenance"
+    ],
+    "relationship_semantics": "Relationships are directional and typed; causal/explanatory links include mechanism, conditions, and effect where appropriate."
+  },
+  "nodes": [
+    {
+      "id": "wifi",
+      "label": "Wi-Fi",
+      "type": "technology",
+      "description": "Wireless networking using radio waves instead of wires; commonly used for local networking and Internet access.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "ieee80211",
+      "label": "IEEE 802.11",
+      "type": "standard_family",
+      "description": "IEEE family of protocols and specifications for wireless local-area networking.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wlan",
+      "label": "Wireless LAN (WLAN)",
+      "type": "network_type",
+      "description": "A local-area network using wireless links, commonly IEEE 802.11.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wireless_networking",
+      "label": "Wireless networking",
+      "type": "concept",
+      "description": "Communication over wireless media.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "computer_network",
+      "label": "Computer network",
+      "type": "concept",
+      "description": "Interconnected devices exchanging data.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "internet",
+      "label": "Internet",
+      "type": "network",
+      "description": "Global internetwork reachable through many access technologies.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "internet_access",
+      "label": "Internet access",
+      "type": "service",
+      "description": "Connectivity to the Internet, which Wi-Fi alone does not guarantee.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "ieee",
+      "label": "Institute of Electrical and Electronics Engineers",
+      "type": "organization",
+      "description": "Standards organization named in the supplied article.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wifi_alliance",
+      "label": "Wi-Fi Alliance",
+      "type": "organization",
+      "description": "Organization associated with Wi-Fi branding and interoperability ecosystem.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "protocol",
+      "label": "Protocol",
+      "type": "concept",
+      "description": "Rules governing communication between systems.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "specification",
+      "label": "Technical specification",
+      "type": "document",
+      "description": "Definition of expected technical behavior.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "radio_wave",
+      "label": "Radio wave",
+      "type": "physical_phenomenon",
+      "description": "Electromagnetic energy used to carry wireless signals.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "radio_frequency",
+      "label": "Radio frequency",
+      "type": "physical_quantity",
+      "description": "Frequency used in radio communications.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "band24",
+      "label": "2.4 GHz band",
+      "type": "frequency_band",
+      "description": "Widely used band shared by Wi-Fi and other technologies.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "band5",
+      "label": "5 GHz band",
+      "type": "frequency_band",
+      "description": "Wi-Fi band described as less used and having more channels, but subject to more regulatory constraints.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "channel",
+      "label": "Radio channel",
+      "type": "resource",
+      "description": "Specific frequency allocation within a band.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "interference",
+      "label": "Radio interference",
+      "type": "phenomenon",
+      "description": "Competing or unwanted radio energy that can reduce communication performance.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "contention",
+      "label": "Medium contention",
+      "type": "phenomenon",
+      "description": "Competition for transmission opportunities on a shared wireless medium.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "shared_medium",
+      "label": "Shared wireless medium",
+      "type": "concept",
+      "description": "Radio channel shared by multiple devices.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "microwave",
+      "label": "Microwave oven",
+      "type": "device",
+      "description": "Device named as a potential source of energy in the 2.4 GHz region.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "bluetooth",
+      "label": "Bluetooth",
+      "type": "wireless_technology",
+      "description": "Wireless technology commonly using 2.4 GHz.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "dect",
+      "label": "DECT telephone",
+      "type": "wireless_technology",
+      "description": "Cordless telephone technology listed as a possible interferer.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "access_point",
+      "label": "Wireless access point",
+      "type": "network_device",
+      "description": "Provides Wi-Fi connectivity and bridges wireless stations to a network.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "station",
+      "label": "Wi-Fi station",
+      "type": "network_role",
+      "description": "Device with a compatible 802.11 interface participating in a WLAN.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "router",
+      "label": "Router",
+      "type": "network_device",
+      "description": "Forwards packets between networks; consumer Wi-Fi routers often combine router and access-point roles.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "hotspot",
+      "label": "Wi-Fi hotspot",
+      "type": "service",
+      "description": "Location or device offering wireless network access.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "ethernet",
+      "label": "Ethernet",
+      "type": "network_technology",
+      "description": "Wired LAN technology often used to connect access points to a distribution network.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "mac",
+      "label": "MAC layer",
+      "type": "protocol_layer",
+      "description": "Coordinates wireless medium access and link-level behavior.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "phy",
+      "label": "Physical layer (PHY)",
+      "type": "protocol_layer",
+      "description": "Handles radio signaling and transmission/reception.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "modulation",
+      "label": "Modulation",
+      "type": "mechanism",
+      "description": "Encoding information onto a carrier signal.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "error_correction",
+      "label": "Error-correction coding",
+      "type": "mechanism",
+      "description": "Coding techniques that help recover data despite transmission errors.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "bitrate",
+      "label": "Bit rate",
+      "type": "metric",
+      "description": "Bits transmitted per unit time; nominal link rate is not useful application throughput.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "throughput",
+      "label": "Effective throughput",
+      "type": "metric",
+      "description": "Useful data delivered per unit time under real operating conditions.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "range",
+      "label": "Wireless range",
+      "type": "metric",
+      "description": "Distance over which a link maintains usable performance.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "signal",
+      "label": "Received signal strength",
+      "type": "metric",
+      "description": "Measure related to received radio signal power.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "regulation",
+      "label": "Radio regulation",
+      "type": "governance",
+      "description": "Rules governing allowed bands, channels, power, and operating conditions.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "tpc",
+      "label": "Transmit Power Control (TPC)",
+      "type": "mechanism",
+      "description": "Adjusts transmitter power to what is needed where required.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "channel_selection",
+      "label": "Channel selection",
+      "type": "mechanism",
+      "description": "Selecting channels to reduce interference and comply with rules.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "compatibility",
+      "label": "Compatibility",
+      "type": "property",
+      "description": "Ability of implementations to communicate given supported features and configuration.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wifi_name",
+      "label": "Wi-Fi name and branding",
+      "type": "terminology",
+      "description": "The source says Wi-Fi is wordplay on hi-fi and was intended to replace a longer technical name.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "hifi",
+      "label": "Hi-fi",
+      "type": "terminology",
+      "description": "Term used as the wordplay model for Wi-Fi.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "dsss_name",
+      "label": "IEEE 802.11b Direct Sequence Spread Spectrum",
+      "type": "historical_term",
+      "description": "Long technical label the source says the Wi-Fi name was intended to replace.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "legacy",
+      "label": "Original IEEE 802.11 (1997)",
+      "type": "standard_version",
+      "description": "First standard; source gives 1–2 Mbit/s and describes it as outdated and rare.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211a",
+      "label": "IEEE 802.11a",
+      "type": "amendment",
+      "description": "Lettered amendment listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211b",
+      "label": "IEEE 802.11b",
+      "type": "amendment",
+      "description": "Lettered amendment and part of the historical naming discussion.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211g",
+      "label": "IEEE 802.11g",
+      "type": "amendment",
+      "description": "Amendment the source says was widely used alongside 802.11b in 2007.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211n",
+      "label": "IEEE 802.11n",
+      "type": "amendment",
+      "description": "Later amendment listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211ac",
+      "label": "IEEE 802.11ac",
+      "type": "amendment",
+      "description": "Later standard label mentioned in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211ad",
+      "label": "IEEE 802.11ad",
+      "type": "amendment",
+      "description": "Later standard label mentioned in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211h",
+      "label": "IEEE 802.11h",
+      "type": "amendment",
+      "description": "Amendment label listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211i",
+      "label": "IEEE 802.11i",
+      "type": "amendment",
+      "description": "Amendment label listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211j",
+      "label": "IEEE 802.11j",
+      "type": "amendment",
+      "description": "Amendment label listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211p",
+      "label": "IEEE 802.11p",
+      "type": "amendment",
+      "description": "Amendment label listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "80211s",
+      "label": "IEEE 802.11s",
+      "type": "amendment",
+      "description": "Amendment label listed in the source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "pc",
+      "label": "Personal computer",
+      "type": "device_class",
+      "description": "Wi-Fi-compatible device category listed in source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "console",
+      "label": "Gaming console",
+      "type": "device_class",
+      "description": "Wi-Fi-compatible device category listed in source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "tv",
+      "label": "Television",
+      "type": "device_class",
+      "description": "Wi-Fi-compatible device category listed in source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "printer",
+      "label": "Printer",
+      "type": "device_class",
+      "description": "Wi-Fi-compatible device category listed in source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "phone",
+      "label": "Mobile phone",
+      "type": "device_class",
+      "description": "Wi-Fi-compatible device category listed in source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "tablet",
+      "label": "Tablet",
+      "type": "device_class",
+      "description": "Wi-Fi-compatible device category listed in source.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "who",
+      "label": "World Health Organization (WHO)",
+      "type": "organization",
+      "description": "Organization cited in the supplied Wi-Fi article.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "health_claim",
+      "label": "Source-reported health statement",
+      "type": "claim",
+      "description": "The article reports that WHO says Wi-Fi is not dangerous; this graph preserves attribution and does not independently assess the claim.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "source80211",
+      "label": "Simple English Wikipedia: IEEE 802.11",
+      "type": "source_article",
+      "description": "Supplied article extract; footer says last changed 2 July 2024.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "sourcewifi",
+      "label": "Simple English Wikipedia: Wi-Fi",
+      "type": "source_article",
+      "description": "Supplied article extract including references and related-page list.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wikipedia",
+      "label": "Wikipedia",
+      "type": "source_platform",
+      "description": "Source platform for the two supplied article extracts.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "stub",
+      "label": "Wikipedia stub status",
+      "type": "editorial_status",
+      "description": "The IEEE 802.11 article is marked as a short technology article that can be expanded.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "ccby",
+      "label": "Creative Commons Attribution-ShareAlike license",
+      "type": "license",
+      "description": "License stated in the supplied page footer.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "gfdl",
+      "label": "GNU Free Documentation License",
+      "type": "license",
+      "description": "Additional license mentioned in the supplied page footer.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "claim24",
+      "label": "Three-channel claim for 2.4 GHz",
+      "type": "source_claim",
+      "description": "IEEE 802.11 extract says three usable channels; actual channel availability depends on country, channel width, and channel plan.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "claim5",
+      "label": "19-channel claim for 5 GHz",
+      "type": "source_claim",
+      "description": "IEEE 802.11 extract says 19 usable channels; actual availability depends on country, channel width, and rules.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "claimrate",
+      "label": "Real-world usable-rate estimate",
+      "type": "source_claim",
+      "description": "IEEE 802.11 extract says around 40–50% of nominal 54 Mbit/s may be usable in real life; not a universal guarantee.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "claim2007",
+      "label": "2007 adoption snapshot",
+      "type": "historical_claim",
+      "description": "Source says 802.11g and 802.11b were widely used as of 2007.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "claim2013",
+      "label": "2013 frequency-band snapshot",
+      "type": "historical_claim",
+      "description": "Wi-Fi article frames 2.4 GHz and 5 GHz as the two most-used bands as of 2013.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "date1997",
+      "label": "1997 first-standard date",
+      "type": "historical_claim",
+      "description": "Source says first IEEE 802.11 standard was made in 1997.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "date1998",
+      "label": "September 1998 introduction date",
+      "type": "historical_claim",
+      "description": "Wi-Fi infobox gives September 1998 as introduction date.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "nominal_actual",
+      "label": "Nominal rate versus throughput",
+      "type": "semantic_distinction",
+      "description": "Nominal link rate differs from useful application throughput due to overhead, contention, interference, retries, and conditions.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "standard_brand",
+      "label": "IEEE 802.11 versus Wi-Fi",
+      "type": "semantic_distinction",
+      "description": "IEEE 802.11 is the standards family; Wi-Fi is the familiar ecosystem/brand term.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wifi_internet",
+      "label": "Wi-Fi versus Internet service",
+      "type": "semantic_distinction",
+      "description": "Wi-Fi is a local wireless access method; upstream Internet access is a separate service.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "band_channel",
+      "label": "Band versus channel",
+      "type": "semantic_distinction",
+      "description": "A band is a broad frequency range; a channel is a specific allocation within a band.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "compat_caveat",
+      "label": "Compatibility is conditional",
+      "type": "semantic_distinction",
+      "description": "Interoperability depends on supported bands, channels, regulatory domain, security settings, and features.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "historical_caveat",
+      "label": "Historical claims versus current practice",
+      "type": "semantic_distinction",
+      "description": "2007 and 2013 statements are historical snapshots, not current prevalence data.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "health_caveat",
+      "label": "Attributed claim versus independent assessment",
+      "type": "semantic_distinction",
+      "description": "The graph preserves the article’s attribution and does not independently verify the health claim.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "wifi_gen",
+      "label": "Wi-Fi generation labels",
+      "type": "terminology",
+      "description": "Consumer-facing generation names are distinct from formal IEEE amendment names.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "global_use",
+      "label": "Worldwide compatibility claim",
+      "type": "source_claim",
+      "description": "The supplied Wi-Fi article says a Wi-Fi device can work with any Wi-Fi network worldwide; practical use depends on supported bands, channels, rules, and configuration.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    },
+    {
+      "id": "security",
+      "label": "Wi-Fi security",
+      "type": "topic",
+      "description": "Authentication, encryption, and configuration used to protect wireless networks; the supplied extracts do not detail specific security protocols.",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied Simple English Wikipedia extracts"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r0001",
+      "source": "ieee80211",
+      "target": "wifi",
+      "type": "standard_ecosystem_relationship",
+      "meaning": "Wi-Fi implementations use standards from the IEEE 802.11 family.",
+      "mechanism": "IEEE specifications define wireless LAN behavior; Wi-Fi is the familiar ecosystem term.",
+      "conditions": "For compatible implementations.",
+      "effect": "Connects formal standard to consumer terminology.",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0002",
+      "source": "ieee",
+      "target": "ieee80211",
+      "type": "develops",
+      "meaning": "IEEE is the standards organization named in the source.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0003",
+      "source": "wifi_alliance",
+      "target": "wifi",
+      "type": "associated_with_brand_and_interoperability",
+      "meaning": "The article associates the Wi-Fi Alliance with the definition/ecosystem of Wi-Fi.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0004",
+      "source": "ieee80211",
+      "target": "wlan",
+      "type": "specifies",
+      "meaning": "IEEE 802.11 specifies protocols for wireless LAN networking.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0005",
+      "source": "wifi",
+      "target": "wlan",
+      "type": "commonly_means",
+      "meaning": "Wi-Fi commonly refers to WLAN networking following IEEE 802.11.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0006",
+      "source": "wifi",
+      "target": "wireless_networking",
+      "type": "is_a_form_of",
+      "meaning": "Wi-Fi communicates over radio rather than a cable.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0007",
+      "source": "wireless_networking",
+      "target": "computer_network",
+      "type": "enables",
+      "meaning": "Wireless links connect devices into a network.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0008",
+      "source": "wifi",
+      "target": "internet_access",
+      "type": "can_provide",
+      "meaning": "Wi-Fi commonly supplies the local wireless link for Internet access.",
+      "mechanism": "Client communicates with AP/router, which may forward traffic upstream.",
+      "conditions": "Only if upstream service is working.",
+      "effect": "Wi-Fi connection alone does not guarantee Internet connectivity.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0009",
+      "source": "wifi",
+      "target": "internet",
+      "type": "can_be_access_path_to",
+      "meaning": "Wi-Fi can carry traffic toward the Internet through a functioning upstream network.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0010",
+      "source": "access_point",
+      "target": "station",
+      "type": "communicates_with",
+      "meaning": "An AP exchanges wireless link traffic with stations.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0011",
+      "source": "router",
+      "target": "access_point",
+      "type": "often_combines_role_with",
+      "meaning": "Consumer Wi-Fi routers commonly combine routing and AP functions.",
+      "mechanism": "Common product arrangement, not a requirement.",
+      "conditions": "",
+      "effect": "One physical device may perform multiple network roles.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0012",
+      "source": "hotspot",
+      "target": "wifi",
+      "type": "offers",
+      "meaning": "A hotspot offers wireless network access.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0013",
+      "source": "wifi",
+      "target": "radio_wave",
+      "type": "transmits_using",
+      "meaning": "Wi-Fi radios use radio waves to carry encoded information.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0014",
+      "source": "radio_wave",
+      "target": "radio_frequency",
+      "type": "occupies",
+      "meaning": "Radio signals operate at particular frequencies.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0015",
+      "source": "ieee80211",
+      "target": "mac",
+      "type": "defines_behavior_at",
+      "meaning": "802.11 includes MAC/link behavior.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0016",
+      "source": "ieee80211",
+      "target": "phy",
+      "type": "defines_behavior_at",
+      "meaning": "802.11 includes physical-layer radio behavior.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0017",
+      "source": "mac",
+      "target": "shared_medium",
+      "type": "coordinates_access_to",
+      "meaning": "MAC mechanisms coordinate transmission over shared radio airtime.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0018",
+      "source": "phy",
+      "target": "modulation",
+      "type": "uses",
+      "meaning": "PHY signaling uses modulation and related methods.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0019",
+      "source": "phy",
+      "target": "error_correction",
+      "type": "may_use",
+      "meaning": "Wireless PHY designs may use coding to recover data under errors.",
+      "mechanism": "Exact schemes depend on amendment and mode.",
+      "conditions": "",
+      "effect": "Can improve reception robustness.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0020",
+      "source": "ethernet",
+      "target": "access_point",
+      "type": "can_connect_distribution_side_of",
+      "meaning": "Ethernet may connect an AP to the wired distribution network.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0021",
+      "source": "wifi",
+      "target": "ethernet",
+      "type": "contrasts_with",
+      "meaning": "Wi-Fi uses radio for the local wireless hop; Ethernet is wired.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0022",
+      "source": "band24",
+      "target": "wifi",
+      "type": "commonly_used_by",
+      "meaning": "The source identifies 2.4 GHz as a widely used Wi-Fi band.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0023",
+      "source": "band5",
+      "target": "wifi",
+      "type": "commonly_used_by",
+      "meaning": "The source identifies 5 GHz as a widely used Wi-Fi band.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0024",
+      "source": "band24",
+      "target": "interference",
+      "type": "is_exposed_to",
+      "meaning": "The source describes 2.4 GHz as shared with other devices.",
+      "mechanism": "Multiple technologies use the same band or nearby spectrum.",
+      "conditions": "Especially in dense environments.",
+      "effect": "May reduce effective throughput and reliability.",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0025",
+      "source": "microwave",
+      "target": "band24",
+      "type": "can_emit_energy_in",
+      "meaning": "Microwave ovens are named as potential sources of energy in the 2.4 GHz region.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0026",
+      "source": "bluetooth",
+      "target": "band24",
+      "type": "commonly_uses",
+      "meaning": "Bluetooth commonly uses the 2.4 GHz band.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0027",
+      "source": "dect",
+      "target": "interference",
+      "type": "may_contribute_to",
+      "meaning": "The Wi-Fi article lists DECT telephones among possible sources of interference in the 2.4 GHz band.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0028",
+      "source": "band24",
+      "target": "channel",
+      "type": "contains",
+      "meaning": "Channels are selected within the frequency band.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0029",
+      "source": "band5",
+      "target": "channel",
+      "type": "contains",
+      "meaning": "The source describes more channels in 5 GHz than 2.4 GHz.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0030",
+      "source": "channel",
+      "target": "regulation",
+      "type": "is_constrained_by",
+      "meaning": "Allowed channels and operating conditions vary by jurisdiction.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0031",
+      "source": "interference",
+      "target": "throughput",
+      "type": "can_reduce",
+      "meaning": "Interference may cause disruption, retries, or wasted airtime.",
+      "mechanism": "Shared-medium competition and receiver disruption reduce successful useful delivery.",
+      "conditions": "When interfering transmissions are sufficiently strong or frequent.",
+      "effect": "Useful throughput can fall even when the connection remains active.",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0032",
+      "source": "contention",
+      "target": "throughput",
+      "type": "can_reduce",
+      "meaning": "More devices competing for airtime can reduce useful per-device throughput.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0033",
+      "source": "shared_medium",
+      "target": "contention",
+      "type": "creates",
+      "meaning": "Multiple stations share transmission opportunities.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0034",
+      "source": "channel",
+      "target": "interference",
+      "type": "can_overlap_to_create",
+      "meaning": "Overlapping channels can cause competing transmissions and interference.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0035",
+      "source": "band24",
+      "target": "claim24",
+      "type": "has_source_reported_channel_claim",
+      "meaning": "Source reports three usable channels in 2.4 GHz.",
+      "mechanism": "Simplified article statement; real planning depends on regulatory domain and channel width.",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0036",
+      "source": "band5",
+      "target": "claim5",
+      "type": "has_source_reported_channel_claim",
+      "meaning": "Source reports 19 usable channels in 5 GHz.",
+      "mechanism": "Actual availability depends on country, channel width, and restrictions.",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0037",
+      "source": "band5",
+      "target": "interference",
+      "type": "often_has_less_congestion_than",
+      "meaning": "Source says 5 GHz is less used overall.",
+      "mechanism": "Fewer competing devices may share airtime.",
+      "conditions": "Local environment can differ.",
+      "effect": "May improve performance in congested 2.4 GHz environments.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0038",
+      "source": "band5",
+      "target": "regulation",
+      "type": "is_subject_to",
+      "meaning": "Source emphasizes more rules and possible outdoor restrictions for 5 GHz.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0039",
+      "source": "regulation",
+      "target": "tpc",
+      "type": "may_require",
+      "meaning": "Some channels require transmitter power control, according to source.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0040",
+      "source": "regulation",
+      "target": "channel_selection",
+      "type": "may_require",
+      "meaning": "Devices may need to select channels to satisfy local restrictions and avoid interference.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0041",
+      "source": "tpc",
+      "target": "interference",
+      "type": "helps_reduce",
+      "meaning": "Adjusting transmit power to the needed level can reduce interference between networks.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0042",
+      "source": "channel_selection",
+      "target": "interference",
+      "type": "aims_to_reduce",
+      "meaning": "Choosing an appropriate channel can reduce interference with other networks.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0043",
+      "source": "band24",
+      "target": "band5",
+      "type": "differs_from",
+      "meaning": "Bands differ in congestion, channel availability, device costs, and regulatory constraints.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0044",
+      "source": "legacy",
+      "target": "date1997",
+      "type": "associated_with",
+      "meaning": "Source says first IEEE 802.11 standard was made in 1997.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0045",
+      "source": "wifi",
+      "target": "date1998",
+      "type": "has_source_reported_introduction_date",
+      "meaning": "The Wi-Fi infobox gives September 1998; kept distinct from the first standard date.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0046",
+      "source": "legacy",
+      "target": "bitrate",
+      "type": "source_reports_rate",
+      "meaning": "The source gives 1–2 Mbit/s for the original 1997 standard.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0047",
+      "source": "80211g",
+      "target": "bitrate",
+      "type": "source_context_mentions_54_mbit_s",
+      "meaning": "The article mentions 54 Mbit/s for newer standards in this historical summary; not a universal rate for all amendments or configurations.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0048",
+      "source": "bitrate",
+      "target": "throughput",
+      "type": "is_not_equivalent_to",
+      "meaning": "Nominal bit rate is not the same as useful application throughput.",
+      "mechanism": "Overhead, contention, interference, and retransmissions consume capacity.",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0049",
+      "source": "claimrate",
+      "target": "throughput",
+      "type": "qualifies_nominal_rate",
+      "meaning": "Source estimates around 40–50% of nominal 54 Mbit/s usable in real life.",
+      "mechanism": "Contextual approximation, not a universal conversion factor.",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0050",
+      "source": "80211b",
+      "target": "claim2007",
+      "type": "included_in_snapshot",
+      "meaning": "Source says 802.11b was widely used as of 2007.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0051",
+      "source": "80211g",
+      "target": "claim2007",
+      "type": "included_in_snapshot",
+      "meaning": "Source says 802.11g was widely used as of 2007.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0052",
+      "source": "band24",
+      "target": "claim2013",
+      "type": "included_in_snapshot",
+      "meaning": "Source frames 2.4 GHz as one of the two most-used bands as of 2013.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0053",
+      "source": "band5",
+      "target": "claim2013",
+      "type": "included_in_snapshot",
+      "meaning": "Source frames 5 GHz as one of the two most-used bands as of 2013.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0054",
+      "source": "80211a",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11a is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0055",
+      "source": "80211b",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11b is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0056",
+      "source": "80211g",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11g is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0057",
+      "source": "80211n",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11n is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0058",
+      "source": "80211ac",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11ac is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0059",
+      "source": "80211ad",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11ad is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0060",
+      "source": "80211h",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11h is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0061",
+      "source": "80211i",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11i is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0062",
+      "source": "80211j",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11j is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0063",
+      "source": "80211p",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11p is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0064",
+      "source": "80211s",
+      "target": "ieee80211",
+      "type": "member_of_family",
+      "meaning": "IEEE 802.11s is listed as an 802.11 amendment or standard label.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0065",
+      "source": "ieee80211",
+      "target": "compatibility",
+      "type": "article_claims_interoperability",
+      "meaning": "The source says the lettered standards are compatible.",
+      "mechanism": "Practical compatibility depends on supported modes, bands, security, features, and regulatory constraints.",
+      "conditions": "",
+      "effect": "Avoid interpreting this as universal compatibility across every device/configuration.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0066",
+      "source": "wifi",
+      "target": "compat_caveat",
+      "type": "qualified_by",
+      "meaning": "Supported bands, channels, security configurations, and optional features can limit interoperability.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0067",
+      "source": "wifi",
+      "target": "global_use",
+      "type": "source_claim",
+      "meaning": "Source broadly says a Wi-Fi device can work with any Wi-Fi network anywhere.",
+      "mechanism": "This broad statement is constrained in practice by device support and local rules.",
+      "conditions": "",
+      "effect": "Recorded as source claim with caveat.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0068",
+      "source": "band24",
+      "target": "range",
+      "type": "affects_tradeoffs",
+      "meaning": "Band choice can affect usable coverage; supplied extract does not quantify comparative range.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "No numeric range comparison inferred.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0069",
+      "source": "band5",
+      "target": "range",
+      "type": "affects_tradeoffs",
+      "meaning": "Band choice can affect usable coverage; supplied extract does not quantify comparative range.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "No numeric range comparison inferred.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0070",
+      "source": "signal",
+      "target": "throughput",
+      "type": "can_affect",
+      "meaning": "Signal quality can affect usable rate, retries, and connectivity.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Weak reception may reduce throughput.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0071",
+      "source": "interference",
+      "target": "range",
+      "type": "can_reduce_usable_range",
+      "meaning": "Interference can make a radio link unusable at a distance where signal power alone might suffice.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Usable range depends on both signal and noise/interference.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0072",
+      "source": "wifi",
+      "target": "pc",
+      "type": "supports_device_class",
+      "meaning": "The supplied Wi-Fi article lists Personal computer as compatible hardware.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0073",
+      "source": "pc",
+      "target": "station",
+      "type": "can_act_as",
+      "meaning": "With a compatible Wi-Fi interface, this device can participate as a station.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Actual support depends on its hardware and software.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0074",
+      "source": "wifi",
+      "target": "console",
+      "type": "supports_device_class",
+      "meaning": "The supplied Wi-Fi article lists Gaming console as compatible hardware.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0075",
+      "source": "console",
+      "target": "station",
+      "type": "can_act_as",
+      "meaning": "With a compatible Wi-Fi interface, this device can participate as a station.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Actual support depends on its hardware and software.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0076",
+      "source": "wifi",
+      "target": "tv",
+      "type": "supports_device_class",
+      "meaning": "The supplied Wi-Fi article lists Television as compatible hardware.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0077",
+      "source": "tv",
+      "target": "station",
+      "type": "can_act_as",
+      "meaning": "With a compatible Wi-Fi interface, this device can participate as a station.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Actual support depends on its hardware and software.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0078",
+      "source": "wifi",
+      "target": "printer",
+      "type": "supports_device_class",
+      "meaning": "The supplied Wi-Fi article lists Printer as compatible hardware.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0079",
+      "source": "printer",
+      "target": "station",
+      "type": "can_act_as",
+      "meaning": "With a compatible Wi-Fi interface, this device can participate as a station.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Actual support depends on its hardware and software.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0080",
+      "source": "wifi",
+      "target": "phone",
+      "type": "supports_device_class",
+      "meaning": "The supplied Wi-Fi article lists Mobile phone as compatible hardware.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0081",
+      "source": "phone",
+      "target": "station",
+      "type": "can_act_as",
+      "meaning": "With a compatible Wi-Fi interface, this device can participate as a station.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Actual support depends on its hardware and software.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0082",
+      "source": "wifi",
+      "target": "tablet",
+      "type": "supports_device_class",
+      "meaning": "The supplied Wi-Fi article lists Tablet as compatible hardware.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0083",
+      "source": "tablet",
+      "target": "station",
+      "type": "can_act_as",
+      "meaning": "With a compatible Wi-Fi interface, this device can participate as a station.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Actual support depends on its hardware and software.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0084",
+      "source": "wifi",
+      "target": "security",
+      "type": "has_security_considerations",
+      "meaning": "Wi-Fi deployments need appropriate authentication and encryption; supplied extract does not name specific security protocols.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Security details are an expansion target.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    },
+    {
+      "id": "r0085",
+      "source": "who",
+      "target": "health_claim",
+      "type": "is_attributed_as_source",
+      "meaning": "The supplied Wi-Fi article attributes its health statement to WHO.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0086",
+      "source": "health_claim",
+      "target": "sourcewifi",
+      "type": "reported_by",
+      "meaning": "The article reports the health statement and cites WHO/BBC references.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Not independently verified in this transformation.",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0087",
+      "source": "wifi_name",
+      "target": "hifi",
+      "type": "wordplay_on",
+      "meaning": "Source says Wi-Fi is a play on words with hi-fi.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0088",
+      "source": "wifi_name",
+      "target": "dsss_name",
+      "type": "intended_to_replace",
+      "meaning": "Source says Wi-Fi replaced the long name IEEE 802.11b Direct Sequence Spread Spectrum.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0089",
+      "source": "wifi",
+      "target": "wifi_name",
+      "type": "uses_name",
+      "meaning": "Wi-Fi is the name used for the technology/ecosystem.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0090",
+      "source": "source80211",
+      "target": "wikipedia",
+      "type": "hosted_on",
+      "meaning": "Supplied extract is from Simple English Wikipedia.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0091",
+      "source": "sourcewifi",
+      "target": "wikipedia",
+      "type": "hosted_on",
+      "meaning": "Supplied extract is from Simple English Wikipedia.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0092",
+      "source": "source80211",
+      "target": "stub",
+      "type": "marked_as",
+      "meaning": "IEEE 802.11 page is labeled a short technology article that can be expanded.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0093",
+      "source": "sourcewifi",
+      "target": "ccby",
+      "type": "states_license",
+      "meaning": "Page footer states Creative Commons Attribution-ShareAlike.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0094",
+      "source": "sourcewifi",
+      "target": "gfdl",
+      "type": "mentions_license",
+      "meaning": "Page footer also mentions the GFDL.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0095",
+      "source": "ieee80211",
+      "target": "standard_brand",
+      "type": "distinguished_from",
+      "meaning": "Formal technical standard family versus ecosystem/brand term.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0096",
+      "source": "wifi",
+      "target": "standard_brand",
+      "type": "distinguished_from",
+      "meaning": "Wi-Fi is not a single IEEE amendment designation.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0097",
+      "source": "wifi",
+      "target": "wifi_internet",
+      "type": "distinguished_from",
+      "meaning": "Wi-Fi provides a local wireless link, not guaranteed upstream service.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0098",
+      "source": "internet_access",
+      "target": "wifi_internet",
+      "type": "distinguished_from",
+      "meaning": "Internet access is separate from the Wi-Fi radio link.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0099",
+      "source": "band24",
+      "target": "band_channel",
+      "type": "distinguished_from",
+      "meaning": "2.4 GHz names a band, not one channel.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0100",
+      "source": "channel",
+      "target": "band_channel",
+      "type": "distinguished_from",
+      "meaning": "A channel is a specific allocation within a band.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0101",
+      "source": "bitrate",
+      "target": "nominal_actual",
+      "type": "distinguished_from",
+      "meaning": "Nominal rate is not useful delivered throughput.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0102",
+      "source": "throughput",
+      "target": "nominal_actual",
+      "type": "distinguished_from",
+      "meaning": "Throughput measures useful data delivered under real conditions.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0103",
+      "source": "claim2007",
+      "target": "historical_caveat",
+      "type": "illustrates",
+      "meaning": "2007 usage claim is historical rather than current prevalence.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0104",
+      "source": "claim2013",
+      "target": "historical_caveat",
+      "type": "illustrates",
+      "meaning": "2013 band claim is historical rather than current prevalence.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0105",
+      "source": "health_claim",
+      "target": "health_caveat",
+      "type": "qualified_by",
+      "meaning": "This is a source-attributed claim, not an independent assessment.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "",
+      "directionality": "directed",
+      "evidence_class": "source_supported",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "user-supplied article text"
+      }
+    },
+    {
+      "id": "r0106",
+      "source": "wifi_gen",
+      "target": "ieee80211",
+      "type": "not_identical_to",
+      "meaning": "Consumer generation labels and formal IEEE amendment identifiers are related but not identical naming systems.",
+      "mechanism": "",
+      "conditions": "",
+      "effect": "Avoids conflating brand-generation names with amendments.",
+      "directionality": "directed",
+      "evidence_class": "synthesis",
+      "provenance": {
+        "source_articles": [
+          "IEEE 802.11",
+          "Wi-Fi"
+        ],
+        "basis": "explanatory synthesis grounded in supplied article text"
+      }
+    }
+  ],
+  "formal_models": [
+    {
+      "id": "model_path",
+      "name": "Typical Wi-Fi-to-Internet path",
+      "kind": "architecture_flow",
+      "steps": [
+        "station",
+        "access_point",
+        "router",
+        "internet_access",
+        "internet"
+      ],
+      "description": "A station sends wireless traffic to an access point; a router/gateway forwards traffic to an upstream Internet connection. Devices may combine AP and router roles."
+    },
+    {
+      "id": "model_radio",
+      "name": "Radio performance factors",
+      "kind": "conceptual_causal_model",
+      "steps": [
+        "band24",
+        "band5",
+        "channel",
+        "signal",
+        "interference",
+        "contention",
+        "bitrate",
+        "throughput",
+        "range"
+      ],
+      "description": "Band/channel choice, received signal, interference, contention, supported mode, and overhead jointly influence practical performance; no universal deterministic formula is implied."
+    },
+    {
+      "id": "model_layers",
+      "name": "802.11 link architecture",
+      "kind": "layer_model",
+      "steps": [
+        "phy",
+        "mac",
+        "shared_medium",
+        "wlan"
+      ],
+      "description": "PHY handles radio signaling; MAC coordinates shared-medium access; together they support wireless LAN links."
+    },
+    {
+      "id": "model_band",
+      "name": "Band-selection trade-off",
+      "kind": "decision_model",
+      "steps": [
+        "band24",
+        "band5",
+        "interference",
+        "regulation",
+        "channel",
+        "range"
+      ],
+      "description": "Band selection balances congestion, channel availability, device support, coverage, and regulatory constraints."
+    },
+    {
+      "id": "model_brand",
+      "name": "Standards-to-ecosystem relationship",
+      "kind": "conceptual_model",
+      "steps": [
+        "ieee",
+        "ieee80211",
+        "wifi_alliance",
+        "wifi",
+        "wlan"
+      ],
+      "description": "IEEE develops the technical standard family; Wi-Fi is the common ecosystem term associated with compatible WLAN implementations."
+    },
+    {
+      "id": "model_interference",
+      "name": "Interference-to-throughput chain",
+      "kind": "causal_chain",
+      "steps": [
+        "shared_medium",
+        "contention",
+        "interference",
+        "throughput"
+      ],
+      "description": "Competing transmissions can consume airtime or trigger retries and reduce useful throughput; the effect depends on conditions."
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "claim_001",
+      "claim": "The first IEEE 802.11 standard was made in 1997 and allowed 1–2 Mbit/s.",
+      "source_article": "IEEE 802.11",
+      "section": "Later standards",
+      "type": "historical_technical_claim"
+    },
+    {
+      "id": "claim_002",
+      "claim": "The article estimates around 40–50% of a nominal 54 Mbit/s rate is usable in real-life situations.",
+      "source_article": "IEEE 802.11",
+      "section": "Later standards",
+      "type": "performance_estimate",
+      "qualification": "Not a universal conversion factor."
+    },
+    {
+      "id": "claim_003",
+      "claim": "As of 2007, 802.11g and 802.11b were the most widely used standards.",
+      "source_article": "IEEE 802.11",
+      "section": "Later standards",
+      "type": "historical_prevalence_claim"
+    },
+    {
+      "id": "claim_004",
+      "claim": "The source states three usable channels in 2.4 GHz and 19 in 5 GHz.",
+      "source_article": "IEEE 802.11",
+      "section": "Frequency bands",
+      "type": "channel_count_claim",
+      "qualification": "Simplified source claim; actual availability depends on country, channel width, and rules."
+    },
+    {
+      "id": "claim_005",
+      "claim": "Wi-Fi infobox lists September 1998 as the introduction date.",
+      "source_article": "Wi-Fi",
+      "section": "Infobox",
+      "type": "historical_metadata"
+    },
+    {
+      "id": "claim_006",
+      "claim": "Wi-Fi is wordplay on hi-fi and was intended to replace a longer technical label.",
+      "source_article": "Wi-Fi",
+      "section": "Opening section",
+      "type": "etymology_claim"
+    },
+    {
+      "id": "claim_007",
+      "claim": "The article attributes to WHO the statement that Wi-Fi is not dangerous.",
+      "source_article": "Wi-Fi",
+      "section": "Opening section and references",
+      "type": "attributed_health_claim",
+      "qualification": "Attribution preserved; not independently assessed."
+    },
+    {
+      "id": "claim_008",
+      "claim": "Listed compatible hardware includes computers, consoles, TVs, printers, phones, and tablets.",
+      "source_article": "Wi-Fi",
+      "section": "Infobox",
+      "type": "device_support_claim"
+    }
+  ],
+  "semantic_distinctions": [
+    {
+      "id": "dist_001",
+      "left": "IEEE 802.11",
+      "right": "Wi-Fi",
+      "difference": "Formal standards family versus ecosystem/brand term",
+      "why_it_matters": "Prevents conflating the standard family with the common name for compatible WLAN technology."
+    },
+    {
+      "id": "dist_002",
+      "left": "Wi-Fi",
+      "right": "Internet access",
+      "difference": "Local wireless link versus upstream service",
+      "why_it_matters": "Wi-Fi may work while Internet service is unavailable."
+    },
+    {
+      "id": "dist_003",
+      "left": "Frequency band",
+      "right": "Channel",
+      "difference": "Broad frequency range versus a specific allocation",
+      "why_it_matters": "A band does not identify a single channel."
+    },
+    {
+      "id": "dist_004",
+      "left": "Bit rate",
+      "right": "Throughput",
+      "difference": "Nominal link rate versus useful delivered data",
+      "why_it_matters": "Link-rate figures are not guaranteed application speeds."
+    },
+    {
+      "id": "dist_005",
+      "left": "Historical source snapshot",
+      "right": "Current practice",
+      "difference": "Dated claims versus present-day deployment facts",
+      "why_it_matters": "2007/2013 statements are not current prevalence measurements."
+    },
+    {
+      "id": "dist_006",
+      "left": "Attributed health claim",
+      "right": "Independent assessment",
+      "difference": "What an article attributes to WHO versus fresh evidence evaluation",
+      "why_it_matters": "Preserves attribution without implying independent verification."
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "path_001",
+      "name": "Wi-Fi fundamentals",
+      "steps": [
+        "wifi",
+        "wlan",
+        "ieee80211",
+        "station",
+        "access_point",
+        "internet_access"
+      ],
+      "goal": "Understand Wi-Fi, IEEE 802.11, stations, access points, and Internet access."
+    },
+    {
+      "id": "path_002",
+      "name": "From radio to useful data",
+      "steps": [
+        "radio_wave",
+        "band24",
+        "channel",
+        "phy",
+        "mac",
+        "bitrate",
+        "throughput"
+      ],
+      "goal": "Trace radio signaling and channel use to application throughput."
+    },
+    {
+      "id": "path_003",
+      "name": "Understand interference",
+      "steps": [
+        "band24",
+        "microwave",
+        "bluetooth",
+        "interference",
+        "contention",
+        "throughput"
+      ],
+      "goal": "Explain how shared spectrum and competing transmissions can slow a WLAN."
+    },
+    {
+      "id": "path_004",
+      "name": "Compare frequency bands",
+      "steps": [
+        "band24",
+        "band5",
+        "channel",
+        "regulation",
+        "channel_selection",
+        "tpc"
+      ],
+      "goal": "Understand channel and regulatory trade-offs."
+    },
+    {
+      "id": "path_005",
+      "name": "Read standard names",
+      "steps": [
+        "legacy",
+        "80211a",
+        "80211b",
+        "80211g",
+        "80211n",
+        "80211ac",
+        "80211ad"
+      ],
+      "goal": "Distinguish the original standard and lettered amendments."
+    },
+    {
+      "id": "path_006",
+      "name": "Diagnose speed",
+      "steps": [
+        "bitrate",
+        "nominal_actual",
+        "signal",
+        "interference",
+        "contention",
+        "throughput"
+      ],
+      "goal": "Separate nominal rates from real-world throughput."
+    },
+    {
+      "id": "path_007",
+      "name": "Wi-Fi versus Internet",
+      "steps": [
+        "station",
+        "access_point",
+        "router",
+        "internet_access",
+        "internet",
+        "wifi_internet"
+      ],
+      "goal": "Understand local wireless connectivity versus upstream Internet service."
+    },
+    {
+      "id": "path_008",
+      "name": "Assess source claims",
+      "steps": [
+        "claim2007",
+        "claim2013",
+        "claim24",
+        "claim5",
+        "historical_caveat",
+        "health_caveat"
+      ],
+      "goal": "Retain historical context and attribution instead of treating claims as current or independently verified."
+    }
+  ],
+  "misconceptions_and_corrections": [
+    {
+      "id": "mis_001",
+      "misconception": "Wi-Fi and IEEE 802.11 are exactly the same kind of thing.",
+      "correction": "IEEE 802.11 is the formal standards family; Wi-Fi is the common ecosystem/brand term."
+    },
+    {
+      "id": "mis_002",
+      "misconception": "Wi-Fi automatically means the Internet works.",
+      "correction": "A local Wi-Fi link can work while upstream Internet service is unavailable."
+    },
+    {
+      "id": "mis_003",
+      "misconception": "A nominal 54 Mbit/s rate guarantees that application throughput.",
+      "correction": "Overhead, contention, interference, retransmissions, and conditions reduce useful throughput."
+    },
+    {
+      "id": "mis_004",
+      "misconception": "2.4 GHz and 5 GHz are standard versions.",
+      "correction": "They are frequency bands; 802.11a/b/g/n/ac/ad are standard/amendment labels."
+    },
+    {
+      "id": "mis_005",
+      "misconception": "Every Wi-Fi device can use every channel worldwide.",
+      "correction": "Bands and channels vary by hardware and regulatory domain."
+    },
+    {
+      "id": "mis_006",
+      "misconception": "The article’s 2007/2013 statements describe current prevalence.",
+      "correction": "They are historical snapshots."
+    },
+    {
+      "id": "mis_007",
+      "misconception": "Wi-Fi literally stands for Wireless Fidelity.",
+      "correction": "The supplied article describes it as wordplay on hi-fi and says it is not short for Wireless Fidelity."
+    },
+    {
+      "id": "mis_008",
+      "misconception": "More networks mean data can never get through.",
+      "correction": "Networks may still communicate, but contention and interference can reduce performance."
+    },
+    {
+      "id": "mis_009",
+      "misconception": "An attributed health statement is independent verification.",
+      "correction": "The graph records what the supplied article attributes to WHO and does not independently assess the claim."
+    }
+  ],
+  "review_questions": [
+    {
+      "id": "q001",
+      "question": "What is Wi-Fi?",
+      "answer": "Wireless networking using radio waves rather than wires.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q002",
+      "question": "What does IEEE 802.11 specify?",
+      "answer": "Protocols and behavior for wireless local-area networking.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q003",
+      "question": "How do Wi-Fi and IEEE 802.11 differ?",
+      "answer": "IEEE 802.11 is the standards family; Wi-Fi is the common ecosystem term.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q004",
+      "question": "Does Wi-Fi guarantee Internet access?",
+      "answer": "No; upstream connectivity is separate.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q005",
+      "question": "Which frequency bands are emphasized in the supplied articles?",
+      "answer": "2.4 GHz and 5 GHz.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q006",
+      "question": "Why can 2.4 GHz be crowded?",
+      "answer": "Multiple wireless technologies and Wi-Fi networks share the band.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q007",
+      "question": "What is a channel?",
+      "answer": "A specific frequency allocation within a broader band.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q008",
+      "question": "What is transmit power control?",
+      "answer": "Adjusting transmit power to what is needed, where required.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q009",
+      "question": "Why does bit rate differ from throughput?",
+      "answer": "Protocol overhead, contention, interference, and retries reduce useful delivered data.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q010",
+      "question": "What year does the article give for the first 802.11 standard?",
+      "answer": "1997.",
+      "difficulty": "foundational"
+    },
+    {
+      "id": "q011",
+      "question": "What rate does the source give for the original standard?",
+      "answer": "1–2 Mbit/s.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q012",
+      "question": "Which standards does the source say were widely used in 2007?",
+      "answer": "802.11g and 802.11b.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q013",
+      "question": "What introduction date appears in the Wi-Fi infobox?",
+      "answer": "September 1998.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q014",
+      "question": "Which hardware categories are listed?",
+      "answer": "Personal computers, gaming consoles, televisions, printers, mobile phones, and tablets.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q015",
+      "question": "What is an access point?",
+      "answer": "A device that provides wireless connectivity and connects stations to a network.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q016",
+      "question": "What is a Wi-Fi station?",
+      "answer": "A device with a compatible 802.11 interface participating in a WLAN.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q017",
+      "question": "Why may 5 GHz have less congestion?",
+      "answer": "The source says it is less used overall and has more channels; local conditions vary.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q018",
+      "question": "Why does 5 GHz have additional restrictions?",
+      "answer": "Radio regulations constrain channels and operating conditions.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q019",
+      "question": "What is interference?",
+      "answer": "Unwanted or competing radio energy that reduces communication performance.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q020",
+      "question": "What is medium contention?",
+      "answer": "Competition among devices for transmission opportunities on shared airtime.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q021",
+      "question": "Why is global compatibility conditional?",
+      "answer": "Device capabilities, bands, channels, regulations, and configurations differ.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q022",
+      "question": "What does the source say about the Wi-Fi name?",
+      "answer": "It is wordplay on hi-fi and replaced a longer technical label.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q023",
+      "question": "What health statement does the source report?",
+      "answer": "It attributes to WHO the statement that Wi-Fi is not dangerous; this graph does not independently verify it.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q024",
+      "question": "What is a hotspot?",
+      "answer": "A location or device offering wireless network access.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q025",
+      "question": "Which possible interferers are named?",
+      "answer": "Microwave ovens, Bluetooth devices, and DECT telephones.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q026",
+      "question": "Why are 2007 and 2013 claims historical?",
+      "answer": "They are dated snapshots, not current prevalence measurements.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q027",
+      "question": "What is the difference between a band and a channel?",
+      "answer": "A band is a range; a channel is a specific allocation within it.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q028",
+      "question": "What does the MAC layer do?",
+      "answer": "Coordinates access to the shared wireless medium.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q029",
+      "question": "What does the PHY layer do?",
+      "answer": "Handles radio signaling and transmission/reception.",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": "q030",
+      "question": "Why separate source claims from synthesis?",
+      "answer": "To preserve what the article says while making explanatory connections transparent.",
+      "difficulty": "intermediate"
+    }
+  ],
+  "expansion_targets": [
+    {
+      "id": "expand_001",
+      "topic": "802.11 amendments and Wi-Fi generations",
+      "reason": "The supplied source lists labels but does not explain each technical change.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_002",
+      "topic": "802.11 frame formats",
+      "reason": "Not covered in the supplied extracts.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_003",
+      "topic": "CSMA/CA and medium access",
+      "reason": "Would explain contention in greater detail.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_004",
+      "topic": "MIMO and spatial streams",
+      "reason": "Not covered in the extracts.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_005",
+      "topic": "OFDM and modulation modes",
+      "reason": "PHY details are not provided.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_006",
+      "topic": "Wi-Fi security generations",
+      "reason": "Security is mentioned generally; WPA/WPA2/WPA3 are not detailed.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_007",
+      "topic": "DFS requirements",
+      "reason": "The source notes restrictions but not Dynamic Frequency Selection.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_008",
+      "topic": "Regional channel plans",
+      "reason": "Channel counts are simplified and not broken down by country.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_009",
+      "topic": "Channel width",
+      "reason": "Not detailed but relevant to capacity and overlap.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_010",
+      "topic": "Roaming across access points",
+      "reason": "Not covered.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_011",
+      "topic": "Mesh Wi-Fi",
+      "reason": "Not covered.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_012",
+      "topic": "Enterprise authentication",
+      "reason": "Not covered.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_013",
+      "topic": "Captive portals",
+      "reason": "Hotspots are mentioned but portal mechanics are not.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_014",
+      "topic": "Wi-Fi 6/6E/7",
+      "reason": "Newer generation capabilities are outside the source’s detail.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_015",
+      "topic": "Radio propagation and obstacles",
+      "reason": "Range is mentioned generally but no propagation model is supplied.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_016",
+      "topic": "Latency and jitter",
+      "reason": "Not discussed in detail.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_017",
+      "topic": "Power consumption",
+      "reason": "Not covered.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_018",
+      "topic": "Wi-Fi Direct and ad hoc modes",
+      "reason": "Not covered.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_019",
+      "topic": "Regulatory differences by jurisdiction",
+      "reason": "Rules are mentioned but not mapped by country.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_020",
+      "topic": "Wi-Fi Alliance certification",
+      "reason": "The organization is named but certification mechanics are not explained.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_021",
+      "topic": "Exact line-level provenance",
+      "reason": "Pasted source has no stable line numbering; article/section provenance is used.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_022",
+      "topic": "Current technical verification",
+      "reason": "No external research was requested, so current details are not refreshed.",
+      "status": "not_expanded_from_source"
+    },
+    {
+      "id": "expand_023",
+      "topic": "Health evidence review",
+      "reason": "The article’s attributed statement is preserved without independent assessment.",
+      "status": "not_expanded_from_source"
+    }
+  ],
+  "references": [
+    {
+      "id": "ref_001",
+      "title": "Simple English Wikipedia: IEEE 802.11",
+      "url": "https://simple.wikipedia.org/wiki/IEEE_802.11",
+      "type": "supplied_source"
+    },
+    {
+      "id": "ref_002",
+      "title": "Simple English Wikipedia: Wi-Fi",
+      "url": "https://simple.wikipedia.org/wiki/Wi-Fi",
+      "type": "supplied_source"
+    },
+    {
+      "id": "ref_003",
+      "title": "WiFi isn’t short for “Wireless Fidelity”",
+      "url": "https://web.archive.org/web/20051124004204/http://www.boingboing.net/2005/11/08/wifi_isnt_short_for_.html",
+      "type": "article_cited_reference",
+      "date": "2005-11-08"
+    },
+    {
+      "id": "ref_004",
+      "title": "Wireless Fidelity Debunked",
+      "url": "http://www.wi-fiplanet.com/columns/article.php/3674591",
+      "type": "article_cited_reference",
+      "date": "2007-04-27"
+    },
+    {
+      "id": "ref_005",
+      "title": "What is the True Meaning of Wi-Fi?",
+      "url": "http://www.teleclick.ca/2005/12/what-is-the-true-meaning-of-wi-fi/",
+      "type": "article_cited_reference"
+    },
+    {
+      "id": "ref_006",
+      "title": "Electromagnetic Hypersensitivity (EMS)",
+      "url": "https://web.archive.org/web/20051225042656/http://www.who.int/mediacentre/factsheets/fs296/en/",
+      "type": "article_cited_reference",
+      "date": "2011"
+    },
+    {
+      "id": "ref_007",
+      "title": "Q&A: Wi-fi health concerns",
+      "url": "http://news.bbc.co.uk/2/hi/technology/6677051.stm",
+      "type": "article_cited_reference"
+    },
+    {
+      "id": "ref_008",
+      "title": "Wi-Fi Alliance",
+      "url": "https://www.wi-fi.org/",
+      "type": "related_website"
+    },
+    {
+      "id": "ref_009",
+      "title": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "type": "license_reference"
+    }
+  ],
+  "historical_events": [
+    {
+      "id": "event_001",
+      "date": "1997",
+      "event": "First IEEE 802.11 standard",
+      "description": "Source says the first standard was made in 1997 and allowed 1–2 Mbit/s."
+    },
+    {
+      "id": "event_002",
+      "date": "1998-09",
+      "event": "Wi-Fi introduction date listed",
+      "description": "Wi-Fi infobox gives September 1998."
+    },
+    {
+      "id": "event_003",
+      "date": "2007",
+      "event": "Historical adoption snapshot",
+      "description": "Source says 802.11g and 802.11b were most widely used as of 2007."
+    },
+    {
+      "id": "event_004",
+      "date": "2013",
+      "event": "Historical frequency-band snapshot",
+      "description": "Source frames 2.4 GHz and 5 GHz as the two most-used bands as of 2013."
+    }
+  ],
+  "validation": {
+    "status": "CLEAN",
+    "node_count": 85,
+    "directional_relationship_count": 106,
+    "unique_node_ids": 85,
+    "duplicate_node_ids": [],
+    "dangling_relationships": [],
+    "duplicate_relationship_ids": [],
+    "duplicate_source_target_type_edges": [],
+    "formal_model_count": 6,
+    "source_claim_count": 8,
+    "semantic_distinction_count": 6,
+    "learning_path_count": 8,
+    "misconception_correction_count": 9,
+    "review_question_count": 30,
+    "expansion_target_count": 23,
+    "reference_count": 9,
+    "historical_event_count": 4
+  }
+}
