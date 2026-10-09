@@ -63,3 +63,11 @@ Build succeeds and source-retention manifest confirms all 37 original hashes. Ne
 No new library/service: native fetch/Web Crypto plus the existing Node test/JSDOM stack. Local browser navigation remains prohibited by the earlier browser policy; no alternate host, transport or config bypass was used. Real public browser checks are recorded separately after normal main push/autodeploy. No GitHub Actions workflow is configured; CI is unavailable, not passed.
 
 Final `npm test`: **50 passed, 0 failed**, exit 0 (286.4 seconds). Full regeneration and the source manifest command both exited 0.
+
+### Public autodeploy verification, October 9
+
+Commit 813a8b2 deployed through the existing automatic pipeline. Public browser verified the new detail loader, 8,623 relationships / 19 editorials and a deployment-generated content-addressed manifest. Deployment layout coordinates can differ, so its manifest hash differs from the local deterministic build; semantic coverage and SHA-256 checks succeeded. Next.js search click immediately displayed 213 links, then all 213 full evidence records. Python keyboard Enter displayed 251, C displayed 157, and CPython displayed 12. Python → CPython → C navigation, incoming implementation relation, typed filter/reset and Back all worked. V8 deep-link selection loaded both C++ implementation and ECMAScript specification links. No page errors were recorded. The browser requested only overview/manifest/shards, never atlas.json. At 390 CSS px the panel had no horizontal overflow.
+
+Real mobile QA also caught the expanded legend squeezing the canvas to zero height. The follow-up CSS gives the canvas a non-shrinking minimum, bounds legends and permits automatic panel height. This issue was invisible to mocked Canvas tests and is checked on the deployed page after the follow-up push.
+
+Follow-up affected UI suites: **26 passed, 0 failed**, exit 0 (63.9 seconds). Full 50-test suite/build evidence above remains valid for unchanged data and JavaScript.
