@@ -1,0 +1,5146 @@
+{
+  "metadata": {
+    "title": "Imperative Programming Paradigm — Comprehensive Knowledge Graph",
+    "subject": "Imperative programming, its core concepts, history, languages, implementations, tools, and application domains",
+    "schema_version": "1.0.0",
+    "graph_version": "1.0.0",
+    "created_at": "2026-10-19T21:33:18Z",
+    "source_basis": [
+      "User-provided Imperative programming article excerpt (uploaded 2026-10-19)",
+      "Established general knowledge used to expand the language inventory and connect concepts beyond the excerpt"
+    ],
+    "source_handling": {
+      "uploaded_source": "The uploaded article is treated as the source for its described paradigm, procedural programming, state and control-flow concepts, and named historical examples.",
+      "expanded_knowledge": "The language inventory and many implementation/runtime connections are expanded using general model knowledge; individual release milestones and lineage links may require source-specific verification.",
+      "scope_note": "Imperative is a broad paradigm. Languages listed may be multi-paradigm and are included because they support substantial imperative programming, not because they are exclusively imperative."
+    },
+    "counts": {
+      "entities": 250,
+      "relationships": 382,
+      "entity_types": 23,
+      "relationship_types": 51
+    },
+    "relationship_direction": "Every relationship is directed from source to target; reciprocal meaning is represented by a separate relationship when appropriate.",
+    "identifier_conventions": "Entity IDs use descriptive snake_case; relationship IDs are sequential rel_00001-style identifiers.",
+    "coverage_notes": [
+      "Paradigm definition and contrast with declarative programming",
+      "Procedural, structured, object-oriented, event-driven, reactive, concurrent, and functional connections",
+      "State, mutation, side effects, assignments, expressions, procedures, functions, scope, control flow, loops, branches, exceptions, I/O",
+      "Memory regions, allocation, garbage collection, ownership, RAII, and resource lifetimes",
+      "Compilers, interpreters, virtual machines, bytecode, JIT/AOT, linking, build systems, testing, and debugging",
+      "Broad inventory of imperative and multi-paradigm languages, including historical, mainstream, scripting, systems, and domain-oriented examples",
+      "Designers, institutions, standards, operating systems, processor architectures, runtimes, and application domains",
+      "Relations are explanatory knowledge-graph edges, not a claim that every language implements every feature identically"
+    ]
+  },
+  "entity_types": [
+    {
+      "type": "application_domain",
+      "description": "A field in which imperative programming is used."
+    },
+    {
+      "type": "compiler",
+      "description": "A tool that translates source programs into another representation."
+    },
+    {
+      "type": "concept",
+      "description": "A foundational idea or property of imperative programming."
+    },
+    {
+      "type": "control_structure",
+      "description": "A construct that controls execution order."
+    },
+    {
+      "type": "data_type",
+      "description": "A category of values or storage representation."
+    },
+    {
+      "type": "hardware_architecture",
+      "description": "A processor or computer architecture relevant to execution."
+    },
+    {
+      "type": "historical_event",
+      "description": "A dated event or milestone in the evolution of programming."
+    },
+    {
+      "type": "interpreter",
+      "description": "A tool that executes or evaluates source programs."
+    },
+    {
+      "type": "language",
+      "description": "A programming language that is wholly or partly imperative."
+    },
+    {
+      "type": "language_family",
+      "description": "A group of languages with shared lineage or design."
+    },
+    {
+      "type": "language_feature",
+      "description": "A syntax or semantic feature supported by one or more languages."
+    },
+    {
+      "type": "memory_region",
+      "description": "A logical memory area relevant to imperative execution."
+    },
+    {
+      "type": "operating_system",
+      "description": "A system software platform related to a language or its history."
+    },
+    {
+      "type": "organization",
+      "description": "An institution, standards body, or company."
+    },
+    {
+      "type": "person",
+      "description": "A person associated with imperative programming history or language design."
+    },
+    {
+      "type": "programming_paradigm",
+      "description": "A high-level model for organizing computation."
+    },
+    {
+      "type": "programming_technique",
+      "description": "A method for structuring or implementing programs."
+    },
+    {
+      "type": "related_paradigm",
+      "description": "A paradigm related to or contrasted with imperative programming."
+    },
+    {
+      "type": "research_work",
+      "description": "A book, paper, or influential publication."
+    },
+    {
+      "type": "runtime",
+      "description": "An execution environment or runtime system."
+    },
+    {
+      "type": "software_project",
+      "description": "A software platform or project that implements or uses a language."
+    },
+    {
+      "type": "standard",
+      "description": "A formal or widely recognized language specification."
+    },
+    {
+      "type": "toolchain",
+      "description": "A collection of tools used to build or run programs."
+    }
+  ],
+  "relationship_types": [
+    {
+      "type": "affects",
+      "description": "Relationship type used in the graph: affects."
+    },
+    {
+      "type": "allocates",
+      "description": "Obtains or reserves memory or another resource."
+    },
+    {
+      "type": "branches_to",
+      "description": "Transfers execution to a branch or target."
+    },
+    {
+      "type": "calls",
+      "description": "Invokes a procedure, function, or routine."
+    },
+    {
+      "type": "checks",
+      "description": "Relationship type used in the graph: checks."
+    },
+    {
+      "type": "compiled_by",
+      "description": "Can be compiled by a compiler or toolchain."
+    },
+    {
+      "type": "composes_with",
+      "description": "Works together with another concept or technique."
+    },
+    {
+      "type": "contains",
+      "description": "Has a constituent feature, subsystem, or component."
+    },
+    {
+      "type": "contrasts_with",
+      "description": "A conceptual contrast, not necessarily mutual exclusivity."
+    },
+    {
+      "type": "deallocates",
+      "description": "Releases a resource."
+    },
+    {
+      "type": "derived_from",
+      "description": "Has direct design or implementation lineage from."
+    },
+    {
+      "type": "designed_by",
+      "description": "Was designed or primarily created by a person or team."
+    },
+    {
+      "type": "developed_at",
+      "description": "Was developed at an institution or organization."
+    },
+    {
+      "type": "enables",
+      "description": "Makes a capability or technique practical."
+    },
+    {
+      "type": "evolved_into",
+      "description": "Evolved into a later form or related language."
+    },
+    {
+      "type": "executes_on",
+      "description": "Runs on a hardware or software platform."
+    },
+    {
+      "type": "has_example",
+      "description": "Is exemplified by a language or construct."
+    },
+    {
+      "type": "has_implementation",
+      "description": "Has a known implementation or tool."
+    },
+    {
+      "type": "has_property",
+      "description": "Has a characteristic or semantic property."
+    },
+    {
+      "type": "implements",
+      "description": "Implements a language, standard, runtime, or technique."
+    },
+    {
+      "type": "improves",
+      "description": "Improves a quality or property."
+    },
+    {
+      "type": "includes",
+      "description": "Relationship type used in the graph: includes."
+    },
+    {
+      "type": "influenced",
+      "description": "Had an influence on a later language, concept, or system."
+    },
+    {
+      "type": "inspects",
+      "description": "Relationship type used in the graph: inspects."
+    },
+    {
+      "type": "inspired",
+      "description": "Provided inspiration for a design."
+    },
+    {
+      "type": "interpreted_by",
+      "description": "Can be interpreted by an interpreter or runtime."
+    },
+    {
+      "type": "is_a",
+      "description": "Taxonomic relationship."
+    },
+    {
+      "type": "manages",
+      "description": "Controls or manages a resource or state."
+    },
+    {
+      "type": "mutates",
+      "description": "Changes the value or state of."
+    },
+    {
+      "type": "part_of",
+      "description": "Belongs to a family, ecosystem, or system."
+    },
+    {
+      "type": "popularized",
+      "description": "Helped popularize a feature, paradigm, or practice."
+    },
+    {
+      "type": "provides",
+      "description": "Supplies a capability or interface."
+    },
+    {
+      "type": "reads_from",
+      "description": "Reads data from a source or region."
+    },
+    {
+      "type": "refines",
+      "description": "Makes a concept more structured or specific."
+    },
+    {
+      "type": "released_in",
+      "description": "Was released or introduced in a year or event."
+    },
+    {
+      "type": "repeats",
+      "description": "Repeats execution of a statement or block."
+    },
+    {
+      "type": "returns_to",
+      "description": "Returns control to a caller or continuation."
+    },
+    {
+      "type": "scopes",
+      "description": "Limits visibility or lifetime."
+    },
+    {
+      "type": "shares_lineage_with",
+      "description": "Shares historical or conceptual lineage."
+    },
+    {
+      "type": "standardized_by",
+      "description": "Was standardized or specified by an organization."
+    },
+    {
+      "type": "standardizes",
+      "description": "Defines or standardizes a language or feature."
+    },
+    {
+      "type": "stores_in",
+      "description": "Stores data in a memory region or location."
+    },
+    {
+      "type": "subparadigm_of",
+      "description": "A paradigm is a more specific form of another paradigm."
+    },
+    {
+      "type": "supersedes",
+      "description": "Replaces or succeeds an earlier standard or design."
+    },
+    {
+      "type": "supports",
+      "description": "Provides a feature or capability."
+    },
+    {
+      "type": "supports_portability_via",
+      "description": "Improves portability through a mechanism."
+    },
+    {
+      "type": "translated_to",
+      "description": "Can be translated into another language or representation."
+    },
+    {
+      "type": "used_as",
+      "description": "Serves as an example or implementation of a concept."
+    },
+    {
+      "type": "used_for",
+      "description": "Is used for an application domain or task."
+    },
+    {
+      "type": "used_in",
+      "description": "Is used in a system, domain, or ecosystem."
+    },
+    {
+      "type": "uses",
+      "description": "Uses a concept, construct, or technique."
+    }
+  ],
+  "entities": [
+    {
+      "id": "imperative_programming",
+      "name": "Imperative programming",
+      "type": "programming_paradigm",
+      "description": "A programming paradigm that describes computation as ordered commands and state-changing operations.",
+      "properties": {}
+    },
+    {
+      "id": "declarative_programming",
+      "name": "Declarative programming",
+      "type": "related_paradigm",
+      "description": "A paradigm focused on specifying desired results or constraints rather than every execution step.",
+      "properties": {}
+    },
+    {
+      "id": "procedural_programming",
+      "name": "Procedural programming",
+      "type": "programming_paradigm",
+      "description": "An imperative subparadigm that organizes programs into procedures, subroutines, or functions.",
+      "properties": {}
+    },
+    {
+      "id": "structured_programming",
+      "name": "Structured programming",
+      "type": "programming_technique",
+      "description": "A discipline using sequence, selection, iteration, blocks, and procedures to make control flow clearer.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented_programming",
+      "name": "Object-oriented programming",
+      "type": "programming_paradigm",
+      "description": "A paradigm that organizes state and behavior around objects; many mainstream object-oriented languages are imperative.",
+      "properties": {}
+    },
+    {
+      "id": "functional_programming",
+      "name": "Functional programming",
+      "type": "related_paradigm",
+      "description": "A paradigm emphasizing function composition and, in its pure forms, avoiding observable mutation and side effects.",
+      "properties": {}
+    },
+    {
+      "id": "event_driven_programming",
+      "name": "Event-driven programming",
+      "type": "programming_technique",
+      "description": "A style where execution responds to events, callbacks, messages, or user actions; often implemented imperatively.",
+      "properties": {}
+    },
+    {
+      "id": "concurrent_programming",
+      "name": "Concurrent programming",
+      "type": "programming_technique",
+      "description": "Programming multiple tasks whose execution can overlap or interleave.",
+      "properties": {}
+    },
+    {
+      "id": "reactive_programming",
+      "name": "Reactive programming",
+      "type": "related_paradigm",
+      "description": "A style centered on propagation of changes and data flows; can be combined with imperative code.",
+      "properties": {}
+    },
+    {
+      "id": "state",
+      "name": "Program state",
+      "type": "concept",
+      "description": "The values held by variables, memory, and other mutable resources at a point during execution.",
+      "properties": {}
+    },
+    {
+      "id": "state_transition",
+      "name": "State transition",
+      "type": "concept",
+      "description": "A change from one program state to another caused by executing an operation.",
+      "properties": {}
+    },
+    {
+      "id": "side_effect",
+      "name": "Side effect",
+      "type": "concept",
+      "description": "An observable effect beyond returning a value, such as mutation, I/O, or modifying shared state.",
+      "properties": {}
+    },
+    {
+      "id": "statement",
+      "name": "Statement",
+      "type": "language_feature",
+      "description": "A unit of executable instruction in an imperative program.",
+      "properties": {}
+    },
+    {
+      "id": "expression",
+      "name": "Expression",
+      "type": "language_feature",
+      "description": "A construct evaluated to produce a value, often used inside assignments, conditions, and calls.",
+      "properties": {}
+    },
+    {
+      "id": "assignment",
+      "name": "Assignment",
+      "type": "language_feature",
+      "description": "An operation that stores a computed value into a variable or location.",
+      "properties": {}
+    },
+    {
+      "id": "variable",
+      "name": "Variable",
+      "type": "language_feature",
+      "description": "A named or addressable storage abstraction whose value may change.",
+      "properties": {}
+    },
+    {
+      "id": "sequence",
+      "name": "Sequential execution",
+      "type": "control_structure",
+      "description": "Execution of statements in a defined order.",
+      "properties": {}
+    },
+    {
+      "id": "selection",
+      "name": "Conditional selection",
+      "type": "control_structure",
+      "description": "Choosing which statement sequence to execute based on a condition.",
+      "properties": {}
+    },
+    {
+      "id": "iteration",
+      "name": "Iteration",
+      "type": "control_structure",
+      "description": "Repeating a statement or block.",
+      "properties": {}
+    },
+    {
+      "id": "procedure",
+      "name": "Procedure or subroutine",
+      "type": "language_feature",
+      "description": "A named callable unit used to encapsulate a computation or task.",
+      "properties": {}
+    },
+    {
+      "id": "function",
+      "name": "Function",
+      "type": "language_feature",
+      "description": "A callable unit that may accept arguments and return a value; terminology and semantics vary by language.",
+      "properties": {}
+    },
+    {
+      "id": "parameter",
+      "name": "Parameter",
+      "type": "language_feature",
+      "description": "An input or output interface variable associated with a callable unit.",
+      "properties": {}
+    },
+    {
+      "id": "argument",
+      "name": "Argument",
+      "type": "concept",
+      "description": "A value or reference supplied when calling a procedure or function.",
+      "properties": {}
+    },
+    {
+      "id": "return",
+      "name": "Return statement",
+      "type": "language_feature",
+      "description": "A statement that returns control to a caller and may provide a result.",
+      "properties": {}
+    },
+    {
+      "id": "block",
+      "name": "Block structure",
+      "type": "language_feature",
+      "description": "A grouped sequence of statements and declarations treated as a unit.",
+      "properties": {}
+    },
+    {
+      "id": "scope",
+      "name": "Lexical or dynamic scope",
+      "type": "concept",
+      "description": "The rules determining where a name is visible; details differ among languages.",
+      "properties": {}
+    },
+    {
+      "id": "local_variable",
+      "name": "Local variable",
+      "type": "language_feature",
+      "description": "A variable whose visibility is limited to a function, block, or other local region.",
+      "properties": {}
+    },
+    {
+      "id": "global_variable",
+      "name": "Global variable",
+      "type": "language_feature",
+      "description": "A variable accessible across a broad program region, subject to language-specific rules.",
+      "properties": {}
+    },
+    {
+      "id": "loop",
+      "name": "Loop",
+      "type": "control_structure",
+      "description": "A construct that repeats a block based on a count or condition.",
+      "properties": {}
+    },
+    {
+      "id": "for_loop",
+      "name": "For loop",
+      "type": "control_structure",
+      "description": "A loop commonly controlled by an iteration variable, range, or initialization/condition/update clauses.",
+      "properties": {}
+    },
+    {
+      "id": "while_loop",
+      "name": "While loop",
+      "type": "control_structure",
+      "description": "A loop that tests a condition before each iteration.",
+      "properties": {}
+    },
+    {
+      "id": "do_while_loop",
+      "name": "Do-while loop",
+      "type": "control_structure",
+      "description": "A loop that executes its body before testing whether to repeat.",
+      "properties": {}
+    },
+    {
+      "id": "conditional",
+      "name": "If/else conditional",
+      "type": "control_structure",
+      "description": "A branch selected according to a Boolean condition.",
+      "properties": {}
+    },
+    {
+      "id": "switch_case",
+      "name": "Switch/case selection",
+      "type": "control_structure",
+      "description": "Multiway selection among alternatives, with behavior varying by language.",
+      "properties": {}
+    },
+    {
+      "id": "goto",
+      "name": "GOTO or unconditional jump",
+      "type": "control_structure",
+      "description": "A direct transfer of control to a labeled target; often discouraged in structured code but still present in some languages.",
+      "properties": {}
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion",
+      "type": "programming_technique",
+      "description": "A callable unit invokes itself directly or indirectly.",
+      "properties": {}
+    },
+    {
+      "id": "exception_handling",
+      "name": "Exception handling",
+      "type": "language_feature",
+      "description": "Mechanisms to signal and handle exceptional control-flow conditions.",
+      "properties": {}
+    },
+    {
+      "id": "input_output",
+      "name": "Input/output",
+      "type": "language_feature",
+      "description": "Interaction with files, terminals, networks, devices, or other external systems.",
+      "properties": {}
+    },
+    {
+      "id": "mutation",
+      "name": "Mutation",
+      "type": "concept",
+      "description": "Changing a value or data structure after it has been created.",
+      "properties": {}
+    },
+    {
+      "id": "memory",
+      "name": "Memory",
+      "type": "concept",
+      "description": "Storage used to represent program instructions, data, stack frames, and dynamically allocated objects.",
+      "properties": {}
+    },
+    {
+      "id": "stack",
+      "name": "Call stack",
+      "type": "memory_region",
+      "description": "A runtime structure commonly used for return addresses, call frames, and automatic storage.",
+      "properties": {}
+    },
+    {
+      "id": "heap",
+      "name": "Heap memory",
+      "type": "memory_region",
+      "description": "A region or allocator-managed pool commonly used for dynamically allocated data.",
+      "properties": {}
+    },
+    {
+      "id": "static_storage",
+      "name": "Static storage duration",
+      "type": "memory_region",
+      "description": "Storage that persists for a program or module lifetime, depending on the language.",
+      "properties": {}
+    },
+    {
+      "id": "automatic_storage",
+      "name": "Automatic storage duration",
+      "type": "memory_region",
+      "description": "Storage whose lifetime is typically tied to entering and leaving a block or call.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_allocation",
+      "name": "Dynamic memory allocation",
+      "type": "language_feature",
+      "description": "Obtaining memory during program execution.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collection",
+      "name": "Garbage collection",
+      "type": "language_feature",
+      "description": "Automatic reclamation of memory no longer reachable under a runtime's collection model.",
+      "properties": {}
+    },
+    {
+      "id": "type_system",
+      "name": "Type system",
+      "type": "concept",
+      "description": "Rules governing values, operations, type checking, and conversions.",
+      "properties": {}
+    },
+    {
+      "id": "control_flow",
+      "name": "Control flow",
+      "type": "concept",
+      "description": "The order in which executable instructions are selected and performed.",
+      "properties": {}
+    },
+    {
+      "id": "compiler",
+      "name": "Compiler",
+      "type": "compiler",
+      "description": "A tool that translates source code into machine code, bytecode, or another representation.",
+      "properties": {}
+    },
+    {
+      "id": "interpreter",
+      "name": "Interpreter",
+      "type": "interpreter",
+      "description": "A program that executes or evaluates source code or an intermediate representation.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_system",
+      "name": "Runtime system",
+      "type": "runtime",
+      "description": "Support code and services needed while a program executes.",
+      "properties": {}
+    },
+    {
+      "id": "machine_code",
+      "name": "Machine code",
+      "type": "concept",
+      "description": "Instructions represented in a form directly executable by a processor.",
+      "properties": {}
+    },
+    {
+      "id": "assembly_language",
+      "name": "Assembly language",
+      "type": "language",
+      "description": "A low-level language with symbolic representations of processor instructions.",
+      "properties": {}
+    },
+    {
+      "id": "bytecode",
+      "name": "Bytecode",
+      "type": "concept",
+      "description": "An intermediate instruction representation executed by a virtual machine or runtime.",
+      "properties": {}
+    },
+    {
+      "id": "virtual_machine",
+      "name": "Virtual machine",
+      "type": "runtime",
+      "description": "A software execution environment that interprets or compiles an instruction representation.",
+      "properties": {}
+    },
+    {
+      "id": "operating_system",
+      "name": "Operating system",
+      "type": "operating_system",
+      "description": "System software that manages hardware resources and provides services to programs.",
+      "properties": {}
+    },
+    {
+      "id": "hardware",
+      "name": "Computer hardware",
+      "type": "hardware_architecture",
+      "description": "Physical processors, memory, and I/O devices on which programs execute.",
+      "properties": {}
+    },
+    {
+      "id": "portability",
+      "name": "Portability",
+      "type": "concept",
+      "description": "The ability to move software across systems with limited changes.",
+      "properties": {}
+    },
+    {
+      "id": "modularity",
+      "name": "Modularity",
+      "type": "concept",
+      "description": "Organization of a program into components with defined responsibilities and interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "maintainability",
+      "name": "Maintainability",
+      "type": "concept",
+      "description": "How easily software can be understood, corrected, and evolved.",
+      "properties": {}
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging",
+      "type": "programming_technique",
+      "description": "Finding and correcting defects in program behavior.",
+      "properties": {}
+    },
+    {
+      "id": "testing",
+      "name": "Software testing",
+      "type": "programming_technique",
+      "description": "Evaluating behavior against expectations and requirements.",
+      "properties": {}
+    },
+    {
+      "id": "concurrency_control",
+      "name": "Concurrency control",
+      "type": "concept",
+      "description": "Mechanisms that coordinate concurrent access to shared state.",
+      "properties": {}
+    },
+    {
+      "id": "synchronization",
+      "name": "Synchronization",
+      "type": "language_feature",
+      "description": "Coordination of tasks or threads through locks, atomic operations, barriers, or related primitives.",
+      "properties": {}
+    },
+    {
+      "id": "transaction",
+      "name": "Transaction",
+      "type": "concept",
+      "description": "A bounded operation or sequence treated as a logical unit, particularly in databases.",
+      "properties": {}
+    },
+    {
+      "id": "imperative_vs_declarative",
+      "name": "Imperative versus declarative",
+      "type": "concept",
+      "description": "A useful conceptual contrast: imperative code emphasizes the steps, while declarative code emphasizes the desired result.",
+      "properties": {}
+    },
+    {
+      "id": "machine_language_history",
+      "name": "Machine-language imperative origins",
+      "type": "historical_event",
+      "description": "Early programs were written as machine instructions, an imperative model close to the hardware execution model.",
+      "properties": {}
+    },
+    {
+      "id": "fortran",
+      "name": "Fortran",
+      "type": "language",
+      "description": "Compiled language developed for scientific and numerical computation; introduced named variables, expressions, arrays, and subprograms.",
+      "properties": {}
+    },
+    {
+      "id": "cobol",
+      "name": "COBOL",
+      "type": "language",
+      "description": "Business-oriented imperative language with English-like, verbose statements and extensive data-processing facilities.",
+      "properties": {}
+    },
+    {
+      "id": "algol",
+      "name": "ALGOL",
+      "type": "language",
+      "description": "Family of algorithmic languages influential in block structure, formal syntax, recursion, and structured control flow.",
+      "properties": {}
+    },
+    {
+      "id": "basic",
+      "name": "BASIC",
+      "type": "language",
+      "description": "Beginner-oriented language created at Dartmouth College in 1964, notable for interactive use and accessible syntax.",
+      "properties": {}
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "type": "language",
+      "description": "General-purpose procedural language with low-level memory and pointer capabilities, used extensively for systems software.",
+      "properties": {}
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "type": "language",
+      "description": "Multi-paradigm language extending C with classes, object-oriented features, generic programming, and other abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "pascal",
+      "name": "Pascal",
+      "type": "language",
+      "description": "Structured imperative language designed for teaching and systematic programming.",
+      "properties": {}
+    },
+    {
+      "id": "ada",
+      "name": "Ada",
+      "type": "language",
+      "description": "Strongly typed language designed for reliable, maintainable software, including embedded and safety-critical systems.",
+      "properties": {}
+    },
+    {
+      "id": "modula_2",
+      "name": "Modula-2",
+      "type": "language",
+      "description": "Structured language designed by Niklaus Wirth, with modularity and explicit interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "oberon",
+      "name": "Oberon",
+      "type": "language",
+      "description": "Language and system lineage associated with Wirth, emphasizing simplicity and modular design.",
+      "properties": {}
+    },
+    {
+      "id": "smalltalk",
+      "name": "Smalltalk",
+      "type": "language",
+      "description": "Object-oriented language and environment in which computation is strongly organized around objects and message passing.",
+      "properties": {}
+    },
+    {
+      "id": "simula",
+      "name": "Simula",
+      "type": "language",
+      "description": "Early language whose class and object ideas influenced object-oriented programming.",
+      "properties": {}
+    },
+    {
+      "id": "perl",
+      "name": "Perl",
+      "type": "language",
+      "description": "General-purpose language with imperative scripting, text processing, and multiple programming styles.",
+      "properties": {}
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "language",
+      "description": "General-purpose language with imperative, object-oriented, and functional features and a large standard library.",
+      "properties": {}
+    },
+    {
+      "id": "visual_basic",
+      "name": "Visual Basic",
+      "type": "language",
+      "description": "Microsoft language and development environment associated with event-driven applications and GUI programming.",
+      "properties": {}
+    },
+    {
+      "id": "vbscript",
+      "name": "VBScript",
+      "type": "language",
+      "description": "Lightweight scripting language in the Visual Basic family, historically used for Windows automation and web scripting.",
+      "properties": {}
+    },
+    {
+      "id": "visual_basic_dotnet",
+      "name": "Visual Basic .NET",
+      "type": "language",
+      "description": "Visual Basic-family language targeting the .NET platform.",
+      "properties": {}
+    },
+    {
+      "id": "csharp",
+      "name": "C#",
+      "type": "language",
+      "description": "Modern general-purpose language for the .NET ecosystem, combining imperative, object-oriented, and other features.",
+      "properties": {}
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "type": "language",
+      "description": "Class-based language designed around portability through JVM bytecode and runtime services.",
+      "properties": {}
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "type": "language",
+      "description": "Language with imperative, functional, and event-driven styles, commonly used in browsers and server runtimes.",
+      "properties": {}
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "type": "language",
+      "description": "Dynamic general-purpose language supporting imperative and object-oriented programming.",
+      "properties": {}
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "type": "language",
+      "description": "General-purpose scripting language widely used for server-side web development.",
+      "properties": {}
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "type": "language",
+      "description": "Systems language supporting imperative programming with ownership and borrowing rules designed to prevent classes of memory errors.",
+      "properties": {}
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "type": "language",
+      "description": "Compiled language with imperative syntax, garbage collection, and built-in concurrency constructs.",
+      "properties": {}
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "type": "language",
+      "description": "General-purpose language with imperative and object-oriented constructs, value types, and safety-oriented design.",
+      "properties": {}
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "type": "language",
+      "description": "Multi-paradigm language interoperable with Java and commonly targeting the JVM, Android, and other platforms.",
+      "properties": {}
+    },
+    {
+      "id": "objective_c",
+      "name": "Objective-C",
+      "type": "language",
+      "description": "C-derived language with Smalltalk-inspired messaging and object-oriented features.",
+      "properties": {}
+    },
+    {
+      "id": "d",
+      "name": "D",
+      "type": "language",
+      "description": "Systems-oriented language with imperative and multi-paradigm capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "fortran_person_john_backus",
+      "name": "John Backus",
+      "type": "person",
+      "description": "IBM researcher and leader associated with the development of Fortran.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper",
+      "name": "Grace Hopper",
+      "type": "person",
+      "description": "Computer scientist and naval officer who was a major contributor to COBOL's development and compiler history.",
+      "properties": {}
+    },
+    {
+      "id": "niklaus_wirth",
+      "name": "Niklaus Wirth",
+      "type": "person",
+      "description": "Language designer associated with Pascal, Modula, and Oberon.",
+      "properties": {}
+    },
+    {
+      "id": "dennis_ritchie",
+      "name": "Dennis Ritchie",
+      "type": "person",
+      "description": "Computer scientist at Bell Labs who created C and contributed to Unix.",
+      "properties": {}
+    },
+    {
+      "id": "bjarne_stroustrup",
+      "name": "Bjarne Stroustrup",
+      "type": "person",
+      "description": "Designer of C++, initially developed as C with Classes.",
+      "properties": {}
+    },
+    {
+      "id": "alan_kay",
+      "name": "Alan Kay",
+      "type": "person",
+      "description": "Computer scientist associated with Smalltalk and influential object-oriented ideas.",
+      "properties": {}
+    },
+    {
+      "id": "yukihiro_matsumoto",
+      "name": "Yukihiro Matsumoto",
+      "type": "person",
+      "description": "Creator of Ruby.",
+      "properties": {}
+    },
+    {
+      "id": "guido_van_rossum",
+      "name": "Guido van Rossum",
+      "type": "person",
+      "description": "Creator of Python.",
+      "properties": {}
+    },
+    {
+      "id": "brendan_eich",
+      "name": "Brendan Eich",
+      "type": "person",
+      "description": "Creator of JavaScript.",
+      "properties": {}
+    },
+    {
+      "id": "james_gosling",
+      "name": "James Gosling",
+      "type": "person",
+      "description": "Lead designer associated with Java.",
+      "properties": {}
+    },
+    {
+      "id": "larry_wall",
+      "name": "Larry Wall",
+      "type": "person",
+      "description": "Creator of Perl.",
+      "properties": {}
+    },
+    {
+      "id": "john_kemeny",
+      "name": "John G. Kemeny",
+      "type": "person",
+      "description": "Co-creator of BASIC at Dartmouth College.",
+      "properties": {}
+    },
+    {
+      "id": "thomas_kurtz",
+      "name": "Thomas E. Kurtz",
+      "type": "person",
+      "description": "Co-creator of BASIC at Dartmouth College.",
+      "properties": {}
+    },
+    {
+      "id": "darthmouth_college",
+      "name": "Dartmouth College",
+      "type": "organization",
+      "description": "Institution where BASIC was developed.",
+      "properties": {}
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "type": "organization",
+      "description": "Company whose research and computing platforms were closely associated with early Fortran.",
+      "properties": {}
+    },
+    {
+      "id": "bell_labs",
+      "name": "Bell Labs",
+      "type": "organization",
+      "description": "Research organization where C and Unix were developed.",
+      "properties": {}
+    },
+    {
+      "id": "ansi",
+      "name": "ANSI",
+      "type": "organization",
+      "description": "American National Standards Institute; published standards for languages including Fortran and COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "iso_iec",
+      "name": "ISO/IEC",
+      "type": "organization",
+      "description": "International standardization organizations responsible for many programming language standards.",
+      "properties": {}
+    },
+    {
+      "id": "us_department_of_defense",
+      "name": "United States Department of Defense",
+      "type": "organization",
+      "description": "Organization whose software requirements motivated the Ada language project.",
+      "properties": {}
+    },
+    {
+      "id": "unix",
+      "name": "Unix",
+      "type": "operating_system",
+      "description": "Operating system whose implementation was a major purpose for the C language.",
+      "properties": {}
+    },
+    {
+      "id": "d_programming",
+      "name": "D programming ecosystem",
+      "type": "software_project",
+      "description": "Compiler and tooling ecosystem for the D language.",
+      "properties": {}
+    },
+    {
+      "id": "gcc",
+      "name": "GNU Compiler Collection (GCC)",
+      "type": "toolchain",
+      "description": "Compiler suite supporting many imperative languages including C, C++, Fortran, and Ada through front ends.",
+      "properties": {}
+    },
+    {
+      "id": "llvm",
+      "name": "LLVM",
+      "type": "toolchain",
+      "description": "Compiler infrastructure used by multiple imperative language implementations.",
+      "properties": {}
+    },
+    {
+      "id": "jvm",
+      "name": "Java Virtual Machine",
+      "type": "runtime",
+      "description": "Virtual machine that executes Java bytecode and bytecode from other JVM languages.",
+      "properties": {}
+    },
+    {
+      "id": "dotnet",
+      "name": ".NET platform",
+      "type": "runtime",
+      "description": "Runtime and library ecosystem for languages including C#, Visual Basic .NET, and F#.",
+      "properties": {}
+    },
+    {
+      "id": "python_runtime",
+      "name": "Python runtime",
+      "type": "runtime",
+      "description": "Execution environment for Python implementations, commonly CPython.",
+      "properties": {}
+    },
+    {
+      "id": "javascript_runtime",
+      "name": "JavaScript runtime",
+      "type": "runtime",
+      "description": "Execution environment for JavaScript, such as browser engines and server-side runtimes.",
+      "properties": {}
+    },
+    {
+      "id": "c_standard",
+      "name": "C language standards",
+      "type": "standard",
+      "description": "C language specifications published through ANSI/ISO processes.",
+      "properties": {}
+    },
+    {
+      "id": "cpp_standard",
+      "name": "C++ language standards",
+      "type": "standard",
+      "description": "C++ language specifications maintained through ISO standardization.",
+      "properties": {}
+    },
+    {
+      "id": "fortran_standard",
+      "name": "Fortran language standards",
+      "type": "standard",
+      "description": "Standardized Fortran language specifications.",
+      "properties": {}
+    },
+    {
+      "id": "ada_standard",
+      "name": "Ada language standards",
+      "type": "standard",
+      "description": "Standardized Ada language specifications.",
+      "properties": {}
+    },
+    {
+      "id": "cobol_standard",
+      "name": "COBOL language standards",
+      "type": "standard",
+      "description": "Standardized COBOL language specifications.",
+      "properties": {}
+    },
+    {
+      "id": "procedural_decomposition",
+      "name": "Procedural decomposition",
+      "type": "programming_technique",
+      "description": "Breaking a program into procedures that encapsulate smaller tasks.",
+      "properties": {}
+    },
+    {
+      "id": "structured_control_flow",
+      "name": "Structured control flow",
+      "type": "programming_technique",
+      "description": "Using sequence, selection, and iteration instead of arbitrary jumps where practical.",
+      "properties": {}
+    },
+    {
+      "id": "manual_memory_management",
+      "name": "Manual memory management",
+      "type": "programming_technique",
+      "description": "Explicit allocation and release of dynamically managed memory.",
+      "properties": {}
+    },
+    {
+      "id": "resource_lifetime_management",
+      "name": "Resource lifetime management",
+      "type": "programming_technique",
+      "description": "Managing the lifetime of resources such as memory, files, sockets, and locks.",
+      "properties": {}
+    },
+    {
+      "id": "raii",
+      "name": "Resource Acquisition Is Initialization (RAII)",
+      "type": "programming_technique",
+      "description": "C++ technique tying resource lifetime to object lifetime and deterministic destruction.",
+      "properties": {}
+    },
+    {
+      "id": "ownership_borrowing",
+      "name": "Ownership and borrowing",
+      "type": "programming_technique",
+      "description": "Rust model that constrains aliases and lifetimes to prevent many memory-safety errors.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collected_memory_management",
+      "name": "Garbage-collected memory management",
+      "type": "programming_technique",
+      "description": "Using a runtime collector to reclaim unreachable managed objects.",
+      "properties": {}
+    },
+    {
+      "id": "imperative_io",
+      "name": "Imperative input/output",
+      "type": "programming_technique",
+      "description": "Explicitly performs I/O actions such as reading, writing, sending, or receiving.",
+      "properties": {}
+    },
+    {
+      "id": "algorithmic_programming",
+      "name": "Algorithmic programming",
+      "type": "programming_technique",
+      "description": "Expressing an algorithm as explicit steps and state transitions.",
+      "properties": {}
+    },
+    {
+      "id": "scientific_computing",
+      "name": "Scientific and numerical computing",
+      "type": "application_domain",
+      "description": "Numerical simulation, modeling, and high-performance calculation.",
+      "properties": {}
+    },
+    {
+      "id": "business_data_processing",
+      "name": "Business data processing",
+      "type": "application_domain",
+      "description": "Record-oriented, reporting, transaction, and batch business workloads.",
+      "properties": {}
+    },
+    {
+      "id": "systems_programming",
+      "name": "Systems programming",
+      "type": "application_domain",
+      "description": "Building operating systems, runtimes, drivers, and other low-level software.",
+      "properties": {}
+    },
+    {
+      "id": "embedded_systems",
+      "name": "Embedded systems",
+      "type": "application_domain",
+      "description": "Software running on resource-constrained or specialized devices.",
+      "properties": {}
+    },
+    {
+      "id": "web_development",
+      "name": "Web development",
+      "type": "application_domain",
+      "description": "Building server-side and browser-based software.",
+      "properties": {}
+    },
+    {
+      "id": "desktop_gui",
+      "name": "Desktop and GUI applications",
+      "type": "application_domain",
+      "description": "Applications with graphical user interfaces and event-driven interaction.",
+      "properties": {}
+    },
+    {
+      "id": "game_development",
+      "name": "Game development",
+      "type": "application_domain",
+      "description": "Real-time interactive software with simulation, input, and rendering loops.",
+      "properties": {}
+    },
+    {
+      "id": "database_processing",
+      "name": "Database and transaction processing",
+      "type": "application_domain",
+      "description": "Applications that query, mutate, and persist structured data.",
+      "properties": {}
+    },
+    {
+      "id": "automation_scripting",
+      "name": "Automation and scripting",
+      "type": "application_domain",
+      "description": "Small programs that automate tasks, process text, and connect tools.",
+      "properties": {}
+    },
+    {
+      "id": "safety_critical",
+      "name": "Safety-critical software",
+      "type": "application_domain",
+      "description": "Software where failures can cause major harm and engineering assurance is important.",
+      "properties": {}
+    },
+    {
+      "id": "scientific_algorithm",
+      "name": "Scientific algorithms",
+      "type": "application_domain",
+      "description": "Numerical algorithms and mathematical procedures.",
+      "properties": {}
+    },
+    {
+      "id": "data_structures",
+      "name": "Data structures",
+      "type": "concept",
+      "description": "Organized representations such as arrays, lists, trees, maps, and records.",
+      "properties": {}
+    },
+    {
+      "id": "array",
+      "name": "Array",
+      "type": "data_type",
+      "description": "Indexed collection of elements, commonly stored contiguously in many languages.",
+      "properties": {}
+    },
+    {
+      "id": "record_struct",
+      "name": "Record or structure",
+      "type": "data_type",
+      "description": "Composite data type that groups fields under one logical value.",
+      "properties": {}
+    },
+    {
+      "id": "pointer",
+      "name": "Pointer",
+      "type": "data_type",
+      "description": "A value that refers to a memory address or object, with semantics varying by language.",
+      "properties": {}
+    },
+    {
+      "id": "integer",
+      "name": "Integer type",
+      "type": "data_type",
+      "description": "Whole-number value type.",
+      "properties": {}
+    },
+    {
+      "id": "floating_point",
+      "name": "Floating-point type",
+      "type": "data_type",
+      "description": "Approximate real-number representation used for numerical computation.",
+      "properties": {}
+    },
+    {
+      "id": "string",
+      "name": "String type",
+      "type": "data_type",
+      "description": "Textual sequence type, built-in or library-defined depending on language.",
+      "properties": {}
+    },
+    {
+      "id": "boolean",
+      "name": "Boolean type",
+      "type": "data_type",
+      "description": "Truth-valued type commonly used in conditions.",
+      "properties": {}
+    },
+    {
+      "id": "module",
+      "name": "Module",
+      "type": "language_feature",
+      "description": "A unit of code and namespace organization with language-specific interface and visibility rules.",
+      "properties": {}
+    },
+    {
+      "id": "class",
+      "name": "Class",
+      "type": "language_feature",
+      "description": "A type or blueprint that groups state and behavior in class-based object-oriented languages.",
+      "properties": {}
+    },
+    {
+      "id": "object",
+      "name": "Object",
+      "type": "concept",
+      "description": "A runtime entity that may combine state and behavior.",
+      "properties": {}
+    },
+    {
+      "id": "method",
+      "name": "Method",
+      "type": "language_feature",
+      "description": "A callable operation associated with a class, object, or receiver.",
+      "properties": {}
+    },
+    {
+      "id": "inheritance",
+      "name": "Inheritance",
+      "type": "language_feature",
+      "description": "A mechanism for deriving a type or class from another and reusing or specializing behavior.",
+      "properties": {}
+    },
+    {
+      "id": "message_passing",
+      "name": "Message passing",
+      "type": "concept",
+      "description": "A communication style where a receiver is sent a message or method request.",
+      "properties": {}
+    },
+    {
+      "id": "thread",
+      "name": "Thread",
+      "type": "concept",
+      "description": "A schedulable execution path within a process or runtime.",
+      "properties": {}
+    },
+    {
+      "id": "lock",
+      "name": "Lock or mutex",
+      "type": "language_feature",
+      "description": "A synchronization primitive that grants controlled access to shared state.",
+      "properties": {}
+    },
+    {
+      "id": "atomic_operation",
+      "name": "Atomic operation",
+      "type": "language_feature",
+      "description": "An operation that appears indivisible to relevant concurrent observers.",
+      "properties": {}
+    },
+    {
+      "id": "database_transaction",
+      "name": "Database transaction",
+      "type": "concept",
+      "description": "A database operation grouping changes under consistency and isolation guarantees.",
+      "properties": {}
+    },
+    {
+      "id": "file_system",
+      "name": "File system",
+      "type": "concept",
+      "description": "A system for naming, storing, and retrieving persistent files.",
+      "properties": {}
+    },
+    {
+      "id": "network_socket",
+      "name": "Network socket",
+      "type": "concept",
+      "description": "An endpoint used for process-to-process or network communication.",
+      "properties": {}
+    },
+    {
+      "id": "test_framework",
+      "name": "Test framework",
+      "type": "software_project",
+      "description": "A framework that supports repeatable automated tests.",
+      "properties": {}
+    },
+    {
+      "id": "debugger",
+      "name": "Debugger",
+      "type": "toolchain",
+      "description": "A tool for inspecting execution, variables, stack frames, and program state.",
+      "properties": {}
+    },
+    {
+      "id": "build_system",
+      "name": "Build system",
+      "type": "toolchain",
+      "description": "A tool that compiles and links source files based on dependencies.",
+      "properties": {}
+    },
+    {
+      "id": "linker",
+      "name": "Linker",
+      "type": "toolchain",
+      "description": "A tool that combines object files and libraries into an executable or shared library.",
+      "properties": {}
+    },
+    {
+      "id": "object_file",
+      "name": "Object file",
+      "type": "concept",
+      "description": "A compiled unit containing machine code and metadata that may be linked into a program.",
+      "properties": {}
+    },
+    {
+      "id": "executable",
+      "name": "Executable program",
+      "type": "concept",
+      "description": "A program image prepared for loading and execution.",
+      "properties": {}
+    },
+    {
+      "id": "source_code",
+      "name": "Source code",
+      "type": "concept",
+      "description": "Human-readable program text written in a programming language.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_frontend",
+      "name": "Compiler front end",
+      "type": "concept",
+      "description": "Compiler stage that parses source code and performs semantic analysis.",
+      "properties": {}
+    },
+    {
+      "id": "optimization",
+      "name": "Compiler optimization",
+      "type": "programming_technique",
+      "description": "Transformation intended to improve runtime, size, or other properties while preserving required behavior.",
+      "properties": {}
+    },
+    {
+      "id": "undefined_behavior",
+      "name": "Undefined behavior",
+      "type": "concept",
+      "description": "In languages such as C and C++, behavior for which the language specification imposes no requirements.",
+      "properties": {}
+    },
+    {
+      "id": "memory_safety",
+      "name": "Memory safety",
+      "type": "concept",
+      "description": "Property preventing invalid memory access and related errors under a defined model.",
+      "properties": {}
+    },
+    {
+      "id": "determinism",
+      "name": "Determinism",
+      "type": "concept",
+      "description": "Property that the same inputs and environment produce the same observable behavior, within stated assumptions.",
+      "properties": {}
+    },
+    {
+      "id": "reproducible_build",
+      "name": "Reproducible build",
+      "type": "programming_technique",
+      "description": "A build process that yields bit-identical or otherwise verifiably equivalent artifacts under controlled conditions.",
+      "properties": {}
+    },
+    {
+      "id": "standard_library",
+      "name": "Standard library",
+      "type": "concept",
+      "description": "Library functionality specified or shipped with a language implementation.",
+      "properties": {}
+    },
+    {
+      "id": "api",
+      "name": "Application programming interface (API)",
+      "type": "concept",
+      "description": "A defined interface through which software components call or use one another.",
+      "properties": {}
+    },
+    {
+      "id": "foreign_function_interface",
+      "name": "Foreign function interface (FFI)",
+      "type": "concept",
+      "description": "Mechanisms allowing one language to call code written in another language.",
+      "properties": {}
+    },
+    {
+      "id": "interoperability",
+      "name": "Language interoperability",
+      "type": "concept",
+      "description": "Ability of languages or components to exchange data and invoke one another.",
+      "properties": {}
+    },
+    {
+      "id": "bytecode_compilation",
+      "name": "Bytecode compilation",
+      "type": "programming_technique",
+      "description": "Compiling source to an intermediate representation executed by a virtual machine.",
+      "properties": {}
+    },
+    {
+      "id": "jit_compilation",
+      "name": "Just-in-time compilation",
+      "type": "programming_technique",
+      "description": "Compiling code during execution, often guided by runtime information.",
+      "properties": {}
+    },
+    {
+      "id": "ahead_of_time_compilation",
+      "name": "Ahead-of-time compilation",
+      "type": "programming_technique",
+      "description": "Compiling code before runtime.",
+      "properties": {}
+    },
+    {
+      "id": "interpreter_loop",
+      "name": "Interpreter dispatch loop",
+      "type": "concept",
+      "description": "Runtime loop that fetches, decodes, and executes instructions or syntax nodes.",
+      "properties": {}
+    },
+    {
+      "id": "event_loop",
+      "name": "Event loop",
+      "type": "concept",
+      "description": "A runtime mechanism that dispatches queued events and callbacks.",
+      "properties": {}
+    },
+    {
+      "id": "callback",
+      "name": "Callback",
+      "type": "concept",
+      "description": "A function or procedure supplied to be invoked when an event or operation occurs.",
+      "properties": {}
+    },
+    {
+      "id": "message_queue",
+      "name": "Message queue",
+      "type": "concept",
+      "description": "A queue used to pass messages or work items between components.",
+      "properties": {}
+    },
+    {
+      "id": "coroutine",
+      "name": "Coroutine",
+      "type": "concept",
+      "description": "A computation that can suspend and resume, often used for cooperative concurrency.",
+      "properties": {}
+    },
+    {
+      "id": "async_await",
+      "name": "Async/await",
+      "type": "language_feature",
+      "description": "Syntax for expressing asynchronous operations in an imperative style.",
+      "properties": {}
+    },
+    {
+      "id": "exception",
+      "name": "Exception",
+      "type": "concept",
+      "description": "A representation of an abnormal condition that transfers control to a handler or runtime mechanism.",
+      "properties": {}
+    },
+    {
+      "id": "assertion",
+      "name": "Assertion",
+      "type": "language_feature",
+      "description": "A check expressing a condition expected to hold at a point in execution.",
+      "properties": {}
+    },
+    {
+      "id": "invariant",
+      "name": "Program invariant",
+      "type": "concept",
+      "description": "A condition intended to remain true at designated program points.",
+      "properties": {}
+    },
+    {
+      "id": "precondition_postcondition",
+      "name": "Preconditions and postconditions",
+      "type": "concept",
+      "description": "Contracts specifying assumptions before an operation and guarantees afterward.",
+      "properties": {}
+    },
+    {
+      "id": "formal_verification",
+      "name": "Formal verification",
+      "type": "programming_technique",
+      "description": "Mathematical reasoning or tooling used to establish program properties.",
+      "properties": {}
+    },
+    {
+      "id": "algebraic_semantics",
+      "name": "Algebraic semantics of imperative programs",
+      "type": "research_work",
+      "description": "Research topic and publication title associated with formal treatment of imperative program meaning.",
+      "properties": {}
+    },
+    {
+      "id": "joseph_goguen",
+      "name": "Joseph Goguen",
+      "type": "person",
+      "description": "Researcher associated with algebraic semantics and formal methods.",
+      "properties": {}
+    },
+    {
+      "id": "grant_malcolm",
+      "name": "Grant Malcolm",
+      "type": "person",
+      "description": "Co-author associated with work on algebraic semantics of imperative programs.",
+      "properties": {}
+    },
+    {
+      "id": "mumps",
+      "name": "MUMPS",
+      "type": "language",
+      "description": "Imperative language originating in medical information systems, known for command-oriented syntax and intrinsic state.",
+      "properties": {}
+    },
+    {
+      "id": "bcpl",
+      "name": "BCPL",
+      "type": "language",
+      "description": "Systems programming language that influenced B, which in turn influenced C.",
+      "properties": {}
+    },
+    {
+      "id": "b_language",
+      "name": "B language",
+      "type": "language",
+      "description": "A predecessor to C developed at Bell Labs.",
+      "properties": {}
+    },
+    {
+      "id": "fsharp",
+      "name": "F#",
+      "type": "language",
+      "description": "Functional-first .NET language that can also interoperate with imperative .NET components.",
+      "properties": {}
+    },
+    {
+      "id": "delphi",
+      "name": "Delphi",
+      "type": "language",
+      "description": "Object Pascal language and development environment associated with rapid application development.",
+      "properties": {}
+    },
+    {
+      "id": "qbasic",
+      "name": "QBasic",
+      "type": "language",
+      "description": "Microsoft BASIC-family interpreter and development environment for DOS-era systems.",
+      "properties": {}
+    },
+    {
+      "id": "visual_cplusplus",
+      "name": "Visual C++",
+      "type": "software_project",
+      "description": "Microsoft C++ development toolchain and environment.",
+      "properties": {}
+    },
+    {
+      "id": "php_runtime",
+      "name": "PHP runtime",
+      "type": "runtime",
+      "description": "Execution environment for PHP programs.",
+      "properties": {}
+    },
+    {
+      "id": "ruby_runtime",
+      "name": "Ruby runtime",
+      "type": "runtime",
+      "description": "Execution environment for Ruby programs.",
+      "properties": {}
+    },
+    {
+      "id": "go_runtime",
+      "name": "Go runtime",
+      "type": "runtime",
+      "description": "Runtime support for Go programs, including scheduling and garbage collection.",
+      "properties": {}
+    },
+    {
+      "id": "rustc",
+      "name": "rustc",
+      "type": "compiler",
+      "description": "Rust compiler.",
+      "properties": {}
+    },
+    {
+      "id": "clang",
+      "name": "Clang",
+      "type": "compiler",
+      "description": "C-family compiler front end in the LLVM ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "gfortran",
+      "name": "GNU Fortran (gfortran)",
+      "type": "compiler",
+      "description": "GNU compiler front end for Fortran.",
+      "properties": {}
+    },
+    {
+      "id": "gnat",
+      "name": "GNAT",
+      "type": "compiler",
+      "description": "Compiler implementation for Ada in the GCC ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "gcc_c_frontend",
+      "name": "GCC C front end",
+      "type": "compiler",
+      "description": "GCC front end for C.",
+      "properties": {}
+    },
+    {
+      "id": "gcc_cpp_frontend",
+      "name": "GCC C++ front end",
+      "type": "compiler",
+      "description": "GCC front end for C++.",
+      "properties": {}
+    },
+    {
+      "id": "cobol_compilers",
+      "name": "COBOL compiler implementations",
+      "type": "compiler",
+      "description": "Family of COBOL compiler implementations, commercial and open source.",
+      "properties": {}
+    },
+    {
+      "id": "basic_interpreters",
+      "name": "BASIC interpreters",
+      "type": "interpreter",
+      "description": "Family of interpreters for BASIC dialects.",
+      "properties": {}
+    },
+    {
+      "id": "python_cpython",
+      "name": "CPython",
+      "type": "runtime",
+      "description": "Mainstream Python implementation written primarily in C.",
+      "properties": {}
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "type": "runtime",
+      "description": "JavaScript runtime based on the V8 engine and supporting server-side applications.",
+      "properties": {}
+    },
+    {
+      "id": "browser_engine",
+      "name": "Browser JavaScript engines",
+      "type": "runtime",
+      "description": "JavaScript execution environments embedded in web browsers.",
+      "properties": {}
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "type": "operating_system",
+      "description": "Operating system commonly targeted by Java and Kotlin applications.",
+      "properties": {}
+    },
+    {
+      "id": "windows",
+      "name": "Microsoft Windows",
+      "type": "operating_system",
+      "description": "Operating system historically associated with Visual Basic, C#, C++, and scripting.",
+      "properties": {}
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "type": "operating_system",
+      "description": "Operating system and kernel ecosystem widely targeted by C, C++, Rust, Go, and other languages.",
+      "properties": {}
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "type": "operating_system",
+      "description": "Operating system targeted by C-family, Swift, Objective-C, and other languages.",
+      "properties": {}
+    },
+    {
+      "id": "x86",
+      "name": "x86 architecture",
+      "type": "hardware_architecture",
+      "description": "Processor architecture executing machine code produced by many imperative language toolchains.",
+      "properties": {}
+    },
+    {
+      "id": "arm",
+      "name": "Arm architecture",
+      "type": "hardware_architecture",
+      "description": "Processor architecture widely used in mobile, embedded, and server systems.",
+      "properties": {}
+    },
+    {
+      "id": "risc_v",
+      "name": "RISC-V architecture",
+      "type": "hardware_architecture",
+      "description": "Open instruction set architecture targeted by modern compilers.",
+      "properties": {}
+    },
+    {
+      "id": "fortran_1954",
+      "name": "Fortran development begins (1954)",
+      "type": "historical_event",
+      "description": "Fortran development at IBM began in 1954.",
+      "properties": {}
+    },
+    {
+      "id": "fortran_1957",
+      "name": "Early Fortran release (1957)",
+      "type": "historical_event",
+      "description": "Early Fortran implementation was delivered in 1957; dates can vary by milestone definition.",
+      "properties": {}
+    },
+    {
+      "id": "cobol_1959",
+      "name": "COBOL design milestone (1959)",
+      "type": "historical_event",
+      "description": "COBOL was developed around 1959 under a committee effort.",
+      "properties": {}
+    },
+    {
+      "id": "basic_1964",
+      "name": "BASIC introduced (1964)",
+      "type": "historical_event",
+      "description": "BASIC was developed at Dartmouth and introduced in 1964.",
+      "properties": {}
+    },
+    {
+      "id": "c_1970s",
+      "name": "C development in the 1970s",
+      "type": "historical_event",
+      "description": "C was developed at Bell Labs in the early 1970s for Unix implementation.",
+      "properties": {}
+    },
+    {
+      "id": "cpp_1979",
+      "name": "C with Classes begins (1979)",
+      "type": "historical_event",
+      "description": "C++ development began in 1979 under the name C with Classes.",
+      "properties": {}
+    },
+    {
+      "id": "cpp_1983",
+      "name": "First C++ implementation (1983)",
+      "type": "historical_event",
+      "description": "The first C++ implementation was completed in 1983.",
+      "properties": {}
+    },
+    {
+      "id": "smalltalk_1980",
+      "name": "Smalltalk-80 release (1980)",
+      "type": "historical_event",
+      "description": "Smalltalk-80 was released in 1980.",
+      "properties": {}
+    },
+    {
+      "id": "java_1995",
+      "name": "Java released (1995)",
+      "type": "historical_event",
+      "description": "Java was released in 1995.",
+      "properties": {}
+    },
+    {
+      "id": "javascript_1995",
+      "name": "JavaScript released (1995)",
+      "type": "historical_event",
+      "description": "JavaScript was released in 1995.",
+      "properties": {}
+    },
+    {
+      "id": "python_1991",
+      "name": "Python public release (1991)",
+      "type": "historical_event",
+      "description": "Python was released in the early 1990s; 1991 is commonly cited for its first public release.",
+      "properties": {}
+    },
+    {
+      "id": "ruby_1995",
+      "name": "Ruby public release (1995)",
+      "type": "historical_event",
+      "description": "Ruby was released in 1995.",
+      "properties": {}
+    },
+    {
+      "id": "ada_1983",
+      "name": "Ada specification published (1983)",
+      "type": "historical_event",
+      "description": "Ada's first specification was published in 1983.",
+      "properties": {}
+    },
+    {
+      "id": "structured_programming_movement",
+      "name": "Structured programming movement",
+      "type": "historical_event",
+      "description": "A movement promoting disciplined control structures, modularity, and maintainable program organization.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented_growth_1980s",
+      "name": "Growth of object-oriented programming (1980s)",
+      "type": "historical_event",
+      "description": "Object-oriented programming gained substantial interest in the 1980s.",
+      "properties": {}
+    },
+    {
+      "id": "ansi_fortran_1966",
+      "name": "First ANSI Fortran standard (1966)",
+      "type": "historical_event",
+      "description": "ANSI published an early Fortran standard in 1966.",
+      "properties": {}
+    },
+    {
+      "id": "iso_c_1990",
+      "name": "ISO C standard (1990)",
+      "type": "historical_event",
+      "description": "ISO published the first international C standard in 1990, following the ANSI C standardization milestone.",
+      "properties": {}
+    },
+    {
+      "id": "regular_expression",
+      "name": "Regular expressions",
+      "type": "language_feature",
+      "description": "Pattern language used for matching and transforming text.",
+      "properties": {}
+    },
+    {
+      "id": "task",
+      "name": "Tasking and task types",
+      "type": "language_feature",
+      "description": "Language constructs for expressing concurrent tasks, especially in Ada-like systems.",
+      "properties": {}
+    },
+    {
+      "id": "goroutine",
+      "name": "Goroutine",
+      "type": "concept",
+      "description": "Lightweight concurrent execution unit provided by Go.",
+      "properties": {}
+    },
+    {
+      "id": "template",
+      "name": "Templates and generic programming",
+      "type": "language_feature",
+      "description": "Compile-time parameterized code mechanisms such as C++ templates.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_00001",
+      "source": "imperative_programming",
+      "target": "state",
+      "type": "uses",
+      "description": "Imperative programs operate on a program state that can change during execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00002",
+      "source": "imperative_programming",
+      "target": "state_transition",
+      "type": "uses",
+      "description": "Executing commands can transition the program from one state to another.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00003",
+      "source": "imperative_programming",
+      "target": "statement",
+      "type": "uses",
+      "description": "Imperative programs are commonly expressed as executable statements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00004",
+      "source": "imperative_programming",
+      "target": "assignment",
+      "type": "uses",
+      "description": "Assignment updates variables or storage locations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00005",
+      "source": "imperative_programming",
+      "target": "sequence",
+      "type": "uses",
+      "description": "The order of statements determines the execution sequence.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00006",
+      "source": "imperative_programming",
+      "target": "selection",
+      "type": "uses",
+      "description": "Conditions select which statements execute.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00007",
+      "source": "imperative_programming",
+      "target": "iteration",
+      "type": "uses",
+      "description": "Loops repeat statements while a count or condition permits.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00008",
+      "source": "imperative_programming",
+      "target": "side_effect",
+      "type": "uses",
+      "description": "Many imperative operations produce observable side effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00009",
+      "source": "imperative_programming",
+      "target": "control_flow",
+      "type": "uses",
+      "description": "The paradigm explicitly describes control flow.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00010",
+      "source": "imperative_programming",
+      "target": "input_output",
+      "type": "uses",
+      "description": "Imperative programs often perform explicit input and output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00011",
+      "source": "imperative_programming",
+      "target": "procedure",
+      "type": "uses",
+      "description": "Procedures can organize and reuse sequences of commands.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00012",
+      "source": "imperative_programming",
+      "target": "mutation",
+      "type": "uses",
+      "description": "Mutation is a common way to express state changes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00013",
+      "source": "procedural_programming",
+      "target": "imperative_programming",
+      "type": "subparadigm_of",
+      "description": "Procedural programming is commonly treated as a structured form of imperative programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00014",
+      "source": "structured_programming",
+      "target": "procedural_programming",
+      "type": "refines",
+      "description": "Structured programming commonly disciplines procedural code through explicit control structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00015",
+      "source": "object_oriented_programming",
+      "target": "imperative_programming",
+      "type": "composes_with",
+      "description": "Object-oriented languages often retain imperative statements while organizing behavior around objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00016",
+      "source": "functional_programming",
+      "target": "imperative_programming",
+      "type": "contrasts_with",
+      "description": "Pure functional programming seeks to avoid observable mutation, though real languages often combine paradigms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00017",
+      "source": "imperative_vs_declarative",
+      "target": "imperative_programming",
+      "type": "has_example",
+      "description": "The concept summarizes the imperative side of the comparison.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00018",
+      "source": "imperative_vs_declarative",
+      "target": "declarative_programming",
+      "type": "contrasts_with",
+      "description": "The contrast is between explicit steps and a description of desired results.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00019",
+      "source": "event_driven_programming",
+      "target": "imperative_programming",
+      "type": "composes_with",
+      "description": "Event handlers frequently execute imperative statements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00020",
+      "source": "concurrent_programming",
+      "target": "imperative_programming",
+      "type": "composes_with",
+      "description": "Concurrent systems can be implemented with imperative tasks and mutable state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00021",
+      "source": "reactive_programming",
+      "target": "imperative_programming",
+      "type": "composes_with",
+      "description": "Reactive architectures may include imperative handlers and side effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00022",
+      "source": "statement",
+      "target": "expression",
+      "type": "uses",
+      "description": "Statements frequently contain expressions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00023",
+      "source": "assignment",
+      "target": "variable",
+      "type": "mutates",
+      "description": "Assignment changes the value associated with a variable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00024",
+      "source": "assignment",
+      "target": "state_transition",
+      "type": "enables",
+      "description": "Assignment is a common mechanism for changing program state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00025",
+      "source": "sequence",
+      "target": "control_flow",
+      "type": "part_of",
+      "description": "Sequence is a basic control-flow form.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00026",
+      "source": "selection",
+      "target": "control_flow",
+      "type": "part_of",
+      "description": "Conditional selection determines the next executed branch.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00027",
+      "source": "iteration",
+      "target": "control_flow",
+      "type": "part_of",
+      "description": "Iteration repeats a statement or block.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00028",
+      "source": "procedure",
+      "target": "modularity",
+      "type": "improves",
+      "description": "Procedures can isolate responsibilities and reduce duplication.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00029",
+      "source": "procedure",
+      "target": "parameter",
+      "type": "uses",
+      "description": "Parameters define the input/output interface of a callable unit.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00030",
+      "source": "procedure",
+      "target": "argument",
+      "type": "uses",
+      "description": "Calls supply arguments to parameters.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00031",
+      "source": "procedure",
+      "target": "return",
+      "type": "composes_with",
+      "description": "A procedure commonly returns control to its caller.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00032",
+      "source": "function",
+      "target": "return",
+      "type": "uses",
+      "description": "Functions commonly return a computed value.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00033",
+      "source": "procedure",
+      "target": "block",
+      "type": "uses",
+      "description": "Procedure bodies are commonly expressed as blocks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00034",
+      "source": "block",
+      "target": "scope",
+      "type": "supports",
+      "description": "Blocks can delimit lexical scope.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00035",
+      "source": "scope",
+      "target": "local_variable",
+      "type": "scopes",
+      "description": "Scope rules determine local-variable visibility.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00036",
+      "source": "global_variable",
+      "target": "state",
+      "type": "part_of",
+      "description": "Global variables contribute to program state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00037",
+      "source": "local_variable",
+      "target": "state",
+      "type": "part_of",
+      "description": "Local variables contribute to state while their storage is live.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00038",
+      "source": "loop",
+      "target": "iteration",
+      "type": "is_a",
+      "description": "A loop is a construct for iteration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00039",
+      "source": "for_loop",
+      "target": "loop",
+      "type": "is_a",
+      "description": "A for loop is a kind of loop.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00040",
+      "source": "while_loop",
+      "target": "loop",
+      "type": "is_a",
+      "description": "A while loop is a kind of loop.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00041",
+      "source": "do_while_loop",
+      "target": "loop",
+      "type": "is_a",
+      "description": "A do-while loop is a kind of loop.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00042",
+      "source": "conditional",
+      "target": "selection",
+      "type": "is_a",
+      "description": "If/else is a common selection construct.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00043",
+      "source": "switch_case",
+      "target": "selection",
+      "type": "is_a",
+      "description": "Switch/case is a multiway selection construct.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00044",
+      "source": "goto",
+      "target": "control_flow",
+      "type": "part_of",
+      "description": "GOTO is an unconditional control-flow transfer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00045",
+      "source": "recursion",
+      "target": "procedure",
+      "type": "composes_with",
+      "description": "Recursive procedures or functions call themselves directly or indirectly.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00046",
+      "source": "exception_handling",
+      "target": "control_flow",
+      "type": "affects",
+      "description": "Exception mechanisms alter ordinary control flow.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00047",
+      "source": "side_effect",
+      "target": "mutation",
+      "type": "includes",
+      "description": "Mutation is one kind of observable side effect.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00048",
+      "source": "input_output",
+      "target": "side_effect",
+      "type": "is_a",
+      "description": "I/O is externally observable and therefore a side effect in many semantic models.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00049",
+      "source": "dynamic_allocation",
+      "target": "heap",
+      "type": "allocates",
+      "description": "Dynamic allocation commonly obtains storage from a heap allocator.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00050",
+      "source": "garbage_collection",
+      "target": "heap",
+      "type": "manages",
+      "description": "Collectors reclaim managed heap objects that are no longer reachable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00051",
+      "source": "automatic_storage",
+      "target": "stack",
+      "type": "used_as",
+      "description": "Automatic storage is often implemented using stack frames, though implementations vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00052",
+      "source": "static_storage",
+      "target": "memory",
+      "type": "part_of",
+      "description": "Static-duration objects occupy memory for an extended program or module lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00053",
+      "source": "manual_memory_management",
+      "target": "dynamic_allocation",
+      "type": "uses",
+      "description": "Manual memory management explicitly allocates and releases storage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00054",
+      "source": "resource_lifetime_management",
+      "target": "raii",
+      "type": "has_example",
+      "description": "RAII is a resource lifetime management technique.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00055",
+      "source": "raii",
+      "target": "cpp",
+      "type": "used_in",
+      "description": "C++ uses RAII and deterministic object destruction as a common resource-management idiom.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00056",
+      "source": "ownership_borrowing",
+      "target": "rust",
+      "type": "used_in",
+      "description": "Rust uses ownership and borrowing to constrain memory access and lifetimes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00057",
+      "source": "garbage_collected_memory_management",
+      "target": "garbage_collection",
+      "type": "uses",
+      "description": "Garbage-collected runtimes reclaim unreachable objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00058",
+      "source": "runtime_system",
+      "target": "interpreter",
+      "type": "composes_with",
+      "description": "Interpreters depend on runtime support for values, calls, and services.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00059",
+      "source": "compiler",
+      "target": "source_code",
+      "type": "reads_from",
+      "description": "A compiler consumes source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00060",
+      "source": "compiler",
+      "target": "object_file",
+      "type": "provides",
+      "description": "A native compiler toolchain may emit object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00061",
+      "source": "linker",
+      "target": "object_file",
+      "type": "reads_from",
+      "description": "A linker consumes object files and libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00062",
+      "source": "linker",
+      "target": "executable",
+      "type": "provides",
+      "description": "A linker commonly produces an executable or library.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00063",
+      "source": "machine_code",
+      "target": "hardware",
+      "type": "executes_on",
+      "description": "Machine code is executed by a compatible processor architecture.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00064",
+      "source": "bytecode",
+      "target": "virtual_machine",
+      "type": "executes_on",
+      "description": "Bytecode is executed by a compatible virtual machine.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00065",
+      "source": "bytecode_compilation",
+      "target": "bytecode",
+      "type": "provides",
+      "description": "Bytecode compilation emits an intermediate instruction representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00066",
+      "source": "jit_compilation",
+      "target": "runtime_system",
+      "type": "part_of",
+      "description": "JIT compilation occurs during execution in a runtime environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00067",
+      "source": "ahead_of_time_compilation",
+      "target": "compiler",
+      "type": "uses",
+      "description": "Ahead-of-time compilation translates code before program execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00068",
+      "source": "interpreter_loop",
+      "target": "interpreter",
+      "type": "part_of",
+      "description": "An interpreter commonly dispatches instructions or syntax nodes in a loop.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00069",
+      "source": "testing",
+      "target": "debugging",
+      "type": "composes_with",
+      "description": "Tests help expose failures that can then be debugged.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00070",
+      "source": "structured_programming",
+      "target": "maintainability",
+      "type": "improves",
+      "description": "Clear control structures and decomposition generally improve understandability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00071",
+      "source": "modularity",
+      "target": "maintainability",
+      "type": "improves",
+      "description": "Defined component boundaries help maintenance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00072",
+      "source": "portability",
+      "target": "compiler",
+      "type": "composes_with",
+      "description": "Portable source can be built by multiple conforming toolchains.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00073",
+      "source": "type_system",
+      "target": "compiler_frontend",
+      "type": "used_in",
+      "description": "Static type checking is often performed during semantic analysis.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00074",
+      "source": "undefined_behavior",
+      "target": "c",
+      "type": "has_property",
+      "description": "C specifications define cases where behavior is undefined.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00075",
+      "source": "undefined_behavior",
+      "target": "cpp",
+      "type": "has_property",
+      "description": "C++ specifications define cases where behavior is undefined.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00076",
+      "source": "memory_safety",
+      "target": "rust",
+      "type": "improves",
+      "description": "Rust's ownership and borrowing rules prevent many common invalid memory accesses in safe code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00077",
+      "source": "formal_verification",
+      "target": "invariant",
+      "type": "uses",
+      "description": "Invariants are commonly used to reason about program correctness.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00078",
+      "source": "precondition_postcondition",
+      "target": "formal_verification",
+      "type": "composes_with",
+      "description": "Contracts can support formal reasoning and verification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00079",
+      "source": "assertion",
+      "target": "invariant",
+      "type": "checks",
+      "description": "Assertions can check whether an invariant holds at a program point.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00080",
+      "source": "async_await",
+      "target": "coroutine",
+      "type": "composes_with",
+      "description": "Async/await syntax is often implemented using coroutine-like state machines.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00081",
+      "source": "event_loop",
+      "target": "callback",
+      "type": "calls",
+      "description": "Event loops dispatch callbacks when events are ready.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00082",
+      "source": "message_queue",
+      "target": "concurrent_programming",
+      "type": "supports",
+      "description": "Message queues can coordinate asynchronous or concurrent components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00083",
+      "source": "lock",
+      "target": "synchronization",
+      "type": "is_a",
+      "description": "A lock is a synchronization primitive.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00084",
+      "source": "atomic_operation",
+      "target": "synchronization",
+      "type": "supports",
+      "description": "Atomic operations can implement lock-free synchronization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00085",
+      "source": "database_transaction",
+      "target": "transaction",
+      "type": "is_a",
+      "description": "A database transaction is a transaction over persistent database state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00086",
+      "source": "foreign_function_interface",
+      "target": "interoperability",
+      "type": "supports",
+      "description": "FFIs let code in different languages call across language boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00087",
+      "source": "api",
+      "target": "interoperability",
+      "type": "supports",
+      "description": "APIs define callable interfaces between software components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00088",
+      "source": "reproducible_build",
+      "target": "build_system",
+      "type": "composes_with",
+      "description": "Build systems can be configured to make builds reproducible.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00089",
+      "source": "fortran",
+      "target": "fortran_person_john_backus",
+      "type": "designed_by",
+      "description": "John Backus led the Fortran development effort at IBM.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00090",
+      "source": "cobol",
+      "target": "grace_hopper",
+      "type": "designed_by",
+      "description": "Grace Hopper was a major contributor to COBOL's development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00091",
+      "source": "pascal",
+      "target": "niklaus_wirth",
+      "type": "designed_by",
+      "description": "Niklaus Wirth designed Pascal.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00092",
+      "source": "modula_2",
+      "target": "niklaus_wirth",
+      "type": "designed_by",
+      "description": "Niklaus Wirth designed Modula-2.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00093",
+      "source": "oberon",
+      "target": "niklaus_wirth",
+      "type": "designed_by",
+      "description": "Niklaus Wirth designed Oberon.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00094",
+      "source": "c",
+      "target": "dennis_ritchie",
+      "type": "designed_by",
+      "description": "Dennis Ritchie created C at Bell Labs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00095",
+      "source": "cpp",
+      "target": "bjarne_stroustrup",
+      "type": "designed_by",
+      "description": "Bjarne Stroustrup designed C++, initially called C with Classes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00096",
+      "source": "smalltalk",
+      "target": "alan_kay",
+      "type": "designed_by",
+      "description": "Alan Kay is associated with Smalltalk and its conceptual direction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00097",
+      "source": "ruby",
+      "target": "yukihiro_matsumoto",
+      "type": "designed_by",
+      "description": "Yukihiro Matsumoto created Ruby.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00098",
+      "source": "python",
+      "target": "guido_van_rossum",
+      "type": "designed_by",
+      "description": "Guido van Rossum created Python.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00099",
+      "source": "javascript",
+      "target": "brendan_eich",
+      "type": "designed_by",
+      "description": "Brendan Eich created JavaScript.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00100",
+      "source": "java",
+      "target": "james_gosling",
+      "type": "designed_by",
+      "description": "James Gosling led Java's design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00101",
+      "source": "perl",
+      "target": "larry_wall",
+      "type": "designed_by",
+      "description": "Larry Wall created Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00102",
+      "source": "basic",
+      "target": "john_kemeny",
+      "type": "designed_by",
+      "description": "John G. Kemeny co-created BASIC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00103",
+      "source": "basic",
+      "target": "thomas_kurtz",
+      "type": "designed_by",
+      "description": "Thomas E. Kurtz co-created BASIC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00104",
+      "source": "fortran",
+      "target": "ibm",
+      "type": "developed_at",
+      "description": "Fortran was developed at IBM.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00105",
+      "source": "c",
+      "target": "bell_labs",
+      "type": "developed_at",
+      "description": "C was developed at Bell Labs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00106",
+      "source": "basic",
+      "target": "darthmouth_college",
+      "type": "developed_at",
+      "description": "BASIC was developed at Dartmouth College.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00107",
+      "source": "ada",
+      "target": "us_department_of_defense",
+      "type": "used_for",
+      "description": "Ada was designed in response to U.S. Department of Defense software requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00108",
+      "source": "c",
+      "target": "unix",
+      "type": "used_for",
+      "description": "C was developed in large part to implement Unix.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00109",
+      "source": "fortran",
+      "target": "scientific_computing",
+      "type": "used_for",
+      "description": "Fortran is widely used for scientific and numerical computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00110",
+      "source": "cobol",
+      "target": "business_data_processing",
+      "type": "used_for",
+      "description": "COBOL is widely associated with business data processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00111",
+      "source": "algol",
+      "target": "scientific_algorithm",
+      "type": "used_for",
+      "description": "ALGOL was designed to express algorithms and mathematical procedures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00112",
+      "source": "basic",
+      "target": "automation_scripting",
+      "type": "used_for",
+      "description": "BASIC's accessibility made it useful for interactive learning and simple applications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00113",
+      "source": "c",
+      "target": "systems_programming",
+      "type": "used_for",
+      "description": "C is widely used for operating systems and systems software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00114",
+      "source": "cpp",
+      "target": "game_development",
+      "type": "used_for",
+      "description": "C++ is used for performance-sensitive interactive and game software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00115",
+      "source": "ada",
+      "target": "safety_critical",
+      "type": "used_for",
+      "description": "Ada is used in safety-critical and embedded software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00116",
+      "source": "python",
+      "target": "automation_scripting",
+      "type": "used_for",
+      "description": "Python is widely used for scripting and automation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00117",
+      "source": "javascript",
+      "target": "web_development",
+      "type": "used_for",
+      "description": "JavaScript is a core language of browser-side web development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00118",
+      "source": "php",
+      "target": "web_development",
+      "type": "used_for",
+      "description": "PHP is widely used for server-side web development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00119",
+      "source": "java",
+      "target": "business_data_processing",
+      "type": "used_for",
+      "description": "Java is used in enterprise and transaction-processing systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00120",
+      "source": "go",
+      "target": "systems_programming",
+      "type": "used_for",
+      "description": "Go is used for network services and infrastructure software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00121",
+      "source": "rust",
+      "target": "systems_programming",
+      "type": "used_for",
+      "description": "Rust is used for systems software where memory safety and control matter.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00122",
+      "source": "swift",
+      "target": "desktop_gui",
+      "type": "used_for",
+      "description": "Swift is used for application development in Apple's ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00123",
+      "source": "visual_basic",
+      "target": "desktop_gui",
+      "type": "used_for",
+      "description": "Visual Basic is associated with event-driven GUI application development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00124",
+      "source": "kotlin",
+      "target": "android",
+      "type": "used_for",
+      "description": "Kotlin is commonly used for Android application development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00125",
+      "source": "fortran",
+      "target": "fortran_1954",
+      "type": "released_in",
+      "description": "Fortran development began at IBM in 1954.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00126",
+      "source": "fortran",
+      "target": "fortran_1957",
+      "type": "released_in",
+      "description": "Early Fortran was delivered in 1957; milestone terminology varies.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00127",
+      "source": "cobol",
+      "target": "cobol_1959",
+      "type": "released_in",
+      "description": "COBOL's initial design and committee milestone is commonly dated to 1959.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00128",
+      "source": "basic",
+      "target": "basic_1964",
+      "type": "released_in",
+      "description": "BASIC was introduced at Dartmouth in 1964.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00129",
+      "source": "c",
+      "target": "c_1970s",
+      "type": "released_in",
+      "description": "C was developed at Bell Labs in the early 1970s.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00130",
+      "source": "cpp",
+      "target": "cpp_1979",
+      "type": "released_in",
+      "description": "C++ development began in 1979.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00131",
+      "source": "cpp",
+      "target": "cpp_1983",
+      "type": "released_in",
+      "description": "The first C++ implementation was completed in 1983.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00132",
+      "source": "smalltalk",
+      "target": "smalltalk_1980",
+      "type": "released_in",
+      "description": "Smalltalk-80 was released in 1980.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00133",
+      "source": "java",
+      "target": "java_1995",
+      "type": "released_in",
+      "description": "Java was released in 1995.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00134",
+      "source": "javascript",
+      "target": "javascript_1995",
+      "type": "released_in",
+      "description": "JavaScript was released in 1995.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00135",
+      "source": "python",
+      "target": "python_1991",
+      "type": "released_in",
+      "description": "Python's first public release is commonly dated to 1991.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00136",
+      "source": "ruby",
+      "target": "ruby_1995",
+      "type": "released_in",
+      "description": "Ruby was publicly released in 1995.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00137",
+      "source": "ada",
+      "target": "ada_1983",
+      "type": "released_in",
+      "description": "The first Ada specification was published in 1983.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00138",
+      "source": "fortran",
+      "target": "ansi_fortran_1966",
+      "type": "standardized_by",
+      "description": "ANSI published an early Fortran standard in 1966.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00139",
+      "source": "c",
+      "target": "c_standard",
+      "type": "standardized_by",
+      "description": "C has ANSI and ISO language standards.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00140",
+      "source": "cpp",
+      "target": "cpp_standard",
+      "type": "standardized_by",
+      "description": "C++ is standardized through ISO.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00141",
+      "source": "fortran",
+      "target": "fortran_standard",
+      "type": "standardized_by",
+      "description": "Fortran has standardized specifications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00142",
+      "source": "ada",
+      "target": "ada_standard",
+      "type": "standardized_by",
+      "description": "Ada has standardized specifications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00143",
+      "source": "cobol",
+      "target": "cobol_standard",
+      "type": "standardized_by",
+      "description": "COBOL has standardized specifications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00144",
+      "source": "ansi",
+      "target": "fortran_standard",
+      "type": "standardizes",
+      "description": "ANSI standardized early Fortran specifications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00145",
+      "source": "iso_iec",
+      "target": "c_standard",
+      "type": "standardizes",
+      "description": "ISO/IEC publishes C language standards.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00146",
+      "source": "iso_iec",
+      "target": "cpp_standard",
+      "type": "standardizes",
+      "description": "ISO/IEC publishes C++ language standards.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00147",
+      "source": "iso_iec",
+      "target": "fortran_standard",
+      "type": "standardizes",
+      "description": "ISO/IEC publishes Fortran standards.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00148",
+      "source": "iso_iec",
+      "target": "ada_standard",
+      "type": "standardizes",
+      "description": "ISO/IEC standardization processes cover Ada specifications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00149",
+      "source": "iso_iec",
+      "target": "cobol_standard",
+      "type": "standardizes",
+      "description": "ISO/IEC publishes COBOL language standards.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00150",
+      "source": "algol",
+      "target": "pascal",
+      "type": "influenced",
+      "description": "ALGOL's structured design influenced Pascal.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00151",
+      "source": "algol",
+      "target": "modula_2",
+      "type": "influenced",
+      "description": "ALGOL influenced the Wirth language lineage that includes Modula-2.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00152",
+      "source": "algol",
+      "target": "ada",
+      "type": "influenced",
+      "description": "ALGOL and its structured descendants influenced Ada's design context.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00153",
+      "source": "algol",
+      "target": "c",
+      "type": "influenced",
+      "description": "ALGOL's influence contributed to the broader lineage of structured high-level languages including C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00154",
+      "source": "algol",
+      "target": "cpp",
+      "type": "influenced",
+      "description": "ALGOL's lineage indirectly influenced later structured languages; this is a broad historical connection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00155",
+      "source": "algol",
+      "target": "java",
+      "type": "influenced",
+      "description": "Java belongs to a broad language lineage shaped by ALGOL-derived block and control-flow ideas.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00156",
+      "source": "bcpl",
+      "target": "b_language",
+      "type": "influenced",
+      "description": "BCPL influenced the B language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00157",
+      "source": "b_language",
+      "target": "c",
+      "type": "influenced",
+      "description": "B was a direct predecessor to C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00158",
+      "source": "c",
+      "target": "cpp",
+      "type": "influenced",
+      "description": "C++ began as an extension of C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00159",
+      "source": "simula",
+      "target": "cpp",
+      "type": "influenced",
+      "description": "Simula's object-oriented concepts influenced C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00160",
+      "source": "simula",
+      "target": "smalltalk",
+      "type": "shares_lineage_with",
+      "description": "Simula and Smalltalk are key early object-oriented language lineages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00161",
+      "source": "smalltalk",
+      "target": "objective_c",
+      "type": "influenced",
+      "description": "Smalltalk-style messaging influenced Objective-C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00162",
+      "source": "c",
+      "target": "objective_c",
+      "type": "derived_from",
+      "description": "Objective-C extends C with object-oriented messaging.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00163",
+      "source": "c",
+      "target": "d",
+      "type": "influenced",
+      "description": "D was influenced by C and C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00164",
+      "source": "c",
+      "target": "rust",
+      "type": "influenced",
+      "description": "Rust shares the systems-programming domain and some syntax lineage with C-family languages; not a direct derivation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00165",
+      "source": "c",
+      "target": "go",
+      "type": "influenced",
+      "description": "Go was influenced by C-like syntax and systems programming traditions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00166",
+      "source": "c",
+      "target": "javascript",
+      "type": "shares_lineage_with",
+      "description": "JavaScript uses C-like syntax but is not derived from Java.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00167",
+      "source": "c",
+      "target": "java",
+      "type": "shares_lineage_with",
+      "description": "Java uses C-like syntax and shares broader Algol/C-family conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00168",
+      "source": "java",
+      "target": "kotlin",
+      "type": "influenced",
+      "description": "Kotlin was designed for practical interoperability with Java and the JVM ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00169",
+      "source": "java",
+      "target": "csharp",
+      "type": "shares_lineage_with",
+      "description": "C# and Java share class-based design and C-like syntax, without a simple direct derivation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00170",
+      "source": "visual_basic",
+      "target": "visual_basic_dotnet",
+      "type": "evolved_into",
+      "description": "Visual Basic .NET is the later .NET-targeting Visual Basic-family language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00171",
+      "source": "visual_basic",
+      "target": "vbscript",
+      "type": "shares_lineage_with",
+      "description": "VBScript shares Visual Basic syntax and family lineage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00172",
+      "source": "visual_basic_dotnet",
+      "target": "dotnet",
+      "type": "executes_on",
+      "description": "Visual Basic .NET targets the .NET platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00173",
+      "source": "csharp",
+      "target": "dotnet",
+      "type": "executes_on",
+      "description": "C# commonly targets the .NET runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00174",
+      "source": "fsharp",
+      "target": "dotnet",
+      "type": "executes_on",
+      "description": "F# runs on the .NET platform despite being functional-first.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00175",
+      "source": "java",
+      "target": "jvm",
+      "type": "executes_on",
+      "description": "Java source is typically compiled to bytecode executed by the JVM.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00176",
+      "source": "kotlin",
+      "target": "jvm",
+      "type": "executes_on",
+      "description": "Kotlin commonly targets JVM bytecode.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00177",
+      "source": "python",
+      "target": "python_runtime",
+      "type": "executes_on",
+      "description": "Python programs execute under a Python implementation/runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00178",
+      "source": "python_runtime",
+      "target": "python_cpython",
+      "type": "has_implementation",
+      "description": "CPython is the mainstream Python implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00179",
+      "source": "javascript",
+      "target": "javascript_runtime",
+      "type": "executes_on",
+      "description": "JavaScript executes in browser or server runtimes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00180",
+      "source": "javascript_runtime",
+      "target": "nodejs",
+      "type": "has_implementation",
+      "description": "Node.js is a JavaScript runtime for server-side use.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00181",
+      "source": "javascript_runtime",
+      "target": "browser_engine",
+      "type": "has_implementation",
+      "description": "Browser engines execute JavaScript in browsers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00182",
+      "source": "php",
+      "target": "php_runtime",
+      "type": "executes_on",
+      "description": "PHP code runs under PHP runtimes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00183",
+      "source": "ruby",
+      "target": "ruby_runtime",
+      "type": "executes_on",
+      "description": "Ruby code runs under Ruby runtimes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00184",
+      "source": "go",
+      "target": "go_runtime",
+      "type": "executes_on",
+      "description": "Go programs use runtime support for scheduling and memory management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00185",
+      "source": "rust",
+      "target": "rustc",
+      "type": "compiled_by",
+      "description": "rustc compiles Rust source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00186",
+      "source": "c",
+      "target": "gcc_c_frontend",
+      "type": "compiled_by",
+      "description": "GCC's C front end compiles C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00187",
+      "source": "c",
+      "target": "clang",
+      "type": "compiled_by",
+      "description": "Clang compiles C and related languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00188",
+      "source": "cpp",
+      "target": "gcc_cpp_frontend",
+      "type": "compiled_by",
+      "description": "GCC's C++ front end compiles C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00189",
+      "source": "cpp",
+      "target": "clang",
+      "type": "compiled_by",
+      "description": "Clang compiles C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00190",
+      "source": "fortran",
+      "target": "gfortran",
+      "type": "compiled_by",
+      "description": "gfortran compiles Fortran.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00191",
+      "source": "ada",
+      "target": "gnat",
+      "type": "compiled_by",
+      "description": "GNAT is an Ada compiler implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00192",
+      "source": "cobol",
+      "target": "cobol_compilers",
+      "type": "compiled_by",
+      "description": "COBOL has multiple compiler implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00193",
+      "source": "basic",
+      "target": "basic_interpreters",
+      "type": "interpreted_by",
+      "description": "Many BASIC dialects have been implemented as interpreters.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00194",
+      "source": "gcc",
+      "target": "c",
+      "type": "supports",
+      "description": "GCC supports C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00195",
+      "source": "gcc",
+      "target": "cpp",
+      "type": "supports",
+      "description": "GCC supports C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00196",
+      "source": "gcc",
+      "target": "fortran",
+      "type": "supports",
+      "description": "GCC supports Fortran.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00197",
+      "source": "gcc",
+      "target": "ada",
+      "type": "supports",
+      "description": "GCC supports Ada through GNAT in relevant distributions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00198",
+      "source": "llvm",
+      "target": "clang",
+      "type": "contains",
+      "description": "Clang is a compiler front end commonly used with LLVM infrastructure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00199",
+      "source": "jvm",
+      "target": "bytecode",
+      "type": "executes_on",
+      "description": "The JVM executes bytecode instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00200",
+      "source": "dotnet",
+      "target": "bytecode",
+      "type": "uses",
+      "description": "The .NET runtime executes intermediate language code, typically with JIT or AOT compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00201",
+      "source": "unix",
+      "target": "c",
+      "type": "uses",
+      "description": "Unix and C evolved together; Unix has historically been implemented largely in C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00202",
+      "source": "windows",
+      "target": "visual_basic",
+      "type": "used_in",
+      "description": "Visual Basic applications have historically targeted Windows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00203",
+      "source": "windows",
+      "target": "csharp",
+      "type": "used_in",
+      "description": "C# is widely used for Windows and .NET development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00204",
+      "source": "linux",
+      "target": "c",
+      "type": "used_in",
+      "description": "C is widely used for Linux kernel and system components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00205",
+      "source": "linux",
+      "target": "rust",
+      "type": "used_in",
+      "description": "Rust is used in parts of the Linux ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00206",
+      "source": "android",
+      "target": "java",
+      "type": "used_in",
+      "description": "Java has long been used for Android development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00207",
+      "source": "android",
+      "target": "kotlin",
+      "type": "used_in",
+      "description": "Kotlin is a major language for Android development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00208",
+      "source": "macos",
+      "target": "swift",
+      "type": "used_in",
+      "description": "Swift is used for Apple-platform software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00209",
+      "source": "macos",
+      "target": "objective_c",
+      "type": "used_in",
+      "description": "Objective-C has historically been important for Apple-platform software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00210",
+      "source": "x86",
+      "target": "machine_code",
+      "type": "executes_on",
+      "description": "x86 processors execute x86 machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00211",
+      "source": "arm",
+      "target": "machine_code",
+      "type": "executes_on",
+      "description": "Arm processors execute Arm machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00212",
+      "source": "risc_v",
+      "target": "machine_code",
+      "type": "executes_on",
+      "description": "RISC-V processors execute RISC-V machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00213",
+      "source": "source_code",
+      "target": "compiler_frontend",
+      "type": "reads_from",
+      "description": "Compiler front ends parse and analyze source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00214",
+      "source": "compiler_frontend",
+      "target": "optimization",
+      "type": "composes_with",
+      "description": "A compiler pipeline may optimize an intermediate representation after front-end analysis.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00215",
+      "source": "foreign_function_interface",
+      "target": "c",
+      "type": "composes_with",
+      "description": "C is a common ABI boundary language for foreign function interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00216",
+      "source": "interoperability",
+      "target": "api",
+      "type": "supports",
+      "description": "APIs are a common mechanism for language and component interoperability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00217",
+      "source": "procedural_decomposition",
+      "target": "procedure",
+      "type": "uses",
+      "description": "Procedural decomposition organizes code around procedures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00218",
+      "source": "structured_control_flow",
+      "target": "structured_programming",
+      "type": "is_a",
+      "description": "Structured control flow is a central technique of structured programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00219",
+      "source": "algorithmic_programming",
+      "target": "imperative_programming",
+      "type": "has_example",
+      "description": "Imperative programming expresses algorithms as explicit steps.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00220",
+      "source": "imperative_io",
+      "target": "input_output",
+      "type": "uses",
+      "description": "Imperative I/O explicitly invokes read/write operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00221",
+      "source": "database_processing",
+      "target": "database_transaction",
+      "type": "uses",
+      "description": "Database processing commonly groups changes into transactions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00222",
+      "source": "web_development",
+      "target": "api",
+      "type": "uses",
+      "description": "Web applications expose and consume APIs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00223",
+      "source": "embedded_systems",
+      "target": "hardware",
+      "type": "composes_with",
+      "description": "Embedded software interacts directly with hardware resources.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00224",
+      "source": "safety_critical",
+      "target": "formal_verification",
+      "type": "composes_with",
+      "description": "Formal methods can support assurance for safety-critical systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00225",
+      "source": "test_framework",
+      "target": "testing",
+      "type": "supports",
+      "description": "Test frameworks automate and organize tests.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00226",
+      "source": "debugger",
+      "target": "stack",
+      "type": "inspects",
+      "description": "Debuggers commonly inspect call stacks and frames.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00227",
+      "source": "build_system",
+      "target": "compiler",
+      "type": "uses",
+      "description": "Build systems invoke compilers and other tools.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00228",
+      "source": "build_system",
+      "target": "linker",
+      "type": "uses",
+      "description": "Build systems commonly invoke a linker.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00229",
+      "source": "object_file",
+      "target": "executable",
+      "type": "part_of",
+      "description": "Object files are commonly linked into executables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00230",
+      "source": "reproducible_build",
+      "target": "portability",
+      "type": "composes_with",
+      "description": "Reproducible builds improve artifact verification and support portable workflows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00231",
+      "source": "fortran",
+      "target": "array",
+      "type": "supports",
+      "description": "Fortran supports or commonly uses array, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00232",
+      "source": "fortran",
+      "target": "procedure",
+      "type": "supports",
+      "description": "Fortran supports or commonly uses procedure or subroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00233",
+      "source": "fortran",
+      "target": "for_loop",
+      "type": "supports",
+      "description": "Fortran supports or commonly uses for loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00234",
+      "source": "fortran",
+      "target": "scientific_computing",
+      "type": "supports",
+      "description": "Fortran supports or commonly uses scientific and numerical computing, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00235",
+      "source": "fortran",
+      "target": "floating_point",
+      "type": "supports",
+      "description": "Fortran supports or commonly uses floating-point type, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00236",
+      "source": "cobol",
+      "target": "record_struct",
+      "type": "supports",
+      "description": "COBOL supports or commonly uses record or structure, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00237",
+      "source": "cobol",
+      "target": "string",
+      "type": "supports",
+      "description": "COBOL supports or commonly uses string type, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00238",
+      "source": "cobol",
+      "target": "procedure",
+      "type": "supports",
+      "description": "COBOL supports or commonly uses procedure or subroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00239",
+      "source": "cobol",
+      "target": "conditional",
+      "type": "supports",
+      "description": "COBOL supports or commonly uses if/else conditional, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00240",
+      "source": "cobol",
+      "target": "loop",
+      "type": "supports",
+      "description": "COBOL supports or commonly uses loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00241",
+      "source": "cobol",
+      "target": "business_data_processing",
+      "type": "supports",
+      "description": "COBOL supports or commonly uses business data processing, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00242",
+      "source": "algol",
+      "target": "block",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses block structure, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00243",
+      "source": "algol",
+      "target": "scope",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses lexical or dynamic scope, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00244",
+      "source": "algol",
+      "target": "array",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses array, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00245",
+      "source": "algol",
+      "target": "for_loop",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses for loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00246",
+      "source": "algol",
+      "target": "function",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses function, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00247",
+      "source": "algol",
+      "target": "recursion",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses recursion, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00248",
+      "source": "algol",
+      "target": "structured_programming",
+      "type": "supports",
+      "description": "ALGOL supports or commonly uses structured programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00249",
+      "source": "basic",
+      "target": "statement",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses statement, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00250",
+      "source": "basic",
+      "target": "assignment",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses assignment, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00251",
+      "source": "basic",
+      "target": "input_output",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00252",
+      "source": "basic",
+      "target": "conditional",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses if/else conditional, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00253",
+      "source": "basic",
+      "target": "loop",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00254",
+      "source": "basic",
+      "target": "for_loop",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses for loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00255",
+      "source": "basic",
+      "target": "while_loop",
+      "type": "supports",
+      "description": "BASIC supports or commonly uses while loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00256",
+      "source": "c",
+      "target": "pointer",
+      "type": "supports",
+      "description": "C supports or commonly uses pointer, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00257",
+      "source": "c",
+      "target": "array",
+      "type": "supports",
+      "description": "C supports or commonly uses array, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00258",
+      "source": "c",
+      "target": "record_struct",
+      "type": "supports",
+      "description": "C supports or commonly uses record or structure, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00259",
+      "source": "c",
+      "target": "function",
+      "type": "supports",
+      "description": "C supports or commonly uses function, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00260",
+      "source": "c",
+      "target": "procedure",
+      "type": "supports",
+      "description": "C supports or commonly uses procedure or subroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00261",
+      "source": "c",
+      "target": "manual_memory_management",
+      "type": "supports",
+      "description": "C supports or commonly uses manual memory management, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00262",
+      "source": "c",
+      "target": "systems_programming",
+      "type": "supports",
+      "description": "C supports or commonly uses systems programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00263",
+      "source": "c",
+      "target": "integer",
+      "type": "supports",
+      "description": "C supports or commonly uses integer type, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00264",
+      "source": "c",
+      "target": "floating_point",
+      "type": "supports",
+      "description": "C supports or commonly uses floating-point type, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00265",
+      "source": "cpp",
+      "target": "class",
+      "type": "supports",
+      "description": "C++ supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00266",
+      "source": "cpp",
+      "target": "object",
+      "type": "supports",
+      "description": "C++ supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00267",
+      "source": "cpp",
+      "target": "method",
+      "type": "supports",
+      "description": "C++ supports or commonly uses method, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00268",
+      "source": "cpp",
+      "target": "inheritance",
+      "type": "supports",
+      "description": "C++ supports or commonly uses inheritance, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00269",
+      "source": "cpp",
+      "target": "template",
+      "type": "supports",
+      "description": "C++ supports or commonly uses templates and generic programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00270",
+      "source": "cpp",
+      "target": "pointer",
+      "type": "supports",
+      "description": "C++ supports or commonly uses pointer, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00271",
+      "source": "cpp",
+      "target": "manual_memory_management",
+      "type": "supports",
+      "description": "C++ supports or commonly uses manual memory management, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00272",
+      "source": "cpp",
+      "target": "raii",
+      "type": "supports",
+      "description": "C++ supports or commonly uses resource acquisition is initialization (raii), with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00273",
+      "source": "cpp",
+      "target": "systems_programming",
+      "type": "supports",
+      "description": "C++ supports or commonly uses systems programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00274",
+      "source": "pascal",
+      "target": "block",
+      "type": "supports",
+      "description": "Pascal supports or commonly uses block structure, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00275",
+      "source": "pascal",
+      "target": "scope",
+      "type": "supports",
+      "description": "Pascal supports or commonly uses lexical or dynamic scope, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00276",
+      "source": "pascal",
+      "target": "array",
+      "type": "supports",
+      "description": "Pascal supports or commonly uses array, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00277",
+      "source": "pascal",
+      "target": "procedure",
+      "type": "supports",
+      "description": "Pascal supports or commonly uses procedure or subroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00278",
+      "source": "pascal",
+      "target": "function",
+      "type": "supports",
+      "description": "Pascal supports or commonly uses function, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00279",
+      "source": "pascal",
+      "target": "structured_programming",
+      "type": "supports",
+      "description": "Pascal supports or commonly uses structured programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00280",
+      "source": "ada",
+      "target": "type_system",
+      "type": "supports",
+      "description": "Ada supports or commonly uses type system, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00281",
+      "source": "ada",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "Ada supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00282",
+      "source": "ada",
+      "target": "task",
+      "type": "supports",
+      "description": "Ada supports or commonly uses tasking and task types, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00283",
+      "source": "ada",
+      "target": "embedded_systems",
+      "type": "supports",
+      "description": "Ada supports or commonly uses embedded systems, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00284",
+      "source": "ada",
+      "target": "safety_critical",
+      "type": "supports",
+      "description": "Ada supports or commonly uses safety-critical software, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00285",
+      "source": "modula_2",
+      "target": "module",
+      "type": "supports",
+      "description": "Modula-2 supports or commonly uses module, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00286",
+      "source": "modula_2",
+      "target": "block",
+      "type": "supports",
+      "description": "Modula-2 supports or commonly uses block structure, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00287",
+      "source": "modula_2",
+      "target": "scope",
+      "type": "supports",
+      "description": "Modula-2 supports or commonly uses lexical or dynamic scope, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00288",
+      "source": "modula_2",
+      "target": "procedure",
+      "type": "supports",
+      "description": "Modula-2 supports or commonly uses procedure or subroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00289",
+      "source": "oberon",
+      "target": "module",
+      "type": "supports",
+      "description": "Oberon supports or commonly uses module, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00290",
+      "source": "oberon",
+      "target": "object",
+      "type": "supports",
+      "description": "Oberon supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00291",
+      "source": "oberon",
+      "target": "procedure",
+      "type": "supports",
+      "description": "Oberon supports or commonly uses procedure or subroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00292",
+      "source": "smalltalk",
+      "target": "object",
+      "type": "supports",
+      "description": "Smalltalk supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00293",
+      "source": "smalltalk",
+      "target": "class",
+      "type": "supports",
+      "description": "Smalltalk supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00294",
+      "source": "smalltalk",
+      "target": "method",
+      "type": "supports",
+      "description": "Smalltalk supports or commonly uses method, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00295",
+      "source": "smalltalk",
+      "target": "message_passing",
+      "type": "supports",
+      "description": "Smalltalk supports or commonly uses message passing, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00296",
+      "source": "simula",
+      "target": "class",
+      "type": "supports",
+      "description": "Simula supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00297",
+      "source": "simula",
+      "target": "object",
+      "type": "supports",
+      "description": "Simula supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00298",
+      "source": "simula",
+      "target": "inheritance",
+      "type": "supports",
+      "description": "Simula supports or commonly uses inheritance, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00299",
+      "source": "perl",
+      "target": "string",
+      "type": "supports",
+      "description": "Perl supports or commonly uses string type, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00300",
+      "source": "perl",
+      "target": "regular_expression",
+      "type": "supports",
+      "description": "Perl supports or commonly uses regular expressions, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00301",
+      "source": "perl",
+      "target": "input_output",
+      "type": "supports",
+      "description": "Perl supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00302",
+      "source": "perl",
+      "target": "automation_scripting",
+      "type": "supports",
+      "description": "Perl supports or commonly uses automation and scripting, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00303",
+      "source": "python",
+      "target": "object",
+      "type": "supports",
+      "description": "Python supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00304",
+      "source": "python",
+      "target": "function",
+      "type": "supports",
+      "description": "Python supports or commonly uses function, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00305",
+      "source": "python",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "Python supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00306",
+      "source": "python",
+      "target": "garbage_collection",
+      "type": "supports",
+      "description": "Python supports or commonly uses garbage collection, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00307",
+      "source": "python",
+      "target": "input_output",
+      "type": "supports",
+      "description": "Python supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00308",
+      "source": "python",
+      "target": "automation_scripting",
+      "type": "supports",
+      "description": "Python supports or commonly uses automation and scripting, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00309",
+      "source": "visual_basic",
+      "target": "event_loop",
+      "type": "supports",
+      "description": "Visual Basic supports or commonly uses event loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00310",
+      "source": "visual_basic",
+      "target": "callback",
+      "type": "supports",
+      "description": "Visual Basic supports or commonly uses callback, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00311",
+      "source": "visual_basic",
+      "target": "object",
+      "type": "supports",
+      "description": "Visual Basic supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00312",
+      "source": "visual_basic",
+      "target": "desktop_gui",
+      "type": "supports",
+      "description": "Visual Basic supports or commonly uses desktop and gui applications, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00313",
+      "source": "vbscript",
+      "target": "automation_scripting",
+      "type": "supports",
+      "description": "VBScript supports or commonly uses automation and scripting, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00314",
+      "source": "vbscript",
+      "target": "input_output",
+      "type": "supports",
+      "description": "VBScript supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00315",
+      "source": "visual_basic_dotnet",
+      "target": "object",
+      "type": "supports",
+      "description": "Visual Basic .NET supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00316",
+      "source": "visual_basic_dotnet",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "Visual Basic .NET supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00317",
+      "source": "visual_basic_dotnet",
+      "target": "dotnet",
+      "type": "supports",
+      "description": "Visual Basic .NET supports or commonly uses .net platform, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00318",
+      "source": "csharp",
+      "target": "object",
+      "type": "supports",
+      "description": "C# supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00319",
+      "source": "csharp",
+      "target": "class",
+      "type": "supports",
+      "description": "C# supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00320",
+      "source": "csharp",
+      "target": "method",
+      "type": "supports",
+      "description": "C# supports or commonly uses method, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00321",
+      "source": "csharp",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "C# supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00322",
+      "source": "csharp",
+      "target": "async_await",
+      "type": "supports",
+      "description": "C# supports or commonly uses async/await, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00323",
+      "source": "csharp",
+      "target": "dotnet",
+      "type": "supports",
+      "description": "C# supports or commonly uses .net platform, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00324",
+      "source": "java",
+      "target": "object",
+      "type": "supports",
+      "description": "Java supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00325",
+      "source": "java",
+      "target": "class",
+      "type": "supports",
+      "description": "Java supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00326",
+      "source": "java",
+      "target": "method",
+      "type": "supports",
+      "description": "Java supports or commonly uses method, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00327",
+      "source": "java",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "Java supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00328",
+      "source": "java",
+      "target": "garbage_collection",
+      "type": "supports",
+      "description": "Java supports or commonly uses garbage collection, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00329",
+      "source": "java",
+      "target": "jvm",
+      "type": "supports",
+      "description": "Java supports or commonly uses java virtual machine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00330",
+      "source": "javascript",
+      "target": "object",
+      "type": "supports",
+      "description": "JavaScript supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00331",
+      "source": "javascript",
+      "target": "function",
+      "type": "supports",
+      "description": "JavaScript supports or commonly uses function, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00332",
+      "source": "javascript",
+      "target": "event_loop",
+      "type": "supports",
+      "description": "JavaScript supports or commonly uses event loop, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00333",
+      "source": "javascript",
+      "target": "callback",
+      "type": "supports",
+      "description": "JavaScript supports or commonly uses callback, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00334",
+      "source": "javascript",
+      "target": "async_await",
+      "type": "supports",
+      "description": "JavaScript supports or commonly uses async/await, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00335",
+      "source": "javascript",
+      "target": "web_development",
+      "type": "supports",
+      "description": "JavaScript supports or commonly uses web development, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00336",
+      "source": "ruby",
+      "target": "object",
+      "type": "supports",
+      "description": "Ruby supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00337",
+      "source": "ruby",
+      "target": "class",
+      "type": "supports",
+      "description": "Ruby supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00338",
+      "source": "ruby",
+      "target": "method",
+      "type": "supports",
+      "description": "Ruby supports or commonly uses method, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00339",
+      "source": "ruby",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "Ruby supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00340",
+      "source": "php",
+      "target": "string",
+      "type": "supports",
+      "description": "PHP supports or commonly uses string type, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00341",
+      "source": "php",
+      "target": "input_output",
+      "type": "supports",
+      "description": "PHP supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00342",
+      "source": "php",
+      "target": "web_development",
+      "type": "supports",
+      "description": "PHP supports or commonly uses web development, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00343",
+      "source": "rust",
+      "target": "ownership_borrowing",
+      "type": "supports",
+      "description": "Rust supports or commonly uses ownership and borrowing, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00344",
+      "source": "rust",
+      "target": "pointer",
+      "type": "supports",
+      "description": "Rust supports or commonly uses pointer, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00345",
+      "source": "rust",
+      "target": "type_system",
+      "type": "supports",
+      "description": "Rust supports or commonly uses type system, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00346",
+      "source": "rust",
+      "target": "memory_safety",
+      "type": "supports",
+      "description": "Rust supports or commonly uses memory safety, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00347",
+      "source": "rust",
+      "target": "systems_programming",
+      "type": "supports",
+      "description": "Rust supports or commonly uses systems programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00348",
+      "source": "go",
+      "target": "goroutine",
+      "type": "supports",
+      "description": "Go supports or commonly uses goroutine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00349",
+      "source": "go",
+      "target": "garbage_collection",
+      "type": "supports",
+      "description": "Go supports or commonly uses garbage collection, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00350",
+      "source": "go",
+      "target": "concurrent_programming",
+      "type": "supports",
+      "description": "Go supports or commonly uses concurrent programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00351",
+      "source": "go",
+      "target": "systems_programming",
+      "type": "supports",
+      "description": "Go supports or commonly uses systems programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00352",
+      "source": "swift",
+      "target": "object",
+      "type": "supports",
+      "description": "Swift supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00353",
+      "source": "swift",
+      "target": "class",
+      "type": "supports",
+      "description": "Swift supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00354",
+      "source": "swift",
+      "target": "type_system",
+      "type": "supports",
+      "description": "Swift supports or commonly uses type system, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00355",
+      "source": "swift",
+      "target": "exception_handling",
+      "type": "supports",
+      "description": "Swift supports or commonly uses exception handling, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00356",
+      "source": "kotlin",
+      "target": "object",
+      "type": "supports",
+      "description": "Kotlin supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00357",
+      "source": "kotlin",
+      "target": "class",
+      "type": "supports",
+      "description": "Kotlin supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00358",
+      "source": "kotlin",
+      "target": "async_await",
+      "type": "supports",
+      "description": "Kotlin supports or commonly uses async/await, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00359",
+      "source": "kotlin",
+      "target": "jvm",
+      "type": "supports",
+      "description": "Kotlin supports or commonly uses java virtual machine, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00360",
+      "source": "objective_c",
+      "target": "object",
+      "type": "supports",
+      "description": "Objective-C supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00361",
+      "source": "objective_c",
+      "target": "class",
+      "type": "supports",
+      "description": "Objective-C supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00362",
+      "source": "objective_c",
+      "target": "message_passing",
+      "type": "supports",
+      "description": "Objective-C supports or commonly uses message passing, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00363",
+      "source": "objective_c",
+      "target": "pointer",
+      "type": "supports",
+      "description": "Objective-C supports or commonly uses pointer, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00364",
+      "source": "d",
+      "target": "pointer",
+      "type": "supports",
+      "description": "D supports or commonly uses pointer, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00365",
+      "source": "d",
+      "target": "class",
+      "type": "supports",
+      "description": "D supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00366",
+      "source": "d",
+      "target": "garbage_collection",
+      "type": "supports",
+      "description": "D supports or commonly uses garbage collection, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00367",
+      "source": "d",
+      "target": "systems_programming",
+      "type": "supports",
+      "description": "D supports or commonly uses systems programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00368",
+      "source": "mumps",
+      "target": "statement",
+      "type": "supports",
+      "description": "MUMPS supports or commonly uses statement, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00369",
+      "source": "mumps",
+      "target": "conditional",
+      "type": "supports",
+      "description": "MUMPS supports or commonly uses if/else conditional, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00370",
+      "source": "mumps",
+      "target": "input_output",
+      "type": "supports",
+      "description": "MUMPS supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00371",
+      "source": "mumps",
+      "target": "database_processing",
+      "type": "supports",
+      "description": "MUMPS supports or commonly uses database and transaction processing, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00372",
+      "source": "fsharp",
+      "target": "function",
+      "type": "supports",
+      "description": "F# supports or commonly uses function, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00373",
+      "source": "fsharp",
+      "target": "type_system",
+      "type": "supports",
+      "description": "F# supports or commonly uses type system, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00374",
+      "source": "fsharp",
+      "target": "dotnet",
+      "type": "supports",
+      "description": "F# supports or commonly uses .net platform, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00375",
+      "source": "delphi",
+      "target": "class",
+      "type": "supports",
+      "description": "Delphi supports or commonly uses class, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00376",
+      "source": "delphi",
+      "target": "object",
+      "type": "supports",
+      "description": "Delphi supports or commonly uses object, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00377",
+      "source": "delphi",
+      "target": "structured_programming",
+      "type": "supports",
+      "description": "Delphi supports or commonly uses structured programming, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00378",
+      "source": "qbasic",
+      "target": "statement",
+      "type": "supports",
+      "description": "QBasic supports or commonly uses statement, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00379",
+      "source": "qbasic",
+      "target": "assignment",
+      "type": "supports",
+      "description": "QBasic supports or commonly uses assignment, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00380",
+      "source": "qbasic",
+      "target": "input_output",
+      "type": "supports",
+      "description": "QBasic supports or commonly uses input/output, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00381",
+      "source": "qbasic",
+      "target": "conditional",
+      "type": "supports",
+      "description": "QBasic supports or commonly uses if/else conditional, with details varying by dialect and version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00382",
+      "source": "qbasic",
+      "target": "loop",
+      "type": "supports",
+      "description": "QBasic supports or commonly uses loop, with details varying by dialect and version.",
+      "properties": {}
+    }
+  ]
+}

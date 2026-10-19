@@ -1,0 +1,4361 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "graph_metadata": {
+    "title": "Assembly Language — Detailed Machine-Readable Knowledge Graph",
+    "graph_id": "assembly-language-knowledge-graph",
+    "version": "1.0.0",
+    "created_utc": "2026-10-19T17:19:06.940735+00:00",
+    "subject": "Assembly language, assemblers, instruction sets, object files, linking, and execution",
+    "description": "Architecture-aware knowledge graph representing assembly language syntax, assembler directives, registers, addressing modes, ISA families, toolchains, object formats, relocations, debugging, security, firmware workflows, and usage examples.",
+    "scope_note": "Assembly is not one universal language: syntax, mnemonics, register names, instruction encodings, directives, ABI rules, and object formats vary by ISA, assembler, platform, and toolchain.",
+    "source_basis": {
+      "source_type": "General technical knowledge and standard toolchain concepts",
+      "primary_reference_families": [
+        "GNU Binutils documentation",
+        "NASM documentation",
+        "LLVM documentation",
+        "platform ABI and ISA specifications"
+      ],
+      "freshness_note": "Tool options, syntax, supported ISAs, ABI conventions, and security features vary by release and target. Validate examples on the intended platform."
+    },
+    "counts": {
+      "entities": 188,
+      "relationships": 274
+    },
+    "serialization": {
+      "encoding": "UTF-8",
+      "format": "JSON",
+      "entity_key": "id",
+      "relationship_key": "id",
+      "relationship_direction": "directed",
+      "id_policy": "Stable lowercase snake_case entity IDs; sequential relationship IDs within this generated artifact."
+    }
+  },
+  "entities": [
+    {
+      "id": "assembly_language",
+      "type": "language_family",
+      "name": "Assembly language",
+      "description": "A family of low-level programming languages whose symbolic instructions and directives correspond closely to a processor instruction set, object format, assembler, or toolchain.",
+      "aliases": [
+        "ASM",
+        "assembler language"
+      ],
+      "properties": {
+        "abstraction_level": "low-level",
+        "typical_output": "machine-code object file",
+        "architecture_specific": true,
+        "notable_properties": [
+          "symbolic mnemonics",
+          "labels",
+          "operands",
+          "directives",
+          "relocation references",
+          "register-level operations"
+        ]
+      }
+    },
+    {
+      "id": "assembly_source",
+      "type": "source_artifact",
+      "name": "Assembly source file",
+      "description": "Text containing assembly instructions, labels, expressions, macros, and assembler directives.",
+      "aliases": [],
+      "properties": {
+        "common_extensions": [
+          ".s",
+          ".S",
+          ".asm",
+          ".nasm",
+          ".inc"
+        ],
+        "case_sensitivity": "assembler-dependent"
+      }
+    },
+    {
+      "id": "assembler_program",
+      "type": "software_component",
+      "name": "Assembler",
+      "description": "A program that parses assembly source, resolves symbols and expressions, encodes instructions, applies relocations, and emits object code or flat binary output.",
+      "aliases": [],
+      "properties": {
+        "typical_tools": [
+          "GNU as",
+          "NASM",
+          "YASM",
+          "MASM",
+          "FASM",
+          "LLVM integrated assembler"
+        ]
+      }
+    },
+    {
+      "id": "machine_code",
+      "type": "binary_artifact",
+      "name": "Machine code",
+      "description": "Processor-specific instruction encodings executed or interpreted by a processor or virtual machine.",
+      "aliases": [],
+      "properties": {
+        "representation": "bytes",
+        "architecture_dependent": true
+      }
+    },
+    {
+      "id": "object_file",
+      "type": "binary_artifact",
+      "name": "Object file",
+      "description": "Relocatable binary containing machine code, data, symbols, relocations, and optional debug or metadata sections.",
+      "aliases": [],
+      "properties": {
+        "formats": [
+          "ELF",
+          "COFF",
+          "PE/COFF",
+          "Mach-O",
+          "OMF"
+        ]
+      }
+    },
+    {
+      "id": "executable",
+      "type": "binary_artifact",
+      "name": "Executable image",
+      "description": "A linked program image loaded by an operating system, firmware, bootloader, or runtime.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "linker",
+      "type": "software_component",
+      "name": "Linker",
+      "description": "Combines object files and libraries, resolves symbol references, applies relocations, and produces executable or library output.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "loader",
+      "type": "software_component",
+      "name": "Program loader",
+      "description": "Operating-system, firmware, or runtime component that maps executable sections, applies dynamic relocations where needed, and transfers control to the entry point.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "cpu",
+      "type": "hardware_component",
+      "name": "Processor / CPU",
+      "description": "Hardware that fetches, decodes, and executes instructions according to an instruction-set architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa",
+      "type": "architecture_concept",
+      "name": "Instruction-set architecture (ISA)",
+      "description": "The programmer-visible contract defining instructions, registers, addressing modes, memory model, privilege behavior, and encoding rules.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "microarchitecture",
+      "type": "architecture_concept",
+      "name": "Microarchitecture",
+      "description": "A particular implementation of an ISA, including pipelines, caches, execution units, and branch prediction.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "abi",
+      "type": "architecture_concept",
+      "name": "Application Binary Interface (ABI)",
+      "description": "Binary conventions for function calls, register use, stack layout, data layout, symbol naming, and interoperability.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "calling_convention",
+      "type": "architecture_concept",
+      "name": "Calling convention",
+      "description": "Rules for passing arguments, returning values, preserving registers, and managing call frames.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "object_format",
+      "type": "binary_format",
+      "name": "Object-file format",
+      "description": "Container specification for code/data sections, symbols, relocations, metadata, and debug information.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "elf",
+      "type": "binary_format",
+      "name": "Executable and Linkable Format (ELF)",
+      "description": "Object and executable format common on Linux and many Unix-like systems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "coff",
+      "type": "binary_format",
+      "name": "Common Object File Format (COFF)",
+      "description": "Object format family used by various toolchains and platforms.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "pe_coff",
+      "type": "binary_format",
+      "name": "PE/COFF",
+      "description": "Executable and object format used by Windows toolchains.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "macho",
+      "type": "binary_format",
+      "name": "Mach-O",
+      "description": "Object and executable format used by Apple platforms.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "relocation",
+      "type": "object_file_concept",
+      "name": "Relocation",
+      "description": "A record describing how a symbol-dependent address or value must be adjusted by the assembler, linker, or loader.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "symbol",
+      "type": "object_file_concept",
+      "name": "Symbol",
+      "description": "Named addressable entity such as a function, object, section, label, or externally resolved reference.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "symbol_table",
+      "type": "object_file_concept",
+      "name": "Symbol table",
+      "description": "Object-file data that records symbol names, bindings, types, visibility, and associated locations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "section",
+      "type": "object_file_concept",
+      "name": "Section",
+      "description": "Named object-file region such as code, initialized data, uninitialized data, read-only constants, or metadata.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "debug_info",
+      "type": "object_file_concept",
+      "name": "Debug information",
+      "description": "Metadata mapping machine instructions and data to source locations, types, and symbols.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "disassembler",
+      "type": "software_component",
+      "name": "Disassembler",
+      "description": "Tool that decodes machine-code bytes into assembly-like instruction text.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "compiler",
+      "type": "software_component",
+      "name": "Compiler",
+      "description": "Program that translates a higher-level language into a lower-level representation, assembly, or object code.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "integrated_assembler",
+      "type": "software_component",
+      "name": "Integrated assembler",
+      "description": "Assembler implementation embedded in a compiler toolchain, such as LLVM's integrated assembler.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "macro_assembler",
+      "type": "assembler_feature",
+      "name": "Macro assembler",
+      "description": "Assembler supporting textual or parameterized macros that expand into source constructs.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "linker_script",
+      "type": "configuration_artifact",
+      "name": "Linker script",
+      "description": "Configuration describing memory regions, section placement, symbols, and layout for supported linkers.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "startup_code",
+      "type": "runtime_component",
+      "name": "Startup code",
+      "description": "Entry-point and initialization code that prepares runtime state before invoking application code.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "runtime_library",
+      "type": "runtime_component",
+      "name": "Runtime library",
+      "description": "Library routines used by generated programs for initialization, arithmetic helpers, I/O, exceptions, or language runtime support.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "firmware",
+      "type": "software_category",
+      "name": "Firmware",
+      "description": "Software built to run on a device or bare-metal target, often with a custom memory map and startup sequence.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "bare_metal",
+      "type": "execution_environment",
+      "name": "Bare-metal environment",
+      "description": "Execution without a general-purpose operating system, requiring explicit startup, memory, and hardware setup.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "operating_system",
+      "type": "software_category",
+      "name": "Operating system",
+      "description": "System software that loads processes, provides system calls, manages memory, and schedules execution.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "source_level_debugger",
+      "type": "software_component",
+      "name": "Source-level debugger",
+      "description": "Debugger that uses symbols and debug metadata to correlate machine execution with source or assembly.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "profiling_tool",
+      "type": "software_component",
+      "name": "Profiler",
+      "description": "Tool that measures or samples program execution to identify performance costs.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "assembler_listing",
+      "type": "build_artifact",
+      "name": "Assembler listing",
+      "description": "Human-readable output correlating source lines, addresses, encodings, and symbols.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "flat_binary",
+      "type": "binary_artifact",
+      "name": "Flat binary image",
+      "description": "Raw bytes without the richer section/symbol metadata of a relocatable object file.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "disassembly",
+      "type": "analysis_artifact",
+      "name": "Disassembly listing",
+      "description": "Textual rendering of machine-code instructions and optionally addresses, bytes, and symbol annotations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "mnemonic",
+      "type": "syntax_element",
+      "name": "Instruction mnemonic",
+      "description": "Textual name for an instruction or pseudo-operation, such as MOV, ADD, JMP, LDR, or ADDQ.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "mov",
+          "add",
+          "jmp",
+          "ldr",
+          "addq"
+        ],
+        "case_sensitivity": "architecture-and-assembler-dependent"
+      }
+    },
+    {
+      "id": "instruction",
+      "type": "language_construct",
+      "name": "Assembly instruction",
+      "description": "An operation written using a mnemonic and zero or more operands, encoded according to the target ISA.",
+      "aliases": [],
+      "properties": {
+        "typical_fields": [
+          "label (optional)",
+          "mnemonic",
+          "operands",
+          "comment (optional)"
+        ]
+      }
+    },
+    {
+      "id": "operand",
+      "type": "language_construct",
+      "name": "Instruction operand",
+      "description": "A register, immediate constant, memory expression, label, symbol, or architecture-specific operand form.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "register",
+      "type": "isa_component",
+      "name": "Register",
+      "description": "A named processor storage location used by instructions.",
+      "aliases": [],
+      "properties": {
+        "categories": [
+          "general-purpose",
+          "floating-point",
+          "vector/SIMD",
+          "flags/status",
+          "control",
+          "segment",
+          "special-purpose"
+        ]
+      }
+    },
+    {
+      "id": "general_register",
+      "type": "isa_component",
+      "name": "General-purpose register",
+      "description": "Register commonly used for integer values, pointers, addresses, and arithmetic.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "stack_pointer",
+      "type": "isa_component",
+      "name": "Stack pointer",
+      "description": "Register conventionally tracking the current stack location.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "frame_pointer",
+      "type": "isa_component",
+      "name": "Frame/base pointer",
+      "description": "Register sometimes used to anchor a function's stack frame.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "instruction_pointer",
+      "type": "isa_component",
+      "name": "Instruction pointer / program counter",
+      "description": "Register or architectural state identifying the current or next instruction address.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "flags_register",
+      "type": "isa_component",
+      "name": "Flags/status register",
+      "description": "Architectural state recording conditions or status produced by operations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "vector_register",
+      "type": "isa_component",
+      "name": "Vector/SIMD register",
+      "description": "Register holding packed data for vector or single-instruction-multiple-data operations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "immediate",
+      "type": "operand_kind",
+      "name": "Immediate operand",
+      "description": "Literal value encoded directly in an instruction where the ISA permits it.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "memory_operand",
+      "type": "operand_kind",
+      "name": "Memory operand",
+      "description": "Operand denoting a memory location, often expressed using a base register, index, scale, and displacement.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "label",
+      "type": "symbol_kind",
+      "name": "Label",
+      "description": "Named location in assembly source used as a branch target or address reference.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "local_label",
+      "type": "symbol_kind",
+      "name": "Local label",
+      "description": "Assembler-specific label scoped or numbered for local control flow.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "global_symbol",
+      "type": "symbol_kind",
+      "name": "Global symbol",
+      "description": "Symbol exposed for reference from other object files or link units.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "external_symbol",
+      "type": "symbol_kind",
+      "name": "External symbol",
+      "description": "Symbol reference resolved by the linker or another object/module.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "directive",
+      "type": "assembler_directive",
+      "name": "Assembler directive",
+      "description": "Non-CPU instruction that controls assembly, sections, symbols, alignment, data emission, or assembler behavior.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "comment",
+      "type": "syntax_element",
+      "name": "Assembly comment",
+      "description": "Text ignored by the assembler according to the syntax and comment markers of the selected assembler.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "expression",
+      "type": "syntax_element",
+      "name": "Assembly expression",
+      "description": "Constant or symbol expression evaluated by the assembler or linker where supported.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "addressing_mode",
+      "type": "isa_component",
+      "name": "Addressing mode",
+      "description": "Rule describing how an instruction identifies its operands or memory locations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "register_direct",
+      "type": "addressing_mode",
+      "name": "Register addressing",
+      "description": "Operand is a register.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "immediate_addressing",
+      "type": "addressing_mode",
+      "name": "Immediate addressing",
+      "description": "Operand is an immediate literal.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "base_displacement",
+      "type": "addressing_mode",
+      "name": "Base-plus-displacement addressing",
+      "description": "Memory address is derived from a base register and displacement.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "indexed_addressing",
+      "type": "addressing_mode",
+      "name": "Indexed addressing",
+      "description": "Memory address is derived from a base/index register combination, potentially with scale.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "pc_relative",
+      "type": "addressing_mode",
+      "name": "PC-relative addressing",
+      "description": "Address or branch displacement is relative to the instruction pointer/program counter.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "indirect_addressing",
+      "type": "addressing_mode",
+      "name": "Indirect addressing",
+      "description": "Operand location or branch target is obtained through a register or memory reference.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "data_width",
+      "type": "language_concept",
+      "name": "Data width",
+      "description": "Width of an operand or data object, commonly measured in bits or bytes.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "endianness",
+      "type": "architecture_concept",
+      "name": "Endianness",
+      "description": "Ordering of bytes in multi-byte values in memory or encoded data.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "alignment",
+      "type": "architecture_concept",
+      "name": "Alignment",
+      "description": "Requirement or performance preference for addresses to be multiples of a given boundary.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "instruction_encoding",
+      "type": "isa_component",
+      "name": "Instruction encoding",
+      "description": "Bit-level layout used to represent an instruction and its operands.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "opcode",
+      "type": "isa_component",
+      "name": "Opcode",
+      "description": "Encoding field or bit pattern identifying an operation.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "condition_code",
+      "type": "isa_component",
+      "name": "Condition code",
+      "description": "Predicate used by conditional branches or predicated instructions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "branch",
+      "type": "control_flow_construct",
+      "name": "Branch instruction",
+      "description": "Instruction that changes the next instruction address, conditionally or unconditionally.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "conditional_branch",
+      "type": "control_flow_construct",
+      "name": "Conditional branch",
+      "description": "Branch taken only when a condition is satisfied.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "unconditional_branch",
+      "type": "control_flow_construct",
+      "name": "Unconditional branch",
+      "description": "Branch that always transfers control to its target.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "call_instruction",
+      "type": "control_flow_construct",
+      "name": "Call instruction",
+      "description": "Transfers control to a subroutine and establishes return behavior according to the ISA/ABI.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "return_instruction",
+      "type": "control_flow_construct",
+      "name": "Return instruction",
+      "description": "Transfers control back to the caller according to the ISA/ABI.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "stack_frame",
+      "type": "runtime_concept",
+      "name": "Stack frame",
+      "description": "Per-call storage region used for saved state, local variables, spills, and other ABI-defined data.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "prologue",
+      "type": "runtime_concept",
+      "name": "Function prologue",
+      "description": "Initial function instructions that establish a stack frame or save required state.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "epilogue",
+      "type": "runtime_concept",
+      "name": "Function epilogue",
+      "description": "Final function instructions that restore state and return.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "procedure",
+      "type": "language_construct",
+      "name": "Procedure / function",
+      "description": "A callable code region with entry, body, and return behavior.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "inline_assembly",
+      "type": "language_construct",
+      "name": "Inline assembly",
+      "description": "Assembly embedded inside a higher-level language, with compiler-specific constraints and clobber declarations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "volatile_memory",
+      "type": "memory_model_concept",
+      "name": "Volatile memory access",
+      "description": "Access whose observability constraints are defined by the language/compiler and target environment; not a general substitute for synchronization.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "atomic_operation",
+      "type": "memory_model_concept",
+      "name": "Atomic operation",
+      "description": "Operation with atomicity and possibly ordering semantics defined by ISA, ABI, or language runtime.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "memory_barrier",
+      "type": "memory_model_concept",
+      "name": "Memory barrier / fence",
+      "description": "Instruction or construct constraining the ordering or visibility of memory operations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "interrupt_handler",
+      "type": "runtime_concept",
+      "name": "Interrupt handler",
+      "description": "Routine entered due to an interrupt or exception under platform-specific rules.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "exception_trap",
+      "type": "control_flow_construct",
+      "name": "Trap / exception instruction",
+      "description": "Instruction or event that transfers control to an exception, fault, or trap handler.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "dir_text",
+      "type": "assembler_directive",
+      "name": "Code section directive",
+      "description": "Selects or declares a section intended for executable code.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".text"
+        ]
+      }
+    },
+    {
+      "id": "dir_data",
+      "type": "assembler_directive",
+      "name": "Initialized data section directive",
+      "description": "Selects or declares a section for initialized data.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".data"
+        ]
+      }
+    },
+    {
+      "id": "dir_bss",
+      "type": "assembler_directive",
+      "name": "Zero-initialized data section directive",
+      "description": "Selects or declares a section for uninitialized or zero-initialized storage.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".bss"
+        ]
+      }
+    },
+    {
+      "id": "dir_rodata",
+      "type": "assembler_directive",
+      "name": "Read-only data section directive",
+      "description": "Selects or declares a section for constants.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".section .rodata"
+        ]
+      }
+    },
+    {
+      "id": "dir_global",
+      "type": "assembler_directive",
+      "name": "Global symbol directive",
+      "description": "Makes a symbol externally visible according to the assembler/object format.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".globl symbol"
+        ],
+        "other_syntax": [
+          "global symbol (NASM)"
+        ]
+      }
+    },
+    {
+      "id": "dir_extern",
+      "type": "assembler_directive",
+      "name": "External symbol directive",
+      "description": "Declares a symbol expected to be defined elsewhere.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".extern symbol"
+        ],
+        "other_syntax": [
+          "extern symbol (NASM)"
+        ]
+      }
+    },
+    {
+      "id": "dir_align",
+      "type": "assembler_directive",
+      "name": "Alignment directive",
+      "description": "Aligns the location counter or data/code placement according to assembler-specific semantics.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".align",
+          " .p2align",
+          " .balign"
+        ]
+      }
+    },
+    {
+      "id": "dir_byte",
+      "type": "assembler_directive",
+      "name": "Byte data directive",
+      "description": "Emits byte-sized data values.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".byte"
+        ],
+        "other_syntax": [
+          "db (NASM/MASM)"
+        ]
+      }
+    },
+    {
+      "id": "dir_word",
+      "type": "assembler_directive",
+      "name": "Word data directive",
+      "description": "Emits data values of an assembler-defined word width.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".word"
+        ],
+        "note": "The meaning of 'word' varies by assembler and target."
+      }
+    },
+    {
+      "id": "dir_long",
+      "type": "assembler_directive",
+      "name": "Long data directive",
+      "description": "Emits a target-defined long-width data value in GNU assembler syntax.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".long"
+        ]
+      }
+    },
+    {
+      "id": "dir_quad",
+      "type": "assembler_directive",
+      "name": "Quad data directive",
+      "description": "Emits a 64-bit data value in GNU assembler syntax on common targets.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".quad"
+        ]
+      }
+    },
+    {
+      "id": "dir_ascii",
+      "type": "assembler_directive",
+      "name": "String data directive",
+      "description": "Emits string bytes, with null termination behavior depending on directive.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".ascii",
+          ".asciz"
+        ]
+      }
+    },
+    {
+      "id": "dir_equ",
+      "type": "assembler_directive",
+      "name": "Symbol constant directive",
+      "description": "Defines a symbol as an expression value.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".equ",
+          ".set"
+        ]
+      }
+    },
+    {
+      "id": "dir_type",
+      "type": "assembler_directive",
+      "name": "Symbol type directive",
+      "description": "Provides symbol-type metadata in supported object formats.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".type symbol, @function"
+        ]
+      }
+    },
+    {
+      "id": "dir_size",
+      "type": "assembler_directive",
+      "name": "Symbol size directive",
+      "description": "Associates a size expression with a symbol in supported formats.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".size symbol, .-symbol"
+        ]
+      }
+    },
+    {
+      "id": "dir_cfi",
+      "type": "assembler_directive",
+      "name": "Call-frame information directives",
+      "description": "Emit unwind/debug metadata describing stack frames.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".cfi_startproc",
+          ".cfi_endproc",
+          ".cfi_def_cfa"
+        ]
+      }
+    },
+    {
+      "id": "dir_incbin",
+      "type": "assembler_directive",
+      "name": "Include binary file directive",
+      "description": "Copies bytes from a file into the output.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".incbin"
+        ]
+      }
+    },
+    {
+      "id": "dir_include",
+      "type": "assembler_directive",
+      "name": "Include source directive",
+      "description": "Includes another assembler source file.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".include"
+        ],
+        "other_syntax": [
+          "%include (NASM)"
+        ]
+      }
+    },
+    {
+      "id": "dir_macro",
+      "type": "assembler_directive",
+      "name": "Macro definition directive",
+      "description": "Defines an assembler macro using syntax specific to the assembler.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".macro",
+          ".endm"
+        ],
+        "nasm_examples": [
+          "%macro",
+          "%endmacro"
+        ]
+      }
+    },
+    {
+      "id": "dir_conditional",
+      "type": "assembler_directive",
+      "name": "Conditional assembly directive",
+      "description": "Includes or excludes source blocks according to assembly-time conditions.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".if",
+          ".ifdef",
+          ".ifndef",
+          ".else",
+          ".endif"
+        ],
+        "nasm_examples": [
+          "%if",
+          "%ifdef",
+          "%endif"
+        ]
+      }
+    },
+    {
+      "id": "dir_arch",
+      "type": "assembler_directive",
+      "name": "Architecture selection directive",
+      "description": "Selects an ISA extension, architecture, or instruction mode where supported.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".arch",
+          ".arch_extension",
+          ".code32",
+          ".code64"
+        ]
+      }
+    },
+    {
+      "id": "dir_syntax",
+      "type": "assembler_directive",
+      "name": "Syntax selection directive",
+      "description": "Selects a syntax dialect for supported target assemblers.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".intel_syntax",
+          ".att_syntax"
+        ]
+      }
+    },
+    {
+      "id": "dir_section",
+      "type": "assembler_directive",
+      "name": "Section selection directive",
+      "description": "Selects or creates an output section.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".section"
+        ]
+      }
+    },
+    {
+      "id": "dir_comm",
+      "type": "assembler_directive",
+      "name": "Common symbol directive",
+      "description": "Requests storage for a common symbol according to assembler/linker conventions.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".comm",
+          ".lcomm"
+        ]
+      }
+    },
+    {
+      "id": "dir_file",
+      "type": "assembler_directive",
+      "name": "File metadata directive",
+      "description": "Records source-file or compilation metadata.",
+      "aliases": [],
+      "properties": {
+        "gnu_as_examples": [
+          ".file",
+          ".ident"
+        ]
+      }
+    },
+    {
+      "id": "dir_org",
+      "type": "assembler_directive",
+      "name": "Origin/location directive",
+      "description": "Changes or specifies an output location/origin where supported; behavior varies by assembler and output mode.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "org (NASM/FASM)"
+        ]
+      }
+    },
+    {
+      "id": "dir_times",
+      "type": "assembler_directive",
+      "name": "Repeated data directive",
+      "description": "Emits repeated data or reserves repeated space in assemblers that support it.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "times (NASM)"
+        ]
+      }
+    },
+    {
+      "id": "dir_end",
+      "type": "assembler_directive",
+      "name": "End directive",
+      "description": "Assembler-specific marker for end of source or module.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "END (MASM)"
+        ]
+      }
+    },
+    {
+      "id": "isa_x86",
+      "type": "instruction_set",
+      "name": "x86 ISA",
+      "description": "CISC instruction set used by IA-32 processors.",
+      "aliases": [],
+      "properties": {
+        "register_family": "EAX/EBX/...",
+        "syntax_dialects": [
+          "Intel",
+          "AT&T"
+        ],
+        "common_modes": [
+          "16-bit",
+          "32-bit"
+        ]
+      }
+    },
+    {
+      "id": "isa_x86_64",
+      "type": "instruction_set",
+      "name": "x86-64 ISA",
+      "description": "64-bit extension of x86 with additional registers and addressing capabilities.",
+      "aliases": [],
+      "properties": {
+        "register_family": "RAX/RBX/RIP/...",
+        "syntax_dialects": [
+          "Intel",
+          "AT&T"
+        ]
+      }
+    },
+    {
+      "id": "isa_arm32",
+      "type": "instruction_set",
+      "name": "Arm 32-bit ISA",
+      "description": "32-bit Arm instruction-set family with ARM and Thumb encodings depending on target.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_aarch64",
+      "type": "instruction_set",
+      "name": "AArch64 ISA",
+      "description": "64-bit Arm instruction set.",
+      "aliases": [],
+      "properties": {
+        "register_family": "X0-X30, SP, PC (architectural behavior varies)"
+      }
+    },
+    {
+      "id": "isa_riscv",
+      "type": "instruction_set",
+      "name": "RISC-V ISA",
+      "description": "Open ISA family with base instruction sets and optional extensions.",
+      "aliases": [],
+      "properties": {
+        "base_isa_examples": [
+          "RV32I",
+          "RV64I"
+        ],
+        "extensions": [
+          "M",
+          "A",
+          "F",
+          "D",
+          "C",
+          "V"
+        ]
+      }
+    },
+    {
+      "id": "isa_power",
+      "type": "instruction_set",
+      "name": "Power ISA",
+      "description": "Instruction set used by PowerPC/Power systems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_avr",
+      "type": "instruction_set",
+      "name": "AVR ISA",
+      "description": "Instruction set for AVR microcontrollers.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_mips",
+      "type": "instruction_set",
+      "name": "MIPS ISA",
+      "description": "RISC instruction-set family.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_s390",
+      "type": "instruction_set",
+      "name": "IBM z/Architecture ISA",
+      "description": "Instruction set for IBM mainframe systems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_nvptx",
+      "type": "instruction_set",
+      "name": "NVIDIA PTX ISA",
+      "description": "Virtual instruction set for NVIDIA GPU programming toolchains.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_wasm",
+      "type": "instruction_set",
+      "name": "WebAssembly instruction set",
+      "description": "Portable stack-machine instruction set commonly produced by compilers rather than conventional native assemblers.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_ebpf",
+      "type": "instruction_set",
+      "name": "eBPF instruction set",
+      "description": "Verified bytecode instruction set used in Linux kernel and related environments.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_6502",
+      "type": "instruction_set",
+      "name": "MOS 6502 ISA",
+      "description": "8-bit instruction set used in classic and embedded systems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_z80",
+      "type": "instruction_set",
+      "name": "Zilog Z80 ISA",
+      "description": "8-bit instruction set used in embedded and legacy systems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "isa_m68k",
+      "type": "instruction_set",
+      "name": "Motorola 68000 ISA",
+      "description": "Instruction set for the 68000 processor family.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gnu_as",
+      "type": "assembler_implementation",
+      "name": "GNU assembler (GNU as)",
+      "description": "Assembler distributed with GNU Binutils, commonly invoked as as and used in GCC toolchains.",
+      "aliases": [],
+      "properties": {
+        "syntax": "target-dependent GNU as syntax",
+        "object_formats": [
+          "ELF",
+          "COFF",
+          "others depending on target"
+        ],
+        "documentation": "https://sourceware.org/binutils/docs/as/"
+      }
+    },
+    {
+      "id": "nasm",
+      "type": "assembler_implementation",
+      "name": "NASM",
+      "description": "Netwide Assembler, commonly used for x86 and x86-64 with Intel-like syntax.",
+      "aliases": [],
+      "properties": {
+        "syntax": "Intel-like",
+        "output_formats": [
+          "ELF",
+          "COFF",
+          "Mach-O",
+          "flat binary, depending on build"
+        ]
+      }
+    },
+    {
+      "id": "yasm",
+      "type": "assembler_implementation",
+      "name": "Yasm",
+      "description": "Assembler designed for x86 and x86-64, supporting NASM-like syntax and multiple output formats.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "masm",
+      "type": "assembler_implementation",
+      "name": "Microsoft Macro Assembler (MASM)",
+      "description": "Microsoft assembler commonly used for x86/x64 Windows development.",
+      "aliases": [],
+      "properties": {
+        "syntax": "Intel-like"
+      }
+    },
+    {
+      "id": "fasm",
+      "type": "assembler_implementation",
+      "name": "Flat Assembler (FASM)",
+      "description": "Assembler known for direct binary and executable output workflows.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "llvm_mc",
+      "type": "assembler_implementation",
+      "name": "LLVM MC / integrated assembler",
+      "description": "LLVM machine-code framework and integrated assembler used by Clang and other LLVM tools.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "armasm",
+      "type": "assembler_implementation",
+      "name": "Arm assembler toolchain",
+      "description": "Arm assembler implementations and syntax used by Arm development toolchains; exact syntax varies by tool/version.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "riscv_gnu_toolchain",
+      "type": "toolchain",
+      "name": "RISC-V GNU toolchain",
+      "description": "Cross-toolchain including assembler, linker, compiler, and binary utilities for RISC-V.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "binutils",
+      "type": "tool_suite",
+      "name": "GNU Binutils",
+      "description": "Tool suite containing GNU assembler, linker, and binary inspection utilities.",
+      "aliases": [],
+      "properties": {
+        "tools": [
+          "as",
+          "ld",
+          "objdump",
+          "readelf",
+          "nm",
+          "objcopy",
+          "ar",
+          "ranlib",
+          "size",
+          "strip"
+        ]
+      }
+    },
+    {
+      "id": "objdump",
+      "type": "binary_inspection_tool",
+      "name": "objdump",
+      "description": "Displays object-file information and disassembles machine code.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "readelf",
+      "type": "binary_inspection_tool",
+      "name": "readelf",
+      "description": "Displays ELF file headers, sections, symbols, and relocation information.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "nm",
+      "type": "binary_inspection_tool",
+      "name": "nm",
+      "description": "Lists symbols from object files and executables.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "objcopy",
+      "type": "binary_conversion_tool",
+      "name": "objcopy",
+      "description": "Copies and transforms object files, including conversion to raw binary in supported workflows.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gdb",
+      "type": "debugger",
+      "name": "GNU Debugger (GDB)",
+      "description": "Debugger that can inspect registers, memory, symbols, and assembly instructions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "perf",
+      "type": "profiler",
+      "name": "Linux perf",
+      "description": "Linux performance analysis tool that can sample execution and annotate machine instructions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "compiler_explorer",
+      "type": "online_tool",
+      "name": "Compiler Explorer",
+      "description": "Online tool for exploring compiler-generated assembly; availability and supported compilers vary.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "make",
+      "type": "build_tool",
+      "name": "GNU Make",
+      "description": "Build automation tool commonly used to invoke assemblers and linkers.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "cmake",
+      "type": "build_tool",
+      "name": "CMake",
+      "description": "Build-system generator that can configure assembly and mixed-language projects.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "qemu",
+      "type": "emulator",
+      "name": "QEMU",
+      "description": "Machine emulator and virtualizer useful for running code built for supported target architectures.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gdb_remote",
+      "type": "debug_protocol",
+      "name": "GDB Remote Serial Protocol",
+      "description": "Protocol used by GDB to debug remote targets, including embedded hardware.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "dwarf",
+      "type": "debug_format",
+      "name": "DWARF",
+      "description": "Debugging information format used by many ELF toolchains.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "unwind_info",
+      "type": "binary_metadata",
+      "name": "Unwind metadata",
+      "description": "Metadata enabling stack unwinding, exceptions, profilers, or debuggers depending on platform.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "security_mitigations",
+      "type": "security_concept",
+      "name": "Binary security mitigations",
+      "description": "Compiler/assembler/linker/platform mechanisms such as NX, PIE, RELRO, stack canaries, and control-flow protection.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "pie",
+      "type": "binary_security_feature",
+      "name": "Position-independent executable (PIE)",
+      "description": "Executable built to support relocation to varying virtual addresses where platform/toolchain support exists.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "pic",
+      "type": "code_generation_feature",
+      "name": "Position-independent code (PIC)",
+      "description": "Code generated to execute correctly when loaded at varying addresses, often used in shared libraries.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "stack_canary",
+      "type": "binary_security_feature",
+      "name": "Stack canary",
+      "description": "Runtime check intended to detect certain stack-buffer overwrite patterns.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "nx_bit",
+      "type": "hardware_security_feature",
+      "name": "NX / execute-disable protection",
+      "description": "Hardware/OS mechanism marking memory regions non-executable.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "relro",
+      "type": "binary_security_feature",
+      "name": "RELRO",
+      "description": "ELF hardening technique that makes selected relocation-related data read-only after relocation.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "control_flow_integrity",
+      "type": "binary_security_feature",
+      "name": "Control-flow integrity",
+      "description": "Mechanisms that constrain indirect control transfers to reduce exploitation opportunities.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "cfi_directives",
+      "type": "assembler_feature",
+      "name": "Call-frame information emission",
+      "description": "Assembler directives describing frame layout and unwind rules.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "inline_asm_constraints",
+      "type": "compiler_concept",
+      "name": "Inline assembly constraints",
+      "description": "Compiler annotations specifying operand forms, outputs, inputs, and clobbered state for embedded assembly.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "assemble_phase",
+      "type": "build_phase",
+      "name": "Assembly phase",
+      "description": "Parses assembly source, resolves local expressions/symbols, encodes instructions, and emits object or binary output.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "compile_phase",
+      "type": "build_phase",
+      "name": "Compilation phase",
+      "description": "Translates a higher-level language into assembly or object code.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "link_phase",
+      "type": "build_phase",
+      "name": "Link phase",
+      "description": "Resolves cross-object symbols, selects libraries, lays out sections, and applies relocations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "load_phase",
+      "type": "build_phase",
+      "name": "Load phase",
+      "description": "Maps an executable into memory and transfers control to its entry point.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "cross_assembly",
+      "type": "build_mode",
+      "name": "Cross-assembly",
+      "description": "Assembly performed for a target ISA different from the host CPU or platform.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "embedded_build",
+      "type": "build_mode",
+      "name": "Embedded / bare-metal build",
+      "description": "Build process for firmware with target-specific startup code, linker script, memory layout, and runtime assumptions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "mixed_language_build",
+      "type": "build_mode",
+      "name": "Mixed-language build",
+      "description": "Build combining assembly and higher-level language objects with compatible ABI and symbol conventions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "function_call",
+      "type": "execution_concept",
+      "name": "Function call sequence",
+      "description": "Coordinated steps involving argument passing, return address, stack/frame handling, register preservation, and return.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "interrupt_vector_table",
+      "type": "firmware_concept",
+      "name": "Interrupt vector table",
+      "description": "Target-specific table mapping interrupt or exception numbers to handler addresses.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "memory_map",
+      "type": "firmware_concept",
+      "name": "Memory map",
+      "description": "Definition of address ranges for flash, RAM, peripherals, and reserved regions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "linker_entry_symbol",
+      "type": "linker_concept",
+      "name": "Entry-point symbol",
+      "description": "Symbol chosen as program entry by linker configuration, OS format, or firmware startup convention.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "endianness_test",
+      "type": "usage_example",
+      "name": "Inspect endianness-sensitive data",
+      "description": "Example concept for reasoning about how multi-byte values are stored and loaded.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "example_hello_x86_64",
+      "type": "usage_example",
+      "name": "Minimal x86-64 Linux assembly example",
+      "description": "Illustrative GNU as Intel-syntax source using Linux system-call conventions; target-specific and not a portable ABI.",
+      "aliases": [],
+      "properties": {
+        "source": " .intel_syntax noprefix\\n.global _start\\n.section .text\\n_start:\\n  mov eax, 60\\n  xor edi, edi\\n  syscall\\n",
+        "build": "as --64 -o exit.o exit.s && ld -o exit exit.o",
+        "target": "x86-64 Linux",
+        "note": "Exits with status 0; it does not print text."
+      }
+    },
+    {
+      "id": "example_nasm_hello",
+      "type": "usage_example",
+      "name": "NASM flat-binary skeleton",
+      "description": "Illustrative NASM syntax skeleton for a flat binary, requiring a specific load address and execution environment.",
+      "aliases": [],
+      "properties": {
+        "source": "bits 16\\norg 0x7C00\\nstart:\\n  cli\\n  hlt\\n",
+        "note": "Not a complete boot sector; boot protocol, signature, memory setup, and hardware assumptions are omitted."
+      }
+    },
+    {
+      "id": "example_data_sections",
+      "type": "usage_example",
+      "name": "Define code and data sections",
+      "description": "Illustrates using section and data directives in GNU as.",
+      "aliases": [],
+      "properties": {
+        "source": ".section .rodata\\nmessage:\\n  .asciz \"hello\"\\n.section .data\\nvalue:\\n  .long 42\\n.section .text\\n"
+      }
+    },
+    {
+      "id": "example_function",
+      "type": "usage_example",
+      "name": "Function symbol and metadata",
+      "description": "Illustrates function labels, global visibility, and ELF symbol size metadata.",
+      "aliases": [],
+      "properties": {
+        "source": ".text\\n.globl add_one\\n.type add_one, @function\\nadd_one:\\n  lea 1(%rdi), %eax\\n  ret\\n.size add_one, .-add_one",
+        "target": "x86-64 System V ABI",
+        "note": "Illustrative GNU as AT&T syntax; argument and return conventions follow the stated ABI."
+      }
+    },
+    {
+      "id": "example_inline_c",
+      "type": "usage_example",
+      "name": "Inline assembly in C",
+      "description": "Illustrates a compiler extended-assembly statement with explicit output, input, and clobber constraints.",
+      "aliases": [],
+      "properties": {
+        "source": "unsigned long out;\\n__asm__ volatile (\"\" : \"=r\"(out) : : \"memory\");",
+        "note": "Illustrative constraint syntax only; an empty asm with a memory clobber is a compiler barrier in GCC/Clang contexts, not a hardware fence."
+      }
+    },
+    {
+      "id": "example_disassemble",
+      "type": "usage_example",
+      "name": "Disassemble an ELF executable",
+      "description": "Inspect instructions and symbol labels with objdump.",
+      "aliases": [],
+      "properties": {
+        "command": "objdump -d -Mintel ./program",
+        "tool": "objdump"
+      }
+    },
+    {
+      "id": "example_symbols",
+      "type": "usage_example",
+      "name": "Inspect object symbols",
+      "description": "List symbols in an object file.",
+      "aliases": [],
+      "properties": {
+        "command": "nm -C module.o",
+        "tool": "nm"
+      }
+    },
+    {
+      "id": "example_sections",
+      "type": "usage_example",
+      "name": "Inspect ELF sections",
+      "description": "Read ELF headers and section metadata.",
+      "aliases": [],
+      "properties": {
+        "command": "readelf -h -S program",
+        "tool": "readelf"
+      }
+    },
+    {
+      "id": "example_object_to_binary",
+      "type": "usage_example",
+      "name": "Convert object to raw binary",
+      "description": "Convert supported object output to a flat binary, typically for firmware or ROM images.",
+      "aliases": [],
+      "properties": {
+        "command": "objcopy -O binary firmware.elf firmware.bin",
+        "tool": "objcopy",
+        "note": "Output omits object metadata and follows objcopy/target semantics."
+      }
+    },
+    {
+      "id": "example_nasm_elf",
+      "type": "usage_example",
+      "name": "Assemble NASM to ELF64 object",
+      "description": "Assemble x86-64 source into an ELF relocatable object.",
+      "aliases": [],
+      "properties": {
+        "command": "nasm -f elf64 source.asm -o source.o && ld -o program source.o",
+        "tool": "nasm",
+        "target": "x86-64 ELF",
+        "note": "A real program needs a valid entry point and suitable runtime/syscall or library integration."
+      }
+    },
+    {
+      "id": "example_gnu_as",
+      "type": "usage_example",
+      "name": "Assemble with GNU as",
+      "description": "Assemble x86-64 source into an ELF object.",
+      "aliases": [],
+      "properties": {
+        "command": "as --64 source.s -o source.o",
+        "tool": "GNU as",
+        "note": "Target options and syntax vary by architecture."
+      }
+    },
+    {
+      "id": "example_gcc_assembly",
+      "type": "usage_example",
+      "name": "Generate assembly from C",
+      "description": "Use GCC to emit assembly for inspection.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -S -O2 -fverbose-asm program.c -o program.s",
+        "tool": "GCC",
+        "note": "Compiler-generated assembly is target-, compiler-version-, and flag-dependent."
+      }
+    },
+    {
+      "id": "example_mixed_build",
+      "type": "usage_example",
+      "name": "Link assembly with C",
+      "description": "Compile C and assemble a compatible assembly module, then link the objects.",
+      "aliases": [],
+      "properties": {
+        "commands": [
+          "gcc -c main.c -o main.o",
+          "as module.s -o module.o",
+          "gcc main.o module.o -o app"
+        ],
+        "note": "Symbols, calling convention, stack alignment, object format, and ABI must agree."
+      }
+    },
+    {
+      "id": "example_arm_cross",
+      "type": "usage_example",
+      "name": "Cross-assemble for AArch64",
+      "description": "Use a target-prefixed assembler and linker for an AArch64 target.",
+      "aliases": [],
+      "properties": {
+        "command": "aarch64-linux-gnu-as source.s -o source.o",
+        "note": "The target toolchain and syntax must match the intended AArch64 environment."
+      }
+    },
+    {
+      "id": "example_debug_gdb",
+      "type": "usage_example",
+      "name": "Debug assembly with GDB",
+      "description": "Start a debugger and inspect instructions and registers.",
+      "aliases": [],
+      "properties": {
+        "commands": [
+          "gdb ./program",
+          "(gdb) break _start",
+          "(gdb) run",
+          "(gdb) disassemble /r _start",
+          "(gdb) info registers"
+        ]
+      }
+    },
+    {
+      "id": "example_profile_perf",
+      "type": "usage_example",
+      "name": "Profile machine instructions",
+      "description": "Use Linux perf to sample and annotate a program.",
+      "aliases": [],
+      "properties": {
+        "command": "perf record ./program && perf report",
+        "note": "Permissions, kernel configuration, and hardware support may affect availability."
+      }
+    },
+    {
+      "id": "example_linker_script",
+      "type": "usage_example",
+      "name": "Use a linker script",
+      "description": "Pass a custom linker script to a linker for embedded memory layout.",
+      "aliases": [],
+      "properties": {
+        "command": "ld -T linker.ld startup.o main.o -o firmware.elf",
+        "note": "Memory regions and entry point must match the actual device and startup implementation."
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "assembly_language",
+      "predicate": "represented_by",
+      "target": "assembly_source",
+      "description": "Assembly language programs are commonly authored in assembly source files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "assembly_source",
+      "predicate": "processed_by",
+      "target": "assembler_program",
+      "description": "The assembler reads source and directives.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "assembler_program",
+      "predicate": "emits",
+      "target": "object_file",
+      "description": "Typical assemblers emit relocatable object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "assembler_program",
+      "predicate": "can_emit",
+      "target": "flat_binary",
+      "description": "Some assemblers can emit flat binary images directly.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "object_file",
+      "predicate": "contains",
+      "target": "machine_code",
+      "description": "Object files contain encoded instruction bytes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "object_file",
+      "predicate": "contains",
+      "target": "symbol_table",
+      "description": "Object files can contain symbol tables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "object_file",
+      "predicate": "contains",
+      "target": "relocation",
+      "description": "Object files can contain relocation records.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "object_file",
+      "predicate": "organized_into",
+      "target": "section",
+      "description": "Object files organize content into sections.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "object_file",
+      "predicate": "may_contain",
+      "target": "debug_info",
+      "description": "Object files may include debug information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "linker",
+      "predicate": "consumes",
+      "target": "object_file",
+      "description": "Linkers consume relocatable objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "linker",
+      "predicate": "resolves",
+      "target": "symbol",
+      "description": "Linkers resolve definitions and references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "linker",
+      "predicate": "applies",
+      "target": "relocation",
+      "description": "Linkers apply relocations when resolving addresses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "linker",
+      "predicate": "produces",
+      "target": "executable",
+      "description": "Linking produces an executable or library.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "loader",
+      "predicate": "loads",
+      "target": "executable",
+      "description": "Loaders map executable images for execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "loader",
+      "predicate": "uses",
+      "target": "object_format",
+      "description": "Loader behavior depends on the executable format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "cpu",
+      "predicate": "executes",
+      "target": "machine_code",
+      "description": "A compatible CPU executes the encoded instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "isa",
+      "predicate": "defines",
+      "target": "mnemonic",
+      "description": "ISA operations are represented by architecture-specific mnemonic names in assembly syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "isa",
+      "predicate": "defines",
+      "target": "instruction_encoding",
+      "description": "The ISA specifies instruction encodings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "isa",
+      "predicate": "implemented_by",
+      "target": "cpu",
+      "description": "A processor implements one or more ISAs or ISA extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "microarchitecture",
+      "predicate": "implements",
+      "target": "isa",
+      "description": "A microarchitecture implements the externally visible ISA.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "abi",
+      "predicate": "defines",
+      "target": "calling_convention",
+      "description": "ABI specifications define calling conventions among other binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "object_format",
+      "predicate": "defines",
+      "target": "section",
+      "description": "Object formats define section structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "object_format",
+      "predicate": "defines",
+      "target": "symbol_table",
+      "description": "Object formats define symbol-table representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "object_format",
+      "predicate": "supports",
+      "target": "relocation",
+      "description": "Object formats define relocation types and representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "elf",
+      "predicate": "instance_of",
+      "target": "object_format",
+      "description": "ELF is an object-file and executable format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "coff",
+      "predicate": "instance_of",
+      "target": "object_format",
+      "description": "COFF is an object format family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "pe_coff",
+      "predicate": "instance_of",
+      "target": "object_format",
+      "description": "PE/COFF is used by Windows toolchains.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "macho",
+      "predicate": "instance_of",
+      "target": "object_format",
+      "description": "Mach-O is used by Apple platforms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "disassembler",
+      "predicate": "produces",
+      "target": "disassembly",
+      "description": "Disassemblers produce a textual instruction listing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "disassembler",
+      "predicate": "analyzes",
+      "target": "machine_code",
+      "description": "Disassemblers decode instruction bytes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "compiler",
+      "predicate": "can_emit",
+      "target": "assembly_source",
+      "description": "Compilers can emit assembly as an intermediate artifact.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "integrated_assembler",
+      "predicate": "implements",
+      "target": "assembler_program",
+      "description": "An integrated assembler implements assembler functionality within a toolchain.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "macro_assembler",
+      "predicate": "extends",
+      "target": "assembler_program",
+      "description": "Macro assemblers add macro expansion facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "linker_script",
+      "predicate": "configures",
+      "target": "linker",
+      "description": "A linker script can configure memory and section layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "startup_code",
+      "predicate": "initializes",
+      "target": "runtime_library",
+      "description": "Startup code establishes state needed by the runtime where applicable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "firmware",
+      "predicate": "may_run_in",
+      "target": "bare_metal",
+      "description": "Firmware commonly runs without a general-purpose operating system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "bare_metal",
+      "predicate": "requires",
+      "target": "memory_map",
+      "description": "Bare-metal builds must respect target memory layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "source_level_debugger",
+      "predicate": "uses",
+      "target": "debug_info",
+      "description": "Debuggers use debug metadata for source-level inspection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "profiling_tool",
+      "predicate": "analyzes",
+      "target": "machine_code",
+      "description": "Profilers may attribute samples to machine instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "assembler_listing",
+      "predicate": "documents",
+      "target": "assembly_source",
+      "description": "Listings correlate source lines and output addresses/bytes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "flat_binary",
+      "predicate": "may_be_loaded_by",
+      "target": "loader",
+      "description": "A flat binary needs an external loader or a defined execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_text",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_data",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_bss",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_rodata",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_global",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_extern",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_align",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_byte",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_word",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_long",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_quad",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_ascii",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_equ",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_type",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_size",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_cfi",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_incbin",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_include",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_macro",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_conditional",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_arch",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_syntax",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_section",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_comm",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_file",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_org",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_times",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "assembler_program",
+      "predicate": "supports_directive",
+      "target": "dir_end",
+      "description": "Directive support and exact syntax depend on assembler, target, and output format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "dir_text",
+      "predicate": "selects",
+      "target": "section",
+      "description": "The GNU as .text directive selects a code section.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "dir_data",
+      "predicate": "selects",
+      "target": "section",
+      "description": "The GNU as .data directive selects initialized data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "dir_bss",
+      "predicate": "selects",
+      "target": "section",
+      "description": "The GNU as .bss directive selects zero-initialized storage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "dir_rodata",
+      "predicate": "selects",
+      "target": "section",
+      "description": "A read-only data section stores constants.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "dir_global",
+      "predicate": "changes_visibility_of",
+      "target": "global_symbol",
+      "description": "Global directives expose symbols.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "dir_extern",
+      "predicate": "declares",
+      "target": "external_symbol",
+      "description": "External directives declare symbols defined elsewhere.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "dir_align",
+      "predicate": "configures",
+      "target": "alignment",
+      "description": "Alignment directives adjust location or placement.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "dir_byte",
+      "predicate": "emits",
+      "target": "data_width",
+      "description": "Byte directives emit byte-sized values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "dir_word",
+      "predicate": "emits",
+      "target": "data_width",
+      "description": "Word directives emit assembler-defined word-sized values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "dir_long",
+      "predicate": "emits",
+      "target": "data_width",
+      "description": "Long directives emit target-defined long-width values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "dir_quad",
+      "predicate": "emits",
+      "target": "data_width",
+      "description": "Quad directives commonly emit 64-bit values in GNU as.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "dir_ascii",
+      "predicate": "emits",
+      "target": "section",
+      "description": "String directives emit bytes into the current section.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "dir_equ",
+      "predicate": "defines",
+      "target": "symbol",
+      "description": "Equate directives define symbol constants.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "dir_type",
+      "predicate": "annotates",
+      "target": "symbol",
+      "description": "Symbol type directives annotate symbols in supported formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "dir_size",
+      "predicate": "annotates",
+      "target": "symbol",
+      "description": "Symbol size directives associate sizes with symbols.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "dir_cfi",
+      "predicate": "emits",
+      "target": "unwind_info",
+      "description": "CFI directives describe call frames and unwinding.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "dir_incbin",
+      "predicate": "imports_bytes_from",
+      "target": "assembly_source",
+      "description": "Include-binary directives copy external file bytes into output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "dir_include",
+      "predicate": "includes",
+      "target": "assembly_source",
+      "description": "Source include directives incorporate another file.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "dir_macro",
+      "predicate": "defines",
+      "target": "macro_assembler",
+      "description": "Macro directives define reusable source expansions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "dir_conditional",
+      "predicate": "controls",
+      "target": "assembler_program",
+      "description": "Conditional directives select source blocks at assembly time.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "dir_arch",
+      "predicate": "configures",
+      "target": "isa",
+      "description": "Architecture directives select target modes or extensions where supported.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "dir_syntax",
+      "predicate": "selects",
+      "target": "mnemonic",
+      "description": "Syntax directives select an instruction syntax dialect.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "dir_section",
+      "predicate": "selects",
+      "target": "section",
+      "description": "Section directives change the current output section.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "dir_comm",
+      "predicate": "declares",
+      "target": "symbol",
+      "description": "Common directives request symbol storage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "dir_org",
+      "predicate": "configures",
+      "target": "flat_binary",
+      "description": "Origin directives may set location assumptions for flat binary output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "dir_times",
+      "predicate": "emits",
+      "target": "machine_code",
+      "description": "Repeated-data directives can emit repeated bytes or reserve space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "gnu_as",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "nasm",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "yasm",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "masm",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "fasm",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "llvm_mc",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "armasm",
+      "predicate": "is_implementation_of",
+      "target": "assembler_program",
+      "description": "This tool implements assembly for a supported subset of architectures and formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_x86",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_x86_64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_arm32",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_aarch64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_riscv",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0157",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_power",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0158",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_avr",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0159",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_mips",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0160",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_s390",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0161",
+      "source": "gnu_as",
+      "predicate": "supports_isa",
+      "target": "isa_m68k",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0162",
+      "source": "nasm",
+      "predicate": "supports_isa",
+      "target": "isa_x86",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0163",
+      "source": "nasm",
+      "predicate": "supports_isa",
+      "target": "isa_x86_64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0164",
+      "source": "yasm",
+      "predicate": "supports_isa",
+      "target": "isa_x86",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0165",
+      "source": "yasm",
+      "predicate": "supports_isa",
+      "target": "isa_x86_64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0166",
+      "source": "masm",
+      "predicate": "supports_isa",
+      "target": "isa_x86",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0167",
+      "source": "masm",
+      "predicate": "supports_isa",
+      "target": "isa_x86_64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0168",
+      "source": "armasm",
+      "predicate": "supports_isa",
+      "target": "isa_arm32",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0169",
+      "source": "armasm",
+      "predicate": "supports_isa",
+      "target": "isa_aarch64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0170",
+      "source": "llvm_mc",
+      "predicate": "supports_isa",
+      "target": "isa_x86",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0171",
+      "source": "llvm_mc",
+      "predicate": "supports_isa",
+      "target": "isa_x86_64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0172",
+      "source": "llvm_mc",
+      "predicate": "supports_isa",
+      "target": "isa_aarch64",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0173",
+      "source": "llvm_mc",
+      "predicate": "supports_isa",
+      "target": "isa_riscv",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0174",
+      "source": "llvm_mc",
+      "predicate": "supports_isa",
+      "target": "isa_wasm",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0175",
+      "source": "llvm_mc",
+      "predicate": "supports_isa",
+      "target": "isa_ebpf",
+      "description": "Supported targets depend on tool version and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0176",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_x86",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0177",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_x86_64",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0178",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_arm32",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0179",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_aarch64",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0180",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_riscv",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0181",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_power",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0182",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_avr",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0183",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_mips",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0184",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_s390",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0185",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_nvptx",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0186",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_wasm",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0187",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_ebpf",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0188",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_6502",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0189",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_z80",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0190",
+      "source": "assembly_language",
+      "predicate": "can_target_isa",
+      "target": "isa_m68k",
+      "description": "Assembly syntax and available instructions depend on the selected instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0191",
+      "source": "isa_x86",
+      "predicate": "has_syntax_dialect",
+      "target": "dir_syntax",
+      "description": "x86 assembly is commonly written in Intel or AT&T syntax dialects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0192",
+      "source": "isa_x86_64",
+      "predicate": "has_syntax_dialect",
+      "target": "dir_syntax",
+      "description": "x86-64 assembly is commonly written in Intel or AT&T syntax dialects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0193",
+      "source": "binutils",
+      "predicate": "contains",
+      "target": "gnu_as",
+      "description": "GNU Binutils includes GNU assembler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0194",
+      "source": "binutils",
+      "predicate": "contains",
+      "target": "linker",
+      "description": "GNU Binutils includes GNU ld.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0195",
+      "source": "binutils",
+      "predicate": "contains",
+      "target": "objdump",
+      "description": "GNU Binutils includes objdump.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0196",
+      "source": "binutils",
+      "predicate": "contains",
+      "target": "readelf",
+      "description": "GNU Binutils includes readelf.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0197",
+      "source": "binutils",
+      "predicate": "contains",
+      "target": "nm",
+      "description": "GNU Binutils includes nm.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0198",
+      "source": "binutils",
+      "predicate": "contains",
+      "target": "objcopy",
+      "description": "GNU Binutils includes objcopy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0199",
+      "source": "objdump",
+      "predicate": "produces",
+      "target": "disassembly",
+      "description": "objdump can disassemble executable and object code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0200",
+      "source": "readelf",
+      "predicate": "inspects",
+      "target": "elf",
+      "description": "readelf inspects ELF headers and sections.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0201",
+      "source": "nm",
+      "predicate": "inspects",
+      "target": "symbol_table",
+      "description": "nm lists object-file symbols.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0202",
+      "source": "objcopy",
+      "predicate": "transforms",
+      "target": "object_file",
+      "description": "objcopy can transform object files and extract binary images.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0203",
+      "source": "gdb",
+      "predicate": "uses",
+      "target": "debug_info",
+      "description": "GDB can use compatible debug information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0204",
+      "source": "gdb",
+      "predicate": "inspects",
+      "target": "register",
+      "description": "GDB can inspect register state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0205",
+      "source": "gdb",
+      "predicate": "inspects",
+      "target": "machine_code",
+      "description": "GDB can display and step through instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0206",
+      "source": "perf",
+      "predicate": "profiles",
+      "target": "machine_code",
+      "description": "perf can sample and annotate machine instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0207",
+      "source": "compiler_explorer",
+      "predicate": "visualizes",
+      "target": "assembly_source",
+      "description": "Compiler Explorer presents compiler output for source code and selected toolchains.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0208",
+      "source": "qemu",
+      "predicate": "emulates",
+      "target": "isa",
+      "description": "QEMU emulates supported target instruction sets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0209",
+      "source": "gdb_remote",
+      "predicate": "connects",
+      "target": "source_level_debugger",
+      "description": "The remote protocol lets GDB communicate with a target stub.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0210",
+      "source": "dwarf",
+      "predicate": "encodes",
+      "target": "debug_info",
+      "description": "DWARF is a format for debug information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0211",
+      "source": "cfi_directives",
+      "predicate": "emits",
+      "target": "unwind_info",
+      "description": "CFI directives emit unwind metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0212",
+      "source": "security_mitigations",
+      "predicate": "includes",
+      "target": "pie",
+      "description": "PIE is one binary hardening mechanism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0213",
+      "source": "security_mitigations",
+      "predicate": "includes",
+      "target": "pic",
+      "description": "PIC supports position-independent code generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0214",
+      "source": "security_mitigations",
+      "predicate": "includes",
+      "target": "stack_canary",
+      "description": "Stack canaries detect some stack corruption.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0215",
+      "source": "security_mitigations",
+      "predicate": "includes",
+      "target": "nx_bit",
+      "description": "NX is provided by hardware and OS support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0216",
+      "source": "security_mitigations",
+      "predicate": "includes",
+      "target": "relro",
+      "description": "RELRO protects selected ELF relocation-related data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0217",
+      "source": "security_mitigations",
+      "predicate": "includes",
+      "target": "control_flow_integrity",
+      "description": "CFI mechanisms constrain control transfers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0218",
+      "source": "pie",
+      "predicate": "depends_on",
+      "target": "pic",
+      "description": "PIE generally requires position-independent code generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0219",
+      "source": "stack_canary",
+      "predicate": "requires_support_from",
+      "target": "compiler",
+      "description": "Stack canaries typically require compiler instrumentation and runtime support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0220",
+      "source": "relro",
+      "predicate": "configured_by",
+      "target": "linker",
+      "description": "RELRO is configured through linker options and platform conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0221",
+      "source": "compile_phase",
+      "predicate": "may_produce",
+      "target": "assembly_source",
+      "description": "A compiler may emit assembly source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0222",
+      "source": "assemble_phase",
+      "predicate": "consumes",
+      "target": "assembly_source",
+      "description": "The assembler consumes assembly source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0223",
+      "source": "assemble_phase",
+      "predicate": "produces",
+      "target": "object_file",
+      "description": "The assembler commonly emits an object file.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0224",
+      "source": "link_phase",
+      "predicate": "consumes",
+      "target": "object_file",
+      "description": "The linker combines object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0225",
+      "source": "link_phase",
+      "predicate": "produces",
+      "target": "executable",
+      "description": "The link phase produces the final program image.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0226",
+      "source": "load_phase",
+      "predicate": "consumes",
+      "target": "executable",
+      "description": "The load phase maps an executable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0227",
+      "source": "cross_assembly",
+      "predicate": "uses",
+      "target": "assembler_program",
+      "description": "Cross-assembly uses an assembler configured for the target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0228",
+      "source": "embedded_build",
+      "predicate": "uses",
+      "target": "linker_script",
+      "description": "Embedded builds often define explicit memory layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0229",
+      "source": "embedded_build",
+      "predicate": "uses",
+      "target": "startup_code",
+      "description": "Embedded builds commonly provide startup code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0230",
+      "source": "embedded_build",
+      "predicate": "targets",
+      "target": "firmware",
+      "description": "Embedded build workflows produce firmware images.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0231",
+      "source": "mixed_language_build",
+      "predicate": "requires",
+      "target": "abi",
+      "description": "Mixed-language components must agree on ABI details.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0232",
+      "source": "function_call",
+      "predicate": "follows",
+      "target": "calling_convention",
+      "description": "Function calls follow calling-convention rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0233",
+      "source": "interrupt_vector_table",
+      "predicate": "references",
+      "target": "interrupt_handler",
+      "description": "Vector tables point to configured handlers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0234",
+      "source": "memory_map",
+      "predicate": "configures",
+      "target": "linker_script",
+      "description": "Linker scripts encode memory map placement.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0235",
+      "source": "linker_entry_symbol",
+      "predicate": "selects_entry_for",
+      "target": "executable",
+      "description": "Entry-point symbols identify where execution begins.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0236",
+      "source": "example_hello_x86_64",
+      "predicate": "demonstrates",
+      "target": "assembly_language",
+      "description": "The example demonstrates x86-64 assembly.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0237",
+      "source": "example_hello_x86_64",
+      "predicate": "uses",
+      "target": "gnu_as",
+      "description": "The example uses GNU as syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0238",
+      "source": "example_nasm_hello",
+      "predicate": "uses",
+      "target": "nasm",
+      "description": "The example uses NASM syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0239",
+      "source": "example_data_sections",
+      "predicate": "demonstrates",
+      "target": "section",
+      "description": "The example demonstrates section selection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0240",
+      "source": "example_function",
+      "predicate": "demonstrates",
+      "target": "procedure",
+      "description": "The example defines a callable function.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0241",
+      "source": "example_inline_c",
+      "predicate": "demonstrates",
+      "target": "inline_assembly",
+      "description": "The example illustrates inline assembly syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0242",
+      "source": "example_disassemble",
+      "predicate": "uses",
+      "target": "objdump",
+      "description": "The example inspects machine code with objdump.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0243",
+      "source": "example_symbols",
+      "predicate": "uses",
+      "target": "nm",
+      "description": "The example inspects symbols.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0244",
+      "source": "example_sections",
+      "predicate": "uses",
+      "target": "readelf",
+      "description": "The example inspects ELF structure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0245",
+      "source": "example_object_to_binary",
+      "predicate": "uses",
+      "target": "objcopy",
+      "description": "The example converts an object/executable artifact to raw binary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0246",
+      "source": "example_nasm_elf",
+      "predicate": "uses",
+      "target": "nasm",
+      "description": "The example assembles NASM source to ELF64.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0247",
+      "source": "example_gnu_as",
+      "predicate": "uses",
+      "target": "gnu_as",
+      "description": "The example assembles source using GNU as.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0248",
+      "source": "example_gcc_assembly",
+      "predicate": "uses",
+      "target": "compiler",
+      "description": "The example generates assembly using a compiler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0249",
+      "source": "example_mixed_build",
+      "predicate": "demonstrates",
+      "target": "mixed_language_build",
+      "description": "The example combines C and assembly objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0250",
+      "source": "example_arm_cross",
+      "predicate": "demonstrates",
+      "target": "cross_assembly",
+      "description": "The example uses a target-prefixed assembler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0251",
+      "source": "example_debug_gdb",
+      "predicate": "uses",
+      "target": "gdb",
+      "description": "The example debugs and inspects instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0252",
+      "source": "example_profile_perf",
+      "predicate": "uses",
+      "target": "perf",
+      "description": "The example profiles execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0253",
+      "source": "example_linker_script",
+      "predicate": "uses",
+      "target": "linker_script",
+      "description": "The example uses a custom linker script.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0254",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_x86",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0255",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_x86_64",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0256",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_arm32",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0257",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_aarch64",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0258",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_riscv",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0259",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_power",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0260",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_avr",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0261",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_mips",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0262",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_s390",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0263",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_nvptx",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0264",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_wasm",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0265",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_ebpf",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0266",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_6502",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0267",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_z80",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0268",
+      "source": "isa",
+      "predicate": "has_concrete_isa",
+      "target": "isa_m68k",
+      "description": "Concrete instruction-set families define instruction encodings and architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0269",
+      "source": "isa_x86_64",
+      "predicate": "extends",
+      "target": "isa_x86",
+      "description": "x86-64 extends the x86 architecture family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0270",
+      "source": "isa_aarch64",
+      "predicate": "belongs_to_family",
+      "target": "isa_arm32",
+      "description": "AArch64 and AArch32 belong to the Arm architecture family but have distinct execution states/ISAs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0271",
+      "source": "isa_riscv",
+      "predicate": "has_extension_family",
+      "target": "isa_riscv",
+      "description": "RISC-V specifications define a base ISA plus optional extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0272",
+      "source": "isa_nvptx",
+      "predicate": "targets_runtime_for",
+      "target": "cpu",
+      "description": "PTX is an intermediate virtual ISA lowered/executed through NVIDIA GPU tooling and hardware.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0273",
+      "source": "isa_ebpf",
+      "predicate": "verified_by",
+      "target": "operating_system",
+      "description": "eBPF programs are subject to verifier and runtime rules in supported systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0274",
+      "source": "isa_wasm",
+      "predicate": "executed_by",
+      "target": "loader",
+      "description": "WebAssembly code is executed by a WebAssembly runtime, not generally loaded as native CPU instructions.",
+      "properties": {}
+    }
+  ],
+  "taxonomy": {
+    "entity_types": [
+      "addressing_mode",
+      "analysis_artifact",
+      "architecture_concept",
+      "assembler_directive",
+      "assembler_feature",
+      "assembler_implementation",
+      "binary_artifact",
+      "binary_conversion_tool",
+      "binary_format",
+      "binary_inspection_tool",
+      "binary_metadata",
+      "binary_security_feature",
+      "build_artifact",
+      "build_mode",
+      "build_phase",
+      "build_tool",
+      "code_generation_feature",
+      "compiler_concept",
+      "configuration_artifact",
+      "control_flow_construct",
+      "debug_format",
+      "debug_protocol",
+      "debugger",
+      "emulator",
+      "execution_concept",
+      "execution_environment",
+      "firmware_concept",
+      "hardware_component",
+      "hardware_security_feature",
+      "instruction_set",
+      "isa_component",
+      "language_concept",
+      "language_construct",
+      "language_family",
+      "linker_concept",
+      "memory_model_concept",
+      "object_file_concept",
+      "online_tool",
+      "operand_kind",
+      "profiler",
+      "runtime_component",
+      "runtime_concept",
+      "security_concept",
+      "software_category",
+      "software_component",
+      "source_artifact",
+      "symbol_kind",
+      "syntax_element",
+      "tool_suite",
+      "toolchain",
+      "usage_example"
+    ],
+    "relationship_predicates": [
+      "analyzes",
+      "annotates",
+      "applies",
+      "belongs_to_family",
+      "can_emit",
+      "can_target_isa",
+      "changes_visibility_of",
+      "configured_by",
+      "configures",
+      "connects",
+      "consumes",
+      "contains",
+      "controls",
+      "declares",
+      "defines",
+      "demonstrates",
+      "depends_on",
+      "documents",
+      "emits",
+      "emulates",
+      "encodes",
+      "executed_by",
+      "executes",
+      "extends",
+      "follows",
+      "has_concrete_isa",
+      "has_extension_family",
+      "has_syntax_dialect",
+      "implemented_by",
+      "implements",
+      "imports_bytes_from",
+      "includes",
+      "initializes",
+      "inspects",
+      "instance_of",
+      "is_implementation_of",
+      "loads",
+      "may_be_loaded_by",
+      "may_contain",
+      "may_produce",
+      "may_run_in",
+      "organized_into",
+      "processed_by",
+      "produces",
+      "profiles",
+      "references",
+      "represented_by",
+      "requires",
+      "requires_support_from",
+      "resolves",
+      "selects",
+      "selects_entry_for",
+      "supports",
+      "supports_directive",
+      "supports_isa",
+      "targets",
+      "targets_runtime_for",
+      "transforms",
+      "uses",
+      "verified_by",
+      "visualizes"
+    ],
+    "domains": {
+      "foundations": [
+        "assembly_language",
+        "isa",
+        "cpu",
+        "microarchitecture",
+        "abi",
+        "calling_convention",
+        "machine_code"
+      ],
+      "syntax_and_operands": [
+        "instruction",
+        "mnemonic",
+        "operand",
+        "register",
+        "immediate",
+        "memory_operand",
+        "label",
+        "directive",
+        "expression",
+        "addressing_mode",
+        "branch"
+      ],
+      "assembler_directives": [
+        "dir_text",
+        "dir_data",
+        "dir_bss",
+        "dir_rodata",
+        "dir_global",
+        "dir_extern",
+        "dir_align",
+        "dir_byte",
+        "dir_word",
+        "dir_long",
+        "dir_quad",
+        "dir_ascii",
+        "dir_equ",
+        "dir_type",
+        "dir_size",
+        "dir_cfi",
+        "dir_incbin",
+        "dir_include",
+        "dir_macro",
+        "dir_conditional",
+        "dir_arch",
+        "dir_syntax",
+        "dir_section",
+        "dir_comm",
+        "dir_file",
+        "dir_org",
+        "dir_times",
+        "dir_end"
+      ],
+      "formats_and_linking": [
+        "object_file",
+        "object_format",
+        "elf",
+        "coff",
+        "pe_coff",
+        "macho",
+        "section",
+        "symbol",
+        "symbol_table",
+        "relocation",
+        "linker",
+        "executable",
+        "loader"
+      ],
+      "architectures": [
+        "isa_x86",
+        "isa_x86_64",
+        "isa_arm32",
+        "isa_aarch64",
+        "isa_riscv",
+        "isa_power",
+        "isa_avr",
+        "isa_mips",
+        "isa_s390",
+        "isa_nvptx",
+        "isa_wasm",
+        "isa_ebpf",
+        "isa_6502",
+        "isa_z80",
+        "isa_m68k"
+      ],
+      "assembler_implementations": [
+        "gnu_as",
+        "nasm",
+        "yasm",
+        "masm",
+        "fasm",
+        "llvm_mc",
+        "armasm"
+      ],
+      "tooling": [
+        "binutils",
+        "objdump",
+        "readelf",
+        "nm",
+        "objcopy",
+        "gdb",
+        "perf",
+        "compiler_explorer",
+        "qemu"
+      ],
+      "debug_and_security": [
+        "debug_info",
+        "dwarf",
+        "unwind_info",
+        "security_mitigations",
+        "pie",
+        "pic",
+        "stack_canary",
+        "nx_bit",
+        "relro",
+        "control_flow_integrity"
+      ],
+      "workflows_and_examples": [
+        "assemble_phase",
+        "compile_phase",
+        "link_phase",
+        "load_phase",
+        "cross_assembly",
+        "embedded_build",
+        "mixed_language_build",
+        "function_call",
+        "interrupt_vector_table",
+        "memory_map",
+        "linker_entry_symbol",
+        "endianness_test",
+        "example_hello_x86_64",
+        "example_nasm_hello",
+        "example_data_sections",
+        "example_function",
+        "example_inline_c",
+        "example_disassemble",
+        "example_symbols",
+        "example_sections",
+        "example_object_to_binary",
+        "example_nasm_elf",
+        "example_gnu_as",
+        "example_gcc_assembly",
+        "example_mixed_build",
+        "example_arm_cross",
+        "example_debug_gdb",
+        "example_profile_perf",
+        "example_linker_script"
+      ]
+    },
+    "relationship_semantics": {
+      "supports_isa": "The tool supports assembling or processing the named instruction set, subject to its version and configuration.",
+      "can_target_isa": "Assembly language source is specific to a target ISA or a related assembler target.",
+      "lowered_to": "A representation is transformed to another, usually lower-level, representation.",
+      "produces": "The source entity produces the target artifact or result.",
+      "resolves": "A linker or tool resolves names or references to definitions or addresses.",
+      "contains": "The source entity structurally contains the target entity or data.",
+      "requires": "The source entity depends on the target entity or constraint.",
+      "is_implementation_of": "The tool implements the relevant component role."
+    }
+  }
+}

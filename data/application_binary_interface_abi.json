@@ -1,0 +1,4622 @@
+{
+  "metadata": {
+    "title": "Application Binary Interface (ABI) Knowledge Graph",
+    "description": "Detailed directed knowledge graph for ABI concepts, calling conventions, data layout, symbols and linking, object formats, language ABIs, operating-system interfaces, embedded ABIs, compatibility, testing, and ABI evolution.",
+    "version": "1.0.0",
+    "created_utc": "2026-10-19T19:45:21.650451+00:00",
+    "source_basis": [
+      {
+        "title": "Application binary interface article supplied by user",
+        "source_type": "user-provided source text",
+        "coverage_used": "ABI versus API; binary-level interface; ISA and register details; data sizes/layout/alignment; calling conventions; stack organization; registers; stack cleanup; unwinding; name mangling; exception propagation; system calls; object formats; embedded ABIs; C and C++ ABIs; library ABI; Linux/LSB/System V and Windows examples; ARM floating-point ABI distinctions."
+      },
+      {
+        "title": "Supplemental ABI engineering knowledge",
+        "source_type": "model synthesis",
+        "coverage_used": "Expanded linker/loader mechanics, ELF/PE/Mach-O components, C++ object model, FFI, runtime startup, compatibility testing, symbol/version management, interop design, and ABI-risk workflows."
+      }
+    ],
+    "entity_count": 213,
+    "relationship_count": 284,
+    "entity_type_count": 85,
+    "relationship_type_count": 121,
+    "id_convention": "Lowercase snake_case entity IDs derived from canonical names; sequential relationship IDs use rel_00001 style.",
+    "relationship_direction": "All relationships are directed from source to target. Reverse relationships are not implied.",
+    "scope_note": "Conceptual, cross-platform ABI knowledge graph. Concrete ABI details vary by ISA, operating system, compiler, runtime, language, and ABI version; this graph is not a substitute for a target ABI specification."
+  },
+  "entity_types": [
+    {
+      "type": "C_runtime_mechanism",
+      "entity_count": 1
+    },
+    {
+      "type": "abi_analysis_tool",
+      "entity_count": 2
+    },
+    {
+      "type": "abi_component",
+      "entity_count": 6
+    },
+    {
+      "type": "architectural_register_role",
+      "entity_count": 2
+    },
+    {
+      "type": "architecture_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "binary_artifact",
+      "entity_count": 4
+    },
+    {
+      "type": "binary_format",
+      "entity_count": 5
+    },
+    {
+      "type": "binary_metadata",
+      "entity_count": 3
+    },
+    {
+      "type": "build_process",
+      "entity_count": 1
+    },
+    {
+      "type": "build_property",
+      "entity_count": 1
+    },
+    {
+      "type": "calling_convention_component",
+      "entity_count": 12
+    },
+    {
+      "type": "calling_convention_variant",
+      "entity_count": 3
+    },
+    {
+      "type": "code_generation_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "compatibility_consequence",
+      "entity_count": 1
+    },
+    {
+      "type": "compatibility_event",
+      "entity_count": 1
+    },
+    {
+      "type": "compatibility_property",
+      "entity_count": 7
+    },
+    {
+      "type": "core_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "cpp_abi_component",
+      "entity_count": 7
+    },
+    {
+      "type": "cpp_abi_design_pattern",
+      "entity_count": 1
+    },
+    {
+      "type": "cpp_abi_family",
+      "entity_count": 2
+    },
+    {
+      "type": "cpp_language_rule",
+      "entity_count": 1
+    },
+    {
+      "type": "data_exchange_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "data_layout_component",
+      "entity_count": 16
+    },
+    {
+      "type": "data_representation",
+      "entity_count": 2
+    },
+    {
+      "type": "development_tool",
+      "entity_count": 6
+    },
+    {
+      "type": "development_tool_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "documentation_artifact",
+      "entity_count": 2
+    },
+    {
+      "type": "elf_component",
+      "entity_count": 4
+    },
+    {
+      "type": "embedded_abi",
+      "entity_count": 1
+    },
+    {
+      "type": "embedded_abi_family",
+      "entity_count": 3
+    },
+    {
+      "type": "engineering_policy",
+      "entity_count": 1
+    },
+    {
+      "type": "engineering_process",
+      "entity_count": 1
+    },
+    {
+      "type": "engineering_property",
+      "entity_count": 1
+    },
+    {
+      "type": "exception_abi_component",
+      "entity_count": 3
+    },
+    {
+      "type": "executable_component",
+      "entity_count": 1
+    },
+    {
+      "type": "execution_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "failure_mode",
+      "entity_count": 4
+    },
+    {
+      "type": "historical_abi",
+      "entity_count": 1
+    },
+    {
+      "type": "historical_standard",
+      "entity_count": 1
+    },
+    {
+      "type": "implementation_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "interface_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "interface_versioning",
+      "entity_count": 2
+    },
+    {
+      "type": "interop_component",
+      "entity_count": 1
+    },
+    {
+      "type": "interop_concept",
+      "entity_count": 6
+    },
+    {
+      "type": "interop_design_pattern",
+      "entity_count": 2
+    },
+    {
+      "type": "interop_interface",
+      "entity_count": 2
+    },
+    {
+      "type": "interop_operation",
+      "entity_count": 3
+    },
+    {
+      "type": "kernel_interface",
+      "entity_count": 3
+    },
+    {
+      "type": "kernel_interface_component",
+      "entity_count": 1
+    },
+    {
+      "type": "language_abi",
+      "entity_count": 6
+    },
+    {
+      "type": "language_abi_concept",
+      "entity_count": 4
+    },
+    {
+      "type": "language_abi_feature",
+      "entity_count": 1
+    },
+    {
+      "type": "language_semantics",
+      "entity_count": 1
+    },
+    {
+      "type": "library_abi_case",
+      "entity_count": 1
+    },
+    {
+      "type": "library_abi_component",
+      "entity_count": 2
+    },
+    {
+      "type": "linking_concept",
+      "entity_count": 5
+    },
+    {
+      "type": "linking_model",
+      "entity_count": 2
+    },
+    {
+      "type": "linking_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "linking_property",
+      "entity_count": 1
+    },
+    {
+      "type": "linking_technique",
+      "entity_count": 2
+    },
+    {
+      "type": "object_file_component",
+      "entity_count": 1
+    },
+    {
+      "type": "operating_system_component",
+      "entity_count": 2
+    },
+    {
+      "type": "operating_system_interface",
+      "entity_count": 4
+    },
+    {
+      "type": "platform_abi",
+      "entity_count": 2
+    },
+    {
+      "type": "platform_abi_component",
+      "entity_count": 1
+    },
+    {
+      "type": "platform_abi_family",
+      "entity_count": 3
+    },
+    {
+      "type": "platform_component",
+      "entity_count": 1
+    },
+    {
+      "type": "platform_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "platform_standard",
+      "entity_count": 1
+    },
+    {
+      "type": "register_convention",
+      "entity_count": 4
+    },
+    {
+      "type": "runtime_abi_component",
+      "entity_count": 6
+    },
+    {
+      "type": "runtime_component",
+      "entity_count": 1
+    },
+    {
+      "type": "runtime_structure",
+      "entity_count": 1
+    },
+    {
+      "type": "software_component",
+      "entity_count": 3
+    },
+    {
+      "type": "source_interface_artifact",
+      "entity_count": 1
+    },
+    {
+      "type": "stakeholder",
+      "entity_count": 4
+    },
+    {
+      "type": "toolchain_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "toolchain_configuration",
+      "entity_count": 3
+    },
+    {
+      "type": "validation_method",
+      "entity_count": 1
+    },
+    {
+      "type": "validation_tool",
+      "entity_count": 1
+    },
+    {
+      "type": "versioning_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "virtual_abi",
+      "entity_count": 1
+    },
+    {
+      "type": "virtual_machine_interface",
+      "entity_count": 1
+    },
+    {
+      "type": "windows_binary_artifact",
+      "entity_count": 2
+    },
+    {
+      "type": "windows_binary_metadata",
+      "entity_count": 1
+    }
+  ],
+  "relationship_types": [
+    {
+      "type": "addresses",
+      "relationship_count": 1
+    },
+    {
+      "type": "affects",
+      "relationship_count": 3
+    },
+    {
+      "type": "aimed_to_provide",
+      "relationship_count": 1
+    },
+    {
+      "type": "applies",
+      "relationship_count": 1
+    },
+    {
+      "type": "are_a_kind_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_be_exposed_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_change_interpretation_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_complicate",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_implement",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_participate_in",
+      "relationship_count": 6
+    },
+    {
+      "type": "can_result_from_mismatch_in",
+      "relationship_count": 2
+    },
+    {
+      "type": "can_route_calls_through",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_support_validation_with",
+      "relationship_count": 1
+    },
+    {
+      "type": "commonly_underpins",
+      "relationship_count": 1
+    },
+    {
+      "type": "configure",
+      "relationship_count": 1
+    },
+    {
+      "type": "configures",
+      "relationship_count": 1
+    },
+    {
+      "type": "conforms_to",
+      "relationship_count": 1
+    },
+    {
+      "type": "constrains",
+      "relationship_count": 2
+    },
+    {
+      "type": "consumes",
+      "relationship_count": 1
+    },
+    {
+      "type": "contains",
+      "relationship_count": 1
+    },
+    {
+      "type": "controls",
+      "relationship_count": 1
+    },
+    {
+      "type": "converts",
+      "relationship_count": 1
+    },
+    {
+      "type": "declares",
+      "relationship_count": 1
+    },
+    {
+      "type": "decodes",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines",
+      "relationship_count": 5
+    },
+    {
+      "type": "defines_handling_for",
+      "relationship_count": 2
+    },
+    {
+      "type": "defines_or_extends",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_or_maintains",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_part_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_platform_specific_rules_for",
+      "relationship_count": 10
+    },
+    {
+      "type": "defines_representation_of",
+      "relationship_count": 3
+    },
+    {
+      "type": "defines_supported_forms_of",
+      "relationship_count": 3
+    },
+    {
+      "type": "defines_usage_of",
+      "relationship_count": 2
+    },
+    {
+      "type": "depends_on",
+      "relationship_count": 3
+    },
+    {
+      "type": "describes",
+      "relationship_count": 1
+    },
+    {
+      "type": "determines",
+      "relationship_count": 1
+    },
+    {
+      "type": "documents",
+      "relationship_count": 1
+    },
+    {
+      "type": "enables",
+      "relationship_count": 1
+    },
+    {
+      "type": "encodes",
+      "relationship_count": 1
+    },
+    {
+      "type": "encodes_source_entity_as",
+      "relationship_count": 1
+    },
+    {
+      "type": "evaluates_likelihood_and_impact_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "explains",
+      "relationship_count": 50
+    },
+    {
+      "type": "exposes",
+      "relationship_count": 1
+    },
+    {
+      "type": "forms_part_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "identifies",
+      "relationship_count": 1
+    },
+    {
+      "type": "implements",
+      "relationship_count": 3
+    },
+    {
+      "type": "includes",
+      "relationship_count": 1
+    },
+    {
+      "type": "includes_component",
+      "relationship_count": 43
+    },
+    {
+      "type": "includes_or_interacts_with",
+      "relationship_count": 1
+    },
+    {
+      "type": "includes_or_targets",
+      "relationship_count": 1
+    },
+    {
+      "type": "inspects",
+      "relationship_count": 1
+    },
+    {
+      "type": "interacts_with",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_a",
+      "relationship_count": 3
+    },
+    {
+      "type": "is_a_consequence_of_breaking",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_a_family_of",
+      "relationship_count": 3
+    },
+    {
+      "type": "is_a_specification_family_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_an_example_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_an_implementation_family_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_constrained_by",
+      "relationship_count": 3
+    },
+    {
+      "type": "is_defined_by",
+      "relationship_count": 3
+    },
+    {
+      "type": "is_distinct_from",
+      "relationship_count": 5
+    },
+    {
+      "type": "is_governed_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_part_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_provided_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_realized_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_related_to",
+      "relationship_count": 4
+    },
+    {
+      "type": "is_represented_in",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_stored_in",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_the_exposed_contract_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "loads",
+      "relationship_count": 1
+    },
+    {
+      "type": "maintains",
+      "relationship_count": 2
+    },
+    {
+      "type": "matches_references_to",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_affect",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_constrained_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_invoked_through",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_part_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_populated_or_resolved_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_reported_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_stored_in",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_cause",
+      "relationship_count": 3
+    },
+    {
+      "type": "may_create",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_include",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_inform",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_reference",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_require",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_specify",
+      "relationship_count": 3
+    },
+    {
+      "type": "may_specify_or_rely_on",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_use",
+      "relationship_count": 2
+    },
+    {
+      "type": "must_follow",
+      "relationship_count": 2
+    },
+    {
+      "type": "must_match",
+      "relationship_count": 1
+    },
+    {
+      "type": "must_match_or_convert",
+      "relationship_count": 1
+    },
+    {
+      "type": "must_specify",
+      "relationship_count": 1
+    },
+    {
+      "type": "often_supports",
+      "relationship_count": 1
+    },
+    {
+      "type": "participates_in",
+      "relationship_count": 2
+    },
+    {
+      "type": "performs",
+      "relationship_count": 1
+    },
+    {
+      "type": "produces",
+      "relationship_count": 1
+    },
+    {
+      "type": "realizes",
+      "relationship_count": 1
+    },
+    {
+      "type": "reduces_exposure_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "references",
+      "relationship_count": 1
+    },
+    {
+      "type": "references_or_uses",
+      "relationship_count": 1
+    },
+    {
+      "type": "requires",
+      "relationship_count": 1
+    },
+    {
+      "type": "requires_compatible_outputs_from",
+      "relationship_count": 1
+    },
+    {
+      "type": "resolves_dependencies_on",
+      "relationship_count": 1
+    },
+    {
+      "type": "reverses_readable_representation_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "selects",
+      "relationship_count": 1
+    },
+    {
+      "type": "sets_expectations_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "specializes",
+      "relationship_count": 5
+    },
+    {
+      "type": "specializes_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "specifies",
+      "relationship_count": 3
+    },
+    {
+      "type": "supports",
+      "relationship_count": 3
+    },
+    {
+      "type": "supports_linking_against",
+      "relationship_count": 1
+    },
+    {
+      "type": "supports_management_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "targets",
+      "relationship_count": 1
+    },
+    {
+      "type": "tests",
+      "relationship_count": 1
+    },
+    {
+      "type": "tracks",
+      "relationship_count": 1
+    },
+    {
+      "type": "transfers_control_to",
+      "relationship_count": 1
+    },
+    {
+      "type": "translates_between",
+      "relationship_count": 1
+    },
+    {
+      "type": "uses",
+      "relationship_count": 6
+    },
+    {
+      "type": "uses_or_specifies",
+      "relationship_count": 5
+    },
+    {
+      "type": "versions",
+      "relationship_count": 1
+    },
+    {
+      "type": "violates",
+      "relationship_count": 1
+    }
+  ],
+  "entities": [
+    {
+      "id": "application_binary_interface_abi",
+      "name": "Application binary interface (ABI)",
+      "type": "core_concept",
+      "description": "Low-level contract governing how compiled machine code interacts with other code, libraries, runtime services, and the operating system.",
+      "properties": {}
+    },
+    {
+      "id": "application_programming_interface_api",
+      "name": "Application programming interface (API)",
+      "type": "interface_concept",
+      "description": "Source-level interface describing declarations and operations available to source code before compilation.",
+      "properties": {}
+    },
+    {
+      "id": "abi_compatibility",
+      "name": "ABI compatibility",
+      "type": "compatibility_property",
+      "description": "Ability for separately compiled components to interact correctly under the same binary contract.",
+      "properties": {}
+    },
+    {
+      "id": "api_compatibility",
+      "name": "API compatibility",
+      "type": "compatibility_property",
+      "description": "Ability for source consumers to continue using an interface, subject to source-language and build constraints.",
+      "properties": {}
+    },
+    {
+      "id": "binary_compatibility",
+      "name": "Binary compatibility",
+      "type": "compatibility_property",
+      "description": "Ability to run or link existing binaries without recompilation under specified platform conditions.",
+      "properties": {}
+    },
+    {
+      "id": "source_compatibility",
+      "name": "Source compatibility",
+      "type": "compatibility_property",
+      "description": "Ability to rebuild existing source code against a changed interface.",
+      "properties": {}
+    },
+    {
+      "id": "abi_stability",
+      "name": "ABI stability",
+      "type": "compatibility_property",
+      "description": "Preservation of binary-level conventions across versions or releases.",
+      "properties": {}
+    },
+    {
+      "id": "abi_break",
+      "name": "ABI break",
+      "type": "compatibility_event",
+      "description": "Incompatible change to a binary-visible contract, potentially preventing linking or correct execution.",
+      "properties": {}
+    },
+    {
+      "id": "abi_specification",
+      "name": "ABI specification",
+      "type": "documentation_artifact",
+      "description": "Normative or descriptive document defining binary conventions and platform requirements.",
+      "properties": {}
+    },
+    {
+      "id": "abi_implementation",
+      "name": "ABI implementation",
+      "type": "implementation_concept",
+      "description": "Compiler, runtime, library, operating system, and toolchain behavior that realizes an ABI.",
+      "properties": {}
+    },
+    {
+      "id": "target_platform",
+      "name": "Target platform",
+      "type": "platform_concept",
+      "description": "Combination of ISA, operating system, object format, runtime, and conventions targeted by a binary.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_set_architecture_isa",
+      "name": "Instruction set architecture (ISA)",
+      "type": "architecture_concept",
+      "description": "Programmer-visible machine instruction and architectural-state contract used by generated machine code.",
+      "properties": {}
+    },
+    {
+      "id": "microarchitecture",
+      "name": "Microarchitecture",
+      "type": "architecture_concept",
+      "description": "Internal processor implementation; generally not the ABI contract itself.",
+      "properties": {}
+    },
+    {
+      "id": "toolchain",
+      "name": "Toolchain",
+      "type": "development_tool",
+      "description": "Compiler, assembler, linker, libraries, and related tools used to produce binaries.",
+      "properties": {}
+    },
+    {
+      "id": "compiler",
+      "name": "Compiler",
+      "type": "development_tool",
+      "description": "Translates source or intermediate representation into machine code and ABI-conforming interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "assembler",
+      "name": "Assembler",
+      "type": "development_tool",
+      "description": "Converts assembly language into object code and associated metadata.",
+      "properties": {}
+    },
+    {
+      "id": "linker",
+      "name": "Linker",
+      "type": "development_tool",
+      "description": "Combines object files, resolves symbols, applies relocations, and creates executable or library artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "loader",
+      "name": "Loader",
+      "type": "operating_system_component",
+      "description": "Maps executable and library segments into a process and prepares execution.",
+      "properties": {}
+    },
+    {
+      "id": "operating_system",
+      "name": "Operating system",
+      "type": "platform_component",
+      "description": "Provides process, memory, system-call, and library services used by applications.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_library",
+      "name": "Runtime library",
+      "type": "software_component",
+      "description": "Provides language/runtime support routines and often participates in ABI conventions.",
+      "properties": {}
+    },
+    {
+      "id": "c_library",
+      "name": "C library",
+      "type": "software_component",
+      "description": "Provides common C runtime and operating-system-facing interfaces on many platforms.",
+      "properties": {}
+    },
+    {
+      "id": "standard_library",
+      "name": "Standard library",
+      "type": "software_component",
+      "description": "Library implementation providing language-standard facilities; its binary surface can be ABI-sensitive.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_linker",
+      "name": "Dynamic linker",
+      "type": "operating_system_component",
+      "description": "Resolves dynamic dependencies and symbols when a program is loaded or during execution.",
+      "properties": {}
+    },
+    {
+      "id": "static_linking",
+      "name": "Static linking",
+      "type": "linking_model",
+      "description": "Copies required library code into an executable or linked artifact at build time.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_linking",
+      "name": "Dynamic linking",
+      "type": "linking_model",
+      "description": "Resolves references to shared libraries at load time or runtime.",
+      "properties": {}
+    },
+    {
+      "id": "shared_library",
+      "name": "Shared library",
+      "type": "binary_artifact",
+      "description": "Reusable dynamically linked library exposing symbols and binary interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "static_library",
+      "name": "Static library",
+      "type": "binary_artifact",
+      "description": "Archive of object files linked into another artifact.",
+      "properties": {}
+    },
+    {
+      "id": "executable",
+      "name": "Executable",
+      "type": "binary_artifact",
+      "description": "Runnable program artifact whose machine code, object format, ABI, and dependencies must match its environment.",
+      "properties": {}
+    },
+    {
+      "id": "object_file",
+      "name": "Object file",
+      "type": "binary_artifact",
+      "description": "Compiled unit containing code, data, symbols, relocations, and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "object_file_format",
+      "name": "Object file format",
+      "type": "binary_format",
+      "description": "Container specification for executable and object artifacts, symbols, sections, relocations, and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "elf",
+      "name": "ELF",
+      "type": "binary_format",
+      "description": "Executable and Linkable Format used by many Unix-like systems.",
+      "properties": {}
+    },
+    {
+      "id": "pe_coff",
+      "name": "PE/COFF",
+      "type": "binary_format",
+      "description": "Portable Executable and Common Object File Format used in Windows ecosystems and related toolchains.",
+      "properties": {}
+    },
+    {
+      "id": "mach_o",
+      "name": "Mach-O",
+      "type": "binary_format",
+      "description": "Object and executable format used by Apple operating systems.",
+      "properties": {}
+    },
+    {
+      "id": "wasm_module_format",
+      "name": "Wasm module format",
+      "type": "binary_format",
+      "description": "Binary format for WebAssembly modules, a virtual instruction target rather than a native platform ABI by itself.",
+      "properties": {}
+    },
+    {
+      "id": "symbol_table",
+      "name": "Symbol table",
+      "type": "linking_concept",
+      "description": "Mapping between names and symbol definitions, references, binding, visibility, and types.",
+      "properties": {}
+    },
+    {
+      "id": "symbol",
+      "name": "Symbol",
+      "type": "linking_concept",
+      "description": "Named function, object, or other entity referenced by compiled components.",
+      "properties": {}
+    },
+    {
+      "id": "symbol_resolution",
+      "name": "Symbol resolution",
+      "type": "linking_operation",
+      "description": "Process of matching references to symbol definitions.",
+      "properties": {}
+    },
+    {
+      "id": "symbol_visibility",
+      "name": "Symbol visibility",
+      "type": "linking_property",
+      "description": "Rules determining which symbols are exposed to other link units or dynamic consumers.",
+      "properties": {}
+    },
+    {
+      "id": "symbol_versioning",
+      "name": "Symbol versioning",
+      "type": "linking_technique",
+      "description": "Mechanism allowing multiple compatible or versioned symbol interfaces to coexist.",
+      "properties": {}
+    },
+    {
+      "id": "name_mangling",
+      "name": "Name mangling",
+      "type": "language_abi_concept",
+      "description": "Encoding source-language names and signatures into linker-visible symbol names.",
+      "properties": {}
+    },
+    {
+      "id": "demangling",
+      "name": "Demangling",
+      "type": "development_tool_operation",
+      "description": "Reconstructing readable source-like names from mangled symbols.",
+      "properties": {}
+    },
+    {
+      "id": "relocation",
+      "name": "Relocation",
+      "type": "linking_concept",
+      "description": "Adjustment of address-dependent fields by a linker or loader.",
+      "properties": {}
+    },
+    {
+      "id": "relocation_entry",
+      "name": "Relocation entry",
+      "type": "object_file_component",
+      "description": "Object-file record describing a location and relocation operation.",
+      "properties": {}
+    },
+    {
+      "id": "position_independent_code_pic",
+      "name": "Position-independent code (PIC)",
+      "type": "code_generation_concept",
+      "description": "Code generated to execute correctly regardless of its load address, within defined constraints.",
+      "properties": {}
+    },
+    {
+      "id": "procedure_linkage_table_plt",
+      "name": "Procedure linkage table (PLT)",
+      "type": "elf_component",
+      "description": "ELF mechanism commonly used for indirect calls to dynamically resolved functions.",
+      "properties": {}
+    },
+    {
+      "id": "global_offset_table_got",
+      "name": "Global offset table (GOT)",
+      "type": "elf_component",
+      "description": "ELF table commonly used to access addresses of global data and dynamic symbols.",
+      "properties": {}
+    },
+    {
+      "id": "calling_convention",
+      "name": "Calling convention",
+      "type": "abi_component",
+      "description": "Rules for argument passing, return values, register preservation, stack use, and call/return behavior.",
+      "properties": {}
+    },
+    {
+      "id": "function_call",
+      "name": "Function call",
+      "type": "execution_concept",
+      "description": "Control transfer to a function under the calling convention.",
+      "properties": {}
+    },
+    {
+      "id": "function_return",
+      "name": "Function return",
+      "type": "execution_concept",
+      "description": "Transfer back to the caller while producing specified return results.",
+      "properties": {}
+    },
+    {
+      "id": "argument_passing",
+      "name": "Argument passing",
+      "type": "calling_convention_component",
+      "description": "Rules for assigning parameters to registers, stack locations, or other agreed locations.",
+      "properties": {}
+    },
+    {
+      "id": "return_value_convention",
+      "name": "Return value convention",
+      "type": "calling_convention_component",
+      "description": "Rules for conveying function results in registers, memory, or special mechanisms.",
+      "properties": {}
+    },
+    {
+      "id": "caller_saved_register",
+      "name": "Caller-saved register",
+      "type": "register_convention",
+      "description": "Register whose value a caller must preserve if needed across a call.",
+      "properties": {}
+    },
+    {
+      "id": "callee_saved_register",
+      "name": "Callee-saved register",
+      "type": "register_convention",
+      "description": "Register whose value a callee must restore if it modifies it.",
+      "properties": {}
+    },
+    {
+      "id": "volatile_register",
+      "name": "Volatile register",
+      "type": "register_convention",
+      "description": "Register whose value is not guaranteed to survive a call under the convention.",
+      "properties": {}
+    },
+    {
+      "id": "nonvolatile_register",
+      "name": "Nonvolatile register",
+      "type": "register_convention",
+      "description": "Register whose value must be preserved across calls under the convention.",
+      "properties": {}
+    },
+    {
+      "id": "stack_frame",
+      "name": "Stack frame",
+      "type": "calling_convention_component",
+      "description": "Per-call region for locals, saved state, spill slots, and other call-related data.",
+      "properties": {}
+    },
+    {
+      "id": "call_stack",
+      "name": "Call stack",
+      "type": "runtime_structure",
+      "description": "Stack discipline supporting nested calls, returns, and often local storage.",
+      "properties": {}
+    },
+    {
+      "id": "stack_pointer",
+      "name": "Stack pointer",
+      "type": "architectural_register_role",
+      "description": "Register or architectural state identifying the current stack position.",
+      "properties": {}
+    },
+    {
+      "id": "frame_pointer",
+      "name": "Frame pointer",
+      "type": "architectural_register_role",
+      "description": "Optional register used to reference a stack frame consistently.",
+      "properties": {}
+    },
+    {
+      "id": "stack_alignment",
+      "name": "Stack alignment",
+      "type": "calling_convention_component",
+      "description": "Required alignment of the stack at specified points such as function entry or call sites.",
+      "properties": {}
+    },
+    {
+      "id": "red_zone",
+      "name": "Red zone",
+      "type": "calling_convention_component",
+      "description": "ABI-defined region below the stack pointer that may be used without adjusting the stack pointer on some platforms.",
+      "properties": {}
+    },
+    {
+      "id": "shadow_space_home_space",
+      "name": "Shadow space / home space",
+      "type": "calling_convention_component",
+      "description": "Caller-reserved stack area used by some conventions for register-passed arguments.",
+      "properties": {}
+    },
+    {
+      "id": "variadic_function",
+      "name": "Variadic function",
+      "type": "language_abi_concept",
+      "description": "Function accepting a variable number of arguments, requiring ABI-defined argument classification and retrieval.",
+      "properties": {}
+    },
+    {
+      "id": "aggregate_return",
+      "name": "Aggregate return",
+      "type": "calling_convention_component",
+      "description": "Rules for returning structures, unions, or other aggregate values.",
+      "properties": {}
+    },
+    {
+      "id": "hidden_structure_return_pointer",
+      "name": "Hidden structure-return pointer",
+      "type": "calling_convention_component",
+      "description": "Implicit pointer used by some ABIs when an aggregate result is returned indirectly.",
+      "properties": {}
+    },
+    {
+      "id": "register_classification",
+      "name": "Register classification",
+      "type": "calling_convention_component",
+      "description": "Rules classifying types and assigning argument/result pieces to registers or memory.",
+      "properties": {}
+    },
+    {
+      "id": "parameter_classification",
+      "name": "Parameter classification",
+      "type": "calling_convention_component",
+      "description": "ABI algorithm assigning parameters to integer, floating-point, vector, or memory locations.",
+      "properties": {}
+    },
+    {
+      "id": "tail_call",
+      "name": "Tail call",
+      "type": "calling_convention_component",
+      "description": "Call optimization replacing the current frame or return path under ABI-compatible conditions.",
+      "properties": {}
+    },
+    {
+      "id": "unwind_information",
+      "name": "Unwind information",
+      "type": "exception_abi_component",
+      "description": "Metadata used to reconstruct frames and restore state during unwinding.",
+      "properties": {}
+    },
+    {
+      "id": "stack_unwinding",
+      "name": "Stack unwinding",
+      "type": "exception_abi_component",
+      "description": "Walking or dismantling call frames to propagate exceptions or restore saved execution state.",
+      "properties": {}
+    },
+    {
+      "id": "setjmp_longjmp",
+      "name": "setjmp/longjmp",
+      "type": "C_runtime_mechanism",
+      "description": "C facilities for saving and restoring a nonlocal execution context subject to platform rules.",
+      "properties": {}
+    },
+    {
+      "id": "exception_propagation",
+      "name": "Exception propagation",
+      "type": "language_abi_concept",
+      "description": "Binary protocol for transferring exceptions across frames and possibly across module boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "exception_handling_abi",
+      "name": "Exception handling ABI",
+      "type": "language_abi_concept",
+      "description": "Conventions for exception objects, personality routines, unwind tables, and cleanup.",
+      "properties": {}
+    },
+    {
+      "id": "personality_routine",
+      "name": "Personality routine",
+      "type": "exception_abi_component",
+      "description": "Language/runtime-specific logic consulted by an unwinder to decide cleanup and handler actions.",
+      "properties": {}
+    },
+    {
+      "id": "unwind_table",
+      "name": "Unwind table",
+      "type": "binary_metadata",
+      "description": "Metadata describing how to restore caller state and traverse stack frames.",
+      "properties": {}
+    },
+    {
+      "id": "debug_information",
+      "name": "Debug information",
+      "type": "binary_metadata",
+      "description": "Metadata mapping machine code and data back to source-level constructs.",
+      "properties": {}
+    },
+    {
+      "id": "debug_symbol",
+      "name": "Debug symbol",
+      "type": "binary_metadata",
+      "description": "Symbol or metadata used by debuggers to identify code and data.",
+      "properties": {}
+    },
+    {
+      "id": "foreign_function_interface_ffi",
+      "name": "Foreign function interface (FFI)",
+      "type": "interop_concept",
+      "description": "Mechanism allowing code in one language to call functions or exchange data with another.",
+      "properties": {}
+    },
+    {
+      "id": "language_binding",
+      "name": "Language binding",
+      "type": "interop_concept",
+      "description": "Language-specific wrapper or declaration exposing another language's API.",
+      "properties": {}
+    },
+    {
+      "id": "c_abi",
+      "name": "C ABI",
+      "type": "language_abi",
+      "description": "Common binary contract used by C-compiled code and often adopted as an interoperability baseline.",
+      "properties": {}
+    },
+    {
+      "id": "c_abi_81",
+      "name": "C++ ABI",
+      "type": "language_abi",
+      "description": "Binary conventions for C++ entities, including mangling, object layout, virtual dispatch, RTTI, and exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "rust_abi",
+      "name": "Rust ABI",
+      "type": "language_abi",
+      "description": "Rust's native ABI is generally not a stable cross-version contract; extern ABI declarations select interoperability conventions.",
+      "properties": {}
+    },
+    {
+      "id": "extern_c",
+      "name": "extern \"C\"",
+      "type": "language_abi_feature",
+      "description": "C++ or Rust-style declaration selecting a C-compatible calling/interface convention where supported.",
+      "properties": {}
+    },
+    {
+      "id": "fortran_abi",
+      "name": "Fortran ABI",
+      "type": "language_abi",
+      "description": "Compiler and platform conventions for Fortran procedures, data representation, and interoperability.",
+      "properties": {}
+    },
+    {
+      "id": "objective_c_runtime_abi",
+      "name": "Objective-C runtime ABI",
+      "type": "language_abi",
+      "description": "Binary/runtime conventions for Objective-C classes, selectors, messages, and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "swift_abi",
+      "name": "Swift ABI",
+      "type": "language_abi",
+      "description": "Swift binary interface conventions; stability guarantees depend on platform and language/runtime version.",
+      "properties": {}
+    },
+    {
+      "id": "java_native_interface_jni",
+      "name": "Java Native Interface (JNI)",
+      "type": "interop_interface",
+      "description": "Standard interface for Java code and native libraries.",
+      "properties": {}
+    },
+    {
+      "id": "net_p_invoke",
+      "name": ".NET P/Invoke",
+      "type": "interop_interface",
+      "description": "Mechanism for .NET code to invoke native functions with specified marshalling and calling conventions.",
+      "properties": {}
+    },
+    {
+      "id": "webassembly_tool_conventions",
+      "name": "WebAssembly tool conventions",
+      "type": "virtual_abi",
+      "description": "Conventions for module imports/exports, calling, memory, and interoperability in WebAssembly environments.",
+      "properties": {}
+    },
+    {
+      "id": "jvm_bytecode",
+      "name": "JVM bytecode",
+      "type": "virtual_machine_interface",
+      "description": "Virtual instruction representation executed by JVM implementations; distinct from a native machine-code ABI.",
+      "properties": {}
+    },
+    {
+      "id": "data_model",
+      "name": "Data model",
+      "type": "abi_component",
+      "description": "Mapping of language types such as int, long, pointer, and size_t to widths and representations.",
+      "properties": {}
+    },
+    {
+      "id": "primitive_type_size",
+      "name": "Primitive type size",
+      "type": "data_layout_component",
+      "description": "ABI-defined size of fundamental scalar types.",
+      "properties": {}
+    },
+    {
+      "id": "type_alignment",
+      "name": "Type alignment",
+      "type": "data_layout_component",
+      "description": "Required alignment of a type or object in memory.",
+      "properties": {}
+    },
+    {
+      "id": "data_layout",
+      "name": "Data layout",
+      "type": "abi_component",
+      "description": "Rules for field offsets, padding, aggregate alignment, and representation.",
+      "properties": {}
+    },
+    {
+      "id": "structure_layout",
+      "name": "Structure layout",
+      "type": "data_layout_component",
+      "description": "Ordering and offsets of structure fields, including padding and alignment.",
+      "properties": {}
+    },
+    {
+      "id": "union_layout",
+      "name": "Union layout",
+      "type": "data_layout_component",
+      "description": "Storage and alignment rules for overlapping union members.",
+      "properties": {}
+    },
+    {
+      "id": "padding",
+      "name": "Padding",
+      "type": "data_layout_component",
+      "description": "Unused bytes inserted to meet alignment or layout requirements.",
+      "properties": {}
+    },
+    {
+      "id": "bit_field_layout",
+      "name": "Bit-field layout",
+      "type": "data_layout_component",
+      "description": "Implementation- and ABI-defined packing and allocation of language bit-fields.",
+      "properties": {}
+    },
+    {
+      "id": "enum_representation",
+      "name": "Enum representation",
+      "type": "data_layout_component",
+      "description": "Rules determining an enumeration's storage size and value representation.",
+      "properties": {}
+    },
+    {
+      "id": "boolean_representation",
+      "name": "Boolean representation",
+      "type": "data_layout_component",
+      "description": "Representation and size of boolean-like values across language/platform boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "pointer_representation",
+      "name": "Pointer representation",
+      "type": "data_layout_component",
+      "description": "Size, representation, and interpretation of pointers under a platform ABI.",
+      "properties": {}
+    },
+    {
+      "id": "pointer_width",
+      "name": "Pointer width",
+      "type": "data_layout_component",
+      "description": "Number of bits in a pointer representation, not necessarily identical to all address widths.",
+      "properties": {}
+    },
+    {
+      "id": "endianness",
+      "name": "Endianness",
+      "type": "data_representation",
+      "description": "Byte order used to represent multibyte scalar values in memory.",
+      "properties": {}
+    },
+    {
+      "id": "floating_point_representation",
+      "name": "Floating-point representation",
+      "type": "data_representation",
+      "description": "Representation and calling conventions for floating-point values.",
+      "properties": {}
+    },
+    {
+      "id": "vector_type_abi",
+      "name": "Vector type ABI",
+      "type": "data_layout_component",
+      "description": "Representation and argument/result handling for vector or SIMD types.",
+      "properties": {}
+    },
+    {
+      "id": "long_double",
+      "name": "Long double",
+      "type": "data_layout_component",
+      "description": "C floating type whose size, format, alignment, and passing convention vary among ABIs.",
+      "properties": {}
+    },
+    {
+      "id": "wchar_t",
+      "name": "wchar_t",
+      "type": "data_layout_component",
+      "description": "Wide-character type whose width and encoding conventions vary across platforms.",
+      "properties": {}
+    },
+    {
+      "id": "size_t",
+      "name": "size_t",
+      "type": "data_layout_component",
+      "description": "Unsigned type used for object sizes, with width tied to the target data model.",
+      "properties": {}
+    },
+    {
+      "id": "time_t",
+      "name": "time_t",
+      "type": "data_layout_component",
+      "description": "Time representation type whose width or signedness choices can affect compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "intmax_t",
+      "name": "intmax_t",
+      "type": "data_layout_component",
+      "description": "Integer type capable of representing any supported signed integer type, with ABI-sensitive representation.",
+      "properties": {}
+    },
+    {
+      "id": "c_object_layout",
+      "name": "C++ object layout",
+      "type": "cpp_abi_component",
+      "description": "Rules for class subobjects, base classes, fields, padding, and object representation.",
+      "properties": {}
+    },
+    {
+      "id": "virtual_method_table_vtable",
+      "name": "Virtual method table (vtable)",
+      "type": "cpp_abi_component",
+      "description": "Implementation structure supporting virtual dispatch under a C++ ABI.",
+      "properties": {}
+    },
+    {
+      "id": "virtual_table_pointer_vptr",
+      "name": "Virtual table pointer (vptr)",
+      "type": "cpp_abi_component",
+      "description": "Pointer stored or otherwise associated with an object to enable virtual dispatch.",
+      "properties": {}
+    },
+    {
+      "id": "multiple_inheritance",
+      "name": "Multiple inheritance",
+      "type": "cpp_abi_component",
+      "description": "C++ object model feature affecting subobject layout, pointer adjustment, and dispatch.",
+      "properties": {}
+    },
+    {
+      "id": "run_time_type_information_rtti",
+      "name": "Run-time type information (RTTI)",
+      "type": "cpp_abi_component",
+      "description": "Metadata and runtime mechanisms supporting dynamic type identification and casts.",
+      "properties": {}
+    },
+    {
+      "id": "template_instantiation",
+      "name": "Template instantiation",
+      "type": "cpp_abi_component",
+      "description": "Compiler-generated specialization whose symbol naming and emitted representation affect linkage.",
+      "properties": {}
+    },
+    {
+      "id": "inline_function",
+      "name": "Inline function",
+      "type": "cpp_abi_component",
+      "description": "Function that may be emitted in multiple translation units, with ODR and linkage constraints.",
+      "properties": {}
+    },
+    {
+      "id": "one_definition_rule_odr",
+      "name": "One Definition Rule (ODR)",
+      "type": "cpp_language_rule",
+      "description": "C++ rule governing definitions across translation units; violations can cause undefined behavior or ABI trouble.",
+      "properties": {}
+    },
+    {
+      "id": "standard_library_abi",
+      "name": "Standard library ABI",
+      "type": "library_abi_component",
+      "description": "Binary interface of library types, symbols, layouts, and runtime behavior.",
+      "properties": {}
+    },
+    {
+      "id": "libstdc_dual_abi",
+      "name": "libstdc++ dual ABI",
+      "type": "library_abi_case",
+      "description": "GCC C++ standard-library transition supporting old and new ABI variants for selected types.",
+      "properties": {}
+    },
+    {
+      "id": "microsoft_visual_c_abi",
+      "name": "Microsoft Visual C++ ABI",
+      "type": "cpp_abi_family",
+      "description": "Microsoft C++ binary conventions used by MSVC toolchains, subject to toolchain/runtime compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "itanium_c_abi",
+      "name": "Itanium C++ ABI",
+      "type": "cpp_abi_family",
+      "description": "Widely used C++ ABI specification adopted by GCC and Clang on many non-Windows targets.",
+      "properties": {}
+    },
+    {
+      "id": "system_v_abi",
+      "name": "System V ABI",
+      "type": "platform_abi_family",
+      "description": "Family of platform binary conventions for Unix-like systems and multiple ISAs.",
+      "properties": {}
+    },
+    {
+      "id": "amd64_system_v_abi",
+      "name": "AMD64 System V ABI",
+      "type": "platform_abi",
+      "description": "System V AMD64 ABI covering calling convention, data model, stack, object and runtime conventions.",
+      "properties": {}
+    },
+    {
+      "id": "microsoft_x64_abi",
+      "name": "Microsoft x64 ABI",
+      "type": "platform_abi",
+      "description": "Windows x64 calling convention and related binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "windows_abi",
+      "name": "Windows ABI",
+      "type": "platform_abi_family",
+      "description": "Windows platform binary contracts including calling conventions, system interfaces, object format, and runtime constraints.",
+      "properties": {}
+    },
+    {
+      "id": "linux_abi",
+      "name": "Linux ABI",
+      "type": "platform_abi_family",
+      "description": "Linux userspace/kernel and library binary contracts for a specific architecture and environment.",
+      "properties": {}
+    },
+    {
+      "id": "linux_system_call_abi",
+      "name": "Linux system-call ABI",
+      "type": "kernel_interface",
+      "description": "Architecture-specific interface for entering the Linux kernel, including syscall numbers and argument conventions.",
+      "properties": {}
+    },
+    {
+      "id": "system_call",
+      "name": "System call",
+      "type": "operating_system_interface",
+      "description": "Controlled transition from user code to kernel services using a platform-defined convention.",
+      "properties": {}
+    },
+    {
+      "id": "system_call_number",
+      "name": "System-call number",
+      "type": "kernel_interface_component",
+      "description": "Number identifying a kernel service in an architecture-specific system-call ABI.",
+      "properties": {}
+    },
+    {
+      "id": "system_call_wrapper",
+      "name": "System-call wrapper",
+      "type": "runtime_component",
+      "description": "Library or assembly stub exposing system calls through a callable interface.",
+      "properties": {}
+    },
+    {
+      "id": "kernel_abi",
+      "name": "Kernel ABI",
+      "type": "kernel_interface",
+      "description": "Binary interface exposed by a kernel, including any supported stability commitments.",
+      "properties": {}
+    },
+    {
+      "id": "kernel_to_userspace_abi",
+      "name": "Kernel-to-userspace ABI",
+      "type": "kernel_interface",
+      "description": "Boundary conventions for user processes interacting with the kernel.",
+      "properties": {}
+    },
+    {
+      "id": "userspace_abi",
+      "name": "Userspace ABI",
+      "type": "platform_abi_component",
+      "description": "Binary conventions governing application and library execution in user mode.",
+      "properties": {}
+    },
+    {
+      "id": "linux_standard_base_lsb",
+      "name": "Linux Standard Base (LSB)",
+      "type": "platform_standard",
+      "description": "Specification set historically defining parts of Linux application binary and library interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "intel_binary_compatibility_standard_ibcs",
+      "name": "Intel Binary Compatibility Standard (iBCS)",
+      "type": "historical_standard",
+      "description": "Historical binary compatibility specification for Unix-like x86 environments.",
+      "properties": {}
+    },
+    {
+      "id": "embedded_abi_eabi",
+      "name": "Embedded ABI (EABI)",
+      "type": "embedded_abi",
+      "description": "ABI profile for embedded systems specifying data, calls, object files, and register/stack conventions.",
+      "properties": {}
+    },
+    {
+      "id": "arm_eabi",
+      "name": "ARM EABI",
+      "type": "embedded_abi_family",
+      "description": "Embedded ABI family for Arm targets, with variants and floating-point conventions.",
+      "properties": {}
+    },
+    {
+      "id": "arm_oabi",
+      "name": "ARM OABI",
+      "type": "historical_abi",
+      "description": "Older Arm Linux ABI conventions, distinct from the newer EABI usage.",
+      "properties": {}
+    },
+    {
+      "id": "powerpc_eabi",
+      "name": "PowerPC EABI",
+      "type": "embedded_abi_family",
+      "description": "Embedded ABI conventions for PowerPC targets.",
+      "properties": {}
+    },
+    {
+      "id": "mips_eabi",
+      "name": "MIPS EABI",
+      "type": "embedded_abi_family",
+      "description": "Embedded ABI conventions for MIPS targets.",
+      "properties": {}
+    },
+    {
+      "id": "hard_float_abi",
+      "name": "Hard-float ABI",
+      "type": "calling_convention_variant",
+      "description": "ABI variant passing eligible floating-point arguments/results in hardware floating-point registers.",
+      "properties": {}
+    },
+    {
+      "id": "soft_float_abi",
+      "name": "Soft-float ABI",
+      "type": "calling_convention_variant",
+      "description": "ABI variant using integer registers or memory conventions rather than hardware FP argument registers.",
+      "properties": {}
+    },
+    {
+      "id": "softfp_abi",
+      "name": "Softfp ABI",
+      "type": "calling_convention_variant",
+      "description": "Convention that may use software-compatible calling conventions while allowing hardware floating-point instructions.",
+      "properties": {}
+    },
+    {
+      "id": "target_triple",
+      "name": "Target triple",
+      "type": "toolchain_concept",
+      "description": "Toolchain identifier typically encoding architecture, vendor, operating system, and environment/ABI details.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_flags",
+      "name": "Compiler flags",
+      "type": "toolchain_configuration",
+      "description": "Options that can change code generation, data layout, calling convention, or ABI-relevant features.",
+      "properties": {}
+    },
+    {
+      "id": "cpu_feature_flags",
+      "name": "CPU feature flags",
+      "type": "toolchain_configuration",
+      "description": "Options enabling instruction extensions; some may alter vector types or call boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "preprocessor_definitions",
+      "name": "Preprocessor definitions",
+      "type": "toolchain_configuration",
+      "description": "Compile-time definitions that can change declarations or data layout across translation units.",
+      "properties": {}
+    },
+    {
+      "id": "header_file",
+      "name": "Header file",
+      "type": "source_interface_artifact",
+      "description": "Declarations and type definitions used to compile clients against an API.",
+      "properties": {}
+    },
+    {
+      "id": "library_version",
+      "name": "Library version",
+      "type": "versioning_concept",
+      "description": "Release identifier for a library; compatibility depends on preserved binary-visible behavior.",
+      "properties": {}
+    },
+    {
+      "id": "semantic_versioning",
+      "name": "Semantic versioning",
+      "type": "versioning_concept",
+      "description": "Version-labeling convention often used to communicate intended compatibility changes, but not a guarantee by itself.",
+      "properties": {}
+    },
+    {
+      "id": "soname",
+      "name": "SONAME",
+      "type": "elf_component",
+      "description": "ELF shared-library identity used by dynamic linkers to select compatible library names.",
+      "properties": {}
+    },
+    {
+      "id": "dll",
+      "name": "DLL",
+      "type": "windows_binary_artifact",
+      "description": "Dynamically linked library format/concept in Windows environments.",
+      "properties": {}
+    },
+    {
+      "id": "import_library",
+      "name": "Import library",
+      "type": "windows_binary_artifact",
+      "description": "Link-time artifact describing or forwarding imports from a DLL.",
+      "properties": {}
+    },
+    {
+      "id": "application_manifest",
+      "name": "Application manifest",
+      "type": "windows_binary_metadata",
+      "description": "Metadata that can influence Windows runtime activation or dependency behavior.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_symbol",
+      "name": "Dynamic symbol",
+      "type": "linking_concept",
+      "description": "Symbol exported or looked up across dynamically linked components.",
+      "properties": {}
+    },
+    {
+      "id": "weak_symbol",
+      "name": "Weak symbol",
+      "type": "linking_concept",
+      "description": "Symbol definition or reference with weaker resolution precedence under toolchain rules.",
+      "properties": {}
+    },
+    {
+      "id": "exported_symbol_set",
+      "name": "Exported symbol set",
+      "type": "library_abi_component",
+      "description": "Set of externally visible symbols forming part of a library's binary surface.",
+      "properties": {}
+    },
+    {
+      "id": "opaque_pointer",
+      "name": "Opaque pointer",
+      "type": "interop_design_pattern",
+      "description": "Pointer to an implementation-hidden object, reducing client dependence on private layout.",
+      "properties": {}
+    },
+    {
+      "id": "pimpl_idiom",
+      "name": "PImpl idiom",
+      "type": "cpp_abi_design_pattern",
+      "description": "C++ technique hiding implementation layout behind a pointer to reduce ABI exposure.",
+      "properties": {}
+    },
+    {
+      "id": "stable_c_wrapper",
+      "name": "Stable C wrapper",
+      "type": "interop_design_pattern",
+      "description": "C-compatible façade around a library implementation to constrain cross-language ABI surface.",
+      "properties": {}
+    },
+    {
+      "id": "versioned_api",
+      "name": "Versioned API",
+      "type": "interface_versioning",
+      "description": "Source interface evolution strategy; API versioning alone does not ensure ABI compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "abi_versioning",
+      "name": "ABI versioning",
+      "type": "interface_versioning",
+      "description": "Explicit identification or coexistence of binary interface revisions.",
+      "properties": {}
+    },
+    {
+      "id": "backward_compatibility",
+      "name": "Backward compatibility",
+      "type": "compatibility_property",
+      "description": "Newer provider remains usable by older consumers under specified conditions.",
+      "properties": {}
+    },
+    {
+      "id": "forward_compatibility",
+      "name": "Forward compatibility",
+      "type": "compatibility_property",
+      "description": "Older provider can support newer consumers only when the contract explicitly allows it.",
+      "properties": {}
+    },
+    {
+      "id": "cross_compilation",
+      "name": "Cross-compilation",
+      "type": "build_process",
+      "description": "Building binaries on one host for a different target platform.",
+      "properties": {}
+    },
+    {
+      "id": "cross_language_linking",
+      "name": "Cross-language linking",
+      "type": "interop_operation",
+      "description": "Linking components produced from different programming languages through compatible conventions.",
+      "properties": {}
+    },
+    {
+      "id": "mixed_compiler_linking",
+      "name": "Mixed-compiler linking",
+      "type": "interop_operation",
+      "description": "Linking object code generated by different compiler implementations or versions.",
+      "properties": {}
+    },
+    {
+      "id": "undefined_behavior",
+      "name": "Undefined behavior",
+      "type": "language_semantics",
+      "description": "Program behavior for which the language contract imposes no requirements; ABI mismatch can expose such failures.",
+      "properties": {}
+    },
+    {
+      "id": "marshalling",
+      "name": "Marshalling",
+      "type": "interop_concept",
+      "description": "Converting values and data structures to a representation suitable for a foreign runtime or call boundary.",
+      "properties": {}
+    },
+    {
+      "id": "foreign_data_layout",
+      "name": "Foreign data layout",
+      "type": "interop_concept",
+      "description": "Representation requirements for values crossing a language or process boundary.",
+      "properties": {}
+    },
+    {
+      "id": "callback",
+      "name": "Callback",
+      "type": "interop_concept",
+      "description": "Call from a foreign library/runtime back into a client-provided function.",
+      "properties": {}
+    },
+    {
+      "id": "thread_local_storage_tls",
+      "name": "Thread-local storage (TLS)",
+      "type": "runtime_abi_component",
+      "description": "ABI mechanisms for per-thread variables and their access models.",
+      "properties": {}
+    },
+    {
+      "id": "thread_local_variable_model",
+      "name": "Thread-local variable model",
+      "type": "runtime_abi_component",
+      "description": "Compiler/linker/runtime strategy for locating thread-local data.",
+      "properties": {}
+    },
+    {
+      "id": "process_startup",
+      "name": "Process startup",
+      "type": "runtime_abi_component",
+      "description": "Entry-point and initialization conventions before application-level main or equivalent.",
+      "properties": {}
+    },
+    {
+      "id": "entry_point",
+      "name": "Entry point",
+      "type": "executable_component",
+      "description": "Address or symbol where a loader or runtime begins program execution.",
+      "properties": {}
+    },
+    {
+      "id": "initialization_and_finalization",
+      "name": "Initialization and finalization",
+      "type": "runtime_abi_component",
+      "description": "Conventions for constructors, destructors, and runtime startup/teardown.",
+      "properties": {}
+    },
+    {
+      "id": "constructor_array",
+      "name": "Constructor array",
+      "type": "elf_component",
+      "description": "ELF metadata mechanism used to run initialization functions.",
+      "properties": {}
+    },
+    {
+      "id": "termination_handler",
+      "name": "Termination handler",
+      "type": "runtime_abi_component",
+      "description": "Mechanism for cleanup and finalization during process termination.",
+      "properties": {}
+    },
+    {
+      "id": "tls_destructor",
+      "name": "TLS destructor",
+      "type": "runtime_abi_component",
+      "description": "Cleanup mechanism for thread-local objects where supported.",
+      "properties": {}
+    },
+    {
+      "id": "signal_frame",
+      "name": "Signal frame",
+      "type": "operating_system_interface",
+      "description": "OS-defined saved execution context used when delivering signals or analogous asynchronous events.",
+      "properties": {}
+    },
+    {
+      "id": "signal_handler_abi",
+      "name": "Signal handler ABI",
+      "type": "operating_system_interface",
+      "description": "Rules for entering and returning from signal handlers and accessing saved context.",
+      "properties": {}
+    },
+    {
+      "id": "system_register_usage",
+      "name": "System register usage",
+      "type": "abi_component",
+      "description": "Rules governing special architectural registers or processor state at binary interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "floating_point_control_state",
+      "name": "Floating-point control state",
+      "type": "abi_component",
+      "description": "Rounding, exception, and vector state that may have preservation or call-boundary rules.",
+      "properties": {}
+    },
+    {
+      "id": "vector_register_preservation",
+      "name": "Vector register preservation",
+      "type": "calling_convention_component",
+      "description": "Rules governing which SIMD/vector registers must survive function calls.",
+      "properties": {}
+    },
+    {
+      "id": "redirection_thunk",
+      "name": "Redirection thunk",
+      "type": "linking_technique",
+      "description": "Small adapter that translates between calling conventions, symbol forms, or instruction modes.",
+      "properties": {}
+    },
+    {
+      "id": "calling_convention_adapter",
+      "name": "Calling-convention adapter",
+      "type": "interop_component",
+      "description": "Generated or handwritten shim translating between ABI conventions.",
+      "properties": {}
+    },
+    {
+      "id": "abi_conformance_test",
+      "name": "ABI conformance test",
+      "type": "validation_method",
+      "description": "Test suite checking calling, layout, symbol, unwind, or system-interface rules.",
+      "properties": {}
+    },
+    {
+      "id": "abi_diff_tool",
+      "name": "ABI diff tool",
+      "type": "validation_tool",
+      "description": "Tool comparing exported symbols, type layouts, or other binary interface details across versions.",
+      "properties": {}
+    },
+    {
+      "id": "symbol_inspection_tool",
+      "name": "Symbol inspection tool",
+      "type": "development_tool",
+      "description": "Tool that lists or demangles symbols in object files and libraries.",
+      "properties": {}
+    },
+    {
+      "id": "disassembler",
+      "name": "Disassembler",
+      "type": "development_tool",
+      "description": "Tool decoding machine code into instruction representations for inspection.",
+      "properties": {}
+    },
+    {
+      "id": "libabigail",
+      "name": "libabigail",
+      "type": "abi_analysis_tool",
+      "description": "Tooling ecosystem for comparing ABI changes in ELF binaries and libraries.",
+      "properties": {}
+    },
+    {
+      "id": "abi_compliance_checker",
+      "name": "abi-compliance-checker",
+      "type": "abi_analysis_tool",
+      "description": "Tool for checking library ABI compatibility using binary and debug information.",
+      "properties": {}
+    },
+    {
+      "id": "application_software_vendor_isv",
+      "name": "Application software vendor (ISV)",
+      "type": "stakeholder",
+      "description": "Software provider that depends on platform ABI stability to distribute binaries.",
+      "properties": {}
+    },
+    {
+      "id": "operating_system_vendor",
+      "name": "Operating-system vendor",
+      "type": "stakeholder",
+      "description": "Provider responsible for platform and kernel/library binary interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "library_maintainer",
+      "name": "Library maintainer",
+      "type": "stakeholder",
+      "description": "Maintains library binary surfaces and compatibility policy.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_vendor",
+      "name": "Compiler vendor",
+      "type": "stakeholder",
+      "description": "Maintains code generation and ABI behavior across compiler versions.",
+      "properties": {}
+    },
+    {
+      "id": "endianness_conversion",
+      "name": "Endianness conversion",
+      "type": "interop_operation",
+      "description": "Explicit conversion when binary data crosses environments with different byte-order expectations.",
+      "properties": {}
+    },
+    {
+      "id": "serialization_format",
+      "name": "Serialization format",
+      "type": "data_exchange_concept",
+      "description": "Explicit representation for data exchange that is independent of in-process ABI layout.",
+      "properties": {}
+    },
+    {
+      "id": "network_protocol",
+      "name": "Network protocol",
+      "type": "data_exchange_concept",
+      "description": "Specified wire-level communication contract, distinct from an in-process ABI.",
+      "properties": {}
+    },
+    {
+      "id": "ipc",
+      "name": "IPC",
+      "type": "operating_system_interface",
+      "description": "Inter-process communication interface, usually distinct from an in-process ABI.",
+      "properties": {}
+    },
+    {
+      "id": "shared_memory_interface",
+      "name": "Shared-memory interface",
+      "type": "interop_concept",
+      "description": "Cross-component data exchange through shared memory whose layout, synchronization, and ownership rules must be specified.",
+      "properties": {}
+    },
+    {
+      "id": "abi_surface",
+      "name": "ABI surface",
+      "type": "abi_component",
+      "description": "All binary-visible symbols, layouts, calling rules, metadata, and runtime behavior exposed to consumers.",
+      "properties": {}
+    },
+    {
+      "id": "abi_risk_assessment",
+      "name": "ABI risk assessment",
+      "type": "engineering_process",
+      "description": "Evaluation of proposed changes for binary compatibility impact.",
+      "properties": {}
+    },
+    {
+      "id": "abi_policy",
+      "name": "ABI policy",
+      "type": "engineering_policy",
+      "description": "Project rules defining supported compatibility scope, versioning, and deprecation.",
+      "properties": {}
+    },
+    {
+      "id": "rebuild_requirement",
+      "name": "Rebuild requirement",
+      "type": "compatibility_consequence",
+      "description": "Need to recompile dependent consumers after an incompatible interface change.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_crash",
+      "name": "Runtime crash",
+      "type": "failure_mode",
+      "description": "Failure symptom that can result from mismatched calling conventions or data layouts.",
+      "properties": {}
+    },
+    {
+      "id": "silent_data_corruption",
+      "name": "Silent data corruption",
+      "type": "failure_mode",
+      "description": "Incorrect behavior caused by mismatched structure layout, parameter classification, or type representation.",
+      "properties": {}
+    },
+    {
+      "id": "link_time_failure",
+      "name": "Link-time failure",
+      "type": "failure_mode",
+      "description": "Unresolved symbols or incompatible object metadata prevent successful linking.",
+      "properties": {}
+    },
+    {
+      "id": "load_time_failure",
+      "name": "Load-time failure",
+      "type": "failure_mode",
+      "description": "Dynamic loader cannot locate or resolve required libraries, symbols, or versions.",
+      "properties": {}
+    },
+    {
+      "id": "cross_platform_portability",
+      "name": "Cross-platform portability",
+      "type": "engineering_property",
+      "description": "Ability to move source or binaries between platforms; ABI portability is narrower and more constrained than source portability.",
+      "properties": {}
+    },
+    {
+      "id": "reproducible_build",
+      "name": "Reproducible build",
+      "type": "build_property",
+      "description": "Build process yielding equivalent artifacts from controlled inputs; relevant to validating ABI changes.",
+      "properties": {}
+    },
+    {
+      "id": "abi_documentation",
+      "name": "ABI documentation",
+      "type": "documentation_artifact",
+      "description": "Human-readable contract for supported data layouts, calling conventions, symbols, and platform boundaries.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_00001",
+      "source": "application_binary_interface_abi",
+      "target": "application_programming_interface_api",
+      "type": "is_distinct_from",
+      "description": "API is source-level; ABI governs compiled-code interaction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00002",
+      "source": "application_binary_interface_abi",
+      "target": "target_platform",
+      "type": "depends_on",
+      "description": "ABI compatibility depends on target hardware, operating system, and toolchain.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00003",
+      "source": "application_binary_interface_abi",
+      "target": "instruction_set_architecture_isa",
+      "type": "includes_or_targets",
+      "description": "ABI is associated with a target ISA and its architectural conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00004",
+      "source": "application_binary_interface_abi",
+      "target": "calling_convention",
+      "type": "specifies",
+      "description": "Calling conventions are a central ABI component.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00005",
+      "source": "application_binary_interface_abi",
+      "target": "data_layout",
+      "type": "specifies",
+      "description": "ABI specifies type size, alignment, and aggregate layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00006",
+      "source": "application_binary_interface_abi",
+      "target": "object_file_format",
+      "type": "may_specify_or_rely_on",
+      "description": "A complete platform ABI commonly defines or relies on object formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00007",
+      "source": "application_binary_interface_abi",
+      "target": "system_call",
+      "type": "may_specify",
+      "description": "OS ABI defines how applications invoke kernel services.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00008",
+      "source": "application_binary_interface_abi",
+      "target": "name_mangling",
+      "type": "may_specify",
+      "description": "Language ABIs may define symbol naming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00009",
+      "source": "application_binary_interface_abi",
+      "target": "exception_handling_abi",
+      "type": "may_specify",
+      "description": "Some language ABIs define exception propagation and unwinding.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00010",
+      "source": "application_binary_interface_abi",
+      "target": "standard_library_abi",
+      "type": "includes_or_interacts_with",
+      "description": "Libraries expose binary interfaces as part of the platform's usable ABI surface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00011",
+      "source": "application_binary_interface_abi",
+      "target": "abi_stability",
+      "type": "may_require",
+      "description": "Long-lived binary distribution depends on preserving stable contracts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00012",
+      "source": "abi_compatibility",
+      "target": "binary_compatibility",
+      "type": "enables",
+      "description": "Compatible binary interfaces allow precompiled components to interoperate.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00013",
+      "source": "api_compatibility",
+      "target": "source_compatibility",
+      "type": "often_supports",
+      "description": "Source-compatible changes help consumers rebuild, but do not guarantee binary compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00014",
+      "source": "abi_break",
+      "target": "abi_compatibility",
+      "type": "violates",
+      "description": "An incompatible binary-visible change breaks prior assumptions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00015",
+      "source": "abi_break",
+      "target": "rebuild_requirement",
+      "type": "may_create",
+      "description": "Consumers may need recompilation or coordinated upgrades.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00016",
+      "source": "abi_break",
+      "target": "link_time_failure",
+      "type": "may_cause",
+      "description": "Symbol or metadata mismatches can prevent linking.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00017",
+      "source": "abi_break",
+      "target": "runtime_crash",
+      "type": "may_cause",
+      "description": "Call or layout mismatches can fail at runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00018",
+      "source": "abi_break",
+      "target": "silent_data_corruption",
+      "type": "may_cause",
+      "description": "Mismatched layouts may silently misinterpret values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00019",
+      "source": "abi_specification",
+      "target": "application_binary_interface_abi",
+      "type": "documents",
+      "description": "Specification records ABI rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00020",
+      "source": "abi_implementation",
+      "target": "application_binary_interface_abi",
+      "type": "realizes",
+      "description": "Compiler, runtime, OS, and libraries implement the contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00021",
+      "source": "target_platform",
+      "target": "toolchain",
+      "type": "constrains",
+      "description": "Toolchain target configuration must match the intended platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00022",
+      "source": "compiler",
+      "target": "calling_convention",
+      "type": "implements",
+      "description": "Compiler-generated calls and function prologues follow calling conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00023",
+      "source": "assembler",
+      "target": "object_file",
+      "type": "produces",
+      "description": "Assembler emits object code and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00024",
+      "source": "linker",
+      "target": "object_file",
+      "type": "consumes",
+      "description": "Linker combines object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00025",
+      "source": "linker",
+      "target": "symbol_resolution",
+      "type": "performs",
+      "description": "Linker matches symbol references to definitions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00026",
+      "source": "linker",
+      "target": "relocation",
+      "type": "applies",
+      "description": "Linker applies relocations when producing output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00027",
+      "source": "loader",
+      "target": "executable",
+      "type": "loads",
+      "description": "Loader maps and prepares executable artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00028",
+      "source": "dynamic_linker",
+      "target": "shared_library",
+      "type": "resolves_dependencies_on",
+      "description": "Dynamic linker resolves shared-library dependencies.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00029",
+      "source": "static_linking",
+      "target": "static_library",
+      "type": "uses",
+      "description": "Static linking incorporates selected object code from archives.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00030",
+      "source": "dynamic_linking",
+      "target": "shared_library",
+      "type": "uses",
+      "description": "Dynamic linking resolves code in shared objects or DLLs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00031",
+      "source": "object_file",
+      "target": "object_file_format",
+      "type": "conforms_to",
+      "description": "Object files follow a format specification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00032",
+      "source": "elf",
+      "target": "object_file_format",
+      "type": "is_a",
+      "description": "ELF is an object/executable file format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00033",
+      "source": "pe_coff",
+      "target": "object_file_format",
+      "type": "is_a",
+      "description": "PE/COFF describes object and executable formats used in Windows ecosystems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00034",
+      "source": "mach_o",
+      "target": "object_file_format",
+      "type": "is_a",
+      "description": "Mach-O is an object and executable format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00035",
+      "source": "wasm_module_format",
+      "target": "object_file_format",
+      "type": "is_related_to",
+      "description": "Wasm modules are binary artifacts but target a virtual execution environment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00036",
+      "source": "symbol_table",
+      "target": "object_file",
+      "type": "is_stored_in",
+      "description": "Object files contain symbol tables or related symbol metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00037",
+      "source": "symbol",
+      "target": "symbol_table",
+      "type": "is_represented_in",
+      "description": "Symbols are recorded in symbol tables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00038",
+      "source": "symbol_resolution",
+      "target": "symbol",
+      "type": "matches_references_to",
+      "description": "Resolution binds references to definitions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00039",
+      "source": "symbol_visibility",
+      "target": "exported_symbol_set",
+      "type": "controls",
+      "description": "Visibility rules help determine the externally visible interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00040",
+      "source": "symbol_versioning",
+      "target": "dynamic_symbol",
+      "type": "versions",
+      "description": "Dynamic symbols can be associated with version identifiers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00041",
+      "source": "name_mangling",
+      "target": "symbol",
+      "type": "encodes_source_entity_as",
+      "description": "Mangling maps language-level names/signatures to linker-visible names.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00042",
+      "source": "demangling",
+      "target": "name_mangling",
+      "type": "reverses_readable_representation_of",
+      "description": "Demanglers render mangled symbols in readable form.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00043",
+      "source": "relocation_entry",
+      "target": "relocation",
+      "type": "describes",
+      "description": "A relocation entry encodes a relocation operation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00044",
+      "source": "position_independent_code_pic",
+      "target": "dynamic_linking",
+      "type": "supports",
+      "description": "PIC facilitates loading code at different addresses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00045",
+      "source": "procedure_linkage_table_plt",
+      "target": "dynamic_linker",
+      "type": "can_route_calls_through",
+      "description": "PLT stubs can participate in lazy or dynamic symbol resolution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00046",
+      "source": "global_offset_table_got",
+      "target": "dynamic_linker",
+      "type": "may_be_populated_or_resolved_by",
+      "description": "GOT entries may be initialized or updated for dynamic addresses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00047",
+      "source": "calling_convention",
+      "target": "argument_passing",
+      "type": "defines",
+      "description": "Convention determines argument locations and classification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00048",
+      "source": "calling_convention",
+      "target": "return_value_convention",
+      "type": "defines",
+      "description": "Convention determines result locations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00049",
+      "source": "calling_convention",
+      "target": "caller_saved_register",
+      "type": "defines_usage_of",
+      "description": "Call boundary specifies which register values caller must protect.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00050",
+      "source": "calling_convention",
+      "target": "callee_saved_register",
+      "type": "defines_usage_of",
+      "description": "Callee preserves required nonvolatile registers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00051",
+      "source": "calling_convention",
+      "target": "stack_frame",
+      "type": "constrains",
+      "description": "Call convention governs stack-frame organization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00052",
+      "source": "calling_convention",
+      "target": "stack_alignment",
+      "type": "specifies",
+      "description": "Stack alignment requirements are ABI-defined.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00053",
+      "source": "calling_convention",
+      "target": "variadic_function",
+      "type": "defines_handling_for",
+      "description": "Variadic calls need defined argument classification and metadata rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00054",
+      "source": "calling_convention",
+      "target": "aggregate_return",
+      "type": "defines_handling_for",
+      "description": "ABI rules determine direct versus indirect aggregate return.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00055",
+      "source": "calling_convention",
+      "target": "vector_register_preservation",
+      "type": "defines",
+      "description": "Some conventions specify preservation of vector state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00056",
+      "source": "function_call",
+      "target": "calling_convention",
+      "type": "must_follow",
+      "description": "Calls must use matching conventions at the binary boundary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00057",
+      "source": "function_return",
+      "target": "calling_convention",
+      "type": "must_follow",
+      "description": "Returns follow the agreed result and saved-state rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00058",
+      "source": "call_stack",
+      "target": "stack_frame",
+      "type": "contains",
+      "description": "Nested calls commonly create frames on the call stack.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00059",
+      "source": "stack_pointer",
+      "target": "call_stack",
+      "type": "tracks",
+      "description": "Stack pointer identifies current stack position.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00060",
+      "source": "frame_pointer",
+      "target": "stack_frame",
+      "type": "may_reference",
+      "description": "Frame pointer may provide stable frame-relative addressing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00061",
+      "source": "red_zone",
+      "target": "calling_convention",
+      "type": "is_defined_by",
+      "description": "Some ABIs reserve a stack region for leaf-function use.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00062",
+      "source": "shadow_space_home_space",
+      "target": "calling_convention",
+      "type": "is_defined_by",
+      "description": "Some conventions require caller-reserved home space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00063",
+      "source": "parameter_classification",
+      "target": "argument_passing",
+      "type": "determines",
+      "description": "Type classes determine register or memory locations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00064",
+      "source": "register_classification",
+      "target": "parameter_classification",
+      "type": "implements",
+      "description": "Classification algorithms assign values to eligible register classes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00065",
+      "source": "hidden_structure_return_pointer",
+      "target": "aggregate_return",
+      "type": "implements",
+      "description": "Indirect aggregate returns may use a hidden result pointer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00066",
+      "source": "tail_call",
+      "target": "calling_convention",
+      "type": "is_constrained_by",
+      "description": "Tail calls require compatible argument, stack, and return conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00067",
+      "source": "unwind_information",
+      "target": "stack_unwinding",
+      "type": "supports",
+      "description": "Unwind metadata enables restoration of caller state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00068",
+      "source": "setjmp_longjmp",
+      "target": "stack_unwinding",
+      "type": "is_related_to",
+      "description": "Nonlocal jumps restore a saved execution context but are not ordinary exception unwinding.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00069",
+      "source": "exception_propagation",
+      "target": "exception_handling_abi",
+      "type": "is_governed_by",
+      "description": "Exception propagation relies on language/runtime-specific binary rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00070",
+      "source": "exception_handling_abi",
+      "target": "personality_routine",
+      "type": "may_use",
+      "description": "Unwinders may consult language-specific personality routines.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00071",
+      "source": "unwind_table",
+      "target": "unwind_information",
+      "type": "encodes",
+      "description": "Unwind tables store frame-recovery information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00072",
+      "source": "debug_information",
+      "target": "object_file",
+      "type": "may_be_stored_in",
+      "description": "Debug metadata may be embedded or associated with object artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00073",
+      "source": "foreign_function_interface_ffi",
+      "target": "calling_convention",
+      "type": "must_match",
+      "description": "Foreign calls require compatible calling conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00074",
+      "source": "foreign_function_interface_ffi",
+      "target": "data_layout",
+      "type": "must_match_or_convert",
+      "description": "Cross-language values must have compatible layouts or be marshalled.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00075",
+      "source": "language_binding",
+      "target": "foreign_function_interface_ffi",
+      "type": "exposes",
+      "description": "Bindings make foreign functions accessible to a language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00076",
+      "source": "c_abi",
+      "target": "foreign_function_interface_ffi",
+      "type": "commonly_underpins",
+      "description": "Many language FFIs use C-compatible functions as an interoperability baseline.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00077",
+      "source": "extern_c",
+      "target": "c_abi",
+      "type": "selects",
+      "description": "The declaration requests C-linkage conventions where supported.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00078",
+      "source": "c_abi_81",
+      "target": "name_mangling",
+      "type": "defines",
+      "description": "C++ ABI specifies names for overloaded and otherwise distinct entities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00079",
+      "source": "c_abi_81",
+      "target": "exception_handling_abi",
+      "type": "defines_or_extends",
+      "description": "C++ ABI conventions include exception propagation details.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00080",
+      "source": "c_abi_81",
+      "target": "c_object_layout",
+      "type": "defines",
+      "description": "C++ binary conventions govern object representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00081",
+      "source": "c_object_layout",
+      "target": "virtual_table_pointer_vptr",
+      "type": "may_include",
+      "description": "Some implementations store a vptr in polymorphic objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00082",
+      "source": "virtual_table_pointer_vptr",
+      "target": "virtual_method_table_vtable",
+      "type": "references",
+      "description": "The vptr provides access to virtual dispatch metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00083",
+      "source": "multiple_inheritance",
+      "target": "c_object_layout",
+      "type": "affects",
+      "description": "Base subobjects and pointer adjustments affect object layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00084",
+      "source": "multiple_inheritance",
+      "target": "virtual_method_table_vtable",
+      "type": "can_complicate",
+      "description": "Multiple inheritance can require multiple vtable views or adjustments.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00085",
+      "source": "run_time_type_information_rtti",
+      "target": "c_abi_81",
+      "type": "is_defined_by",
+      "description": "RTTI representation and operations are ABI-sensitive.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00086",
+      "source": "template_instantiation",
+      "target": "name_mangling",
+      "type": "affects",
+      "description": "Specialization identity is reflected in symbol naming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00087",
+      "source": "inline_function",
+      "target": "one_definition_rule_odr",
+      "type": "is_constrained_by",
+      "description": "Inline definitions must satisfy language linkage/ODR requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00088",
+      "source": "standard_library_abi",
+      "target": "application_binary_interface_abi",
+      "type": "forms_part_of",
+      "description": "Library binary surfaces contribute to the overall ABI experienced by consumers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00089",
+      "source": "libstdc_dual_abi",
+      "target": "standard_library_abi",
+      "type": "is_an_example_of",
+      "description": "libstdc++ supported old and new ABI variants for selected types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00090",
+      "source": "microsoft_visual_c_abi",
+      "target": "c_abi_81",
+      "type": "is_an_implementation_family_of",
+      "description": "MSVC uses its own C++ binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00091",
+      "source": "itanium_c_abi",
+      "target": "c_abi_81",
+      "type": "is_a_specification_family_of",
+      "description": "Itanium ABI is used by GCC/Clang on many non-Windows targets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00092",
+      "source": "amd64_system_v_abi",
+      "target": "system_v_abi",
+      "type": "specializes",
+      "description": "AMD64 System V ABI specifies x86-64 platform conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00093",
+      "source": "microsoft_x64_abi",
+      "target": "windows_abi",
+      "type": "specializes",
+      "description": "Microsoft x64 specifies Windows x64 calling and binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00094",
+      "source": "linux_abi",
+      "target": "linux_system_call_abi",
+      "type": "includes",
+      "description": "Linux ABI includes architecture-specific kernel-entry conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00095",
+      "source": "linux_system_call_abi",
+      "target": "system_call_number",
+      "type": "uses",
+      "description": "Syscall number identifies the requested kernel operation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00096",
+      "source": "system_call",
+      "target": "system_call_wrapper",
+      "type": "may_be_invoked_through",
+      "description": "Libraries commonly provide wrappers around kernel entry.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00097",
+      "source": "kernel_to_userspace_abi",
+      "target": "operating_system",
+      "type": "is_provided_by",
+      "description": "Kernel and userspace runtime define the relevant interface boundary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00098",
+      "source": "userspace_abi",
+      "target": "c_library",
+      "type": "interacts_with",
+      "description": "C library exposes user-facing interfaces over platform services.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00099",
+      "source": "linux_standard_base_lsb",
+      "target": "system_v_abi",
+      "type": "references_or_uses",
+      "description": "LSB specifications included System V ABI conventions for relevant targets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00100",
+      "source": "intel_binary_compatibility_standard_ibcs",
+      "target": "binary_compatibility",
+      "type": "aimed_to_provide",
+      "description": "iBCS sought compatibility among supported Unix binary environments.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00101",
+      "source": "embedded_abi_eabi",
+      "target": "target_platform",
+      "type": "specializes_for",
+      "description": "EABI profiles target embedded systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00102",
+      "source": "arm_eabi",
+      "target": "embedded_abi_eabi",
+      "type": "is_a_family_of",
+      "description": "Arm EABI defines embedded binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00103",
+      "source": "arm_oabi",
+      "target": "arm_eabi",
+      "type": "is_distinct_from",
+      "description": "Older OABI conventions differ from the newer EABI family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00104",
+      "source": "powerpc_eabi",
+      "target": "embedded_abi_eabi",
+      "type": "is_a_family_of",
+      "description": "PowerPC EABI defines embedded target conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00105",
+      "source": "mips_eabi",
+      "target": "embedded_abi_eabi",
+      "type": "is_a_family_of",
+      "description": "MIPS EABI defines embedded target conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00106",
+      "source": "hard_float_abi",
+      "target": "calling_convention",
+      "type": "specializes",
+      "description": "Eligible floating-point arguments/results use floating-point registers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00107",
+      "source": "soft_float_abi",
+      "target": "calling_convention",
+      "type": "specializes",
+      "description": "Floating-point values follow software-compatible argument/result conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00108",
+      "source": "softfp_abi",
+      "target": "calling_convention",
+      "type": "specializes",
+      "description": "Instruction capability and call convention can differ; softfp typically preserves soft-float-style calls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00109",
+      "source": "target_triple",
+      "target": "toolchain",
+      "type": "configures",
+      "description": "Target triple identifies architecture and environment dimensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00110",
+      "source": "compiler_flags",
+      "target": "compiler",
+      "type": "configure",
+      "description": "Flags can affect ABI-sensitive code generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00111",
+      "source": "cpu_feature_flags",
+      "target": "compiler_flags",
+      "type": "are_a_kind_of",
+      "description": "Feature flags select instruction and sometimes ABI-relevant type/call behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00112",
+      "source": "preprocessor_definitions",
+      "target": "header_file",
+      "type": "can_change_interpretation_of",
+      "description": "Macros may alter declarations and layouts seen by translation units.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00113",
+      "source": "header_file",
+      "target": "application_programming_interface_api",
+      "type": "declares",
+      "description": "Headers expose source-level declarations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00114",
+      "source": "library_version",
+      "target": "abi_stability",
+      "type": "may_affect",
+      "description": "Version changes require compatibility policy and validation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00115",
+      "source": "semantic_versioning",
+      "target": "abi_policy",
+      "type": "may_inform",
+      "description": "Version labels may communicate intended compatibility, but do not prove ABI stability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00116",
+      "source": "soname",
+      "target": "shared_library",
+      "type": "identifies",
+      "description": "SONAME communicates shared-library identity to ELF dynamic linkers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00117",
+      "source": "dll",
+      "target": "dynamic_linking",
+      "type": "participates_in",
+      "description": "DLLs are loaded dynamically on Windows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00118",
+      "source": "import_library",
+      "target": "dll",
+      "type": "supports_linking_against",
+      "description": "Import libraries provide link-time references to DLL exports.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00119",
+      "source": "dynamic_symbol",
+      "target": "exported_symbol_set",
+      "type": "may_be_part_of",
+      "description": "Dynamic symbols can form a library's public ABI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00120",
+      "source": "weak_symbol",
+      "target": "symbol_resolution",
+      "type": "affects",
+      "description": "Weak definitions/references participate in toolchain-specific resolution rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00121",
+      "source": "exported_symbol_set",
+      "target": "abi_surface",
+      "type": "defines_part_of",
+      "description": "Exported symbols form a visible part of a library ABI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00122",
+      "source": "opaque_pointer",
+      "target": "data_layout",
+      "type": "reduces_exposure_of",
+      "description": "Opaque handles avoid exposing private structure layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00123",
+      "source": "pimpl_idiom",
+      "target": "opaque_pointer",
+      "type": "uses",
+      "description": "PImpl hides implementation details behind a pointer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00124",
+      "source": "stable_c_wrapper",
+      "target": "c_abi",
+      "type": "uses",
+      "description": "A C façade can constrain cross-language binary contracts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00125",
+      "source": "versioned_api",
+      "target": "api_compatibility",
+      "type": "addresses",
+      "description": "Source-level versioning concerns do not automatically guarantee binary compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00126",
+      "source": "abi_versioning",
+      "target": "abi_stability",
+      "type": "supports_management_of",
+      "description": "Explicit versions can help manage multiple binary contracts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00127",
+      "source": "cross_compilation",
+      "target": "target_platform",
+      "type": "targets",
+      "description": "Cross-compilation produces binaries for another platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00128",
+      "source": "cross_language_linking",
+      "target": "foreign_function_interface_ffi",
+      "type": "depends_on",
+      "description": "Cross-language object interoperability requires compatible boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00129",
+      "source": "mixed_compiler_linking",
+      "target": "toolchain",
+      "type": "requires_compatible_outputs_from",
+      "description": "Different compilers must agree on ABI and object-level conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00130",
+      "source": "undefined_behavior",
+      "target": "abi_break",
+      "type": "can_be_exposed_by",
+      "description": "ABI mismatches can cause behavior outside language guarantees.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00131",
+      "source": "marshalling",
+      "target": "foreign_data_layout",
+      "type": "converts",
+      "description": "Marshalling transforms values to expected boundary representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00132",
+      "source": "callback",
+      "target": "foreign_function_interface_ffi",
+      "type": "requires",
+      "description": "Callbacks need compatible calling convention, lifetime, and error behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00133",
+      "source": "thread_local_storage_tls",
+      "target": "thread_local_variable_model",
+      "type": "is_realized_by",
+      "description": "TLS models define how per-thread objects are located.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00134",
+      "source": "process_startup",
+      "target": "entry_point",
+      "type": "transfers_control_to",
+      "description": "Loader/runtime eventually transfers control to an entry point.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00135",
+      "source": "initialization_and_finalization",
+      "target": "constructor_array",
+      "type": "may_use",
+      "description": "ELF initialization arrays can invoke startup constructors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00136",
+      "source": "termination_handler",
+      "target": "initialization_and_finalization",
+      "type": "participates_in",
+      "description": "Termination runs cleanup/finalization according to runtime rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00137",
+      "source": "signal_handler_abi",
+      "target": "signal_frame",
+      "type": "uses",
+      "description": "OS signal delivery may construct a saved context frame.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00138",
+      "source": "floating_point_control_state",
+      "target": "calling_convention",
+      "type": "may_be_constrained_by",
+      "description": "Call boundaries can specify preservation or assumptions about FP state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00139",
+      "source": "vector_register_preservation",
+      "target": "calling_convention",
+      "type": "is_part_of",
+      "description": "Vector register save/restore policy is convention-specific.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00140",
+      "source": "redirection_thunk",
+      "target": "calling_convention_adapter",
+      "type": "can_implement",
+      "description": "Thunks can bridge calling conventions or symbol forms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00141",
+      "source": "calling_convention_adapter",
+      "target": "calling_convention",
+      "type": "translates_between",
+      "description": "Adapters convert arguments, register usage, stack state, or results.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00142",
+      "source": "abi_conformance_test",
+      "target": "application_binary_interface_abi",
+      "type": "tests",
+      "description": "Tests check implementation against ABI expectations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00143",
+      "source": "abi_diff_tool",
+      "target": "abi_risk_assessment",
+      "type": "supports",
+      "description": "Automated comparison helps identify binary-visible changes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00144",
+      "source": "symbol_inspection_tool",
+      "target": "symbol_table",
+      "type": "inspects",
+      "description": "Inspection tools display symbols and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00145",
+      "source": "disassembler",
+      "target": "instruction_set_architecture_isa",
+      "type": "decodes",
+      "description": "Disassemblers decode machine code according to an ISA.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00146",
+      "source": "libabigail",
+      "target": "abi_diff_tool",
+      "type": "is_related_to",
+      "description": "libabigail provides ABI analysis/comparison tooling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00147",
+      "source": "abi_compliance_checker",
+      "target": "abi_diff_tool",
+      "type": "is_related_to",
+      "description": "abi-compliance-checker checks library compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00148",
+      "source": "application_software_vendor_isv",
+      "target": "abi_stability",
+      "type": "depends_on",
+      "description": "ISVs benefit from stable binary contracts across supported releases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00149",
+      "source": "operating_system_vendor",
+      "target": "kernel_abi",
+      "type": "defines_or_maintains",
+      "description": "OS vendors define and maintain platform interface commitments.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00150",
+      "source": "library_maintainer",
+      "target": "standard_library_abi",
+      "type": "maintains",
+      "description": "Library maintainers control exported symbols and binary-visible layouts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00151",
+      "source": "compiler_vendor",
+      "target": "compiler",
+      "type": "maintains",
+      "description": "Compiler vendors implement ABI behavior in code generation and runtime integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00152",
+      "source": "serialization_format",
+      "target": "data_layout",
+      "type": "is_distinct_from",
+      "description": "Wire/storage serialization should be explicitly specified rather than relying on in-process layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00153",
+      "source": "network_protocol",
+      "target": "application_binary_interface_abi",
+      "type": "is_distinct_from",
+      "description": "Network protocols define wire interactions; ABIs define compiled-code interactions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00154",
+      "source": "ipc",
+      "target": "application_binary_interface_abi",
+      "type": "is_distinct_from",
+      "description": "IPC crosses process boundaries and commonly uses explicit protocols rather than direct function-call ABI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00155",
+      "source": "shared_memory_interface",
+      "target": "data_layout",
+      "type": "must_specify",
+      "description": "Shared-memory consumers must agree on layout, synchronization, and ownership.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00156",
+      "source": "abi_surface",
+      "target": "application_binary_interface_abi",
+      "type": "is_the_exposed_contract_of",
+      "description": "ABI surface comprises all externally observable binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00157",
+      "source": "abi_risk_assessment",
+      "target": "abi_break",
+      "type": "evaluates_likelihood_and_impact_of",
+      "description": "Review identifies changes that may invalidate existing consumers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00158",
+      "source": "abi_policy",
+      "target": "abi_stability",
+      "type": "sets_expectations_for",
+      "description": "Policy defines supported compatibility scope and deprecation rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00159",
+      "source": "rebuild_requirement",
+      "target": "binary_compatibility",
+      "type": "is_a_consequence_of_breaking",
+      "description": "Breaking changes can require consumers to rebuild.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00160",
+      "source": "runtime_crash",
+      "target": "calling_convention",
+      "type": "can_result_from_mismatch_in",
+      "description": "Wrong register/stack assumptions can corrupt execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00161",
+      "source": "silent_data_corruption",
+      "target": "structure_layout",
+      "type": "can_result_from_mismatch_in",
+      "description": "Field offsets and sizes can be interpreted incorrectly.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00162",
+      "source": "load_time_failure",
+      "target": "dynamic_linker",
+      "type": "may_be_reported_by",
+      "description": "Missing libraries or symbols can prevent program loading.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00163",
+      "source": "cross_platform_portability",
+      "target": "application_binary_interface_abi",
+      "type": "is_constrained_by",
+      "description": "Native binaries are generally platform-specific unless a compatible execution environment exists.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00164",
+      "source": "reproducible_build",
+      "target": "abi_diff_tool",
+      "type": "can_support_validation_with",
+      "description": "Repeatable artifacts help isolate changes when ABI differences are investigated.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00165",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00166",
+      "source": "application_binary_interface_abi",
+      "target": "argument_passing",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00167",
+      "source": "application_binary_interface_abi",
+      "target": "return_value_convention",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00168",
+      "source": "application_binary_interface_abi",
+      "target": "caller_saved_register",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00169",
+      "source": "application_binary_interface_abi",
+      "target": "callee_saved_register",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00170",
+      "source": "application_binary_interface_abi",
+      "target": "stack_frame",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00171",
+      "source": "application_binary_interface_abi",
+      "target": "call_stack",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00172",
+      "source": "application_binary_interface_abi",
+      "target": "stack_alignment",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00173",
+      "source": "application_binary_interface_abi",
+      "target": "red_zone",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00174",
+      "source": "application_binary_interface_abi",
+      "target": "shadow_space_home_space",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00175",
+      "source": "application_binary_interface_abi",
+      "target": "variadic_function",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00176",
+      "source": "application_binary_interface_abi",
+      "target": "aggregate_return",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00177",
+      "source": "application_binary_interface_abi",
+      "target": "hidden_structure_return_pointer",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00178",
+      "source": "application_binary_interface_abi",
+      "target": "register_classification",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00179",
+      "source": "application_binary_interface_abi",
+      "target": "parameter_classification",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00180",
+      "source": "application_binary_interface_abi",
+      "target": "unwind_information",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00181",
+      "source": "application_binary_interface_abi",
+      "target": "stack_unwinding",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00182",
+      "source": "application_binary_interface_abi",
+      "target": "name_mangling",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00183",
+      "source": "application_binary_interface_abi",
+      "target": "exception_propagation",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00184",
+      "source": "application_binary_interface_abi",
+      "target": "system_call_number",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00185",
+      "source": "application_binary_interface_abi",
+      "target": "object_file_format",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00186",
+      "source": "application_binary_interface_abi",
+      "target": "data_model",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00187",
+      "source": "application_binary_interface_abi",
+      "target": "primitive_type_size",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00188",
+      "source": "application_binary_interface_abi",
+      "target": "type_alignment",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00189",
+      "source": "application_binary_interface_abi",
+      "target": "data_layout",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00190",
+      "source": "application_binary_interface_abi",
+      "target": "structure_layout",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00191",
+      "source": "application_binary_interface_abi",
+      "target": "union_layout",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00192",
+      "source": "application_binary_interface_abi",
+      "target": "padding",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00193",
+      "source": "application_binary_interface_abi",
+      "target": "bit_field_layout",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00194",
+      "source": "application_binary_interface_abi",
+      "target": "enum_representation",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00195",
+      "source": "application_binary_interface_abi",
+      "target": "boolean_representation",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00196",
+      "source": "application_binary_interface_abi",
+      "target": "pointer_representation",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00197",
+      "source": "application_binary_interface_abi",
+      "target": "pointer_width",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00198",
+      "source": "application_binary_interface_abi",
+      "target": "endianness",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00199",
+      "source": "application_binary_interface_abi",
+      "target": "floating_point_representation",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00200",
+      "source": "application_binary_interface_abi",
+      "target": "vector_type_abi",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00201",
+      "source": "application_binary_interface_abi",
+      "target": "thread_local_storage_tls",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00202",
+      "source": "application_binary_interface_abi",
+      "target": "process_startup",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00203",
+      "source": "application_binary_interface_abi",
+      "target": "entry_point",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00204",
+      "source": "application_binary_interface_abi",
+      "target": "initialization_and_finalization",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00205",
+      "source": "application_binary_interface_abi",
+      "target": "exported_symbol_set",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00206",
+      "source": "application_binary_interface_abi",
+      "target": "symbol_visibility",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00207",
+      "source": "application_binary_interface_abi",
+      "target": "relocation",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00208",
+      "source": "application_binary_interface_abi",
+      "target": "calling_convention_adapter",
+      "type": "includes_component",
+      "description": "This concept can form part of an ABI specification or binary-visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00209",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00210",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00211",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00212",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00213",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00214",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00215",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00216",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00217",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00218",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00219",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00220",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00221",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00222",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00223",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00224",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00225",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00226",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00227",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00228",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00229",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00230",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00231",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00232",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00233",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00234",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00235",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00236",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00237",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00238",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00239",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00240",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00241",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00242",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00243",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00244",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00245",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00246",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00247",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00248",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00249",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00250",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00251",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00252",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00253",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00254",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00255",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00256",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00257",
+      "source": "abi_documentation",
+      "target": "abi_specification",
+      "type": "explains",
+      "description": "Documentation communicates ABI rules to implementers and users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00258",
+      "source": "amd64_system_v_abi",
+      "target": "calling_convention",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI defines concrete parameter, register, stack, and result conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00259",
+      "source": "amd64_system_v_abi",
+      "target": "data_layout",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI specifies target-specific data representation and layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00260",
+      "source": "amd64_system_v_abi",
+      "target": "object_file_format",
+      "type": "uses_or_specifies",
+      "description": "Platform toolchains pair ABI conventions with compatible object and executable formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00261",
+      "source": "microsoft_x64_abi",
+      "target": "calling_convention",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI defines concrete parameter, register, stack, and result conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00262",
+      "source": "microsoft_x64_abi",
+      "target": "data_layout",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI specifies target-specific data representation and layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00263",
+      "source": "microsoft_x64_abi",
+      "target": "object_file_format",
+      "type": "uses_or_specifies",
+      "description": "Platform toolchains pair ABI conventions with compatible object and executable formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00264",
+      "source": "arm_eabi",
+      "target": "calling_convention",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI defines concrete parameter, register, stack, and result conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00265",
+      "source": "arm_eabi",
+      "target": "data_layout",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI specifies target-specific data representation and layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00266",
+      "source": "arm_eabi",
+      "target": "object_file_format",
+      "type": "uses_or_specifies",
+      "description": "Platform toolchains pair ABI conventions with compatible object and executable formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00267",
+      "source": "powerpc_eabi",
+      "target": "calling_convention",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI defines concrete parameter, register, stack, and result conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00268",
+      "source": "powerpc_eabi",
+      "target": "data_layout",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI specifies target-specific data representation and layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00269",
+      "source": "powerpc_eabi",
+      "target": "object_file_format",
+      "type": "uses_or_specifies",
+      "description": "Platform toolchains pair ABI conventions with compatible object and executable formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00270",
+      "source": "mips_eabi",
+      "target": "calling_convention",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI defines concrete parameter, register, stack, and result conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00271",
+      "source": "mips_eabi",
+      "target": "data_layout",
+      "type": "defines_platform_specific_rules_for",
+      "description": "The platform ABI specifies target-specific data representation and layout.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00272",
+      "source": "mips_eabi",
+      "target": "object_file_format",
+      "type": "uses_or_specifies",
+      "description": "Platform toolchains pair ABI conventions with compatible object and executable formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00273",
+      "source": "c_abi",
+      "target": "foreign_function_interface_ffi",
+      "type": "can_participate_in",
+      "description": "Language ABI conventions determine which calls and data can safely cross a foreign interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00274",
+      "source": "c_abi_81",
+      "target": "foreign_function_interface_ffi",
+      "type": "can_participate_in",
+      "description": "Language ABI conventions determine which calls and data can safely cross a foreign interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00275",
+      "source": "rust_abi",
+      "target": "foreign_function_interface_ffi",
+      "type": "can_participate_in",
+      "description": "Language ABI conventions determine which calls and data can safely cross a foreign interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00276",
+      "source": "fortran_abi",
+      "target": "foreign_function_interface_ffi",
+      "type": "can_participate_in",
+      "description": "Language ABI conventions determine which calls and data can safely cross a foreign interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00277",
+      "source": "objective_c_runtime_abi",
+      "target": "foreign_function_interface_ffi",
+      "type": "can_participate_in",
+      "description": "Language ABI conventions determine which calls and data can safely cross a foreign interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00278",
+      "source": "swift_abi",
+      "target": "foreign_function_interface_ffi",
+      "type": "can_participate_in",
+      "description": "Language ABI conventions determine which calls and data can safely cross a foreign interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00279",
+      "source": "elf",
+      "target": "relocation",
+      "type": "defines_supported_forms_of",
+      "description": "Object format defines relocation records and supported relocation types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00280",
+      "source": "elf",
+      "target": "symbol_table",
+      "type": "defines_representation_of",
+      "description": "Object format defines how symbols and their metadata are represented.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00281",
+      "source": "pe_coff",
+      "target": "relocation",
+      "type": "defines_supported_forms_of",
+      "description": "Object format defines relocation records and supported relocation types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00282",
+      "source": "pe_coff",
+      "target": "symbol_table",
+      "type": "defines_representation_of",
+      "description": "Object format defines how symbols and their metadata are represented.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00283",
+      "source": "mach_o",
+      "target": "relocation",
+      "type": "defines_supported_forms_of",
+      "description": "Object format defines relocation records and supported relocation types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00284",
+      "source": "mach_o",
+      "target": "symbol_table",
+      "type": "defines_representation_of",
+      "description": "Object format defines how symbols and their metadata are represented.",
+      "properties": {}
+    }
+  ]
+}

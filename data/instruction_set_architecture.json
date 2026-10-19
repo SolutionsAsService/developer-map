@@ -1,0 +1,4538 @@
+{
+  "metadata": {
+    "title": "Instruction Set Architecture (ISA) Knowledge Graph",
+    "description": "Detailed directed graph covering ISA contracts, instruction semantics and classes, operand models, encoding, memory and exceptions, privilege, toolchains, compilers, implementation strategies, performance, representative architectures, extensions, and security facilities.",
+    "version": "1.0.0",
+    "created_utc": "2026-10-19T19:40:00.590715+00:00",
+    "source_basis": [
+      {
+        "title": "Instruction set architecture",
+        "source_type": "user-provided reference text",
+        "coverage_used": "Definition, compatibility, ISA versus microarchitecture, classifications, instruction types, encoding, operand counts, register pressure, instruction length, code density, design, and implementation."
+      },
+      {
+        "title": "Supplemental architecture knowledge",
+        "source_type": "model synthesis",
+        "coverage_used": "Expanded memory-model, toolchain, compiler, extension, virtualization, security, and implementation connections."
+      }
+    ],
+    "entity_count": 249,
+    "relationship_count": 235,
+    "entity_type_count": 94,
+    "relationship_type_count": 126,
+    "id_convention": "Lowercase snake_case entity IDs derived from canonical names; sequential relationship IDs within this artifact.",
+    "relationship_direction": "Every edge is directed from source to target; reverse edges are not implied.",
+    "scope_note": "Conceptual cross-ISA knowledge graph, not a normative specification or exhaustive opcode inventory."
+  },
+  "entity_types": [
+    {
+      "type": "abi_component",
+      "entity_count": 1
+    },
+    {
+      "type": "architectural_mode",
+      "entity_count": 1
+    },
+    {
+      "type": "architectural_state",
+      "entity_count": 1
+    },
+    {
+      "type": "arithmetic_semantics",
+      "entity_count": 1
+    },
+    {
+      "type": "binary_format",
+      "entity_count": 1
+    },
+    {
+      "type": "binary_linking_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "bytecode_isa",
+      "entity_count": 3
+    },
+    {
+      "type": "compatibility_property",
+      "entity_count": 2
+    },
+    {
+      "type": "compiler_objective",
+      "entity_count": 2
+    },
+    {
+      "type": "compiler_stage",
+      "entity_count": 3
+    },
+    {
+      "type": "compiler_technique",
+      "entity_count": 1
+    },
+    {
+      "type": "component",
+      "entity_count": 1
+    },
+    {
+      "type": "concept",
+      "entity_count": 5
+    },
+    {
+      "type": "contract",
+      "entity_count": 2
+    },
+    {
+      "type": "control_event",
+      "entity_count": 2
+    },
+    {
+      "type": "control_flow_feature",
+      "entity_count": 1
+    },
+    {
+      "type": "control_flow_model",
+      "entity_count": 1
+    },
+    {
+      "type": "control_model",
+      "entity_count": 1
+    },
+    {
+      "type": "control_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "control_structure",
+      "entity_count": 1
+    },
+    {
+      "type": "coprocessor",
+      "entity_count": 1
+    },
+    {
+      "type": "coprocessor_or_extension",
+      "entity_count": 1
+    },
+    {
+      "type": "data_representation",
+      "entity_count": 1
+    },
+    {
+      "type": "design_tradeoff",
+      "entity_count": 1
+    },
+    {
+      "type": "design_tradition",
+      "entity_count": 1
+    },
+    {
+      "type": "documentation_artifact",
+      "entity_count": 1
+    },
+    {
+      "type": "encoding_concept",
+      "entity_count": 4
+    },
+    {
+      "type": "encoding_constraint",
+      "entity_count": 1
+    },
+    {
+      "type": "encoding_family",
+      "entity_count": 1
+    },
+    {
+      "type": "encoding_field",
+      "entity_count": 4
+    },
+    {
+      "type": "encoding_property",
+      "entity_count": 3
+    },
+    {
+      "type": "encoding_strategy",
+      "entity_count": 4
+    },
+    {
+      "type": "exception_kind",
+      "entity_count": 3
+    },
+    {
+      "type": "exception_property",
+      "entity_count": 2
+    },
+    {
+      "type": "extension_category",
+      "entity_count": 1
+    },
+    {
+      "type": "extension_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "floating_point_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "historical_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "implementation_component",
+      "entity_count": 3
+    },
+    {
+      "type": "implementation_concept",
+      "entity_count": 4
+    },
+    {
+      "type": "implementation_form",
+      "entity_count": 2
+    },
+    {
+      "type": "implementation_technique",
+      "entity_count": 12
+    },
+    {
+      "type": "instruction_class",
+      "entity_count": 34
+    },
+    {
+      "type": "instruction_field",
+      "entity_count": 2
+    },
+    {
+      "type": "instruction_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "instruction_property",
+      "entity_count": 1
+    },
+    {
+      "type": "instruction_semantics",
+      "entity_count": 1
+    },
+    {
+      "type": "io_model",
+      "entity_count": 2
+    },
+    {
+      "type": "isa_extension",
+      "entity_count": 10
+    },
+    {
+      "type": "isa_extension_category",
+      "entity_count": 2
+    },
+    {
+      "type": "isa_family",
+      "entity_count": 13
+    },
+    {
+      "type": "isa_form",
+      "entity_count": 2
+    },
+    {
+      "type": "isa_style",
+      "entity_count": 8
+    },
+    {
+      "type": "isa_variant",
+      "entity_count": 3
+    },
+    {
+      "type": "memory_behavior",
+      "entity_count": 1
+    },
+    {
+      "type": "memory_concept",
+      "entity_count": 4
+    },
+    {
+      "type": "memory_constraint",
+      "entity_count": 1
+    },
+    {
+      "type": "memory_model",
+      "entity_count": 2
+    },
+    {
+      "type": "memory_model_component",
+      "entity_count": 3
+    },
+    {
+      "type": "memory_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "memory_organization",
+      "entity_count": 3
+    },
+    {
+      "type": "memory_structure",
+      "entity_count": 1
+    },
+    {
+      "type": "memory_system_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "microarchitectural_component",
+      "entity_count": 2
+    },
+    {
+      "type": "operand_kind",
+      "entity_count": 2
+    },
+    {
+      "type": "operand_model",
+      "entity_count": 5
+    },
+    {
+      "type": "operand_organization",
+      "entity_count": 5
+    },
+    {
+      "type": "os_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "performance_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "performance_metric",
+      "entity_count": 2
+    },
+    {
+      "type": "performance_operation",
+      "entity_count": 1
+    },
+    {
+      "type": "performance_property",
+      "entity_count": 1
+    },
+    {
+      "type": "person",
+      "entity_count": 1
+    },
+    {
+      "type": "pipeline_stage",
+      "entity_count": 2
+    },
+    {
+      "type": "processor_class",
+      "entity_count": 1
+    },
+    {
+      "type": "protection_concept",
+      "entity_count": 2
+    },
+    {
+      "type": "register_concept",
+      "entity_count": 1
+    },
+    {
+      "type": "register_organization",
+      "entity_count": 1
+    },
+    {
+      "type": "register_role",
+      "entity_count": 2
+    },
+    {
+      "type": "representation",
+      "entity_count": 2
+    },
+    {
+      "type": "research_movement",
+      "entity_count": 1
+    },
+    {
+      "type": "security_concept",
+      "entity_count": 4
+    },
+    {
+      "type": "software_artifact",
+      "entity_count": 1
+    },
+    {
+      "type": "software_component",
+      "entity_count": 3
+    },
+    {
+      "type": "software_interface",
+      "entity_count": 2
+    },
+    {
+      "type": "state",
+      "entity_count": 1
+    },
+    {
+      "type": "status_model",
+      "entity_count": 2
+    },
+    {
+      "type": "synchronization_primitive",
+      "entity_count": 4
+    },
+    {
+      "type": "system_interface",
+      "entity_count": 1
+    },
+    {
+      "type": "tool",
+      "entity_count": 5
+    },
+    {
+      "type": "translation_system",
+      "entity_count": 1
+    },
+    {
+      "type": "validation_method",
+      "entity_count": 3
+    },
+    {
+      "type": "vector_concept",
+      "entity_count": 3
+    },
+    {
+      "type": "virtualization_extension",
+      "entity_count": 2
+    }
+  ],
+  "relationship_types": [
+    {
+      "type": "accesses",
+      "relationship_count": 1
+    },
+    {
+      "type": "affects",
+      "relationship_count": 1
+    },
+    {
+      "type": "assigns_values_to",
+      "relationship_count": 1
+    },
+    {
+      "type": "benefits_from",
+      "relationship_count": 1
+    },
+    {
+      "type": "caches_results_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "calculates",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_accelerate",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_affect_representation_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_allow",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_be_extended_by",
+      "relationship_count": 2
+    },
+    {
+      "type": "can_be_represented_as",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_cause",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_control",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_encode",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_implement",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_improve",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_provide",
+      "relationship_count": 1
+    },
+    {
+      "type": "can_raise",
+      "relationship_count": 1
+    },
+    {
+      "type": "commonly_uses",
+      "relationship_count": 5
+    },
+    {
+      "type": "compares",
+      "relationship_count": 1
+    },
+    {
+      "type": "complicates_detection_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "constrains",
+      "relationship_count": 3
+    },
+    {
+      "type": "contains",
+      "relationship_count": 1
+    },
+    {
+      "type": "contains_or_implies",
+      "relationship_count": 2
+    },
+    {
+      "type": "decodes",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines",
+      "relationship_count": 9
+    },
+    {
+      "type": "defines_encoding_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_handling_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_handling_of",
+      "relationship_count": 2
+    },
+    {
+      "type": "defines_mappings_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_or_supports",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_ordering_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "defines_scope_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "depends_on",
+      "relationship_count": 2
+    },
+    {
+      "type": "depends_partly_on",
+      "relationship_count": 1
+    },
+    {
+      "type": "determines_status_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "dispatches_to",
+      "relationship_count": 1
+    },
+    {
+      "type": "documents",
+      "relationship_count": 1
+    },
+    {
+      "type": "does_not_require_specific_implementation",
+      "relationship_count": 2
+    },
+    {
+      "type": "example_of_isa_family_or_form",
+      "relationship_count": 19
+    },
+    {
+      "type": "executes",
+      "relationship_count": 1
+    },
+    {
+      "type": "exploits",
+      "relationship_count": 3
+    },
+    {
+      "type": "extends",
+      "relationship_count": 12
+    },
+    {
+      "type": "extends_or_controls",
+      "relationship_count": 1
+    },
+    {
+      "type": "extends_or_evolves",
+      "relationship_count": 1
+    },
+    {
+      "type": "formalizes",
+      "relationship_count": 1
+    },
+    {
+      "type": "guides",
+      "relationship_count": 1
+    },
+    {
+      "type": "handles",
+      "relationship_count": 1
+    },
+    {
+      "type": "has",
+      "relationship_count": 1
+    },
+    {
+      "type": "implements",
+      "relationship_count": 2
+    },
+    {
+      "type": "informed",
+      "relationship_count": 1
+    },
+    {
+      "type": "interacts_with",
+      "relationship_count": 2
+    },
+    {
+      "type": "is_a_form_of",
+      "relationship_count": 3
+    },
+    {
+      "type": "is_an_example_of",
+      "relationship_count": 5
+    },
+    {
+      "type": "is_associated_with",
+      "relationship_count": 4
+    },
+    {
+      "type": "is_common_in",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_configured_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_constrained_by",
+      "relationship_count": 2
+    },
+    {
+      "type": "is_defined_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_distinct_from",
+      "relationship_count": 2
+    },
+    {
+      "type": "is_element_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_execution_state_of",
+      "relationship_count": 2
+    },
+    {
+      "type": "is_gated_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_governed_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_implemented_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_informed_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_part_of",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_processed_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_recorded_in",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_related_to",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_represented_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "is_used_by",
+      "relationship_count": 2
+    },
+    {
+      "type": "may_be_classified_as",
+      "relationship_count": 7
+    },
+    {
+      "type": "may_be_included_in",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_realized_as",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_specified_by",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_stronger_than",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_be_supported_by",
+      "relationship_count": 3
+    },
+    {
+      "type": "may_compile",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_contain",
+      "relationship_count": 3
+    },
+    {
+      "type": "may_define",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_define_instruction_class",
+      "relationship_count": 17
+    },
+    {
+      "type": "may_define_support_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_exploit",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_include",
+      "relationship_count": 2
+    },
+    {
+      "type": "may_interact_with",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_not_use_conventional_field",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_require",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_sequence",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_translate_into",
+      "relationship_count": 1
+    },
+    {
+      "type": "may_update",
+      "relationship_count": 3
+    },
+    {
+      "type": "may_use",
+      "relationship_count": 1
+    },
+    {
+      "type": "models",
+      "relationship_count": 1
+    },
+    {
+      "type": "modifies_available_behavior_within",
+      "relationship_count": 1
+    },
+    {
+      "type": "modifies_or_extends",
+      "relationship_count": 1
+    },
+    {
+      "type": "obeys",
+      "relationship_count": 1
+    },
+    {
+      "type": "often_emphasizes",
+      "relationship_count": 1
+    },
+    {
+      "type": "often_supports",
+      "relationship_count": 2
+    },
+    {
+      "type": "operates_on",
+      "relationship_count": 1
+    },
+    {
+      "type": "optimizes_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "organizes",
+      "relationship_count": 1
+    },
+    {
+      "type": "pairs_with",
+      "relationship_count": 1
+    },
+    {
+      "type": "performs",
+      "relationship_count": 1
+    },
+    {
+      "type": "precedes",
+      "relationship_count": 1
+    },
+    {
+      "type": "preserves_or_restores",
+      "relationship_count": 1
+    },
+    {
+      "type": "prioritized",
+      "relationship_count": 1
+    },
+    {
+      "type": "processes",
+      "relationship_count": 1
+    },
+    {
+      "type": "produces",
+      "relationship_count": 2
+    },
+    {
+      "type": "provides_encoding_family_for",
+      "relationship_count": 1
+    },
+    {
+      "type": "reads_from",
+      "relationship_count": 1
+    },
+    {
+      "type": "requires",
+      "relationship_count": 3
+    },
+    {
+      "type": "routes",
+      "relationship_count": 1
+    },
+    {
+      "type": "shares_design_goals_with",
+      "relationship_count": 1
+    },
+    {
+      "type": "should_be_exposed_through",
+      "relationship_count": 1
+    },
+    {
+      "type": "specifies",
+      "relationship_count": 1
+    },
+    {
+      "type": "supports",
+      "relationship_count": 2
+    },
+    {
+      "type": "supports_in_some_states",
+      "relationship_count": 1
+    },
+    {
+      "type": "supports_multiple",
+      "relationship_count": 1
+    },
+    {
+      "type": "targets",
+      "relationship_count": 1
+    },
+    {
+      "type": "tests",
+      "relationship_count": 1
+    },
+    {
+      "type": "trades_off_against",
+      "relationship_count": 1
+    },
+    {
+      "type": "translates",
+      "relationship_count": 2
+    },
+    {
+      "type": "updates",
+      "relationship_count": 1
+    },
+    {
+      "type": "uses",
+      "relationship_count": 9
+    },
+    {
+      "type": "uses_explicitly",
+      "relationship_count": 2
+    },
+    {
+      "type": "writes_to",
+      "relationship_count": 1
+    }
+  ],
+  "entities": [
+    {
+      "id": "instruction_set_architecture_isa",
+      "name": "Instruction Set Architecture (ISA)",
+      "type": "concept",
+      "description": "Abstract programmer-visible contract defining instructions, architectural state, registers, data types, addressing, memory behavior, exceptions, and system interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "machine_instruction",
+      "name": "Machine instruction",
+      "type": "concept",
+      "description": "Encoded operation interpreted according to the ISA, with explicit and/or implicit operands.",
+      "properties": {}
+    },
+    {
+      "id": "machine_code",
+      "name": "Machine code",
+      "type": "representation",
+      "description": "Binary encoding of instructions and operand fields.",
+      "properties": {}
+    },
+    {
+      "id": "assembly_language",
+      "name": "Assembly language",
+      "type": "representation",
+      "description": "Symbolic representation of machine instructions, registers, operands, labels, and directives.",
+      "properties": {}
+    },
+    {
+      "id": "opcode",
+      "name": "Opcode",
+      "type": "instruction_field",
+      "description": "Encoding that identifies an operation or operation family.",
+      "properties": {}
+    },
+    {
+      "id": "operand",
+      "name": "Operand",
+      "type": "instruction_field",
+      "description": "Source, destination, address, immediate value, register, memory reference, or implicit value used by an instruction.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_semantics",
+      "name": "Instruction semantics",
+      "type": "contract",
+      "description": "Architecturally specified effects of executing an instruction, independent of implementation microarchitecture.",
+      "properties": {}
+    },
+    {
+      "id": "architectural_state",
+      "name": "Architectural state",
+      "type": "state",
+      "description": "Program-visible state including registers, instruction pointer, status flags, control state, and memory effects.",
+      "properties": {}
+    },
+    {
+      "id": "program_counter_instruction_pointer",
+      "name": "Program counter / instruction pointer",
+      "type": "register_role",
+      "description": "State identifying the instruction stream location used for execution and control flow.",
+      "properties": {}
+    },
+    {
+      "id": "status_register_condition_codes",
+      "name": "Status register / condition codes",
+      "type": "register_role",
+      "description": "State recording conditions such as zero, carry, overflow, sign, or comparison results.",
+      "properties": {}
+    },
+    {
+      "id": "register_file",
+      "name": "Register file",
+      "type": "component",
+      "description": "Set of architecturally visible registers used for operands, addresses, results, and control state.",
+      "properties": {}
+    },
+    {
+      "id": "data_type",
+      "name": "Data type",
+      "type": "concept",
+      "description": "ISA-supported interpretation of bits, such as integer, floating-point, vector, predicate, pointer, or packed decimal.",
+      "properties": {}
+    },
+    {
+      "id": "addressing_mode",
+      "name": "Addressing mode",
+      "type": "concept",
+      "description": "Rule determining how an instruction identifies an operand or computes an effective address.",
+      "properties": {}
+    },
+    {
+      "id": "effective_address",
+      "name": "Effective address",
+      "type": "concept",
+      "description": "Computed address used to identify a memory operand.",
+      "properties": {}
+    },
+    {
+      "id": "immediate_value",
+      "name": "Immediate value",
+      "type": "operand_kind",
+      "description": "Constant encoded directly in an instruction.",
+      "properties": {}
+    },
+    {
+      "id": "implicit_operand",
+      "name": "Implicit operand",
+      "type": "operand_kind",
+      "description": "Operand or state effect implied by opcode or execution context rather than explicitly encoded.",
+      "properties": {}
+    },
+    {
+      "id": "memory_model",
+      "name": "Memory model",
+      "type": "contract",
+      "description": "Rules governing ordering, visibility, atomicity, and consistency of memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "exception",
+      "name": "Exception",
+      "type": "control_event",
+      "description": "Synchronous architectural event such as a fault, trap, or abort.",
+      "properties": {}
+    },
+    {
+      "id": "interrupt",
+      "name": "Interrupt",
+      "type": "control_event",
+      "description": "Event redirecting execution to a handler, commonly from an asynchronous system condition.",
+      "properties": {}
+    },
+    {
+      "id": "privilege_level",
+      "name": "Privilege level",
+      "type": "protection_concept",
+      "description": "Architectural execution level controlling access to privileged instructions and state.",
+      "properties": {}
+    },
+    {
+      "id": "system_call",
+      "name": "System call",
+      "type": "software_interface",
+      "description": "Controlled transition from application execution into operating-system service code.",
+      "properties": {}
+    },
+    {
+      "id": "abi_application_binary_interface",
+      "name": "ABI (Application Binary Interface)",
+      "type": "software_interface",
+      "description": "Platform contract covering calling conventions, data layout, object formats, and system interfaces beyond the ISA alone.",
+      "properties": {}
+    },
+    {
+      "id": "microarchitecture",
+      "name": "Microarchitecture",
+      "type": "implementation_concept",
+      "description": "Internal processor design implementing an ISA through pipelines, execution units, caches, prediction, and scheduling.",
+      "properties": {}
+    },
+    {
+      "id": "isa_implementation",
+      "name": "ISA implementation",
+      "type": "implementation_concept",
+      "description": "Physical processor, emulator, interpreter, or translation system implementing the architectural contract.",
+      "properties": {}
+    },
+    {
+      "id": "binary_compatibility",
+      "name": "Binary compatibility",
+      "type": "compatibility_property",
+      "description": "Ability to execute compatible machine code across conforming implementations, subject to extensions, ABI, and OS requirements.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_extension",
+      "name": "Instruction extension",
+      "type": "extension_concept",
+      "description": "Optional or later-added instruction, architectural state, or capability.",
+      "properties": {}
+    },
+    {
+      "id": "feature_discovery",
+      "name": "Feature discovery",
+      "type": "system_interface",
+      "description": "Mechanism allowing software to discover supported ISA extensions and architectural features.",
+      "properties": {}
+    },
+    {
+      "id": "reserved_encoding",
+      "name": "Reserved encoding",
+      "type": "encoding_concept",
+      "description": "Bit pattern reserved by the specification, with status defined by architecture.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_decoder",
+      "name": "Instruction decoder",
+      "type": "implementation_component",
+      "description": "Logic identifying instruction boundaries and decoding operation fields.",
+      "properties": {}
+    },
+    {
+      "id": "execution_unit",
+      "name": "Execution unit",
+      "type": "implementation_component",
+      "description": "Resource performing integer, floating-point, vector, address, or specialized operations.",
+      "properties": {}
+    },
+    {
+      "id": "micro_operation_uop",
+      "name": "Micro-operation (uop)",
+      "type": "implementation_concept",
+      "description": "Internal implementation-level operation into which an instruction may be decomposed.",
+      "properties": {}
+    },
+    {
+      "id": "microcode",
+      "name": "Microcode",
+      "type": "implementation_technique",
+      "description": "Internal control sequence used by some processors to implement complex instructions.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_set_simulator",
+      "name": "Instruction set simulator",
+      "type": "tool",
+      "description": "Software model simulating architectural instruction behavior.",
+      "properties": {}
+    },
+    {
+      "id": "emulator",
+      "name": "Emulator",
+      "type": "tool",
+      "description": "Software or hardware system reproducing an ISA or platform sufficiently to run programs.",
+      "properties": {}
+    },
+    {
+      "id": "interpreter",
+      "name": "Interpreter",
+      "type": "implementation_technique",
+      "description": "Repeatedly decodes and executes instruction representations.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_binary_translation",
+      "name": "Dynamic binary translation",
+      "type": "implementation_technique",
+      "description": "Runtime translation of machine-code blocks between execution models or ISAs.",
+      "properties": {}
+    },
+    {
+      "id": "jit_compilation",
+      "name": "JIT compilation",
+      "type": "implementation_technique",
+      "description": "Compilation of bytecode or intermediate representation into executable code at runtime.",
+      "properties": {}
+    },
+    {
+      "id": "cisc",
+      "name": "CISC",
+      "type": "isa_style",
+      "description": "Complex instruction set design style with rich instruction forms or addressing modes.",
+      "properties": {}
+    },
+    {
+      "id": "risc",
+      "name": "RISC",
+      "type": "isa_style",
+      "description": "Reduced instruction set design style emphasizing simpler operations and often load/store organization.",
+      "properties": {}
+    },
+    {
+      "id": "vliw",
+      "name": "VLIW",
+      "type": "isa_style",
+      "description": "Wide instruction word encoding multiple operations, often scheduled by compiler.",
+      "properties": {}
+    },
+    {
+      "id": "liw",
+      "name": "LIW",
+      "type": "isa_style",
+      "description": "Long instruction word family related to VLIW.",
+      "properties": {}
+    },
+    {
+      "id": "epic",
+      "name": "EPIC",
+      "type": "isa_style",
+      "description": "Explicitly parallel instruction computing exposing parallelism and scheduling responsibility to compiler/software.",
+      "properties": {}
+    },
+    {
+      "id": "misc",
+      "name": "MISC",
+      "type": "isa_style",
+      "description": "Minimal instruction set computer approach, often using a small stack-oriented instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "oisc",
+      "name": "OISC",
+      "type": "isa_style",
+      "description": "One-instruction set computer model where one primitive instruction can express general computation.",
+      "properties": {}
+    },
+    {
+      "id": "load_store_architecture",
+      "name": "Load-store architecture",
+      "type": "memory_organization",
+      "description": "Ordinary arithmetic uses registers; memory access uses explicit load/store instructions.",
+      "properties": {}
+    },
+    {
+      "id": "stack_machine",
+      "name": "Stack machine",
+      "type": "operand_organization",
+      "description": "Arithmetic commonly consumes operands from an evaluation stack.",
+      "properties": {}
+    },
+    {
+      "id": "accumulator_machine",
+      "name": "Accumulator machine",
+      "type": "operand_organization",
+      "description": "Uses an implicit accumulator as a common source and/or destination.",
+      "properties": {}
+    },
+    {
+      "id": "register_register_architecture",
+      "name": "Register-register architecture",
+      "type": "operand_organization",
+      "description": "Arithmetic and logic generally use register operands and register results.",
+      "properties": {}
+    },
+    {
+      "id": "register_memory_architecture",
+      "name": "Register-memory architecture",
+      "type": "operand_organization",
+      "description": "Instruction forms allow memory operands directly in operations.",
+      "properties": {}
+    },
+    {
+      "id": "memory_memory_architecture",
+      "name": "Memory-memory architecture",
+      "type": "operand_organization",
+      "description": "Instruction forms operate directly on multiple memory operands.",
+      "properties": {}
+    },
+    {
+      "id": "transport_triggered_architecture_tta",
+      "name": "Transport-triggered architecture (TTA)",
+      "type": "isa_style",
+      "description": "Operand transport triggers operations; designs may lack conventional opcode fields.",
+      "properties": {}
+    },
+    {
+      "id": "bytecode_isa",
+      "name": "Bytecode ISA",
+      "type": "isa_form",
+      "description": "Virtual instruction set interpreted or compiled by a runtime.",
+      "properties": {}
+    },
+    {
+      "id": "native_isa",
+      "name": "Native ISA",
+      "type": "isa_form",
+      "description": "Machine instruction set implemented by hardware or a close compatible execution engine.",
+      "properties": {}
+    },
+    {
+      "id": "zero_operand_instruction_form",
+      "name": "Zero-operand instruction form",
+      "type": "operand_model",
+      "description": "Arithmetic uses implicit stack operands; stack access instructions may still have operands.",
+      "properties": {}
+    },
+    {
+      "id": "one_operand_instruction_form",
+      "name": "One-operand instruction form",
+      "type": "operand_model",
+      "description": "One explicit operand with other operands/results implicit, often accumulator-based.",
+      "properties": {}
+    },
+    {
+      "id": "two_operand_instruction_form",
+      "name": "Two-operand instruction form",
+      "type": "operand_model",
+      "description": "Two operands, often with one operand also serving as destination.",
+      "properties": {}
+    },
+    {
+      "id": "three_operand_instruction_form",
+      "name": "Three-operand instruction form",
+      "type": "operand_model",
+      "description": "Two sources and a separate destination.",
+      "properties": {}
+    },
+    {
+      "id": "four_operand_instruction_form",
+      "name": "Four-operand instruction form",
+      "type": "operand_model",
+      "description": "Some operations encode a destination and three source inputs.",
+      "properties": {}
+    },
+    {
+      "id": "register_pressure",
+      "name": "Register pressure",
+      "type": "performance_concept",
+      "description": "Demand for simultaneously live values relative to available registers.",
+      "properties": {}
+    },
+    {
+      "id": "register_spilling",
+      "name": "Register spilling",
+      "type": "compiler_technique",
+      "description": "Stores register values to stack or memory when register allocation capacity is exceeded.",
+      "properties": {}
+    },
+    {
+      "id": "data_movement",
+      "name": "Data movement",
+      "type": "instruction_class",
+      "description": "Transfers values between registers, memory, constants, stack, or architectural state.",
+      "properties": {}
+    },
+    {
+      "id": "load",
+      "name": "Load",
+      "type": "instruction_class",
+      "description": "Reads a value from memory or an addressable source.",
+      "properties": {}
+    },
+    {
+      "id": "store",
+      "name": "Store",
+      "type": "instruction_class",
+      "description": "Writes a value to memory or an addressable destination.",
+      "properties": {}
+    },
+    {
+      "id": "move",
+      "name": "Move",
+      "type": "instruction_class",
+      "description": "Copies a value between operands while normally preserving the source.",
+      "properties": {}
+    },
+    {
+      "id": "input_output_instruction",
+      "name": "Input/output instruction",
+      "type": "instruction_class",
+      "description": "Accesses architecturally defined device or I/O spaces where supported.",
+      "properties": {}
+    },
+    {
+      "id": "integer_arithmetic",
+      "name": "Integer arithmetic",
+      "type": "instruction_class",
+      "description": "Integer add, subtract, multiply, divide, increment, decrement, and related operations.",
+      "properties": {}
+    },
+    {
+      "id": "floating_point_arithmetic",
+      "name": "Floating-point arithmetic",
+      "type": "instruction_class",
+      "description": "Arithmetic over floating-point formats with defined rounding and exceptional behavior.",
+      "properties": {}
+    },
+    {
+      "id": "bitwise_logic",
+      "name": "Bitwise logic",
+      "type": "instruction_class",
+      "description": "AND, OR, XOR, NOT, and related bit-pattern operations.",
+      "properties": {}
+    },
+    {
+      "id": "shift_and_rotate",
+      "name": "Shift and rotate",
+      "type": "instruction_class",
+      "description": "Shifts or rotates bit patterns under defined width and count rules.",
+      "properties": {}
+    },
+    {
+      "id": "compare_and_test",
+      "name": "Compare and test",
+      "type": "instruction_class",
+      "description": "Compares values or tests bits, often updating condition state.",
+      "properties": {}
+    },
+    {
+      "id": "branch",
+      "name": "Branch",
+      "type": "instruction_class",
+      "description": "Changes the next instruction address.",
+      "properties": {}
+    },
+    {
+      "id": "conditional_branch",
+      "name": "Conditional branch",
+      "type": "instruction_class",
+      "description": "Changes control flow when a condition or predicate is satisfied.",
+      "properties": {}
+    },
+    {
+      "id": "indirect_branch",
+      "name": "Indirect branch",
+      "type": "instruction_class",
+      "description": "Obtains a control-flow target from a register, memory operand, or computed value.",
+      "properties": {}
+    },
+    {
+      "id": "call",
+      "name": "Call",
+      "type": "instruction_class",
+      "description": "Transfers control to a procedure and preserves return information.",
+      "properties": {}
+    },
+    {
+      "id": "return",
+      "name": "Return",
+      "type": "instruction_class",
+      "description": "Resumes execution at a saved return location.",
+      "properties": {}
+    },
+    {
+      "id": "trap_software_interrupt",
+      "name": "Trap / software interrupt",
+      "type": "instruction_class",
+      "description": "Requests a controlled exception or software-service transition.",
+      "properties": {}
+    },
+    {
+      "id": "atomic_read_modify_write",
+      "name": "Atomic read-modify-write",
+      "type": "instruction_class",
+      "description": "Performs an indivisible memory update, such as CAS or fetch-and-add.",
+      "properties": {}
+    },
+    {
+      "id": "load_linked_store_conditional",
+      "name": "Load-linked / store-conditional",
+      "type": "instruction_class",
+      "description": "Conditional update pattern used to build synchronization primitives.",
+      "properties": {}
+    },
+    {
+      "id": "fence_memory_barrier",
+      "name": "Fence / memory barrier",
+      "type": "instruction_class",
+      "description": "Constrains ordering or visibility of memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "vector_simd",
+      "name": "Vector / SIMD",
+      "type": "instruction_class",
+      "description": "Applies an operation to multiple packed values or vector lanes.",
+      "properties": {}
+    },
+    {
+      "id": "dsp_multiply_accumulate",
+      "name": "DSP / multiply-accumulate",
+      "type": "instruction_class",
+      "description": "Signal-processing operation such as multiply-accumulate, often with specialized data paths.",
+      "properties": {}
+    },
+    {
+      "id": "string_operation",
+      "name": "String operation",
+      "type": "instruction_class",
+      "description": "Repeated or bulk operations over data sequences.",
+      "properties": {}
+    },
+    {
+      "id": "block_transfer",
+      "name": "Block transfer",
+      "type": "instruction_class",
+      "description": "Transfers multiple registers or a block of memory.",
+      "properties": {}
+    },
+    {
+      "id": "decimal_bcd_arithmetic",
+      "name": "Decimal / BCD arithmetic",
+      "type": "instruction_class",
+      "description": "Operations on decimal-coded representations.",
+      "properties": {}
+    },
+    {
+      "id": "cryptographic_instruction",
+      "name": "Cryptographic instruction",
+      "type": "instruction_class",
+      "description": "Accelerates cryptographic transformations such as AES rounds or polynomial operations.",
+      "properties": {}
+    },
+    {
+      "id": "bit_manipulation",
+      "name": "Bit manipulation",
+      "type": "instruction_class",
+      "description": "Bit extraction, deposit, population count, leading/trailing zero count, and related operations.",
+      "properties": {}
+    },
+    {
+      "id": "cache_and_prefetch_control",
+      "name": "Cache and prefetch control",
+      "type": "instruction_class",
+      "description": "Hints or operations affecting cache, prefetch, or cache maintenance.",
+      "properties": {}
+    },
+    {
+      "id": "system_privileged_instruction",
+      "name": "System / privileged instruction",
+      "type": "instruction_class",
+      "description": "Controls processor state, protection, translation, interrupts, or privileged facilities.",
+      "properties": {}
+    },
+    {
+      "id": "coprocessor_instruction",
+      "name": "Coprocessor instruction",
+      "type": "instruction_class",
+      "description": "Transfers data to or invokes an associated specialized execution facility.",
+      "properties": {}
+    },
+    {
+      "id": "vector_reduction",
+      "name": "Vector reduction",
+      "type": "instruction_class",
+      "description": "Combines vector lanes into scalar or reduced results.",
+      "properties": {}
+    },
+    {
+      "id": "predicate_operation",
+      "name": "Predicate operation",
+      "type": "instruction_class",
+      "description": "Creates, combines, or consumes predicate state.",
+      "properties": {}
+    },
+    {
+      "id": "atomic_memory_operation_amo",
+      "name": "Atomic memory operation (AMO)",
+      "type": "instruction_class",
+      "description": "Atomically reads and updates a memory location.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_format",
+      "name": "Instruction format",
+      "type": "encoding_concept",
+      "description": "Layout of operation selectors, register fields, immediates, displacements, and other bits.",
+      "properties": {}
+    },
+    {
+      "id": "fixed_length_encoding",
+      "name": "Fixed-length encoding",
+      "type": "encoding_strategy",
+      "description": "Instructions or an instruction subset use a fixed instruction length.",
+      "properties": {}
+    },
+    {
+      "id": "variable_length_encoding",
+      "name": "Variable-length encoding",
+      "type": "encoding_strategy",
+      "description": "Instruction size varies by operation or operand form.",
+      "properties": {}
+    },
+    {
+      "id": "mixed_length_encoding",
+      "name": "Mixed-length encoding",
+      "type": "encoding_strategy",
+      "description": "ISA supports multiple instruction lengths or encoding modes.",
+      "properties": {}
+    },
+    {
+      "id": "prefix_byte_prefix_field",
+      "name": "Prefix byte / prefix field",
+      "type": "encoding_concept",
+      "description": "Encoding element modifying operation, operand size, addressing, or semantics.",
+      "properties": {}
+    },
+    {
+      "id": "register_field",
+      "name": "Register field",
+      "type": "encoding_field",
+      "description": "Bits identifying an architectural register.",
+      "properties": {}
+    },
+    {
+      "id": "immediate_field",
+      "name": "Immediate field",
+      "type": "encoding_field",
+      "description": "Bits encoding a constant, displacement, mask, or inline value.",
+      "properties": {}
+    },
+    {
+      "id": "displacement_field",
+      "name": "Displacement field",
+      "type": "encoding_field",
+      "description": "Encoded offset used in address calculation or branch targeting.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_alignment",
+      "name": "Instruction alignment",
+      "type": "encoding_constraint",
+      "description": "Alignment requirement or performance property for instruction addresses.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_boundary",
+      "name": "Instruction boundary",
+      "type": "encoding_concept",
+      "description": "Boundary between adjacent encoded instructions.",
+      "properties": {}
+    },
+    {
+      "id": "endianness",
+      "name": "Endianness",
+      "type": "data_representation",
+      "description": "Byte-order convention for multi-byte values; instruction encoding rules may differ by ISA.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_length",
+      "name": "Instruction length",
+      "type": "encoding_property",
+      "description": "Number of bits or bytes occupied by an instruction.",
+      "properties": {}
+    },
+    {
+      "id": "code_density",
+      "name": "Code density",
+      "type": "performance_property",
+      "description": "Useful program behavior represented per byte of machine code.",
+      "properties": {}
+    },
+    {
+      "id": "compressed_instruction_encoding",
+      "name": "Compressed instruction encoding",
+      "type": "encoding_strategy",
+      "description": "Shorter encodings for common operations, often improving code size.",
+      "properties": {}
+    },
+    {
+      "id": "predication",
+      "name": "Predication",
+      "type": "control_flow_model",
+      "description": "Instruction effects occur only when a predicate is satisfied.",
+      "properties": {}
+    },
+    {
+      "id": "condition_field",
+      "name": "Condition field",
+      "type": "encoding_field",
+      "description": "Field selecting the condition under which an operation is active.",
+      "properties": {}
+    },
+    {
+      "id": "delay_slot",
+      "name": "Delay slot",
+      "type": "control_flow_feature",
+      "description": "Instruction slot after a control transfer with architecture-defined execution behavior.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_fetch",
+      "name": "Instruction fetch",
+      "type": "pipeline_stage",
+      "description": "Retrieves instruction bytes from the memory hierarchy.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_decode",
+      "name": "Instruction decode",
+      "type": "pipeline_stage",
+      "description": "Interprets instruction encoding and identifies operations and operands.",
+      "properties": {}
+    },
+    {
+      "id": "memory_address_space",
+      "name": "Memory address space",
+      "type": "memory_concept",
+      "description": "Set of addresses available under architectural addressing rules.",
+      "properties": {}
+    },
+    {
+      "id": "virtual_memory",
+      "name": "Virtual memory",
+      "type": "memory_concept",
+      "description": "Translation and protection abstraction mapping virtual addresses to physical memory or backing resources.",
+      "properties": {}
+    },
+    {
+      "id": "physical_address",
+      "name": "Physical address",
+      "type": "memory_concept",
+      "description": "Address identifying a location in physical memory or physical address space.",
+      "properties": {}
+    },
+    {
+      "id": "virtual_address",
+      "name": "Virtual address",
+      "type": "memory_concept",
+      "description": "Address generated by software and translated according to architectural rules.",
+      "properties": {}
+    },
+    {
+      "id": "address_translation",
+      "name": "Address translation",
+      "type": "memory_operation",
+      "description": "Maps virtual addresses to physical addresses and applies permissions.",
+      "properties": {}
+    },
+    {
+      "id": "page_table",
+      "name": "Page table",
+      "type": "memory_structure",
+      "description": "Structure describing virtual-to-physical mappings and permissions.",
+      "properties": {}
+    },
+    {
+      "id": "tlb",
+      "name": "TLB",
+      "type": "microarchitectural_component",
+      "description": "Translation lookaside buffer caching address-translation results.",
+      "properties": {}
+    },
+    {
+      "id": "memory_protection",
+      "name": "Memory protection",
+      "type": "protection_concept",
+      "description": "Rules restricting access by privilege, permissions, domains, keys, or metadata.",
+      "properties": {}
+    },
+    {
+      "id": "alignment",
+      "name": "Alignment",
+      "type": "memory_constraint",
+      "description": "Requirement or performance property for access address alignment.",
+      "properties": {}
+    },
+    {
+      "id": "unaligned_access",
+      "name": "Unaligned access",
+      "type": "memory_behavior",
+      "description": "Access not meeting a natural or specified alignment boundary.",
+      "properties": {}
+    },
+    {
+      "id": "memory_mapped_i_o",
+      "name": "Memory-mapped I/O",
+      "type": "io_model",
+      "description": "Device registers occupy addresses in the memory address space.",
+      "properties": {}
+    },
+    {
+      "id": "port_mapped_i_o",
+      "name": "Port-mapped I/O",
+      "type": "io_model",
+      "description": "Device access uses a separate I/O address space where supported.",
+      "properties": {}
+    },
+    {
+      "id": "memory_ordering",
+      "name": "Memory ordering",
+      "type": "memory_model_component",
+      "description": "Constraints on how memory operations may be observed by other agents.",
+      "properties": {}
+    },
+    {
+      "id": "sequential_consistency",
+      "name": "Sequential consistency",
+      "type": "memory_model",
+      "description": "Operations appear in one global order consistent with each agent's program order.",
+      "properties": {}
+    },
+    {
+      "id": "relaxed_memory_ordering",
+      "name": "Relaxed memory ordering",
+      "type": "memory_model",
+      "description": "Model permitting specified reorderings while defining synchronization constraints.",
+      "properties": {}
+    },
+    {
+      "id": "atomicity",
+      "name": "Atomicity",
+      "type": "memory_model_component",
+      "description": "Guarantee that an operation appears indivisible to relevant observers.",
+      "properties": {}
+    },
+    {
+      "id": "cache_coherence",
+      "name": "Cache coherence",
+      "type": "memory_system_concept",
+      "description": "Rules and mechanisms keeping cached copies of a memory location coherent.",
+      "properties": {}
+    },
+    {
+      "id": "fence",
+      "name": "Fence",
+      "type": "synchronization_primitive",
+      "description": "Instruction constraining ordering of memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "compare_and_swap_cas",
+      "name": "Compare-and-swap (CAS)",
+      "type": "synchronization_primitive",
+      "description": "Atomically replaces a value if it matches an expected value.",
+      "properties": {}
+    },
+    {
+      "id": "fetch_and_add",
+      "name": "Fetch-and-add",
+      "type": "synchronization_primitive",
+      "description": "Atomically adds to a memory location and returns a specified old or resulting value.",
+      "properties": {}
+    },
+    {
+      "id": "load_link_store_conditional_ll_sc",
+      "name": "Load-link/store-conditional (LL/SC)",
+      "type": "synchronization_primitive",
+      "description": "Conditional store succeeds only if a linked reservation remains valid.",
+      "properties": {}
+    },
+    {
+      "id": "reservation_granule",
+      "name": "Reservation granule",
+      "type": "memory_model_component",
+      "description": "Granularity relevant to tracking LL/SC reservations.",
+      "properties": {}
+    },
+    {
+      "id": "exception_model",
+      "name": "Exception model",
+      "type": "control_model",
+      "description": "Rules for identifying, prioritizing, reporting, and handling execution events.",
+      "properties": {}
+    },
+    {
+      "id": "precise_exception",
+      "name": "Precise exception",
+      "type": "exception_property",
+      "description": "Presents state as if instructions before a defined boundary completed and later ones did not.",
+      "properties": {}
+    },
+    {
+      "id": "fault",
+      "name": "Fault",
+      "type": "exception_kind",
+      "description": "Synchronous event associated with an instruction that cannot complete normally.",
+      "properties": {}
+    },
+    {
+      "id": "trap",
+      "name": "Trap",
+      "type": "exception_kind",
+      "description": "Synchronous event often used for deliberate software transition or post-instruction notification.",
+      "properties": {}
+    },
+    {
+      "id": "abort",
+      "name": "Abort",
+      "type": "exception_kind",
+      "description": "Exception category for failures where normal completion or restart may not be possible.",
+      "properties": {}
+    },
+    {
+      "id": "interrupt_vector",
+      "name": "Interrupt vector",
+      "type": "control_structure",
+      "description": "Location or table entry routing control to a handler.",
+      "properties": {}
+    },
+    {
+      "id": "context_switch",
+      "name": "Context switch",
+      "type": "os_operation",
+      "description": "Operating-system transition that preserves/restores required execution state.",
+      "properties": {}
+    },
+    {
+      "id": "privilege_transition",
+      "name": "Privilege transition",
+      "type": "control_operation",
+      "description": "Controlled change between execution privilege levels.",
+      "properties": {}
+    },
+    {
+      "id": "virtualization_extension",
+      "name": "Virtualization extension",
+      "type": "isa_extension_category",
+      "description": "Architectural facilities supporting guest execution and hypervisor control.",
+      "properties": {}
+    },
+    {
+      "id": "debug_and_trace_facility",
+      "name": "Debug and trace facility",
+      "type": "isa_extension_category",
+      "description": "Facilities for breakpoints, watchpoints, stepping, counters, and tracing.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_level_parallelism_ilp",
+      "name": "Instruction-level parallelism (ILP)",
+      "type": "performance_concept",
+      "description": "Potential to execute independent instructions concurrently or overlap processing.",
+      "properties": {}
+    },
+    {
+      "id": "pipelining",
+      "name": "Pipelining",
+      "type": "implementation_technique",
+      "description": "Overlaps different instruction-processing stages.",
+      "properties": {}
+    },
+    {
+      "id": "out_of_order_execution",
+      "name": "Out-of-order execution",
+      "type": "implementation_technique",
+      "description": "Executes ready operations in an order different from program order while preserving architectural behavior.",
+      "properties": {}
+    },
+    {
+      "id": "superscalar_execution",
+      "name": "Superscalar execution",
+      "type": "implementation_technique",
+      "description": "Issues or completes multiple instructions per cycle.",
+      "properties": {}
+    },
+    {
+      "id": "branch_prediction",
+      "name": "Branch prediction",
+      "type": "implementation_technique",
+      "description": "Predicts control-flow outcomes and targets.",
+      "properties": {}
+    },
+    {
+      "id": "speculative_execution",
+      "name": "Speculative execution",
+      "type": "implementation_technique",
+      "description": "Performs work before it is certain to be needed.",
+      "properties": {}
+    },
+    {
+      "id": "architectural_retirement",
+      "name": "Architectural retirement",
+      "type": "implementation_concept",
+      "description": "Point where instruction effects become committed to architectural state in many modern processors.",
+      "properties": {}
+    },
+    {
+      "id": "power_performance_area_trade_off",
+      "name": "Power-performance-area trade-off",
+      "type": "design_tradeoff",
+      "description": "Design choices balance power, speed, silicon area, verification, and cost.",
+      "properties": {}
+    },
+    {
+      "id": "hardwired_control",
+      "name": "Hardwired control",
+      "type": "implementation_technique",
+      "description": "Control sequencing implemented mainly with fixed logic.",
+      "properties": {}
+    },
+    {
+      "id": "microcoded_control",
+      "name": "Microcoded control",
+      "type": "implementation_technique",
+      "description": "Control sequencing implemented partly with internal microinstruction sequences.",
+      "properties": {}
+    },
+    {
+      "id": "fpga_implementation",
+      "name": "FPGA implementation",
+      "type": "implementation_technique",
+      "description": "ISA implementation using reconfigurable logic.",
+      "properties": {}
+    },
+    {
+      "id": "hardware_implementation",
+      "name": "Hardware implementation",
+      "type": "implementation_form",
+      "description": "Physical processor logic implementing an ISA.",
+      "properties": {}
+    },
+    {
+      "id": "software_implementation",
+      "name": "Software implementation",
+      "type": "implementation_form",
+      "description": "Interpreter, emulator, or translator implementing an ISA in software.",
+      "properties": {}
+    },
+    {
+      "id": "compatibility_test_suite",
+      "name": "Compatibility test suite",
+      "type": "validation_method",
+      "description": "Tests whether an implementation conforms to specified architectural behavior.",
+      "properties": {}
+    },
+    {
+      "id": "formal_isa_model",
+      "name": "Formal ISA model",
+      "type": "validation_method",
+      "description": "Mathematical or executable description of architectural state transitions.",
+      "properties": {}
+    },
+    {
+      "id": "differential_testing",
+      "name": "Differential testing",
+      "type": "validation_method",
+      "description": "Compares implementations or simulators on shared test programs.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_instruction_selection",
+      "name": "Compiler instruction selection",
+      "type": "compiler_stage",
+      "description": "Maps intermediate operations to instructions supported by the target ISA.",
+      "properties": {}
+    },
+    {
+      "id": "register_allocation",
+      "name": "Register allocation",
+      "type": "compiler_stage",
+      "description": "Assigns live values to architectural registers and inserts spills when needed.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_scheduling",
+      "name": "Instruction scheduling",
+      "type": "compiler_stage",
+      "description": "Orders instructions to respect dependencies and improve performance.",
+      "properties": {}
+    },
+    {
+      "id": "optimization_for_size",
+      "name": "Optimization for size",
+      "type": "compiler_objective",
+      "description": "Code generation objective emphasizing smaller executable size.",
+      "properties": {}
+    },
+    {
+      "id": "optimization_for_speed",
+      "name": "Optimization for speed",
+      "type": "compiler_objective",
+      "description": "Code generation objective emphasizing execution performance.",
+      "properties": {}
+    },
+    {
+      "id": "harvard_architecture",
+      "name": "Harvard architecture",
+      "type": "memory_organization",
+      "description": "Separate instruction and data memories or paths.",
+      "properties": {}
+    },
+    {
+      "id": "von_neumann_architecture",
+      "name": "Von Neumann architecture",
+      "type": "memory_organization",
+      "description": "Unified instruction/data memory organization.",
+      "properties": {}
+    },
+    {
+      "id": "digital_signal_processor_dsp",
+      "name": "Digital signal processor (DSP)",
+      "type": "processor_class",
+      "description": "Processor optimized for signal processing, often with MAC operations and high-throughput data access.",
+      "properties": {}
+    },
+    {
+      "id": "fused_multiply_add_fma",
+      "name": "Fused multiply-add (FMA)",
+      "type": "instruction_operation",
+      "description": "Computes multiplication plus addition with one rounding step under defined floating-point semantics.",
+      "properties": {}
+    },
+    {
+      "id": "saturation_arithmetic",
+      "name": "Saturation arithmetic",
+      "type": "arithmetic_semantics",
+      "description": "Clamps overflowed results to representable extrema rather than wrapping or trapping.",
+      "properties": {}
+    },
+    {
+      "id": "rounding_mode",
+      "name": "Rounding mode",
+      "type": "floating_point_concept",
+      "description": "Rule selecting how an inexact floating-point result is rounded.",
+      "properties": {}
+    },
+    {
+      "id": "floating_point_exception_flags",
+      "name": "Floating-point exception flags",
+      "type": "floating_point_concept",
+      "description": "Architectural indicators for invalid, divide-by-zero, overflow, underflow, or inexact results.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_cache",
+      "name": "Instruction cache",
+      "type": "microarchitectural_component",
+      "description": "Cache holding instruction bytes; maintenance interfaces may be architectural.",
+      "properties": {}
+    },
+    {
+      "id": "prefetch",
+      "name": "Prefetch",
+      "type": "performance_operation",
+      "description": "Hint or operation requesting earlier retrieval of instructions or data.",
+      "properties": {}
+    },
+    {
+      "id": "x86",
+      "name": "x86",
+      "type": "isa_family",
+      "description": "CISC-family ISA originating with Intel 8086 and evolving through IA-32 and x86-64.",
+      "properties": {}
+    },
+    {
+      "id": "x86_64",
+      "name": "x86-64",
+      "type": "isa_variant",
+      "description": "64-bit x86 extension with wider registers and addressing capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "arm_architecture",
+      "name": "ARM architecture",
+      "type": "isa_family",
+      "description": "Arm ISA family spanning A-, R-, and M-profile designs and multiple execution states.",
+      "properties": {}
+    },
+    {
+      "id": "aarch64",
+      "name": "AArch64",
+      "type": "isa_variant",
+      "description": "64-bit Arm execution state with its own encoding and register model.",
+      "properties": {}
+    },
+    {
+      "id": "aarch32",
+      "name": "AArch32",
+      "type": "isa_variant",
+      "description": "32-bit Arm execution state.",
+      "properties": {}
+    },
+    {
+      "id": "thumb_t32",
+      "name": "Thumb / T32",
+      "type": "encoding_family",
+      "description": "Compact Arm encoding family with 16-bit and 32-bit instruction encodings.",
+      "properties": {}
+    },
+    {
+      "id": "risc_v",
+      "name": "RISC-V",
+      "type": "isa_family",
+      "description": "Open ISA with base integer architecture and modular standard/custom extensions.",
+      "properties": {}
+    },
+    {
+      "id": "mips",
+      "name": "MIPS",
+      "type": "isa_family",
+      "description": "RISC ISA family known for register-oriented instructions and multiple generations.",
+      "properties": {}
+    },
+    {
+      "id": "power_isa",
+      "name": "Power ISA",
+      "type": "isa_family",
+      "description": "ISA used by Power-family processors with scalar and vector extensions.",
+      "properties": {}
+    },
+    {
+      "id": "sparc",
+      "name": "SPARC",
+      "type": "isa_family",
+      "description": "RISC ISA family including register-window designs in several versions.",
+      "properties": {}
+    },
+    {
+      "id": "ibm_z_architecture",
+      "name": "IBM z/Architecture",
+      "type": "isa_family",
+      "description": "Mainframe ISA with compatibility history, conditional operations, and extensive system facilities.",
+      "properties": {}
+    },
+    {
+      "id": "avr",
+      "name": "AVR",
+      "type": "isa_family",
+      "description": "8-bit microcontroller ISA family.",
+      "properties": {}
+    },
+    {
+      "id": "msp430",
+      "name": "MSP430",
+      "type": "isa_family",
+      "description": "16-bit low-power microcontroller ISA family.",
+      "properties": {}
+    },
+    {
+      "id": "6502",
+      "name": "6502",
+      "type": "isa_family",
+      "description": "Historical 8-bit accumulator-centric ISA.",
+      "properties": {}
+    },
+    {
+      "id": "z80",
+      "name": "Z80",
+      "type": "isa_family",
+      "description": "Historical 8-bit ISA with registers, flags, and rich control-flow operations.",
+      "properties": {}
+    },
+    {
+      "id": "vax",
+      "name": "VAX",
+      "type": "isa_family",
+      "description": "Historical CISC architecture with rich addressing and elaborate instructions.",
+      "properties": {}
+    },
+    {
+      "id": "ibm_system_360_architecture",
+      "name": "IBM System/360 architecture",
+      "type": "isa_family",
+      "description": "Compatibility-oriented architecture family separating programming model from implementation trade-offs.",
+      "properties": {}
+    },
+    {
+      "id": "java_virtual_machine_jvm_instruction_set",
+      "name": "Java Virtual Machine (JVM) instruction set",
+      "type": "bytecode_isa",
+      "description": "Stack-oriented bytecode instruction set interpreted or compiled by JVM implementations.",
+      "properties": {}
+    },
+    {
+      "id": "common_intermediate_language_cil",
+      "name": "Common Intermediate Language (CIL)",
+      "type": "bytecode_isa",
+      "description": "Stack-based virtual instruction set used by the .NET runtime ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "smalltalk_bytecode",
+      "name": "Smalltalk bytecode",
+      "type": "bytecode_isa",
+      "description": "Virtual-machine instruction representation used by Smalltalk implementations.",
+      "properties": {}
+    },
+    {
+      "id": "mmx",
+      "name": "MMX",
+      "type": "isa_extension",
+      "description": "Historical x86 packed-integer SIMD extension.",
+      "properties": {}
+    },
+    {
+      "id": "sse",
+      "name": "SSE",
+      "type": "isa_extension",
+      "description": "x86 SIMD extension family.",
+      "properties": {}
+    },
+    {
+      "id": "avx",
+      "name": "AVX",
+      "type": "isa_extension",
+      "description": "x86 vector extension family with wider registers and instruction forms.",
+      "properties": {}
+    },
+    {
+      "id": "avx_512",
+      "name": "AVX-512",
+      "type": "isa_extension",
+      "description": "x86 extension family with 512-bit vector facilities and mask capabilities on supporting processors.",
+      "properties": {}
+    },
+    {
+      "id": "aes_ni",
+      "name": "AES-NI",
+      "type": "isa_extension",
+      "description": "x86 instructions accelerating AES transformations.",
+      "properties": {}
+    },
+    {
+      "id": "altivec_vmx",
+      "name": "AltiVec / VMX",
+      "type": "isa_extension",
+      "description": "Power-family vector extension.",
+      "properties": {}
+    },
+    {
+      "id": "arm_neon",
+      "name": "ARM NEON",
+      "type": "isa_extension",
+      "description": "Arm SIMD extension for packed integer and floating-point workloads.",
+      "properties": {}
+    },
+    {
+      "id": "risc_v_vector_extension",
+      "name": "RISC-V Vector extension",
+      "type": "isa_extension",
+      "description": "Scalable vector extension with vector length and vector configuration state.",
+      "properties": {}
+    },
+    {
+      "id": "risc_v_atomic_extension",
+      "name": "RISC-V Atomic extension",
+      "type": "isa_extension",
+      "description": "RISC-V extension defining atomic memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "risc_v_compressed_extension",
+      "name": "RISC-V Compressed extension",
+      "type": "isa_extension",
+      "description": "RISC-V compact instruction encoding extension commonly called C.",
+      "properties": {}
+    },
+    {
+      "id": "x86_vmx",
+      "name": "x86 VMX",
+      "type": "virtualization_extension",
+      "description": "Intel x86 virtualization extension for guest execution and VM control.",
+      "properties": {}
+    },
+    {
+      "id": "amd_v_svm",
+      "name": "AMD-V / SVM",
+      "type": "virtualization_extension",
+      "description": "AMD x86 virtualization facilities for guest execution and hypervisor control.",
+      "properties": {}
+    },
+    {
+      "id": "ibm_3090_vector_facility",
+      "name": "IBM 3090 Vector Facility",
+      "type": "coprocessor_or_extension",
+      "description": "Historical vector processing facility for IBM 3090 systems.",
+      "properties": {}
+    },
+    {
+      "id": "intel_8087",
+      "name": "Intel 8087",
+      "type": "coprocessor",
+      "description": "Floating-point coprocessor associated with early x86 systems.",
+      "properties": {}
+    },
+    {
+      "id": "transmeta_code_morphing",
+      "name": "Transmeta code-morphing",
+      "type": "translation_system",
+      "description": "Approach translating x86 streams onto an internal VLIW execution engine.",
+      "properties": {}
+    },
+    {
+      "id": "fred_brooks",
+      "name": "Fred Brooks",
+      "type": "person",
+      "description": "Computer architect associated with articulating architecture versus implementation during IBM System/360 work.",
+      "properties": {}
+    },
+    {
+      "id": "ibm_system_360_compatibility_objective",
+      "name": "IBM System/360 compatibility objective",
+      "type": "historical_concept",
+      "description": "Objective of a compatible architecture spanning processors with different cost and performance points.",
+      "properties": {}
+    },
+    {
+      "id": "risc_research",
+      "name": "RISC research",
+      "type": "research_movement",
+      "description": "Research movement exploring simpler instruction sets, compiler cooperation, and efficient implementation.",
+      "properties": {}
+    },
+    {
+      "id": "cisc_design_tradition",
+      "name": "CISC design tradition",
+      "type": "design_tradition",
+      "description": "Design tradition favoring rich instructions, operand forms, and addressing capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_atomicity",
+      "name": "Instruction atomicity",
+      "type": "instruction_semantics",
+      "description": "Whether an instruction appears indivisible architecturally; distinct from atomic memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "restartability",
+      "name": "Restartability",
+      "type": "exception_property",
+      "description": "Whether a faulted or interrupted instruction can safely resume from a defined state.",
+      "properties": {}
+    },
+    {
+      "id": "architectural_register_aliasing",
+      "name": "Architectural register aliasing",
+      "type": "register_concept",
+      "description": "Different names or widths refer to overlapping architectural register state.",
+      "properties": {}
+    },
+    {
+      "id": "register_window",
+      "name": "Register window",
+      "type": "register_organization",
+      "description": "Organization exposing overlapping register sets across procedure calls.",
+      "properties": {}
+    },
+    {
+      "id": "condition_code_architecture",
+      "name": "Condition-code architecture",
+      "type": "status_model",
+      "description": "Design where operations update shared status flags used by later instructions.",
+      "properties": {}
+    },
+    {
+      "id": "predicate_register_architecture",
+      "name": "Predicate-register architecture",
+      "type": "status_model",
+      "description": "Design using explicit predicate registers to control or mask effects.",
+      "properties": {}
+    },
+    {
+      "id": "simd_lane",
+      "name": "SIMD lane",
+      "type": "vector_concept",
+      "description": "One element position within a packed vector operation.",
+      "properties": {}
+    },
+    {
+      "id": "vector_length",
+      "name": "Vector length",
+      "type": "vector_concept",
+      "description": "Number of active vector elements, fixed or configurable by ISA.",
+      "properties": {}
+    },
+    {
+      "id": "vector_mask",
+      "name": "Vector mask",
+      "type": "vector_concept",
+      "description": "Predicate state controlling which vector lanes participate.",
+      "properties": {}
+    },
+    {
+      "id": "address_generation_unit_agu",
+      "name": "Address generation unit (AGU)",
+      "type": "implementation_component",
+      "description": "Implementation resource calculating effective addresses.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_latency",
+      "name": "Instruction latency",
+      "type": "performance_metric",
+      "description": "Time from input availability to result availability under a stated implementation convention.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_throughput",
+      "name": "Instruction throughput",
+      "type": "performance_metric",
+      "description": "Sustainable rate of executing an operation or instruction class.",
+      "properties": {}
+    },
+    {
+      "id": "architectural_compatibility_level",
+      "name": "Architectural compatibility level",
+      "type": "compatibility_property",
+      "description": "Baseline and extension level software may target for compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "custom_instruction_extension",
+      "name": "Custom instruction extension",
+      "type": "extension_concept",
+      "description": "Nonstandard or implementation-specific instructions requiring toolchain/runtime coordination.",
+      "properties": {}
+    },
+    {
+      "id": "isa_specification",
+      "name": "ISA specification",
+      "type": "documentation_artifact",
+      "description": "Normative description of encodings, semantics, state, exceptions, and compatibility rules.",
+      "properties": {}
+    },
+    {
+      "id": "assembler",
+      "name": "Assembler",
+      "type": "tool",
+      "description": "Translates assembly statements into machine code and object records.",
+      "properties": {}
+    },
+    {
+      "id": "linker",
+      "name": "Linker",
+      "type": "tool",
+      "description": "Combines object files, resolves symbols, and produces executable/shared objects.",
+      "properties": {}
+    },
+    {
+      "id": "compiler",
+      "name": "Compiler",
+      "type": "tool",
+      "description": "Translates high-level or intermediate representation into code targeting an ISA and ABI.",
+      "properties": {}
+    },
+    {
+      "id": "object_file_format",
+      "name": "Object file format",
+      "type": "binary_format",
+      "description": "Container for machine code, data, symbols, relocations, and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "relocation",
+      "name": "Relocation",
+      "type": "binary_linking_concept",
+      "description": "Record or operation describing how an address-dependent field is adjusted by linker or loader.",
+      "properties": {}
+    },
+    {
+      "id": "calling_convention",
+      "name": "Calling convention",
+      "type": "abi_component",
+      "description": "Rules for argument passing, return values, register preservation, and stack usage.",
+      "properties": {}
+    },
+    {
+      "id": "exception_handler",
+      "name": "Exception handler",
+      "type": "software_component",
+      "description": "Code entered to respond to an exception or interrupt.",
+      "properties": {}
+    },
+    {
+      "id": "operating_system",
+      "name": "Operating system",
+      "type": "software_component",
+      "description": "System software managing resources and using privileged facilities.",
+      "properties": {}
+    },
+    {
+      "id": "hypervisor",
+      "name": "Hypervisor",
+      "type": "software_component",
+      "description": "Software managing virtual machines and using virtualization facilities.",
+      "properties": {}
+    },
+    {
+      "id": "application_binary",
+      "name": "Application binary",
+      "type": "software_artifact",
+      "description": "Executable machine-code program built for an ISA and platform ABI.",
+      "properties": {}
+    },
+    {
+      "id": "instruction_legality",
+      "name": "Instruction legality",
+      "type": "encoding_property",
+      "description": "Whether a bit pattern is valid under the active ISA, mode, and feature set.",
+      "properties": {}
+    },
+    {
+      "id": "feature_dependent_encoding",
+      "name": "Feature-dependent encoding",
+      "type": "encoding_property",
+      "description": "Encoding whose meaning or legality depends on enabled extensions or execution mode.",
+      "properties": {}
+    },
+    {
+      "id": "execution_mode",
+      "name": "Execution mode",
+      "type": "architectural_mode",
+      "description": "Mode changing instruction availability, state interpretation, or execution rules.",
+      "properties": {}
+    },
+    {
+      "id": "privilege_sensitive_instruction",
+      "name": "Privilege-sensitive instruction",
+      "type": "instruction_property",
+      "description": "Instruction whose availability/effect depends on privilege or configuration.",
+      "properties": {}
+    },
+    {
+      "id": "power_management_instruction",
+      "name": "Power management instruction",
+      "type": "instruction_class",
+      "description": "Operation or hint for idle, wait, low-power, or power-state behavior.",
+      "properties": {}
+    },
+    {
+      "id": "timer_and_counter_instruction",
+      "name": "Timer and counter instruction",
+      "type": "instruction_class",
+      "description": "Accesses architecturally defined timers, counters, or performance-monitoring state.",
+      "properties": {}
+    },
+    {
+      "id": "performance_monitoring_counter",
+      "name": "Performance monitoring counter",
+      "type": "architectural_state",
+      "description": "Counter exposed for measuring events, with access and event definitions varying by ISA.",
+      "properties": {}
+    },
+    {
+      "id": "security_extension",
+      "name": "Security extension",
+      "type": "extension_category",
+      "description": "Architectural facilities for isolation, cryptography, memory tagging, or control-flow integrity.",
+      "properties": {}
+    },
+    {
+      "id": "control_flow_integrity",
+      "name": "Control-flow integrity",
+      "type": "security_concept",
+      "description": "Mechanisms constraining indirect control flow or return behavior.",
+      "properties": {}
+    },
+    {
+      "id": "memory_tagging",
+      "name": "Memory tagging",
+      "type": "security_concept",
+      "description": "Associates tags with pointers or memory granules to help detect invalid accesses.",
+      "properties": {}
+    },
+    {
+      "id": "pointer_authentication",
+      "name": "Pointer authentication",
+      "type": "security_concept",
+      "description": "Authenticates pointers or return addresses where supported.",
+      "properties": {}
+    },
+    {
+      "id": "memory_encryption",
+      "name": "Memory encryption",
+      "type": "security_concept",
+      "description": "Protects memory contents against selected threat models using architecture/platform mechanisms.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_00001",
+      "source": "instruction_set_architecture_isa",
+      "target": "machine_instruction",
+      "type": "defines",
+      "description": "Specifies available operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00002",
+      "source": "instruction_set_architecture_isa",
+      "target": "machine_code",
+      "type": "defines_encoding_for",
+      "description": "Defines instruction binary representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00003",
+      "source": "instruction_set_architecture_isa",
+      "target": "instruction_semantics",
+      "type": "specifies",
+      "description": "Defines architecturally visible effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00004",
+      "source": "instruction_set_architecture_isa",
+      "target": "architectural_state",
+      "type": "defines",
+      "description": "Defines programmer-visible state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00005",
+      "source": "instruction_set_architecture_isa",
+      "target": "register_file",
+      "type": "defines",
+      "description": "Identifies architectural registers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00006",
+      "source": "instruction_set_architecture_isa",
+      "target": "data_type",
+      "type": "defines_or_supports",
+      "description": "Specifies or supports architectural data representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00007",
+      "source": "instruction_set_architecture_isa",
+      "target": "addressing_mode",
+      "type": "defines",
+      "description": "Defines operand and address formation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00008",
+      "source": "instruction_set_architecture_isa",
+      "target": "memory_model",
+      "type": "defines",
+      "description": "Specifies ordering and synchronization guarantees.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00009",
+      "source": "instruction_set_architecture_isa",
+      "target": "exception_model",
+      "type": "defines",
+      "description": "Specifies exception and interrupt behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00010",
+      "source": "instruction_set_architecture_isa",
+      "target": "privilege_level",
+      "type": "defines",
+      "description": "May define privilege levels and protected state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00011",
+      "source": "instruction_set_architecture_isa",
+      "target": "abi_application_binary_interface",
+      "type": "interacts_with",
+      "description": "ABI includes ISA conventions plus platform and OS contracts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00012",
+      "source": "instruction_set_architecture_isa",
+      "target": "microarchitecture",
+      "type": "is_distinct_from",
+      "description": "ISA is the software-visible contract; microarchitecture is its implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00013",
+      "source": "instruction_set_architecture_isa",
+      "target": "isa_implementation",
+      "type": "is_implemented_by",
+      "description": "Hardware and software systems realize the contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00014",
+      "source": "isa_implementation",
+      "target": "binary_compatibility",
+      "type": "can_provide",
+      "description": "Conforming implementations can execute compatible binaries when feature and platform requirements match.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00015",
+      "source": "instruction_set_architecture_isa",
+      "target": "instruction_extension",
+      "type": "can_be_extended_by",
+      "description": "Architectures evolve through added instructions and state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00016",
+      "source": "instruction_extension",
+      "target": "feature_discovery",
+      "type": "should_be_exposed_through",
+      "description": "Software needs to discover optional feature support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00017",
+      "source": "machine_instruction",
+      "target": "opcode",
+      "type": "contains_or_implies",
+      "description": "Encoding identifies the operation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00018",
+      "source": "machine_instruction",
+      "target": "operand",
+      "type": "uses",
+      "description": "Instructions consume or produce operands.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00019",
+      "source": "machine_instruction",
+      "target": "instruction_semantics",
+      "type": "has",
+      "description": "Each instruction has specified effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00020",
+      "source": "machine_code",
+      "target": "assembly_language",
+      "type": "can_be_represented_as",
+      "description": "Assembly is the symbolic representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00021",
+      "source": "instruction_decoder",
+      "target": "machine_code",
+      "type": "decodes",
+      "description": "Decoder identifies boundaries and fields.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00022",
+      "source": "instruction_decoder",
+      "target": "micro_operation_uop",
+      "type": "may_translate_into",
+      "description": "Some implementations decompose instructions into internal operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00023",
+      "source": "microcode",
+      "target": "micro_operation_uop",
+      "type": "may_sequence",
+      "description": "Microcode can sequence internal operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00024",
+      "source": "execution_unit",
+      "target": "instruction_semantics",
+      "type": "implements",
+      "description": "Execution resources realize operations while preserving architectural behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00025",
+      "source": "instruction_set_simulator",
+      "target": "instruction_semantics",
+      "type": "models",
+      "description": "Simulator models instruction effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00026",
+      "source": "emulator",
+      "target": "instruction_set_architecture_isa",
+      "type": "implements",
+      "description": "Emulator reproduces ISA behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00027",
+      "source": "interpreter",
+      "target": "machine_instruction",
+      "type": "executes",
+      "description": "Interpreter decodes and performs instruction effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00028",
+      "source": "dynamic_binary_translation",
+      "target": "machine_code",
+      "type": "translates",
+      "description": "Runtime translation converts code between execution representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00029",
+      "source": "jit_compilation",
+      "target": "bytecode_isa",
+      "type": "may_compile",
+      "description": "Runtime may compile bytecode to native code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00030",
+      "source": "binary_compatibility",
+      "target": "abi_application_binary_interface",
+      "type": "depends_partly_on",
+      "description": "Executable compatibility also depends on ABI, OS, and runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00031",
+      "source": "instruction_set_architecture_isa",
+      "target": "feature_discovery",
+      "type": "supports",
+      "description": "Software can query optional capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00032",
+      "source": "instruction_set_architecture_isa",
+      "target": "cisc",
+      "type": "may_be_classified_as",
+      "description": "CISC is one ISA design classification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00033",
+      "source": "instruction_set_architecture_isa",
+      "target": "risc",
+      "type": "may_be_classified_as",
+      "description": "RISC is one ISA design classification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00034",
+      "source": "instruction_set_architecture_isa",
+      "target": "vliw",
+      "type": "may_be_classified_as",
+      "description": "VLIW groups multiple operations into wide instruction words.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00035",
+      "source": "instruction_set_architecture_isa",
+      "target": "liw",
+      "type": "may_be_classified_as",
+      "description": "LIW is related to VLIW.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00036",
+      "source": "instruction_set_architecture_isa",
+      "target": "epic",
+      "type": "may_be_classified_as",
+      "description": "EPIC exposes parallelism and compiler scheduling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00037",
+      "source": "instruction_set_architecture_isa",
+      "target": "misc",
+      "type": "may_be_classified_as",
+      "description": "MISC uses a minimal instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00038",
+      "source": "instruction_set_architecture_isa",
+      "target": "oisc",
+      "type": "may_be_classified_as",
+      "description": "OISC is a theoretical one-instruction model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00039",
+      "source": "vliw",
+      "target": "liw",
+      "type": "is_related_to",
+      "description": "The design terms describe related wide-instruction approaches.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00040",
+      "source": "epic",
+      "target": "vliw",
+      "type": "shares_design_goals_with",
+      "description": "Both expose parallelism and shift scheduling toward software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00041",
+      "source": "risc",
+      "target": "load_store_architecture",
+      "type": "commonly_uses",
+      "description": "Many RISC ISAs separate memory access from ALU operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00042",
+      "source": "stack_machine",
+      "target": "zero_operand_instruction_form",
+      "type": "commonly_uses",
+      "description": "Stack arithmetic often has no explicit operands.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00043",
+      "source": "accumulator_machine",
+      "target": "one_operand_instruction_form",
+      "type": "commonly_uses",
+      "description": "Accumulator is an implicit operand/result.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00044",
+      "source": "register_register_architecture",
+      "target": "three_operand_instruction_form",
+      "type": "often_supports",
+      "description": "Separate source and destination registers are common.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00045",
+      "source": "transport_triggered_architecture_tta",
+      "target": "opcode",
+      "type": "may_not_use_conventional_field",
+      "description": "Some TTA designs encode transport rather than a conventional opcode.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00046",
+      "source": "zero_operand_instruction_form",
+      "target": "stack_machine",
+      "type": "is_associated_with",
+      "description": "Arithmetic consumes stack operands.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00047",
+      "source": "one_operand_instruction_form",
+      "target": "accumulator_machine",
+      "type": "is_associated_with",
+      "description": "Accumulator reduces explicit operand encoding.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00048",
+      "source": "four_operand_instruction_form",
+      "target": "fused_multiply_add_fma",
+      "type": "can_encode",
+      "description": "Some forms encode destination and three sources.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00049",
+      "source": "register_pressure",
+      "target": "register_spilling",
+      "type": "can_cause",
+      "description": "High demand can force spills.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00050",
+      "source": "register_file",
+      "target": "register_pressure",
+      "type": "affects",
+      "description": "Register availability affects allocation pressure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00051",
+      "source": "register_allocation",
+      "target": "register_file",
+      "type": "assigns_values_to",
+      "description": "Compiler maps live values to registers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00052",
+      "source": "compiler_instruction_selection",
+      "target": "instruction_set_architecture_isa",
+      "type": "targets",
+      "description": "Instruction selection maps operations to target instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00053",
+      "source": "instruction_scheduling",
+      "target": "microarchitecture",
+      "type": "is_informed_by",
+      "description": "Scheduling can exploit implementation latency and throughput.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00054",
+      "source": "optimization_for_size",
+      "target": "code_density",
+      "type": "optimizes_for",
+      "description": "Size-oriented compilation reduces code footprint.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00055",
+      "source": "optimization_for_speed",
+      "target": "instruction_level_parallelism_ilp",
+      "type": "may_exploit",
+      "description": "Speed-oriented code may expose independent operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00056",
+      "source": "fused_multiply_add_fma",
+      "target": "rounding_mode",
+      "type": "obeys",
+      "description": "Floating-point behavior follows rounding rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00057",
+      "source": "saturation_arithmetic",
+      "target": "dsp_multiply_accumulate",
+      "type": "is_common_in",
+      "description": "Saturating operations occur in signal-processing ISAs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00058",
+      "source": "harvard_architecture",
+      "target": "digital_signal_processor_dsp",
+      "type": "is_used_by",
+      "description": "Separate paths can support concurrent instruction/data fetch.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00059",
+      "source": "digital_signal_processor_dsp",
+      "target": "dsp_multiply_accumulate",
+      "type": "often_supports",
+      "description": "DSP ISAs often provide MAC operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00060",
+      "source": "instruction_set_architecture_isa",
+      "target": "data_movement",
+      "type": "may_define_instruction_class",
+      "description": "Data movement transfers values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00061",
+      "source": "instruction_set_architecture_isa",
+      "target": "load",
+      "type": "may_define_instruction_class",
+      "description": "Load reads memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00062",
+      "source": "instruction_set_architecture_isa",
+      "target": "store",
+      "type": "may_define_instruction_class",
+      "description": "Store writes memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00063",
+      "source": "instruction_set_architecture_isa",
+      "target": "integer_arithmetic",
+      "type": "may_define_instruction_class",
+      "description": "Integer arithmetic performs numeric operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00064",
+      "source": "instruction_set_architecture_isa",
+      "target": "floating_point_arithmetic",
+      "type": "may_define_instruction_class",
+      "description": "Floating-point operations follow defined numeric semantics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00065",
+      "source": "instruction_set_architecture_isa",
+      "target": "bitwise_logic",
+      "type": "may_define_instruction_class",
+      "description": "Logical operations act on bit patterns.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00066",
+      "source": "instruction_set_architecture_isa",
+      "target": "shift_and_rotate",
+      "type": "may_define_instruction_class",
+      "description": "Shift and rotate manipulate bit positions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00067",
+      "source": "instruction_set_architecture_isa",
+      "target": "compare_and_test",
+      "type": "may_define_instruction_class",
+      "description": "Comparison may update condition state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00068",
+      "source": "instruction_set_architecture_isa",
+      "target": "branch",
+      "type": "may_define_instruction_class",
+      "description": "Branch changes control flow.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00069",
+      "source": "instruction_set_architecture_isa",
+      "target": "conditional_branch",
+      "type": "may_define_instruction_class",
+      "description": "Conditional branch tests a condition.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00070",
+      "source": "instruction_set_architecture_isa",
+      "target": "call",
+      "type": "may_define_instruction_class",
+      "description": "Call transfers control and saves return information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00071",
+      "source": "instruction_set_architecture_isa",
+      "target": "return",
+      "type": "may_define_instruction_class",
+      "description": "Return resumes caller execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00072",
+      "source": "instruction_set_architecture_isa",
+      "target": "atomic_read_modify_write",
+      "type": "may_define_instruction_class",
+      "description": "Atomic RMW updates memory indivisibly.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00073",
+      "source": "instruction_set_architecture_isa",
+      "target": "fence_memory_barrier",
+      "type": "may_define_instruction_class",
+      "description": "Fence constrains memory ordering.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00074",
+      "source": "instruction_set_architecture_isa",
+      "target": "vector_simd",
+      "type": "may_define_instruction_class",
+      "description": "SIMD processes multiple data lanes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00075",
+      "source": "instruction_set_architecture_isa",
+      "target": "cryptographic_instruction",
+      "type": "may_define_instruction_class",
+      "description": "Cryptographic instructions accelerate selected transforms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00076",
+      "source": "instruction_set_architecture_isa",
+      "target": "system_privileged_instruction",
+      "type": "may_define_instruction_class",
+      "description": "Privileged operations control system state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00077",
+      "source": "load",
+      "target": "memory_address_space",
+      "type": "reads_from",
+      "description": "Loads read from addressable sources.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00078",
+      "source": "store",
+      "target": "memory_address_space",
+      "type": "writes_to",
+      "description": "Stores write to addressable destinations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00079",
+      "source": "integer_arithmetic",
+      "target": "status_register_condition_codes",
+      "type": "may_update",
+      "description": "Some operations update flags.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00080",
+      "source": "floating_point_arithmetic",
+      "target": "floating_point_exception_flags",
+      "type": "may_update",
+      "description": "Floating-point operations may set exception flags.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00081",
+      "source": "compare_and_test",
+      "target": "status_register_condition_codes",
+      "type": "may_update",
+      "description": "Comparisons may update status flags.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00082",
+      "source": "conditional_branch",
+      "target": "condition_field",
+      "type": "uses",
+      "description": "Branch tests a condition or predicate.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00083",
+      "source": "branch",
+      "target": "program_counter_instruction_pointer",
+      "type": "updates",
+      "description": "Control transfers update next instruction location.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00084",
+      "source": "call",
+      "target": "return",
+      "type": "pairs_with",
+      "description": "Return resumes caller according to the ISA mechanism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00085",
+      "source": "trap_software_interrupt",
+      "target": "exception",
+      "type": "can_raise",
+      "description": "Trap can cause a synchronous transition.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00086",
+      "source": "system_privileged_instruction",
+      "target": "privilege_level",
+      "type": "is_constrained_by",
+      "description": "Privilege gates some operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00087",
+      "source": "vector_simd",
+      "target": "data_type",
+      "type": "operates_on",
+      "description": "Vector operations work on packed or lane-based data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00088",
+      "source": "vector_simd",
+      "target": "vector_reduction",
+      "type": "may_include",
+      "description": "Vector ISAs may reduce across lanes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00089",
+      "source": "predicate_operation",
+      "target": "predication",
+      "type": "supports",
+      "description": "Predicate state controls conditional execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00090",
+      "source": "atomic_read_modify_write",
+      "target": "atomicity",
+      "type": "requires",
+      "description": "Atomic update is indivisible as specified.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00091",
+      "source": "atomic_memory_operation_amo",
+      "target": "memory_ordering",
+      "type": "is_governed_by",
+      "description": "Ordering and atomicity are related but distinct.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00092",
+      "source": "fence",
+      "target": "memory_ordering",
+      "type": "constrains",
+      "description": "Fence enforces ordering constraints.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00093",
+      "source": "compare_and_swap_cas",
+      "target": "atomic_read_modify_write",
+      "type": "is_an_example_of",
+      "description": "CAS conditionally updates atomically.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00094",
+      "source": "fetch_and_add",
+      "target": "atomic_read_modify_write",
+      "type": "is_an_example_of",
+      "description": "Fetch-add atomically increments a value.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00095",
+      "source": "instruction_format",
+      "target": "opcode",
+      "type": "contains_or_implies",
+      "description": "Format encodes operation selector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00096",
+      "source": "instruction_format",
+      "target": "register_field",
+      "type": "may_contain",
+      "description": "Format may encode registers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00097",
+      "source": "instruction_format",
+      "target": "immediate_field",
+      "type": "may_contain",
+      "description": "Format may encode constants.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00098",
+      "source": "instruction_format",
+      "target": "displacement_field",
+      "type": "may_contain",
+      "description": "Format may encode offsets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00099",
+      "source": "fixed_length_encoding",
+      "target": "instruction_length",
+      "type": "constrains",
+      "description": "Fixed-length subsets have consistent size.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00100",
+      "source": "variable_length_encoding",
+      "target": "instruction_boundary",
+      "type": "complicates_detection_of",
+      "description": "Decoder must identify variable boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00101",
+      "source": "mixed_length_encoding",
+      "target": "instruction_length",
+      "type": "supports_multiple",
+      "description": "Mixed-length design supports multiple sizes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00102",
+      "source": "prefix_byte_prefix_field",
+      "target": "instruction_format",
+      "type": "modifies_or_extends",
+      "description": "Prefix modifies interpretation of following fields.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00103",
+      "source": "compressed_instruction_encoding",
+      "target": "code_density",
+      "type": "can_improve",
+      "description": "Short encodings reduce footprint.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00104",
+      "source": "instruction_alignment",
+      "target": "instruction_fetch",
+      "type": "constrains",
+      "description": "Alignment may constrain instruction addresses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00105",
+      "source": "endianness",
+      "target": "machine_code",
+      "type": "can_affect_representation_of",
+      "description": "Byte order matters according to architecture-specific rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00106",
+      "source": "predication",
+      "target": "condition_field",
+      "type": "may_use",
+      "description": "Predicate controls instruction effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00107",
+      "source": "delay_slot",
+      "target": "branch",
+      "type": "is_associated_with",
+      "description": "Some architectures define post-branch slot behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00108",
+      "source": "instruction_fetch",
+      "target": "instruction_decode",
+      "type": "precedes",
+      "description": "Fetch precedes decoding.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00109",
+      "source": "instruction_decode",
+      "target": "execution_unit",
+      "type": "dispatches_to",
+      "description": "Decoded operations go to execution resources.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00110",
+      "source": "virtual_address",
+      "target": "address_translation",
+      "type": "is_processed_by",
+      "description": "Virtual addresses are translated.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00111",
+      "source": "address_translation",
+      "target": "physical_address",
+      "type": "produces",
+      "description": "Translation yields physical address or fault.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00112",
+      "source": "page_table",
+      "target": "address_translation",
+      "type": "defines_mappings_for",
+      "description": "Page tables describe mappings and permissions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00113",
+      "source": "tlb",
+      "target": "address_translation",
+      "type": "caches_results_of",
+      "description": "TLBs cache translations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00114",
+      "source": "memory_protection",
+      "target": "privilege_level",
+      "type": "interacts_with",
+      "description": "Access can depend on privilege.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00115",
+      "source": "memory_mapped_i_o",
+      "target": "memory_address_space",
+      "type": "uses",
+      "description": "Device registers occupy memory addresses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00116",
+      "source": "port_mapped_i_o",
+      "target": "input_output_instruction",
+      "type": "may_require",
+      "description": "Port I/O may use explicit instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00117",
+      "source": "memory_ordering",
+      "target": "sequential_consistency",
+      "type": "may_be_stronger_than",
+      "description": "Sequential consistency is a strong model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00118",
+      "source": "memory_ordering",
+      "target": "relaxed_memory_ordering",
+      "type": "can_allow",
+      "description": "Relaxed models permit defined reorderings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00119",
+      "source": "cache_coherence",
+      "target": "memory_ordering",
+      "type": "is_distinct_from",
+      "description": "Coherence differs from ordering.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00120",
+      "source": "exception_model",
+      "target": "fault",
+      "type": "defines_handling_of",
+      "description": "Architecture defines fault reporting and restart behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00121",
+      "source": "exception_model",
+      "target": "trap",
+      "type": "defines_handling_of",
+      "description": "Architecture defines trap delivery.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00122",
+      "source": "interrupt_vector",
+      "target": "interrupt",
+      "type": "routes",
+      "description": "Vector/table routes execution to handler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00123",
+      "source": "context_switch",
+      "target": "architectural_state",
+      "type": "preserves_or_restores",
+      "description": "OS saves/restores required state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00124",
+      "source": "privilege_transition",
+      "target": "system_call",
+      "type": "is_used_by",
+      "description": "System calls commonly enter privileged code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00125",
+      "source": "virtualization_extension",
+      "target": "privilege_level",
+      "type": "extends_or_controls",
+      "description": "Virtualization adds guest/hypervisor controls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00126",
+      "source": "memory_model",
+      "target": "atomic_read_modify_write",
+      "type": "defines_ordering_for",
+      "description": "Memory model defines ordering of atomic operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00127",
+      "source": "load_store_architecture",
+      "target": "load",
+      "type": "uses_explicitly",
+      "description": "Loads explicitly read memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00128",
+      "source": "load_store_architecture",
+      "target": "store",
+      "type": "uses_explicitly",
+      "description": "Stores explicitly write memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00129",
+      "source": "pipelining",
+      "target": "instruction_level_parallelism_ilp",
+      "type": "exploits",
+      "description": "Pipeline overlaps stages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00130",
+      "source": "out_of_order_execution",
+      "target": "instruction_level_parallelism_ilp",
+      "type": "exploits",
+      "description": "Ready operations may execute while preserving architectural behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00131",
+      "source": "superscalar_execution",
+      "target": "instruction_level_parallelism_ilp",
+      "type": "exploits",
+      "description": "Multiple-issue implementations execute independent instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00132",
+      "source": "branch_prediction",
+      "target": "speculative_execution",
+      "type": "guides",
+      "description": "Predictions guide speculation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00133",
+      "source": "speculative_execution",
+      "target": "architectural_retirement",
+      "type": "is_constrained_by",
+      "description": "Speculation must preserve architectural behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00134",
+      "source": "hardwired_control",
+      "target": "isa_implementation",
+      "type": "can_implement",
+      "description": "Fixed logic can decode and sequence instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00135",
+      "source": "microcoded_control",
+      "target": "microcode",
+      "type": "uses",
+      "description": "Microcoded control uses internal sequences.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00136",
+      "source": "fpga_implementation",
+      "target": "isa_implementation",
+      "type": "is_a_form_of",
+      "description": "Reconfigurable logic can implement an ISA.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00137",
+      "source": "hardware_implementation",
+      "target": "isa_implementation",
+      "type": "is_a_form_of",
+      "description": "A processor is a hardware implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00138",
+      "source": "software_implementation",
+      "target": "isa_implementation",
+      "type": "is_a_form_of",
+      "description": "Emulation is a software implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00139",
+      "source": "compatibility_test_suite",
+      "target": "isa_implementation",
+      "type": "tests",
+      "description": "Conformance tests implementation behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00140",
+      "source": "formal_isa_model",
+      "target": "instruction_semantics",
+      "type": "formalizes",
+      "description": "Formal model represents state transitions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00141",
+      "source": "differential_testing",
+      "target": "isa_implementation",
+      "type": "compares",
+      "description": "Testing compares implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00142",
+      "source": "instruction_cache",
+      "target": "code_density",
+      "type": "benefits_from",
+      "description": "Smaller code can improve fetch/cache efficiency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00143",
+      "source": "prefetch",
+      "target": "instruction_fetch",
+      "type": "can_accelerate",
+      "description": "Prefetch may reduce fetch latency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00144",
+      "source": "instruction_set_architecture_isa",
+      "target": "pipelining",
+      "type": "does_not_require_specific_implementation",
+      "description": "ISA generally does not mandate a particular pipeline.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00145",
+      "source": "instruction_set_architecture_isa",
+      "target": "out_of_order_execution",
+      "type": "does_not_require_specific_implementation",
+      "description": "In-order and out-of-order implementations can conform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00146",
+      "source": "x86_64",
+      "target": "x86",
+      "type": "extends_or_evolves",
+      "description": "x86-64 extends x86 with 64-bit capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00147",
+      "source": "aarch64",
+      "target": "arm_architecture",
+      "type": "is_execution_state_of",
+      "description": "AArch64 is Arm's 64-bit state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00148",
+      "source": "aarch32",
+      "target": "arm_architecture",
+      "type": "is_execution_state_of",
+      "description": "AArch32 is Arm's 32-bit state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00149",
+      "source": "thumb_t32",
+      "target": "arm_architecture",
+      "type": "provides_encoding_family_for",
+      "description": "Thumb/T32 provides compact encodings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00150",
+      "source": "risc_v_compressed_extension",
+      "target": "risc_v",
+      "type": "extends",
+      "description": "Adds compact encodings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00151",
+      "source": "risc_v_atomic_extension",
+      "target": "risc_v",
+      "type": "extends",
+      "description": "Adds atomic memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00152",
+      "source": "risc_v_vector_extension",
+      "target": "risc_v",
+      "type": "extends",
+      "description": "Adds scalable vector operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00153",
+      "source": "mmx",
+      "target": "x86",
+      "type": "extends",
+      "description": "Adds packed integer SIMD.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00154",
+      "source": "sse",
+      "target": "x86",
+      "type": "extends",
+      "description": "Adds vector operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00155",
+      "source": "avx",
+      "target": "x86",
+      "type": "extends",
+      "description": "Adds wider vector operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00156",
+      "source": "avx_512",
+      "target": "avx",
+      "type": "extends",
+      "description": "Adds 512-bit vector and mask capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00157",
+      "source": "aes_ni",
+      "target": "x86",
+      "type": "extends",
+      "description": "Adds AES acceleration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00158",
+      "source": "arm_neon",
+      "target": "arm_architecture",
+      "type": "extends",
+      "description": "Adds SIMD capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00159",
+      "source": "altivec_vmx",
+      "target": "power_isa",
+      "type": "extends",
+      "description": "Adds vector operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00160",
+      "source": "x86_vmx",
+      "target": "x86",
+      "type": "extends",
+      "description": "Adds virtualization facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00161",
+      "source": "amd_v_svm",
+      "target": "x86",
+      "type": "extends",
+      "description": "Adds virtualization facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00162",
+      "source": "java_virtual_machine_jvm_instruction_set",
+      "target": "bytecode_isa",
+      "type": "is_an_example_of",
+      "description": "JVM bytecode is a virtual instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00163",
+      "source": "common_intermediate_language_cil",
+      "target": "bytecode_isa",
+      "type": "is_an_example_of",
+      "description": "CIL is a virtual instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00164",
+      "source": "smalltalk_bytecode",
+      "target": "bytecode_isa",
+      "type": "is_an_example_of",
+      "description": "Smalltalk bytecode is runtime interpreted or compiled.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00165",
+      "source": "transmeta_code_morphing",
+      "target": "dynamic_binary_translation",
+      "type": "uses",
+      "description": "Transmeta translated x86 streams to an internal execution model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00166",
+      "source": "fred_brooks",
+      "target": "ibm_system_360_compatibility_objective",
+      "type": "is_associated_with",
+      "description": "Architecture/implementation distinction was articulated during System/360 work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00167",
+      "source": "ibm_system_360_compatibility_objective",
+      "target": "binary_compatibility",
+      "type": "prioritized",
+      "description": "The project sought compatibility across cost/performance points.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00168",
+      "source": "risc_research",
+      "target": "risc",
+      "type": "informed",
+      "description": "Research helped establish the RISC design tradition.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00169",
+      "source": "cisc_design_tradition",
+      "target": "cisc",
+      "type": "is_represented_by",
+      "description": "CISC represents rich instruction/addressing design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00170",
+      "source": "instruction_atomicity",
+      "target": "instruction_set_architecture_isa",
+      "type": "may_be_specified_by",
+      "description": "ISA can define architectural instruction atomicity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00171",
+      "source": "exception_model",
+      "target": "restartability",
+      "type": "defines",
+      "description": "Exception rules govern safe resumption.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00172",
+      "source": "register_file",
+      "target": "architectural_register_aliasing",
+      "type": "may_include",
+      "description": "Different names/widths can overlap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00173",
+      "source": "register_window",
+      "target": "register_file",
+      "type": "organizes",
+      "description": "Windows provide alternative register organization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00174",
+      "source": "condition_code_architecture",
+      "target": "status_register_condition_codes",
+      "type": "uses",
+      "description": "Operations update shared condition state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00175",
+      "source": "predicate_register_architecture",
+      "target": "predicate_operation",
+      "type": "uses",
+      "description": "Predicate registers control or mask effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00176",
+      "source": "simd_lane",
+      "target": "vector_simd",
+      "type": "is_element_of",
+      "description": "A vector operation processes multiple lanes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00177",
+      "source": "vector_length",
+      "target": "risc_v_vector_extension",
+      "type": "is_configured_by",
+      "description": "Vector state configures active length.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00178",
+      "source": "vector_mask",
+      "target": "predicate_operation",
+      "type": "can_control",
+      "description": "Masks control active lanes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00179",
+      "source": "address_generation_unit_agu",
+      "target": "effective_address",
+      "type": "calculates",
+      "description": "AGUs calculate effective addresses in implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00180",
+      "source": "instruction_latency",
+      "target": "microarchitecture",
+      "type": "depends_on",
+      "description": "Latency is implementation-specific.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00181",
+      "source": "instruction_throughput",
+      "target": "microarchitecture",
+      "type": "depends_on",
+      "description": "Throughput depends on implementation resources.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00182",
+      "source": "architectural_compatibility_level",
+      "target": "binary_compatibility",
+      "type": "defines_scope_of",
+      "description": "Baseline levels define minimum expected features.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00183",
+      "source": "custom_instruction_extension",
+      "target": "feature_discovery",
+      "type": "requires",
+      "description": "Software should identify custom capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00184",
+      "source": "isa_specification",
+      "target": "instruction_set_architecture_isa",
+      "type": "documents",
+      "description": "Specification is the normative contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00185",
+      "source": "assembler",
+      "target": "assembly_language",
+      "type": "translates",
+      "description": "Assembler translates symbolic instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00186",
+      "source": "assembler",
+      "target": "machine_code",
+      "type": "produces",
+      "description": "Assembler emits machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00187",
+      "source": "compiler",
+      "target": "compiler_instruction_selection",
+      "type": "performs",
+      "description": "Compiler selects target instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00188",
+      "source": "linker",
+      "target": "object_file_format",
+      "type": "processes",
+      "description": "Linker processes object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00189",
+      "source": "object_file_format",
+      "target": "machine_code",
+      "type": "contains",
+      "description": "Object files contain code sections.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00190",
+      "source": "relocation",
+      "target": "object_file_format",
+      "type": "is_recorded_in",
+      "description": "Relocation records are stored in object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00191",
+      "source": "calling_convention",
+      "target": "abi_application_binary_interface",
+      "type": "is_part_of",
+      "description": "Calling convention is part of ABI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00192",
+      "source": "operating_system",
+      "target": "system_privileged_instruction",
+      "type": "uses",
+      "description": "OS uses privileged facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00193",
+      "source": "exception_handler",
+      "target": "exception",
+      "type": "handles",
+      "description": "Handler responds to exception.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00194",
+      "source": "hypervisor",
+      "target": "virtualization_extension",
+      "type": "uses",
+      "description": "Hypervisor uses virtualization facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00195",
+      "source": "application_binary",
+      "target": "binary_compatibility",
+      "type": "requires",
+      "description": "Executable requires compatible ISA and platform ABI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00196",
+      "source": "instruction_legality",
+      "target": "reserved_encoding",
+      "type": "determines_status_of",
+      "description": "Specification distinguishes valid/reserved/illegal encodings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00197",
+      "source": "feature_dependent_encoding",
+      "target": "instruction_extension",
+      "type": "is_defined_by",
+      "description": "Extensions may add encodings or alter legality.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00198",
+      "source": "execution_mode",
+      "target": "instruction_set_architecture_isa",
+      "type": "modifies_available_behavior_within",
+      "description": "Modes may change state interpretation or instruction availability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00199",
+      "source": "privilege_sensitive_instruction",
+      "target": "privilege_level",
+      "type": "is_gated_by",
+      "description": "Privilege controls instruction availability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00200",
+      "source": "power_management_instruction",
+      "target": "instruction_set_architecture_isa",
+      "type": "may_be_included_in",
+      "description": "Some ISAs define wait/idle/power operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00201",
+      "source": "timer_and_counter_instruction",
+      "target": "performance_monitoring_counter",
+      "type": "accesses",
+      "description": "Instructions can access architectural counters.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00202",
+      "source": "security_extension",
+      "target": "instruction_extension",
+      "type": "may_be_realized_as",
+      "description": "Security features may arrive as architectural extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00203",
+      "source": "control_flow_integrity",
+      "target": "security_extension",
+      "type": "may_be_supported_by",
+      "description": "Some architectures harden indirect branches/returns.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00204",
+      "source": "memory_tagging",
+      "target": "security_extension",
+      "type": "may_be_supported_by",
+      "description": "Some ISAs define memory/pointer tags.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00205",
+      "source": "pointer_authentication",
+      "target": "security_extension",
+      "type": "may_be_supported_by",
+      "description": "Some architectures authenticate pointers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00206",
+      "source": "memory_encryption",
+      "target": "security_extension",
+      "type": "may_interact_with",
+      "description": "Memory encryption may combine ISA and platform mechanisms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00207",
+      "source": "instruction_set_architecture_isa",
+      "target": "x86",
+      "type": "example_of_isa_family_or_form",
+      "description": "x86 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00208",
+      "source": "instruction_set_architecture_isa",
+      "target": "x86_64",
+      "type": "example_of_isa_family_or_form",
+      "description": "x86-64 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00209",
+      "source": "instruction_set_architecture_isa",
+      "target": "arm_architecture",
+      "type": "example_of_isa_family_or_form",
+      "description": "ARM architecture is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00210",
+      "source": "instruction_set_architecture_isa",
+      "target": "aarch64",
+      "type": "example_of_isa_family_or_form",
+      "description": "AArch64 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00211",
+      "source": "instruction_set_architecture_isa",
+      "target": "aarch32",
+      "type": "example_of_isa_family_or_form",
+      "description": "AArch32 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00212",
+      "source": "instruction_set_architecture_isa",
+      "target": "risc_v",
+      "type": "example_of_isa_family_or_form",
+      "description": "RISC-V is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00213",
+      "source": "instruction_set_architecture_isa",
+      "target": "mips",
+      "type": "example_of_isa_family_or_form",
+      "description": "MIPS is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00214",
+      "source": "instruction_set_architecture_isa",
+      "target": "power_isa",
+      "type": "example_of_isa_family_or_form",
+      "description": "Power ISA is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00215",
+      "source": "instruction_set_architecture_isa",
+      "target": "sparc",
+      "type": "example_of_isa_family_or_form",
+      "description": "SPARC is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00216",
+      "source": "instruction_set_architecture_isa",
+      "target": "ibm_z_architecture",
+      "type": "example_of_isa_family_or_form",
+      "description": "IBM z/Architecture is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00217",
+      "source": "instruction_set_architecture_isa",
+      "target": "avr",
+      "type": "example_of_isa_family_or_form",
+      "description": "AVR is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00218",
+      "source": "instruction_set_architecture_isa",
+      "target": "msp430",
+      "type": "example_of_isa_family_or_form",
+      "description": "MSP430 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00219",
+      "source": "instruction_set_architecture_isa",
+      "target": "6502",
+      "type": "example_of_isa_family_or_form",
+      "description": "6502 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00220",
+      "source": "instruction_set_architecture_isa",
+      "target": "z80",
+      "type": "example_of_isa_family_or_form",
+      "description": "Z80 is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00221",
+      "source": "instruction_set_architecture_isa",
+      "target": "vax",
+      "type": "example_of_isa_family_or_form",
+      "description": "VAX is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00222",
+      "source": "instruction_set_architecture_isa",
+      "target": "ibm_system_360_architecture",
+      "type": "example_of_isa_family_or_form",
+      "description": "IBM System/360 architecture is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00223",
+      "source": "instruction_set_architecture_isa",
+      "target": "java_virtual_machine_jvm_instruction_set",
+      "type": "example_of_isa_family_or_form",
+      "description": "Java Virtual Machine (JVM) instruction set is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00224",
+      "source": "instruction_set_architecture_isa",
+      "target": "common_intermediate_language_cil",
+      "type": "example_of_isa_family_or_form",
+      "description": "Common Intermediate Language (CIL) is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00225",
+      "source": "instruction_set_architecture_isa",
+      "target": "smalltalk_bytecode",
+      "type": "example_of_isa_family_or_form",
+      "description": "Smalltalk bytecode is a representative ISA family, variant, or virtual-machine instruction set.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00226",
+      "source": "x86",
+      "target": "variable_length_encoding",
+      "type": "commonly_uses",
+      "description": "x86 instructions have variable-length encodings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00227",
+      "source": "risc_v",
+      "target": "fixed_length_encoding",
+      "type": "commonly_uses",
+      "description": "Base RISC-V instructions are fixed-width, with compressed extension adding shorter forms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00228",
+      "source": "arm_architecture",
+      "target": "mixed_length_encoding",
+      "type": "supports_in_some_states",
+      "description": "Arm execution states and extensions include different instruction encoding lengths.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00229",
+      "source": "cisc",
+      "target": "code_density",
+      "type": "often_emphasizes",
+      "description": "Rich instruction forms can improve code density depending on compiler and workload.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00230",
+      "source": "risc",
+      "target": "code_density",
+      "type": "trades_off_against",
+      "description": "Regular instruction formats may trade code size against decode simplicity, with compact extensions mitigating this.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00231",
+      "source": "instruction_set_architecture_isa",
+      "target": "input_output_instruction",
+      "type": "may_define",
+      "description": "Some ISAs define explicit I/O instruction families.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00232",
+      "source": "instruction_set_architecture_isa",
+      "target": "interrupt",
+      "type": "defines_handling_for",
+      "description": "The ISA defines interrupt delivery and state-transition behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00233",
+      "source": "instruction_set_architecture_isa",
+      "target": "virtual_memory",
+      "type": "may_define_support_for",
+      "description": "Architecture may define address translation and protection mechanisms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00234",
+      "source": "instruction_set_architecture_isa",
+      "target": "atomicity",
+      "type": "defines",
+      "description": "The memory model may define atomicity of selected operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_00235",
+      "source": "instruction_set_architecture_isa",
+      "target": "instruction_extension",
+      "type": "can_be_extended_by",
+      "description": "New instruction families may be added over time.",
+      "properties": {}
+    }
+  ]
+}

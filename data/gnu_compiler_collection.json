@@ -1,0 +1,3958 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "graph_metadata": {
+    "title": "GNU Compiler Collection (GCC) — Detailed Knowledge Graph",
+    "graph_id": "gnu-compiler-collection-knowledge-graph",
+    "version": "1.0.0",
+    "created_utc": "2026-10-19T17:10:10.308459+00:00",
+    "subject": "GNU Compiler Collection",
+    "description": "Machine-readable graph of GCC identity, history, pipeline, intermediate representations, optimization, languages, runtimes, target architectures, platforms, build dependencies, plugins, interoperability, licensing, and usage patterns.",
+    "source_basis": {
+      "primary_user_supplied_source": "Pasted text(20261019-170757).txt",
+      "source_type": "Wikipedia article excerpt supplied by user",
+      "source_coverage": "The excerpt informs historical, release, language, architecture, compiler-design, optimization, plugin, and licensing entries.",
+      "expansion_policy": "Additional standard compiler concepts and illustrative command patterns are included for technical navigation and are not all assertions made by the supplied excerpt.",
+      "freshness_note": "Release status, front-end maturity, target support, command behavior, and license interpretation can vary by version/configuration; consult matching official GCC documentation."
+    },
+    "counts": {
+      "entities": 177,
+      "relationships": 237
+    },
+    "serialization": {
+      "encoding": "UTF-8",
+      "format": "JSON",
+      "entity_key": "id",
+      "relationship_key": "id",
+      "relationship_direction": "directed",
+      "id_policy": "Stable lowercase snake_case entity IDs; sequential relationship IDs within this generated artifact."
+    }
+  },
+  "entities": [
+    {
+      "id": "gcc",
+      "type": "software",
+      "name": "GNU Compiler Collection",
+      "description": "A collection of language compilers sharing common compiler infrastructure and targeting many processor architectures and operating systems.",
+      "aliases": [
+        "GNU C Compiler"
+      ],
+      "properties": {
+        "acronym": "GCC",
+        "historical_name": "GNU C Compiler",
+        "category": "compiler toolchain",
+        "implementation_languages": [
+          "C",
+          "C++"
+        ],
+        "first_release": "1987-03-22",
+        "snapshot_release": "16.2",
+        "snapshot_release_date": "2026-08-07",
+        "license": "GPL-3.0-or-later with GCC Runtime Library Exception",
+        "project": "GNU Project",
+        "source_note": "Release facts reflect the supplied article excerpt; verify against official release notes."
+      }
+    },
+    {
+      "id": "gnu_project",
+      "type": "organization",
+      "name": "GNU Project",
+      "description": "The free-software project that develops GCC.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "fsf",
+      "type": "organization",
+      "name": "Free Software Foundation",
+      "description": "Organization associated with GNU software distribution and GCC licensing history.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcc_steering_committee",
+      "type": "governance_body",
+      "name": "GCC Steering Committee",
+      "description": "Steering body associated with GCC project governance.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcc_maintainers",
+      "type": "role_group",
+      "name": "GCC maintainers",
+      "description": "Distributed developers maintaining GCC subsystems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcc_repository",
+      "type": "source_repository",
+      "name": "GCC Git repository",
+      "description": "Primary repository for GCC source development.",
+      "aliases": [],
+      "properties": {
+        "url": "https://gcc.gnu.org/git/gcc.git"
+      }
+    },
+    {
+      "id": "gcc_docs",
+      "type": "documentation",
+      "name": "GCC documentation",
+      "description": "Official user manuals, internals documentation, installation instructions, and release notes.",
+      "aliases": [],
+      "properties": {
+        "url": "https://gcc.gnu.org/onlinedocs/"
+      }
+    },
+    {
+      "id": "gnu_license",
+      "type": "license",
+      "name": "GNU General Public License version 3 or later",
+      "description": "Copyleft license governing GCC source, subject to applicable exceptions.",
+      "aliases": [],
+      "properties": {
+        "spdx_id": "GPL-3.0-or-later"
+      }
+    },
+    {
+      "id": "gcc_runtime_exception",
+      "type": "license_exception",
+      "name": "GCC Runtime Library Exception",
+      "description": "Exception that permits certain distributions of target code using GCC runtime libraries if its conditions are met.",
+      "aliases": [],
+      "properties": {
+        "spdx_id": "GCC-exception-3.1",
+        "caveat": "License interpretation depends on the compilation process and exact components; not legal advice."
+      }
+    },
+    {
+      "id": "gcc_release_16_1",
+      "type": "software_release",
+      "name": "GCC 16.1",
+      "description": "Release listed in the supplied article excerpt as released 30 April 2026.",
+      "aliases": [],
+      "properties": {
+        "version": "16.1",
+        "release_date": "2026-04-30"
+      }
+    },
+    {
+      "id": "gcc_release_16_2",
+      "type": "software_release",
+      "name": "GCC 16.2",
+      "description": "Release listed in the supplied article excerpt as released 7 August 2026.",
+      "aliases": [],
+      "properties": {
+        "version": "16.2",
+        "release_date": "2026-08-07"
+      }
+    },
+    {
+      "id": "egcs",
+      "type": "software_project",
+      "name": "Experimental/Enhanced GNU Compiler System (EGCS)",
+      "description": "1997 effort merging experimental GCC forks; adopted as the official development line in 1999.",
+      "aliases": [],
+      "properties": {
+        "start_year": 1997,
+        "reunification_release": "GCC 2.95"
+      }
+    },
+    {
+      "id": "richard_stallman",
+      "type": "person",
+      "name": "Richard Stallman",
+      "description": "GNU Project founder and original author associated with GCC's initial release.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "andrew_tanenbaum",
+      "type": "person",
+      "name": "Andrew S. Tanenbaum",
+      "description": "Amsterdam Compiler Kit author approached about using that compiler for GNU.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "jack_davidson",
+      "type": "person",
+      "name": "Jack Davidson",
+      "description": "Contributor associated with RTL intermediate representation and instruction-pattern techniques.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "christopher_fraser",
+      "type": "person",
+      "name": "Christopher W. Fraser",
+      "description": "Contributor associated with RTL intermediate representation and instruction-pattern techniques.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "len_tower",
+      "type": "person",
+      "name": "Len Tower",
+      "description": "Early contributor associated with parser, RTL generator, RTL definitions, and VAX machine-description work.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "paul_rubin",
+      "type": "person",
+      "name": "Paul Rubin",
+      "description": "Early contributor credited with writing much of the preprocessor.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcc_1987_release",
+      "type": "historical_event",
+      "name": "Initial GCC release",
+      "description": "GCC 1.0 was released on 22 March 1987 as a C compiler.",
+      "aliases": [],
+      "properties": {
+        "date": "1987-03-22"
+      }
+    },
+    {
+      "id": "egcs_merge_1999",
+      "type": "historical_event",
+      "name": "EGCS becomes official GCC line",
+      "description": "The FSF recognized EGCS as the official GCC development line; GCC 2.95 reunited the projects.",
+      "aliases": [],
+      "properties": {
+        "year": 1999
+      }
+    },
+    {
+      "id": "gcc_driver",
+      "type": "program",
+      "name": "GCC driver (gcc)",
+      "description": "Driver commonly used for C compilation; coordinates compilation stages and optionally linking.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc"
+      }
+    },
+    {
+      "id": "gpp_driver",
+      "type": "program",
+      "name": "G++ driver (g++)",
+      "description": "C++ driver that selects C++ language behavior and commonly links libstdc++.",
+      "aliases": [],
+      "properties": {
+        "command": "g++"
+      }
+    },
+    {
+      "id": "language_driver_family",
+      "type": "software_component",
+      "name": "Language-specific GCC drivers",
+      "description": "Drivers such as gcc, g++, gfortran, gccgo, gdc, and gm2 select language modes and coordinate tools.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "preprocessor",
+      "type": "compiler_stage",
+      "name": "Preprocessor",
+      "description": "Processes include directives, macros, and conditional compilation.",
+      "aliases": [],
+      "properties": {
+        "flags": [
+          "-E",
+          "-I",
+          "-D",
+          "-U"
+        ]
+      }
+    },
+    {
+      "id": "lexer",
+      "type": "compiler_stage",
+      "name": "Lexical analysis",
+      "description": "Converts source text into tokens.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "parser",
+      "type": "compiler_stage",
+      "name": "Parsing / syntax analysis",
+      "description": "Checks grammar and builds syntax representations.",
+      "aliases": [],
+      "properties": {
+        "implementation_note": "Supplied excerpt says GCC front ends used hand-written recursive-descent parsers as of 2021."
+      }
+    },
+    {
+      "id": "semantic_analysis",
+      "type": "compiler_stage",
+      "name": "Semantic analysis",
+      "description": "Checks declarations, types, scopes, and language-specific semantic constraints.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "ast",
+      "type": "intermediate_representation",
+      "name": "Abstract syntax tree (AST)",
+      "description": "Tree representation of source-language constructs.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "frontend",
+      "type": "compiler_component",
+      "name": "GCC front end",
+      "description": "Language-specific component performing parsing, semantic analysis, and internal-representation production.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "generic_ir",
+      "type": "intermediate_representation",
+      "name": "GENERIC",
+      "description": "Common high-level tree representation used to bridge language front ends to the middle end.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gimplifier",
+      "type": "compiler_component",
+      "name": "Gimplifier",
+      "description": "Lowers GENERIC trees into simplified GIMPLE.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gimple",
+      "type": "intermediate_representation",
+      "name": "GIMPLE",
+      "description": "Simplified, largely language- and target-independent IR central to many GCC optimizations.",
+      "aliases": [],
+      "properties": {
+        "features": [
+          "lowered operations",
+          "three-address-style form",
+          "SSA-based optimization"
+        ]
+      }
+    },
+    {
+      "id": "ssa",
+      "type": "compiler_concept",
+      "name": "Static Single Assignment (SSA) form",
+      "description": "IR form where each variable version is assigned once, supporting data-flow analysis.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "middle_end",
+      "type": "compiler_component",
+      "name": "GCC middle end",
+      "description": "Performs common analyses and optimizations largely independent of source language and target architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "optimization_passes",
+      "type": "compiler_component",
+      "name": "Optimization passes",
+      "description": "Analysis and transformation passes intended to improve code speed, size, or other properties.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "rtl",
+      "type": "intermediate_representation",
+      "name": "Register Transfer Language (RTL)",
+      "description": "Lower-level, target-aware representation used for machine-specific processing.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "backend",
+      "type": "compiler_component",
+      "name": "GCC back end",
+      "description": "Target-specific code-generation component.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "machine_description",
+      "type": "compiler_component",
+      "name": "Machine description",
+      "description": "Target-specific patterns and constraints describing processor instructions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "instruction_selection",
+      "type": "compiler_stage",
+      "name": "Instruction selection",
+      "description": "Maps operations to target instructions using target-specific patterns.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "register_allocation",
+      "type": "compiler_stage",
+      "name": "Register allocation",
+      "description": "Maps compiler values to hardware registers or spill locations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "instruction_scheduling",
+      "type": "optimization",
+      "name": "Instruction scheduling",
+      "description": "Reorders eligible instructions to improve execution efficiency while preserving semantics.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "assembler",
+      "type": "tool",
+      "name": "Assembler",
+      "description": "Converts assembly output into relocatable machine-code object files.",
+      "aliases": [],
+      "properties": {
+        "typical_tool": "as"
+      }
+    },
+    {
+      "id": "object_file",
+      "type": "artifact",
+      "name": "Object file",
+      "description": "Relocatable machine-code artifact created before final linking.",
+      "aliases": [],
+      "properties": {
+        "extensions": [
+          ".o",
+          ".obj"
+        ]
+      }
+    },
+    {
+      "id": "linker",
+      "type": "tool",
+      "name": "Linker",
+      "description": "Combines objects and libraries, resolves symbols, and produces final link outputs.",
+      "aliases": [],
+      "properties": {
+        "typical_tool": "ld"
+      }
+    },
+    {
+      "id": "executable",
+      "type": "artifact",
+      "name": "Executable binary",
+      "description": "Linked program image for a target platform.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "libraries",
+      "type": "artifact_group",
+      "name": "Libraries",
+      "description": "Static or shared libraries used by the linker.",
+      "aliases": [],
+      "properties": {
+        "kinds": [
+          "static",
+          "shared"
+        ]
+      }
+    },
+    {
+      "id": "compiler_diagnostics",
+      "type": "compiler_feature",
+      "name": "Compiler diagnostics",
+      "description": "Warnings and errors reported by compiler stages.",
+      "aliases": [],
+      "properties": {
+        "flags": [
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-pedantic"
+        ]
+      }
+    },
+    {
+      "id": "static_analysis",
+      "type": "compiler_feature",
+      "name": "Compile-time static analysis",
+      "description": "Analyses performed during compilation, including diagnostics and certain security checks.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "fortify_source",
+      "type": "security_feature",
+      "name": "_FORTIFY_SOURCE",
+      "description": "Hardening mechanism that can add checks to some library calls when supported by libc, optimization, and build configuration.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "build_system",
+      "type": "tool_category",
+      "name": "Build system",
+      "description": "Coordinates compile commands, dependencies, and incremental builds.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "GNU Make",
+          "CMake",
+          "Meson",
+          "Autotools"
+        ]
+      }
+    },
+    {
+      "id": "bootstrap",
+      "type": "build_process",
+      "name": "Compiler bootstrap",
+      "description": "Build process using an existing compiler to build GCC, often in stages.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "cross_compiler",
+      "type": "compiler_configuration",
+      "name": "Cross-compiler",
+      "description": "Compiler that runs on one host but emits code for a different target.",
+      "aliases": [],
+      "properties": {
+        "terms": [
+          "build",
+          "host",
+          "target"
+        ]
+      }
+    },
+    {
+      "id": "target_triplet",
+      "type": "configuration",
+      "name": "Target triplet",
+      "description": "Identifier conventionally describing target CPU, vendor, OS, and ABI.",
+      "aliases": [],
+      "properties": {
+        "example": "x86_64-linux-gnu"
+      }
+    },
+    {
+      "id": "sysroot",
+      "type": "configuration",
+      "name": "Sysroot",
+      "description": "Directory tree containing target headers, libraries, and system files.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "compile_only",
+      "type": "command_mode",
+      "name": "Compile-only mode (-c)",
+      "description": "Compiles source to object files without final linking.",
+      "aliases": [],
+      "properties": {
+        "flag": "-c"
+      }
+    },
+    {
+      "id": "preprocess_only",
+      "type": "command_mode",
+      "name": "Preprocess-only mode (-E)",
+      "description": "Emits preprocessed source without compiling to object code.",
+      "aliases": [],
+      "properties": {
+        "flag": "-E"
+      }
+    },
+    {
+      "id": "assembly_only",
+      "type": "command_mode",
+      "name": "Assembly output mode (-S)",
+      "description": "Emits assembly without assembling it.",
+      "aliases": [],
+      "properties": {
+        "flag": "-S"
+      }
+    },
+    {
+      "id": "pgo_profile_data",
+      "type": "artifact",
+      "name": "Profile data",
+      "description": "Runtime-generated data used by profile-guided optimization.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "lto_metadata",
+      "type": "artifact",
+      "name": "LTO intermediate metadata",
+      "description": "Serialized intermediate representation associated with object files for link-time optimization.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "debug_info",
+      "type": "compiler_feature",
+      "name": "Debug information",
+      "description": "Metadata emitted for source-level debugging and profiling tools.",
+      "aliases": [],
+      "properties": {
+        "flags": [
+          "-g",
+          "-ggdb"
+        ]
+      }
+    },
+    {
+      "id": "optimization_levels",
+      "type": "configuration",
+      "name": "Optimization levels",
+      "description": "Named presets controlling optimization pass families.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "-O0",
+          "-O1",
+          "-O2",
+          "-O3",
+          "-Os",
+          "-Oz",
+          "-Ofast"
+        ]
+      }
+    },
+    {
+      "id": "warning_flags",
+      "type": "configuration",
+      "name": "Warning options",
+      "description": "Options enabling and tuning compiler diagnostics.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Wconversion",
+          "-Wshadow"
+        ]
+      }
+    },
+    {
+      "id": "language_standard_flags",
+      "type": "configuration",
+      "name": "Language standard options",
+      "description": "Options selecting language dialect and standard version.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "-std=c17",
+          "-std=c++20",
+          "-std=gnu23",
+          "-std=gnu++20"
+        ]
+      }
+    },
+    {
+      "id": "target_flags",
+      "type": "configuration",
+      "name": "Target and CPU flags",
+      "description": "Options controlling target architecture, instruction set, ABI, and tuning.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "-march",
+          "-mtune",
+          "-mabi",
+          "-mcpu"
+        ]
+      }
+    },
+    {
+      "id": "preprocessor_flags",
+      "type": "configuration",
+      "name": "Preprocessor options",
+      "description": "Options controlling include paths and macro definitions.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "-I",
+          "-isystem",
+          "-D",
+          "-U"
+        ]
+      }
+    },
+    {
+      "id": "linker_flags",
+      "type": "configuration",
+      "name": "Linker options",
+      "description": "Options controlling libraries, symbols, output kind, and linker behavior.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "-L",
+          "-l",
+          "-shared",
+          "-static",
+          "-Wl,"
+        ]
+      }
+    },
+    {
+      "id": "sanitizers",
+      "type": "compiler_feature",
+      "name": "Compiler sanitizers",
+      "description": "Instrumentation for detecting certain runtime defects during testing.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "AddressSanitizer",
+          "UndefinedBehaviorSanitizer",
+          "ThreadSanitizer"
+        ]
+      }
+    },
+    {
+      "id": "dead_code_elimination",
+      "type": "optimization",
+      "name": "Dead-code elimination",
+      "description": "Removes code whose results cannot affect observable behavior.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "common_subexpression_elimination",
+      "type": "optimization",
+      "name": "Common subexpression elimination",
+      "description": "Reuses equivalent prior computations when safe.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "jump_threading",
+      "type": "optimization",
+      "name": "Jump threading",
+      "description": "Simplifies control flow using known branch conditions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "loop_optimization",
+      "type": "optimization",
+      "name": "Loop optimization",
+      "description": "Transforms eligible loops, including loop-invariant motion and induction-variable simplification.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "vectorization",
+      "type": "optimization",
+      "name": "Automatic vectorization",
+      "description": "Transforms eligible scalar operations into vector/SIMD operations.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "auto_parallelization",
+      "type": "optimization",
+      "name": "Automatic parallelization",
+      "description": "Attempts to parallelize eligible operations or loops where supported.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "profile_guided_optimization",
+      "type": "optimization",
+      "name": "Profile-guided optimization (PGO)",
+      "description": "Uses representative runtime profile data to guide compiler decisions.",
+      "aliases": [],
+      "properties": {
+        "flags": [
+          "-fprofile-generate",
+          "-fprofile-use"
+        ]
+      }
+    },
+    {
+      "id": "link_time_optimization",
+      "type": "optimization",
+      "name": "Link-time optimization (LTO)",
+      "description": "Enables eligible optimizations across translation-unit/object boundaries.",
+      "aliases": [],
+      "properties": {
+        "flag": "-flto"
+      }
+    },
+    {
+      "id": "lang_c",
+      "type": "programming_language",
+      "name": "C",
+      "description": "Systems programming language supported by GCC's C front end.",
+      "aliases": [],
+      "properties": {
+        "driver": "gcc",
+        "standards": [
+          "c90",
+          "c99",
+          "c11",
+          "c17",
+          "c23",
+          "gnu23"
+        ]
+      }
+    },
+    {
+      "id": "lang_cpp",
+      "type": "programming_language",
+      "name": "C++",
+      "description": "Systems and application language supported by GCC's C++ front end.",
+      "aliases": [],
+      "properties": {
+        "driver": "g++",
+        "standards": [
+          "c++11",
+          "c++14",
+          "c++17",
+          "c++20",
+          "c++23",
+          "c++26",
+          "gnu++20"
+        ]
+      }
+    },
+    {
+      "id": "lang_objc",
+      "type": "programming_language",
+      "name": "Objective-C",
+      "description": "C-family language with object-oriented extensions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "lang_objcpp",
+      "type": "programming_language",
+      "name": "Objective-C++",
+      "description": "C++ with Objective-C language features.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "lang_fortran",
+      "type": "programming_language",
+      "name": "Fortran",
+      "description": "Scientific and numerical language supported by GNU Fortran.",
+      "aliases": [],
+      "properties": {
+        "driver": "gfortran",
+        "historical_frontend": "g77"
+      }
+    },
+    {
+      "id": "lang_ada",
+      "type": "programming_language",
+      "name": "Ada",
+      "description": "Language supported through the GNAT toolchain.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "lang_go",
+      "type": "programming_language",
+      "name": "Go",
+      "description": "Language supported by GCC's gccgo front end.",
+      "aliases": [],
+      "properties": {
+        "driver": "gccgo"
+      }
+    },
+    {
+      "id": "lang_d",
+      "type": "programming_language",
+      "name": "D",
+      "description": "Language supported by the gdc front end in upstream releases described by the source.",
+      "aliases": [],
+      "properties": {
+        "driver": "gdc",
+        "upstream_since": "GCC 9.1"
+      }
+    },
+    {
+      "id": "lang_modula2",
+      "type": "programming_language",
+      "name": "Modula-2",
+      "description": "Language supported by the gm2 front end in upstream releases described by the source.",
+      "aliases": [],
+      "properties": {
+        "driver": "gm2",
+        "upstream_since": "GCC 13.1"
+      }
+    },
+    {
+      "id": "lang_rust",
+      "type": "programming_language",
+      "name": "Rust",
+      "description": "Systems language with a GCC front end named gccrs in the upstream series described by the source.",
+      "aliases": [],
+      "properties": {
+        "frontend": "gccrs",
+        "upstream_since": "GCC 15.1",
+        "note": "Feature completeness may differ from rustc; verify current release status."
+      }
+    },
+    {
+      "id": "lang_cobol",
+      "type": "programming_language",
+      "name": "COBOL",
+      "description": "Business language with the gcobol front end in the upstream series described by the source.",
+      "aliases": [],
+      "properties": {
+        "frontend": "gcobol",
+        "upstream_since": "GCC 15.1"
+      }
+    },
+    {
+      "id": "lang_algol68",
+      "type": "programming_language",
+      "name": "ALGOL 68",
+      "description": "Language associated with the ga68 front end in the GCC 16.1 series described by the source.",
+      "aliases": [],
+      "properties": {
+        "frontend": "ga68",
+        "upstream_since": "GCC 16.1"
+      }
+    },
+    {
+      "id": "lang_java_legacy",
+      "type": "programming_language",
+      "name": "Java (legacy GCC support)",
+      "description": "Java support via GCJ existed in older GCC releases before GCC 7 and is historical.",
+      "aliases": [],
+      "properties": {
+        "frontend": "gcj",
+        "status": "historical"
+      }
+    },
+    {
+      "id": "lang_pascal",
+      "type": "programming_language",
+      "name": "Pascal (third-party front end)",
+      "description": "Pascal support has existed through third-party GCC front ends.",
+      "aliases": [],
+      "properties": {
+        "example": "GPC",
+        "status": "third-party"
+      }
+    },
+    {
+      "id": "lang_mercury",
+      "type": "programming_language",
+      "name": "Mercury (third-party front end)",
+      "description": "Mercury support has existed through external GCC front ends.",
+      "aliases": [],
+      "properties": {
+        "status": "third-party"
+      }
+    },
+    {
+      "id": "lang_modula3",
+      "type": "programming_language",
+      "name": "Modula-3 (third-party front end)",
+      "description": "Modula-3 support has existed through external GCC front ends.",
+      "aliases": [],
+      "properties": {
+        "status": "third-party"
+      }
+    },
+    {
+      "id": "lang_vhdl",
+      "type": "programming_language",
+      "name": "VHDL (third-party integration)",
+      "description": "Hardware description language supported through external integrations such as GHDL.",
+      "aliases": [],
+      "properties": {
+        "example": "GHDL",
+        "status": "third-party"
+      }
+    },
+    {
+      "id": "lang_pli",
+      "type": "programming_language",
+      "name": "PL/I (third-party front end)",
+      "description": "PL/I support has existed through external GCC front-end projects.",
+      "aliases": [],
+      "properties": {
+        "status": "third-party"
+      }
+    },
+    {
+      "id": "openmp",
+      "type": "parallel_extension",
+      "name": "OpenMP",
+      "description": "Parallel programming directives/API supported by GCC for applicable languages and targets.",
+      "aliases": [],
+      "properties": {
+        "support_since": "GCC 5.1",
+        "languages": [
+          "C",
+          "C++",
+          "Fortran"
+        ]
+      }
+    },
+    {
+      "id": "openacc",
+      "type": "parallel_extension",
+      "name": "OpenACC",
+      "description": "Directive-based parallel programming model supported by GCC for applicable configurations.",
+      "aliases": [],
+      "properties": {
+        "support_since": "GCC 5.1"
+      }
+    },
+    {
+      "id": "gnu_c_extensions",
+      "type": "language_extension",
+      "name": "GNU C extensions",
+      "description": "Non-standard C extensions provided by GCC, including nested functions.",
+      "aliases": [],
+      "properties": {
+        "portability": "May reduce portability to other compilers or strict modes."
+      }
+    },
+    {
+      "id": "cpp_stdlib",
+      "type": "runtime_library",
+      "name": "libstdc++",
+      "description": "GCC's implementation of the C++ Standard Library.",
+      "aliases": [],
+      "properties": {
+        "license": "GPLv3 with GCC Runtime Library Exception",
+        "abi_note": "C++ ABI based on the Itanium C++ ABI since GCC 3 on relevant targets."
+      }
+    },
+    {
+      "id": "libgcc",
+      "type": "runtime_library",
+      "name": "libgcc",
+      "description": "Low-level runtime support routines for operations not directly implemented by target processors.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "libgfortran",
+      "type": "runtime_library",
+      "name": "libgfortran",
+      "description": "GNU Fortran runtime library.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "libgomp",
+      "type": "runtime_library",
+      "name": "libgomp",
+      "description": "GNU OpenMP runtime support library.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "libobjc",
+      "type": "runtime_library",
+      "name": "libobjc",
+      "description": "Objective-C runtime support library.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "libquadmath",
+      "type": "runtime_library",
+      "name": "libquadmath",
+      "description": "Runtime library for quad-precision math on supported platforms.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_x86",
+      "type": "architecture",
+      "name": "x86 / IA-32",
+      "description": "32-bit x86 architecture.",
+      "aliases": [],
+      "properties": {
+        "bitness": 32
+      }
+    },
+    {
+      "id": "arch_x86_64",
+      "type": "architecture",
+      "name": "x86-64",
+      "description": "64-bit x86 architecture.",
+      "aliases": [],
+      "properties": {
+        "bitness": 64
+      }
+    },
+    {
+      "id": "arch_arm",
+      "type": "architecture",
+      "name": "ARM",
+      "description": "32-bit ARM processor family.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_aarch64",
+      "type": "architecture",
+      "name": "AArch64",
+      "description": "64-bit ARM architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_powerpc",
+      "type": "architecture",
+      "name": "PowerPC",
+      "description": "PowerPC processor family.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_sparc",
+      "type": "architecture",
+      "name": "SPARC",
+      "description": "SPARC processor family.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_riscv",
+      "type": "architecture",
+      "name": "RISC-V",
+      "description": "Open instruction set architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_avr",
+      "type": "architecture",
+      "name": "AVR",
+      "description": "Microcontroller architecture.",
+      "aliases": [],
+      "properties": {
+        "typical_use": "embedded systems"
+      }
+    },
+    {
+      "id": "arch_mips",
+      "type": "architecture",
+      "name": "MIPS",
+      "description": "Processor architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_s390",
+      "type": "architecture",
+      "name": "System/390 and z/Architecture",
+      "description": "IBM mainframe architecture family.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_nvptx",
+      "type": "architecture",
+      "name": "NVIDIA PTX",
+      "description": "GPU-oriented target architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_ebpf",
+      "type": "architecture",
+      "name": "eBPF",
+      "description": "Bytecode instruction-set target in GCC target listings.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_m68k",
+      "type": "architecture",
+      "name": "Motorola 68000 series",
+      "description": "Processor family historically targeted by GCC.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_pa_risc",
+      "type": "architecture",
+      "name": "PA-RISC",
+      "description": "Processor architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_alpha",
+      "type": "architecture",
+      "name": "Alpha",
+      "description": "Processor architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_ia64",
+      "type": "architecture",
+      "name": "IA-64 / Itanium",
+      "description": "Intel Itanium processor architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_msp430",
+      "type": "architecture",
+      "name": "MSP430",
+      "description": "Embedded microcontroller architecture.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "arch_xtensa",
+      "type": "architecture",
+      "name": "Xtensa",
+      "description": "Configurable processor architecture found in embedded ports.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "platform_linux",
+      "type": "operating_system",
+      "name": "Linux",
+      "description": "Operating system whose distributions commonly use GCC.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "platform_gnu",
+      "type": "operating_system",
+      "name": "GNU operating system",
+      "description": "Operating system project for which GCC is the official compiler.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "platform_bsd",
+      "type": "operating_system_family",
+      "name": "BSD family systems",
+      "description": "Unix-like operating systems with historical GCC adoption; defaults vary.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "platform_windows",
+      "type": "operating_system",
+      "name": "Windows",
+      "description": "Operating system targetable through suitable GCC ports/toolchains.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "platform_android",
+      "type": "operating_system",
+      "name": "Android",
+      "description": "Operating system listed as a possible target in the source excerpt; current toolchain practice varies.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "platform_macos",
+      "type": "operating_system",
+      "name": "Apple macOS",
+      "description": "Operating system whose mainstream developer toolchain uses Clang rather than GCC.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "embedded_systems",
+      "type": "platform_category",
+      "name": "Embedded systems",
+      "description": "Device-oriented targets including ARM and Power ISA systems.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "abi",
+      "type": "compiler_concept",
+      "name": "Application Binary Interface (ABI)",
+      "description": "Binary-level conventions for calls, data layout, symbols, and interoperability.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "itanium_cpp_abi",
+      "type": "abi_specification",
+      "name": "Itanium C++ ABI",
+      "description": "C++ ABI specification used as a basis for GCC's C++ ABI on relevant platforms.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "c_abi",
+      "type": "abi_specification",
+      "name": "C ABI",
+      "description": "Common binary interface often used for cross-language interoperability.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "object_format",
+      "type": "binary_format",
+      "name": "Object-file format",
+      "description": "Target-specific format such as ELF, PE/COFF, or Mach-O.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          "ELF",
+          "PE/COFF",
+          "Mach-O"
+        ]
+      }
+    },
+    {
+      "id": "binutils",
+      "type": "tool_suite",
+      "name": "GNU Binutils",
+      "description": "Common tool suite providing assembler, linker, and binary utilities.",
+      "aliases": [],
+      "properties": {
+        "components": [
+          "as",
+          "ld",
+          "ar",
+          "nm",
+          "objdump",
+          "readelf"
+        ]
+      }
+    },
+    {
+      "id": "gmp",
+      "type": "build_dependency",
+      "name": "GNU Multiple Precision Arithmetic Library (GMP)",
+      "description": "Build dependency used for arbitrary-precision integer arithmetic.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "mpfr",
+      "type": "build_dependency",
+      "name": "MPFR",
+      "description": "Multiple-precision floating-point library required for GCC builds.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "mpc",
+      "type": "build_dependency",
+      "name": "MPC",
+      "description": "Multiple-precision complex arithmetic library required for GCC builds.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "flex",
+      "type": "build_dependency",
+      "name": "Flex",
+      "description": "Lexical analyzer generator used in some GNU toolchain build workflows.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "bison",
+      "type": "build_dependency",
+      "name": "Bison",
+      "description": "Parser generator used historically and by some GCC-related components.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "perl",
+      "type": "build_dependency",
+      "name": "Perl",
+      "description": "Scripting runtime used by GCC build and maintenance tooling.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "make",
+      "type": "build_tool",
+      "name": "GNU Make",
+      "description": "Build automation tool used in many GCC-based projects.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "cmake",
+      "type": "build_tool",
+      "name": "CMake",
+      "description": "Build-system generator that can create projects invoking GCC.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "autotools",
+      "type": "build_toolchain",
+      "name": "GNU Autotools",
+      "description": "Autoconf/Automake/Libtool build tooling common in GNU software.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcc_plugin_api",
+      "type": "plugin_api",
+      "name": "GCC plugin API",
+      "description": "Extension interface allowing external code to interact with compiler state and passes.",
+      "aliases": [],
+      "properties": {
+        "capabilities": [
+          "register callbacks",
+          "add passes",
+          "inspect or modify selected internal representations"
+        ],
+        "compatibility": "May depend on GCC version and build configuration."
+      }
+    },
+    {
+      "id": "python_gcc_plugin",
+      "type": "plugin_example",
+      "name": "Python GCC plugin (historical example)",
+      "description": "Historical example linking libpython to run Python scripts from GCC.",
+      "aliases": [],
+      "properties": {
+        "status": "historical example in supplied article"
+      }
+    },
+    {
+      "id": "melt_plugin",
+      "type": "plugin_example",
+      "name": "MELT plugin",
+      "description": "Historical Lisp-like framework for extending GCC.",
+      "aliases": [],
+      "properties": {
+        "status": "historical example"
+      }
+    },
+    {
+      "id": "ffi",
+      "type": "interoperability",
+      "name": "Foreign Function Interface (FFI)",
+      "description": "Cross-language calls and linking through compatible ABI, symbols, data layout, and runtime assumptions.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "shared_library",
+      "type": "artifact",
+      "name": "Shared library",
+      "description": "Dynamically loaded library used by executables and other libraries.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "static_library",
+      "type": "artifact",
+      "name": "Static library",
+      "description": "Archive of object files incorporated during linking.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gdb",
+      "type": "debugger",
+      "name": "GNU Debugger (GDB)",
+      "description": "Debugger commonly used with GCC-generated debug information.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcov",
+      "type": "coverage_tool",
+      "name": "gcov",
+      "description": "Coverage tool associated with GCC instrumentation.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gcovr",
+      "type": "coverage_tool",
+      "name": "gcovr",
+      "description": "External utility that summarizes gcov coverage results.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "gprof",
+      "type": "profiler",
+      "name": "gprof",
+      "description": "Profiler that can consume GCC-generated profiling data.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "valgrind",
+      "type": "analysis_tool",
+      "name": "Valgrind",
+      "description": "Dynamic analysis toolkit often used with GCC-built programs.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "clang",
+      "type": "compiler",
+      "name": "Clang",
+      "description": "Compiler front end associated with LLVM and a common alternative to GCC.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "llvm",
+      "type": "software_project",
+      "name": "LLVM",
+      "description": "Compiler infrastructure project associated with Clang.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "mingw",
+      "type": "toolchain",
+      "name": "MinGW",
+      "description": "GCC-based toolchain ecosystem for Windows.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "glibc",
+      "type": "libc",
+      "name": "GNU C Library (glibc)",
+      "description": "C library commonly paired with GCC on GNU/Linux.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "musl",
+      "type": "libc",
+      "name": "musl libc",
+      "description": "C library implementation used by some Linux-oriented toolchains.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "newlib",
+      "type": "libc",
+      "name": "newlib",
+      "description": "C library frequently used in embedded and bare-metal toolchains.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "source_file",
+      "type": "artifact",
+      "name": "Source file",
+      "description": "Human-authored program text supplied to a compiler.",
+      "aliases": [],
+      "properties": {
+        "examples": [
+          ".c",
+          ".cc",
+          ".cpp",
+          ".f90",
+          ".adb",
+          ".go",
+          ".d",
+          ".rs"
+        ]
+      }
+    },
+    {
+      "id": "header_file",
+      "type": "artifact",
+      "name": "Header file",
+      "description": "Textual interface file included by preprocessing.",
+      "aliases": [],
+      "properties": {
+        "extensions": [
+          ".h",
+          ".hpp"
+        ]
+      }
+    },
+    {
+      "id": "translation_unit",
+      "type": "compiler_concept",
+      "name": "Translation unit",
+      "description": "Source file after preprocessing, commonly compiled into an object file.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "symbol_table",
+      "type": "compiler_concept",
+      "name": "Symbol table",
+      "description": "Collection of symbol definitions and references used in compilation and linking.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "relocation",
+      "type": "compiler_concept",
+      "name": "Relocation",
+      "description": "Mechanism by which addresses and references in object files are adjusted.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "dynamic_loader",
+      "type": "operating_system_component",
+      "name": "Dynamic loader",
+      "description": "OS component that loads shared libraries and resolves dynamic symbols.",
+      "aliases": [],
+      "properties": {}
+    },
+    {
+      "id": "example_hello_c",
+      "type": "usage_example",
+      "name": "Compile a C program",
+      "description": "Compile and link a simple C source file.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc hello.c -o hello",
+        "input": "hello.c",
+        "output": "hello"
+      }
+    },
+    {
+      "id": "example_compile_only",
+      "type": "usage_example",
+      "name": "Compile C to object",
+      "description": "Compile a source file without linking.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -Wall -Wextra -O2 -c module.c -o module.o",
+        "input": "module.c",
+        "output": "module.o"
+      }
+    },
+    {
+      "id": "example_cpp",
+      "type": "usage_example",
+      "name": "Compile C++ program",
+      "description": "Compile and link C++ using the C++ driver.",
+      "aliases": [],
+      "properties": {
+        "command": "g++ -std=c++20 -Wall -Wextra main.cpp -o app",
+        "input": "main.cpp",
+        "output": "app",
+        "note": "Use g++ when the C++ standard library should be linked automatically."
+      }
+    },
+    {
+      "id": "example_preprocess",
+      "type": "usage_example",
+      "name": "Inspect preprocessed source",
+      "description": "Emit preprocessed source only.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -E source.c -o source.i",
+        "input": "source.c",
+        "output": "source.i"
+      }
+    },
+    {
+      "id": "example_assembly",
+      "type": "usage_example",
+      "name": "Emit assembly",
+      "description": "Emit assembly without assembling.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -S -O2 source.c -o source.s",
+        "input": "source.c",
+        "output": "source.s"
+      }
+    },
+    {
+      "id": "example_debug",
+      "type": "usage_example",
+      "name": "Build with debug symbols",
+      "description": "Build a debug-friendly executable.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -g -O0 main.c -o main",
+        "input": "main.c",
+        "output": "main"
+      }
+    },
+    {
+      "id": "example_sanitizer",
+      "type": "usage_example",
+      "name": "Use AddressSanitizer",
+      "description": "Build an instrumented test binary for memory-error detection.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -g -O1 -fsanitize=address -fno-omit-frame-pointer app.c -o app",
+        "input": "app.c",
+        "output": "app",
+        "note": "Runtime and target support required; instrumentation is not proof of correctness."
+      }
+    },
+    {
+      "id": "example_pgo_generate",
+      "type": "usage_example",
+      "name": "Generate PGO profile",
+      "description": "Build an instrumented program that writes profile data when run.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -O3 -fprofile-generate app.c -o app-instrumented"
+      }
+    },
+    {
+      "id": "example_pgo_use",
+      "type": "usage_example",
+      "name": "Use PGO profile",
+      "description": "Rebuild using previously collected profile data.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -O3 -fprofile-use app.c -o app-optimized"
+      }
+    },
+    {
+      "id": "example_lto",
+      "type": "usage_example",
+      "name": "Enable LTO",
+      "description": "Compile and link with link-time optimization.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -O2 -flto a.c b.c -o app",
+        "input": [
+          "a.c",
+          "b.c"
+        ],
+        "output": "app"
+      }
+    },
+    {
+      "id": "example_cross",
+      "type": "usage_example",
+      "name": "Cross-compile for a target",
+      "description": "Use a target-prefixed cross compiler and target sysroot.",
+      "aliases": [],
+      "properties": {
+        "command": "aarch64-linux-gnu-gcc --sysroot=/path/to/sysroot -O2 -c app.c -o app.o",
+        "note": "Target compiler, headers, libraries, ABI, and deployment environment must agree."
+      }
+    },
+    {
+      "id": "example_warnings",
+      "type": "usage_example",
+      "name": "Enable common warnings",
+      "description": "Build with common warning groups and treat warnings as errors.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -Wall -Wextra -Wpedantic -Werror source.c -o app"
+      }
+    },
+    {
+      "id": "example_shared",
+      "type": "usage_example",
+      "name": "Build a shared library",
+      "description": "Compile position-independent code and link as a shared library on supported systems.",
+      "aliases": [],
+      "properties": {
+        "command": "gcc -fPIC -shared library.c -o libexample.so",
+        "note": "Platform flags and file extensions vary."
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "gnu_project",
+      "predicate": "develops",
+      "target": "gcc",
+      "description": "GCC is developed as part of the GNU Project.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "fsf",
+      "predicate": "distributes",
+      "target": "gcc",
+      "description": "The FSF distributes GCC as free software.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "gcc_steering_committee",
+      "predicate": "governs",
+      "target": "gcc",
+      "description": "The steering committee directs project governance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "gcc_maintainers",
+      "predicate": "maintains",
+      "target": "gcc",
+      "description": "Maintainers develop and maintain GCC subsystems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "gcc_repository",
+      "predicate": "contains_source_for",
+      "target": "gcc",
+      "description": "The repository contains GCC source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "gcc_docs",
+      "predicate": "documents",
+      "target": "gcc",
+      "description": "Official documentation covers usage, installation, and internals.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "gcc",
+      "predicate": "licensed_under",
+      "target": "gnu_license",
+      "description": "GCC source is licensed under GPLv3 or later, subject to applicable exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "gcc_runtime_exception",
+      "predicate": "modifies_distribution_terms_for",
+      "target": "gnu_license",
+      "description": "The exception changes terms for qualifying runtime-library and target-code combinations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "richard_stallman",
+      "predicate": "founded_or_authored",
+      "target": "gcc",
+      "description": "Stallman initiated GCC and was identified as its original author.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "gcc_1987_release",
+      "predicate": "released",
+      "target": "gcc",
+      "description": "The first GCC release was published in 1987.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "egcs",
+      "predicate": "merged_into",
+      "target": "gcc",
+      "description": "EGCS became the official development line and reunited with GCC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "egcs_merge_1999",
+      "predicate": "recognized_as",
+      "target": "egcs",
+      "description": "The 1999 transition recognized EGCS as the official GCC line.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "gcc",
+      "predicate": "has_release",
+      "target": "gcc_release_16_1",
+      "description": "The supplied article excerpt identifies GCC 16.1 as a 2026 release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "gcc",
+      "predicate": "has_release",
+      "target": "gcc_release_16_2",
+      "description": "The supplied article excerpt identifies GCC 16.2 as a 2026 release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "gcc_release_16_2",
+      "predicate": "follows_release",
+      "target": "gcc_release_16_1",
+      "description": "Version 16.2 follows 16.1 in the same release series.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "gcc_driver",
+      "predicate": "invokes",
+      "target": "preprocessor",
+      "description": "The driver can run preprocessing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "gpp_driver",
+      "predicate": "invokes",
+      "target": "preprocessor",
+      "description": "The C++ driver coordinates preprocessing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "language_driver_family",
+      "predicate": "selects",
+      "target": "frontend",
+      "description": "Language-specific drivers select matching front ends.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "source_file",
+      "predicate": "processed_by",
+      "target": "preprocessor",
+      "description": "C-family source can be preprocessed before parsing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "header_file",
+      "predicate": "expanded_by",
+      "target": "preprocessor",
+      "description": "Header files are expanded through include directives.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "preprocessor",
+      "predicate": "produces",
+      "target": "translation_unit",
+      "description": "Preprocessing prepares the translation unit.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "frontend",
+      "predicate": "contains_stage",
+      "target": "lexer",
+      "description": "Front ends perform lexical analysis.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "frontend",
+      "predicate": "contains_stage",
+      "target": "parser",
+      "description": "Front ends parse source syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "frontend",
+      "predicate": "contains_stage",
+      "target": "semantic_analysis",
+      "description": "Front ends check language semantics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "parser",
+      "predicate": "produces",
+      "target": "ast",
+      "description": "Parsing produces an abstract syntax tree.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "frontend",
+      "predicate": "produces",
+      "target": "ast",
+      "description": "The front end creates source-level tree representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "ast",
+      "predicate": "lowered_to",
+      "target": "generic_ir",
+      "description": "Source-level representations are converted to GENERIC, directly or through language-specific forms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "generic_ir",
+      "predicate": "lowered_by",
+      "target": "gimplifier",
+      "description": "The gimplifier lowers GENERIC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "gimplifier",
+      "predicate": "produces",
+      "target": "gimple",
+      "description": "The gimplifier creates simplified GIMPLE.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "gimple",
+      "predicate": "uses_representation",
+      "target": "ssa",
+      "description": "Many GIMPLE optimizations use SSA form.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "middle_end",
+      "predicate": "consumes",
+      "target": "generic_ir",
+      "description": "The middle end starts from common GENERIC representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "middle_end",
+      "predicate": "uses",
+      "target": "gimple",
+      "description": "Many middle-end passes operate on GIMPLE.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "gimple",
+      "predicate": "optimized_by",
+      "target": "optimization_passes",
+      "description": "GIMPLE is central to many global optimizations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "optimization_passes",
+      "predicate": "transforms",
+      "target": "gimple",
+      "description": "Passes analyze and transform GIMPLE.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "gimple",
+      "predicate": "lowered_to",
+      "target": "rtl",
+      "description": "Compilation proceeds toward target-aware RTL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "rtl",
+      "predicate": "consumed_by",
+      "target": "backend",
+      "description": "The target back end consumes RTL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "backend",
+      "predicate": "uses",
+      "target": "machine_description",
+      "description": "Target-specific descriptions guide code generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "machine_description",
+      "predicate": "guides",
+      "target": "instruction_selection",
+      "description": "Instruction patterns guide instruction selection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "instruction_selection",
+      "predicate": "feeds",
+      "target": "register_allocation",
+      "description": "Selected instructions and temporaries feed register allocation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "register_allocation",
+      "predicate": "feeds",
+      "target": "instruction_scheduling",
+      "description": "Register allocation and scheduling are parts of code generation; exact ordering varies.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "backend",
+      "predicate": "emits",
+      "target": "assembly_only",
+      "description": "The back end can emit assembly output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "assembly_only",
+      "predicate": "assembled_by",
+      "target": "assembler",
+      "description": "Assembly output is converted into object code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "assembler",
+      "predicate": "produces",
+      "target": "object_file",
+      "description": "The assembler creates object files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "object_file",
+      "predicate": "linked_by",
+      "target": "linker",
+      "description": "Object files are combined by the linker.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "linker",
+      "predicate": "consumes",
+      "target": "libraries",
+      "description": "The linker resolves references against libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "linker",
+      "predicate": "produces",
+      "target": "executable",
+      "description": "Successful linking produces an executable or other link output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "gcc_driver",
+      "predicate": "orchestrates",
+      "target": "assembler",
+      "description": "The driver invokes the assembler when required.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "gcc_driver",
+      "predicate": "orchestrates",
+      "target": "linker",
+      "description": "The driver invokes the linker unless compilation stops before linking.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "compiler_diagnostics",
+      "predicate": "reported_during",
+      "target": "semantic_analysis",
+      "description": "Warnings and errors may arise during front-end and later stages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "static_analysis",
+      "predicate": "analyzes",
+      "target": "gimple",
+      "description": "Some analyses operate on compiler intermediate representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "fortify_source",
+      "predicate": "supports",
+      "target": "static_analysis",
+      "description": "FORTIFY_SOURCE checks depend on libc and compiler configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "compile_only",
+      "predicate": "stops_before",
+      "target": "linker",
+      "description": "The -c mode skips final linking.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "preprocess_only",
+      "predicate": "stops_before",
+      "target": "frontend",
+      "description": "The -E mode emits preprocessed source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "assembly_only",
+      "predicate": "stops_before",
+      "target": "assembler",
+      "description": "The -S mode emits assembly without assembling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "bootstrap",
+      "predicate": "builds",
+      "target": "gcc",
+      "description": "Bootstrap builds GCC with an existing compiler, often in stages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "cross_compiler",
+      "predicate": "configured_by",
+      "target": "target_triplet",
+      "description": "A cross compiler is configured for a target triplet.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "cross_compiler",
+      "predicate": "uses",
+      "target": "sysroot",
+      "description": "Cross toolchains often use a target sysroot.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "target_triplet",
+      "predicate": "identifies",
+      "target": "abi",
+      "description": "Target configuration implies platform and ABI choices.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "dead_code_elimination",
+      "description": "Dead-code elimination is a common optimization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "common_subexpression_elimination",
+      "description": "Common subexpression elimination is a standard optimization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "jump_threading",
+      "description": "Jump threading simplifies control flow.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "loop_optimization",
+      "description": "Loop optimization improves eligible loops.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "vectorization",
+      "description": "Vectorization emits vector instructions where appropriate.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "auto_parallelization",
+      "description": "Automatic parallelization is available for eligible code/configurations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "optimization_passes",
+      "predicate": "includes",
+      "target": "instruction_scheduling",
+      "description": "Instruction scheduling is a target-aware optimization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "optimization_levels",
+      "predicate": "configures",
+      "target": "optimization_passes",
+      "description": "Optimization-level flags select groups of passes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "profile_guided_optimization",
+      "predicate": "uses",
+      "target": "pgo_profile_data",
+      "description": "PGO consumes profile data from representative runs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "profile_guided_optimization",
+      "predicate": "configures",
+      "target": "optimization_passes",
+      "description": "Profile information guides optimization decisions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "link_time_optimization",
+      "predicate": "uses",
+      "target": "lto_metadata",
+      "description": "LTO uses serialized intermediate representation associated with objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "link_time_optimization",
+      "predicate": "extends_scope_of",
+      "target": "optimization_passes",
+      "description": "LTO can enable eligible cross-object optimizations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "sanitizers",
+      "predicate": "instruments",
+      "target": "executable",
+      "description": "Sanitizers add instrumentation to detect selected runtime defects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "debug_info",
+      "predicate": "supports",
+      "target": "gdb",
+      "description": "Debug metadata enables source-level debugging.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "gcov",
+      "predicate": "consumes",
+      "target": "pgo_profile_data",
+      "description": "GCC instrumentation workflows produce data for coverage and profile analysis; exact formats/modes differ.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "gprof",
+      "predicate": "consumes",
+      "target": "pgo_profile_data",
+      "description": "Profiling workflows may use GCC-generated profiling data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "warning_flags",
+      "predicate": "configures",
+      "target": "compiler_diagnostics",
+      "description": "Warning options enable or tune diagnostics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "language_standard_flags",
+      "predicate": "configures",
+      "target": "frontend",
+      "description": "Standard flags select language dialect and features.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "target_flags",
+      "predicate": "configures",
+      "target": "backend",
+      "description": "Target flags affect code generation, instruction sets, and ABI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "preprocessor_flags",
+      "predicate": "configures",
+      "target": "preprocessor",
+      "description": "Preprocessor flags configure include paths and macros.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "linker_flags",
+      "predicate": "configures",
+      "target": "linker",
+      "description": "Linker flags control library and output behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_c",
+      "description": "GCC supports C in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "lang_c",
+      "predicate": "compiled_by",
+      "target": "gcc_driver",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "lang_c",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_cpp",
+      "description": "GCC supports C++ in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "lang_cpp",
+      "predicate": "compiled_by",
+      "target": "gpp_driver",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "lang_cpp",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_objc",
+      "description": "GCC supports Objective-C in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "lang_objc",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "lang_objc",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_objcpp",
+      "description": "GCC supports Objective-C++ in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "lang_objcpp",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "lang_objcpp",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_fortran",
+      "description": "GCC supports Fortran in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "lang_fortran",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "lang_fortran",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_ada",
+      "description": "GCC supports Ada in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "lang_ada",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "lang_ada",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_go",
+      "description": "GCC supports Go in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "lang_go",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "lang_go",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_d",
+      "description": "GCC supports D in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "lang_d",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "lang_d",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_modula2",
+      "description": "GCC supports Modula-2 in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "lang_modula2",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "lang_modula2",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_rust",
+      "description": "GCC supports Rust in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "lang_rust",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "lang_rust",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_cobol",
+      "description": "GCC supports COBOL in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "lang_cobol",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "lang_cobol",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "gcc",
+      "predicate": "supports_language",
+      "target": "lang_algol68",
+      "description": "GCC supports ALGOL 68 in the source-described upstream series; language feature completeness depends on release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "lang_algol68",
+      "predicate": "compiled_by",
+      "target": "language_driver_family",
+      "description": "The language is handled through the indicated GCC driver family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "lang_algol68",
+      "predicate": "handled_by",
+      "target": "frontend",
+      "description": "A language-specific front end parses and translates source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "gcc",
+      "predicate": "has_historical_or_third_party_frontend",
+      "target": "lang_java_legacy",
+      "description": "Support is historical or external and should not be read as a promise of current upstream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "gcc",
+      "predicate": "has_historical_or_third_party_frontend",
+      "target": "lang_pascal",
+      "description": "Support is historical or external and should not be read as a promise of current upstream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "gcc",
+      "predicate": "has_historical_or_third_party_frontend",
+      "target": "lang_mercury",
+      "description": "Support is historical or external and should not be read as a promise of current upstream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "gcc",
+      "predicate": "has_historical_or_third_party_frontend",
+      "target": "lang_modula3",
+      "description": "Support is historical or external and should not be read as a promise of current upstream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "gcc",
+      "predicate": "has_historical_or_third_party_frontend",
+      "target": "lang_vhdl",
+      "description": "Support is historical or external and should not be read as a promise of current upstream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "gcc",
+      "predicate": "has_historical_or_third_party_frontend",
+      "target": "lang_pli",
+      "description": "Support is historical or external and should not be read as a promise of current upstream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "openmp",
+      "predicate": "supported_by",
+      "target": "gcc",
+      "description": "GCC supports OpenMP for applicable languages and targets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "openacc",
+      "predicate": "supported_by",
+      "target": "gcc",
+      "description": "GCC supports OpenACC for applicable configurations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "lang_c",
+      "predicate": "can_use",
+      "target": "gnu_c_extensions",
+      "description": "GNU C mode offers GCC-specific extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "lang_cpp",
+      "predicate": "uses_library",
+      "target": "cpp_stdlib",
+      "description": "C++ programs commonly use libstdc++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "lang_c",
+      "predicate": "uses_runtime",
+      "target": "libgcc",
+      "description": "Compiled programs may rely on libgcc support routines.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "lang_fortran",
+      "predicate": "uses_runtime",
+      "target": "libgfortran",
+      "description": "GNU Fortran programs may use the Fortran runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "openmp",
+      "predicate": "uses_runtime",
+      "target": "libgomp",
+      "description": "OpenMP programs commonly use libgomp.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "lang_objc",
+      "predicate": "uses_runtime",
+      "target": "libobjc",
+      "description": "Objective-C programs may use libobjc.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "lang_cpp",
+      "predicate": "uses_abi",
+      "target": "itanium_cpp_abi",
+      "description": "GCC's C++ ABI is based on the Itanium C++ ABI on relevant platforms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "itanium_cpp_abi",
+      "predicate": "specializes",
+      "target": "abi",
+      "description": "The Itanium C++ ABI specifies C++ binary conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "c_abi",
+      "predicate": "specializes",
+      "target": "abi",
+      "description": "The C ABI defines conventions used for C and cross-language interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "ffi",
+      "predicate": "relies_on",
+      "target": "abi",
+      "description": "FFI compatibility depends on calling convention, layout, symbols, and runtime assumptions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "lang_c",
+      "predicate": "commonly_interoperates_via",
+      "target": "c_abi",
+      "description": "C is frequently used as an interoperability boundary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "lang_rust",
+      "predicate": "can_interoperate_via",
+      "target": "ffi",
+      "description": "Rust and C/C++ code can interoperate when ABI and safety requirements are respected.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "lang_cpp",
+      "predicate": "can_interoperate_via",
+      "target": "ffi",
+      "description": "C++ interoperability often uses C-compatible interfaces or compatible C++ ABIs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_x86",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_x86",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_x86_64",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_x86_64",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_arm",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_arm",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_aarch64",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_aarch64",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_powerpc",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_powerpc",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_sparc",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_sparc",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_riscv",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_riscv",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_avr",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_avr",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_mips",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_mips",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_s390",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_s390",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0157",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_nvptx",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0158",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_nvptx",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0159",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_ebpf",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0160",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_ebpf",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0161",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_m68k",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0162",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_m68k",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0163",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_pa_risc",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0164",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_pa_risc",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0165",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_alpha",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0166",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_alpha",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0167",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_ia64",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0168",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_ia64",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0169",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_msp430",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0170",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_msp430",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0171",
+      "source": "gcc",
+      "predicate": "targets_architecture",
+      "target": "arch_xtensa",
+      "description": "Target support depends on GCC version, configuration, target port, and platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0172",
+      "source": "backend",
+      "predicate": "implements_target",
+      "target": "arch_xtensa",
+      "description": "The back end provides architecture-specific code generation for this target.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0173",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "platform_linux",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0174",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "platform_gnu",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0175",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "platform_bsd",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0176",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "platform_windows",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0177",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "platform_android",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0178",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "platform_macos",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0179",
+      "source": "gcc",
+      "predicate": "can_target_platform",
+      "target": "embedded_systems",
+      "description": "GCC can target this platform through suitable ports/configurations; current toolchain defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0180",
+      "source": "arch_avr",
+      "predicate": "used_in",
+      "target": "embedded_systems",
+      "description": "AVR is commonly used for microcontrollers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0181",
+      "source": "arch_arm",
+      "predicate": "used_in",
+      "target": "embedded_systems",
+      "description": "ARM is widely used in embedded systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0182",
+      "source": "arch_msp430",
+      "predicate": "used_in",
+      "target": "embedded_systems",
+      "description": "MSP430 is an embedded microcontroller family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0183",
+      "source": "arch_xtensa",
+      "predicate": "used_in",
+      "target": "embedded_systems",
+      "description": "Xtensa appears in embedded toolchains.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0184",
+      "source": "gcc",
+      "predicate": "commonly_used_with",
+      "target": "platform_linux",
+      "description": "GCC is a common system compiler on many Linux distributions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0185",
+      "source": "platform_gnu",
+      "predicate": "uses_compiler",
+      "target": "gcc",
+      "description": "GCC is the official compiler of the GNU operating system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0186",
+      "source": "platform_bsd",
+      "predicate": "historically_used",
+      "target": "gcc",
+      "description": "Many BSD systems historically adopted GCC; current defaults vary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0187",
+      "source": "platform_macos",
+      "predicate": "commonly_uses_instead",
+      "target": "clang",
+      "description": "The mainstream macOS developer toolchain uses Clang.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0188",
+      "source": "clang",
+      "predicate": "part_of",
+      "target": "llvm",
+      "description": "Clang is associated with the LLVM project.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0189",
+      "source": "mingw",
+      "predicate": "provides",
+      "target": "gcc",
+      "description": "MinGW provides a GCC-based Windows toolchain.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0190",
+      "source": "gcc",
+      "predicate": "uses_tool_suite",
+      "target": "binutils",
+      "description": "GCC commonly integrates with GNU Binutils.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0191",
+      "source": "object_file",
+      "predicate": "has_format",
+      "target": "object_format",
+      "description": "Object files use a target-specific binary format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0192",
+      "source": "linker",
+      "predicate": "resolves",
+      "target": "symbol_table",
+      "description": "The linker resolves external symbols.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0193",
+      "source": "linker",
+      "predicate": "applies",
+      "target": "relocation",
+      "description": "The linker processes relocations while creating output binaries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0194",
+      "source": "executable",
+      "predicate": "may_load",
+      "target": "shared_library",
+      "description": "Executables may depend on shared libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0195",
+      "source": "dynamic_loader",
+      "predicate": "loads",
+      "target": "shared_library",
+      "description": "The dynamic loader maps shared libraries at runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0196",
+      "source": "gcc",
+      "predicate": "build_requires",
+      "target": "gmp",
+      "description": "Build dependency identified in the supplied article's build overview.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0197",
+      "source": "gcc",
+      "predicate": "build_requires",
+      "target": "mpfr",
+      "description": "Build dependency identified in the supplied article's build overview.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0198",
+      "source": "gcc",
+      "predicate": "build_requires",
+      "target": "mpc",
+      "description": "Build dependency identified in the supplied article's build overview.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0199",
+      "source": "gcc",
+      "predicate": "build_may_use",
+      "target": "flex",
+      "description": "Common build/workflow tool; exact requirement depends on GCC release and configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0200",
+      "source": "gcc",
+      "predicate": "build_may_use",
+      "target": "bison",
+      "description": "Common build/workflow tool; exact requirement depends on GCC release and configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0201",
+      "source": "gcc",
+      "predicate": "build_may_use",
+      "target": "perl",
+      "description": "Common build/workflow tool; exact requirement depends on GCC release and configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0202",
+      "source": "gcc",
+      "predicate": "build_may_use",
+      "target": "make",
+      "description": "Common build/workflow tool; exact requirement depends on GCC release and configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0203",
+      "source": "gcc",
+      "predicate": "build_may_use",
+      "target": "autotools",
+      "description": "Common build/workflow tool; exact requirement depends on GCC release and configuration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0204",
+      "source": "gcc",
+      "predicate": "works_with",
+      "target": "gdb",
+      "description": "GDB debugs programs with compatible debug information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0205",
+      "source": "gcc",
+      "predicate": "works_with",
+      "target": "gcov",
+      "description": "GCC provides coverage instrumentation and gcov tooling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0206",
+      "source": "gcc",
+      "predicate": "works_with",
+      "target": "gprof",
+      "description": "GCC supports profiling workflows used by gprof.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0207",
+      "source": "gcc",
+      "predicate": "works_with",
+      "target": "valgrind",
+      "description": "Valgrind can analyze many GCC-built programs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0208",
+      "source": "gcc",
+      "predicate": "extended_by",
+      "target": "gcc_plugin_api",
+      "description": "Plugins extend selected compiler behaviors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0209",
+      "source": "gcc_plugin_api",
+      "predicate": "enables",
+      "target": "python_gcc_plugin",
+      "description": "Historical example links Python into GCC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0210",
+      "source": "gcc_plugin_api",
+      "predicate": "enabled_historical_example",
+      "target": "melt_plugin",
+      "description": "MELT is a historical GCC extension framework.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0211",
+      "source": "gcc",
+      "predicate": "can_link_against",
+      "target": "glibc",
+      "description": "GNU/Linux GCC toolchains commonly link against glibc.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0212",
+      "source": "gcc",
+      "predicate": "can_link_against",
+      "target": "musl",
+      "description": "GCC toolchains can target systems using musl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0213",
+      "source": "gcc",
+      "predicate": "can_link_against",
+      "target": "newlib",
+      "description": "Embedded GCC toolchains commonly use newlib.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0214",
+      "source": "gcc",
+      "predicate": "supports",
+      "target": "debug_info",
+      "description": "GCC can emit debugging metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0215",
+      "source": "gcc",
+      "predicate": "supports",
+      "target": "sanitizers",
+      "description": "GCC supports sanitizer instrumentation on supported targets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0216",
+      "source": "gcc",
+      "predicate": "supports",
+      "target": "link_time_optimization",
+      "description": "GCC supports LTO.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0217",
+      "source": "gcc",
+      "predicate": "supports",
+      "target": "profile_guided_optimization",
+      "description": "GCC supports PGO workflows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0218",
+      "source": "gcc",
+      "predicate": "supports",
+      "target": "optimization_levels",
+      "description": "GCC provides named optimization-level flags.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0219",
+      "source": "build_system",
+      "predicate": "invokes",
+      "target": "gcc_driver",
+      "description": "Build systems invoke the C compiler driver.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0220",
+      "source": "build_system",
+      "predicate": "invokes",
+      "target": "gpp_driver",
+      "description": "Build systems invoke the C++ compiler driver.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0221",
+      "source": "cmake",
+      "predicate": "can_configure",
+      "target": "build_system",
+      "description": "CMake can generate build files that invoke GCC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0222",
+      "source": "make",
+      "predicate": "can_run",
+      "target": "build_system",
+      "description": "Make can coordinate compile and link commands.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0223",
+      "source": "gcovr",
+      "predicate": "summarizes",
+      "target": "gcov",
+      "description": "gcovr can summarize gcov coverage output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0224",
+      "source": "example_hello_c",
+      "predicate": "uses_driver",
+      "target": "gcc_driver",
+      "description": "The example uses the C compiler driver.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0225",
+      "source": "example_compile_only",
+      "predicate": "uses_mode",
+      "target": "compile_only",
+      "description": "The example uses -c to stop before linking.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0226",
+      "source": "example_cpp",
+      "predicate": "uses_driver",
+      "target": "gpp_driver",
+      "description": "The example uses the C++ driver.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0227",
+      "source": "example_preprocess",
+      "predicate": "uses_mode",
+      "target": "preprocess_only",
+      "description": "The example uses -E.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0228",
+      "source": "example_assembly",
+      "predicate": "uses_mode",
+      "target": "assembly_only",
+      "description": "The example uses -S.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0229",
+      "source": "example_debug",
+      "predicate": "configures",
+      "target": "debug_info",
+      "description": "The example requests debug information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0230",
+      "source": "example_sanitizer",
+      "predicate": "configures",
+      "target": "sanitizers",
+      "description": "The example enables AddressSanitizer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0231",
+      "source": "example_pgo_generate",
+      "predicate": "configures",
+      "target": "profile_guided_optimization",
+      "description": "The example generates profile data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0232",
+      "source": "example_pgo_use",
+      "predicate": "configures",
+      "target": "profile_guided_optimization",
+      "description": "The example consumes profile data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0233",
+      "source": "example_lto",
+      "predicate": "configures",
+      "target": "link_time_optimization",
+      "description": "The example enables LTO.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0234",
+      "source": "example_cross",
+      "predicate": "uses",
+      "target": "cross_compiler",
+      "description": "The example illustrates a target-prefixed cross compiler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0235",
+      "source": "example_cross",
+      "predicate": "configures",
+      "target": "sysroot",
+      "description": "The example specifies a target sysroot.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0236",
+      "source": "example_warnings",
+      "predicate": "configures",
+      "target": "warning_flags",
+      "description": "The example enables warning options.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0237",
+      "source": "example_shared",
+      "predicate": "produces",
+      "target": "shared_library",
+      "description": "The example builds a shared library.",
+      "properties": {}
+    }
+  ],
+  "taxonomy": {
+    "entity_types": [
+      "abi_specification",
+      "analysis_tool",
+      "architecture",
+      "artifact",
+      "artifact_group",
+      "binary_format",
+      "build_dependency",
+      "build_process",
+      "build_tool",
+      "build_toolchain",
+      "command_mode",
+      "compiler",
+      "compiler_component",
+      "compiler_concept",
+      "compiler_configuration",
+      "compiler_feature",
+      "compiler_stage",
+      "configuration",
+      "coverage_tool",
+      "debugger",
+      "documentation",
+      "governance_body",
+      "historical_event",
+      "intermediate_representation",
+      "interoperability",
+      "language_extension",
+      "libc",
+      "license",
+      "license_exception",
+      "operating_system",
+      "operating_system_component",
+      "operating_system_family",
+      "optimization",
+      "organization",
+      "parallel_extension",
+      "person",
+      "platform_category",
+      "plugin_api",
+      "plugin_example",
+      "profiler",
+      "program",
+      "programming_language",
+      "role_group",
+      "runtime_library",
+      "security_feature",
+      "software",
+      "software_component",
+      "software_project",
+      "software_release",
+      "source_repository",
+      "tool",
+      "tool_category",
+      "tool_suite",
+      "toolchain",
+      "usage_example"
+    ],
+    "relationship_predicates": [
+      "analyzes",
+      "applies",
+      "assembled_by",
+      "build_may_use",
+      "build_requires",
+      "builds",
+      "can_configure",
+      "can_interoperate_via",
+      "can_link_against",
+      "can_run",
+      "can_target_platform",
+      "can_use",
+      "commonly_interoperates_via",
+      "commonly_used_with",
+      "commonly_uses_instead",
+      "compiled_by",
+      "configured_by",
+      "configures",
+      "consumed_by",
+      "consumes",
+      "contains_source_for",
+      "contains_stage",
+      "develops",
+      "distributes",
+      "documents",
+      "emits",
+      "enabled_historical_example",
+      "enables",
+      "expanded_by",
+      "extended_by",
+      "extends_scope_of",
+      "feeds",
+      "follows_release",
+      "founded_or_authored",
+      "governs",
+      "guides",
+      "handled_by",
+      "has_format",
+      "has_historical_or_third_party_frontend",
+      "has_release",
+      "historically_used",
+      "identifies",
+      "implements_target",
+      "includes",
+      "instruments",
+      "invokes",
+      "licensed_under",
+      "linked_by",
+      "loads",
+      "lowered_by",
+      "lowered_to",
+      "maintains",
+      "may_load",
+      "merged_into",
+      "modifies_distribution_terms_for",
+      "optimized_by",
+      "orchestrates",
+      "part_of",
+      "processed_by",
+      "produces",
+      "provides",
+      "recognized_as",
+      "released",
+      "relies_on",
+      "reported_during",
+      "resolves",
+      "selects",
+      "specializes",
+      "stops_before",
+      "summarizes",
+      "supported_by",
+      "supports",
+      "supports_language",
+      "targets_architecture",
+      "transforms",
+      "used_in",
+      "uses",
+      "uses_abi",
+      "uses_compiler",
+      "uses_driver",
+      "uses_library",
+      "uses_mode",
+      "uses_representation",
+      "uses_runtime",
+      "uses_tool_suite",
+      "works_with"
+    ],
+    "domains": {
+      "identity_governance": [
+        "gcc",
+        "gnu_project",
+        "fsf",
+        "gcc_steering_committee",
+        "gcc_maintainers",
+        "gcc_repository",
+        "gcc_docs",
+        "gnu_license",
+        "gcc_runtime_exception",
+        "egcs"
+      ],
+      "compiler_pipeline": [
+        "source_file",
+        "preprocessor",
+        "lexer",
+        "parser",
+        "semantic_analysis",
+        "ast",
+        "generic_ir",
+        "gimplifier",
+        "gimple",
+        "ssa",
+        "middle_end",
+        "optimization_passes",
+        "rtl",
+        "backend",
+        "machine_description",
+        "instruction_selection",
+        "register_allocation",
+        "instruction_scheduling",
+        "assembler",
+        "object_file",
+        "linker",
+        "executable"
+      ],
+      "languages_runtimes": [
+        "lang_c",
+        "lang_cpp",
+        "lang_objc",
+        "lang_objcpp",
+        "lang_fortran",
+        "lang_ada",
+        "lang_go",
+        "lang_d",
+        "lang_modula2",
+        "lang_rust",
+        "lang_cobol",
+        "lang_algol68",
+        "openmp",
+        "openacc",
+        "cpp_stdlib",
+        "libgcc",
+        "libgfortran",
+        "libgomp"
+      ],
+      "optimization_analysis": [
+        "dead_code_elimination",
+        "common_subexpression_elimination",
+        "jump_threading",
+        "loop_optimization",
+        "vectorization",
+        "auto_parallelization",
+        "profile_guided_optimization",
+        "link_time_optimization",
+        "sanitizers",
+        "fortify_source"
+      ],
+      "targets_platforms": [
+        "arch_x86",
+        "arch_x86_64",
+        "arch_arm",
+        "arch_aarch64",
+        "arch_powerpc",
+        "arch_sparc",
+        "arch_riscv",
+        "arch_avr",
+        "arch_mips",
+        "arch_s390",
+        "arch_nvptx",
+        "arch_ebpf",
+        "platform_linux",
+        "platform_gnu",
+        "platform_bsd",
+        "platform_windows",
+        "embedded_systems"
+      ],
+      "tooling_interoperability": [
+        "binutils",
+        "gmp",
+        "mpfr",
+        "mpc",
+        "gcc_plugin_api",
+        "ffi",
+        "c_abi",
+        "itanium_cpp_abi",
+        "gdb",
+        "gcov",
+        "gprof",
+        "valgrind",
+        "clang",
+        "llvm",
+        "mingw",
+        "glibc",
+        "musl",
+        "newlib"
+      ],
+      "usage_examples": [
+        "example_hello_c",
+        "example_compile_only",
+        "example_cpp",
+        "example_preprocess",
+        "example_assembly",
+        "example_debug",
+        "example_sanitizer",
+        "example_pgo_generate",
+        "example_pgo_use",
+        "example_lto",
+        "example_cross",
+        "example_warnings",
+        "example_shared"
+      ]
+    },
+    "relationship_semantics": {
+      "supports_language": "The compiler provides a front end for a language; this does not imply complete standards conformance in every release.",
+      "lowered_to": "A compiler representation is transformed into a simpler or lower-level representation.",
+      "targets_architecture": "Target availability depends on release, build configuration, and maintained target support.",
+      "can_target_platform": "Capability depends on target configuration and available toolchain components.",
+      "licensed_under": "Describes source licensing; runtime exceptions and generated output need separate interpretation.",
+      "build_requires": "Dependency required for a build in the source/release context described.",
+      "compiled_by": "Associates a language with a compiler driver or toolchain entry point."
+    }
+  }
+}

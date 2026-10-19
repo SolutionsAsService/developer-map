@@ -1,0 +1,3867 @@
+{
+  "metadata": {
+    "schema_name": "rust_programming_language_knowledge_graph",
+    "schema_version": "1.0.0",
+    "subject": "Rust programming language",
+    "language_version": "Version-aware overview; verify edition- and compiler-specific details before treating them as normative",
+    "created_date": "2026-10-19",
+    "data_model": "directed_labeled_multigraph",
+    "source_policy": {
+      "source_attribution": "Primary input: user-provided Rust programming language article excerpt. Descriptions are normalized into graph entities; some connections are structured explanatory modeling rather than verbatim source claims.",
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low",
+        "inferred"
+      ],
+      "distinguish_stable_from_version_specific": true,
+      "notes": [
+        "This is a knowledge-graph instance plus a JSON Schema contract, not the Rust compiler's formal grammar or an official language specification.",
+        "Rust features, tool behavior, editions, and APIs may vary by compiler version and target.",
+        "Validate every relationship endpoint against entities[].id before graph ingestion."
+      ]
+    }
+  },
+  "entities": [
+    {
+      "id": "rust",
+      "name": "Rust",
+      "entity_type": "language",
+      "description": "General-purpose, multi-paradigm systems programming language emphasizing performance, type safety, concurrency, and memory safety without a conventional garbage collector.",
+      "properties": {
+        "paradigms": [
+          "imperative",
+          "functional-influenced",
+          "generic",
+          "concurrent",
+          "structured"
+        ],
+        "typing": [
+          "static",
+          "strong",
+          "nominal",
+          "inferred"
+        ],
+        "memory_management": "ownership_and_borrowing",
+        "primary_source_extensions": [
+          ".rs",
+          ".rlib"
+        ],
+        "license": [
+          "MIT",
+          "Apache-2.0"
+        ]
+      },
+      "tags": [
+        "language",
+        "systems",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "performance",
+      "name": "Performance",
+      "entity_type": "concept",
+      "description": "Rust targets low-level control and efficient compiled code, including zero-cost abstractions and opportunities for zero-copy processing.",
+      "properties": {},
+      "tags": [
+        "design-principle"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "type_safety",
+      "name": "Type safety",
+      "entity_type": "concept",
+      "description": "Static type checking rejects incompatible operations and invalid type use before program execution.",
+      "properties": {},
+      "tags": [
+        "design-principle"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "memory_safety",
+      "name": "Memory safety",
+      "entity_type": "concept",
+      "description": "Safe Rust's type and ownership rules prevent common invalid-memory operations, subject to the limits of unsafe code and external interfaces.",
+      "properties": {},
+      "tags": [
+        "design-principle"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "data_race_freedom",
+      "name": "Data-race freedom",
+      "entity_type": "concept",
+      "description": "Safe Rust's concurrency and aliasing rules prevent data races for properly modeled shared state.",
+      "properties": {},
+      "tags": [
+        "design-principle"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "multi_paradigm",
+      "name": "Multi-paradigm programming",
+      "entity_type": "concept",
+      "description": "Rust combines imperative and structured programming with functional concepts, generic programming, and concurrency.",
+      "properties": {},
+      "tags": [
+        "design-principle"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "zero_cost_abstractions",
+      "name": "Zero-cost abstractions",
+      "entity_type": "concept",
+      "description": "Many abstractions compile away or specialize at compile time, avoiding inherent runtime costs where possible.",
+      "properties": {},
+      "tags": [
+        "design-principle"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "fn",
+      "name": "fn keyword",
+      "entity_type": "keyword",
+      "description": "Declares a function; function signatures express parameters and return types.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "let",
+      "name": "let binding",
+      "entity_type": "keyword",
+      "description": "Introduces a local binding; bindings are immutable unless mut is specified.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "mut",
+      "name": "mut modifier",
+      "entity_type": "keyword",
+      "description": "Permits mutation of a binding or mutable access where the type and borrowing rules allow it.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "shadowing",
+      "name": "Variable shadowing",
+      "entity_type": "syntax",
+      "description": "A new let binding may reuse a name, including with a different type, without mutating the previous binding.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "block_expression",
+      "name": "Block expression",
+      "entity_type": "syntax",
+      "description": "A brace-delimited block evaluates to its final expression when that expression lacks a trailing semicolon.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "if_expression",
+      "name": "if expression",
+      "entity_type": "syntax",
+      "description": "Branches on a boolean condition and can itself yield a value when branches have compatible types.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "match_expression",
+      "name": "match expression",
+      "entity_type": "syntax",
+      "description": "Performs exhaustive pattern matching over values and enum variants.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "if_let",
+      "name": "if let",
+      "entity_type": "syntax",
+      "description": "Matches a single pattern conveniently, optionally with an else branch.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "loop",
+      "name": "loop expression",
+      "entity_type": "keyword",
+      "description": "Repeats indefinitely until exited, and can return a value through break.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "while",
+      "name": "while loop",
+      "entity_type": "keyword",
+      "description": "Repeats while a boolean condition evaluates to true.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "for",
+      "name": "for loop",
+      "entity_type": "keyword",
+      "description": "Iterates over values produced by an IntoIterator/iterator expression.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "break",
+      "name": "break",
+      "entity_type": "keyword",
+      "description": "Exits a loop; loop expressions can return the break value.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "continue",
+      "name": "continue",
+      "entity_type": "keyword",
+      "description": "Skips to the next iteration of the innermost or labeled loop.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "return",
+      "name": "return expression",
+      "entity_type": "keyword",
+      "description": "Returns from the current function, optionally carrying a value.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "control-flow"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "semicolon",
+      "name": "Semicolon",
+      "entity_type": "syntax",
+      "description": "Terminates statements and suppresses the value of an expression in statement position.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pattern_matching",
+      "name": "Pattern matching",
+      "entity_type": "syntax",
+      "description": "Destructures and tests values using patterns in match, if let, let, and related constructs.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "closures",
+      "name": "Closures",
+      "entity_type": "syntax",
+      "description": "Anonymous function-like values that can capture their environment by borrow, mutable borrow, or move.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "iterator_trait",
+      "name": "Iterator trait",
+      "entity_type": "syntax",
+      "description": "Defines sequential value production through next and supports adapter/consumer chains.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "iterator_adapters",
+      "name": "Iterator adapters",
+      "entity_type": "syntax",
+      "description": "Methods such as map and filter transform iterator pipelines, often lazily.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "range",
+      "name": "Range expressions",
+      "entity_type": "syntax",
+      "description": "Expressions such as 1..5 and 1..=5 create range values, commonly used with iterators.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "macros",
+      "name": "Macros",
+      "entity_type": "macro",
+      "description": "Compile-time code generation mechanisms that expand into Rust syntax or items.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "macro_rules",
+      "name": "macro_rules!",
+      "entity_type": "macro",
+      "description": "Declarative macro mechanism that matches token patterns and expands templates.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "procedural_macros",
+      "name": "Procedural macros",
+      "entity_type": "macro",
+      "description": "Compiler-invoked Rust functions that transform token streams; include derive, attribute, and function-like forms.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "attributes",
+      "name": "Attributes",
+      "entity_type": "syntax",
+      "description": "Metadata syntax such as #[derive(...)] and #![no_std] that affects compilation or tooling.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "unsafe_keyword",
+      "name": "unsafe",
+      "entity_type": "keyword",
+      "description": "Marks operations or blocks where the programmer must uphold additional safety obligations.",
+      "properties": {},
+      "tags": [
+        "syntax",
+        "language-feature"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "unit",
+      "name": "Unit type ()",
+      "entity_type": "type",
+      "description": "The single-valued type used when no meaningful value is returned; ordinary functions without an explicit return type return unit.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "bool",
+      "name": "bool",
+      "entity_type": "type",
+      "description": "Boolean type with values true and false.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "char",
+      "name": "char",
+      "entity_type": "type",
+      "description": "A 32-bit Unicode scalar value, excluding surrogate code points.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "i8",
+      "name": "i8",
+      "entity_type": "type",
+      "description": "8-bit signed integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "i16",
+      "name": "i16",
+      "entity_type": "type",
+      "description": "16-bit signed integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "i32",
+      "name": "i32",
+      "entity_type": "type",
+      "description": "32-bit signed integer type and default integer type absent other inference.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "i64",
+      "name": "i64",
+      "entity_type": "type",
+      "description": "64-bit signed integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "i128",
+      "name": "i128",
+      "entity_type": "type",
+      "description": "128-bit signed integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "u8",
+      "name": "u8",
+      "entity_type": "type",
+      "description": "8-bit unsigned integer type; also used for byte-oriented data.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "u16",
+      "name": "u16",
+      "entity_type": "type",
+      "description": "16-bit unsigned integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "u32",
+      "name": "u32",
+      "entity_type": "type",
+      "description": "32-bit unsigned integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "u64",
+      "name": "u64",
+      "entity_type": "type",
+      "description": "64-bit unsigned integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "u128",
+      "name": "u128",
+      "entity_type": "type",
+      "description": "128-bit unsigned integer type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "isize",
+      "name": "isize",
+      "entity_type": "type",
+      "description": "Signed integer type sized to the target pointer width.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "usize",
+      "name": "usize",
+      "entity_type": "type",
+      "description": "Unsigned integer type sized to the target pointer width; commonly used for indexing and sizes.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f32",
+      "name": "f32",
+      "entity_type": "type",
+      "description": "IEEE 754 single-precision floating-point type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f64",
+      "name": "f64",
+      "entity_type": "type",
+      "description": "IEEE 754 double-precision floating-point type and default float type absent other inference.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "tuple",
+      "name": "Tuple",
+      "entity_type": "type",
+      "description": "Fixed-length compound value whose fields may have different types; tuple fields are accessed by numeric position.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "array",
+      "name": "Array",
+      "entity_type": "type",
+      "description": "Fixed-length collection of values all having the same element type, represented as [T; N].",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "slice",
+      "name": "Slice",
+      "entity_type": "type",
+      "description": "Dynamically sized view of a contiguous sequence, typically borrowed as &[T] or &mut [T].",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "str",
+      "name": "str",
+      "entity_type": "type",
+      "description": "Dynamically sized UTF-8 string slice type, normally accessed through references such as &str.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "string",
+      "name": "String",
+      "entity_type": "type",
+      "description": "Owned, growable UTF-8 string type from the standard library.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "struct",
+      "name": "struct",
+      "entity_type": "type",
+      "description": "Declares a named record-like type with fields; layout is not generally a stable ABI unless explicitly represented.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "enum",
+      "name": "enum",
+      "entity_type": "type",
+      "description": "Declares a type with one of several variants; variants can carry associated data.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "type_alias",
+      "name": "type alias",
+      "entity_type": "type",
+      "description": "Gives another name to an existing type without creating a distinct nominal type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "generic",
+      "name": "Generics",
+      "entity_type": "type_constructor",
+      "description": "Parameterized functions, types, traits, and implementations whose parameters are constrained by bounds.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "option",
+      "name": "Option<T>",
+      "entity_type": "type_constructor",
+      "description": "Represents an optional value with Some(T) or None, making absence explicit in the type.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "result",
+      "name": "Result<T, E>",
+      "entity_type": "type_constructor",
+      "description": "Represents success as Ok(T) or failure as Err(E), supporting explicit error propagation.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "reference",
+      "name": "&T",
+      "entity_type": "type",
+      "description": "Shared immutable borrow; safe references are non-null, aligned, and valid for their inferred lifetime.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "mutable_reference",
+      "name": "&mut T",
+      "entity_type": "type",
+      "description": "Exclusive mutable borrow; borrowing rules prevent conflicting active accesses.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "raw_const_pointer",
+      "name": "*const T",
+      "entity_type": "type",
+      "description": "Raw const pointer that may be null, dangling, or misaligned; dereferencing requires unsafe.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "raw_mut_pointer",
+      "name": "*mut T",
+      "entity_type": "type",
+      "description": "Raw mutable pointer that may be null, dangling, or misaligned; dereferencing requires unsafe.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "box",
+      "name": "Box<T>",
+      "entity_type": "type_constructor",
+      "description": "Owning smart pointer for heap allocation with unique ownership by default.",
+      "properties": {},
+      "tags": [
+        "language-concept",
+        "memory-model",
+        "type-system"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rc",
+      "name": "Rc<T>",
+      "entity_type": "type_constructor",
+      "description": "Single-threaded reference-counted shared ownership pointer; not thread-safe for cross-thread sharing.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "arc",
+      "name": "Arc<T>",
+      "entity_type": "type_constructor",
+      "description": "Atomically reference-counted shared ownership pointer for sharing ownership across threads when T satisfies required bounds.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cell",
+      "name": "Cell<T>",
+      "entity_type": "type_constructor",
+      "description": "Interior-mutability container permitting value replacement through shared references when its rules are met.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "refcell",
+      "name": "RefCell<T>",
+      "entity_type": "type_constructor",
+      "description": "Interior-mutability container enforcing borrow rules at runtime.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "mutex",
+      "name": "Mutex<T>",
+      "entity_type": "type_constructor",
+      "description": "Synchronization primitive that grants exclusive access through a lock guard.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rwlock",
+      "name": "RwLock<T>",
+      "entity_type": "type_constructor",
+      "description": "Synchronization primitive allowing multiple readers or one writer, subject to lock behavior.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "pin",
+      "name": "Pin<P>",
+      "entity_type": "type_constructor",
+      "description": "Pointer wrapper used to constrain movement of a pointee when required by pinning APIs and invariants.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "memory-model"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "phantomdata",
+      "name": "PhantomData<T>",
+      "entity_type": "type_constructor",
+      "description": "Zero-sized marker used to express ownership, variance, or drop-check relationships to the compiler.",
+      "properties": {},
+      "tags": [
+        "type-system",
+        "type"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ownership",
+      "name": "Ownership",
+      "entity_type": "ownership_rule",
+      "description": "Each value has one owner at a time; ownership can move between bindings and function calls.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "move_semantics",
+      "name": "Move semantics",
+      "entity_type": "ownership_rule",
+      "description": "A non-Copy value passed or assigned by value is typically moved, invalidating the previous binding for further use.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "copy_trait",
+      "name": "Copy trait",
+      "entity_type": "ownership_rule",
+      "description": "Types implementing Copy are copied by value rather than moved in ordinary copy contexts; Copy is limited to types whose duplication is bitwise/simple and does not require custom destruction.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "borrowing",
+      "name": "Borrowing",
+      "entity_type": "ownership_rule",
+      "description": "A reference temporarily accesses a value without transferring ownership.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "shared_borrow",
+      "name": "Shared borrowing",
+      "entity_type": "ownership_rule",
+      "description": "Multiple immutable borrows may coexist when no conflicting mutable borrow is active.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "exclusive_borrow",
+      "name": "Mutable borrowing",
+      "entity_type": "ownership_rule",
+      "description": "A mutable borrow provides exclusive access for its active lifetime, preventing conflicting accesses.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "borrow_checker",
+      "name": "Borrow checker",
+      "entity_type": "ownership_rule",
+      "description": "Compiler analysis enforces ownership, reference validity, and aliasing rules.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "lifetime",
+      "name": "Lifetime",
+      "entity_type": "lifetime_rule",
+      "description": "A lifetime describes the region in which a reference is valid; most lifetimes are inferred.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "lifetime_parameter",
+      "name": "Named lifetime parameter",
+      "entity_type": "lifetime_rule",
+      "description": "Syntax such as 'a relates reference validity across signatures and types.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "lifetime_elision",
+      "name": "Lifetime elision",
+      "entity_type": "lifetime_rule",
+      "description": "Rules allow many function signatures to omit explicit lifetime parameters when relationships can be inferred.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "nll",
+      "name": "Non-lexical lifetimes",
+      "entity_type": "lifetime_rule",
+      "description": "Borrow checking can end a borrow after its last relevant use rather than only at the end of the enclosing lexical scope.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "drop",
+      "name": "Drop and destruction",
+      "entity_type": "memory_model",
+      "description": "A value is dropped when it leaves scope or is otherwise destroyed; Drop can define cleanup behavior.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "raii",
+      "name": "RAII",
+      "entity_type": "memory_model",
+      "description": "Resource acquisition and release are tied to value lifetime, commonly through ownership and Drop.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "interior_mutability",
+      "name": "Interior mutability",
+      "entity_type": "memory_model",
+      "description": "Abstractions such as Cell and RefCell permit mutation through shared references while enforcing their respective rules.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "unsafe_rust",
+      "name": "Unsafe Rust",
+      "entity_type": "unsafe_operation",
+      "description": "A subset that enables operations requiring programmer-maintained invariants; unsafe does not disable all compiler checks.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "undefined_behavior",
+      "name": "Undefined behavior",
+      "entity_type": "unsafe_operation",
+      "description": "Invalid operations, often in unsafe code or violated foreign contracts, for which Rust does not guarantee program behavior.",
+      "properties": {},
+      "tags": [
+        "ownership",
+        "borrowing",
+        "memory-safety"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "trait",
+      "name": "Trait",
+      "entity_type": "trait",
+      "description": "Declares shared behavior through required methods, associated types/constants, and optional default implementations.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "impl",
+      "name": "impl block",
+      "entity_type": "concept",
+      "description": "Defines inherent methods for a type or implements a trait for a type.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "trait_bound",
+      "name": "Trait bound",
+      "entity_type": "concept",
+      "description": "Constrains generic types to implement required traits, for example T: Display.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "where_clause",
+      "name": "where clause",
+      "entity_type": "concept",
+      "description": "Expresses trait and lifetime constraints in a separate clause for complex signatures.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "static_dispatch",
+      "name": "Static dispatch",
+      "entity_type": "concept",
+      "description": "Generic calls are usually monomorphized for concrete types at compile time.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "dynamic_dispatch",
+      "name": "Dynamic dispatch",
+      "entity_type": "concept",
+      "description": "Trait objects such as dyn Trait invoke methods through a runtime vtable.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "trait_object",
+      "name": "Trait object",
+      "entity_type": "concept",
+      "description": "Type-erased value paired with trait method metadata, commonly used behind references or smart pointers.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "associated_type",
+      "name": "Associated type",
+      "entity_type": "concept",
+      "description": "Trait-declared type selected by an implementation.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "derive",
+      "name": "derive macros",
+      "entity_type": "concept",
+      "description": "Attributes such as #[derive(Debug, Clone, PartialEq)] generate common trait implementations.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "display",
+      "name": "Display trait",
+      "entity_type": "trait",
+      "description": "Formatting trait for user-facing textual representation.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "debug",
+      "name": "Debug trait",
+      "entity_type": "trait",
+      "description": "Formatting trait for programmer-oriented diagnostic output.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "send",
+      "name": "Send trait",
+      "entity_type": "trait",
+      "description": "Marker trait indicating a type can be transferred safely between threads under Rust's rules.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "sync",
+      "name": "Sync trait",
+      "entity_type": "trait",
+      "description": "Marker trait indicating references to a type can be shared safely between threads under Rust's rules.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "iterator",
+      "name": "Iterator",
+      "entity_type": "trait",
+      "description": "Protocol for producing a sequence of values through next.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "intoiterator",
+      "name": "IntoIterator",
+      "entity_type": "trait",
+      "description": "Conversion protocol that produces an iterator, used by for loops and iterator APIs.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "collect",
+      "name": "collect",
+      "entity_type": "concept",
+      "description": "Iterator consumer that builds a collection or other FromIterator target when the type is inferable.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "map",
+      "name": "map",
+      "entity_type": "concept",
+      "description": "Iterator adapter that transforms each item.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "filter",
+      "name": "filter",
+      "entity_type": "concept",
+      "description": "Iterator adapter that keeps items satisfying a predicate.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "closure_capture",
+      "name": "Closure capture",
+      "entity_type": "concept",
+      "description": "Closures infer how to capture environment values, with move available to capture by value.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "error_handling",
+      "name": "Explicit error handling",
+      "entity_type": "concept",
+      "description": "Rust commonly models recoverable errors using Result and absence using Option rather than exceptions.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "question_mark",
+      "name": "? operator",
+      "entity_type": "concept",
+      "description": "Propagates compatible residual error/absence from Result or Option contexts and returns early when propagation applies.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "panic",
+      "name": "panic!",
+      "entity_type": "concept",
+      "description": "Signals an unrecoverable programming failure; unwinding or abort behavior depends on build configuration and target.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "unwrap",
+      "name": "unwrap",
+      "entity_type": "concept",
+      "description": "Extracts a success/present value or panics if the value is an error/None.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "vec",
+      "name": "Vec<T>",
+      "entity_type": "standard_library",
+      "description": "Growable contiguous owned vector from the standard library.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "hashmap",
+      "name": "HashMap<K,V>",
+      "entity_type": "standard_library",
+      "description": "Hash-based key-value collection from the standard library.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "hashset",
+      "name": "HashSet<T>",
+      "entity_type": "standard_library",
+      "description": "Hash-based set collection from the standard library.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "btreemap",
+      "name": "BTreeMap<K,V>",
+      "entity_type": "standard_library",
+      "description": "Ordered key-value map implemented using a B-tree.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "no_std",
+      "name": "no_std",
+      "entity_type": "concept",
+      "description": "Crate-level attribute that avoids the standard library; core remains available and alloc may be used when configured.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "core_crate",
+      "name": "core",
+      "entity_type": "standard_library",
+      "description": "Fundamental library with language-level primitives and no OS-dependent facilities.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "alloc_crate",
+      "name": "alloc",
+      "entity_type": "standard_library",
+      "description": "Allocation-backed collection and smart-pointer facilities usable without the full standard library when an allocator is supplied.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "std_crate",
+      "name": "std",
+      "entity_type": "standard_library",
+      "description": "Standard library adding OS, I/O, threading, networking, and other platform facilities.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "module",
+      "name": "Module system",
+      "entity_type": "concept",
+      "description": "Organizes items and controls visibility with mod, pub, paths, and use.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "crate",
+      "name": "Crate",
+      "entity_type": "package_concept",
+      "description": "Rust compilation unit/package target; a crate is a library or binary root.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "workspace",
+      "name": "Cargo workspace",
+      "entity_type": "package_concept",
+      "description": "Groups related packages and shares build coordination and commonly a lockfile.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cargo_toml",
+      "name": "Cargo.toml",
+      "entity_type": "package_concept",
+      "description": "Manifest declaring package metadata, targets, features, dependencies, and build configuration.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cargo_lock",
+      "name": "Cargo.lock",
+      "entity_type": "package_concept",
+      "description": "Records exact resolved dependency versions for reproducible application builds; library policy may vary.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "crate_io",
+      "name": "crates.io",
+      "entity_type": "package_concept",
+      "description": "Public package registry commonly used by Cargo.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rustup",
+      "name": "rustup",
+      "entity_type": "tool",
+      "description": "Toolchain installer and manager for Rust compiler versions, components, and targets.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rustc",
+      "name": "rustc",
+      "entity_type": "tool",
+      "description": "Rust compiler that parses, analyzes, lowers, optimizes, and emits compiled artifacts.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cargo",
+      "name": "Cargo",
+      "entity_type": "tool",
+      "description": "Rust build system and package manager; also integrates common development commands.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rustfmt",
+      "name": "rustfmt",
+      "entity_type": "tool",
+      "description": "Code formatter that applies configured Rust formatting conventions.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "clippy",
+      "name": "Clippy",
+      "entity_type": "tool",
+      "description": "Linting tool that detects suspicious patterns and suggests correctness, performance, and style improvements.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rust_analyzer",
+      "name": "rust-analyzer",
+      "entity_type": "tool",
+      "description": "Language Server Protocol implementation providing IDE features such as completion, navigation, and diagnostics.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ast",
+      "name": "Abstract syntax tree",
+      "entity_type": "compiler_stage",
+      "description": "Structured representation of parsed source syntax.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ir",
+      "name": "Intermediate representations",
+      "entity_type": "compiler_stage",
+      "description": "Compiler representations used between source parsing and backend code generation.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "llvm",
+      "name": "LLVM backend",
+      "entity_type": "tool",
+      "description": "Default major code-generation backend for rustc on many targets.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "gccrs",
+      "name": "GCC Rust front end",
+      "entity_type": "tool",
+      "description": "Alternative Rust compiler front end in the GCC project; support and compatibility depend on version.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cranelift",
+      "name": "Cranelift backend",
+      "entity_type": "tool",
+      "description": "Alternative code-generation backend used in some Rust toolchain workflows.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "linker",
+      "name": "Linker",
+      "entity_type": "tool",
+      "description": "Combines object files and libraries into a final executable or shared artifact.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "edition",
+      "name": "Rust edition",
+      "entity_type": "package_concept",
+      "description": "Edition system permits selected language evolution while maintaining interoperability among crates using different editions.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "stable_channel",
+      "name": "Stable channel",
+      "entity_type": "package_concept",
+      "description": "Release channel intended for stable, supported language and toolchain features.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "beta_channel",
+      "name": "Beta channel",
+      "entity_type": "package_concept",
+      "description": "Pre-release channel used to test the next stable Rust release.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "nightly_channel",
+      "name": "Nightly channel",
+      "entity_type": "package_concept",
+      "description": "Frequently updated channel where experimental features may be available behind feature gates.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "ffi",
+      "name": "Foreign function interface",
+      "entity_type": "ffi_mechanism",
+      "description": "Mechanisms for calling external-language functions and exposing Rust functions to other languages.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "extern_c",
+      "name": "extern C",
+      "entity_type": "ffi_mechanism",
+      "description": "Declares functions or blocks using the C ABI for interoperability.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "repr_c",
+      "name": "repr(C)",
+      "entity_type": "ffi_mechanism",
+      "description": "Representation attribute for C-compatible layout expectations where the type's field types and ABI are compatible.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "bindgen",
+      "name": "bindgen",
+      "entity_type": "tool",
+      "description": "Tool that can generate Rust FFI bindings from C/C++ headers.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cxx",
+      "name": "cxx crate",
+      "entity_type": "tool",
+      "description": "Ecosystem tool for defining and generating safer Rust/C++ interop bridges.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "async_await",
+      "name": "async/await",
+      "entity_type": "async_mechanism",
+      "description": "Syntax for asynchronous computations; async functions produce futures that are polled by an executor.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "future",
+      "name": "Future trait",
+      "entity_type": "trait",
+      "description": "Represents a value that may become available later through polling.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "executor",
+      "name": "Async executor",
+      "entity_type": "async_mechanism",
+      "description": "Runtime component that schedules and polls futures.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "tokio",
+      "name": "Tokio",
+      "entity_type": "tool",
+      "description": "Popular asynchronous runtime ecosystem for networking, timers, and task scheduling.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "thread",
+      "name": "OS thread",
+      "entity_type": "concurrency_primitive",
+      "description": "Standard-library thread abstraction for concurrent execution.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "channel",
+      "name": "Channel",
+      "entity_type": "concurrency_primitive",
+      "description": "Message-passing abstraction for transferring values between concurrent tasks or threads.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "atomic",
+      "name": "Atomic types",
+      "entity_type": "concurrency_primitive",
+      "description": "Atomic operations enable synchronization on supported primitive values under defined memory orderings.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "mutex_guard",
+      "name": "MutexGuard",
+      "entity_type": "concurrency_primitive",
+      "description": "RAII guard representing acquired mutex access; dropping the guard releases the lock.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "wasm",
+      "name": "WebAssembly target",
+      "entity_type": "concept",
+      "description": "Compilation target for portable sandboxed execution environments, subject to target and runtime support.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "embedded",
+      "name": "Embedded Rust",
+      "entity_type": "concept",
+      "description": "Rust use in constrained or bare-metal targets, often using no_std and target-specific HALs.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "formal_verification",
+      "name": "Formal verification",
+      "entity_type": "concept",
+      "description": "Methods and tools for proving properties of Rust programs or subsets of their semantics.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "kani",
+      "name": "Kani",
+      "entity_type": "tool",
+      "description": "Bounded model checker for Rust code.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "miri",
+      "name": "Miri",
+      "entity_type": "tool",
+      "description": "Interpreter used to detect certain classes of undefined behavior and invalid operations in Rust programs.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "aeneas",
+      "name": "Aeneas",
+      "entity_type": "tool",
+      "description": "Research tool for translating or reasoning about Rust programs for verification.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "creusot",
+      "name": "Creusot",
+      "entity_type": "tool",
+      "description": "Deductive verification tool for Rust programs.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "prusti",
+      "name": "Prusti",
+      "entity_type": "tool",
+      "description": "Verification tool using specifications and verification conditions for Rust.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "verus",
+      "name": "Verus",
+      "entity_type": "tool",
+      "description": "Verification system for Rust programs using a specification-oriented approach.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rust_foundation",
+      "name": "Rust Foundation",
+      "entity_type": "community_organization",
+      "description": "Nonprofit organization supporting Rust project infrastructure, trademarks, and ecosystem sustainability.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "graydon_hoare",
+      "name": "Graydon Hoare",
+      "entity_type": "people",
+      "description": "Creator of Rust, who began it as a personal project in 2006.",
+      "properties": {},
+      "tags": [
+        "language-concept"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "mozilla",
+      "name": "Mozilla",
+      "entity_type": "community_organization",
+      "description": "Organization that sponsored Rust development beginning in 2009.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "rust_team",
+      "name": "Rust Team",
+      "entity_type": "community_organization",
+      "description": "Project teams that maintain the language, compiler, libraries, tools, infrastructure, and community processes.",
+      "properties": {},
+      "tags": [
+        "ecosystem"
+      ],
+      "stability": "stable",
+      "since": null,
+      "source_ids": [
+        "source.rust.wikipedia_user_supplied"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel.0001",
+      "source": "rust",
+      "target": "performance",
+      "predicate": "emphasizes",
+      "description": "Rust is designed to support high-performance compiled software.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0002",
+      "source": "rust",
+      "target": "type_safety",
+      "predicate": "emphasizes",
+      "description": "Rust's static type system contributes to type safety.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0003",
+      "source": "rust",
+      "target": "memory_safety",
+      "predicate": "emphasizes",
+      "description": "Rust's ownership and borrowing rules are central to safe memory access.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0004",
+      "source": "rust",
+      "target": "data_race_freedom",
+      "predicate": "emphasizes",
+      "description": "Safe concurrency relies on type and aliasing constraints.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0005",
+      "source": "rust",
+      "target": "multi_paradigm",
+      "predicate": "emphasizes",
+      "description": "Rust supports multiple programming paradigms.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0006",
+      "source": "ownership",
+      "target": "borrow_checker",
+      "predicate": "checked_by",
+      "description": "The borrow checker enforces ownership and borrowing constraints.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0007",
+      "source": "let",
+      "target": "shadowing",
+      "predicate": "enables",
+      "description": "A new let binding can reuse a name to shadow an earlier binding.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0008",
+      "source": "let",
+      "target": "mut",
+      "predicate": "related_to",
+      "description": "let bindings are immutable unless mut is specified.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0009",
+      "source": "block_expression",
+      "target": "semicolon",
+      "predicate": "constrains",
+      "description": "A trailing semicolon suppresses an expression's value in statement position.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0010",
+      "source": "if_expression",
+      "target": "bool",
+      "predicate": "requires",
+      "description": "if conditions evaluate to bool.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0011",
+      "source": "match_expression",
+      "target": "pattern_matching",
+      "predicate": "implements",
+      "description": "match applies pattern matching to a value.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0012",
+      "source": "if_let",
+      "target": "pattern_matching",
+      "predicate": "implements",
+      "description": "if let performs a convenient partial pattern match.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0013",
+      "source": "for",
+      "target": "iterator_trait",
+      "predicate": "uses",
+      "description": "for loops consume values through iteration.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0014",
+      "source": "range",
+      "target": "iterator_trait",
+      "predicate": "implements",
+      "description": "Standard range types implement iteration where applicable.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0015",
+      "source": "iterator_adapters",
+      "target": "iterator_trait",
+      "predicate": "uses",
+      "description": "Adapters transform iterator pipelines.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0016",
+      "source": "map",
+      "target": "iterator_adapters",
+      "predicate": "is_a",
+      "description": "map is an iterator adapter.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0017",
+      "source": "filter",
+      "target": "iterator_adapters",
+      "predicate": "is_a",
+      "description": "filter is an iterator adapter.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0018",
+      "source": "loop",
+      "target": "break",
+      "predicate": "uses",
+      "description": "break exits a loop and may provide its result value.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0019",
+      "source": "rust",
+      "target": "ownership",
+      "predicate": "uses",
+      "description": "Rust uses ownership to manage values and resources.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0020",
+      "source": "ownership",
+      "target": "move_semantics",
+      "predicate": "includes",
+      "description": "Ownership transfer commonly occurs through moves.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0021",
+      "source": "ownership",
+      "target": "borrowing",
+      "predicate": "contrasts_with",
+      "description": "Borrowing provides access without transferring ownership.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0022",
+      "source": "borrowing",
+      "target": "reference",
+      "predicate": "produces",
+      "description": "Borrowing is represented through references.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0023",
+      "source": "borrowing",
+      "target": "mutable_reference",
+      "predicate": "produces",
+      "description": "Exclusive mutable borrowing is represented through &mut T.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0024",
+      "source": "shared_borrow",
+      "target": "reference",
+      "predicate": "uses",
+      "description": "Shared borrows are represented by shared references.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0025",
+      "source": "exclusive_borrow",
+      "target": "mutable_reference",
+      "predicate": "uses",
+      "description": "Mutable borrows are represented by mutable references.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0026",
+      "source": "borrow_checker",
+      "target": "lifetime",
+      "predicate": "checks_at_compile_time",
+      "description": "Borrow checking validates reference validity across lifetimes.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0027",
+      "source": "lifetime_parameter",
+      "target": "lifetime",
+      "predicate": "describes",
+      "description": "Named lifetime parameters express relationships between reference validity regions.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0028",
+      "source": "lifetime_elision",
+      "target": "lifetime_parameter",
+      "predicate": "is_alternative_to",
+      "description": "Lifetime elision omits annotations where inference rules determine the relationships.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0029",
+      "source": "nll",
+      "target": "borrow_checker",
+      "predicate": "supplies_behavior_to",
+      "description": "Non-lexical lifetimes improve precision of borrow-checking regions.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0030",
+      "source": "drop",
+      "target": "raii",
+      "predicate": "implements",
+      "description": "Drop and scope-based destruction support RAII resource management.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0031",
+      "source": "raii",
+      "target": "ownership",
+      "predicate": "depends_on",
+      "description": "RAII relies on ownership and deterministic destruction.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0032",
+      "source": "unsafe_keyword",
+      "target": "unsafe_rust",
+      "predicate": "marks",
+      "description": "unsafe marks blocks, functions, or operations with additional obligations.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0033",
+      "source": "unsafe_rust",
+      "target": "undefined_behavior",
+      "predicate": "may_cause",
+      "description": "Violating unsafe invariants can cause undefined behavior.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0034",
+      "source": "raw_const_pointer",
+      "target": "unsafe_rust",
+      "predicate": "requires",
+      "description": "Dereferencing a raw pointer requires unsafe.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0035",
+      "source": "raw_mut_pointer",
+      "target": "unsafe_rust",
+      "predicate": "requires",
+      "description": "Dereferencing a raw pointer requires unsafe.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0036",
+      "source": "option",
+      "target": "error_handling",
+      "predicate": "supports",
+      "description": "Option represents absence explicitly.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0037",
+      "source": "result",
+      "target": "error_handling",
+      "predicate": "supports",
+      "description": "Result represents success or recoverable failure explicitly.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0038",
+      "source": "question_mark",
+      "target": "result",
+      "predicate": "uses",
+      "description": "The ? operator propagates compatible Result errors.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0039",
+      "source": "question_mark",
+      "target": "option",
+      "predicate": "uses",
+      "description": "The ? operator can propagate None in compatible Option contexts.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0040",
+      "source": "unwrap",
+      "target": "panic",
+      "predicate": "may_cause",
+      "description": "unwrap panics for Err or None.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0041",
+      "source": "panic",
+      "target": "error_handling",
+      "predicate": "contrasts_with",
+      "description": "panic is generally for unrecoverable failures rather than ordinary recoverable error propagation.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0042",
+      "source": "generic",
+      "target": "trait_bound",
+      "predicate": "constrained_by",
+      "description": "Generic parameters may be constrained by trait bounds.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0043",
+      "source": "where_clause",
+      "target": "trait_bound",
+      "predicate": "expresses",
+      "description": "where clauses express generic constraints.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0044",
+      "source": "impl",
+      "target": "trait",
+      "predicate": "implements",
+      "description": "An impl block may provide a trait implementation.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0045",
+      "source": "trait_object",
+      "target": "dynamic_dispatch",
+      "predicate": "dispatches_via",
+      "description": "Trait objects normally use dynamic dispatch.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0046",
+      "source": "static_dispatch",
+      "target": "generic",
+      "predicate": "uses",
+      "description": "Generic calls commonly use monomorphization and static dispatch.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0047",
+      "source": "dynamic_dispatch",
+      "target": "trait_object",
+      "predicate": "uses",
+      "description": "Trait objects provide runtime polymorphism.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0048",
+      "source": "send",
+      "target": "thread",
+      "predicate": "constrains",
+      "description": "Send bounds govern whether values may safely move between threads.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0049",
+      "source": "sync",
+      "target": "thread",
+      "predicate": "constrains",
+      "description": "Sync bounds govern whether shared references may safely cross threads.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0050",
+      "source": "arc",
+      "target": "thread",
+      "predicate": "supports",
+      "description": "Arc enables shared ownership across threads when contained types meet thread-safety bounds.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0051",
+      "source": "rc",
+      "target": "thread",
+      "predicate": "contrasts_with",
+      "description": "Rc is not intended for cross-thread shared ownership.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0052",
+      "source": "mutex",
+      "target": "mutex_guard",
+      "predicate": "produces",
+      "description": "Locking a Mutex produces a guard that releases the lock on drop.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0053",
+      "source": "cell",
+      "target": "interior_mutability",
+      "predicate": "implements",
+      "description": "Cell provides a form of interior mutability.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0054",
+      "source": "refcell",
+      "target": "interior_mutability",
+      "predicate": "implements",
+      "description": "RefCell checks borrowing rules at runtime.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0055",
+      "source": "vec",
+      "target": "iterator_trait",
+      "predicate": "supports",
+      "description": "Vectors can be iterated over by reference or by value.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0056",
+      "source": "core_crate",
+      "target": "no_std",
+      "predicate": "supports",
+      "description": "core is available in no_std programs.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0057",
+      "source": "alloc_crate",
+      "target": "no_std",
+      "predicate": "supports",
+      "description": "alloc can be used in no_std contexts when allocation is configured.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0058",
+      "source": "std_crate",
+      "target": "core_crate",
+      "predicate": "depends_on",
+      "description": "std builds on core functionality.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0059",
+      "source": "std_crate",
+      "target": "alloc_crate",
+      "predicate": "depends_on",
+      "description": "std includes allocation-backed facilities.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0060",
+      "source": "cargo",
+      "target": "cargo_toml",
+      "predicate": "uses",
+      "description": "Cargo reads Cargo.toml manifests.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0061",
+      "source": "cargo",
+      "target": "cargo_lock",
+      "predicate": "uses",
+      "description": "Cargo uses Cargo.lock to preserve resolved dependency versions when present.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0062",
+      "source": "cargo",
+      "target": "rustc",
+      "predicate": "uses",
+      "description": "Cargo invokes rustc to compile package targets.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0063",
+      "source": "rustup",
+      "target": "rustc",
+      "predicate": "manages",
+      "description": "rustup installs and selects rustc toolchains.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0064",
+      "source": "rustfmt",
+      "target": "cargo",
+      "predicate": "integrates_with",
+      "description": "rustfmt can be invoked through Cargo.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0065",
+      "source": "clippy",
+      "target": "cargo",
+      "predicate": "integrates_with",
+      "description": "Clippy is commonly run through Cargo.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0066",
+      "source": "rust_analyzer",
+      "target": "rustc",
+      "predicate": "related_to",
+      "description": "rust-analyzer uses project and compiler knowledge to provide IDE analysis.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0067",
+      "source": "rustc",
+      "target": "ast",
+      "predicate": "produces",
+      "description": "rustc parses source into syntax structures such as an AST.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0068",
+      "source": "ast",
+      "target": "ir",
+      "predicate": "lowers_to",
+      "description": "Source syntax is lowered through compiler intermediate representations.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0069",
+      "source": "ir",
+      "target": "llvm",
+      "predicate": "consumes",
+      "description": "The LLVM backend consumes compiler representations to generate machine code.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0070",
+      "source": "llvm",
+      "target": "linker",
+      "predicate": "produces",
+      "description": "Backend output is linked into final artifacts.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0071",
+      "source": "edition",
+      "target": "crate",
+      "predicate": "governs",
+      "description": "A crate selects an edition that controls selected language interpretation rules.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0072",
+      "source": "stable_channel",
+      "target": "rustc",
+      "predicate": "is_a",
+      "description": "Stable is a Rust compiler release channel.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0073",
+      "source": "beta_channel",
+      "target": "rustc",
+      "predicate": "is_a",
+      "description": "Beta is a Rust compiler release channel.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0074",
+      "source": "nightly_channel",
+      "target": "rustc",
+      "predicate": "is_a",
+      "description": "Nightly is a Rust compiler release channel.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0075",
+      "source": "ffi",
+      "target": "extern_c",
+      "predicate": "uses",
+      "description": "Rust FFI commonly declares C ABI boundaries with extern C.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0076",
+      "source": "ffi",
+      "target": "repr_c",
+      "predicate": "uses",
+      "description": "repr(C) is commonly used for compatible struct or enum layout across FFI boundaries.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0077",
+      "source": "ffi",
+      "target": "unsafe_rust",
+      "predicate": "related_to",
+      "description": "Calling foreign code and upholding foreign contracts may require unsafe blocks or unsafe declarations.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0078",
+      "source": "async_await",
+      "target": "future",
+      "predicate": "produces",
+      "description": "An async function produces a future.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0079",
+      "source": "future",
+      "target": "executor",
+      "predicate": "requires",
+      "description": "A future normally needs an executor or caller to poll it to completion.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0080",
+      "source": "tokio",
+      "target": "executor",
+      "predicate": "implements",
+      "description": "Tokio provides runtime and executor facilities.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0081",
+      "source": "thread",
+      "target": "channel",
+      "predicate": "interoperates_with",
+      "description": "Channels are commonly used to communicate between concurrent threads or tasks.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0082",
+      "source": "atomic",
+      "target": "thread",
+      "predicate": "supports",
+      "description": "Atomics provide low-level synchronization across concurrent execution.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0083",
+      "source": "wasm",
+      "target": "rust",
+      "predicate": "supports",
+      "description": "Rust can target WebAssembly when the selected target and dependencies support it.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0084",
+      "source": "embedded",
+      "target": "no_std",
+      "predicate": "often_uses",
+      "description": "Embedded targets commonly use no_std to reduce platform assumptions.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0085",
+      "source": "miri",
+      "target": "unsafe_rust",
+      "predicate": "validates",
+      "description": "Miri can detect certain invalid operations and undefined-behavior patterns.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0086",
+      "source": "kani",
+      "target": "formal_verification",
+      "predicate": "is_a",
+      "description": "Kani is a bounded model checker used for Rust verification.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0087",
+      "source": "aeneas",
+      "target": "formal_verification",
+      "predicate": "is_a",
+      "description": "Aeneas supports research on translating/reasoning about Rust programs.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0088",
+      "source": "creusot",
+      "target": "formal_verification",
+      "predicate": "is_a",
+      "description": "Creusot supports deductive verification of Rust programs.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0089",
+      "source": "prusti",
+      "target": "formal_verification",
+      "predicate": "is_a",
+      "description": "Prusti supports specification-driven verification of Rust programs.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0090",
+      "source": "verus",
+      "target": "formal_verification",
+      "predicate": "is_a",
+      "description": "Verus supports formal verification of Rust programs.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0091",
+      "source": "graydon_hoare",
+      "target": "rust",
+      "predicate": "related_to",
+      "description": "Graydon Hoare began Rust as a personal project in 2006.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0092",
+      "source": "mozilla",
+      "target": "rust",
+      "predicate": "supports",
+      "description": "Mozilla officially sponsored Rust development beginning in 2009.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0093",
+      "source": "rust_foundation",
+      "target": "rust",
+      "predicate": "supports",
+      "description": "The Rust Foundation supports project infrastructure and ecosystem sustainability.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0094",
+      "source": "rust_team",
+      "target": "rust",
+      "predicate": "supports",
+      "description": "Rust project teams maintain the language and its ecosystem.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    },
+    {
+      "id": "rel.0095",
+      "source": "rust",
+      "target": "cargo",
+      "predicate": "uses",
+      "description": "Cargo is the standard build and package-management tool for Rust projects.",
+      "directionality": "directed",
+      "properties": {},
+      "confidence": "high"
+    }
+  ],
+  "taxonomy": {
+    "top_level_domains": [
+      "language_identity_and_design",
+      "syntax_and_control_flow",
+      "primitive_and_compound_types",
+      "ownership_borrowing_and_lifetimes",
+      "traits_generics_and_polymorphism",
+      "error_handling",
+      "standard_library",
+      "concurrency_and_async",
+      "macros_and_attributes",
+      "compiler_and_codegen",
+      "cargo_and_package_ecosystem",
+      "ffi_and_interoperability",
+      "targets_and_platforms",
+      "safety_and_verification",
+      "history_and_governance"
+    ],
+    "relationship_predicates": [
+      "borrows_from",
+      "can_bypass",
+      "checked_by",
+      "checks_at_compile_time",
+      "checks_at_runtime",
+      "compiled_by",
+      "constrains",
+      "consumes",
+      "contrasts_with",
+      "depends_on",
+      "desugars_to",
+      "dispatches_via",
+      "distributes",
+      "drops",
+      "enables",
+      "example_of",
+      "exposes",
+      "formats",
+      "governed_by",
+      "implements",
+      "influenced_by",
+      "influences",
+      "interoperates_with",
+      "is_a",
+      "is_alternative_to",
+      "is_composed_of",
+      "links_with",
+      "lowers_to",
+      "manages",
+      "may_cause",
+      "owns",
+      "part_of",
+      "prevents",
+      "produces",
+      "provides_abstraction_for",
+      "related_to",
+      "requires",
+      "resolves",
+      "runs_on",
+      "serializes",
+      "supplies_behavior_to",
+      "supports",
+      "uses",
+      "validates"
+    ],
+    "id_conventions": "Use lowercase snake_case IDs with stable semantic names. Relationship IDs use rel.NNNN. IDs should remain stable across enrichment; rename through explicit aliases or migration maps.",
+    "validation_rules": [
+      "Every relationship source and target must match an entities[].id.",
+      "Entity IDs must be unique.",
+      "Relationship IDs must be unique.",
+      "Use confidence=inferred for modeled relationships not explicitly asserted by a source.",
+      "Do not interpret unsafe as automatic undefined behavior; undefined behavior arises when required safety invariants are violated.",
+      "Do not treat all Rust references as runtime reference-counted pointers.",
+      "Mark compiler-version-specific, edition-specific, platform-specific, and nightly-only facts explicitly.",
+      "Keep source claims separate from explanatory inferences."
+    ]
+  }
+}
