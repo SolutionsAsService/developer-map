@@ -131,3 +131,57 @@ bridge('wifi-physical','wifi_graph:ieee80211','OSI-Model:layer_1','specifies_lay
 bridge('wifi-link','wifi_graph:ieee80211','OSI-Model:layer_2','specifies_mac_sublayer','IEEE 802.11 specifies medium access control, part of the data-link layer, alongside separate physical-layer specifications.','MAC sublayer, not the whole OSI layer and not IP routing.',['https://www.ieee802.org/11/abt80211.html'],'IEEE 802.11 scope: MAC and PHY specifications');
 bridge('lua-c-embedding','Lua:lua_c_api','c','provides_embedding_api_for','The Lua manual defines a C API by which a host program exchanges values with Lua and invokes Lua functions. An embedding interface is not a claim that every Lua application is written in C.','Lua 5.4 C API.',['https://www.lua.org/manual/5.4/manual.html'],'4 The Application Program Interface');
 bridge('www-uses-http','world_wide_web:internet.world_wide_web','Ruby_on_Rails:http','uses_protocol','The World Wide Web runs over HTTP as its application protocol; the Web concept and the HTTP protocol family remain distinct reviewed identities.','Web-to-protocol direction; HTTP also serves non-Web clients.',['https://www.w3.org/TR/webarch/'],'Architecture of the World Wide Web, Volume One');
+
+// 2026-10-20 upload: reviewed identities connecting the new security and
+// cryptocurrency sources to the protocol, language and hardware concepts they
+// name. Each member was checked in its source record; same-spelling records
+// with narrower scope (Bitcoin networking terms, Git object SHA-1, C switch
+// statement, DoS resource capacities) stay source-scoped below.
+const extend = (id, members) => aliasGroups.find(group => group.id === id).members.push(...members);
+extend('c', ['bitcoin:c_language']);
+extend('cpp', ['bitcoin:cpp']);
+extend('linux_os', ['gayfemboy:linux', 'mirai:linux']);
+extend('TCP_IP:tcp', ['denial_of_service:tcp', 'gayfemboy:tcp']);
+extend('Ruby_on_Rails:http', ['denial_of_service:http', 'mirai:http']);
+extend('IPv6:ipv6', ['denial_of_service:ipv6']);
+extend('Router_Graph:router', ['denial_of_service:router']);
+extend('Network_Switch:network_switch', ['denial_of_service:switch']);
+extend('Firewall:firewall', ['denial_of_service:firewall']);
+
+reviewed('udp', 'UDP', ['TCP_IP:udp', 'Internet_Protocol:udp', 'denial_of_service:udp', 'gayfemboy:udp'], 'All four records identify the User Datagram Protocol, the connectionless datagram transport; protocol-version and OSI layer mentions remain in variants.');
+reviewed('icmp', 'ICMP', ['TCP_IP:icmp', 'Internet_Protocol:icmp', 'denial_of_service:icmp', 'gayfemboy:icmp'], 'All four records identify the Internet Control Message Protocol carried with IP.');
+reviewed('dns', 'DNS', ['TCP_IP:dns', 'Internet_Protocol:dns', 'botnets:dns', 'denial_of_service:dns', 'mirai:dns'], 'All five records identify the Domain Name System naming/lookup service; Kubernetes cluster DNS and DNS-based attacks remain separate scoped records.');
+reviewed('telnet', 'Telnet', ['TCP_IP:telnet', 'botnets:telnet', 'mirai:telnet'], 'All three records identify the Telnet remote-terminal protocol that Mirai-class botnets scan.');
+reviewed('ssh', 'SSH', ['TCP_IP:ssh', 'botnets:ssh'], 'Both records identify the Secure Shell remote-access protocol; key-exchange and git-transport mentions remain scoped.');
+reviewed('ipv4', 'IPv4', ['Internet_Protocol:ipv4', 'IPv6:ipv4', 'TCP_IP:ipv4', 'mirai:ipv4'], 'All four records identify Internet Protocol version 4 with 32-bit addressing.');
+reviewed('iot', 'Internet of Things', ['OS:iot', 'botnets:iot', 'gayfemboy:iot', 'mirai:iot'], 'All four records identify the Internet of Things device domain; Mirai-family targets and asset categories remain separate records.');
+reviewed('arm', 'ARM architecture', ['Docker:arm', 'gayfemboy:arm', 'mirai:arm'], 'All three records identify the ARM processor architecture, including as a Mirai-family build target.');
+reviewed('github', 'GitHub', ['Python:github', 'mirai:github'], 'Both records identify the GitHub source-hosting service; the Mirai record documents the public source release.');
+reviewed('redis', 'Redis', ['Lua:redis', 'gayfemboy:redis'], 'Both records identify the Redis key-value server; the Gayfemboy record describes abuse of unauthenticated Redis instances.');
+reviewed('selinux', 'SELinux', ['sandbox:selinux', 'gayfemboy:selinux'], 'Both records identify the SELinux Linux security module; the Gayfemboy record lists it among target-hardening controls.');
+reviewed('proof_of_work', 'Proof of work', ['cryptographichash:proof_of_work', 'dsa:proof_of_work', 'bitcoin:proof_of_work', 'proof_of_work:proof_of_work'], 'All four records identify the proof-of-work consensus/anti-abuse mechanism; Bitcoin-specific difficulty and reward parameters remain separate records.');
+reviewed('hashcash', 'Hashcash', ['cryptographichash:hashcash', 'dsa:hashcash', 'bitcoin:hashcash', 'proof_of_work:hashcash'], 'All four records identify the Hashcash proof-of-work system.');
+reviewed('bitcoin', 'Bitcoin', ['digital_signature:bitcoin', 'public_key_cryptography:bitcoin', 'bitcoin:bitcoin', 'proof_of_work:bitcoin'], 'All four records identify the Bitcoin cryptocurrency network; Bitcoin-scoped blocks, transactions, nodes and wallets remain separate records.');
+reviewed('sha256', 'SHA-256', ['cryptographichash:sha256', 'dsa:sha256', 'bittorrent:concept:sha256', 'torrentfile:concept:sha256', 'bitcoin:sha256', 'proof_of_work:sha256'], 'All six records identify the SHA-256 hash algorithm; BitTorrent v2 and Bitcoin usage assertions remain as edges, not identities.');
+reviewed('digital_signature', 'Digital signature', ['digital_signature:digital_signature', 'public_key_cryptography:digital_signature', 'bitcoin:digital_signature'], 'All three records identify the digital-signature primitive; specific schemes such as ECDSA remain separate.');
+reviewed('public_key', 'Public key', ['public_key_cryptography:public_key', 'bitcoin:public_key'], 'Both records identify the openly distributed asymmetric public key; the digital-signature source\'s narrower verification-key record remains separate.');
+reviewed('private_key', 'Private key', ['public_key_cryptography:private_key', 'bitcoin:private_key'], 'Both records identify the secret asymmetric private key; the digital-signature source\'s narrower signing-key record remains separate.');
+reviewed('ecdsa', 'ECDSA', ['public_key_cryptography:ecdsa', 'digital_signature:ecdsa', 'bitcoin:ecdsa'], 'All three records identify the Elliptic Curve Digital Signature Algorithm.');
+reviewed('cryptographic_hash_function', 'Cryptographic hash function', ['cryptographichash:cryptographic_hash_function', 'dsa:cryptographic_hash_function', 'digital_signature:hash_function', 'bitcoin:hash_function'], 'All four records identify the general cryptographic hash-function primitive; specific algorithms such as SHA-1 and SHA-256 remain separate.');
+reviewed('scrypt', 'scrypt', ['cryptographichash:scrypt', 'dsa:scrypt', 'proof_of_work:scrypt'], 'All three records identify the memory-hard scrypt password KDF / proof-of-work algorithm.');
+reviewed('sybil_attack', 'Sybil attack', ['DHT:concept:sybil_attack', 'tor:concept:sybil_attack', 'bitcoin:sybil_attack'], 'All three records identify the Sybil multiple-identity attack pattern.');
+reviewed('byzantine_fault_tolerance', 'Byzantine fault tolerance', ['DHT:concept:byzantine_fault_tolerance', 'bitcoin:byzantine_fault_tolerance'], 'Both records identify Byzantine fault tolerance for arbitrary/malicious failures.');
+reviewed('elliptic_curve_cryptography', 'Elliptic-curve cryptography', ['public_key_cryptography:ecc', 'bitcoin:elliptic_curve'], 'Both records identify elliptic-curve public-key cryptography; ECDSA is a specific scheme within it.');
+reviewed('distributed_system', 'Distributed system', ['concurrent_computing:distributed_system', 'bitcoin:distributed_system'], 'Both records identify the general distributed-system concept; API-style and object-system records remain scoped.');
+reviewed('denial_of_service', 'Denial-of-service attack', ['cryptographichash:denial_of_service', 'dsa:denial_of_service', 'bittorrent:concept:denial_of_service', 'denial_of_service:denial_of_service_attack'], 'All four records identify the availability-disrupting denial-of-service attack category; DDoS and specific techniques remain separate records.');
+reviewed('ddos', 'Distributed denial-of-service (DDoS)', ['botnets:ddos', 'denial_of_service:ddos', 'gayfemboy:ddos'], 'All three records identify the distributed, multi-source denial-of-service attack category.');
+reviewed('malware', 'Malware', ['Firewall:malware', 'botnets:malware'], 'Both records identify the malicious-software category; VM-threat and sandbox-analysis variants remain scoped.');
+reviewed('botnet', 'Botnet', ['botnets:botnet', 'denial_of_service:botnet', 'gayfemboy:botnet', 'mirai:botnet'], 'All four records identify the remotely controlled network of compromised devices; individual botnet families and historical botnets remain separate records.');
+reviewed('mirai', 'Mirai', ['botnets:mirai', 'denial_of_service:mirai', 'gayfemboy:mirai', 'mirai:mirai'], 'All four records identify the Mirai IoT/Linux botnet malware family; specific variants such as Satori remain separate records.');
+reviewed('availability', 'Availability', ['Cloud_Computing:availability', 'denial_of_service:availability'], 'Both records identify service availability, the security property DoS attacks target.');
+reviewed('osi_model', 'OSI model', ['Network_Switch:osi_model', 'denial_of_service:osi_model'], 'Both records identify the seven-layer OSI networking reference model; the TCP/IP-source record typed reference_model is protected from merging by the claim/reference safeguard.');
+
+bridge('mirai-agent-written-c','mirai','c','written_in','The Mirai source attributes identify C as the device-agent implementation language. This describes the named malware component, not a claim about the Go controller or every Mirai variant.','Mirai agent as documented in the source; not the controller and not derived variants.',['https://github.com/jgamblin/Mirai-Source-Code'],'Mirai source code attribution');
+bridge('mirai-controller-written-go','mirai','go','written_in','The Mirai source attributes identify Go as the command-and-control controller implementation language. This describes the named controller component, not a claim about the C agent or every Mirai variant.','Mirai controller as documented in the source; not the device agent and not derived variants.',['https://github.com/jgamblin/Mirai-Source-Code'],'Mirai source code attribution');
+bridge('pow-deters-dos','proof_of_work','denial_of_service','helps_deter','Proof-of-work systems impose a computational cost on requesters, which the source documents as a deterrence mechanism against denial-of-service abuse; it is a mitigation, not a prevention guarantee.','Cost-asymmetry deterrence; does not prevent resourced attackers.',['https://www.hashcash.org/'],'Hashcash: A Denial of Service Counter-Measure');
+bridge('dos-targets-availability','denial_of_service','availability','targets','Denial-of-service attacks are defined by disrupting the availability security property; the CIA-triad scope keeps availability distinct from confidentiality and integrity.','Availability dimension of the CIA triad.',['https://www.cisa.gov/news-events/news/understanding-denial-service-attacks'],'CISA: Understanding Denial-of-Service Attacks');
