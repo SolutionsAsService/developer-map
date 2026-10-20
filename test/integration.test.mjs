@@ -27,7 +27,7 @@ test('all source input hashes and exact manifest mappings preserve source record
     for (const record of source.claims) assert.ok(byId.get(record.derivedId).variants.some(v => JSON.stringify(v.record) === JSON.stringify(pointer(record.pointer)) || v.claims.some(c => JSON.stringify(c) === JSON.stringify(pointer(record.pointer)))));
     nodes += source.nodes.length; edges += source.edges.length; claims += source.claims.length; paths += source.paths.length;
   }
-  assert.deepEqual([nodes, edges, claims, paths], [14597, 17744, 526, 522]);
+  assert.deepEqual([nodes, edges, claims, paths], [15618, 19009, 526, 522]);
   assert.deepEqual(manifest.derivedNodeIds, atlas.nodes.map(n => n.id));
   assert.deepEqual(manifest.derivedEdgeIds, atlas.edges.map(e => e.id));
 });
@@ -68,7 +68,7 @@ test('source evidence connects new domains without invented editorial repairs', 
     assert.equal(edge.target, id(graph + ':' + edge.record.target));
     assert.equal(edge.provenance, 'source');
   }
-  assert.equal(atlas.edges.filter(e => e.curated).length, 20);
+  assert.equal(atlas.edges.filter(e => e.curated).length, 24);
   assert.equal(atlas.edges.find(e => e.id === 'Python:relationships:310').target, atlas.edges.find(e => e.id === 'virtual_machine:relationships:33').source);
   assert.equal(atlas.edges.find(e => e.id === 'system_image:relationships:3').record.conditions, 'All relevant state must be on disk.');
 });

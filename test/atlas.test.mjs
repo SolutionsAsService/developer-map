@@ -11,9 +11,9 @@ const byId = new Map(atlas.nodes.map(node => [node.id, node]));
 
 test('published atlas matches regenerated source data', () => {
   assert.deepEqual(published, atlas);
-  assert.equal(atlas.documents.length, 74);
-  assert.equal(atlas.summary.sourceRelationships, 17744);
-  assert.equal(atlas.summary.bridges, 20);
+  assert.equal(atlas.documents.length, 80);
+  assert.equal(atlas.summary.sourceRelationships, 19009);
+  assert.equal(atlas.summary.bridges, 24);
   assert.equal(atlas.summary.unresolved, 0);
   assert.equal(atlas.paths.length, 522);
   assert.equal(byId.size, atlas.nodes.length);
@@ -47,7 +47,7 @@ test('collisions remain source-scoped and editorial relationships are labeled', 
   assert.ok(claims.every(node => node.id.startsWith(`${node.topics[0]}:`)));
   assert.ok(atlas.nodes.some(node => node.topics.length > 1));
   const bridges = atlas.edges.filter(edge => edge.curated);
-  assert.equal(bridges.length, 20);
+  assert.equal(bridges.length, 24);
   assert.ok(bridges.every(edge => edge.provenance === 'editorial' && edge.evidenceUrls.length > 0 && edge.rationale));
   assert.match(bridges[0].record.provenance, /not an original source edge/i);
   assert.ok(atlas.edges.filter(edge => !edge.curated).every(edge => edge.document !== 'curated'));
