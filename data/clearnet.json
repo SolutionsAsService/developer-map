@@ -1,0 +1,995 @@
+{
+  "schema_name": "Clearnet Networking — Full Detail Knowledge Graph",
+  "schema_version": "1.0.0",
+  "record_type": "topic_knowledge_graph",
+  "topic": {
+    "canonical_name": "Clearnet (networking)",
+    "aliases": [
+      "clearnet",
+      "clear net"
+    ],
+    "domains": [
+      "computer_networking",
+      "internet_terminology",
+      "web_architecture",
+      "privacy_and_security"
+    ],
+    "summary": "A machine-readable knowledge graph covering clearnet terminology, its relationship to the Internet and World Wide Web, surface/deep/dark web distinctions, search indexing, IP-address exposure, anonymity networks, privacy considerations, technical context, and source provenance."
+  },
+  "provenance": {
+    "primary_input": "User-supplied text of Wikipedia article Clearnet (networking)",
+    "primary_url": "https://en.wikipedia.org/wiki/Clearnet_(networking)",
+    "article_last_edited_as_supplied": "2026-08-29T17:30:00Z",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "method": "Core claims are attributed to the supplied article; additional networking and privacy explanations are labeled background or external_reference.",
+    "limitations": [
+      "The supplied Wikipedia page is marked as a stub and provides limited technical detail.",
+      "The three references in the supplied article are historical, so they should not be treated as current operational-security guidance.",
+      "An IP address does not by itself prove the identity of a natural person.",
+      "Clearnet is used inconsistently: broad usage refers to the public Internet, while narrow usage refers to the indexed surface web."
+    ]
+  },
+  "entities": [
+    {
+      "id": "concept:clearnet",
+      "type": "networking_concept",
+      "name": "Clearnet",
+      "description": "A term typically referring to the publicly accessible Internet; sometimes used as a synonym for the surface web.",
+      "attributes": {
+        "usage_variation": "Broad usage means publicly accessible Internet; narrower usage means indexed surface web.",
+        "anonymity": "Ordinary clearnet browsing is not inherently anonymous."
+      }
+    },
+    {
+      "id": "concept:internet",
+      "type": "network",
+      "name": "Internet",
+      "description": "Global network infrastructure supporting distributed services and applications."
+    },
+    {
+      "id": "concept:world_wide_web",
+      "type": "distributed_service",
+      "name": "World Wide Web",
+      "description": "A distributed information service operating over the Internet; it is not synonymous with the Internet."
+    },
+    {
+      "id": "concept:surface_web",
+      "type": "web_scope",
+      "name": "Surface web",
+      "description": "Web content indexed and retrievable through traditional search engines.",
+      "attributes": {
+        "criterion": "Search-engine indexability",
+        "caveat": "Indexability is not the same as public accessibility."
+      }
+    },
+    {
+      "id": "concept:deep_web",
+      "type": "web_scope",
+      "name": "Deep web",
+      "description": "Content not indexed by conventional search engines, whether or not it is publicly accessible.",
+      "attributes": {
+        "examples": [
+          "database portals requiring searches",
+          "interactive sites requiring additional user input",
+          "authenticated portals"
+        ],
+        "not_synonymous_with": "dark web"
+      }
+    },
+    {
+      "id": "concept:darknet",
+      "type": "networking_concept",
+      "name": "Darknet",
+      "description": "A network or set of services commonly reached using specialized software or configurations and often associated with anonymity networks."
+    },
+    {
+      "id": "concept:dark_web",
+      "type": "web_scope",
+      "name": "Dark web",
+      "description": "Web content or services hosted on darknets or anonymity networks; not synonymous with all deep-web content."
+    },
+    {
+      "id": "network:tor",
+      "type": "anonymity_network",
+      "name": "Tor",
+      "description": "An anonymity network that routes traffic through relays to reduce the ability to link users to destinations.",
+      "attributes": {
+        "limits": [
+          "does not guarantee perfect anonymity",
+          "endpoint compromise, account logins, misconfiguration, and traffic correlation can affect privacy"
+        ]
+      }
+    },
+    {
+      "id": "concept:anonymity_service",
+      "type": "privacy_technology",
+      "name": "Anonymity service",
+      "description": "A service or network intended to reduce linkability between a user, their network address, and their destination."
+    },
+    {
+      "id": "concept:ip_address",
+      "type": "network_identifier",
+      "name": "IP address",
+      "description": "A network-layer address used for Internet Protocol communication.",
+      "attributes": {
+        "privacy_caveat": "An observed address may identify a shared gateway, proxy, VPN, carrier NAT, or network endpoint rather than a particular person."
+      }
+    },
+    {
+      "id": "concept:client_metadata",
+      "type": "data_category",
+      "name": "Client-transmitted data and metadata",
+      "description": "Data sent or exposed during client-server communication, potentially including request headers, cookies, browser characteristics, and account identifiers."
+    },
+    {
+      "id": "concept:website",
+      "type": "web_resource",
+      "name": "Website",
+      "description": "A collection of related web resources served by a web server or application infrastructure."
+    },
+    {
+      "id": "concept:search_engine",
+      "type": "information_retrieval_system",
+      "name": "Traditional search engine",
+      "description": "A system that collects web content, creates an index, and retrieves ranked results in response to queries."
+    },
+    {
+      "id": "concept:indexing",
+      "type": "information_retrieval_process",
+      "name": "Search-engine indexing",
+      "description": "Representing collected content in a searchable index; crawling and indexing are distinct processes and not all content is indexed."
+    },
+    {
+      "id": "concept:public_accessibility",
+      "type": "access_property",
+      "name": "Public accessibility",
+      "description": "The ability to reach a resource without specialized network membership or credentials."
+    },
+    {
+      "id": "concept:privacy",
+      "type": "security_property",
+      "name": "Online privacy",
+      "description": "The ability to limit collection, linkage, retention, and disclosure of information about online activity."
+    },
+    {
+      "id": "concept:encryption",
+      "type": "security_property",
+      "name": "Encryption in transit",
+      "description": "Cryptographic protection of data while it travels between endpoints; encryption does not by itself provide anonymity."
+    },
+    {
+      "id": "concept:proxy",
+      "type": "networking_technology",
+      "name": "Proxy server",
+      "description": "An intermediary that makes requests to destinations on behalf of a client."
+    },
+    {
+      "id": "concept:vpn",
+      "type": "networking_technology",
+      "name": "Virtual private network (VPN)",
+      "description": "A technology that tunnels traffic through a VPN provider or private network; destinations commonly see the VPN egress address."
+    },
+    {
+      "id": "concept:access_control",
+      "type": "security_control",
+      "name": "Access control and authentication",
+      "description": "Mechanisms that restrict access or require proof of authorization."
+    },
+    {
+      "id": "concept:robots_txt",
+      "type": "web_standard",
+      "name": "robots.txt",
+      "description": "A convention for communicating crawler preferences; it is not an access-control mechanism and does not make a URL secret."
+    },
+    {
+      "id": "concept:browser_fingerprinting",
+      "type": "tracking_technique",
+      "name": "Browser fingerprinting",
+      "description": "Using combinations of browser and device characteristics to distinguish or probabilistically recognize clients."
+    },
+    {
+      "id": "concept:cookies",
+      "type": "web_technology",
+      "name": "HTTP cookies",
+      "description": "Browser-stored state sent to a site under defined conditions; may support sessions, preferences, or tracking."
+    },
+    {
+      "id": "concept:tls_https",
+      "type": "web_protocol_security",
+      "name": "HTTPS / TLS",
+      "description": "HTTPS uses TLS to protect HTTP communication between endpoints; it does not hide all connection metadata from all observers."
+    },
+    {
+      "id": "concept:internet_service_provider",
+      "type": "network_operator",
+      "name": "Internet service provider (ISP)",
+      "description": "An organization providing Internet connectivity; it may observe connection metadata depending on network configuration and encryption."
+    },
+    {
+      "id": "concept:network_observer",
+      "type": "threat_actor_category",
+      "name": "Network observer",
+      "description": "An entity able to observe some portion of network traffic, such as an ISP, Wi-Fi operator, hosting provider, or state-level observer."
+    },
+    {
+      "id": "concept:threat_model",
+      "type": "security_concept",
+      "name": "Privacy threat model",
+      "description": "An explicit description of what information must be protected, from which observers, and under what assumptions."
+    },
+    {
+      "id": "concept:surface_deep_dark_distinction",
+      "type": "classification_framework",
+      "name": "Surface web / deep web / dark web distinction",
+      "description": "A conceptual framework distinguishing indexed content, non-indexed content, and content hosted on anonymity-oriented networks.",
+      "attributes": {
+        "caveat": "These labels describe overlapping dimensions rather than perfectly disjoint physical layers."
+      }
+    },
+    {
+      "id": "concept:clearnet_vs_darknet",
+      "type": "comparison",
+      "name": "Clearnet versus darknet",
+      "description": "A terminology contrast between ordinary public Internet services and services reached through specialized anonymity networks."
+    },
+    {
+      "id": "source:wikipedia_clearnet_article",
+      "type": "source_document",
+      "name": "Clearnet (networking) — Wikipedia",
+      "description": "The user-supplied Wikipedia article text, including its definition, characteristics, and three references.",
+      "attributes": {
+        "url": "https://en.wikipedia.org/wiki/Clearnet_(networking)",
+        "last_edited_as_supplied": "2026-08-29T17:30:00Z",
+        "license": "CC BY-SA 4.0",
+        "source_type": "tertiary encyclopedia article",
+        "limitations": "The article is marked as a stub."
+      }
+    },
+    {
+      "id": "source:miller_2014_lifehacker",
+      "type": "source_document",
+      "name": "How Can I Stay Anonymous with Tor?",
+      "description": "Tessa Miller, Lifehacker, 10 January 2014; reference 1 in the supplied article.",
+      "attributes": {
+        "author": "Tessa Miller",
+        "publication": "Lifehacker",
+        "publication_date": "2014-01-10",
+        "url": "https://lifehacker.com/how-can-i-stay-anonymous-with-tor-1498876762",
+        "source_role": "article-cited historical reference"
+      }
+    },
+    {
+      "id": "source:barratt_darknet_terminology",
+      "type": "source_document",
+      "name": "A discussion about dark net terminology",
+      "description": "A terminology discussion attributed to Monica Barratt; archived 18 January 2016; reference 2 in the supplied article.",
+      "attributes": {
+        "url": "https://web.archive.org/web/20160118085807/http://monicabarratt.net/?p=5999",
+        "archived_on": "2016-01-18",
+        "source_role": "article-cited historical reference"
+      }
+    },
+    {
+      "id": "source:deepdotweb_2015",
+      "type": "source_document",
+      "name": "Clearnet vs Hidden Services – Why You Should Be Careful",
+      "description": "DeepDotWeb article archived 28 June 2015; reference 3 in the supplied article.",
+      "attributes": {
+        "url": "https://web.archive.org/web/20150628204337/https://www.deepdotweb.com/jolly-rogers-security-guide-for-beginners/clearnet-vs-hidden-services-why-you-should-be-careful/",
+        "archived_on": "2015-06-28",
+        "source_role": "article-cited historical reference"
+      }
+    },
+    {
+      "id": "source:tor_project",
+      "type": "official_reference",
+      "name": "Tor Project official site",
+      "description": "Official project documentation recommended for current validation of Tor behavior.",
+      "attributes": {
+        "url": "https://www.torproject.org/",
+        "source_status": "additional background reference; not one of the three supplied article references"
+      }
+    },
+    {
+      "id": "source:ietf_rfc8446",
+      "type": "technical_standard",
+      "name": "RFC 8446 — TLS 1.3",
+      "description": "IETF standard specifying TLS 1.3, relevant to encryption-in-transit context.",
+      "attributes": {
+        "url": "https://www.rfc-editor.org/rfc/rfc8446",
+        "source_status": "additional technical background"
+      }
+    },
+    {
+      "id": "source:ietf_rfc9309",
+      "type": "technical_standard",
+      "name": "RFC 9309 — Robots Exclusion Protocol",
+      "description": "IETF standard documenting the Robots Exclusion Protocol.",
+      "attributes": {
+        "url": "https://www.rfc-editor.org/rfc/rfc9309",
+        "source_status": "additional technical background"
+      }
+    },
+    {
+      "id": "source:ietf_rfc791",
+      "type": "technical_standard",
+      "name": "RFC 791 — Internet Protocol",
+      "description": "Historical specification of IPv4.",
+      "attributes": {
+        "url": "https://www.rfc-editor.org/rfc/rfc791",
+        "source_status": "additional technical background"
+      }
+    },
+    {
+      "id": "source:ietf_rfc8200",
+      "type": "technical_standard",
+      "name": "RFC 8200 — Internet Protocol, Version 6 (IPv6) Specification",
+      "description": "Internet Standard specifying IPv6.",
+      "attributes": {
+        "url": "https://www.rfc-editor.org/rfc/rfc8200",
+        "source_status": "additional technical background"
+      }
+    },
+    {
+      "id": "source:ietf_rfc9110",
+      "type": "technical_standard",
+      "name": "RFC 9110 — HTTP Semantics",
+      "description": "IETF HTTP semantics standard relevant to web requests and responses.",
+      "attributes": {
+        "url": "https://www.rfc-editor.org/rfc/rfc9110",
+        "source_status": "additional technical background"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:0001",
+      "source": "concept:clearnet",
+      "predicate": "commonly_refers_to",
+      "target": "concept:internet",
+      "description": "The supplied article defines clearnet as typically referring to the publicly accessible Internet.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0002",
+      "source": "concept:clearnet",
+      "predicate": "sometimes_used_as_synonym_for",
+      "target": "concept:surface_web",
+      "description": "The article explicitly notes a narrower usage.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0003",
+      "source": "concept:clearnet",
+      "predicate": "contrasted_with",
+      "target": "concept:darknet",
+      "description": "The article contrasts clearnet with darknet.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0004",
+      "source": "concept:internet",
+      "predicate": "hosts",
+      "target": "concept:world_wide_web",
+      "description": "The Web is a distributed service on the Internet.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0005",
+      "source": "concept:surface_web",
+      "predicate": "contains_content_indexed_by",
+      "target": "concept:search_engine",
+      "description": "Surface web is associated with pages and databases indexed by traditional search engines.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0006",
+      "source": "concept:deep_web",
+      "predicate": "is_characterized_by",
+      "target": "concept:indexing",
+      "description": "The article defines deep-web content as not indexed.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0007",
+      "source": "concept:deep_web",
+      "predicate": "may_include",
+      "target": "concept:access_control",
+      "description": "The article includes database portals and interactive sites; access controls are a related example.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0008",
+      "source": "concept:darknet",
+      "predicate": "may_use",
+      "target": "network:tor",
+      "description": "Tor is given as an example of an anonymity network.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0009",
+      "source": "concept:darknet",
+      "predicate": "is_commonly_classified_within",
+      "target": "concept:deep_web",
+      "description": "The supplied article describes darknet services as part of the deep web.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0010",
+      "source": "concept:dark_web",
+      "predicate": "is_associated_with",
+      "target": "concept:darknet",
+      "description": "Dark-web services are commonly associated with darknet networks.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0011",
+      "source": "concept:clearnet",
+      "predicate": "does_not_inherently_provide",
+      "target": "concept:privacy",
+      "description": "Ordinary clearnet browsing is typically not anonymous without anonymity services.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0012",
+      "source": "concept:website",
+      "predicate": "may_observe",
+      "target": "concept:ip_address",
+      "description": "Websites can observe the source address of requests; it does not necessarily identify a particular person.",
+      "source_status": "article_with_precision"
+    },
+    {
+      "id": "rel:0013",
+      "source": "concept:website",
+      "predicate": "may_receive",
+      "target": "concept:client_metadata",
+      "description": "The article mentions IP addresses and other data transmitted by the client.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0014",
+      "source": "concept:ip_address",
+      "predicate": "is_a_kind_of",
+      "target": "concept:client_metadata",
+      "description": "IP addresses are network metadata.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0015",
+      "source": "network:tor",
+      "predicate": "is_an_example_of",
+      "target": "concept:anonymity_service",
+      "description": "Tor is an example of an anonymity network/service.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0016",
+      "source": "concept:anonymity_service",
+      "predicate": "may_reduce_destination_visibility_of",
+      "target": "concept:ip_address",
+      "description": "Intermediated routing can hide the client's ordinary address from the destination.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0017",
+      "source": "concept:vpn",
+      "predicate": "may_mask_from_destination",
+      "target": "concept:ip_address",
+      "description": "A destination commonly sees a VPN egress address.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0018",
+      "source": "concept:proxy",
+      "predicate": "may_mask_from_destination",
+      "target": "concept:ip_address",
+      "description": "A proxy can make requests on behalf of a client.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0019",
+      "source": "concept:tls_https",
+      "predicate": "uses",
+      "target": "concept:encryption",
+      "description": "HTTPS uses TLS to protect traffic between endpoints.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0020",
+      "source": "concept:encryption",
+      "predicate": "does_not_guarantee",
+      "target": "concept:privacy",
+      "description": "Encryption helps protect content but does not alone prevent tracking or identification.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0021",
+      "source": "concept:internet_service_provider",
+      "predicate": "is_a_potential",
+      "target": "concept:network_observer",
+      "description": "An ISP can observe some connection metadata depending on configuration.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0022",
+      "source": "concept:network_observer",
+      "predicate": "may_observe",
+      "target": "concept:ip_address",
+      "description": "What is visible depends on the observer's network position.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0023",
+      "source": "concept:privacy",
+      "predicate": "is_affected_by",
+      "target": "concept:ip_address",
+      "description": "Address exposure is one privacy factor.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0024",
+      "source": "concept:privacy",
+      "predicate": "is_affected_by",
+      "target": "concept:cookies",
+      "description": "Cookies may support session identification or tracking.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0025",
+      "source": "concept:privacy",
+      "predicate": "is_affected_by",
+      "target": "concept:browser_fingerprinting",
+      "description": "Fingerprinting may distinguish clients using browser/device characteristics.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0026",
+      "source": "concept:privacy",
+      "predicate": "should_be_evaluated_using",
+      "target": "concept:threat_model",
+      "description": "The relevant protections depend on the observer and information in scope.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0027",
+      "source": "concept:search_engine",
+      "predicate": "creates",
+      "target": "concept:indexing",
+      "description": "Search engines build indexes of collected content.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0028",
+      "source": "concept:surface_deep_dark_distinction",
+      "predicate": "distinguishes",
+      "target": "concept:surface_web",
+      "description": "Indexing is one dimension of the classification.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0029",
+      "source": "concept:surface_deep_dark_distinction",
+      "predicate": "distinguishes",
+      "target": "concept:deep_web",
+      "description": "Non-indexing is the supplied article's criterion for deep web.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0030",
+      "source": "concept:surface_deep_dark_distinction",
+      "predicate": "distinguishes",
+      "target": "concept:dark_web",
+      "description": "Dark web is associated with anonymity-network services.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0031",
+      "source": "concept:clearnet_vs_darknet",
+      "predicate": "compares",
+      "target": "concept:clearnet",
+      "description": "Clearnet usage is compared with darknet usage.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0032",
+      "source": "concept:clearnet_vs_darknet",
+      "predicate": "compares",
+      "target": "concept:darknet",
+      "description": "The terms describe different access/networking contexts.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0033",
+      "source": "source:wikipedia_clearnet_article",
+      "predicate": "describes",
+      "target": "concept:clearnet",
+      "description": "Primary source for the supplied article's definition.",
+      "source_status": "source_link"
+    },
+    {
+      "id": "rel:0034",
+      "source": "source:wikipedia_clearnet_article",
+      "predicate": "cites",
+      "target": "source:miller_2014_lifehacker",
+      "description": "Reference 1 in supplied article.",
+      "source_status": "source_link"
+    },
+    {
+      "id": "rel:0035",
+      "source": "source:wikipedia_clearnet_article",
+      "predicate": "cites",
+      "target": "source:barratt_darknet_terminology",
+      "description": "Reference 2 in supplied article.",
+      "source_status": "source_link"
+    },
+    {
+      "id": "rel:0036",
+      "source": "source:wikipedia_clearnet_article",
+      "predicate": "cites",
+      "target": "source:deepdotweb_2015",
+      "description": "Reference 3 in supplied article.",
+      "source_status": "source_link"
+    },
+    {
+      "id": "rel:0037",
+      "source": "source:tor_project",
+      "predicate": "provides_background_for",
+      "target": "network:tor",
+      "description": "Official reference for checking current Tor information.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0038",
+      "source": "source:ietf_rfc8446",
+      "predicate": "specifies",
+      "target": "concept:tls_https",
+      "description": "TLS 1.3 technical standard.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0039",
+      "source": "source:ietf_rfc9309",
+      "predicate": "specifies",
+      "target": "concept:robots_txt",
+      "description": "Robots Exclusion Protocol standard.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0040",
+      "source": "source:ietf_rfc791",
+      "predicate": "specifies_background_for",
+      "target": "concept:ip_address",
+      "description": "IPv4 technical background.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0041",
+      "source": "source:ietf_rfc8200",
+      "predicate": "specifies_background_for",
+      "target": "concept:ip_address",
+      "description": "IPv6 technical background.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0042",
+      "source": "source:ietf_rfc9110",
+      "predicate": "specifies_background_for",
+      "target": "concept:website",
+      "description": "HTTP semantics technical background.",
+      "source_status": "external_reference"
+    }
+  ],
+  "taxonomy": {
+    "dimensions": [
+      {
+        "name": "accessibility",
+        "values": [
+          "publicly_reachable",
+          "credential_gated",
+          "specialized_network_only"
+        ],
+        "description": "Whether a resource can be reached without credentials or specialized network software."
+      },
+      {
+        "name": "indexability",
+        "values": [
+          "indexed",
+          "not_indexed",
+          "partially_indexed"
+        ],
+        "description": "Whether conventional search engines can discover and retrieve a resource."
+      },
+      {
+        "name": "network_path",
+        "values": [
+          "ordinary_internet_routing",
+          "proxy_or_vpn_mediated",
+          "anonymity_network_routing"
+        ],
+        "description": "The route used to reach a destination."
+      },
+      {
+        "name": "privacy_linkability",
+        "values": [
+          "directly_identifiable",
+          "pseudonymous",
+          "anonymity_enhanced"
+        ],
+        "description": "How readily activity can be linked to a user; depends on multiple signals and the threat model."
+      }
+    ],
+    "non_equivalences": [
+      [
+        "public accessibility",
+        "search-engine indexing"
+      ],
+      [
+        "deep web",
+        "dark web"
+      ],
+      [
+        "encryption",
+        "anonymity"
+      ],
+      [
+        "IP address",
+        "verified real-world identity"
+      ],
+      [
+        "clearnet",
+        "surface web in every context"
+      ]
+    ]
+  },
+  "technical_model": {
+    "ordinary_clearnet_request_flow": [
+      {
+        "step": 1,
+        "component": "client device and browser",
+        "action": "The user initiates a request to a public website."
+      },
+      {
+        "step": 2,
+        "component": "local network and ISP",
+        "action": "Packets are forwarded toward the destination; network operators may observe some connection metadata."
+      },
+      {
+        "step": 3,
+        "component": "DNS resolver, when used",
+        "action": "A hostname may be resolved to an IP address; resolver visibility depends on resolver and transport configuration."
+      },
+      {
+        "step": 4,
+        "component": "routing and destination infrastructure",
+        "action": "Traffic reaches hosting, CDN, reverse-proxy, or origin infrastructure."
+      },
+      {
+        "step": 5,
+        "component": "TLS endpoint for HTTPS",
+        "action": "TLS protects application traffic in transit between TLS endpoints, but does not conceal all metadata from every observer."
+      },
+      {
+        "step": 6,
+        "component": "website/application",
+        "action": "The service processes the request and may receive source address, cookies, account state, and request data."
+      },
+      {
+        "step": 7,
+        "component": "logging and analytics",
+        "action": "Operators may log or correlate requests subject to configuration, policy, and law."
+      }
+    ],
+    "anonymity_network_flow": [
+      {
+        "step": 1,
+        "component": "client",
+        "action": "The client connects using anonymity-network software."
+      },
+      {
+        "step": 2,
+        "component": "entry/guard relay in Tor",
+        "action": "The entry relay sees the client connection but ordinarily does not know the final destination when Tor is correctly used."
+      },
+      {
+        "step": 3,
+        "component": "middle relay when used",
+        "action": "Traffic is forwarded through the circuit."
+      },
+      {
+        "step": 4,
+        "component": "exit relay or onion-service route",
+        "action": "Public Internet traffic may leave through an exit relay; onion services use Tor's onion-service mechanisms rather than a conventional public-Internet exit."
+      },
+      {
+        "step": 5,
+        "component": "destination",
+        "action": "The destination generally sees the exit address for public-web traffic or the Tor-mediated connection for an onion service, not the client's ordinary public IP."
+      }
+    ],
+    "caveats": [
+      "These are conceptual flows, not packet-level protocol specifications.",
+      "Exact routing depends on the network, protocol, DNS setup, browser, and destination type.",
+      "Anonymity networks do not guarantee immunity from endpoint compromise, account-based identification, user disclosure, configuration mistakes, or traffic correlation."
+    ]
+  },
+  "comparisons": [
+    {
+      "left": "Clearnet",
+      "right": "Surface web",
+      "similarities": [
+        "Often used interchangeably in casual terminology."
+      ],
+      "differences": [
+        "Clearnet may mean the public Internet broadly; surface web more specifically means indexed web content."
+      ],
+      "source_status": "article"
+    },
+    {
+      "left": "Deep web",
+      "right": "Dark web",
+      "similarities": [
+        "Both may be absent from ordinary search-engine results."
+      ],
+      "differences": [
+        "Deep web is defined mainly by non-indexing and can include ordinary database portals; dark web usually refers to services hosted on anonymity-oriented networks."
+      ],
+      "source_status": "article_plus_background"
+    },
+    {
+      "left": "HTTPS encryption",
+      "right": "Anonymity network",
+      "similarities": [
+        "Both can improve aspects of security or privacy."
+      ],
+      "differences": [
+        "HTTPS protects traffic content between endpoints; an anonymity network changes routing and may reduce destination visibility of a client's network address. Neither alone guarantees anonymity."
+      ],
+      "source_status": "background"
+    },
+    {
+      "left": "VPN",
+      "right": "Tor",
+      "similarities": [
+        "Both can affect what address a destination sees."
+      ],
+      "differences": [
+        "A VPN generally routes traffic through one provider's egress infrastructure; Tor uses a multi-relay anonymity network. Their trust models and protections differ."
+      ],
+      "source_status": "background"
+    }
+  ],
+  "privacy_analysis": {
+    "potentially_observable_data": [
+      "source IP address as seen by a destination or intermediary",
+      "request metadata available at relevant endpoints",
+      "cookies and session identifiers",
+      "authenticated account identity",
+      "browser/device characteristics that contribute to fingerprinting",
+      "DNS or connection metadata visible to relevant network operators",
+      "timing and traffic-volume patterns"
+    ],
+    "caveats": [
+      "Not every website collects or retains every listed data type.",
+      "An observed IP address may belong to a shared gateway, VPN, proxy, mobile carrier NAT, or other intermediary.",
+      "HTTPS reduces exposure of application content to passive network observers but does not prevent the destination from seeing the request.",
+      "Privacy depends on observer position, endpoint security, configuration, provider practices, and legal environment."
+    ],
+    "threat_model_questions": [
+      "Which party is the user trying to hide information from: destination website, ISP, local Wi-Fi operator, advertiser, employer, or state-level observer?",
+      "Is the goal to hide content, IP address, identity, location, or browsing relationships?",
+      "Is the user logged into an identifying account?",
+      "Can the endpoint and browser be trusted?",
+      "What metadata remains visible at each network hop?"
+    ]
+  },
+  "source_register": [
+    {
+      "id": "source:wikipedia_clearnet_article",
+      "name": "Clearnet (networking) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Clearnet_(networking)",
+      "source_type": "source_document",
+      "source_status": "primary_supplied_article"
+    },
+    {
+      "id": "source:miller_2014_lifehacker",
+      "name": "How Can I Stay Anonymous with Tor?",
+      "url": "https://lifehacker.com/how-can-i-stay-anonymous-with-tor-1498876762",
+      "source_type": "source_document",
+      "source_status": "cited_by_supplied_article"
+    },
+    {
+      "id": "source:barratt_darknet_terminology",
+      "name": "A discussion about dark net terminology",
+      "url": "https://web.archive.org/web/20160118085807/http://monicabarratt.net/?p=5999",
+      "source_type": "source_document",
+      "source_status": "cited_by_supplied_article"
+    },
+    {
+      "id": "source:deepdotweb_2015",
+      "name": "Clearnet vs Hidden Services – Why You Should Be Careful",
+      "url": "https://web.archive.org/web/20150628204337/https://www.deepdotweb.com/jolly-rogers-security-guide-for-beginners/clearnet-vs-hidden-services-why-you-should-be-careful/",
+      "source_type": "source_document",
+      "source_status": "cited_by_supplied_article"
+    },
+    {
+      "id": "source:tor_project",
+      "name": "Tor Project official site",
+      "url": "https://www.torproject.org/",
+      "source_type": "official_reference",
+      "source_status": "additional background reference; not one of the three supplied article references"
+    },
+    {
+      "id": "source:ietf_rfc8446",
+      "name": "RFC 8446 — TLS 1.3",
+      "url": "https://www.rfc-editor.org/rfc/rfc8446",
+      "source_type": "technical_standard",
+      "source_status": "additional technical background"
+    },
+    {
+      "id": "source:ietf_rfc9309",
+      "name": "RFC 9309 — Robots Exclusion Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc9309",
+      "source_type": "technical_standard",
+      "source_status": "additional technical background"
+    },
+    {
+      "id": "source:ietf_rfc791",
+      "name": "RFC 791 — Internet Protocol",
+      "url": "https://www.rfc-editor.org/rfc/rfc791",
+      "source_type": "technical_standard",
+      "source_status": "additional technical background"
+    },
+    {
+      "id": "source:ietf_rfc8200",
+      "name": "RFC 8200 — Internet Protocol, Version 6 (IPv6) Specification",
+      "url": "https://www.rfc-editor.org/rfc/rfc8200",
+      "source_type": "technical_standard",
+      "source_status": "additional technical background"
+    },
+    {
+      "id": "source:ietf_rfc9110",
+      "name": "RFC 9110 — HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "source_type": "technical_standard",
+      "source_status": "additional technical background"
+    }
+  ],
+  "data_dictionary": {
+    "entity_required_fields": [
+      "id",
+      "type",
+      "name",
+      "description"
+    ],
+    "relationship_required_fields": [
+      "id",
+      "source",
+      "predicate",
+      "target",
+      "description",
+      "source_status"
+    ],
+    "relationship_direction": "source --predicate--> target",
+    "identifier_convention": "Stable prefixed entity IDs; relationship IDs use rel:NNNN.",
+    "source_status_examples": [
+      "article",
+      "article_with_precision",
+      "article_plus_context",
+      "background",
+      "external_reference",
+      "source_link"
+    ],
+    "missing_data_policy": "Do not infer unsupported bibliographic details; omit unknown values or use null."
+  },
+  "graph_statistics": {
+    "entity_count": 39,
+    "relationship_count": 42,
+    "source_count": 10
+  },
+  "validation": {
+    "json_parses": true,
+    "entity_ids_unique": true,
+    "all_relationship_endpoints_exist": true,
+    "all_relationships_have_source_status": true
+  }
+}

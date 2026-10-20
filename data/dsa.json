@@ -1,0 +1,2517 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "knowledge_graph_entry",
+  "topic": {
+    "id": "cryptographic_hash_function",
+    "name": "Cryptographic hash function",
+    "definition": "A deterministic algorithm that maps an arbitrary-length binary input to a fixed-length digest, with security goals including preimage resistance, second-preimage resistance, and collision resistance.",
+    "aliases": [
+      "cryptographic hash",
+      "secure hash",
+      "message digest function",
+      "one-way hash (informal)"
+    ],
+    "domain": [
+      "cryptography",
+      "information security",
+      "data integrity",
+      "distributed systems",
+      "content addressing",
+      "password security"
+    ]
+  },
+  "source_scope": {
+    "primary_source": "User-supplied Wikipedia article text: Cryptographic hash function",
+    "scope_note": "The graph follows the supplied article's terminology and coverage, while adding explicit relationship structure, schema, patterns, and cautious engineering rules for machine use.",
+    "source_derived_content": [
+      "formal hash properties",
+      "hashing applications",
+      "password hashing and salts",
+      "proof of work",
+      "content-addressable storage",
+      "block-cipher-based hashing",
+      "Merkle–Damgård, wide-pipe, sponge, and HAIFA constructions",
+      "HMAC and other derived primitives",
+      "algorithm family summaries",
+      "known attack summaries"
+    ],
+    "editorial_caveat": "Algorithm status and parameter recommendations change. Use current standards and expert review for production decisions; the graph is not a substitute for a cryptographic design review."
+  },
+  "entities": [
+    {
+      "id": "cryptographic_hash_function",
+      "name": "Cryptographic hash function",
+      "type": "cryptographic_primitive",
+      "description": "A deterministic algorithm mapping an arbitrary-length binary message to a fixed-length digest, designed to provide cryptographic security properties."
+    },
+    {
+      "id": "hash_function",
+      "name": "Hash function",
+      "type": "mathematical_function",
+      "description": "A function that maps input values to hash outputs; not every hash function is cryptographically secure."
+    },
+    {
+      "id": "message",
+      "name": "Message / input",
+      "type": "data_object",
+      "description": "The arbitrary-length binary string supplied to a hash algorithm."
+    },
+    {
+      "id": "digest",
+      "name": "Hash digest",
+      "type": "data_object",
+      "description": "The fixed-length output produced by hashing a message; also called a message digest, hash value, or digital fingerprint."
+    },
+    {
+      "id": "fixed_length_output",
+      "name": "Fixed-length output",
+      "type": "property",
+      "description": "The digest length is defined by the algorithm or selected output mode, regardless of ordinary input length."
+    },
+    {
+      "id": "determinism",
+      "name": "Determinism",
+      "type": "property",
+      "description": "The same input and algorithm parameters produce the same digest."
+    },
+    {
+      "id": "avalanche_effect",
+      "name": "Avalanche effect",
+      "type": "cryptographic_property",
+      "description": "A small input change should cause a large, unpredictable change in the output bits."
+    },
+    {
+      "id": "preimage_resistance",
+      "name": "Preimage resistance",
+      "type": "security_property",
+      "description": "Given a target digest h, it should be computationally infeasible to find any m for which H(m)=h."
+    },
+    {
+      "id": "second_preimage_resistance",
+      "name": "Second-preimage resistance",
+      "type": "security_property",
+      "description": "Given m1, it should be infeasible to find a different m2 with H(m1)=H(m2)."
+    },
+    {
+      "id": "collision_resistance",
+      "name": "Collision resistance",
+      "type": "security_property",
+      "description": "It should be infeasible to find any two distinct messages m1 and m2 with equal digests."
+    },
+    {
+      "id": "birthday_bound",
+      "name": "Birthday bound",
+      "type": "cryptographic_concept",
+      "description": "For an ideal n-bit digest, generic collision search costs roughly 2^(n/2), while generic preimage search costs roughly 2^n."
+    },
+    {
+      "id": "random_oracle_model",
+      "name": "Random oracle model",
+      "type": "cryptographic_model",
+      "description": "An idealized model treating a hash as a deterministic function whose outputs appear random for distinct new inputs."
+    },
+    {
+      "id": "length_extension",
+      "name": "Length-extension attack",
+      "type": "cryptographic_attack",
+      "description": "For certain Merkle–Damgård hashes, an attacker knowing H(m) and len(m) may calculate H(m || padding || m′) without knowing m."
+    },
+    {
+      "id": "hash_collision",
+      "name": "Hash collision",
+      "type": "security_event",
+      "description": "A pair of different messages that produce the same digest under the same hash algorithm and parameters."
+    },
+    {
+      "id": "cryptanalysis",
+      "name": "Cryptanalysis",
+      "type": "discipline",
+      "description": "The study of weaknesses and attacks against cryptographic algorithms and protocols."
+    },
+    {
+      "id": "cryptographic_agility",
+      "name": "Cryptographic agility",
+      "type": "security_practice",
+      "description": "The ability to change algorithms, digest sizes, and parameters as security recommendations evolve."
+    },
+    {
+      "id": "checksum",
+      "name": "Checksum",
+      "type": "data_integrity_concept",
+      "description": "A general error-detection value; ordinary checksums are not necessarily resistant to intentional manipulation."
+    },
+    {
+      "id": "crc32",
+      "name": "CRC-32",
+      "type": "checksum_algorithm",
+      "description": "A cyclic redundancy check useful for accidental-error detection but not a cryptographic hash."
+    },
+    {
+      "id": "integrity_verification",
+      "name": "Integrity verification",
+      "type": "security_application",
+      "description": "Comparing a freshly computed digest with a trusted expected digest to detect data changes."
+    },
+    {
+      "id": "chain_of_trust",
+      "name": "Chain of trust",
+      "type": "security_concept",
+      "description": "The trust path by which a digest or signature is obtained from an authenticated source."
+    },
+    {
+      "id": "content_addressable_storage",
+      "name": "Content-addressable storage (CAS)",
+      "type": "storage_architecture",
+      "description": "Storage in which content is retrieved using a digest-derived content address rather than a name or physical location."
+    },
+    {
+      "id": "content_address",
+      "name": "Content address",
+      "type": "identifier",
+      "description": "A digest-derived identifier used to locate or identify content."
+    },
+    {
+      "id": "deduplication",
+      "name": "Content deduplication",
+      "type": "storage_operation",
+      "description": "Detecting identical content using content-derived identifiers, subject to the system's collision-handling assumptions."
+    },
+    {
+      "id": "hash_table",
+      "name": "Hash table",
+      "type": "data_structure",
+      "description": "A data structure that uses hash outputs to choose storage buckets; non-cryptographic hashes may be vulnerable to deliberate collision attacks."
+    },
+    {
+      "id": "digital_signature",
+      "name": "Digital signature",
+      "type": "cryptographic_primitive",
+      "description": "A signing scheme commonly hashes a message before signing a fixed-size digest; signature verification alone still depends on the full scheme and key trust."
+    },
+    {
+      "id": "message_authentication_code",
+      "name": "Message authentication code (MAC)",
+      "type": "cryptographic_primitive",
+      "description": "A keyed integrity/authentication tag that allows parties sharing a secret key to verify message authenticity and integrity."
+    },
+    {
+      "id": "hmac",
+      "name": "HMAC",
+      "type": "cryptographic_construction",
+      "description": "A keyed message authentication construction built from a cryptographic hash function, designed to avoid pitfalls of naive hash-based authentication."
+    },
+    {
+      "id": "password_hashing",
+      "name": "Password hashing",
+      "type": "security_application",
+      "description": "Transforming a password into a stored verifier; general-purpose fast hashes are unsuitable alone for modern password storage."
+    },
+    {
+      "id": "salt",
+      "name": "Password salt",
+      "type": "password_security_concept",
+      "description": "A random, non-secret value included in password derivation so identical passwords do not share the same stored result and precomputed tables are less useful."
+    },
+    {
+      "id": "key_derivation_function",
+      "name": "Key derivation function (KDF)",
+      "type": "cryptographic_primitive",
+      "description": "A function that derives keys or password verifiers; password KDFs are configured to impose computational and sometimes memory cost."
+    },
+    {
+      "id": "key_stretching",
+      "name": "Key stretching",
+      "type": "password_security_technique",
+      "description": "Increasing the cost of password guessing through repeated work and/or memory requirements."
+    },
+    {
+      "id": "proof_of_work",
+      "name": "Proof of work",
+      "type": "cryptographic_protocol_technique",
+      "description": "A protocol technique requiring a requester to find a value satisfying a hash-based condition, while verification remains cheap."
+    },
+    {
+      "id": "hashcash",
+      "name": "Hashcash",
+      "type": "proof_of_work_system",
+      "description": "A proof-of-work system that requires a hash meeting a leading-zero-bit target, originally used as an anti-abuse token."
+    },
+    {
+      "id": "bitcoin_mining",
+      "name": "Bitcoin mining",
+      "type": "blockchain_mechanism",
+      "description": "A proof-of-work process that searches for block headers meeting a network-defined hash target."
+    },
+    {
+      "id": "file_fingerprint",
+      "name": "File fingerprint",
+      "type": "identifier",
+      "description": "A digest used as a compact identifier for file or object content."
+    },
+    {
+      "id": "peer_to_peer_file_sharing",
+      "name": "Peer-to-peer file sharing",
+      "type": "distributed_system",
+      "description": "Systems that use content hashes or hash trees to identify and verify shared data."
+    },
+    {
+      "id": "magnet_link",
+      "name": "Magnet link",
+      "type": "resource_identifier",
+      "description": "A link that identifies peer-to-peer content using a content hash or related identifier rather than requiring a direct file URL."
+    },
+    {
+      "id": "hash_tree",
+      "name": "Hash tree",
+      "type": "data_structure",
+      "description": "A tree of hashes that can support efficient verification of data subsets and identify a root digest for a larger object."
+    },
+    {
+      "id": "merkle_tree",
+      "name": "Merkle tree",
+      "type": "cryptographic_data_structure",
+      "description": "A hash tree in which parent nodes are derived from child hashes and a root commits to the tree's content."
+    },
+    {
+      "id": "commitment_scheme",
+      "name": "Commitment scheme",
+      "type": "cryptographic_protocol",
+      "description": "A protocol allowing a party to commit to a value while keeping it hidden until later revelation; a digest can serve as a simple commitment in appropriate contexts."
+    },
+    {
+      "id": "block_cipher",
+      "name": "Block cipher",
+      "type": "cryptographic_primitive",
+      "description": "A keyed fixed-block encryption primitive; specialized constructions can use block-cipher-like components to build hashes."
+    },
+    {
+      "id": "compression_function",
+      "name": "Compression function",
+      "type": "cryptographic_component",
+      "description": "A fixed-input-size function that combines a chaining state and a message block into a smaller or fixed-size state."
+    },
+    {
+      "id": "merkle_damgard",
+      "name": "Merkle–Damgård construction",
+      "type": "hash_construction",
+      "description": "An iterative hash construction processing padded message blocks through a compression function; many classical hashes use this structure."
+    },
+    {
+      "id": "wide_pipe",
+      "name": "Wide-pipe design",
+      "type": "hash_construction",
+      "description": "A design with an internal state wider than the final digest, intended to mitigate some structural attacks."
+    },
+    {
+      "id": "narrow_pipe",
+      "name": "Narrow-pipe design",
+      "type": "hash_construction",
+      "description": "A design where internal state width closely matches output width, associated with several structural limitations in straightforward Merkle–Damgård applications."
+    },
+    {
+      "id": "sponge_construction",
+      "name": "Sponge construction",
+      "type": "hash_construction",
+      "description": "A construction that absorbs input into an internal state and squeezes output; used by Keccak/SHA-3 and extendable-output functions."
+    },
+    {
+      "id": "haifa_construction",
+      "name": "HAIFA construction",
+      "type": "hash_construction",
+      "description": "A hash construction framework adding features such as counters and salts to an iterative design."
+    },
+    {
+      "id": "davies_meyer",
+      "name": "Davies–Meyer construction",
+      "type": "cryptographic_construction",
+      "description": "A compression-function construction often used with block-cipher-like components in hash designs."
+    },
+    {
+      "id": "truncation",
+      "name": "Digest truncation",
+      "type": "cryptographic_technique",
+      "description": "Returning fewer bits than an underlying hash state or longer digest; security depends on construction and selected output length."
+    },
+    {
+      "id": "concatenated_hashes",
+      "name": "Concatenation of hash outputs",
+      "type": "cryptographic_construction",
+      "description": "Combining digests from multiple algorithms; security depends on the combiner and assumptions about component algorithms."
+    },
+    {
+      "id": "prng",
+      "name": "Pseudorandom number generator (PRNG)",
+      "type": "cryptographic_primitive",
+      "description": "A generator that expands a seed into a sequence intended to appear pseudorandom; hashes can be used with a secret seed and counter."
+    },
+    {
+      "id": "stream_cipher",
+      "name": "Stream cipher",
+      "type": "cryptographic_primitive",
+      "description": "An encryption primitive that combines a keystream with plaintext; hash-based constructions may help generate pseudorandom streams."
+    },
+    {
+      "id": "noncryptographic_hash",
+      "name": "Non-cryptographic hash function",
+      "type": "algorithm_category",
+      "description": "A hash designed for speed or distribution rather than resistance to adversarial attacks."
+    },
+    {
+      "id": "password_bruteforce",
+      "name": "Password brute-force attack",
+      "type": "security_attack",
+      "description": "Trying candidate passwords and comparing derived verifiers; fast general-purpose hashes enable high guess rates."
+    },
+    {
+      "id": "rainbow_table",
+      "name": "Rainbow table",
+      "type": "attack_technique",
+      "description": "A precomputed time-memory tradeoff table for reversing password hash values over a candidate space; salts reduce reuse of such tables."
+    },
+    {
+      "id": "denial_of_service",
+      "name": "Denial-of-service attack",
+      "type": "security_attack",
+      "description": "An attack intended to exhaust or disrupt a service; predictable hash-table collisions can be used to increase processing cost."
+    },
+    {
+      "id": "randomized_hashing",
+      "name": "Randomized hashing",
+      "type": "cryptographic_technique",
+      "description": "A technique used in some signature and hashing contexts to reduce risks from adversarially crafted messages or collisions."
+    },
+    {
+      "id": "md4",
+      "name": "MD4",
+      "type": "hash_algorithm",
+      "description": "Older 128-bit digest design; historically influential but cryptographically broken."
+    },
+    {
+      "id": "md5",
+      "name": "MD5",
+      "type": "hash_algorithm",
+      "description": "Produces a 128-bit (16-byte) digest. Practical collisions are known; unsuitable for security-sensitive collision-resistant uses."
+    },
+    {
+      "id": "sha0",
+      "name": "SHA-0",
+      "type": "hash_algorithm",
+      "description": "Original Secure Hash Standard algorithm published in 1993 and withdrawn/replaced shortly thereafter."
+    },
+    {
+      "id": "sha1",
+      "name": "SHA-1",
+      "type": "hash_algorithm",
+      "description": "Produces a 160-bit (20-byte) digest. Practical collision attacks exist; do not use for new collision-resistant security applications."
+    },
+    {
+      "id": "ripemd160",
+      "name": "RIPEMD-160",
+      "type": "hash_algorithm",
+      "description": "Produces a 160-bit (20-byte) digest; the supplied article describes it as not broken at the time of its text, but algorithm choice should follow current standards guidance."
+    },
+    {
+      "id": "whirlpool",
+      "name": "Whirlpool",
+      "type": "hash_algorithm",
+      "description": "Produces a 512-bit (64-byte) digest and is based on a substantially modified AES-like design."
+    },
+    {
+      "id": "sha2",
+      "name": "SHA-2",
+      "type": "hash_family",
+      "description": "Family including SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224 and SHA-512/256."
+    },
+    {
+      "id": "sha224",
+      "name": "SHA-224",
+      "type": "hash_algorithm",
+      "description": "SHA-2 variant with a 224-bit (28-byte) output."
+    },
+    {
+      "id": "sha256",
+      "name": "SHA-256",
+      "type": "hash_algorithm",
+      "description": "SHA-2 algorithm with a 256-bit (32-byte) output; Merkle–Damgård-family and susceptible to length extension when used naively."
+    },
+    {
+      "id": "sha384",
+      "name": "SHA-384",
+      "type": "hash_algorithm",
+      "description": "SHA-2 variant with a 384-bit (48-byte) output."
+    },
+    {
+      "id": "sha512",
+      "name": "SHA-512",
+      "type": "hash_algorithm",
+      "description": "SHA-2 algorithm with a 512-bit (64-byte) output; commonly efficient on 64-bit systems."
+    },
+    {
+      "id": "sha512_224",
+      "name": "SHA-512/224",
+      "type": "hash_algorithm",
+      "description": "SHA-512-derived variant with a 224-bit output."
+    },
+    {
+      "id": "sha512_256",
+      "name": "SHA-512/256",
+      "type": "hash_algorithm",
+      "description": "SHA-512-derived variant with a 256-bit output; output truncation changes relevant structural properties."
+    },
+    {
+      "id": "sha3",
+      "name": "SHA-3",
+      "type": "hash_family",
+      "description": "NIST-standardized family based on Keccak and the sponge construction; provides 224-, 256-, 384-, and 512-bit outputs."
+    },
+    {
+      "id": "keccak",
+      "name": "Keccak",
+      "type": "hash_algorithm_family",
+      "description": "Sponge-based cryptographic primitive family designed by Guido Bertoni, Joan Daemen, Michael Peeters, and Gilles Van Assche; SHA-3 is based on it."
+    },
+    {
+      "id": "shake128",
+      "name": "SHAKE-128",
+      "type": "extendable_output_function",
+      "description": "SHAKE function with configurable output length; the 128 designation indicates security strength, not a fixed output size."
+    },
+    {
+      "id": "shake256",
+      "name": "SHAKE-256",
+      "type": "extendable_output_function",
+      "description": "SHAKE function with configurable output length; the 256 designation indicates security strength, not a fixed output size."
+    },
+    {
+      "id": "blake",
+      "name": "BLAKE",
+      "type": "hash_algorithm_family",
+      "description": "SHA-3 competition finalist family with configurable digest sizes."
+    },
+    {
+      "id": "blake2",
+      "name": "BLAKE2",
+      "type": "hash_algorithm_family",
+      "description": "Efficient hash family designed in part as a replacement for broken MD5/SHA-1 use cases; BLAKE2b is optimized for 64-bit platforms."
+    },
+    {
+      "id": "blake2b",
+      "name": "BLAKE2b",
+      "type": "hash_algorithm",
+      "description": "BLAKE2 variant optimized for 64-bit platforms and known for high software performance."
+    },
+    {
+      "id": "blake2s",
+      "name": "BLAKE2s",
+      "type": "hash_algorithm",
+      "description": "BLAKE2 variant oriented toward smaller architectures; BLAKE3's compression function is closely based on it."
+    },
+    {
+      "id": "blake3",
+      "name": "BLAKE3",
+      "type": "hash_algorithm",
+      "description": "Single hash algorithm announced in 2020, using a Merkle-tree internal design and supporting high parallelism; its compression design is based on BLAKE2s with seven rounds."
+    },
+    {
+      "id": "skein",
+      "name": "Skein",
+      "type": "hash_algorithm",
+      "description": "SHA-3 competition finalist with configurable output and a construction that can produce arbitrary-length output."
+    },
+    {
+      "id": "swifft",
+      "name": "SWIFFT",
+      "type": "hash_algorithm",
+      "description": "A function with provable collision-resistance properties under stated ideal-lattice assumptions, but its linearity means it does not provide all desirable random-like hash properties."
+    },
+    {
+      "id": "sm3",
+      "name": "SM3",
+      "type": "hash_algorithm",
+      "description": "Cryptographic hash algorithm primarily standardized/used in China."
+    },
+    {
+      "id": "streebog",
+      "name": "Streebog / GOST R 34.11-2012",
+      "type": "hash_algorithm",
+      "description": "Russian cryptographic hash standard."
+    },
+    {
+      "id": "gost_3411_94",
+      "name": "GOST R 34.11-94",
+      "type": "hash_algorithm",
+      "description": "Older Soviet/Russian hash algorithm; deprecated in the supplied article's description."
+    },
+    {
+      "id": "lsh",
+      "name": "LSH hash",
+      "type": "hash_algorithm",
+      "description": "Hash family associated with South Korea."
+    },
+    {
+      "id": "kupyna",
+      "name": "Kupyna",
+      "type": "hash_algorithm",
+      "description": "Ukrainian cryptographic hash algorithm."
+    },
+    {
+      "id": "sha1_shattered",
+      "name": "SHAttered collision demonstration",
+      "type": "cryptanalysis_result",
+      "description": "Practical collision demonstration against SHA-1 announced by Google in 2017."
+    },
+    {
+      "id": "aes",
+      "name": "Advanced Encryption Standard (AES)",
+      "type": "block_cipher",
+      "description": "General-purpose block cipher; can be repurposed in hash constructions but design goals and security considerations differ from purpose-built hash components."
+    },
+    {
+      "id": "argon2",
+      "name": "Argon2",
+      "type": "password_kdf",
+      "description": "Password hashing/key derivation function designed to impose configurable memory and computational costs."
+    },
+    {
+      "id": "scrypt",
+      "name": "scrypt",
+      "type": "password_kdf",
+      "description": "Memory-hard password-based key derivation function."
+    },
+    {
+      "id": "pbkdf2",
+      "name": "PBKDF2",
+      "type": "password_kdf",
+      "description": "Password-based key derivation function that uses repeated pseudorandom-function iterations."
+    },
+    {
+      "id": "bcrypt",
+      "name": "bcrypt",
+      "type": "password_kdf",
+      "description": "Password hashing function designed to make password guessing more expensive."
+    },
+    {
+      "id": "balloon_hashing",
+      "name": "Balloon hashing",
+      "type": "password_kdf",
+      "description": "Password hashing/KDF approach using repeated work and memory to slow offline guessing."
+    },
+    {
+      "id": "tls",
+      "name": "Transport Layer Security (TLS)",
+      "type": "security_protocol",
+      "description": "Protocol whose signatures, certificates, and integrity mechanisms use cryptographic primitives; the supplied article discusses historic concatenated MD5/SHA-1 use in older TLS/SSL versions."
+    },
+    {
+      "id": "git",
+      "name": "Git object hashing",
+      "type": "content_identifier_system",
+      "description": "Version control system that uses content hashes to identify objects; historical object formats used SHA-1."
+    },
+    {
+      "id": "mercurial",
+      "name": "Mercurial object hashing",
+      "type": "content_identifier_system",
+      "description": "Version control system that uses hashes to identify repository content and history objects."
+    },
+    {
+      "id": "monotone",
+      "name": "Monotone",
+      "type": "content_identifier_system",
+      "description": "Source control system cited as using hashes for content, trees, and ancestry information."
+    },
+    {
+      "id": "ed2k",
+      "name": "eD2k hash/link",
+      "type": "content_identifier_system",
+      "description": "Peer-to-peer file identification using an MD4-variant hash combined with file size."
+    },
+    {
+      "id": "nsa",
+      "name": "National Security Agency (NSA)",
+      "type": "organization",
+      "description": "U.S. agency credited in the supplied article with designing SHA-2 and associated with the Secure Hash Algorithm lineage."
+    },
+    {
+      "id": "nist",
+      "name": "National Institute of Standards and Technology (NIST)",
+      "type": "organization",
+      "description": "U.S. standards agency that published Secure Hash Standards and selected SHA-3."
+    },
+    {
+      "id": "guido_bertoni",
+      "name": "Guido Bertoni",
+      "type": "person",
+      "description": "One of the designers of Keccak."
+    },
+    {
+      "id": "joan_daemen",
+      "name": "Joan Daemen",
+      "type": "person",
+      "description": "One of the designers of Keccak."
+    },
+    {
+      "id": "michael_peeters",
+      "name": "Michael Peeters",
+      "type": "person",
+      "description": "One of the designers of Keccak."
+    },
+    {
+      "id": "gilles_van_assche",
+      "name": "Gilles Van Assche",
+      "type": "person",
+      "description": "One of the designers of Keccak."
+    },
+    {
+      "id": "ronald_rivest",
+      "name": "Ronald Rivest",
+      "type": "person",
+      "description": "Designed MD5 in 1991 as a successor to MD4."
+    },
+    {
+      "id": "jean_philippe_aumasson",
+      "name": "Jean-Philippe Aumasson",
+      "type": "person",
+      "description": "Co-creator of BLAKE2 and BLAKE3."
+    },
+    {
+      "id": "samuel_neves",
+      "name": "Samuel Neves",
+      "type": "person",
+      "description": "Co-creator of BLAKE2 and BLAKE3."
+    },
+    {
+      "id": "zooko_wilcox_ohearn",
+      "name": "Zooko Wilcox-O'Hearn",
+      "type": "person",
+      "description": "Co-creator of BLAKE2 and BLAKE3."
+    },
+    {
+      "id": "christian_winnerlein",
+      "name": "Christian Winnerlein",
+      "type": "person",
+      "description": "Co-creator of BLAKE2."
+    },
+    {
+      "id": "birthday_attack",
+      "name": "Birthday attack",
+      "type": "cryptographic_attack",
+      "description": "Generic collision-search strategy exploiting birthday probabilities; for n-bit ideal hashes, collision work is on the order of 2^(n/2)."
+    },
+    {
+      "id": "preimage_attack",
+      "name": "Preimage attack",
+      "type": "cryptographic_attack",
+      "description": "Attack attempting to find any input matching a specified digest."
+    },
+    {
+      "id": "second_preimage_attack",
+      "name": "Second-preimage attack",
+      "type": "cryptographic_attack",
+      "description": "Attack attempting to find a distinct input matching the digest of a given message."
+    },
+    {
+      "id": "chosen_prefix_collision",
+      "name": "Chosen-prefix collision",
+      "type": "cryptographic_attack",
+      "description": "A collision technique that aims to create two messages with attacker-chosen prefixes and matching hash results; practical consequences depend on the algorithm."
+    },
+    {
+      "id": "shattered_attack",
+      "name": "SHAttered attack",
+      "type": "cryptographic_attack",
+      "description": "The 2017 practical SHA-1 collision demonstration, showing SHA-1 is unsuitable for collision-sensitive security uses."
+    },
+    {
+      "id": "md5_certificate_attack",
+      "name": "MD5 certificate collision attack",
+      "type": "cryptographic_attack",
+      "description": "A practical 2008 attack used MD5 collisions to undermine certificate trust."
+    },
+    {
+      "id": "hash_table_collision_dos",
+      "name": "Hash-table collision denial of service",
+      "type": "cryptographic_attack",
+      "description": "An attacker supplies inputs that concentrate into the same hash-table buckets, causing excessive work when the table hash is not adversarially robust."
+    },
+    {
+      "id": "random_seed",
+      "name": "Secret random seed",
+      "type": "cryptographic_input",
+      "description": "A seed used with a counter and hash-based construction to derive pseudorandom output."
+    },
+    {
+      "id": "counter",
+      "name": "Counter",
+      "type": "cryptographic_input",
+      "description": "A changing value combined with a seed in hash-based PRNG constructions."
+    },
+    {
+      "id": "password_database",
+      "name": "Password verifier database",
+      "type": "data_store",
+      "description": "Stores salts and derived password verifiers rather than plaintext passwords."
+    },
+    {
+      "id": "trusted_publisher",
+      "name": "Trusted publisher",
+      "type": "trust_role",
+      "description": "The authenticated source from which a file and its expected digest are obtained."
+    },
+    {
+      "id": "file_download",
+      "name": "Downloaded file",
+      "type": "data_object",
+      "description": "A file whose computed digest can be compared against a trusted expected digest."
+    },
+    {
+      "id": "merkle_root",
+      "name": "Merkle root",
+      "type": "cryptographic_commitment",
+      "description": "The root digest that commits to the leaves and structure of a Merkle tree."
+    },
+    {
+      "id": "hash_based_prng",
+      "name": "Hash-based PRNG construction",
+      "type": "cryptographic_construction",
+      "description": "A generator construction combining a secret seed with a counter and applying a hash-based primitive."
+    },
+    {
+      "id": "tls_naive_hash_auth",
+      "name": "Naive hash-based authentication",
+      "type": "security_anti_pattern",
+      "description": "Authentication designs that directly hash a message with an appended secret can be vulnerable to length-extension attacks."
+    },
+    {
+      "id": "wEP",
+      "name": "Wired Equivalent Privacy (WEP)",
+      "type": "security_protocol",
+      "description": "Legacy wireless security protocol that used CRC for integrity; CRC's linearity made manipulation attacks possible."
+    },
+    {
+      "id": "hash_function_competition",
+      "name": "NIST SHA-3 competition",
+      "type": "standardization_event",
+      "description": "NIST process that evaluated candidate hash functions and selected Keccak for SHA-3."
+    },
+    {
+      "id": "merkle_damgard_padding",
+      "name": "Merkle–Damgård length padding",
+      "type": "hash_construction_component",
+      "description": "Unambiguous padding, including message length, is crucial to the security of Merkle–Damgård iteration."
+    },
+    {
+      "id": "message_block",
+      "name": "Message block",
+      "type": "data_structure",
+      "description": "A fixed-size portion of a message processed by an iterative hash construction."
+    },
+    {
+      "id": "chaining_state",
+      "name": "Chaining state",
+      "type": "cryptographic_state",
+      "description": "The evolving internal state passed between compression-function steps."
+    },
+    {
+      "id": "digest_length",
+      "name": "Digest length",
+      "type": "parameter",
+      "description": "Output length measured in bits or bytes; it affects generic preimage and collision security bounds."
+    },
+    {
+      "id": "security_strength",
+      "name": "Security strength",
+      "type": "security_metric",
+      "description": "An estimate of attack work in bits; ideal n-bit hashes offer about n-bit generic preimage strength and n/2-bit collision strength."
+    },
+    {
+      "id": "16kib_block",
+      "name": "16 KiB block",
+      "type": "data_unit",
+      "description": "A 16 KiB block size mentioned in the separate torrent-v2 topic; not a general cryptographic hash standard. Included only as a cross-domain context node."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "is_a",
+      "target": "hash_function",
+      "description": "A cryptographic hash is a specialized hash function."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "maps",
+      "target": "message",
+      "description": "Maps arbitrary-length binary messages to digests."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "produces",
+      "target": "digest",
+      "description": "Produces a fixed-size output under a given algorithm and output mode."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_property",
+      "target": "determinism",
+      "description": "Identical inputs yield identical digests."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_property",
+      "target": "avalanche_effect",
+      "description": "Small input changes should cause large output changes."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "requires_security_property",
+      "target": "preimage_resistance",
+      "description": "Preimage resistance is a core security goal."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "requires_security_property",
+      "target": "second_preimage_resistance",
+      "description": "Second-preimage resistance is a core security goal."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "requires_security_property",
+      "target": "collision_resistance",
+      "description": "Collision resistance is a core security goal."
+    },
+    {
+      "source": "collision_resistance",
+      "relation": "is_limited_by",
+      "target": "birthday_bound",
+      "description": "Generic collision search has a birthday-bound cost."
+    },
+    {
+      "source": "security_strength",
+      "relation": "is_measured_using",
+      "target": "digest_length",
+      "description": "Digest length bounds idealized generic attack strengths."
+    },
+    {
+      "source": "digest_length",
+      "relation": "influences",
+      "target": "preimage_resistance",
+      "description": "An ideal n-bit digest gives approximately n-bit generic preimage strength."
+    },
+    {
+      "source": "digest_length",
+      "relation": "influences",
+      "target": "collision_resistance",
+      "description": "An ideal n-bit digest gives approximately n/2-bit generic collision strength."
+    },
+    {
+      "source": "collision_resistance",
+      "relation": "does_not_imply",
+      "target": "preimage_resistance",
+      "description": "The supplied article notes that collision resistance does not imply preimage resistance."
+    },
+    {
+      "source": "collision_resistance",
+      "relation": "implies",
+      "target": "second_preimage_resistance",
+      "description": "In the theoretical relationship described by the article, collision resistance implies second-preimage resistance."
+    },
+    {
+      "source": "hash_collision",
+      "relation": "violates_goal_of",
+      "target": "collision_resistance",
+      "description": "A collision is a pair that collision resistance aims to make infeasible to find."
+    },
+    {
+      "source": "preimage_attack",
+      "relation": "targets",
+      "target": "preimage_resistance",
+      "description": "Attempts to find an input for a given digest."
+    },
+    {
+      "source": "second_preimage_attack",
+      "relation": "targets",
+      "target": "second_preimage_resistance",
+      "description": "Attempts to match the digest of a specified message with a different message."
+    },
+    {
+      "source": "birthday_attack",
+      "relation": "targets",
+      "target": "collision_resistance",
+      "description": "Uses birthday probabilities to find a colliding pair."
+    },
+    {
+      "source": "length_extension",
+      "relation": "affects",
+      "target": "merkle_damgard",
+      "description": "Many direct Merkle–Damgård hash constructions are susceptible to length extension."
+    },
+    {
+      "source": "length_extension",
+      "relation": "can_break",
+      "target": "tls_naive_hash_auth",
+      "description": "Naively appending a secret to a message before hashing can be vulnerable."
+    },
+    {
+      "source": "hmac",
+      "relation": "mitigates",
+      "target": "length_extension",
+      "description": "HMAC construction avoids the naive length-extension authentication pitfall."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "supports",
+      "target": "integrity_verification",
+      "description": "Digest comparison can detect changes when expected digest is trusted."
+    },
+    {
+      "source": "integrity_verification",
+      "relation": "depends_on",
+      "target": "chain_of_trust",
+      "description": "A digest is useful against malicious substitution only when its expected value is authenticated."
+    },
+    {
+      "source": "trusted_publisher",
+      "relation": "provides",
+      "target": "digest",
+      "description": "A trusted publisher can distribute an expected digest."
+    },
+    {
+      "source": "file_download",
+      "relation": "is_checked_by",
+      "target": "integrity_verification",
+      "description": "Compute the file digest and compare it with the trusted expected digest."
+    },
+    {
+      "source": "digital_signature",
+      "relation": "uses",
+      "target": "cryptographic_hash_function",
+      "description": "Most signature schemes hash messages before signing."
+    },
+    {
+      "source": "message_authentication_code",
+      "relation": "includes_construction",
+      "target": "hmac",
+      "description": "HMAC is a widely used hash-based MAC construction."
+    },
+    {
+      "source": "password_hashing",
+      "relation": "should_use",
+      "target": "key_derivation_function",
+      "description": "Password storage should use a password-specific KDF rather than a fast general-purpose hash alone."
+    },
+    {
+      "source": "password_hashing",
+      "relation": "uses",
+      "target": "salt",
+      "description": "A random salt is stored with the password verifier."
+    },
+    {
+      "source": "password_hashing",
+      "relation": "is_hardened_by",
+      "target": "key_stretching",
+      "description": "Repeated work or memory costs slow offline guessing."
+    },
+    {
+      "source": "key_derivation_function",
+      "relation": "includes_example",
+      "target": "argon2",
+      "description": "Argon2 is a password KDF."
+    },
+    {
+      "source": "key_derivation_function",
+      "relation": "includes_example",
+      "target": "scrypt",
+      "description": "scrypt is a password KDF."
+    },
+    {
+      "source": "key_derivation_function",
+      "relation": "includes_example",
+      "target": "pbkdf2",
+      "description": "PBKDF2 is a password KDF."
+    },
+    {
+      "source": "key_derivation_function",
+      "relation": "includes_example",
+      "target": "bcrypt",
+      "description": "bcrypt is a password hashing function."
+    },
+    {
+      "source": "key_derivation_function",
+      "relation": "includes_example",
+      "target": "balloon_hashing",
+      "description": "Balloon hashing is a password KDF approach."
+    },
+    {
+      "source": "password_bruteforce",
+      "relation": "targets",
+      "target": "password_database",
+      "description": "Attackers test candidate passwords against stored verifiers."
+    },
+    {
+      "source": "salt",
+      "relation": "reduces_value_of",
+      "target": "rainbow_table",
+      "description": "Unique salts frustrate reuse of precomputed hash tables across accounts."
+    },
+    {
+      "source": "proof_of_work",
+      "relation": "uses",
+      "target": "cryptographic_hash_function",
+      "description": "Hash conditions make work moderately costly to find and cheap to verify."
+    },
+    {
+      "source": "hashcash",
+      "relation": "implements",
+      "target": "proof_of_work",
+      "description": "Hashcash uses a leading-zero hash condition."
+    },
+    {
+      "source": "bitcoin_mining",
+      "relation": "uses",
+      "target": "proof_of_work",
+      "description": "Mining searches for block data meeting a hash target."
+    },
+    {
+      "source": "proof_of_work",
+      "relation": "requires",
+      "target": "message",
+      "description": "A candidate message or header is repeatedly varied until its hash meets the target."
+    },
+    {
+      "source": "content_addressable_storage",
+      "relation": "derives_identifier_from",
+      "target": "cryptographic_hash_function",
+      "description": "CAS derives a content address from content."
+    },
+    {
+      "source": "content_addressable_storage",
+      "relation": "uses",
+      "target": "content_address",
+      "description": "The digest-derived address is used to locate stored content."
+    },
+    {
+      "source": "content_address",
+      "relation": "is_derived_from",
+      "target": "digest",
+      "description": "The content address is based on a content digest."
+    },
+    {
+      "source": "content_addressable_storage",
+      "relation": "supports",
+      "target": "deduplication",
+      "description": "Identical content maps to the same address under the same scheme."
+    },
+    {
+      "source": "hash_tree",
+      "relation": "contains",
+      "target": "merkle_tree",
+      "description": "A Merkle tree is a type of hash tree."
+    },
+    {
+      "source": "merkle_tree",
+      "relation": "produces",
+      "target": "merkle_root",
+      "description": "The root summarizes the tree's contents."
+    },
+    {
+      "source": "merkle_tree",
+      "relation": "uses",
+      "target": "cryptographic_hash_function",
+      "description": "Nodes are computed from hashes of children or leaf data."
+    },
+    {
+      "source": "merkle_root",
+      "relation": "commits_to",
+      "target": "message",
+      "description": "The root commits to the represented tree content, subject to hash security and unambiguous encoding."
+    },
+    {
+      "source": "peer_to_peer_file_sharing",
+      "relation": "uses",
+      "target": "file_fingerprint",
+      "description": "P2P systems use content hashes to identify and verify data."
+    },
+    {
+      "source": "magnet_link",
+      "relation": "identifies",
+      "target": "file_fingerprint",
+      "description": "Magnet links encode content identifiers or hashes."
+    },
+    {
+      "source": "ed2k",
+      "relation": "uses",
+      "target": "md4",
+      "description": "The eD2k identifier uses an MD4-variant hash."
+    },
+    {
+      "source": "git",
+      "relation": "uses_historically",
+      "target": "sha1",
+      "description": "Git historically used SHA-1 object identifiers; newer object-format support is a separate compatibility concern."
+    },
+    {
+      "source": "mercurial",
+      "relation": "uses",
+      "target": "file_fingerprint",
+      "description": "Mercurial uses hashes to identify content and repository objects."
+    },
+    {
+      "source": "monotone",
+      "relation": "uses",
+      "target": "file_fingerprint",
+      "description": "Monotone uses hashes for content, directory trees, and ancestry."
+    },
+    {
+      "source": "noncryptographic_hash",
+      "relation": "is_not_equivalent_to",
+      "target": "cryptographic_hash_function",
+      "description": "A fast ordinary hash may lack adversarial security properties."
+    },
+    {
+      "source": "crc32",
+      "relation": "is_a",
+      "target": "checksum",
+      "description": "CRC-32 is an error-detection checksum rather than a cryptographic hash."
+    },
+    {
+      "source": "wEP",
+      "relation": "used_for_integrity",
+      "target": "crc32",
+      "description": "WEP used CRC for integrity; the linear checksum was exploitable."
+    },
+    {
+      "source": "hash_table_collision_dos",
+      "relation": "exploits",
+      "target": "noncryptographic_hash",
+      "description": "Predictable collisions can create excessive hash-table work."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "may_be_built_from",
+      "target": "block_cipher",
+      "description": "Some hash constructions use block-cipher-like components."
+    },
+    {
+      "source": "merkle_damgard",
+      "relation": "processes",
+      "target": "message_block",
+      "description": "The construction iterates over padded message blocks."
+    },
+    {
+      "source": "merkle_damgard",
+      "relation": "uses",
+      "target": "compression_function",
+      "description": "A compression function updates the chaining state."
+    },
+    {
+      "source": "merkle_damgard",
+      "relation": "requires",
+      "target": "merkle_damgard_padding",
+      "description": "Unambiguous length padding is crucial."
+    },
+    {
+      "source": "merkle_damgard",
+      "relation": "maintains",
+      "target": "chaining_state",
+      "description": "The chaining state evolves across blocks."
+    },
+    {
+      "source": "wide_pipe",
+      "relation": "mitigates_some_issues_of",
+      "target": "narrow_pipe",
+      "description": "A wider internal state is intended to reduce several structural weaknesses."
+    },
+    {
+      "source": "sponge_construction",
+      "relation": "used_by",
+      "target": "keccak",
+      "description": "Keccak uses a sponge construction."
+    },
+    {
+      "source": "sha3",
+      "relation": "based_on",
+      "target": "keccak",
+      "description": "SHA-3 is based on the Keccak family."
+    },
+    {
+      "source": "sha3",
+      "relation": "has_output_variant",
+      "target": "sha224",
+      "description": "SHA-3 includes a 224-bit output variant."
+    },
+    {
+      "source": "sha3",
+      "relation": "has_output_variant",
+      "target": "sha256",
+      "description": "SHA-3 includes a 256-bit output variant."
+    },
+    {
+      "source": "sha3",
+      "relation": "has_output_variant",
+      "target": "sha384",
+      "description": "SHA-3 includes a 384-bit output variant."
+    },
+    {
+      "source": "sha3",
+      "relation": "has_output_variant",
+      "target": "sha512",
+      "description": "SHA-3 includes a 512-bit output variant."
+    },
+    {
+      "source": "shake128",
+      "relation": "is_a",
+      "target": "cryptographic_hash_function",
+      "description": "SHAKE-128 is an extendable-output hash function."
+    },
+    {
+      "source": "shake256",
+      "relation": "is_a",
+      "target": "cryptographic_hash_function",
+      "description": "SHAKE-256 is an extendable-output hash function."
+    },
+    {
+      "source": "merkle_damgard",
+      "relation": "used_by",
+      "target": "sha1",
+      "description": "SHA-1 is described as Merkle–Damgård-based."
+    },
+    {
+      "source": "merkle_damgard",
+      "relation": "used_by",
+      "target": "sha2",
+      "description": "SHA-2 algorithms in the supplied article use this family of construction."
+    },
+    {
+      "source": "sha1",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-1 produces a 160-bit / 20-byte digest."
+    },
+    {
+      "source": "sha256",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-256 produces a 256-bit / 32-byte digest."
+    },
+    {
+      "source": "sha512",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-512 produces a 512-bit / 64-byte digest."
+    },
+    {
+      "source": "md5",
+      "relation": "produces",
+      "target": "digest",
+      "description": "MD5 produces a 128-bit / 16-byte digest."
+    },
+    {
+      "source": "ripemd160",
+      "relation": "produces",
+      "target": "digest",
+      "description": "RIPEMD-160 produces a 160-bit / 20-byte digest."
+    },
+    {
+      "source": "whirlpool",
+      "relation": "produces",
+      "target": "digest",
+      "description": "Whirlpool produces a 512-bit / 64-byte digest."
+    },
+    {
+      "source": "sha224",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-224 produces a 224-bit / 28-byte digest."
+    },
+    {
+      "source": "sha384",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-384 produces a 384-bit / 48-byte digest."
+    },
+    {
+      "source": "sha512_224",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-512/224 produces a 224-bit digest."
+    },
+    {
+      "source": "sha512_256",
+      "relation": "produces",
+      "target": "digest",
+      "description": "SHA-512/256 produces a 256-bit digest."
+    },
+    {
+      "source": "blake2",
+      "relation": "has_variant",
+      "target": "blake2b",
+      "description": "BLAKE2b is the 64-bit-oriented BLAKE2 variant."
+    },
+    {
+      "source": "blake2",
+      "relation": "has_variant",
+      "target": "blake2s",
+      "description": "BLAKE2s is the smaller-architecture-oriented variant."
+    },
+    {
+      "source": "blake3",
+      "relation": "based_on_design_of",
+      "target": "blake2s",
+      "description": "BLAKE3's compression function is closely based on BLAKE2s."
+    },
+    {
+      "source": "blake3",
+      "relation": "uses",
+      "target": "merkle_tree",
+      "description": "BLAKE3 uses a Merkle-tree internal structure and supports parallelism."
+    },
+    {
+      "source": "sha2",
+      "relation": "designed_by",
+      "target": "nsa",
+      "description": "The supplied article attributes SHA-2 design to the NSA."
+    },
+    {
+      "source": "sha2",
+      "relation": "standardized_by",
+      "target": "nist",
+      "description": "SHA-2 was published as a Secure Hash Algorithm standard."
+    },
+    {
+      "source": "sha3",
+      "relation": "selected_by",
+      "target": "nist",
+      "description": "NIST selected Keccak for SHA-3."
+    },
+    {
+      "source": "keccak",
+      "relation": "designed_by",
+      "target": "guido_bertoni",
+      "description": "Guido Bertoni is one of Keccak's designers."
+    },
+    {
+      "source": "keccak",
+      "relation": "designed_by",
+      "target": "joan_daemen",
+      "description": "Joan Daemen is one of Keccak's designers."
+    },
+    {
+      "source": "keccak",
+      "relation": "designed_by",
+      "target": "michael_peeters",
+      "description": "Michael Peeters is one of Keccak's designers."
+    },
+    {
+      "source": "keccak",
+      "relation": "designed_by",
+      "target": "gilles_van_assche",
+      "description": "Gilles Van Assche is one of Keccak's designers."
+    },
+    {
+      "source": "md5",
+      "relation": "designed_by",
+      "target": "ronald_rivest",
+      "description": "Ronald Rivest designed MD5."
+    },
+    {
+      "source": "blake2",
+      "relation": "co_created_by",
+      "target": "jean_philippe_aumasson",
+      "description": "Jean-Philippe Aumasson co-created BLAKE2."
+    },
+    {
+      "source": "blake2",
+      "relation": "co_created_by",
+      "target": "samuel_neves",
+      "description": "Samuel Neves co-created BLAKE2."
+    },
+    {
+      "source": "blake2",
+      "relation": "co_created_by",
+      "target": "zooko_wilcox_ohearn",
+      "description": "Zooko Wilcox-O'Hearn co-created BLAKE2."
+    },
+    {
+      "source": "blake2",
+      "relation": "co_created_by",
+      "target": "christian_winnerlein",
+      "description": "Christian Winnerlein co-created BLAKE2."
+    },
+    {
+      "source": "md5",
+      "relation": "has_known_weakness",
+      "target": "md5_certificate_attack",
+      "description": "A practical MD5 collision attack undermined certificate trust."
+    },
+    {
+      "source": "sha1",
+      "relation": "has_known_weakness",
+      "target": "shattered_attack",
+      "description": "The SHAttered result demonstrated a practical SHA-1 collision."
+    },
+    {
+      "source": "shattered_attack",
+      "relation": "is_example_of",
+      "target": "collision_resistance",
+      "description": "The attack violates the practical collision-resistance expectation for SHA-1."
+    },
+    {
+      "source": "sha1_shattered",
+      "relation": "demonstrates_weakness_of",
+      "target": "sha1",
+      "description": "The 2017 collision demonstration is evidence that SHA-1 is broken for collision-sensitive use."
+    },
+    {
+      "source": "cryptographic_agility",
+      "relation": "helps_replace",
+      "target": "sha1",
+      "description": "Algorithm agility enables migration away from weak algorithms."
+    },
+    {
+      "source": "cryptographic_agility",
+      "relation": "helps_replace",
+      "target": "md5",
+      "description": "Algorithm agility enables migration away from weak algorithms."
+    },
+    {
+      "source": "randomized_hashing",
+      "relation": "can_support",
+      "target": "digital_signature",
+      "description": "Randomized hashing techniques may help address collision-related concerns in signature contexts."
+    },
+    {
+      "source": "concatenated_hashes",
+      "relation": "combines",
+      "target": "md5",
+      "description": "Historical constructions combined MD5 with another hash."
+    },
+    {
+      "source": "concatenated_hashes",
+      "relation": "combines",
+      "target": "sha1",
+      "description": "Older TLS/SSL versions used concatenated MD5 and SHA-1 in certain contexts."
+    },
+    {
+      "source": "prng",
+      "relation": "can_be_built_from",
+      "target": "hash_based_prng",
+      "description": "A PRNG can combine a secret seed, counter, and hash operation."
+    },
+    {
+      "source": "hash_based_prng",
+      "relation": "uses",
+      "target": "random_seed",
+      "description": "The construction starts from a secret random seed."
+    },
+    {
+      "source": "hash_based_prng",
+      "relation": "uses",
+      "target": "counter",
+      "description": "A counter differentiates generated outputs."
+    },
+    {
+      "source": "stream_cipher",
+      "relation": "can_use",
+      "target": "prng",
+      "description": "Hash-derived PRNG output can be used as a keystream in a carefully designed construction."
+    },
+    {
+      "source": "aes",
+      "relation": "is_a",
+      "target": "block_cipher",
+      "description": "AES is a general-purpose block cipher."
+    },
+    {
+      "source": "davies_meyer",
+      "relation": "uses_component_type",
+      "target": "block_cipher",
+      "description": "Davies–Meyer constructions use a block-cipher-like component."
+    },
+    {
+      "source": "swifft",
+      "relation": "illustrates_limitation_of",
+      "target": "random_oracle_model",
+      "description": "Collision resistance alone does not guarantee all desirable random-like properties."
+    },
+    {
+      "source": "nist",
+      "relation": "organized",
+      "target": "hash_function_competition",
+      "description": "NIST organized the SHA-3 hash function competition."
+    },
+    {
+      "source": "hash_function_competition",
+      "relation": "selected",
+      "target": "sha3",
+      "description": "The competition led to SHA-3 standardization based on Keccak."
+    },
+    {
+      "source": "length_extension",
+      "relation": "is_relevant_to",
+      "target": "sha256",
+      "description": "SHA-256 can be length-extended when used directly in vulnerable constructions."
+    },
+    {
+      "source": "length_extension",
+      "relation": "is_relevant_to",
+      "target": "sha512",
+      "description": "SHA-512 can be length-extended when used directly in vulnerable constructions."
+    },
+    {
+      "source": "length_extension",
+      "relation": "not_applicable_in_same_way_to",
+      "target": "sha3",
+      "description": "The supplied article states SHA-3 is not vulnerable to this specific length-extension property."
+    },
+    {
+      "source": "length_extension",
+      "relation": "not_applicable_in_same_way_to",
+      "target": "blake2",
+      "description": "The supplied article states BLAKE2 is not vulnerable to this specific length-extension property."
+    },
+    {
+      "source": "length_extension",
+      "relation": "not_applicable_in_same_way_to",
+      "target": "blake3",
+      "description": "The supplied article states BLAKE3 is not vulnerable to this specific length-extension property."
+    },
+    {
+      "source": "password_hashing",
+      "relation": "must_not_rely_on_fast_hash_alone",
+      "target": "sha256",
+      "description": "A fast general-purpose digest does not adequately slow password guessing."
+    },
+    {
+      "source": "password_hashing",
+      "relation": "must_not_rely_on_fast_hash_alone",
+      "target": "sha1",
+      "description": "A fast general-purpose digest is unsuitable as a password-storage scheme by itself."
+    },
+    {
+      "source": "content_addressable_storage",
+      "relation": "is_used_in",
+      "target": "peer_to_peer_file_sharing",
+      "description": "Content addressing principles are used in P2P sharing and distributed systems."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "can_support",
+      "target": "commitment_scheme",
+      "description": "A digest can act as a simple commitment when the message is later revealed and rehashed."
+    },
+    {
+      "source": "commitment_scheme",
+      "relation": "illustrated_by",
+      "target": "message",
+      "description": "A party can commit to a hidden solution by publishing its digest, then reveal the solution later."
+    },
+    {
+      "source": "sha0",
+      "relation": "replaced_by",
+      "target": "sha1",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "md4",
+      "relation": "succeeded_by",
+      "target": "md5",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha2",
+      "relation": "includes_variant",
+      "target": "sha224",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha2",
+      "relation": "includes_variant",
+      "target": "sha256",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha2",
+      "relation": "includes_variant",
+      "target": "sha384",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha2",
+      "relation": "includes_variant",
+      "target": "sha512",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha2",
+      "relation": "includes_variant",
+      "target": "sha512_224",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha2",
+      "relation": "includes_variant",
+      "target": "sha512_256",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha3",
+      "relation": "includes_xof_family",
+      "target": "shake128",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "sha3",
+      "relation": "includes_xof_family",
+      "target": "shake256",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "ripemd160",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "whirlpool",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "sm3",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "streebog",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "gost_3411_94",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "lsh",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "kupyna",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "blake",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "skein",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "swifft",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "md5",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "sha1",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "sha2",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "sha3",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "blake2",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "has_example",
+      "target": "blake3",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "can_be_used_for",
+      "target": "file_fingerprint",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "can_be_used_for",
+      "target": "message_authentication_code",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "can_be_used_for",
+      "target": "prng",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "cryptographic_hash_function",
+      "relation": "can_be_used_for",
+      "target": "proof_of_work",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "key_derivation_function",
+      "relation": "slows",
+      "target": "password_bruteforce",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "hash_tree",
+      "relation": "supports",
+      "target": "file_fingerprint",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "hash_function",
+      "relation": "may_be_noncryptographic",
+      "target": "noncryptographic_hash",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    },
+    {
+      "source": "hash_function",
+      "relation": "may_be_cryptographic",
+      "target": "cryptographic_hash_function",
+      "description": "Relationship included to preserve algorithm lineage, family membership, application, or cross-domain context."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern_secure_file_verification",
+      "name": "Secure file verification",
+      "purpose": "Detect modification or substitution of downloaded content.",
+      "steps": [
+        "Obtain the expected digest from an authenticated/trusted source.",
+        "Compute the digest of the received file with a suitable modern algorithm.",
+        "Compare values using the correct algorithm and encoding.",
+        "If a mismatch occurs, reject or investigate the file; if it matches, interpret the result only within the trust model."
+      ],
+      "entities": [
+        "trusted_publisher",
+        "file_download",
+        "cryptographic_hash_function",
+        "digest",
+        "integrity_verification",
+        "chain_of_trust"
+      ],
+      "caveats": [
+        "A digest posted beside a file on the same unauthenticated channel may be replaced together with the file.",
+        "A matching hash does not prove that software is benign or that the publisher is trustworthy."
+      ]
+    },
+    {
+      "id": "pattern_password_storage",
+      "name": "Password storage with a password KDF",
+      "purpose": "Reduce the rate of offline password guessing after a verifier database is exposed.",
+      "steps": [
+        "Generate a unique random salt per password.",
+        "Derive a verifier using a password KDF such as Argon2, scrypt, bcrypt, or PBKDF2 with appropriate parameters.",
+        "Store the algorithm identifier, parameters, salt, and verifier.",
+        "On login, recompute and compare; upgrade parameters as policy changes."
+      ],
+      "entities": [
+        "password_hashing",
+        "salt",
+        "key_derivation_function",
+        "argon2",
+        "scrypt",
+        "bcrypt",
+        "pbkdf2",
+        "password_database"
+      ],
+      "caveats": [
+        "Do not store plaintext passwords.",
+        "Do not use a fast hash such as raw SHA-256 or SHA-1 alone for password storage.",
+        "Parameter choices should follow current platform and standards guidance."
+      ]
+    },
+    {
+      "id": "pattern_hmac_authentication",
+      "name": "HMAC message authentication",
+      "purpose": "Authenticate messages using a shared secret and a standardized keyed construction.",
+      "steps": [
+        "Agree on a secure hash and shared secret key.",
+        "Compute the HMAC over the canonical message representation.",
+        "Transmit the message and authentication tag.",
+        "Receiver recomputes the HMAC and compares tags using an appropriate constant-time comparison."
+      ],
+      "entities": [
+        "hmac",
+        "message_authentication_code",
+        "cryptographic_hash_function",
+        "length_extension"
+      ],
+      "caveats": [
+        "Do not substitute naive hash(secret || message) constructions for HMAC.",
+        "Key management and message canonicalization remain important."
+      ]
+    },
+    {
+      "id": "pattern_hash_content_addressing",
+      "name": "Content-addressed storage",
+      "purpose": "Address and deduplicate objects based on content.",
+      "steps": [
+        "Select a collision-resistant hash and a canonical byte representation.",
+        "Hash the content to derive a content address.",
+        "Store the object and index its address to physical storage.",
+        "On retrieval, recompute the hash to verify content integrity."
+      ],
+      "entities": [
+        "content_addressable_storage",
+        "content_address",
+        "digest",
+        "deduplication",
+        "merkle_tree"
+      ],
+      "caveats": [
+        "Collision handling and algorithm migration should be part of the design.",
+        "The content address is not automatically a claim of publisher authenticity."
+      ]
+    },
+    {
+      "id": "pattern_merkle_verification",
+      "name": "Merkle-tree verification",
+      "purpose": "Commit to a large data set and verify components using a root digest and authentication path.",
+      "steps": [
+        "Hash each leaf using an unambiguous encoding.",
+        "Hash internal nodes from their child hashes.",
+        "Publish or authenticate the root digest.",
+        "Verify a selected leaf by recomputing its path to the root."
+      ],
+      "entities": [
+        "merkle_tree",
+        "merkle_root",
+        "hash_tree",
+        "cryptographic_hash_function"
+      ],
+      "caveats": [
+        "Tree layout, leaf/node domain separation, and encoding must be specified to avoid ambiguity."
+      ]
+    },
+    {
+      "id": "pattern_hash_based_pow",
+      "name": "Hash-based proof of work",
+      "purpose": "Make request creation moderately costly while allowing cheap validation.",
+      "steps": [
+        "Define a target predicate over a hash output.",
+        "Vary a nonce or candidate header and compute hashes until the predicate passes.",
+        "Send the candidate and proof.",
+        "Verifier performs one or a small number of hash computations and checks the predicate."
+      ],
+      "entities": [
+        "proof_of_work",
+        "hashcash",
+        "bitcoin_mining",
+        "cryptographic_hash_function",
+        "message"
+      ],
+      "caveats": [
+        "Difficulty must be calibrated; proof of work does not itself establish the truth or legitimacy of the submitted content."
+      ]
+    },
+    {
+      "id": "pattern_algorithm_migration",
+      "name": "Cryptographic hash algorithm migration",
+      "purpose": "Retire weak digest algorithms while maintaining interoperability.",
+      "steps": [
+        "Inventory every algorithm use and stored identifier format.",
+        "Choose a modern algorithm appropriate to the use case and threat model.",
+        "Version formats and APIs so algorithm identity is explicit.",
+        "Where feasible, verify old objects and add new digests; plan dual-read or staged migration.",
+        "Monitor standards and cryptanalysis and retire obsolete formats."
+      ],
+      "entities": [
+        "cryptographic_agility",
+        "md5",
+        "sha1",
+        "sha2",
+        "sha3",
+        "blake2",
+        "blake3"
+      ],
+      "caveats": [
+        "A digest's byte length alone does not uniquely identify the algorithm.",
+        "Do not assume legacy digests become secure because they are combined with a modern digest."
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule_hash_is_not_encryption",
+      "statement": "A cryptographic hash is not encryption and has no decryption key or general inverse operation.",
+      "basis": [
+        "cryptographic_hash_function",
+        "preimage_resistance"
+      ],
+      "kind": "semantic_constraint"
+    },
+    {
+      "id": "rule_digest_does_not_prove_safety",
+      "statement": "A matching digest proves only a content match relative to the expected digest and trust chain; it does not establish that the content is safe or benign.",
+      "basis": [
+        "integrity_verification",
+        "chain_of_trust",
+        "trusted_publisher"
+      ],
+      "kind": "trust_boundary"
+    },
+    {
+      "id": "rule_collision_security",
+      "statement": "For an ideal n-bit hash, generic preimage work is about 2^n and generic collision work about 2^(n/2); real algorithms may be weaker due to cryptanalysis.",
+      "basis": [
+        "digest_length",
+        "security_strength",
+        "birthday_bound"
+      ],
+      "kind": "security_estimate"
+    },
+    {
+      "id": "rule_passwords_need_kdf",
+      "statement": "Fast general-purpose hashes should not be used alone to store passwords; use a salted password KDF with current recommended parameters.",
+      "basis": [
+        "password_hashing",
+        "salt",
+        "key_derivation_function"
+      ],
+      "kind": "security_policy"
+    },
+    {
+      "id": "rule_mac_use_hmac",
+      "statement": "For hash-based message authentication, use HMAC or another reviewed construction rather than naive secret-prefix/suffix hashing.",
+      "basis": [
+        "hmac",
+        "length_extension",
+        "tls_naive_hash_auth"
+      ],
+      "kind": "security_policy"
+    },
+    {
+      "id": "rule_retire_md5_sha1",
+      "statement": "MD5 and SHA-1 are unsuitable for new applications that depend on collision resistance.",
+      "basis": [
+        "md5",
+        "sha1",
+        "md5_certificate_attack",
+        "shattered_attack"
+      ],
+      "kind": "algorithm_policy"
+    },
+    {
+      "id": "rule_crc_not_crypto",
+      "statement": "CRC-32 and similar checksums detect accidental corruption but do not provide cryptographic protection against intentional manipulation.",
+      "basis": [
+        "crc32",
+        "checksum",
+        "wEP"
+      ],
+      "kind": "semantic_constraint"
+    },
+    {
+      "id": "rule_algorithm_identifier",
+      "statement": "Persist the algorithm name/version and output parameters alongside a digest; digest bytes alone are not a robust self-describing identifier.",
+      "basis": [
+        "digest",
+        "cryptographic_agility",
+        "digest_length"
+      ],
+      "kind": "schema_constraint"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_sha256_file_check",
+      "title": "File digest comparison",
+      "input": "A downloaded archive and a trusted SHA-256 digest string.",
+      "steps": [
+        "Compute SHA-256 over the exact downloaded bytes.",
+        "Encode the result consistently, commonly as hexadecimal.",
+        "Compare with the authenticated expected digest."
+      ],
+      "output": "Equal digests provide strong evidence of byte-for-byte identity under SHA-256's security assumptions and the trust model."
+    },
+    {
+      "id": "example_hashcash",
+      "title": "Leading-zero proof of work",
+      "input": "A candidate message/header plus a nonce.",
+      "steps": [
+        "Hash the candidate.",
+        "Check whether the digest begins with the required number of zero bits.",
+        "If not, vary the nonce and repeat."
+      ],
+      "output": "A valid candidate is relatively cheap to verify; expected search effort grows exponentially with the number of required leading zero bits."
+    },
+    {
+      "id": "example_commitment",
+      "title": "Digest commitment",
+      "input": "A secret solution m held by Alice.",
+      "steps": [
+        "Alice computes H(m) and publishes the digest before revealing m.",
+        "Bob later computes H(m) over the revealed solution.",
+        "They compare the result to the earlier commitment."
+      ],
+      "output": "The matching digest supports the claim that the revealed solution matches the committed value, assuming the hash and protocol are appropriate."
+    },
+    {
+      "id": "example_password_salt",
+      "title": "Salted password verifier",
+      "input": "Password candidate, unique random salt, KDF name and parameters.",
+      "steps": [
+        "Derive a verifier with the selected password KDF.",
+        "Store the salt, algorithm parameters and verifier, not the plaintext password.",
+        "At login, derive again and compare."
+      ],
+      "output": "Unique salts reduce cross-account precomputation and KDF cost slows each password guess."
+    }
+  ],
+  "source_records": [
+    {
+      "id": "source_wikipedia_cryptographic_hash_function",
+      "title": "Cryptographic hash function",
+      "source_type": "user_supplied_article_text",
+      "supports": [
+        "definition",
+        "security properties",
+        "applications",
+        "construction families",
+        "algorithm summaries",
+        "attack summaries",
+        "password hashing cautions",
+        "hash-based cryptographic primitives"
+      ],
+      "notes": "Primary content source is the article text supplied in the conversation. Statements are modeled as source claims and should be checked against current standards before operational security use.",
+      "source_lines": "Supplied extract lines 58-359"
+    },
+    {
+      "id": "source_menezes_hac",
+      "title": "Handbook of Applied Cryptography",
+      "source_type": "bibliographic_reference_listed_in_article",
+      "supports": [
+        "formal hash-function properties"
+      ],
+      "notes": "Listed in the supplied article's references; this graph does not independently retrieve the work."
+    },
+    {
+      "id": "source_nist_sp800_63b",
+      "title": "NIST SP 800-63B Digital Identity Guidelines",
+      "source_type": "bibliographic_reference_listed_in_article",
+      "supports": [
+        "password verifier and password hashing guidance"
+      ],
+      "notes": "Listed in the supplied article; current editions and revisions should be consulted for production policy."
+    },
+    {
+      "id": "source_fips_180",
+      "title": "Secure Hash Standard (FIPS PUB 180 lineage)",
+      "source_type": "standard_family_referenced_in_article",
+      "supports": [
+        "SHA-0 and SHA-1 history",
+        "SHA family standardization"
+      ],
+      "notes": "The supplied article summarizes this standards history."
+    },
+    {
+      "id": "source_sha3_competition",
+      "title": "NIST SHA-3 hash function competition",
+      "source_type": "standardization_process_referenced_in_article",
+      "supports": [
+        "SHA-3 selection",
+        "candidate algorithm evaluation"
+      ],
+      "notes": "The article describes candidate evaluation and selection of Keccak."
+    },
+    {
+      "id": "source_shattered",
+      "title": "SHAttered SHA-1 collision demonstration",
+      "source_type": "cryptanalysis_result_referenced_in_article",
+      "supports": [
+        "SHA-1 collision weakness"
+      ],
+      "notes": "The supplied article identifies Google's 2017 practical collision demonstration."
+    },
+    {
+      "id": "source_md5_certificate_attack",
+      "title": "MD5 considered harmful / rogue certificate demonstration",
+      "source_type": "cryptanalysis_result_referenced_in_article",
+      "supports": [
+        "practical MD5 collision attack in certificate context"
+      ],
+      "notes": "The supplied article references a 2008 practical attack."
+    },
+    {
+      "id": "source_joux_multicollisions",
+      "title": "Multicollisions in Iterated Hash Functions",
+      "source_type": "academic_reference_listed_in_article",
+      "supports": [
+        "multicollision observations",
+        "concatenated hash considerations"
+      ],
+      "notes": "Listed in the supplied article's references."
+    },
+    {
+      "id": "source_rogaway_shrimpton",
+      "title": "Cryptographic Hash-Function Basics",
+      "source_type": "academic_reference_listed_in_article",
+      "supports": [
+        "formal separation of preimage, second-preimage, and collision resistance"
+      ],
+      "notes": "Listed in the supplied article's references."
+    }
+  ],
+  "validation": {
+    "unique_entity_ids": true,
+    "relationship_endpoints_resolve": true,
+    "architecture_pattern_entity_refs_resolve": true,
+    "derived_rule_basis_refs_resolve": true,
+    "source_records_are_provenance_not_independent_verification": true,
+    "entity_count": 132,
+    "relationship_count": 163,
+    "architecture_pattern_count": 7,
+    "derived_rule_count": 8,
+    "example_count": 4,
+    "source_record_count": 9,
+    "json_schema_embedded": true
+  },
+  "json_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Cryptographic Hash Function Knowledge Graph Entry",
+    "description": "Machine-readable knowledge graph derived primarily from the supplied Wikipedia article text on cryptographic hash functions. Historical claims are attributed to that source; this schema is an educational graph record, not a current cryptographic implementation recommendation.",
+    "type": "object",
+    "required": [
+      "schema_version",
+      "record_type",
+      "topic",
+      "source_scope",
+      "entities",
+      "relationships",
+      "architecture_patterns",
+      "derived_rules",
+      "examples",
+      "source_records"
+    ],
+    "properties": {
+      "schema_version": {
+        "type": "string",
+        "const": "1.0.0"
+      },
+      "record_type": {
+        "type": "string",
+        "const": "knowledge_graph_entry"
+      },
+      "topic": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "definition"
+        ],
+        "properties": {
+          "id": {
+            "const": "cryptographic_hash_function"
+          },
+          "name": {
+            "const": "Cryptographic hash function"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "domain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "source_scope": {
+        "type": "object",
+        "required": [
+          "primary_source",
+          "scope_note",
+          "source_derived_content"
+        ],
+        "properties": {
+          "primary_source": {
+            "type": "string"
+          },
+          "scope_note": {
+            "type": "string"
+          },
+          "source_derived_content": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "editorial_caveat": {
+            "type": "string"
+          }
+        }
+      },
+      "entities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "type",
+            "description"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "object"
+            },
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "relationships": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "source",
+            "relation",
+            "target",
+            "description"
+          ],
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "relation": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "qualifiers": {
+              "type": "object"
+            },
+            "source_notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "architecture_patterns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "purpose",
+            "steps",
+            "entities",
+            "caveats"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "entities": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "caveats": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "derived_rules": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "statement",
+            "basis",
+            "kind"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "statement": {
+              "type": "string"
+            },
+            "basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "kind": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "examples": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "title",
+            "input",
+            "steps",
+            "output"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "input": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "output": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "source_records": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "title",
+            "source_type",
+            "supports"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "source_type": {
+              "type": "string"
+            },
+            "supports": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "notes": {
+              "type": "string"
+            },
+            "source_lines": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "validation": {
+        "type": "object"
+      }
+    },
+    "additionalProperties": false
+  }
+}

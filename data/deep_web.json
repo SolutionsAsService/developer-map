@@ -1,0 +1,665 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "knowledge_graph_entity",
+  "id": "web.concepts.deep_web",
+  "canonical_name": "Deep web",
+  "entity_type": "internet_concept",
+  "aliases": [
+    "invisible web",
+    "hidden web"
+  ],
+  "description": "The parts of the World Wide Web whose content is not indexed by standard web search-engine programs. Deep-web content may still be reachable through a direct URL, an authenticated session, a database query, a site-specific search interface, an archive, or specialized software.",
+  "source_basis": {
+    "primary_source": "Wikipedia article: Deep web",
+    "source_file": "Pasted text(20261020-161756).txt",
+    "source_scope_note": "This record follows the supplied article text. Generalized structural links are represented as knowledge-graph relationships; they do not imply that every relationship was explicitly asserted in the article.",
+    "source_citation": "fileciteturn0file0L46-L51"
+  },
+  "definitions": {
+    "core_definition": "Web content not indexed by standard search engines.",
+    "contrasted_with": {
+      "surface_web": "Content that is accessible and indexed by ordinary web search engines.",
+      "dark_web": "A subset of the deep web intentionally hidden and generally reachable through specialized software or networks rather than standard browsers and methods."
+    },
+    "terminology_warning": "Deep web and dark web are not synonyms. Media usage has sometimes conflated them, which has created persistent confusion.",
+    "historical_term_attribution": {
+      "person": "Michael K. Bergman",
+      "year": 2001,
+      "claim": "Credited with establishing the term 'deep web' as a search-indexing term."
+    }
+  },
+  "access_model": {
+    "direct_access": [
+      "Direct URL",
+      "IP address"
+    ],
+    "possible_access_requirements": [
+      "Password",
+      "Authentication or other security information",
+      "Registration",
+      "Payment or subscription",
+      "Submitted database query",
+      "JavaScript-generated navigation",
+      "Specialized software for certain intentionally hidden services"
+    ],
+    "examples": [
+      {
+        "name": "Webmail",
+        "access_pattern": "Authenticated account",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Online banking",
+        "access_pattern": "Authenticated account",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Cloud storage",
+        "access_pattern": "Authenticated account or private link",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Restricted social-media pages and profiles",
+        "access_pattern": "Privacy settings, account permissions, or login",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Registration-gated web forums",
+        "access_pattern": "Account registration and login",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Paywalled video, magazine, and newspaper services",
+        "access_pattern": "Subscription or payment",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Database query results",
+        "access_pattern": "Form submission or application query",
+        "classification": "deep_web_example"
+      },
+      {
+        "name": "Web archives",
+        "access_pattern": "Archive interface and historical snapshot selection",
+        "classification": "potential_deep_web_example_as_described_by_source"
+      }
+    ]
+  },
+  "non_indexing_mechanisms": [
+    {
+      "id": "deep_web.indexing.contextual",
+      "name": "Contextual web",
+      "description": "Pages vary according to access context, such as client IP range or prior navigation sequence.",
+      "mechanisms": [
+        "IP-dependent responses",
+        "Session or navigation-dependent responses"
+      ],
+      "crawler_challenge": "A crawler may not reproduce the context needed to obtain the same page."
+    },
+    {
+      "id": "deep_web.indexing.dynamic",
+      "name": "Dynamic content",
+      "description": "Pages are generated in response to submitted queries or forms and may not exist as stable, discoverable URLs before the query.",
+      "mechanisms": [
+        "Search forms",
+        "Database queries",
+        "Open-domain text inputs"
+      ],
+      "crawler_challenge": "The query space may be too large or indeterminate to enumerate."
+    },
+    {
+      "id": "deep_web.indexing.limited_access",
+      "name": "Limited-access content",
+      "description": "Technical or policy controls limit crawling, indexing, or caching.",
+      "mechanisms": [
+        "Robots Exclusion Standard",
+        "CAPTCHAs",
+        "No-store directives",
+        "Authentication barriers"
+      ],
+      "crawler_challenge": "Access controls or directives can prevent crawling or cached copies."
+    },
+    {
+      "id": "deep_web.indexing.non_html",
+      "name": "Non-HTML or non-text content",
+      "description": "Information is embedded in multimedia or file formats that a search engine may not recognize or extract.",
+      "mechanisms": [
+        "Images",
+        "Video",
+        "Specialized file formats"
+      ],
+      "crawler_challenge": "Text extraction, format recognition, or semantic interpretation may be limited."
+    },
+    {
+      "id": "deep_web.indexing.private",
+      "name": "Private web",
+      "description": "Resources require registration or login.",
+      "mechanisms": [
+        "Account registration",
+        "Password-protected pages",
+        "Authenticated sessions"
+      ],
+      "crawler_challenge": "The crawler cannot retrieve the protected content without authorized access."
+    },
+    {
+      "id": "deep_web.indexing.scripted",
+      "name": "Scripted content",
+      "description": "Pages or data are exposed through links created by JavaScript or content fetched dynamically by client-side scripts.",
+      "mechanisms": [
+        "JavaScript-generated links",
+        "AJAX-style requests",
+        "Client-side rendering"
+      ],
+      "crawler_challenge": "A crawler that does not execute the relevant scripts or reproduce application behavior may miss content."
+    },
+    {
+      "id": "deep_web.indexing.special_software",
+      "name": "Special-software-accessible content",
+      "description": "Some intentionally hidden services are accessible through specialized software or networks.",
+      "mechanisms": [
+        "Tor",
+        "I2P",
+        "Other darknet software"
+      ],
+      "crawler_challenge": "Ordinary browsers and conventional crawlers do not directly access all such services."
+    },
+    {
+      "id": "deep_web.indexing.unlinked",
+      "name": "Unlinked content",
+      "description": "Pages with few or no links from known pages may remain undiscovered by link-following crawlers.",
+      "mechanisms": [
+        "Orphan pages",
+        "Missing backlinks or inlinks"
+      ],
+      "crawler_challenge": "A crawler generally needs a known URL, link, sitemap, submission, or other discovery route."
+    },
+    {
+      "id": "deep_web.indexing.archives",
+      "name": "Archived web content",
+      "description": "Historical snapshots may be accessible through archival interfaces but may not be indexed as ordinary current pages.",
+      "mechanisms": [
+        "Archived snapshots",
+        "Time-based archive lookup"
+      ],
+      "example": "Internet Archive Wayback Machine",
+      "classification_note": "The supplied article describes archives as a possible deep-web case; classification can depend on the search engine and the particular archive resource."
+    }
+  ],
+  "discovery_and_indexing": {
+    "conventional_search_engine_model": {
+      "components": [
+        "Crawler",
+        "URL frontier",
+        "Link discovery",
+        "Content fetcher",
+        "Parser",
+        "Indexer",
+        "Search interface"
+      ],
+      "typical_method": "Follow hyperlinks from known URLs and process retrievable pages.",
+      "limitations": [
+        "Cannot enumerate every possible database query.",
+        "May not access authenticated resources.",
+        "May not execute all client-side application behavior.",
+        "May not interpret all multimedia or specialized file formats.",
+        "May not discover unlinked pages.",
+        "May avoid content restricted by site policy or technical controls."
+      ]
+    },
+    "deep_web_crawling_methods": [
+      {
+        "name": "Form-interface discovery",
+        "description": "Identify web forms and query interfaces, then submit selected queries to obtain otherwise undiscovered result pages."
+      },
+      {
+        "name": "User-supplied or learned query terms",
+        "description": "Use important terms provided by users or collected from query interfaces to generate searches against hidden-web databases."
+      },
+      {
+        "name": "Automatic query generation",
+        "description": "Generate meaningful queries for search forms and extract structured data from resulting pages."
+      },
+      {
+        "name": "Sitemaps",
+        "description": "A site can advertise discoverable URLs through the Sitemap Protocol."
+      },
+      {
+        "name": "OAI-PMH",
+        "description": "A metadata-harvesting protocol that can help expose records or resources from participating repositories."
+      },
+      {
+        "name": "Search-engine form surfacing",
+        "description": "Search engines may select representative form values and combinations to generate URLs that can be indexed."
+      }
+    ],
+    "form_surfacing_strategies": [
+      "Select input values for keyword-search fields.",
+      "Identify fields constrained to specific data types, such as dates.",
+      "Select a limited number of input combinations likely to produce useful indexable URLs."
+    ],
+    "tradeoffs": [
+      "Crawling forms can expose useful pages that ordinary link traversal misses.",
+      "The number of possible queries can be enormous.",
+      "Poorly chosen submissions may create low-value pages or inflate apparent popularity.",
+      "Access permission, privacy, rate limits, and site policies remain important constraints."
+    ]
+  },
+  "historical_development": [
+    {
+      "year": 1994,
+      "entity": "Jill Ellsworth",
+      "event": "Used the term 'Invisible Web' for websites not registered with search engines, as reported by the cited historical account."
+    },
+    {
+      "year": 1996,
+      "entity": "Frank Garcia",
+      "event": "An early published use described websites that were not registered with search engines and therefore were difficult to find."
+    },
+    {
+      "year": 1996,
+      "entity": "Personal Library Software",
+      "event": "A December press release described the No. 1 Deep Web program."
+    },
+    {
+      "year": 2001,
+      "entity": "Michael K. Bergman",
+      "event": "Published 'The Deep Web: Surfacing Hidden Value' in The Journal of Electronic Publishing and is credited with the now-common term."
+    },
+    {
+      "year": 2001,
+      "entity": "Sriram Raghavan and Hector Garcia-Molina",
+      "event": "Presented an architectural model for a hidden-web crawler that used important terms and query interfaces."
+    },
+    {
+      "year": 2005,
+      "entity": "Alexandros Ntoulas, Petros Zerfos, and Junghoo Cho",
+      "event": "Published work on automatically generating meaningful queries and downloading hidden-web content."
+    },
+    {
+      "year": 2005,
+      "entity": "DEQUE / DEQUEL-related query research",
+      "event": "Research explored query languages and extraction of structured data from result pages; terminology varies across references."
+    },
+    {
+      "year": 2005,
+      "entity": "Google Sitemap Protocol",
+      "event": "The supplied article notes the Sitemap Protocol was first developed and introduced in 2005 as a mechanism for advertising URLs."
+    },
+    {
+      "year": 2008,
+      "entity": "Google deep-web crawling research",
+      "event": "Research described form submission selection and methods for surfacing some query-generated pages into search indexes."
+    },
+    {
+      "year": 2008,
+      "entity": "Aaron Swartz",
+      "event": "Designed Tor2web, a proxy application intended to make access to Tor hidden-service links possible through ordinary web browsers."
+    },
+    {
+      "year": 2009,
+      "entity": "Media terminology",
+      "event": "The terms deep web and dark web were increasingly conflated in coverage that discussed search terminology alongside illegal activity on darknet networks."
+    }
+  ],
+  "research_and_named_systems": [
+    {
+      "name": "DeepPeep",
+      "type": "research_project",
+      "description": "A project focused on gathering hidden-web sources and web forms using focused-crawler techniques.",
+      "association": "University of Utah; National Science Foundation sponsorship described in the supplied article."
+    },
+    {
+      "name": "Intute",
+      "type": "search_service",
+      "status_as_reported": "Funding ended; temporary static archive as of July 2011."
+    },
+    {
+      "name": "Scirus",
+      "type": "science_search_engine",
+      "status_as_reported": "Retired; the supplied article's references describe discontinuation around 2014."
+    },
+    {
+      "name": "Aleph Open Search",
+      "type": "search_system",
+      "description": "Listed by the article among systems that accessed deep-web content."
+    },
+    {
+      "name": "Deep Web Technologies",
+      "type": "organization_or_product_name",
+      "description": "Listed by the article among deep-web search-related names."
+    },
+    {
+      "name": "Ahmia.fi",
+      "type": "search_service",
+      "description": "Listed by the article among search systems associated with deep-web access."
+    },
+    {
+      "name": "Tor2web",
+      "type": "proxy_application",
+      "designer": "Aaron Swartz",
+      "year": 2008,
+      "purpose": "Provide access to Tor hidden-service links through conventional web browsers via a proxy model.",
+      "security_note": "A proxy changes the trust boundary; it should not be assumed to provide the same privacy properties as using Tor directly."
+    },
+    {
+      "name": "Internet Archive Wayback Machine",
+      "type": "web_archive",
+      "purpose": "Access archived versions of websites and historical snapshots."
+    }
+  ],
+  "people_and_research": [
+    {
+      "name": "Michael K. Bergman",
+      "role": "Researcher and consultant",
+      "connections": [
+        "deep_web",
+        "The Deep Web: Surfacing Hidden Value",
+        "Journal of Electronic Publishing",
+        "2001 terminology"
+      ]
+    },
+    {
+      "name": "Jill Ellsworth",
+      "role": "Early user of the term 'Invisible Web' in the cited historical account",
+      "connections": [
+        "invisible_web",
+        "1994 terminology"
+      ]
+    },
+    {
+      "name": "Frank Garcia",
+      "role": "Writer cited for an early 1996 description",
+      "connections": [
+        "invisible_web",
+        "search engine registration"
+      ]
+    },
+    {
+      "name": "Sriram Raghavan",
+      "role": "Computer-science researcher",
+      "connections": [
+        "hidden_web_crawling",
+        "Stanford",
+        "query interfaces"
+      ]
+    },
+    {
+      "name": "Hector Garcia-Molina",
+      "role": "Computer-science researcher",
+      "connections": [
+        "hidden_web_crawling",
+        "Stanford",
+        "query interfaces"
+      ]
+    },
+    {
+      "name": "Alexandros Ntoulas",
+      "role": "Researcher",
+      "connections": [
+        "automatic_query_generation",
+        "hidden_web_content"
+      ]
+    },
+    {
+      "name": "Petros Zerfos",
+      "role": "Researcher",
+      "connections": [
+        "automatic_query_generation",
+        "hidden_web_content"
+      ]
+    },
+    {
+      "name": "Junghoo Cho",
+      "role": "Researcher",
+      "connections": [
+        "automatic_query_generation",
+        "hidden_web_content",
+        "UCLA"
+      ]
+    },
+    {
+      "name": "Aaron Swartz",
+      "role": "Programmer and designer of Tor2web",
+      "connections": [
+        "Tor2web",
+        "Tor hidden services",
+        "2008"
+      ]
+    }
+  ],
+  "related_concepts": [
+    {
+      "id": "web.concepts.surface_web",
+      "name": "Surface web",
+      "relation": "contrasted_with"
+    },
+    {
+      "id": "web.concepts.dark_web",
+      "name": "Dark web",
+      "relation": "distinct_subset_of_deep_web"
+    },
+    {
+      "id": "networking.protocols.http",
+      "name": "HTTP",
+      "relation": "web_delivery_protocol_context"
+    },
+    {
+      "id": "web.crawling.web_crawler",
+      "name": "Web crawler",
+      "relation": "discovery_mechanism"
+    },
+    {
+      "id": "web.search.index",
+      "name": "Search index",
+      "relation": "indexing_boundary"
+    },
+    {
+      "id": "web.archives.wayback_machine",
+      "name": "Wayback Machine",
+      "relation": "archive_example"
+    },
+    {
+      "id": "networking.anonymity.tor",
+      "name": "Tor",
+      "relation": "specialized_access_network"
+    },
+    {
+      "id": "networking.anonymity.i2p",
+      "name": "I2P",
+      "relation": "specialized_access_network"
+    },
+    {
+      "id": "web.discovery.sitemaps",
+      "name": "Sitemap Protocol",
+      "relation": "discovery_mechanism"
+    },
+    {
+      "id": "metadata.protocols.oai_pmh",
+      "name": "OAI-PMH",
+      "relation": "resource_discovery_mechanism"
+    },
+    {
+      "id": "web.security.authentication",
+      "name": "Authentication",
+      "relation": "access_control"
+    },
+    {
+      "id": "web.data.database_query",
+      "name": "Database query",
+      "relation": "dynamic_content_generation"
+    },
+    {
+      "id": "web.privacy.access_control",
+      "name": "Access control",
+      "relation": "content_visibility_constraint"
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.concepts.surface_web",
+      "type": "contrasted_with"
+    },
+    {
+      "from": "web.concepts.dark_web",
+      "to": "web.concepts.deep_web",
+      "type": "subset_of"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.crawling.web_crawler",
+      "type": "discovery_challenged_by"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.search.index",
+      "type": "defined_by_absence_from"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.data.database_query",
+      "type": "often_contains_query_generated_content"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.security.authentication",
+      "type": "may_require"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.discovery.sitemaps",
+      "type": "may_be_partially_exposed_by"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "metadata.protocols.oai_pmh",
+      "type": "may_be_partially_exposed_by"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "web.archives.wayback_machine",
+      "type": "related_to_historical_snapshots"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "networking.anonymity.tor",
+      "type": "some_content_accessible_via_specialized_software"
+    },
+    {
+      "from": "web.concepts.deep_web",
+      "to": "networking.anonymity.i2p",
+      "type": "some_content_accessible_via_specialized_software"
+    },
+    {
+      "from": "person.michael_k_bergman",
+      "to": "web.concepts.deep_web",
+      "type": "credited_with_term"
+    },
+    {
+      "from": "person.sriram_raghavan",
+      "to": "web.research.hidden_web_crawling",
+      "type": "coauthored"
+    },
+    {
+      "from": "person.hector_garcia_molina",
+      "to": "web.research.hidden_web_crawling",
+      "type": "coauthored"
+    },
+    {
+      "from": "person.aaron_swartz",
+      "to": "web.tools.tor2web",
+      "type": "designed"
+    }
+  ],
+  "use_cases": [
+    "Accessing personal email and account dashboards",
+    "Retrieving private or permission-gated documents",
+    "Searching databases whose results are generated only after a query",
+    "Finding scholarly, government, library, or repository records not fully represented in general search indexes",
+    "Accessing subscription-based media",
+    "Retrieving historical website snapshots",
+    "Researching hidden-web crawling and information retrieval"
+  ],
+  "security_privacy_and_ethics": {
+    "principles": [
+      "Not indexed does not mean illegal.",
+      "Deep web is not synonymous with dark web.",
+      "Authentication and authorization must be respected.",
+      "Do not bypass access controls, CAPTCHAs, paywalls, or rate limits without authorization.",
+      "Crawler designs should respect robots directives, terms of service, privacy, data minimization, and rate limits.",
+      "Specialized anonymity networks and proxy services have distinct trust and privacy properties."
+    ],
+    "risk_categories": [
+      "Credential exposure",
+      "Unauthorized access",
+      "Privacy violations through aggressive crawling",
+      "Malicious or deceptive content on some hidden services",
+      "False assumptions that a proxy or hidden service guarantees anonymity"
+    ],
+    "classification_caution": "The deep web is a broad indexing category containing routine private services as well as other forms of non-indexed content; it should not be classified as inherently illicit."
+  },
+  "limitations_and_uncertainties": [
+    "The exact boundary of the deep web depends on the search engine, index, crawl policy, and time.",
+    "A page may be indexed by one service and not another.",
+    "Some categories, especially web archives and dynamically rendered pages, can be classified differently depending on the definition used.",
+    "The article contains historical descriptions of systems; listed statuses should not be treated as current operational status without fresh verification.",
+    "A relationship edge indicates a conceptual association and does not necessarily mean a direct technical dependency."
+  ],
+  "source_references": [
+    {
+      "citation_number": 1,
+      "topic": "Core definition, aliases, and examples",
+      "source_text": "Wikipedia article: Deep web",
+      "lines": "46-51"
+    },
+    {
+      "citation_number": 2,
+      "topic": "Deep web versus dark web terminology",
+      "source_text": "Wikipedia article: Deep web",
+      "lines": "53-56"
+    },
+    {
+      "citation_number": 3,
+      "topic": "Non-indexing mechanisms",
+      "source_text": "Wikipedia article: Deep web",
+      "lines": "67-78"
+    },
+    {
+      "citation_number": 4,
+      "topic": "Crawler limits and research methods",
+      "source_text": "Wikipedia article: Deep web",
+      "lines": "80-93"
+    },
+    {
+      "citation_number": 5,
+      "topic": "References and further reading",
+      "source_text": "Wikipedia article: Deep web",
+      "lines": "107-157"
+    }
+  ],
+  "metadata": {
+    "language": "en",
+    "data_format": "JSON",
+    "intended_use": [
+      "knowledge graph",
+      "entity database",
+      "semantic search",
+      "relationship visualization",
+      "research indexing"
+    ],
+    "generated_at": "2026-10-20",
+    "tags": [
+      "deep web",
+      "invisible web",
+      "hidden web",
+      "search engines",
+      "web crawling",
+      "indexing",
+      "dynamic content",
+      "dark web distinction",
+      "web archives",
+      "Tor",
+      "I2P"
+    ]
+  }
+}

@@ -1,0 +1,3180 @@
+{
+  "schema_name": "Overlay Network Full-Detail Knowledge Graph",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-10-20",
+  "language": "en",
+  "description": "A detailed machine-readable knowledge graph derived from the user-provided Wikipedia article text on overlay networks, with explicit entities, relationships, examples, architectural patterns, trade-offs, and source provenance. Model-expanded illustrations are marked separately from article-stated claims.",
+  "source_scope": {
+    "primary_source": "source:wikipedia_overlay_network",
+    "source_text_file": "Pasted text(20261020-170044).txt",
+    "coverage": [
+      "definition",
+      "structure",
+      "attributes",
+      "QoS",
+      "uses",
+      "advantages",
+      "resilience",
+      "application-layer resilience",
+      "multicast",
+      "disadvantages",
+      "protocol lists",
+      "references",
+      "external links"
+    ],
+    "limitations": [
+      "The input is a Wikipedia article excerpt, not a full technical standard.",
+      "The source article itself marks some statements citation-needed and includes a promotional-content/neutrality notice.",
+      "Examples and architecture patterns added beyond the article are explicitly labeled as model expansion."
+    ]
+  },
+  "data_model": {
+    "entity_fields": [
+      "id",
+      "type",
+      "name",
+      "description",
+      "attributes",
+      "source_refs"
+    ],
+    "relationship_fields": [
+      "id",
+      "subject",
+      "predicate",
+      "object",
+      "evidence",
+      "confidence",
+      "source_refs",
+      "qualifiers"
+    ],
+    "confidence_values": [
+      "source_stated",
+      "model_inference",
+      "model_expansion"
+    ],
+    "id_policy": "Stable namespace-prefixed IDs; relationship endpoints must refer to an entity or an architecture pattern ID.",
+    "relationship_direction": "subject --predicate--> object",
+    "source_policy": "Source references point to the user-provided article and its bibliography records. Article claims are not treated as independently verified."
+  },
+  "entities": [
+    {
+      "id": "concept:overlay_network",
+      "type": "concept",
+      "name": "Overlay network",
+      "description": "A logical computer network layered over an existing physical or underlay network; the article says the underlay is almost always some form of IP network.",
+      "attributes": {
+        "layering": "logical network over underlay",
+        "underlay_assumption": "usually IP"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:underlay_network",
+      "type": "concept",
+      "name": "Underlay network",
+      "description": "The existing physical and network infrastructure that transports overlay traffic.",
+      "attributes": {
+        "examples": [
+          "physical links",
+          "optical network",
+          "IP network",
+          "provider network"
+        ]
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:logical_link",
+      "type": "concept",
+      "name": "Logical link",
+      "description": "A connection in the overlay topology corresponding to a path through one or more links in the underlying network.",
+      "attributes": {
+        "maps_to": "one or more underlay links"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:overlay_node",
+      "type": "concept",
+      "name": "Overlay node",
+      "description": "A participating endpoint or system that forms part of the overlay topology.",
+      "attributes": {
+        "may_run": "overlay protocol software"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:logical_addressing",
+      "type": "concept",
+      "name": "Logical addressing",
+      "description": "Addressing that identifies overlay entities or destinations independently of the underlying IP address.",
+      "attributes": {
+        "benefit": "can route by logical identity"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:encapsulation",
+      "type": "concept",
+      "name": "Encapsulation",
+      "description": "Wrapping a payload in one or more protocol headers to carry it through the underlay; adds overhead.",
+      "attributes": {
+        "tradeoff": "tunneling flexibility versus header overhead"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:tunnel",
+      "type": "concept",
+      "name": "Network tunnel",
+      "description": "A logical path that carries traffic between endpoints using an encapsulating protocol.",
+      "attributes": {
+        "examples": [
+          "GRE",
+          "IP-in-IP",
+          "IPsec"
+        ]
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:quality_of_service",
+      "type": "concept",
+      "name": "Quality of Service (QoS)",
+      "description": "Mechanisms for differentiating traffic treatment and, in some designs, controlling service characteristics.",
+      "attributes": {
+        "dimensions": [
+          "priority",
+          "bandwidth",
+          "latency",
+          "loss"
+        ]
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:resilience",
+      "type": "concept",
+      "name": "Network resilience",
+      "description": "Ability to recover automatically from failures or degraded paths to maintain a desired service level or availability.",
+      "attributes": {
+        "layers": [
+          "physical",
+          "optical",
+          "IP",
+          "session",
+          "application"
+        ]
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:overlay_topology",
+      "type": "concept",
+      "name": "Overlay topology",
+      "description": "The logical arrangement of nodes and links used by an overlay protocol.",
+      "attributes": {
+        "edges": "logical links carried over underlay paths"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:multicast",
+      "type": "concept",
+      "name": "Multicast",
+      "description": "Delivery of data from one or more sources to a receiver group, with overlay approaches implementing distribution among participating end systems.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:peer_to_peer",
+      "type": "concept",
+      "name": "Peer-to-peer networking",
+      "description": "A model in which participating peers communicate and may organize themselves into a logical network over existing Internet connections.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:distributed_hash_table",
+      "type": "concept",
+      "name": "Distributed hash table (DHT)",
+      "description": "A distributed data structure that maps keys or logical identifiers to responsible nodes without requiring the requester to know a destination IP address in advance.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:traffic_engineering",
+      "type": "concept",
+      "name": "Traffic engineering",
+      "description": "Selection or management of paths and traffic treatment to meet application or operational goals.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:latency",
+      "type": "concept",
+      "name": "Latency",
+      "description": "Time taken for traffic or a message to travel through a system; overlay detours may increase it.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:bandwidth_overhead",
+      "type": "concept",
+      "name": "Bandwidth overhead",
+      "description": "Capacity consumed by additional headers, encapsulation, relaying, or duplicated traffic.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:failure_recovery",
+      "type": "concept",
+      "name": "Failure recovery",
+      "description": "Detection of a network failure or degraded path and selection of an alternative path.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:application_layer",
+      "type": "concept",
+      "name": "Application layer",
+      "description": "The layer at which applications or overlay software can implement routing, recovery, multicast, or other behavior.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:ip_network",
+      "type": "concept",
+      "name": "IP network",
+      "description": "A network using Internet Protocol addressing and forwarding; commonly serves as the underlay for overlay networks.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:virtual_private_network",
+      "type": "concept",
+      "name": "Virtual private network (VPN)",
+      "description": "A logical private network implemented across shared infrastructure; BGP VPNs and IP tunneling are examples of overlays.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:sd_wan",
+      "type": "concept",
+      "name": "Software-defined wide-area network (SD-WAN)",
+      "description": "An overlay WAN approach that adds programmable policy and path-selection flexibility across underlying network services.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:security",
+      "type": "concept",
+      "name": "Network security",
+      "description": "Protection of overlay traffic and participants through mechanisms such as encryption, isolation, and access policy; the article lists security as an overlay attribute.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:encryption",
+      "type": "concept",
+      "name": "Encryption",
+      "description": "Cryptographic transformation used to protect traffic confidentiality and sometimes integrity, depending on the protocol.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:ip_multicast",
+      "type": "concept",
+      "name": "IP multicast",
+      "description": "Network-layer multicast capability described in the article as having limited deployment, motivating end-system alternatives.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:unicast",
+      "type": "concept",
+      "name": "Unicast",
+      "description": "Delivery from one sender to one destination; overlay multicast topologies commonly use underlying unicast paths between peers.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:network_layer",
+      "type": "concept",
+      "name": "Network layer",
+      "description": "Layer responsible for network-level packet forwarding; IP multicast is discussed as a network-layer mechanism.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:service_provider",
+      "type": "concept",
+      "name": "Telecommunications service provider",
+      "description": "An operator that can offer overlay services on top of its physical and IP infrastructure.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:data_center",
+      "type": "concept",
+      "name": "Data center networking",
+      "description": "Networking among servers, virtual machines, containers, and clusters in a data-center environment.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:enterprise_wan",
+      "type": "concept",
+      "name": "Enterprise wide-area network (WAN)",
+      "description": "Connectivity joining geographically separated enterprise sites and applications.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:osi_model",
+      "type": "concept",
+      "name": "OSI layered networking model",
+      "description": "The conventional layered networking model; the article notes overlay networking is conceptually distinct from traditional OSI layering.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:internet",
+      "type": "concept",
+      "name": "Internet",
+      "description": "The global IP-based network that commonly transports overlay traffic and can itself host multiple logical networks.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:telephone_network",
+      "type": "concept",
+      "name": "Telephone network",
+      "description": "Circuit- and packet-switched telecommunication infrastructure that the article uses to illustrate historical and changing overlay relationships.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:voip",
+      "type": "concept",
+      "name": "Voice over Internet Protocol (VoIP)",
+      "description": "Voice communication carried over IP networks; the article notes the telephone network increasingly becomes an overlay on the Internet through VoIP.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:congestion",
+      "type": "concept",
+      "name": "Network congestion",
+      "description": "A condition in which demand competes for network resources; DiffServ can influence forwarding priority under congestion but does not itself guarantee throughput.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:flow_tracking",
+      "type": "concept",
+      "name": "Per-flow tracking",
+      "description": "Tracking individual flows to apply service treatment; the article identifies scaling concerns for IntServ.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:ipsec",
+      "type": "concept",
+      "name": "IPsec",
+      "description": "A family of IP-layer security protocols used for protected communications and commonly used in tunneling/overlay designs.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:gre",
+      "type": "concept",
+      "name": "Generic Routing Encapsulation (GRE)",
+      "description": "A tunneling protocol used to encapsulate packets inside other packets.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:vxlan",
+      "type": "concept",
+      "name": "VXLAN",
+      "description": "A network virtualization overlay technology commonly used in data centers to extend Layer 2 segments over an IP underlay.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:bgp_vpn",
+      "type": "concept",
+      "name": "BGP VPN",
+      "description": "A provider-operated VPN service using BGP-based mechanisms to connect enterprise sites while isolating enterprise-specific addressing and routing.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:mpls",
+      "type": "concept",
+      "name": "Multiprotocol Label Switching (MPLS)",
+      "description": "A provider network technology mentioned as part of the migration from legacy Frame Relay/ATM enterprise services.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:frame_relay",
+      "type": "concept",
+      "name": "Frame Relay",
+      "description": "A legacy packet-switched telecommunication infrastructure formerly used to carry enterprise private networks.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:atm",
+      "type": "concept",
+      "name": "Asynchronous Transfer Mode (ATM)",
+      "description": "A legacy packet/cell-switching infrastructure formerly used for enterprise private networking.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:diffserv",
+      "type": "concept",
+      "name": "Differentiated Services (DiffServ)",
+      "description": "A traffic differentiation model widely deployed by operators to classify and prioritize traffic, but not itself a throughput guarantee.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:intserv",
+      "type": "concept",
+      "name": "Integrated Services (IntServ)",
+      "description": "A QoS approach requiring per-flow tracking; the article notes scaling issues and limited deployment.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:resilient_overlay_networks",
+      "type": "concept",
+      "name": "Resilient Overlay Networks (RONs)",
+      "description": "Application-layer overlay architectures whose nodes monitor Internet paths and reroute traffic through alternative overlay nodes to recover from disconnection or interference.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:overlay_multicast",
+      "type": "concept",
+      "name": "Overlay multicast",
+      "description": "End-system or peer-to-peer multicast in which peers form an overlay topology and distribute data over unicast paths.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:xmpp",
+      "type": "protocol",
+      "name": "XMPP",
+      "description": "A messaging protocol listed as an overlay-related protocol because messages can be routed using endpoint Jabber IDs rather than IP addresses.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:jxta",
+      "type": "protocol",
+      "name": "JXTA",
+      "description": "An overlay-network protocol listed in the source article.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:chord",
+      "type": "protocol",
+      "name": "Chord",
+      "description": "A distributed hash table algorithm used to route lookups across overlay nodes.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:kademlia",
+      "type": "protocol",
+      "name": "Kademlia",
+      "description": "A distributed hash table algorithm; the article lists UDP/IP DHTs based on Kademlia.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:gnutella",
+      "type": "protocol",
+      "name": "Gnutella",
+      "description": "A peer-to-peer protocol listed among overlay network protocols.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:gnutella2",
+      "type": "protocol",
+      "name": "Gnutella2",
+      "description": "A peer-to-peer protocol listed among overlay network protocols.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:freenet",
+      "type": "software",
+      "name": "Freenet",
+      "description": "A peer-to-peer system listed among overlay network protocols.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:i2p",
+      "type": "software",
+      "name": "I2P",
+      "description": "An anonymity-oriented overlay network listed in the article.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:tor",
+      "type": "software",
+      "name": "Tor",
+      "description": "An anonymity-oriented overlay network listed in the article.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:pucc",
+      "type": "protocol",
+      "name": "PUCC",
+      "description": "An overlay-network protocol listed in the source article.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:solipsis",
+      "type": "system",
+      "name": "Solipsis",
+      "description": "A France Télécom system for a massively shared virtual world, listed as an overlay network protocol/system.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:rtmfp",
+      "type": "protocol",
+      "name": "Real Time Media Flow Protocol (RTMFP)",
+      "description": "A UDP/IP-based protocol listed as an overlay-related technology and a component of Adobe Flash.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:pilot_protocol",
+      "type": "protocol",
+      "name": "Pilot Protocol",
+      "description": "A protocol described in the article as direct peer-to-peer networking for AI agents using virtual addressing and encrypted peer tunnels over UDP; article cites a 2026 listing.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:darknet",
+      "type": "concept",
+      "name": "Darknet",
+      "description": "A private network of connections between trusted peers, listed in the article's See also section.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:peercasting",
+      "type": "concept",
+      "name": "Peercasting",
+      "description": "Distribution of streaming media over the Internet using peer-to-peer techniques.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:overcast",
+      "type": "system",
+      "name": "Overcast",
+      "description": "A reliable multicasting system with an overlay network, listed in the article's external links.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:overqos",
+      "type": "system",
+      "name": "OverQoS",
+      "description": "An overlay-based architecture for enhancing Internet QoS, listed in the article's external links.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:end_system_multicast",
+      "type": "system",
+      "name": "End System Multicast",
+      "description": "An overlay multicast approach referenced in the article's external links.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:tcp_ip",
+      "type": "concept",
+      "name": "TCP/IP",
+      "description": "The protocol suite used as the basis for many overlay technologies in the article's protocol lists.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:udp_ip",
+      "type": "concept",
+      "name": "UDP/IP",
+      "description": "The UDP/IP transport context used for the article's second overlay protocol list.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:ip_over_ip",
+      "type": "technology",
+      "name": "IP-over-IP",
+      "description": "Tunneling technique that carries an IP packet inside another IP packet.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:enterprise_vpn_service",
+      "type": "service",
+      "name": "Enterprise VPN service",
+      "description": "Provider-delivered overlay connecting enterprise sites and applications.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:virtual_machines",
+      "type": "technology",
+      "name": "Virtual machines (VMs)",
+      "description": "Virtualized compute instances that can require Layer 2 or Layer 3 connectivity within a data center.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:kubernetes_clusters",
+      "type": "technology",
+      "name": "Kubernetes clusters",
+      "description": "Clustered container orchestration environments that may need inter-cluster network connectivity.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:overlay_encryption",
+      "type": "technology",
+      "name": "Overlay encryption",
+      "description": "Optional overlay attribute that protects traffic within logical network paths.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:bandwidth_control",
+      "type": "technology",
+      "name": "Bandwidth control",
+      "description": "Optional overlay capability for managing traffic rates or allocation.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:application_specific_metrics",
+      "type": "concept",
+      "name": "Application-specific path metrics",
+      "description": "Metrics used by an application overlay to choose paths, such as path quality or recovery performance.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:traffic_duplication",
+      "type": "concept",
+      "name": "Duplicate packet transmission",
+      "description": "Repeated packet delivery can occur at points in an overlay, wasting capacity.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:provider_independence",
+      "type": "concept",
+      "name": "Incremental deployment without ISP cooperation",
+      "description": "Overlay software can be deployed at end-user sites or hosts without requiring the Internet service provider to change its network.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:logical_destination",
+      "type": "concept",
+      "name": "Logical destination identifier",
+      "description": "An address or key that identifies a destination independently of a known IP address.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:enterprise_policy",
+      "type": "concept",
+      "name": "Enterprise traffic policy",
+      "description": "Rules selecting traffic priority based on application, user, or site.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:physical_network",
+      "type": "concept",
+      "name": "Physical network infrastructure",
+      "description": "Physical links and equipment carrying underlay traffic.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:optical_network",
+      "type": "concept",
+      "name": "Optical network",
+      "description": "Transport layer infrastructure on which IP and overlay services may depend.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:service_availability",
+      "type": "concept",
+      "name": "Service availability",
+      "description": "The extent to which a network service remains usable during failures or degradation.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "technology:message_routing",
+      "type": "concept",
+      "name": "Message routing",
+      "description": "Choosing a route to deliver a message, potentially based on logical identity rather than IP destination.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "source:wikipedia_overlay_network",
+      "type": "source",
+      "name": "Wikipedia — Overlay network article",
+      "description": "User-provided article text, last edited 23 September 2026. Source text includes a neutrality/promotional-content notice.",
+      "attributes": {
+        "url": "https://en.wikipedia.org/wiki/Overlay_network",
+        "source_type": "user_provided_article_text",
+        "last_edited": "2026-09-23",
+        "retrieved_from": "user-uploaded pasted text"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "source:tarkoma_2010",
+      "type": "source",
+      "name": "Sasu Tarkoma (2010), Overlay Networks: Toward Information Networking",
+      "description": "Book reference cited in the supplied article.",
+      "attributes": {
+        "year": 2010,
+        "isbn": "9781439813737"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "source:peterson_davie_2012",
+      "type": "source",
+      "name": "Peterson and Davie (2012), Computer Networks: A Systems Approach, Chapter 9",
+      "description": "Book reference cited in the supplied article.",
+      "attributes": {
+        "year": 2012,
+        "chapter": "9"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "source:ron_paper_2001",
+      "type": "source",
+      "name": "Andersen, Balakrishnan, Kaashoek, Morris (2001), Resilient overlay networks",
+      "description": "Conference paper cited in the supplied article.",
+      "attributes": {
+        "year": 2001,
+        "doi": "10.1145/502034.502048"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "source:braun_arya_turletti_2006",
+      "type": "source",
+      "name": "Braun, Arya, Turletti (2006), Explicit routing in multicast overlay networks",
+      "description": "Journal article cited in the supplied article.",
+      "attributes": {
+        "year": 2006,
+        "doi": "10.1016/j.comcom.2006.02.022"
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "source:pilot_protocol_listing_2026",
+      "type": "source",
+      "name": "Pilot Protocol: Direct peer-to-peer networking for AI",
+      "description": "AgentsIndex listing cited by the supplied article.",
+      "attributes": {
+        "retrieved_date": "2026-09-04",
+        "source_article_caveat": "Listing cited by Wikipedia; technical claims not independently verified."
+      },
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:enterprise_policy",
+      "type": "concept",
+      "name": "Enterprise traffic policy",
+      "description": "Rules for prioritizing traffic by application, user, or site.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:optical_network",
+      "type": "concept",
+      "name": "Optical network",
+      "description": "Optical transport infrastructure on which IP services may depend.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:physical_network",
+      "type": "concept",
+      "name": "Physical network",
+      "description": "The physical links and equipment that carry network traffic.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    },
+    {
+      "id": "concept:service_availability",
+      "type": "concept",
+      "name": "Service availability",
+      "description": "The extent to which a network service remains usable.",
+      "attributes": {},
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:0001",
+      "subject": "concept:overlay_network",
+      "predicate": "is_layered_over",
+      "object": "concept:underlay_network",
+      "evidence": "An overlay is a logical network layered on top of a physical network.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0002",
+      "subject": "concept:overlay_network",
+      "predicate": "typically_assumes_underlay",
+      "object": "concept:ip_network",
+      "evidence": "The article says overlays almost always assume an IP network underlay.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0003",
+      "subject": "concept:overlay_node",
+      "predicate": "connected_by",
+      "object": "concept:logical_link",
+      "evidence": "Overlay nodes are represented as connected by logical links.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0004",
+      "subject": "concept:logical_link",
+      "predicate": "corresponds_to",
+      "object": "concept:underlay_network",
+      "evidence": "Each logical link maps to a path through possibly many physical links.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0005",
+      "subject": "concept:overlay_topology",
+      "predicate": "composed_of",
+      "object": "concept:overlay_node",
+      "evidence": "Participating nodes form the logical overlay topology.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0006",
+      "subject": "concept:overlay_topology",
+      "predicate": "uses",
+      "object": "concept:logical_link",
+      "evidence": "Logical links connect overlay nodes.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0007",
+      "subject": "concept:overlay_network",
+      "predicate": "separates",
+      "object": "concept:logical_addressing",
+      "evidence": "Logical addressing is an attribute distinct from underlay addressing.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0008",
+      "subject": "concept:overlay_network",
+      "predicate": "may_provide",
+      "object": "concept:security",
+      "evidence": "Security is listed as an overlay attribute.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0009",
+      "subject": "concept:overlay_network",
+      "predicate": "may_provide",
+      "object": "concept:quality_of_service",
+      "evidence": "QoS is a listed overlay attribute.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0010",
+      "subject": "concept:overlay_network",
+      "predicate": "may_provide",
+      "object": "technology:overlay_encryption",
+      "evidence": "Encryption is an optional attribute.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0011",
+      "subject": "concept:overlay_network",
+      "predicate": "may_provide",
+      "object": "technology:bandwidth_control",
+      "evidence": "Bandwidth control is an optional attribute.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0012",
+      "subject": "concept:overlay_network",
+      "predicate": "can_use",
+      "object": "concept:encapsulation",
+      "evidence": "Tunnel overlays carry encapsulated traffic.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0013",
+      "subject": "concept:encapsulation",
+      "predicate": "creates_overhead_measured_as",
+      "object": "concept:bandwidth_overhead",
+      "evidence": "Multiple payload encapsulations reduce total network capacity.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0014",
+      "subject": "concept:overlay_network",
+      "predicate": "may_add",
+      "object": "concept:latency",
+      "evidence": "Overlay detours can add latency.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0015",
+      "subject": "concept:overlay_network",
+      "predicate": "can_control",
+      "object": "concept:overlay_topology",
+      "evidence": "Overlay can control the sequence of overlay nodes traversed.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0016",
+      "subject": "concept:overlay_network",
+      "predicate": "cannot_directly_control",
+      "object": "concept:underlay_network",
+      "evidence": "Overlay has no control over the underlying packet route between two overlay nodes.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0017",
+      "subject": "concept:overlay_network",
+      "predicate": "can_be_deployed_without_cooperation_from",
+      "object": "technology:provider_independence",
+      "evidence": "The article says overlays can be incrementally deployed on end-user sites or hosts without ISP cooperation.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0018",
+      "subject": "concept:overlay_network",
+      "predicate": "is_conceptually_distinct_from",
+      "object": "concept:osi_model",
+      "evidence": "The source says overlay networking is distinct from traditional OSI layered networks.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0019",
+      "subject": "concept:overlay_network",
+      "predicate": "is_hosted_on",
+      "object": "concept:internet",
+      "evidence": "The Internet supports construction of further overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0020",
+      "subject": "concept:peer_to_peer",
+      "predicate": "is_example_of",
+      "object": "concept:overlay_network",
+      "evidence": "P2P nodes form a network over existing Internet connections.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0021",
+      "subject": "concept:internet",
+      "predicate": "historically_was_overlay_on",
+      "object": "concept:telephone_network",
+      "evidence": "The article states the Internet was originally built as an overlay on the telephone network.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "historical_claim": true,
+        "source_article_caveat": "The Wikipedia text marks this statement citation-needed."
+      }
+    },
+    {
+      "id": "rel:0022",
+      "subject": "concept:telephone_network",
+      "predicate": "increasingly_becomes_overlay_on",
+      "object": "concept:internet",
+      "evidence": "Through VoIP, the telephone network increasingly functions as an overlay on the Internet.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "source_article_caveat": "The Wikipedia text marks this statement citation-needed."
+      }
+    },
+    {
+      "id": "rel:0023",
+      "subject": "concept:voip",
+      "predicate": "carries_voice_over",
+      "object": "concept:internet",
+      "evidence": "VoIP carries voice communications over IP networks.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0024",
+      "subject": "concept:logical_addressing",
+      "predicate": "enables_routing_by",
+      "object": "technology:logical_destination",
+      "evidence": "Overlay systems can route using logical addresses.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0025",
+      "subject": "concept:distributed_hash_table",
+      "predicate": "maps",
+      "object": "technology:logical_destination",
+      "evidence": "DHTs route messages to a node associated with a logical address without prior knowledge of its IP address.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0026",
+      "subject": "technology:message_routing",
+      "predicate": "may_use",
+      "object": "concept:distributed_hash_table",
+      "evidence": "The article gives DHTs as an example of routing to a logical destination.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0027",
+      "subject": "concept:tcp_ip",
+      "predicate": "supports_listed_overlay_protocols",
+      "object": "concept:overlay_network",
+      "evidence": "The source groups a number of listed protocols under TCP/IP-based overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0028",
+      "subject": "concept:udp_ip",
+      "predicate": "supports_listed_overlay_protocols",
+      "object": "concept:overlay_network",
+      "evidence": "The source groups Kademlia-based DHTs, RTMFP, and Pilot Protocol under UDP/IP-based overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0029",
+      "subject": "concept:quality_of_service",
+      "predicate": "can_be_implemented_with",
+      "object": "concept:intserv",
+      "evidence": "IntServ is one solution discussed for QoS.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0030",
+      "subject": "concept:quality_of_service",
+      "predicate": "can_be_implemented_with",
+      "object": "concept:diffserv",
+      "evidence": "DiffServ is another solution discussed for traffic differentiation.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0031",
+      "subject": "concept:intserv",
+      "predicate": "requires",
+      "object": "concept:flow_tracking",
+      "evidence": "IntServ requires per-flow tracking.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0032",
+      "subject": "concept:flow_tracking",
+      "predicate": "creates_scaling_concern_for",
+      "object": "concept:intserv",
+      "evidence": "The article says per-flow tracking creates scaling issues in routing platforms.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0033",
+      "subject": "concept:intserv",
+      "predicate": "deployment_status",
+      "object": "concept:overlay_network",
+      "evidence": "The article says IntServ has not been widely deployed.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "status": "not widely deployed"
+      }
+    },
+    {
+      "id": "rel:0034",
+      "subject": "concept:diffserv",
+      "predicate": "differentiates",
+      "object": "concept:congestion",
+      "evidence": "DiffServ can determine which traffic is forwarded first during congestion.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0035",
+      "subject": "concept:diffserv",
+      "predicate": "does_not_guarantee",
+      "object": "concept:quality_of_service",
+      "evidence": "DiffServ itself provides no throughput guarantee.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0036",
+      "subject": "concept:overlay_network",
+      "predicate": "can_refine_qos_by",
+      "object": "concept:enterprise_policy",
+      "evidence": "Overlays can apply QoS on application, user, or site basis.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0037",
+      "subject": "concept:enterprise_policy",
+      "predicate": "prioritizes",
+      "object": "concept:quality_of_service",
+      "evidence": "Enterprise policies determine which application/user/site traffic should receive priority.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0038",
+      "subject": "concept:congestion",
+      "predicate": "motivates_use_of",
+      "object": "concept:diffserv",
+      "evidence": "DiffServ traffic prioritization is relevant during congestion.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0039",
+      "subject": "concept:service_provider",
+      "predicate": "offers",
+      "object": "concept:overlay_network",
+      "evidence": "Telecommunications operators use overlays to provide services over physical infrastructure.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0040",
+      "subject": "concept:bgp_vpn",
+      "predicate": "is_a",
+      "object": "concept:virtual_private_network",
+      "evidence": "BGP VPNs are described as a common WAN overlay technology.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0041",
+      "subject": "concept:bgp_vpn",
+      "predicate": "connects",
+      "object": "concept:enterprise_wan",
+      "evidence": "BGP VPN services connect enterprise sites and applications.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0042",
+      "subject": "concept:bgp_vpn",
+      "predicate": "reduces_provider_need_to_manage",
+      "object": "concept:logical_addressing",
+      "evidence": "Provider need not manage enterprise-specific addressing and other network attributes.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0043",
+      "subject": "concept:enterprise_wan",
+      "predicate": "connects",
+      "object": "technology:enterprise_vpn_service",
+      "evidence": "Enterprise VPN services connect physically diverse sites.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0044",
+      "subject": "technology:enterprise_vpn_service",
+      "predicate": "is_provided_by",
+      "object": "concept:service_provider",
+      "evidence": "The service is operator-provided.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0045",
+      "subject": "concept:sd_wan",
+      "predicate": "is_a",
+      "object": "concept:overlay_network",
+      "evidence": "SD-WAN overlay networks add flexibility beyond basic operator VPN service.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0046",
+      "subject": "concept:sd_wan",
+      "predicate": "provides",
+      "object": "concept:traffic_engineering",
+      "evidence": "SD-WAN overlays offer flexible policy and path control.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0047",
+      "subject": "concept:sd_wan",
+      "predicate": "depends_on",
+      "object": "concept:underlay_network",
+      "evidence": "IP overlay services depend on the lower physical, optical, and IP services.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0048",
+      "subject": "concept:vxlan",
+      "predicate": "is_a",
+      "object": "concept:overlay_network",
+      "evidence": "VXLAN is named as an overlay technology.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0049",
+      "subject": "concept:vxlan",
+      "predicate": "used_in",
+      "object": "concept:data_center",
+      "evidence": "The article says VXLAN was more common in data centers.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0050",
+      "subject": "concept:vxlan",
+      "predicate": "supports",
+      "object": "technology:virtual_machines",
+      "evidence": "VXLAN can provide Layer 2 overlay connectivity for virtualized workloads.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0051",
+      "subject": "concept:vxlan",
+      "predicate": "can_connect",
+      "object": "technology:kubernetes_clusters",
+      "evidence": "The article discusses Layer 2 connectivity between VMs or Kubernetes clusters in data centers.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0052",
+      "subject": "concept:bgp_vpn",
+      "predicate": "used_in",
+      "object": "concept:enterprise_wan",
+      "evidence": "BGP VPNs are a common overlay for WANs.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0053",
+      "subject": "concept:ipsec",
+      "predicate": "used_for",
+      "object": "concept:tunnel",
+      "evidence": "IPsec is listed as a tunnel technology.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0054",
+      "subject": "concept:gre",
+      "predicate": "used_for",
+      "object": "concept:tunnel",
+      "evidence": "GRE is listed as a tunnel technology.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0055",
+      "subject": "technology:ip_over_ip",
+      "predicate": "is_a",
+      "object": "concept:tunnel",
+      "evidence": "IP-over-IP is listed among IP tunneling technologies.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0056",
+      "subject": "concept:tunnel",
+      "predicate": "implements",
+      "object": "concept:encapsulation",
+      "evidence": "Tunnels carry encapsulated traffic.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0057",
+      "subject": "concept:mpls",
+      "predicate": "replaced_or_followed",
+      "object": "concept:frame_relay",
+      "evidence": "Enterprise migration from legacy Frame Relay infrastructure to IP-based MPLS/VPNs began around 2001–2002, according to the article.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "approximate_period": "2001–2002"
+      }
+    },
+    {
+      "id": "rel:0058",
+      "subject": "concept:mpls",
+      "predicate": "replaced_or_followed",
+      "object": "concept:atm",
+      "evidence": "Enterprise migration from legacy ATM infrastructure to IP-based MPLS/VPNs began around 2001–2002, according to the article.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "approximate_period": "2001–2002"
+      }
+    },
+    {
+      "id": "rel:0059",
+      "subject": "concept:enterprise_wan",
+      "predicate": "historically_used",
+      "object": "concept:frame_relay",
+      "evidence": "Legacy private networks were overlaid on Frame Relay.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0060",
+      "subject": "concept:enterprise_wan",
+      "predicate": "historically_used",
+      "object": "concept:atm",
+      "evidence": "Legacy private networks were overlaid on ATM.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0061",
+      "subject": "concept:data_center",
+      "predicate": "has_connectivity_options",
+      "object": "concept:bgp_vpn",
+      "evidence": "The article says BGP has become more common for Layer 2 connectivity between VMs or Kubernetes clusters.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0062",
+      "subject": "concept:data_center",
+      "predicate": "has_connectivity_options",
+      "object": "concept:vxlan",
+      "evidence": "VXLAN was more common in data centers, though the article notes complexity and stitching challenges.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0063",
+      "subject": "concept:resilience",
+      "predicate": "goal_is",
+      "object": "concept:failure_recovery",
+      "evidence": "Resilience aims for automated recovery during failure events.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0064",
+      "subject": "concept:resilience",
+      "predicate": "can_exist_at_layers",
+      "object": "concept:physical_network",
+      "evidence": "The article lists physical layer resilience.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0065",
+      "subject": "concept:resilience",
+      "predicate": "can_exist_at_layers",
+      "object": "concept:optical_network",
+      "evidence": "The article lists optical layer resilience.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0066",
+      "subject": "concept:resilience",
+      "predicate": "can_exist_at_layers",
+      "object": "concept:ip_network",
+      "evidence": "The article lists IP layer resilience.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0067",
+      "subject": "concept:resilience",
+      "predicate": "can_exist_at_layers",
+      "object": "concept:application_layer",
+      "evidence": "The article lists session/application resilience.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0068",
+      "subject": "concept:sd_wan",
+      "predicate": "depends_on",
+      "object": "technology:physical_network",
+      "evidence": "SD-WAN depends on physical, optical, and underlying IP services.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0069",
+      "subject": "concept:resilience",
+      "predicate": "requires_lower_layer_support_from",
+      "object": "concept:underlay_network",
+      "evidence": "Each layer relies on resilience features of the layer below.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0070",
+      "subject": "concept:overlay_network",
+      "predicate": "tradeoff",
+      "object": "concept:latency",
+      "evidence": "Overlay flexibility may be offset by extra latency.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0071",
+      "subject": "concept:overlay_network",
+      "predicate": "tradeoff",
+      "object": "concept:bandwidth_overhead",
+      "evidence": "Overlay flexibility may be offset by bandwidth overhead.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0072",
+      "subject": "concept:overlay_network",
+      "predicate": "tradeoff",
+      "object": "concept:security",
+      "evidence": "The source identifies security as an attribute; security outcomes depend on design and are not guaranteed by overlaying alone.",
+      "confidence": "model_inference",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "interpretation": "An overlay is not inherently secure without appropriate mechanisms."
+      }
+    },
+    {
+      "id": "rel:0073",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "is_a",
+      "object": "concept:overlay_network",
+      "evidence": "RONs are application-layer overlay architectures.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0074",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "helps",
+      "object": "concept:failure_recovery",
+      "evidence": "RONs detect and recover from disconnection or interference.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0075",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "monitors",
+      "object": "concept:internet",
+      "evidence": "RON nodes monitor Internet path quality among themselves.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0076",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "selects_paths_using",
+      "object": "technology:application_specific_metrics",
+      "evidence": "RON nodes choose paths based on application-specific metrics.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0077",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "may_route_via",
+      "object": "concept:overlay_node",
+      "evidence": "RON traffic may traverse other RON nodes to recover from a poor path.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0078",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "aims_to_reduce",
+      "object": "concept:latency",
+      "evidence": "RONs aim to reduce recovery time, not necessarily the latency of every data path.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0079",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "reroutes_when",
+      "object": "concept:failure_recovery",
+      "evidence": "Nodes decide whether to route directly over the Internet or via other RON nodes.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0080",
+      "subject": "concept:overlay_multicast",
+      "predicate": "also_known_as",
+      "object": "concept:multicast",
+      "evidence": "The article calls overlay multicast End System or Peer-to-Peer Multicast.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0081",
+      "subject": "concept:overlay_multicast",
+      "predicate": "is_implemented_at",
+      "object": "concept:application_layer",
+      "evidence": "Multicast functionality is implemented at peers rather than routers.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0082",
+      "subject": "concept:overlay_multicast",
+      "predicate": "organizes",
+      "object": "concept:peer_to_peer",
+      "evidence": "Peers organize into an overlay topology for data delivery.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0083",
+      "subject": "concept:overlay_multicast",
+      "predicate": "uses_underlay_edges_of_type",
+      "object": "concept:unicast",
+      "evidence": "Each overlay edge corresponds to a unicast path between peers.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0084",
+      "subject": "concept:overlay_multicast",
+      "predicate": "alternative_to",
+      "object": "concept:ip_multicast",
+      "evidence": "Limited deployment of IP multicast has motivated application-layer alternatives.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0085",
+      "subject": "concept:overlay_multicast",
+      "predicate": "supports",
+      "object": "concept:multicast",
+      "evidence": "It supports multi-source distribution among widely distributed nodes.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0086",
+      "subject": "concept:overlay_multicast",
+      "predicate": "can_reduce",
+      "object": "concept:bandwidth_overhead",
+      "evidence": "The article says multicast can potentially avoid redundant communication in the network.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0087",
+      "subject": "concept:multicast",
+      "predicate": "used_for",
+      "object": "concept:internet",
+      "evidence": "Applications include conferencing, multi-party games, and content distribution.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0088",
+      "subject": "concept:ip_multicast",
+      "predicate": "operates_at",
+      "object": "concept:network_layer",
+      "evidence": "The article describes IP multicast as a network-layer protocol.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0089",
+      "subject": "concept:overlay_multicast",
+      "predicate": "aims_to_maintain",
+      "object": "concept:overlay_topology",
+      "evidence": "Protocols construct and maintain an efficient overlay for data transmission.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0090",
+      "subject": "concept:overlay_multicast",
+      "predicate": "can_support",
+      "object": "concept:peer_to_peer",
+      "evidence": "Overlay multicast uses participating peers to distribute data.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0091",
+      "subject": "concept:peercasting",
+      "predicate": "is_a",
+      "object": "concept:overlay_multicast",
+      "evidence": "Peercasting is a P2P method for distributing streaming media.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0092",
+      "subject": "concept:overcast",
+      "predicate": "related_to",
+      "object": "concept:overlay_multicast",
+      "evidence": "The source links Overcast as reliable multicasting with an overlay network.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0093",
+      "subject": "concept:end_system_multicast",
+      "predicate": "related_to",
+      "object": "concept:overlay_multicast",
+      "evidence": "The source lists End System Multicast.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0094",
+      "subject": "concept:overqos",
+      "predicate": "related_to",
+      "object": "concept:quality_of_service",
+      "evidence": "The source lists OverQoS as an overlay architecture for enhancing Internet QoS.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0095",
+      "subject": "concept:chord",
+      "predicate": "uses",
+      "object": "concept:distributed_hash_table",
+      "evidence": "Chord is listed as a DHT basis.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0096",
+      "subject": "concept:kademlia",
+      "predicate": "uses",
+      "object": "concept:distributed_hash_table",
+      "evidence": "Kademlia is listed as a DHT algorithm.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0097",
+      "subject": "concept:jxta",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "JXTA appears in the article's overlay protocol list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0098",
+      "subject": "concept:xmpp",
+      "predicate": "routes_by",
+      "object": "concept:logical_addressing",
+      "evidence": "XMPP messages can be routed using endpoint Jabber IDs rather than IP addresses.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0099",
+      "subject": "concept:gnutella",
+      "predicate": "listed_as",
+      "object": "concept:peer_to_peer",
+      "evidence": "Gnutella appears in the article's TCP/IP-based overlay list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0100",
+      "subject": "concept:gnutella2",
+      "predicate": "listed_as",
+      "object": "concept:peer_to_peer",
+      "evidence": "Gnutella2 appears in the article's TCP/IP-based overlay list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0101",
+      "subject": "concept:freenet",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "Freenet appears in the article's overlay protocol list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0102",
+      "subject": "concept:i2p",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "I2P appears in the article's overlay protocol list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0103",
+      "subject": "concept:tor",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "Tor appears in the article's overlay protocol list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0104",
+      "subject": "concept:pucc",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "PUCC appears in the article's overlay protocol list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0105",
+      "subject": "concept:solipsis",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "Solipsis appears in the article's overlay protocol list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0106",
+      "subject": "concept:rtmfp",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "RTMFP appears in the UDP/IP-based list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0107",
+      "subject": "concept:pilot_protocol",
+      "predicate": "listed_as",
+      "object": "concept:overlay_network",
+      "evidence": "Pilot Protocol appears in the UDP/IP-based list.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0108",
+      "subject": "concept:darknet",
+      "predicate": "related_to",
+      "object": "concept:peer_to_peer",
+      "evidence": "The article describes a darknet as private connections between trusted peers.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0109",
+      "subject": "concept:pilot_protocol",
+      "predicate": "uses",
+      "object": "concept:logical_addressing",
+      "evidence": "The source describes Pilot Protocol as using virtual addressing.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0110",
+      "subject": "concept:pilot_protocol",
+      "predicate": "uses",
+      "object": "concept:encryption",
+      "evidence": "The source describes encrypted peer tunnels over UDP.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0111",
+      "subject": "concept:pilot_protocol",
+      "predicate": "uses",
+      "object": "concept:tunnel",
+      "evidence": "The source describes encrypted peer tunnels over UDP.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0112",
+      "subject": "concept:pilot_protocol",
+      "predicate": "transport_context",
+      "object": "concept:udp_ip",
+      "evidence": "The source groups Pilot Protocol under UDP/IP-based overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0113",
+      "subject": "concept:rtmfp",
+      "predicate": "transport_context",
+      "object": "concept:udp_ip",
+      "evidence": "The source groups RTMFP under UDP/IP-based overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0114",
+      "subject": "concept:chord",
+      "predicate": "transport_context",
+      "object": "concept:tcp_ip",
+      "evidence": "The source groups Chord-based DHTs under TCP/IP-based overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0115",
+      "subject": "concept:kademlia",
+      "predicate": "transport_context",
+      "object": "concept:udp_ip",
+      "evidence": "The source groups Kademlia-based DHTs under UDP/IP-based overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0116",
+      "subject": "concept:overlay_network",
+      "predicate": "can_hide",
+      "object": "concept:underlay_network",
+      "evidence": "The real network topology is hidden from overlay logic.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0117",
+      "subject": "concept:overlay_network",
+      "predicate": "may_inherit_inefficiencies_from",
+      "object": "concept:underlay_network",
+      "evidence": "Underlying routes may be suboptimal.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0118",
+      "subject": "concept:overlay_network",
+      "predicate": "may_increase",
+      "object": "concept:latency",
+      "evidence": "Overlay routes can be slower than non-overlay services.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0119",
+      "subject": "concept:overlay_network",
+      "predicate": "may_cause",
+      "object": "technology:traffic_duplication",
+      "evidence": "Duplicate packets can occur at some points.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0120",
+      "subject": "concept:overlay_network",
+      "predicate": "uses_capacity_for",
+      "object": "concept:bandwidth_overhead",
+      "evidence": "Additional encapsulation consumes capacity.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0121",
+      "subject": "concept:overlay_network",
+      "predicate": "depends_on",
+      "object": "concept:service_availability",
+      "evidence": "An overlay's service availability depends in part on lower layers.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0122",
+      "subject": "concept:overlay_network",
+      "predicate": "can_improve",
+      "object": "concept:resilience",
+      "evidence": "Programmability and flexible rerouting can improve resilience in some designs.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0123",
+      "subject": "concept:overlay_network",
+      "predicate": "tradeoff",
+      "object": "concept:underlay_network",
+      "evidence": "Overlay logic cannot eliminate the underlying network's routing constraints.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0124",
+      "subject": "source:wikipedia_overlay_network",
+      "predicate": "cites",
+      "object": "source:tarkoma_2010",
+      "evidence": "The article's reference list includes Tarkoma's 2010 book.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0125",
+      "subject": "source:wikipedia_overlay_network",
+      "predicate": "cites",
+      "object": "source:peterson_davie_2012",
+      "evidence": "The article's reference list includes Peterson and Davie's textbook.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0126",
+      "subject": "source:wikipedia_overlay_network",
+      "predicate": "cites",
+      "object": "source:ron_paper_2001",
+      "evidence": "The article cites the 2001 RON paper.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0127",
+      "subject": "source:wikipedia_overlay_network",
+      "predicate": "cites",
+      "object": "source:braun_arya_turletti_2006",
+      "evidence": "The article cites a paper on explicit routing in multicast overlays.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0128",
+      "subject": "source:wikipedia_overlay_network",
+      "predicate": "cites",
+      "object": "source:pilot_protocol_listing_2026",
+      "evidence": "The article cites an AgentsIndex Pilot Protocol listing.",
+      "confidence": "source_stated",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {}
+    },
+    {
+      "id": "rel:0129",
+      "subject": "concept:vxlan",
+      "predicate": "illustrated_by",
+      "object": "pattern:vxlan_data_center",
+      "evidence": "Illustrative architecture pattern: Data-center VXLAN overlay pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "General technical illustration consistent with the article's VXLAN/data-center discussion; exact implementation details are model-expanded."
+      }
+    },
+    {
+      "id": "rel:0130",
+      "subject": "concept:data_center",
+      "predicate": "uses_pattern",
+      "object": "pattern:vxlan_data_center",
+      "evidence": "Illustrative architecture pattern: Data-center VXLAN overlay pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "General technical illustration consistent with the article's VXLAN/data-center discussion; exact implementation details are model-expanded."
+      }
+    },
+    {
+      "id": "rel:0131",
+      "subject": "concept:encapsulation",
+      "predicate": "used_in",
+      "object": "pattern:vxlan_data_center",
+      "evidence": "Illustrative architecture pattern: Data-center VXLAN overlay pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "General technical illustration consistent with the article's VXLAN/data-center discussion; exact implementation details are model-expanded."
+      }
+    },
+    {
+      "id": "rel:0132",
+      "subject": "concept:bgp_vpn",
+      "predicate": "illustrated_by",
+      "object": "pattern:bgp_vpn_wan",
+      "evidence": "Illustrative architecture pattern: Provider BGP VPN WAN pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Illustrative generalization of the article's BGP VPN use case; specific control-plane details vary by implementation."
+      }
+    },
+    {
+      "id": "rel:0133",
+      "subject": "concept:enterprise_wan",
+      "predicate": "uses_pattern",
+      "object": "pattern:bgp_vpn_wan",
+      "evidence": "Illustrative architecture pattern: Provider BGP VPN WAN pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Illustrative generalization of the article's BGP VPN use case; specific control-plane details vary by implementation."
+      }
+    },
+    {
+      "id": "rel:0134",
+      "subject": "concept:resilient_overlay_networks",
+      "predicate": "illustrated_by",
+      "object": "pattern:ron_failover",
+      "evidence": "Illustrative architecture pattern: Resilient overlay path recovery pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Based on the article's RON section."
+      }
+    },
+    {
+      "id": "rel:0135",
+      "subject": "concept:failure_recovery",
+      "predicate": "demonstrated_by",
+      "object": "pattern:ron_failover",
+      "evidence": "Illustrative architecture pattern: Resilient overlay path recovery pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Based on the article's RON section."
+      }
+    },
+    {
+      "id": "rel:0136",
+      "subject": "concept:overlay_multicast",
+      "predicate": "illustrated_by",
+      "object": "pattern:overlay_multicast",
+      "evidence": "Illustrative architecture pattern: End-system multicast delivery pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Based on the article's overlay multicast section."
+      }
+    },
+    {
+      "id": "rel:0137",
+      "subject": "concept:unicast",
+      "predicate": "used_as_underlay_edge_in",
+      "object": "pattern:overlay_multicast",
+      "evidence": "Illustrative architecture pattern: End-system multicast delivery pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Based on the article's overlay multicast section."
+      }
+    },
+    {
+      "id": "rel:0138",
+      "subject": "concept:distributed_hash_table",
+      "predicate": "illustrated_by",
+      "object": "pattern:dht_logical_lookup",
+      "evidence": "Illustrative architecture pattern: Logical-address DHT lookup pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Based on the article's DHT discussion; exact lookup procedure depends on the DHT algorithm."
+      }
+    },
+    {
+      "id": "rel:0139",
+      "subject": "concept:logical_addressing",
+      "predicate": "used_by",
+      "object": "pattern:dht_logical_lookup",
+      "evidence": "Illustrative architecture pattern: Logical-address DHT lookup pattern.",
+      "confidence": "model_expansion",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "qualifiers": {
+        "grounding": "Based on the article's DHT discussion; exact lookup procedure depends on the DHT algorithm."
+      }
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern:vxlan_data_center",
+      "name": "Data-center VXLAN overlay pattern",
+      "steps": [
+        "VM or cluster endpoint emits packet",
+        "VXLAN encapsulates the inner Ethernet frame",
+        "IP underlay routes encapsulated packet",
+        "remote VXLAN endpoint decapsulates",
+        "destination VM or cluster receives frame"
+      ],
+      "grounding": "General technical illustration consistent with the article's VXLAN/data-center discussion; exact implementation details are model-expanded.",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "status": "illustrative_pattern",
+      "relationships": []
+    },
+    {
+      "id": "pattern:bgp_vpn_wan",
+      "name": "Provider BGP VPN WAN pattern",
+      "steps": [
+        "Enterprise sites connect to provider edge",
+        "Provider uses BGP VPN mechanisms to maintain isolated routing context",
+        "Provider infrastructure transports traffic across WAN",
+        "Remote site receives traffic in its enterprise routing context"
+      ],
+      "grounding": "Illustrative generalization of the article's BGP VPN use case; specific control-plane details vary by implementation.",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "status": "illustrative_pattern",
+      "relationships": []
+    },
+    {
+      "id": "pattern:ron_failover",
+      "name": "Resilient overlay path recovery pattern",
+      "steps": [
+        "RON nodes measure path quality among participating nodes",
+        "A direct path degrades or disconnects",
+        "Overlay compares direct and relay paths against application-specific metrics",
+        "Traffic is rerouted directly or through another RON node",
+        "Node continues monitoring for future path changes"
+      ],
+      "grounding": "Based on the article's RON section.",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "status": "illustrative_pattern",
+      "relationships": []
+    },
+    {
+      "id": "pattern:overlay_multicast",
+      "name": "End-system multicast delivery pattern",
+      "steps": [
+        "Source publishes stream or data",
+        "Peers form an overlay distribution topology",
+        "Each overlay edge uses an underlying unicast path",
+        "Peers forward data to downstream peers",
+        "Topology is maintained as participants or paths change"
+      ],
+      "grounding": "Based on the article's overlay multicast section.",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "status": "illustrative_pattern",
+      "relationships": []
+    },
+    {
+      "id": "pattern:dht_logical_lookup",
+      "name": "Logical-address DHT lookup pattern",
+      "steps": [
+        "Application has a logical key or destination identifier",
+        "DHT routes lookup across overlay nodes",
+        "Responsible node is discovered without requester knowing its IP beforehand",
+        "Application sends message using discovered overlay route"
+      ],
+      "grounding": "Based on the article's DHT discussion; exact lookup procedure depends on the DHT algorithm.",
+      "source_refs": [
+        "source:wikipedia_overlay_network"
+      ],
+      "status": "illustrative_pattern",
+      "relationships": []
+    }
+  ],
+  "taxonomy": {
+    "overlay_families": [
+      {
+        "id": "family:tunneling",
+        "members": [
+          "technology:ip_over_ip",
+          "concept:gre",
+          "concept:ipsec",
+          "concept:vxlan"
+        ],
+        "description": "Encapsulation/tunnel-based approaches that create logical connectivity over an underlay."
+      },
+      {
+        "id": "family:provider_vpn",
+        "members": [
+          "concept:bgp_vpn",
+          "concept:mpls",
+          "concept:sd_wan"
+        ],
+        "description": "Provider and enterprise WAN overlays, including VPN and programmable SD-WAN approaches."
+      },
+      {
+        "id": "family:peer_to_peer_and_identity_routing",
+        "members": [
+          "concept:peer_to_peer",
+          "concept:distributed_hash_table",
+          "concept:chord",
+          "concept:kademlia",
+          "concept:xmpp"
+        ],
+        "description": "Overlays that organize peers or route using logical identifiers rather than only destination IP addresses."
+      },
+      {
+        "id": "family:resilience",
+        "members": [
+          "concept:resilient_overlay_networks",
+          "concept:failure_recovery"
+        ],
+        "description": "Application-layer path monitoring and rerouting."
+      },
+      {
+        "id": "family:multicast",
+        "members": [
+          "concept:overlay_multicast",
+          "concept:peercasting",
+          "concept:overcast",
+          "concept:end_system_multicast"
+        ],
+        "description": "Peer-based distribution over underlying unicast paths."
+      },
+      {
+        "id": "family:anonymity_overlays",
+        "members": [
+          "concept:tor",
+          "concept:i2p",
+          "concept:freenet"
+        ],
+        "description": "Systems named by the article among overlay networks; this grouping is a taxonomy aid and does not imply identical designs or guarantees."
+      }
+    ],
+    "comparison_dimensions": [
+      "layer of operation",
+      "addressing model",
+      "underlay dependency",
+      "encapsulation",
+      "routing control",
+      "QoS policy",
+      "resilience",
+      "multicast capability",
+      "security properties",
+      "deployment model",
+      "latency overhead",
+      "bandwidth overhead"
+    ]
+  },
+  "tradeoff_matrix": [
+    {
+      "dimension": "Logical addressing",
+      "benefit": "Can identify and route to destinations independently of their currently known IP address.",
+      "cost_or_limit": "Requires overlay-level naming, lookup, or routing mechanisms."
+    },
+    {
+      "dimension": "Programmability",
+      "benefit": "Can select overlay-node sequence and apply application/site/user-specific policies.",
+      "cost_or_limit": "Cannot directly control the underlay's route between two overlay nodes."
+    },
+    {
+      "dimension": "Resilience",
+      "benefit": "Can detect path degradation and reroute at the overlay layer.",
+      "cost_or_limit": "Still depends on lower-layer availability and may choose a longer path."
+    },
+    {
+      "dimension": "Security",
+      "benefit": "Can provide logical isolation and optionally encryption.",
+      "cost_or_limit": "An overlay by itself does not guarantee confidentiality, authentication, or secure endpoint behavior."
+    },
+    {
+      "dimension": "Encapsulation",
+      "benefit": "Enables logical networks and tunnels over shared infrastructure.",
+      "cost_or_limit": "Additional headers consume capacity and can affect MTU/fragmentation behavior (MTU note is model-expanded)."
+    },
+    {
+      "dimension": "QoS",
+      "benefit": "Can prioritize traffic by application, user, or site.",
+      "cost_or_limit": "DiffServ prioritization does not itself guarantee end-to-end throughput."
+    },
+    {
+      "dimension": "Multicast",
+      "benefit": "Can distribute data among peers without relying on router-level IP multicast.",
+      "cost_or_limit": "Requires maintaining an overlay topology and may create redundant transmissions."
+    }
+  ],
+  "example_scenarios": [
+    {
+      "id": "example:branch_connectivity",
+      "title": "Enterprise branch connectivity",
+      "goal": "Connect multiple geographically distributed offices.",
+      "candidate_approaches": [
+        "concept:bgp_vpn",
+        "concept:sd_wan"
+      ],
+      "flow": [
+        "Branch endpoint",
+        "provider or SD-WAN edge",
+        "underlay transport",
+        "remote edge",
+        "destination branch"
+      ],
+      "tradeoffs": [
+        "provider-managed routing context versus enterprise policy flexibility",
+        "underlay dependence",
+        "encryption and segmentation depend on configuration"
+      ],
+      "grounding": "Article use cases plus model-expanded illustration."
+    },
+    {
+      "id": "example:cross_cluster_network",
+      "title": "Cross-cluster or VM network",
+      "goal": "Provide logical Layer 2 or Layer 3 connectivity between virtualized workloads.",
+      "candidate_approaches": [
+        "concept:vxlan",
+        "concept:bgp_vpn"
+      ],
+      "flow": [
+        "VM or cluster endpoint",
+        "overlay encapsulation or routing",
+        "data-center IP fabric",
+        "remote endpoint decapsulation/routing"
+      ],
+      "tradeoffs": [
+        "VXLAN complexity and stitching to Layer 3/BGP",
+        "encapsulation overhead",
+        "operational complexity"
+      ],
+      "grounding": "Article data-center discussion plus model-expanded illustration."
+    },
+    {
+      "id": "example:resilient_application",
+      "title": "Application-specific failover",
+      "goal": "Recover faster from a degraded or disconnected Internet path.",
+      "candidate_approaches": [
+        "concept:resilient_overlay_networks"
+      ],
+      "flow": [
+        "monitor paths",
+        "detect degradation",
+        "compare candidate paths",
+        "reroute directly or through peer",
+        "continue monitoring"
+      ],
+      "tradeoffs": [
+        "possible relay-path latency",
+        "measurement and coordination overhead"
+      ],
+      "grounding": "Article RON discussion plus model-expanded illustration."
+    },
+    {
+      "id": "example:content_distribution",
+      "title": "Distributed media or content delivery",
+      "goal": "Deliver a stream or content to many geographically distributed peers.",
+      "candidate_approaches": [
+        "concept:overlay_multicast",
+        "concept:peercasting"
+      ],
+      "flow": [
+        "source",
+        "overlay distribution tree/mesh",
+        "peer forwarding over unicast links",
+        "receivers"
+      ],
+      "tradeoffs": [
+        "topology maintenance",
+        "duplicate transmissions",
+        "peer churn"
+      ],
+      "grounding": "Article overlay multicast discussion plus model-expanded illustration."
+    },
+    {
+      "id": "example:logical_service_discovery",
+      "title": "Logical destination lookup",
+      "goal": "Find a service or peer without knowing its IP address in advance.",
+      "candidate_approaches": [
+        "concept:distributed_hash_table",
+        "concept:chord",
+        "concept:kademlia"
+      ],
+      "flow": [
+        "logical key",
+        "overlay lookup",
+        "responsible peer or node",
+        "application connection"
+      ],
+      "tradeoffs": [
+        "lookup latency",
+        "membership churn",
+        "algorithm-specific consistency and routing properties"
+      ],
+      "grounding": "Article DHT discussion plus model-expanded illustration."
+    }
+  ],
+  "query_examples": [
+    {
+      "question": "What technologies does the article explicitly identify as overlays?",
+      "filter": {
+        "entity_ids": [
+          "concept:vxlan",
+          "concept:bgp_vpn",
+          "concept:gre",
+          "concept:ipsec",
+          "technology:ip_over_ip"
+        ]
+      }
+    },
+    {
+      "question": "Which overlay approaches focus on resilience?",
+      "filter": {
+        "entity_ids": [
+          "concept:resilient_overlay_networks",
+          "concept:failure_recovery",
+          "concept:application_layer"
+        ]
+      }
+    },
+    {
+      "question": "Which protocols are listed under TCP/IP-based overlays?",
+      "filter": {
+        "entity_ids": [
+          "concept:chord",
+          "concept:jxta",
+          "concept:xmpp",
+          "concept:gnutella",
+          "concept:gnutella2",
+          "concept:freenet",
+          "concept:i2p",
+          "concept:tor",
+          "concept:pucc",
+          "concept:solipsis"
+        ]
+      }
+    },
+    {
+      "question": "Which protocols are listed under UDP/IP-based overlays?",
+      "filter": {
+        "entity_ids": [
+          "concept:kademlia",
+          "concept:rtmfp",
+          "concept:pilot_protocol"
+        ]
+      }
+    },
+    {
+      "question": "What trade-offs are listed for overlays?",
+      "filter": {
+        "entity_ids": [
+          "concept:latency",
+          "concept:bandwidth_overhead",
+          "technology:traffic_duplication",
+          "concept:underlay_network"
+        ]
+      }
+    },
+    {
+      "question": "How does overlay multicast work?",
+      "filter": {
+        "entity_ids": [
+          "concept:overlay_multicast",
+          "concept:unicast",
+          "concept:peer_to_peer",
+          "concept:ip_multicast"
+        ]
+      }
+    }
+  ],
+  "source_register": [
+    {
+      "id": "source:wikipedia_overlay_network",
+      "title": "Overlay network",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Overlay_network",
+      "source_type": "user-provided article text",
+      "last_edited": "2026-09-23",
+      "notes": "The provided text includes an editorial notice about promotional content. Several claims are marked citation-needed; treat as claims in the supplied article rather than verified facts."
+    },
+    {
+      "id": "source:tarkoma_2010",
+      "title": "Overlay Networks: Toward Information Networking",
+      "author": "Sasu Tarkoma",
+      "year": 2010,
+      "isbn": "9781439813737"
+    },
+    {
+      "id": "source:peterson_davie_2012",
+      "title": "Computer Networks: A Systems Approach, Chapter 9",
+      "authors": [
+        "Larry Peterson",
+        "Bruce Davie"
+      ],
+      "year": 2012
+    },
+    {
+      "id": "source:ron_paper_2001",
+      "title": "Resilient overlay networks",
+      "authors": [
+        "David Andersen",
+        "Hari Balakrishnan",
+        "Frans Kaashoek",
+        "Robert Morris"
+      ],
+      "year": 2001,
+      "doi": "10.1145/502034.502048"
+    },
+    {
+      "id": "source:braun_arya_turletti_2006",
+      "title": "Explicit routing in multicast overlay networks",
+      "authors": [
+        "Torsten Braun",
+        "Vijay Arya",
+        "Thierry Turletti"
+      ],
+      "year": 2006,
+      "doi": "10.1016/j.comcom.2006.02.022"
+    },
+    {
+      "id": "source:pilot_protocol_listing_2026",
+      "title": "Pilot Protocol: Direct peer-to-peer networking for AI",
+      "publisher": "AgentsIndex",
+      "retrieved_date": "2026-09-04",
+      "notes": "Referenced by the article; not independently verified."
+    }
+  ],
+  "article_notes": {
+    "neutrality_notice": "The supplied article contains a notice that it may contain promotional content and requests neutral encyclopedic writing.",
+    "citation_needed_claims": [
+      "The Internet was originally built as an overlay upon the telephone network.",
+      "The telephone network is increasingly an overlay on the Internet through VoIP."
+    ],
+    "citation_policy": "Do not convert citation-needed claims into unquestioned facts."
+  }
+}

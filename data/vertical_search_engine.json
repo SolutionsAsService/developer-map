@@ -1,0 +1,1157 @@
+{
+  "schema_metadata": {
+    "schema_name": "vertical_search_engines_knowledge_graph",
+    "schema_version": "1.0.0",
+    "record_type": "topic_knowledge_graph",
+    "title": "Vertical search engines",
+    "canonical_topic_id": "concept:vertical_search_engine",
+    "language": "en",
+    "description": "Detailed machine-readable representation of the supplied Wikipedia article on vertical search, including definitions, benefits, domain-specific search, focused crawling, DARPA's Memex program, cited works, related concepts, and explicit graph relationships.",
+    "source_basis": {
+      "primary_source": "User-provided Wikipedia article text titled 'Vertical search'",
+      "source_url": "https://en.wikipedia.org/wiki/Vertical_search",
+      "source_page_last_edited": "2026-09-18T10:26:00Z",
+      "source_license_as_stated": "Creative Commons Attribution-ShareAlike 4.0 License",
+      "source_quality_notice": "The supplied article contains a Wikipedia notice that it may contain original research and asks for claims to be verified with inline citations.",
+      "scope_note": "This record preserves the supplied article's claims and framing. It does not independently verify the claims or add unsupported technical implementation details."
+    }
+  },
+  "entities": [
+    {
+      "id": "concept:vertical_search_engine",
+      "entity_type": "search_engine_type",
+      "name": "Vertical search engine",
+      "aliases": [
+        "vertical search",
+        "specialty search engine",
+        "topical search engine"
+      ],
+      "definition": "A search engine focused on a specific segment of online content rather than attempting to search broadly across the web.",
+      "content_area_dimensions": [
+        "topic",
+        "media type",
+        "genre"
+      ],
+      "common_domains": [
+        "shopping",
+        "automotive industry",
+        "legal information",
+        "medical information",
+        "scholarly literature",
+        "job search",
+        "travel"
+      ],
+      "typical_crawling_approach": "Focused crawler targeting pages relevant to a predefined topic or set of topics.",
+      "scope_variants": [
+        "single-vertical search site",
+        "multi-vertical search site"
+      ]
+    },
+    {
+      "id": "concept:general_web_search_engine",
+      "entity_type": "search_engine_type",
+      "name": "General web search engine",
+      "definition": "A search engine that attempts to index large portions of the World Wide Web, using web crawlers to collect documents.",
+      "article_contrast": "The article contrasts broad, breadth-first collection with focused crawling over a smaller, topic-relevant subset."
+    },
+    {
+      "id": "concept:focused_crawler",
+      "entity_type": "web_crawling_method",
+      "name": "Focused crawler",
+      "definition": "A crawler that attempts to index only web pages relevant to a predefined topic or set of topics.",
+      "purpose": "Reduce search effort by concentrating on a domain-relevant subset of documents."
+    },
+    {
+      "id": "concept:web_crawler",
+      "entity_type": "web_crawling_method",
+      "name": "Web crawler",
+      "aliases": [
+        "spider"
+      ],
+      "definition": "Software used by search systems to discover and collect web documents for indexing."
+    },
+    {
+      "id": "concept:domain_specific_search",
+      "entity_type": "search_method",
+      "name": "Domain-specific search",
+      "definition": "A vertical-search approach focused on a particular topic or domain, with a customized search experience and a limited corpus.",
+      "characteristics": [
+        "limited document corpus",
+        "clear relationships between concepts",
+        "customized search experience",
+        "potentially highly relevant results"
+      ]
+    },
+    {
+      "id": "concept:enterprise_search",
+      "entity_type": "search_method",
+      "name": "Enterprise search",
+      "definition": "Search whose domain of focus is an enterprise, such as a company, government, or organization.",
+      "relationship_to_vertical_search": "The article describes vertical search as similar to enterprise search, with the domain of focus defining the searchable corpus."
+    },
+    {
+      "id": "concept:domain_knowledge",
+      "entity_type": "search_capability",
+      "name": "Domain knowledge",
+      "definition": "Knowledge about a specific subject area that can be leveraged by a vertical search system.",
+      "examples_of_structuring": [
+        "taxonomies",
+        "ontologies"
+      ]
+    },
+    {
+      "id": "concept:taxonomy",
+      "entity_type": "knowledge_representation",
+      "name": "Taxonomy",
+      "definition": "A structured classification of concepts or items within a domain."
+    },
+    {
+      "id": "concept:ontology",
+      "entity_type": "knowledge_representation",
+      "name": "Ontology",
+      "definition": "A representation of concepts and relationships within a domain."
+    },
+    {
+      "id": "concept:reinforcement_learning",
+      "entity_type": "machine_learning_method",
+      "name": "Reinforcement learning",
+      "article_context": "The article reports that spidering using a reinforcement-learning framework was found to be three times more efficient than breadth-first search in the cited work.",
+      "evidence_status": "reported_by_source_not_independently_verified"
+    },
+    {
+      "id": "concept:breadth_first_search",
+      "entity_type": "search_strategy",
+      "name": "Breadth-first search",
+      "article_context": "Used as a comparison for document collection and spidering efficiency."
+    },
+    {
+      "id": "concept:deep_web",
+      "entity_type": "web_content_category",
+      "name": "Deep Web",
+      "definition": "The part of the Internet described by the article as largely unreachable by commercial search engines.",
+      "distinction_note": "The article discusses Memex as aiming to extend search into the Deep Web; it does not define the Deep Web as synonymous with the dark web."
+    },
+    {
+      "id": "concept:dark_web",
+      "entity_type": "web_content_category",
+      "name": "Dark web",
+      "article_context": "Discussed in reporting about Memex's goal of discovering patterns and relationships in online data, including information relevant to investigations of illegal activity."
+    },
+    {
+      "id": "program:darpa_memex",
+      "entity_type": "research_program",
+      "name": "DARPA Memex program",
+      "aliases": [
+        "Memex",
+        "Memex (Domain-Specific Search)"
+      ],
+      "start_period": "2014",
+      "planned_duration": "three years",
+      "sponsoring_organization_id": "organization:darpa",
+      "name_origin": {
+        "term": "Memex",
+        "portmanteau_of": [
+          "memory",
+          "extension"
+        ],
+        "tribute_to_id": "person:vannevar_bush",
+        "inspiration_work_id": "work:as_we_may_think"
+      },
+      "goals_reported_in_article": [
+        "develop search technologies that overcome some limitations of text-based search",
+        "improve content discovery",
+        "improve information extraction",
+        "improve information retrieval",
+        "support user collaboration",
+        "extend search to the Deep Web",
+        "extend search to the dark web",
+        "support nontraditional content such as multimedia",
+        "uncover patterns and relationships in online data"
+      ],
+      "open_source_milestone": {
+        "reported_date": "2015-04",
+        "description": "The article states that parts of Memex were announced as open-source and modules were made available for download."
+      },
+      "article_stated_design_direction": "Develop a new domain-specific indexing and search paradigm rather than relying only on centralized procedures used by commercial search engines."
+    },
+    {
+      "id": "organization:darpa",
+      "entity_type": "organization",
+      "name": "Defense Advanced Research Projects Agency",
+      "abbreviation": "DARPA",
+      "role_in_topic": "Sponsor and organizer of the Memex research program as described by the article."
+    },
+    {
+      "id": "person:vannevar_bush",
+      "entity_type": "person",
+      "name": "Vannevar Bush",
+      "role_in_topic": "His 1945 Memex concept inspired the name and program framing of DARPA's Memex project."
+    },
+    {
+      "id": "work:as_we_may_think",
+      "entity_type": "publication",
+      "title": "As We May Think",
+      "author_id": "person:vannevar_bush",
+      "publication_date": "1945-07-01",
+      "publication_venue": "The Atlantic",
+      "role_in_topic": "The article identifies this work as the inspiration for DARPA's Memex program."
+    },
+    {
+      "id": "person:andrew_mccallum",
+      "entity_type": "person",
+      "name": "Andrew McCallum",
+      "role_in_topic": "Co-author of the 1999 work on building domain-specific search engines; the article says the term was popularized by this work's authors."
+    },
+    {
+      "id": "person:kamal_nigam",
+      "entity_type": "person",
+      "name": "Kamal Nigam",
+      "role_in_topic": "Co-author of the 1999 work on building domain-specific search engines."
+    },
+    {
+      "id": "person:jason_rennie",
+      "entity_type": "person",
+      "name": "Jason Rennie",
+      "role_in_topic": "Co-author of the 1999 work on building domain-specific search engines."
+    },
+    {
+      "id": "person:kristie_seymore",
+      "entity_type": "person",
+      "name": "Kristie Seymore",
+      "role_in_topic": "Co-author of the 1999 work on building domain-specific search engines."
+    },
+    {
+      "id": "work:machine_learning_domain_specific_search_1999",
+      "entity_type": "academic_work",
+      "title": "A Machine Learning Approach to Building Domain-Specific Search Engines",
+      "authors": [
+        "person:andrew_mccallum",
+        "person:kamal_nigam",
+        "person:jason_rennie",
+        "person:kristie_seymore"
+      ],
+      "publication_year": 1999,
+      "venues_or_associations": [
+        "Carnegie Mellon University Robotics Institute",
+        "IJCAI 1999"
+      ],
+      "reported_contribution": "The article says domain-specific search was popularized as a term by the authors' work."
+    },
+    {
+      "id": "organization:library_of_congress",
+      "entity_type": "organization",
+      "name": "Library of Congress",
+      "article_role": "Example of a search engine or search service in the article's list of vertical-search examples."
+    },
+    {
+      "id": "product:google_maps",
+      "entity_type": "software_service",
+      "name": "Google Maps",
+      "operator_or_brand_id": "company:google",
+      "article_role": "Example of a vertical search engine/search service."
+    },
+    {
+      "id": "company:google",
+      "entity_type": "company",
+      "name": "Google",
+      "article_role": "Named in the article as a commercial search provider and associated with Google Maps."
+    },
+    {
+      "id": "product:linkedin",
+      "entity_type": "software_service",
+      "name": "LinkedIn",
+      "article_role": "Example of a vertical search engine/search service."
+    },
+    {
+      "id": "company:zillow",
+      "entity_type": "company",
+      "name": "Zillow",
+      "article_role": "Example of a vertical search engine/search service."
+    },
+    {
+      "id": "product:kayak",
+      "entity_type": "software_service",
+      "name": "Kayak",
+      "article_role": "Example of a vertical search engine/search service, particularly relevant to travel."
+    },
+    {
+      "id": "company:findthebest",
+      "entity_type": "company",
+      "name": "FindTheBest",
+      "later_name_or_brand": "Graphiq",
+      "article_role": "Consumer price-comparison website with integrated vertical search engines; the article reports it raised a large venture-capital round in 2013."
+    },
+    {
+      "id": "company:graphiq",
+      "entity_type": "company_or_brand",
+      "name": "Graphiq",
+      "article_context": "Identified in the article as the later name associated with FindTheBest."
+    },
+    {
+      "id": "company:save_22",
+      "entity_type": "company_or_service",
+      "name": "Save 22",
+      "article_context": "The references include a 2013 report about an Asian price-comparison site called Save 22 receiving an angel investment round."
+    },
+    {
+      "id": "company:kleiner_perkins",
+      "entity_type": "investment_firm",
+      "name": "Kleiner Perkins",
+      "article_context": "Named in the title of a 2013 report about FindTheBest's funding round."
+    },
+    {
+      "id": "publication:search_engine_watch",
+      "entity_type": "publication_or_website",
+      "name": "Search Engine Watch",
+      "article_context": "Publisher of a referenced article about the rise of vertical search engines."
+    },
+    {
+      "id": "publication:techcrunch",
+      "entity_type": "publication_or_website",
+      "name": "TechCrunch",
+      "article_context": "Publisher of a referenced 2013 report on FindTheBest's $11 million funding round."
+    },
+    {
+      "id": "publication:wired",
+      "entity_type": "publication_or_website",
+      "name": "Wired",
+      "article_context": "Publisher of a referenced 2015 article about DARPA's Memex dark-web search research."
+    },
+    {
+      "id": "publication:forbes",
+      "entity_type": "publication_or_website",
+      "name": "Forbes",
+      "article_context": "Publisher of a referenced 2015 report about open-sourcing Memex technology."
+    },
+    {
+      "id": "organization:nyu_tandon",
+      "entity_type": "academic_institution",
+      "name": "NYU Tandon School of Engineering",
+      "article_context": "The references include a 2015 item about a DARPA contract to fund exploration of hard-to-find information on the web."
+    },
+    {
+      "id": "concept:multimedia_search",
+      "entity_type": "search_type",
+      "name": "Multimedia search",
+      "article_context": "The article identifies nontraditional multimedia content as a target for expanded search capabilities."
+    },
+    {
+      "id": "concept:information_retrieval",
+      "entity_type": "information_science_concept",
+      "name": "Information retrieval",
+      "article_context": "One of the capabilities Memex sought to improve."
+    },
+    {
+      "id": "concept:information_extraction",
+      "entity_type": "information_science_concept",
+      "name": "Information extraction",
+      "article_context": "One of the capabilities Memex sought to improve."
+    },
+    {
+      "id": "concept:content_discovery",
+      "entity_type": "information_science_concept",
+      "name": "Content discovery",
+      "article_context": "One of the capabilities Memex sought to improve."
+    },
+    {
+      "id": "concept:user_collaboration",
+      "entity_type": "software_capability",
+      "name": "User collaboration",
+      "article_context": "One of the capabilities Memex sought to improve."
+    },
+    {
+      "id": "concept:price_comparison",
+      "entity_type": "online_service_category",
+      "name": "Price comparison",
+      "article_context": "The article discusses price-comparison websites as an application area for vertical search."
+    },
+    {
+      "id": "concept:internet_search",
+      "entity_type": "field",
+      "name": "Internet search",
+      "article_context": "Parent topic for vertical search, general web search, enterprise search, and related search methods."
+    }
+  ],
+  "taxonomy": {
+    "parent_topic_id": "concept:internet_search",
+    "topic_category": "Internet search engines",
+    "article_category_labels": [
+      "Internet search engines",
+      "Domain-specific search engines"
+    ],
+    "types_and_related_methods": [
+      {
+        "id": "concept:vertical_search_engine",
+        "relation": "is_a",
+        "parent": "concept:internet_search"
+      },
+      {
+        "id": "concept:domain_specific_search",
+        "relation": "closely_related_to",
+        "target": "concept:vertical_search_engine"
+      },
+      {
+        "id": "concept:enterprise_search",
+        "relation": "analogous_to",
+        "target": "concept:vertical_search_engine"
+      },
+      {
+        "id": "concept:general_web_search_engine",
+        "relation": "contrasted_with",
+        "target": "concept:vertical_search_engine"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "id": "benefit:greater_precision",
+      "name": "Greater precision",
+      "description": "A limited scope can improve precision relative to general search.",
+      "mechanism": "The system searches a more narrowly defined content area."
+    },
+    {
+      "id": "benefit:domain_knowledge",
+      "name": "Leverage domain knowledge",
+      "description": "Vertical search can use knowledge specific to its subject area.",
+      "mechanism": "Use domain taxonomies and ontologies to organize or interpret content."
+    },
+    {
+      "id": "benefit:specific_user_tasks",
+      "name": "Support for specific user tasks",
+      "description": "Vertical search can be designed around distinctive tasks in a domain.",
+      "examples": [
+        "shopping",
+        "travel search",
+        "job search",
+        "legal information retrieval"
+      ]
+    },
+    {
+      "id": "benefit:efficient_focused_spidering",
+      "name": "Potentially more efficient spidering",
+      "description": "Domain-specific spidering concentrates on a smaller subset of relevant documents.",
+      "evidence_note": "The article reports a three-times-efficiency result for a reinforcement-learning framework compared with breadth-first search; the result is preserved as a claim from the supplied source and has not been independently verified."
+    }
+  ],
+  "domain_examples": [
+    {
+      "domain": "shopping",
+      "search_needs": [
+        "products",
+        "prices",
+        "comparison"
+      ],
+      "example_entities": [
+        "company:findthebest",
+        "company:save_22"
+      ]
+    },
+    {
+      "domain": "automotive industry",
+      "search_needs": [
+        "vehicle-specific information"
+      ],
+      "example_entities": []
+    },
+    {
+      "domain": "legal information",
+      "search_needs": [
+        "legal-domain documents and resources"
+      ],
+      "example_entities": []
+    },
+    {
+      "domain": "medical information",
+      "search_needs": [
+        "medical-domain documents and resources"
+      ],
+      "example_entities": []
+    },
+    {
+      "domain": "scholarly literature",
+      "search_needs": [
+        "academic publications and research documents"
+      ],
+      "example_entities": []
+    },
+    {
+      "domain": "job search",
+      "search_needs": [
+        "employment opportunities and job listings"
+      ],
+      "example_entities": [
+        "product:linkedin"
+      ]
+    },
+    {
+      "domain": "travel",
+      "search_needs": [
+        "travel options and related services"
+      ],
+      "example_entities": [
+        "product:kayak"
+      ]
+    },
+    {
+      "domain": "maps and geographic information",
+      "search_needs": [
+        "places and geographic information"
+      ],
+      "example_entities": [
+        "product:google_maps"
+      ]
+    },
+    {
+      "domain": "real estate",
+      "search_needs": [
+        "property information"
+      ],
+      "example_entities": [
+        "company:zillow"
+      ]
+    },
+    {
+      "domain": "library and archival material",
+      "search_needs": [
+        "library collections and records"
+      ],
+      "example_entities": [
+        "organization:library_of_congress"
+      ]
+    }
+  ],
+  "architecture_and_workflow": {
+    "general_web_search_approach": {
+      "description": "The article says general web search engines attempt to index large portions of the World Wide Web using web crawlers.",
+      "collection_strategy": "Broad crawling, described in the article as breadth-first collection.",
+      "primary_objective": "Broad coverage of web documents."
+    },
+    "vertical_search_approach": {
+      "description": "Vertical search engines typically use focused crawlers that target content relevant to a predefined topic or set of topics.",
+      "collection_strategy": "Domain-focused crawling over a smaller subset of documents.",
+      "primary_objective": "Relevant and precise discovery within a chosen content vertical."
+    },
+    "conceptual_pipeline": [
+      {
+        "step": 1,
+        "name": "Define vertical",
+        "description": "Specify the topic, media type, genre, or domain to be searched."
+      },
+      {
+        "step": 2,
+        "name": "Define domain scope",
+        "description": "Establish a predefined topic or set of topics and the relevant document subset."
+      },
+      {
+        "step": 3,
+        "name": "Crawl relevant content",
+        "description": "Use a focused crawler to discover pages likely to be relevant to the chosen domain."
+      },
+      {
+        "step": 4,
+        "name": "Apply domain knowledge",
+        "description": "Where supported by the implementation, use domain taxonomies and ontologies."
+      },
+      {
+        "step": 5,
+        "name": "Index and retrieve",
+        "description": "Organize collected material so users can search the domain-specific corpus."
+      },
+      {
+        "step": 6,
+        "name": "Serve task-specific results",
+        "description": "Return results tailored to the domain and specific user task."
+      }
+    ],
+    "pipeline_status": "Conceptual synthesis of the article's descriptions, not a claim that every vertical engine implements these exact stages."
+  },
+  "domain_specific_search": {
+    "popularization": {
+      "authors": [
+        "person:andrew_mccallum",
+        "person:kamal_nigam",
+        "person:jason_rennie",
+        "person:kristie_seymore"
+      ],
+      "work_id": "work:machine_learning_domain_specific_search_1999",
+      "year": 1999
+    },
+    "reported_properties": [
+      "limited corpus",
+      "clear relationships between concepts",
+      "customized search experience",
+      "potentially highly relevant results"
+    ],
+    "crawling_comparison": {
+      "general_approach": "The article characterizes general search crawling as collecting documents in a breadth-first manner.",
+      "domain_specific_approach": "The spidering process focuses on a smaller subset of documents.",
+      "reported_reinforcement_learning_result": {
+        "claim": "Spidering using a reinforcement-learning framework was found to be three times more efficient than breadth-first search.",
+        "attribution": "Article reference to McCallum (1999)",
+        "verification_status": "not_independently_verified",
+        "interpretation_limit": "The supplied text does not provide enough experimental detail to generalize the numerical result to all crawlers or domains."
+      }
+    }
+  },
+  "darpa_memex_program": {
+    "program_id": "program:darpa_memex",
+    "timeline": [
+      {
+        "date_or_period": "1945-07-01",
+        "event": "Publication of As We May Think",
+        "entity_ids": [
+          "work:as_we_may_think",
+          "person:vannevar_bush"
+        ],
+        "significance": "Historical inspiration for the Memex name and concept."
+      },
+      {
+        "date_or_period": "2014-02-09",
+        "event": "DARPA publicly outlined preliminary details of Memex",
+        "entity_ids": [
+          "program:darpa_memex",
+          "organization:darpa"
+        ]
+      },
+      {
+        "date_or_period": "2015-02-25",
+        "event": "NYU Tandon reference reported a DARPA contract to explore hard-to-find web information",
+        "entity_ids": [
+          "organization:nyu_tandon",
+          "program:darpa_memex"
+        ]
+      },
+      {
+        "date_or_period": "2015-04",
+        "event": "Parts of Memex announced as open-source",
+        "entity_ids": [
+          "program:darpa_memex"
+        ]
+      },
+      {
+        "date_or_period": "2016-09-21",
+        "event": "The article's reference list includes an archived DARPA Memex page retrieved on this date",
+        "entity_ids": [
+          "program:darpa_memex",
+          "organization:darpa"
+        ]
+      }
+    ],
+    "problem_statement": [
+      "Text-based search has limitations.",
+      "Commercial search engines may not reach some Deep Web information.",
+      "Nontraditional content, including multimedia, presents additional discovery challenges."
+    ],
+    "goals": [
+      "improved content discovery",
+      "improved information extraction",
+      "improved information retrieval",
+      "user collaboration",
+      "Deep Web search",
+      "dark web search",
+      "multimedia and nontraditional content search",
+      "pattern and relationship discovery in online data"
+    ],
+    "reported_application_context": "A 2015 Wired article, as summarized by the supplied Wikipedia article, described potential use by law enforcement and others to identify patterns and relationships in online data and track illegal activity.",
+    "design_contrast": {
+      "existing_approach_as_characterized_by_article": "Centralized procedures used by commercial search engines.",
+      "proposed_approach": "A new domain-specific indexing and search paradigm."
+    },
+    "caution": "The supplied article reports historical program aims and contemporary reporting; it does not establish the current operational status, present-day availability, or current capabilities of Memex."
+  },
+  "reference_records": [
+    {
+      "id": "ref:search_engine_watch_vertical_search",
+      "reference_number": 1,
+      "title": "The rise of vertical search engines",
+      "publisher": "Search Engine Watch",
+      "retrieval_date_in_article": "2026-05-07",
+      "supports": [
+        "concept:vertical_search_engine"
+      ]
+    },
+    {
+      "id": "ref:techcrunch_findthebest_funding",
+      "reference_number": 2,
+      "title": "Data-Driven Comparison Shopping Platform FindTheBest Raises $11M From New World, Kleiner Perkins And Others",
+      "author": "Leena Rao",
+      "publisher": "TechCrunch",
+      "publication_date": "2013-03-05",
+      "supports": [
+        "company:findthebest",
+        "concept:price_comparison"
+      ]
+    },
+    {
+      "id": "ref:save22_funding",
+      "reference_number": 3,
+      "title": "Asian Price Comparison Site Save 22 Gets Angel Round Of 'Mid Six Figures'",
+      "author_as_listed": "Victoria Ho",
+      "publisher": "Publisher not specified in supplied citation text",
+      "publication_date": "2013-05-11",
+      "supports": [
+        "company:save_22",
+        "concept:price_comparison"
+      ],
+      "citation_quality_note": "The supplied reference text contains an archived article link but does not clearly name the publisher in the displayed citation."
+    },
+    {
+      "id": "ref:mccallum_domain_specific_search_cmu",
+      "reference_number": 4,
+      "title": "A Machine Learning Approach to Building Domain-Specific Search Engines",
+      "author": "Andrew McCallum",
+      "publication_year": 1999,
+      "institution_as_listed": "Carnegie Mellon University Robotics Institute",
+      "supports": [
+        "concept:domain_specific_search",
+        "concept:reinforcement_learning",
+        "concept:focused_crawler"
+      ]
+    },
+    {
+      "id": "ref:battelle_the_search",
+      "reference_number": 5,
+      "title": "The Search: How Google and its Rivals Rewrote the Rules of Business and Transformed Our Culture",
+      "author": "John Battelle",
+      "publication_year": 2005,
+      "publisher": "Portfolio",
+      "publication_location": "New York",
+      "supports": [
+        "concept:domain_specific_search"
+      ]
+    },
+    {
+      "id": "ref:mccallum_ijcai_1999",
+      "reference_number": 6,
+      "title": "A Machine Learning Approach to Building Domain-Specific Search Engines",
+      "authors_as_listed": [
+        "Andrew McCallum"
+      ],
+      "venue": "IJCAI",
+      "year": 1999,
+      "pages": "662–667",
+      "identifier": "CiteSeerX 10.1.1.88.3818",
+      "supports": [
+        "concept:domain_specific_search",
+        "concept:reinforcement_learning"
+      ],
+      "citation_note": "The supplied article lists this as a separate reference entry for the same or closely related work."
+    },
+    {
+      "id": "ref:darpa_memex_press_release",
+      "reference_number": 7,
+      "title": "Memex Aims to Create a New Paradigm for Domain-Specific Search",
+      "publisher": "DARPA",
+      "publication_date": "2014-02-09",
+      "type": "press release",
+      "supports": [
+        "program:darpa_memex",
+        "organization:darpa"
+      ]
+    },
+    {
+      "id": "ref:nyu_tandon_darpa_contract",
+      "reference_number": 8,
+      "title": "DARPA Contract to Fund Exploration of Hard-to-Find Information on the Web",
+      "publisher": "NYU Tandon School of Engineering",
+      "publication_date": "2015-02-25",
+      "supports": [
+        "program:darpa_memex",
+        "organization:nyu_tandon"
+      ]
+    },
+    {
+      "id": "ref:archive_journal_bush",
+      "reference_number": 9,
+      "title": "As We May Now Think: A Note on Vannevar Bush's Scaffolding Claim",
+      "publisher": "Archive Journal",
+      "supports": [
+        "person:vannevar_bush",
+        "work:as_we_may_think"
+      ]
+    },
+    {
+      "id": "ref:the_atlantic_as_we_may_think",
+      "reference_number": 10,
+      "title": "As We May Think",
+      "author": "Vannevar Bush",
+      "publisher": "The Atlantic",
+      "publication_date": "1945-07-01",
+      "issn_or_identifier_as_listed": "ISSN 2151-9463",
+      "supports": [
+        "person:vannevar_bush",
+        "work:as_we_may_think",
+        "program:darpa_memex"
+      ]
+    },
+    {
+      "id": "ref:darpa_memex_archived",
+      "reference_number": 11,
+      "title": "Memex (Domain-Specific Search)",
+      "publisher": "DARPA",
+      "archive_note": "The supplied citation says archived 2016-09-16 and retrieved 2016-09-21.",
+      "supports": [
+        "program:darpa_memex"
+      ]
+    },
+    {
+      "id": "ref:wired_memex_dark_web",
+      "reference_number": 12,
+      "title": "Darpa Is Developing a Search Engine for the Dark Web",
+      "author": "Kim Zetter",
+      "publisher": "Wired",
+      "publication_date": "2015-02-02",
+      "supports": [
+        "program:darpa_memex",
+        "concept:dark_web",
+        "concept:information_extraction"
+      ]
+    },
+    {
+      "id": "ref:darpa_memex_archived_2015",
+      "reference_number": 13,
+      "title": "Memex (Domain-Specific Search)",
+      "publisher": "DARPA",
+      "archive_note": "The supplied citation says archived 2015-06-10 and retrieved 2015-04-20; these dates appear inconsistent and are preserved as reported.",
+      "supports": [
+        "program:darpa_memex"
+      ]
+    },
+    {
+      "id": "ref:forbes_memex_open_source",
+      "reference_number": 14,
+      "title": "Watch Out Google, DARPA Just Open Sourced All This Swish 'Dark Web' Search Tech",
+      "publisher": "Forbes",
+      "publication_date": "2015-04-17",
+      "supports": [
+        "program:darpa_memex"
+      ]
+    }
+  ],
+  "related_search_concepts_from_article_navigation": [
+    {
+      "name": "Metasearch engine",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Multimedia search",
+      "relation": "related_search_type",
+      "entity_id": "concept:multimedia_search"
+    },
+    {
+      "name": "Collaborative search engine",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Cross-language search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Local search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Social search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Image search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Audio search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Video search engine",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Semantic search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Natural language search engine",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Voice search",
+      "relation": "related_search_type"
+    },
+    {
+      "name": "Enterprise search",
+      "relation": "related_search_type",
+      "entity_id": "concept:enterprise_search"
+    },
+    {
+      "name": "Federated search",
+      "relation": "related_search_tool"
+    },
+    {
+      "name": "Search aggregator",
+      "relation": "related_search_tool"
+    },
+    {
+      "name": "Focused crawler",
+      "relation": "related_crawling_concept",
+      "entity_id": "concept:focused_crawler"
+    },
+    {
+      "name": "Web indexing",
+      "relation": "related_search_tool"
+    },
+    {
+      "name": "Document retrieval",
+      "relation": "related_search_tool"
+    },
+    {
+      "name": "Text mining",
+      "relation": "related_search_tool"
+    },
+    {
+      "name": "OpenSearch",
+      "relation": "related_protocol_or_standard"
+    },
+    {
+      "name": "Z39.50",
+      "relation": "related_protocol_or_standard"
+    },
+    {
+      "name": "Search/Retrieve Web Service",
+      "relation": "related_protocol_or_standard"
+    },
+    {
+      "name": "Search/Retrieve via URL",
+      "relation": "related_protocol_or_standard"
+    },
+    {
+      "name": "Web archiving",
+      "relation": "related_search_tool"
+    },
+    {
+      "name": "Robots exclusion standard",
+      "relation": "related_crawling_concept"
+    },
+    {
+      "name": "Spider trap",
+      "relation": "related_crawling_concept"
+    },
+    {
+      "name": "Distributed web crawling",
+      "relation": "related_crawling_concept"
+    },
+    {
+      "name": "Website mirroring software",
+      "relation": "related_crawling_concept"
+    }
+  ],
+  "graph_edges": [
+    {
+      "source": "concept:vertical_search_engine",
+      "relation": "contrasted_with",
+      "target": "concept:general_web_search_engine"
+    },
+    {
+      "source": "concept:vertical_search_engine",
+      "relation": "uses_typically",
+      "target": "concept:focused_crawler"
+    },
+    {
+      "source": "concept:general_web_search_engine",
+      "relation": "uses",
+      "target": "concept:web_crawler"
+    },
+    {
+      "source": "concept:focused_crawler",
+      "relation": "is_a",
+      "target": "concept:web_crawler"
+    },
+    {
+      "source": "concept:vertical_search_engine",
+      "relation": "can_leverage",
+      "target": "concept:domain_knowledge"
+    },
+    {
+      "source": "concept:domain_knowledge",
+      "relation": "can_be_structured_using",
+      "target": "concept:taxonomy"
+    },
+    {
+      "source": "concept:domain_knowledge",
+      "relation": "can_be_structured_using",
+      "target": "concept:ontology"
+    },
+    {
+      "source": "concept:vertical_search_engine",
+      "relation": "supports",
+      "target": "concept:domain_specific_search"
+    },
+    {
+      "source": "concept:vertical_search_engine",
+      "relation": "analogous_to",
+      "target": "concept:enterprise_search"
+    },
+    {
+      "source": "concept:domain_specific_search",
+      "relation": "was_popularized_by_work",
+      "target": "work:machine_learning_domain_specific_search_1999"
+    },
+    {
+      "source": "work:machine_learning_domain_specific_search_1999",
+      "relation": "has_author",
+      "target": "person:andrew_mccallum"
+    },
+    {
+      "source": "work:machine_learning_domain_specific_search_1999",
+      "relation": "has_author",
+      "target": "person:kamal_nigam"
+    },
+    {
+      "source": "work:machine_learning_domain_specific_search_1999",
+      "relation": "has_author",
+      "target": "person:jason_rennie"
+    },
+    {
+      "source": "work:machine_learning_domain_specific_search_1999",
+      "relation": "has_author",
+      "target": "person:kristie_seymore"
+    },
+    {
+      "source": "concept:domain_specific_search",
+      "relation": "can_focus_on",
+      "target": "concept:deep_web"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "sponsored_by",
+      "target": "organization:darpa"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_improve",
+      "target": "concept:content_discovery"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_improve",
+      "target": "concept:information_extraction"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_improve",
+      "target": "concept:information_retrieval"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_support",
+      "target": "concept:user_collaboration"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_search",
+      "target": "concept:deep_web"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_search",
+      "target": "concept:dark_web"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "aims_to_index",
+      "target": "concept:multimedia_search"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "named_in_tribute_to",
+      "target": "person:vannevar_bush"
+    },
+    {
+      "source": "program:darpa_memex",
+      "relation": "inspired_by",
+      "target": "work:as_we_may_think"
+    },
+    {
+      "source": "work:as_we_may_think",
+      "relation": "authored_by",
+      "target": "person:vannevar_bush"
+    },
+    {
+      "source": "product:google_maps",
+      "relation": "is_example_of",
+      "target": "concept:vertical_search_engine"
+    },
+    {
+      "source": "product:linkedin",
+      "relation": "is_example_of",
+      "target": "concept:vertical_search_engine"
+    },
+    {
+      "source": "company:zillow",
+      "relation": "is_example_of",
+      "target": "concept:vertical_search_engine"
+    },
+    {
+      "source": "product:kayak",
+      "relation": "is_example_of",
+      "target": "concept:vertical_search_engine"
+    },
+    {
+      "source": "organization:library_of_congress",
+      "relation": "is_example_of",
+      "target": "concept:vertical_search_engine"
+    },
+    {
+      "source": "company:findthebest",
+      "relation": "provides",
+      "target": "concept:price_comparison"
+    },
+    {
+      "source": "company:findthebest",
+      "relation": "later_associated_with_name",
+      "target": "company:graphiq"
+    },
+    {
+      "source": "company:save_22",
+      "relation": "operates_in",
+      "target": "concept:price_comparison"
+    },
+    {
+      "source": "concept:vertical_search_engine",
+      "relation": "belongs_to_field",
+      "target": "concept:internet_search"
+    }
+  ],
+  "source_caveats_and_quality": {
+    "article_notice": "The supplied Wikipedia text includes an original-research warning.",
+    "unverified_claims": [
+      {
+        "claim": "Reinforcement-learning-based spidering was three times more efficient than breadth-first search.",
+        "status": "reported_by_article; not independently verified",
+        "reason": "The supplied article does not include experimental details sufficient to establish generality."
+      }
+    ],
+    "citation_inconsistencies_preserved": [
+      "The supplied DARPA Memex reference numbered 13 reports an archive date later than its retrieval date."
+    ],
+    "scope_boundaries": [
+      "The record describes Memex as a historical research program according to the supplied article; current status is not asserted.",
+      "Deep Web and dark web are represented as distinct entities because the article uses both terms and does not equate them.",
+      "Example services are recorded as examples named by the source, not as independently certified classifications of each product's entire feature set."
+    ]
+  },
+  "provenance": {
+    "transformation_method": "Structured extraction and normalization from user-provided article text.",
+    "generated_at_utc": "2026-10-20T16:31:14.578854+00:00",
+    "claims_are_source_attributed": true,
+    "independent_web_verification_performed": false,
+    "relationship_edges_are_explicit": true,
+    "intended_uses": [
+      "knowledge graph ingestion",
+      "search-engine and information-retrieval research",
+      "domain ontology development",
+      "entity relationship visualization",
+      "machine-readable reference data"
+    ]
+  }
+}

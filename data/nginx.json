@@ -1,0 +1,2953 @@
+{
+  "metadata": {
+    "title": "nginx — Full-detail knowledge graph",
+    "version": "1.0.0",
+    "description": "A source-grounded, machine-readable graph of nginx, its features, protocols, architecture, ecosystem, history, licensing, comparative notes and implementation considerations.",
+    "created_date": "2026-10-20",
+    "language": "en",
+    "scope": "Based on the user-provided Wikipedia article text. Inferences are explicitly labeled.",
+    "entity_count": 128,
+    "relationship_count": 117,
+    "pattern_count": 10,
+    "rule_count": 15,
+    "example_count": 7,
+    "source_count": 1
+  },
+  "entities": [
+    {
+      "id": "nginx",
+      "name": "nginx",
+      "type": "software",
+      "description": "NGINX web server, reverse proxy, load balancer and cache",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "igor_sysoev",
+      "name": "Igor Sysoev",
+      "type": "person",
+      "description": "Original author of nginx; began development in 2002",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_community",
+      "name": "NGINX Community",
+      "type": "organization",
+      "description": "Community developers of nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "f5_inc",
+      "name": "F5, Inc.",
+      "type": "company",
+      "description": "Company that acquired Nginx, Inc. in 2019",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_inc",
+      "name": "Nginx, Inc.",
+      "type": "company",
+      "description": "Company founded in 2011 to provide support and commercial NGINX products; acquired by F5",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "maxim_konovalov",
+      "name": "Maxim Konovalov",
+      "type": "person",
+      "description": "Co-founder of Nginx, Inc.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "maxim_dounin",
+      "name": "Maxim Dounin",
+      "type": "person",
+      "description": "Core nginx developer who created freenginx in 2024",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "rambler",
+      "name": "Rambler",
+      "type": "company",
+      "description": "Search engine and portal that used nginx; later asserted copyright ownership in a dispute",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "sberbank",
+      "name": "Sberbank",
+      "type": "company",
+      "description": "Russian state lender that owned 46.5% of Rambler in the article's account",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "apache_http_server",
+      "name": "Apache HTTP Server",
+      "type": "software",
+      "description": "Web server compared with nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_plus",
+      "name": "NGINX Plus",
+      "type": "software",
+      "description": "Proprietary commercial NGINX product with additional load balancing and metrics features",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_unit",
+      "name": "NGINX Unit",
+      "type": "software",
+      "description": "Open-source multi-language web application server; archived in October 2025",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "angie",
+      "name": "Angie",
+      "type": "software",
+      "description": "Open-source nginx fork released in late 2022 by former nginx developers",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "freenginx",
+      "name": "freenginx",
+      "type": "software",
+      "description": "nginx fork created by Maxim Dounin in February 2024",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "tengine",
+      "name": "Tengine",
+      "type": "software",
+      "description": "Related web server project listed among external links",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_controller",
+      "name": "NGINX Controller",
+      "type": "software",
+      "description": "API management tool announced in 2017, built around NGINX Plus API Gateway",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_amplify",
+      "name": "NGINX Amplify",
+      "type": "software",
+      "description": "SaaS monitoring and analytics product announced in 2017",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "type": "programming_language",
+      "description": "Programming language in which nginx is written",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "bsd_2_clause_license",
+      "name": "BSD 2-Clause License",
+      "type": "license",
+      "description": "License for the open-source nginx software",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "proprietary_license",
+      "name": "Proprietary license",
+      "type": "license",
+      "description": "License model for NGINX Plus",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "http",
+      "name": "HTTP",
+      "type": "protocol",
+      "description": "Protocol served and proxied by nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "http_1_1",
+      "name": "HTTP/1.1",
+      "type": "protocol",
+      "description": "HTTP version with Upgrade/101 support",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "http_2",
+      "name": "HTTP/2",
+      "type": "protocol",
+      "description": "HTTP version supported by nginx; upstream/backend proxy support noted from 1.29.4",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "http_3",
+      "name": "HTTP/3",
+      "type": "protocol",
+      "description": "HTTP version described as experimental since nginx 1.25.0",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "tls",
+      "name": "TLS",
+      "type": "protocol",
+      "description": "Transport security protocol used for secure connections",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "ssl",
+      "name": "SSL",
+      "type": "protocol",
+      "description": "Legacy name used in the source's TLS/SSL feature descriptions",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "openssl",
+      "name": "OpenSSL",
+      "type": "software_library",
+      "description": "TLS/SSL library referenced for nginx TLS features",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "sni",
+      "name": "SNI",
+      "type": "protocol_extension",
+      "description": "Server Name Indication support",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "ocsp_stapling",
+      "name": "OCSP stapling",
+      "type": "security_feature",
+      "description": "TLS certificate-status feature supported by nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "encrypted_client_hello_ech",
+      "name": "Encrypted Client Hello (ECH)",
+      "type": "protocol_extension",
+      "description": "TLS extension supported since nginx 1.29.4 when built with a supporting OpenSSL branch",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "acme",
+      "name": "ACME",
+      "type": "protocol",
+      "description": "Protocol used for automatic TLS certificate issuance and renewal",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "fastcgi",
+      "name": "FastCGI",
+      "type": "protocol",
+      "description": "Interface to dynamic application/script handlers, with caching support",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "scgi",
+      "name": "SCGI",
+      "type": "protocol",
+      "description": "Interface to dynamic application/script handlers, with caching support",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "uwsgi",
+      "name": "uWSGI",
+      "type": "protocol",
+      "description": "Interface supported for application servers, with caching",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "wsgi",
+      "name": "WSGI",
+      "type": "interface",
+      "description": "Python web application interface mentioned as a dynamic-content integration",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "phusion_passenger",
+      "name": "Phusion Passenger",
+      "type": "software",
+      "description": "Application module/integration for dynamic content",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "grpc",
+      "name": "gRPC",
+      "type": "protocol",
+      "description": "RPC framework supported since nginx 1.13.10, according to the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "websocket",
+      "name": "WebSocket",
+      "type": "protocol",
+      "description": "Bidirectional protocol supported since nginx 1.3.13, including proxying and load balancing",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "smtp",
+      "name": "SMTP",
+      "type": "protocol",
+      "description": "Mail protocol supported by nginx mail proxy",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "pop3",
+      "name": "POP3",
+      "type": "protocol",
+      "description": "Mail protocol supported by nginx mail proxy",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "imap",
+      "name": "IMAP",
+      "type": "protocol",
+      "description": "Mail protocol supported by nginx mail proxy",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "starttls",
+      "name": "STARTTLS",
+      "type": "protocol_extension",
+      "description": "Mail transport upgrade to TLS supported by nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "ipv6",
+      "name": "IPv6",
+      "type": "network_protocol",
+      "description": "Network protocol supported by nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "dns_host_names",
+      "name": "DNS / host names",
+      "type": "network_concept",
+      "description": "Host-name-based virtual server selection context",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "virtual_server",
+      "name": "Virtual server",
+      "type": "architecture_component",
+      "description": "Name- or IP-address-based virtual hosting",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "reverse_proxy",
+      "name": "Reverse proxy",
+      "type": "architecture_pattern",
+      "description": "Accepts client requests and forwards them to upstream services",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "forward_proxy",
+      "name": "Forward proxy",
+      "type": "architecture_pattern",
+      "description": "Proxy role distinct from reverse proxy; not identified as a principal nginx use in the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "load_balancer",
+      "name": "Load balancer",
+      "type": "architecture_pattern",
+      "description": "Distributes requests among upstream/backend servers",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "http_cache",
+      "name": "HTTP cache",
+      "type": "architecture_pattern",
+      "description": "Caches HTTP responses to reduce repeated backend work",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "static_content_serving",
+      "name": "Static content serving",
+      "type": "capability",
+      "description": "Serving static files, index files and auto-indexed directories",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "dynamic_content_serving",
+      "name": "Dynamic content serving",
+      "type": "capability",
+      "description": "Serving dynamic application responses through handler/application integrations",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "asynchronous_event_driven_architecture",
+      "name": "Asynchronous event-driven architecture",
+      "type": "architecture_pattern",
+      "description": "nginx request-handling architecture that uses events rather than a thread-per-request approach",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "c10k_problem",
+      "name": "C10k problem",
+      "type": "computing_problem",
+      "description": "Challenge of handling very large numbers of simultaneous connections",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "worker_process",
+      "name": "Worker process",
+      "type": "architecture_component",
+      "description": "General nginx architecture concept; exact internal details are not described in supplied article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "module_architecture",
+      "name": "Module architecture",
+      "type": "architecture_pattern",
+      "description": "Core and third-party module support",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "dynamic_module_loading",
+      "name": "Dynamic module loading",
+      "type": "capability",
+      "description": "Added in nginx 1.9.11 in February 2016; module compatibility/build constraints remain",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "static_module_linking",
+      "name": "Static module linking",
+      "type": "capability",
+      "description": "Earlier or still-required way to include certain third-party modules",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "health_checks",
+      "name": "Health checks",
+      "type": "capability",
+      "description": "In-band upstream health checks for load balancing",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "url_rewriting",
+      "name": "URL rewriting",
+      "type": "capability",
+      "description": "Modifying request URLs according to configuration",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "http_redirection",
+      "name": "HTTP redirection",
+      "type": "capability",
+      "description": "Redirecting requests to other URLs",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "configuration_reload_binary_upgrade",
+      "name": "Configuration reload / binary upgrade",
+      "type": "capability",
+      "description": "Upgrading executable/configuration without losing client connections, as described by the source",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "external_http_authentication",
+      "name": "External HTTP authentication",
+      "type": "capability",
+      "description": "Mail proxy authentication through an external HTTP server or script",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "mail_proxy",
+      "name": "Mail proxy",
+      "type": "architecture_pattern",
+      "description": "SMTP, POP3 and IMAP proxy with TLS/SSL and STARTTLS",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "type": "software",
+      "description": "Container platform in which nginx was reported as commonly deployed in a 2018 survey",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "openbsd",
+      "name": "OpenBSD",
+      "type": "operating_system",
+      "description": "Included nginx in base system in 5.2, then removed it in 5.7 in favor of httpd(8)",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "openbsd_httpd_8",
+      "name": "OpenBSD httpd(8)",
+      "type": "software",
+      "description": "OpenBSD's own HTTP server that replaced nginx in the base system",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "type": "operating_system",
+      "description": "Supported operating system",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "type": "operating_system",
+      "description": "Supported operating system",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "microsoft_windows",
+      "name": "Microsoft Windows",
+      "type": "operating_system",
+      "description": "Supported operating system; Windows support is listed in the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "bsd_variants",
+      "name": "BSD variants",
+      "type": "operating_system_family",
+      "description": "Supported operating system family",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "hp_ux",
+      "name": "HP-UX",
+      "type": "operating_system",
+      "description": "Supported operating system",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "ibm_aix",
+      "name": "IBM AIX",
+      "type": "operating_system",
+      "description": "Supported operating system",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "solaris",
+      "name": "Solaris",
+      "type": "operating_system",
+      "description": "Supported operating system",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "linux_kernel",
+      "name": "Linux kernel",
+      "type": "software",
+      "description": "Context associated with nginx's original motivation and deployment; article's see-also context is broad",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "github_nginx_repository",
+      "name": "GitHub nginx repository",
+      "type": "repository",
+      "description": "Main nginx source-code repository listed by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_org",
+      "name": "nginx.org",
+      "type": "website",
+      "description": "Official nginx website listed by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_com",
+      "name": "nginx.com",
+      "type": "website",
+      "description": "NGINX commercial website associated with products and company",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "rambler_search_engine_and_portal",
+      "name": "Rambler search engine and portal",
+      "type": "service",
+      "description": "Website/service for which nginx was developed to help handle large request volume",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "500_million_requests_per_day",
+      "name": "500 million requests per day",
+      "type": "metric",
+      "description": "Rambler traffic level reported for September 2008",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "10_000_simultaneous_connections",
+      "name": "10,000 simultaneous connections",
+      "type": "metric",
+      "description": "Connection-handling capability cited by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "2_5_mb_per_10_000_inactive_keep_alive_connections",
+      "name": "2.5 MB per 10,000 inactive keep-alive connections",
+      "type": "metric",
+      "description": "Low-memory-footprint figure cited by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "w3techs_web_server_survey",
+      "name": "W3Techs web-server survey",
+      "type": "survey",
+      "description": "April 2025 survey figures quoted by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "netcraft_web_server_survey",
+      "name": "Netcraft web-server survey",
+      "type": "survey",
+      "description": "Web server survey source cited by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "apache_htaccess",
+      "name": "Apache .htaccess",
+      "type": "configuration_mechanism",
+      "description": "Per-directory/per-file override mechanism cited as a flexibility distinction from nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "per_file_access_overrides",
+      "name": "Per-file access overrides",
+      "type": "capability",
+      "description": "Apache flexibility feature that nginx does not have built in, according to the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "api_gateway",
+      "name": "API gateway",
+      "type": "architecture_pattern",
+      "description": "Gateway functionality related to NGINX Plus and NGINX Controller",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "microservices",
+      "name": "Microservices",
+      "type": "architecture_pattern",
+      "description": "Application style targeted by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "type": "programming_language",
+      "description": "Initially supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "type": "programming_language",
+      "description": "Initially supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "programming_language",
+      "description": "Initially supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "type": "programming_language",
+      "description": "Later supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "node_js",
+      "name": "Node.js",
+      "type": "runtime",
+      "description": "Later supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "perl",
+      "name": "Perl",
+      "type": "programming_language",
+      "description": "Later supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "type": "programming_language",
+      "description": "Later supported by NGINX Unit",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "dynamic_configuration",
+      "name": "Dynamic configuration",
+      "type": "capability",
+      "description": "NGINX Unit capability described by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "request_routing",
+      "name": "Request routing",
+      "type": "capability",
+      "description": "NGINX Unit capability described by the article Choosing a destination for incoming requests",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "security_patches",
+      "name": "Security patches",
+      "type": "maintenance",
+      "description": "Commercial support includes security patches and updates, according to the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "performance_monitoring",
+      "name": "Performance monitoring",
+      "type": "capability",
+      "description": "Expanded metrics in NGINX Plus and monitoring in NGINX Amplify",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "performance_optimization",
+      "name": "Performance optimization",
+      "type": "practice",
+      "description": "Commercial support and consulting areas described by the article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "copyright_dispute_2019",
+      "name": "Copyright dispute (2019)",
+      "type": "legal_event",
+      "description": "Rambler-related claim concerning ownership of nginx code",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "f5_acquisition_of_nginx_inc",
+      "name": "F5 acquisition of Nginx, Inc.",
+      "type": "business_event",
+      "description": "Acquisition announced/completed on 11 March 2019 for US$670 million",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "igor_sysoev_departure",
+      "name": "Igor Sysoev departure",
+      "type": "business_event",
+      "description": "F5 announced in January 2022 that Sysoev was leaving",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "angie_release",
+      "name": "Angie release",
+      "type": "software_event",
+      "description": "Open-source nginx fork released in late 2022",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "freenginx_creation",
+      "name": "freenginx creation",
+      "type": "software_event",
+      "description": "Fork created by Maxim Dounin in February 2024",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_inc_founding",
+      "name": "Nginx, Inc. founding",
+      "type": "business_event",
+      "description": "Founded in July 2011 by Igor Sysoev and Maxim Konovalov",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "commercial_support",
+      "name": "Commercial support",
+      "type": "service",
+      "description": "Paid support for production deployments, configuration, optimization and updates",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "acme_native_support_announcement",
+      "name": "ACME native support announcement",
+      "type": "software_event",
+      "description": "NGINX native ACME support announcement referenced in August/September 2025",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "tls_certificate",
+      "name": "TLS certificate",
+      "type": "security_artifact",
+      "description": "Certificate managed/used in TLS and ACME workflows",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "upstream_backend_server",
+      "name": "Upstream/backend server",
+      "type": "architecture_component",
+      "description": "Application or server to which nginx forwards requests",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "client_connection",
+      "name": "Client connection",
+      "type": "network_concept",
+      "description": "Connection from a user agent to nginx",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "caching",
+      "name": "Caching",
+      "type": "computing_concept",
+      "description": "Reuse of stored response content",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "compression",
+      "name": "Compression",
+      "type": "computing_concept",
+      "description": "Pack/response compression is not specifically described in this source",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "load_balancing_algorithms",
+      "name": "Load balancing algorithms",
+      "type": "computing_concept",
+      "description": "Article references load balancing but does not enumerate specific algorithms",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "nginx_plus_metrics",
+      "name": "NGINX Plus metrics",
+      "type": "metric",
+      "description": "Expanded performance-monitoring metrics included in paid product",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "source_article",
+      "name": "Source article",
+      "type": "source_record",
+      "description": "Supplied Wikipedia article text for nginx, accessed as user-provided source",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "license_compliance",
+      "name": "License compliance",
+      "type": "security_practice",
+      "description": "Reviewing module licenses and terms is relevant to module and product licensing",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "third_party_modules",
+      "name": "Third-party modules",
+      "type": "software_component",
+      "description": "Extension modules; may require compilation alongside nginx and may have compatibility constraints",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "high_concurrency",
+      "name": "High concurrency",
+      "type": "performance_property",
+      "description": "Handling many simultaneous requests/connections with low memory use",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "tls_termination",
+      "name": "TLS termination",
+      "type": "architecture_pattern",
+      "description": "TLS processing at nginx before proxying to upstreams; inferred common deployment pattern, not explicitly elaborated in article",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "graceful_upgrade",
+      "name": "Graceful upgrade",
+      "type": "availability_pattern",
+      "description": "Upgrade executable/configuration without losing client connections",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "monitoring_and_analytics",
+      "name": "Monitoring and analytics",
+      "type": "capability",
+      "description": "NGINX Amplify monitoring and analytics",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "f5_commercial_ecosystem",
+      "name": "F5 commercial ecosystem",
+      "type": "organization",
+      "description": "Commercial products and services associated with F5 after acquisition",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "october_2025",
+      "name": "October 2025",
+      "type": "fact_or_event",
+      "description": "The article says it was archived and no longer receives updates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "3_million_in_october_2011",
+      "name": "$3 million in October 2011",
+      "type": "fact_or_event",
+      "description": "Funding from BV Capital, Runa Capital and MSD Capital.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "10_million_in_october_2013",
+      "name": "$10 million in October 2013",
+      "type": "fact_or_event",
+      "description": "Series B round led by New Enterprise Associates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "20_million_in_december_2014",
+      "name": "$20 million in December 2014",
+      "type": "fact_or_event",
+      "description": "Series B1 round led by New Enterprise Associates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "43_million_in_june_2018",
+      "name": "$43 million in June 2018",
+      "type": "fact_or_event",
+      "description": "Series C round led by Goldman Sachs.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    },
+    {
+      "id": "cloudflare_server",
+      "name": "Cloudflare Server",
+      "type": "concept",
+      "description": "Reported 23.4% in April 2025.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_nginx_0001",
+      "subject": "nginx",
+      "predicate": "created_by",
+      "object": "igor_sysoev",
+      "description": "The source identifies Sysoev as nginx's original author.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0002",
+      "subject": "nginx",
+      "predicate": "maintained_by",
+      "object": "nginx_community",
+      "description": "The article lists the community among developers.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0003",
+      "subject": "nginx",
+      "predicate": "associated_with",
+      "object": "f5_inc",
+      "description": "F5 owns the company that commercializes NGINX Plus.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0004",
+      "subject": "nginx",
+      "predicate": "written_in",
+      "object": "c",
+      "description": "The article identifies C as the implementation language.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0005",
+      "subject": "nginx",
+      "predicate": "licensed_under",
+      "object": "bsd_2_clause_license",
+      "description": "The open-source nginx software is under the 2-clause BSD license.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0006",
+      "subject": "nginx_plus",
+      "predicate": "licensed_under",
+      "object": "proprietary_license",
+      "description": "The paid Plus product is proprietary.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0007",
+      "subject": "nginx_inc",
+      "predicate": "founded_by",
+      "object": "igor_sysoev",
+      "description": "The company was founded by Sysoev and Konovalov.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0008",
+      "subject": "nginx_inc",
+      "predicate": "founded_by",
+      "object": "maxim_konovalov",
+      "description": "The company was founded by Konovalov and Sysoev.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0009",
+      "subject": "f5_acquisition_of_nginx_inc",
+      "predicate": "acquired",
+      "object": "nginx_inc",
+      "description": "F5 acquired Nginx, Inc. on 11 March 2019.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0010",
+      "subject": "f5_acquisition_of_nginx_inc",
+      "predicate": "acquirer",
+      "object": "f5_inc",
+      "description": "The transaction value was reported as US$670 million.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0011",
+      "subject": "nginx",
+      "predicate": "created_to_address",
+      "object": "c10k_problem",
+      "description": "The original development goal was to address high concurrent connection loads.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0012",
+      "subject": "nginx",
+      "predicate": "used_by",
+      "object": "rambler_search_engine_and_portal",
+      "description": "Rambler was among the sites for which nginx was developed.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0013",
+      "subject": "rambler_search_engine_and_portal",
+      "predicate": "reported_traffic",
+      "object": "500_million_requests_per_day",
+      "description": "The article reports this daily request volume in September 2008.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0014",
+      "subject": "nginx",
+      "predicate": "implements",
+      "object": "asynchronous_event_driven_architecture",
+      "description": "nginx handles requests asynchronously using events rather than threads.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0015",
+      "subject": "asynchronous_event_driven_architecture",
+      "predicate": "supports",
+      "object": "high_concurrency",
+      "description": "The architecture is presented as enabling predictable performance under load.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0016",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "static_content_serving",
+      "description": "It can serve static web content, index files and auto-indexed directories.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0017",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "dynamic_content_serving",
+      "description": "It integrates with handlers and application servers.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0018",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "fastcgi",
+      "description": "FastCGI is supported with caching.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0019",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "scgi",
+      "description": "SCGI is supported with caching.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0020",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "uwsgi",
+      "description": "uWSGI is supported with caching.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0021",
+      "subject": "nginx",
+      "predicate": "integrates_with",
+      "object": "wsgi",
+      "description": "The article lists WSGI application servers for dynamic content.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0022",
+      "subject": "nginx",
+      "predicate": "integrates_with",
+      "object": "phusion_passenger",
+      "description": "Passenger modules can be used to serve dynamic content.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0023",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "http",
+      "description": "HTTP web server and proxy functions.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0024",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "http_1_1",
+      "description": "Upgrade and 101 Switching Protocols support is noted.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0025",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "http_2",
+      "description": "The article notes HTTP/2 support.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0026",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "http_3",
+      "description": "The article calls HTTP/3 experimental since version 1.25.0.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0027",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "websocket",
+      "description": "Support begins in version 1.3.13.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0028",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "grpc",
+      "description": "Support begins in version 1.13.10.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0029",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "ipv6",
+      "description": "The article lists IPv6 compatibility.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0030",
+      "subject": "nginx",
+      "predicate": "supports_tls_through",
+      "object": "openssl",
+      "description": "TLS/SSL support is described via OpenSSL.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0031",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "sni",
+      "description": "Server Name Indication support.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0032",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "ocsp_stapling",
+      "description": "Certificate status stapling support.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0033",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "encrypted_client_hello_ech",
+      "description": "Since 1.29.4 when built with a compatible OpenSSL branch.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0034",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "acme",
+      "description": "The article reports native issuance and renewal support.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0035",
+      "subject": "acme",
+      "predicate": "manages",
+      "object": "tls_certificate",
+      "description": "ACME is used for automatic certificate issuance and renewal.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0036",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "reverse_proxy",
+      "description": "One of its principal roles.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0037",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "load_balancer",
+      "description": "It can distribute requests and perform in-band health checks.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0038",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "http_cache",
+      "description": "It can cache responses in reverse-proxy deployments.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0039",
+      "subject": "load_balancer",
+      "predicate": "uses",
+      "object": "health_checks",
+      "description": "The article notes in-band health checks.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0040",
+      "subject": "nginx",
+      "predicate": "supports",
+      "object": "virtual_server",
+      "description": "Virtual servers may be selected by name or IP address.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0041",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "url_rewriting",
+      "description": "URL rewriting is listed as a feature.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0042",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "http_redirection",
+      "description": "Redirects are listed as a feature.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0043",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "configuration_reload_binary_upgrade",
+      "description": "The article describes upgrades without losing client connections.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0044",
+      "subject": "nginx",
+      "predicate": "provides",
+      "object": "mail_proxy",
+      "description": "It proxies SMTP, POP3 and IMAP.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0045",
+      "subject": "mail_proxy",
+      "predicate": "supports",
+      "object": "smtp",
+      "description": "SMTP proxy is listed.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0046",
+      "subject": "mail_proxy",
+      "predicate": "supports",
+      "object": "pop3",
+      "description": "POP3 proxy is listed.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0047",
+      "subject": "mail_proxy",
+      "predicate": "supports",
+      "object": "imap",
+      "description": "IMAP proxy is listed.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0048",
+      "subject": "mail_proxy",
+      "predicate": "supports",
+      "object": "starttls",
+      "description": "Mail proxy supports STARTTLS.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0049",
+      "subject": "mail_proxy",
+      "predicate": "authenticates_through",
+      "object": "external_http_authentication",
+      "description": "Authentication requires an external HTTP server or authentication script.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0050",
+      "subject": "nginx",
+      "predicate": "has_architecture",
+      "object": "module_architecture",
+      "description": "Core and third-party modules are supported.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0051",
+      "subject": "dynamic_module_loading",
+      "predicate": "introduced_in",
+      "object": "nginx",
+      "description": "Dynamic loading was added in version 1.9.11 in February 2016.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0052",
+      "subject": "third_party_modules",
+      "predicate": "may_require",
+      "object": "static_module_linking",
+      "description": "Some modules still require static linking.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0053",
+      "subject": "third_party_modules",
+      "predicate": "must_match_build",
+      "object": "nginx",
+      "description": "Modules may need to be compiled at the same time as nginx and may not all be compatible.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0054",
+      "subject": "nginx_plus",
+      "predicate": "extends",
+      "object": "nginx",
+      "description": "Paid product adds advanced load balancing and expanded metrics.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0055",
+      "subject": "nginx_plus",
+      "predicate": "provides",
+      "object": "nginx_plus_metrics",
+      "description": "Expanded performance monitoring metrics.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0056",
+      "subject": "nginx_amplify",
+      "predicate": "provides",
+      "object": "monitoring_and_analytics",
+      "description": "It is described as a SaaS monitoring/analytics product.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0057",
+      "subject": "nginx_controller",
+      "predicate": "related_to",
+      "object": "api_gateway",
+      "description": "The product was announced as an API management tool built around NGINX Plus API Gateway.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0058",
+      "subject": "nginx_unit",
+      "predicate": "targets",
+      "object": "microservices",
+      "description": "It was designed as a multi-language application server for microservices.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0059",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "go",
+      "description": "Supported in the initial release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0060",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "php",
+      "description": "Supported in the initial release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0061",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "python",
+      "description": "Supported in the initial release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0062",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "java",
+      "description": "Added by a later release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0063",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "node_js",
+      "description": "Added by a later release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0064",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "perl",
+      "description": "Added by a later release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0065",
+      "subject": "nginx_unit",
+      "predicate": "supports",
+      "object": "ruby",
+      "description": "Added by a later release.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0066",
+      "subject": "nginx_unit",
+      "predicate": "provides",
+      "object": "dynamic_configuration",
+      "description": "Listed as a feature.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0067",
+      "subject": "nginx_unit",
+      "predicate": "provides",
+      "object": "request_routing",
+      "description": "Listed as a feature.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0068",
+      "subject": "nginx_unit",
+      "predicate": "provides",
+      "object": "load_balancer",
+      "description": "Listed as a feature.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0069",
+      "subject": "nginx_unit",
+      "predicate": "archived_in",
+      "object": "october_2025",
+      "description": "The article says it was archived and no longer receives updates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0070",
+      "subject": "nginx",
+      "predicate": "compared_with",
+      "object": "apache_http_server",
+      "description": "The article compares performance and flexibility.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0071",
+      "subject": "apache_http_server",
+      "predicate": "provides",
+      "object": "apache_htaccess",
+      "description": "The article cites .htaccess as a per-file/per-directory override mechanism.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0072",
+      "subject": "apache_htaccess",
+      "predicate": "enables",
+      "object": "per_file_access_overrides",
+      "description": "A flexibility feature not built into nginx, according to the article.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0073",
+      "subject": "nginx",
+      "predicate": "lacks_built_in",
+      "object": "per_file_access_overrides",
+      "description": "The article contrasts nginx with Apache's .htaccess.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0074",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "linux",
+      "description": "Linux is listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0075",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "macos",
+      "description": "macOS is listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0076",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "microsoft_windows",
+      "description": "Windows is listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0077",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "bsd_variants",
+      "description": "BSD variants are listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0078",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "hp_ux",
+      "description": "HP-UX is listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0079",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "ibm_aix",
+      "description": "IBM AIX is listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0080",
+      "subject": "nginx",
+      "predicate": "runs_on",
+      "object": "solaris",
+      "description": "Solaris is listed among supported operating systems.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0081",
+      "subject": "openbsd",
+      "predicate": "included_nginx_in_base",
+      "object": "nginx",
+      "description": "nginx entered OpenBSD base in version 5.2 in November 2012.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0082",
+      "subject": "openbsd",
+      "predicate": "replaced_nginx_with",
+      "object": "openbsd_httpd_8",
+      "description": "nginx was removed from base in OpenBSD 5.7 in November 2014.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0083",
+      "subject": "docker",
+      "predicate": "commonly_deployed",
+      "object": "nginx",
+      "description": "A 2018 Docker usage survey described nginx as the most commonly deployed technology.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0084",
+      "subject": "nginx",
+      "predicate": "source_repository",
+      "object": "github_nginx_repository",
+      "description": "The article lists the GitHub repository.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0085",
+      "subject": "nginx",
+      "predicate": "official_website",
+      "object": "nginx_org",
+      "description": "The article lists nginx.org.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0086",
+      "subject": "nginx_plus",
+      "predicate": "commercial_website",
+      "object": "nginx_com",
+      "description": "The commercial site is listed.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0087",
+      "subject": "nginx_inc",
+      "predicate": "announced",
+      "object": "nginx_controller",
+      "description": "API management announcement in September 2017.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0088",
+      "subject": "nginx_inc",
+      "predicate": "announced",
+      "object": "nginx_amplify",
+      "description": "General availability announced in October 2017.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0089",
+      "subject": "nginx_inc",
+      "predicate": "raised_funding",
+      "object": "3_million_in_october_2011",
+      "description": "Funding from BV Capital, Runa Capital and MSD Capital.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0090",
+      "subject": "nginx_inc",
+      "predicate": "raised_funding",
+      "object": "10_million_in_october_2013",
+      "description": "Series B round led by New Enterprise Associates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0091",
+      "subject": "nginx_inc",
+      "predicate": "raised_funding",
+      "object": "20_million_in_december_2014",
+      "description": "Series B1 round led by New Enterprise Associates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0092",
+      "subject": "nginx_inc",
+      "predicate": "raised_funding",
+      "object": "43_million_in_june_2018",
+      "description": "Series C round led by Goldman Sachs.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0093",
+      "subject": "copyright_dispute_2019",
+      "predicate": "involved",
+      "object": "rambler",
+      "description": "Rambler asserted ownership of code written while Sysoev was its employee.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0094",
+      "subject": "copyright_dispute_2019",
+      "predicate": "concerned",
+      "object": "nginx",
+      "description": "The claim concerned rights to nginx code.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0095",
+      "subject": "sberbank",
+      "predicate": "owned_share_of",
+      "object": "rambler",
+      "description": "The article states Sberbank owned 46.5% of Rambler at the time.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0096",
+      "subject": "igor_sysoev_departure",
+      "predicate": "involved",
+      "object": "igor_sysoev",
+      "description": "F5 announced his departure in January 2022.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0097",
+      "subject": "angie_release",
+      "predicate": "released_project",
+      "object": "angie",
+      "description": "Open-source fork released in late 2022 by former nginx developers.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0098",
+      "subject": "angie",
+      "predicate": "fork_of",
+      "object": "nginx",
+      "description": "The article describes Angie as an open-source fork.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0099",
+      "subject": "freenginx_creation",
+      "predicate": "released_project",
+      "object": "freenginx",
+      "description": "Created by Maxim Dounin in February 2024.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0100",
+      "subject": "freenginx",
+      "predicate": "fork_of",
+      "object": "nginx",
+      "description": "The article describes freenginx as an nginx fork.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0101",
+      "subject": "maxim_dounin",
+      "predicate": "created",
+      "object": "freenginx",
+      "description": "Dounin created the fork in February 2024.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0102",
+      "subject": "nginx",
+      "predicate": "popularized_by",
+      "object": "w3techs_web_server_survey",
+      "description": "The article quotes an April 2025 share of 33.8% of all websites.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0103",
+      "subject": "w3techs_web_server_survey",
+      "predicate": "reported_share_for",
+      "object": "nginx",
+      "description": "Reported 33.8% in April 2025.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0104",
+      "subject": "w3techs_web_server_survey",
+      "predicate": "reported_share_for",
+      "object": "apache_http_server",
+      "description": "Reported 26.4% in April 2025.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0105",
+      "subject": "w3techs_web_server_survey",
+      "predicate": "reported_share_for",
+      "object": "cloudflare_server",
+      "description": "Reported 23.4% in April 2025.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0106",
+      "subject": "nginx",
+      "predicate": "reported_connection_scale",
+      "object": "10_000_simultaneous_connections",
+      "description": "Feature section cites ability to handle more than 10,000 simultaneous connections.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0107",
+      "subject": "nginx",
+      "predicate": "reported_memory_footprint",
+      "object": "2_5_mb_per_10_000_inactive_keep_alive_connections",
+      "description": "Approximate value stated in the article.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0108",
+      "subject": "tls_termination",
+      "predicate": "commonly_uses",
+      "object": "tls",
+      "description": "Architecture pattern derived from nginx's TLS and proxy features.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "inferred"
+    },
+    {
+      "id": "rel_nginx_0109",
+      "subject": "reverse_proxy",
+      "predicate": "forwards_to",
+      "object": "upstream_backend_server",
+      "description": "General relationship implicit in reverse proxy role.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "inferred"
+    },
+    {
+      "id": "rel_nginx_0110",
+      "subject": "client_connection",
+      "predicate": "sends_requests_to",
+      "object": "nginx",
+      "description": "Typical web server/proxy interaction.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "inferred"
+    },
+    {
+      "id": "rel_nginx_0111",
+      "subject": "nginx",
+      "predicate": "routes_to",
+      "object": "upstream_backend_server",
+      "description": "Reverse proxy and load balancing route requests to backends.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0112",
+      "subject": "http_cache",
+      "predicate": "reduces_repeat_work_for",
+      "object": "upstream_backend_server",
+      "description": "Caching can reduce repeated backend processing; explanatory inference.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "inferred"
+    },
+    {
+      "id": "rel_nginx_0113",
+      "subject": "commercial_support",
+      "predicate": "offered_by",
+      "object": "nginx_inc",
+      "description": "Company offered production support, consulting and updates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0114",
+      "subject": "commercial_support",
+      "predicate": "covers",
+      "object": "security_patches",
+      "description": "The article lists security notifications, patches and updates.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0115",
+      "subject": "commercial_support",
+      "predicate": "covers",
+      "object": "performance_optimization",
+      "description": "The article lists configuration and performance help.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0116",
+      "subject": "nginx_plus",
+      "predicate": "extends",
+      "object": "load_balancer",
+      "description": "Advanced load-balancing features are included.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    },
+    {
+      "id": "rel_nginx_0117",
+      "subject": "license_compliance",
+      "predicate": "applies_to",
+      "object": "third_party_modules",
+      "description": "Practical compliance consideration arising from the source's module and licensing discussion.",
+      "source_ids": [
+        "src_nginx_wikipedia"
+      ],
+      "confidence": "source_stated"
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern_edge_reverse_proxy",
+      "name": "Edge reverse proxy",
+      "description": "Clients connect to nginx, which terminates or handles HTTP-level traffic and forwards requests to upstream application services.",
+      "components": [
+        "nginx",
+        "Client connection",
+        "Reverse proxy",
+        "Upstream/backend server"
+      ],
+      "flow": [
+        "Client connection",
+        "nginx",
+        "Reverse proxy",
+        "Upstream/backend server"
+      ],
+      "source_basis": "Core reverse-proxy role is explicit; detailed deployment flow is a generalized architecture interpretation."
+    },
+    {
+      "id": "pattern_static_site",
+      "name": "Static content delivery",
+      "description": "nginx serves static files, index files and optionally auto-indexed directory listings.",
+      "components": [
+        "nginx",
+        "Static content serving"
+      ],
+      "flow": [
+        "Client connection",
+        "nginx",
+        "Static content serving"
+      ],
+      "source_basis": "Explicitly supported by the article."
+    },
+    {
+      "id": "pattern_load_balanced_app",
+      "name": "Load-balanced application",
+      "description": "nginx distributes incoming requests across backend servers and can use in-band health checks.",
+      "components": [
+        "nginx",
+        "Load balancer",
+        "Health checks",
+        "Upstream/backend server"
+      ],
+      "flow": [
+        "Client connection",
+        "nginx",
+        "Load balancer",
+        "Upstream/backend server"
+      ],
+      "source_basis": "Load balancing and in-band health checks are explicitly listed."
+    },
+    {
+      "id": "pattern_cached_proxy",
+      "name": "Reverse proxy with HTTP caching",
+      "description": "nginx caches eligible responses so repeated requests can be served without always querying the backend.",
+      "components": [
+        "nginx",
+        "Reverse proxy",
+        "HTTP cache",
+        "Upstream/backend server"
+      ],
+      "flow": [
+        "Client connection",
+        "nginx",
+        "HTTP cache",
+        "Upstream/backend server"
+      ],
+      "source_basis": "Caching is explicit; exact cache policy and bypass rules are not covered in the supplied article."
+    },
+    {
+      "id": "pattern_dynamic_content",
+      "name": "Dynamic application integration",
+      "description": "nginx serves as a front end for dynamic content through FastCGI, SCGI, uWSGI, WSGI application servers or Phusion Passenger.",
+      "components": [
+        "nginx",
+        "FastCGI",
+        "SCGI",
+        "uWSGI",
+        "WSGI",
+        "Phusion Passenger",
+        "Dynamic content serving"
+      ],
+      "flow": [
+        "Client connection",
+        "nginx",
+        "Dynamic content serving"
+      ],
+      "source_basis": "Integrations are explicitly listed."
+    },
+    {
+      "id": "pattern_tls_frontend",
+      "name": "TLS-enabled frontend",
+      "description": "nginx supports TLS/SSL features such as SNI, OCSP stapling and TLS protocol integrations; a frontend TLS termination topology is a common inference.",
+      "components": [
+        "nginx",
+        "TLS",
+        "OpenSSL",
+        "TLS certificate"
+      ],
+      "flow": [
+        "Client connection",
+        "TLS",
+        "nginx"
+      ],
+      "source_basis": "TLS/SSL features are explicit; exact termination topology is inferred."
+    },
+    {
+      "id": "pattern_mail_proxy",
+      "name": "Mail protocol proxy",
+      "description": "nginx can proxy SMTP, POP3 and IMAP, with TLS/SSL and STARTTLS; authentication is delegated to an external HTTP server or script.",
+      "components": [
+        "nginx",
+        "Mail proxy",
+        "SMTP",
+        "POP3",
+        "IMAP",
+        "STARTTLS",
+        "External HTTP authentication"
+      ],
+      "flow": [
+        "Mail client",
+        "nginx",
+        "Mail proxy",
+        "External HTTP authentication"
+      ],
+      "source_basis": "Protocol and authentication features are explicit."
+    },
+    {
+      "id": "pattern_graceful_upgrade",
+      "name": "Graceful configuration or executable upgrade",
+      "description": "The article states nginx can upgrade its executable and configuration without losing client connections.",
+      "components": [
+        "nginx",
+        "Configuration reload / binary upgrade",
+        "Client connection"
+      ],
+      "flow": [
+        "Existing client connection",
+        "nginx",
+        "Configuration reload / binary upgrade"
+      ],
+      "source_basis": "Explicitly listed feature; operational procedure is not detailed in the supplied article."
+    },
+    {
+      "id": "pattern_container_frontend",
+      "name": "Containerized web frontend",
+      "description": "nginx is commonly deployed in Docker containers according to a 2018 usage survey; container orchestration details are outside the source.",
+      "components": [
+        "Docker",
+        "nginx"
+      ],
+      "flow": [
+        "Docker",
+        "nginx"
+      ],
+      "source_basis": "The source reports a historical survey finding, not a current universal deployment statistic."
+    },
+    {
+      "id": "pattern_api_gateway",
+      "name": "Commercial API gateway and management",
+      "description": "NGINX Plus API gateway functionality was associated with NGINX Controller, announced as an API management tool in 2017.",
+      "components": [
+        "NGINX Plus",
+        "API gateway",
+        "NGINX Controller"
+      ],
+      "flow": [
+        "Client connection",
+        "API gateway",
+        "Upstream/backend server"
+      ],
+      "source_basis": "Commercial product relationship is explicit; flow is conceptual."
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule_event_driven_concurrency",
+      "rule": "For high numbers of concurrent connections, nginx's asynchronous event-driven approach is a core architectural choice.",
+      "rationale": "The article contrasts its event-driven model with thread-based handling and connects it to predictable performance under high load.",
+      "evidence": [
+        "Asynchronous event-driven architecture",
+        "C10k problem",
+        "High concurrency"
+      ]
+    },
+    {
+      "id": "rule_nginx_not_apache_htaccess",
+      "rule": "Do not assume nginx natively supports Apache-style .htaccess per-file overrides.",
+      "rationale": "The article explicitly identifies this as a flexibility difference.",
+      "evidence": [
+        "nginx",
+        "Apache .htaccess",
+        "Per-file access overrides"
+      ]
+    },
+    {
+      "id": "rule_dynamic_module_compatibility",
+      "rule": "Verify third-party module compatibility and build requirements before deploying modules.",
+      "rationale": "The article notes modules may need to be compiled alongside nginx, may not all support dynamic loading, and some still require static linking.",
+      "evidence": [
+        "Third-party modules",
+        "Dynamic module loading",
+        "Static module linking"
+      ]
+    },
+    {
+      "id": "rule_http3_status",
+      "rule": "Treat the article's HTTP/3 status as experimental from nginx 1.25.0, not as a blanket statement about every build or later release.",
+      "rationale": "The source specifically characterizes HTTP/3 as experimental starting with version 1.25.0.",
+      "evidence": [
+        "HTTP/3",
+        "nginx"
+      ]
+    },
+    {
+      "id": "rule_ech_build_requirement",
+      "rule": "Encrypted Client Hello support depends on using a compatible OpenSSL branch and the relevant nginx build/configuration.",
+      "rationale": "The source conditions ECH support on nginx 1.29.4 and an OpenSSL branch implementing ECH.",
+      "evidence": [
+        "Encrypted Client Hello (ECH)",
+        "OpenSSL",
+        "nginx"
+      ]
+    },
+    {
+      "id": "rule_mail_auth_external",
+      "rule": "Plan an external HTTP service or authentication script for nginx mail-proxy authentication.",
+      "rationale": "The source says mail proxy authentication requires an external HTTP server or script.",
+      "evidence": [
+        "Mail proxy",
+        "External HTTP authentication"
+      ]
+    },
+    {
+      "id": "rule_unit_maintenance",
+      "rule": "Do not assume NGINX Unit receives upstream maintenance after October 2025.",
+      "rationale": "The article says it was archived by maintainers and is no longer receiving updates.",
+      "evidence": [
+        "NGINX Unit"
+      ]
+    },
+    {
+      "id": "rule_plus_license",
+      "rule": "Distinguish the BSD-licensed nginx project from proprietary NGINX Plus.",
+      "rationale": "The source lists different license models.",
+      "evidence": [
+        "nginx",
+        "NGINX Plus",
+        "BSD 2-Clause License",
+        "Proprietary license"
+      ]
+    },
+    {
+      "id": "rule_acme_cert_lifecycle",
+      "rule": "When relying on native ACME automation, verify the deployed nginx version and certificate lifecycle configuration.",
+      "rationale": "The article reports native ACME issuance and renewal support, but does not provide a complete configuration procedure.",
+      "evidence": [
+        "ACME",
+        "TLS certificate",
+        "nginx"
+      ]
+    },
+    {
+      "id": "rule_survey_time_bound",
+      "rule": "Keep popularity figures tied to the survey and date rather than treating them as timeless market share.",
+      "rationale": "The article cites different survey dates and populations, including all websites versus the busiest sites.",
+      "evidence": [
+        "W3Techs web-server survey",
+        "Netcraft web-server survey",
+        "nginx"
+      ]
+    },
+    {
+      "id": "rule_cache_scope",
+      "rule": "Define cacheability, invalidation, and bypass rules explicitly when using nginx HTTP caching.",
+      "rationale": "The source confirms reverse-proxy caching but does not describe policy details; this is an implementation recommendation inferred from the capability.",
+      "evidence": [
+        "HTTP cache",
+        "Reverse proxy"
+      ]
+    },
+    {
+      "id": "rule_load_balancer_health",
+      "rule": "Consider upstream health checks when deploying nginx as a load balancer.",
+      "rationale": "In-band health checks are listed as a load-balancing feature.",
+      "evidence": [
+        "Load balancer",
+        "Health checks"
+      ]
+    },
+    {
+      "id": "rule_legal_dispute_attribution",
+      "rule": "Describe the 2019 Rambler matter as a reported copyright claim/dispute, not as a settled determination of ownership.",
+      "rationale": "The supplied article describes allegations and subsequent events but does not establish a court finding that resolves ownership.",
+      "evidence": [
+        "Copyright dispute (2019)",
+        "Rambler",
+        "nginx"
+      ]
+    },
+    {
+      "id": "rule_product_versioning",
+      "rule": "Validate protocol features against the exact nginx version and build in use.",
+      "rationale": "The article ties multiple capabilities to particular versions and build dependencies.",
+      "evidence": [
+        "HTTP/2",
+        "HTTP/3",
+        "WebSocket",
+        "gRPC",
+        "Encrypted Client Hello (ECH)"
+      ]
+    },
+    {
+      "id": "rule_source_snapshot",
+      "rule": "Treat versions, adoption statistics, and project status as claims from the supplied article snapshot, not independently verified current facts.",
+      "rationale": "The article contains dated and potentially time-sensitive claims.",
+      "evidence": [
+        "Source article",
+        "W3Techs web-server survey",
+        "NGINX Unit"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_static_site",
+      "title": "Serve a static site",
+      "purpose": "Use nginx to serve static web content and index files.",
+      "steps": [
+        "Install an nginx build appropriate for the target operating system.",
+        "Configure a server block/virtual server for the intended host name.",
+        "Set the content root and index file behavior.",
+        "Validate the configuration and test requests."
+      ],
+      "caveat": "Operational commands and configuration syntax are not included in the source article; these steps are generalized guidance."
+    },
+    {
+      "id": "example_reverse_proxy",
+      "title": "Reverse proxy to an application",
+      "purpose": "Forward client HTTP requests to an upstream application server.",
+      "steps": [
+        "Configure a virtual server for the public hostname.",
+        "Define a location/routing rule for application traffic.",
+        "Configure proxy forwarding to the upstream/backend.",
+        "Test request routing, headers, error handling and logs."
+      ],
+      "caveat": "The source confirms reverse proxy capability but does not provide exact directives."
+    },
+    {
+      "id": "example_load_balancing",
+      "title": "Load balance multiple backends",
+      "purpose": "Distribute requests across upstream servers.",
+      "steps": [
+        "Define the upstream/backend pool.",
+        "Configure the frontend server to route requests to the pool.",
+        "Choose a suitable load-balancing policy for the workload.",
+        "Configure or verify health checks and test backend failure behavior."
+      ],
+      "caveat": "The source mentions load balancing and in-band health checks but does not enumerate algorithms."
+    },
+    {
+      "id": "example_tls",
+      "title": "Enable HTTPS and certificate lifecycle",
+      "purpose": "Use nginx TLS support and, where suitable, ACME certificate issuance/renewal.",
+      "steps": [
+        "Verify nginx version and TLS library/build capabilities.",
+        "Configure certificates and TLS settings for the hostname.",
+        "If using native ACME, configure issuance and renewal according to version-specific documentation.",
+        "Test certificate validity, renewal behavior and protocol compatibility."
+      ],
+      "caveat": "The supplied article does not provide a working configuration example; verify current official documentation before production deployment."
+    },
+    {
+      "id": "example_dynamic_app",
+      "title": "Serve a dynamic application",
+      "purpose": "Integrate nginx with a supported application handler/server.",
+      "steps": [
+        "Identify the application runtime and supported integration (FastCGI, SCGI, uWSGI, WSGI application server, Passenger or gRPC).",
+        "Configure routing and upstream/handler details.",
+        "Enable caching only when correct for the application semantics.",
+        "Test application errors, concurrency and deployment behavior."
+      ],
+      "caveat": "The source lists integrations but not app-specific configuration."
+    },
+    {
+      "id": "example_mail_proxy",
+      "title": "Proxy mail protocols",
+      "purpose": "Use nginx mail proxy for SMTP, POP3 or IMAP.",
+      "steps": [
+        "Select the mail protocols and TLS/STARTTLS requirements.",
+        "Configure the mail proxy and upstream mail servers.",
+        "Provide an external HTTP authentication service or script.",
+        "Test authentication failures and secure transport."
+      ],
+      "caveat": "The source states external authentication is required but does not provide configuration."
+    },
+    {
+      "id": "example_modules",
+      "title": "Evaluate a third-party module",
+      "purpose": "Add a module while accounting for build and compatibility constraints.",
+      "steps": [
+        "Check the module's maintenance status and license.",
+        "Verify compatibility with the exact nginx version and build.",
+        "Determine whether dynamic loading is supported or static linking is required.",
+        "Build and test in staging before production rollout."
+      ],
+      "caveat": "Derived from the article's module-loading discussion."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_nginx_wikipedia",
+      "type": "user_supplied_article",
+      "title": "nginx — Wikipedia article text supplied by user",
+      "url": "https://en.wikipedia.org/wiki/Nginx",
+      "retrieval_method": "Uploaded text file; not independently verified against the live page",
+      "source_file": "Pasted text(20261020-185829).txt",
+      "source_notes": "The source text reports an article snapshot last edited 25 August 2026 and includes a reported nginx release dated 14 October 2026. Version and popularity statements are preserved as source-reported and are not independently verified here.",
+      "attribution": "The uploaded text identifies Wikipedia content under CC BY-SA 4.0, subject to its stated terms."
+    }
+  ],
+  "coverage": {
+    "core_identity": [
+      "original author",
+      "developers",
+      "language",
+      "license",
+      "operating systems",
+      "project and company history"
+    ],
+    "server_features": [
+      "static content",
+      "reverse proxy",
+      "load balancing",
+      "HTTP cache",
+      "virtual servers",
+      "URL rewriting",
+      "redirects",
+      "TLS",
+      "ACME",
+      "HTTP/1.1",
+      "HTTP/2",
+      "HTTP/3",
+      "ECH",
+      "WebSocket",
+      "gRPC",
+      "FastCGI",
+      "SCGI",
+      "uWSGI",
+      "WSGI",
+      "mail proxy"
+    ],
+    "architecture": [
+      "event-driven concurrency",
+      "C10k motivation",
+      "module architecture",
+      "dynamic and static module loading",
+      "health checks",
+      "graceful upgrades"
+    ],
+    "ecosystem": [
+      "NGINX Plus",
+      "NGINX Unit",
+      "NGINX Controller",
+      "NGINX Amplify",
+      "Angie",
+      "freenginx",
+      "Tengine",
+      "Apache comparison",
+      "Docker",
+      "OpenBSD"
+    ],
+    "history": [
+      "2002 development start",
+      "2004 public release",
+      "Rambler use",
+      "Nginx Inc founding and funding",
+      "F5 acquisition",
+      "2019 copyright dispute",
+      "2022 Sysoev departure",
+      "2022 Angie",
+      "2024 freenginx",
+      "2025 NGINX Unit archive"
+    ],
+    "explicit_gaps": [
+      "The source does not provide detailed nginx.conf syntax or deployment commands.",
+      "The source does not enumerate load-balancing algorithms.",
+      "The source does not explain detailed worker-process internals.",
+      "The source does not establish a legal judgment resolving the 2019 copyright dispute.",
+      "Popularity and release facts are not independently verified against live sources.",
+      "Entity identifiers are normalized from entity names; duplicate names share a single graph node."
+    ]
+  }
+}

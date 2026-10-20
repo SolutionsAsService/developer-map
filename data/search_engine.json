@@ -1,0 +1,1661 @@
+{
+  "schema_metadata": {
+    "schema_name": "search_engine_knowledge_graph",
+    "schema_version": "1.0.0",
+    "record_type": "topic_knowledge_graph",
+    "title": "Search engine",
+    "canonical_topic_id": "concept:search_engine",
+    "language": "en",
+    "description": "Full-detail structured knowledge graph based on the user-provided Wikipedia article about web search engines, including definitions, history, architecture, ranking, market context, bias, engine types, historical systems, and explicit relationships.",
+    "source_basis": {
+      "primary_source": "User-provided Wikipedia article text titled 'Search engine'",
+      "source_url": "https://en.wikipedia.org/wiki/Search_engine",
+      "source_page_last_edited": "2026-10-15T16:50:00Z",
+      "source_license_as_stated": "Creative Commons Attribution-ShareAlike 4.0 License",
+      "scope_note": "The supplied text is the source of the historical statements and figures below. Time-sensitive market-share figures are retained with their source date rather than represented as current."
+    }
+  },
+  "entities": [
+    {
+      "id": "concept:search_engine",
+      "type": "core_concept",
+      "name": "Search engine",
+      "aliases": [
+        "web search engine"
+      ],
+      "definition": "A search application that responds to a user's query with links to web pages and other relevant information, often shown with snippets, images, and specialized result types.",
+      "scope_note": "This record focuses primarily on Internet and World Wide Web search, as in the supplied article."
+    },
+    {
+      "id": "concept:information_retrieval",
+      "type": "field",
+      "name": "Information retrieval",
+      "definition": "The process of finding information relevant to a user's information need from a collection of documents or records."
+    },
+    {
+      "id": "concept:world_wide_web",
+      "type": "internet_system",
+      "name": "World Wide Web",
+      "definition": "A linked information system whose pages and resources can be discovered and accessed over the Internet."
+    },
+    {
+      "id": "concept:search_query",
+      "type": "user_input",
+      "name": "Search query",
+      "definition": "A word, combination of words, phrase, or sentence submitted to a search system."
+    },
+    {
+      "id": "concept:search_results_page",
+      "type": "interface",
+      "name": "Search engine results page",
+      "aliases": [
+        "SERP"
+      ],
+      "definition": "A result interface containing ranked links and commonly snippets, images, and other result modules."
+    },
+    {
+      "id": "concept:web_crawler",
+      "type": "software_agent",
+      "name": "Web crawler",
+      "aliases": [
+        "spider",
+        "robot",
+        "bot"
+      ],
+      "definition": "Automated software that visits web resources, discovers links, and collects information for indexing."
+    },
+    {
+      "id": "concept:robots_txt",
+      "type": "web_standard",
+      "name": "robots.txt",
+      "definition": "A conventionally named file containing directives that communicate crawl preferences to automated crawlers."
+    },
+    {
+      "id": "concept:indexing",
+      "type": "process",
+      "name": "Indexing",
+      "definition": "Associating words and other tokens from documents with locations, fields, and other searchable representations, then storing those associations in an index."
+    },
+    {
+      "id": "concept:inverted_index",
+      "type": "data_structure",
+      "name": "Inverted index",
+      "definition": "An index structure mapping terms to documents or locations in which they occur."
+    },
+    {
+      "id": "concept:ranking",
+      "type": "process",
+      "name": "Search ranking",
+      "definition": "Ordering candidate results by estimated relevance or other ranking signals."
+    },
+    {
+      "id": "concept:snippet",
+      "type": "search_result_component",
+      "name": "Search result snippet",
+      "definition": "A short extract or description showing context relevant to a query."
+    },
+    {
+      "id": "concept:cache",
+      "type": "system_component",
+      "name": "Search cache",
+      "definition": "Stored page content or representations retained to support retrieval and result processing between crawler visits."
+    },
+    {
+      "id": "concept:link_analysis",
+      "type": "ranking_technique",
+      "name": "Link analysis",
+      "definition": "Analysis of hyperlinks among pages to infer relationships, relevance, authority, or importance."
+    },
+    {
+      "id": "algorithm:pagerank",
+      "type": "algorithm",
+      "name": "PageRank",
+      "developer_ids": [
+        "person:larry_page",
+        "person:sergey_brin"
+      ],
+      "definition": "A link-analysis algorithm associated with Google that uses the linking structure of the web to estimate page importance."
+    },
+    {
+      "id": "algorithm:rankdex",
+      "type": "algorithm",
+      "name": "RankDex",
+      "developer_ids": [
+        "person:robin_li"
+      ],
+      "definition": "A site-scoring and ranking algorithm developed by Robin Li that used hyperlinks to assess the quality of indexed websites."
+    },
+    {
+      "id": "concept:search_advertising",
+      "type": "business_model",
+      "name": "Search advertising",
+      "definition": "Advertising associated with search queries or search result pages; commercial search engines may derive substantial revenue from advertising."
+    },
+    {
+      "id": "concept:search_engine_optimization",
+      "type": "practice",
+      "name": "Search engine optimization",
+      "aliases": [
+        "SEO"
+      ],
+      "definition": "Practices intended to improve a website's visibility in organic search results."
+    },
+    {
+      "id": "concept:search_engine_bias",
+      "type": "research_topic",
+      "name": "Search engine bias",
+      "definition": "Ways search results and visibility may be shaped by indexing coverage, ranking methods, commercial incentives, geography, language, policy, personalization, or other system choices."
+    },
+    {
+      "id": "concept:filter_bubble",
+      "type": "information_environment",
+      "name": "Filter bubble",
+      "definition": "The hypothesis or concern that personalization and selection systems can narrow the information encountered by a user."
+    },
+    {
+      "id": "concept:local_search",
+      "type": "search_type",
+      "name": "Local search",
+      "definition": "Search focused on geographically relevant businesses, places, services, or information."
+    },
+    {
+      "id": "concept:vertical_search",
+      "type": "search_type",
+      "name": "Vertical search",
+      "definition": "Search focused on a specific subject area, content type, or industry."
+    },
+    {
+      "id": "concept:metasearch",
+      "type": "search_type",
+      "name": "Metasearch engine",
+      "definition": "A search system that queries or aggregates results from multiple other search services."
+    },
+    {
+      "id": "concept:enterprise_search",
+      "type": "search_type",
+      "name": "Enterprise search",
+      "definition": "Search across information belonging to an organization, company, government, or other enterprise."
+    },
+    {
+      "id": "concept:multimedia_search",
+      "type": "search_type",
+      "name": "Multimedia search",
+      "definition": "Search across images, video, audio, or other non-text media."
+    },
+    {
+      "id": "concept:semantic_search",
+      "type": "search_type",
+      "name": "Semantic search",
+      "definition": "Search that attempts to use meaning, concepts, or relationships in addition to literal keyword matching."
+    },
+    {
+      "id": "concept:voice_search",
+      "type": "search_type",
+      "name": "Voice search",
+      "definition": "Search initiated through spoken input or voice interfaces."
+    },
+    {
+      "id": "concept:human_curated_directory",
+      "type": "information_system",
+      "name": "Human-curated web directory",
+      "definition": "A categorized collection of web resources selected or organized by people rather than exclusively through automated crawling."
+    },
+    {
+      "id": "program:memex_vision",
+      "type": "historical_concept",
+      "name": "Memex",
+      "definition": "Vannevar Bush's 1945 vision of a personal information retrieval system for navigating a large body of connected knowledge and annotations.",
+      "related_work_id": "work:as_we_may_think"
+    },
+    {
+      "id": "work:as_we_may_think",
+      "type": "publication",
+      "title": "As We May Think",
+      "author_id": "person:vannevar_bush",
+      "publication_date": "1945-07-01",
+      "publisher": "The Atlantic",
+      "topic_role": "Historical precursor to ideas about personal information retrieval and linked annotations."
+    },
+    {
+      "id": "person:vannevar_bush",
+      "type": "person",
+      "name": "Vannevar Bush",
+      "role_in_topic": "Proposed the Memex concept in 1945."
+    },
+    {
+      "id": "person:alan_emtage",
+      "type": "person",
+      "name": "Alan Emtage",
+      "role_in_topic": "Created Archie, an early searchable index of file names from public anonymous FTP sites."
+    },
+    {
+      "id": "person:mark_mccahill",
+      "type": "person",
+      "name": "Mark McCahill",
+      "role_in_topic": "Created Gopher in 1991, which was followed by search utilities including Veronica and Jughead."
+    },
+    {
+      "id": "person:oscar_nierstrasz",
+      "type": "person",
+      "name": "Oscar Nierstrasz",
+      "role_in_topic": "Wrote Perl scripts that mirrored and standardized web resource pages, forming the basis for W3Catalog."
+    },
+    {
+      "id": "person:matthew_gray",
+      "type": "person",
+      "name": "Matthew Gray",
+      "role_in_topic": "Created the World Wide Web Wanderer and the Wandex index in 1993."
+    },
+    {
+      "id": "person:jonathon_fletcher",
+      "type": "person",
+      "name": "Jonathon Fletcher",
+      "role_in_topic": "Created JumpStation in December 1993."
+    },
+    {
+      "id": "person:michael_mauldin",
+      "type": "person",
+      "name": "Michael Mauldin",
+      "role_in_topic": "Developed the Lycos search engine at Carnegie Mellon University in 1994."
+    },
+    {
+      "id": "person:robin_li",
+      "type": "person",
+      "name": "Robin Li",
+      "aliases": [
+        "Yanhong Li"
+      ],
+      "role_in_topic": "Developed RankDex and later used its technology in Baidu."
+    },
+    {
+      "id": "person:larry_page",
+      "type": "person",
+      "name": "Larry Page",
+      "role_in_topic": "Google co-founder associated with PageRank; his patent cited Robin Li's earlier RankDex work."
+    },
+    {
+      "id": "person:sergey_brin",
+      "type": "person",
+      "name": "Sergey Brin",
+      "role_in_topic": "Google co-founder and co-author of the 1998 paper describing a large-scale hypertext search engine."
+    },
+    {
+      "id": "person:jerry_yang",
+      "type": "person",
+      "name": "Jerry Yang",
+      "role_in_topic": "Co-founded Yahoo! with David Filo."
+    },
+    {
+      "id": "person:david_filo",
+      "type": "person",
+      "name": "David Filo",
+      "role_in_topic": "Co-founded Yahoo! with Jerry Yang."
+    },
+    {
+      "id": "organization:darpa",
+      "type": "organization",
+      "name": "Defense Advanced Research Projects Agency",
+      "abbreviation": "DARPA",
+      "role_in_topic": "Historical sponsor of the Memex domain-specific search research program, mentioned in the related context."
+    },
+    {
+      "id": "company:google",
+      "type": "company",
+      "name": "Google",
+      "search_product": "Google Search",
+      "role_in_topic": "Became the dominant global search provider in the 2000s, according to the supplied article."
+    },
+    {
+      "id": "company:microsoft",
+      "type": "company",
+      "name": "Microsoft",
+      "search_product": "Bing",
+      "role_in_topic": "Developed its own crawling and search technology and launched Bing in 2009."
+    },
+    {
+      "id": "company:yahoo",
+      "type": "company",
+      "name": "Yahoo!",
+      "search_product": "Yahoo! Search",
+      "role_in_topic": "Began as a human-curated web directory and later operated search services powered by external and acquired technologies."
+    },
+    {
+      "id": "company:baidu",
+      "type": "company",
+      "name": "Baidu",
+      "role_in_topic": "Chinese search provider founded by Robin Li; launched in 2000."
+    },
+    {
+      "id": "company:yandex",
+      "type": "company",
+      "name": "Yandex",
+      "role_in_topic": "Search provider associated with Russia and listed among major engines in the article."
+    },
+    {
+      "id": "company:duckduckgo",
+      "type": "company",
+      "name": "DuckDuckGo",
+      "role_in_topic": "Search provider listed among active engines in the article's historical timeline."
+    },
+    {
+      "id": "company:brave",
+      "type": "company",
+      "name": "Brave",
+      "search_product": "Brave Search",
+      "role_in_topic": "Search provider listed in the article's 2020s timeline."
+    },
+    {
+      "id": "company:naver",
+      "type": "company",
+      "name": "Naver",
+      "role_in_topic": "Search provider active in South Korea."
+    },
+    {
+      "id": "company:bing",
+      "type": "search_product",
+      "name": "Bing",
+      "operator_id": "company:microsoft",
+      "launched": "2009-06-01"
+    },
+    {
+      "id": "company:lycos",
+      "type": "search_product",
+      "name": "Lycos",
+      "role_in_topic": "Search engine developed at Carnegie Mellon University in 1994."
+    },
+    {
+      "id": "company:excite",
+      "type": "search_product",
+      "name": "Excite",
+      "role_in_topic": "One of the early major commercial web search engines."
+    },
+    {
+      "id": "company:alta_vista",
+      "type": "search_product",
+      "name": "AltaVista",
+      "historical_status": "Inactive; the article says it was acquired by Yahoo! in 2003 and later redirected to Yahoo!."
+    },
+    {
+      "id": "company:inktomi",
+      "type": "search_technology_company",
+      "name": "Inktomi",
+      "role_in_topic": "Provided search technology used by Yahoo! and Microsoft/MSN Search during earlier phases."
+    },
+    {
+      "id": "company:goto",
+      "type": "search_company",
+      "name": "GoTo.com",
+      "role_in_topic": "The article says Google adopted the idea of selling search terms from this company in 1998."
+    },
+    {
+      "id": "engine:archie",
+      "type": "historical_search_engine",
+      "name": "Archie",
+      "created": "1990-09-10",
+      "creator_id": "person:alan_emtage",
+      "scope": "Public anonymous FTP file and directory names",
+      "indexing_method": "Downloaded FTP directory listings and created a searchable database of filenames; did not index file contents."
+    },
+    {
+      "id": "engine:veronica",
+      "type": "historical_search_engine",
+      "name": "Veronica",
+      "expansion": "Very Easy Rodent-Oriented Net-wide Index to Computerized Archives",
+      "scope": "Gopher menu titles",
+      "relationship_note": "Searched keyword matches across Gopher menu listings."
+    },
+    {
+      "id": "engine:jughead",
+      "type": "historical_search_tool",
+      "name": "Jughead",
+      "expansion": "Jonzy's Universal Gopher Hierarchy Excavation And Display",
+      "scope": "Gopher server menu information"
+    },
+    {
+      "id": "engine:w3catalog",
+      "type": "historical_search_engine",
+      "name": "W3Catalog",
+      "created": "1993-09-02",
+      "creator_id": "person:oscar_nierstrasz",
+      "method": "Periodically mirrored manually maintained resource pages and standardized them with Perl scripts."
+    },
+    {
+      "id": "engine:wandex",
+      "type": "historical_web_index",
+      "name": "Wandex",
+      "created": "1993",
+      "creator_id": "person:matthew_gray",
+      "crawler_id": "engine:world_wide_web_wanderer",
+      "purpose": "Index generated to estimate the size of the World Wide Web."
+    },
+    {
+      "id": "engine:world_wide_web_wanderer",
+      "type": "historical_web_crawler",
+      "name": "World Wide Web Wanderer",
+      "created": "1993-06",
+      "creator_id": "person:matthew_gray",
+      "purpose": "Measure the size of the Web; captured URLs."
+    },
+    {
+      "id": "engine:aliweb",
+      "type": "historical_search_engine",
+      "name": "ALIWEB",
+      "created": "1993-11",
+      "method": "Relied on site administrators to submit index files; did not use a web robot."
+    },
+    {
+      "id": "engine:jumpstation",
+      "type": "historical_search_engine",
+      "name": "JumpStation",
+      "created": "1993-12",
+      "creator_id": "person:jonathon_fletcher",
+      "capabilities": [
+        "crawling",
+        "indexing",
+        "searching"
+      ],
+      "limitation": "Limited resources restricted indexing primarily to page titles and headings."
+    },
+    {
+      "id": "engine:webcrawler",
+      "type": "search_engine",
+      "name": "WebCrawler",
+      "created": "1994",
+      "capability": "One of the first crawler-based all-text search engines; enabled searching for any word in a web page."
+    },
+    {
+      "id": "engine:rankdex",
+      "type": "historical_search_engine",
+      "name": "RankDex",
+      "created": "1996",
+      "creator_id": "person:robin_li",
+      "capability": "Used hyperlinks to measure the quality of indexed websites."
+    },
+    {
+      "id": "engine:google_search",
+      "type": "search_engine",
+      "name": "Google Search",
+      "operator_id": "company:google",
+      "launched": "1998",
+      "historical_note": "Rose to prominence around 2000, combining link-analysis ranking with a minimalist interface."
+    },
+    {
+      "id": "engine:yahoo_search",
+      "type": "search_engine",
+      "name": "Yahoo! Search",
+      "operator_id": "company:yahoo",
+      "launched": "1995",
+      "historical_note": "Initially searched Yahoo! Directory; later used external search technologies and acquisitions."
+    },
+    {
+      "id": "engine:msn_search",
+      "type": "historical_search_engine",
+      "name": "MSN Search",
+      "operator_id": "company:microsoft",
+      "launched": "1998",
+      "historical_note": "Initially used Inktomi results, with later transitions through other sources and Microsoft's own crawler."
+    },
+    {
+      "id": "engine:bing",
+      "type": "search_engine",
+      "name": "Bing",
+      "operator_id": "company:microsoft",
+      "launched": "2009-06-01",
+      "historical_note": "Rebranded from Live Search; Yahoo! and Microsoft finalized a deal for Yahoo! Search to be powered by Bing technology in July 2009."
+    },
+    {
+      "id": "engine:baidu_search",
+      "type": "search_engine",
+      "name": "Baidu Search",
+      "operator_id": "company:baidu",
+      "launched": "2000",
+      "historical_note": "The article connects its technology to Robin Li's RankDex work."
+    },
+    {
+      "id": "engine:yandex_search",
+      "type": "search_engine",
+      "name": "Yandex Search",
+      "operator_id": "company:yandex"
+    },
+    {
+      "id": "engine:duckduckgo_search",
+      "type": "search_engine",
+      "name": "DuckDuckGo",
+      "operator_id": "company:duckduckgo"
+    },
+    {
+      "id": "engine:brave_search",
+      "type": "search_engine",
+      "name": "Brave Search",
+      "operator_id": "company:brave",
+      "launched": "2021"
+    },
+    {
+      "id": "engine:naver_search",
+      "type": "search_engine",
+      "name": "Naver Search",
+      "operator_id": "company:naver"
+    },
+    {
+      "id": "concept:artificial_intelligence_search",
+      "type": "search_approach",
+      "name": "AI-powered search",
+      "definition": "Search experiences that integrate language models or other AI systems with search indexes to produce conversational answers, summaries, and contextual recommendations.",
+      "article_context": "The supplied article says this integration became increasingly common in the 2020s."
+    }
+  ],
+  "definition_and_core_functions": {
+    "definition": "A search application that accepts a query and provides links to web pages and other relevant information, commonly with snippets, images, and specialized result types.",
+    "common_interfaces": [
+      "web browser",
+      "mobile application"
+    ],
+    "common_result_types": [
+      "web pages",
+      "images",
+      "video",
+      "news",
+      "other specialized results"
+    ],
+    "provider_architecture": "A search engine can be one component of a distributed computing system spanning multiple data centers.",
+    "core_tasks": [
+      {
+        "step": 1,
+        "name": "Find and select content",
+        "description": "Discover full or partial content relevant to query terms."
+      },
+      {
+        "step": 2,
+        "name": "Maintain an index",
+        "description": "Store searchable representations and references to document locations."
+      },
+      {
+        "step": 3,
+        "name": "Search the index",
+        "description": "Match user queries against the index and return candidate documents."
+      },
+      {
+        "step": 4,
+        "name": "Rank results",
+        "description": "Order candidate results according to relevance and other system-specific signals."
+      },
+      {
+        "step": 5,
+        "name": "Render results",
+        "description": "Generate a results page with links, snippets, and potentially images or specialized modules."
+      }
+    ],
+    "important_distinction": "A user query usually searches the search engine's index, not the live Web in its entirety."
+  },
+  "technology_pipeline": {
+    "processes": [
+      {
+        "id": "process:crawling",
+        "name": "Web crawling",
+        "inputs": [
+          "seed URLs",
+          "discovered links",
+          "crawl policy"
+        ],
+        "operations": [
+          "visit web resources",
+          "check robots.txt directives",
+          "collect selected page information",
+          "follow links according to crawl policy",
+          "schedule later revisits"
+        ],
+        "possible_collected_fields": [
+          "title",
+          "page text",
+          "headings",
+          "HTML metadata",
+          "JavaScript-derived information",
+          "CSS-related context",
+          "links"
+        ],
+        "limitations": [
+          "Some content is inaccessible to crawlers.",
+          "Crawl budgets and policies prevent exhaustive crawling of every reachable page.",
+          "Infinite URL spaces, spider traps, spam, and other practical issues constrain crawling.",
+          "Some sites are crawled extensively while others are only partially crawled."
+        ]
+      },
+      {
+        "id": "process:indexing",
+        "name": "Indexing",
+        "inputs": [
+          "crawled documents",
+          "document fields",
+          "tokens"
+        ],
+        "operations": [
+          "extract words and other tokens",
+          "associate tokens with URLs or domain names",
+          "record field-level information",
+          "store searchable associations in index structures",
+          "update the index as pages change"
+        ],
+        "output": "Searchable index or indexes."
+      },
+      {
+        "id": "process:query_processing",
+        "name": "Query processing",
+        "inputs": [
+          "user query",
+          "search index"
+        ],
+        "operations": [
+          "interpret query terms or phrases",
+          "retrieve matching candidate documents",
+          "apply query operators and filters where supported",
+          "combine signals needed to rank results"
+        ]
+      },
+      {
+        "id": "process:ranking",
+        "name": "Ranking",
+        "inputs": [
+          "candidate documents",
+          "query",
+          "index signals",
+          "ranking features"
+        ],
+        "operations": [
+          "estimate relevance",
+          "consider content and page fields",
+          "potentially analyze hyperlinks",
+          "apply engine-specific ranking algorithms",
+          "order candidate results"
+        ],
+        "caveat": "Ranking methods differ by engine and change over time; commercial implementations may treat parts of their methods as trade secrets."
+      },
+      {
+        "id": "process:result_rendering",
+        "name": "Result rendering",
+        "inputs": [
+          "ranked candidates",
+          "cached content",
+          "query terms"
+        ],
+        "operations": [
+          "generate result list",
+          "look up and reconstruct snippets",
+          "mark up query context",
+          "render specialized result types when available"
+        ]
+      },
+      {
+        "id": "process:cache_refresh",
+        "name": "Cache and refresh management",
+        "operations": [
+          "retain some page content or renderable representations",
+          "serve stored representations between crawler visits",
+          "refresh data according to crawl schedules and policies"
+        ],
+        "caveat": "A cached representation may differ from the live page if the page has changed since it was crawled."
+      }
+    ],
+    "robots_exclusion": {
+      "standard_file": "robots.txt",
+      "function": "Communicates crawl directives to compliant crawlers.",
+      "limitation": "Crawl directives do not guarantee that all content is indexed or that every crawler will behave identically."
+    },
+    "query_refinement": {
+      "features": [
+        "Boolean operators AND, OR, NOT",
+        "date filters",
+        "advanced search parameters",
+        "exact phrase matching",
+        "proximity search in some engines",
+        "concept-based or statistically informed search in some systems"
+      ],
+      "user_feedback_loop": "Users refine queries and filters after reviewing initial results."
+    }
+  },
+  "ranking_and_relevance": {
+    "goal": "Present useful, relevant, or authoritative results early in the result list.",
+    "signals_described_in_article": [
+      "keyword frequency",
+      "keyword location within page fields",
+      "page titles and headings",
+      "page metadata",
+      "hyperlinks and linking structure",
+      "relevance of linked pages",
+      "freshness or modification time where used",
+      "engine-specific statistical or concept-based signals"
+    ],
+    "historical_link_analysis": {
+      "rankdex": {
+        "algorithm_id": "algorithm:rankdex",
+        "year": 1996,
+        "claim": "The article describes RankDex as an early search ranking system using hyperlinks to measure website quality.",
+        "historical_significance": "The article says RankDex preceded Google's similar PageRank patent filing and that Robin Li later used the technology in Baidu."
+      },
+      "pagerank": {
+        "algorithm_id": "algorithm:pagerank",
+        "year": 1998,
+        "authors": [
+          "person:larry_page",
+          "person:sergey_brin"
+        ],
+        "principle": "Uses the linking structure of the Web and the PageRank of linking pages to estimate relative importance.",
+        "article_reported_influence": "Larry Page's patent cited Robin Li's earlier RankDex work."
+      }
+    },
+    "anti_spam_considerations": [
+      "Keyword stuffing",
+      "Spamdexing",
+      "Artificial link building",
+      "Manipulation of ranking signals"
+    ],
+    "tradeoffs": [
+      "Relevance is not identical to popularity.",
+      "Index coverage limits what can be retrieved.",
+      "Different engines can produce different results because they use different indexes and ranking algorithms.",
+      "Ranking methods and user-facing behavior evolve over time."
+    ]
+  },
+  "history": {
+    "pre_web_precursors": [
+      {
+        "date": "1982",
+        "event": "WHOIS user-search service",
+        "entity_ids": [
+          "concept:information_retrieval"
+        ],
+        "description": "The article states that Internet user-search systems predate the Web and dates WHOIS search to 1982."
+      },
+      {
+        "date": "1989",
+        "event": "Knowbot Information Service",
+        "description": "The article dates an early multi-network user-search service to 1989."
+      },
+      {
+        "date": "1945",
+        "event": "Vannevar Bush describes Memex",
+        "entity_ids": [
+          "program:memex_vision",
+          "person:vannevar_bush",
+          "work:as_we_may_think"
+        ],
+        "description": "A vision for navigating and annotating a large body of connected information."
+      }
+    ],
+    "timeline": [
+      {
+        "year": "1990",
+        "name": "Archie",
+        "entity_id": "engine:archie",
+        "status": "historical",
+        "significance": "Searchable database of filenames from public anonymous FTP sites."
+      },
+      {
+        "year": "1991",
+        "name": "Gopher",
+        "entity_id": "person:mark_mccahill",
+        "status": "historical",
+        "significance": "Gopher's menus led to search tools such as Veronica and Jughead."
+      },
+      {
+        "year": "1993-09-02",
+        "name": "W3Catalog",
+        "entity_id": "engine:w3catalog",
+        "status": "historical",
+        "significance": "Early web search tool based on mirroring and standardizing manually maintained resource lists."
+      },
+      {
+        "year": "1993-06",
+        "name": "World Wide Web Wanderer and Wandex",
+        "entity_id": "engine:world_wide_web_wanderer",
+        "status": "historical",
+        "significance": "A web robot and index initially used to measure the size of the Web."
+      },
+      {
+        "year": "1993-11",
+        "name": "ALIWEB",
+        "entity_id": "engine:aliweb",
+        "status": "historical",
+        "significance": "Relied on site administrators to submit index files instead of using a web robot."
+      },
+      {
+        "year": "1993-12",
+        "name": "JumpStation",
+        "entity_id": "engine:jumpstation",
+        "status": "historical",
+        "significance": "Combined crawling, indexing, and searching in one web resource-discovery tool."
+      },
+      {
+        "year": "1994",
+        "name": "WebCrawler",
+        "entity_id": "engine:webcrawler",
+        "status": "historical_milestone",
+        "significance": "Among the first crawler-based engines to search the full text of web pages."
+      },
+      {
+        "year": "1994",
+        "name": "Lycos",
+        "entity_id": "company:lycos",
+        "status": "historical_milestone",
+        "significance": "Launched from work at Carnegie Mellon University and became a major commercial endeavor."
+      },
+      {
+        "year": "1995",
+        "name": "Yahoo! Search",
+        "entity_id": "engine:yahoo_search",
+        "status": "historical_milestone",
+        "significance": "Search was added to Yahoo!'s human-curated directory."
+      },
+      {
+        "year": "1996",
+        "name": "RankDex",
+        "entity_id": "engine:rankdex",
+        "status": "historical_milestone",
+        "significance": "Used hyperlinks to assess website quality."
+      },
+      {
+        "year": "1996",
+        "name": "Netscape search distribution deal",
+        "status": "historical_milestone",
+        "significance": "Netscape rotated five major search providers on its search page under commercial agreements."
+      },
+      {
+        "year": "1998",
+        "name": "Google Search and PageRank",
+        "entity_id": "engine:google_search",
+        "status": "historical_milestone",
+        "significance": "Google launched and later rose to prominence through ranking and interface choices."
+      },
+      {
+        "year": "1998",
+        "name": "MSN Search",
+        "entity_id": "engine:msn_search",
+        "status": "historical_milestone",
+        "significance": "Initially relied on third-party results before Microsoft moved toward its own search technology."
+      },
+      {
+        "year": "2000",
+        "name": "Baidu",
+        "entity_id": "engine:baidu_search",
+        "status": "historical_milestone",
+        "significance": "Launched using technology associated with Robin Li's work."
+      },
+      {
+        "year": "2000s",
+        "name": "Google becomes dominant",
+        "entity_id": "engine:google_search",
+        "status": "market_shift",
+        "significance": "The article attributes this to ranking quality, link analysis, and a minimalist interface."
+      },
+      {
+        "year": "2002-2004",
+        "name": "Yahoo! search technology consolidation",
+        "entity_id": "engine:yahoo_search",
+        "status": "market_shift",
+        "significance": "Yahoo! acquired Inktomi in 2002 and Overture-owned search assets in 2003, then launched its own technology in 2004."
+      },
+      {
+        "year": "2004",
+        "name": "Microsoft transitions to its own search technology",
+        "entity_id": "company:microsoft",
+        "status": "market_shift",
+        "significance": "Microsoft moved toward its own crawler and search infrastructure."
+      },
+      {
+        "year": "2009-06-01",
+        "name": "Bing launches",
+        "entity_id": "engine:bing",
+        "status": "active_in_article_timeline",
+        "significance": "Microsoft rebranded Live Search as Bing."
+      },
+      {
+        "year": "2009-07-29",
+        "name": "Yahoo!-Microsoft search agreement finalized",
+        "entity_id": "engine:bing",
+        "status": "market_shift",
+        "significance": "Yahoo! Search was to be powered by Bing technology."
+      },
+      {
+        "year": "2011",
+        "name": "YaCy",
+        "status": "listed_in_article_timeline",
+        "significance": "A peer-to-peer search engine listed in the article's timeline."
+      },
+      {
+        "year": "2013-2018",
+        "name": "Qwant, Swisscows, Kagi and others appear in timeline",
+        "status": "listed_in_article_timeline",
+        "significance": "The article's timeline records continuing diversity in search providers."
+      },
+      {
+        "year": "2021",
+        "name": "Brave Search and You.com",
+        "entity_id": "engine:brave_search",
+        "status": "listed_in_article_timeline",
+        "significance": "Newer search services appear in the article's chronology."
+      },
+      {
+        "year": "2022",
+        "name": "Perplexity",
+        "status": "listed_in_article_timeline",
+        "significance": "The article lists Perplexity as an AI-era search product."
+      },
+      {
+        "year": "2020s",
+        "name": "AI-powered search integration",
+        "entity_id": "concept:artificial_intelligence_search",
+        "status": "ongoing_trend_as_described_by_article",
+        "significance": "Search increasingly combines indexing with language models for conversational answers, summaries, and contextual recommendations."
+      }
+    ],
+    "early_search_system_details": [
+      {
+        "name": "Archie",
+        "entity_id": "engine:archie",
+        "details": "Downloaded public anonymous FTP directory listings and indexed filenames, not the contents of the files."
+      },
+      {
+        "name": "Veronica",
+        "entity_id": "engine:veronica",
+        "details": "Keyword search over Gopher menu titles."
+      },
+      {
+        "name": "Jughead",
+        "entity_id": "engine:jughead",
+        "details": "Retrieved menu information from specific Gopher servers."
+      },
+      {
+        "name": "W3Catalog",
+        "entity_id": "engine:w3catalog",
+        "details": "Standardized mirrored pages of manually maintained web resource catalogs."
+      },
+      {
+        "name": "World Wide Web Wanderer",
+        "entity_id": "engine:world_wide_web_wanderer",
+        "details": "Captured URLs; the article notes that URLs alone often did not provide descriptive information useful for searchers."
+      },
+      {
+        "name": "ALIWEB",
+        "entity_id": "engine:aliweb",
+        "details": "Depended on webmasters to submit index files in a specified format."
+      },
+      {
+        "name": "JumpStation",
+        "entity_id": "engine:jumpstation",
+        "details": "Combined a crawler, index, and query interface but initially had limited fields available for indexing."
+      }
+    ]
+  },
+  "search_engine_types": [
+    {
+      "type": "crawler_based",
+      "description": "Uses automated software agents to visit websites, read page content and metadata, follow links, and build or refresh an index.",
+      "examples": [
+        "Google Search",
+        "Bing",
+        "WebCrawler"
+      ],
+      "strengths": [
+        "automated discovery",
+        "repeatable refresh cycles",
+        "scalable collection"
+      ],
+      "limitations": [
+        "crawl-policy limits",
+        "inaccessible or unlinked content",
+        "spam and spider traps",
+        "index freshness gaps"
+      ]
+    },
+    {
+      "type": "human_submitted_or_curated",
+      "description": "Depends on people submitting or categorizing resources; only submitted or curated resources are included in the resulting collection.",
+      "examples": [
+        "Yahoo! Directory as a historical precursor"
+      ],
+      "strengths": [
+        "human selection and categorization"
+      ],
+      "limitations": [
+        "coverage depends on submissions and editorial effort"
+      ]
+    },
+    {
+      "type": "hybrid",
+      "description": "Combines automated crawling/indexing with human submissions, curation, or other sources."
+    },
+    {
+      "type": "text_based",
+      "description": "Searches textual content using keywords, phrases, and sometimes limited natural-language queries.",
+      "examples": [
+        "Google",
+        "Bing",
+        "Yahoo!"
+      ]
+    },
+    {
+      "type": "voice_based",
+      "description": "Accepts spoken queries, typically through an assistant or voice interface.",
+      "examples": [
+        "Google",
+        "Bing",
+        "Yahoo! as listed in supplied article"
+      ]
+    },
+    {
+      "type": "multimedia",
+      "description": "Searches media using visual appearance or other media-specific representations.",
+      "examples": [
+        "QBIC",
+        "WebSeek",
+        "SaFe"
+      ]
+    },
+    {
+      "type": "question_answering",
+      "description": "Supports questions expressed in restricted or natural language and returns answers or answer-oriented resources.",
+      "examples": [
+        "Stack Exchange",
+        "NSIR as listed in supplied article"
+      ]
+    },
+    {
+      "type": "clustering",
+      "description": "Groups or clusters results to help users explore related topics.",
+      "examples": [
+        "Vivisimo",
+        "Clusty",
+        "Togoda"
+      ]
+    },
+    {
+      "type": "research_or_scientific",
+      "description": "Searches academic or scientific literature and may attempt to extract research concepts or findings.",
+      "examples": [
+        "Google Scholar",
+        "Lemur",
+        "Nutch as listed in supplied article"
+      ]
+    },
+    {
+      "type": "vertical",
+      "description": "Focuses on a specific domain, subject, or content type.",
+      "related_entity_id": "concept:vertical_search"
+    },
+    {
+      "type": "enterprise_or_structured_data",
+      "description": "Searches structured data, databases, or organization-specific repositories.",
+      "related_entity_id": "concept:enterprise_search"
+    },
+    {
+      "type": "metasearch",
+      "description": "Aggregates or forwards queries to other search systems.",
+      "related_entity_id": "concept:metasearch"
+    },
+    {
+      "type": "AI_augmented",
+      "description": "Integrates retrieval with AI-generated summaries or conversational answers.",
+      "related_entity_id": "concept:artificial_intelligence_search"
+    }
+  ],
+  "market_context": {
+    "historical_share_snapshot": {
+      "measurement_period": "2025-05",
+      "source_named_in_article": "StatCounter Global Stats",
+      "values_percent": {
+        "Google": 89.5,
+        "Bing": 4.0,
+        "Yandex": 2.5,
+        "Yahoo!": 1.3,
+        "DuckDuckGo": 0.8,
+        "Baidu": 0.7
+      },
+      "precision_note": "The source text gives approximate ranges or rounded figures; Google is represented as 89.5 only to encode the article's approximate 89–90% range, not as a precise independently verified measurement.",
+      "article_claim": "May 2025 marked the first time in over a decade that Google's share fell below 90%.",
+      "freshness_warning": "Historical snapshot only; not current market share."
+    },
+    "commercial_model": {
+      "dominant_model_in_article": "Advertising-supported search",
+      "related_entity_ids": [
+        "concept:search_advertising",
+        "concept:search_engine_optimization"
+      ],
+      "history_note": "The article says selling search terms, adopted by Google in 1998 from GoTo.com, contributed to the profitability of the search business.",
+      "ecosystem_effect": "Website optimization historically focused heavily on Google because of its market share."
+    },
+    "competition_and_consolidation": [
+      "Search engines competed through result quality, index coverage, interface design, distribution deals, acquisitions, and monetization.",
+      "The article describes search providers entering the market during the late-1990s investment boom and some later withdrawing consumer products or changing focus.",
+      "The dot-com bubble peaked in March 2000, according to the supplied article."
+    ]
+  },
+  "regional_landscape": {
+    "russia": {
+      "noted_provider_ids": [
+        "company:yandex"
+      ],
+      "context": "The article contains a dedicated section on search-engine market share in Russia."
+    },
+    "east_asia": {
+      "noted_provider_ids": [
+        "company:baidu",
+        "company:naver"
+      ],
+      "context": "The article contains regional discussion of search in China, Japan, South Korea, and Taiwan, including the roles of local providers and changes in market use.",
+      "caution": "Regional market figures in the supplied article have their own dates and should not be treated as current without fresh verification."
+    }
+  },
+  "bias_privacy_and_personalization": {
+    "search_engine_bias": {
+      "entity_id": "concept:search_engine_bias",
+      "dimensions": [
+        "index coverage bias",
+        "ranking and visibility effects",
+        "commercial incentives",
+        "geographic and language differences",
+        "policy and censorship effects",
+        "personalization and user-context effects",
+        "representation of topics and sources"
+      ],
+      "article_context": "The supplied article discusses research on coverage bias, search politics, representation of topics, and the effect of ranking systems on what users see."
+    },
+    "customized_results_and_filter_bubbles": {
+      "entity_id": "concept:filter_bubble",
+      "description": "The article describes concerns that personalization and ranking can shape the information users encounter.",
+      "evidence_caution": "The existence and magnitude of filter-bubble effects are debated in the research literature; this schema records the topic as discussed, not a universal causal conclusion."
+    },
+    "religious_search_engines": {
+      "description": "The article discusses specialized search services that filter or frame results for religious audiences.",
+      "examples_from_article_references": [
+        "Islam-oriented search services",
+        "Jewogle",
+        "Halalgoogling"
+      ],
+      "caution": "Examples are preserved as historical references from the article; current availability and operation are not asserted."
+    },
+    "privacy_and_governance_topics": [
+      "Search query data can be relevant to privacy analysis.",
+      "Search ranking and content moderation can raise governance questions.",
+      "Regional legal or policy requirements can affect result availability."
+    ]
+  },
+  "special_topics": {
+    "local_search": {
+      "entity_id": "concept:local_search",
+      "purpose": "Find geographically relevant businesses, places, and services.",
+      "related_practice": "Local SEO",
+      "source_note": "The supplied article includes a dedicated local-search section and a reference on local SEO."
+    },
+    "search_engine_submission": {
+      "description": "Submitting a site or sitemap can be part of discovery workflows, but the article cites warnings that third-party search-engine submission services can be harmful.",
+      "caution": "Submission does not guarantee crawling, indexing, ranking, or visibility."
+    },
+    "social_bookmarking": {
+      "description": "The article compares search engines with social bookmarking and cites research asking whether social bookmarking can improve web search."
+    },
+    "scientific_search": {
+      "description": "Scientific search engines index research literature; some research aims to extract theoretical constructs or key findings from articles.",
+      "example": "Google Scholar",
+      "related_entity_id": "concept:information_retrieval"
+    },
+    "search_advertising": {
+      "description": "Search advertising associates paid promotion with search terms or results; the article describes its importance to the commercial search business.",
+      "related_entity_id": "concept:search_advertising"
+    }
+  },
+  "relationship_graph": {
+    "node_id_convention": "Stable string IDs are used for concepts, processes, people, companies, algorithms, and historical engines.",
+    "graph_edges": [
+      {
+        "source": "concept:search_engine",
+        "relation": "retrieves_information_from",
+        "target": "concept:world_wide_web"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "accepts",
+        "target": "concept:search_query"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "returns",
+        "target": "concept:search_results_page"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "depends_on",
+        "target": "concept:web_crawler"
+      },
+      {
+        "source": "concept:web_crawler",
+        "relation": "checks_directives_in",
+        "target": "concept:robots_txt"
+      },
+      {
+        "source": "concept:web_crawler",
+        "relation": "feeds_documents_to",
+        "target": "concept:indexing"
+      },
+      {
+        "source": "concept:indexing",
+        "relation": "can_build",
+        "target": "concept:inverted_index"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "uses_for_retrieval",
+        "target": "concept:inverted_index"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "orders_results_using",
+        "target": "concept:ranking"
+      },
+      {
+        "source": "concept:ranking",
+        "relation": "can_use",
+        "target": "concept:link_analysis"
+      },
+      {
+        "source": "concept:link_analysis",
+        "relation": "includes_algorithm",
+        "target": "algorithm:pagerank"
+      },
+      {
+        "source": "algorithm:pagerank",
+        "relation": "historically_influenced_by",
+        "target": "algorithm:rankdex"
+      },
+      {
+        "source": "algorithm:rankdex",
+        "relation": "developed_by",
+        "target": "person:robin_li"
+      },
+      {
+        "source": "algorithm:pagerank",
+        "relation": "associated_with",
+        "target": "person:larry_page"
+      },
+      {
+        "source": "algorithm:pagerank",
+        "relation": "associated_with",
+        "target": "person:sergey_brin"
+      },
+      {
+        "source": "engine:google_search",
+        "relation": "operated_by",
+        "target": "company:google"
+      },
+      {
+        "source": "engine:bing",
+        "relation": "operated_by",
+        "target": "company:microsoft"
+      },
+      {
+        "source": "engine:yahoo_search",
+        "relation": "operated_by",
+        "target": "company:yahoo"
+      },
+      {
+        "source": "engine:baidu_search",
+        "relation": "operated_by",
+        "target": "company:baidu"
+      },
+      {
+        "source": "engine:yandex_search",
+        "relation": "operated_by",
+        "target": "company:yandex"
+      },
+      {
+        "source": "engine:duckduckgo_search",
+        "relation": "operated_by",
+        "target": "company:duckduckgo"
+      },
+      {
+        "source": "engine:brave_search",
+        "relation": "operated_by",
+        "target": "company:brave"
+      },
+      {
+        "source": "engine:naver_search",
+        "relation": "operated_by",
+        "target": "company:naver"
+      },
+      {
+        "source": "engine:archie",
+        "relation": "created_by",
+        "target": "person:alan_emtage"
+      },
+      {
+        "source": "engine:veronica",
+        "relation": "searches",
+        "target": "concept:human_curated_directory"
+      },
+      {
+        "source": "engine:w3catalog",
+        "relation": "created_by",
+        "target": "person:oscar_nierstrasz"
+      },
+      {
+        "source": "engine:world_wide_web_wanderer",
+        "relation": "created_by",
+        "target": "person:matthew_gray"
+      },
+      {
+        "source": "engine:wandex",
+        "relation": "built_from",
+        "target": "engine:world_wide_web_wanderer"
+      },
+      {
+        "source": "engine:jumpstation",
+        "relation": "created_by",
+        "target": "person:jonathon_fletcher"
+      },
+      {
+        "source": "company:lycos",
+        "relation": "developed_by",
+        "target": "person:michael_mauldin"
+      },
+      {
+        "source": "engine:rankdex",
+        "relation": "developed_by",
+        "target": "person:robin_li"
+      },
+      {
+        "source": "engine:google_search",
+        "relation": "uses_historically_associated_ranking_algorithm",
+        "target": "algorithm:pagerank"
+      },
+      {
+        "source": "engine:baidu_search",
+        "relation": "uses_technology_associated_with",
+        "target": "algorithm:rankdex"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "may_be_supported_by",
+        "target": "concept:search_advertising"
+      },
+      {
+        "source": "concept:search_engine_optimization",
+        "relation": "attempts_to_improve_visibility_in",
+        "target": "concept:search_results_page"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "has_specialized_form",
+        "target": "concept:vertical_search"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "has_specialized_form",
+        "target": "concept:local_search"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "has_specialized_form",
+        "target": "concept:enterprise_search"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "has_specialized_form",
+        "target": "concept:multimedia_search"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "has_specialized_form",
+        "target": "concept:metasearch"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "can_integrate",
+        "target": "concept:artificial_intelligence_search"
+      },
+      {
+        "source": "concept:search_engine",
+        "relation": "raises_questions_about",
+        "target": "concept:search_engine_bias"
+      },
+      {
+        "source": "concept:search_engine_bias",
+        "relation": "related_to",
+        "target": "concept:filter_bubble"
+      },
+      {
+        "source": "program:memex_vision",
+        "relation": "proposed_by",
+        "target": "person:vannevar_bush"
+      },
+      {
+        "source": "program:memex_vision",
+        "relation": "described_in",
+        "target": "work:as_we_may_think"
+      }
+    ]
+  },
+  "source_references": [
+    {
+      "id": "ref:statcounter_2025",
+      "number": 1,
+      "title": "StatCounter Global Stats – Search Engine Market Share (May 2025)",
+      "publisher": "StatCounter",
+      "supports": [
+        "market_context.historical_share_snapshot"
+      ]
+    },
+    {
+      "id": "ref:bush_1945",
+      "number": 2,
+      "title": "As We May Think",
+      "author": "Vannevar Bush",
+      "date": "1945-07-01",
+      "publisher": "The Atlantic",
+      "supports": [
+        "program:memex_vision",
+        "work:as_we_may_think"
+      ]
+    },
+    {
+      "id": "ref:search_engine_history",
+      "number": 3,
+      "title": "Search Engine History.com",
+      "supports": [
+        "history"
+      ]
+    },
+    {
+      "id": "ref:hyper_search_1997",
+      "number": 5,
+      "title": "The Quest for Correct Information on the Web: Hyper Search Engines",
+      "author": "Massimo Marchiori",
+      "date": "1997",
+      "supports": [
+        "concept:link_analysis"
+      ]
+    },
+    {
+      "id": "ref:anatomy_google_1998",
+      "number": 6,
+      "title": "The Anatomy of a Large-Scale Hypertextual Web Search Engine",
+      "authors": [
+        "Sergey Brin",
+        "Larry Page"
+      ],
+      "date": "1998",
+      "venue": "Proceedings of WWW7",
+      "supports": [
+        "algorithm:pagerank",
+        "engine:google_search"
+      ]
+    },
+    {
+      "id": "ref:rfc812",
+      "number": 7,
+      "title": "NICNAME/WHOIS",
+      "authors": [
+        "Ken Harrenstien",
+        "Vic White"
+      ],
+      "date": "1982-03",
+      "identifier": "RFC 812",
+      "supports": [
+        "history.pre_web_precursors"
+      ]
+    },
+    {
+      "id": "ref:archie_1990",
+      "number": 9,
+      "title": "An Internet archive server server (was about Lisp)",
+      "author": "Peter Deutsch",
+      "date": "1990-09-11",
+      "supports": [
+        "engine:archie"
+      ]
+    },
+    {
+      "id": "ref:w3catalog_1993",
+      "number": 17,
+      "title": "Searchable Catalog of WWW Resources (experimental)",
+      "author": "Oscar Nierstrasz",
+      "date": "1993-09-02",
+      "supports": [
+        "engine:w3catalog"
+      ]
+    },
+    {
+      "id": "ref:rankdex_patent",
+      "number": 25,
+      "title": "Hypertext Document Retrieval System and Method",
+      "inventor": "Yanhong Li",
+      "patent_number": "US 5920859",
+      "filed": "1997-02-05",
+      "issued": "1999-07-06",
+      "supports": [
+        "algorithm:rankdex"
+      ]
+    },
+    {
+      "id": "ref:google_pagerank_patent",
+      "number": 27,
+      "title": "Method for node ranking in a linked database",
+      "supports": [
+        "algorithm:pagerank"
+      ]
+    },
+    {
+      "id": "ref:market_dynamics_2001",
+      "number": 33,
+      "title": "The dynamics of competition in the internet search engine market",
+      "author": "Neil Gandal",
+      "date": "2001",
+      "journal": "International Journal of Industrial Organization",
+      "volume": "19",
+      "issue": "7",
+      "pages": "1103–1117",
+      "doi": "10.1016/S0167-7187(01)00065-0",
+      "supports": [
+        "market_context"
+      ]
+    },
+    {
+      "id": "ref:roose_ai_search_2023",
+      "number": 36,
+      "title": "The Race to Build an A.I.-Powered Search Engine",
+      "author": "Kevin Roose",
+      "publisher": "The New York Times",
+      "date": "2023-02-16",
+      "supports": [
+        "concept:artificial_intelligence_search"
+      ]
+    },
+    {
+      "id": "ref:search_engine_definition",
+      "number": 37,
+      "title": "Definition – search engine",
+      "publisher": "TechTarget",
+      "supports": [
+        "definition_and_core_functions"
+      ]
+    },
+    {
+      "id": "ref:discoverability_web",
+      "number": 39,
+      "title": "The Discoverability of the Web",
+      "authors": [
+        "Anirban Dasgupta",
+        "Arpita Ghosh",
+        "Ravi Kumar",
+        "Christopher Olston",
+        "Sandeep Pandey",
+        "Andrew Tomkins"
+      ],
+      "supports": [
+        "technology_pipeline"
+      ]
+    },
+    {
+      "id": "ref:coverage_bias_2004",
+      "number": 53,
+      "title": "Search engine coverage bias: evidence and possible causes",
+      "authors": [
+        "Liwen Vaughan",
+        "Mike Thelwall"
+      ],
+      "date": "2004",
+      "journal": "Information Processing & Management",
+      "volume": "40",
+      "issue": "4",
+      "pages": "693–707",
+      "doi": "10.1016/j.ipm.2003.06.003",
+      "supports": [
+        "concept:search_engine_bias"
+      ]
+    },
+    {
+      "id": "ref:pariser_filter_bubble_2011",
+      "number": 62,
+      "title": "The Filter Bubble: What the Internet Is Hiding from You",
+      "author": "Eli Pariser",
+      "date": "2011",
+      "publisher": "Penguin Press",
+      "supports": [
+        "concept:filter_bubble"
+      ]
+    },
+    {
+      "id": "ref:heymann_social_bookmarking_2008",
+      "number": 75,
+      "title": "Can Social Bookmarking Improve Web Search?",
+      "authors": [
+        "Paul Heymann",
+        "Georgia Koutrika",
+        "Hector Garcia-Molina"
+      ],
+      "date": "2008-02-12",
+      "venue": "ACM International Conference on Web Search and Data Mining",
+      "supports": [
+        "special_topics.social_bookmarking"
+      ]
+    }
+  ],
+  "source_quality_and_caveats": {
+    "source_is_user_supplied": true,
+    "independent_verification_performed": false,
+    "historical_status_note": "The article's search-engine timeline mixes engines that remain active, have been renamed, have been acquired, or are no longer operating. Status labels are preserved as article-reported context, not independently checked.",
+    "market_data_note": "The article's May 2025 market-share figures are historical and approximate; do not treat them as current figures.",
+    "taxonomy_note": "Search-engine categories can overlap; a modern product may combine crawling, metasearch, vertical search, semantic retrieval, and AI-generated answers.",
+    "bias_note": "The schema records research topics and debates without asserting that every claimed bias or filter-bubble mechanism occurs uniformly.",
+    "relationship_note": "Edges encode relationships stated or implied in the supplied article. Conceptual pipeline stages are normalized for machine readability."
+  },
+  "provenance": {
+    "transformation_method": "Structured extraction, normalization, and relationship modeling from user-provided Wikipedia article text.",
+    "generated_at_utc": "2026-10-20T16:38:42.255205+00:00",
+    "explicit_graph_edges": true,
+    "intended_uses": [
+      "knowledge graph ingestion",
+      "search technology reference",
+      "history of web search",
+      "entity relationship visualization",
+      "information retrieval ontology development"
+    ]
+  }
+}

@@ -1,0 +1,2660 @@
+{
+  "schema_name": "technical_knowledge_graph",
+  "schema_version": "1.0.0",
+  "artifact": {
+    "id": "artifact:torrent_file_full_detail",
+    "title": "Torrent File — Full-Detail Knowledge Graph",
+    "subject": "BitTorrent .torrent meta-info file format",
+    "created_date": "2026-10-20",
+    "language": "en",
+    "description": "Detailed machine-readable graph of torrent-file structure, metadata fields, v1/v2 identity and integrity models, extensions, discovery methods, workflow, examples, limitations, and source references.",
+    "source_policy": "Primary descriptive claims are grounded in the user-provided Torrent file article text. General security implications are explicitly identified as inference where applicable."
+  },
+  "entity_types": [
+    "data_format",
+    "media_type",
+    "protocol_specification",
+    "concept",
+    "network_architecture",
+    "network_concept",
+    "network_role",
+    "protocol_data_unit",
+    "torrent_field",
+    "serialization_format",
+    "character_encoding",
+    "cryptographic_identifier",
+    "cryptographic_hash",
+    "data_structure",
+    "security_property",
+    "network_service",
+    "distributed_system",
+    "distribution_mode",
+    "peer_discovery_strategy",
+    "workflow_step",
+    "metadata_layout",
+    "derived_value",
+    "security_concept",
+    "performance_property",
+    "security_limitation",
+    "magnet_topic",
+    "file_state",
+    "distribution_source",
+    "trust_property",
+    "security_risk",
+    "source"
+  ],
+  "relationship_types": [
+    "affected_by",
+    "aims_to_reduce",
+    "applies_to_communication_with",
+    "built_from",
+    "can_be_reduced_by",
+    "can_become",
+    "can_encode",
+    "can_reference",
+    "carries",
+    "contacts_for_discovery",
+    "contains",
+    "contains_digest_from",
+    "contains_digests_from",
+    "contains_participants",
+    "contains_per_file",
+    "contains_required_core_dictionary",
+    "contrasts_with",
+    "contributes_to",
+    "defined_by",
+    "defines",
+    "defines_size_of",
+    "derived_from",
+    "describes_not_contains",
+    "determines_piece_stream_order",
+    "documents",
+    "does_not_eliminate",
+    "does_not_prove",
+    "enables",
+    "explains_identity_behavior_for",
+    "extended_by",
+    "functions_as",
+    "has_media_type",
+    "has_v1_identity",
+    "has_v2_identity",
+    "hashed_to_in_v1",
+    "hashed_to_in_v2",
+    "helps_discover",
+    "identifies",
+    "identifies_v2_component",
+    "is_encoded_as",
+    "is_exception_to_nonempty_file_rule",
+    "is_specialized_role_of",
+    "linked_to",
+    "may_begin_with",
+    "may_contain",
+    "motivates",
+    "motivates_adoption_of",
+    "motivates_replacement_of",
+    "names_payload_for",
+    "names_root_for",
+    "organizes_distribution_as",
+    "parses",
+    "performs",
+    "points_to",
+    "provides",
+    "qualifies_meaning_of",
+    "reconstructed_by",
+    "references_multiple",
+    "represents",
+    "represents_layout_for",
+    "requests_and_uploads",
+    "requires_client_swarm_merging",
+    "restricts",
+    "serialized_using",
+    "specified_by",
+    "stores_piece_level_hash_data_for",
+    "stores_root_of",
+    "supports",
+    "used_by",
+    "used_for",
+    "used_with",
+    "uses",
+    "uses_for_discovery",
+    "uses_for_strings_except_binary_field",
+    "uses_truncated_form_of",
+    "verifies"
+  ],
+  "entities": [
+    {
+      "id": "concept:torrent_file",
+      "name": "Torrent file",
+      "type": "data_format",
+      "description": "A .torrent meta-info file containing metadata that describes distributed content and how a BitTorrent client can discover peers.",
+      "source_basis": "BEP-0003; BEP-0052",
+      "tags": [
+        "BitTorrent",
+        "metadata",
+        "peer-to-peer",
+        "file distribution"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "format:application_x_bittorrent",
+      "name": "application/x-bittorrent",
+      "type": "media_type",
+      "description": "Internet media type associated with .torrent files.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "MIME",
+        "torrent"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0003",
+      "name": "BEP-0003",
+      "type": "protocol_specification",
+      "description": "BitTorrent v1 protocol specification defining the classic torrent metadata model and protocol behavior.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "BitTorrent v1",
+        "bencoding",
+        "pieces"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0052",
+      "name": "BEP-0052",
+      "type": "protocol_specification",
+      "description": "BitTorrent v2 specification introducing a revised metadata layout, SHA-256-based hashing, file trees, and Merkle-based integrity metadata.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "BitTorrent v2",
+        "SHA-256",
+        "Merkle tree"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:metadata",
+      "name": "Metadata",
+      "type": "concept",
+      "description": "Descriptive information about files and directories, including names, sizes, paths, piece layout, integrity hashes, and discovery hints.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "data description",
+        "index"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:content_payload",
+      "name": "Content payload",
+      "type": "concept",
+      "description": "The actual files or folders being distributed; the torrent file describes them but does not itself contain their payload bytes.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "file data",
+        "download"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:table_of_contents",
+      "name": "Torrent as table of contents",
+      "type": "concept",
+      "description": "The torrent metadata acts as an index that lets a client understand the content layout and locate data pieces across peers.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "index",
+        "client"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:peer_to_peer",
+      "name": "Peer-to-peer distribution",
+      "type": "network_architecture",
+      "description": "Distribution model in which participating clients exchange pieces directly rather than requiring every client to fetch all bytes from a central server.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "P2P",
+        "swarm"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:swarm",
+      "name": "Swarm",
+      "type": "network_concept",
+      "description": "The group of peers participating in distribution of content identified by a torrent.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "peers",
+        "seeds",
+        "tracker"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:peer",
+      "name": "Peer",
+      "type": "network_role",
+      "description": "A BitTorrent participant that can request pieces and, after obtaining them, typically make those pieces available to other participants.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "client",
+        "upload",
+        "download"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:seeder",
+      "name": "Seeder",
+      "type": "network_role",
+      "description": "A peer that has the complete content and continues uploading pieces to other peers.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "peer",
+        "availability"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:piece",
+      "name": "Piece",
+      "type": "protocol_data_unit",
+      "description": "A logical chunk of content independently requested and integrity-checked in the classic BitTorrent model.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "piece length",
+        "hash"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:block_16k",
+      "name": "16 KiB block",
+      "type": "protocol_data_unit",
+      "description": "A 16 KiB data block used as a leaf-level input in the BitTorrent v2 Merkle construction described by the article.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "Merkle tree",
+        "piece root"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:announce",
+      "name": "announce",
+      "type": "torrent_field",
+      "description": "Top-level field containing a tracker URL in the classic metadata structure.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "tracker",
+        "URL"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:announce_list",
+      "name": "announce-list",
+      "type": "torrent_field",
+      "description": "Top-level extension field containing multiple tracker tiers or URLs.",
+      "source_basis": "BEP-0012",
+      "tags": [
+        "multiple trackers",
+        "BEP-0012"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:info",
+      "name": "info dictionary",
+      "type": "torrent_field",
+      "description": "Dictionary containing core content identity and layout metadata; the info dictionary is the input used to calculate the torrent infohash.",
+      "source_basis": "BEP-0003; BEP-0052",
+      "tags": [
+        "infohash",
+        "name",
+        "pieces"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:name",
+      "name": "name",
+      "type": "torrent_field",
+      "description": "Suggested file name for a single-file torrent or suggested directory name for a multi-file torrent.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "path",
+        "file layout"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:length",
+      "name": "length",
+      "type": "torrent_field",
+      "description": "File length in bytes; used directly for single-file torrents and inside each file entry for multi-file torrents.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "size",
+        "bytes"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:files",
+      "name": "files list",
+      "type": "torrent_field",
+      "description": "List of per-file dictionaries used when a torrent describes multiple files.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "length",
+        "path",
+        "multi-file"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:path",
+      "name": "path",
+      "type": "torrent_field",
+      "description": "List of path components that identifies a file within the multi-file torrent's directory structure.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "files",
+        "name"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:piece_length",
+      "name": "piece length",
+      "type": "torrent_field",
+      "description": "Number of bytes represented by each piece; v2 requires this value to be a power of two.",
+      "source_basis": "BEP-0003; BEP-0052",
+      "tags": [
+        "piece",
+        "file layout"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:pieces",
+      "name": "pieces",
+      "type": "torrent_field",
+      "description": "In v1, concatenated binary SHA-1 hashes for the pieces; the byte string length is a multiple of 20 bytes.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "SHA-1",
+        "piece",
+        "integrity"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:bencoding",
+      "name": "Bencoding",
+      "type": "serialization_format",
+      "description": "The encoding used for torrent metadata dictionaries, lists, integers, and byte strings; dictionary keys are lexicographically ordered.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "serialization",
+        "dictionary"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:utf8",
+      "name": "UTF-8",
+      "type": "character_encoding",
+      "description": "String values are UTF-8 encoded, except the v1 pieces field, which is binary hash data.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "text",
+        "binary"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:infohash_v1",
+      "name": "v1 infohash",
+      "type": "cryptographic_identifier",
+      "description": "SHA-1 digest calculated over the bencoded info dictionary; identifies the torrent in v1 peer discovery and magnet links.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "SHA-1",
+        "DHT",
+        "magnet link"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:sha1",
+      "name": "SHA-1",
+      "type": "cryptographic_hash",
+      "description": "160-bit hash function used by the classic v1 pieces field and v1 infohash.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "20-byte digest",
+        "v1"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:sha256",
+      "name": "SHA-256",
+      "type": "cryptographic_hash",
+      "description": "Hash function used in BitTorrent v2 piece-integrity metadata and the v2 infohash.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "32-byte digest",
+        "v2"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:infohash_v2",
+      "name": "v2 infohash",
+      "type": "cryptographic_identifier",
+      "description": "SHA-256-based identifier for a v2 torrent's info dictionary; the full hash is represented in btmh magnet links.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "SHA-256",
+        "btmh"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:magnet_link",
+      "name": "Magnet link",
+      "type": "resource_identifier",
+      "description": "A link that identifies a torrent through its content hash and allows a client to acquire metadata without first downloading a .torrent file.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "infohash",
+        "btmh",
+        "client"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:meta_version",
+      "name": "meta version",
+      "type": "torrent_field",
+      "description": "Field with value 2 identifying the v2 metadata format.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "v2",
+        "file tree"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:file_tree",
+      "name": "file tree",
+      "type": "torrent_field",
+      "description": "Tree of dictionaries whose keys represent directory or file names in the v2 metadata layout.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "multi-file",
+        "path",
+        "v2"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:piece_root",
+      "name": "piece root",
+      "type": "torrent_field",
+      "description": "For a non-empty v2 file, the Merkle root associated with the file's integrity tree built from 16 KiB blocks.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "Merkle tree",
+        "file integrity"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:piece_layers",
+      "name": "piece layers",
+      "type": "torrent_field",
+      "description": "Dictionary holding Merkle root hash data for pieces in the v2 format.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "Merkle tree",
+        "piece"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:merkle_tree",
+      "name": "Merkle tree",
+      "type": "data_structure",
+      "description": "Hash tree in which child hashes are combined recursively to produce a root hash that can support integrity proofs and localized verification.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "piece root",
+        "SHA-256",
+        "block"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:integrity_verification",
+      "name": "Integrity verification",
+      "type": "security_property",
+      "description": "Checking downloaded content against hashes committed to by torrent metadata; this establishes data integrity relative to the metadata, not safety or legitimacy.",
+      "source_basis": "BEP-0003; BEP-0052",
+      "tags": [
+        "hash",
+        "malware distinction"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:tracker",
+      "name": "Tracker",
+      "type": "network_service",
+      "description": "A service named by torrent metadata that helps clients discover peers participating in a swarm.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "announce",
+        "peer discovery"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:dht",
+      "name": "Distributed hash table (DHT)",
+      "type": "distributed_system",
+      "description": "A decentralized peer-discovery mechanism; BitTorrent Mainline DHT is specified by BEP-0005.",
+      "source_basis": "BEP-0005",
+      "tags": [
+        "nodes",
+        "trackerless",
+        "peer discovery"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0005",
+      "name": "BEP-0005",
+      "type": "protocol_specification",
+      "description": "BitTorrent extension for distributed hash tables, specifically Mainline DHT.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "DHT",
+        "nodes"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:nodes",
+      "name": "nodes",
+      "type": "torrent_field",
+      "description": "Optional bootstrap node list used by trackerless torrent metadata; entries pair host names or addresses with ports.",
+      "source_basis": "BEP-0005",
+      "tags": [
+        "DHT",
+        "bootstrap"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:trackerless_torrent",
+      "name": "Trackerless torrent",
+      "type": "distribution_mode",
+      "description": "A torrent that omits announce and instead can include nodes for DHT bootstrap information.",
+      "source_basis": "BEP-0005",
+      "tags": [
+        "nodes",
+        "DHT"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0012",
+      "name": "BEP-0012",
+      "type": "protocol_specification",
+      "description": "Multitracker metadata extension adding announce-list to support multiple trackers.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "announce-list",
+        "tracker"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:multiple_trackers",
+      "name": "Multiple trackers",
+      "type": "peer_discovery_strategy",
+      "description": "Providing multiple tracker endpoints can offer alternative peer-discovery paths if a tracker is unavailable.",
+      "source_basis": "BEP-0012",
+      "tags": [
+        "announce-list",
+        "resilience"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0019",
+      "name": "BEP-0019",
+      "type": "protocol_specification",
+      "description": "Extension that adds url-list web-seed URLs usable by clients to retrieve ordinary HTTP data without special server-side support.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "url-list",
+        "web seed"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:url_list",
+      "name": "url-list",
+      "type": "torrent_field",
+      "description": "Top-level list of URLs used as web seeds under BEP-0019.",
+      "source_basis": "BEP-0019",
+      "tags": [
+        "HTTP",
+        "HTTPS",
+        "web seed"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:web_seed",
+      "name": "Web seed",
+      "type": "distribution_source",
+      "description": "An HTTP(S) source from which a BitTorrent client can retrieve content alongside peer-to-peer sources.",
+      "source_basis": "BEP-0019",
+      "tags": [
+        "url-list",
+        "HTTP",
+        "mirror"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0017",
+      "name": "BEP-0017",
+      "type": "protocol_specification",
+      "description": "Extension defining the httpseeds field for web addresses where data can be retrieved with special server support; article describes it as Draft status.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "httpseeds",
+        "web seed"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:httpseeds",
+      "name": "httpseeds",
+      "type": "torrent_field",
+      "description": "List of web addresses for retrieving torrent data using the BEP-0017 approach, which requires special server support according to the article.",
+      "source_basis": "BEP-0017",
+      "tags": [
+        "HTTP",
+        "web seed"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0027",
+      "name": "BEP-0027",
+      "type": "protocol_specification",
+      "description": "Private torrents extension defining a private flag in the info dictionary.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "private",
+        "tracker policy"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:private",
+      "name": "private",
+      "type": "torrent_field",
+      "description": "Flag with value 1 indicating a private torrent policy; the article says decentralized discovery mechanisms are disabled to preserve tracker control.",
+      "source_basis": "BEP-0027",
+      "tags": [
+        "DHT",
+        "PEX",
+        "LSD"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:private_tracker",
+      "name": "Private tracker",
+      "type": "network_service",
+      "description": "Tracker that restricts access to its peer list, often by recognizing registered users or known IP addresses and maintaining transfer statistics.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "private torrent",
+        "access control"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:pex",
+      "name": "Peer Exchange (PEX)",
+      "type": "peer_discovery_mechanism",
+      "description": "A decentralized peer-discovery method that private-torrent policy typically disables according to the article.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "private torrent",
+        "peer discovery"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:lsd",
+      "name": "Local Service Discovery (LSD)",
+      "type": "peer_discovery_mechanism",
+      "description": "A local-network peer-discovery method that private-torrent policy typically disables according to the article.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "private torrent",
+        "peer discovery"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "standard:bep_0030",
+      "name": "BEP-0030",
+      "type": "protocol_specification",
+      "description": "Extension describing Merkle hash torrents intended to reduce torrent metadata size; the article describes a root_hash field and SHA-1-based construction.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "Merkle tree",
+        "root_hash"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "field:root_hash",
+      "name": "root_hash",
+      "type": "torrent_field",
+      "description": "Legacy Merkle-torrent field containing a binary SHA-1 Merkle root in the BEP-0030 description.",
+      "source_basis": "BEP-0030",
+      "tags": [
+        "Merkle tree",
+        "SHA-1"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:hybrid_torrent",
+      "name": "Hybrid torrent",
+      "type": "metadata_format_variant",
+      "description": "Torrent metadata that carries both v1-compatible and v2 fields so clients can support both ecosystems; v1 and v2 identities differ and clients must merge corresponding swarms.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "v1",
+        "v2",
+        "two infohashes"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:single_file_torrent",
+      "name": "Single-file torrent",
+      "type": "metadata_layout",
+      "description": "Torrent whose info dictionary uses length to describe one file.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "length",
+        "name"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:multi_file_torrent",
+      "name": "Multi-file torrent",
+      "type": "metadata_layout",
+      "description": "Torrent whose info dictionary uses a files list with per-file length and path fields.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "files",
+        "path",
+        "directory"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:piece_boundary",
+      "name": "Piece boundaries across files",
+      "type": "layout_rule",
+      "description": "In the classic multi-file model, file data is concatenated in files-list order for piece hashing; pieces are generally piece-length sized except the last.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "files",
+        "pieces",
+        "piece length"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:piece_count",
+      "name": "Piece count",
+      "type": "derived_value",
+      "description": "Number of pieces for a classic torrent is ceiling(total content bytes / piece length), with the last piece possibly shorter.",
+      "source_basis": "Derived from article's example",
+      "tags": [
+        "length",
+        "piece length"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:binary_hash_blob",
+      "name": "Binary hash blob",
+      "type": "data_representation",
+      "description": "The v1 pieces field is a binary byte string rather than human-readable UTF-8 text.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "pieces",
+        "20-byte hashes"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:hash_collision_risk",
+      "name": "Hash security limitation",
+      "type": "security_concept",
+      "description": "The article characterizes SHA-1 as broken in the v2 comparison; v2 adopts SHA-256 for integrity metadata and infohashing.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "SHA-1",
+        "SHA-256"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:metadata_size",
+      "name": "Torrent metadata size",
+      "type": "performance_property",
+      "description": "The size of a .torrent file is influenced by metadata and the amount of integrity-hash information it carries; Merkle approaches can reduce metadata burden in described cases.",
+      "source_basis": "BEP-0030; BEP-0052",
+      "tags": [
+        "pieces",
+        "Merkle tree"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:server_load_reduction",
+      "name": "Server load reduction",
+      "type": "system_benefit",
+      "description": "Peer-to-peer piece exchange distributes outbound bandwidth demand across participants instead of requiring one source to serve every copy.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "P2P",
+        "swarm",
+        "web seed"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:asymmetric_internet",
+      "name": "Asymmetric internet access",
+      "type": "network_constraint",
+      "description": "Many access connections provide greater download than upload capacity, which can constrain centralized distribution and motivate peer-to-peer sharing.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "upload bandwidth",
+        "P2P"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:client",
+      "name": "BitTorrent client",
+      "type": "software_role",
+      "description": "Software that parses torrent metadata, discovers peers, requests and verifies pieces, assembles content, and may continue uploading after completion.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "bencoding",
+        "tracker",
+        "DHT"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:metadata_acquisition",
+      "name": "Metadata acquisition",
+      "type": "workflow_step",
+      "description": "A user obtains a .torrent file directly or begins from a magnet link and then uses a client to obtain the necessary metadata and content.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "torrent file",
+        "magnet link",
+        "client"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:piece_assembly",
+      "name": "Piece assembly",
+      "type": "workflow_step",
+      "description": "After all pieces have been obtained and verified, the client reconstructs the usable file or directory structure.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "piece",
+        "client",
+        "content payload"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:privacy_limit",
+      "name": "Private flag is not cryptographic privacy",
+      "type": "security_limitation",
+      "description": "The private flag is a tracker-policy signal, not a guarantee of anonymity; manually removing it changes the infohash and creates a different swarm.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "private",
+        "infohash",
+        "privacy"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:tracker_list_identity",
+      "name": "Tracker list excluded from infohash",
+      "type": "identity_rule",
+      "description": "Changes to fields outside the info dictionary, such as the tracker list, do not change the infohash; changes inside info do.",
+      "source_basis": "BEP-0003",
+      "tags": [
+        "infohash",
+        "announce"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:v2_truncated_hash",
+      "name": "Truncated v2 hash for legacy message structures",
+      "type": "compatibility_mechanism",
+      "description": "The article states that tracker and DHT communication use a 20-byte truncated v2 hash while btmh magnet links carry the full 32-byte hash.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "SHA-256",
+        "DHT",
+        "btmh"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:btmh",
+      "name": "btmh",
+      "type": "magnet_topic",
+      "description": "Magnet-link topic type that carries the full 32-byte v2 SHA-256-based hash.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "magnet link",
+        "infohash v2"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:duplicate_file_detection",
+      "name": "Cross-torrent duplicate-file detection",
+      "type": "capability",
+      "description": "Independent per-file Merkle roots in v2 can allow duplicate files to be recognized across torrents even when piece lengths differ.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "piece root",
+        "file tree"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:empty_file",
+      "name": "Empty file",
+      "type": "file_state",
+      "description": "A zero-length file does not have the non-empty-file piece root described by the v2 format.",
+      "source_basis": "BEP-0052",
+      "tags": [
+        "piece root",
+        "length"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:linux_distribution_delivery",
+      "name": "Linux distribution delivery",
+      "type": "use_case",
+      "description": "Open-source operating systems and Linux distributions may offer torrent downloads to spread distribution bandwidth across users.",
+      "source_basis": "Wikipedia Torrent file article",
+      "tags": [
+        "server load reduction",
+        "web seed"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:mirror_site",
+      "name": "Mirror site",
+      "type": "distribution_source",
+      "description": "An alternate HTTP(S) source that can be combined with peer-to-peer sources for robust delivery.",
+      "source_basis": "BEP-0019",
+      "tags": [
+        "web seed",
+        "url-list"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:content_legitimacy",
+      "name": "Content legitimacy",
+      "type": "trust_property",
+      "description": "Torrent metadata and hashes do not establish whether content is lawful, authorized, or safe to execute.",
+      "source_basis": "Inference bounded by integrity-verification semantics",
+      "tags": [
+        "integrity verification",
+        "malware risk"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "concept:malware_risk",
+      "name": "Malware risk",
+      "type": "security_risk",
+      "description": "A hash match establishes consistency with torrent metadata but does not prove downloaded files are benign.",
+      "source_basis": "General security inference",
+      "tags": [
+        "integrity verification",
+        "content legitimacy"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:wikipedia_torrent_file",
+      "name": "Wikipedia: Torrent file",
+      "type": "source",
+      "description": "User-provided article text about torrent-file structure, v1/v2, extensions, and examples.",
+      "source_basis": "User-provided file",
+      "tags": [
+        "background",
+        "file structure",
+        "extensions"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep3",
+      "name": "BitTorrent BEP-0003",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for v1 torrent metadata and BitTorrent protocol details.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "v1",
+        "bencoding"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep52",
+      "name": "BitTorrent BEP-0052",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for v2 metadata, SHA-256, and Merkle trees.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "v2",
+        "Merkle tree"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep5",
+      "name": "BitTorrent BEP-0005",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for Mainline DHT and trackerless torrent metadata.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "DHT",
+        "nodes"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep12",
+      "name": "BitTorrent BEP-0012",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for announce-list and multiple trackers.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "multiple trackers"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep19",
+      "name": "BitTorrent BEP-0019",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for url-list web seeds.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "web seeds"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep27",
+      "name": "BitTorrent BEP-0027",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for the private torrent flag.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "private torrents"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep17",
+      "name": "BitTorrent BEP-0017",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for httpseeds.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "HTTP seeds"
+      ],
+      "properties": {}
+    },
+    {
+      "id": "source:bittorrent_bep30",
+      "name": "BitTorrent BEP-0030",
+      "type": "source",
+      "description": "Protocol specification cited by the supplied article for the legacy Merkle hash torrent extension.",
+      "source_basis": "Bittorrent.org",
+      "tags": [
+        "Merkle torrents"
+      ],
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:torrent_file:0001",
+      "source": "concept:torrent_file",
+      "target": "concept:metadata",
+      "type": "contains",
+      "domain": "torrent",
+      "description": "A torrent file stores descriptive metadata about the payload.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0002",
+      "source": "concept:torrent_file",
+      "target": "concept:content_payload",
+      "type": "describes_not_contains",
+      "domain": "torrent",
+      "description": "The metadata describes payload files but does not embed their contents.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0003",
+      "source": "concept:torrent_file",
+      "target": "concept:table_of_contents",
+      "type": "functions_as",
+      "domain": "torrent",
+      "description": "The metadata serves as a table of contents for clients.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0004",
+      "source": "concept:torrent_file",
+      "target": "format:application_x_bittorrent",
+      "type": "has_media_type",
+      "domain": "torrent",
+      "description": "The article lists application/x-bittorrent.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0005",
+      "source": "concept:torrent_file",
+      "target": "standard:bep_0003",
+      "type": "specified_by",
+      "domain": "torrent",
+      "description": "The classic format is specified by BEP-0003.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0006",
+      "source": "concept:torrent_file",
+      "target": "standard:bep_0052",
+      "type": "extended_by",
+      "domain": "torrent",
+      "description": "BEP-0052 defines the v2 metadata format.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0007",
+      "source": "concept:torrent_file",
+      "target": "concept:bencoding",
+      "type": "serialized_using",
+      "domain": "torrent",
+      "description": "Torrent metadata is a bencoded dictionary.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0008",
+      "source": "concept:torrent_file",
+      "target": "field:announce",
+      "type": "may_contain",
+      "domain": "torrent",
+      "description": "The top-level announce field gives a tracker URL.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0009",
+      "source": "concept:torrent_file",
+      "target": "field:info",
+      "type": "contains_required_core_dictionary",
+      "domain": "torrent",
+      "description": "The info dictionary carries core content metadata.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0010",
+      "source": "field:info",
+      "target": "concept:infohash_v1",
+      "type": "hashed_to_in_v1",
+      "domain": "torrent",
+      "description": "The bencoded info dictionary is hashed to form the v1 infohash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0011",
+      "source": "field:info",
+      "target": "concept:infohash_v2",
+      "type": "hashed_to_in_v2",
+      "domain": "torrent",
+      "description": "In v2 the info dictionary is identified with SHA-256-based hashing.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0012",
+      "source": "field:announce",
+      "target": "concept:tracker",
+      "type": "points_to",
+      "domain": "torrent",
+      "description": "The announce URL identifies a tracker endpoint.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0013",
+      "source": "concept:tracker",
+      "target": "concept:peer",
+      "type": "helps_discover",
+      "domain": "torrent",
+      "description": "Trackers help clients discover peers.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0014",
+      "source": "concept:dht",
+      "target": "concept:peer",
+      "type": "helps_discover",
+      "domain": "torrent",
+      "description": "DHT provides a decentralized peer-discovery route.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0015",
+      "source": "concept:peer_to_peer",
+      "target": "concept:swarm",
+      "type": "organizes_distribution_as",
+      "domain": "torrent",
+      "description": "Peers exchange pieces within a swarm.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0016",
+      "source": "concept:swarm",
+      "target": "concept:peer",
+      "type": "contains_participants",
+      "domain": "torrent",
+      "description": "Peers participate in a content swarm.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0017",
+      "source": "concept:peer",
+      "target": "concept:piece",
+      "type": "requests_and_uploads",
+      "domain": "torrent",
+      "description": "Peers request pieces and can upload pieces they possess.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0018",
+      "source": "concept:seeder",
+      "target": "concept:peer",
+      "type": "is_specialized_role_of",
+      "domain": "torrent",
+      "description": "A seeder is a peer with complete content.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0019",
+      "source": "concept:client",
+      "target": "concept:torrent_file",
+      "type": "parses",
+      "domain": "torrent",
+      "description": "The client parses torrent metadata.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0020",
+      "source": "concept:client",
+      "target": "concept:tracker",
+      "type": "contacts_for_discovery",
+      "domain": "torrent",
+      "description": "The client can contact trackers listed in metadata.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0021",
+      "source": "concept:client",
+      "target": "concept:dht",
+      "type": "uses_for_discovery",
+      "domain": "torrent",
+      "description": "The client may use DHT for peer discovery.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0022",
+      "source": "concept:client",
+      "target": "concept:piece_assembly",
+      "type": "performs",
+      "domain": "torrent",
+      "description": "The client reconstructs the content from pieces.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0023",
+      "source": "concept:metadata_acquisition",
+      "target": "concept:torrent_file",
+      "type": "may_begin_with",
+      "domain": "torrent",
+      "description": "A user may first acquire a torrent file.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0024",
+      "source": "concept:metadata_acquisition",
+      "target": "concept:magnet_link",
+      "type": "may_begin_with",
+      "domain": "torrent",
+      "description": "A user may instead begin with a magnet link.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0025",
+      "source": "concept:magnet_link",
+      "target": "concept:infohash_v1",
+      "type": "can_encode",
+      "domain": "torrent",
+      "description": "A v1 magnet link can identify a torrent by its infohash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0026",
+      "source": "concept:magnet_link",
+      "target": "concept:btmh",
+      "type": "can_encode",
+      "domain": "torrent",
+      "description": "A v2 magnet link can use the btmh topic.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0027",
+      "source": "concept:btmh",
+      "target": "concept:infohash_v2",
+      "type": "carries",
+      "domain": "torrent",
+      "description": "The btmh topic carries the full v2 hash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0028",
+      "source": "field:files",
+      "target": "field:length",
+      "type": "contains_per_file",
+      "domain": "torrent",
+      "description": "Each multi-file entry includes a length.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0029",
+      "source": "field:files",
+      "target": "field:path",
+      "type": "contains_per_file",
+      "domain": "torrent",
+      "description": "Each multi-file entry includes path components.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0030",
+      "source": "field:name",
+      "target": "concept:single_file_torrent",
+      "type": "names_payload_for",
+      "domain": "torrent",
+      "description": "For a single file, name is the suggested filename.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0031",
+      "source": "field:name",
+      "target": "concept:multi_file_torrent",
+      "type": "names_root_for",
+      "domain": "torrent",
+      "description": "For multiple files, name is the suggested directory name.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0032",
+      "source": "concept:single_file_torrent",
+      "target": "field:length",
+      "type": "uses",
+      "domain": "torrent",
+      "description": "Single-file metadata stores total file length.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0033",
+      "source": "concept:multi_file_torrent",
+      "target": "field:files",
+      "type": "uses",
+      "domain": "torrent",
+      "description": "Multi-file metadata stores a files list.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0034",
+      "source": "concept:multi_file_torrent",
+      "target": "concept:piece_boundary",
+      "type": "determines_piece_stream_order",
+      "domain": "torrent",
+      "description": "Files are concatenated in the order listed for v1 piece hashing.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0035",
+      "source": "field:piece_length",
+      "target": "concept:piece",
+      "type": "defines_size_of",
+      "domain": "torrent",
+      "description": "Piece length defines the nominal number of bytes per piece.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0036",
+      "source": "field:pieces",
+      "target": "concept:sha1",
+      "type": "contains_digests_from",
+      "domain": "torrent",
+      "description": "The v1 pieces blob concatenates SHA-1 digests.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0037",
+      "source": "concept:sha1",
+      "target": "concept:infohash_v1",
+      "type": "used_for",
+      "domain": "torrent",
+      "description": "SHA-1 is used for v1 infohashing.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0038",
+      "source": "concept:sha256",
+      "target": "concept:infohash_v2",
+      "type": "used_for",
+      "domain": "torrent",
+      "description": "SHA-256 is used for v2 infohashing.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0039",
+      "source": "field:pieces",
+      "target": "concept:binary_hash_blob",
+      "type": "is_encoded_as",
+      "domain": "torrent",
+      "description": "The pieces value is binary rather than UTF-8 text.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0040",
+      "source": "concept:bencoding",
+      "target": "concept:utf8",
+      "type": "uses_for_strings_except_binary_field",
+      "domain": "torrent",
+      "description": "Strings are UTF-8 except the binary pieces field.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0041",
+      "source": "concept:piece_count",
+      "target": "field:length",
+      "type": "derived_from",
+      "domain": "torrent",
+      "description": "Piece count is calculated from total length.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0042",
+      "source": "concept:piece_count",
+      "target": "field:piece_length",
+      "type": "derived_from",
+      "domain": "torrent",
+      "description": "Piece count is ceiling(total length divided by piece length).",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0043",
+      "source": "concept:integrity_verification",
+      "target": "concept:piece",
+      "type": "verifies",
+      "domain": "torrent",
+      "description": "Piece hashes allow clients to check downloaded data.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0044",
+      "source": "concept:integrity_verification",
+      "target": "concept:content_legitimacy",
+      "type": "does_not_prove",
+      "domain": "torrent",
+      "description": "Integrity does not establish authorization or safety.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0045",
+      "source": "concept:integrity_verification",
+      "target": "concept:malware_risk",
+      "type": "does_not_eliminate",
+      "domain": "torrent",
+      "description": "Hash verification does not prove content is malware-free.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0046",
+      "source": "field:meta_version",
+      "target": "concept:hybrid_torrent",
+      "type": "identifies_v2_component",
+      "domain": "torrent",
+      "description": "The value 2 identifies the v2 metadata version.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0047",
+      "source": "field:file_tree",
+      "target": "concept:multi_file_torrent",
+      "type": "represents_layout_for",
+      "domain": "torrent",
+      "description": "The v2 file tree encodes directory and file names.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0048",
+      "source": "field:piece_root",
+      "target": "concept:merkle_tree",
+      "type": "stores_root_of",
+      "domain": "torrent",
+      "description": "For non-empty files, piece-root metadata represents a Merkle root.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0049",
+      "source": "field:piece_layers",
+      "target": "concept:merkle_tree",
+      "type": "stores_piece_level_hash_data_for",
+      "domain": "torrent",
+      "description": "Piece layers store Merkle hash data for pieces.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0050",
+      "source": "concept:merkle_tree",
+      "target": "concept:block_16k",
+      "type": "built_from",
+      "domain": "torrent",
+      "description": "The described v2 tree is constructed from 16 KiB blocks.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0051",
+      "source": "concept:merkle_tree",
+      "target": "concept:integrity_verification",
+      "type": "supports",
+      "domain": "torrent",
+      "description": "Merkle structure supports verification of blocks/pieces.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0052",
+      "source": "concept:merkle_tree",
+      "target": "concept:duplicate_file_detection",
+      "type": "enables",
+      "domain": "torrent",
+      "description": "Independent file roots can help identify duplicate files across torrents.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0053",
+      "source": "concept:empty_file",
+      "target": "field:piece_root",
+      "type": "is_exception_to_nonempty_file_rule",
+      "domain": "torrent",
+      "description": "The stated piece-root rule applies to non-empty files.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0054",
+      "source": "concept:hybrid_torrent",
+      "target": "concept:infohash_v1",
+      "type": "has_v1_identity",
+      "domain": "torrent",
+      "description": "Hybrid metadata participates in the v1 identity space.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0055",
+      "source": "concept:hybrid_torrent",
+      "target": "concept:infohash_v2",
+      "type": "has_v2_identity",
+      "domain": "torrent",
+      "description": "Hybrid metadata also has a distinct v2 identity.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0056",
+      "source": "concept:hybrid_torrent",
+      "target": "concept:swarm",
+      "type": "requires_client_swarm_merging",
+      "domain": "torrent",
+      "description": "Different v1 and v2 infohashes can create separate swarms that clients must handle together.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0057",
+      "source": "field:announce_list",
+      "target": "standard:bep_0012",
+      "type": "defined_by",
+      "domain": "torrent",
+      "description": "BEP-0012 defines the announce-list extension.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0058",
+      "source": "field:announce_list",
+      "target": "concept:multiple_trackers",
+      "type": "represents",
+      "domain": "torrent",
+      "description": "The list provides multiple tracker endpoints.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0059",
+      "source": "concept:multiple_trackers",
+      "target": "concept:tracker",
+      "type": "references_multiple",
+      "domain": "torrent",
+      "description": "Multiple tracker URLs can provide alternative discovery endpoints.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0060",
+      "source": "field:nodes",
+      "target": "standard:bep_0005",
+      "type": "defined_by",
+      "domain": "torrent",
+      "description": "The nodes field is described by BEP-0005.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0061",
+      "source": "field:nodes",
+      "target": "concept:trackerless_torrent",
+      "type": "used_by",
+      "domain": "torrent",
+      "description": "Trackerless torrent metadata can list DHT bootstrap nodes.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0062",
+      "source": "concept:trackerless_torrent",
+      "target": "concept:dht",
+      "type": "uses",
+      "domain": "torrent",
+      "description": "Trackerless discovery can rely on DHT.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0063",
+      "source": "field:url_list",
+      "target": "standard:bep_0019",
+      "type": "defined_by",
+      "domain": "torrent",
+      "description": "BEP-0019 defines url-list web seeds.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0064",
+      "source": "field:url_list",
+      "target": "concept:web_seed",
+      "type": "identifies",
+      "domain": "torrent",
+      "description": "The URLs identify web-seed sources.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0065",
+      "source": "concept:web_seed",
+      "target": "concept:server_load_reduction",
+      "type": "contributes_to",
+      "domain": "torrent",
+      "description": "Web seeds can be combined with P2P delivery to reduce server load.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0066",
+      "source": "concept:web_seed",
+      "target": "concept:mirror_site",
+      "type": "can_reference",
+      "domain": "torrent",
+      "description": "Web seeds can refer to mirror sites.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0067",
+      "source": "field:httpseeds",
+      "target": "standard:bep_0017",
+      "type": "defined_by",
+      "domain": "torrent",
+      "description": "BEP-0017 defines the httpseeds field described in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0068",
+      "source": "field:private",
+      "target": "standard:bep_0027",
+      "type": "defined_by",
+      "domain": "torrent",
+      "description": "BEP-0027 defines the private flag.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.98
+    },
+    {
+      "id": "rel:torrent_file:0069",
+      "source": "field:private",
+      "target": "concept:private_tracker",
+      "type": "used_with",
+      "domain": "torrent",
+      "description": "Private torrents are intended to be used with private trackers.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0070",
+      "source": "concept:private_tracker",
+      "target": "concept:pex",
+      "type": "restricts",
+      "domain": "torrent",
+      "description": "Private-torrent policy disables PEX in the article's description.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0071",
+      "source": "concept:private_tracker",
+      "target": "concept:lsd",
+      "type": "restricts",
+      "domain": "torrent",
+      "description": "Private-torrent policy disables LSD in the article's description.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0072",
+      "source": "concept:private_tracker",
+      "target": "concept:dht",
+      "type": "restricts",
+      "domain": "torrent",
+      "description": "Private-torrent policy disables DHT to maintain centralized control.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0073",
+      "source": "concept:privacy_limit",
+      "target": "field:private",
+      "type": "qualifies_meaning_of",
+      "domain": "torrent",
+      "description": "The flag represents policy, not cryptographic anonymity.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0074",
+      "source": "concept:privacy_limit",
+      "target": "concept:infohash_v1",
+      "type": "linked_to",
+      "domain": "torrent",
+      "description": "Removing the private flag changes the info dictionary and thus the v1 infohash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0075",
+      "source": "concept:tracker_list_identity",
+      "target": "field:announce",
+      "type": "explains_identity_behavior_for",
+      "domain": "torrent",
+      "description": "Changing tracker metadata outside info does not change the infohash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0076",
+      "source": "concept:tracker_list_identity",
+      "target": "field:info",
+      "type": "contrasts_with",
+      "domain": "torrent",
+      "description": "Changes to info affect the infohash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0077",
+      "source": "standard:bep_0030",
+      "target": "field:root_hash",
+      "type": "defines",
+      "domain": "torrent",
+      "description": "The legacy Merkle torrent approach uses root_hash in info.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0078",
+      "source": "field:root_hash",
+      "target": "concept:sha1",
+      "type": "contains_digest_from",
+      "domain": "torrent",
+      "description": "The described legacy root_hash is a binary SHA-1 hash.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0079",
+      "source": "standard:bep_0030",
+      "target": "concept:metadata_size",
+      "type": "aims_to_reduce",
+      "domain": "torrent",
+      "description": "Merkle hash torrents were intended to reduce torrent-file metadata size.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0080",
+      "source": "concept:metadata_size",
+      "target": "field:pieces",
+      "type": "affected_by",
+      "domain": "torrent",
+      "description": "A per-piece hash list contributes to metadata size.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0081",
+      "source": "concept:metadata_size",
+      "target": "concept:merkle_tree",
+      "type": "can_be_reduced_by",
+      "domain": "torrent",
+      "description": "Merkle metadata can reduce some metadata overhead.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0082",
+      "source": "concept:asymmetric_internet",
+      "target": "concept:server_load_reduction",
+      "type": "motivates",
+      "domain": "torrent",
+      "description": "Upload constraints and central bottlenecks motivate decentralized distribution.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0083",
+      "source": "concept:peer_to_peer",
+      "target": "concept:server_load_reduction",
+      "type": "provides",
+      "domain": "torrent",
+      "description": "Peer uploads distribute bandwidth demand.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0084",
+      "source": "concept:linux_distribution_delivery",
+      "target": "concept:peer_to_peer",
+      "type": "uses",
+      "domain": "torrent",
+      "description": "Linux distributions can use torrents to distribute large downloads.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0085",
+      "source": "concept:content_payload",
+      "target": "concept:piece_assembly",
+      "type": "reconstructed_by",
+      "domain": "torrent",
+      "description": "Clients assemble the payload from downloaded pieces.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0086",
+      "source": "concept:client",
+      "target": "concept:seeder",
+      "type": "can_become",
+      "domain": "torrent",
+      "description": "A client with all pieces may continue sharing as a seeder.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0087",
+      "source": "concept:v2_truncated_hash",
+      "target": "concept:infohash_v2",
+      "type": "uses_truncated_form_of",
+      "domain": "torrent",
+      "description": "Tracker/DHT messaging uses a 20-byte truncated v2 hash per the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0088",
+      "source": "concept:v2_truncated_hash",
+      "target": "concept:dht",
+      "type": "applies_to_communication_with",
+      "domain": "torrent",
+      "description": "The truncated hash fits legacy DHT message structures.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0089",
+      "source": "concept:v2_truncated_hash",
+      "target": "concept:tracker",
+      "type": "applies_to_communication_with",
+      "domain": "torrent",
+      "description": "The truncated hash fits tracker message structures.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0090",
+      "source": "concept:hash_collision_risk",
+      "target": "concept:sha1",
+      "type": "motivates_replacement_of",
+      "domain": "torrent",
+      "description": "The article characterizes SHA-1 as broken in this context.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0091",
+      "source": "concept:hash_collision_risk",
+      "target": "concept:sha256",
+      "type": "motivates_adoption_of",
+      "domain": "torrent",
+      "description": "V2 adopts SHA-256.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0092",
+      "source": "source:wikipedia_torrent_file",
+      "target": "concept:torrent_file",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Primary source supplied by the user.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0093",
+      "source": "source:bittorrent_bep3",
+      "target": "standard:bep_0003",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0094",
+      "source": "source:bittorrent_bep52",
+      "target": "standard:bep_0052",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0095",
+      "source": "source:bittorrent_bep5",
+      "target": "standard:bep_0005",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0096",
+      "source": "source:bittorrent_bep12",
+      "target": "standard:bep_0012",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0097",
+      "source": "source:bittorrent_bep19",
+      "target": "standard:bep_0019",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0098",
+      "source": "source:bittorrent_bep27",
+      "target": "standard:bep_0027",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0099",
+      "source": "source:bittorrent_bep17",
+      "target": "standard:bep_0017",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    },
+    {
+      "id": "rel:torrent_file:0100",
+      "source": "source:bittorrent_bep30",
+      "target": "standard:bep_0030",
+      "type": "documents",
+      "domain": "torrent",
+      "description": "Protocol reference cited in the article.",
+      "evidence_type": "source-derived_or_direct_inference",
+      "confidence": 0.91
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern:v1_torrent_parse",
+      "name": "Parse and interpret a v1 .torrent file",
+      "summary": "Decode bencoding, read the info dictionary, interpret single-file or multi-file layout, and use piece hashes to verify payload chunks.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Read the .torrent byte stream and decode its bencoded top-level dictionary."
+        },
+        {
+          "order": 2,
+          "action": "Read announce if present, plus optional extension fields such as announce-list, url-list, httpseeds, nodes, and private."
+        },
+        {
+          "order": 3,
+          "action": "Read info.name and either info.length for a single file or info.files entries for a multi-file torrent."
+        },
+        {
+          "order": 4,
+          "action": "Read piece length and split the logical content stream into pieces; multi-file v1 content follows files-list order."
+        },
+        {
+          "order": 5,
+          "action": "Interpret pieces as concatenated 20-byte SHA-1 digests, one digest per piece."
+        },
+        {
+          "order": 6,
+          "action": "Calculate the v1 infohash over the exact bencoded info dictionary and use it for torrent identity."
+        },
+        {
+          "order": 7,
+          "action": "Use trackers and/or DHT to discover peers, fetch pieces, verify them, and assemble the payload."
+        }
+      ],
+      "entities": [
+        "concept:torrent_file",
+        "concept:bencoding",
+        "field:info",
+        "field:announce",
+        "field:files",
+        "field:pieces",
+        "concept:infohash_v1",
+        "concept:tracker",
+        "concept:dht",
+        "concept:integrity_verification",
+        "concept:piece_assembly"
+      ]
+    },
+    {
+      "id": "pattern:v2_torrent_integrity",
+      "name": "BitTorrent v2 metadata and Merkle verification",
+      "summary": "Use v2 metadata fields and SHA-256-based Merkle structures to describe files and verify content at block and piece levels.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Identify v2 metadata using meta version = 2."
+        },
+        {
+          "order": 2,
+          "action": "Read file tree to determine the directory and file hierarchy."
+        },
+        {
+          "order": 3,
+          "action": "Read piece length, which must be a power of two in v2."
+        },
+        {
+          "order": 4,
+          "action": "For each non-empty file, interpret piece root as the Merkle root built from 16 KiB blocks."
+        },
+        {
+          "order": 5,
+          "action": "Use piece layers to carry per-piece Merkle root data."
+        },
+        {
+          "order": 6,
+          "action": "Use SHA-256-based piece hashing and v2 infohashing; use the full hash in btmh magnet links."
+        },
+        {
+          "order": 7,
+          "action": "When speaking to legacy tracker/DHT message structures, account for the described 20-byte truncated hash."
+        }
+      ],
+      "entities": [
+        "standard:bep_0052",
+        "field:meta_version",
+        "field:file_tree",
+        "field:piece_root",
+        "field:piece_layers",
+        "concept:block_16k",
+        "concept:merkle_tree",
+        "concept:sha256",
+        "concept:infohash_v2",
+        "concept:btmh",
+        "concept:v2_truncated_hash"
+      ]
+    },
+    {
+      "id": "pattern:trackerless_discovery",
+      "name": "Trackerless discovery via DHT",
+      "summary": "Omit the announce tracker field and include optional DHT bootstrap nodes, allowing peer discovery through a distributed hash table.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Represent a trackerless torrent without an announce key."
+        },
+        {
+          "order": 2,
+          "action": "Optionally include nodes as host/port pairs, ideally useful nearby routing-table nodes or a known reliable node."
+        },
+        {
+          "order": 3,
+          "action": "Client uses Mainline DHT to discover peers for the torrent identity."
+        },
+        {
+          "order": 4,
+          "action": "Client connects directly to discovered peers and participates in the swarm."
+        }
+      ],
+      "entities": [
+        "concept:trackerless_torrent",
+        "field:nodes",
+        "standard:bep_0005",
+        "concept:dht",
+        "concept:peer",
+        "concept:swarm"
+      ]
+    },
+    {
+      "id": "pattern:multi_source_distribution",
+      "name": "Combine peers, trackers, and web seeds",
+      "summary": "Use multiple peer-discovery endpoints and optional HTTP(S) web seeds to improve availability and reduce pressure on any single distribution server.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Include announce-list with multiple tracker URLs when supported."
+        },
+        {
+          "order": 2,
+          "action": "Optionally include url-list web-seed URLs."
+        },
+        {
+          "order": 3,
+          "action": "Client discovers peers through trackers and/or DHT as permitted by torrent policy."
+        },
+        {
+          "order": 4,
+          "action": "Client fetches pieces from peers and web seeds, combining sources where supported."
+        }
+      ],
+      "entities": [
+        "field:announce_list",
+        "concept:multiple_trackers",
+        "field:url_list",
+        "concept:web_seed",
+        "concept:mirror_site",
+        "concept:server_load_reduction"
+      ]
+    },
+    {
+      "id": "pattern:private_torrent_policy",
+      "name": "Private torrent discovery policy",
+      "summary": "Use the private flag and a private tracker to enforce a community-controlled peer-discovery convention, while recognizing that the flag is not anonymity.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Set info.private to 1."
+        },
+        {
+          "order": 2,
+          "action": "Use a private tracker that gates peer-list access."
+        },
+        {
+          "order": 3,
+          "action": "Disable DHT, PEX, and LSD in compliant clients to preserve tracker control."
+        },
+        {
+          "order": 4,
+          "action": "Do not treat this flag as encryption or anonymity; modifying the info dictionary changes the infohash."
+        }
+      ],
+      "entities": [
+        "field:private",
+        "standard:bep_0027",
+        "concept:private_tracker",
+        "concept:dht",
+        "concept:pex",
+        "concept:lsd",
+        "concept:privacy_limit",
+        "concept:infohash_v1"
+      ]
+    },
+    {
+      "id": "pattern:hybrid_v1_v2",
+      "name": "Hybrid v1/v2 compatibility",
+      "summary": "Carry old and new metadata fields to support both v1 and v2 clients, while managing distinct v1 and v2 infohash identities.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Include v1-compatible and v2 metadata structures in the hybrid torrent."
+        },
+        {
+          "order": 2,
+          "action": "Compute the corresponding v1 and v2 infohashes."
+        },
+        {
+          "order": 3,
+          "action": "Recognize that distinct identities may produce separate swarms in the respective networks."
+        },
+        {
+          "order": 4,
+          "action": "Use client logic to associate and merge the corresponding v1 and v2 swarm participation."
+        }
+      ],
+      "entities": [
+        "concept:hybrid_torrent",
+        "standard:bep_0003",
+        "standard:bep_0052",
+        "concept:infohash_v1",
+        "concept:infohash_v2",
+        "concept:swarm"
+      ]
+    },
+    {
+      "id": "pattern:integrity_not_trust",
+      "name": "Separate integrity from trust and safety",
+      "summary": "Use metadata hashes to detect corruption or mismatch, but do not infer that a file is safe, lawful, or trustworthy solely because its hashes match.",
+      "steps": [
+        {
+          "order": 1,
+          "action": "Verify downloaded pieces or blocks against hashes in the torrent metadata."
+        },
+        {
+          "order": 2,
+          "action": "Treat successful verification as evidence that bytes match the metadata's committed hashes."
+        },
+        {
+          "order": 3,
+          "action": "Assess source trust, file behavior, and legal authorization separately."
+        }
+      ],
+      "entities": [
+        "concept:integrity_verification",
+        "concept:content_legitimacy",
+        "concept:malware_risk",
+        "concept:sha1",
+        "concept:sha256"
+      ]
+    }
+  ],
+  "source_records": [
+    {
+      "id": "source:wikipedia_torrent_file",
+      "title": "Torrent file",
+      "publisher": "Wikipedia",
+      "source_kind": "user-provided article excerpt",
+      "claims_supported": [
+        "definition and purpose of .torrent files",
+        "v1 file structure",
+        "v2 metadata structure",
+        "extensions",
+        "examples",
+        "limitations and history notes"
+      ],
+      "citation_note": "The user-provided article excerpt is the source basis for this graph."
+    },
+    {
+      "id": "source:bittorrent_bep3",
+      "title": "BEP-0003: The BitTorrent Protocol Specification",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "v1 torrent structure",
+        "bencoding",
+        "announce/info/files/length/path/piece length/pieces",
+        "v1 infohash"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep52",
+      "title": "BEP-0052: BitTorrent v2",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "meta version",
+        "file tree",
+        "piece root",
+        "piece layers",
+        "SHA-256",
+        "hybrid torrent identity"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep5",
+      "title": "BEP-0005: DHT Protocol",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "Mainline DHT",
+        "trackerless torrents",
+        "nodes field"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep12",
+      "title": "BEP-0012: Multitracker Metadata Extension",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "announce-list",
+        "multiple trackers"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep19",
+      "title": "BEP-0019: WebSeed support",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "url-list",
+        "web seeds",
+        "HTTP(S) source combination"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep27",
+      "title": "BEP-0027: Private Torrents",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "private flag",
+        "private tracker behavior",
+        "disabling decentralized discovery methods"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep17",
+      "title": "BEP-0017: HTTP Seeding",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "httpseeds field",
+        "special server support as described in article"
+      ]
+    },
+    {
+      "id": "source:bittorrent_bep30",
+      "title": "BEP-0030: Merkle hash torrent extension",
+      "publisher": "BitTorrent.org",
+      "source_kind": "protocol specification cited by supplied article",
+      "claims_supported": [
+        "legacy root_hash field",
+        "Merkle torrent metadata-size goal"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "example:single_file",
+      "name": "Single-file torrent example from article",
+      "kind": "illustrative_debencoded_structure",
+      "fields": {
+        "announce": "tracker URL",
+        "info": {
+          "length": 678301696,
+          "name": "debian-503-amd64-CD-1.iso",
+          "piece length": 262144,
+          "pieces": "<binary SHA-1 hashes>"
+        }
+      },
+      "notes": [
+        "The payload is not embedded in the torrent file.",
+        "The supplied article gives 678301696 bytes and a piece length of 262144 bytes.",
+        "The pieces field is a binary placeholder in the example, not literal JSON torrent syntax."
+      ]
+    },
+    {
+      "id": "example:multi_file",
+      "name": "Multi-file torrent example from article",
+      "kind": "illustrative_debencoded_structure",
+      "fields": {
+        "announce": "tracker URL",
+        "info": {
+          "files": [
+            {
+              "length": 111,
+              "path": [
+                "111.txt"
+              ]
+            },
+            {
+              "length": 222,
+              "path": [
+                "222.txt"
+              ]
+            }
+          ],
+          "name": "directoryName",
+          "piece length": 262144,
+          "pieces": "<binary SHA-1 hashes>"
+        }
+      },
+      "notes": [
+        "The files list contains a length and path for each file.",
+        "The example is illustrative and uses a placeholder for binary hash data."
+      ]
+    },
+    {
+      "id": "example:trackerless",
+      "name": "Trackerless nodes example",
+      "kind": "field_example",
+      "fields": {
+        "nodes": [
+          [
+            "127.0.0.1",
+            6881
+          ],
+          [
+            "your.router.node",
+            4804
+          ]
+        ]
+      },
+      "notes": [
+        "Host/port pairs are illustrative values from the supplied article."
+      ]
+    },
+    {
+      "id": "example:private",
+      "name": "Private torrent flag example",
+      "kind": "field_example",
+      "fields": {
+        "info": {
+          "private": 1
+        }
+      },
+      "notes": [
+        "The flag is a policy marker and not a guarantee of anonymity."
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule:v1_piece_hash_length",
+      "statement": "For v1, the pieces byte string length is a multiple of 20 bytes because each SHA-1 digest is 160 bits.",
+      "formula": "pieces_bytes_length = piece_count * 20",
+      "applies_to": "BitTorrent v1"
+    },
+    {
+      "id": "rule:piece_count",
+      "statement": "Piece count for a non-empty classic content stream is the ceiling of total content bytes divided by piece length.",
+      "formula": "piece_count = ceil(total_content_bytes / piece_length)",
+      "applies_to": "Classic v1 piece layout"
+    },
+    {
+      "id": "rule:v2_piece_length",
+      "statement": "BitTorrent v2 requires piece length to be a power of two.",
+      "formula": "piece_length > 0 and (piece_length & (piece_length - 1)) == 0",
+      "applies_to": "BitTorrent v2"
+    },
+    {
+      "id": "rule:infohash_scope",
+      "statement": "Infohash identity is computed from the bencoded info dictionary; changing fields outside info such as announce does not affect it, while changing info does.",
+      "applies_to": "Torrent metadata identity"
+    },
+    {
+      "id": "rule:v2_block_size",
+      "statement": "The v2 Merkle tree described by the article is constructed from 16 KiB blocks.",
+      "applies_to": "BitTorrent v2"
+    }
+  ],
+  "caveats": [
+    "This is a knowledge graph derived primarily from the supplied article, not a replacement for the current normative BEP specifications.",
+    "The source article itself notes citation and cleanup issues, including extension status labels that may be outdated.",
+    "The source's displayed piece-length expression has formatting corruption; the intended example value is 256 KiB = 262144 bytes.",
+    "The graph preserves the article's descriptions of BEP status rather than independently updating each status.",
+    "A successful hash check verifies consistency with torrent metadata; it does not prove that content is benign, lawful, or trustworthy."
+  ]
+}

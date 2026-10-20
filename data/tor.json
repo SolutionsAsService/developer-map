@@ -1,0 +1,1409 @@
+{
+  "schema_name": "Tor — Full Detail Knowledge Graph",
+  "schema_version": "1.0.0",
+  "record_type": "topic_knowledge_graph",
+  "topic": {
+    "canonical_name": "Tor (anonymity network)",
+    "aliases": [
+      "Tor network",
+      "The Onion Router"
+    ],
+    "domains": [
+      "computer_networking",
+      "privacy_and_security",
+      "cryptography",
+      "censorship_circumvention",
+      "distributed_systems"
+    ],
+    "summary": "Detailed machine-readable graph of Tor's purpose, onion routing, relay roles, circuits, onion services, history, software ecosystem, privacy use cases, threat model, attacks and limitations, and source provenance."
+  },
+  "provenance": {
+    "primary_input": "User-supplied text of the Wikipedia article 'Tor (network)', redirected from 'Tor (anonymity network)'",
+    "primary_url": "https://en.wikipedia.org/wiki/Tor_(network)",
+    "article_last_edited_as_supplied": "2026-10-14T13:28:00Z",
+    "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "method": "Core claims are derived from the supplied article. Additional current documentation and technical explanations are explicitly marked as external references or background context.",
+    "version_freshness_warning": "The supplied article contains version and network-size snapshots that can change quickly. Do not treat version numbers, relay counts, user counts, or legal/political descriptions as current unless independently checked against current official sources.",
+    "limitations": [
+      "Tor is an anonymity-enhancing system, not a guarantee of absolute anonymity.",
+      "Low-latency routing cannot reliably defeat an adversary able to observe and correlate traffic at both ends.",
+      "Traffic from applications not routed through Tor Browser or a configured Tor proxy is not automatically protected.",
+      "Tor does not itself provide end-to-end encryption between an exit relay and a public Internet destination; use HTTPS or another end-to-end encrypted protocol.",
+      "Historical attack descriptions and statistics are included as claims reported by the supplied article, not as independently verified current findings."
+    ]
+  },
+  "entities": [
+    {
+      "id": "concept:tor",
+      "type": "anonymity_network",
+      "name": "Tor",
+      "aliases": [
+        "The Onion Router",
+        "Tor network"
+      ],
+      "description": "A free and open-source overlay network and software ecosystem designed to make communication more difficult to trace by separating a user's network identity from destination routing through onion routing.",
+      "attributes": {
+        "project_start": "2002-09-20",
+        "network_model": "volunteer-operated relays and client software",
+        "primary_goal": "reduce linkability between source and destination",
+        "not_a_guarantee": "Tor does not guarantee perfect anonymity and cannot prevent every form of traffic correlation, endpoint compromise, or user identification.",
+        "source_basis": "user-supplied Wikipedia article text; see provenance and sources"
+      }
+    },
+    {
+      "id": "org:tor_project",
+      "type": "organization",
+      "name": "The Tor Project",
+      "description": "Nonprofit organization responsible for maintaining and developing Tor software and related privacy tools.",
+      "attributes": {
+        "founded_year": 2006,
+        "organization_type": "501(c)(3) nonprofit, as described in supplied article",
+        "official_website": "https://www.torproject.org/",
+        "code_repository": "https://gitlab.torproject.org/tpo/core/tor/"
+      }
+    },
+    {
+      "id": "concept:onion_routing",
+      "type": "networking_technique",
+      "name": "Onion routing",
+      "description": "A technique that wraps traffic in multiple layers of encryption and routes it through a sequence of relays, where each relay learns only the information needed for its portion of the path.",
+      "attributes": {
+        "metaphor": "nested layers of an onion",
+        "origin_period": "mid-1990s"
+      }
+    },
+    {
+      "id": "concept:overlay_network",
+      "type": "network_architecture",
+      "name": "Overlay network",
+      "description": "A logical network implemented on top of an underlying network, using its connectivity while providing additional routing or service behavior."
+    },
+    {
+      "id": "concept:mix_network",
+      "type": "network_architecture",
+      "name": "Mix network",
+      "description": "A class of systems intended to make communication relationships harder to infer by relaying and transforming traffic; Tor is categorized as a mix/overlay network in the supplied article, though Tor is a low-latency design rather than a high-latency batching mixnet."
+    },
+    {
+      "id": "concept:relay",
+      "type": "network_node",
+      "name": "Tor relay",
+      "description": "A node that forwards Tor traffic as part of a circuit. Relays are commonly operated by volunteers and have distinct roles and flags.",
+      "attributes": {
+        "roles": [
+          "guard",
+          "middle",
+          "exit",
+          "bridge",
+          "directory authority",
+          "onion-service directory/descriptor-related roles"
+        ],
+        "trust_note": "A relay sees only a portion of the route and traffic metadata, depending on its role."
+      }
+    },
+    {
+      "id": "concept:guard_relay",
+      "type": "network_node_role",
+      "name": "Guard relay",
+      "description": "The entry relay selected for a client's circuits and kept relatively stable over time to reduce exposure to many potentially hostile entry nodes.",
+      "attributes": {
+        "visibility": "Can observe the client's network address and that the client is using Tor, but ordinarily does not know the final destination."
+      }
+    },
+    {
+      "id": "concept:middle_relay",
+      "type": "network_node_role",
+      "name": "Middle relay",
+      "description": "A relay between the guard and exit in a typical Tor circuit; forwards traffic without serving as the public Internet exit."
+    },
+    {
+      "id": "concept:exit_relay",
+      "type": "network_node_role",
+      "name": "Exit relay",
+      "description": "The relay that forwards a circuit's traffic to a destination on the public Internet for ordinary clearnet connections.",
+      "attributes": {
+        "visibility": "Destination commonly sees the exit relay's public IP address.",
+        "risk": "Unencrypted application traffic can be observed or modified between the exit and destination; HTTPS or other end-to-end encryption is still important."
+      }
+    },
+    {
+      "id": "concept:bridge_relay",
+      "type": "network_node_role",
+      "name": "Bridge relay",
+      "description": "A relay whose address is not broadly listed as a public relay, intended in part to help users connect where public Tor relays are blocked.",
+      "attributes": {
+        "purpose": "censorship circumvention",
+        "distribution": "may be provided through bridge-distribution mechanisms or pluggable transports"
+      }
+    },
+    {
+      "id": "concept:directory_authority",
+      "type": "network_role",
+      "name": "Directory authority",
+      "description": "A specially trusted Tor infrastructure role that votes on network status and parameters used to build the network consensus.",
+      "attributes": {
+        "security_consideration": "Compromise of enough authorities could undermine consensus integrity; this is a centralization/trust consideration in Tor's network design."
+      }
+    },
+    {
+      "id": "concept:network_consensus",
+      "type": "network_protocol_data",
+      "name": "Tor network consensus",
+      "description": "A signed, periodically updated view of network status and relay information assembled from directory-authority votes and used by clients to select relays.",
+      "attributes": {
+        "update_cadence": "The supplied article says authorities vote hourly; exact operational behavior may evolve."
+      }
+    },
+    {
+      "id": "concept:tor_circuit",
+      "type": "routing_construct",
+      "name": "Tor circuit",
+      "description": "A temporary logical path through a sequence of Tor relays used to carry one or more TCP streams.",
+      "attributes": {
+        "typical_public_web_path": [
+          "guard",
+          "middle",
+          "exit"
+        ],
+        "onion_service_path": "client-side and service-side paths join through Tor rendezvous mechanisms; traffic does not exit to the public Internet"
+      }
+    },
+    {
+      "id": "concept:virtual_circuit",
+      "type": "routing_construct",
+      "name": "Virtual circuit",
+      "description": "A logical connection established through Tor relays; Tor can multiplex TCP streams over circuits."
+    },
+    {
+      "id": "concept:layered_encryption",
+      "type": "cryptographic_mechanism",
+      "name": "Layered circuit encryption",
+      "description": "Tor client traffic is protected in layers so each relay removes or processes the layer intended for it, learning only the next routing step rather than the entire route.",
+      "attributes": {
+        "security_property": "limits any one relay's view of the complete source-to-destination relationship",
+        "caveat": "Does not hide all traffic timing/volume patterns from a sufficiently positioned observer."
+      }
+    },
+    {
+      "id": "concept:perfect_forward_secrecy",
+      "type": "cryptographic_property",
+      "name": "Perfect forward secrecy",
+      "description": "A property intended to prevent later compromise of long-term keys from exposing previously recorded session traffic, when the protocol and key lifecycle provide the property."
+    },
+    {
+      "id": "concept:tcp",
+      "type": "network_protocol",
+      "name": "Transmission Control Protocol (TCP)",
+      "description": "Transport-layer protocol providing reliable byte-stream communication. The supplied article describes Tor as operating at the TCP stream level."
+    },
+    {
+      "id": "concept:socks",
+      "type": "network_protocol_interface",
+      "name": "SOCKS proxy interface",
+      "description": "A proxy protocol interface through which compatible applications can send traffic to a local Tor process.",
+      "attributes": {
+        "historical_default_ports_in_supplied_article": {
+          "standalone_tor": 9050,
+          "tor_browser_bundle": 9150
+        },
+        "port_note": "Defaults can vary by configuration and deployment; verify the local configuration."
+      }
+    },
+    {
+      "id": "software:tor_browser",
+      "type": "privacy_browser",
+      "name": "Tor Browser",
+      "description": "A browser designed to route browser traffic through Tor and reduce browser-level tracking and fingerprinting.",
+      "attributes": {
+        "scope": "Traffic from applications outside Tor Browser is not automatically routed through Tor unless separately configured.",
+        "security_guidance": "Keep it updated, use appropriate security settings, avoid identity-revealing logins when anonymity is needed, and follow official guidance."
+      }
+    },
+    {
+      "id": "concept:onion_service",
+      "type": "network_service",
+      "name": "Onion service",
+      "aliases": [
+        "hidden service"
+      ],
+      "description": "A service reachable through Tor using a cryptographic .onion address, designed to avoid revealing the service's ordinary public IP address and to support communication without leaving the Tor network.",
+      "attributes": {
+        "use_cases": [
+          "websites",
+          "messaging",
+          "file sharing",
+          "SSH and other TCP services"
+        ],
+        "both_sides": "Can help protect the location of the service and the network location of the client.",
+        "discovery": "Addresses are not globally indexed by design; a client generally needs to know the address or obtain it from a trusted source."
+      }
+    },
+    {
+      "id": "concept:onion_address",
+      "type": "network_identifier",
+      "name": "Onion address (.onion)",
+      "description": "A special-use address used to identify a Tor onion service; modern onion addresses encode cryptographic identity material.",
+      "attributes": {
+        "access_requirement": "Requires Tor-capable software or a compatible route into Tor; a normal browser alone does not directly resolve .onion addresses."
+      }
+    },
+    {
+      "id": "concept:introduction_point",
+      "type": "onion_service_component",
+      "name": "Onion-service introduction point",
+      "description": "A Tor relay selected by an onion service to facilitate initial contact without directly exposing the service's location to the client."
+    },
+    {
+      "id": "concept:rendezvous_point",
+      "type": "onion_service_component",
+      "name": "Rendezvous point",
+      "description": "A Tor relay through which a client and onion service establish a connection while each side builds its own Tor path."
+    },
+    {
+      "id": "concept:distributed_hash_table",
+      "type": "distributed_data_structure",
+      "name": "Distributed hash table (DHT)",
+      "description": "A distributed data structure used to locate information by key across nodes. The supplied article describes onion-service information being published and discovered through distributed Tor directory mechanisms; implementation details vary by protocol version."
+    },
+    {
+      "id": "concept:pluggable_transport",
+      "type": "censorship_circumvention",
+      "name": "Pluggable transport",
+      "description": "A mechanism that changes how Tor traffic appears on the network to make blocking or identification more difficult.",
+      "attributes": {
+        "purpose": "help users connect where standard Tor traffic or public relay addresses are blocked",
+        "examples_note": "Specific transports and availability change over time; use current official Tor documentation."
+      }
+    },
+    {
+      "id": "concept:traffic_analysis",
+      "type": "attack_class",
+      "name": "Traffic analysis",
+      "description": "Inferring communication relationships or activity from traffic patterns such as timing, volume, direction, and connection metadata, even when payload content is encrypted."
+    },
+    {
+      "id": "concept:end_to_end_correlation",
+      "type": "attack_class",
+      "name": "End-to-end traffic correlation",
+      "description": "An attack in which an observer compares traffic entering and leaving an anonymity network to infer that flows belong to the same communication.",
+      "attributes": {
+        "limitation": "Tor's low-latency design cannot guarantee protection against an adversary able to monitor both ends of a connection."
+      }
+    },
+    {
+      "id": "concept:sybil_attack",
+      "type": "attack_class",
+      "name": "Sybil attack",
+      "description": "An attack in which one adversary operates or controls multiple identities or nodes to gain disproportionate influence over a distributed system."
+    },
+    {
+      "id": "concept:relay_compromise",
+      "type": "attack_class",
+      "name": "Malicious or compromised relay",
+      "description": "A relay controlled by an adversary or compromised in a way that attempts to observe, manipulate, or correlate traffic."
+    },
+    {
+      "id": "concept:browser_fingerprinting",
+      "type": "tracking_technique",
+      "name": "Browser fingerprinting",
+      "description": "Recognition or distinguishing of a browser based on a combination of device and browser attributes such as fonts, screen settings, language, and graphics capabilities."
+    },
+    {
+      "id": "concept:endpoint_compromise",
+      "type": "attack_class",
+      "name": "Endpoint compromise",
+      "description": "Compromise of the user's device, browser, or destination server; network anonymity cannot protect secrets exposed directly at a compromised endpoint."
+    },
+    {
+      "id": "concept:tls_https",
+      "type": "security_protocol",
+      "name": "HTTPS / TLS",
+      "description": "HTTPS protects HTTP traffic between the browser and the TLS endpoint. It remains important when using Tor because Tor does not itself guarantee encryption from the exit relay to a public Internet destination."
+    },
+    {
+      "id": "concept:exit_policy",
+      "type": "relay_policy",
+      "name": "Exit relay policy",
+      "description": "Rules governing which destination ports or traffic an exit relay permits; exit operators commonly restrict traffic to reduce abuse and operational risk."
+    },
+    {
+      "id": "concept:website_blocking",
+      "type": "service_policy",
+      "name": "Website restrictions on Tor exit traffic",
+      "description": "A destination service may block, challenge, or limit traffic from known Tor exit IP addresses because many unrelated users share exit relays or because of the site's risk policies."
+    },
+    {
+      "id": "concept:censorship_circumvention",
+      "type": "privacy_use_case",
+      "name": "Censorship circumvention",
+      "description": "Using privacy or networking tools to reach information or communicate when access is blocked or monitored."
+    },
+    {
+      "id": "concept:whistleblowing",
+      "type": "privacy_use_case",
+      "name": "Whistleblowing and source protection",
+      "description": "Use of privacy-preserving communication channels to help sources communicate with journalists or organizations while reducing exposure of their identity or location."
+    },
+    {
+      "id": "concept:online_privacy",
+      "type": "security_property",
+      "name": "Online privacy",
+      "description": "Control over collection, linkage, retention, and disclosure of information about online activities."
+    },
+    {
+      "id": "concept:anonymity",
+      "type": "security_property",
+      "name": "Anonymity",
+      "description": "A condition in which an action or communication cannot readily be linked to a specific identity within a defined threat model; anonymity is contextual, not absolute."
+    },
+    {
+      "id": "concept:clearnet",
+      "type": "networking_concept",
+      "name": "Clearnet",
+      "description": "The publicly accessible Internet or, in narrower usage, the indexed surface web; ordinary clearnet browsing commonly exposes a user's public network address to destination services unless mediated."
+    },
+    {
+      "id": "concept:deep_web",
+      "type": "web_scope",
+      "name": "Deep web",
+      "description": "Web content not indexed by conventional search engines; this includes many ordinary authenticated portals and database-driven resources, not only dark-web services."
+    },
+    {
+      "id": "concept:dark_web",
+      "type": "web_scope",
+      "name": "Dark web",
+      "description": "Content or services hosted on anonymity-oriented networks such as Tor; it is a subset of content commonly described as deep web, not a synonym for all non-indexed content."
+    },
+    {
+      "id": "org:naval_research_laboratory",
+      "type": "organization",
+      "name": "United States Naval Research Laboratory",
+      "description": "Research organization whose researchers developed the core onion-routing concept in the mid-1990s, according to the supplied article."
+    },
+    {
+      "id": "person:paul_syverson",
+      "type": "person",
+      "name": "Paul Syverson",
+      "description": "Mathematician associated with the development of onion routing and early Tor.",
+      "attributes": {
+        "role": "co-developer of onion routing and early Tor"
+      }
+    },
+    {
+      "id": "person:michael_reed",
+      "type": "person",
+      "name": "Michael G. Reed",
+      "description": "Computer scientist associated with the development of onion routing at the U.S. Naval Research Laboratory."
+    },
+    {
+      "id": "person:david_goldschlag",
+      "type": "person",
+      "name": "David Goldschlag",
+      "description": "Computer scientist associated with the development of onion routing at the U.S. Naval Research Laboratory."
+    },
+    {
+      "id": "person:roger_dingledine",
+      "type": "person",
+      "name": "Roger Dingledine",
+      "description": "Co-developer of the alpha version of Tor and co-founder of The Tor Project."
+    },
+    {
+      "id": "person:nick_mathewson",
+      "type": "person",
+      "name": "Nick Mathewson",
+      "description": "Co-developer of the alpha version of Tor and co-founder of The Tor Project."
+    },
+    {
+      "id": "org:electronic_frontier_foundation",
+      "type": "organization",
+      "name": "Electronic Frontier Foundation (EFF)",
+      "description": "Digital civil liberties organization that funded early Tor development after the source code was released under a free license, according to the supplied article."
+    },
+    {
+      "id": "org:secure_drop",
+      "type": "software_project",
+      "name": "SecureDrop",
+      "description": "An open-source whistleblower submission system used by some news organizations; can be used alongside Tor to reduce source exposure."
+    },
+    {
+      "id": "org:internet_censorship_observers",
+      "type": "organization_category",
+      "name": "Censorship and surveillance authorities",
+      "description": "Governmental or other entities that may block, monitor, or analyze network traffic; the capabilities of any particular observer depend on its position and resources."
+    },
+    {
+      "id": "source:wikipedia_tor_article",
+      "type": "source_document",
+      "name": "Tor (network) — Wikipedia",
+      "description": "User-supplied article text redirected from Tor (anonymity network), including history, usage, operation, onion services, attacks and limitations, software, reception, and references.",
+      "attributes": {
+        "url": "https://en.wikipedia.org/wiki/Tor_(network)",
+        "source_type": "tertiary encyclopedia article",
+        "last_edited_as_supplied": "2026-10-14T13:28:00Z",
+        "license": "CC BY-SA 4.0",
+        "source_quality_note": "Useful map of the topic; article claims and cited sources should be distinguished, especially for historical incident reports and changing software versions."
+      }
+    },
+    {
+      "id": "source:tor_project_official",
+      "type": "official_documentation",
+      "name": "The Tor Project — official website and documentation",
+      "description": "Primary source for current Tor software, network design, browser guidance, onion services, and censorship-circumvention documentation.",
+      "attributes": {
+        "url": "https://www.torproject.org/",
+        "support_url": "https://support.torproject.org/",
+        "manual_url": "https://tb-manual.torproject.org/"
+      }
+    },
+    {
+      "id": "source:tor_onion_services",
+      "type": "official_documentation",
+      "name": "Tor Project — Onion Services documentation",
+      "description": "Official documentation explaining onion services and their security model.",
+      "attributes": {
+        "url": "https://community.torproject.org/onion-services/"
+      }
+    },
+    {
+      "id": "source:tor_gitlab",
+      "type": "source_code_repository",
+      "name": "Tor core source repository",
+      "description": "Official source repository for Tor core software.",
+      "attributes": {
+        "url": "https://gitlab.torproject.org/tpo/core/tor/"
+      }
+    },
+    {
+      "id": "source:tor_browser_manual",
+      "type": "official_documentation",
+      "name": "Tor Browser Manual",
+      "description": "Official user manual covering installation, security settings, and appropriate browser use.",
+      "attributes": {
+        "url": "https://tb-manual.torproject.org/"
+      }
+    },
+    {
+      "id": "source:eff_surveillance_self_defense",
+      "type": "guidance_document",
+      "name": "EFF Surveillance Self-Defense",
+      "description": "Privacy and security guide discussing Tor as one tool in a broader privacy strategy.",
+      "attributes": {
+        "url": "https://ssd.eff.org/"
+      }
+    },
+    {
+      "id": "source:rfc8446",
+      "type": "technical_standard",
+      "name": "RFC 8446 — The Transport Layer Security (TLS) Protocol Version 1.3",
+      "description": "IETF TLS 1.3 standard relevant to understanding end-to-end encryption for clearnet destinations.",
+      "attributes": {
+        "url": "https://www.rfc-editor.org/rfc/rfc8446"
+      }
+    },
+    {
+      "id": "source:tor_design_paper",
+      "type": "research_paper",
+      "name": "Tor: The Second-Generation Onion Router",
+      "description": "Foundational technical paper describing Tor's design and threat model.",
+      "attributes": {
+        "url": "https://www.usenix.org/legacy/event/sec04/tech/full_papers/dingledine/dingledine.pdf",
+        "authors": [
+          "Roger Dingledine",
+          "Nick Mathewson",
+          "Paul Syverson"
+        ],
+        "year": 2004
+      }
+    },
+    {
+      "id": "source:tor_project_faq",
+      "type": "official_documentation",
+      "name": "Tor Project FAQ",
+      "description": "Official answers about Tor's goals, use cases, limitations, and common misconceptions.",
+      "attributes": {
+        "url": "https://support.torproject.org/faq/"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel:0001",
+      "source": "concept:tor",
+      "predicate": "implements",
+      "target": "concept:onion_routing",
+      "description": "Tor uses onion routing to separate routing from user identity.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0002",
+      "source": "concept:tor",
+      "predicate": "is_an_example_of",
+      "target": "concept:overlay_network",
+      "description": "Tor is an overlay network.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0003",
+      "source": "concept:tor",
+      "predicate": "is_developed_and_maintained_by",
+      "target": "org:tor_project",
+      "description": "The Tor Project develops and maintains Tor.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0004",
+      "source": "concept:onion_routing",
+      "predicate": "uses",
+      "target": "concept:layered_encryption",
+      "description": "Nested encryption layers are central to onion routing.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0005",
+      "source": "concept:onion_routing",
+      "predicate": "routes_traffic_through",
+      "target": "concept:relay",
+      "description": "Traffic traverses a path of relays.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0006",
+      "source": "concept:relay",
+      "predicate": "has_role",
+      "target": "concept:guard_relay",
+      "description": "A relay can serve as the circuit entry.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0007",
+      "source": "concept:relay",
+      "predicate": "has_role",
+      "target": "concept:middle_relay",
+      "description": "A relay can forward traffic between entry and exit.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0008",
+      "source": "concept:relay",
+      "predicate": "has_role",
+      "target": "concept:exit_relay",
+      "description": "A relay can forward traffic to the public Internet.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0009",
+      "source": "concept:relay",
+      "predicate": "may_be_used_as",
+      "target": "concept:bridge_relay",
+      "description": "Bridge relays help in some censorship environments.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0010",
+      "source": "concept:tor",
+      "predicate": "uses_network_state_from",
+      "target": "concept:network_consensus",
+      "description": "Clients use network status information to select relays.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0011",
+      "source": "concept:directory_authority",
+      "predicate": "votes_on",
+      "target": "concept:network_consensus",
+      "description": "Directory authorities vote on current network status.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0012",
+      "source": "concept:network_consensus",
+      "predicate": "describes",
+      "target": "concept:relay",
+      "description": "Consensus includes relay status, roles, and capacity information.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0013",
+      "source": "concept:tor",
+      "predicate": "builds",
+      "target": "concept:tor_circuit",
+      "description": "Tor creates circuits through relays.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0014",
+      "source": "concept:tor_circuit",
+      "predicate": "typically_contains",
+      "target": "concept:guard_relay",
+      "description": "A typical public-web circuit starts with a guard.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0015",
+      "source": "concept:tor_circuit",
+      "predicate": "typically_contains",
+      "target": "concept:middle_relay",
+      "description": "A typical public-web circuit includes a middle relay.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0016",
+      "source": "concept:tor_circuit",
+      "predicate": "may_end_at",
+      "target": "concept:exit_relay",
+      "description": "For public Internet destinations, the circuit exits through an exit relay.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0017",
+      "source": "concept:tor",
+      "predicate": "multiplexes_streams_over",
+      "target": "concept:virtual_circuit",
+      "description": "Tor can multiplex TCP streams over circuits.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0018",
+      "source": "concept:tor",
+      "predicate": "operates_at_stream_level_of",
+      "target": "concept:tcp",
+      "description": "The supplied article describes Tor as operating at TCP stream level.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0019",
+      "source": "concept:socks",
+      "predicate": "can_connect_applications_to",
+      "target": "concept:tor",
+      "description": "SOCKS-aware applications can send traffic to a local Tor instance.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0020",
+      "source": "software:tor_browser",
+      "predicate": "routes_browser_traffic_through",
+      "target": "concept:tor",
+      "description": "Tor Browser is designed to route browser traffic through Tor.",
+      "source_status": "official_documentation"
+    },
+    {
+      "id": "rel:0021",
+      "source": "software:tor_browser",
+      "predicate": "attempts_to_reduce",
+      "target": "concept:browser_fingerprinting",
+      "description": "Browser design aims to reduce fingerprinting and identifying differences.",
+      "source_status": "official_documentation"
+    },
+    {
+      "id": "rel:0022",
+      "source": "concept:layered_encryption",
+      "predicate": "limits_visibility_for",
+      "target": "concept:relay",
+      "description": "Each relay handles only its layer and next routing instruction.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0023",
+      "source": "concept:layered_encryption",
+      "predicate": "is_related_to",
+      "target": "concept:perfect_forward_secrecy",
+      "description": "Tor uses cryptographic mechanisms intended to protect circuit sessions; exact properties depend on protocol details.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0024",
+      "source": "concept:exit_relay",
+      "predicate": "forwards_traffic_to",
+      "target": "concept:clearnet",
+      "description": "Exit relays forward ordinary Internet traffic to destinations.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0025",
+      "source": "concept:exit_relay",
+      "predicate": "may_expose_unencrypted_traffic_without",
+      "target": "concept:tls_https",
+      "description": "Tor does not encrypt traffic between an exit relay and a public destination unless the application protocol adds encryption.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0026",
+      "source": "concept:tor",
+      "predicate": "supports",
+      "target": "concept:onion_service",
+      "description": "Tor can host services without revealing their ordinary public IP address.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0027",
+      "source": "concept:onion_service",
+      "predicate": "is_identified_by",
+      "target": "concept:onion_address",
+      "description": "Clients use the onion address to reach the service.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0028",
+      "source": "concept:onion_service",
+      "predicate": "uses",
+      "target": "concept:introduction_point",
+      "description": "Introduction points help clients contact services without directly learning the service location.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0029",
+      "source": "concept:onion_service",
+      "predicate": "uses",
+      "target": "concept:rendezvous_point",
+      "description": "Client and service paths meet at a rendezvous point.",
+      "source_status": "official_documentation"
+    },
+    {
+      "id": "rel:0030",
+      "source": "concept:onion_service",
+      "predicate": "uses_directory_mechanisms_related_to",
+      "target": "concept:distributed_hash_table",
+      "description": "Onion service descriptors and addresses are discovered through Tor's distributed directory mechanisms.",
+      "source_status": "article_with_technical_caveat"
+    },
+    {
+      "id": "rel:0031",
+      "source": "concept:onion_service",
+      "predicate": "can_host",
+      "target": "concept:tcp",
+      "description": "Onion services can support TCP services beyond websites.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0032",
+      "source": "concept:onion_service",
+      "predicate": "can_support",
+      "target": "concept:whistleblowing",
+      "description": "Onion services can provide a channel for source protection and confidential submissions.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0033",
+      "source": "concept:tor",
+      "predicate": "can_support",
+      "target": "concept:censorship_circumvention",
+      "description": "Tor and bridges/transports can help users reach blocked services.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0034",
+      "source": "concept:bridge_relay",
+      "predicate": "helps_counter",
+      "target": "concept:website_blocking",
+      "description": "Secret or less-public relay addresses can evade simple blocks of public relay IPs.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0035",
+      "source": "concept:pluggable_transport",
+      "predicate": "helps_counter",
+      "target": "org:internet_censorship_observers",
+      "description": "Pluggable transports can make Tor connections harder to identify or block.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0036",
+      "source": "concept:tor",
+      "predicate": "does_not_guarantee_protection_against",
+      "target": "concept:end_to_end_correlation",
+      "description": "A sufficiently positioned observer may correlate traffic at both ends.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0037",
+      "source": "concept:traffic_analysis",
+      "predicate": "includes",
+      "target": "concept:end_to_end_correlation",
+      "description": "End-to-end correlation is a form of traffic analysis/confirmation.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0038",
+      "source": "concept:relay_compromise",
+      "predicate": "can_enable",
+      "target": "concept:traffic_analysis",
+      "description": "A malicious relay may observe its part of the path or contribute to correlation attacks.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0039",
+      "source": "concept:sybil_attack",
+      "predicate": "can_target",
+      "target": "concept:relay",
+      "description": "An adversary may operate multiple relays to influence or observe portions of the network.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0040",
+      "source": "concept:directory_authority",
+      "predicate": "is_a_trust_dependency_for",
+      "target": "concept:network_consensus",
+      "description": "Consensus security depends on the authority system and its integrity.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0041",
+      "source": "concept:tor",
+      "predicate": "does_not_prevent",
+      "target": "concept:endpoint_compromise",
+      "description": "A compromised client or application can expose identity or activity directly.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0042",
+      "source": "concept:tor",
+      "predicate": "does_not_automatically_prevent",
+      "target": "concept:browser_fingerprinting",
+      "description": "Browser-level attributes can still identify or narrow the anonymity set.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0043",
+      "source": "concept:tor",
+      "predicate": "does_not_hide_use_of_tor_from_every_observer",
+      "target": "concept:anonymity",
+      "description": "An ISP or local observer may be able to infer that Tor is being used.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0044",
+      "source": "concept:website_blocking",
+      "predicate": "may_block",
+      "target": "concept:exit_relay",
+      "description": "Sites may block or challenge known Tor exit addresses.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0045",
+      "source": "concept:website_blocking",
+      "predicate": "can_cause",
+      "target": "concept:online_privacy",
+      "description": "Blocking, CAPTCHA, and false association can affect access and user experience.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0046",
+      "source": "concept:tor",
+      "predicate": "is_used_for",
+      "target": "concept:online_privacy",
+      "description": "Privacy is a central use case.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0047",
+      "source": "concept:tor",
+      "predicate": "can_help_protect",
+      "target": "concept:whistleblowing",
+      "description": "Tor can reduce exposure of sources communicating with news organizations.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0048",
+      "source": "concept:tor",
+      "predicate": "can_help_with",
+      "target": "concept:censorship_circumvention",
+      "description": "Tor can help access information under network restrictions.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0049",
+      "source": "concept:tor",
+      "predicate": "is_not_limited_to",
+      "target": "concept:dark_web",
+      "description": "Tor is also used for ordinary web browsing, messaging, and other legitimate activities.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0050",
+      "source": "concept:tor",
+      "predicate": "can_access",
+      "target": "concept:clearnet",
+      "description": "Tor exit relays can connect users to ordinary public websites.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0051",
+      "source": "concept:dark_web",
+      "predicate": "may_use",
+      "target": "concept:onion_service",
+      "description": "Many dark-web services are onion services, though the terms are not identical.",
+      "source_status": "article_plus_context"
+    },
+    {
+      "id": "rel:0052",
+      "source": "concept:deep_web",
+      "predicate": "is_not_synonymous_with",
+      "target": "concept:dark_web",
+      "description": "Much deep-web content consists of ordinary unindexed or authenticated resources.",
+      "source_status": "background"
+    },
+    {
+      "id": "rel:0053",
+      "source": "org:naval_research_laboratory",
+      "predicate": "was_associated_with_development_of",
+      "target": "concept:onion_routing",
+      "description": "The article attributes the core concept to U.S. Naval Research Laboratory researchers.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0054",
+      "source": "person:paul_syverson",
+      "predicate": "co_developed",
+      "target": "concept:onion_routing",
+      "description": "Paul Syverson is named among onion-routing originators.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0055",
+      "source": "person:michael_reed",
+      "predicate": "co_developed",
+      "target": "concept:onion_routing",
+      "description": "Michael G. Reed is named among onion-routing originators.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0056",
+      "source": "person:david_goldschlag",
+      "predicate": "co_developed",
+      "target": "concept:onion_routing",
+      "description": "David Goldschlag is named among onion-routing originators.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0057",
+      "source": "person:paul_syverson",
+      "predicate": "co_developed",
+      "target": "concept:tor",
+      "description": "Paul Syverson worked on the early Tor alpha.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0058",
+      "source": "person:roger_dingledine",
+      "predicate": "co_developed",
+      "target": "concept:tor",
+      "description": "Roger Dingledine worked on the early Tor alpha.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0059",
+      "source": "person:nick_mathewson",
+      "predicate": "co_developed",
+      "target": "concept:tor",
+      "description": "Nick Mathewson worked on the early Tor alpha.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0060",
+      "source": "person:roger_dingledine",
+      "predicate": "co_founded",
+      "target": "org:tor_project",
+      "description": "Dingledine helped found The Tor Project in 2006.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0061",
+      "source": "person:nick_mathewson",
+      "predicate": "co_founded",
+      "target": "org:tor_project",
+      "description": "Mathewson helped found The Tor Project in 2006.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0062",
+      "source": "org:electronic_frontier_foundation",
+      "predicate": "funded_early_development_of",
+      "target": "concept:tor",
+      "description": "EFF supported continued Tor development after the code was released under a free license.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0063",
+      "source": "org:secure_drop",
+      "predicate": "can_use",
+      "target": "concept:tor",
+      "description": "Some news organizations use Tor alongside SecureDrop for source privacy.",
+      "source_status": "article"
+    },
+    {
+      "id": "rel:0064",
+      "source": "source:wikipedia_tor_article",
+      "predicate": "describes",
+      "target": "concept:tor",
+      "description": "Primary supplied source for the graph.",
+      "source_status": "source_link"
+    },
+    {
+      "id": "rel:0065",
+      "source": "source:wikipedia_tor_article",
+      "predicate": "cites_as_background",
+      "target": "source:tor_design_paper",
+      "description": "The Tor design paper is a foundational technical reference.",
+      "source_status": "source_link"
+    },
+    {
+      "id": "rel:0066",
+      "source": "source:tor_project_official",
+      "predicate": "documents",
+      "target": "concept:tor",
+      "description": "Official current project documentation.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0067",
+      "source": "source:tor_onion_services",
+      "predicate": "documents",
+      "target": "concept:onion_service",
+      "description": "Official onion-service documentation.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0068",
+      "source": "source:tor_browser_manual",
+      "predicate": "documents",
+      "target": "software:tor_browser",
+      "description": "Official Tor Browser manual.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0069",
+      "source": "source:eff_surveillance_self_defense",
+      "predicate": "discusses",
+      "target": "concept:online_privacy",
+      "description": "EFF guidance contextualizes Tor within broader privacy practices.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0070",
+      "source": "source:rfc8446",
+      "predicate": "specifies",
+      "target": "concept:tls_https",
+      "description": "TLS 1.3 standard supports the distinction between Tor routing and application-layer encryption.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0071",
+      "source": "source:tor_project_faq",
+      "predicate": "explains",
+      "target": "concept:anonymity",
+      "description": "Official FAQ explains intended goals and limitations.",
+      "source_status": "external_reference"
+    },
+    {
+      "id": "rel:0072",
+      "source": "source:tor_gitlab",
+      "predicate": "contains_source_for",
+      "target": "concept:tor",
+      "description": "Official repository for core Tor software.",
+      "source_status": "external_reference"
+    }
+  ],
+  "history": [
+    {
+      "date": "mid-1990s",
+      "date_precision": "period",
+      "event": "Onion-routing concept developed",
+      "people": [
+        "person:paul_syverson",
+        "person:michael_reed",
+        "person:david_goldschlag"
+      ],
+      "organization": "org:naval_research_laboratory",
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2002-09-20",
+      "date_precision": "day",
+      "event": "Alpha version of Tor launched as The Onion Routing project",
+      "people": [
+        "person:paul_syverson",
+        "person:roger_dingledine",
+        "person:nick_mathewson"
+      ],
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2003",
+      "date_precision": "year",
+      "event": "Onion services first specified, according to the supplied article",
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2003",
+      "date_precision": "year",
+      "event": "First public release of Tor, approximately one year after the alpha launch",
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2004",
+      "date_precision": "year",
+      "event": "Naval Research Laboratory released Tor code under a free license; EFF supported continued development",
+      "organizations": [
+        "org:naval_research_laboratory",
+        "org:electronic_frontier_foundation"
+      ],
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2004",
+      "date_precision": "year",
+      "event": "Onion services began deployment on the Tor network, according to the supplied article",
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2006",
+      "date_precision": "year",
+      "event": "The Tor Project was founded as a nonprofit organization",
+      "people": [
+        "person:roger_dingledine",
+        "person:nick_mathewson"
+      ],
+      "source_status": "supplied_article"
+    },
+    {
+      "date": "2014-07",
+      "date_precision": "month",
+      "event": "Tor Project disclosed a relay-early traffic-confirmation attack involving malicious relays; affected relays were removed and software was patched, according to the supplied article",
+      "source_status": "historical_article_report"
+    }
+  ],
+  "architecture": {
+    "public_internet_circuit": [
+      {
+        "step": 1,
+        "component": "client application configured to use Tor",
+        "action": "The application sends supported TCP traffic to a local Tor SOCKS interface or Tor Browser."
+      },
+      {
+        "step": 2,
+        "component": "guard relay",
+        "action": "The first relay receives traffic from the client; it can see the client's network address but ordinarily not the final destination."
+      },
+      {
+        "step": 3,
+        "component": "middle relay",
+        "action": "Forwards the circuit to the next hop without being the public Internet exit."
+      },
+      {
+        "step": 4,
+        "component": "exit relay",
+        "action": "Removes the final Tor relay layer and connects to the public Internet destination; destination typically sees the exit IP."
+      },
+      {
+        "step": 5,
+        "component": "destination service",
+        "action": "Receives the request. If the application protocol lacks end-to-end encryption, traffic between exit and destination may be observable or modifiable."
+      }
+    ],
+    "onion_service_connection": [
+      {
+        "step": 1,
+        "component": "client",
+        "action": "Knows or obtains the service's .onion address and uses Tor-capable software."
+      },
+      {
+        "step": 2,
+        "component": "service descriptor and introduction mechanism",
+        "action": "Client obtains service connection information through Tor's distributed directory mechanisms."
+      },
+      {
+        "step": 3,
+        "component": "client-side circuit",
+        "action": "Client chooses a path through Tor, including a rendezvous point."
+      },
+      {
+        "step": 4,
+        "component": "service-side circuit",
+        "action": "Onion service independently builds a Tor path and connects to the rendezvous point."
+      },
+      {
+        "step": 5,
+        "component": "rendezvous point",
+        "action": "Joins the circuits; communication remains within Tor and does not use a public Internet exit."
+      }
+    ],
+    "trust_boundaries": [
+      "Client endpoint and browser",
+      "Local network and ISP",
+      "Guard relay",
+      "Middle relay(s)",
+      "Exit relay for clearnet traffic",
+      "Destination website or service",
+      "Directory authorities and consensus distribution",
+      "Onion-service host and application"
+    ],
+    "important_distinction": "Tor routes traffic through relays; it is not a replacement for HTTPS, secure endpoint configuration, or sound operational security."
+  },
+  "threat_model": {
+    "protected_properties": [
+      "reduce destination visibility of the client's ordinary public IP",
+      "reduce any single relay's ability to see both source and destination",
+      "support location privacy and censorship circumvention",
+      "support onion services without publishing the host's ordinary IP address"
+    ],
+    "out_of_scope_or_limited_properties": [
+      "perfect anonymity against global or multi-point traffic observation",
+      "protection from malware or a compromised operating system",
+      "preventing identification when a user logs into a personal account or reveals identifying details",
+      "automatically routing every application on a device through Tor",
+      "end-to-end encryption between exit relay and public destination when the application does not provide it",
+      "preventing a destination from recognizing or blocking Tor exit IP addresses"
+    ],
+    "attacker_capabilities_to_consider": [
+      "control or observation of one relay",
+      "observation by an ISP or local network",
+      "control of a destination website",
+      "simultaneous observation of traffic entering and leaving Tor",
+      "operation of multiple malicious relays (Sybil behavior)",
+      "browser fingerprinting or endpoint compromise",
+      "blocking public relays or Tor traffic"
+    ],
+    "mitigations_and_hygiene": [
+      "Use the official Tor Browser or correctly configured applications.",
+      "Keep software updated and obtain it from official project sources.",
+      "Use HTTPS for public Internet websites.",
+      "Do not assume other applications on the device are routed through Tor.",
+      "Avoid logging into identifying accounts when identity separation is the goal.",
+      "Do not open downloaded documents in an application that can make unprotected network requests while the user is online unless the risks are understood.",
+      "Use bridges or supported pluggable transports where appropriate for censorship circumvention.",
+      "Use official Tor Project documentation for current configuration advice."
+    ],
+    "source_status": "combined supplied article and official documentation; not a guarantee of safety"
+  },
+  "software_ecosystem": [
+    {
+      "name": "Tor core",
+      "role": "Network client/relay software implementing Tor protocol behavior",
+      "source": "https://gitlab.torproject.org/tpo/core/tor/"
+    },
+    {
+      "name": "Tor Browser",
+      "role": "Browser configured for Tor routing and fingerprinting resistance",
+      "source": "https://www.torproject.org/download/"
+    },
+    {
+      "name": "Arti",
+      "role": "Rust implementation of Tor components; status and maturity depend on current release",
+      "source": "https://tpo.pages.torproject.net/arti/"
+    },
+    {
+      "name": "Onion services",
+      "role": "Host websites and other TCP services over Tor",
+      "source": "https://community.torproject.org/onion-services/"
+    },
+    {
+      "name": "Pluggable transports",
+      "role": "Alter traffic characteristics to help evade censorship-based blocking",
+      "source": "https://tb-manual.torproject.org/circumvention/"
+    }
+  ],
+  "source_register": [
+    {
+      "id": "source:wikipedia_tor_article",
+      "name": "Tor (network) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tor_(network)",
+      "source_type": "source_document",
+      "source_status": "primary_supplied_article"
+    },
+    {
+      "id": "source:tor_project_official",
+      "name": "The Tor Project — official website and documentation",
+      "url": "https://www.torproject.org/",
+      "source_type": "official_documentation",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:tor_onion_services",
+      "name": "Tor Project — Onion Services documentation",
+      "url": "https://community.torproject.org/onion-services/",
+      "source_type": "official_documentation",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:tor_gitlab",
+      "name": "Tor core source repository",
+      "url": "https://gitlab.torproject.org/tpo/core/tor/",
+      "source_type": "source_code_repository",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:tor_browser_manual",
+      "name": "Tor Browser Manual",
+      "url": "https://tb-manual.torproject.org/",
+      "source_type": "official_documentation",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:eff_surveillance_self_defense",
+      "name": "EFF Surveillance Self-Defense",
+      "url": "https://ssd.eff.org/",
+      "source_type": "guidance_document",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:rfc8446",
+      "name": "RFC 8446 — The Transport Layer Security (TLS) Protocol Version 1.3",
+      "url": "https://www.rfc-editor.org/rfc/rfc8446",
+      "source_type": "technical_standard",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:tor_design_paper",
+      "name": "Tor: The Second-Generation Onion Router",
+      "url": "https://www.usenix.org/legacy/event/sec04/tech/full_papers/dingledine/dingledine.pdf",
+      "source_type": "research_paper",
+      "source_status": "official_or_technical_background"
+    },
+    {
+      "id": "source:tor_project_faq",
+      "name": "Tor Project FAQ",
+      "url": "https://support.torproject.org/faq/",
+      "source_type": "official_documentation",
+      "source_status": "official_or_technical_background"
+    }
+  ],
+  "data_dictionary": {
+    "entity_required_fields": [
+      "id",
+      "type",
+      "name",
+      "description"
+    ],
+    "relationship_required_fields": [
+      "id",
+      "source",
+      "predicate",
+      "target",
+      "description",
+      "source_status"
+    ],
+    "relationship_direction": "source --predicate--> target",
+    "identifier_convention": "Stable prefixed IDs such as concept:, org:, person:, software:, and source:; relationships use rel:NNNN.",
+    "source_status_examples": [
+      "article",
+      "article_plus_context",
+      "article_with_technical_caveat",
+      "official_documentation",
+      "external_reference",
+      "source_link"
+    ],
+    "unknown_data_policy": "Do not infer missing facts; use null or omit unknown values. Mark changing facts with dates and source status."
+  },
+  "graph_statistics": {
+    "entity_count": 59,
+    "relationship_count": 72,
+    "source_count": 9,
+    "history_event_count": 8
+  },
+  "validation": {
+    "json_parses": true,
+    "entity_ids_unique": true,
+    "all_relationship_endpoints_exist": true,
+    "all_relationships_have_source_status": true
+  }
+}

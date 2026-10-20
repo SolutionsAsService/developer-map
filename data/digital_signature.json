@@ -1,0 +1,2965 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "digital_signature_full_detail",
+  "title": "Digital Signature — Full Detail Knowledge Graph",
+  "topic": "Digital signatures as a public-key cryptographic primitive and the surrounding security, key-management, implementation, standards, and legal ecosystem",
+  "source_policy": {
+    "primary_basis": "User-supplied Wikipedia article extract",
+    "external_enrichment": false,
+    "caveats": "Claims explicitly marked as citation-needed, failed verification, or unsourced in the supplied article are represented with caveats rather than treated as independently verified."
+  },
+  "entities": [
+    {
+      "id": "digital_signature",
+      "name": "Digital signature",
+      "type": "cryptographic_primitive",
+      "description": "Mathematical scheme used to verify authenticity of digital messages or documents; binds a signature to message bits and is designed to make forgery computationally infeasible."
+    },
+    {
+      "id": "electronic_signature",
+      "name": "Electronic signature",
+      "type": "legal_technical_concept",
+      "description": "Electronic data carrying the intent of a signature; broader than digital signatures and does not necessarily use cryptography."
+    },
+    {
+      "id": "public_key_cryptography",
+      "name": "Public-key cryptography",
+      "type": "cryptographic_paradigm",
+      "description": "Cryptographic paradigm using related public and private keys; digital signatures use the private key to sign and public key to verify."
+    },
+    {
+      "id": "private_key",
+      "name": "Private signing key",
+      "type": "cryptographic_key",
+      "description": "Secret key used by a signing algorithm; disclosure permits an attacker to produce signatures attributable to the key holder."
+    },
+    {
+      "id": "public_key",
+      "name": "Public verification key",
+      "type": "cryptographic_key",
+      "description": "Public key used to verify signatures; its association with an identity must itself be authenticated."
+    },
+    {
+      "id": "key_generation",
+      "name": "Key generation algorithm",
+      "type": "algorithm_stage",
+      "description": "Generates a private key and corresponding public key; the source formalizes this as G."
+    },
+    {
+      "id": "signing_algorithm",
+      "name": "Signing algorithm",
+      "type": "algorithm_stage",
+      "description": "Takes a message and private key and outputs a signature/tag; formalized as S."
+    },
+    {
+      "id": "verification_algorithm",
+      "name": "Verification algorithm",
+      "type": "algorithm_stage",
+      "description": "Takes a message, public key and signature/tag and returns accept or reject; formalized as V."
+    },
+    {
+      "id": "message",
+      "name": "Message / bitstring",
+      "type": "data_object",
+      "description": "Arbitrary bitstring or document to be signed; signatures bind to exact signed content."
+    },
+    {
+      "id": "signature_value",
+      "name": "Signature value / tag",
+      "type": "data_object",
+      "description": "Cryptographic output produced by signing; it is verified against the message and public key."
+    },
+    {
+      "id": "message_digest",
+      "name": "Message digest",
+      "type": "cryptographic_data",
+      "description": "Short digest computed from a message by a hash function, commonly signed instead of the entire document."
+    },
+    {
+      "id": "hash_function",
+      "name": "Cryptographic hash function",
+      "type": "cryptographic_primitive",
+      "description": "Maps a message to a digest; used for efficiency and to normalize message data for signature schemes."
+    },
+    {
+      "id": "correctness",
+      "name": "Signature correctness",
+      "type": "security_property",
+      "description": "A signature produced using a private key is accepted by verification with the corresponding public key."
+    },
+    {
+      "id": "euf_cma",
+      "name": "EUF-CMA",
+      "type": "security_definition",
+      "description": "Existential unforgeability under chosen-message attack: an adversary with access to signing queries should not be able to produce a valid signature on a message not queried."
+    },
+    {
+      "id": "security_parameter",
+      "name": "Security parameter n",
+      "type": "formal_parameter",
+      "description": "Parameter controlling the computational security scale in the formal definition; represented as unary input 1^n."
+    },
+    {
+      "id": "probabilistic_polynomial_time",
+      "name": "Probabilistic polynomial time",
+      "type": "complexity_class",
+      "description": "Formal computational model used to describe key generation, signing, verification and efficient adversaries."
+    },
+    {
+      "id": "signing_oracle",
+      "name": "Signing oracle",
+      "type": "security_model_component",
+      "description": "Oracle that returns signatures for adversary-selected messages in the adaptive chosen-message attack model."
+    },
+    {
+      "id": "query_set",
+      "name": "Signing query set Q",
+      "type": "security_model_component",
+      "description": "Set of messages queried to the signing oracle; a successful EUF-CMA forgery must target a message outside this set."
+    },
+    {
+      "id": "authentication",
+      "name": "Authentication",
+      "type": "security_goal",
+      "description": "Evidence that a message was produced by an entity controlling the private key associated with a trusted public key."
+    },
+    {
+      "id": "integrity",
+      "name": "Integrity",
+      "type": "security_goal",
+      "description": "Ability to detect changes to signed message content because verification fails when signed bits are altered."
+    },
+    {
+      "id": "non_repudiation",
+      "name": "Non-repudiation of origin",
+      "type": "security_goal_legal_concept",
+      "description": "Property intended to make it difficult for a signer to deny having signed information; depends on key custody, attribution, revocation and legal context."
+    },
+    {
+      "id": "confidentiality",
+      "name": "Confidentiality",
+      "type": "security_goal",
+      "description": "Protection of message contents from disclosure; signatures do not themselves provide confidentiality."
+    },
+    {
+      "id": "message_authentication_code",
+      "name": "Message authentication code (MAC)",
+      "type": "cryptographic_primitive",
+      "description": "Authentication mechanism that provides confidence to a specific recipient or set of key holders, unlike public verifiability of digital signatures."
+    },
+    {
+      "id": "encryption",
+      "name": "Encryption",
+      "type": "cryptographic_primitive",
+      "description": "Transforms plaintext to ciphertext to conceal content; by itself it does not necessarily authenticate sender or detect all unauthorized modifications."
+    },
+    {
+      "id": "public_key_infrastructure",
+      "name": "Public key infrastructure (PKI)",
+      "type": "trust_infrastructure",
+      "description": "Systems and governance used to associate public keys with identities, commonly through certificates and certificate authorities."
+    },
+    {
+      "id": "public_key_certificate",
+      "name": "Public key certificate",
+      "type": "credential",
+      "description": "Cryptographically protected record binding a public key to an identity or subject."
+    },
+    {
+      "id": "certificate_authority",
+      "name": "Certificate authority (CA)",
+      "type": "trust_infrastructure_actor",
+      "description": "PKI operator that attests to a public-key/identity association."
+    },
+    {
+      "id": "certificate_revocation_list",
+      "name": "Certificate revocation list (CRL)",
+      "type": "revocation_mechanism",
+      "description": "Published list used to check whether certificates have been revoked."
+    },
+    {
+      "id": "ocsp",
+      "name": "Online Certificate Status Protocol (OCSP)",
+      "type": "protocol",
+      "description": "Online mechanism for checking certificate status/revocation."
+    },
+    {
+      "id": "key_revocation",
+      "name": "Key or certificate revocation",
+      "type": "security_operation",
+      "description": "Process for marking a key/certificate as no longer trusted, important after compromise or loss."
+    },
+    {
+      "id": "replay_attack",
+      "name": "Replay attack",
+      "type": "attack",
+      "description": "Reuses a previously valid signed message to trigger an action again; signatures alone do not prevent replay."
+    },
+    {
+      "id": "transaction_identifier",
+      "name": "Transaction identifier / nonce",
+      "type": "protocol_control",
+      "description": "Unique transaction context used to detect duplicate operations and prevent replay of signed commands."
+    },
+    {
+      "id": "signature_malleability",
+      "name": "Signature malleability",
+      "type": "cryptographic_property_risk",
+      "description": "Ability in some schemes to transform a valid signature into another valid signature for the same message without the private key."
+    },
+    {
+      "id": "public_key_authentication",
+      "name": "Public-key authentication",
+      "type": "trust_requirement",
+      "description": "Process of verifying that a public key really belongs to the claimed signer; a signature alone does not establish this binding."
+    },
+    {
+      "id": "wysiwys",
+      "name": "WYSIWYS (What You See Is What You Sign)",
+      "type": "human_interface_security_property",
+      "description": "Requirement that the semantic content shown to the signer corresponds to the exact content actually signed, without hidden or substituted content."
+    },
+    {
+      "id": "trusted_application",
+      "name": "Trusted signing application",
+      "type": "software_security_control",
+      "description": "Application whose integrity and communication with signing software are verified to prevent substitution of what is shown and what is signed."
+    },
+    {
+      "id": "smart_card",
+      "name": "Smart card",
+      "type": "secure_hardware",
+      "description": "Tamper-resistant device that can hold a private key and perform signing operations without routinely exporting the key."
+    },
+    {
+      "id": "smart_card_reader",
+      "name": "Smart-card reader",
+      "type": "hardware_component",
+      "description": "Interface used to communicate with a smart card; a separate keypad can reduce exposure of PINs to compromised host computers."
+    },
+    {
+      "id": "pin",
+      "name": "Personal identification number (PIN)",
+      "type": "authentication_secret",
+      "description": "Code used to activate a smart card; security depends partly on PIN strength and protection."
+    },
+    {
+      "id": "hardware_security_module",
+      "name": "Hardware security module (HSM)",
+      "type": "secure_hardware",
+      "description": "Dedicated hardware used to protect cryptographic keys and perform operations, including network-attached signing services."
+    },
+    {
+      "id": "network_attached_hsm",
+      "name": "Network-attached HSM",
+      "type": "secure_architecture",
+      "description": "HSM reachable over a network for centralized signing operations; introduces deployment and trust-boundary considerations."
+    },
+    {
+      "id": "fips_140_2_level_3",
+      "name": "FIPS 140-2 Level 3",
+      "type": "security_standard",
+      "description": "Security level cited in the source as a standard some risk-averse organizations require for cryptographic modules."
+    },
+    {
+      "id": "fips_201",
+      "name": "FIPS 201",
+      "type": "security_standard",
+      "description": "Standard cited in the source in relation to secure identity credentials and signature-service requirements."
+    },
+    {
+      "id": "digital_document",
+      "name": "Digital document",
+      "type": "data_object",
+      "description": "Electronic document that may be signed as a whole to bind its contents and reveal subsequent alteration."
+    },
+    {
+      "id": "provenance",
+      "name": "Document provenance",
+      "type": "assurance_property",
+      "description": "Evidence about origin, identity and status of an electronic document."
+    },
+    {
+      "id": "software_distribution",
+      "name": "Software distribution signing",
+      "type": "application",
+      "description": "Use of digital signatures to authenticate software, packages, patches or updates before installation."
+    },
+    {
+      "id": "financial_transaction",
+      "name": "Financial transaction",
+      "type": "application",
+      "description": "Transaction whose instructions can be digitally signed to detect forgery and tampering."
+    },
+    {
+      "id": "contract_management",
+      "name": "Contract management software",
+      "type": "application",
+      "description": "Software and workflows using digital signatures for approvals and agreements."
+    },
+    {
+      "id": "electronic_transcript",
+      "name": "Electronic academic transcript",
+      "type": "application",
+      "description": "Electronic student record that can be digitally signed to help assure authenticity."
+    },
+    {
+      "id": "lotus_notes_1",
+      "name": "Lotus Notes 1.0",
+      "type": "software",
+      "description": "Released in 1989; described as the first widely marketed software package to offer digital signatures using RSA."
+    },
+    {
+      "id": "rsa",
+      "name": "RSA signature scheme",
+      "type": "signature_algorithm",
+      "description": "Signature scheme based on RSA public-key mathematics; the source warns plain/raw RSA signatures are insecure and describes hash-then-sign practice."
+    },
+    {
+      "id": "rsa_modulus",
+      "name": "RSA modulus N",
+      "type": "mathematical_parameter",
+      "description": "Product of two distinct secret large primes in the RSA key-generation description."
+    },
+    {
+      "id": "rsa_primes",
+      "name": "RSA secret primes",
+      "type": "mathematical_parameter",
+      "description": "Two random distinct large primes whose product forms the RSA modulus."
+    },
+    {
+      "id": "rsa_public_exponent",
+      "name": "RSA public exponent e",
+      "type": "mathematical_parameter",
+      "description": "Public RSA exponent."
+    },
+    {
+      "id": "rsa_private_exponent",
+      "name": "RSA private exponent d",
+      "type": "mathematical_parameter",
+      "description": "Secret RSA exponent satisfying e*d ≡ 1 mod φ(N) in the described construction."
+    },
+    {
+      "id": "euler_totient",
+      "name": "Euler totient φ(N)",
+      "type": "mathematical_function",
+      "description": "Totient of RSA modulus N used in the relation between public and private exponents."
+    },
+    {
+      "id": "padding",
+      "name": "Signature padding / encoding",
+      "type": "cryptographic_encoding",
+      "description": "Encoding applied to a digest before RSA signing; secure schemes require suitable standardized encoding rather than raw RSA."
+    },
+    {
+      "id": "random_oracle_model",
+      "name": "Random oracle model",
+      "type": "security_model",
+      "description": "Idealized model used in the source's discussion of hash-then-sign security."
+    },
+    {
+      "id": "raw_rsa_forgery",
+      "name": "Raw RSA existential forgery",
+      "type": "attack",
+      "description": "Key-only forgery risk in direct/raw RSA signing, where a chosen signature can be mapped through verification to a corresponding message."
+    },
+    {
+      "id": "lamport_signatures",
+      "name": "Lamport signatures",
+      "type": "signature_family",
+      "description": "Early signature family based on one-way functions; cited as one of the schemes developed after RSA."
+    },
+    {
+      "id": "merkle_signatures",
+      "name": "Merkle signatures / hash trees",
+      "type": "signature_family",
+      "description": "Signature family associated with Merkle trees or hash trees."
+    },
+    {
+      "id": "rabin_signatures",
+      "name": "Rabin signature algorithm",
+      "type": "signature_algorithm",
+      "description": "Early digital-signature scheme described in the article's history and algorithm list."
+    },
+    {
+      "id": "gmr_scheme",
+      "name": "GMR signature scheme",
+      "type": "signature_algorithm",
+      "description": "Goldwasser–Micali–Rivest scheme introduced with rigorous security treatment against existential forgery under chosen-message attack."
+    },
+    {
+      "id": "dsa",
+      "name": "Digital Signature Algorithm (DSA)",
+      "type": "signature_algorithm",
+      "description": "Discrete-logarithm-based signature algorithm listed among signature algorithms; see separate DSA graph entry for detailed algorithm-specific treatment."
+    },
+    {
+      "id": "ecdsa",
+      "name": "Elliptic Curve Digital Signature Algorithm (ECDSA)",
+      "type": "signature_algorithm",
+      "description": "Elliptic-curve signature algorithm listed in the source."
+    },
+    {
+      "id": "eddsa",
+      "name": "EdDSA",
+      "type": "signature_algorithm",
+      "description": "Edwards-curve digital signature family listed in the source."
+    },
+    {
+      "id": "ed25519",
+      "name": "Ed25519",
+      "type": "signature_algorithm_variant",
+      "description": "EdDSA signature scheme variant mentioned in the source's references and public-key cryptography overview."
+    },
+    {
+      "id": "ed448",
+      "name": "Ed448",
+      "type": "signature_algorithm_variant",
+      "description": "EdDSA signature scheme variant listed in the public-key cryptography overview."
+    },
+    {
+      "id": "elgamal_signature",
+      "name": "ElGamal signature scheme",
+      "type": "signature_algorithm",
+      "description": "Signature scheme described as predecessor to DSA and related to discrete-logarithm cryptography."
+    },
+    {
+      "id": "schnorr_signature",
+      "name": "Schnorr signature",
+      "type": "signature_algorithm",
+      "description": "Signature scheme listed as a variant related to ElGamal and as a basis for signature aggregation/protocols."
+    },
+    {
+      "id": "pointcheval_stern",
+      "name": "Pointcheval–Stern signature algorithm",
+      "type": "signature_algorithm",
+      "description": "Signature algorithm listed among variants related to ElGamal."
+    },
+    {
+      "id": "bls",
+      "name": "BLS signatures",
+      "type": "signature_algorithm",
+      "description": "Pairing-based signature family; supports aggregation in suitable constructions."
+    },
+    {
+      "id": "aggregate_signature",
+      "name": "Aggregate signature",
+      "type": "signature_capability",
+      "description": "Technique that combines multiple signatures on multiple messages from multiple users into one compact signature, under scheme-specific conditions."
+    },
+    {
+      "id": "blind_signature",
+      "name": "Blind signature",
+      "type": "signature_variant",
+      "description": "Signature concept listed in the article's related topics."
+    },
+    {
+      "id": "detached_signature",
+      "name": "Detached signature",
+      "type": "signature_format",
+      "description": "Signature stored separately from the signed content, listed in related topics."
+    },
+    {
+      "id": "undeniable_signature",
+      "name": "Undeniable signature",
+      "type": "signature_variant",
+      "description": "Signature family listed among digital-signature algorithms and variants."
+    },
+    {
+      "id": "probabilistic_signature",
+      "name": "Probabilistic signature scheme",
+      "type": "signature_property",
+      "description": "Signature scheme category listed in related topics; signing may use randomness."
+    },
+    {
+      "id": "crystals_dilithium",
+      "name": "CRYSTALS-Dilithium",
+      "type": "post_quantum_signature",
+      "description": "Post-quantum signature scheme described as lattice-based and based on LWE in the source."
+    },
+    {
+      "id": "falcon",
+      "name": "Falcon",
+      "type": "post_quantum_signature",
+      "description": "Post-quantum signature scheme described as lattice-based and related to CVP in lattices."
+    },
+    {
+      "id": "sphincs_plus",
+      "name": "SPHINCS+",
+      "type": "post_quantum_signature",
+      "description": "Post-quantum signature scheme based on hash functions."
+    },
+    {
+      "id": "lattice_cryptography",
+      "name": "Lattice-based cryptography",
+      "type": "cryptographic_family",
+      "description": "Family including LWE/SIS and lattice problems; used by post-quantum signature schemes such as Dilithium and Falcon."
+    },
+    {
+      "id": "hash_based_cryptography",
+      "name": "Hash-based cryptography",
+      "type": "cryptographic_family",
+      "description": "Family of cryptographic constructions based on hash functions; used by SPHINCS+ and related signature schemes."
+    },
+    {
+      "id": "post_quantum_cryptography",
+      "name": "Post-quantum cryptography",
+      "type": "cryptographic_field",
+      "description": "Cryptographic methods designed to resist attacks by quantum-capable adversaries; the source lists several post-quantum signature algorithms."
+    },
+    {
+      "id": "zero_knowledge_proofs",
+      "name": "Zero-knowledge proofs",
+      "type": "cryptographic_protocol",
+      "description": "Protocol family that some signature schemes can facilitate efficiently."
+    },
+    {
+      "id": "secure_computation",
+      "name": "Secure computation",
+      "type": "cryptographic_protocol",
+      "description": "Cryptographic protocol family that can benefit from signature schemes with efficient protocol support."
+    },
+    {
+      "id": "diffie_hellman",
+      "name": "Whitfield Diffie and Martin Hellman",
+      "type": "people",
+      "description": "Described the notion of digital signatures in 1976 while conjecturing schemes based on trapdoor one-way permutations."
+    },
+    {
+      "id": "rivest",
+      "name": "Ronald Rivest",
+      "type": "person",
+      "description": "Co-inventor of RSA and co-author of the GMR security definition and scheme."
+    },
+    {
+      "id": "shamir",
+      "name": "Adi Shamir",
+      "type": "person",
+      "description": "Co-inventor of RSA."
+    },
+    {
+      "id": "adleman",
+      "name": "Leonard Adleman",
+      "type": "person",
+      "description": "Co-inventor of RSA."
+    },
+    {
+      "id": "goldwasser",
+      "name": "Shafi Goldwasser",
+      "type": "person",
+      "description": "Co-author of the rigorous 1988 definition of signature security and GMR scheme."
+    },
+    {
+      "id": "micali",
+      "name": "Silvio Micali",
+      "type": "person",
+      "description": "Co-author of the rigorous 1988 definition of signature security and GMR scheme."
+    },
+    {
+      "id": "naor",
+      "name": "Moni Naor",
+      "type": "person",
+      "description": "Co-author, with Moti Yung, of a signature construction using a weaker one-way-function property as described in the source."
+    },
+    {
+      "id": "yung",
+      "name": "Moti Yung",
+      "type": "person",
+      "description": "Co-author, with Moni Naor, of a signature construction described in the article's history."
+    },
+    {
+      "id": "lamport",
+      "name": "Leslie Lamport",
+      "type": "person",
+      "description": "Originator associated with Lamport signatures; source cites a 1979 technical report."
+    },
+    {
+      "id": "merkle",
+      "name": "Ralph C. Merkle",
+      "type": "person",
+      "description": "Associated with Merkle signatures/hash trees; source cites his 1990 paper."
+    },
+    {
+      "id": "lotus_notes",
+      "name": "Lotus Notes",
+      "type": "software_product",
+      "description": "Software package whose version 1.0 was released in 1989 and used RSA digital signatures."
+    },
+    {
+      "id": "nist",
+      "name": "National Institute of Standards and Technology (NIST)",
+      "type": "standards_organization",
+      "description": "Standards body associated with Federal Information Processing Standards and digital-signature standards."
+    },
+    {
+      "id": "fips_186",
+      "name": "FIPS 186 / Digital Signature Standard",
+      "type": "security_standard",
+      "description": "Digital-signature standard family; the source's linked DSA context and current standards landscape concern DSS/FIPS."
+    },
+    {
+      "id": "x509",
+      "name": "X.509",
+      "type": "standard",
+      "description": "Certificate format/PKI standard listed in related topics."
+    },
+    {
+      "id": "openpgp",
+      "name": "OpenPGP",
+      "type": "standard",
+      "description": "OpenPGP-related cryptographic ecosystem referenced via OpenPGP card in the source's topic taxonomy."
+    },
+    {
+      "id": "gnu_privacy_guard",
+      "name": "GNU Privacy Guard (GnuPG)",
+      "type": "software",
+      "description": "Software implementation related to public-key cryptography and digital signatures, listed in related topics."
+    },
+    {
+      "id": "ssh",
+      "name": "OpenSSH",
+      "type": "software_protocol",
+      "description": "SSH ecosystem with signature algorithms including Ed25519 and Ed448 in the source's public-key cryptography overview."
+    },
+    {
+      "id": "bitcoin",
+      "name": "Bitcoin",
+      "type": "system",
+      "description": "System mentioned in relation to signature malleability, replay risks and potential uses of aggregate signatures."
+    },
+    {
+      "id": "debian_package_signing",
+      "name": "Debian package signing",
+      "type": "software_supply_chain",
+      "description": "Package signing practice referenced in the source's notes."
+    },
+    {
+      "id": "apple_app_distribution",
+      "name": "Apple app distribution",
+      "type": "software_supply_chain",
+      "description": "Apple Developer documentation cited in relation to distributing apps to registered devices."
+    },
+    {
+      "id": "gpo",
+      "name": "United States Government Publishing Office (GPO)",
+      "type": "organization",
+      "description": "The source describes GPO publishing electronic versions of government materials with digital signatures, while noting the citation is marked as needing verification."
+    },
+    {
+      "id": "penn_state",
+      "name": "Pennsylvania State University",
+      "type": "organization",
+      "description": "University named in the article as publishing electronic transcripts with digital signatures."
+    },
+    {
+      "id": "uchicago",
+      "name": "University of Chicago",
+      "type": "organization",
+      "description": "University named in the article as publishing electronic transcripts with digital signatures."
+    },
+    {
+      "id": "stanford",
+      "name": "Stanford University",
+      "type": "organization",
+      "description": "University named in the article as publishing electronic transcripts with digital signatures."
+    },
+    {
+      "id": "automotive_network_exchange",
+      "name": "Automotive Network Exchange (ANX)",
+      "type": "industry_standard",
+      "description": "Industry interoperability environment cited for the automotive industry."
+    },
+    {
+      "id": "safe_biopharma",
+      "name": "SAFE-BioPharma Association",
+      "type": "industry_standard",
+      "description": "Healthcare-industry interoperability standards organization cited in the source."
+    },
+    {
+      "id": "esign_act",
+      "name": "US ESIGN Act of 2000",
+      "type": "law",
+      "description": "United States law cited in the source in relation to electronic signatures."
+    },
+    {
+      "id": "eu_digital_signature_directive",
+      "name": "EU Digital Signature Directive (1999)",
+      "type": "law",
+      "description": "European Union directive cited as part of legal recognition of digital signatures."
+    },
+    {
+      "id": "eu_eidas_follow_on",
+      "name": "EU follow-on electronic-signature legislation (2014)",
+      "type": "law",
+      "description": "Follow-on EU legislation cited by the source; exact legal instrument is not named in the supplied text."
+    },
+    {
+      "id": "wysiwys_authors",
+      "name": "Peter Landrock and Torben Pedersen",
+      "type": "people",
+      "description": "Coined the term WYSIWYS in a 1998 paper about principles for secure and legally binding digital signatures."
+    },
+    {
+      "id": "eal3",
+      "name": "Evaluation Assurance Level 3 (EAL3)",
+      "type": "security_assurance_level",
+      "description": "Assurance level that the source says specialized smart-card readers are often certified against."
+    },
+    {
+      "id": "smart_card_attack_research",
+      "name": "Ross Anderson and students",
+      "type": "people_group",
+      "description": "Researchers cited in the source as having broken some smart-card designs."
+    },
+    {
+      "id": "ink_signature",
+      "name": "Ink-on-paper signature",
+      "type": "analogue_concept",
+      "description": "Physical signature that may be copied across documents and does not cryptographically bind the signature to all document bits."
+    },
+    {
+      "id": "contract",
+      "name": "Contract",
+      "type": "legal_document",
+      "description": "Document or agreement that may be signed electronically; signing and encryption keys are recommended to be separated in the source."
+    },
+    {
+      "id": "certificate_compromise",
+      "name": "Compromised signing key/certificate",
+      "type": "security_event",
+      "description": "Event in which a private key is disclosed or misused, undermining attribution and requiring response such as revocation."
+    },
+    {
+      "id": "semantic_interpretation",
+      "name": "Semantic interpretation of signed bits",
+      "type": "data_processing_concept",
+      "description": "Human/application meaning derived from a bitstring through software and hardware transformations; may diverge from the actual signed bits."
+    },
+    {
+      "id": "signing_service",
+      "name": "Digital signing service",
+      "type": "system",
+      "description": "Local or cloud/network service that performs digital-signature operations and requires controls around key security and request integrity."
+    },
+    {
+      "id": "two_factor_authentication",
+      "name": "Two-factor authentication",
+      "type": "security_control",
+      "description": "Combination such as possession of a smart card and knowledge of its PIN."
+    },
+    {
+      "id": "key_backup",
+      "name": "Key backup / escrow",
+      "type": "key_management_practice",
+      "description": "Backup or escrow can preserve access to encrypted data, but the source cautions against backup/escrow of signing keys unless securely encrypted."
+    },
+    {
+      "id": "separate_key_pairs",
+      "name": "Separate signing and encryption key pairs",
+      "type": "key_management_design",
+      "description": "Practice of using distinct key pairs for signing and encryption to separate legal assent from confidentiality functions."
+    },
+    {
+      "id": "ink_page_numbering",
+      "name": "Page numbering for paper contracts",
+      "type": "document_integrity_practice",
+      "description": "Paper-based practice mentioned as an analogue to signing a whole digital document to reveal page substitution."
+    },
+    {
+      "id": "signature_aggregation_protocols",
+      "name": "Signature aggregation protocols",
+      "type": "cryptographic_protocol",
+      "description": "Protocols that combine signatures and may be used in systems such as Bitcoin, subject to construction-specific properties."
+    },
+    {
+      "id": "key_only_attack",
+      "name": "key-only attack",
+      "type": "attack_model",
+      "description": "Attacker knows only public verification key."
+    },
+    {
+      "id": "known_message_attack",
+      "name": "known-message attack",
+      "type": "attack_model",
+      "description": "Attacker knows valid signatures for messages not chosen by attacker."
+    },
+    {
+      "id": "adaptive_chosen_message_attack",
+      "name": "adaptive chosen-message attack",
+      "type": "attack_model",
+      "description": "Attacker adaptively requests signatures on selected messages."
+    },
+    {
+      "id": "total_break",
+      "name": "total break",
+      "type": "attack_outcome",
+      "description": "Attacker recovers signing key."
+    },
+    {
+      "id": "universal_forgery",
+      "name": "universal forgery",
+      "type": "attack_outcome",
+      "description": "Attacker can forge signatures for any message."
+    },
+    {
+      "id": "selective_forgery",
+      "name": "selective forgery",
+      "type": "attack_outcome",
+      "description": "Attacker forges a signature for a message selected by the adversary."
+    },
+    {
+      "id": "existential_forgery",
+      "name": "existential forgery",
+      "type": "attack_outcome",
+      "description": "Attacker creates some valid message/signature pair not already known."
+    },
+    {
+      "id": "user",
+      "name": "user",
+      "type": "actor",
+      "description": "The article says users and software must carry out the protocol properly."
+    },
+    {
+      "id": "quality_algorithms",
+      "name": "quality_algorithms",
+      "type": "implementation_requirement",
+      "description": "Weak algorithms with practical attacks do not provide expected security."
+    },
+    {
+      "id": "quality_implementations",
+      "name": "quality_implementations",
+      "type": "implementation_requirement",
+      "description": "Implementation errors can undermine an otherwise good algorithm."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "digital_signature",
+      "target": "public_key_cryptography",
+      "type": "is_instance_of",
+      "description": "Digital signatures are a public-key cryptographic construct.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "key_generation",
+      "type": "uses_stage",
+      "description": "A signature scheme generates a corresponding key pair.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "signing_algorithm",
+      "type": "uses_stage",
+      "description": "The signing stage uses message and private key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "verification_algorithm",
+      "type": "uses_stage",
+      "description": "The verification stage checks message, public key and signature.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "key_generation",
+      "target": "private_key",
+      "type": "produces",
+      "description": "Outputs secret signing key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "key_generation",
+      "target": "public_key",
+      "type": "produces",
+      "description": "Outputs corresponding public verification key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signing_algorithm",
+      "target": "message",
+      "type": "consumes",
+      "description": "Signs a message or bitstring.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signing_algorithm",
+      "target": "private_key",
+      "type": "consumes",
+      "description": "Signing requires secret key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signing_algorithm",
+      "target": "signature_value",
+      "type": "produces",
+      "description": "Returns signature/tag.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "verification_algorithm",
+      "target": "message",
+      "type": "consumes",
+      "description": "Verification is performed for the claimed message.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "verification_algorithm",
+      "target": "public_key",
+      "type": "consumes",
+      "description": "Uses signer's public key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "verification_algorithm",
+      "target": "signature_value",
+      "type": "consumes",
+      "description": "Checks supplied signature.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "verification_algorithm",
+      "target": "correctness",
+      "type": "must_satisfy",
+      "description": "Correct signatures verify under the matching public key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "integrity",
+      "type": "supports",
+      "description": "Alteration of signed bits should cause verification failure.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "authentication",
+      "type": "supports",
+      "description": "Supports authentication when the public key is trusted and key remains secret.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "non_repudiation",
+      "type": "may_support",
+      "description": "Non-repudiation is contextual and depends on key custody and legal framework.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "confidentiality",
+      "type": "does_not_provide",
+      "description": "Signing does not conceal message content.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "electronic_signature",
+      "type": "may_implement",
+      "description": "Digital signatures can implement electronic signatures; not all electronic signatures are digital signatures.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "message_authentication_code",
+      "type": "contrasts_with",
+      "description": "MAC trust is specific to key holders/recipients rather than general public verification.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "euf_cma",
+      "type": "security_goal",
+      "description": "The accepted strong notion described is existential unforgeability under adaptive chosen-message attack.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "euf_cma",
+      "target": "signing_oracle",
+      "type": "models_access_to",
+      "description": "Adversary can request signatures on chosen messages.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "euf_cma",
+      "target": "query_set",
+      "type": "excludes_forgery_target_from",
+      "description": "A successful forgery message must not be in the queried set.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "euf_cma",
+      "target": "security_parameter",
+      "type": "is_parameterized_by",
+      "description": "Negligible success probability is measured against security parameter.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "message_digest",
+      "type": "commonly_signs",
+      "description": "Common constructions hash a message before signing.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "hash_function",
+      "target": "message",
+      "type": "maps_to_digest",
+      "description": "Produces a short digest of input message.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "message_digest",
+      "target": "signing_algorithm",
+      "type": "is_input_to",
+      "description": "Digest is encoded and signed in common hash-then-sign designs.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "hash_function",
+      "target": "integrity",
+      "type": "supports",
+      "description": "A changed message generally changes the digest and invalidates the signature.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "message_digest",
+      "target": "padding",
+      "type": "is_encoded_by",
+      "description": "RSA signatures use an appropriate encoding/padding of the digest.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "rsa_modulus",
+      "type": "uses_parameter",
+      "description": "RSA key includes modulus N.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "rsa_public_exponent",
+      "type": "uses_parameter",
+      "description": "Public key includes e.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "rsa_private_exponent",
+      "type": "uses_parameter",
+      "description": "Secret key includes d.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa_modulus",
+      "target": "rsa_primes",
+      "type": "is_product_of",
+      "description": "N is the product of two distinct secret large primes.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa_private_exponent",
+      "target": "euler_totient",
+      "type": "satisfies_inverse_relation",
+      "description": "The described relation is e*d ≡ 1 (mod φ(N)).",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "raw_rsa_forgery",
+      "type": "is_vulnerable_to_when_raw",
+      "description": "Direct raw RSA signatures permit a key-only existential-forgery construction.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "hash_function",
+      "type": "commonly_combined_with",
+      "description": "Practical signing hashes and encodes messages before signing.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "random_oracle_model",
+      "type": "security_discussed_in",
+      "description": "The source describes hash-then-sign security in an idealized random-oracle model.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "lotus_notes",
+      "target": "rsa",
+      "type": "used_for_signatures",
+      "description": "Lotus Notes 1.0 used RSA digital signatures.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "replay_attack",
+      "type": "does_not_prevent",
+      "description": "A valid signature can be replayed unless the surrounding protocol prevents reuse.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "replay_attack",
+      "target": "transaction_identifier",
+      "type": "mitigated_by",
+      "description": "Transaction identifiers or duplicate detection can stop repeated execution.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "signature_malleability",
+      "type": "may_be_subject_to",
+      "description": "Some schemes permit alternate valid signatures or transformations.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signature_malleability",
+      "target": "bitcoin",
+      "type": "relevant_to",
+      "description": "Source discusses transaction malleability and replay-related risk in Bitcoin contexts.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "public_key_authentication",
+      "type": "depends_on",
+      "description": "The verifier must know that the public key belongs to the claimed signer.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "public_key_authentication",
+      "target": "public_key_certificate",
+      "type": "can_use",
+      "description": "Certificates bind public keys to identities.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "public_key_certificate",
+      "target": "certificate_authority",
+      "type": "is_attested_by",
+      "description": "PKI commonly uses a CA to attest identity-key binding.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "public_key_certificate",
+      "target": "x509",
+      "type": "can_follow_format",
+      "description": "X.509 is a related certificate standard.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "public_key_certificate",
+      "target": "key_revocation",
+      "type": "subject_to",
+      "description": "Certificate or key can be revoked.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "key_revocation",
+      "target": "certificate_revocation_list",
+      "type": "checked_via",
+      "description": "CRLs can indicate revoked certificates.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "key_revocation",
+      "target": "ocsp",
+      "type": "checked_via",
+      "description": "OCSP provides online certificate status checking.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "certificate_compromise",
+      "target": "key_revocation",
+      "type": "requires_response",
+      "description": "Revocation is needed to reduce future reliance on compromised credentials.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "private_key",
+      "target": "certificate_compromise",
+      "type": "must_be_protected_against",
+      "description": "Disclosure allows attacker to generate signatures.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "wysiwys",
+      "type": "requires_semantic_assurance",
+      "description": "The signed bits must match what the signer believes is being signed.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "wysiwys",
+      "target": "semantic_interpretation",
+      "type": "concerns",
+      "description": "Meaning can change through processing of signed bits.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "trusted_application",
+      "target": "wysiwys",
+      "type": "helps_enforce",
+      "description": "Trusted UI and signing application integrity help align displayed and signed content.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "trusted_application",
+      "target": "signing_service",
+      "type": "authenticates_requests_to",
+      "description": "Signing application can accept requests only from trusted or signed applications.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "smart_card",
+      "target": "private_key",
+      "type": "can_store",
+      "description": "Smart cards may keep private keys inside tamper-resistant hardware.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "smart_card",
+      "target": "signing_algorithm",
+      "type": "performs",
+      "description": "Card CPU can sign a document digest.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "smart_card",
+      "target": "pin",
+      "type": "protected_by",
+      "description": "PIN commonly activates the card.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "smart_card_reader",
+      "target": "smart_card",
+      "type": "interfaces_with",
+      "description": "Reader provides card access.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "smart_card_reader",
+      "target": "pin",
+      "type": "can_protect_entry_of",
+      "description": "Separate keypad reduces host keylogger exposure.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "two_factor_authentication",
+      "target": "smart_card",
+      "type": "uses_possession_factor",
+      "description": "Card possession is one factor.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "two_factor_authentication",
+      "target": "pin",
+      "type": "uses_knowledge_factor",
+      "description": "PIN is a knowledge factor.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "network_attached_hsm",
+      "target": "signing_service",
+      "type": "hosts_or_supports",
+      "description": "HSM can serve centralized signing operations.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signing_service",
+      "target": "fips_140_2_level_3",
+      "type": "may_require_compliance_with",
+      "description": "Some risk-averse organizations require this cited security level.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signing_service",
+      "target": "fips_201",
+      "type": "may_require_compliance_with",
+      "description": "The source cites FIPS 201 among requested security standards.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "software_distribution",
+      "type": "used_for",
+      "description": "Signed updates allow clients to verify publisher authenticity before installation.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "financial_transaction",
+      "type": "used_for",
+      "description": "Can authenticate financial instructions and detect tampering.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "contract_management",
+      "type": "used_for",
+      "description": "Supports signing workflows for contracts.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "electronic_transcript",
+      "type": "used_for",
+      "description": "Can provide authenticity assurances for electronic transcripts.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "provenance",
+      "type": "can_support",
+      "description": "May provide evidence about origin and status of electronic documents.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_document",
+      "target": "digital_signature",
+      "type": "can_be_bound_to",
+      "description": "Signing a whole document can reveal alterations to any signed portion.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "ink_signature",
+      "type": "differs_from",
+      "description": "Digital signatures cryptographically bind bits; ink signatures can be copied as images.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "separate_key_pairs",
+      "target": "private_key",
+      "type": "protects_role_separation_for",
+      "description": "Distinct signing and encryption keys separate assent from confidentiality.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "separate_key_pairs",
+      "target": "encryption",
+      "type": "separates_from",
+      "description": "Encryption keys serve confidentiality; signing keys serve assent/authentication.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "key_backup",
+      "target": "private_key",
+      "type": "has_different_policy_for_signing_and_encryption",
+      "description": "Source recommends backup/escrow for encryption keys if needed but cautions against signing-key escrow unless securely encrypted.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "fips_186",
+      "target": "dsa",
+      "type": "standardizes_or_covers",
+      "description": "DSS/FIPS family is related to digital signature algorithm standards.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "rsa",
+      "type": "has_algorithm_family",
+      "description": "RSA is one listed signature scheme.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "dsa",
+      "type": "has_algorithm_family",
+      "description": "DSA is listed among digital signature algorithms.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "ecdsa",
+      "type": "has_algorithm_family",
+      "description": "ECDSA is listed among digital signature algorithms.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "eddsa",
+      "type": "has_algorithm_family",
+      "description": "EdDSA is listed among digital signature algorithms.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "eddsa",
+      "target": "ed25519",
+      "type": "has_variant",
+      "description": "Ed25519 is a variant.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "eddsa",
+      "target": "ed448",
+      "type": "has_variant",
+      "description": "Ed448 is a variant.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "elgamal_signature",
+      "target": "dsa",
+      "type": "historical_predecessor_to",
+      "description": "The source describes ElGamal signature as DSA's predecessor.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "elgamal_signature",
+      "target": "schnorr_signature",
+      "type": "related_variant",
+      "description": "The source lists Schnorr as a variant in this family context.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "elgamal_signature",
+      "target": "pointcheval_stern",
+      "type": "related_variant",
+      "description": "The source lists Pointcheval–Stern among related variants.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "lamport_signatures",
+      "type": "includes_family",
+      "description": "Lamport signatures are an early family.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "merkle_signatures",
+      "type": "includes_family",
+      "description": "Merkle signatures/hash trees are an early family.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "rabin_signatures",
+      "type": "includes_family",
+      "description": "Rabin signatures are an early family.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "goldwasser",
+      "target": "gmr_scheme",
+      "type": "coauthored",
+      "description": "GMR scheme is associated with Goldwasser, Micali and Rivest.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "micali",
+      "target": "gmr_scheme",
+      "type": "coauthored",
+      "description": "GMR scheme is associated with Goldwasser, Micali and Rivest.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rivest",
+      "target": "gmr_scheme",
+      "type": "coauthored",
+      "description": "GMR scheme is associated with Goldwasser, Micali and Rivest.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "goldwasser",
+      "target": "euf_cma",
+      "type": "helped_formalize",
+      "description": "The 1988 work rigorously defined signature security requirements.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "micali",
+      "target": "euf_cma",
+      "type": "helped_formalize",
+      "description": "The 1988 work rigorously defined signature security requirements.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rivest",
+      "target": "euf_cma",
+      "type": "helped_formalize",
+      "description": "The 1988 work rigorously defined signature security requirements.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "diffie_hellman",
+      "target": "digital_signature",
+      "type": "introduced_concept_in_1976",
+      "description": "They first described the notion of digital signature schemes.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rivest",
+      "target": "rsa",
+      "type": "co_invented",
+      "description": "Rivest, Shamir and Adleman invented RSA.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "shamir",
+      "target": "rsa",
+      "type": "co_invented",
+      "description": "Rivest, Shamir and Adleman invented RSA.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "adleman",
+      "target": "rsa",
+      "type": "co_invented",
+      "description": "Rivest, Shamir and Adleman invented RSA.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "lamport",
+      "target": "lamport_signatures",
+      "type": "associated_with",
+      "description": "Lamport signatures are named for Leslie Lamport.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "merkle",
+      "target": "merkle_signatures",
+      "type": "associated_with",
+      "description": "Merkle signatures/hash trees are associated with Ralph Merkle.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "naor",
+      "target": "yung",
+      "type": "coauthored_work_with",
+      "description": "Naor and Yung presented a construction described in the source.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "crystals_dilithium",
+      "target": "lattice_cryptography",
+      "type": "based_on",
+      "description": "Source describes it as lattice-based and based on LWE.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "falcon",
+      "target": "lattice_cryptography",
+      "type": "based_on",
+      "description": "Source describes Falcon as lattice/CVP-based.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "sphincs_plus",
+      "target": "hash_based_cryptography",
+      "type": "based_on",
+      "description": "SPHINCS+ is described as hash-function-based.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "lattice_cryptography",
+      "target": "post_quantum_cryptography",
+      "type": "is_family_of",
+      "description": "Lattice-based signatures are listed as quantum-resistant candidates.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "hash_based_cryptography",
+      "target": "post_quantum_cryptography",
+      "type": "is_family_of",
+      "description": "Hash-based signatures are listed as quantum-resistant candidates.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "aggregate_signature",
+      "type": "has_specialized_variant",
+      "description": "Aggregation can compress multiple signatures under suitable schemes.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "aggregate_signature",
+      "target": "bls",
+      "type": "can_be_supported_by",
+      "description": "Pairing-based BLS schemes are one relevant signature family.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "signature_aggregation_protocols",
+      "target": "aggregate_signature",
+      "type": "implements",
+      "description": "Aggregation protocols combine signatures subject to scheme constraints.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "zero_knowledge_proofs",
+      "type": "can_facilitate",
+      "description": "Some signature schemes facilitate efficient zero-knowledge protocols.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "secure_computation",
+      "type": "can_facilitate",
+      "description": "Some signature schemes facilitate efficient secure computation.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "public_key_infrastructure",
+      "type": "often_deployed_with",
+      "description": "PKI commonly establishes public-key identity binding.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "public_key_infrastructure",
+      "target": "certificate_authority",
+      "type": "includes_role",
+      "description": "CA attests key-to-identity association.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "signing_service",
+      "type": "can_be_provided_by",
+      "description": "Signing may occur locally, on a smart card, or through a network-attached service.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "smart_card_attack_research",
+      "target": "smart_card",
+      "type": "studied_weaknesses_of",
+      "description": "Source notes some smart-card designs have been broken.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "wysiwys_authors",
+      "target": "wysiwys",
+      "type": "coined_term_for",
+      "description": "Landrock and Pedersen coined WYSIWYS.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "eal3",
+      "target": "smart_card_reader",
+      "type": "assurance_level_cited_for",
+      "description": "Specialized readers are described as often EAL3-certified.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "automotive_network_exchange",
+      "target": "digital_signature",
+      "type": "industry_interoperability_context",
+      "description": "ANX is cited as an industry interoperability environment.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "safe_biopharma",
+      "target": "digital_signature",
+      "type": "industry_interoperability_context",
+      "description": "SAFE-BioPharma is cited in healthcare interoperability.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "esign_act",
+      "target": "electronic_signature",
+      "type": "provides_legal_context_for",
+      "description": "US ESIGN Act is cited in references.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "eu_digital_signature_directive",
+      "target": "digital_signature",
+      "type": "provides_legal_context_for",
+      "description": "1999 directive is cited as legal context.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "eu_eidas_follow_on",
+      "target": "digital_signature",
+      "type": "provides_legal_context_for",
+      "description": "2014 EU follow-on legislation is cited as legal context.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "debian_package_signing",
+      "target": "software_distribution",
+      "type": "is_example_of",
+      "description": "Package signing is cited in the source notes.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "apple_app_distribution",
+      "target": "software_distribution",
+      "type": "is_example_of",
+      "description": "Apple app distribution documentation is cited.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "gnu_privacy_guard",
+      "target": "digital_signature",
+      "type": "implements_or_supports",
+      "description": "GnuPG is a related tool in the article's related topics.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "ssh",
+      "target": "ed25519",
+      "type": "supports_algorithm_context",
+      "description": "Ed25519 appears in the public-key cryptography/SSH topic overview.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "ssh",
+      "target": "ed448",
+      "type": "supports_algorithm_context",
+      "description": "Ed448 appears in the public-key cryptography/SSH topic overview.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "gpo",
+      "target": "digital_signature",
+      "type": "publishes_signed_materials_as_described",
+      "description": "The article says GPO published signed government materials, while marking the citation as needing verification.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "penn_state",
+      "target": "electronic_transcript",
+      "type": "named_as_example_of",
+      "description": "Named by the source as publishing digitally signed transcripts.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "uchicago",
+      "target": "electronic_transcript",
+      "type": "named_as_example_of",
+      "description": "Named by the source as publishing digitally signed transcripts.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "stanford",
+      "target": "electronic_transcript",
+      "type": "named_as_example_of",
+      "description": "Named by the source as publishing digitally signed transcripts.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "contract",
+      "target": "separate_key_pairs",
+      "type": "can_use",
+      "description": "Separate key pairs separate encryption from the act of signing an agreement.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "ink_page_numbering",
+      "target": "digital_document",
+      "type": "analogue_for_integrity",
+      "description": "Page numbering in paper contracts is compared with digitally signing the entire document.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "key_only_attack",
+      "type": "has_attack_model",
+      "description": "Attacker knows only public verification key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "known_message_attack",
+      "type": "has_attack_model",
+      "description": "Attacker knows valid signatures for messages not chosen by attacker.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "adaptive_chosen_message_attack",
+      "type": "has_attack_model",
+      "description": "Attacker adaptively requests signatures on selected messages.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "total_break",
+      "type": "has_attack_outcome",
+      "description": "Attacker recovers signing key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "universal_forgery",
+      "type": "has_attack_outcome",
+      "description": "Attacker can forge signatures for any message.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "selective_forgery",
+      "type": "has_attack_outcome",
+      "description": "Attacker forges a signature for a message selected by the adversary.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "existential_forgery",
+      "type": "has_attack_outcome",
+      "description": "Attacker creates some valid message/signature pair not already known.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "diffie_hellman",
+      "target": "rsa",
+      "type": "historical_precedes",
+      "description": "Diffie and Hellman introduced the concept in 1976; RSA followed soon afterward.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "rsa",
+      "target": "lotus_notes",
+      "type": "historical_precedes",
+      "description": "RSA signatures were used in Lotus Notes 1.0 in 1989.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "goldwasser",
+      "target": "gmr_scheme",
+      "type": "historically_formalized_in_1988",
+      "description": "Their work rigorously defined security requirements.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "signature_value",
+      "type": "not_suitable_as_unique_transaction_id",
+      "description": "Signature malleability or multiple valid signatures can undermine use as transaction identifiers.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "key_revocation",
+      "type": "requires_operational_support_for",
+      "description": "Revocation is needed when a key is lost or compromised.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "user",
+      "type": "requires_correct_protocol_use",
+      "description": "The article says users and software must carry out the protocol properly.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "quality_algorithms",
+      "type": "depends_on",
+      "description": "Weak algorithms with practical attacks do not provide expected security.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "quality_implementations",
+      "type": "depends_on",
+      "description": "Implementation errors can undermine an otherwise good algorithm.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "public_key",
+      "type": "depends_on_trusted_identity_binding",
+      "description": "The key owner must be verifiable.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "private_key",
+      "type": "depends_on_secrecy_of",
+      "description": "Private-key compromise permits perfect impersonation.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "encryption",
+      "type": "should_use_separate_key_pairs_from",
+      "description": "Source recommends distinct key pairs for signing and encryption.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "fips_186",
+      "target": "nist",
+      "type": "published_by_or_associated_with",
+      "description": "FIPS standards are part of the US federal standards context.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "automotive_network_exchange",
+      "type": "used_in_industry_context",
+      "description": "Source lists industry interoperability standards.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "safe_biopharma",
+      "type": "used_in_industry_context",
+      "description": "Source lists healthcare interoperability standards.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "ink_signature",
+      "type": "can_sign_entire_document",
+      "description": "Digital signing can bind all document pages, unlike a signature block alone.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "key_only_attack",
+      "type": "has_attack_model",
+      "description": "Attacker receives only the public verification key.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "known_message_attack",
+      "type": "has_attack_model",
+      "description": "Attacker knows signatures on messages not chosen by the attacker.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "adaptive_chosen_message_attack",
+      "type": "has_attack_model",
+      "description": "Attacker obtains signatures on adaptively chosen messages.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "total_break",
+      "type": "has_attack_outcome",
+      "description": "Signing key is recovered.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "universal_forgery",
+      "type": "has_attack_outcome",
+      "description": "Attacker can forge for any message.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "selective_forgery",
+      "type": "has_attack_outcome",
+      "description": "Attacker forges a message selected by the adversary.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "existential_forgery",
+      "type": "has_attack_outcome",
+      "description": "Attacker produces any new valid message/signature pair.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "quality_algorithms",
+      "type": "depends_on",
+      "description": "Strong algorithms are necessary.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "quality_implementations",
+      "type": "depends_on",
+      "description": "Correct implementations are necessary.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "digital_signature",
+      "target": "user",
+      "type": "requires_correct_signing_intent_from",
+      "description": "Signer must verify what is being signed.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "key_only_attack",
+      "target": "digital_signature",
+      "type": "attack_model_for",
+      "description": "Public verification key only.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "known_message_attack",
+      "target": "digital_signature",
+      "type": "attack_model_for",
+      "description": "Known valid signatures on messages not chosen by attacker.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "adaptive_chosen_message_attack",
+      "target": "digital_signature",
+      "type": "attack_model_for",
+      "description": "Adaptive signing-oracle access.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "total_break",
+      "target": "digital_signature",
+      "type": "attack_outcome_for",
+      "description": "Signing-key recovery.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "universal_forgery",
+      "target": "digital_signature",
+      "type": "attack_outcome_for",
+      "description": "Forgery for any message.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "selective_forgery",
+      "target": "digital_signature",
+      "type": "attack_outcome_for",
+      "description": "Forgery for adversary-selected message.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "existential_forgery",
+      "target": "digital_signature",
+      "type": "attack_outcome_for",
+      "description": "Any new valid message/signature pair.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "quality_algorithms",
+      "target": "digital_signature",
+      "type": "required_for_security",
+      "description": "Sound algorithm choice.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "quality_implementations",
+      "target": "digital_signature",
+      "type": "required_for_security",
+      "description": "Correct implementation and protocol operation.",
+      "evidence_class": "source"
+    },
+    {
+      "source": "user",
+      "target": "wysiwys",
+      "type": "must_be_protected_by",
+      "description": "User must see and approve the actual signed semantics.",
+      "evidence_class": "source"
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern_sign_verify",
+      "name": "Sign–Verify Lifecycle",
+      "description": "Canonical public-key signature lifecycle from key generation through message signing and recipient verification.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Generate keys",
+          "inputs": [
+            "security_parameter"
+          ],
+          "outputs": [
+            "private_key",
+            "public_key"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Prepare content",
+          "inputs": [
+            "message"
+          ],
+          "outputs": [
+            "message_digest"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Sign",
+          "inputs": [
+            "private_key",
+            "message_digest"
+          ],
+          "outputs": [
+            "signature_value"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Transmit",
+          "inputs": [
+            "message",
+            "signature_value",
+            "public_key_certificate"
+          ],
+          "outputs": [
+            "signed_message_package"
+          ]
+        },
+        {
+          "step": 5,
+          "name": "Verify",
+          "inputs": [
+            "message",
+            "signature_value",
+            "public_key"
+          ],
+          "outputs": [
+            "accept_or_reject"
+          ]
+        }
+      ],
+      "entities": [
+        "digital_signature",
+        "key_generation",
+        "signing_algorithm",
+        "verification_algorithm",
+        "private_key",
+        "public_key",
+        "message",
+        "message_digest",
+        "signature_value"
+      ],
+      "controls": [
+        "Validate signer-to-key binding",
+        "Reject if verification fails",
+        "Protect private key",
+        "Apply algorithm-specific encoding and parameters"
+      ]
+    },
+    {
+      "id": "pattern_pki_trust",
+      "name": "PKI Identity Binding and Revocation",
+      "description": "Establishes trust in the public key and checks current certificate status before relying on a signature.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Issue certificate",
+          "inputs": [
+            "identity",
+            "public_key"
+          ],
+          "outputs": [
+            "public_key_certificate"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Validate chain or trust relationship",
+          "inputs": [
+            "public_key_certificate",
+            "certificate_authority"
+          ],
+          "outputs": [
+            "trusted_key_binding"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Check status",
+          "inputs": [
+            "public_key_certificate"
+          ],
+          "outputs": [
+            "revocation_status"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Verify signature",
+          "inputs": [
+            "trusted_public_key",
+            "message",
+            "signature_value"
+          ],
+          "outputs": [
+            "verification_result"
+          ]
+        }
+      ],
+      "entities": [
+        "public_key_infrastructure",
+        "public_key_certificate",
+        "certificate_authority",
+        "certificate_revocation_list",
+        "ocsp",
+        "key_revocation",
+        "public_key_authentication"
+      ],
+      "controls": [
+        "Do not infer key identity from signature alone",
+        "Check revocation status where required",
+        "Consider CA mis-issuance and PKI governance"
+      ]
+    },
+    {
+      "id": "pattern_hash_then_sign",
+      "name": "Hash-Then-Sign",
+      "description": "Hash the message, encode the digest according to the signature scheme, then sign the encoded digest.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Hash message",
+          "inputs": [
+            "message"
+          ],
+          "outputs": [
+            "message_digest"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Encode digest",
+          "inputs": [
+            "message_digest"
+          ],
+          "outputs": [
+            "encoded_digest"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Sign encoded digest",
+          "inputs": [
+            "encoded_digest",
+            "private_key"
+          ],
+          "outputs": [
+            "signature_value"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Verify and compare",
+          "inputs": [
+            "message",
+            "signature_value",
+            "public_key"
+          ],
+          "outputs": [
+            "verification_result"
+          ]
+        }
+      ],
+      "entities": [
+        "hash_function",
+        "message_digest",
+        "padding",
+        "rsa",
+        "random_oracle_model"
+      ],
+      "controls": [
+        "Never use raw RSA signing as described",
+        "Use suitable scheme-specific encoding",
+        "Hash the exact bytes whose semantics are intended to be signed"
+      ]
+    },
+    {
+      "id": "pattern_hardware_key_custody",
+      "name": "Hardware-Protected Signing Key",
+      "description": "Keep signing key within a smart card or HSM and authorize signing requests through protected interfaces.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Provision key",
+          "inputs": [
+            "private_key"
+          ],
+          "outputs": [
+            "smart_card_or_hsm_key"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Authenticate operator",
+          "inputs": [
+            "smart_card",
+            "pin"
+          ],
+          "outputs": [
+            "authorized_session"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Send digest/request",
+          "inputs": [
+            "message_digest",
+            "trusted_application"
+          ],
+          "outputs": [
+            "signing_request"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Sign in protected hardware",
+          "inputs": [
+            "signing_request",
+            "private_key"
+          ],
+          "outputs": [
+            "signature_value"
+          ]
+        },
+        {
+          "step": 5,
+          "name": "Return signature",
+          "inputs": [
+            "signature_value"
+          ],
+          "outputs": [
+            "signed_message"
+          ]
+        }
+      ],
+      "entities": [
+        "smart_card",
+        "smart_card_reader",
+        "pin",
+        "hardware_security_module",
+        "network_attached_hsm",
+        "trusted_application",
+        "two_factor_authentication"
+      ],
+      "controls": [
+        "Keep private key non-exportable where supported",
+        "Protect PIN entry against keylogging",
+        "Authenticate calling applications",
+        "Plan revocation after loss or theft"
+      ]
+    },
+    {
+      "id": "pattern_wysiwys",
+      "name": "WYSIWYS Trusted Presentation",
+      "description": "Ensures the user-facing semantic document corresponds to the exact bitstring presented to the signing operation.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Render document",
+          "inputs": [
+            "digital_document"
+          ],
+          "outputs": [
+            "semantic_interpretation"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Validate application integrity",
+          "inputs": [
+            "trusted_application"
+          ],
+          "outputs": [
+            "trusted_rendering_path"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Show signable content",
+          "inputs": [
+            "semantic_interpretation"
+          ],
+          "outputs": [
+            "user_confirmation"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Bind exact content",
+          "inputs": [
+            "message",
+            "user_confirmation"
+          ],
+          "outputs": [
+            "signing_request"
+          ]
+        },
+        {
+          "step": 5,
+          "name": "Sign",
+          "inputs": [
+            "signing_request",
+            "private_key"
+          ],
+          "outputs": [
+            "signature_value"
+          ]
+        }
+      ],
+      "entities": [
+        "wysiwys",
+        "semantic_interpretation",
+        "trusted_application",
+        "digital_document",
+        "user",
+        "signing_algorithm"
+      ],
+      "controls": [
+        "Prevent hidden content and semantic substitution",
+        "Ensure displayed and signed content match",
+        "Use integrity-checked applications"
+      ]
+    },
+    {
+      "id": "pattern_replay_safe_transactions",
+      "name": "Replay-Safe Signed Transaction",
+      "description": "Combines signature verification with application-level freshness and duplicate detection.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Create transaction context",
+          "inputs": [
+            "transaction_payload"
+          ],
+          "outputs": [
+            "transaction_identifier"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Sign complete context",
+          "inputs": [
+            "transaction_payload",
+            "transaction_identifier",
+            "private_key"
+          ],
+          "outputs": [
+            "signature_value"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Verify signer and content",
+          "inputs": [
+            "public_key",
+            "transaction_payload",
+            "signature_value"
+          ],
+          "outputs": [
+            "verified_request"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Check uniqueness/freshness",
+          "inputs": [
+            "transaction_identifier",
+            "transaction_history"
+          ],
+          "outputs": [
+            "fresh_or_duplicate"
+          ]
+        },
+        {
+          "step": 5,
+          "name": "Execute once",
+          "inputs": [
+            "verified_request",
+            "fresh_or_duplicate"
+          ],
+          "outputs": [
+            "transaction_result"
+          ]
+        }
+      ],
+      "entities": [
+        "digital_signature",
+        "replay_attack",
+        "transaction_identifier",
+        "signature_malleability",
+        "financial_transaction"
+      ],
+      "controls": [
+        "Do not use signature bytes alone as transaction IDs",
+        "Bind transaction context, audience and freshness",
+        "Reject previously processed identifiers"
+      ]
+    },
+    {
+      "id": "pattern_separated_keys",
+      "name": "Separate Signing and Encryption Keys",
+      "description": "Uses distinct key pairs for legal assent/authentication and confidentiality so encrypted communication does not automatically imply a signed agreement.",
+      "stages": [
+        {
+          "step": 1,
+          "name": "Provision distinct keys",
+          "inputs": [
+            "identity"
+          ],
+          "outputs": [
+            "signing_key_pair",
+            "encryption_key_pair"
+          ]
+        },
+        {
+          "step": 2,
+          "name": "Exchange encrypted messages",
+          "inputs": [
+            "encryption_key_pair",
+            "message"
+          ],
+          "outputs": [
+            "ciphertext"
+          ]
+        },
+        {
+          "step": 3,
+          "name": "Finalize agreement",
+          "inputs": [
+            "contract",
+            "signing_key_pair"
+          ],
+          "outputs": [
+            "signed_contract"
+          ]
+        },
+        {
+          "step": 4,
+          "name": "Handle compromise by purpose",
+          "inputs": [
+            "certificate_compromise"
+          ],
+          "outputs": [
+            "key-specific_recovery"
+          ]
+        }
+      ],
+      "entities": [
+        "separate_key_pairs",
+        "contract",
+        "encryption",
+        "digital_signature",
+        "key_backup",
+        "key_revocation"
+      ],
+      "controls": [
+        "Never treat encryption as legal signature by itself",
+        "Use distinct lifecycle and recovery policies",
+        "Protect signing-key backups exceptionally carefully"
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule_private_key_confidentiality",
+      "rule": "A signing private key must remain secret; anyone who obtains it can generate valid signatures.",
+      "basis": [
+        "private_key",
+        "certificate_compromise",
+        "digital_signature"
+      ],
+      "severity": "critical",
+      "kind": "security_invariant"
+    },
+    {
+      "id": "rule_verify_exact_message",
+      "rule": "Verify the signature against the exact received message bytes; any mutation should cause rejection under a correct scheme.",
+      "basis": [
+        "message",
+        "signature_value",
+        "verification_algorithm",
+        "integrity"
+      ],
+      "severity": "critical",
+      "kind": "verification_invariant"
+    },
+    {
+      "id": "rule_authenticate_public_key",
+      "rule": "A valid signature proves control of a private key only relative to a trusted binding between that public key and the claimed identity.",
+      "basis": [
+        "public_key_authentication",
+        "public_key_certificate",
+        "public_key_infrastructure"
+      ],
+      "severity": "critical",
+      "kind": "trust_invariant"
+    },
+    {
+      "id": "rule_replay_protection",
+      "rule": "A signature alone does not prevent replay; add transaction identifiers, freshness checks, and duplicate detection to state-changing protocols.",
+      "basis": [
+        "replay_attack",
+        "transaction_identifier",
+        "financial_transaction"
+      ],
+      "severity": "critical",
+      "kind": "protocol_rule"
+    },
+    {
+      "id": "rule_do_not_use_signature_as_id",
+      "rule": "Do not assume signature bytes uniquely identify a signed message or transaction; account for randomized signatures and malleability.",
+      "basis": [
+        "signature_malleability",
+        "signature_value",
+        "transaction_identifier"
+      ],
+      "severity": "high",
+      "kind": "protocol_rule"
+    },
+    {
+      "id": "rule_sign_semantic_content",
+      "rule": "Ensure the content the user sees and approves is the content actually signed; protect rendering and signing applications against substitution.",
+      "basis": [
+        "wysiwys",
+        "semantic_interpretation",
+        "trusted_application"
+      ],
+      "severity": "critical",
+      "kind": "human_interface_security"
+    },
+    {
+      "id": "rule_check_revocation",
+      "rule": "Check certificate/key status where the trust model requires it, especially after loss or suspected compromise.",
+      "basis": [
+        "key_revocation",
+        "certificate_revocation_list",
+        "ocsp"
+      ],
+      "severity": "high",
+      "kind": "key_lifecycle"
+    },
+    {
+      "id": "rule_do_not_raw_rsa",
+      "rule": "Do not use raw/plain RSA as a signature construction; use a secure, scheme-appropriate hash-and-encoding construction.",
+      "basis": [
+        "rsa",
+        "raw_rsa_forgery",
+        "hash_function",
+        "padding"
+      ],
+      "severity": "critical",
+      "kind": "algorithm_use"
+    },
+    {
+      "id": "rule_separate_keys",
+      "rule": "Use separate key pairs for signing and encryption when the application needs to distinguish assent from confidentiality.",
+      "basis": [
+        "separate_key_pairs",
+        "digital_signature",
+        "encryption"
+      ],
+      "severity": "high",
+      "kind": "key_management"
+    },
+    {
+      "id": "rule_secure_hardware_is_not_absolute",
+      "rule": "Hardware key storage reduces exposure but does not remove PIN, reader, application, provisioning, revocation, or user-interface risks.",
+      "basis": [
+        "smart_card",
+        "smart_card_reader",
+        "pin",
+        "trusted_application",
+        "key_revocation"
+      ],
+      "severity": "high",
+      "kind": "defense_in_depth"
+    },
+    {
+      "id": "rule_nonrepudiation_is_conditional",
+      "rule": "Do not treat non-repudiation as an automatic mathematical or legal guarantee; key custody, identity binding, revocation timing, and jurisdiction matter.",
+      "basis": [
+        "non_repudiation",
+        "private_key",
+        "public_key_authentication",
+        "key_revocation"
+      ],
+      "severity": "high",
+      "kind": "assurance_limit"
+    },
+    {
+      "id": "rule_algorithm_and_impl",
+      "rule": "Security requires a sound algorithm, correct implementation, correct protocol use, private-key secrecy, and trusted public-key ownership binding.",
+      "basis": [
+        "quality_algorithms",
+        "quality_implementations",
+        "private_key",
+        "public_key_authentication"
+      ],
+      "severity": "critical",
+      "kind": "system_invariant"
+    },
+    {
+      "id": "rule_signature_not_encryption",
+      "rule": "Do not assume signing hides a message or that encryption alone proves authenticity; combine mechanisms according to the required security goals.",
+      "basis": [
+        "digital_signature",
+        "encryption",
+        "confidentiality",
+        "authentication"
+      ],
+      "severity": "high",
+      "kind": "security_goal_separation"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_alice_bob",
+      "name": "Alice signs Hello Bob",
+      "scenario": "Alice signs the bitstring Hello Bob with her private key; Bob receives message and signature and verifies with Alice's trusted public key.",
+      "entities": [
+        "message",
+        "private_key",
+        "public_key",
+        "signature_value",
+        "verification_algorithm",
+        "authentication",
+        "integrity"
+      ],
+      "flow": [
+        "Alice prepares message",
+        "Alice signs with private key",
+        "Bob obtains message and signature",
+        "Bob validates Alice's public-key identity binding",
+        "Bob verifies signature and rejects if message was altered"
+      ],
+      "lesson": "Verification checks integrity and possession of the corresponding private key, assuming the public key is correctly associated with Alice."
+    },
+    {
+      "id": "example_bank_transfer_replay",
+      "name": "Signed bank transfer and replay",
+      "scenario": "A branch signs a transfer request. An attacker replays the same valid request if the bank lacks transaction IDs or duplicate detection.",
+      "entities": [
+        "financial_transaction",
+        "digital_signature",
+        "replay_attack",
+        "transaction_identifier"
+      ],
+      "flow": [
+        "Branch signs transaction request",
+        "Bank verifies signature",
+        "Attacker resends the same signed request",
+        "Without replay controls the transfer may execute again",
+        "Transaction ID and replay cache reject duplicate"
+      ],
+      "lesson": "Authentication and integrity do not provide freshness or exactly-once execution by themselves."
+    },
+    {
+      "id": "example_software_update",
+      "name": "Authenticating a software update",
+      "scenario": "Publisher distributes a non-secret patch; client verifies its signature before applying it to reduce risk of malicious substitution.",
+      "entities": [
+        "software_distribution",
+        "digital_signature",
+        "message",
+        "public_key",
+        "verification_algorithm"
+      ],
+      "flow": [
+        "Publisher prepares update bytes",
+        "Publisher signs update or digest",
+        "Client obtains update and signature",
+        "Client verifies signature and trusted publisher key",
+        "Client rejects invalid signature"
+      ],
+      "lesson": "A signature can authenticate public software artifacts even when confidentiality is unnecessary."
+    },
+    {
+      "id": "example_smart_card_signing",
+      "name": "Smart-card digest signing",
+      "scenario": "The application hashes a document and sends the digest to a smart card; the card signs using its stored private key and returns the signature.",
+      "entities": [
+        "smart_card",
+        "message_digest",
+        "private_key",
+        "pin",
+        "smart_card_reader",
+        "signature_value"
+      ],
+      "flow": [
+        "User activates card with PIN",
+        "Trusted application hashes document",
+        "Digest is sent to card",
+        "Card signs internally",
+        "Signature is returned without exporting the private key"
+      ],
+      "lesson": "Hardware protection reduces key-extraction risk but does not by itself guarantee correct document presentation or safe host software."
+    },
+    {
+      "id": "example_contract_key_separation",
+      "name": "Contract signing separate from encrypted negotiation",
+      "scenario": "Parties exchange confidential negotiation messages using encryption keys and sign the final contract with separate signing keys.",
+      "entities": [
+        "contract",
+        "separate_key_pairs",
+        "encryption",
+        "digital_signature",
+        "key_revocation"
+      ],
+      "flow": [
+        "Parties exchange encrypted messages",
+        "Final agreement is prepared",
+        "Each party signs the agreement with signing key",
+        "Signatures are verified against trusted identities",
+        "Compromise of one key type is handled according to its separate purpose"
+      ],
+      "lesson": "Encryption of a conversation should not be confused with signing a particular contract."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_supplied_wikipedia",
+      "title": "Digital signature",
+      "publisher": "Wikipedia, The Free Encyclopedia",
+      "source_type": "article_extract",
+      "url": "https://en.wikipedia.org/wiki/Digital_signature",
+      "date_accessed": "2026-10-20",
+      "notes": "Primary source supplied by user. The extract includes the definition, history, formal model, RSA method, applications, limitations, security models, key protection, WYSIWYS, algorithms, legal context and industry standards. Some source sections explicitly mark citations as missing or needing verification; those claims should retain that caveat.",
+      "line_ranges": [
+        "65-100",
+        "102-109",
+        "113-124",
+        "125-150",
+        "151-163",
+        "165-189",
+        "191-235",
+        "239-319"
+      ]
+    },
+    {
+      "id": "src_diffie_hellman_1976",
+      "title": "New Directions in Cryptography",
+      "authors": [
+        "Whitfield Diffie",
+        "Martin E. Hellman"
+      ],
+      "year": 1976,
+      "source_type": "paper_cited_in_source",
+      "doi": "10.1109/TIT.1976.1055638",
+      "notes": "Cited by supplied article for the early notion of digital signatures."
+    },
+    {
+      "id": "src_rsa_1978",
+      "title": "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems",
+      "authors": [
+        "Ronald Rivest",
+        "Adi Shamir",
+        "Leonard Adleman"
+      ],
+      "year": 1978,
+      "source_type": "paper_cited_in_source",
+      "doi": "10.1145/359340.359342",
+      "notes": "Cited by supplied article for RSA."
+    },
+    {
+      "id": "src_gmr_1988",
+      "title": "A Digital Signature Scheme Secure Against Adaptive Chosen-Message Attacks",
+      "authors": [
+        "Shafi Goldwasser",
+        "Silvio Micali",
+        "Ronald L. Rivest"
+      ],
+      "year": 1988,
+      "source_type": "paper_cited_in_source",
+      "doi": "10.1137/0217017",
+      "notes": "Cited for rigorous security definitions and the GMR signature scheme."
+    },
+    {
+      "id": "src_lamport_1979",
+      "title": "Constructing Digital Signatures from a One-Way Function",
+      "authors": [
+        "Leslie Lamport"
+      ],
+      "year": 1979,
+      "source_type": "technical_report_cited_in_source",
+      "notes": "Source cites SRI International Technical Report CSL-98."
+    },
+    {
+      "id": "src_merkle_1990",
+      "title": "A Certified Digital Signature",
+      "authors": [
+        "Ralph C. Merkle"
+      ],
+      "year": 1990,
+      "source_type": "paper_cited_in_source",
+      "doi": "10.1007/0-387-34805-0_21",
+      "notes": "Cited for Merkle signatures/hash-tree concepts."
+    },
+    {
+      "id": "src_landrock_pedersen_1998",
+      "title": "WYSIWYS? – What You See Is What You Sign?",
+      "authors": [
+        "Peter Landrock",
+        "Torben Pedersen"
+      ],
+      "year": 1998,
+      "source_type": "paper_cited_in_source",
+      "doi": "10.1016/S0167-4048(98)80005-8",
+      "notes": "Cited for the WYSIWYS concept."
+    },
+    {
+      "id": "src_applied_cryptography",
+      "title": "A Graduate Course in Applied Cryptography",
+      "authors": [
+        "Dan Boneh",
+        "Victor Shoup"
+      ],
+      "year": 2023,
+      "source_type": "book_or_course_notes_cited_in_source",
+      "notes": "Cited for digital-signature concepts; the source gives version 0.6."
+    },
+    {
+      "id": "src_goldreich",
+      "title": "Foundations of Cryptography",
+      "authors": [
+        "Oded Goldreich"
+      ],
+      "years": [
+        2001,
+        2004
+      ],
+      "source_type": "books_cited_in_source",
+      "notes": "Volumes I and II are cited as further reading."
+    },
+    {
+      "id": "src_industry_standards",
+      "title": "Industry interoperability standards referenced by the article",
+      "publisher_entities": [
+        "automotive_network_exchange",
+        "safe_biopharma"
+      ],
+      "source_type": "article_claim",
+      "notes": "The article names Automotive Network Exchange and SAFE-BioPharma Association, but the supplied Industry standards section itself is marked as lacking citations."
+    }
+  ],
+  "coverage": {
+    "topics": [
+      "definition and three-algorithm model",
+      "correctness and EUF-CMA",
+      "history and foundational contributors",
+      "RSA hash-then-sign construction",
+      "applications",
+      "authentication and integrity",
+      "replay and malleability",
+      "public-key authentication and PKI",
+      "revocation",
+      "security attack models and outcomes",
+      "smart cards and PINs",
+      "trusted applications and WYSIWYS",
+      "network-attached HSMs",
+      "signature algorithms and post-quantum signatures",
+      "industry interoperability",
+      "legal and practical context",
+      "separate signing and encryption key pairs"
+    ],
+    "explicit_source_caveats": [
+      "The supplied article marks the Method section as needing additional citations.",
+      "The supplied article marks the Industry standards section as lacking citations.",
+      "Some application claims are marked citation-needed or failed verification in the supplied article."
+    ]
+  },
+  "stats": {
+    "entity_count": 137,
+    "relationship_count": 174,
+    "architecture_pattern_count": 7,
+    "derived_rule_count": 13,
+    "example_count": 5,
+    "source_record_count": 10
+  }
+}

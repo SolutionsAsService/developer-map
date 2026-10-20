@@ -1,0 +1,3275 @@
+{
+  "schema_version": "1.0.0",
+  "graph_metadata": {
+    "title": "Git — Full Detail Knowledge Graph",
+    "canonical_id": "git",
+    "domain": [
+      "software_engineering",
+      "version_control",
+      "distributed_systems",
+      "developer_tools",
+      "software_supply_chain_security"
+    ],
+    "description": "Machine-readable knowledge graph of Git's history, architecture, object model, refs, commands, merge algorithms, transports, server/hosting ecosystem, extensions, workflows, implementations and security lessons.",
+    "source_policy": "Based primarily on the user-supplied Git article text. Inferences and operational best-practice rules are labeled as derived rules; claims that can change by version are preserved as source-reported rather than silently updated.",
+    "generated_from": "Pasted text(20261020-185455).txt",
+    "counts": {
+      "entities": 157,
+      "relationships": 197,
+      "architecture_patterns": 9,
+      "derived_rules": 19,
+      "examples": 6,
+      "sources": 1
+    }
+  },
+  "entities": [
+    {
+      "id": "git",
+      "name": "Git",
+      "type": "software",
+      "description": "Distributed version control system for tracking versions of source code and data; each repository ordinarily contains local history and supports independent work and synchronization."
+    },
+    {
+      "id": "dvc",
+      "name": "Distributed version control",
+      "type": "concept",
+      "description": "Version-control model in which developers hold local repositories and exchange changes between peers."
+    },
+    {
+      "id": "vcs",
+      "name": "Version control system",
+      "type": "software_category",
+      "description": "System that records changes to files over time and supports history inspection and collaboration."
+    },
+    {
+      "id": "scm",
+      "name": "Source code management",
+      "type": "concept",
+      "description": "Management of source-code versions and collaborative development history."
+    },
+    {
+      "id": "linus_torvalds",
+      "name": "Linus Torvalds",
+      "type": "person",
+      "description": "Created Git in 2005 to support Linux kernel development after the loss of the BitKeeper arrangement."
+    },
+    {
+      "id": "junio_hamano",
+      "name": "Junio C. Hamano",
+      "type": "person",
+      "description": "Major contributor who took over maintenance in July 2005 and led the Git 1.0 release."
+    },
+    {
+      "id": "linux_kernel",
+      "name": "Linux kernel",
+      "type": "software_project",
+      "description": "Large distributed open-source kernel project whose development needs motivated Git."
+    },
+    {
+      "id": "bitkeeper",
+      "name": "BitKeeper",
+      "type": "software",
+      "description": "Proprietary source-control system used for Linux kernel development from 2002 until its free-license arrangement was revoked."
+    },
+    {
+      "id": "mercurial",
+      "name": "Mercurial",
+      "type": "software",
+      "description": "Distributed version-control system whose creation was also spurred by the BitKeeper incident."
+    },
+    {
+      "id": "cvs",
+      "name": "Concurrent Versions System (CVS)",
+      "type": "software",
+      "description": "Earlier version-control system used by Torvalds as a design example of what Git should avoid."
+    },
+    {
+      "id": "git_scm_site",
+      "name": "Git official website",
+      "type": "website",
+      "description": "Official Git project website.",
+      "url": "https://git-scm.com"
+    },
+    {
+      "id": "git_repo",
+      "name": "Git source repository",
+      "type": "repository",
+      "description": "Canonical Git source-code repository hosted at git.kernel.org."
+    },
+    {
+      "id": "gpl2",
+      "name": "GNU General Public License version 2.0 only",
+      "type": "license",
+      "description": "Git is identified as GPL-2.0-only, with some components under compatible licenses such as LGPLv2.1."
+    },
+    {
+      "id": "c_language",
+      "name": "C",
+      "type": "programming_language",
+      "description": "Primary implementation language for Git."
+    },
+    {
+      "id": "shell",
+      "name": "Shell script",
+      "type": "programming_language",
+      "description": "Used for wrappers and scripts in Git's toolkit-based design."
+    },
+    {
+      "id": "perl",
+      "name": "Perl",
+      "type": "programming_language",
+      "description": "Used in Git tooling and in the Windows distribution environment."
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "programming_language",
+      "description": "Used for tooling and in independent Git implementations."
+    },
+    {
+      "id": "tcl",
+      "name": "Tcl",
+      "type": "programming_language",
+      "description": "Used for the Tcl/Tk GUI distributed with Git."
+    },
+    {
+      "id": "windows",
+      "name": "Windows",
+      "type": "operating_system",
+      "description": "Supported operating system; historical case-insensitive filesystem behavior was relevant to a Git vulnerability."
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "type": "operating_system",
+      "description": "Supported operating system; historical case-insensitive filesystem behavior was relevant to a Git vulnerability."
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "type": "operating_system",
+      "description": "Primary development environment for Git."
+    },
+    {
+      "id": "posix",
+      "name": "POSIX systems",
+      "type": "operating_system_family",
+      "description": "Includes Linux, macOS, Solaris, AIX and related environments cited for Git support."
+    },
+    {
+      "id": "distributed_workflow",
+      "name": "Distributed workflow",
+      "type": "concept",
+      "description": "Development model where repository histories and changes move between independently held repositories."
+    },
+    {
+      "id": "central_repository",
+      "name": "Central integration repository",
+      "type": "architecture_component",
+      "description": "Commonly used shared remote repository that hosts an integrated copy despite Git's peer-to-peer repository model."
+    },
+    {
+      "id": "local_repository",
+      "name": "Local repository",
+      "type": "architecture_component",
+      "description": "Repository stored on a developer's computer with local history and version-tracking data."
+    },
+    {
+      "id": "remote_repository",
+      "name": "Remote repository",
+      "type": "architecture_component",
+      "description": "Another repository, commonly on a server, from or to which changes are fetched or pushed."
+    },
+    {
+      "id": "network_independence",
+      "name": "Offline repository operation",
+      "type": "property",
+      "description": "Local history and operations remain available without network access."
+    },
+    {
+      "id": "performance",
+      "name": "Performance and scalability",
+      "type": "quality_attribute",
+      "description": "Git design goals include fast patching, efficient history access and support for large projects."
+    },
+    {
+      "id": "data_integrity",
+      "name": "Data integrity",
+      "type": "security_property",
+      "description": "Safeguards against accidental or malicious corruption were explicit design goals."
+    },
+    {
+      "id": "nonlinear_history",
+      "name": "Non-linear development history",
+      "type": "concept",
+      "description": "History with multiple branches and concurrent lines of development."
+    },
+    {
+      "id": "branch",
+      "name": "Branch",
+      "type": "git_concept",
+      "description": "Lightweight named reference to a commit; branch names can advance as commits are added."
+    },
+    {
+      "id": "commit",
+      "name": "Commit object",
+      "type": "git_object",
+      "description": "Immutable object connecting a tree snapshot to parent commits and metadata including author/committer information, timestamps and a log message."
+    },
+    {
+      "id": "tree",
+      "name": "Tree object",
+      "type": "git_object",
+      "description": "Directory-like snapshot listing names, mode/type bits and references to blobs or other trees."
+    },
+    {
+      "id": "blob",
+      "name": "Blob object",
+      "type": "git_object",
+      "description": "Object containing file contents without filename or timestamps; its identity is content-derived."
+    },
+    {
+      "id": "tag_object",
+      "name": "Annotated tag object",
+      "type": "git_object",
+      "description": "Object referring to another object and carrying metadata, often including a digital signature for a release."
+    },
+    {
+      "id": "packfile",
+      "name": "Packfile",
+      "type": "git_storage",
+      "description": "Compressed bundle of Git objects, often using delta compression for storage and transport efficiency."
+    },
+    {
+      "id": "object_database",
+      "name": "Git object database",
+      "type": "data_store",
+      "description": "Stores immutable Git objects such as blobs, trees, commits, tags and packed objects."
+    },
+    {
+      "id": "index",
+      "name": "Git index / staging area",
+      "type": "data_structure",
+      "description": "Mutable cache between working tree and object database; records what is staged for the next commit."
+    },
+    {
+      "id": "working_tree",
+      "name": "Working tree",
+      "type": "data_structure",
+      "description": "Checked-out files and directories on which a user works."
+    },
+    {
+      "id": "refs",
+      "name": "Git references (refs)",
+      "type": "data_structure",
+      "description": "Named pointers that identify commits or other objects; include branches, tags, remotes and other namespaces."
+    },
+    {
+      "id": "head",
+      "name": "HEAD",
+      "type": "git_reference",
+      "description": "Reserved reference identifying the current checkout context, commonly the current branch or commit."
+    },
+    {
+      "id": "heads",
+      "name": "Local branch refs",
+      "type": "git_reference",
+      "description": "Named local branch references that normally advance when new commits are made on them."
+    },
+    {
+      "id": "tags",
+      "name": "Git tags",
+      "type": "git_reference",
+      "description": "References used to label important points in history; lightweight tags point directly to an object, annotated tags use tag objects."
+    },
+    {
+      "id": "remote_tracking_refs",
+      "name": "Remote-tracking references",
+      "type": "git_reference",
+      "description": "Local references representing observed state of branches in remote repositories."
+    },
+    {
+      "id": "stash",
+      "name": "Git stash",
+      "type": "git_feature",
+      "description": "Mechanism for saving uncommitted work for later reapplication; the source describes stash refs as objects not yet committed."
+    },
+    {
+      "id": "gitignore",
+      "name": " .gitignore",
+      "type": "configuration_file",
+      "description": "Plain-text patterns describing files Git should not track, commonly used for generated files, secrets and large files."
+    },
+    {
+      "id": "hash",
+      "name": "Content hash",
+      "type": "cryptographic_concept",
+      "description": "Digest computed from object content and used as an object identifier."
+    },
+    {
+      "id": "sha1",
+      "name": "SHA-1",
+      "type": "hash_function",
+      "description": "Historically used by Git for object IDs and pack integrity checks; the source describes Git's response to the SHAttered collision demonstration."
+    },
+    {
+      "id": "sha1_collision",
+      "name": "SHAttered attack",
+      "type": "security_event",
+      "description": "2017 demonstration of practical SHA-1 collision capability that prompted Git hardening and hash-transition planning."
+    },
+    {
+      "id": "hash_transition",
+      "name": "Git hash-function transition",
+      "type": "project",
+      "description": "Git work to transition away from dependence on SHA-1, with planning noted as ongoing since February 2020 in the source."
+    },
+    {
+      "id": "merkle_tree",
+      "name": "Merkle tree",
+      "type": "data_structure",
+      "description": "Hash-linked tree where a root hash identifies the content and structure beneath it; Git's tree/commit structure has this property."
+    },
+    {
+      "id": "zlib",
+      "name": "zlib compression",
+      "type": "software_library",
+      "description": "Compression used for Git objects and packfiles."
+    },
+    {
+      "id": "delta_compression",
+      "name": "Delta compression",
+      "type": "compression_technique",
+      "description": "Stores object differences relative to similar objects to reduce packfile size."
+    },
+    {
+      "id": "git_gc",
+      "name": "git gc",
+      "type": "git_command",
+      "description": "Garbage collection and maintenance command that can prune eligible unreachable objects and repack objects."
+    },
+    {
+      "id": "git_fsck",
+      "name": "git fsck",
+      "type": "git_command",
+      "description": "Checks repository object integrity and connectivity."
+    },
+    {
+      "id": "git_init",
+      "name": "git init",
+      "type": "git_command",
+      "description": "Creates a new local repository; the default initial branch name is configurable and varies by Git version/configuration."
+    },
+    {
+      "id": "git_clone",
+      "name": "git clone",
+      "type": "git_command",
+      "description": "Creates a copy of a repository from a local path or remote URL."
+    },
+    {
+      "id": "git_add",
+      "name": "git add",
+      "type": "git_command",
+      "description": "Adds selected working-tree content to the index/staging area."
+    },
+    {
+      "id": "git_commit",
+      "name": "git commit",
+      "type": "git_command",
+      "description": "Records the staged state as a new commit in repository history."
+    },
+    {
+      "id": "git_fetch",
+      "name": "git fetch",
+      "type": "git_command",
+      "description": "Retrieves objects and refs from a remote without necessarily integrating them into the current branch."
+    },
+    {
+      "id": "git_pull",
+      "name": "git pull",
+      "type": "git_command",
+      "description": "Fetches from a remote and integrates changes, usually by merge or rebase according to configuration."
+    },
+    {
+      "id": "git_push",
+      "name": "git push",
+      "type": "git_command",
+      "description": "Publishes local refs and reachable commits to a remote repository subject to permissions and server policy."
+    },
+    {
+      "id": "git_merge",
+      "name": "git merge",
+      "type": "git_command",
+      "description": "Integrates changes from one or more histories into the current branch."
+    },
+    {
+      "id": "git_rebase",
+      "name": "git rebase",
+      "type": "git_command",
+      "description": "Replays commits onto another base, rewriting commit identities for the replayed history."
+    },
+    {
+      "id": "git_revert",
+      "name": "git revert",
+      "type": "git_command",
+      "description": "Creates a new commit that reverses an earlier commit without removing the original published commit from history."
+    },
+    {
+      "id": "git_show_ref",
+      "name": "git show-ref",
+      "type": "git_command",
+      "description": "Lists references known to the repository."
+    },
+    {
+      "id": "git_daemon",
+      "name": "git daemon",
+      "type": "git_server",
+      "description": "Built-in simple TCP server for Git protocol; the source notes typical port 9418."
+    },
+    {
+      "id": "gitweb",
+      "name": "gitweb",
+      "type": "software",
+      "description": "CGI-based web interface for browsing Git repository contents over HTTP."
+    },
+    {
+      "id": "git_gui",
+      "name": "Git GUI",
+      "type": "software",
+      "description": "Tcl/Tk graphical interface distributed with Git."
+    },
+    {
+      "id": "git_lfs",
+      "name": "Git LFS",
+      "type": "extension",
+      "description": "Extension that supports handling large files outside ordinary Git object storage."
+    },
+    {
+      "id": "git_annex",
+      "name": "git-annex",
+      "type": "extension",
+      "description": "Distributed file synchronization system based on Git."
+    },
+    {
+      "id": "git_flow",
+      "name": "git-flow",
+      "type": "extension_workflow",
+      "description": "Extensions and conventions for feature/develop/main/hotfix branching."
+    },
+    {
+      "id": "git_machete",
+      "name": "git-machete",
+      "type": "extension",
+      "description": "Repository organizer and automation for rebase, merge, pull and push operations."
+    },
+    {
+      "id": "vfs_git",
+      "name": "Virtual File System for Git",
+      "type": "extension",
+      "description": "Extension using placeholders for files in very large repositories and downloading file contents when accessed."
+    },
+    {
+      "id": "pull_request",
+      "name": "Pull request / merge request",
+      "type": "hosting_platform_feature",
+      "description": "A hosting-service workflow requesting that a branch be merged into another; not a core Git SCM feature."
+    },
+    {
+      "id": "code_review",
+      "name": "Code review",
+      "type": "software_process",
+      "description": "Review of proposed changes, often supported by pull/merge requests and hosting services."
+    },
+    {
+      "id": "merge_conflict",
+      "name": "Merge conflict",
+      "type": "concept",
+      "description": "Condition where Git cannot automatically reconcile changes and requires manual resolution."
+    },
+    {
+      "id": "three_way_merge",
+      "name": "Three-way merge",
+      "type": "algorithm",
+      "description": "Merge algorithm using two branch tips and a common ancestor as inputs."
+    },
+    {
+      "id": "resolve_strategy",
+      "name": "resolve merge strategy",
+      "type": "merge_strategy",
+      "description": "Traditional three-way merge strategy."
+    },
+    {
+      "id": "recursive_strategy",
+      "name": "recursive merge strategy",
+      "type": "merge_strategy",
+      "description": "Historical strategy described by the source as a variant of three-way merge, able to combine multiple merge bases and handle renames; current Git versions may use newer strategy names."
+    },
+    {
+      "id": "octopus_strategy",
+      "name": "octopus merge strategy",
+      "type": "merge_strategy",
+      "description": "Strategy used by default when merging more than two heads, according to the source."
+    },
+    {
+      "id": "rename_detection",
+      "name": "Rename detection",
+      "type": "algorithm",
+      "description": "Git infers renames when browsing snapshot history by similarity rather than recording persistent file identity at commit time."
+    },
+    {
+      "id": "file_history",
+      "name": "File history traversal",
+      "type": "algorithm",
+      "description": "History inspection may walk project-wide commits and determine which changed a particular file."
+    },
+    {
+      "id": "git_server",
+      "name": "Git server",
+      "type": "architecture_component",
+      "description": "A repository made accessible over a network or remote shell; Git can serve repositories using built-in or dedicated services."
+    },
+    {
+      "id": "git_protocol",
+      "name": "Git protocol",
+      "type": "network_protocol",
+      "description": "Protocol used to exchange Git objects and refs; the built-in daemon listens on TCP port 9418."
+    },
+    {
+      "id": "http",
+      "name": "HTTP",
+      "type": "network_protocol",
+      "description": "One transport for publishing and accessing repositories."
+    },
+    {
+      "id": "https",
+      "name": "HTTPS",
+      "type": "network_protocol",
+      "description": "Encrypted HTTP transport for repository access."
+    },
+    {
+      "id": "ssh",
+      "name": "SSH",
+      "type": "network_protocol",
+      "description": "Remote-shell and Git transport option for authenticated repository access."
+    },
+    {
+      "id": "ftp",
+      "name": "FTP",
+      "type": "network_protocol",
+      "description": "Transport listed in the source as historically supported for repository publication."
+    },
+    {
+      "id": "cvs_server_emulation",
+      "name": "CVS server emulation",
+      "type": "compatibility_feature",
+      "description": "Allows existing CVS clients and IDE plugins to access Git through a CVS-compatible interface."
+    },
+    {
+      "id": "git_svn",
+      "name": "git-svn",
+      "type": "compatibility_tool",
+      "description": "Tool that allows Subversion repositories to be used through Git workflows."
+    },
+    {
+      "id": "git_protocol_v2",
+      "name": "Git protocol v2",
+      "type": "protocol_version",
+      "description": "Client-directed protocol version designed to avoid advertising every ref before the client indicates what it wants."
+    },
+    {
+      "id": "gerrit",
+      "name": "Gerrit",
+      "type": "software",
+      "description": "Git server and code-review tool with configurable authentication/integration options and pull-request functionality."
+    },
+    {
+      "id": "phabricator",
+      "name": "Phabricator",
+      "type": "software",
+      "description": "Code collaboration suite with Git support, noted as less prominent in Facebook's Mercurial-centered environment."
+    },
+    {
+      "id": "rhodecode",
+      "name": "RhodeCode Community Edition",
+      "type": "software",
+      "description": "Self-hosting source-control solution supporting Git, Mercurial and Subversion."
+    },
+    {
+      "id": "kallithea",
+      "name": "Kallithea",
+      "type": "software",
+      "description": "Python-based self-hosting service supporting Git and Mercurial."
+    },
+    {
+      "id": "gitolite",
+      "name": "gitolite",
+      "type": "software",
+      "description": "Scripts and tooling that add fine-grained access control for Git repositories."
+    },
+    {
+      "id": "gogs",
+      "name": "Gogs",
+      "type": "software",
+      "description": "Self-hosted Git service implemented in Go."
+    },
+    {
+      "id": "gitea",
+      "name": "Gitea",
+      "type": "software",
+      "description": "Self-hosted Git service forked from Gogs and implemented in Go."
+    },
+    {
+      "id": "forgejo",
+      "name": "Forgejo",
+      "type": "software",
+      "description": "Self-hosted Git service forked from Gitea and implemented in Go."
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "type": "software_service",
+      "description": "Git repository hosting and collaboration service; pull requests are a hosting-layer feature.",
+      "url": "https://github.com"
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "type": "software_service",
+      "description": "Git repository hosting and collaboration service, including merge requests.",
+      "url": "https://gitlab.com"
+    },
+    {
+      "id": "bitbucket",
+      "name": "Bitbucket",
+      "type": "software_service",
+      "description": "Git repository hosting service.",
+      "url": "https://bitbucket.org"
+    },
+    {
+      "id": "sourceforge",
+      "name": "SourceForge",
+      "type": "software_service",
+      "description": "Software project hosting service offering Git repositories.",
+      "url": "https://sourceforge.net"
+    },
+    {
+      "id": "jgit",
+      "name": "JGit",
+      "type": "software_library",
+      "description": "Pure Java implementation/library of Git embedded in Java applications; used by Gerrit and EGit."
+    },
+    {
+      "id": "go_git",
+      "name": "go-git",
+      "type": "software_library",
+      "description": "Pure Go implementation of Git."
+    },
+    {
+      "id": "dulwich",
+      "name": "Dulwich",
+      "type": "software_library",
+      "description": "Pure Python implementation of Git."
+    },
+    {
+      "id": "libgit2",
+      "name": "libgit2",
+      "type": "software_library",
+      "description": "ANSI C Git library with language bindings."
+    },
+    {
+      "id": "js_git",
+      "name": "JS-Git",
+      "type": "software_library",
+      "description": "JavaScript implementation of a subset of Git."
+    },
+    {
+      "id": "game_of_trees",
+      "name": "Game of Trees",
+      "type": "software",
+      "description": "Independent Git-compatible implementation associated with OpenBSD."
+    },
+    {
+      "id": "git9",
+      "name": "git9",
+      "type": "software",
+      "description": "Independent Git implementation for Plan 9."
+    },
+    {
+      "id": "gitoxide",
+      "name": "gitoxide",
+      "type": "software",
+      "description": "Git implementation written in Rust."
+    },
+    {
+      "id": "egit",
+      "name": "EGit",
+      "type": "software",
+      "description": "Git client integration for the Eclipse IDE using JGit."
+    },
+    {
+      "id": "gtk",
+      "name": "GTK",
+      "type": "software_library",
+      "description": "Toolkit used by gitg graphical front-end."
+    },
+    {
+      "id": "gitg",
+      "name": "gitg",
+      "type": "software",
+      "description": "Graphical Git front-end using GTK."
+    },
+    {
+      "id": "open_source",
+      "name": "Open-source software",
+      "type": "concept",
+      "description": "Software whose source is available under an open-source license."
+    },
+    {
+      "id": "version_control_history",
+      "name": "Version history",
+      "type": "concept",
+      "description": "Ordered/branched record of repository snapshots and their relationships."
+    },
+    {
+      "id": "snapshot_model",
+      "name": "Snapshot-based versioning",
+      "type": "concept",
+      "description": "Git records snapshots of directory trees rather than explicit persistent file identities or per-file revision chains."
+    },
+    {
+      "id": "working_copy",
+      "name": "Working copy",
+      "type": "concept",
+      "description": "Checked-out version of repository files in a working tree."
+    },
+    {
+      "id": "remote_origin",
+      "name": "origin remote",
+      "type": "git_convention",
+      "description": "Common default name for the remote from which a repository was cloned."
+    },
+    {
+      "id": "main_branch",
+      "name": "main branch",
+      "type": "git_convention",
+      "description": "Common default integration branch name used by several hosting services; source reports Git's planned change to main for a future 3.0 release."
+    },
+    {
+      "id": "master_branch",
+      "name": "master branch",
+      "type": "git_convention",
+      "description": "Historical default initial branch name; not intrinsically special in Git."
+    },
+    {
+      "id": "feature_branch",
+      "name": "feature/* branch",
+      "type": "git_convention",
+      "description": "Branch naming convention for feature-specific unstable development."
+    },
+    {
+      "id": "develop_branch",
+      "name": "develop branch",
+      "type": "git_convention",
+      "description": "Integration branch convention for ongoing development in git-flow."
+    },
+    {
+      "id": "hotfix_branch",
+      "name": "hotfix branch",
+      "type": "git_convention",
+      "description": "Branch convention for emergency patches to released products."
+    },
+    {
+      "id": "reflog",
+      "name": "Reflog",
+      "type": "git_feature",
+      "description": "Local record of reference movements that can help recover recently reachable commits; not explicitly detailed in the source article."
+    },
+    {
+      "id": "hooks",
+      "name": "Git hooks",
+      "type": "extension_point",
+      "description": "Executable scripts that Git can run at certain repository events; unsafe hook content was central to a historical vulnerability."
+    },
+    {
+      "id": "git_config",
+      "name": "Git configuration",
+      "type": "configuration",
+      "description": "Repository or user configuration including aliases and remote settings."
+    },
+    {
+      "id": "gitmodules",
+      "name": " .gitmodules",
+      "type": "configuration_file",
+      "description": "File that can define submodule URLs; attacker-controlled URLs were involved in a historical vulnerability."
+    },
+    {
+      "id": "cve_2014_9390",
+      "name": "CVE-2014-9390 / malicious .git directory issue",
+      "type": "security_vulnerability",
+      "description": "Historical Windows/macOS vulnerability involving case-insensitive filesystems, malicious .git-like directories, hooks and configuration."
+    },
+    {
+      "id": "cve_2015_7545",
+      "name": "CVE-2015-7545",
+      "type": "security_vulnerability",
+      "description": "Historical vulnerability fixed in Git 2.6.1 involving crafted clone URLs and possible arbitrary command execution."
+    },
+    {
+      "id": "mitm",
+      "name": "Man-in-the-middle attack",
+      "type": "attack",
+      "description": "Network attacker intercepts or alters communications; the source notes an unencrypted connection could enable redirection to a malicious clone URL."
+    },
+    {
+      "id": "access_control",
+      "name": "Repository access control",
+      "type": "security_control",
+      "description": "Authorization mechanisms commonly supplied by surrounding server or hosting tools rather than Git's core object model."
+    },
+    {
+      "id": "digital_signature",
+      "name": "Digital signature",
+      "type": "security_primitive",
+      "description": "Cryptographic signature used to authenticate tags/commits or releases; source emphasizes signing as an important security layer."
+    },
+    {
+      "id": "signed_tag",
+      "name": "Signed Git tag",
+      "type": "security_feature",
+      "description": "Annotated tag can carry a digital signature for a release object."
+    },
+    {
+      "id": "secret_scanning",
+      "name": "Secret management hygiene",
+      "type": "security_practice",
+      "description": "Prevent credentials, keys and passwords from entering repository history; .gitignore can prevent accidental tracking but is not a substitute for secret scanning or history cleanup."
+    },
+    {
+      "id": "large_files",
+      "name": "Large files",
+      "type": "data_category",
+      "description": "Files that may be better managed with Git LFS or other dedicated storage."
+    },
+    {
+      "id": "repository_fork",
+      "name": "Repository fork",
+      "type": "collaboration_pattern",
+      "description": "Independent repository copy used to develop changes and submit them for integration."
+    },
+    {
+      "id": "push_policy",
+      "name": "Push and history policy",
+      "type": "security_practice",
+      "description": "Published commits are normally preserved; reverting is safer for shared history, while sensitive-data removal may require rewriting history and coordinating cleanup."
+    },
+    {
+      "id": "source_citation",
+      "name": "Source article: Git (Wikipedia text supplied by user)",
+      "type": "source_document",
+      "description": "User-supplied article text describing Git; claims and version-specific details in this graph are based on that source."
+    },
+    {
+      "id": "immutable_objects",
+      "name": "Immutable object model",
+      "type": "concept",
+      "description": "Git objects are content-addressed and treated as immutable once written."
+    },
+    {
+      "id": "unreachable_objects",
+      "name": "Unreachable objects",
+      "type": "git_storage",
+      "description": "Objects not reachable from references or other objects may eventually be pruned by garbage collection."
+    },
+    {
+      "id": "loose_objects",
+      "name": "Loose objects",
+      "type": "git_storage",
+      "description": "Newly created objects stored individually in the object database before packing."
+    },
+    {
+      "id": "pack_index",
+      "name": "Pack index",
+      "type": "git_storage",
+      "description": "Index mapping packed object identifiers to offsets in a packfile."
+    },
+    {
+      "id": "author_metadata",
+      "name": "Commit metadata",
+      "type": "data_category",
+      "description": "Commit records tree, parent commit references, timestamp and log message; Git commit objects also encode author/committer identity and timestamps."
+    },
+    {
+      "id": "repository_integrity_check",
+      "name": "Repository integrity checking",
+      "type": "process",
+      "description": "Validation of object integrity/connectivity with git fsck and checksum verification."
+    },
+    {
+      "id": "patch",
+      "name": "Patch",
+      "type": "concept",
+      "description": "A set of changes applied to source files; fast patch application was a design target."
+    },
+    {
+      "id": "linux_kernel_release",
+      "name": "Linux kernel 2.6.12 release",
+      "type": "historical_event",
+      "description": "Git managed this kernel release on 16 June 2005."
+    },
+    {
+      "id": "self_hosting",
+      "name": "Self-hosting",
+      "type": "software_development_practice",
+      "description": "A project uses its own system to manage its development; Git became self-hosting on 7 April 2005."
+    },
+    {
+      "id": "first_merge",
+      "name": "First multi-branch merge in Git",
+      "type": "historical_event",
+      "description": "First merge of multiple branches took place on 18 April 2005."
+    },
+    {
+      "id": "git_1_0",
+      "name": "Git 1.0 release",
+      "type": "software_release",
+      "description": "Release managed by Junio Hamano on 21 December 2005."
+    },
+    {
+      "id": "git_2_2_1",
+      "name": "Git 2.2.1",
+      "type": "software_release",
+      "description": "Release on 17 December 2014 that fixed the malicious .git directory vulnerability described in the source."
+    },
+    {
+      "id": "git_2_6_1",
+      "name": "Git 2.6.1",
+      "type": "software_release",
+      "description": "Release on 29 September 2015 that patched CVE-2015-7545."
+    },
+    {
+      "id": "git_2_56_0",
+      "name": "Git 2.56.0",
+      "type": "software_release",
+      "description": "Stable release reported by the supplied article as released 28 September 2026."
+    },
+    {
+      "id": "tcp_9418",
+      "name": "TCP port 9418",
+      "type": "network_port",
+      "description": "Typical port for the built-in Git daemon protocol."
+    },
+    {
+      "id": "metadata",
+      "name": "Repository metadata",
+      "type": "data_category",
+      "description": "Information associated with repository objects, refs, configuration and commit messages."
+    },
+    {
+      "id": "public_key_cryptography",
+      "name": "Public-key cryptography",
+      "type": "external_concept",
+      "description": "External concept referenced for signed tags and release authentication; expected to be connected to a separate public-key cryptography graph."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "git",
+      "target": "dvc",
+      "type": "is_a",
+      "description": "Git is a distributed version-control system."
+    },
+    {
+      "id": "rel_0002",
+      "source": "git",
+      "target": "vcs",
+      "type": "is_a",
+      "description": "Git is a version-control system."
+    },
+    {
+      "id": "rel_0003",
+      "source": "git",
+      "target": "scm",
+      "type": "supports",
+      "description": "Git supports source-code management workflows."
+    },
+    {
+      "id": "rel_0004",
+      "source": "linus_torvalds",
+      "target": "git",
+      "type": "created",
+      "description": "Created Git in April 2005."
+    },
+    {
+      "id": "rel_0005",
+      "source": "junio_hamano",
+      "target": "git",
+      "type": "maintains",
+      "description": "Took over maintenance in July 2005."
+    },
+    {
+      "id": "rel_0006",
+      "source": "git",
+      "target": "linux_kernel",
+      "type": "was_created_for",
+      "description": "Originally created for Linux kernel development."
+    },
+    {
+      "id": "rel_0007",
+      "source": "bitkeeper",
+      "target": "linux_kernel",
+      "type": "was_used_for",
+      "description": "Used in kernel development before the licensing dispute."
+    },
+    {
+      "id": "rel_0008",
+      "source": "bitkeeper",
+      "target": "git",
+      "type": "historically_motivated",
+      "description": "Revocation of the free-license arrangement motivated Git's creation."
+    },
+    {
+      "id": "rel_0009",
+      "source": "bitkeeper",
+      "target": "mercurial",
+      "type": "historically_motivated",
+      "description": "The same BitKeeper incident also spurred Mercurial."
+    },
+    {
+      "id": "rel_0010",
+      "source": "git",
+      "target": "git_scm_site",
+      "type": "official_website",
+      "description": "Official project website."
+    },
+    {
+      "id": "rel_0011",
+      "source": "git",
+      "target": "git_repo",
+      "type": "source_code_hosted_at",
+      "description": "Git's source repository is hosted at git.kernel.org."
+    },
+    {
+      "id": "rel_0012",
+      "source": "git",
+      "target": "gpl2",
+      "type": "licensed_under",
+      "description": "Identified as GPL-2.0-only with some compatible components."
+    },
+    {
+      "id": "rel_0013",
+      "source": "git",
+      "target": "c_language",
+      "type": "primarily_implemented_in",
+      "description": "The main implementation is primarily C."
+    },
+    {
+      "id": "rel_0014",
+      "source": "git",
+      "target": "shell",
+      "type": "uses",
+      "description": "Toolkit design historically includes shell wrappers."
+    },
+    {
+      "id": "rel_0015",
+      "source": "git",
+      "target": "perl",
+      "type": "uses",
+      "description": "Tooling and Windows environment include Perl."
+    },
+    {
+      "id": "rel_0016",
+      "source": "git",
+      "target": "python",
+      "type": "uses",
+      "description": "Python is used in scripts and independent implementations."
+    },
+    {
+      "id": "rel_0017",
+      "source": "git",
+      "target": "tcl",
+      "type": "uses",
+      "description": "Tcl/Tk powers the included GUI."
+    },
+    {
+      "id": "rel_0018",
+      "source": "git",
+      "target": "posix",
+      "type": "runs_on",
+      "description": "Supports POSIX operating systems."
+    },
+    {
+      "id": "rel_0019",
+      "source": "git",
+      "target": "windows",
+      "type": "runs_on",
+      "description": "Supports Windows."
+    },
+    {
+      "id": "rel_0020",
+      "source": "git",
+      "target": "distributed_workflow",
+      "type": "enables",
+      "description": "Supports distributed asynchronous collaboration."
+    },
+    {
+      "id": "rel_0021",
+      "source": "git",
+      "target": "local_repository",
+      "type": "stores",
+      "description": "Each developer normally has a local repository copy."
+    },
+    {
+      "id": "rel_0022",
+      "source": "local_repository",
+      "target": "version_control_history",
+      "type": "contains",
+      "description": "Local repositories include history."
+    },
+    {
+      "id": "rel_0023",
+      "source": "local_repository",
+      "target": "network_independence",
+      "type": "provides",
+      "description": "History and local operations are available without network access."
+    },
+    {
+      "id": "rel_0024",
+      "source": "local_repository",
+      "target": "remote_repository",
+      "type": "synchronizes_with",
+      "description": "Repositories exchange changes and objects."
+    },
+    {
+      "id": "rel_0025",
+      "source": "central_repository",
+      "target": "remote_repository",
+      "type": "is_a",
+      "description": "Central integration repository is a common remote-repository role."
+    },
+    {
+      "id": "rel_0026",
+      "source": "git",
+      "target": "performance",
+      "type": "optimizes_for",
+      "description": "Speed and scalability are design goals."
+    },
+    {
+      "id": "rel_0027",
+      "source": "git",
+      "target": "data_integrity",
+      "type": "prioritizes",
+      "description": "Strong safeguards against corruption were explicit goals."
+    },
+    {
+      "id": "rel_0028",
+      "source": "git",
+      "target": "nonlinear_history",
+      "type": "supports",
+      "description": "Branches and merges support non-linear histories."
+    },
+    {
+      "id": "rel_0029",
+      "source": "branch",
+      "target": "commit",
+      "type": "points_to",
+      "description": "A branch is a lightweight reference to a commit."
+    },
+    {
+      "id": "rel_0030",
+      "source": "git",
+      "target": "branch",
+      "type": "supports",
+      "description": "Git supports cheap branch creation and merging."
+    },
+    {
+      "id": "rel_0031",
+      "source": "git",
+      "target": "snapshot_model",
+      "type": "uses",
+      "description": "Git records snapshots of directory trees."
+    },
+    {
+      "id": "rel_0032",
+      "source": "git",
+      "target": "object_database",
+      "type": "stores_in",
+      "description": "Repository objects are stored in the object database."
+    },
+    {
+      "id": "rel_0033",
+      "source": "git",
+      "target": "index",
+      "type": "uses",
+      "description": "The mutable index stages the next commit."
+    },
+    {
+      "id": "rel_0034",
+      "source": "index",
+      "target": "working_tree",
+      "type": "bridges",
+      "description": "Index connects working tree and object database."
+    },
+    {
+      "id": "rel_0035",
+      "source": "index",
+      "target": "object_database",
+      "type": "bridges",
+      "description": "Index connects working tree and object database."
+    },
+    {
+      "id": "rel_0036",
+      "source": "object_database",
+      "target": "blob",
+      "type": "contains_type",
+      "description": "Stores blob objects."
+    },
+    {
+      "id": "rel_0037",
+      "source": "object_database",
+      "target": "tree",
+      "type": "contains_type",
+      "description": "Stores tree objects."
+    },
+    {
+      "id": "rel_0038",
+      "source": "object_database",
+      "target": "commit",
+      "type": "contains_type",
+      "description": "Stores commit objects."
+    },
+    {
+      "id": "rel_0039",
+      "source": "object_database",
+      "target": "tag_object",
+      "type": "contains_type",
+      "description": "Stores annotated tag objects."
+    },
+    {
+      "id": "rel_0040",
+      "source": "object_database",
+      "target": "packfile",
+      "type": "contains_packed_data",
+      "description": "Packfiles bundle objects for storage and transfer."
+    },
+    {
+      "id": "rel_0041",
+      "source": "blob",
+      "target": "hash",
+      "type": "identified_by",
+      "description": "Blob identity is derived from file content."
+    },
+    {
+      "id": "rel_0042",
+      "source": "tree",
+      "target": "blob",
+      "type": "references",
+      "description": "Tree entries can refer to blob objects."
+    },
+    {
+      "id": "rel_0043",
+      "source": "tree",
+      "target": "tree",
+      "type": "references",
+      "description": "Tree entries can refer to child tree objects."
+    },
+    {
+      "id": "rel_0044",
+      "source": "commit",
+      "target": "tree",
+      "type": "references",
+      "description": "Commit points to the root tree for the snapshot."
+    },
+    {
+      "id": "rel_0045",
+      "source": "commit",
+      "target": "commit",
+      "type": "has_parent",
+      "description": "Commit references zero or more parent commits."
+    },
+    {
+      "id": "rel_0046",
+      "source": "tag_object",
+      "target": "commit",
+      "type": "can_reference",
+      "description": "Annotated tags commonly refer to a commit."
+    },
+    {
+      "id": "rel_0047",
+      "source": "tag_object",
+      "target": "digital_signature",
+      "type": "can_contain",
+      "description": "Annotated tags may carry a digital signature."
+    },
+    {
+      "id": "rel_0048",
+      "source": "git",
+      "target": "merkle_tree",
+      "type": "has_structure_similar_to",
+      "description": "Tree and commit hashes connect snapshots and history in a Merkle-tree-like structure."
+    },
+    {
+      "id": "rel_0049",
+      "source": "merkle_tree",
+      "target": "hash",
+      "type": "uses",
+      "description": "Hashes summarize subtrees and enable state identification."
+    },
+    {
+      "id": "rel_0050",
+      "source": "git",
+      "target": "hash",
+      "type": "uses_for_object_identity",
+      "description": "Git names objects using hashes of their contents."
+    },
+    {
+      "id": "rel_0051",
+      "source": "git",
+      "target": "sha1",
+      "type": "historically_uses",
+      "description": "The source describes SHA-1 as Git's internal hash function."
+    },
+    {
+      "id": "rel_0052",
+      "source": "packfile",
+      "target": "zlib",
+      "type": "compressed_with",
+      "description": "Packfiles use zlib compression."
+    },
+    {
+      "id": "rel_0053",
+      "source": "packfile",
+      "target": "delta_compression",
+      "type": "uses",
+      "description": "Similar objects can be delta-compressed in packs."
+    },
+    {
+      "id": "rel_0054",
+      "source": "packfile",
+      "target": "pack_index",
+      "type": "paired_with",
+      "description": "A corresponding index records object offsets."
+    },
+    {
+      "id": "rel_0055",
+      "source": "git",
+      "target": "loose_objects",
+      "type": "initially_stores_as",
+      "description": "New objects can be stored individually."
+    },
+    {
+      "id": "rel_0056",
+      "source": "loose_objects",
+      "target": "packfile",
+      "type": "can_be_repacked_into",
+      "description": "Loose objects may later be packed."
+    },
+    {
+      "id": "rel_0057",
+      "source": "git",
+      "target": "git_gc",
+      "type": "maintained_by",
+      "description": "Garbage collection prunes eligible objects and repacks data."
+    },
+    {
+      "id": "rel_0058",
+      "source": "git",
+      "target": "git_fsck",
+      "type": "integrity_checked_by",
+      "description": "git fsck checks repository integrity."
+    },
+    {
+      "id": "rel_0059",
+      "source": "git_fsck",
+      "target": "repository_integrity_check",
+      "type": "performs",
+      "description": "Checks object integrity/connectivity."
+    },
+    {
+      "id": "rel_0060",
+      "source": "git",
+      "target": "refs",
+      "type": "uses",
+      "description": "Refs identify commits and other objects."
+    },
+    {
+      "id": "rel_0061",
+      "source": "refs",
+      "target": "heads",
+      "type": "includes",
+      "description": "Local branches are refs."
+    },
+    {
+      "id": "rel_0062",
+      "source": "refs",
+      "target": "tags",
+      "type": "includes",
+      "description": "Tags are refs."
+    },
+    {
+      "id": "rel_0063",
+      "source": "refs",
+      "target": "remote_tracking_refs",
+      "type": "includes",
+      "description": "Remote-tracking branches are refs."
+    },
+    {
+      "id": "rel_0064",
+      "source": "refs",
+      "target": "stash",
+      "type": "includes",
+      "description": "Stash state uses refs."
+    },
+    {
+      "id": "rel_0065",
+      "source": "head",
+      "target": "branch",
+      "type": "usually_identifies",
+      "description": "HEAD commonly identifies the current branch."
+    },
+    {
+      "id": "rel_0066",
+      "source": "heads",
+      "target": "commit",
+      "type": "points_to",
+      "description": "Local branch refs point to commits."
+    },
+    {
+      "id": "rel_0067",
+      "source": "remote_tracking_refs",
+      "target": "remote_repository",
+      "type": "represents_state_of",
+      "description": "Tracks the observed state of remote branches."
+    },
+    {
+      "id": "rel_0068",
+      "source": "remote_origin",
+      "target": "remote_repository",
+      "type": "names",
+      "description": "origin is the common default remote name."
+    },
+    {
+      "id": "rel_0069",
+      "source": "git_init",
+      "target": "git",
+      "type": "creates",
+      "description": "Initializes a repository."
+    },
+    {
+      "id": "rel_0070",
+      "source": "git_clone",
+      "target": "remote_repository",
+      "type": "copies_from",
+      "description": "Clones an existing repository."
+    },
+    {
+      "id": "rel_0071",
+      "source": "git_add",
+      "target": "index",
+      "type": "updates",
+      "description": "Stages working-tree content in the index."
+    },
+    {
+      "id": "rel_0072",
+      "source": "git_commit",
+      "target": "index",
+      "type": "records_from",
+      "description": "Creates a commit from staged content."
+    },
+    {
+      "id": "rel_0073",
+      "source": "git_commit",
+      "target": "commit",
+      "type": "creates",
+      "description": "Creates a new commit object and advances the current branch in ordinary cases."
+    },
+    {
+      "id": "rel_0074",
+      "source": "git_fetch",
+      "target": "remote_repository",
+      "type": "retrieves_from",
+      "description": "Fetches refs and objects from a remote."
+    },
+    {
+      "id": "rel_0075",
+      "source": "git_pull",
+      "target": "git_fetch",
+      "type": "includes",
+      "description": "Pull generally fetches before integrating changes."
+    },
+    {
+      "id": "rel_0076",
+      "source": "git_pull",
+      "target": "git_merge",
+      "type": "may_use",
+      "description": "Pull may merge fetched changes."
+    },
+    {
+      "id": "rel_0077",
+      "source": "git_pull",
+      "target": "git_rebase",
+      "type": "may_use",
+      "description": "Pull may rebase fetched changes depending on configuration."
+    },
+    {
+      "id": "rel_0078",
+      "source": "git_push",
+      "target": "remote_repository",
+      "type": "publishes_to",
+      "description": "Push publishes commits and refs to a remote subject to policy."
+    },
+    {
+      "id": "rel_0079",
+      "source": "git_merge",
+      "target": "three_way_merge",
+      "type": "uses",
+      "description": "Three-way merge is a central merge method."
+    },
+    {
+      "id": "rel_0080",
+      "source": "three_way_merge",
+      "target": "merge_conflict",
+      "type": "may_produce",
+      "description": "Conflicting edits may require manual resolution."
+    },
+    {
+      "id": "rel_0081",
+      "source": "git_merge",
+      "target": "resolve_strategy",
+      "type": "can_select",
+      "description": "A merge can use the resolve strategy."
+    },
+    {
+      "id": "rel_0082",
+      "source": "git_merge",
+      "target": "recursive_strategy",
+      "type": "historically_used",
+      "description": "The source describes recursive as a historical/default strategy; modern Git may differ."
+    },
+    {
+      "id": "rel_0083",
+      "source": "git_merge",
+      "target": "octopus_strategy",
+      "type": "can_select",
+      "description": "Octopus supports merging multiple heads."
+    },
+    {
+      "id": "rel_0084",
+      "source": "git",
+      "target": "rename_detection",
+      "type": "uses",
+      "description": "Git infers renames during history inspection."
+    },
+    {
+      "id": "rel_0085",
+      "source": "rename_detection",
+      "target": "file_history",
+      "type": "assists",
+      "description": "Rename detection helps trace file history across snapshots."
+    },
+    {
+      "id": "rel_0086",
+      "source": "file_history",
+      "target": "snapshot_model",
+      "type": "depends_on",
+      "description": "History is inferred by walking snapshots rather than using persistent file identity."
+    },
+    {
+      "id": "rel_0087",
+      "source": "git",
+      "target": "gitignore",
+      "type": "supports",
+      "description": "Repository .gitignore patterns exclude files from tracking."
+    },
+    {
+      "id": "rel_0088",
+      "source": "gitignore",
+      "target": "secret_scanning",
+      "type": "is_not_a_substitute_for",
+      "description": "Ignoring files does not remove secrets already committed and does not replace secret scanning."
+    },
+    {
+      "id": "rel_0089",
+      "source": "git",
+      "target": "git_daemon",
+      "type": "includes_server",
+      "description": "Git ships with a simple daemon server."
+    },
+    {
+      "id": "rel_0090",
+      "source": "git_daemon",
+      "target": "git_protocol",
+      "type": "serves_over",
+      "description": "git daemon serves the Git protocol."
+    },
+    {
+      "id": "rel_0091",
+      "source": "git_daemon",
+      "target": "tcp_9418",
+      "type": "typically_listens_on",
+      "description": "The source lists TCP port 9418 as typical."
+    },
+    {
+      "id": "rel_0092",
+      "source": "git",
+      "target": "gitweb",
+      "type": "includes_interface",
+      "description": "Git includes gitweb for repository browsing."
+    },
+    {
+      "id": "rel_0093",
+      "source": "git",
+      "target": "git_gui",
+      "type": "includes_interface",
+      "description": "Git ships with a Tcl/Tk GUI."
+    },
+    {
+      "id": "rel_0094",
+      "source": "git",
+      "target": "git_lfs",
+      "type": "extended_by",
+      "description": "Git LFS handles large files."
+    },
+    {
+      "id": "rel_0095",
+      "source": "git",
+      "target": "git_annex",
+      "type": "extended_by",
+      "description": "git-annex provides distributed file synchronization."
+    },
+    {
+      "id": "rel_0096",
+      "source": "git",
+      "target": "git_flow",
+      "type": "extended_by",
+      "description": "git-flow provides high-level branching workflow operations."
+    },
+    {
+      "id": "rel_0097",
+      "source": "git",
+      "target": "git_machete",
+      "type": "extended_by",
+      "description": "git-machete automates repository organization and operations."
+    },
+    {
+      "id": "rel_0098",
+      "source": "git",
+      "target": "vfs_git",
+      "type": "extended_by",
+      "description": "VFS for Git supports very large repository checkouts."
+    },
+    {
+      "id": "rel_0099",
+      "source": "pull_request",
+      "target": "git",
+      "type": "is_not_core_feature_of",
+      "description": "Pull requests are hosted-service workflow features, not native Git SCM primitives."
+    },
+    {
+      "id": "rel_0100",
+      "source": "pull_request",
+      "target": "code_review",
+      "type": "supports",
+      "description": "Pull requests organize proposed changes for review."
+    },
+    {
+      "id": "rel_0101",
+      "source": "gerrit",
+      "target": "git",
+      "type": "hosts",
+      "description": "Gerrit hosts Git repositories and code review."
+    },
+    {
+      "id": "rel_0102",
+      "source": "gerrit",
+      "target": "code_review",
+      "type": "provides",
+      "description": "Gerrit integrates code review."
+    },
+    {
+      "id": "rel_0103",
+      "source": "gitolite",
+      "target": "access_control",
+      "type": "adds",
+      "description": "gitolite supplies fine-grained repository authorization."
+    },
+    {
+      "id": "rel_0104",
+      "source": "git",
+      "target": "access_control",
+      "type": "does_not_provide_natively",
+      "description": "Git core does not itself provide repository access control."
+    },
+    {
+      "id": "rel_0105",
+      "source": "github",
+      "target": "git",
+      "type": "hosts",
+      "description": "GitHub hosts Git repositories."
+    },
+    {
+      "id": "rel_0106",
+      "source": "gitlab",
+      "target": "git",
+      "type": "hosts",
+      "description": "GitLab hosts Git repositories."
+    },
+    {
+      "id": "rel_0107",
+      "source": "bitbucket",
+      "target": "git",
+      "type": "hosts",
+      "description": "Bitbucket offers Git hosting."
+    },
+    {
+      "id": "rel_0108",
+      "source": "sourceforge",
+      "target": "git",
+      "type": "hosts",
+      "description": "SourceForge offers Git hosting."
+    },
+    {
+      "id": "rel_0109",
+      "source": "jgit",
+      "target": "git",
+      "type": "implements",
+      "description": "JGit is a pure Java Git implementation."
+    },
+    {
+      "id": "rel_0110",
+      "source": "go_git",
+      "target": "git",
+      "type": "implements",
+      "description": "go-git is a pure Go implementation."
+    },
+    {
+      "id": "rel_0111",
+      "source": "dulwich",
+      "target": "git",
+      "type": "implements",
+      "description": "Dulwich is a pure Python implementation."
+    },
+    {
+      "id": "rel_0112",
+      "source": "libgit2",
+      "target": "git",
+      "type": "implements",
+      "description": "libgit2 is a C library implementing Git functionality."
+    },
+    {
+      "id": "rel_0113",
+      "source": "js_git",
+      "target": "git",
+      "type": "partially_implements",
+      "description": "JS-Git implements a subset of Git."
+    },
+    {
+      "id": "rel_0114",
+      "source": "game_of_trees",
+      "target": "git",
+      "type": "implements_compatible_model",
+      "description": "Independent Git implementation."
+    },
+    {
+      "id": "rel_0115",
+      "source": "git9",
+      "target": "git",
+      "type": "implements",
+      "description": "Independent implementation for Plan 9."
+    },
+    {
+      "id": "rel_0116",
+      "source": "gitoxide",
+      "target": "git",
+      "type": "implements",
+      "description": "Rust implementation of Git."
+    },
+    {
+      "id": "rel_0117",
+      "source": "jgit",
+      "target": "gerrit",
+      "type": "used_by",
+      "description": "Gerrit uses JGit."
+    },
+    {
+      "id": "rel_0118",
+      "source": "jgit",
+      "target": "egit",
+      "type": "used_by",
+      "description": "EGit uses JGit."
+    },
+    {
+      "id": "rel_0119",
+      "source": "gitg",
+      "target": "gtk",
+      "type": "built_with",
+      "description": "gitg uses GTK."
+    },
+    {
+      "id": "rel_0120",
+      "source": "git",
+      "target": "cvs_server_emulation",
+      "type": "supports_compatibility_with",
+      "description": "CVS emulation supports existing clients and IDE plugins."
+    },
+    {
+      "id": "rel_0121",
+      "source": "git_svn",
+      "target": "git",
+      "type": "integrates_with",
+      "description": "git-svn lets Git workflows interoperate with Subversion repositories."
+    },
+    {
+      "id": "rel_0122",
+      "source": "git_protocol_v2",
+      "target": "git_protocol",
+      "type": "version_of",
+      "description": "Git protocol v2 is a newer client-directed protocol."
+    },
+    {
+      "id": "rel_0123",
+      "source": "git_protocol_v2",
+      "target": "git_server",
+      "type": "improves_fetch_from",
+      "description": "Client requests can limit advertised refs and reduce unnecessary transfer."
+    },
+    {
+      "id": "rel_0124",
+      "source": "main_branch",
+      "target": "master_branch",
+      "type": "alternative_to",
+      "description": "main and master are alternative common default branch names."
+    },
+    {
+      "id": "rel_0125",
+      "source": "feature_branch",
+      "target": "develop_branch",
+      "type": "used_with",
+      "description": "git-flow conventions distinguish feature and integration branches."
+    },
+    {
+      "id": "rel_0126",
+      "source": "develop_branch",
+      "target": "main_branch",
+      "type": "integrates_into",
+      "description": "Develop branch commonly feeds production-ready main."
+    },
+    {
+      "id": "rel_0127",
+      "source": "hotfix_branch",
+      "target": "main_branch",
+      "type": "patches",
+      "description": "Hotfix branches address urgent fixes to released products."
+    },
+    {
+      "id": "rel_0128",
+      "source": "git_revert",
+      "target": "push_policy",
+      "type": "supports",
+      "description": "Reverting published changes preserves shared history."
+    },
+    {
+      "id": "rel_0129",
+      "source": "git_rebase",
+      "target": "commit",
+      "type": "rewrites_identity_of",
+      "description": "Rebase creates new commit identities for replayed commits."
+    },
+    {
+      "id": "rel_0130",
+      "source": "signed_tag",
+      "target": "tag_object",
+      "type": "is_a",
+      "description": "Signed tag is commonly an annotated tag with signature metadata."
+    },
+    {
+      "id": "rel_0131",
+      "source": "signed_tag",
+      "target": "digital_signature",
+      "type": "uses",
+      "description": "Signature can authenticate release tag data."
+    },
+    {
+      "id": "rel_0132",
+      "source": "digital_signature",
+      "target": "public_key_cryptography",
+      "type": "related_to",
+      "description": "Digital signatures use public-key cryptography; this concept is a cross-graph link."
+    },
+    {
+      "id": "rel_0133",
+      "source": "git",
+      "target": "public_key_cryptography",
+      "type": "related_to",
+      "description": "Git history hashes and signed tags connect to cryptographic integrity and authentication."
+    },
+    {
+      "id": "rel_0134",
+      "source": "sha1",
+      "target": "sha1_collision",
+      "type": "weakened_by_demonstration_of",
+      "description": "SHAttered demonstrated practical SHA-1 collisions."
+    },
+    {
+      "id": "rel_0135",
+      "source": "sha1_collision",
+      "target": "hash_transition",
+      "type": "motivated",
+      "description": "Collision demonstration prompted hardening and transition planning."
+    },
+    {
+      "id": "rel_0136",
+      "source": "git",
+      "target": "cve_2014_9390",
+      "type": "affected_by",
+      "description": "Historical vulnerability affected Windows and macOS Git clients."
+    },
+    {
+      "id": "rel_0137",
+      "source": "cve_2014_9390",
+      "target": "hooks",
+      "type": "exploited",
+      "description": "Malicious hook files could be executed after path/case confusion."
+    },
+    {
+      "id": "rel_0138",
+      "source": "cve_2014_9390",
+      "target": "git_config",
+      "type": "could_modify",
+      "description": "The attack could alter configuration and aliases."
+    },
+    {
+      "id": "rel_0139",
+      "source": "cve_2014_9390",
+      "target": "git_2_2_1",
+      "type": "fixed_in",
+      "description": "Patched in Git 2.2.1 according to the source."
+    },
+    {
+      "id": "rel_0140",
+      "source": "git",
+      "target": "cve_2015_7545",
+      "type": "affected_by",
+      "description": "Historical arbitrary-command-execution vulnerability involving crafted clone URLs."
+    },
+    {
+      "id": "rel_0141",
+      "source": "cve_2015_7545",
+      "target": "gitmodules",
+      "type": "could_involve",
+      "description": "Recursive clones could follow attacker-controlled URLs in .gitmodules."
+    },
+    {
+      "id": "rel_0142",
+      "source": "cve_2015_7545",
+      "target": "mitm",
+      "type": "could_be_exploited_via",
+      "description": "Unencrypted connections could be intercepted and redirected."
+    },
+    {
+      "id": "rel_0143",
+      "source": "cve_2015_7545",
+      "target": "git_2_6_1",
+      "type": "fixed_in",
+      "description": "Patched in Git 2.6.1 according to the source."
+    },
+    {
+      "id": "rel_0144",
+      "source": "git",
+      "target": "push_policy",
+      "type": "commonly_uses",
+      "description": "Published commits are generally reverted rather than overwritten."
+    },
+    {
+      "id": "rel_0145",
+      "source": "push_policy",
+      "target": "secret_scanning",
+      "type": "requires",
+      "description": "Sensitive information already committed may require history rewrite and cleanup."
+    },
+    {
+      "id": "rel_0146",
+      "source": "git",
+      "target": "source_citation",
+      "type": "described_by",
+      "description": "This graph is grounded in the supplied article text."
+    },
+    {
+      "id": "rel_0147",
+      "source": "linus_torvalds",
+      "target": "first_merge",
+      "type": "associated_with",
+      "description": "Git's early development achieved its first multi-branch merge in April 2005."
+    },
+    {
+      "id": "rel_0148",
+      "source": "git",
+      "target": "self_hosting",
+      "type": "became",
+      "description": "Git began managing its own development on 7 April 2005."
+    },
+    {
+      "id": "rel_0149",
+      "source": "git",
+      "target": "linux_kernel_release",
+      "type": "managed",
+      "description": "Git managed the Linux 2.6.12 release in June 2005."
+    },
+    {
+      "id": "rel_0150",
+      "source": "junio_hamano",
+      "target": "git_1_0",
+      "type": "released",
+      "description": "Hamano was responsible for Git 1.0 release."
+    },
+    {
+      "id": "rel_0151",
+      "source": "git_2_2_1",
+      "target": "cve_2014_9390",
+      "type": "patches",
+      "description": "Release fixed the historical .git directory issue."
+    },
+    {
+      "id": "rel_0152",
+      "source": "git_2_6_1",
+      "target": "cve_2015_7545",
+      "type": "patches",
+      "description": "Release patched crafted clone URL command execution."
+    },
+    {
+      "id": "rel_0153",
+      "source": "git",
+      "target": "git_2_56_0",
+      "type": "has_release",
+      "description": "The supplied article reports 2.56.0 as stable release."
+    },
+    {
+      "id": "rel_0154",
+      "source": "git",
+      "target": "tcp_9418",
+      "type": "uses_port_for_daemon",
+      "description": "Built-in daemon typically listens on this port."
+    },
+    {
+      "id": "rel_0155",
+      "source": "git",
+      "target": "repository_fork",
+      "type": "supports",
+      "description": "Repositories can be cloned and independently developed."
+    },
+    {
+      "id": "rel_0156",
+      "source": "repository_fork",
+      "target": "pull_request",
+      "type": "commonly_submits_via",
+      "description": "A fork-based workflow may submit changes using a hosting-service pull request."
+    },
+    {
+      "id": "rel_0157",
+      "source": "commit",
+      "target": "author_metadata",
+      "type": "contains",
+      "description": "Commit objects contain identifying and temporal metadata as well as tree and parent references."
+    },
+    {
+      "id": "rel_0158",
+      "source": "metadata",
+      "target": "commit",
+      "type": "associated_with",
+      "description": "Commit messages and timestamps are part of repository history."
+    },
+    {
+      "id": "rel_0159",
+      "source": "blob",
+      "target": "object_database",
+      "type": "stored_in",
+      "description": "Blob is an object stored in the repository database."
+    },
+    {
+      "id": "rel_0160",
+      "source": "tree",
+      "target": "object_database",
+      "type": "stored_in",
+      "description": "Tree is an object stored in the repository database."
+    },
+    {
+      "id": "rel_0161",
+      "source": "commit",
+      "target": "object_database",
+      "type": "stored_in",
+      "description": "Commit is an object stored in the repository database."
+    },
+    {
+      "id": "rel_0162",
+      "source": "tag_object",
+      "target": "object_database",
+      "type": "stored_in",
+      "description": "Annotated tag is an object stored in the repository database."
+    },
+    {
+      "id": "rel_0163",
+      "source": "packfile",
+      "target": "object_database",
+      "type": "stores_compacted_objects_from",
+      "description": "Packfiles compact objects from the database."
+    },
+    {
+      "id": "rel_0164",
+      "source": "git_add",
+      "target": "working_tree",
+      "type": "reads_from",
+      "description": "git add selects content from the working tree."
+    },
+    {
+      "id": "rel_0165",
+      "source": "git_commit",
+      "target": "refs",
+      "type": "may_advance",
+      "description": "A commit usually advances the current branch reference."
+    },
+    {
+      "id": "rel_0166",
+      "source": "git_show_ref",
+      "target": "refs",
+      "type": "lists",
+      "description": "The command lists refs."
+    },
+    {
+      "id": "rel_0167",
+      "source": "git_gc",
+      "target": "unreachable_objects",
+      "type": "may_prune",
+      "description": "Eligible unreachable objects may be removed during garbage collection."
+    },
+    {
+      "id": "rel_0168",
+      "source": "unreachable_objects",
+      "target": "object_database",
+      "type": "reside_in",
+      "description": "Dangling objects can remain in the object database until pruning."
+    },
+    {
+      "id": "rel_0169",
+      "source": "git",
+      "target": "immutable_objects",
+      "type": "uses",
+      "description": "Git's stored objects are immutable by design."
+    },
+    {
+      "id": "rel_0170",
+      "source": "immutable_objects",
+      "target": "hash",
+      "type": "identified_by",
+      "description": "Immutable object identity is tied to its content hash."
+    },
+    {
+      "id": "rel_0171",
+      "source": "repository_integrity_check",
+      "target": "sha1",
+      "type": "checksums_include",
+      "description": "The supplied article notes SHA-1 checksums for packs and indexes."
+    },
+    {
+      "id": "rel_0172",
+      "source": "git",
+      "target": "patch",
+      "type": "optimizes_for",
+      "description": "Original design targeted very fast patch application."
+    },
+    {
+      "id": "rel_0173",
+      "source": "git",
+      "target": "merge_conflict",
+      "type": "reports_when_unresolvable",
+      "description": "Git reports when it cannot automatically finish a merge."
+    },
+    {
+      "id": "rel_0174",
+      "source": "git_gui",
+      "target": "git_merge",
+      "type": "supports_operation",
+      "description": "GUI supports creating and merging branches."
+    },
+    {
+      "id": "rel_0175",
+      "source": "git_gui",
+      "target": "git_push",
+      "type": "supports_operation",
+      "description": "GUI supports interaction with remote repositories."
+    },
+    {
+      "id": "rel_0176",
+      "source": "git_gui",
+      "target": "git_commit",
+      "type": "supports_operation",
+      "description": "GUI supports commit creation and amendment."
+    },
+    {
+      "id": "rel_0177",
+      "source": "vfs_git",
+      "target": "large_files",
+      "type": "addresses_scale_of",
+      "description": "Virtualized checkout patterns reduce the need to download every file immediately."
+    },
+    {
+      "id": "rel_0178",
+      "source": "git_lfs",
+      "target": "large_files",
+      "type": "specializes_in",
+      "description": "Git LFS handles large file workflows."
+    },
+    {
+      "id": "rel_0179",
+      "source": "git_annex",
+      "target": "git",
+      "type": "based_on",
+      "description": "git-annex is based on Git."
+    },
+    {
+      "id": "rel_0180",
+      "source": "git_flow",
+      "target": "feature_branch",
+      "type": "defines_convention_for",
+      "description": "Feature branch naming is part of common git-flow conventions."
+    },
+    {
+      "id": "rel_0181",
+      "source": "git_flow",
+      "target": "hotfix_branch",
+      "type": "defines_convention_for",
+      "description": "Hotfix branch naming is part of common git-flow conventions."
+    },
+    {
+      "id": "rel_0182",
+      "source": "git_flow",
+      "target": "develop_branch",
+      "type": "defines_convention_for",
+      "description": "Develop is a common integration branch convention."
+    },
+    {
+      "id": "rel_0183",
+      "source": "git_flow",
+      "target": "main_branch",
+      "type": "defines_convention_for",
+      "description": "Main/master is used as production-ready integration branch."
+    },
+    {
+      "id": "rel_0184",
+      "source": "access_control",
+      "target": "git_server",
+      "type": "typically_enforced_by",
+      "description": "Server and hosting layers enforce repository authorization."
+    },
+    {
+      "id": "rel_0185",
+      "source": "https",
+      "target": "git",
+      "type": "transports",
+      "description": "HTTPS can be used to access repositories."
+    },
+    {
+      "id": "rel_0186",
+      "source": "ssh",
+      "target": "git",
+      "type": "transports",
+      "description": "SSH is a common authenticated transport."
+    },
+    {
+      "id": "rel_0187",
+      "source": "http",
+      "target": "git",
+      "type": "transports",
+      "description": "HTTP is listed as a repository access transport."
+    },
+    {
+      "id": "rel_0188",
+      "source": "ftp",
+      "target": "git",
+      "type": "historically_transports",
+      "description": "FTP is listed as a supported publication transport in the source."
+    },
+    {
+      "id": "rel_0189",
+      "source": "git_protocol",
+      "target": "remote_repository",
+      "type": "synchronizes",
+      "description": "Git protocol transports repository data."
+    },
+    {
+      "id": "rel_0190",
+      "source": "git_protocol_v2",
+      "target": "remote_tracking_refs",
+      "type": "can_limit_advertisement_of",
+      "description": "Client can request refs of interest instead of receiving every ref."
+    },
+    {
+      "id": "rel_0191",
+      "source": "gitmodules",
+      "target": "repository_fork",
+      "type": "can_affect_clone_of",
+      "description": "Submodule URLs can influence recursive cloning behavior."
+    },
+    {
+      "id": "rel_0192",
+      "source": "hooks",
+      "target": "git",
+      "type": "are_extension_points_for",
+      "description": "Hooks execute scripts at selected Git lifecycle events."
+    },
+    {
+      "id": "rel_0193",
+      "source": "git_config",
+      "target": "git",
+      "type": "configures",
+      "description": "Configuration influences aliases, remotes and other behaviors."
+    },
+    {
+      "id": "rel_0194",
+      "source": "secret_scanning",
+      "target": "git",
+      "type": "protects_repositories_using",
+      "description": "Scanning can detect credentials before or after they enter history."
+    },
+    {
+      "id": "rel_0195",
+      "source": "digital_signature",
+      "target": "data_integrity",
+      "type": "supports",
+      "description": "Signatures can authenticate a release or object, while hashes alone do not establish publisher identity."
+    },
+    {
+      "id": "rel_0196",
+      "source": "signed_tag",
+      "target": "version_control_history",
+      "type": "authenticates_checkpoint_in",
+      "description": "A signed tag can authenticate a named release point."
+    },
+    {
+      "id": "rel_0197",
+      "source": "source_citation",
+      "target": "git",
+      "type": "is_source_for",
+      "description": "Article supplies details on Git's design, implementation, history and security."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pat_local_commit",
+      "name": "Local edit-to-commit lifecycle",
+      "description": "Stages a selected working-tree state and records it as a new snapshot in local history.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Edit files in the working tree",
+          "command": null,
+          "effects": [
+            "working_tree changes"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Stage intended content",
+          "command": "git add <path>",
+          "effects": [
+            "index updated"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Commit the staged state",
+          "command": "git commit -m \"message\"",
+          "effects": [
+            "new commit and tree objects",
+            "current branch ref advances"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Inspect history and working state",
+          "command": "git log; git status",
+          "effects": [
+            "review local history and remaining changes"
+          ]
+        }
+      ],
+      "related_entities": [
+        "working_tree",
+        "git_add",
+        "index",
+        "git_commit",
+        "commit",
+        "tree",
+        "blob",
+        "heads"
+      ]
+    },
+    {
+      "id": "pat_clone_branch_push",
+      "name": "Distributed collaboration lifecycle",
+      "description": "Copies repository history locally, develops a branch, and publishes it to a remote repository.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Clone repository",
+          "command": "git clone <url>",
+          "effects": [
+            "local repository and working tree created"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Create/switch to a topic branch",
+          "command": "git switch -c feature/example",
+          "effects": [
+            "branch ref points to current commit"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Edit, stage and commit",
+          "command": "git add <path> && git commit",
+          "effects": [
+            "local commits extend branch history"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Fetch current remote state",
+          "command": "git fetch origin",
+          "effects": [
+            "remote-tracking refs and objects updated"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Integrate if needed and publish",
+          "command": "git push -u origin feature/example",
+          "effects": [
+            "remote receives commits/ref if policy permits"
+          ]
+        },
+        {
+          "step": 6,
+          "action": "Request review through hosting service if used",
+          "command": null,
+          "effects": [
+            "pull/merge request opened outside core Git"
+          ]
+        }
+      ],
+      "related_entities": [
+        "git_clone",
+        "branch",
+        "git_add",
+        "git_commit",
+        "git_fetch",
+        "git_push",
+        "remote_repository",
+        "pull_request"
+      ]
+    },
+    {
+      "id": "pat_merge",
+      "name": "Merge and conflict-resolution workflow",
+      "description": "Integrates divergent branch histories using a merge strategy and asks for manual resolution when necessary.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Update the target branch",
+          "command": "git fetch origin",
+          "effects": [
+            "remote state becomes available locally"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Merge topic branch",
+          "command": "git merge <branch>",
+          "effects": [
+            "Git calculates merge result from history/common ancestor"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Resolve conflicts if reported",
+          "command": null,
+          "effects": [
+            "manual edits reconcile competing changes"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Stage resolved paths",
+          "command": "git add <resolved-paths>",
+          "effects": [
+            "index records resolutions"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Complete merge",
+          "command": "git commit",
+          "effects": [
+            "merge commit records multiple parents where applicable"
+          ]
+        }
+      ],
+      "related_entities": [
+        "git_merge",
+        "three_way_merge",
+        "merge_conflict",
+        "index",
+        "commit",
+        "resolve_strategy",
+        "octopus_strategy"
+      ]
+    },
+    {
+      "id": "pat_object_storage",
+      "name": "Object storage and packing lifecycle",
+      "description": "Represents files and snapshots as immutable content-addressed objects, then compacts objects into packfiles.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Write file contents as blobs",
+          "effects": [
+            "blob IDs derive from content hashes"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Represent directories as trees",
+          "effects": [
+            "tree entries link names/modes to blobs and subtrees"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Create commit snapshot",
+          "effects": [
+            "commit references root tree and parent commits"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Store new objects loosely",
+          "effects": [
+            "fast object creation, more filesystem entries"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Run maintenance and pack objects",
+          "command": "git gc",
+          "effects": [
+            "packfiles and indexes improve storage/transfer efficiency"
+          ]
+        },
+        {
+          "step": 6,
+          "action": "Check repository integrity",
+          "command": "git fsck",
+          "effects": [
+            "integrity/connectivity checks run"
+          ]
+        }
+      ],
+      "related_entities": [
+        "blob",
+        "tree",
+        "commit",
+        "object_database",
+        "hash",
+        "packfile",
+        "delta_compression",
+        "git_gc",
+        "git_fsck"
+      ]
+    },
+    {
+      "id": "pat_release_signing",
+      "name": "Release authentication pattern",
+      "description": "Use an annotated signed tag to identify and authenticate a release point.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Prepare a reviewed release commit",
+          "effects": [
+            "release state exists in history"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Create annotated signed tag",
+          "command": "git tag -s vX.Y.Z -m \"release\"",
+          "effects": [
+            "tag object contains metadata and signature"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Publish tag and history",
+          "command": "git push origin vX.Y.Z",
+          "effects": [
+            "remote receives tag subject to policy"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Verify signer and tag before consuming release",
+          "command": "git tag -v vX.Y.Z",
+          "effects": [
+            "signature verification supports publisher authentication"
+          ]
+        }
+      ],
+      "related_entities": [
+        "signed_tag",
+        "tag_object",
+        "digital_signature",
+        "commit",
+        "git_push"
+      ]
+    },
+    {
+      "id": "pat_secret_hygiene",
+      "name": "Prevent and remediate secret exposure",
+      "description": "Reduce the chance that credentials are committed and define remediation if a secret enters history.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Ignore local secret/config files where appropriate",
+          "command": "add patterns to .gitignore",
+          "effects": [
+            "untracked matching files are excluded"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Use secret scanning and pre-commit checks",
+          "effects": [
+            "credentials can be detected before publication"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "If a secret was committed, revoke or rotate it immediately",
+          "effects": [
+            "exposed credential is no longer trusted"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Coordinate history cleanup and remote cleanup",
+          "effects": [
+            "sensitive content may be removed by history rewrite, but clones/caches may retain copies"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Use revert rather than rewriting ordinary shared history",
+          "effects": [
+            "published shared history remains stable for routine changes"
+          ]
+        }
+      ],
+      "related_entities": [
+        "gitignore",
+        "secret_scanning",
+        "push_policy",
+        "git_revert",
+        "git_rebase",
+        "object_database"
+      ]
+    },
+    {
+      "id": "pat_secure_remote",
+      "name": "Secure repository transport and authorization",
+      "description": "Separate transport security from repository authorization and signed-history verification.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Choose an authenticated transport",
+          "options": [
+            "SSH",
+            "HTTPS"
+          ],
+          "effects": [
+            "protects transport and/or authenticates remote depending on configuration"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Enforce repository permissions at server/hosting layer",
+          "effects": [
+            "read/write access constrained by policy"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Review untrusted clone URLs, submodule URLs and hooks",
+          "effects": [
+            "reduces malicious repository/config execution risk"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Verify signed release tags or commits when provided",
+          "effects": [
+            "authenticates signer for signed content; hashes alone do not prove identity"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Keep Git client updated",
+          "effects": [
+            "receives security fixes for known vulnerabilities"
+          ]
+        }
+      ],
+      "related_entities": [
+        "https",
+        "ssh",
+        "access_control",
+        "git_server",
+        "gitmodules",
+        "hooks",
+        "digital_signature",
+        "git_2_2_1",
+        "git_2_6_1"
+      ]
+    },
+    {
+      "id": "pat_fork_pr",
+      "name": "Fork-and-review workflow",
+      "description": "Uses an independent repository and hosting-service pull request for collaboration.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Fork or clone the upstream repository",
+          "effects": [
+            "independent development copy created"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Develop commits on a topic branch",
+          "effects": [
+            "change history isolated from upstream default branch"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Push branch to a writable remote",
+          "effects": [
+            "branch becomes available for review"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Open pull/merge request on hosting service",
+          "effects": [
+            "review metadata and discussion tracked by forge"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Review, test and merge through configured process",
+          "effects": [
+            "approved commits integrated into target branch"
+          ]
+        }
+      ],
+      "related_entities": [
+        "repository_fork",
+        "branch",
+        "git_push",
+        "pull_request",
+        "code_review",
+        "github",
+        "gitlab",
+        "gerrit"
+      ]
+    },
+    {
+      "id": "pat_large_repo",
+      "name": "Large repository optimization",
+      "description": "Use packing, selective transfer and virtualization/extensions when repository size becomes expensive.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Pack objects and run maintenance",
+          "command": "git gc",
+          "effects": [
+            "reduced loose-object overhead and delta-compressed storage"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Use protocol v2-capable clients/servers",
+          "effects": [
+            "fetch can request only relevant refs"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Use Git LFS for appropriate large binary assets",
+          "effects": [
+            "large payloads handled through LFS workflows"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Consider VFS for Git for huge working trees",
+          "effects": [
+            "placeholder files downloaded when accessed"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Measure repository history and clone costs",
+          "effects": [
+            "choose optimization based on workload"
+          ]
+        }
+      ],
+      "related_entities": [
+        "packfile",
+        "git_gc",
+        "git_protocol_v2",
+        "git_lfs",
+        "vfs_git",
+        "large_files",
+        "performance"
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule_local_history",
+      "title": "Local commits are repository-local until published",
+      "statement": "A successful local commit does not automatically update a remote repository; use push or an explicit hosting workflow to publish changes.",
+      "severity": "important",
+      "related_entities": [
+        "git_commit",
+        "git_push",
+        "local_repository",
+        "remote_repository"
+      ]
+    },
+    {
+      "id": "rule_stage_review",
+      "title": "Review the index before committing",
+      "statement": "git commit records staged content, so inspect staged diffs and status to avoid committing unintended changes.",
+      "severity": "important",
+      "related_entities": [
+        "index",
+        "git_add",
+        "git_commit"
+      ]
+    },
+    {
+      "id": "rule_hash_not_identity",
+      "title": "A content hash is not publisher authentication",
+      "statement": "Object hashes support content identity and integrity checks, but signed tags/commits or a trusted release process are needed to authenticate who published content.",
+      "severity": "critical",
+      "related_entities": [
+        "hash",
+        "digital_signature",
+        "signed_tag",
+        "data_integrity"
+      ]
+    },
+    {
+      "id": "rule_sha1_transition",
+      "title": "Do not assume SHA-1 collision resistance",
+      "statement": "The source documents the SHAttered demonstration and Git's hash-transition work; deployments should follow current Git guidance on hash compatibility and security.",
+      "severity": "critical",
+      "related_entities": [
+        "sha1",
+        "sha1_collision",
+        "hash_transition"
+      ]
+    },
+    {
+      "id": "rule_gitignore_limit",
+      "title": "Do not treat .gitignore as secret removal",
+      "statement": "Ignoring a file prevents matching untracked files from being added by ordinary workflows; it does not erase already committed secrets from history or other clones.",
+      "severity": "critical",
+      "related_entities": [
+        "gitignore",
+        "secret_scanning",
+        "object_database"
+      ]
+    },
+    {
+      "id": "rule_rotate_secret",
+      "title": "Rotate exposed credentials before history cleanup",
+      "statement": "If a credential was committed, revoke/rotate it first; history rewriting alone cannot ensure every clone or cache has discarded the value.",
+      "severity": "critical",
+      "related_entities": [
+        "secret_scanning",
+        "push_policy",
+        "object_database"
+      ]
+    },
+    {
+      "id": "rule_shared_history",
+      "title": "Prefer revert for changes already shared",
+      "statement": "A new revert commit is generally safer for shared published history than rewriting commits on which others may depend.",
+      "severity": "important",
+      "related_entities": [
+        "git_revert",
+        "push_policy",
+        "git_rebase"
+      ]
+    },
+    {
+      "id": "rule_access_control",
+      "title": "Enforce permissions outside core Git",
+      "statement": "Git's core does not provide access control; enforce read/write authorization at the server, SSH, hosting or authorization-tool layer.",
+      "severity": "critical",
+      "related_entities": [
+        "git",
+        "access_control",
+        "git_server",
+        "gitolite"
+      ]
+    },
+    {
+      "id": "rule_untrusted_repo",
+      "title": "Treat untrusted repositories as executable-risk inputs",
+      "statement": "Inspect repository configuration, hooks, submodule URLs and scripts before running commands or tools from untrusted repositories.",
+      "severity": "critical",
+      "related_entities": [
+        "hooks",
+        "git_config",
+        "gitmodules",
+        "cve_2014_9390",
+        "cve_2015_7545"
+      ]
+    },
+    {
+      "id": "rule_transport",
+      "title": "Use authenticated protected transports for remotes",
+      "statement": "Prefer appropriately configured SSH or HTTPS and verify host identity; an unencrypted or untrusted transport can expose users to redirection or interception.",
+      "severity": "critical",
+      "related_entities": [
+        "ssh",
+        "https",
+        "mitm",
+        "remote_repository"
+      ]
+    },
+    {
+      "id": "rule_keep_updated",
+      "title": "Keep Git clients and servers patched",
+      "statement": "Historical vulnerabilities were fixed in later releases; update supported clients, servers and hosting services to receive security fixes.",
+      "severity": "critical",
+      "related_entities": [
+        "git_2_2_1",
+        "git_2_6_1",
+        "git_server"
+      ]
+    },
+    {
+      "id": "rule_gc_unreachable",
+      "title": "Do not rely on unreachable objects as durable backups",
+      "statement": "Unreachable objects may be removed by automatic or explicit garbage collection; preserve important commits with refs or backups.",
+      "severity": "important",
+      "related_entities": [
+        "unreachable_objects",
+        "git_gc",
+        "refs"
+      ]
+    },
+    {
+      "id": "rule_rename_inference",
+      "title": "Rename history is inferred, not stored as permanent file identity",
+      "statement": "Git detects renames heuristically while viewing history; a rename with substantial simultaneous edits may appear as deletion plus addition.",
+      "severity": "informational",
+      "related_entities": [
+        "rename_detection",
+        "file_history",
+        "snapshot_model"
+      ]
+    },
+    {
+      "id": "rule_pr_layer",
+      "title": "Pull requests belong to hosting/workflow layers",
+      "statement": "A pull request is not a native Git object or command; Git transports commits and refs while hosting services manage review records and merge UI.",
+      "severity": "informational",
+      "related_entities": [
+        "pull_request",
+        "git",
+        "github",
+        "gitlab"
+      ]
+    },
+    {
+      "id": "rule_merge_conflict",
+      "title": "Validate merges that require manual conflict resolution",
+      "statement": "A successful merge operation can still require human judgment; test the integrated result and review staged resolutions before finalizing.",
+      "severity": "important",
+      "related_entities": [
+        "git_merge",
+        "merge_conflict",
+        "three_way_merge"
+      ]
+    },
+    {
+      "id": "rule_protocol_scale",
+      "title": "Limit unnecessary ref advertisement in large repositories",
+      "statement": "Where supported, protocol v2 allows clients to request relevant refs, reducing overhead for fetches that need only a subset of repository state.",
+      "severity": "informational",
+      "related_entities": [
+        "git_protocol_v2",
+        "git_protocol",
+        "performance"
+      ]
+    },
+    {
+      "id": "rule_signed_release",
+      "title": "Verify signatures for security-sensitive releases",
+      "statement": "When a release uses signed tags, verify the signature and trust in the signing key before relying on the tag as publisher-authenticated.",
+      "severity": "critical",
+      "related_entities": [
+        "signed_tag",
+        "digital_signature",
+        "tag_object"
+      ]
+    },
+    {
+      "id": "rule_working_tree",
+      "title": "Distinguish working tree, index and object database",
+      "statement": "Working-tree edits are not staged; staged content is not committed; committed objects are local history until pushed.",
+      "severity": "important",
+      "related_entities": [
+        "working_tree",
+        "index",
+        "object_database",
+        "git_add",
+        "git_commit",
+        "git_push"
+      ]
+    },
+    {
+      "id": "rule_default_branch",
+      "title": "Do not assume every repository uses the same default branch name",
+      "statement": "Repositories may use main, master or a configured alternative; inspect local and remote refs rather than hard-coding a branch name.",
+      "severity": "informational",
+      "related_entities": [
+        "main_branch",
+        "master_branch",
+        "heads",
+        "remote_tracking_refs"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_basic_commit",
+      "title": "Create and commit a local change",
+      "scenario": "A developer changes a file and wants a recorded snapshot.",
+      "steps": [
+        "git init",
+        "edit README.md",
+        "git add README.md",
+        "git diff --cached",
+        "git commit -m \"Add README\""
+      ],
+      "outcome": "The index contents become a new commit in local history; nothing is published remotely unless pushed.",
+      "related_entities": [
+        "git_init",
+        "working_tree",
+        "git_add",
+        "index",
+        "git_commit",
+        "commit"
+      ]
+    },
+    {
+      "id": "ex_distributed_feature",
+      "title": "Collaborate on a feature branch",
+      "scenario": "A developer contributes a feature to a shared repository.",
+      "steps": [
+        "git clone <remote-url>",
+        "git switch -c feature/search",
+        "edit files",
+        "git add <paths>",
+        "git commit -m \"Add search\"",
+        "git fetch origin",
+        "git push -u origin feature/search",
+        "open a pull/merge request on the hosting service"
+      ],
+      "outcome": "Commits remain locally available offline, then are published to a remote branch and optionally reviewed using a hosting-layer pull request.",
+      "related_entities": [
+        "git_clone",
+        "branch",
+        "git_commit",
+        "git_fetch",
+        "git_push",
+        "pull_request"
+      ]
+    },
+    {
+      "id": "ex_merge_conflict",
+      "title": "Resolve conflicting edits",
+      "scenario": "Two branches modify overlapping lines and Git cannot automatically choose a result.",
+      "steps": [
+        "git switch main",
+        "git merge feature/search",
+        "inspect conflicted paths",
+        "edit files to desired combined result",
+        "git add <resolved-paths>",
+        "git commit"
+      ],
+      "outcome": "The resulting history records the integrated state; tests and review are needed to validate semantic correctness.",
+      "related_entities": [
+        "git_merge",
+        "merge_conflict",
+        "index",
+        "commit"
+      ]
+    },
+    {
+      "id": "ex_signed_release",
+      "title": "Authenticate a release tag",
+      "scenario": "A maintainer wants consumers to verify that a release tag was signed by an expected key.",
+      "steps": [
+        "git tag -s v1.2.0 -m \"Release 1.2.0\"",
+        "git push origin v1.2.0",
+        "git tag -v v1.2.0"
+      ],
+      "outcome": "Signature verification checks the tag signature; consumers must also trust the signer/key and verify release provenance.",
+      "related_entities": [
+        "signed_tag",
+        "tag_object",
+        "digital_signature",
+        "git_push"
+      ]
+    },
+    {
+      "id": "ex_secret_leak",
+      "title": "Respond to a committed credential",
+      "scenario": "A password or API token accidentally enters a commit and may have been pushed.",
+      "steps": [
+        "Revoke or rotate the credential immediately",
+        "Check access logs and downstream use",
+        "Coordinate removal/rewriting of affected history if required",
+        "Notify collaborators and clean relevant clones/caches where feasible",
+        "Add preventive scanning and appropriate ignore rules"
+      ],
+      "outcome": "The credential is invalidated first; history cleanup reduces future exposure but cannot guarantee every copy is erased.",
+      "related_entities": [
+        "secret_scanning",
+        "gitignore",
+        "push_policy",
+        "object_database",
+        "git_rebase"
+      ]
+    },
+    {
+      "id": "ex_integrity_check",
+      "title": "Inspect repository integrity and storage",
+      "scenario": "A maintainer wants to check object connectivity and reduce loose-object overhead.",
+      "steps": [
+        "git fsck",
+        "git gc",
+        "git fsck"
+      ],
+      "outcome": "Integrity checks and object packing can reveal repository issues and improve storage efficiency; garbage collection can prune unreachable objects.",
+      "related_entities": [
+        "git_fsck",
+        "git_gc",
+        "object_database",
+        "packfile",
+        "unreachable_objects"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_user_wikipedia_git",
+      "title": "Git (Wikipedia article text supplied by user)",
+      "source_type": "user_supplied_text",
+      "provenance": {
+        "uploaded_file": "Pasted text(20261020-185455).txt",
+        "article_title": "Git",
+        "article_last_edited": "2026-09-04",
+        "article_date_context": "The supplied text reports Git 2.56.0 as stable on 2026-09-28; preserve this as source-reported rather than independently verified.",
+        "line_ranges": [
+          [
+            64,
+            90,
+            "Identity, definition, design goals and adoption"
+          ],
+          [
+            92,
+            104,
+            "History"
+          ],
+          [
+            119,
+            147,
+            "Design, object model, rename/history tradeoffs"
+          ],
+          [
+            148,
+            185,
+            "Merge strategies and data structures"
+          ],
+          [
+            186,
+            202,
+            "Commands and references"
+          ],
+          [
+            203,
+            249,
+            "Implementations, servers and GUIs"
+          ],
+          [
+            250,
+            280,
+            "Adoption and extensions"
+          ],
+          [
+            282,
+            297,
+            "Conventions and security"
+          ],
+          [
+            308,
+            446,
+            "References"
+          ],
+          [
+            454,
+            458,
+            "Categories and license notice"
+          ]
+        ]
+      },
+      "claims_are_source_derived": true,
+      "notes": "Article statements about release dates, future planned defaults, versions, adoption percentages, transports and vulnerabilities are represented as source claims and may be time-sensitive."
+    }
+  ],
+  "graph_integrity": {
+    "relationship_endpoint_policy": "Every relationship source and target must match an entity ID, except explicit cross-graph links recorded in external_references.",
+    "external_references": [
+      {
+        "id": "public_key_cryptography",
+        "name": "Public-key cryptography",
+        "reason": "Cross-graph concept link for signed tags and release authentication; resolve to the separate cryptography graph if loaded."
+      }
+    ]
+  },
+  "notes": [
+    "Git is distributed even when a team chooses a central integration server.",
+    "Git's content-addressed object store, commit-parent links and tree structure form the basis of its history and integrity model.",
+    "Hashes do not by themselves establish the identity or trustworthiness of a publisher; signatures and trusted key distribution address that separate problem.",
+    "Hosting features such as pull requests and fine-grained authorization are distinct from core Git objects and commands.",
+    "Some source details are explicitly historical (e.g., recursive merge strategy, SHA-1 internals, old vulnerabilities, and planned Git 3.0 default branch change); verify current official documentation before relying on them operationally."
+  ]
+}
