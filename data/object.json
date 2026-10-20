@@ -1,0 +1,2302 @@
+{
+  "metadata": {
+    "title": "Object (Computer Science) — Comprehensive Knowledge Graph",
+    "description": "Connected graph of the computer-science concept of an object: state, behavior, identity, object lifecycle, type and programming paradigms, object relationships, modeling, persistence, distributed systems, security, concurrency, design patterns, and cited source references.",
+    "source_basis": "Primarily based on the user-provided Wikipedia article text; broader related concepts are added as clearly described contextual expansions.",
+    "source_name": "Wikipedia — Object (computer science)",
+    "source_last_edited_as_stated_by_source": "2026-06-12",
+    "schema_version": "1.0",
+    "json_schema_draft": "2020-12",
+    "counts": {
+      "entities": 144,
+      "relationships": 137,
+      "entity_types": 69,
+      "relationship_types": 104
+    }
+  },
+  "entity_types": [
+    "article",
+    "base_type",
+    "book",
+    "computer_science_concept",
+    "concurrency_hazard",
+    "concurrency_mechanism",
+    "contract_concept",
+    "copy_semantics",
+    "core_concept",
+    "data_processing_concept",
+    "database_concept",
+    "design_concept",
+    "design_pattern",
+    "design_principle",
+    "design_relationship",
+    "distributed_computing",
+    "distributed_concept",
+    "distributed_mechanism",
+    "distributed_system_concept",
+    "documentation_concept",
+    "domain_driven_design",
+    "domain_model_concept",
+    "domain_pattern",
+    "execution_concept",
+    "execution_environment",
+    "javascript_concept",
+    "member_feature",
+    "memory_management",
+    "memory_semantics",
+    "metaprogramming",
+    "metaprogramming_concept",
+    "modeling_concept",
+    "modeling_language",
+    "object_concept",
+    "object_interaction",
+    "object_semantic",
+    "oop_feature",
+    "persistence_concept",
+    "persistence_pattern",
+    "programming_concept",
+    "programming_language",
+    "programming_language_concept",
+    "programming_paradigm",
+    "programming_principle",
+    "programming_semantics",
+    "relational_database_concept",
+    "research_work",
+    "runtime_behavior",
+    "runtime_concept",
+    "runtime_mechanism",
+    "runtime_operation",
+    "runtime_structure",
+    "security_concept",
+    "security_model",
+    "security_principle",
+    "semantic_concept",
+    "software_architecture",
+    "software_design",
+    "software_design_concept",
+    "software_design_quality",
+    "software_engineering_concept",
+    "software_methodology",
+    "software_pattern",
+    "software_quality_attribute",
+    "software_system",
+    "software_technology",
+    "type_construct",
+    "type_system_concept",
+    "uml_artifact"
+  ],
+  "relationship_types": [
+    "accessed_through",
+    "arises_from",
+    "assigns",
+    "begins",
+    "belongs_to",
+    "can_be_mediated_by",
+    "can_be_modeled_with",
+    "can_create",
+    "can_enable",
+    "can_expose_shared_changes_to",
+    "can_interleave_operations_on",
+    "can_model",
+    "can_preserve_or_create",
+    "can_realize",
+    "can_represent",
+    "can_undergo",
+    "can_use",
+    "centers_on",
+    "changes",
+    "classifies_or_relates",
+    "commonly_includes",
+    "commonly_uses",
+    "connects_nodes_with",
+    "constrains",
+    "contains_nodes_that_are",
+    "contrasts_with",
+    "coordinates_notifications_between",
+    "coordinates_with",
+    "covers",
+    "creates_or_describes",
+    "defines_meaning_of",
+    "defines_public_side_of",
+    "depicts",
+    "depicts_instances_of",
+    "discusses",
+    "discusses_history_of",
+    "documents",
+    "encapsulates_algorithm_in",
+    "encodes",
+    "ends_or_terminates",
+    "exposes_or_supports",
+    "favors_dependency_on",
+    "forwards_responsibility_between",
+    "fulfills",
+    "governs",
+    "guides_assignment_of",
+    "has",
+    "has_property",
+    "has_semantic_component",
+    "has_semantics_for",
+    "hides_or_contains",
+    "identifies",
+    "identifies_or_builds",
+    "implements",
+    "includes",
+    "is_affected_by",
+    "is_constrained_by",
+    "is_defined_by",
+    "is_historically_associated_with",
+    "is_language_specific_form_of",
+    "is_security_model_for",
+    "is_specialized_form_of",
+    "links_through",
+    "maintains",
+    "manages_or_executes",
+    "maps",
+    "maps_runtime_identity_to",
+    "maps_to",
+    "may_be",
+    "may_define",
+    "may_expose",
+    "may_mean",
+    "may_reduce",
+    "may_require",
+    "may_use",
+    "measures_alignment_of",
+    "models",
+    "models_with",
+    "must_account_for",
+    "must_define",
+    "organizes",
+    "participates_in",
+    "performs_or_encapsulates",
+    "preserves_or_implements",
+    "produces",
+    "provides_access_to",
+    "reclaims_when_unreachable",
+    "reconstructs",
+    "reduces_repeated_cost_of",
+    "references_without_strong_ownership_of",
+    "reflects",
+    "relates",
+    "represented_or_stored_at",
+    "separates_from",
+    "shares_intrinsic_state_across",
+    "specifies",
+    "supports",
+    "tracks_changes_to",
+    "tracks_references_to",
+    "translates_between",
+    "used_through",
+    "uses",
+    "uses_as_root_type",
+    "wraps"
+  ],
+  "entities": [
+    {
+      "id": "object",
+      "name": "Object (computer science)",
+      "type": "core_concept",
+      "description": "An identifiable semantic entity in software with state, behavior, and identity.",
+      "properties": {}
+    },
+    {
+      "id": "state",
+      "name": "State",
+      "type": "object_semantic",
+      "description": "The data or condition associated with an object at a particular point in time.",
+      "properties": {}
+    },
+    {
+      "id": "behavior",
+      "name": "Behavior",
+      "type": "object_semantic",
+      "description": "The operations, responses, and effects an object can exhibit.",
+      "properties": {}
+    },
+    {
+      "id": "identity",
+      "name": "Identity",
+      "type": "object_semantic",
+      "description": "The property that distinguishes an object as an individual entity even when its state resembles another object's state.",
+      "properties": {}
+    },
+    {
+      "id": "attributes",
+      "name": "Attributes",
+      "type": "object_semantic",
+      "description": "Named data characteristics or properties associated with an object.",
+      "properties": {}
+    },
+    {
+      "id": "methods",
+      "name": "Methods",
+      "type": "object_semantic",
+      "description": "Operations callable on or associated with an object.",
+      "properties": {}
+    },
+    {
+      "id": "invariants",
+      "name": "Object invariants",
+      "type": "object_semantic",
+      "description": "Conditions that should remain true for an object across its valid lifetime or public operations.",
+      "properties": {}
+    },
+    {
+      "id": "responsibility",
+      "name": "Object responsibility",
+      "type": "design_concept",
+      "description": "The role or work an object is assigned within a software design.",
+      "properties": {}
+    },
+    {
+      "id": "collaboration",
+      "name": "Object collaboration",
+      "type": "design_concept",
+      "description": "Interaction among objects whose coordinated behavior provides higher-level functionality.",
+      "properties": {}
+    },
+    {
+      "id": "domain_model",
+      "name": "Domain model",
+      "type": "software_design",
+      "description": "Representation of concepts, entities, and rules in a problem domain.",
+      "properties": {}
+    },
+    {
+      "id": "real_world_entity",
+      "name": "Real-world entity",
+      "type": "modeling_concept",
+      "description": "A person, place, thing, event, or other real-world concept represented by software.",
+      "properties": {}
+    },
+    {
+      "id": "abstract_entity",
+      "name": "Abstract entity",
+      "type": "modeling_concept",
+      "description": "A conceptual or invented design entity that does not need a direct physical counterpart.",
+      "properties": {}
+    },
+    {
+      "id": "object_reference",
+      "name": "Object reference",
+      "type": "programming_concept",
+      "description": "A language-level value or handle used to access an object indirectly.",
+      "properties": {}
+    },
+    {
+      "id": "pointer",
+      "name": "Pointer",
+      "type": "programming_concept",
+      "description": "A value representing a memory address or location, distinct from higher-level object identity.",
+      "properties": {}
+    },
+    {
+      "id": "memory_location",
+      "name": "Memory location",
+      "type": "runtime_concept",
+      "description": "A runtime storage location associated with an object representation.",
+      "properties": {}
+    },
+    {
+      "id": "object_lifetime",
+      "name": "Object lifetime",
+      "type": "runtime_concept",
+      "description": "The interval during which an object exists and can participate in program behavior.",
+      "properties": {}
+    },
+    {
+      "id": "object_creation",
+      "name": "Object creation",
+      "type": "runtime_operation",
+      "description": "The process by which an object comes into existence.",
+      "properties": {}
+    },
+    {
+      "id": "object_destruction",
+      "name": "Object destruction",
+      "type": "runtime_operation",
+      "description": "The termination, cleanup, or reclamation phase of an object's lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "object_copying",
+      "name": "Object copying",
+      "type": "runtime_operation",
+      "description": "Creating another object or representation from an existing object.",
+      "properties": {}
+    },
+    {
+      "id": "shallow_copy",
+      "name": "Shallow copy",
+      "type": "copy_semantics",
+      "description": "A copy that duplicates top-level structure while retaining references to nested objects.",
+      "properties": {}
+    },
+    {
+      "id": "deep_copy",
+      "name": "Deep copy",
+      "type": "copy_semantics",
+      "description": "A copy that recursively duplicates nested mutable object structures according to a defined policy.",
+      "properties": {}
+    },
+    {
+      "id": "equality",
+      "name": "Object equality",
+      "type": "semantic_concept",
+      "description": "A rule for determining whether two object references or values count as equal.",
+      "properties": {}
+    },
+    {
+      "id": "reference_equality",
+      "name": "Reference equality",
+      "type": "semantic_concept",
+      "description": "Equality based on whether two references designate the same object.",
+      "properties": {}
+    },
+    {
+      "id": "value_equality",
+      "name": "Value equality",
+      "type": "semantic_concept",
+      "description": "Equality based on the values or contents represented by objects.",
+      "properties": {}
+    },
+    {
+      "id": "aliasing",
+      "name": "Aliasing",
+      "type": "memory_semantics",
+      "description": "Multiple references can designate the same object, so changes through one alias may be visible through another.",
+      "properties": {}
+    },
+    {
+      "id": "mutability",
+      "name": "Mutability",
+      "type": "object_semantic",
+      "description": "Whether an object's state can change after construction.",
+      "properties": {}
+    },
+    {
+      "id": "immutability",
+      "name": "Immutability",
+      "type": "object_semantic",
+      "description": "A guarantee or design property that object state cannot change after construction, subject to the definition used.",
+      "properties": {}
+    },
+    {
+      "id": "encapsulation",
+      "name": "Encapsulation",
+      "type": "programming_principle",
+      "description": "Bundling state and behavior and controlling access to an object's implementation.",
+      "properties": {}
+    },
+    {
+      "id": "information_hiding",
+      "name": "Information hiding",
+      "type": "programming_principle",
+      "description": "Concealing implementation decisions behind a stable interface.",
+      "properties": {}
+    },
+    {
+      "id": "interface",
+      "name": "Interface",
+      "type": "software_design",
+      "description": "A defined set of operations or capabilities through which a client can use an object.",
+      "properties": {}
+    },
+    {
+      "id": "implementation",
+      "name": "Implementation",
+      "type": "software_design",
+      "description": "The internal representation and code that realizes an object's externally visible contract.",
+      "properties": {}
+    },
+    {
+      "id": "class",
+      "name": "Class",
+      "type": "type_construct",
+      "description": "A type or blueprint from which instances may be created in class-based systems.",
+      "properties": {}
+    },
+    {
+      "id": "instance",
+      "name": "Instance",
+      "type": "object_concept",
+      "description": "A particular runtime object created from or conforming to a type or class.",
+      "properties": {}
+    },
+    {
+      "id": "class_based",
+      "name": "Class-based programming",
+      "type": "programming_paradigm",
+      "description": "A model in which classes are central templates for creating objects.",
+      "properties": {}
+    },
+    {
+      "id": "prototype_based",
+      "name": "Prototype-based programming",
+      "type": "programming_paradigm",
+      "description": "A model in which objects inherit or delegate behavior through links to other objects used as prototypes.",
+      "properties": {}
+    },
+    {
+      "id": "object_based",
+      "name": "Object-based programming",
+      "type": "programming_paradigm",
+      "description": "A style providing encapsulated objects, without necessarily requiring inheritance and polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented",
+      "name": "Object-oriented programming",
+      "type": "programming_paradigm",
+      "description": "A style commonly characterized by objects, encapsulation, inheritance, and polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "inheritance",
+      "name": "Inheritance",
+      "type": "oop_feature",
+      "description": "A mechanism by which a type or object reuses or specializes behavior from a parent type or prototype.",
+      "properties": {}
+    },
+    {
+      "id": "polymorphism",
+      "name": "Polymorphism",
+      "type": "oop_feature",
+      "description": "The ability to use a common abstraction with different implementations or behaviors.",
+      "properties": {}
+    },
+    {
+      "id": "subtyping",
+      "name": "Subtyping",
+      "type": "type_system_concept",
+      "description": "A type relationship in which values of a subtype can be used where a supertype is expected, subject to the type system.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_dispatch",
+      "name": "Dynamic dispatch",
+      "type": "runtime_mechanism",
+      "description": "Selecting an implementation based on the runtime type or receiver.",
+      "properties": {}
+    },
+    {
+      "id": "message_passing",
+      "name": "Message passing",
+      "type": "object_interaction",
+      "description": "Sending a request or message to an object to invoke behavior.",
+      "properties": {}
+    },
+    {
+      "id": "method_invocation",
+      "name": "Method invocation",
+      "type": "runtime_operation",
+      "description": "Calling an operation associated with an object or type.",
+      "properties": {}
+    },
+    {
+      "id": "composition",
+      "name": "Object composition",
+      "type": "design_relationship",
+      "description": "Building a larger object or behavior by combining collaborating component objects.",
+      "properties": {}
+    },
+    {
+      "id": "aggregation",
+      "name": "Aggregation",
+      "type": "design_relationship",
+      "description": "A whole-part relationship in which parts can have independent lifetimes, as commonly modeled in UML.",
+      "properties": {}
+    },
+    {
+      "id": "association",
+      "name": "Association",
+      "type": "design_relationship",
+      "description": "A relationship in which objects know about or interact with other objects.",
+      "properties": {}
+    },
+    {
+      "id": "delegation",
+      "name": "Delegation",
+      "type": "design_pattern",
+      "description": "Forwarding responsibility from one object to another object.",
+      "properties": {}
+    },
+    {
+      "id": "dependency",
+      "name": "Dependency",
+      "type": "design_relationship",
+      "description": "A relationship in which one component relies on another component's services or contract.",
+      "properties": {}
+    },
+    {
+      "id": "object_graph",
+      "name": "Object graph",
+      "type": "runtime_structure",
+      "description": "A set of objects and the references or links connecting them.",
+      "properties": {}
+    },
+    {
+      "id": "object_network",
+      "name": "Object network",
+      "type": "distributed_concept",
+      "description": "A set of interacting objects across components, processes, or machines.",
+      "properties": {}
+    },
+    {
+      "id": "business_object",
+      "name": "Business object",
+      "type": "software_architecture",
+      "description": "An object representing a business concept, business rule, or business process element.",
+      "properties": {}
+    },
+    {
+      "id": "data_transfer_object",
+      "name": "Data Transfer Object (DTO)",
+      "type": "software_pattern",
+      "description": "A data carrier used to transfer information across process or architectural boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "value_object",
+      "name": "Value object",
+      "type": "domain_driven_design",
+      "description": "A domain model object whose identity is typically defined by its attributes rather than a unique identity.",
+      "properties": {}
+    },
+    {
+      "id": "entity",
+      "name": "Domain entity",
+      "type": "domain_driven_design",
+      "description": "A domain object whose identity persists independently of changes to its attributes.",
+      "properties": {}
+    },
+    {
+      "id": "distributed_object",
+      "name": "Distributed object",
+      "type": "distributed_computing",
+      "description": "An object abstraction whose operations or state are accessible across a process or network boundary.",
+      "properties": {}
+    },
+    {
+      "id": "metaobject",
+      "name": "Metaobject",
+      "type": "metaprogramming",
+      "description": "An object that represents or controls aspects of another object's structure or behavior.",
+      "properties": {}
+    },
+    {
+      "id": "object_capability",
+      "name": "Object-capability model",
+      "type": "security_model",
+      "description": "A security model in which references to objects convey authority to invoke permitted operations.",
+      "properties": {}
+    },
+    {
+      "id": "database_object",
+      "name": "Database object",
+      "type": "database_concept",
+      "description": "A database structure or modeled item such as a table, column, view, procedure, or other schema element.",
+      "properties": {}
+    },
+    {
+      "id": "table",
+      "name": "Database table",
+      "type": "relational_database_concept",
+      "description": "A named relational structure containing rows and columns.",
+      "properties": {}
+    },
+    {
+      "id": "column",
+      "name": "Database column",
+      "type": "relational_database_concept",
+      "description": "A named attribute of a relational table.",
+      "properties": {}
+    },
+    {
+      "id": "information_system",
+      "name": "Information system",
+      "type": "software_system",
+      "description": "A system whose components, interfaces, and responsibilities can be modeled as objects.",
+      "properties": {}
+    },
+    {
+      "id": "distributed_system",
+      "name": "Distributed system",
+      "type": "software_system",
+      "description": "A system whose components execute across multiple processes or machines.",
+      "properties": {}
+    },
+    {
+      "id": "semantics",
+      "name": "Semantics",
+      "type": "computer_science_concept",
+      "description": "The meaning of constructs, operations, and relationships in a programming language or model.",
+      "properties": {}
+    },
+    {
+      "id": "programming_language",
+      "name": "Programming language",
+      "type": "computer_science_concept",
+      "description": "A formal language used to express computations and program behavior.",
+      "properties": {}
+    },
+    {
+      "id": "type_system",
+      "name": "Type system",
+      "type": "programming_language_concept",
+      "description": "Rules that classify values and constrain operations and compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "runtime",
+      "name": "Runtime system",
+      "type": "execution_environment",
+      "description": "Execution machinery that manages objects, calls, storage, and object lifetimes.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collection",
+      "name": "Garbage collection",
+      "type": "memory_management",
+      "description": "Automatic reclamation of managed objects that are no longer reachable under a runtime's rules.",
+      "properties": {}
+    },
+    {
+      "id": "resource_management",
+      "name": "Resource management",
+      "type": "software_engineering_concept",
+      "description": "Handling object-associated resources such as files, sockets, locks, and handles.",
+      "properties": {}
+    },
+    {
+      "id": "serialization",
+      "name": "Serialization",
+      "type": "data_processing_concept",
+      "description": "Encoding object data into a transferable or storable representation.",
+      "properties": {}
+    },
+    {
+      "id": "deserialization",
+      "name": "Deserialization",
+      "type": "data_processing_concept",
+      "description": "Reconstructing an object or data structure from an encoded representation.",
+      "properties": {}
+    },
+    {
+      "id": "object_relational_mapping",
+      "name": "Object-relational mapping (ORM)",
+      "type": "software_technology",
+      "description": "Mapping between in-memory object models and relational database structures.",
+      "properties": {}
+    },
+    {
+      "id": "uml",
+      "name": "Unified Modeling Language (UML)",
+      "type": "modeling_language",
+      "description": "A modeling language commonly used to describe classes, objects, associations, composition, and object interactions.",
+      "properties": {}
+    },
+    {
+      "id": "object_diagram",
+      "name": "Object diagram",
+      "type": "uml_artifact",
+      "description": "A UML diagram showing object instances and links at a particular snapshot.",
+      "properties": {}
+    },
+    {
+      "id": "class_diagram",
+      "name": "Class diagram",
+      "type": "uml_artifact",
+      "description": "A UML diagram showing classes, attributes, operations, and relationships.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented_analysis",
+      "name": "Object-oriented analysis",
+      "type": "software_methodology",
+      "description": "Identifying domain concepts, responsibilities, and relationships as part of analysis.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented_design",
+      "name": "Object-oriented design",
+      "type": "software_methodology",
+      "description": "Designing objects, interfaces, responsibilities, collaborations, and relationships.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented_analysis_design",
+      "name": "Object-Oriented Analysis and Design with Applications",
+      "type": "book",
+      "description": "A well-known book by Grady Booch and collaborators cited in the supplied article.",
+      "properties": {}
+    },
+    {
+      "id": "nemirovsky_article",
+      "name": "Is Schrödinger's Cat Object-Oriented?",
+      "type": "article",
+      "description": "Article by Adolfo M. Nemirovsky cited in the supplied source.",
+      "properties": {}
+    },
+    {
+      "id": "distributed_object_paper",
+      "name": "Distributed Object-Based Programming Systems",
+      "type": "research_work",
+      "description": "ACM-catalogued work referenced by the supplied article.",
+      "properties": {}
+    },
+    {
+      "id": "language_design_dimensions",
+      "name": "Dimensions of Object-Based Language Design",
+      "type": "research_work",
+      "description": "Research work referenced by the supplied article.",
+      "properties": {}
+    },
+    {
+      "id": "history_oop",
+      "name": "A Brief History of the Object-Oriented Approach",
+      "type": "article",
+      "description": "Historical overview cited by the supplied article.",
+      "properties": {}
+    },
+    {
+      "id": "sql_demystified",
+      "name": "SQL Demystified",
+      "type": "book",
+      "description": "Andy Oppel's book cited in relation to database objects.",
+      "properties": {}
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "type": "programming_language",
+      "description": "Class-based language in which classes ultimately inherit from Object in the conventional Java type model.",
+      "properties": {}
+    },
+    {
+      "id": "csharp",
+      "name": "C#",
+      "type": "programming_language",
+      "description": "Class-based .NET language in which reference types ultimately derive from System.Object.",
+      "properties": {}
+    },
+    {
+      "id": "system_object",
+      "name": "System.Object / Object",
+      "type": "base_type",
+      "description": "Root base type in the standard class hierarchies of Java and C#/.NET.",
+      "properties": {}
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "type": "programming_language",
+      "description": "Prototype-based language whose objects delegate through prototype chains.",
+      "properties": {}
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "programming_language",
+      "description": "Multi-paradigm language with class-based object models and runtime object identity.",
+      "properties": {}
+    },
+    {
+      "id": "smalltalk",
+      "name": "Smalltalk",
+      "type": "programming_language",
+      "description": "Historically influential object-oriented language.",
+      "properties": {}
+    },
+    {
+      "id": "object_state_transition",
+      "name": "State transition",
+      "type": "runtime_behavior",
+      "description": "A change from one valid object state to another caused by an operation or event.",
+      "properties": {}
+    },
+    {
+      "id": "constructor",
+      "name": "Constructor",
+      "type": "member_feature",
+      "description": "An initialization mechanism commonly used to establish an object's initial valid state.",
+      "properties": {}
+    },
+    {
+      "id": "factory",
+      "name": "Factory",
+      "type": "design_pattern",
+      "description": "A function or object responsible for constructing and sometimes configuring objects.",
+      "properties": {}
+    },
+    {
+      "id": "finalizer",
+      "name": "Finalizer / destructor",
+      "type": "member_feature",
+      "description": "A language/runtime-specific mechanism for cleanup near the end of object lifetime; semantics vary by language.",
+      "properties": {}
+    },
+    {
+      "id": "reference_counting",
+      "name": "Reference counting",
+      "type": "memory_management",
+      "description": "A memory-management technique that tracks references to determine when an object can be reclaimed.",
+      "properties": {}
+    },
+    {
+      "id": "ownership",
+      "name": "Ownership",
+      "type": "memory_semantics",
+      "description": "A rule or discipline assigning responsibility for an object's lifetime or mutation.",
+      "properties": {}
+    },
+    {
+      "id": "borrowed_reference",
+      "name": "Borrowed reference",
+      "type": "memory_semantics",
+      "description": "A reference whose use is limited by an ownership or lifetime discipline.",
+      "properties": {}
+    },
+    {
+      "id": "weak_reference",
+      "name": "Weak reference",
+      "type": "memory_semantics",
+      "description": "A reference that does not by itself keep a managed object alive under the relevant runtime's rules.",
+      "properties": {}
+    },
+    {
+      "id": "concurrency",
+      "name": "Concurrency",
+      "type": "execution_concept",
+      "description": "Overlapping execution or progress by multiple tasks that may interact with shared objects.",
+      "properties": {}
+    },
+    {
+      "id": "thread_safety",
+      "name": "Thread safety",
+      "type": "software_quality_attribute",
+      "description": "A property describing whether concurrent access preserves an object's correctness.",
+      "properties": {}
+    },
+    {
+      "id": "synchronization",
+      "name": "Synchronization",
+      "type": "concurrency_mechanism",
+      "description": "Coordination of concurrent operations to prevent races or establish ordering.",
+      "properties": {}
+    },
+    {
+      "id": "race_condition",
+      "name": "Race condition",
+      "type": "concurrency_hazard",
+      "description": "A correctness failure whose outcome depends on timing or interleaving.",
+      "properties": {}
+    },
+    {
+      "id": "object_pool",
+      "name": "Object pool",
+      "type": "design_pattern",
+      "description": "A reusable collection of pre-created objects intended to reduce allocation cost or manage scarce resources.",
+      "properties": {}
+    },
+    {
+      "id": "flyweight",
+      "name": "Flyweight",
+      "type": "design_pattern",
+      "description": "A pattern that shares intrinsic state among many logical objects to reduce memory use.",
+      "properties": {}
+    },
+    {
+      "id": "proxy",
+      "name": "Proxy",
+      "type": "design_pattern",
+      "description": "An object that controls access to another object or stands in for it.",
+      "properties": {}
+    },
+    {
+      "id": "adapter",
+      "name": "Adapter",
+      "type": "design_pattern",
+      "description": "An object that translates one interface into another expected by a client.",
+      "properties": {}
+    },
+    {
+      "id": "decorator",
+      "name": "Decorator",
+      "type": "design_pattern",
+      "description": "An object that wraps another object to add behavior while preserving an interface.",
+      "properties": {}
+    },
+    {
+      "id": "observer",
+      "name": "Observer",
+      "type": "design_pattern",
+      "description": "A publish-subscribe relationship in which observers are notified about subject changes.",
+      "properties": {}
+    },
+    {
+      "id": "strategy",
+      "name": "Strategy",
+      "type": "design_pattern",
+      "description": "An interchangeable object encapsulating an algorithm or behavior.",
+      "properties": {}
+    },
+    {
+      "id": "repository",
+      "name": "Repository",
+      "type": "domain_pattern",
+      "description": "An abstraction mediating access to domain objects and persistence.",
+      "properties": {}
+    },
+    {
+      "id": "aggregate",
+      "name": "Aggregate",
+      "type": "domain_driven_design",
+      "description": "A cluster of domain objects governed by an aggregate root and consistency boundary.",
+      "properties": {}
+    },
+    {
+      "id": "aggregate_root",
+      "name": "Aggregate root",
+      "type": "domain_driven_design",
+      "description": "The designated entry point for modifying an aggregate.",
+      "properties": {}
+    },
+    {
+      "id": "identity_map",
+      "name": "Identity map",
+      "type": "persistence_pattern",
+      "description": "A pattern ensuring a persistence context maintains one in-memory instance per database identity.",
+      "properties": {}
+    },
+    {
+      "id": "unit_of_work",
+      "name": "Unit of Work",
+      "type": "persistence_pattern",
+      "description": "A pattern tracking changes to objects and coordinating persistence.",
+      "properties": {}
+    },
+    {
+      "id": "object_capability_reference",
+      "name": "Capability reference",
+      "type": "security_concept",
+      "description": "An unforgeable or protected reference whose possession grants specific authority.",
+      "properties": {}
+    },
+    {
+      "id": "least_authority",
+      "name": "Least authority",
+      "type": "security_principle",
+      "description": "Give each component only the authority required for its task.",
+      "properties": {}
+    },
+    {
+      "id": "remote_method_invocation",
+      "name": "Remote method invocation",
+      "type": "distributed_mechanism",
+      "description": "Invoking object-like operations across a process or network boundary.",
+      "properties": {}
+    },
+    {
+      "id": "latency",
+      "name": "Network latency",
+      "type": "distributed_system_concept",
+      "description": "Delay affecting remote object calls and distributed collaborations.",
+      "properties": {}
+    },
+    {
+      "id": "partial_failure",
+      "name": "Partial failure",
+      "type": "distributed_system_concept",
+      "description": "A distributed component can fail while other components remain operational.",
+      "properties": {}
+    },
+    {
+      "id": "consistency",
+      "name": "Consistency",
+      "type": "distributed_system_concept",
+      "description": "Rules governing which states and observations are considered valid across components.",
+      "properties": {}
+    },
+    {
+      "id": "object_identity_map",
+      "name": "Object identity mapping",
+      "type": "persistence_concept",
+      "description": "Mapping between runtime identity and a persistent identifier.",
+      "properties": {}
+    },
+    {
+      "id": "primary_key",
+      "name": "Primary key",
+      "type": "database_concept",
+      "description": "A relational key used to identify a row independently of its mutable non-key attributes.",
+      "properties": {}
+    },
+    {
+      "id": "row",
+      "name": "Database row",
+      "type": "relational_database_concept",
+      "description": "A tuple of values in a relational table.",
+      "properties": {}
+    },
+    {
+      "id": "object_documentation",
+      "name": "Object documentation",
+      "type": "documentation_concept",
+      "description": "Descriptions of an object's purpose, invariants, operations, and collaboration contract.",
+      "properties": {}
+    },
+    {
+      "id": "contract",
+      "name": "Object contract",
+      "type": "software_design_concept",
+      "description": "Preconditions, postconditions, and invariants defining correct use of an object.",
+      "properties": {}
+    },
+    {
+      "id": "precondition",
+      "name": "Precondition",
+      "type": "contract_concept",
+      "description": "A condition that must hold before an operation is called.",
+      "properties": {}
+    },
+    {
+      "id": "postcondition",
+      "name": "Postcondition",
+      "type": "contract_concept",
+      "description": "A condition guaranteed after an operation completes successfully.",
+      "properties": {}
+    },
+    {
+      "id": "cohesion",
+      "name": "Cohesion",
+      "type": "software_design_quality",
+      "description": "How strongly an object's responsibilities belong together.",
+      "properties": {}
+    },
+    {
+      "id": "coupling",
+      "name": "Coupling",
+      "type": "software_design_quality",
+      "description": "How strongly an object depends on details of other objects.",
+      "properties": {}
+    },
+    {
+      "id": "single_responsibility",
+      "name": "Single-responsibility principle",
+      "type": "design_principle",
+      "description": "A design principle favoring one coherent reason for a module or class to change.",
+      "properties": {}
+    },
+    {
+      "id": "law_demeter",
+      "name": "Law of Demeter",
+      "type": "design_principle",
+      "description": "A principle limiting the breadth of knowledge and navigation among collaborators.",
+      "properties": {}
+    },
+    {
+      "id": "dependency_inversion",
+      "name": "Dependency inversion principle",
+      "type": "design_principle",
+      "description": "A principle favoring dependencies on abstractions rather than concrete implementation details.",
+      "properties": {}
+    },
+    {
+      "id": "encapsulation_boundary",
+      "name": "Encapsulation boundary",
+      "type": "software_design_concept",
+      "description": "The boundary across which an object exposes its public contract while hiding internal details.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_reachability",
+      "name": "Reachability",
+      "type": "runtime_concept",
+      "description": "Whether an object can be reached from roots or other live references according to a runtime's memory model.",
+      "properties": {}
+    },
+    {
+      "id": "object_identity_token",
+      "name": "Identity token",
+      "type": "runtime_concept",
+      "description": "A stable identifier used by a runtime or application to distinguish object instances.",
+      "properties": {}
+    },
+    {
+      "id": "object_handle",
+      "name": "Object handle",
+      "type": "runtime_concept",
+      "description": "An indirect token or reference used to access an object managed elsewhere.",
+      "properties": {}
+    },
+    {
+      "id": "prototype_chain",
+      "name": "Prototype chain",
+      "type": "javascript_concept",
+      "description": "A chain of prototype links used by JavaScript property lookup and delegation.",
+      "properties": {}
+    },
+    {
+      "id": "prototype",
+      "name": "Prototype",
+      "type": "javascript_concept",
+      "description": "An object used as a delegation target for property lookup and shared behavior.",
+      "properties": {}
+    },
+    {
+      "id": "metaclass",
+      "name": "Metaclass",
+      "type": "metaprogramming_concept",
+      "description": "A class or type that describes or controls classes/types in systems that expose such a model.",
+      "properties": {}
+    },
+    {
+      "id": "reflection",
+      "name": "Reflection",
+      "type": "metaprogramming_concept",
+      "description": "Runtime inspection of object types, members, and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "introspection",
+      "name": "Introspection",
+      "type": "metaprogramming_concept",
+      "description": "Inspection of an object's structure or capabilities by a program.",
+      "properties": {}
+    },
+    {
+      "id": "business_rule",
+      "name": "Business rule",
+      "type": "domain_model_concept",
+      "description": "A rule governing valid business state or operations represented by domain objects.",
+      "properties": {}
+    },
+    {
+      "id": "service_object",
+      "name": "Service object",
+      "type": "software_design_concept",
+      "description": "An object organizing behavior or operations that do not naturally belong to a single entity.",
+      "properties": {}
+    },
+    {
+      "id": "value_semantics",
+      "name": "Value semantics",
+      "type": "programming_semantics",
+      "description": "Behavior in which values are treated as independent values rather than shared mutable identities.",
+      "properties": {}
+    },
+    {
+      "id": "reference_semantics",
+      "name": "Reference semantics",
+      "type": "programming_semantics",
+      "description": "Behavior in which variables/references can designate a shared object identity.",
+      "properties": {}
+    },
+    {
+      "id": "object_capability_security",
+      "name": "Object-capability security",
+      "type": "security_model",
+      "description": "Security architecture that uses explicit object references and restricted authority rather than ambient global access.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "object",
+      "target": "state",
+      "type": "has_semantic_component",
+      "description": "State is one of the three core semantic aspects of an object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "object",
+      "target": "behavior",
+      "type": "has_semantic_component",
+      "description": "Behavior is one of the three core semantic aspects of an object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "object",
+      "target": "identity",
+      "type": "has_semantic_component",
+      "description": "Identity distinguishes an individual object from other objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "object",
+      "target": "attributes",
+      "type": "has",
+      "description": "Attributes represent object data or properties.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "object",
+      "target": "methods",
+      "type": "exposes_or_supports",
+      "description": "Methods represent operations associated with an object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "object",
+      "target": "responsibility",
+      "type": "fulfills",
+      "description": "An object is assigned a role or responsibility in a design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "object",
+      "target": "collaboration",
+      "type": "participates_in",
+      "description": "Objects collaborate to produce higher-level behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "collaboration",
+      "target": "behavior",
+      "type": "produces",
+      "description": "Coordinated object interactions can realize system behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "object",
+      "target": "domain_model",
+      "type": "can_represent",
+      "description": "Objects can model domain concepts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "object",
+      "target": "real_world_entity",
+      "type": "can_model",
+      "description": "An object can model an identifiable real-world entity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "object",
+      "target": "abstract_entity",
+      "type": "can_model",
+      "description": "An object can represent an abstract design concept.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "object",
+      "target": "invariants",
+      "type": "maintains",
+      "description": "A well-designed object preserves its invariants across valid operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "object",
+      "target": "encapsulation",
+      "type": "uses",
+      "description": "Objects commonly encapsulate state and behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "encapsulation",
+      "target": "information_hiding",
+      "type": "supports",
+      "description": "Encapsulation can hide implementation details behind a contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "object",
+      "target": "interface",
+      "type": "used_through",
+      "description": "Clients interact with objects through their exposed interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "interface",
+      "target": "implementation",
+      "type": "separates_from",
+      "description": "An interface distinguishes a contract from its implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "object",
+      "target": "object_reference",
+      "type": "accessed_through",
+      "description": "A program may access an object through a reference.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "object",
+      "target": "memory_location",
+      "type": "represented_or_stored_at",
+      "description": "Runtime representation and storage vary by language and implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "object",
+      "target": "object_lifetime",
+      "type": "has",
+      "description": "Objects exist over a language/runtime-defined lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "object_creation",
+      "target": "object_lifetime",
+      "type": "begins",
+      "description": "Creation begins an object's lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "object_destruction",
+      "target": "object_lifetime",
+      "type": "ends_or_terminates",
+      "description": "Destruction or reclamation ends the usable lifetime under language-specific rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "constructor",
+      "target": "object_creation",
+      "type": "participates_in",
+      "description": "Constructors commonly establish initial state during object creation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "factory",
+      "target": "object_creation",
+      "type": "performs_or_encapsulates",
+      "description": "Factories encapsulate construction decisions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "object",
+      "target": "object_copying",
+      "type": "can_undergo",
+      "description": "An object can be copied according to language-specific semantics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "object_copying",
+      "target": "shallow_copy",
+      "type": "may_use",
+      "description": "A shallow copy duplicates top-level representation but may share nested objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "object_copying",
+      "target": "deep_copy",
+      "type": "may_use",
+      "description": "A deep copy may recursively duplicate nested structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "shallow_copy",
+      "target": "aliasing",
+      "type": "can_preserve_or_create",
+      "description": "Shallow copying can leave nested references aliased.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "deep_copy",
+      "target": "aliasing",
+      "type": "may_reduce",
+      "description": "Deep copying may reduce shared nested references, depending on copy policy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "object",
+      "target": "equality",
+      "type": "has_semantics_for",
+      "description": "Languages and APIs define how object equality is evaluated.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "equality",
+      "target": "reference_equality",
+      "type": "may_mean",
+      "description": "Equality may be defined by object identity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "equality",
+      "target": "value_equality",
+      "type": "may_mean",
+      "description": "Equality may be defined by represented values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "object",
+      "target": "mutability",
+      "type": "has_property",
+      "description": "Objects may be mutable or immutable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "immutability",
+      "target": "mutability",
+      "type": "contrasts_with",
+      "description": "Immutability is the absence of externally observable state changes after construction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "object_reference",
+      "target": "aliasing",
+      "type": "can_create",
+      "description": "Multiple references may designate the same object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "aliasing",
+      "target": "state",
+      "type": "can_expose_shared_changes_to",
+      "description": "Mutation through one alias may be observed through another.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "class",
+      "target": "instance",
+      "type": "creates_or_describes",
+      "description": "A class commonly describes the instances created from it.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "class_based",
+      "target": "class",
+      "type": "centers_on",
+      "description": "Class-based programming uses classes as templates.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "prototype_based",
+      "target": "prototype",
+      "type": "centers_on",
+      "description": "Prototype-based programming delegates behavior through prototype objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "object_based",
+      "target": "object",
+      "type": "centers_on",
+      "description": "Object-based languages provide object constructs but need not provide inheritance/polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "object_oriented",
+      "target": "object",
+      "type": "centers_on",
+      "description": "Object-oriented programming centers on objects and their interactions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "object_oriented",
+      "target": "encapsulation",
+      "type": "commonly_includes",
+      "description": "Encapsulation is a common OOP characteristic.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "object_oriented",
+      "target": "inheritance",
+      "type": "commonly_includes",
+      "description": "Inheritance is a common OOP characteristic.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "object_oriented",
+      "target": "polymorphism",
+      "type": "commonly_includes",
+      "description": "Polymorphism is a common OOP characteristic.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "inheritance",
+      "target": "polymorphism",
+      "type": "can_enable",
+      "description": "Inheritance and subtyping can enable subtype polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "subtyping",
+      "target": "polymorphism",
+      "type": "supports",
+      "description": "Subtyping supports using specialized values through broader abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "dynamic_dispatch",
+      "target": "polymorphism",
+      "type": "implements",
+      "description": "Dynamic dispatch is a common implementation mechanism for runtime polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "message_passing",
+      "target": "method_invocation",
+      "type": "can_realize",
+      "description": "Message sending can be implemented through method invocation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "object",
+      "target": "message_passing",
+      "type": "participates_in",
+      "description": "Objects can send and receive messages or requests.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "composition",
+      "target": "collaboration",
+      "type": "organizes",
+      "description": "Composition builds behavior by assembling collaborating objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "aggregation",
+      "target": "association",
+      "type": "is_specialized_form_of",
+      "description": "Aggregation is commonly modeled as a specialized whole-part association.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "association",
+      "target": "object",
+      "type": "relates",
+      "description": "Associations relate object instances or their types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "delegation",
+      "target": "object",
+      "type": "forwards_responsibility_between",
+      "description": "Delegation forwards work from one object to another.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "dependency",
+      "target": "interface",
+      "type": "can_be_mediated_by",
+      "description": "Dependencies can be directed toward interfaces rather than concrete implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "object_graph",
+      "target": "object",
+      "type": "contains_nodes_that_are",
+      "description": "An object graph contains object nodes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "object_graph",
+      "target": "object_reference",
+      "type": "connects_nodes_with",
+      "description": "References connect objects within an object graph.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "information_system",
+      "target": "object",
+      "type": "can_be_modeled_with",
+      "description": "System components and interfaces may be represented by objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "database_object",
+      "target": "table",
+      "type": "includes",
+      "description": "A table is one kind of database object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "database_object",
+      "target": "column",
+      "type": "includes",
+      "description": "A column is one kind of database object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "distributed_object",
+      "target": "distributed_system",
+      "type": "participates_in",
+      "description": "Distributed objects operate within distributed systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "distributed_object",
+      "target": "remote_method_invocation",
+      "type": "may_expose",
+      "description": "Distributed objects may expose remote method invocation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "distributed_object",
+      "target": "latency",
+      "type": "is_affected_by",
+      "description": "Remote object calls incur network latency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "distributed_object",
+      "target": "partial_failure",
+      "type": "must_account_for",
+      "description": "Distributed object interactions must account for partial failures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "distributed_object",
+      "target": "consistency",
+      "type": "must_define",
+      "description": "Distributed object systems need explicit consistency expectations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "semantics",
+      "target": "object",
+      "type": "defines_meaning_of",
+      "description": "Object semantics describe what an object is and how it behaves.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "programming_language",
+      "target": "object",
+      "type": "may_define",
+      "description": "A programming language defines object constructs and their semantics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "type_system",
+      "target": "class",
+      "type": "classifies_or_relates",
+      "description": "Type systems classify classes and object-compatible values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "runtime",
+      "target": "object",
+      "type": "manages_or_executes",
+      "description": "Runtimes may allocate, execute, track, or reclaim objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "garbage_collection",
+      "target": "garbage_reachability",
+      "type": "uses",
+      "description": "Tracing garbage collection typically determines reachability from roots.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "garbage_collection",
+      "target": "object",
+      "type": "reclaims_when_unreachable",
+      "description": "A tracing collector can reclaim objects no longer reachable under its rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "resource_management",
+      "target": "object_lifetime",
+      "type": "coordinates_with",
+      "description": "Resources often need cleanup coordinated with object lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "serialization",
+      "target": "object",
+      "type": "encodes",
+      "description": "Serialization encodes object data or state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "deserialization",
+      "target": "object",
+      "type": "reconstructs",
+      "description": "Deserialization reconstructs objects or data representations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "object_relational_mapping",
+      "target": "object",
+      "type": "maps",
+      "description": "ORMs map between object models and relational data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "object_relational_mapping",
+      "target": "table",
+      "type": "maps_to",
+      "description": "ORMs commonly map classes/entities to tables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "object_relational_mapping",
+      "target": "column",
+      "type": "maps_to",
+      "description": "ORMs commonly map properties/fields to columns.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "uml",
+      "target": "object",
+      "type": "models",
+      "description": "UML can represent objects, classes, and their relationships.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "object_diagram",
+      "target": "object",
+      "type": "depicts_instances_of",
+      "description": "Object diagrams show object instances and links.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "class_diagram",
+      "target": "class",
+      "type": "depicts",
+      "description": "Class diagrams show classes and structural relationships.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "object_oriented_analysis",
+      "target": "domain_model",
+      "type": "identifies_or_builds",
+      "description": "OO analysis identifies domain concepts and relationships.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "object_oriented_design",
+      "target": "responsibility",
+      "type": "assigns",
+      "description": "OO design allocates responsibilities among objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "object_oriented_design",
+      "target": "collaboration",
+      "type": "specifies",
+      "description": "OO design specifies object collaborations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "object_oriented_analysis_design",
+      "target": "object_oriented_analysis",
+      "type": "covers",
+      "description": "The cited Booch et al. book covers OO analysis and design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "object_oriented_analysis_design",
+      "target": "object_oriented_design",
+      "type": "covers",
+      "description": "The cited Booch et al. book covers OO analysis and design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "nemirovsky_article",
+      "target": "object",
+      "type": "discusses",
+      "description": "The article is cited in connection with the concept of objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "distributed_object_paper",
+      "target": "distributed_object",
+      "type": "discusses",
+      "description": "The referenced ACM work concerns distributed object-based programming systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "language_design_dimensions",
+      "target": "object_based",
+      "type": "discusses",
+      "description": "The referenced work concerns dimensions of object-based language design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "history_oop",
+      "target": "object_oriented",
+      "type": "discusses_history_of",
+      "description": "The referenced article reviews the history of the object-oriented approach.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "sql_demystified",
+      "target": "database_object",
+      "type": "discusses",
+      "description": "The cited SQL book is referenced for database-object terminology.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "java",
+      "target": "system_object",
+      "type": "uses_as_root_type",
+      "description": "Java's standard class hierarchy has java.lang.Object as its root.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "csharp",
+      "target": "system_object",
+      "type": "uses_as_root_type",
+      "description": "C#/.NET uses System.Object as the root base type for reference types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "system_object",
+      "target": "object",
+      "type": "is_language_specific_form_of",
+      "description": "System.Object is a language/platform-specific root object type.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "javascript",
+      "target": "prototype_chain",
+      "type": "uses",
+      "description": "JavaScript property lookup can follow the prototype chain.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "prototype_chain",
+      "target": "prototype",
+      "type": "links_through",
+      "description": "The prototype chain links objects to prototype objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "python",
+      "target": "object",
+      "type": "models_with",
+      "description": "Python uses objects for values, instances, functions, classes, and other runtime entities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "smalltalk",
+      "target": "object_oriented",
+      "type": "is_historically_associated_with",
+      "description": "Smalltalk is a historically influential object-oriented language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "object",
+      "target": "object_state_transition",
+      "type": "can_undergo",
+      "description": "Object operations and events can cause state transitions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "object_state_transition",
+      "target": "state",
+      "type": "changes",
+      "description": "A state transition changes the object's state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "contract",
+      "target": "precondition",
+      "type": "includes",
+      "description": "Contracts may specify preconditions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "contract",
+      "target": "postcondition",
+      "type": "includes",
+      "description": "Contracts may specify postconditions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "contract",
+      "target": "invariants",
+      "type": "includes",
+      "description": "Contracts may specify invariants.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "object",
+      "target": "contract",
+      "type": "is_defined_by",
+      "description": "An object's public contract may specify valid use and behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "cohesion",
+      "target": "responsibility",
+      "type": "measures_alignment_of",
+      "description": "Cohesion measures how closely responsibilities belong together.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "coupling",
+      "target": "dependency",
+      "type": "reflects",
+      "description": "Coupling is influenced by dependencies between objects or components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "single_responsibility",
+      "target": "responsibility",
+      "type": "guides_assignment_of",
+      "description": "The single-responsibility principle guides coherent responsibility assignment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "law_demeter",
+      "target": "collaboration",
+      "type": "constrains",
+      "description": "The Law of Demeter constrains how broadly objects navigate collaborators.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "dependency_inversion",
+      "target": "interface",
+      "type": "favors_dependency_on",
+      "description": "Dependency inversion favors stable abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "encapsulation_boundary",
+      "target": "interface",
+      "type": "defines_public_side_of",
+      "description": "An encapsulation boundary exposes a public contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "encapsulation_boundary",
+      "target": "implementation",
+      "type": "hides_or_contains",
+      "description": "An encapsulation boundary separates public contract from implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "reference_counting",
+      "target": "object",
+      "type": "tracks_references_to",
+      "description": "Reference counting tracks references associated with an object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "ownership",
+      "target": "object_lifetime",
+      "type": "governs",
+      "description": "Ownership models can govern lifetime and cleanup.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "borrowed_reference",
+      "target": "ownership",
+      "type": "is_constrained_by",
+      "description": "Borrowed references are constrained by ownership/lifetime rules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "weak_reference",
+      "target": "object",
+      "type": "references_without_strong_ownership_of",
+      "description": "Weak references do not necessarily keep a managed object alive.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "concurrency",
+      "target": "object",
+      "type": "can_interleave_operations_on",
+      "description": "Concurrent tasks may interact with shared objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "thread_safety",
+      "target": "synchronization",
+      "type": "may_require",
+      "description": "Thread-safe implementations may use synchronization or other concurrency-safe techniques.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "race_condition",
+      "target": "concurrency",
+      "type": "arises_from",
+      "description": "Race conditions can arise from unsafe interleavings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "object_pool",
+      "target": "object_creation",
+      "type": "reduces_repeated_cost_of",
+      "description": "Object pools can reuse objects instead of repeatedly creating them.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "flyweight",
+      "target": "object",
+      "type": "shares_intrinsic_state_across",
+      "description": "Flyweight shares intrinsic state among logical objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "proxy",
+      "target": "interface",
+      "type": "preserves_or_implements",
+      "description": "A proxy often presents the same interface as its subject.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "adapter",
+      "target": "interface",
+      "type": "translates_between",
+      "description": "An adapter translates between incompatible interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "decorator",
+      "target": "object",
+      "type": "wraps",
+      "description": "A decorator wraps an object to add behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "observer",
+      "target": "object",
+      "type": "coordinates_notifications_between",
+      "description": "Observer relates a subject to subscribed observers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "strategy",
+      "target": "object",
+      "type": "encapsulates_algorithm_in",
+      "description": "Strategy encapsulates interchangeable behavior in an object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "repository",
+      "target": "entity",
+      "type": "provides_access_to",
+      "description": "A repository mediates access to domain entities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "aggregate",
+      "target": "aggregate_root",
+      "type": "has",
+      "description": "An aggregate is governed through an aggregate root.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "aggregate_root",
+      "target": "entity",
+      "type": "may_be",
+      "description": "An aggregate root is often a domain entity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "identity_map",
+      "target": "object_identity_map",
+      "type": "implements",
+      "description": "Identity maps maintain consistent mapping between persistent identities and in-memory objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "unit_of_work",
+      "target": "object",
+      "type": "tracks_changes_to",
+      "description": "A Unit of Work tracks object changes for persistence.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "object_capability",
+      "target": "object_capability_reference",
+      "type": "uses",
+      "description": "Object-capability systems convey authority through references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "object_capability_reference",
+      "target": "least_authority",
+      "type": "supports",
+      "description": "Capability references can restrict authority to the minimum required operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "object_identity_map",
+      "target": "primary_key",
+      "type": "maps_runtime_identity_to",
+      "description": "Persistence layers commonly map object identity to a primary key.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "primary_key",
+      "target": "row",
+      "type": "identifies",
+      "description": "A primary key identifies a row in a relational table.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "row",
+      "target": "table",
+      "type": "belongs_to",
+      "description": "A row belongs to a relational table.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "object_documentation",
+      "target": "object",
+      "type": "documents",
+      "description": "Object documentation describes purpose, contract, invariants, and usage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "service_object",
+      "target": "responsibility",
+      "type": "organizes",
+      "description": "A service object groups operations around a coherent responsibility.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "value_semantics",
+      "target": "value_equality",
+      "type": "commonly_uses",
+      "description": "Value semantics commonly compare values rather than object identity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "reference_semantics",
+      "target": "reference_equality",
+      "type": "can_use",
+      "description": "Reference semantics allow equality based on whether references designate the same object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "object_capability_security",
+      "target": "object_capability",
+      "type": "is_security_model_for",
+      "description": "Object-capability security organizes authority around object capabilities.",
+      "properties": {}
+    }
+  ]
+}

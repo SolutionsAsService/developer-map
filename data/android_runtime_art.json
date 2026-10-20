@@ -1,0 +1,3090 @@
+{
+  "metadata": {
+    "title": "Android Runtime (ART) — Detailed Connected Knowledge Graph",
+    "description": "A detailed, connected machine-readable knowledge graph of Android Runtime architecture, bytecode, compilation, memory management, profiling, history, tooling, security, platform integration, and performance trade-offs.",
+    "version": "1.0.0",
+    "created_date": "2026-10-19",
+    "source_basis": "User-provided Wikipedia article on Android Runtime; distinctions beyond that article are included as explanatory context and marked where release support is version-dependent.",
+    "source_file": "Pasted text(20261020-004835).txt",
+    "primary_source_citation": "User-provided source lines 43-126, especially overview lines 67-91 and references/official links lines 99-126.",
+    "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+    "entity_count": 115,
+    "relationship_count": 247,
+    "entity_type_count": 79,
+    "relationship_type_count": 186,
+    "graph_model": "directed_labeled_multigraph",
+    "id_policy": "lowercase_snake_case; relationship IDs use rel_NNNN",
+    "notes": [
+      "ART's concrete compilation policy and implementation details vary by Android version and device configuration.",
+      "RISC-V is listed in the supplied article; actual deployment support is version- and device-dependent.",
+      "The graph preserves the article's central history: KitKat preview, Lollipop default replacement, Nougat hybrid JIT/AOT and OpenJDK transition, Pie cloud profiles/compressed DEX, Baseline Profiles, and Android 13 GC changes."
+    ]
+  },
+  "entity_types": [
+    "android_library",
+    "android_release",
+    "application_asset",
+    "binary_format",
+    "binary_interface",
+    "build_tool",
+    "build_toolchain",
+    "bytecode_format",
+    "code_optimizer",
+    "compatibility_property",
+    "compiled_artifact",
+    "compiler",
+    "compiler_component",
+    "compiler_tool",
+    "debugging_capability",
+    "design_tradeoff",
+    "developer_tool",
+    "diagnostic_tool",
+    "distribution_mechanism",
+    "emulator",
+    "execution_engine",
+    "execution_model",
+    "failure_mode",
+    "instruction_set_architecture",
+    "integrated_development_environment",
+    "lifecycle_stage",
+    "linux_kernel_api",
+    "maintenance_mechanism",
+    "memory_management_component",
+    "memory_region",
+    "modular_system_component",
+    "native_interoperability_api",
+    "native_library",
+    "operating_system",
+    "operating_system_kernel",
+    "optimization_technique",
+    "organization",
+    "package_component",
+    "package_format",
+    "package_metadata",
+    "performance_concept",
+    "performance_event",
+    "performance_metric",
+    "performance_problem",
+    "platform_concept",
+    "platform_lifecycle",
+    "process",
+    "profile_data",
+    "profile_format",
+    "profile_service",
+    "profiling_capability",
+    "profiling_concept",
+    "programming_language",
+    "resource_metric",
+    "runtime_capability",
+    "runtime_component",
+    "runtime_condition",
+    "runtime_data_structure",
+    "runtime_environment",
+    "runtime_library",
+    "runtime_mechanism",
+    "runtime_operation",
+    "runtime_resource",
+    "security_and_correctness_mechanism",
+    "security_mechanism",
+    "security_property",
+    "software_artifact",
+    "software_development_kit",
+    "software_framework",
+    "software_library_ecosystem",
+    "software_license",
+    "software_platform",
+    "source_code_repository",
+    "system_process",
+    "system_service",
+    "technical_documentation",
+    "ui_toolkit",
+    "versioned_platform",
+    "virtual_machine"
+  ],
+  "relationship_types": [
+    "accepts_input",
+    "adapts_using",
+    "adds_capabilities_for",
+    "adopted_libraries_from",
+    "affects",
+    "aims_to_reduce",
+    "aims_to_reduce_risk_of",
+    "allocates_into",
+    "allocates_managed_objects_in",
+    "availability_depends_on",
+    "available_in",
+    "balances",
+    "balances_startup_storage_throughput",
+    "benefits_from",
+    "builds",
+    "calls_into",
+    "can_affect",
+    "can_affect_performance_of",
+    "can_be_bundled_with",
+    "can_be_improved_by",
+    "can_be_involved_in",
+    "can_benefit_from",
+    "can_cause",
+    "can_complement",
+    "can_increase_use_of",
+    "can_increase_work_at",
+    "can_influence",
+    "can_invoke",
+    "can_produce",
+    "can_receive",
+    "can_reduce_initial_compiled_artifact_need",
+    "can_reduce_need_for",
+    "can_use",
+    "communicates_with",
+    "compiles",
+    "constrained_by",
+    "consumed_by",
+    "consumes",
+    "contains",
+    "contains_threads_managed_by",
+    "contributes_to",
+    "controlled_and_debugged_through",
+    "coordinates_with_threads",
+    "debuggable_through",
+    "defines_and_manages",
+    "defines_binary_contract_for",
+    "depends_on",
+    "derived_from",
+    "developed_by",
+    "diagnosed_with",
+    "distributed_under",
+    "distributed_with",
+    "documented_and_targeted_by",
+    "documented_by",
+    "does_not_execute_as_code",
+    "does_not_normally_execute_directly",
+    "embodies",
+    "enables",
+    "evolves_through",
+    "execute_within",
+    "executes",
+    "executes_code_for",
+    "executes_compiled_code_from",
+    "executes_framework_callbacks_for",
+    "executes_on",
+    "explained_in",
+    "falls_back_or_uses_when_needed",
+    "feeds",
+    "generates_or_runs",
+    "guide",
+    "helps_diagnose",
+    "historically_used",
+    "hosts",
+    "identifies",
+    "identify",
+    "illustrates",
+    "implemented_in",
+    "implemented_in_repository",
+    "implemented_using",
+    "implements",
+    "implements_runtime_introspection_for",
+    "improves",
+    "improves_accuracy_of",
+    "includes",
+    "includes_release",
+    "influences",
+    "integrated_into_process_model",
+    "integrated_with",
+    "integrates_with",
+    "interacts_with",
+    "interop_boundary",
+    "introduced",
+    "introduced_gc_changes_to",
+    "introduced_or_expanded",
+    "introduced_or_popularized",
+    "is_modularized_by",
+    "licensed_under",
+    "links_loaded_types_with",
+    "listed_platform_target",
+    "loads_code_for",
+    "made_available_by",
+    "made_default_runtime",
+    "maintained_by",
+    "maintains",
+    "managed_by",
+    "manages",
+    "may_be_compiled_later_by",
+    "may_be_written_in",
+    "may_include",
+    "may_trigger",
+    "may_use",
+    "measured_by",
+    "must_match",
+    "must_respect",
+    "observable_through",
+    "observes_logs_from",
+    "often_orchestrated_by",
+    "operates_under",
+    "operates_within",
+    "optimizes_for",
+    "optimizes_or_emits",
+    "owns_or_uses",
+    "packaged_as",
+    "packages_as",
+    "part_of",
+    "performs",
+    "permits_deferred_compilation_of",
+    "preceded",
+    "preloads_through",
+    "preserves_dex_ecosystem",
+    "previewed",
+    "prioritized_for",
+    "produces",
+    "produces_device_specific",
+    "propagates",
+    "provided_by",
+    "provides",
+    "provides_access_to",
+    "provides_boundary_for",
+    "receives_artifacts_from",
+    "receives_modular_updates_via",
+    "reclaims_from",
+    "reduces_repeated_resolution_via",
+    "reduces_use_of",
+    "remained_default_during",
+    "replaced_in",
+    "replaces",
+    "represents",
+    "resolves_native_bindings_for",
+    "responds_to",
+    "runs_after_compilation_as",
+    "runs_image_with",
+    "runs_within",
+    "schedules_and_tracks",
+    "seeks_to_conserve",
+    "seeks_to_improve",
+    "seeks_to_reduce",
+    "seeks_to_reduce_when_possible",
+    "source_available_at",
+    "spawns",
+    "stores_compiled_output_in",
+    "subject_to",
+    "supplies_tools_to",
+    "supports",
+    "supports_correctness_through",
+    "supports_debugging_of",
+    "supports_execution_during",
+    "supports_execution_model",
+    "supports_language_semantics_for",
+    "supports_runtime_for",
+    "supports_updates_through",
+    "target",
+    "targeted_by",
+    "targets",
+    "updates",
+    "uses",
+    "uses_compilation_tool",
+    "uses_execution_model",
+    "uses_format",
+    "uses_in_gc_implementation",
+    "uses_in_gc_work",
+    "uses_library_runtime",
+    "uses_or_integrates",
+    "varies_by",
+    "version_specific",
+    "visualizes"
+  ],
+  "entities": [
+    {
+      "id": "android_runtime",
+      "name": "Android Runtime (ART)",
+      "type": "runtime_environment",
+      "description": "Android's application runtime environment that executes Android application code, translating DEX bytecode into native instructions using a combination of interpretation, just-in-time compilation, and ahead-of-time compilation.",
+      "properties": {
+        "developer": "Google",
+        "implementation_language": "C++",
+        "operating_system": "Android",
+        "license": "Apache License 2.0",
+        "predecessor": "Dalvik",
+        "platforms": [
+          "ARM64",
+          "RISC-V",
+          "x86"
+        ],
+        "official_documentation": "https://source.android.com/docs/core/runtime",
+        "repository": "https://android.googlesource.com/platform/art/"
+      }
+    },
+    {
+      "id": "android_os",
+      "name": "Android operating system",
+      "type": "operating_system",
+      "description": "Operating system platform that integrates ART with application framework services, Linux kernel facilities, package management, process management, and system security.",
+      "properties": {}
+    },
+    {
+      "id": "android_app",
+      "name": "Android application",
+      "type": "software_artifact",
+      "description": "An installable application package whose managed code is commonly distributed as DEX bytecode and executed by ART.",
+      "properties": {}
+    },
+    {
+      "id": "android_framework",
+      "name": "Android application framework",
+      "type": "software_framework",
+      "description": "Platform APIs and system services used by Android apps, including lifecycle, UI, resources, content, and service abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "android_sdk",
+      "name": "Android SDK",
+      "type": "software_development_kit",
+      "description": "Development tools, APIs, build utilities, and platform packages used to create, test, package, and debug Android applications.",
+      "properties": {}
+    },
+    {
+      "id": "android_build_system",
+      "name": "Android build system",
+      "type": "build_toolchain",
+      "description": "Build pipeline that compiles source code, transforms bytecode, packages resources and manifests, and produces APK or app bundle artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "dalvik",
+      "name": "Dalvik virtual machine",
+      "type": "virtual_machine",
+      "description": "ART's predecessor runtime, which executed DEX bytecode and introduced trace-based JIT compilation in Android 2.2.",
+      "properties": {}
+    },
+    {
+      "id": "dex",
+      "name": "Dalvik Executable (DEX)",
+      "type": "bytecode_format",
+      "description": "Register-based bytecode format used to represent Android application code and packaged in DEX files.",
+      "properties": {}
+    },
+    {
+      "id": "apk",
+      "name": "Android Package (APK)",
+      "type": "package_format",
+      "description": "Android application installation package containing compiled code, resources, manifest, and related assets.",
+      "properties": {}
+    },
+    {
+      "id": "aab",
+      "name": "Android App Bundle (AAB)",
+      "type": "package_format",
+      "description": "Publishing format from which distribution systems can generate optimized APKs for device configurations.",
+      "properties": {}
+    },
+    {
+      "id": "elf",
+      "name": "Executable and Linkable Format (ELF)",
+      "type": "binary_format",
+      "description": "Native executable and object-file format used for ART-generated compiled code and native libraries.",
+      "properties": {}
+    },
+    {
+      "id": "dex2oat",
+      "name": "dex2oat",
+      "type": "compiler_tool",
+      "description": "ART tool that compiles DEX bytecode into native code and produces ART-related compiled artifacts according to the device's compilation policy.",
+      "properties": {}
+    },
+    {
+      "id": "art_service",
+      "name": "ART service / runtime management",
+      "type": "runtime_component",
+      "description": "System-managed facilities coordinating ART-related compilation, profile handling, and runtime updates across Android releases.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_process",
+      "name": "Android application process",
+      "type": "process",
+      "description": "Operating-system process in which an app's runtime instance, managed heap, threads, native libraries, and application components execute.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_instance",
+      "name": "ART runtime instance",
+      "type": "runtime_component",
+      "description": "An initialized ART runtime associated with an application process, providing managed execution, class loading, memory management, and runtime services.",
+      "properties": {}
+    },
+    {
+      "id": "class_loader",
+      "name": "Class loader",
+      "type": "runtime_component",
+      "description": "Runtime mechanism that locates, defines, and loads classes from DEX or related code sources, subject to Android's class-loading rules.",
+      "properties": {}
+    },
+    {
+      "id": "class_linker",
+      "name": "Class linker",
+      "type": "runtime_component",
+      "description": "ART subsystem responsible for linking loaded classes, resolving types and methods, and coordinating class metadata and dispatch information.",
+      "properties": {}
+    },
+    {
+      "id": "interpreter",
+      "name": "ART interpreter",
+      "type": "execution_engine",
+      "description": "Execution engine that interprets DEX instructions when code has not been compiled or when interpretation is otherwise selected.",
+      "properties": {}
+    },
+    {
+      "id": "jit",
+      "name": "ART JIT compiler",
+      "type": "compiler",
+      "description": "Just-in-time compiler that compiles selected methods or code paths during execution, guided by runtime profiling and compilation policy.",
+      "properties": {}
+    },
+    {
+      "id": "aot",
+      "name": "ART AOT compiler",
+      "type": "compiler",
+      "description": "Ahead-of-time compiler path that translates selected DEX code into native machine code before execution, typically through installation, idle maintenance, or profile-guided workflows.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_driver",
+      "name": "ART compiler pipeline",
+      "type": "compiler_component",
+      "description": "Compilation orchestration that applies compiler optimizations and emits target-specific native code for selected DEX methods.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_linker",
+      "name": "ART runtime linking and resolution",
+      "type": "runtime_component",
+      "description": "Runtime mechanisms that resolve methods, fields, types, and native bindings needed to execute managed and native code.",
+      "properties": {}
+    },
+    {
+      "id": "gc",
+      "name": "ART garbage collector",
+      "type": "memory_management_component",
+      "description": "Automatic memory manager that identifies unreachable managed objects and reclaims their heap storage, with collectors and policies evolving across Android versions.",
+      "properties": {}
+    },
+    {
+      "id": "managed_heap",
+      "name": "ART managed heap",
+      "type": "memory_region",
+      "description": "Memory region used for managed objects, with allocation, reachability, collection, and runtime metadata managed by ART.",
+      "properties": {}
+    },
+    {
+      "id": "thread_runtime",
+      "name": "ART thread subsystem",
+      "type": "runtime_component",
+      "description": "Runtime support for managed threads, thread state transitions, synchronization, stack management, and coordination with the operating system.",
+      "properties": {}
+    },
+    {
+      "id": "jni",
+      "name": "Java Native Interface (JNI)",
+      "type": "native_interoperability_api",
+      "description": "Interface allowing managed Java/Kotlin code to call native code and native code to interact with managed objects and runtime services.",
+      "properties": {}
+    },
+    {
+      "id": "native_lib",
+      "name": "Android native library",
+      "type": "native_library",
+      "description": "Shared native code, commonly packaged as ABI-specific shared objects, that apps can load and call through JNI or other supported interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "java_runtime",
+      "name": "Java runtime libraries on Android",
+      "type": "runtime_library",
+      "description": "Core library APIs available to managed Android code; modern ART uses OpenJDK-derived library implementations rather than the discontinued Apache Harmony library.",
+      "properties": {}
+    },
+    {
+      "id": "openjdk",
+      "name": "OpenJDK",
+      "type": "software_platform",
+      "description": "Open-source Java platform implementation whose library base replaced Apache Harmony in Android 7.0's Java runtime environment.",
+      "properties": {}
+    },
+    {
+      "id": "apache_harmony",
+      "name": "Apache Harmony",
+      "type": "software_platform",
+      "description": "Earlier Java class-library implementation used by Android before the Android 7.0 transition to OpenJDK-derived libraries.",
+      "properties": {}
+    },
+    {
+      "id": "java_language",
+      "name": "Java",
+      "type": "programming_language",
+      "description": "A statically typed language commonly used for Android application development and compiled to JVM-style class files before conversion into DEX.",
+      "properties": {}
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "type": "programming_language",
+      "description": "A statically typed language commonly used for Android development and compiled through the Android toolchain to DEX-compatible bytecode.",
+      "properties": {}
+    },
+    {
+      "id": "javac",
+      "name": "Java compiler (javac)",
+      "type": "compiler",
+      "description": "Compiler that translates Java source code into JVM class files as one stage of a typical Android Java build.",
+      "properties": {}
+    },
+    {
+      "id": "kotlinc",
+      "name": "Kotlin compiler",
+      "type": "compiler",
+      "description": "Compiler that translates Kotlin source into JVM-compatible or other target bytecode, with Android builds subsequently transforming code for ART.",
+      "properties": {}
+    },
+    {
+      "id": "d8",
+      "name": "D8 dexer",
+      "type": "compiler_tool",
+      "description": "Android build tool that converts JVM class files into DEX bytecode for Android packaging.",
+      "properties": {}
+    },
+    {
+      "id": "r8",
+      "name": "R8 optimizer",
+      "type": "code_optimizer",
+      "description": "Android code shrinker and optimizer that can remove unused code, optimize bytecode, and perform obfuscation before DEX output.",
+      "properties": {}
+    },
+    {
+      "id": "gradle",
+      "name": "Gradle build system",
+      "type": "build_tool",
+      "description": "Build automation system commonly used by Android projects to coordinate compilation, optimization, resource processing, and packaging.",
+      "properties": {}
+    },
+    {
+      "id": "android_package_manager",
+      "name": "Android package manager",
+      "type": "system_service",
+      "description": "Installs, updates, verifies, and manages application packages and participates in the app installation and update lifecycle.",
+      "properties": {}
+    },
+    {
+      "id": "zygote",
+      "name": "Zygote process",
+      "type": "system_process",
+      "description": "Android process that preloads common classes and resources and serves as a parent from which app processes are forked.",
+      "properties": {}
+    },
+    {
+      "id": "linux_kernel",
+      "name": "Linux kernel",
+      "type": "operating_system_kernel",
+      "description": "Kernel beneath Android that provides process and thread scheduling, virtual memory, system calls, device drivers, and low-level isolation.",
+      "properties": {}
+    },
+    {
+      "id": "art_mainline",
+      "name": "ART Mainline module",
+      "type": "modular_system_component",
+      "description": "Android modularization mechanism that allows supported ART components to receive updates independently of a full system image update on compatible releases.",
+      "properties": {}
+    },
+    {
+      "id": "android_profiles",
+      "name": "ART profile data",
+      "type": "profile_data",
+      "description": "Runtime and build-time profile information used to identify frequently executed methods and classes and guide compilation decisions.",
+      "properties": {}
+    },
+    {
+      "id": "baseline_profiles",
+      "name": "Baseline Profiles",
+      "type": "profile_format",
+      "description": "App/library-supplied profile data that identifies important methods and classes for early optimization, reducing first-run performance costs.",
+      "properties": {}
+    },
+    {
+      "id": "cloud_profiles",
+      "name": "Google Play cloud profiles",
+      "type": "profile_service",
+      "description": "Aggregated profile data distributed with app downloads to guide profile-informed optimization on devices with similar characteristics.",
+      "properties": {}
+    },
+    {
+      "id": "profile_installer",
+      "name": "ProfileInstaller",
+      "type": "android_library",
+      "description": "AndroidX library component that makes Baseline Profile data available to ART on supported devices.",
+      "properties": {}
+    },
+    {
+      "id": "userfaultfd",
+      "name": "Linux userfaultfd",
+      "type": "linux_kernel_api",
+      "description": "Linux system call interface used by newer ART garbage-collection implementation work to coordinate page-fault handling and memory operations.",
+      "properties": {}
+    },
+    {
+      "id": "androidx",
+      "name": "AndroidX",
+      "type": "software_library_ecosystem",
+      "description": "Set of Android libraries; releases can include Baseline Profiles for performance-sensitive library and application code.",
+      "properties": {}
+    },
+    {
+      "id": "jetpack_compose",
+      "name": "Jetpack Compose",
+      "type": "ui_toolkit",
+      "description": "Declarative Android UI toolkit whose libraries can distribute Baseline Profiles to improve important execution paths.",
+      "properties": {}
+    },
+    {
+      "id": "app_startup",
+      "name": "Application startup",
+      "type": "performance_concept",
+      "description": "Time and work needed to create an app process, initialize ART and application state, load classes, and render initial UI.",
+      "properties": {}
+    },
+    {
+      "id": "warmup",
+      "name": "Runtime warm-up",
+      "type": "performance_concept",
+      "description": "Execution period during which profiling, JIT compilation, caches, and adaptive runtime behavior can improve later performance.",
+      "properties": {}
+    },
+    {
+      "id": "jank",
+      "name": "UI jank",
+      "type": "performance_problem",
+      "description": "Visible stutter or missed frame deadlines, potentially influenced by GC pauses, compilation, startup work, scheduling, or application code.",
+      "properties": {}
+    },
+    {
+      "id": "battery",
+      "name": "Mobile battery consumption",
+      "type": "performance_metric",
+      "description": "Energy used by app execution and runtime work; compilation and execution strategy can trade installation or idle work against runtime energy.",
+      "properties": {}
+    },
+    {
+      "id": "storage",
+      "name": "On-device code storage",
+      "type": "resource_metric",
+      "description": "Persistent storage consumed by bytecode, profiles, compiled native code, and other app/runtime artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "backward_compatibility",
+      "name": "Backward compatibility",
+      "type": "compatibility_property",
+      "description": "Ability to continue accepting the DEX input and app ecosystem expected by existing Android applications as runtime implementation changes.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_debugging",
+      "name": "ART debugging support",
+      "type": "debugging_capability",
+      "description": "Runtime capabilities and tooling interfaces that support inspection, breakpoints, stack traces, and diagnosis of managed applications.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_profiling",
+      "name": "ART runtime profiling",
+      "type": "profiling_capability",
+      "description": "Collection of execution information such as method hotness and timing used for performance analysis and optimization.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_security",
+      "name": "ART and Android runtime security",
+      "type": "security_property",
+      "description": "Security controls and integration points that constrain app execution through process isolation, permissions, verification, and managed-runtime safeguards.",
+      "properties": {}
+    },
+    {
+      "id": "process_isolation",
+      "name": "Application process isolation",
+      "type": "security_mechanism",
+      "description": "Use of distinct OS processes and Android security identities to isolate application execution and resources.",
+      "properties": {}
+    },
+    {
+      "id": "native_execution",
+      "name": "Native machine-code execution",
+      "type": "execution_model",
+      "description": "Execution of target-CPU instructions produced by compilation or supplied by native libraries.",
+      "properties": {}
+    },
+    {
+      "id": "bytecode_interpretation",
+      "name": "Bytecode interpretation",
+      "type": "execution_model",
+      "description": "Execution strategy in which runtime instructions are decoded and performed by an interpreter rather than first being compiled to native code.",
+      "properties": {}
+    },
+    {
+      "id": "jit_aot_hybrid",
+      "name": "Hybrid JIT/AOT execution",
+      "type": "execution_model",
+      "description": "ART strategy that combines adaptive JIT compilation during use with AOT compilation of profile-selected code when suitable.",
+      "properties": {}
+    },
+    {
+      "id": "profile_guided_optimization",
+      "name": "Profile-guided optimization",
+      "type": "optimization_technique",
+      "description": "Use of observed or supplied execution profiles to prioritize compilation and optimization of methods likely to affect performance.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collection_pause",
+      "name": "Garbage-collection pause",
+      "type": "performance_event",
+      "description": "Period when GC activity affects mutator execution; pause duration and frequency influence latency and UI smoothness.",
+      "properties": {}
+    },
+    {
+      "id": "heap_allocation",
+      "name": "Managed object allocation",
+      "type": "runtime_operation",
+      "description": "Creation of managed objects in the ART heap, with allocation paths and collection pressure affecting application performance.",
+      "properties": {}
+    },
+    {
+      "id": "class_metadata",
+      "name": "Class metadata",
+      "type": "runtime_data_structure",
+      "description": "Runtime information about classes, methods, fields, types, and dispatch used for linking and execution.",
+      "properties": {}
+    },
+    {
+      "id": "method_dispatch",
+      "name": "Method dispatch",
+      "type": "runtime_mechanism",
+      "description": "Runtime selection of the implementation to execute for a method invocation, including virtual/interface dispatch where applicable.",
+      "properties": {}
+    },
+    {
+      "id": "reflection",
+      "name": "Reflection",
+      "type": "runtime_capability",
+      "description": "Dynamic inspection or invocation of classes, methods, and fields, supported through Android's managed runtime APIs and constrained by platform rules.",
+      "properties": {}
+    },
+    {
+      "id": "exception_handling",
+      "name": "Exception handling",
+      "type": "runtime_mechanism",
+      "description": "Runtime support for throwing, propagating, and catching managed exceptions and producing diagnostic stack traces.",
+      "properties": {}
+    },
+    {
+      "id": "android_debug_bridge",
+      "name": "Android Debug Bridge (ADB)",
+      "type": "developer_tool",
+      "description": "Command-line tool used to communicate with Android devices and emulators for installation, debugging, logging, and shell access.",
+      "properties": {}
+    },
+    {
+      "id": "android_studio",
+      "name": "Android Studio",
+      "type": "integrated_development_environment",
+      "description": "Android development environment integrating build, debugging, profiling, emulator, and deployment workflows.",
+      "properties": {}
+    },
+    {
+      "id": "android_profiler",
+      "name": "Android Studio Profiler",
+      "type": "developer_tool",
+      "description": "Tooling for examining application CPU, memory, energy, and related runtime behavior.",
+      "properties": {}
+    },
+    {
+      "id": "logcat",
+      "name": "Logcat",
+      "type": "diagnostic_tool",
+      "description": "Android logging system and viewer used to inspect runtime and application logs.",
+      "properties": {}
+    },
+    {
+      "id": "android_emulator",
+      "name": "Android Emulator",
+      "type": "emulator",
+      "description": "Virtual Android device used for app development and testing; ART behavior depends on the emulated Android image and CPU architecture.",
+      "properties": {}
+    },
+    {
+      "id": "arm64",
+      "name": "ARM64 / AArch64",
+      "type": "instruction_set_architecture",
+      "description": "64-bit Arm architecture targeted by Android devices and supported by ART compilation and native libraries.",
+      "properties": {}
+    },
+    {
+      "id": "x86",
+      "name": "x86 architecture",
+      "type": "instruction_set_architecture",
+      "description": "Intel-compatible architecture used by some Android devices and emulator images and supported as a runtime compilation target where configured.",
+      "properties": {}
+    },
+    {
+      "id": "riscv",
+      "name": "RISC-V architecture",
+      "type": "instruction_set_architecture",
+      "description": "Open instruction-set architecture listed among ART's supported platforms in the supplied source; actual device and release support is version-dependent.",
+      "properties": {}
+    },
+    {
+      "id": "android_version",
+      "name": "Android release version",
+      "type": "versioned_platform",
+      "description": "Versioned Android platform whose ART implementation, compiler policy, libraries, GC, and modular update behavior may differ.",
+      "properties": {}
+    },
+    {
+      "id": "android_kitkat",
+      "name": "Android 4.4 KitKat",
+      "type": "android_release",
+      "description": "Release that introduced ART as a technology preview while Dalvik remained the default runtime.",
+      "properties": {}
+    },
+    {
+      "id": "android_lollipop",
+      "name": "Android 5.0 Lollipop",
+      "type": "android_release",
+      "description": "Release that replaced Dalvik with ART as Android's default runtime.",
+      "properties": {}
+    },
+    {
+      "id": "android_nougat",
+      "name": "Android 7.0 Nougat",
+      "type": "android_release",
+      "description": "Release that made ART use a hybrid JIT/AOT approach, introduced profiling-guided JIT compilation, and moved from Apache Harmony to OpenJDK-derived libraries.",
+      "properties": {}
+    },
+    {
+      "id": "android_pie",
+      "name": "Android 9 Pie",
+      "type": "android_release",
+      "description": "Release associated with compressed DEX files and Google Play cloud profiles for better storage use and profile-guided optimization.",
+      "properties": {}
+    },
+    {
+      "id": "android_12",
+      "name": "Android 12",
+      "type": "android_release",
+      "description": "Release whose ART component can receive updates through Android's Mainline architecture on supported devices.",
+      "properties": {}
+    },
+    {
+      "id": "android_13",
+      "name": "Android 13",
+      "type": "android_release",
+      "description": "Release associated in the supplied source with a new ART garbage collector using Linux userfaultfd.",
+      "properties": {}
+    },
+    {
+      "id": "install_time",
+      "name": "Application installation time",
+      "type": "lifecycle_stage",
+      "description": "Stage when an APK is installed and ART-related compilation or preparation may occur, depending on device policy and available profiles.",
+      "properties": {}
+    },
+    {
+      "id": "idle_charging",
+      "name": "Device idle and charging state",
+      "type": "runtime_condition",
+      "description": "Condition used by ART's compilation policy in the described hybrid workflow to perform AOT work on hot code while the device is idle and charging.",
+      "properties": {}
+    },
+    {
+      "id": "hot_code",
+      "name": "Hot code",
+      "type": "profiling_concept",
+      "description": "Methods or code paths frequently executed or important to UI-thread work and startup performance, identified through profiles.",
+      "properties": {}
+    },
+    {
+      "id": "cold_code",
+      "name": "Cold code",
+      "type": "profiling_concept",
+      "description": "Infrequently executed code that may be left uncompiled or handled by interpretation/JIT to avoid unnecessary compilation and storage costs.",
+      "properties": {}
+    },
+    {
+      "id": "dex_cache",
+      "name": "DEX/runtime caches",
+      "type": "runtime_data_structure",
+      "description": "Runtime caches and resolved references that reduce repeated lookup or execution overhead.",
+      "properties": {}
+    },
+    {
+      "id": "code_cache",
+      "name": "Compiled code cache",
+      "type": "runtime_data_structure",
+      "description": "Storage and management of compiled native code and related artifacts used to avoid repeated compilation.",
+      "properties": {}
+    },
+    {
+      "id": "android_manifest",
+      "name": "AndroidManifest.xml",
+      "type": "package_metadata",
+      "description": "Application manifest describing app components, permissions, package-level configuration, and other metadata consumed by Android tooling and system services.",
+      "properties": {}
+    },
+    {
+      "id": "resources",
+      "name": "Android resources",
+      "type": "application_asset",
+      "description": "Non-code app assets such as layouts, strings, images, and other resources packaged and resolved through Android resource infrastructure.",
+      "properties": {}
+    },
+    {
+      "id": "app_bundle_delivery",
+      "name": "App bundle delivery",
+      "type": "distribution_mechanism",
+      "description": "Distribution flow that can produce device-specific APKs and include optimization profile data where supported.",
+      "properties": {}
+    },
+    {
+      "id": "native_abi",
+      "name": "Android native ABI",
+      "type": "binary_interface",
+      "description": "Architecture-specific calling conventions and binary compatibility requirements for native libraries and generated machine code.",
+      "properties": {}
+    },
+    {
+      "id": "jni_refs",
+      "name": "JNI references",
+      "type": "runtime_resource",
+      "description": "Handles used to refer to managed objects from native code, with lifetime and thread rules enforced by JNI/ART.",
+      "properties": {}
+    },
+    {
+      "id": "ndk",
+      "name": "Android NDK",
+      "type": "software_development_kit",
+      "description": "Toolchain and headers for building native Android code, including C/C++ libraries that can interoperate with managed code.",
+      "properties": {}
+    },
+    {
+      "id": "app_lifecycle",
+      "name": "Android app lifecycle",
+      "type": "platform_lifecycle",
+      "description": "Framework-defined creation, foreground/background, pause, stop, and destruction states that shape when code runs and resources are used.",
+      "properties": {}
+    },
+    {
+      "id": "low_memory",
+      "name": "Low-memory condition",
+      "type": "runtime_condition",
+      "description": "System state in which memory pressure may trigger reclamation or app process termination; GC behavior can influence risk and responsiveness.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_update",
+      "name": "ART runtime update",
+      "type": "maintenance_mechanism",
+      "description": "Delivery and application of runtime changes, including supported modular ART updates without requiring a complete OS update.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_artifact",
+      "name": "Compiled ART artifact",
+      "type": "compiled_artifact",
+      "description": "Device-specific output of ART compilation, such as native compiled code and associated metadata derived from DEX and profiles.",
+      "properties": {}
+    },
+    {
+      "id": "apk_dex",
+      "name": "classes.dex / DEX payload",
+      "type": "package_component",
+      "description": "DEX bytecode file or set of DEX files packaged inside an APK, serving as ART's managed-code input.",
+      "properties": {}
+    },
+    {
+      "id": "jvm_classfile",
+      "name": "JVM class file",
+      "type": "bytecode_format",
+      "description": "Intermediate output from Java/Kotlin compilation that is transformed into DEX for conventional Android app packaging.",
+      "properties": {}
+    },
+    {
+      "id": "android_app_components",
+      "name": "Android app components",
+      "type": "platform_concept",
+      "description": "Activities, services, broadcast receivers, and content providers managed by the Android framework and executed within application processes.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_startup",
+      "name": "ART initialization and startup",
+      "type": "runtime_operation",
+      "description": "Initialization of runtime structures, core libraries, class loading, and app execution environment during process startup.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_optimization",
+      "name": "Compiler optimization",
+      "type": "optimization_technique",
+      "description": "Transformations applied during JIT/AOT compilation to improve execution efficiency while preserving program behavior.",
+      "properties": {}
+    },
+    {
+      "id": "deoptimization",
+      "name": "Deoptimization",
+      "type": "runtime_mechanism",
+      "description": "Transition from optimized compiled code to a less-optimized execution mode when assumptions or runtime conditions require it.",
+      "properties": {}
+    },
+    {
+      "id": "verification",
+      "name": "DEX verification",
+      "type": "security_and_correctness_mechanism",
+      "description": "Validation of bytecode structure and type-safety-related properties as part of runtime or build/install processing, subject to Android version and implementation.",
+      "properties": {}
+    },
+    {
+      "id": "native_crash",
+      "name": "Native crash",
+      "type": "failure_mode",
+      "description": "Failure in native code or runtime-native components, typically diagnosed using tombstones, stack traces, and native debugging tools.",
+      "properties": {}
+    },
+    {
+      "id": "managed_exception",
+      "name": "Managed exception",
+      "type": "failure_mode",
+      "description": "Exceptional managed-code control flow propagated by ART and application/framework code.",
+      "properties": {}
+    },
+    {
+      "id": "performance_tradeoff",
+      "name": "Compilation performance trade-off",
+      "type": "design_tradeoff",
+      "description": "Balance among install latency, first-run latency, throughput, memory use, storage consumption, and battery energy in ART compilation policies.",
+      "properties": {}
+    },
+    {
+      "id": "developer_google",
+      "name": "Google",
+      "type": "organization",
+      "description": "Technology company that develops Android and ART.",
+      "properties": {}
+    },
+    {
+      "id": "cpp_language",
+      "name": "C++",
+      "type": "programming_language",
+      "description": "Programming language used to implement ART according to the supplied article.",
+      "properties": {}
+    },
+    {
+      "id": "apache_license",
+      "name": "Apache License 2.0",
+      "type": "software_license",
+      "description": "Permissive open-source license listed for ART.",
+      "properties": {}
+    },
+    {
+      "id": "developer_documentation",
+      "name": "Android Open Source Project runtime documentation",
+      "type": "technical_documentation",
+      "description": "Official documentation describing ART and Android runtime behavior.",
+      "properties": {}
+    },
+    {
+      "id": "source_repository",
+      "name": "ART source repository",
+      "type": "source_code_repository",
+      "description": "Source repository for the Android Runtime implementation.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_performance",
+      "name": "ART runtime performance",
+      "type": "performance_concept",
+      "description": "Combined runtime concerns including throughput, latency, startup, energy, memory, and storage.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "android_runtime",
+      "target": "android_os",
+      "type": "integrated_with",
+      "description": "ART is a core runtime subsystem of Android.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "android_runtime",
+      "target": "dalvik",
+      "type": "replaces",
+      "description": "ART succeeded Dalvik as Android's default application runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "android_runtime",
+      "target": "dex",
+      "type": "accepts_input",
+      "description": "ART retains DEX as its managed-code input format.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "android_app",
+      "target": "apk",
+      "type": "packaged_as",
+      "description": "Android apps are commonly distributed in APK packages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "apk",
+      "target": "apk_dex",
+      "type": "contains",
+      "description": "An APK commonly contains one or more DEX payloads.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "apk",
+      "target": "android_manifest",
+      "type": "contains",
+      "description": "An APK contains application manifest metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "apk",
+      "target": "resources",
+      "type": "contains",
+      "description": "An APK packages resources and assets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "android_app",
+      "target": "android_framework",
+      "type": "uses",
+      "description": "Apps call Android framework APIs and services.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "android_app",
+      "target": "android_runtime",
+      "type": "executes_on",
+      "description": "Managed Android app code executes under ART on modern Android releases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "android_runtime",
+      "target": "runtime_process",
+      "type": "runs_within",
+      "description": "ART operates within Android application processes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "runtime_process",
+      "target": "runtime_instance",
+      "type": "hosts",
+      "description": "An app process hosts an initialized runtime instance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "runtime_process",
+      "target": "linux_kernel",
+      "type": "managed_by",
+      "description": "The Linux kernel schedules and manages app processes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "zygote",
+      "target": "runtime_process",
+      "type": "spawns",
+      "description": "Android commonly forks app processes from Zygote.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "zygote",
+      "target": "class_loader",
+      "type": "preloads_through",
+      "description": "Zygote preloads common classes and resources before app process creation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "android_runtime",
+      "target": "interpreter",
+      "type": "includes",
+      "description": "ART includes an interpreter execution path.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "android_runtime",
+      "target": "jit",
+      "type": "includes",
+      "description": "ART includes a JIT compiler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "android_runtime",
+      "target": "aot",
+      "type": "includes",
+      "description": "ART includes AOT compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "interpreter",
+      "target": "dex",
+      "type": "executes",
+      "description": "The interpreter executes DEX instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "jit",
+      "target": "dex",
+      "type": "compiles",
+      "description": "The JIT compiler compiles selected DEX code during execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "aot",
+      "target": "dex",
+      "type": "compiles",
+      "description": "AOT compilation translates selected DEX methods to native machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "dex2oat",
+      "target": "aot",
+      "type": "implements",
+      "description": "dex2oat is a key tool in ART's AOT compilation pipeline.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "dex2oat",
+      "target": "runtime_artifact",
+      "type": "produces",
+      "description": "Compilation can produce device-specific compiled artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "runtime_artifact",
+      "target": "elf",
+      "type": "uses_format",
+      "description": "Compiled native code artifacts use ELF representation in the architecture described by the source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "android_runtime",
+      "target": "elf",
+      "type": "executes_compiled_code_from",
+      "description": "ART can execute compiled code represented in ELF artifacts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "android_runtime",
+      "target": "jit_aot_hybrid",
+      "type": "uses_execution_model",
+      "description": "Modern ART uses a hybrid JIT/AOT model, with policy varying by release and device.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "android_runtime",
+      "target": "bytecode_interpretation",
+      "type": "supports_execution_model",
+      "description": "ART can interpret bytecode when native compilation is not used.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "android_runtime",
+      "target": "native_execution",
+      "type": "supports_execution_model",
+      "description": "ART executes compiled native machine instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "android_runtime",
+      "target": "android_profiles",
+      "type": "consumes",
+      "description": "Profiles inform compilation and optimization decisions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "android_profiles",
+      "target": "hot_code",
+      "type": "identifies",
+      "description": "Profiles help identify frequently executed or performance-critical code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "android_profiles",
+      "target": "profile_guided_optimization",
+      "type": "enables",
+      "description": "Profiles guide compilation and optimization priorities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "android_runtime",
+      "target": "gc",
+      "type": "provides",
+      "description": "ART provides automatic garbage collection for managed objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "gc",
+      "target": "managed_heap",
+      "type": "reclaims_from",
+      "description": "Garbage collection reclaims unreachable objects from the managed heap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "heap_allocation",
+      "target": "managed_heap",
+      "type": "allocates_into",
+      "description": "Managed object allocation uses the ART heap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "gc",
+      "target": "garbage_collection_pause",
+      "type": "can_cause",
+      "description": "GC work can introduce pauses or latency effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "android_runtime",
+      "target": "thread_runtime",
+      "type": "includes",
+      "description": "ART manages managed-thread state and coordination.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "android_runtime",
+      "target": "class_loader",
+      "type": "uses",
+      "description": "ART loads classes from DEX code sources.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "class_loader",
+      "target": "class_linker",
+      "type": "feeds",
+      "description": "Loaded classes are linked and resolved by ART's class-linking machinery.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "class_linker",
+      "target": "class_metadata",
+      "type": "manages",
+      "description": "Class linking builds and maintains runtime class metadata.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "class_linker",
+      "target": "method_dispatch",
+      "type": "supports",
+      "description": "Linked method metadata supports method resolution and dispatch.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "android_runtime",
+      "target": "exception_handling",
+      "type": "implements",
+      "description": "ART supports managed exception propagation and handling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "android_runtime",
+      "target": "reflection",
+      "type": "supports",
+      "description": "ART supports reflection through Android's managed runtime APIs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "android_runtime",
+      "target": "runtime_debugging",
+      "type": "supports",
+      "description": "ART provides runtime support used by debugging tools.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "android_runtime",
+      "target": "runtime_profiling",
+      "type": "supports",
+      "description": "ART gathers execution profile information for adaptive optimization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "android_runtime",
+      "target": "jni",
+      "type": "integrates_with",
+      "description": "JNI connects managed code with native code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "jni",
+      "target": "native_lib",
+      "type": "calls_into",
+      "description": "JNI enables managed applications to invoke native libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "native_lib",
+      "target": "native_abi",
+      "type": "must_match",
+      "description": "Native libraries must match the device/application ABI requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "ndk",
+      "target": "native_lib",
+      "type": "builds",
+      "description": "The Android NDK builds native libraries for Android.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "jni",
+      "target": "jni_refs",
+      "type": "uses",
+      "description": "JNI references provide managed-object handles to native code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "android_runtime",
+      "target": "java_runtime",
+      "type": "provides_access_to",
+      "description": "ART executes managed code with Android's core runtime libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "java_runtime",
+      "target": "openjdk",
+      "type": "derived_from",
+      "description": "Modern Android core libraries are OpenJDK-derived, according to the supplied source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "java_runtime",
+      "target": "apache_harmony",
+      "type": "historically_used",
+      "description": "Earlier Android releases used Apache Harmony libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "android_build_system",
+      "target": "gradle",
+      "type": "often_orchestrated_by",
+      "description": "Gradle commonly orchestrates Android builds.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "gradle",
+      "target": "javac",
+      "type": "can_invoke",
+      "description": "Android Java builds compile Java source to class files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "gradle",
+      "target": "kotlinc",
+      "type": "can_invoke",
+      "description": "Android Kotlin builds compile Kotlin source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "javac",
+      "target": "jvm_classfile",
+      "type": "produces",
+      "description": "javac emits JVM class files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "kotlinc",
+      "target": "jvm_classfile",
+      "type": "can_produce",
+      "description": "Kotlin compilation can emit JVM-compatible class files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "d8",
+      "target": "jvm_classfile",
+      "type": "consumes",
+      "description": "D8 converts JVM class files into DEX.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "d8",
+      "target": "dex",
+      "type": "produces",
+      "description": "D8 emits DEX bytecode.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "r8",
+      "target": "dex",
+      "type": "optimizes_or_emits",
+      "description": "R8 optimizes/shrinks code and participates in producing DEX output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "r8",
+      "target": "profile_guided_optimization",
+      "type": "can_complement",
+      "description": "Build-time optimization can complement runtime profile-guided optimization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "android_sdk",
+      "target": "android_build_system",
+      "type": "supplies_tools_to",
+      "description": "Android SDK supplies build and platform tooling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "android_sdk",
+      "target": "android_studio",
+      "type": "integrates_with",
+      "description": "Android Studio uses Android SDK components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "android_studio",
+      "target": "android_profiler",
+      "type": "includes",
+      "description": "Android Studio provides runtime profiling tools.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "android_debug_bridge",
+      "target": "android_emulator",
+      "type": "communicates_with",
+      "description": "ADB can install and control apps on emulator instances.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "android_debug_bridge",
+      "target": "runtime_process",
+      "type": "supports_debugging_of",
+      "description": "ADB is used in workflows for inspecting and debugging app execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "logcat",
+      "target": "runtime_process",
+      "type": "observes_logs_from",
+      "description": "Logcat exposes system and app log output.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "android_profiler",
+      "target": "runtime_profiling",
+      "type": "visualizes",
+      "description": "Profiler tools visualize CPU, memory, energy, and runtime behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "android_emulator",
+      "target": "android_runtime",
+      "type": "runs_image_with",
+      "description": "An emulator runs an Android system image containing a particular ART implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "android_runtime",
+      "target": "arm64",
+      "type": "targets",
+      "description": "ART compiles and runs native code for ARM64 targets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "android_runtime",
+      "target": "x86",
+      "type": "targets",
+      "description": "ART supports x86 target environments where provided by the Android image.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "android_runtime",
+      "target": "riscv",
+      "type": "listed_platform_target",
+      "description": "The supplied source lists RISC-V among ART platforms; practical support is release/device dependent.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "android_runtime",
+      "target": "native_execution",
+      "type": "generates_or_runs",
+      "description": "Compiled methods execute as native CPU instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "android_runtime",
+      "target": "backward_compatibility",
+      "type": "maintains",
+      "description": "ART preserves DEX input compatibility with the prior Dalvik ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "android_runtime",
+      "target": "runtime_security",
+      "type": "contributes_to",
+      "description": "ART participates in Android's managed execution and security model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "android_os",
+      "target": "process_isolation",
+      "type": "uses",
+      "description": "Android uses process and identity isolation for applications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "runtime_process",
+      "target": "process_isolation",
+      "type": "benefits_from",
+      "description": "App processes provide an important isolation boundary.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "android_runtime",
+      "target": "verification",
+      "type": "uses_or_integrates",
+      "description": "DEX verification and related validation protect correctness and help reject invalid code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "android_runtime",
+      "target": "runtime_startup",
+      "type": "performs",
+      "description": "The runtime initializes during app process startup.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "runtime_startup",
+      "target": "app_startup",
+      "type": "contributes_to",
+      "description": "Runtime initialization is one component of total app startup time.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "android_runtime",
+      "target": "app_lifecycle",
+      "type": "interacts_with",
+      "description": "Runtime work occurs as app components are created and invoked by framework lifecycle events.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "android_runtime",
+      "target": "app_startup",
+      "type": "can_affect",
+      "description": "Compilation and class-loading choices can affect app startup latency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "jit",
+      "target": "warmup",
+      "type": "benefits_from",
+      "description": "JIT compilation and adaptive optimization may improve performance after warm-up.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "android_profiles",
+      "target": "warmup",
+      "type": "can_reduce_need_for",
+      "description": "Profile-informed compilation can reduce reliance on observing all hot code after first launch.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "baseline_profiles",
+      "target": "profile_guided_optimization",
+      "type": "guide",
+      "description": "Baseline Profiles identify important code for early AOT compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "baseline_profiles",
+      "target": "profile_installer",
+      "type": "made_available_by",
+      "description": "ProfileInstaller helps install baseline profile data on supported devices.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "baseline_profiles",
+      "target": "androidx",
+      "type": "distributed_with",
+      "description": "Baseline Profiles are distributed with AndroidX library releases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "baseline_profiles",
+      "target": "jetpack_compose",
+      "type": "distributed_with",
+      "description": "Jetpack Compose libraries can ship Baseline Profiles.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "cloud_profiles",
+      "target": "profile_guided_optimization",
+      "type": "guide",
+      "description": "Google Play cloud profiles guide app optimization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "cloud_profiles",
+      "target": "app_bundle_delivery",
+      "type": "can_be_bundled_with",
+      "description": "Cloud profile data can be distributed alongside app downloads in supported flows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "android_pie",
+      "target": "cloud_profiles",
+      "type": "introduced_or_popularized",
+      "description": "Android 9 is associated with Google Play cloud-profile workflows in the supplied source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "android_pie",
+      "target": "storage",
+      "type": "reduces_use_of",
+      "description": "Compressed bytecode files reduce APK storage requirements as described by the source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "android_nougat",
+      "target": "jit_aot_hybrid",
+      "type": "introduced",
+      "description": "Android 7.0 moved ART from a pure AOT approach to a hybrid JIT/AOT solution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "android_nougat",
+      "target": "openjdk",
+      "type": "adopted_libraries_from",
+      "description": "Android 7.0 moved from Apache Harmony to OpenJDK-derived libraries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "android_nougat",
+      "target": "jit",
+      "type": "introduced_or_expanded",
+      "description": "Android 7.0 introduced a JIT compiler with code profiling in the ART hybrid model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "android_lollipop",
+      "target": "android_runtime",
+      "type": "made_default_runtime",
+      "description": "Android 5.0 replaced Dalvik with ART.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "android_kitkat",
+      "target": "android_runtime",
+      "type": "previewed",
+      "description": "Android 4.4 offered ART as a technology preview while Dalvik remained default.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "android_13",
+      "target": "gc",
+      "type": "introduced_gc_changes_to",
+      "description": "The supplied source associates Android 13 with a new ART GC using userfaultfd.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "android_13",
+      "target": "userfaultfd",
+      "type": "uses_in_gc_work",
+      "description": "The described garbage collector uses the Linux userfaultfd system call.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "android_12",
+      "target": "art_mainline",
+      "type": "supports_updates_through",
+      "description": "The supplied source notes that Android 12 ART can also be updated through Mainline.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "art_mainline",
+      "target": "runtime_update",
+      "type": "enables",
+      "description": "Mainline permits supported ART updates independently of a full OS update.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "android_runtime",
+      "target": "performance_tradeoff",
+      "type": "embodies",
+      "description": "ART balances installation cost, first-run speed, runtime throughput, storage, memory, and battery use.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "aot",
+      "target": "install_time",
+      "type": "can_increase_work_at",
+      "description": "AOT compilation may increase installation or maintenance work depending on policy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "install_time",
+      "target": "performance_tradeoff",
+      "type": "illustrates",
+      "description": "Compilation at installation trades setup time and storage for faster later execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "idle_charging",
+      "target": "aot",
+      "type": "permits_deferred_compilation_of",
+      "description": "In the described hybrid approach, idle-and-charging time is used for AOT compilation of hot code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "hot_code",
+      "target": "aot",
+      "type": "prioritized_for",
+      "description": "Frequently used or performance-critical methods are candidates for AOT compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "cold_code",
+      "target": "jit",
+      "type": "may_be_compiled_later_by",
+      "description": "Less frequently used code may rely on JIT compilation in the described hybrid model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "aot",
+      "target": "storage",
+      "type": "can_increase_use_of",
+      "description": "Compiled native artifacts consume persistent storage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "jit",
+      "target": "storage",
+      "type": "can_reduce_initial_compiled_artifact_need",
+      "description": "Deferring compilation of some code can reduce the need to store all code precompiled.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "gc",
+      "target": "jank",
+      "type": "can_influence",
+      "description": "GC behavior and pauses can contribute to UI jank.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "gc",
+      "target": "low_memory",
+      "type": "responds_to",
+      "description": "Garbage collection participates in managed-heap reclamation under memory pressure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "android_13",
+      "target": "jank",
+      "type": "aims_to_reduce",
+      "description": "The described GC changes aim to reduce jank.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "android_13",
+      "target": "low_memory",
+      "type": "aims_to_reduce_risk_of",
+      "description": "The described GC work aims to reduce app-kill risk during GC under low-memory conditions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "app_startup",
+      "target": "baseline_profiles",
+      "type": "can_be_improved_by",
+      "description": "Baseline Profiles prioritize important code for the first launch.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "app_startup",
+      "target": "cloud_profiles",
+      "type": "can_be_improved_by",
+      "description": "Cloud profiles can improve install-time optimization and startup behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "battery",
+      "target": "aot",
+      "type": "can_benefit_from",
+      "description": "Reducing repeated interpretation/JIT work may improve energy efficiency, while AOT also has costs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "android_runtime",
+      "target": "battery",
+      "type": "influences",
+      "description": "Runtime execution and compilation choices influence energy consumption.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "android_runtime",
+      "target": "storage",
+      "type": "influences",
+      "description": "Compiled artifacts, profiles, and compressed DEX affect storage consumption.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "android_runtime",
+      "target": "runtime_update",
+      "type": "can_receive",
+      "description": "ART components may receive updates according to Android release and module support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "android_runtime",
+      "target": "compiler_optimization",
+      "type": "uses",
+      "description": "JIT/AOT compilation applies code optimizations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "compiler_optimization",
+      "target": "native_execution",
+      "type": "improves",
+      "description": "Compiler optimizations seek to improve native execution while preserving semantics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "jit",
+      "target": "deoptimization",
+      "type": "can_use",
+      "description": "Optimized JIT code may need deoptimization when assumptions no longer hold.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "android_runtime",
+      "target": "dex_cache",
+      "type": "uses",
+      "description": "Runtime caches reduce repeated resolution and lookup work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "android_runtime",
+      "target": "code_cache",
+      "type": "uses",
+      "description": "Compiled code and associated artifacts may be cached.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "android_runtime",
+      "target": "native_crash",
+      "type": "can_be_involved_in",
+      "description": "Failures can occur in ART itself or native code called by an app.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "android_runtime",
+      "target": "managed_exception",
+      "type": "propagates",
+      "description": "ART implements managed exception propagation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "runtime_debugging",
+      "target": "managed_exception",
+      "type": "helps_diagnose",
+      "description": "Debuggers and stack traces help diagnose managed exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "runtime_debugging",
+      "target": "native_crash",
+      "type": "helps_diagnose",
+      "description": "Native debugging and crash traces help diagnose native failures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "android_manifest",
+      "target": "android_package_manager",
+      "type": "consumed_by",
+      "description": "Package management consumes manifest metadata during installation and app management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "android_package_manager",
+      "target": "install_time",
+      "type": "performs",
+      "description": "Package installation is managed by Android's package-management facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "android_package_manager",
+      "target": "dex2oat",
+      "type": "may_trigger",
+      "description": "Installation or package maintenance may trigger ART compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "app_bundle_delivery",
+      "target": "apk",
+      "type": "produces_device_specific",
+      "description": "App bundle distribution can generate device-specific APKs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "native_abi",
+      "target": "arm64",
+      "type": "defines_binary_contract_for",
+      "description": "The native ABI specifies binary compatibility details for a target architecture.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "native_abi",
+      "target": "x86",
+      "type": "defines_binary_contract_for",
+      "description": "The native ABI specifies binary compatibility details for x86 targets.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "native_abi",
+      "target": "riscv",
+      "type": "defines_binary_contract_for",
+      "description": "Any supported RISC-V native target requires a matching ABI contract.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "android_framework",
+      "target": "android_app_components",
+      "type": "defines_and_manages",
+      "description": "The framework defines and manages application components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "android_app_components",
+      "target": "runtime_process",
+      "type": "execute_within",
+      "description": "Application components execute within app processes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "runtime_process",
+      "target": "thread_runtime",
+      "type": "contains_threads_managed_by",
+      "description": "An app process contains threads whose managed states are coordinated by ART.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "android_runtime",
+      "target": "managed_heap",
+      "type": "manages",
+      "description": "ART manages the managed heap and object lifecycle.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "android_runtime",
+      "target": "class_metadata",
+      "type": "maintains",
+      "description": "ART maintains metadata needed for managed execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "android_runtime",
+      "target": "method_dispatch",
+      "type": "performs",
+      "description": "ART resolves and dispatches managed method calls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "android_runtime",
+      "target": "jni",
+      "type": "provides_boundary_for",
+      "description": "JNI provides an interoperability boundary between managed and native code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "native_lib",
+      "target": "native_crash",
+      "type": "can_cause",
+      "description": "Defects in native libraries can cause native crashes or memory-safety failures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "android_runtime",
+      "target": "reflection",
+      "type": "can_affect_performance_of",
+      "description": "Dynamic reflection can have different performance characteristics from direct calls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "android_runtime",
+      "target": "verification",
+      "type": "supports_correctness_through",
+      "description": "Bytecode validation helps ensure code is structurally valid before or during execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "android_runtime",
+      "target": "art_mainline",
+      "type": "is_modularized_by",
+      "description": "On supported releases, ART is modularized for independent updates.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "android_runtime",
+      "target": "android_sdk",
+      "type": "targeted_by",
+      "description": "Android SDK tooling targets platform behavior and runtime capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "android_runtime",
+      "target": "android_version",
+      "type": "varies_by",
+      "description": "ART implementation and behavior vary across Android versions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "android_version",
+      "target": "android_kitkat",
+      "type": "includes_release",
+      "description": "Android version history includes KitKat.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "android_version",
+      "target": "android_lollipop",
+      "type": "includes_release",
+      "description": "Android version history includes Lollipop.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "android_version",
+      "target": "android_nougat",
+      "type": "includes_release",
+      "description": "Android version history includes Nougat.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "android_version",
+      "target": "android_pie",
+      "type": "includes_release",
+      "description": "Android version history includes Pie.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "android_version",
+      "target": "android_12",
+      "type": "includes_release",
+      "description": "Android version history includes Android 12.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "android_version",
+      "target": "android_13",
+      "type": "includes_release",
+      "description": "Android version history includes Android 13.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "android_runtime",
+      "target": "developer_google",
+      "type": "developed_by",
+      "description": "ART is developed by Google.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "android_runtime",
+      "target": "cpp_language",
+      "type": "implemented_in",
+      "description": "The supplied article lists C++ as ART's implementation language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "android_runtime",
+      "target": "apache_license",
+      "type": "licensed_under",
+      "description": "The supplied article lists Apache License 2.0.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0157",
+      "source": "dalvik",
+      "target": "android_kitkat",
+      "type": "remained_default_during",
+      "description": "Dalvik remained the default runtime during ART's KitKat preview.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0158",
+      "source": "dalvik",
+      "target": "android_lollipop",
+      "type": "replaced_in",
+      "description": "Dalvik was replaced by ART in Android 5.0.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0159",
+      "source": "dalvik",
+      "target": "jit",
+      "type": "historically_used",
+      "description": "Dalvik used trace-based JIT compilation before ART became default.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0160",
+      "source": "android_kitkat",
+      "target": "android_lollipop",
+      "type": "preceded",
+      "description": "Android 4.4 preceded Android 5.0.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0161",
+      "source": "android_lollipop",
+      "target": "android_nougat",
+      "type": "preceded",
+      "description": "Android 5.0 preceded Android 7.0.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0162",
+      "source": "android_nougat",
+      "target": "android_pie",
+      "type": "preceded",
+      "description": "Android 7.0 preceded Android 9.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0163",
+      "source": "android_pie",
+      "target": "android_12",
+      "type": "preceded",
+      "description": "Android 9 preceded Android 12.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0164",
+      "source": "android_12",
+      "target": "android_13",
+      "type": "preceded",
+      "description": "Android 12 preceded Android 13.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0165",
+      "source": "android_runtime",
+      "target": "developer_documentation",
+      "type": "documented_by",
+      "description": "Official runtime documentation is hosted in the Android Open Source Project documentation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0166",
+      "source": "android_runtime",
+      "target": "source_repository",
+      "type": "source_available_at",
+      "description": "ART source code is hosted in the Android Open Source Project Git repository.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0167",
+      "source": "android_runtime",
+      "target": "runtime_performance",
+      "type": "optimizes_for",
+      "description": "ART seeks a balance of application performance, startup, memory, battery, and storage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0168",
+      "source": "android_app",
+      "target": "java_language",
+      "type": "may_be_written_in",
+      "description": "Android apps may be implemented in Java.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0169",
+      "source": "android_app",
+      "target": "kotlin",
+      "type": "may_be_written_in",
+      "description": "Android apps may be implemented in Kotlin.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0170",
+      "source": "android_app",
+      "target": "native_lib",
+      "type": "may_include",
+      "description": "Android apps can package native libraries alongside DEX code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0171",
+      "source": "android_build_system",
+      "target": "apk",
+      "type": "packages_as",
+      "description": "Build tooling packages application code and assets into APKs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0172",
+      "source": "android_build_system",
+      "target": "aab",
+      "type": "can_produce",
+      "description": "Build tooling can produce Android App Bundles for distribution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0173",
+      "source": "runtime_instance",
+      "target": "managed_heap",
+      "type": "owns_or_uses",
+      "description": "An ART runtime instance manages or uses its process's managed heap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0174",
+      "source": "runtime_instance",
+      "target": "thread_runtime",
+      "type": "owns_or_uses",
+      "description": "An ART runtime instance coordinates managed threads.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0175",
+      "source": "runtime_instance",
+      "target": "class_loader",
+      "type": "uses",
+      "description": "Runtime class loading occurs within the app's runtime instance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0176",
+      "source": "runtime_instance",
+      "target": "runtime_linker",
+      "type": "uses",
+      "description": "The runtime resolves classes, methods, fields, and native bindings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0177",
+      "source": "runtime_linker",
+      "target": "jni",
+      "type": "resolves_native_bindings_for",
+      "description": "Runtime linking resolves managed/native bindings where applicable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0178",
+      "source": "android_runtime",
+      "target": "app_lifecycle",
+      "type": "supports_execution_during",
+      "description": "ART executes application code invoked during framework-managed lifecycle transitions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0179",
+      "source": "android_runtime",
+      "target": "low_memory",
+      "type": "operates_under",
+      "description": "ART must operate within device memory limits and Android memory-management policy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0180",
+      "source": "android_runtime",
+      "target": "android_debug_bridge",
+      "type": "debuggable_through",
+      "description": "ADB is a common access path for development and runtime debugging.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0181",
+      "source": "android_runtime",
+      "target": "android_profiler",
+      "type": "measured_by",
+      "description": "Runtime behavior can be measured with Android Studio profiling tools.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0182",
+      "source": "android_runtime",
+      "target": "logcat",
+      "type": "diagnosed_with",
+      "description": "Logs can help diagnose runtime and application issues.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0183",
+      "source": "baseline_profiles",
+      "target": "app_startup",
+      "type": "target",
+      "description": "Baseline profiles commonly target important startup and user-critical code paths.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0184",
+      "source": "cloud_profiles",
+      "target": "hot_code",
+      "type": "identify",
+      "description": "Cloud profiles provide observations useful for identifying hot methods.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0185",
+      "source": "profile_guided_optimization",
+      "target": "code_cache",
+      "type": "affects",
+      "description": "Profile-guided compilation influences which compiled artifacts are generated and cached.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0186",
+      "source": "compiler_optimization",
+      "target": "performance_tradeoff",
+      "type": "constrained_by",
+      "description": "Optimizations must balance speed, code size, compilation cost, and correctness.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0187",
+      "source": "dex",
+      "target": "verification",
+      "type": "subject_to",
+      "description": "DEX input is subject to validation/verification in Android execution workflows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0188",
+      "source": "apk_dex",
+      "target": "dex",
+      "type": "represents",
+      "description": "The packaged DEX payload contains DEX bytecode.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0189",
+      "source": "android_runtime",
+      "target": "jvm_classfile",
+      "type": "does_not_normally_execute_directly",
+      "description": "Conventional Android app packaging transforms JVM class files into DEX rather than having ART directly execute class files.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0190",
+      "source": "android_runtime",
+      "target": "java_language",
+      "type": "supports_runtime_for",
+      "description": "ART executes Android Java application code after the build pipeline transforms it to DEX.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0191",
+      "source": "android_runtime",
+      "target": "kotlin",
+      "type": "supports_runtime_for",
+      "description": "ART executes Kotlin application code after compilation and transformation to DEX.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0192",
+      "source": "android_runtime",
+      "target": "native_abi",
+      "type": "must_respect",
+      "description": "Generated code and native interop must obey target ABI requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0193",
+      "source": "android_runtime",
+      "target": "android_app_components",
+      "type": "executes_code_for",
+      "description": "ART executes managed code belonging to framework-managed app components.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0194",
+      "source": "android_runtime",
+      "target": "resources",
+      "type": "does_not_execute_as_code",
+      "description": "Packaged resources are consumed by Android resource/framework systems rather than executed as managed bytecode.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0195",
+      "source": "art_mainline",
+      "target": "android_version",
+      "type": "availability_depends_on",
+      "description": "Independent ART update availability depends on Android release and device support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0196",
+      "source": "userfaultfd",
+      "target": "linux_kernel",
+      "type": "provided_by",
+      "description": "userfaultfd is a Linux kernel system-call interface.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0197",
+      "source": "android_13",
+      "target": "android_runtime",
+      "type": "updates",
+      "description": "Android 13 includes the described ART garbage-collector changes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0198",
+      "source": "android_runtime",
+      "target": "jank",
+      "type": "seeks_to_reduce",
+      "description": "Runtime improvements can reduce UI stutter and missed frame deadlines.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0199",
+      "source": "android_runtime",
+      "target": "app_startup",
+      "type": "seeks_to_improve",
+      "description": "ART compilation and profile mechanisms aim to improve startup performance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0200",
+      "source": "android_runtime",
+      "target": "storage",
+      "type": "seeks_to_reduce_when_possible",
+      "description": "Compressed bytecode and selective compilation can reduce storage overhead.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0201",
+      "source": "android_runtime",
+      "target": "battery",
+      "type": "seeks_to_conserve",
+      "description": "Efficient native execution and runtime policy can reduce energy use.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0202",
+      "source": "android_runtime",
+      "target": "runtime_debugging",
+      "type": "adds_capabilities_for",
+      "description": "The supplied article notes new application debugging features in ART.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0203",
+      "source": "android_runtime",
+      "target": "runtime_profiling",
+      "type": "improves_accuracy_of",
+      "description": "The supplied article notes more accurate high-level application profiling with ART.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0204",
+      "source": "android_runtime",
+      "target": "java_runtime",
+      "type": "uses_library_runtime",
+      "description": "ART executes managed app code with the core libraries available on Android.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0205",
+      "source": "android_runtime",
+      "target": "jni",
+      "type": "interop_boundary",
+      "description": "JNI is the standard interface for managed/native interoperability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0206",
+      "source": "android_runtime",
+      "target": "linux_kernel",
+      "type": "depends_on",
+      "description": "ART relies on kernel services for threads, memory, process execution, and system calls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0207",
+      "source": "android_runtime",
+      "target": "android_package_manager",
+      "type": "integrates_with",
+      "description": "Package installation and maintenance coordinate with ART compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0208",
+      "source": "android_runtime",
+      "target": "android_build_system",
+      "type": "receives_artifacts_from",
+      "description": "The build pipeline transforms source into DEX that ART consumes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0209",
+      "source": "android_build_system",
+      "target": "r8",
+      "type": "may_use",
+      "description": "R8 can shrink and optimize code in the Android build pipeline.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0210",
+      "source": "android_build_system",
+      "target": "d8",
+      "type": "uses",
+      "description": "D8 converts class files to DEX during the build.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0211",
+      "source": "android_runtime",
+      "target": "dex2oat",
+      "type": "uses_compilation_tool",
+      "description": "dex2oat compiles DEX to native code for ART.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0212",
+      "source": "android_runtime",
+      "target": "android_profiles",
+      "type": "adapts_using",
+      "description": "Runtime profile data influences adaptive compilation decisions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0213",
+      "source": "android_runtime",
+      "target": "baseline_profiles",
+      "type": "can_use",
+      "description": "ART can use baseline profile information on supported Android releases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0214",
+      "source": "android_runtime",
+      "target": "cloud_profiles",
+      "type": "can_use",
+      "description": "ART can use cloud profile information in supported distribution flows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0215",
+      "source": "android_runtime",
+      "target": "userfaultfd",
+      "type": "uses_in_gc_implementation",
+      "description": "The supplied source links userfaultfd to the Android 13 GC implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0216",
+      "source": "android_runtime",
+      "target": "art_mainline",
+      "type": "receives_modular_updates_via",
+      "description": "Mainline enables ART updates on supported Android configurations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0217",
+      "source": "android_runtime",
+      "target": "zygote",
+      "type": "integrated_into_process_model",
+      "description": "ART works within Android's Zygote-based application process model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0218",
+      "source": "android_runtime",
+      "target": "android_framework",
+      "type": "executes_framework_callbacks_for",
+      "description": "ART executes managed code invoked by framework components and callbacks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0219",
+      "source": "android_runtime",
+      "target": "android_sdk",
+      "type": "documented_and_targeted_by",
+      "description": "SDK tooling and documentation expose runtime-relevant platform behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0220",
+      "source": "android_runtime",
+      "target": "android_emulator",
+      "type": "available_in",
+      "description": "Android emulator system images include an ART implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0221",
+      "source": "android_runtime",
+      "target": "android_profiler",
+      "type": "observable_through",
+      "description": "Android Studio Profiler helps observe application runtime performance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0222",
+      "source": "android_runtime",
+      "target": "android_debug_bridge",
+      "type": "controlled_and_debugged_through",
+      "description": "ADB supports installation, shell access, logs, and debugging workflows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0223",
+      "source": "android_runtime",
+      "target": "process_isolation",
+      "type": "operates_within",
+      "description": "ART execution occurs within Android's app process and security boundaries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0224",
+      "source": "android_runtime",
+      "target": "runtime_security",
+      "type": "part_of",
+      "description": "ART is one component in Android's broader runtime security model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0225",
+      "source": "android_runtime",
+      "target": "managed_heap",
+      "type": "allocates_managed_objects_in",
+      "description": "Managed objects are allocated in ART's managed heap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0226",
+      "source": "android_runtime",
+      "target": "exception_handling",
+      "type": "supports_language_semantics_for",
+      "description": "ART provides execution support for managed exception semantics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0227",
+      "source": "android_runtime",
+      "target": "reflection",
+      "type": "implements_runtime_introspection_for",
+      "description": "ART supports dynamic class and member inspection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0228",
+      "source": "android_runtime",
+      "target": "method_dispatch",
+      "type": "implements",
+      "description": "ART performs method resolution and dispatch during execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0229",
+      "source": "android_runtime",
+      "target": "class_loader",
+      "type": "loads_code_for",
+      "description": "Class loaders make code available to the runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0230",
+      "source": "android_runtime",
+      "target": "class_linker",
+      "type": "links_loaded_types_with",
+      "description": "The class linker resolves and links loaded classes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0231",
+      "source": "android_runtime",
+      "target": "thread_runtime",
+      "type": "schedules_and_tracks",
+      "description": "ART tracks managed thread states and coordinates runtime operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0232",
+      "source": "android_runtime",
+      "target": "gc",
+      "type": "coordinates_with_threads",
+      "description": "Garbage collection coordinates with executing threads and heap state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0233",
+      "source": "android_runtime",
+      "target": "code_cache",
+      "type": "stores_compiled_output_in",
+      "description": "Compiled code artifacts are cached according to ART's policy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0234",
+      "source": "android_runtime",
+      "target": "dex_cache",
+      "type": "reduces_repeated_resolution_via",
+      "description": "Caches can reduce repeated resolution and lookup overhead.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0235",
+      "source": "android_runtime",
+      "target": "runtime_artifact",
+      "type": "uses",
+      "description": "Compiled artifacts can be consumed by ART on the device.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0236",
+      "source": "android_runtime",
+      "target": "native_execution",
+      "type": "runs_after_compilation_as",
+      "description": "JIT/AOT compiled code executes as native instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0237",
+      "source": "android_runtime",
+      "target": "bytecode_interpretation",
+      "type": "falls_back_or_uses_when_needed",
+      "description": "Interpretation remains an execution mode alongside compilation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0238",
+      "source": "android_runtime",
+      "target": "jit_aot_hybrid",
+      "type": "balances",
+      "description": "The hybrid approach balances adaptive compilation with precompiled hot code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0239",
+      "source": "android_runtime",
+      "target": "performance_tradeoff",
+      "type": "balances_startup_storage_throughput",
+      "description": "Runtime policy balances first-use responsiveness, compiled artifact storage, and steady-state performance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0240",
+      "source": "android_runtime",
+      "target": "backward_compatibility",
+      "type": "preserves_dex_ecosystem",
+      "description": "Retaining DEX input helps maintain compatibility with Android application packages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0241",
+      "source": "android_runtime",
+      "target": "runtime_update",
+      "type": "evolves_through",
+      "description": "ART evolves through Android platform releases and supported module updates.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0242",
+      "source": "android_runtime",
+      "target": "android_version",
+      "type": "version_specific",
+      "description": "Runtime features and policies vary by Android version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0243",
+      "source": "android_runtime",
+      "target": "developer_google",
+      "type": "maintained_by",
+      "description": "Google is listed as ART's developer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0244",
+      "source": "android_runtime",
+      "target": "cpp_language",
+      "type": "implemented_using",
+      "description": "ART is listed as written in C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0245",
+      "source": "android_runtime",
+      "target": "apache_license",
+      "type": "distributed_under",
+      "description": "ART is listed under Apache License 2.0.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0246",
+      "source": "android_runtime",
+      "target": "developer_documentation",
+      "type": "explained_in",
+      "description": "Official AOSP documentation describes ART.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0247",
+      "source": "android_runtime",
+      "target": "source_repository",
+      "type": "implemented_in_repository",
+      "description": "ART implementation source is published in the AOSP repository.",
+      "properties": {}
+    }
+  ]
+}

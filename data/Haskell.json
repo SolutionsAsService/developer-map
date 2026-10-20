@@ -1,0 +1,2670 @@
+{
+  "metadata": {
+    "title": "Haskell Programming Language — Full Detailed Knowledge Graph",
+    "description": "Interconnected, machine-readable explainer covering Haskell language design, functional programming, lazy evaluation, type inference, type classes, algebraic data types, monads and IO, syntax, runtime, compilers, standards, tooling, implementations, applications, history, and related languages.",
+    "schema_version": "1.0.0",
+    "graph_version": "1.0.0",
+    "source_basis": "User-provided Haskell article text, with supplementary general Haskell ecosystem concepts marked in properties where appropriate.",
+    "source_file": "Pasted text(20261019-222856).txt",
+    "primary_subject": "haskell",
+    "language": "en",
+    "entity_count": 169,
+    "relationship_count": 156,
+    "entity_type_count": 80,
+    "relationship_type_count": 91,
+    "format": "JSON knowledge graph"
+  },
+  "entity_types": [
+    "advanced_type_system_feature",
+    "application_domain",
+    "blockchain_platform",
+    "build_tool",
+    "build_workflow",
+    "code_example",
+    "community",
+    "community_event",
+    "compiler",
+    "compiler_backend",
+    "compiler_concept",
+    "compiler_intermediate_representation",
+    "compiler_optimization",
+    "computational_abstraction",
+    "concurrency_abstraction",
+    "conference",
+    "developer_tool",
+    "development_workflow",
+    "documentation_tool",
+    "domain_specific_language",
+    "ecosystem_issue",
+    "effect_representation",
+    "error_category",
+    "error_handling_concept",
+    "evaluation_control",
+    "evaluation_strategy",
+    "functional_concept",
+    "functional_property",
+    "functional_style",
+    "haskell_dialect",
+    "haskell_implementation",
+    "interactive_environment",
+    "interop_mechanism",
+    "io_pattern",
+    "language_design_principle",
+    "language_extension_bundle",
+    "language_extension_system",
+    "language_feature",
+    "language_standard",
+    "language_syntax",
+    "learning_resource",
+    "library",
+    "library_abstraction",
+    "library_type",
+    "operating_system_component",
+    "package_index",
+    "package_repository",
+    "performance_issue",
+    "performance_method",
+    "performance_tooling",
+    "person",
+    "program_entry_point",
+    "programming_concept",
+    "programming_language",
+    "programming_paradigm",
+    "proposed_language_standard",
+    "runtime_capability",
+    "runtime_concept",
+    "runtime_mechanism",
+    "software_application",
+    "software_design_concept",
+    "software_engineering_concept",
+    "software_engineering_method",
+    "software_library",
+    "source_format",
+    "specification_document",
+    "standard_data_structure",
+    "standard_function",
+    "standard_type",
+    "standard_type_class",
+    "standards_group",
+    "static_analysis_tool",
+    "testing_technique",
+    "testing_tool_category",
+    "type_class",
+    "type_system_concept",
+    "type_system_feature",
+    "type_system_mechanism",
+    "type_system_property",
+    "web_framework"
+  ],
+  "relationship_types": [
+    "abstracts_over",
+    "analyzes",
+    "bundles",
+    "can_be_checked_with",
+    "can_be_controlled_by",
+    "can_be_modeled_with",
+    "can_be_written_in",
+    "can_cause",
+    "can_express",
+    "can_use",
+    "combines_with",
+    "commonly_uses",
+    "complements",
+    "defines",
+    "demonstrates",
+    "designed",
+    "detects",
+    "document_types_for",
+    "documents",
+    "draws_from",
+    "embedded_in",
+    "emits",
+    "enables",
+    "enforces_design_separation_of",
+    "evaluates",
+    "explains",
+    "extends",
+    "features",
+    "fits_well_with",
+    "forks",
+    "formed_after",
+    "generalizes_to",
+    "helps_diagnose",
+    "historically_criticized",
+    "illustrated_by",
+    "implemented_in",
+    "implements",
+    "includes",
+    "influenced",
+    "integrates_with",
+    "is",
+    "is_analyzed_by",
+    "is_application_of",
+    "is_associated_with",
+    "is_close_relative_of",
+    "is_conventional_type_of",
+    "is_dialect_of",
+    "is_educational_variant_of",
+    "is_framework_for",
+    "is_instance_of_class",
+    "is_jvm_dialect_of",
+    "is_part_of",
+    "is_related_to",
+    "is_source_format_for",
+    "is_synonym_of",
+    "is_type_class",
+    "largely_replaced_by",
+    "may_target",
+    "may_use",
+    "models",
+    "named_after",
+    "offers_alternative_to",
+    "organizes_code_with",
+    "packages_for",
+    "performs",
+    "preceded",
+    "precedes",
+    "refer_to",
+    "related_language",
+    "represents_work_as",
+    "requires",
+    "separates",
+    "should_obey",
+    "specializes",
+    "specifies",
+    "specifies_language_pragma_for",
+    "standardizes_hierarchical_names_for",
+    "supports",
+    "supports_ecosystem_of",
+    "supports_incremental_use_of",
+    "supports_runtime_for",
+    "teaches",
+    "used_for_prototyping_with",
+    "used_with",
+    "uses",
+    "uses_paradigm",
+    "uses_syntax",
+    "uses_tool",
+    "uses_tooling",
+    "was_planned_as_successor_to",
+    "works_with"
+  ],
+  "entities": [
+    {
+      "id": "haskell",
+      "name": "Haskell",
+      "type": "programming_language",
+      "description": "General-purpose, statically typed, purely functional language with type inference and lazy evaluation; named after logician Haskell Curry.",
+      "properties": {
+        "first_appeared": 1990,
+        "standard": "Haskell 2010",
+        "extensions_common": "GHC extensions",
+        "file_extensions": [
+          ".hs",
+          ".lhs"
+        ],
+        "primary_implementation": "GHC"
+      }
+    },
+    {
+      "id": "functional_programming",
+      "name": "Functional programming",
+      "type": "programming_paradigm",
+      "description": "Organizes programs around function application, composition, immutable values, and transformations.",
+      "properties": {}
+    },
+    {
+      "id": "pure_functional",
+      "name": "Pure functional programming",
+      "type": "programming_paradigm",
+      "description": "Ordinary functions avoid observable side effects; effects are represented explicitly as values and sequenced separately.",
+      "properties": {}
+    },
+    {
+      "id": "declarative",
+      "name": "Declarative programming",
+      "type": "programming_paradigm",
+      "description": "Describes computations in terms of expressions and relationships rather than step-by-step mutation.",
+      "properties": {}
+    },
+    {
+      "id": "static_typing",
+      "name": "Static typing",
+      "type": "type_system_property",
+      "description": "Types are checked before execution, catching many invalid operations early.",
+      "properties": {}
+    },
+    {
+      "id": "strong_typing",
+      "name": "Strong typing",
+      "type": "type_system_property",
+      "description": "Operations are constrained by types and explicit class/instance rules.",
+      "properties": {}
+    },
+    {
+      "id": "type_inference",
+      "name": "Type inference",
+      "type": "type_system_mechanism",
+      "description": "The compiler infers types from expressions and constraints, historically based on Hindley–Milner inference.",
+      "properties": {}
+    },
+    {
+      "id": "lazy_evaluation",
+      "name": "Lazy evaluation",
+      "type": "evaluation_strategy",
+      "description": "Expressions are evaluated when demanded, enabling incremental processing and potentially infinite structures, but complicating resource reasoning.",
+      "properties": {}
+    },
+    {
+      "id": "referential_transparency",
+      "name": "Referential transparency",
+      "type": "functional_property",
+      "description": "A pure expression can be replaced by its value without changing program behavior.",
+      "properties": {}
+    },
+    {
+      "id": "immutability",
+      "name": "Immutability",
+      "type": "programming_concept",
+      "description": "Values are not ordinarily modified in place; transformations construct new values.",
+      "properties": {}
+    },
+    {
+      "id": "higher_order_functions",
+      "name": "Higher-order functions",
+      "type": "functional_concept",
+      "description": "Functions accept other functions as arguments or return functions.",
+      "properties": {}
+    },
+    {
+      "id": "lambda",
+      "name": "Lambda expressions",
+      "type": "language_feature",
+      "description": "Anonymous functions, commonly written with a backslash and parameter list.",
+      "properties": {}
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion",
+      "type": "programming_concept",
+      "description": "A function defines results through smaller or progressing instances of itself.",
+      "properties": {}
+    },
+    {
+      "id": "pattern_matching",
+      "name": "Pattern matching",
+      "type": "language_feature",
+      "description": "Function equations and case alternatives choose behavior by matching data constructors and shapes.",
+      "properties": {}
+    },
+    {
+      "id": "list_comprehension",
+      "name": "List comprehensions",
+      "type": "language_feature",
+      "description": "A concise notation for generating lists from sources with optional filters.",
+      "properties": {}
+    },
+    {
+      "id": "guards",
+      "name": "Guards",
+      "type": "language_feature",
+      "description": "Boolean conditions select which function equation or alternative produces a result.",
+      "properties": {}
+    },
+    {
+      "id": "pointfree",
+      "name": "Point-free style",
+      "type": "functional_style",
+      "description": "Defines functions through composition and combinators without naming all arguments.",
+      "properties": {}
+    },
+    {
+      "id": "composition",
+      "name": "Function composition",
+      "type": "functional_concept",
+      "description": "Combines functions so one function's output feeds another; commonly represented by the dot operator.",
+      "properties": {}
+    },
+    {
+      "id": "currying",
+      "name": "Currying",
+      "type": "functional_concept",
+      "description": "Represents multi-argument functions as a chain of single-argument functions.",
+      "properties": {}
+    },
+    {
+      "id": "partial_application",
+      "name": "Partial application",
+      "type": "functional_concept",
+      "description": "Applying fewer than all arguments creates a function awaiting the remaining arguments.",
+      "properties": {}
+    },
+    {
+      "id": "purity_effects",
+      "name": "Purity and effects separation",
+      "type": "language_design_principle",
+      "description": "Pure computations are separated from effectful actions represented as typed values.",
+      "properties": {}
+    },
+    {
+      "id": "type_classes",
+      "name": "Type classes",
+      "type": "type_system_feature",
+      "description": "Named sets of operations implemented for types through instances, providing principled overloading and abstraction.",
+      "properties": {
+        "proposed_by": "Philip Wadler and Stephen Blott"
+      }
+    },
+    {
+      "id": "polymorphism",
+      "name": "Parametric polymorphism",
+      "type": "type_system_concept",
+      "description": "Functions and data types work uniformly over type variables, subject to constraints.",
+      "properties": {}
+    },
+    {
+      "id": "ad_hoc_polymorphism",
+      "name": "Ad hoc polymorphism",
+      "type": "type_system_concept",
+      "description": "One operation name can have behavior selected by type, notably through type classes.",
+      "properties": {}
+    },
+    {
+      "id": "algebraic_data_types",
+      "name": "Algebraic data types",
+      "type": "type_system_feature",
+      "description": "Types combine alternatives (sum types) and fields (product types), typically declared with data.",
+      "properties": {}
+    },
+    {
+      "id": "newtype",
+      "name": "newtype",
+      "type": "type_system_feature",
+      "description": "Creates a distinct type around one underlying representation, often with little runtime overhead.",
+      "properties": {}
+    },
+    {
+      "id": "type_synonym",
+      "name": "Type synonyms",
+      "type": "type_system_feature",
+      "description": "Aliases an existing type expression without creating a distinct nominal type.",
+      "properties": {}
+    },
+    {
+      "id": "type_families",
+      "name": "Type families",
+      "type": "advanced_type_system_feature",
+      "description": "Type-level functions associating types with other types; available through GHC extensions.",
+      "properties": {}
+    },
+    {
+      "id": "gadt",
+      "name": "Generalized algebraic data types",
+      "type": "advanced_type_system_feature",
+      "description": "Constructors can refine type variables to encode richer invariants.",
+      "properties": {}
+    },
+    {
+      "id": "kind_system",
+      "name": "Kinds",
+      "type": "type_system_concept",
+      "description": "Classifies types and type constructors, including how type-level entities can be applied.",
+      "properties": {}
+    },
+    {
+      "id": "higher_kinded_types",
+      "name": "Higher-kinded types",
+      "type": "type_system_concept",
+      "description": "Abstracts over type constructors, supporting classes such as Functor and Monad.",
+      "properties": {}
+    },
+    {
+      "id": "type_signatures",
+      "name": "Type signatures",
+      "type": "language_feature",
+      "description": "Declarations such as `f :: A -> B` document and constrain inferred types.",
+      "properties": {}
+    },
+    {
+      "id": "type_constraints",
+      "name": "Type constraints",
+      "type": "type_system_concept",
+      "description": "Requirements on type variables, commonly expressed through class constraints such as `Ord a => ...`.",
+      "properties": {}
+    },
+    {
+      "id": "modules",
+      "name": "Modules",
+      "type": "language_feature",
+      "description": "Organize declarations and control imports/exports; hierarchical names such as Data.List are supported.",
+      "properties": {}
+    },
+    {
+      "id": "literate_haskell",
+      "name": "Literate Haskell",
+      "type": "source_format",
+      "description": "The .lhs format interleaves prose and code for documented programs.",
+      "properties": {}
+    },
+    {
+      "id": "do_notation",
+      "name": "do notation",
+      "type": "language_syntax",
+      "description": "Syntactic sugar for sequencing computations in monadic contexts, including IO.",
+      "properties": {}
+    },
+    {
+      "id": "monads",
+      "name": "Monad",
+      "type": "type_class",
+      "description": "An abstraction for sequencing context-bearing computations; used for IO, errors, state, parsing, nondeterminism, and other effects.",
+      "properties": {}
+    },
+    {
+      "id": "functor",
+      "name": "Functor",
+      "type": "type_class",
+      "description": "Maps a function over values inside a structure while preserving its shape.",
+      "properties": {}
+    },
+    {
+      "id": "applicative",
+      "name": "Applicative",
+      "type": "type_class",
+      "description": "Models function application in a context and is more expressive than Functor but generally less sequencing-dependent than Monad.",
+      "properties": {}
+    },
+    {
+      "id": "foldable",
+      "name": "Foldable",
+      "type": "type_class",
+      "description": "Abstracts over structures that can be reduced to an accumulated value.",
+      "properties": {}
+    },
+    {
+      "id": "traversable",
+      "name": "Traversable",
+      "type": "type_class",
+      "description": "Abstracts traversal of a structure while sequencing effects and rebuilding the structure.",
+      "properties": {}
+    },
+    {
+      "id": "io_type",
+      "name": "IO",
+      "type": "effect_representation",
+      "description": "Represents an effectful computation such as reading input or writing output; pure code can return an IO action.",
+      "properties": {}
+    },
+    {
+      "id": "seq",
+      "name": "seq",
+      "type": "evaluation_control",
+      "description": "Creates a demand dependency between values and can help control laziness and memory use.",
+      "properties": {}
+    },
+    {
+      "id": "maybe",
+      "name": "Maybe",
+      "type": "standard_type",
+      "description": "Represents an optional value with Nothing or Just value.",
+      "properties": {}
+    },
+    {
+      "id": "either",
+      "name": "Either",
+      "type": "standard_type",
+      "description": "A sum type commonly used to represent failure or success explicitly with Left and Right.",
+      "properties": {}
+    },
+    {
+      "id": "list",
+      "name": "List",
+      "type": "standard_data_structure",
+      "description": "Immutable lazy linked sequence with empty and head/tail constructors.",
+      "properties": {}
+    },
+    {
+      "id": "tuple",
+      "name": "Tuple",
+      "type": "standard_data_structure",
+      "description": "Fixed-size product grouping values that may have different types.",
+      "properties": {}
+    },
+    {
+      "id": "eq",
+      "name": "Eq",
+      "type": "standard_type_class",
+      "description": "Type class for equality and inequality.",
+      "properties": {}
+    },
+    {
+      "id": "ord",
+      "name": "Ord",
+      "type": "standard_type_class",
+      "description": "Type class for ordering comparisons.",
+      "properties": {}
+    },
+    {
+      "id": "show",
+      "name": "Show",
+      "type": "standard_type_class",
+      "description": "Type class for converting values to human-readable text.",
+      "properties": {}
+    },
+    {
+      "id": "num",
+      "name": "Num",
+      "type": "standard_type_class",
+      "description": "Type class for common numeric operations.",
+      "properties": {}
+    },
+    {
+      "id": "integral",
+      "name": "Integral",
+      "type": "standard_type_class",
+      "description": "Type class for integral numeric types and operations.",
+      "properties": {}
+    },
+    {
+      "id": "integer",
+      "name": "Integer",
+      "type": "standard_type",
+      "description": "Arbitrary-precision integer type.",
+      "properties": {}
+    },
+    {
+      "id": "int",
+      "name": "Int",
+      "type": "standard_type",
+      "description": "Machine-sized signed integer with a bounded range.",
+      "properties": {}
+    },
+    {
+      "id": "string",
+      "name": "String",
+      "type": "standard_type",
+      "description": "Conventionally a synonym for a list of characters.",
+      "properties": {}
+    },
+    {
+      "id": "text",
+      "name": "Text",
+      "type": "library_type",
+      "description": "Unicode text representation generally more efficient than lists of characters for text processing.",
+      "properties": {}
+    },
+    {
+      "id": "bytestring",
+      "name": "ByteString",
+      "type": "library_type",
+      "description": "Byte-oriented sequence for efficient binary data handling.",
+      "properties": {}
+    },
+    {
+      "id": "concurrency",
+      "name": "Concurrency",
+      "type": "runtime_capability",
+      "description": "GHC supports lightweight threads and concurrent programs.",
+      "properties": {}
+    },
+    {
+      "id": "parallelism",
+      "name": "Parallelism",
+      "type": "runtime_capability",
+      "description": "Suitable programs can execute computations across multiple CPU cores.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collection",
+      "name": "Garbage collection",
+      "type": "runtime_mechanism",
+      "description": "Runtime memory management reclaims unreachable values; laziness and retained thunks affect residency.",
+      "properties": {}
+    },
+    {
+      "id": "thunks",
+      "name": "Thunks",
+      "type": "runtime_concept",
+      "description": "Deferred computations evaluated when demanded; retained thunks can contribute to space leaks.",
+      "properties": {}
+    },
+    {
+      "id": "space_leak",
+      "name": "Space leak",
+      "type": "performance_issue",
+      "description": "Unexpected memory retention, often caused by lazy computations retaining unevaluated work or references.",
+      "properties": {}
+    },
+    {
+      "id": "optimization",
+      "name": "Compiler optimization",
+      "type": "compiler_concept",
+      "description": "Transformations such as inlining, specialization, strictness analysis, and fusion can improve generated code.",
+      "properties": {}
+    },
+    {
+      "id": "fusion",
+      "name": "Fusion / deforestation",
+      "type": "compiler_optimization",
+      "description": "Removes intermediate data structures between producers and consumers when safe and profitable.",
+      "properties": {}
+    },
+    {
+      "id": "strictness_analysis",
+      "name": "Strictness analysis",
+      "type": "compiler_optimization",
+      "description": "Estimates which arguments must be evaluated and can enable efficient code generation.",
+      "properties": {}
+    },
+    {
+      "id": "ghc",
+      "name": "Glasgow Haskell Compiler (GHC)",
+      "type": "compiler",
+      "description": "Main Haskell implementation, compiler and interpreter; supports native code, multiple platforms, and many type-system extensions.",
+      "properties": {}
+    },
+    {
+      "id": "ghci",
+      "name": "GHCi",
+      "type": "interactive_environment",
+      "description": "Interactive environment for evaluating expressions, loading modules, and experimenting with code.",
+      "properties": {}
+    },
+    {
+      "id": "cabal",
+      "name": "Cabal",
+      "type": "build_tool",
+      "description": "Build system and package format for Haskell libraries and programs.",
+      "properties": {}
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "type": "build_tool",
+      "description": "Build tool associated with curated package sets and reproducible Haskell workflows.",
+      "properties": {}
+    },
+    {
+      "id": "hackage",
+      "name": "Hackage",
+      "type": "package_repository",
+      "description": "Online package repository for Haskell libraries and tools.",
+      "properties": {}
+    },
+    {
+      "id": "stackage",
+      "name": "Stackage",
+      "type": "package_index",
+      "description": "Curated package snapshots used to improve dependency consistency and reproducibility.",
+      "properties": {}
+    },
+    {
+      "id": "ffi",
+      "name": "Foreign function interface",
+      "type": "interop_mechanism",
+      "description": "Allows Haskell bindings to foreign code; the Haskell 2010 Report specifies C bindings.",
+      "properties": {}
+    },
+    {
+      "id": "ghc_extensions",
+      "name": "GHC extensions",
+      "type": "language_extension_system",
+      "description": "Extensions expand the language beyond the formal report and can be selected with LANGUAGE pragmas.",
+      "properties": {}
+    },
+    {
+      "id": "haskell98",
+      "name": "Haskell 98",
+      "type": "language_standard",
+      "description": "Stable minimal portable language and library standard; originally published in 1999 and revised in 2003.",
+      "properties": {}
+    },
+    {
+      "id": "haskell2010",
+      "name": "Haskell 2010",
+      "type": "language_standard",
+      "description": "Formal language report published in July 2010, including hierarchical module names, FFI, pattern guards, inference changes, and LANGUAGE pragma specification.",
+      "properties": {}
+    },
+    {
+      "id": "ghc2021",
+      "name": "GHC2021",
+      "type": "language_extension_bundle",
+      "description": "Bundle of widely used GHC extensions released with GHC 9.2.1 in October 2021; not a formal language report.",
+      "properties": {}
+    },
+    {
+      "id": "haskell2020",
+      "name": "Haskell 2020",
+      "type": "proposed_language_standard",
+      "description": "Planned successor standard mentioned by the supplied source; the source does not establish it as a published formal report.",
+      "properties": {}
+    },
+    {
+      "id": "haskell_curry",
+      "name": "Haskell Curry",
+      "type": "person",
+      "description": "Logician after whom Haskell is named.",
+      "properties": {}
+    },
+    {
+      "id": "committee",
+      "name": "Haskell committee",
+      "type": "standards_group",
+      "description": "Committee formed after FPCA '87 to define an open common non-strict purely functional language.",
+      "properties": {}
+    },
+    {
+      "id": "fpca87",
+      "name": "FPCA '87",
+      "type": "conference",
+      "description": "Functional Programming Languages and Computer Architecture conference where consensus emerged to form the Haskell committee.",
+      "properties": {
+        "year": 1987
+      }
+    },
+    {
+      "id": "miranda",
+      "name": "Miranda",
+      "type": "programming_language",
+      "description": "Proprietary lazy functional language whose popularity helped motivate an open common standard.",
+      "properties": {
+        "released": 1985
+      }
+    },
+    {
+      "id": "clean",
+      "name": "Clean",
+      "type": "programming_language",
+      "description": "Close relative of Haskell; uses uniqueness types for I/O and side effects rather than monads.",
+      "properties": {}
+    },
+    {
+      "id": "agda",
+      "name": "Agda",
+      "type": "programming_language",
+      "description": "Functional language with dependent types and proof-assistant use cases; implemented in Haskell according to the supplied source.",
+      "properties": {}
+    },
+    {
+      "id": "elm",
+      "name": "Elm",
+      "type": "programming_language",
+      "description": "Haskell-influenced functional language for web front-end applications with a narrower type-class model.",
+      "properties": {}
+    },
+    {
+      "id": "idris",
+      "name": "Idris",
+      "type": "programming_language",
+      "description": "General-purpose functional language with dependent types.",
+      "properties": {}
+    },
+    {
+      "id": "purescript",
+      "name": "PureScript",
+      "type": "programming_language",
+      "description": "Haskell-inspired functional language that transpiles to JavaScript.",
+      "properties": {}
+    },
+    {
+      "id": "curry_lang",
+      "name": "Curry",
+      "type": "programming_language",
+      "description": "Functional/logic language based on Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "bluespec",
+      "name": "Bluespec SystemVerilog",
+      "type": "domain_specific_language",
+      "description": "Haskell-derived hardware description language extension used for electronics design.",
+      "properties": {}
+    },
+    {
+      "id": "cryptol",
+      "name": "Cryptol",
+      "type": "domain_specific_language",
+      "description": "Language and toolchain for developing and verifying cryptographic algorithms, implemented in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "pandoc",
+      "name": "Pandoc",
+      "type": "software_application",
+      "description": "Tool for converting one markup or document format into another.",
+      "properties": {}
+    },
+    {
+      "id": "xmonad",
+      "name": "xmonad",
+      "type": "software_application",
+      "description": "Window manager for the X Window System written fully in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "darcs",
+      "name": "Darcs",
+      "type": "software_application",
+      "description": "Patch-oriented revision control system written in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "git_annex",
+      "name": "git-annex",
+      "type": "software_application",
+      "description": "Tool for managing large data files under Git version control and supporting distributed synchronization.",
+      "properties": {}
+    },
+    {
+      "id": "tidalcycles",
+      "name": "TidalCycles",
+      "type": "software_application",
+      "description": "Live-coding environment for musical patterns embedded in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "cardano",
+      "name": "Cardano",
+      "type": "blockchain_platform",
+      "description": "Blockchain platform whose node implementation is described by the supplied source as Haskell-based.",
+      "properties": {}
+    },
+    {
+      "id": "sel4",
+      "name": "seL4",
+      "type": "operating_system_component",
+      "description": "Formally verified microkernel project that used Haskell for prototyping and an executable specification before refinement to C.",
+      "properties": {}
+    },
+    {
+      "id": "semantic",
+      "name": "Semantic",
+      "type": "software_library",
+      "description": "Haskell library for analyzing, diffing, and interpreting source code across programming languages.",
+      "properties": {}
+    },
+    {
+      "id": "haxl",
+      "name": "Haxl",
+      "type": "software_library",
+      "description": "Haskell data-access library associated with Facebook and concurrent data fetching.",
+      "properties": {}
+    },
+    {
+      "id": "yesod",
+      "name": "Yesod",
+      "type": "web_framework",
+      "description": "Web framework for Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "servant",
+      "name": "Servant",
+      "type": "web_framework",
+      "description": "Haskell web/API framework for describing APIs with types.",
+      "properties": {}
+    },
+    {
+      "id": "snap",
+      "name": "Snap",
+      "type": "web_framework",
+      "description": "Web framework written for Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "ihp",
+      "name": "IHP",
+      "type": "web_framework",
+      "description": "Haskell web framework listed in the supplied source.",
+      "properties": {}
+    },
+    {
+      "id": "helium",
+      "name": "Helium",
+      "type": "haskell_dialect",
+      "description": "Educational Haskell dialect focused on clearer error messages, disabling type classes by default.",
+      "properties": {}
+    },
+    {
+      "id": "gofer",
+      "name": "Gofer",
+      "type": "haskell_dialect",
+      "description": "Educational Haskell-like dialect developed by Mark Jones, known for constructor classes.",
+      "properties": {}
+    },
+    {
+      "id": "hugs",
+      "name": "Hugs",
+      "type": "haskell_implementation",
+      "description": "Historical bytecode interpreter once widely used alongside GHC, now largely replaced by GHCi.",
+      "properties": {}
+    },
+    {
+      "id": "jhc",
+      "name": "Jhc",
+      "type": "haskell_implementation",
+      "description": "Compiler emphasizing speed, efficiency, and program transformation research.",
+      "properties": {}
+    },
+    {
+      "id": "ajhc",
+      "name": "Ajhc",
+      "type": "haskell_implementation",
+      "description": "Fork of Jhc.",
+      "properties": {}
+    },
+    {
+      "id": "uhc",
+      "name": "Utrecht Haskell Compiler",
+      "type": "haskell_implementation",
+      "description": "Research-oriented implementation supporting most Haskell 98 features and experimental extensions.",
+      "properties": {}
+    },
+    {
+      "id": "nhc98",
+      "name": "nhc98",
+      "type": "haskell_implementation",
+      "description": "Historical bytecode compiler emphasizing low memory use.",
+      "properties": {}
+    },
+    {
+      "id": "yhc",
+      "name": "York Haskell Compiler",
+      "type": "haskell_implementation",
+      "description": "Historical nhc98 fork with goals including portability and a JavaScript backend.",
+      "properties": {}
+    },
+    {
+      "id": "eta",
+      "name": "Eta",
+      "type": "haskell_dialect",
+      "description": "Haskell dialect targeting the Java Virtual Machine.",
+      "properties": {}
+    },
+    {
+      "id": "frege",
+      "name": "Frege",
+      "type": "haskell_dialect",
+      "description": "Haskell-inspired dialect targeting the Java Virtual Machine.",
+      "properties": {}
+    },
+    {
+      "id": "disciple",
+      "name": "Disciple",
+      "type": "haskell_dialect",
+      "description": "Strict-by-default Haskell dialect with explicit laziness and a type-and-effect system.",
+      "properties": {}
+    },
+    {
+      "id": "community",
+      "name": "Haskell community",
+      "type": "community",
+      "description": "Community organizations, libraries, conferences, workshops, and hackathons sustain language development.",
+      "properties": {}
+    },
+    {
+      "id": "haskell_symposium",
+      "name": "Haskell Symposium",
+      "type": "conference",
+      "description": "Research and community event associated with ICFP.",
+      "properties": {}
+    },
+    {
+      "id": "zurihac",
+      "name": "ZuriHac",
+      "type": "community_event",
+      "description": "Haskell community event and hackathon in Zurich.",
+      "properties": {}
+    },
+    {
+      "id": "icfp",
+      "name": "International Conference on Functional Programming",
+      "type": "conference",
+      "description": "Conference associated with Haskell-related workshops and symposiums.",
+      "properties": {}
+    },
+    {
+      "id": "typeclass_laws",
+      "name": "Type-class laws",
+      "type": "software_design_concept",
+      "description": "Algebraic properties expected of well-designed class instances; laws are documented but not generally proved by the compiler.",
+      "properties": {}
+    },
+    {
+      "id": "property_testing",
+      "name": "Property-based testing",
+      "type": "testing_technique",
+      "description": "Tests general properties over generated inputs; useful for checking class laws and functional code.",
+      "properties": {}
+    },
+    {
+      "id": "formal_methods",
+      "name": "Formal methods",
+      "type": "software_engineering_method",
+      "description": "Mathematical specification and verification; Haskell can act as a high-level executable model.",
+      "properties": {}
+    },
+    {
+      "id": "web_dev",
+      "name": "Web development",
+      "type": "application_domain",
+      "description": "Haskell frameworks support web applications and typed APIs.",
+      "properties": {}
+    },
+    {
+      "id": "cryptography",
+      "name": "Cryptography",
+      "type": "application_domain",
+      "description": "Haskell and Haskell-based tools have been used for cryptographic development and verification.",
+      "properties": {}
+    },
+    {
+      "id": "finance",
+      "name": "Financial modeling",
+      "type": "application_domain",
+      "description": "The supplied source reports Haskell-like technology used in financial modeling.",
+      "properties": {}
+    },
+    {
+      "id": "systems",
+      "name": "Systems software",
+      "type": "application_domain",
+      "description": "Haskell can be used for system tools and as a prototyping language for low-level systems.",
+      "properties": {}
+    },
+    {
+      "id": "data_processing",
+      "name": "Data processing",
+      "type": "application_domain",
+      "description": "Functional transformations, folds, lists, and text/byte libraries support data processing.",
+      "properties": {}
+    },
+    {
+      "id": "source_analysis",
+      "name": "Source-code analysis",
+      "type": "application_domain",
+      "description": "Haskell has been used to implement source analyzers and developer tools.",
+      "properties": {}
+    },
+    {
+      "id": "hello_world",
+      "name": "Hello World example",
+      "type": "code_example",
+      "description": "Minimal program: `main :: IO (); main = putStrLn \"Hello, World!\"`.",
+      "properties": {
+        "code": "main :: IO ()\nmain = putStrLn \"Hello, World!\""
+      }
+    },
+    {
+      "id": "factorial",
+      "name": "Factorial example",
+      "type": "code_example",
+      "description": "Factorial illustrates recursion, pattern matching, guards, product, folds, point-free style, and fixed-point combinators.",
+      "properties": {
+        "code": "factorial :: (Integral a) => a -> a\nfactorial 0 = 1\nfactorial n = n * factorial (n - 1)"
+      }
+    },
+    {
+      "id": "quicksort",
+      "name": "Quicksort example",
+      "type": "code_example",
+      "description": "List quicksort illustrates pattern matching, Ord constraints, list comprehensions, recursion, and concatenation.",
+      "properties": {
+        "code": "quickSort :: Ord a => [a] -> [a]\nquickSort [] = []\nquickSort (x:xs) = quickSort [a | a <- xs, a < x] ++ [x] ++ quickSort [a | a <- xs, a >= x]"
+      }
+    },
+    {
+      "id": "haskell_report",
+      "name": "Haskell 2010 Language Report",
+      "type": "specification_document",
+      "description": "Formal report describing the Haskell 2010 language and library baseline.",
+      "properties": {}
+    },
+    {
+      "id": "real_world_haskell",
+      "name": "Real World Haskell",
+      "type": "learning_resource",
+      "description": "Practical Haskell book listed in the supplied source.",
+      "properties": {}
+    },
+    {
+      "id": "typeclassopedia",
+      "name": "The Typeclassopedia",
+      "type": "learning_resource",
+      "description": "Learning/reference resource focused on Haskell type classes.",
+      "properties": {}
+    },
+    {
+      "id": "cabal_hell",
+      "name": "Cabal hell",
+      "type": "ecosystem_issue",
+      "description": "Historical nickname for dependency-resolution problems involving library versions; Stack and newer Cabal workflows responded to this problem.",
+      "properties": {}
+    },
+    {
+      "id": "nix",
+      "name": "Nix-style build approach",
+      "type": "build_workflow",
+      "description": "Build workflow idea associated with pinning inputs and reproducible dependencies; the source says Cabal borrowed ideas from Nix.",
+      "properties": {}
+    },
+    {
+      "id": "ghc_native",
+      "name": "GHC native code generation",
+      "type": "compiler_backend",
+      "description": "GHC compiles to native code on many processor architectures.",
+      "properties": {}
+    },
+    {
+      "id": "llvm",
+      "name": "LLVM backend",
+      "type": "compiler_backend",
+      "description": "GHC can use LLVM as a code-generation backend.",
+      "properties": {}
+    },
+    {
+      "id": "cmm",
+      "name": "C--",
+      "type": "compiler_intermediate_representation",
+      "description": "Intermediate representation used by GHC in its compilation pipeline.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_pipeline",
+      "name": "Compiler pipeline",
+      "type": "compiler_concept",
+      "description": "Compilation involves parsing, typechecking, transformations, optimization, and backend code generation.",
+      "properties": {}
+    },
+    {
+      "id": "type_error",
+      "name": "Type error",
+      "type": "error_category",
+      "description": "A mismatch among inferred and required types that prevents successful typechecking.",
+      "properties": {}
+    },
+    {
+      "id": "thunk_space",
+      "name": "Space reasoning",
+      "type": "software_engineering_concept",
+      "description": "Reasoning about retained values, strictness, allocation, and memory use is important in lazy programs.",
+      "properties": {}
+    },
+    {
+      "id": "concurrent_threads",
+      "name": "GHC lightweight threads",
+      "type": "runtime_mechanism",
+      "description": "GHC runtime supports lightweight threads and schedules concurrent work across CPU cores.",
+      "properties": {}
+    },
+    {
+      "id": "state_monad",
+      "name": "State monad",
+      "type": "computational_abstraction",
+      "description": "Models computations that thread state explicitly through a sequence.",
+      "properties": {}
+    },
+    {
+      "id": "parser_monad",
+      "name": "Parser monad",
+      "type": "computational_abstraction",
+      "description": "Models parser computations and sequencing based on parsed results.",
+      "properties": {}
+    },
+    {
+      "id": "nondeterminism",
+      "name": "Nondeterminism",
+      "type": "computational_abstraction",
+      "description": "Models computations with multiple possible results or branches.",
+      "properties": {}
+    },
+    {
+      "id": "stm",
+      "name": "Software transactional memory",
+      "type": "concurrency_abstraction",
+      "description": "Transactional abstraction for coordinating concurrent state updates.",
+      "properties": {}
+    },
+    {
+      "id": "resource_safety",
+      "name": "Resource safety",
+      "type": "software_engineering_concept",
+      "description": "Ensuring files, sockets, and other resources are reliably released in effectful code.",
+      "properties": {}
+    },
+    {
+      "id": "bracket",
+      "name": "bracket pattern",
+      "type": "io_pattern",
+      "description": "Resource pattern ensuring cleanup runs after use, including on exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "haddock",
+      "name": "Haddock",
+      "type": "documentation_tool",
+      "description": "API documentation generator commonly used for Haskell projects.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "hlint",
+      "name": "HLint",
+      "type": "static_analysis_tool",
+      "description": "Tool suggesting simplifications and style improvements in Haskell code.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "haskell_language_server",
+      "name": "Haskell Language Server",
+      "type": "developer_tool",
+      "description": "Editor integration for diagnostics, navigation, and code actions.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "repl",
+      "name": "REPL-driven development",
+      "type": "development_workflow",
+      "description": "Interactive development workflow based on loading modules and evaluating expressions in GHCi.",
+      "properties": {}
+    },
+    {
+      "id": "quickcheck",
+      "name": "QuickCheck-style testing",
+      "type": "testing_tool_category",
+      "description": "Property testing generates inputs to test general program properties.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "higher_rank_types",
+      "name": "Rank-n types",
+      "type": "advanced_type_system_feature",
+      "description": "GHC extension allowing polymorphic types in additional positions.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "existential_types",
+      "name": "Existential types",
+      "type": "advanced_type_system_feature",
+      "description": "Type abstraction pattern that hides a type variable behind a constructor or interface.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "deriving",
+      "name": "Deriving clauses",
+      "type": "language_feature",
+      "description": "Requests compiler-generated type-class instances for supported types.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "record_syntax",
+      "name": "Record syntax",
+      "type": "language_feature",
+      "description": "Named data-constructor fields improve readability and field access.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "monad_transformers",
+      "name": "Monad transformers",
+      "type": "library_abstraction",
+      "description": "Compose effect abstractions such as state, errors, reader environments, and IO.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "mvar",
+      "name": "MVar",
+      "type": "concurrency_abstraction",
+      "description": "Synchronization variable used for communication and coordination in GHC concurrency.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "async",
+      "name": "async package",
+      "type": "library",
+      "description": "Library abstractions for asynchronous computations and concurrency management.",
+      "properties": {
+        "source_basis": "General ecosystem addition"
+      }
+    },
+    {
+      "id": "profiling",
+      "name": "Profiling",
+      "type": "performance_tooling",
+      "description": "Measures time and memory behavior to identify bottlenecks and space leaks.",
+      "properties": {}
+    },
+    {
+      "id": "benchmarking",
+      "name": "Benchmarking",
+      "type": "performance_method",
+      "description": "Measures program performance under controlled workloads.",
+      "properties": {}
+    },
+    {
+      "id": "main",
+      "name": "main",
+      "type": "program_entry_point",
+      "description": "Conventional program entry point, commonly of type IO ().",
+      "properties": {}
+    },
+    {
+      "id": "map",
+      "name": "map",
+      "type": "standard_function",
+      "description": "Applies a function to each list element.",
+      "properties": {}
+    },
+    {
+      "id": "filter",
+      "name": "filter",
+      "type": "standard_function",
+      "description": "Keeps elements satisfying a predicate.",
+      "properties": {}
+    },
+    {
+      "id": "foldr",
+      "name": "foldr",
+      "type": "standard_function",
+      "description": "Folds a list from the right using a combining function and seed.",
+      "properties": {}
+    },
+    {
+      "id": "foldl",
+      "name": "foldl",
+      "type": "standard_function",
+      "description": "Folds a list from the left; strict variants can help avoid accumulator thunks.",
+      "properties": {}
+    },
+    {
+      "id": "product",
+      "name": "product",
+      "type": "standard_function",
+      "description": "Multiplies elements in a foldable structure.",
+      "properties": {}
+    },
+    {
+      "id": "maybe_type",
+      "name": "Maybe result",
+      "type": "error_handling_concept",
+      "description": "Explicit representation of optional results instead of exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "either_type",
+      "name": "Either result",
+      "type": "error_handling_concept",
+      "description": "Explicit representation of success/failure results.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "haskell",
+      "target": "functional_programming",
+      "type": "uses_paradigm",
+      "description": "Haskell centers computation on functions and expressions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "haskell",
+      "target": "pure_functional",
+      "type": "is",
+      "description": "Haskell is classified as purely functional.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "pure_functional",
+      "target": "referential_transparency",
+      "type": "supports",
+      "description": "Pure expressions can be reasoned about by substitution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "pure_functional",
+      "target": "immutability",
+      "type": "commonly_uses",
+      "description": "Immutable values help preserve predictable behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "pure_functional",
+      "target": "purity_effects",
+      "type": "separates",
+      "description": "Effects are represented separately from ordinary pure functions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "haskell",
+      "target": "static_typing",
+      "type": "uses",
+      "description": "Haskell has a static type system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "haskell",
+      "target": "strong_typing",
+      "type": "uses",
+      "description": "Types constrain which operations are valid.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "haskell",
+      "target": "type_inference",
+      "type": "supports",
+      "description": "Many type signatures can be inferred.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "type_inference",
+      "target": "type_error",
+      "type": "detects",
+      "description": "Inconsistent type constraints cause type errors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "haskell",
+      "target": "lazy_evaluation",
+      "type": "uses",
+      "description": "Lazy evaluation is a defining Haskell characteristic.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "lazy_evaluation",
+      "target": "thunks",
+      "type": "represents_work_as",
+      "description": "Deferred computations are represented as thunks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "thunks",
+      "target": "space_leak",
+      "type": "can_cause",
+      "description": "Retained thunks can cause excessive memory retention.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "space_leak",
+      "target": "thunk_space",
+      "type": "requires",
+      "description": "Diagnosing space leaks requires reasoning about retained values and strictness.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "lazy_evaluation",
+      "target": "strictness_analysis",
+      "type": "is_analyzed_by",
+      "description": "Compiler strictness analysis estimates demanded values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "lazy_evaluation",
+      "target": "seq",
+      "type": "can_be_controlled_by",
+      "description": "seq can impose a demand dependency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "lazy_evaluation",
+      "target": "list",
+      "type": "supports_incremental_use_of",
+      "description": "Lazy lists can produce values on demand.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "lazy_evaluation",
+      "target": "higher_order_functions",
+      "type": "combines_with",
+      "description": "Higher-order list operations can process lazy structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "haskell",
+      "target": "lambda",
+      "type": "supports",
+      "description": "Lambda expressions are part of the language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "haskell",
+      "target": "pattern_matching",
+      "type": "supports",
+      "description": "Pattern matching is a core feature.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "haskell",
+      "target": "list_comprehension",
+      "type": "supports",
+      "description": "List comprehensions generate and filter lists.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "haskell",
+      "target": "guards",
+      "type": "supports",
+      "description": "Guards select equations by conditions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "haskell",
+      "target": "recursion",
+      "type": "commonly_uses",
+      "description": "Recursive definitions are common.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "composition",
+      "target": "pointfree",
+      "type": "enables",
+      "description": "Composition enables point-free definitions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "currying",
+      "target": "partial_application",
+      "type": "enables",
+      "description": "Curried functions support partial application.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "higher_order_functions",
+      "target": "map",
+      "type": "illustrated_by",
+      "description": "map takes a function and applies it to every element.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "higher_order_functions",
+      "target": "filter",
+      "type": "illustrated_by",
+      "description": "filter takes a predicate.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "higher_order_functions",
+      "target": "foldr",
+      "type": "illustrated_by",
+      "description": "foldr abstracts recursive reduction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "higher_order_functions",
+      "target": "foldl",
+      "type": "illustrated_by",
+      "description": "foldl abstracts left-to-right reduction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "haskell",
+      "target": "type_classes",
+      "type": "features",
+      "description": "Type classes provide principled operator overloading.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "type_classes",
+      "target": "ad_hoc_polymorphism",
+      "type": "implements",
+      "description": "Type classes implement ad hoc polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "type_classes",
+      "target": "typeclass_laws",
+      "type": "should_obey",
+      "description": "Instances are expected to satisfy documented algebraic laws.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "typeclass_laws",
+      "target": "property_testing",
+      "type": "can_be_checked_with",
+      "description": "Property tests can check algebraic laws.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "haskell",
+      "target": "polymorphism",
+      "type": "supports",
+      "description": "Polymorphic functions abstract over types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "type_signatures",
+      "target": "type_constraints",
+      "type": "can_express",
+      "description": "Signatures can include class constraints.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "type_constraints",
+      "target": "type_classes",
+      "type": "refer_to",
+      "description": "Constraints request class operations for a type.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "haskell",
+      "target": "algebraic_data_types",
+      "type": "supports",
+      "description": "Algebraic data types express sum and product types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "newtype",
+      "target": "algebraic_data_types",
+      "type": "is_related_to",
+      "description": "newtype introduces a distinct wrapper type.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "type_synonym",
+      "target": "algebraic_data_types",
+      "type": "complements",
+      "description": "A synonym names a type expression but does not create a distinct type.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "gadt",
+      "target": "algebraic_data_types",
+      "type": "extends",
+      "description": "GADTs can refine types through constructors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "type_families",
+      "target": "kind_system",
+      "type": "uses",
+      "description": "Type families operate over types classified by kinds.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "higher_kinded_types",
+      "target": "functor",
+      "type": "enables",
+      "description": "Higher-kinded abstractions support classes over type constructors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "functor",
+      "target": "applicative",
+      "type": "generalizes_to",
+      "description": "Applicative adds contextual function application.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "applicative",
+      "target": "monads",
+      "type": "generalizes_to",
+      "description": "Monad supports sequencing dependent computations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "monads",
+      "target": "do_notation",
+      "type": "uses_syntax",
+      "description": "do notation expresses monadic sequencing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "monads",
+      "target": "io_type",
+      "type": "models",
+      "description": "IO actions are sequenced through monadic operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "haskell",
+      "target": "purity_effects",
+      "type": "enforces_design_separation_of",
+      "description": "Pure functions can return effectful actions without executing them.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "io_type",
+      "target": "main",
+      "type": "is_conventional_type_of",
+      "description": "The program entry point commonly has type IO ().",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "haskell",
+      "target": "modules",
+      "type": "organizes_code_with",
+      "description": "Modules organize declarations and imports.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "haskell2010",
+      "target": "modules",
+      "type": "standardizes_hierarchical_names_for",
+      "description": "Hierarchical module names such as Data.List are standardized.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "haskell2010",
+      "target": "ffi",
+      "type": "specifies",
+      "description": "The report specifies C foreign-function bindings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "ghc_extensions",
+      "target": "haskell",
+      "type": "extends",
+      "description": "Extensions add features beyond the formal report.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "haskell2010",
+      "target": "ghc_extensions",
+      "type": "specifies_language_pragma_for",
+      "description": "LANGUAGE pragmas can select extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "haskell98",
+      "target": "haskell2010",
+      "type": "precedes",
+      "description": "Haskell 2010 succeeds Haskell 98.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "ghc2021",
+      "target": "ghc_extensions",
+      "type": "bundles",
+      "description": "GHC2021 bundles widely used extensions but is not a formal standard.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "haskell2020",
+      "target": "haskell2010",
+      "type": "was_planned_as_successor_to",
+      "description": "The supplied source describes Haskell 2020 as a plan.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "haskell",
+      "target": "haskell_curry",
+      "type": "named_after",
+      "description": "The language is named after logician Haskell Curry.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "committee",
+      "target": "fpca87",
+      "type": "formed_after",
+      "description": "The committee followed consensus at FPCA '87.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "committee",
+      "target": "haskell",
+      "type": "designed",
+      "description": "The committee worked toward an open common standard.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "miranda",
+      "target": "haskell",
+      "type": "influenced",
+      "description": "Miranda helped motivate a common open standard for lazy functional languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "clean",
+      "target": "haskell",
+      "type": "is_close_relative_of",
+      "description": "Clean differs notably in its use of uniqueness types for effects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "haskell",
+      "target": "agda",
+      "type": "influenced",
+      "description": "Agda is among languages influenced by Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "haskell",
+      "target": "elm",
+      "type": "influenced",
+      "description": "Elm draws on Haskell's functional design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "haskell",
+      "target": "idris",
+      "type": "influenced",
+      "description": "Idris is a Haskell-influenced dependently typed language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "haskell",
+      "target": "purescript",
+      "type": "influenced",
+      "description": "PureScript is Haskell-inspired and targets JavaScript.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "haskell",
+      "target": "curry_lang",
+      "type": "related_language",
+      "description": "Curry is based on Haskell and combines functional and logic programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "bluespec",
+      "target": "haskell",
+      "type": "draws_from",
+      "description": "Bluespec uses Haskell-derived concepts for hardware description.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "cryptol",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "Cryptol is implemented in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "pandoc",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "Pandoc is implemented in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "xmonad",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "xmonad is written fully in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "darcs",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "Darcs is written in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "git_annex",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "git-annex is a Haskell application.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "tidalcycles",
+      "target": "haskell",
+      "type": "embedded_in",
+      "description": "TidalCycles embeds its music-pattern language in Haskell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "cardano",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "The supplied source describes Cardano's node implementation as Haskell-based.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "sel4",
+      "target": "haskell",
+      "type": "used_for_prototyping_with",
+      "description": "Haskell served as a prototype and executable specification before refinement to C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "semantic",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "Semantic is a Haskell source-analysis library.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "haxl",
+      "target": "haskell",
+      "type": "implemented_in",
+      "description": "Haxl is a Haskell data-access library.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "yesod",
+      "target": "haskell",
+      "type": "is_framework_for",
+      "description": "Yesod is a Haskell web framework.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "servant",
+      "target": "haskell",
+      "type": "is_framework_for",
+      "description": "Servant describes APIs through types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "snap",
+      "target": "haskell",
+      "type": "is_framework_for",
+      "description": "Snap is a Haskell web framework.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "ihp",
+      "target": "haskell",
+      "type": "is_framework_for",
+      "description": "IHP is a Haskell web framework.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "helium",
+      "target": "haskell",
+      "type": "is_educational_variant_of",
+      "description": "Helium focuses on clearer learner error messages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "gofer",
+      "target": "hugs",
+      "type": "preceded",
+      "description": "Hugs supplanted Gofer in educational use.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "hugs",
+      "target": "ghci",
+      "type": "largely_replaced_by",
+      "description": "GHCi largely replaced the historical Hugs interpreter.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "jhc",
+      "target": "haskell",
+      "type": "implements",
+      "description": "Jhc is a Haskell compiler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "ajhc",
+      "target": "jhc",
+      "type": "forks",
+      "description": "Ajhc is a fork of Jhc.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "uhc",
+      "target": "haskell",
+      "type": "implements",
+      "description": "UHC supports Haskell 98 and experimental extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "yhc",
+      "target": "nhc98",
+      "type": "forks",
+      "description": "Yhc was a fork of nhc98.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "eta",
+      "target": "haskell",
+      "type": "is_jvm_dialect_of",
+      "description": "Eta targets the Java Virtual Machine.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "frege",
+      "target": "haskell",
+      "type": "is_jvm_dialect_of",
+      "description": "Frege is a Haskell-inspired JVM dialect.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "disciple",
+      "target": "haskell",
+      "type": "is_dialect_of",
+      "description": "Disciple changes default strictness and adds a type-and-effect system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "community",
+      "target": "haskell",
+      "type": "supports_ecosystem_of",
+      "description": "Community organizations, libraries, events, and workshops sustain development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "haskell_symposium",
+      "target": "icfp",
+      "type": "is_associated_with",
+      "description": "The Haskell Symposium is associated with ICFP.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "zurihac",
+      "target": "community",
+      "type": "is_part_of",
+      "description": "ZuriHac is a Haskell community event.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "hello_world",
+      "target": "main",
+      "type": "defines",
+      "description": "Hello World defines the conventional main entry point.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "hello_world",
+      "target": "io_type",
+      "type": "demonstrates",
+      "description": "putStrLn is used in an IO action.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "factorial",
+      "target": "recursion",
+      "type": "demonstrates",
+      "description": "The recursive form calls factorial on a smaller input.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "factorial",
+      "target": "pattern_matching",
+      "type": "demonstrates",
+      "description": "The base case can match zero.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "factorial",
+      "target": "higher_order_functions",
+      "type": "can_use",
+      "description": "product or fold can express factorial without explicit recursive structure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "factorial",
+      "target": "pointfree",
+      "type": "can_be_written_in",
+      "description": "The source shows a point-free form.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "quicksort",
+      "target": "pattern_matching",
+      "type": "demonstrates",
+      "description": "The empty and nonempty list cases are matched separately.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "quicksort",
+      "target": "list_comprehension",
+      "type": "demonstrates",
+      "description": "List comprehensions partition values around a pivot.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "quicksort",
+      "target": "ord",
+      "type": "requires",
+      "description": "Ord supplies comparison operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "cabal",
+      "target": "hackage",
+      "type": "packages_for",
+      "description": "Cabal builds and packages Haskell libraries and programs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "stack",
+      "target": "stackage",
+      "type": "integrates_with",
+      "description": "Stack is associated with curated package snapshots.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "cabal_hell",
+      "target": "cabal",
+      "type": "historically_criticized",
+      "description": "Cabal historically faced dependency-resolution criticism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "nix",
+      "target": "cabal",
+      "type": "influenced",
+      "description": "The source says newer Cabal build approaches borrowed ideas from Nix.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "ghc",
+      "target": "compiler_pipeline",
+      "type": "implements",
+      "description": "GHC parses, typechecks, optimizes, and compiles programs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "compiler_pipeline",
+      "target": "cmm",
+      "type": "may_use",
+      "description": "C-- is one intermediate representation used by GHC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "compiler_pipeline",
+      "target": "llvm",
+      "type": "may_target",
+      "description": "GHC can use LLVM as a backend.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "compiler_pipeline",
+      "target": "ghc_native",
+      "type": "emits",
+      "description": "GHC generates native code on many architectures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "ghc",
+      "target": "optimization",
+      "type": "performs",
+      "description": "GHC applies compiler optimizations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "optimization",
+      "target": "fusion",
+      "type": "includes",
+      "description": "Fusion can remove intermediate structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "ghc",
+      "target": "concurrent_threads",
+      "type": "supports_runtime_for",
+      "description": "GHC runtime supports lightweight threads and multi-core scheduling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "concurrent_threads",
+      "target": "concurrency",
+      "type": "implements",
+      "description": "Lightweight threads enable concurrent execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "state_monad",
+      "target": "monads",
+      "type": "is_application_of",
+      "description": "State is a common monadic abstraction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "parser_monad",
+      "target": "monads",
+      "type": "is_application_of",
+      "description": "Parser libraries often use monadic sequencing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "nondeterminism",
+      "target": "monads",
+      "type": "can_be_modeled_with",
+      "description": "Nondeterministic computations can be represented monadically.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "stm",
+      "target": "monads",
+      "type": "can_be_modeled_with",
+      "description": "The supplied source lists software transactional memory among computations modeled with monads.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "bracket",
+      "target": "resource_safety",
+      "type": "supports",
+      "description": "bracket helps ensure resources are released.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "bracket",
+      "target": "io_type",
+      "type": "used_with",
+      "description": "Resource management is performed through effectful IO actions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "haddock",
+      "target": "haskell",
+      "type": "documents",
+      "description": "Haddock generates API documentation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "hlint",
+      "target": "haskell",
+      "type": "analyzes",
+      "description": "HLint suggests simplifications and style improvements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "haskell_language_server",
+      "target": "ghc",
+      "type": "integrates_with",
+      "description": "Language-server tooling uses Haskell compiler ecosystem information.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "repl",
+      "target": "ghci",
+      "type": "uses",
+      "description": "GHCi supports interactive development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "formal_methods",
+      "target": "haskell",
+      "type": "can_use",
+      "description": "Haskell can be used as a high-level executable model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "property_testing",
+      "target": "pure_functional",
+      "type": "fits_well_with",
+      "description": "Pure functions are often straightforward to test through properties.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "web_dev",
+      "target": "yesod",
+      "type": "can_use",
+      "description": "Yesod is one Haskell web-development option.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "web_dev",
+      "target": "servant",
+      "type": "can_use",
+      "description": "Servant supports type-described APIs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "web_dev",
+      "target": "snap",
+      "type": "can_use",
+      "description": "Snap is a Haskell web framework.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "web_dev",
+      "target": "ihp",
+      "type": "can_use",
+      "description": "IHP is a Haskell web framework.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "cryptography",
+      "target": "cryptol",
+      "type": "uses_tooling",
+      "description": "Cryptol targets cryptographic algorithm development and verification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "source_analysis",
+      "target": "semantic",
+      "type": "uses",
+      "description": "Semantic provides cross-language source analysis.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "data_processing",
+      "target": "pandoc",
+      "type": "uses_tool",
+      "description": "Pandoc transforms document formats.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "eq",
+      "target": "type_classes",
+      "type": "is_type_class",
+      "description": "This named abstraction belongs to the Haskell type-class system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "ord",
+      "target": "type_classes",
+      "type": "is_type_class",
+      "description": "This named abstraction belongs to the Haskell type-class system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "show",
+      "target": "type_classes",
+      "type": "is_type_class",
+      "description": "This named abstraction belongs to the Haskell type-class system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "num",
+      "target": "type_classes",
+      "type": "is_type_class",
+      "description": "This named abstraction belongs to the Haskell type-class system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "integral",
+      "target": "type_classes",
+      "type": "is_type_class",
+      "description": "This named abstraction belongs to the Haskell type-class system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "integer",
+      "target": "integral",
+      "type": "is_instance_of_class",
+      "description": "Integer supports integral numeric operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "int",
+      "target": "integral",
+      "type": "is_instance_of_class",
+      "description": "Int supports integral numeric operations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "integral",
+      "target": "num",
+      "type": "specializes",
+      "description": "Integral specializes numeric operations for integral types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "string",
+      "target": "list",
+      "type": "is_synonym_of",
+      "description": "String is conventionally a list of characters.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "text",
+      "target": "string",
+      "type": "offers_alternative_to",
+      "description": "Text is often more efficient for text processing than lists of characters.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "bytestring",
+      "target": "text",
+      "type": "complements",
+      "description": "ByteString represents bytes while Text represents Unicode text.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "maybe",
+      "target": "type_classes",
+      "type": "works_with",
+      "description": "Maybe participates in standard type-class abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "either",
+      "target": "type_classes",
+      "type": "works_with",
+      "description": "Either participates in standard type-class abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "foldable",
+      "target": "higher_order_functions",
+      "type": "abstracts_over",
+      "description": "Foldable supports general reductions over data structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "traversable",
+      "target": "applicative",
+      "type": "uses",
+      "description": "Traversable sequences effects using Applicative-like abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "type_signatures",
+      "target": "haskell",
+      "type": "document_types_for",
+      "description": "Signatures document and constrain function types.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "literate_haskell",
+      "target": "haskell",
+      "type": "is_source_format_for",
+      "description": "Literate Haskell combines prose and source code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "haskell_report",
+      "target": "haskell2010",
+      "type": "specifies",
+      "description": "The report documents the Haskell 2010 language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "real_world_haskell",
+      "target": "haskell",
+      "type": "teaches",
+      "description": "The book is a practical learning resource.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "typeclassopedia",
+      "target": "type_classes",
+      "type": "explains",
+      "description": "The resource focuses on type classes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "profiling",
+      "target": "thunk_space",
+      "type": "helps_diagnose",
+      "description": "Profiling can reveal retained thunks and memory growth.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "benchmarking",
+      "target": "optimization",
+      "type": "evaluates",
+      "description": "Benchmarks help evaluate optimization outcomes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "quickcheck",
+      "target": "property_testing",
+      "type": "supports",
+      "description": "QuickCheck-style tools generate inputs for property tests.",
+      "properties": {}
+    }
+  ]
+}

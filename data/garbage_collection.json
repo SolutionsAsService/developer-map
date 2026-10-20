@@ -1,0 +1,3824 @@
+{
+  "metadata": {
+    "title": "Garbage Collection (Computer Science) — Detailed Connected Knowledge Graph",
+    "description": "A machine-readable graph of automatic memory management, tracing and reference-counting algorithms, generational/incremental/concurrent/real-time collectors, compiler/runtime contracts, languages, diagnostics, security, and research.",
+    "version": "1.0.0",
+    "created_date": "2026-10-19",
+    "source_basis": "User-provided Wikipedia article on Garbage collection (computer science), with explanatory context added to connect algorithms and implementations.",
+    "source_file": "Pasted text(20261020-010137).txt",
+    "source_coverage_lines": "68-176 and 187-247",
+    "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+    "graph_model": "directed_labeled_multigraph",
+    "id_policy": "lowercase_snake_case; relationship IDs use rel_NNNN",
+    "entity_count": 195,
+    "relationship_count": 272,
+    "entity_type_count": 80,
+    "relationship_type_count": 169,
+    "notes": [
+      "This graph distinguishes programming-language heap garbage collection from SSD flash-storage garbage collection.",
+      "Collector availability and behavior vary by language runtime, vendor, platform, and version; historical collectors are identified as such.",
+      "GC generally does not guarantee prompt cleanup of sockets, file descriptors, database handles, or secure memory zeroization.",
+      "The supplied article's GC-versus-explicit-memory performance study is represented with its oracle-generated-baseline caveat."
+    ]
+  },
+  "entity_types": [
+    "allocation_optimization",
+    "allocation_strategy",
+    "book",
+    "compiler_analysis",
+    "computer_architecture_concept",
+    "computer_science_topic",
+    "computing_system",
+    "concurrency_primitive",
+    "cxx_library_type",
+    "data_structure",
+    "developer_tool",
+    "diagnostic_artifact",
+    "diagnostic_concept",
+    "diagnostic_data_structure",
+    "diagnostic_technique",
+    "disambiguation_concept",
+    "gc_actor",
+    "gc_algorithm",
+    "gc_algorithm_technique",
+    "gc_barrier_strategy",
+    "gc_component",
+    "gc_concept",
+    "gc_constraint",
+    "gc_data_structure",
+    "gc_design_principle",
+    "gc_implementation",
+    "gc_metadata",
+    "gc_operation",
+    "gc_optimization",
+    "gc_pause_model",
+    "gc_phase",
+    "gc_runtime_mechanism",
+    "gc_strategy",
+    "graph_model",
+    "heap_region",
+    "kernel_api",
+    "language_mechanism",
+    "language_runtime",
+    "lifetime_property",
+    "memory_management_concept",
+    "memory_management_implementation",
+    "memory_management_paradigm",
+    "memory_management_technique",
+    "memory_operation",
+    "memory_problem",
+    "memory_reclamation_technique",
+    "memory_region",
+    "memory_safety_bug",
+    "object_graph_pattern",
+    "operating_system",
+    "operating_system_release",
+    "performance_engineering",
+    "performance_metric",
+    "performance_problem",
+    "person",
+    "programming_abstraction",
+    "programming_concept",
+    "programming_language",
+    "programming_language_extension",
+    "programming_language_family",
+    "related_concept",
+    "research_work",
+    "resource_management_idiom",
+    "runtime_component",
+    "runtime_condition",
+    "runtime_failure",
+    "runtime_mechanism",
+    "runtime_object",
+    "runtime_operation",
+    "runtime_parameter",
+    "runtime_reference",
+    "runtime_system",
+    "security_operation",
+    "software_quality_property",
+    "software_system",
+    "storage_management_concept",
+    "system_resource",
+    "type_system_concept",
+    "virtual_machine",
+    "workload_type"
+  ],
+  "relationship_types": [
+    "adjusts",
+    "aims_to_bound",
+    "aims_to_reduce",
+    "aims_to_reduce_risk_of",
+    "allocated_in",
+    "allocates_into",
+    "alternative_to",
+    "associated_with",
+    "balances",
+    "belongs_to",
+    "bounded_by_stack_frame",
+    "can_affect_latency_of",
+    "can_affect_responsiveness_of",
+    "can_affect_risk_of",
+    "can_be_challenging_for",
+    "can_be_optimized_by",
+    "can_be_used_with",
+    "can_break",
+    "can_cause",
+    "can_coexist_with",
+    "can_coexist_with_native_memory",
+    "can_collect",
+    "can_complement",
+    "can_contribute_to",
+    "can_enable",
+    "can_improve",
+    "can_increase",
+    "can_leave_cycle_leaks",
+    "can_model_with",
+    "can_reduce",
+    "can_reduce_allocations_on",
+    "can_reduce_unreachable_object_leaks",
+    "can_trigger",
+    "can_use",
+    "cannot_reclaim_naively",
+    "cannot_solve_if_live_set_exceeds_capacity",
+    "captures",
+    "central_topic_in",
+    "commonly_uses",
+    "compares_costs_of",
+    "component_of",
+    "connects_from",
+    "contains",
+    "contains_in_compacting_collectors",
+    "contains_in_copying_collectors",
+    "contrasts_with",
+    "contributes_to",
+    "coordinates_at",
+    "coordinates_with",
+    "covered_by",
+    "credited_to",
+    "defines_starting_points_for",
+    "derived_from",
+    "described_by",
+    "describes",
+    "designed_for",
+    "detects",
+    "determines",
+    "developed_for",
+    "differs_from",
+    "discovers",
+    "distinct_from",
+    "distinguishes_from",
+    "documented_in",
+    "does_not_automatically_cover",
+    "does_not_guarantee",
+    "does_not_guarantee_all_safety",
+    "does_not_increment",
+    "does_not_perform",
+    "does_not_promptly_close",
+    "does_not_replace",
+    "eligible_for",
+    "enables",
+    "evaluated_in",
+    "expresses",
+    "forms_edge_in",
+    "groups",
+    "guides",
+    "helps_avoid_but_does_not_prevent",
+    "helps_diagnose",
+    "helps_find",
+    "historically_offered",
+    "historically_supported_gc_for",
+    "historically_used",
+    "historically_uses",
+    "implemented_by",
+    "implements",
+    "includes",
+    "includes_gc_changes_for",
+    "incurs",
+    "influences",
+    "integrates",
+    "integrates_with_controls",
+    "interacts_with",
+    "is_a",
+    "is_a_safe_reclamation_technique",
+    "is_designed_for",
+    "is_not_reliable_for",
+    "is_related_to",
+    "is_work_cycle_of",
+    "maintains",
+    "manages",
+    "may_be_triggered_by",
+    "may_include",
+    "may_increase",
+    "may_leave",
+    "may_offer",
+    "may_perform",
+    "may_require",
+    "may_require_processing_of",
+    "may_retain",
+    "may_schedule_to",
+    "may_use",
+    "measures",
+    "motivated_by",
+    "moves_into",
+    "must_not_replace",
+    "must_respect",
+    "mutates",
+    "name_collision_with",
+    "observable_through",
+    "observed_in",
+    "observes_without_owning",
+    "often_has",
+    "often_provides",
+    "often_requires",
+    "often_uses",
+    "optimized_by",
+    "performed_by",
+    "performs",
+    "promotes_survivors_to",
+    "provides_alternative_to",
+    "reclaims_from",
+    "records",
+    "reduces",
+    "reduces_risk_of",
+    "reduces_work_for",
+    "related_but_distinct_from",
+    "related_to",
+    "represented_in",
+    "requires",
+    "requires_measurement_for",
+    "requires_or_avoids_via_indirection",
+    "responds_to",
+    "runs_alongside",
+    "runs_on",
+    "starts_from",
+    "studied_in",
+    "studies",
+    "studies_costs_of",
+    "studies_optimization_of",
+    "supported_by",
+    "supports",
+    "supports_runtime_semantics_for",
+    "suspends",
+    "targets",
+    "tracked_by",
+    "tracks",
+    "trades_for_compatibility",
+    "traverses",
+    "triggers_when_count_zero",
+    "uses",
+    "uses_for_fast_allocation",
+    "uses_for_precise_roots",
+    "uses_in_gc_work",
+    "uses_in_modern_platforms",
+    "uses_instead_of_tracing_gc",
+    "uses_reachability_to_approximate",
+    "varies_by_generation"
+  ],
+  "entities": [
+    {
+      "id": "garbage_collection",
+      "name": "Garbage collection",
+      "type": "memory_management_technique",
+      "description": "Automatic memory management that reclaims allocated objects no longer considered live.",
+      "properties": {
+        "origin_year_approx": 1959
+      }
+    },
+    {
+      "id": "automatic_memory_management",
+      "name": "Automatic memory management",
+      "type": "memory_management_paradigm",
+      "description": "Memory reclamation managed by runtime/compiler rather than explicit deallocation at every use site.",
+      "properties": {}
+    },
+    {
+      "id": "manual_memory_management",
+      "name": "Manual memory management",
+      "type": "memory_management_paradigm",
+      "description": "Programmer-directed allocation and deallocation with explicit lifetime responsibility.",
+      "properties": {}
+    },
+    {
+      "id": "memory_management",
+      "name": "Memory management",
+      "type": "computer_science_topic",
+      "description": "Allocation, ownership, reuse, reclamation, and memory-safety discipline.",
+      "properties": {}
+    },
+    {
+      "id": "runtime_system",
+      "name": "Runtime system",
+      "type": "software_system",
+      "description": "Execution support including memory management, threads, exceptions, libraries, and diagnostics.",
+      "properties": {}
+    },
+    {
+      "id": "programming_language_runtime",
+      "name": "Programming-language runtime",
+      "type": "runtime_system",
+      "description": "Runtime environment that may provide a managed heap and automatic reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "heap",
+      "name": "Heap",
+      "type": "memory_region",
+      "description": "Dynamically allocated storage whose objects may outlive individual calls.",
+      "properties": {}
+    },
+    {
+      "id": "managed_heap",
+      "name": "Managed heap",
+      "type": "memory_region",
+      "description": "Heap controlled by a runtime and its memory manager.",
+      "properties": {}
+    },
+    {
+      "id": "stack",
+      "name": "Call stack",
+      "type": "memory_region",
+      "description": "Per-thread frames used for calls, locals, and return state.",
+      "properties": {}
+    },
+    {
+      "id": "object",
+      "name": "Heap object",
+      "type": "runtime_object",
+      "description": "Allocated data structure whose references and lifetime are tracked.",
+      "properties": {}
+    },
+    {
+      "id": "object_graph",
+      "name": "Object reference graph",
+      "type": "graph_model",
+      "description": "Graph of objects and references; tracing determines which vertices are reachable from roots.",
+      "properties": {}
+    },
+    {
+      "id": "reference",
+      "name": "Object reference",
+      "type": "runtime_reference",
+      "description": "Pointer-like link from a root or object to another object.",
+      "properties": {}
+    },
+    {
+      "id": "root_set",
+      "name": "GC roots",
+      "type": "gc_concept",
+      "description": "Initial references considered by a tracing collector, including stack, registers, globals, and runtime-held references.",
+      "properties": {}
+    },
+    {
+      "id": "reachability",
+      "name": "Reachability",
+      "type": "gc_concept",
+      "description": "Ability to reach an object by following references from roots.",
+      "properties": {}
+    },
+    {
+      "id": "live_object",
+      "name": "Live object",
+      "type": "gc_concept",
+      "description": "Object the collector must preserve under its liveness rules.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_object",
+      "name": "Garbage object",
+      "type": "gc_concept",
+      "description": "Object eligible for reclamation because it is no longer live.",
+      "properties": {}
+    },
+    {
+      "id": "allocation",
+      "name": "Dynamic allocation",
+      "type": "memory_operation",
+      "description": "Obtaining storage for a new object.",
+      "properties": {}
+    },
+    {
+      "id": "reclamation",
+      "name": "Memory reclamation",
+      "type": "memory_operation",
+      "description": "Making dead-object storage available for reuse.",
+      "properties": {}
+    },
+    {
+      "id": "memory_reuse",
+      "name": "Memory reuse",
+      "type": "memory_operation",
+      "description": "Reusing reclaimed storage for future allocations.",
+      "properties": {}
+    },
+    {
+      "id": "mutator",
+      "name": "Mutator",
+      "type": "gc_actor",
+      "description": "Application code that allocates and changes the object graph.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collector",
+      "name": "Garbage collector",
+      "type": "runtime_component",
+      "description": "Subsystem that executes a collector algorithm and coordinates with application threads.",
+      "properties": {}
+    },
+    {
+      "id": "gc_cycle",
+      "name": "GC cycle",
+      "type": "runtime_operation",
+      "description": "Collection work episode including some combination of root scanning, marking, sweeping, copying, and compaction.",
+      "properties": {}
+    },
+    {
+      "id": "tracing_gc",
+      "name": "Tracing garbage collection",
+      "type": "gc_strategy",
+      "description": "Finds live objects by tracing references from roots.",
+      "properties": {}
+    },
+    {
+      "id": "reference_counting",
+      "name": "Reference counting",
+      "type": "gc_strategy",
+      "description": "Tracks strong-reference counts and normally reclaims objects when counts reach zero.",
+      "properties": {}
+    },
+    {
+      "id": "arc",
+      "name": "Automatic Reference Counting (ARC)",
+      "type": "memory_management_technique",
+      "description": "Compiler-assisted retain/release management used in Apple ecosystems.",
+      "properties": {}
+    },
+    {
+      "id": "mark_sweep",
+      "name": "Mark-and-sweep",
+      "type": "gc_algorithm",
+      "description": "Marks reachable objects, then sweeps unmarked objects.",
+      "properties": {}
+    },
+    {
+      "id": "mark_compact",
+      "name": "Mark-and-compact",
+      "type": "gc_algorithm",
+      "description": "Marks live objects and moves them together to reduce fragmentation.",
+      "properties": {}
+    },
+    {
+      "id": "copying_gc",
+      "name": "Copying garbage collection",
+      "type": "gc_algorithm",
+      "description": "Copies live objects to another region and reclaims the source region.",
+      "properties": {}
+    },
+    {
+      "id": "stop_copy",
+      "name": "Stop-and-copy collector",
+      "type": "gc_algorithm",
+      "description": "Copying design that coordinates or pauses mutators while copying live objects.",
+      "properties": {}
+    },
+    {
+      "id": "semispace",
+      "name": "Semispace collector",
+      "type": "gc_algorithm",
+      "description": "Uses two memory spaces, allocating in one and copying survivors to the other before swapping roles.",
+      "properties": {}
+    },
+    {
+      "id": "mark_phase",
+      "name": "Mark phase",
+      "type": "gc_phase",
+      "description": "Discovers live objects.",
+      "properties": {}
+    },
+    {
+      "id": "sweep_phase",
+      "name": "Sweep phase",
+      "type": "gc_phase",
+      "description": "Reclaims unmarked objects.",
+      "properties": {}
+    },
+    {
+      "id": "compact_phase",
+      "name": "Compaction phase",
+      "type": "gc_phase",
+      "description": "Moves live objects together and may update references.",
+      "properties": {}
+    },
+    {
+      "id": "copy_phase",
+      "name": "Copy phase",
+      "type": "gc_phase",
+      "description": "Copies live objects into a destination region.",
+      "properties": {}
+    },
+    {
+      "id": "root_scanning",
+      "name": "Root scanning",
+      "type": "gc_operation",
+      "description": "Scans roots to seed tracing.",
+      "properties": {}
+    },
+    {
+      "id": "write_barrier",
+      "name": "Write barrier",
+      "type": "gc_runtime_mechanism",
+      "description": "Instrumentation on reference writes that preserves collector invariants during graph mutation.",
+      "properties": {}
+    },
+    {
+      "id": "read_barrier",
+      "name": "Read barrier",
+      "type": "gc_runtime_mechanism",
+      "description": "Instrumentation on reference reads used by some concurrent/moving collectors.",
+      "properties": {}
+    },
+    {
+      "id": "remembered_set",
+      "name": "Remembered set",
+      "type": "gc_data_structure",
+      "description": "Tracks references relevant to collection, often old-to-young pointers.",
+      "properties": {}
+    },
+    {
+      "id": "card_table",
+      "name": "Card table",
+      "type": "gc_data_structure",
+      "description": "Coarse-grained map marking heap regions with relevant reference writes.",
+      "properties": {}
+    },
+    {
+      "id": "generational_gc",
+      "name": "Generational garbage collection",
+      "type": "gc_strategy",
+      "description": "Divides objects by age and collects young objects more frequently.",
+      "properties": {}
+    },
+    {
+      "id": "young_generation",
+      "name": "Young generation",
+      "type": "heap_region",
+      "description": "Region for newly allocated objects, usually collected frequently.",
+      "properties": {}
+    },
+    {
+      "id": "old_generation",
+      "name": "Old generation",
+      "type": "heap_region",
+      "description": "Region for objects that survive young collections.",
+      "properties": {}
+    },
+    {
+      "id": "survivor_space",
+      "name": "Survivor space",
+      "type": "heap_region",
+      "description": "Region holding objects that survive a young collection.",
+      "properties": {}
+    },
+    {
+      "id": "promotion",
+      "name": "Object promotion",
+      "type": "gc_operation",
+      "description": "Moving or reclassifying survivors into an older generation.",
+      "properties": {}
+    },
+    {
+      "id": "incremental_gc",
+      "name": "Incremental garbage collection",
+      "type": "gc_strategy",
+      "description": "Splits collector work into smaller slices interleaved with application execution.",
+      "properties": {}
+    },
+    {
+      "id": "concurrent_gc",
+      "name": "Concurrent garbage collection",
+      "type": "gc_strategy",
+      "description": "Performs some GC work while mutator threads continue running.",
+      "properties": {}
+    },
+    {
+      "id": "parallel_gc",
+      "name": "Parallel garbage collection",
+      "type": "gc_strategy",
+      "description": "Uses multiple worker threads for collection work.",
+      "properties": {}
+    },
+    {
+      "id": "stop_world",
+      "name": "Stop-the-world pause",
+      "type": "gc_pause_model",
+      "description": "Period when mutator threads are suspended for a collection phase.",
+      "properties": {}
+    },
+    {
+      "id": "real_time_gc",
+      "name": "Real-time garbage collection",
+      "type": "gc_strategy",
+      "description": "Designed for predictable or bounded work under timing constraints.",
+      "properties": {}
+    },
+    {
+      "id": "latency",
+      "name": "GC latency",
+      "type": "performance_metric",
+      "description": "Delay experienced due to collection activity.",
+      "properties": {}
+    },
+    {
+      "id": "pause_time",
+      "name": "Pause time",
+      "type": "performance_metric",
+      "description": "Duration of a stop or delay caused by GC.",
+      "properties": {}
+    },
+    {
+      "id": "tail_latency",
+      "name": "Tail latency",
+      "type": "performance_metric",
+      "description": "High-percentile response time affected by occasional long pauses.",
+      "properties": {}
+    },
+    {
+      "id": "throughput",
+      "name": "Application throughput",
+      "type": "performance_metric",
+      "description": "Useful application work completed per unit time.",
+      "properties": {}
+    },
+    {
+      "id": "cpu_overhead",
+      "name": "CPU overhead",
+      "type": "performance_metric",
+      "description": "Processing spent on tracing, barriers, reference counts, copying, and other GC work.",
+      "properties": {}
+    },
+    {
+      "id": "memory_overhead",
+      "name": "Memory overhead",
+      "type": "performance_metric",
+      "description": "Extra space for metadata, counts, remembered sets, and reserved collector regions.",
+      "properties": {}
+    },
+    {
+      "id": "fragmentation",
+      "name": "Heap fragmentation",
+      "type": "memory_problem",
+      "description": "Free space split into blocks that may not satisfy allocations efficiently.",
+      "properties": {}
+    },
+    {
+      "id": "allocation_rate",
+      "name": "Allocation rate",
+      "type": "performance_metric",
+      "description": "Rate of new object allocation.",
+      "properties": {}
+    },
+    {
+      "id": "object_lifetime",
+      "name": "Object lifetime",
+      "type": "memory_management_concept",
+      "description": "Duration an object remains live or accessible.",
+      "properties": {}
+    },
+    {
+      "id": "finalization",
+      "name": "Object finalization",
+      "type": "runtime_mechanism",
+      "description": "Cleanup callback associated with reclamation; timing may be nondeterministic.",
+      "properties": {}
+    },
+    {
+      "id": "destructor",
+      "name": "Destructor",
+      "type": "language_mechanism",
+      "description": "Language cleanup operation invoked according to object lifetime rules.",
+      "properties": {}
+    },
+    {
+      "id": "resource_management",
+      "name": "Non-memory resource management",
+      "type": "programming_concept",
+      "description": "Managing sockets, file descriptors, database handles, and other external resources.",
+      "properties": {}
+    },
+    {
+      "id": "raii",
+      "name": "Resource Acquisition Is Initialization (RAII)",
+      "type": "resource_management_idiom",
+      "description": "C++ idiom tying resource cleanup to deterministic object lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "smart_pointer",
+      "name": "Smart pointer",
+      "type": "programming_abstraction",
+      "description": "Pointer-like abstraction managing ownership or lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "unique_ptr",
+      "name": "std::unique_ptr",
+      "type": "cxx_library_type",
+      "description": "C++ smart pointer expressing exclusive ownership.",
+      "properties": {}
+    },
+    {
+      "id": "shared_ptr",
+      "name": "std::shared_ptr",
+      "type": "cxx_library_type",
+      "description": "C++ smart pointer that uses shared reference counting.",
+      "properties": {}
+    },
+    {
+      "id": "weak_ptr",
+      "name": "std::weak_ptr",
+      "type": "cxx_library_type",
+      "description": "Non-owning C++ reference that does not increment strong count.",
+      "properties": {}
+    },
+    {
+      "id": "dangling_pointer",
+      "name": "Dangling pointer",
+      "type": "memory_safety_bug",
+      "description": "Reference to storage whose object's lifetime has ended.",
+      "properties": {}
+    },
+    {
+      "id": "double_free",
+      "name": "Double-free bug",
+      "type": "memory_safety_bug",
+      "description": "Deallocating an allocation more than once.",
+      "properties": {}
+    },
+    {
+      "id": "memory_leak",
+      "name": "Memory leak",
+      "type": "memory_problem",
+      "description": "Memory retained or allocated after it is no longer useful.",
+      "properties": {}
+    },
+    {
+      "id": "use_after_free",
+      "name": "Use-after-free",
+      "type": "memory_safety_bug",
+      "description": "Access to an object after its storage has been freed or reused.",
+      "properties": {}
+    },
+    {
+      "id": "reference_cycle",
+      "name": "Reference cycle",
+      "type": "object_graph_pattern",
+      "description": "Cycle of strong references that may prevent reference counts from reaching zero.",
+      "properties": {}
+    },
+    {
+      "id": "cycle_detector",
+      "name": "Cycle detector",
+      "type": "gc_component",
+      "description": "Finds unreachable cycles in a reference-counted heap.",
+      "properties": {}
+    },
+    {
+      "id": "weak_reference",
+      "name": "Weak reference",
+      "type": "runtime_reference",
+      "description": "Reference that does not keep its referent alive.",
+      "properties": {}
+    },
+    {
+      "id": "reference_count",
+      "name": "Reference count",
+      "type": "gc_metadata",
+      "description": "Count of strong references to an object.",
+      "properties": {}
+    },
+    {
+      "id": "atomic_operation",
+      "name": "Atomic operation",
+      "type": "concurrency_primitive",
+      "description": "Indivisible update used to coordinate shared state safely.",
+      "properties": {}
+    },
+    {
+      "id": "update_coalescing",
+      "name": "Reference-count update coalescing",
+      "type": "gc_optimization",
+      "description": "Combines redundant counter updates while preserving the final count.",
+      "properties": {}
+    },
+    {
+      "id": "escape_analysis",
+      "name": "Escape analysis",
+      "type": "compiler_analysis",
+      "description": "Determines whether an object can outlive its allocation scope or escape to another thread/function.",
+      "properties": {}
+    },
+    {
+      "id": "stack_allocation",
+      "name": "Stack allocation",
+      "type": "allocation_strategy",
+      "description": "Allocating eligible objects in a stack frame, reclaimed when the frame returns.",
+      "properties": {}
+    },
+    {
+      "id": "region_inference",
+      "name": "Region inference",
+      "type": "memory_management_technique",
+      "description": "Compile-time assignment of objects to regions reclaimed together.",
+      "properties": {}
+    },
+    {
+      "id": "ownership_type_system",
+      "name": "Ownership type system",
+      "type": "type_system_concept",
+      "description": "Type-system model tracking ownership and borrowing to enforce lifetime rules.",
+      "properties": {}
+    },
+    {
+      "id": "compile_time_gc",
+      "name": "Compile-time garbage collection",
+      "type": "memory_management_technique",
+      "description": "Static analysis and compiler transformations enabling safe memory reuse/reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "conservative_gc",
+      "name": "Conservative garbage collection",
+      "type": "gc_strategy",
+      "description": "Treats pointer-looking values as potential references, possibly retaining garbage.",
+      "properties": {}
+    },
+    {
+      "id": "precise_gc",
+      "name": "Precise garbage collection",
+      "type": "gc_strategy",
+      "description": "Uses exact reference information to distinguish pointers from non-pointer values.",
+      "properties": {}
+    },
+    {
+      "id": "boehm_gc",
+      "name": "Boehm-Demers-Weiser GC",
+      "type": "gc_implementation",
+      "description": "Conservative tracing collector usable with C and C++.",
+      "properties": {}
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "programming_language",
+      "description": "Language whose CPython implementation uses reference counting and cyclic GC.",
+      "properties": {}
+    },
+    {
+      "id": "cpython",
+      "name": "CPython",
+      "type": "language_runtime",
+      "description": "Python implementation using reference counting plus cycle detection.",
+      "properties": {}
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "type": "programming_language",
+      "description": "Managed language commonly executed on JVM implementations with tracing collectors.",
+      "properties": {}
+    },
+    {
+      "id": "jvm",
+      "name": "Java Virtual Machine (JVM)",
+      "type": "virtual_machine",
+      "description": "Runtime platform for Java bytecode with multiple collector options.",
+      "properties": {}
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "type": "programming_language",
+      "description": "Systems language without mandatory built-in tracing GC, though external collectors can be integrated.",
+      "properties": {}
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "type": "programming_language",
+      "description": "Systems language commonly using RAII and smart pointers, with optional external GC.",
+      "properties": {}
+    },
+    {
+      "id": "objective_c",
+      "name": "Objective-C",
+      "type": "programming_language",
+      "description": "Language historically associated with macOS GC and later ARC.",
+      "properties": {}
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "type": "programming_language",
+      "description": "Language using ARC-style reference counting for class instances.",
+      "properties": {}
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "type": "programming_language",
+      "description": "Language with an integrated garbage-collected runtime.",
+      "properties": {}
+    },
+    {
+      "id": "csharp",
+      "name": "C#",
+      "type": "programming_language",
+      "description": "Language commonly executed on a managed runtime with GC.",
+      "properties": {}
+    },
+    {
+      "id": "d_language",
+      "name": "D",
+      "type": "programming_language",
+      "description": "Language integrating GC while allowing some explicit memory controls.",
+      "properties": {}
+    },
+    {
+      "id": "haskell",
+      "name": "Haskell",
+      "type": "programming_language",
+      "description": "Functional language whose common implementations include GC.",
+      "properties": {}
+    },
+    {
+      "id": "lisp",
+      "name": "Lisp",
+      "type": "programming_language_family",
+      "description": "Language family associated with early garbage-collection history.",
+      "properties": {}
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "type": "programming_language",
+      "description": "Dynamic language whose common engines use GC.",
+      "properties": {}
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "type": "programming_language",
+      "description": "Dynamic language whose common implementations use GC.",
+      "properties": {}
+    },
+    {
+      "id": "basic",
+      "name": "BASIC",
+      "type": "programming_language_family",
+      "description": "Language family with historical string/list collectors.",
+      "properties": {}
+    },
+    {
+      "id": "ada",
+      "name": "Ada",
+      "type": "programming_language",
+      "description": "Language with implementations that may support managed and manual memory domains.",
+      "properties": {}
+    },
+    {
+      "id": "modula3",
+      "name": "Modula-3",
+      "type": "programming_language",
+      "description": "Language cited as supporting mixed memory-management approaches.",
+      "properties": {}
+    },
+    {
+      "id": "cpp_cli",
+      "name": "C++/CLI",
+      "type": "programming_language_extension",
+      "description": "C++ extension capable of combining managed and native memory models.",
+      "properties": {}
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "type": "programming_language",
+      "description": "Declarative language studied for compile-time GC.",
+      "properties": {}
+    },
+    {
+      "id": "objective_c_arc",
+      "name": "Objective-C ARC",
+      "type": "memory_management_implementation",
+      "description": "Compiler-assisted retain/release management used on Apple platforms.",
+      "properties": {}
+    },
+    {
+      "id": "ios",
+      "name": "iOS",
+      "type": "operating_system",
+      "description": "Apple mobile operating system using ARC rather than general tracing GC for Objective-C objects.",
+      "properties": {}
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "type": "operating_system",
+      "description": "Apple desktop OS that historically offered Objective-C GC before deprecating it in favor of ARC.",
+      "properties": {}
+    },
+    {
+      "id": "android_runtime",
+      "name": "Android Runtime (ART)",
+      "type": "language_runtime",
+      "description": "Android app runtime with a managed heap and garbage collector.",
+      "properties": {}
+    },
+    {
+      "id": "android_13",
+      "name": "Android 13",
+      "type": "operating_system_release",
+      "description": "Android release associated with ART GC changes using Linux userfaultfd.",
+      "properties": {}
+    },
+    {
+      "id": "userfaultfd",
+      "name": "Linux userfaultfd",
+      "type": "kernel_api",
+      "description": "Linux interface used in specific ART GC memory/compaction work.",
+      "properties": {}
+    },
+    {
+      "id": "serial_gc",
+      "name": "Serial GC",
+      "type": "gc_implementation",
+      "description": "Single-worker JVM collector.",
+      "properties": {}
+    },
+    {
+      "id": "parallel_gc_jvm",
+      "name": "Parallel GC",
+      "type": "gc_implementation",
+      "description": "JVM collector using multiple workers and emphasizing throughput.",
+      "properties": {}
+    },
+    {
+      "id": "cms_gc",
+      "name": "Concurrent Mark Sweep",
+      "type": "gc_implementation",
+      "description": "Historical JVM collector designed to reduce pauses with concurrent work; removed from modern standard OpenJDK releases.",
+      "properties": {}
+    },
+    {
+      "id": "g1_gc",
+      "name": "Garbage-First (G1) GC",
+      "type": "gc_implementation",
+      "description": "Region-based JVM collector balancing throughput and pause-time goals.",
+      "properties": {}
+    },
+    {
+      "id": "z_gc",
+      "name": "Z Garbage Collector (ZGC)",
+      "type": "gc_implementation",
+      "description": "Low-latency JVM collector performing much work concurrently.",
+      "properties": {}
+    },
+    {
+      "id": "shenandoah_gc",
+      "name": "Shenandoah GC",
+      "type": "gc_implementation",
+      "description": "Low-pause JVM collector with concurrent evacuation.",
+      "properties": {}
+    },
+    {
+      "id": "epsilon_gc",
+      "name": "Epsilon GC",
+      "type": "gc_implementation",
+      "description": "No-op JVM collector that does not reclaim allocated memory.",
+      "properties": {}
+    },
+    {
+      "id": "gen_z_gc",
+      "name": "Generational ZGC",
+      "type": "gc_implementation",
+      "description": "Generational mode of ZGC available in newer JVM releases.",
+      "properties": {}
+    },
+    {
+      "id": "gen_shen_gc",
+      "name": "Generational Shenandoah",
+      "type": "gc_implementation",
+      "description": "Generational Shenandoah mode where supported.",
+      "properties": {}
+    },
+    {
+      "id": "ibm_metronome",
+      "name": "IBM Metronome GC",
+      "type": "gc_implementation",
+      "description": "Real-time-oriented collector associated with IBM Java implementations.",
+      "properties": {}
+    },
+    {
+      "id": "azul_c4",
+      "name": "Azul C4 collector",
+      "type": "gc_implementation",
+      "description": "Continuously concurrent compacting collector associated with Azul JVM implementations.",
+      "properties": {}
+    },
+    {
+      "id": "baker_algorithm",
+      "name": "Baker copying algorithm",
+      "type": "gc_algorithm",
+      "description": "Real-time copying design where mutator access cooperates with copying between spaces.",
+      "properties": {}
+    },
+    {
+      "id": "lieberman_hewitt",
+      "name": "Lieberman-Hewitt real-time GC",
+      "type": "gc_algorithm",
+      "description": "Real-time garbage-collection design based on object lifetimes.",
+      "properties": {}
+    },
+    {
+      "id": "john_mccarthy",
+      "name": "John McCarthy",
+      "type": "person",
+      "description": "Computer scientist credited with inventing GC around 1959 for Lisp.",
+      "properties": {}
+    },
+    {
+      "id": "henry_baker",
+      "name": "Henry G. Baker",
+      "type": "person",
+      "description": "Researcher associated with real-time and copying garbage collection.",
+      "properties": {}
+    },
+    {
+      "id": "henry_lieberman",
+      "name": "Henry Lieberman",
+      "type": "person",
+      "description": "Researcher who co-authored influential real-time GC work.",
+      "properties": {}
+    },
+    {
+      "id": "carl_hewitt",
+      "name": "Carl Hewitt",
+      "type": "person",
+      "description": "Researcher associated with real-time garbage collection work.",
+      "properties": {}
+    },
+    {
+      "id": "real_time_system",
+      "name": "Real-time system",
+      "type": "computing_system",
+      "description": "System with deadlines and timing constraints.",
+      "properties": {}
+    },
+    {
+      "id": "embedded_system",
+      "name": "Embedded system",
+      "type": "computing_system",
+      "description": "Resource-constrained system often requiring predictable memory and timing.",
+      "properties": {}
+    },
+    {
+      "id": "transaction_processing",
+      "name": "Transaction processing",
+      "type": "workload_type",
+      "description": "Workload where unpredictable pauses can harm latency and service levels.",
+      "properties": {}
+    },
+    {
+      "id": "interactive_application",
+      "name": "Interactive application",
+      "type": "workload_type",
+      "description": "Application whose responsiveness can be affected by collection pauses.",
+      "properties": {}
+    },
+    {
+      "id": "memory_hierarchy",
+      "name": "Memory hierarchy",
+      "type": "computer_architecture_concept",
+      "description": "Caches and virtual memory whose locality behavior influences collector performance.",
+      "properties": {}
+    },
+    {
+      "id": "heap_size",
+      "name": "Heap size",
+      "type": "runtime_parameter",
+      "description": "Managed heap capacity influencing collection frequency and pressure.",
+      "properties": {}
+    },
+    {
+      "id": "memory_pressure",
+      "name": "Memory pressure",
+      "type": "runtime_condition",
+      "description": "Condition where memory demand approaches available resources.",
+      "properties": {}
+    },
+    {
+      "id": "out_of_memory",
+      "name": "Out-of-memory condition",
+      "type": "runtime_failure",
+      "description": "Failure to obtain sufficient memory, potentially causing runtime errors or process termination.",
+      "properties": {}
+    },
+    {
+      "id": "gc_tuning",
+      "name": "GC tuning",
+      "type": "performance_engineering",
+      "description": "Selecting collectors and tuning heap/pause/worker policy based on workload evidence.",
+      "properties": {}
+    },
+    {
+      "id": "profiler",
+      "name": "Memory profiler",
+      "type": "developer_tool",
+      "description": "Tool measuring allocations, heap usage, object lifetimes, and retention.",
+      "properties": {}
+    },
+    {
+      "id": "leak_detection",
+      "name": "Leak detection",
+      "type": "diagnostic_technique",
+      "description": "Finding leaks or suspicious object/resource retention.",
+      "properties": {}
+    },
+    {
+      "id": "memory_safety",
+      "name": "Memory safety",
+      "type": "software_quality_property",
+      "description": "Avoidance of invalid memory accesses such as use-after-free and double-free.",
+      "properties": {}
+    },
+    {
+      "id": "deterministic_destruction",
+      "name": "Deterministic destruction",
+      "type": "lifetime_property",
+      "description": "Cleanup occurs at a predictable point, often through scope-bound ownership.",
+      "properties": {}
+    },
+    {
+      "id": "nondeterministic_reclamation",
+      "name": "Nondeterministic reclamation",
+      "type": "lifetime_property",
+      "description": "Time of reclamation is chosen by runtime policy rather than exactly at last use.",
+      "properties": {}
+    },
+    {
+      "id": "finalizer_queue",
+      "name": "Finalizer queue",
+      "type": "runtime_component",
+      "description": "Runtime mechanism scheduling eligible finalizers.",
+      "properties": {}
+    },
+    {
+      "id": "resurrection",
+      "name": "Object resurrection",
+      "type": "gc_concept",
+      "description": "Finalization or cleanup makes an otherwise unreachable object reachable again.",
+      "properties": {}
+    },
+    {
+      "id": "weak_map",
+      "name": "Weak map",
+      "type": "data_structure",
+      "description": "Map whose weak keys or values do not necessarily keep referents alive.",
+      "properties": {}
+    },
+    {
+      "id": "ephemeron",
+      "name": "Ephemeron",
+      "type": "gc_data_structure",
+      "description": "Weak-map association semantics where value reachability depends on independent key reachability.",
+      "properties": {}
+    },
+    {
+      "id": "floating_garbage",
+      "name": "Floating garbage",
+      "type": "gc_concept",
+      "description": "Objects retained by a concurrent cycle although they become unreachable during that cycle.",
+      "properties": {}
+    },
+    {
+      "id": "tri_color_marking",
+      "name": "Tri-color marking",
+      "type": "gc_algorithm_technique",
+      "description": "White/gray/black abstraction used to reason about tracing invariants.",
+      "properties": {}
+    },
+    {
+      "id": "incremental_update",
+      "name": "Incremental-update barrier",
+      "type": "gc_barrier_strategy",
+      "description": "Barrier strategy tracking graph changes during concurrent/incremental marking.",
+      "properties": {}
+    },
+    {
+      "id": "satb",
+      "name": "Snapshot-at-the-beginning (SATB)",
+      "type": "gc_barrier_strategy",
+      "description": "Barrier strategy preserving a logical snapshot of references from marking start.",
+      "properties": {}
+    },
+    {
+      "id": "evacuation",
+      "name": "Object evacuation",
+      "type": "gc_operation",
+      "description": "Moving live objects from selected regions into another region.",
+      "properties": {}
+    },
+    {
+      "id": "region_based_gc",
+      "name": "Region-based garbage collection",
+      "type": "gc_strategy",
+      "description": "Divides heap into regions and selects regions for collection or evacuation.",
+      "properties": {}
+    },
+    {
+      "id": "pinning",
+      "name": "Object pinning",
+      "type": "gc_constraint",
+      "description": "Preventing an object from moving, often for native interop.",
+      "properties": {}
+    },
+    {
+      "id": "safepoint",
+      "name": "Safepoint",
+      "type": "runtime_mechanism",
+      "description": "State where threads can safely coordinate with GC or other runtime operations.",
+      "properties": {}
+    },
+    {
+      "id": "tlab",
+      "name": "Thread-local allocation buffer (TLAB)",
+      "type": "allocation_optimization",
+      "description": "Per-thread region allowing fast bump-pointer allocation.",
+      "properties": {}
+    },
+    {
+      "id": "generational_hypothesis",
+      "name": "Generational hypothesis",
+      "type": "gc_design_principle",
+      "description": "Empirical observation that many objects die young.",
+      "properties": {}
+    },
+    {
+      "id": "forwarding_pointer",
+      "name": "Forwarding pointer",
+      "type": "gc_data_structure",
+      "description": "Metadata identifying an object's new location after relocation.",
+      "properties": {}
+    },
+    {
+      "id": "stack_map",
+      "name": "Stack map",
+      "type": "gc_metadata",
+      "description": "Compiler metadata identifying reference locations in stack frames.",
+      "properties": {}
+    },
+    {
+      "id": "gc_log",
+      "name": "GC log",
+      "type": "diagnostic_artifact",
+      "description": "Logs describing collection phases, pauses, heap occupancy, and collector decisions.",
+      "properties": {}
+    },
+    {
+      "id": "heap_dump",
+      "name": "Heap dump",
+      "type": "diagnostic_artifact",
+      "description": "Snapshot of heap objects and references used to investigate retention.",
+      "properties": {}
+    },
+    {
+      "id": "allocation_trace",
+      "name": "Allocation trace",
+      "type": "diagnostic_artifact",
+      "description": "Record of allocation sites, sizes, and rates.",
+      "properties": {}
+    },
+    {
+      "id": "retention_path",
+      "name": "Retention path",
+      "type": "diagnostic_concept",
+      "description": "Reference path from a GC root explaining why an object remains reachable.",
+      "properties": {}
+    },
+    {
+      "id": "dominators_tree",
+      "name": "Heap dominator tree",
+      "type": "diagnostic_data_structure",
+      "description": "Structure showing which objects dominate reachability of others.",
+      "properties": {}
+    },
+    {
+      "id": "real_time_gc_paper",
+      "name": "Lieberman-Hewitt real-time GC paper",
+      "type": "research_work",
+      "description": "Research paper describing real-time garbage collection based on object lifetimes.",
+      "properties": {}
+    },
+    {
+      "id": "baker_paper",
+      "name": "Baker real-time copying paper",
+      "type": "research_work",
+      "description": "Research paper describing a real-time copying/list-processing algorithm.",
+      "properties": {}
+    },
+    {
+      "id": "refcount_paper",
+      "name": "Levanoni-Petrank reference-count coalescing paper",
+      "type": "research_work",
+      "description": "Research on reducing redundant reference-count updates.",
+      "properties": {}
+    },
+    {
+      "id": "gc_performance_paper",
+      "name": "GC versus explicit memory management study",
+      "type": "research_work",
+      "description": "2005 study comparing GC to an idealized explicit-deallocation baseline with an oracle-derived trace.",
+      "properties": {}
+    },
+    {
+      "id": "boehm_paper",
+      "name": "Measured cost of conservative GC",
+      "type": "research_work",
+      "description": "Research measuring costs of conservative garbage collection.",
+      "properties": {}
+    },
+    {
+      "id": "compile_time_gc_thesis",
+      "name": "Compile-time GC for Mercury thesis",
+      "type": "research_work",
+      "description": "Research studying compile-time collection for a declarative language.",
+      "properties": {}
+    },
+    {
+      "id": "ssd_gc",
+      "name": "SSD garbage collection",
+      "type": "storage_management_concept",
+      "description": "Flash-storage process reclaiming physical flash blocks; distinct from language-runtime GC.",
+      "properties": {}
+    },
+    {
+      "id": "distributed_gc",
+      "name": "Distributed garbage collection",
+      "type": "gc_strategy",
+      "description": "Techniques for reclaiming remote objects across processes or nodes.",
+      "properties": {}
+    },
+    {
+      "id": "remote_reference",
+      "name": "Remote reference",
+      "type": "runtime_reference",
+      "description": "Proxy/reference to an object in another process or node.",
+      "properties": {}
+    },
+    {
+      "id": "lease_reclamation",
+      "name": "Lease-based distributed reclamation",
+      "type": "memory_management_technique",
+      "description": "Distributed lifetime strategy using leases to bound remote-reference validity.",
+      "properties": {}
+    },
+    {
+      "id": "epoch_reclamation",
+      "name": "Epoch-based reclamation",
+      "type": "memory_reclamation_technique",
+      "description": "Defers freeing retired objects until readers have passed a safe epoch.",
+      "properties": {}
+    },
+    {
+      "id": "hazard_pointer",
+      "name": "Hazard pointers",
+      "type": "memory_reclamation_technique",
+      "description": "Readers publish protected pointers so objects are not freed while accessed.",
+      "properties": {}
+    },
+    {
+      "id": "rcu",
+      "name": "Read-copy-update (RCU)",
+      "type": "memory_reclamation_technique",
+      "description": "Defers reclamation until pre-existing readers have completed.",
+      "properties": {}
+    },
+    {
+      "id": "native_heap",
+      "name": "Native heap",
+      "type": "memory_region",
+      "description": "Memory allocated outside the managed heap and generally requiring separate accounting/lifetime rules.",
+      "properties": {}
+    },
+    {
+      "id": "file_descriptor",
+      "name": "File descriptor",
+      "type": "system_resource",
+      "description": "OS resource handle requiring explicit lifecycle management.",
+      "properties": {}
+    },
+    {
+      "id": "socket",
+      "name": "Network socket",
+      "type": "system_resource",
+      "description": "Network resource whose prompt closure is not guaranteed by GC.",
+      "properties": {}
+    },
+    {
+      "id": "database_handle",
+      "name": "Database handle",
+      "type": "system_resource",
+      "description": "Database resource requiring explicit release.",
+      "properties": {}
+    },
+    {
+      "id": "zeroization",
+      "name": "Sensitive memory zeroization",
+      "type": "security_operation",
+      "description": "Explicit overwriting of sensitive bytes; ordinary GC does not guarantee timely erasure.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collection_ssd",
+      "name": "SSD GC distinction",
+      "type": "disambiguation_concept",
+      "description": "Disambiguates programming-language GC from flash-storage garbage collection.",
+      "properties": {}
+    },
+    {
+      "id": "garbage_collection_handbook",
+      "name": "The Garbage Collection Handbook",
+      "type": "book",
+      "description": "Reference book on algorithms and engineering of automatic memory management.",
+      "properties": {}
+    },
+    {
+      "id": "android_app_jank",
+      "name": "Android UI jank from GC",
+      "type": "performance_problem",
+      "description": "Visible stutter that can occur when GC or allocation pressure interferes with frame deadlines.",
+      "properties": {}
+    },
+    {
+      "id": "android_low_memory_kill",
+      "name": "Android low-memory app termination",
+      "type": "runtime_failure",
+      "description": "Android may terminate app processes under memory pressure.",
+      "properties": {}
+    },
+    {
+      "id": "deallocation",
+      "name": "Deallocation",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Deallocation.",
+      "properties": {}
+    },
+    {
+      "id": "object_movement",
+      "name": "Object Movement",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Object Movement.",
+      "properties": {}
+    },
+    {
+      "id": "pointer_update",
+      "name": "Pointer Update",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Pointer Update.",
+      "properties": {}
+    },
+    {
+      "id": "cross_generation_reference",
+      "name": "Cross Generation Reference",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Cross Generation Reference.",
+      "properties": {}
+    },
+    {
+      "id": "collection_frequency",
+      "name": "Collection Frequency",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Collection Frequency.",
+      "properties": {}
+    },
+    {
+      "id": "hard_deadline",
+      "name": "Hard Deadline",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Hard Deadline.",
+      "properties": {}
+    },
+    {
+      "id": "concurrent_marking",
+      "name": "Concurrent Marking",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Concurrent Marking.",
+      "properties": {}
+    },
+    {
+      "id": "static_analysis",
+      "name": "Static Analysis",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Static Analysis.",
+      "properties": {}
+    },
+    {
+      "id": "collector_selection",
+      "name": "Collector Selection",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Collector Selection.",
+      "properties": {}
+    },
+    {
+      "id": "memory_ownership",
+      "name": "Memory Ownership",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Memory Ownership.",
+      "properties": {}
+    },
+    {
+      "id": "object_pool",
+      "name": "Object Pool",
+      "type": "related_concept",
+      "description": "Supporting concept referenced by the garbage-collection knowledge graph: Object Pool.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "garbage_collection",
+      "target": "automatic_memory_management",
+      "type": "is_a",
+      "description": "GC is a form of automatic memory management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "garbage_collection",
+      "target": "memory_management",
+      "type": "belongs_to",
+      "description": "GC is part of memory management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "garbage_collection",
+      "target": "programming_language_runtime",
+      "type": "implemented_by",
+      "description": "GC is commonly implemented in a language runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "garbage_collection",
+      "target": "runtime_system",
+      "type": "component_of",
+      "description": "GC is one runtime subsystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "garbage_collection",
+      "target": "managed_heap",
+      "type": "reclaims_from",
+      "description": "GC reclaims unreachable managed objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "garbage_collection",
+      "target": "garbage_collector",
+      "type": "performed_by",
+      "description": "The collector performs the algorithm.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "garbage_collection",
+      "target": "john_mccarthy",
+      "type": "credited_to",
+      "description": "John McCarthy is credited with early GC work around 1959.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "john_mccarthy",
+      "target": "lisp",
+      "type": "developed_for",
+      "description": "Early GC simplified memory management in Lisp.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "object",
+      "target": "managed_heap",
+      "type": "allocated_in",
+      "description": "Managed objects occupy the managed heap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "object",
+      "target": "object_graph",
+      "type": "represented_in",
+      "description": "Objects are vertices in the reference graph.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "reference",
+      "target": "object_graph",
+      "type": "forms_edge_in",
+      "description": "References connect object vertices.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "root_set",
+      "target": "reachability",
+      "type": "defines_starting_points_for",
+      "description": "Tracing begins from roots.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "root_scanning",
+      "target": "root_set",
+      "type": "discovers",
+      "description": "Root scanning discovers initial references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "reachability",
+      "target": "live_object",
+      "type": "determines",
+      "description": "Reachable objects are normally live.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "reachability",
+      "target": "garbage_object",
+      "type": "distinguishes_from",
+      "description": "Unreachable objects can be garbage.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "garbage_object",
+      "target": "reclamation",
+      "type": "eligible_for",
+      "description": "Garbage is eligible for reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "reclamation",
+      "target": "memory_reuse",
+      "type": "enables",
+      "description": "Reclaimed storage can be reused.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "mutator",
+      "target": "object_graph",
+      "type": "mutates",
+      "description": "Application code changes references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "mutator",
+      "target": "allocation",
+      "type": "performs",
+      "description": "Application code allocates objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "garbage_collector",
+      "target": "mutator",
+      "type": "coordinates_with",
+      "description": "Collector coordinates with mutator threads.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "gc_cycle",
+      "target": "garbage_collector",
+      "type": "is_work_cycle_of",
+      "description": "A GC cycle consists of collector work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "gc_cycle",
+      "target": "mark_phase",
+      "type": "may_include",
+      "description": "A cycle may include marking.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "gc_cycle",
+      "target": "sweep_phase",
+      "type": "may_include",
+      "description": "A cycle may include sweeping.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "gc_cycle",
+      "target": "compact_phase",
+      "type": "may_include",
+      "description": "A cycle may include compaction.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "gc_cycle",
+      "target": "copy_phase",
+      "type": "may_include",
+      "description": "A cycle may include copying.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "garbage_collection",
+      "target": "manual_memory_management",
+      "type": "alternative_to",
+      "description": "GC reduces per-object explicit deallocation but can coexist with manual memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "manual_memory_management",
+      "target": "deallocation",
+      "type": "uses",
+      "description": "Manual memory management uses explicit deallocation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "tracing_gc",
+      "target": "garbage_collection",
+      "type": "is_a",
+      "description": "Tracing is a major GC family.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "tracing_gc",
+      "target": "root_set",
+      "type": "starts_from",
+      "description": "Tracing begins at roots.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "tracing_gc",
+      "target": "object_graph",
+      "type": "traverses",
+      "description": "Tracing walks the reachable object graph.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "tracing_gc",
+      "target": "mark_sweep",
+      "type": "can_use",
+      "description": "Mark-and-sweep is a tracing algorithm.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "tracing_gc",
+      "target": "mark_compact",
+      "type": "can_use",
+      "description": "Mark-and-compact is a tracing algorithm.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "tracing_gc",
+      "target": "copying_gc",
+      "type": "can_use",
+      "description": "Copying collectors trace and copy live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "mark_sweep",
+      "target": "mark_phase",
+      "type": "performs",
+      "description": "Mark-and-sweep marks live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "mark_sweep",
+      "target": "sweep_phase",
+      "type": "performs",
+      "description": "Mark-and-sweep reclaims unmarked objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "mark_compact",
+      "target": "mark_phase",
+      "type": "performs",
+      "description": "Mark-and-compact identifies live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "mark_compact",
+      "target": "compact_phase",
+      "type": "performs",
+      "description": "Mark-and-compact moves live objects together.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "copying_gc",
+      "target": "copy_phase",
+      "type": "performs",
+      "description": "Copying GC copies live objects to destination space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "stop_copy",
+      "target": "copying_gc",
+      "type": "is_a",
+      "description": "Stop-and-copy is a copying collector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "semispace",
+      "target": "stop_copy",
+      "type": "implements",
+      "description": "Semispace GC swaps active and destination spaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "copying_gc",
+      "target": "object_movement",
+      "type": "requires",
+      "description": "Copying relocates live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "object_movement",
+      "target": "forwarding_pointer",
+      "type": "may_use",
+      "description": "Forwarding pointers identify relocated addresses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "object_movement",
+      "target": "pointer_update",
+      "type": "requires_or_avoids_via_indirection",
+      "description": "Moving objects requires pointer repair or indirection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "mark_sweep",
+      "target": "fragmentation",
+      "type": "may_leave",
+      "description": "Non-moving sweep can leave fragmented free space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "mark_compact",
+      "target": "fragmentation",
+      "type": "reduces",
+      "description": "Compaction reduces fragmentation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "conservative_gc",
+      "target": "tracing_gc",
+      "type": "is_a",
+      "description": "Conservative GC is a tracing approach.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "precise_gc",
+      "target": "tracing_gc",
+      "type": "is_a",
+      "description": "Precise GC is a tracing approach.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "conservative_gc",
+      "target": "memory_overhead",
+      "type": "trades_for_compatibility",
+      "description": "Conservative tracing may avoid some precise metadata requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "reference_counting",
+      "target": "garbage_collection",
+      "type": "is_a",
+      "description": "Reference counting is a common automatic reclamation strategy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "reference_counting",
+      "target": "reference_count",
+      "type": "maintains",
+      "description": "Reference counting maintains strong-reference counts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "reference_count",
+      "target": "reference_counting",
+      "type": "supports",
+      "description": "Counts determine whether strong references remain.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "reference_counting",
+      "target": "reclamation",
+      "type": "triggers_when_count_zero",
+      "description": "An object is usually reclaimed when its strong count reaches zero.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "reference_counting",
+      "target": "reference_cycle",
+      "type": "cannot_reclaim_naively",
+      "description": "Naive counts cannot reclaim unreachable cycles.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "reference_cycle",
+      "target": "memory_leak",
+      "type": "can_cause",
+      "description": "Strong cycles can retain unreachable objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "cycle_detector",
+      "target": "reference_cycle",
+      "type": "detects",
+      "description": "Cycle detection identifies unreachable cycles.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "cpython",
+      "target": "reference_counting",
+      "type": "uses",
+      "description": "CPython uses reference counting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "cpython",
+      "target": "cycle_detector",
+      "type": "uses",
+      "description": "CPython also detects cycles.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "weak_reference",
+      "target": "reference_count",
+      "type": "does_not_increment",
+      "description": "Weak references do not increment strong counts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "weak_reference",
+      "target": "reference_cycle",
+      "type": "can_break",
+      "description": "Weak references can break ownership cycles.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "reference_counting",
+      "target": "memory_overhead",
+      "type": "incurs",
+      "description": "Per-object counters use space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "reference_counting",
+      "target": "cpu_overhead",
+      "type": "incurs",
+      "description": "Counter updates cost CPU.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "reference_counting",
+      "target": "atomic_operation",
+      "type": "may_require",
+      "description": "Shared counts may need atomic updates.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "reference_counting",
+      "target": "update_coalescing",
+      "type": "can_be_optimized_by",
+      "description": "Coalescing combines redundant updates.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "update_coalescing",
+      "target": "refcount_paper",
+      "type": "studied_in",
+      "description": "Levanoni-Petrank studied count-update coalescing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "reference_counting",
+      "target": "deterministic_destruction",
+      "type": "often_provides",
+      "description": "The last strong-reference release often triggers immediate reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "reference_counting",
+      "target": "real_time_gc",
+      "type": "does_not_guarantee",
+      "description": "Recursive destruction can cause unbounded work on a mutator thread.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "generational_gc",
+      "target": "generational_hypothesis",
+      "type": "motivated_by",
+      "description": "Many objects die young.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "generational_gc",
+      "target": "young_generation",
+      "type": "uses",
+      "description": "New objects commonly begin in the young generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "generational_gc",
+      "target": "old_generation",
+      "type": "promotes_survivors_to",
+      "description": "Long-lived objects may be promoted.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "generational_gc",
+      "target": "survivor_space",
+      "type": "uses",
+      "description": "Survivors may pass through survivor spaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "promotion",
+      "target": "old_generation",
+      "type": "moves_into",
+      "description": "Promotion assigns objects to an older generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "cross_generation_reference",
+      "target": "remembered_set",
+      "type": "tracked_by",
+      "description": "Remembered sets track old-to-young references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "card_table",
+      "target": "remembered_set",
+      "type": "supports",
+      "description": "Card tables track regions with relevant pointer writes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "generational_gc",
+      "target": "collection_frequency",
+      "type": "varies_by_generation",
+      "description": "Young and old generations can have different collection frequency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "incremental_gc",
+      "target": "latency",
+      "type": "aims_to_reduce",
+      "description": "Smaller slices reduce individual pauses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "incremental_gc",
+      "target": "tri_color_marking",
+      "type": "can_use",
+      "description": "Tri-color marking models incremental tracing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "concurrent_gc",
+      "target": "mutator",
+      "type": "runs_alongside",
+      "description": "Concurrent GC performs work while mutators run.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "concurrent_gc",
+      "target": "write_barrier",
+      "type": "often_requires",
+      "description": "Concurrent graph mutation often requires barriers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "concurrent_gc",
+      "target": "read_barrier",
+      "type": "may_require",
+      "description": "Moving collectors may use read barriers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "parallel_gc",
+      "target": "throughput",
+      "type": "can_improve",
+      "description": "Parallel workers can increase throughput.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "stop_world",
+      "target": "mutator",
+      "type": "suspends",
+      "description": "Stop-the-world pauses suspend mutator execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "real_time_gc",
+      "target": "real_time_system",
+      "type": "designed_for",
+      "description": "Real-time collectors target timing-constrained systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "real_time_gc",
+      "target": "hard_deadline",
+      "type": "must_respect",
+      "description": "Hard real-time systems require bounded behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "real_time_gc",
+      "target": "baker_algorithm",
+      "type": "can_use",
+      "description": "Baker's copying design is real-time-oriented.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "real_time_gc",
+      "target": "lieberman_hewitt",
+      "type": "related_to",
+      "description": "Lieberman-Hewitt is foundational real-time GC work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "baker_algorithm",
+      "target": "semispace",
+      "type": "uses",
+      "description": "Baker's algorithm uses two spaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "baker_algorithm",
+      "target": "mutator",
+      "type": "coordinates_with",
+      "description": "The mutator cooperates with copying.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "write_barrier",
+      "target": "incremental_update",
+      "type": "implements",
+      "description": "Incremental-update marking uses write barriers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "satb",
+      "target": "write_barrier",
+      "type": "uses",
+      "description": "SATB barriers preserve overwritten references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "concurrent_marking",
+      "target": "floating_garbage",
+      "type": "may_retain",
+      "description": "Concurrent marking may retain objects that die during a cycle.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "region_based_gc",
+      "target": "evacuation",
+      "type": "may_perform",
+      "description": "Region-based GC can evacuate selected regions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "evacuation",
+      "target": "object_movement",
+      "type": "performs",
+      "description": "Evacuation moves live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "safepoint",
+      "target": "root_scanning",
+      "type": "enables",
+      "description": "Safepoints let the runtime scan roots safely.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "stack_map",
+      "target": "root_scanning",
+      "type": "guides",
+      "description": "Stack maps identify pointer locations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "escape_analysis",
+      "target": "stack_allocation",
+      "type": "can_enable",
+      "description": "Non-escaping objects may be stack allocated.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "escape_analysis",
+      "target": "heap",
+      "type": "can_reduce_allocations_on",
+      "description": "Escape analysis can eliminate some heap allocations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "stack_allocation",
+      "target": "stack",
+      "type": "allocates_into",
+      "description": "Eligible objects can live in stack frames.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "stack_allocation",
+      "target": "garbage_collection",
+      "type": "reduces_work_for",
+      "description": "Stack allocation avoids managed-heap GC for those objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "region_inference",
+      "target": "compile_time_gc",
+      "type": "related_to",
+      "description": "Compile-time analysis can determine region lifetimes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "compile_time_gc",
+      "target": "static_analysis",
+      "type": "uses",
+      "description": "Compile-time GC relies on static analysis.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "ownership_type_system",
+      "target": "memory_management",
+      "type": "provides_alternative_to",
+      "description": "Ownership rules can statically constrain object lifetimes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "cpp",
+      "target": "raii",
+      "type": "commonly_uses",
+      "description": "C++ commonly uses RAII for deterministic cleanup.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "unique_ptr",
+      "target": "raii",
+      "type": "implements",
+      "description": "unique_ptr expresses exclusive ownership.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "shared_ptr",
+      "target": "reference_counting",
+      "type": "implements",
+      "description": "shared_ptr uses reference counting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "weak_ptr",
+      "target": "weak_reference",
+      "type": "implements",
+      "description": "weak_ptr provides weak references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "garbage_collection",
+      "target": "memory_safety",
+      "type": "can_improve",
+      "description": "GC avoids many manual deallocation errors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "garbage_collection",
+      "target": "dangling_pointer",
+      "type": "reduces_risk_of",
+      "description": "Managed references avoid many dangling-pointer errors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "garbage_collection",
+      "target": "double_free",
+      "type": "reduces_risk_of",
+      "description": "Automatic reclamation avoids many manual double frees.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "garbage_collection",
+      "target": "memory_leak",
+      "type": "can_reduce_unreachable_object_leaks",
+      "description": "GC can reclaim unreachable objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "manual_memory_management",
+      "target": "use_after_free",
+      "type": "can_cause",
+      "description": "Incorrect deallocation can cause use-after-free.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "manual_memory_management",
+      "target": "double_free",
+      "type": "can_cause",
+      "description": "Repeated deallocation can cause double-free.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "garbage_collection",
+      "target": "cpu_overhead",
+      "type": "incurs",
+      "description": "GC consumes CPU for analysis and reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "garbage_collection",
+      "target": "memory_overhead",
+      "type": "incurs",
+      "description": "Collectors require metadata or reserve additional space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "garbage_collection",
+      "target": "latency",
+      "type": "can_increase",
+      "description": "Collection can delay application progress.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "garbage_collection",
+      "target": "throughput",
+      "type": "can_reduce",
+      "description": "Collector work competes with application work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "allocation_rate",
+      "target": "collection_frequency",
+      "type": "influences",
+      "description": "High allocation rate often increases collection frequency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "heap_size",
+      "target": "collection_frequency",
+      "type": "influences",
+      "description": "Heap size affects when collection pressure occurs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "memory_pressure",
+      "target": "garbage_collection",
+      "type": "can_trigger",
+      "description": "Memory pressure can trigger collection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "garbage_collection",
+      "target": "out_of_memory",
+      "type": "helps_avoid_but_does_not_prevent",
+      "description": "GC can reclaim dead objects but cannot free live objects or guarantee memory sufficiency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "gc_tuning",
+      "target": "heap_size",
+      "type": "adjusts",
+      "description": "Heap sizing is a GC tuning dimension.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "gc_tuning",
+      "target": "collector_selection",
+      "type": "includes",
+      "description": "Collector selection is part of tuning.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "gc_tuning",
+      "target": "profiler",
+      "type": "uses",
+      "description": "Profilers identify allocation and retention patterns.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "profiler",
+      "target": "allocation_trace",
+      "type": "can_collect",
+      "description": "Profilers can collect allocation traces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "heap_dump",
+      "target": "retention_path",
+      "type": "helps_find",
+      "description": "Heap dumps reveal why objects remain reachable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "retention_path",
+      "target": "memory_leak",
+      "type": "helps_diagnose",
+      "description": "Retention paths reveal unintended object retention.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "leak_detection",
+      "target": "memory_leak",
+      "type": "detects",
+      "description": "Leak detection finds memory leaks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "boehm_gc",
+      "target": "conservative_gc",
+      "type": "implements",
+      "description": "Boehm GC is a conservative tracing collector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "boehm_gc",
+      "target": "c",
+      "type": "can_be_used_with",
+      "description": "Boehm GC can be used with C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "boehm_gc",
+      "target": "cpp",
+      "type": "can_be_used_with",
+      "description": "Boehm GC can be used with C++.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "garbage_collection",
+      "target": "resource_management",
+      "type": "does_not_replace",
+      "description": "GC does not reliably close external resources promptly.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "resource_management",
+      "target": "raii",
+      "type": "can_use",
+      "description": "RAII is one resource-management approach.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "raii",
+      "target": "destructor",
+      "type": "uses",
+      "description": "RAII relies on deterministic destructor execution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "finalization",
+      "target": "nondeterministic_reclamation",
+      "type": "often_has",
+      "description": "Finalization timing is generally unpredictable.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "finalization",
+      "target": "resource_management",
+      "type": "is_not_reliable_for",
+      "description": "Finalizers are not a reliable substitute for explicit resource management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "garbage_collection",
+      "target": "zeroization",
+      "type": "does_not_guarantee",
+      "description": "GC does not guarantee secure erasure of sensitive data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "java",
+      "target": "jvm",
+      "type": "runs_on",
+      "description": "Java commonly runs on JVM implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "jvm",
+      "target": "serial_gc",
+      "type": "may_offer",
+      "description": "Serial is a JVM collector option.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "jvm",
+      "target": "parallel_gc_jvm",
+      "type": "may_offer",
+      "description": "Parallel is a JVM collector option.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "jvm",
+      "target": "cms_gc",
+      "type": "historically_offered",
+      "description": "CMS was historically offered and later removed from standard OpenJDK.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "jvm",
+      "target": "g1_gc",
+      "type": "may_offer",
+      "description": "G1 is a JVM collector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "jvm",
+      "target": "z_gc",
+      "type": "may_offer",
+      "description": "ZGC is a JVM collector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "jvm",
+      "target": "shenandoah_gc",
+      "type": "may_offer",
+      "description": "Shenandoah is a JVM collector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "jvm",
+      "target": "epsilon_gc",
+      "type": "may_offer",
+      "description": "Epsilon is a no-op collector.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "gen_z_gc",
+      "target": "generational_gc",
+      "type": "is_a",
+      "description": "Generational ZGC uses age-based collection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "gen_shen_gc",
+      "target": "generational_gc",
+      "type": "is_a",
+      "description": "Generational Shenandoah uses generations where supported.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "ibm_metronome",
+      "target": "real_time_gc",
+      "type": "targets",
+      "description": "Metronome targets real-time behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "azul_c4",
+      "target": "concurrent_gc",
+      "type": "uses",
+      "description": "C4 is continuously concurrent.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "android_runtime",
+      "target": "garbage_collection",
+      "type": "integrates",
+      "description": "ART includes GC for managed objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "android_13",
+      "target": "android_runtime",
+      "type": "includes_gc_changes_for",
+      "description": "The supplied source associates Android 13 with ART GC changes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "android_13",
+      "target": "userfaultfd",
+      "type": "uses_in_gc_work",
+      "description": "The described ART GC uses userfaultfd in a compaction phase.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "android_runtime",
+      "target": "android_app_jank",
+      "type": "aims_to_reduce",
+      "description": "ART GC changes aim to reduce UI jank.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "android_runtime",
+      "target": "android_low_memory_kill",
+      "type": "aims_to_reduce_risk_of",
+      "description": "GC changes aim to reduce low-memory app-kill risk.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "objective_c",
+      "target": "objective_c_arc",
+      "type": "uses_in_modern_platforms",
+      "description": "Modern Objective-C uses ARC rather than the historical macOS GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "swift",
+      "target": "arc",
+      "type": "uses",
+      "description": "Swift uses ARC-style reference counting for class instances.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "ios",
+      "target": "arc",
+      "type": "uses_instead_of_tracing_gc",
+      "description": "iOS uses ARC rather than general tracing GC for Objective-C objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "macos",
+      "target": "objective_c",
+      "type": "historically_supported_gc_for",
+      "description": "macOS historically supported Objective-C GC before deprecation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0157",
+      "source": "go",
+      "target": "garbage_collection",
+      "type": "integrates",
+      "description": "Go includes GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0158",
+      "source": "csharp",
+      "target": "garbage_collection",
+      "type": "integrates",
+      "description": "C# commonly runs on a GC-managed runtime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0159",
+      "source": "d_language",
+      "target": "garbage_collection",
+      "type": "integrates_with_controls",
+      "description": "D integrates GC with some explicit controls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0160",
+      "source": "haskell",
+      "target": "garbage_collection",
+      "type": "integrates",
+      "description": "Common Haskell implementations include GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0161",
+      "source": "javascript",
+      "target": "garbage_collection",
+      "type": "commonly_uses",
+      "description": "Common JavaScript engines use GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0162",
+      "source": "ruby",
+      "target": "garbage_collection",
+      "type": "commonly_uses",
+      "description": "Common Ruby implementations use GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0163",
+      "source": "basic",
+      "target": "garbage_collection",
+      "type": "historically_uses",
+      "description": "BASIC implementations have used GC for strings and lists.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0164",
+      "source": "ada",
+      "target": "manual_memory_management",
+      "type": "can_coexist_with",
+      "description": "Some implementations support manual and collected domains.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0165",
+      "source": "modula3",
+      "target": "garbage_collection",
+      "type": "supports",
+      "description": "Modula-3 is cited as supporting managed memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0166",
+      "source": "cpp_cli",
+      "target": "garbage_collection",
+      "type": "can_coexist_with_native_memory",
+      "description": "C++/CLI can combine managed and native memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0167",
+      "source": "mercury",
+      "target": "compile_time_gc",
+      "type": "studied_in",
+      "description": "Compile-time GC has been studied in Mercury.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0168",
+      "source": "android_runtime",
+      "target": "managed_heap",
+      "type": "manages",
+      "description": "ART manages a heap of managed objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0169",
+      "source": "android_13",
+      "target": "android_low_memory_kill",
+      "type": "aims_to_reduce_risk_of",
+      "description": "GC changes aim to reduce low-memory process termination risk.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0170",
+      "source": "real_time_gc_paper",
+      "target": "lieberman_hewitt",
+      "type": "describes",
+      "description": "Research paper describes Lieberman-Hewitt real-time GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0171",
+      "source": "baker_paper",
+      "target": "baker_algorithm",
+      "type": "describes",
+      "description": "Baker's paper describes a real-time copying algorithm.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0172",
+      "source": "refcount_paper",
+      "target": "reference_counting",
+      "type": "studies_optimization_of",
+      "description": "Research studies on-the-fly count-update coalescing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0173",
+      "source": "gc_performance_paper",
+      "target": "garbage_collection",
+      "type": "compares_costs_of",
+      "description": "Study compares GC with idealized explicit deallocation; oracle baseline assumptions matter.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0174",
+      "source": "boehm_paper",
+      "target": "conservative_gc",
+      "type": "studies_costs_of",
+      "description": "Study measures conservative GC costs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0175",
+      "source": "compile_time_gc_thesis",
+      "target": "compile_time_gc",
+      "type": "studies",
+      "description": "Thesis studies compile-time GC for Mercury.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0176",
+      "source": "garbage_collection",
+      "target": "garbage_collection_handbook",
+      "type": "covered_by",
+      "description": "The handbook covers algorithms and engineering.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0177",
+      "source": "garbage_collection",
+      "target": "garbage_collection_ssd",
+      "type": "distinct_from",
+      "description": "Heap GC is distinct from SSD flash-block GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0178",
+      "source": "garbage_collection",
+      "target": "distributed_gc",
+      "type": "related_but_distinct_from",
+      "description": "Distributed GC tracks remote references across processes or nodes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0179",
+      "source": "distributed_gc",
+      "target": "remote_reference",
+      "type": "tracks",
+      "description": "Distributed GC tracks remote references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0180",
+      "source": "distributed_gc",
+      "target": "lease_reclamation",
+      "type": "may_use",
+      "description": "Leases can bound remote-reference lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0181",
+      "source": "epoch_reclamation",
+      "target": "memory_management",
+      "type": "is_a_safe_reclamation_technique",
+      "description": "Epoch reclamation delays frees until readers pass a safe epoch.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0182",
+      "source": "hazard_pointer",
+      "target": "memory_management",
+      "type": "is_a_safe_reclamation_technique",
+      "description": "Hazard pointers protect objects currently being accessed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0183",
+      "source": "rcu",
+      "target": "memory_management",
+      "type": "is_a_safe_reclamation_technique",
+      "description": "RCU defers freeing until readers finish.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0184",
+      "source": "gc_log",
+      "target": "gc_tuning",
+      "type": "supports",
+      "description": "GC logs support evidence-based tuning.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0185",
+      "source": "heap_dump",
+      "target": "gc_tuning",
+      "type": "supports",
+      "description": "Heap dumps support memory diagnostics and tuning.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0186",
+      "source": "memory_hierarchy",
+      "target": "cpu_overhead",
+      "type": "influences",
+      "description": "Cache and virtual-memory effects affect collector cost.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0187",
+      "source": "copying_gc",
+      "target": "memory_overhead",
+      "type": "may_increase",
+      "description": "Copying collectors reserve destination space.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0188",
+      "source": "region_based_gc",
+      "target": "evacuation",
+      "type": "may_use",
+      "description": "Region-based GC may evacuate selected regions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0189",
+      "source": "garbage_collection",
+      "target": "safepoint",
+      "type": "coordinates_at",
+      "description": "Some GC operations require safepoints.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0190",
+      "source": "garbage_collection",
+      "target": "stack_map",
+      "type": "uses_for_precise_roots",
+      "description": "Precise collectors use stack maps.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0191",
+      "source": "garbage_collection",
+      "target": "tlab",
+      "type": "uses_for_fast_allocation",
+      "description": "TLABs make managed allocation fast and reduce contention.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0192",
+      "source": "garbage_collection",
+      "target": "gc_tuning",
+      "type": "requires_measurement_for",
+      "description": "Tuning should be based on observed workload and metrics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0193",
+      "source": "garbage_collection",
+      "target": "interactive_application",
+      "type": "can_affect_responsiveness_of",
+      "description": "Pauses can affect interactive responsiveness.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0194",
+      "source": "garbage_collection",
+      "target": "transaction_processing",
+      "type": "can_affect_latency_of",
+      "description": "Pauses can affect transaction latency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0195",
+      "source": "garbage_collection",
+      "target": "embedded_system",
+      "type": "can_be_challenging_for",
+      "description": "Resource and timing limits complicate GC use in embedded systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0196",
+      "source": "real_time_gc",
+      "target": "baker_algorithm",
+      "type": "related_to",
+      "description": "Baker is a real-time copying design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0197",
+      "source": "reference_counting",
+      "target": "update_coalescing",
+      "type": "optimized_by",
+      "description": "Update coalescing reduces redundant counter writes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0198",
+      "source": "generational_gc",
+      "target": "remembered_set",
+      "type": "uses",
+      "description": "Generational collectors track cross-generation references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0199",
+      "source": "concurrent_gc",
+      "target": "tri_color_marking",
+      "type": "can_model_with",
+      "description": "Tri-color marking describes concurrent tracing state.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0200",
+      "source": "garbage_collection",
+      "target": "weak_map",
+      "type": "supports_runtime_semantics_for",
+      "description": "Weak maps depend on collector reference processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0201",
+      "source": "garbage_collection",
+      "target": "ephemeron",
+      "type": "may_require_processing_of",
+      "description": "Some weak-key map semantics require ephemeron processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0202",
+      "source": "garbage_collection",
+      "target": "finalizer_queue",
+      "type": "may_schedule_to",
+      "description": "Eligible finalizers may be queued.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0203",
+      "source": "finalization",
+      "target": "resurrection",
+      "type": "can_enable",
+      "description": "Finalization can sometimes resurrect an object.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0204",
+      "source": "garbage_collection",
+      "target": "native_heap",
+      "type": "does_not_automatically_cover",
+      "description": "Native heap allocations require separate management/accounting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0205",
+      "source": "garbage_collection",
+      "target": "file_descriptor",
+      "type": "does_not_promptly_close",
+      "description": "GC does not guarantee prompt file-descriptor closure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0206",
+      "source": "garbage_collection",
+      "target": "socket",
+      "type": "does_not_promptly_close",
+      "description": "GC does not guarantee prompt socket closure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0207",
+      "source": "garbage_collection",
+      "target": "database_handle",
+      "type": "does_not_promptly_close",
+      "description": "GC does not guarantee prompt database-handle release.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0208",
+      "source": "garbage_collection",
+      "target": "out_of_memory",
+      "type": "cannot_solve_if_live_set_exceeds_capacity",
+      "description": "GC cannot reclaim reachable live objects to satisfy an insufficient heap.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0209",
+      "source": "garbage_collection",
+      "target": "object_lifetime",
+      "type": "uses_reachability_to_approximate",
+      "description": "Tracing GC uses reachability as its operational criterion for liveness.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0210",
+      "source": "garbage_collection",
+      "target": "allocation_rate",
+      "type": "responds_to",
+      "description": "Allocation rate influences when and how much collection work is needed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0211",
+      "source": "garbage_collection",
+      "target": "memory_pressure",
+      "type": "responds_to",
+      "description": "Collector policy can respond to memory pressure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0212",
+      "source": "garbage_collection",
+      "target": "memory_safety",
+      "type": "supports",
+      "description": "Automatic reclamation reduces classes of lifetime errors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0213",
+      "source": "garbage_collection",
+      "target": "nondeterministic_reclamation",
+      "type": "often_uses",
+      "description": "Tracing collection time is chosen by runtime policy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0214",
+      "source": "deterministic_destruction",
+      "target": "nondeterministic_reclamation",
+      "type": "contrasts_with",
+      "description": "Scope-bound destruction differs from GC timing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0215",
+      "source": "weak_ptr",
+      "target": "shared_ptr",
+      "type": "observes_without_owning",
+      "description": "weak_ptr observes a shared_ptr-managed object without increasing strong ownership.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0216",
+      "source": "shared_ptr",
+      "target": "reference_count",
+      "type": "uses",
+      "description": "shared_ptr's control block maintains a strong reference count.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0217",
+      "source": "unique_ptr",
+      "target": "memory_ownership",
+      "type": "expresses",
+      "description": "unique_ptr expresses exclusive ownership.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0218",
+      "source": "garbage_collection",
+      "target": "object_pool",
+      "type": "interacts_with",
+      "description": "Pooling may reduce allocation but retain objects longer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0219",
+      "source": "object_pool",
+      "target": "memory_leak",
+      "type": "can_contribute_to",
+      "description": "Pools can look like leaks when they retain unused objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0220",
+      "source": "escape_analysis",
+      "target": "allocation_rate",
+      "type": "can_reduce",
+      "description": "Eliminating heap allocations reduces allocation rate.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0221",
+      "source": "stack_allocation",
+      "target": "object_lifetime",
+      "type": "bounded_by_stack_frame",
+      "description": "Stack object lifetime is normally bounded by the frame.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0222",
+      "source": "region_inference",
+      "target": "reclamation",
+      "type": "groups",
+      "description": "Region inference enables bulk reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0223",
+      "source": "garbage_collection",
+      "target": "memory_pressure",
+      "type": "may_be_triggered_by",
+      "description": "Memory pressure may trigger collection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0224",
+      "source": "garbage_collection",
+      "target": "profiler",
+      "type": "observable_through",
+      "description": "Profilers reveal allocation and retention behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0225",
+      "source": "garbage_collection",
+      "target": "leak_detection",
+      "type": "supported_by",
+      "description": "Leak detection tools find memory leaks and retention.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0226",
+      "source": "garbage_collection",
+      "target": "memory_safety",
+      "type": "does_not_guarantee_all_safety",
+      "description": "GC does not prevent every bug, native memory error, or resource leak.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0227",
+      "source": "garbage_collection",
+      "target": "zeroization",
+      "type": "must_not_replace",
+      "description": "Secure erasure requires explicit guarantees beyond GC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0228",
+      "source": "garbage_collection",
+      "target": "memory_management",
+      "type": "central_topic_in",
+      "description": "GC is a central memory-management technique.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0229",
+      "source": "gc_cycle",
+      "target": "root_scanning",
+      "type": "contains",
+      "description": "A tracing cycle discovers roots.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0230",
+      "source": "gc_cycle",
+      "target": "mark_phase",
+      "type": "contains",
+      "description": "Marking identifies live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0231",
+      "source": "gc_cycle",
+      "target": "sweep_phase",
+      "type": "contains",
+      "description": "Sweeping reclaims dead objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0232",
+      "source": "gc_cycle",
+      "target": "copy_phase",
+      "type": "contains_in_copying_collectors",
+      "description": "Copying collectors copy live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0233",
+      "source": "gc_cycle",
+      "target": "compact_phase",
+      "type": "contains_in_compacting_collectors",
+      "description": "Compacting collectors relocate live objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0234",
+      "source": "incremental_gc",
+      "target": "pause_time",
+      "type": "aims_to_bound",
+      "description": "Incremental work aims to bound individual pauses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0235",
+      "source": "concurrent_gc",
+      "target": "pause_time",
+      "type": "aims_to_reduce",
+      "description": "Concurrent work can reduce stop-the-world time.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0236",
+      "source": "parallel_gc_jvm",
+      "target": "cpu_overhead",
+      "type": "may_increase",
+      "description": "Parallel workers use more concurrent CPU capacity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0237",
+      "source": "g1_gc",
+      "target": "region_based_gc",
+      "type": "is_a",
+      "description": "G1 is region-based.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0238",
+      "source": "z_gc",
+      "target": "concurrent_gc",
+      "type": "is_a",
+      "description": "ZGC performs substantial work concurrently.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0239",
+      "source": "shenandoah_gc",
+      "target": "concurrent_gc",
+      "type": "is_a",
+      "description": "Shenandoah performs substantial work concurrently.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0240",
+      "source": "epsilon_gc",
+      "target": "reclamation",
+      "type": "does_not_perform",
+      "description": "Epsilon does not reclaim memory.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0241",
+      "source": "cms_gc",
+      "target": "concurrent_gc",
+      "type": "historically_used",
+      "description": "CMS performed much work concurrently.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0242",
+      "source": "ibm_metronome",
+      "target": "real_time_gc",
+      "type": "is_designed_for",
+      "description": "Metronome targets real-time requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0243",
+      "source": "azul_c4",
+      "target": "concurrent_gc",
+      "type": "is_a",
+      "description": "C4 is continuously concurrent.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0244",
+      "source": "serial_gc",
+      "target": "parallel_gc_jvm",
+      "type": "contrasts_with",
+      "description": "Serial uses one worker; Parallel uses multiple.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0245",
+      "source": "gc_log",
+      "target": "pause_time",
+      "type": "records",
+      "description": "GC logs often record pause durations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0246",
+      "source": "heap_dump",
+      "target": "object_graph",
+      "type": "captures",
+      "description": "A heap dump captures object/reference structure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0247",
+      "source": "allocation_trace",
+      "target": "allocation_rate",
+      "type": "measures",
+      "description": "Allocation traces help estimate allocation rate.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0248",
+      "source": "retention_path",
+      "target": "root_set",
+      "type": "connects_from",
+      "description": "Retention paths lead from roots to retained objects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0249",
+      "source": "dominators_tree",
+      "target": "heap_dump",
+      "type": "derived_from",
+      "description": "Dominator trees can be computed from heap dumps.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0250",
+      "source": "gc_tuning",
+      "target": "throughput",
+      "type": "balances",
+      "description": "Tuning balances throughput and latency.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0251",
+      "source": "gc_tuning",
+      "target": "memory_overhead",
+      "type": "balances",
+      "description": "Tuning balances heap headroom and overhead.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0252",
+      "source": "gc_tuning",
+      "target": "tail_latency",
+      "type": "targets",
+      "description": "Latency-sensitive tuning targets high-percentile response time.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0253",
+      "source": "heap_size",
+      "target": "out_of_memory",
+      "type": "can_affect_risk_of",
+      "description": "Insufficient heap capacity can lead to OOM.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0254",
+      "source": "allocation_rate",
+      "target": "memory_pressure",
+      "type": "contributes_to",
+      "description": "High allocation rates increase memory demand.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0255",
+      "source": "object_lifetime",
+      "target": "generational_hypothesis",
+      "type": "described_by",
+      "description": "Lifetime distributions motivate generational collection.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0256",
+      "source": "reference_counting",
+      "target": "memory_leak",
+      "type": "can_leave_cycle_leaks",
+      "description": "Naive reference counting can leave unreachable cycles allocated.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0257",
+      "source": "tracing_gc",
+      "target": "reference_counting",
+      "type": "differs_from",
+      "description": "Tracing identifies reachability globally; reference counting tracks local counts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0258",
+      "source": "automatic_memory_management",
+      "target": "manual_memory_management",
+      "type": "contrasts_with",
+      "description": "Automatic and manual management distribute lifetime responsibility differently.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0259",
+      "source": "compile_time_gc",
+      "target": "automatic_memory_management",
+      "type": "is_related_to",
+      "description": "Compile-time GC uses static reasoning to automate reclamation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0260",
+      "source": "ownership_type_system",
+      "target": "compile_time_gc",
+      "type": "can_complement",
+      "description": "Static ownership/lifetime analysis can reduce runtime reclamation needs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0261",
+      "source": "resource_management",
+      "target": "file_descriptor",
+      "type": "manages",
+      "description": "File descriptors need explicit lifecycle management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0262",
+      "source": "resource_management",
+      "target": "socket",
+      "type": "manages",
+      "description": "Sockets need explicit lifecycle management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0263",
+      "source": "resource_management",
+      "target": "database_handle",
+      "type": "manages",
+      "description": "Database handles need explicit lifecycle management.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0264",
+      "source": "android_runtime",
+      "target": "android_app_jank",
+      "type": "observed_in",
+      "description": "ART GC pauses can be associated with app jank.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0265",
+      "source": "android_runtime",
+      "target": "android_low_memory_kill",
+      "type": "interacts_with",
+      "description": "GC behavior can influence memory reclamation under Android memory pressure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0266",
+      "source": "userfaultfd",
+      "target": "android_13",
+      "type": "associated_with",
+      "description": "The supplied article links userfaultfd-based GC changes to Android 13.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0267",
+      "source": "garbage_collection",
+      "target": "garbage_collection_handbook",
+      "type": "documented_in",
+      "description": "The handbook provides broad technical treatment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0268",
+      "source": "garbage_collection",
+      "target": "gc_performance_paper",
+      "type": "evaluated_in",
+      "description": "Performance studies compare collector and explicit-management costs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0269",
+      "source": "garbage_collection",
+      "target": "real_time_gc_paper",
+      "type": "studied_in",
+      "description": "Real-time GC has a substantial research literature.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0270",
+      "source": "garbage_collection",
+      "target": "boehm_paper",
+      "type": "studied_in",
+      "description": "Conservative GC costs have been measured experimentally.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0271",
+      "source": "garbage_collection",
+      "target": "compile_time_gc_thesis",
+      "type": "studied_in",
+      "description": "Compile-time GC has been studied for Mercury.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0272",
+      "source": "garbage_collection",
+      "target": "garbage_collection_ssd",
+      "type": "name_collision_with",
+      "description": "SSD GC is a separate storage-layer concept.",
+      "properties": {}
+    }
+  ]
+}

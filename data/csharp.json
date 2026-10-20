@@ -1,0 +1,3937 @@
+{
+  "metadata": {
+    "title": "C# Programming Language — Comprehensive Knowledge Graph",
+    "description": "Machine-readable connected knowledge graph covering C# language identity, history, standards, versions, syntax, type system, object orientation, functional programming, LINQ, async/concurrency, memory, exceptions, metaprogramming, compiler/runtime architecture, libraries, tools, frameworks, implementations, and language influences.",
+    "source_basis": "User-provided C# article extract (Wikipedia-style source) plus structured language-domain knowledge used to expand connections and normalize concepts.",
+    "source_file": "Pasted text(20261019-233337).txt",
+    "schema_version": "1.0",
+    "json_schema_draft": "2020-12",
+    "created_utc": "2026-10-20T00:00:00Z",
+    "counts": {
+      "entities": 241,
+      "relationships": 254,
+      "entity_types": 94,
+      "relationship_types": 70,
+      "source_lines": 646
+    }
+  },
+  "entity_types": [
+    "analyzer_tool",
+    "architecture_pattern",
+    "base_type",
+    "build_system",
+    "cli_tool",
+    "compiler_feature",
+    "compiler_implementation",
+    "compiler_platform",
+    "compiler_toolchain",
+    "concurrency_feature",
+    "concurrency_library",
+    "concurrency_type",
+    "control_flow_feature",
+    "data_access",
+    "data_construct",
+    "deployment_model",
+    "deployment_unit",
+    "editor",
+    "error_handling",
+    "error_handling_construct",
+    "event_feature",
+    "expression_feature",
+    "framework",
+    "framework_api",
+    "framework_concept",
+    "framework_feature",
+    "framework_interface",
+    "framework_library",
+    "framework_type",
+    "functional_feature",
+    "game_engine",
+    "generic_collection",
+    "generic_programming",
+    "generic_struct",
+    "ide",
+    "implementation",
+    "intermediate_representation",
+    "interop_feature",
+    "jit_compiler",
+    "language_characteristic",
+    "language_construct",
+    "language_dialect",
+    "language_feature",
+    "language_version",
+    "linq_feature",
+    "member_feature",
+    "member_modifier",
+    "memory_feature",
+    "memory_management",
+    "memory_type",
+    "metaprogramming",
+    "method_modifier",
+    "oop_feature",
+    "organization",
+    "orm",
+    "package_manager",
+    "parameter_feature",
+    "pattern_feature",
+    "people",
+    "person",
+    "platform",
+    "platform_feature",
+    "primitive_value_type",
+    "programming_language",
+    "project_file",
+    "project_model",
+    "property_feature",
+    "reference_type",
+    "resource_management",
+    "runtime",
+    "runtime_api",
+    "runtime_concept",
+    "runtime_feature",
+    "runtime_metadata",
+    "runtime_operation",
+    "runtime_standard",
+    "runtime_type",
+    "solution_file",
+    "standard",
+    "static_analysis",
+    "struct_type",
+    "synchronization_feature",
+    "synchronization_type",
+    "syntax_feature",
+    "testing_framework",
+    "tool",
+    "type_category",
+    "type_construct",
+    "type_modifier",
+    "type_system",
+    "type_system_concept",
+    "type_system_feature",
+    "ui_framework",
+    "web_framework"
+  ],
+  "relationship_types": [
+    "awaits",
+    "belongs_to",
+    "builds",
+    "builds_or_manages",
+    "built_with",
+    "characterized_by",
+    "cleanup_with",
+    "commonly_uses",
+    "compiled_by",
+    "compiles_to",
+    "contains",
+    "contains_or_provides",
+    "contrasts_with",
+    "converts",
+    "defines",
+    "designed_by",
+    "developed_by",
+    "dialect_of",
+    "emits",
+    "enables",
+    "extends",
+    "generalizes_to",
+    "handled_by",
+    "has_form",
+    "heap_compatible_counterpart",
+    "hosts",
+    "implemented_by",
+    "implemented_with",
+    "implements",
+    "implements_or_conforms_to",
+    "includes",
+    "influenced_by",
+    "inherit_from",
+    "inspectable_by",
+    "instance_of_pattern",
+    "integrates",
+    "integrates_with",
+    "invokes",
+    "is_a",
+    "loaded_by",
+    "maintained_by",
+    "manages",
+    "modifies",
+    "operates_on",
+    "paired_with",
+    "precedes",
+    "produces",
+    "provides",
+    "read_only_variant_of",
+    "related_to",
+    "represented_by",
+    "requires",
+    "restricts",
+    "reverses",
+    "runs_on",
+    "standardized_by",
+    "supports",
+    "targets_or_integrates_with",
+    "tested_with",
+    "tooled_by",
+    "translated_to",
+    "ultimately_derive_from",
+    "used_by",
+    "used_for",
+    "used_with",
+    "uses",
+    "uses_ecosystem",
+    "uses_for",
+    "uses_pattern",
+    "version_of"
+  ],
+  "entities": [
+    {
+      "id": "csharp",
+      "name": "C#",
+      "type": "programming_language",
+      "description": "General-purpose, high-level, multi-paradigm language centered on the Common Language Infrastructure ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "csharp_designers",
+      "name": "Anders Hejlsberg, Scott Wiltamuth, Peter Golde",
+      "type": "people",
+      "description": "Principal early designers associated with C#.",
+      "properties": {}
+    },
+    {
+      "id": "mads_torgersen",
+      "name": "Mads Torgersen",
+      "type": "person",
+      "description": "Microsoft language designer and later lead designer for C#.",
+      "properties": {}
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "type": "organization",
+      "description": "Organization responsible for C# development and the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "ecma334",
+      "name": "ECMA-334",
+      "type": "standard",
+      "description": "Ecma C# language specification standard.",
+      "properties": {}
+    },
+    {
+      "id": "iso23270",
+      "name": "ISO/IEC 23270",
+      "type": "standard",
+      "description": "ISO/IEC standard family for C# language specifications.",
+      "properties": {}
+    },
+    {
+      "id": "iso20619",
+      "name": "ISO/IEC 20619",
+      "type": "standard",
+      "description": "ISO/IEC standard used for later C# specifications beginning with C# 7.",
+      "properties": {}
+    },
+    {
+      "id": "cli",
+      "name": "Common Language Infrastructure",
+      "type": "runtime_standard",
+      "description": "Standardized execution infrastructure underlying the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "cts",
+      "name": "Common Type System",
+      "type": "type_system",
+      "description": "CLI type system unifying value and reference types.",
+      "properties": {}
+    },
+    {
+      "id": "cls",
+      "name": "Common Language Specification",
+      "type": "standard",
+      "description": "CLI interoperability rules for languages and libraries.",
+      "properties": {}
+    },
+    {
+      "id": "clr",
+      "name": "Common Language Runtime",
+      "type": "runtime",
+      "description": "Managed runtime historically associated with .NET Framework and CoreCLR.",
+      "properties": {}
+    },
+    {
+      "id": "dotnet",
+      "name": ".NET",
+      "type": "platform",
+      "description": "Open-source, cross-platform development platform used by modern C#.",
+      "properties": {}
+    },
+    {
+      "id": "roslyn",
+      "name": "Roslyn",
+      "type": "compiler_platform",
+      "description": "Microsoft .NET Compiler Platform exposing C# parsing, semantic analysis, compilation and code-generation APIs.",
+      "properties": {}
+    },
+    {
+      "id": "ryujit",
+      "name": "RyuJIT",
+      "type": "jit_compiler",
+      "description": "JIT compiler that transforms intermediate language into optimized native code.",
+      "properties": {}
+    },
+    {
+      "id": "mono",
+      "name": "Mono",
+      "type": "implementation",
+      "description": "Open-source implementation of the CLI and C# ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "dotnet_framework",
+      "name": ".NET Framework",
+      "type": "platform",
+      "description": "Windows-oriented historical .NET implementation.",
+      "properties": {}
+    },
+    {
+      "id": "dotnet_core",
+      "name": ".NET Core",
+      "type": "platform",
+      "description": "Open-source cross-platform predecessor that converged into modern .NET.",
+      "properties": {}
+    },
+    {
+      "id": "visual_studio",
+      "name": "Visual Studio",
+      "type": "ide",
+      "description": "Microsoft IDE with comprehensive C# tooling.",
+      "properties": {}
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "type": "editor",
+      "description": "Cross-platform editor supporting C# through .NET tooling.",
+      "properties": {}
+    },
+    {
+      "id": "unity",
+      "name": "Unity",
+      "type": "game_engine",
+      "description": "Game engine using C# as a primary scripting language.",
+      "properties": {}
+    },
+    {
+      "id": "godot",
+      "name": "Godot",
+      "type": "game_engine",
+      "description": "Game engine with an optional C# integration.",
+      "properties": {}
+    },
+    {
+      "id": "elements",
+      "name": "Elements toolchain",
+      "type": "compiler_toolchain",
+      "description": "RemObjects toolchain capable of compiling C# to multiple targets.",
+      "properties": {}
+    },
+    {
+      "id": "source_generators",
+      "name": "Source generators",
+      "type": "compiler_feature",
+      "description": "Roslyn compile-time metaprogramming facility that generates additional source code.",
+      "properties": {}
+    },
+    {
+      "id": "reflection",
+      "name": "Reflection",
+      "type": "metaprogramming",
+      "description": "Runtime inspection and invocation of type and member metadata.",
+      "properties": {}
+    },
+    {
+      "id": "expression_trees",
+      "name": "Expression trees",
+      "type": "metaprogramming",
+      "description": "Object representations of expression syntax that can be inspected or translated.",
+      "properties": {}
+    },
+    {
+      "id": "reflection_emit",
+      "name": "System.Reflection.Emit",
+      "type": "runtime_api",
+      "description": "API for emitting metadata and intermediate language at runtime.",
+      "properties": {}
+    },
+    {
+      "id": "attributes",
+      "name": "Attributes",
+      "type": "language_feature",
+      "description": "Metadata annotations attachable to assemblies, types and members.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic",
+      "name": "dynamic",
+      "type": "type_system_feature",
+      "description": "C# type that defers binding decisions to runtime.",
+      "properties": {}
+    },
+    {
+      "id": "unsafe",
+      "name": "unsafe code",
+      "type": "language_feature",
+      "description": "Opt-in language region permitting pointer operations and other unmanaged-memory techniques.",
+      "properties": {}
+    },
+    {
+      "id": "gc",
+      "name": "Garbage collection",
+      "type": "memory_management",
+      "description": "Automatic reclamation of managed objects that are no longer reachable.",
+      "properties": {}
+    },
+    {
+      "id": "managed_memory",
+      "name": "Managed memory",
+      "type": "runtime_concept",
+      "description": "Memory governed by the managed runtime and garbage collector.",
+      "properties": {}
+    },
+    {
+      "id": "pointers",
+      "name": "Pointers",
+      "type": "memory_feature",
+      "description": "Unsafe native-style memory pointers available in explicitly unsafe contexts.",
+      "properties": {}
+    },
+    {
+      "id": "intptr",
+      "name": "System.IntPtr",
+      "type": "runtime_type",
+      "description": "Integer-sized type capable of representing unmanaged pointers or handles.",
+      "properties": {}
+    },
+    {
+      "id": "boxing",
+      "name": "Boxing",
+      "type": "runtime_operation",
+      "description": "Conversion of a value type to a reference representation.",
+      "properties": {}
+    },
+    {
+      "id": "unboxing",
+      "name": "Unboxing",
+      "type": "runtime_operation",
+      "description": "Explicit extraction of a boxed value back to its value type.",
+      "properties": {}
+    },
+    {
+      "id": "value_types",
+      "name": "Value types",
+      "type": "type_category",
+      "description": "C# types whose instances are represented with value semantics, including structs, enums and primitives.",
+      "properties": {}
+    },
+    {
+      "id": "reference_types",
+      "name": "Reference types",
+      "type": "type_category",
+      "description": "Types whose variables hold references to objects, including classes, arrays, delegates and strings.",
+      "properties": {}
+    },
+    {
+      "id": "object",
+      "name": "System.Object",
+      "type": "base_type",
+      "description": "Ultimate base class for all C# types in the CTS model.",
+      "properties": {}
+    },
+    {
+      "id": "string",
+      "name": "System.String",
+      "type": "reference_type",
+      "description": "Immutable Unicode text type with special language support.",
+      "properties": {}
+    },
+    {
+      "id": "array",
+      "name": "System.Array",
+      "type": "reference_type",
+      "description": "Base class for C# array types.",
+      "properties": {}
+    },
+    {
+      "id": "valuetype",
+      "name": "System.ValueType",
+      "type": "base_type",
+      "description": "Base class for value types in the CTS.",
+      "properties": {}
+    },
+    {
+      "id": "struct",
+      "name": "struct",
+      "type": "type_construct",
+      "description": "User-defined value type.",
+      "properties": {}
+    },
+    {
+      "id": "record",
+      "name": "record",
+      "type": "type_construct",
+      "description": "C# record type supporting concise data-oriented models and value-oriented equality semantics.",
+      "properties": {}
+    },
+    {
+      "id": "record_struct",
+      "name": "record struct",
+      "type": "type_construct",
+      "description": "Value-type record form.",
+      "properties": {}
+    },
+    {
+      "id": "class",
+      "name": "class",
+      "type": "type_construct",
+      "description": "Reference type supporting fields, properties, methods, inheritance and encapsulation.",
+      "properties": {}
+    },
+    {
+      "id": "interface",
+      "name": "interface",
+      "type": "type_construct",
+      "description": "Contract type that classes and structs can implement.",
+      "properties": {}
+    },
+    {
+      "id": "enum",
+      "name": "enum",
+      "type": "type_construct",
+      "description": "Named set of integral-like constants.",
+      "properties": {}
+    },
+    {
+      "id": "delegate",
+      "name": "delegate",
+      "type": "type_construct",
+      "description": "Type-safe function reference supporting callbacks and higher-order programming.",
+      "properties": {}
+    },
+    {
+      "id": "namespace",
+      "name": "namespace",
+      "type": "language_construct",
+      "description": "Logical naming scope for organizing types.",
+      "properties": {}
+    },
+    {
+      "id": "assembly",
+      "name": "assembly",
+      "type": "deployment_unit",
+      "description": "Compiled deployment and metadata unit in .NET.",
+      "properties": {}
+    },
+    {
+      "id": "module",
+      "name": "module",
+      "type": "deployment_unit",
+      "description": "CLI metadata and deployment concept associated with assemblies.",
+      "properties": {}
+    },
+    {
+      "id": "nuget",
+      "name": "NuGet",
+      "type": "package_manager",
+      "description": "Package manager and package ecosystem commonly used by C#/.NET projects.",
+      "properties": {}
+    },
+    {
+      "id": "csharp1",
+      "name": "C# 1.0",
+      "type": "language_version",
+      "description": "Initial C# release.",
+      "properties": {}
+    },
+    {
+      "id": "csharp2",
+      "name": "C# 2.0",
+      "type": "language_version",
+      "description": "Added generics, nullable types, iterators, anonymous methods and related features.",
+      "properties": {}
+    },
+    {
+      "id": "csharp3",
+      "name": "C# 3.0",
+      "type": "language_version",
+      "description": "Added LINQ-enabling features such as lambdas, extension methods, anonymous types and object initializers.",
+      "properties": {}
+    },
+    {
+      "id": "csharp4",
+      "name": "C# 4.0",
+      "type": "language_version",
+      "description": "Added dynamic binding, named and optional arguments and COM interop improvements.",
+      "properties": {}
+    },
+    {
+      "id": "csharp5",
+      "name": "C# 5.0",
+      "type": "language_version",
+      "description": "Added async/await and caller information features.",
+      "properties": {}
+    },
+    {
+      "id": "csharp6",
+      "name": "C# 6.0",
+      "type": "language_version",
+      "description": "Added expression-bodied members, null-conditional operators, string interpolation and more.",
+      "properties": {}
+    },
+    {
+      "id": "csharp7",
+      "name": "C# 7.0",
+      "type": "language_version",
+      "description": "Added tuples, pattern matching, local functions, ref returns and out-variable improvements.",
+      "properties": {}
+    },
+    {
+      "id": "csharp8",
+      "name": "C# 8.0",
+      "type": "language_version",
+      "description": "Added nullable reference types, async streams, ranges and indices, default interface members and switch expressions.",
+      "properties": {}
+    },
+    {
+      "id": "csharp9",
+      "name": "C# 9.0",
+      "type": "language_version",
+      "description": "Added records, init-only setters, top-level statements, target-typed new and richer pattern matching.",
+      "properties": {}
+    },
+    {
+      "id": "csharp10",
+      "name": "C# 10.0",
+      "type": "language_version",
+      "description": "Added global usings, file-scoped namespaces, extended property patterns and interpolated string handlers.",
+      "properties": {}
+    },
+    {
+      "id": "csharp11",
+      "name": "C# 11.0",
+      "type": "language_version",
+      "description": "Added raw string literals, required members, generic math support and list patterns.",
+      "properties": {}
+    },
+    {
+      "id": "csharp12",
+      "name": "C# 12.0",
+      "type": "language_version",
+      "description": "Added primary constructors, collection expressions and related syntax improvements.",
+      "properties": {}
+    },
+    {
+      "id": "csharp13",
+      "name": "C# 13.0",
+      "type": "language_version",
+      "description": "Added newer params collection forms, enhanced patterning and other language improvements.",
+      "properties": {}
+    },
+    {
+      "id": "csharp14",
+      "name": "C# 14.0",
+      "type": "language_version",
+      "description": "Source identifies C# 14 as the stable release in November 2025.",
+      "properties": {}
+    },
+    {
+      "id": "static_typing",
+      "name": "Static typing",
+      "type": "type_system_concept",
+      "description": "Types are checked primarily at compile time.",
+      "properties": {}
+    },
+    {
+      "id": "strong_typing",
+      "name": "Strong typing",
+      "type": "type_system_concept",
+      "description": "C# restricts unsafe implicit conversions and enforces type compatibility.",
+      "properties": {}
+    },
+    {
+      "id": "nominal_typing",
+      "name": "Nominal typing",
+      "type": "type_system_concept",
+      "description": "Type identity and compatibility are based substantially on declared type names and relationships.",
+      "properties": {}
+    },
+    {
+      "id": "type_inference",
+      "name": "Type inference",
+      "type": "language_feature",
+      "description": "Compiler infers types in supported contexts such as var and target-typed constructs.",
+      "properties": {}
+    },
+    {
+      "id": "var",
+      "name": "var",
+      "type": "syntax_feature",
+      "description": "Implicitly typed local-variable declaration whose compile-time type remains statically determined.",
+      "properties": {}
+    },
+    {
+      "id": "nullable_reference_types",
+      "name": "Nullable reference types",
+      "type": "type_system_feature",
+      "description": "Compiler-assisted annotations and flow analysis for nullability of reference types.",
+      "properties": {}
+    },
+    {
+      "id": "nullable_value_types",
+      "name": "Nullable value types",
+      "type": "type_system_feature",
+      "description": "Value types that can represent an underlying value or null using Nullable<T> and T?.",
+      "properties": {}
+    },
+    {
+      "id": "generics",
+      "name": "Generics",
+      "type": "generic_programming",
+      "description": "Parametric types and methods with runtime-reified generic representations in .NET.",
+      "properties": {}
+    },
+    {
+      "id": "generic_constraints",
+      "name": "Generic constraints",
+      "type": "generic_programming",
+      "description": "Constraints restrict type parameters by base type, interfaces, reference/value category, constructors and related capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "variance",
+      "name": "Generic variance",
+      "type": "generic_programming",
+      "description": "Covariance and contravariance rules for compatible generic interfaces and delegates.",
+      "properties": {}
+    },
+    {
+      "id": "covariance",
+      "name": "Covariance",
+      "type": "type_system_concept",
+      "description": "Allows a constructed generic type to substitute a more-derived type in covariant positions.",
+      "properties": {}
+    },
+    {
+      "id": "contravariance",
+      "name": "Contravariance",
+      "type": "type_system_concept",
+      "description": "Allows a constructed generic type to substitute a less-derived type in contravariant positions.",
+      "properties": {}
+    },
+    {
+      "id": "inheritance",
+      "name": "Class inheritance",
+      "type": "oop_feature",
+      "description": "Classes can derive from one base class.",
+      "properties": {}
+    },
+    {
+      "id": "interfaces_impl",
+      "name": "Interface implementation",
+      "type": "oop_feature",
+      "description": "A class or struct can implement multiple interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "polymorphism",
+      "name": "Polymorphism",
+      "type": "oop_feature",
+      "description": "C# supports subtype, ad-hoc, parametric and dynamic forms of polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "overload",
+      "name": "Method overloading",
+      "type": "oop_feature",
+      "description": "Multiple methods can share a name with distinguishable signatures.",
+      "properties": {}
+    },
+    {
+      "id": "operator_overload",
+      "name": "Operator overloading",
+      "type": "language_feature",
+      "description": "User-defined operators can provide domain-specific operator behavior.",
+      "properties": {}
+    },
+    {
+      "id": "virtual",
+      "name": "virtual",
+      "type": "method_modifier",
+      "description": "Marks a method/property/indexer/event for overriding in derived classes.",
+      "properties": {}
+    },
+    {
+      "id": "override",
+      "name": "override",
+      "type": "method_modifier",
+      "description": "Marks a derived implementation as overriding a virtual or abstract base member.",
+      "properties": {}
+    },
+    {
+      "id": "new_modifier",
+      "name": "new modifier",
+      "type": "member_modifier",
+      "description": "Explicitly hides an inherited member.",
+      "properties": {}
+    },
+    {
+      "id": "sealed",
+      "name": "sealed",
+      "type": "type_modifier",
+      "description": "Prevents further inheritance or overriding for applicable declarations.",
+      "properties": {}
+    },
+    {
+      "id": "abstract",
+      "name": "abstract",
+      "type": "type_modifier",
+      "description": "Declares incomplete classes or members intended to be implemented by derived types.",
+      "properties": {}
+    },
+    {
+      "id": "static",
+      "name": "static",
+      "type": "member_modifier",
+      "description": "Associates a member with a type rather than an instance.",
+      "properties": {}
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "type": "language_feature",
+      "description": "Visibility controls including public, private, protected, internal and protected-internal/private-protected forms.",
+      "properties": {}
+    },
+    {
+      "id": "properties",
+      "name": "Properties",
+      "type": "member_feature",
+      "description": "Accessor-based members exposing get/set/init semantics.",
+      "properties": {}
+    },
+    {
+      "id": "auto_properties",
+      "name": "Auto-implemented properties",
+      "type": "member_feature",
+      "description": "Compiler-synthesized backing-field properties.",
+      "properties": {}
+    },
+    {
+      "id": "indexers",
+      "name": "Indexers",
+      "type": "member_feature",
+      "description": "Members allowing instances to be indexed using bracket syntax.",
+      "properties": {}
+    },
+    {
+      "id": "fields",
+      "name": "Fields",
+      "type": "member_feature",
+      "description": "Variables declared as members of a type.",
+      "properties": {}
+    },
+    {
+      "id": "constructors",
+      "name": "Constructors",
+      "type": "member_feature",
+      "description": "Special members used to initialize object instances.",
+      "properties": {}
+    },
+    {
+      "id": "destructors",
+      "name": "Finalizers",
+      "type": "memory_management",
+      "description": "Finalizer syntax for managed cleanup tied to object finalization.",
+      "properties": {}
+    },
+    {
+      "id": "methods",
+      "name": "Methods",
+      "type": "member_feature",
+      "description": "Callable members declared on classes, structs, interfaces and related types.",
+      "properties": {}
+    },
+    {
+      "id": "params",
+      "name": "params",
+      "type": "parameter_feature",
+      "description": "Allows a method to accept a variable number of arguments.",
+      "properties": {}
+    },
+    {
+      "id": "ref",
+      "name": "ref parameters",
+      "type": "parameter_feature",
+      "description": "By-reference parameter and argument semantics.",
+      "properties": {}
+    },
+    {
+      "id": "out",
+      "name": "out parameters",
+      "type": "parameter_feature",
+      "description": "Output parameter semantics requiring assignment by the called method.",
+      "properties": {}
+    },
+    {
+      "id": "in",
+      "name": "in parameters",
+      "type": "parameter_feature",
+      "description": "Read-only by-reference parameter semantics.",
+      "properties": {}
+    },
+    {
+      "id": "optional_params",
+      "name": "Optional parameters",
+      "type": "parameter_feature",
+      "description": "Parameters can have default values.",
+      "properties": {}
+    },
+    {
+      "id": "named_args",
+      "name": "Named arguments",
+      "type": "parameter_feature",
+      "description": "Arguments can be supplied by parameter name.",
+      "properties": {}
+    },
+    {
+      "id": "delegates",
+      "name": "Delegates",
+      "type": "functional_feature",
+      "description": "Strongly typed callable object types.",
+      "properties": {}
+    },
+    {
+      "id": "events",
+      "name": "Events",
+      "type": "event_feature",
+      "description": "Publish-subscribe member abstraction implemented using delegate add/remove accessors.",
+      "properties": {}
+    },
+    {
+      "id": "lambdas",
+      "name": "Lambda expressions",
+      "type": "functional_feature",
+      "description": "Anonymous function expressions supporting closures and expression trees.",
+      "properties": {}
+    },
+    {
+      "id": "closures",
+      "name": "Closures",
+      "type": "functional_feature",
+      "description": "Functions can capture variables from enclosing scopes.",
+      "properties": {}
+    },
+    {
+      "id": "anonymous_methods",
+      "name": "Anonymous methods",
+      "type": "functional_feature",
+      "description": "Delegate expressions introduced before lambda syntax.",
+      "properties": {}
+    },
+    {
+      "id": "higher_order",
+      "name": "Higher-order functions",
+      "type": "functional_feature",
+      "description": "Functions can be passed as values through delegates and related abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "local_functions",
+      "name": "Local functions",
+      "type": "functional_feature",
+      "description": "Named functions declared inside another method or scope.",
+      "properties": {}
+    },
+    {
+      "id": "tuples",
+      "name": "Tuples",
+      "type": "data_construct",
+      "description": "Multiple values grouped into a single value with language syntax.",
+      "properties": {}
+    },
+    {
+      "id": "patterns",
+      "name": "Pattern matching",
+      "type": "control_flow_feature",
+      "description": "Structural and type-oriented matching integrated into expressions and control flow.",
+      "properties": {}
+    },
+    {
+      "id": "switch_expr",
+      "name": "Switch expressions",
+      "type": "expression_feature",
+      "description": "Expression form of pattern-based branching.",
+      "properties": {}
+    },
+    {
+      "id": "expression_bodied",
+      "name": "Expression-bodied members",
+      "type": "syntax_feature",
+      "description": "Concise => syntax for expression-based members.",
+      "properties": {}
+    },
+    {
+      "id": "interpolation",
+      "name": "String interpolation",
+      "type": "syntax_feature",
+      "description": "Embedded expressions inside string literals.",
+      "properties": {}
+    },
+    {
+      "id": "raw_strings",
+      "name": "Raw string literals",
+      "type": "syntax_feature",
+      "description": "String syntax reducing escaping requirements for multiline and embedded text.",
+      "properties": {}
+    },
+    {
+      "id": "collection_expr",
+      "name": "Collection expressions",
+      "type": "syntax_feature",
+      "description": "C# syntax for constructing collections from element expressions.",
+      "properties": {}
+    },
+    {
+      "id": "object_initializers",
+      "name": "Object initializers",
+      "type": "syntax_feature",
+      "description": "Initialize members as part of object construction syntax.",
+      "properties": {}
+    },
+    {
+      "id": "collection_initializers",
+      "name": "Collection initializers",
+      "type": "syntax_feature",
+      "description": "Initialize collection-like objects using element syntax.",
+      "properties": {}
+    },
+    {
+      "id": "anonymous_types",
+      "name": "Anonymous types",
+      "type": "type_construct",
+      "description": "Compiler-generated immutable-property-oriented local types.",
+      "properties": {}
+    },
+    {
+      "id": "extension_methods",
+      "name": "Extension methods",
+      "type": "language_feature",
+      "description": "Static methods callable with instance-method syntax on compatible receiver types.",
+      "properties": {}
+    },
+    {
+      "id": "linq",
+      "name": "LINQ",
+      "type": "framework_feature",
+      "description": "Language Integrated Query combines query syntax, lambdas, generics and extension methods over data sources.",
+      "properties": {}
+    },
+    {
+      "id": "query_syntax",
+      "name": "LINQ query syntax",
+      "type": "linq_feature",
+      "description": "SQL-like C# query syntax translated by the compiler into method calls.",
+      "properties": {}
+    },
+    {
+      "id": "method_syntax",
+      "name": "LINQ method syntax",
+      "type": "linq_feature",
+      "description": "LINQ expressed directly with extension methods such as Where and OrderBy.",
+      "properties": {}
+    },
+    {
+      "id": "ienumerable",
+      "name": "IEnumerable<T>",
+      "type": "framework_interface",
+      "description": "Generic enumerable abstraction underlying many LINQ-to-Objects operations.",
+      "properties": {}
+    },
+    {
+      "id": "async",
+      "name": "async",
+      "type": "concurrency_feature",
+      "description": "Marks methods or lambdas participating in asynchronous programming.",
+      "properties": {}
+    },
+    {
+      "id": "await",
+      "name": "await",
+      "type": "concurrency_feature",
+      "description": "Suspends asynchronous control flow until an awaitable operation completes without blocking the current thread in typical use.",
+      "properties": {}
+    },
+    {
+      "id": "task",
+      "name": "Task",
+      "type": "concurrency_type",
+      "description": "Abstraction representing an asynchronous operation.",
+      "properties": {}
+    },
+    {
+      "id": "valuetask",
+      "name": "ValueTask",
+      "type": "concurrency_type",
+      "description": "Allocation-conscious awaitable result type for scenarios where synchronous completion is common.",
+      "properties": {}
+    },
+    {
+      "id": "async_streams",
+      "name": "Async streams",
+      "type": "concurrency_feature",
+      "description": "Asynchronous iteration based on IAsyncEnumerable<T> and await foreach.",
+      "properties": {}
+    },
+    {
+      "id": "threading",
+      "name": "Threading",
+      "type": "concurrency_feature",
+      "description": "Explicit OS/runtime thread-based concurrency facilities.",
+      "properties": {}
+    },
+    {
+      "id": "parallel",
+      "name": "Parallel programming",
+      "type": "concurrency_feature",
+      "description": "Task/data parallel APIs provided by the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "lock",
+      "name": "lock",
+      "type": "synchronization_feature",
+      "description": "C# mutual-exclusion construct for synchronizing access to shared state.",
+      "properties": {}
+    },
+    {
+      "id": "semaphore",
+      "name": "SemaphoreSlim",
+      "type": "synchronization_type",
+      "description": "Lightweight asynchronous-friendly counting semaphore.",
+      "properties": {}
+    },
+    {
+      "id": "channel",
+      "name": "System.Threading.Channels",
+      "type": "concurrency_library",
+      "description": "Producer-consumer channel primitives for asynchronous pipelines.",
+      "properties": {}
+    },
+    {
+      "id": "exceptions",
+      "name": "Exceptions",
+      "type": "error_handling",
+      "description": "Structured exception mechanism using try/catch/finally and throw.",
+      "properties": {}
+    },
+    {
+      "id": "try",
+      "name": "try",
+      "type": "error_handling_construct",
+      "description": "Starts an exception-protected region.",
+      "properties": {}
+    },
+    {
+      "id": "catch",
+      "name": "catch",
+      "type": "error_handling_construct",
+      "description": "Handles matching exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "finally",
+      "name": "finally",
+      "type": "error_handling_construct",
+      "description": "Cleanup block that executes after try/catch processing.",
+      "properties": {}
+    },
+    {
+      "id": "throw",
+      "name": "throw",
+      "type": "error_handling_construct",
+      "description": "Raises or rethrows an exception.",
+      "properties": {}
+    },
+    {
+      "id": "no_checked_exceptions",
+      "name": "No checked exceptions",
+      "type": "language_characteristic",
+      "description": "C# does not require compile-time declaration or handling of checked exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "idisposable",
+      "name": "IDisposable",
+      "type": "resource_management",
+      "description": "Convention/interface for deterministic release of resources.",
+      "properties": {}
+    },
+    {
+      "id": "using_statement",
+      "name": "using statement",
+      "type": "resource_management",
+      "description": "Deterministic disposal syntax for IDisposable resources.",
+      "properties": {}
+    },
+    {
+      "id": "using_declaration",
+      "name": "using declaration",
+      "type": "resource_management",
+      "description": "Scope-based disposal syntax introduced as a concise alternative to using blocks.",
+      "properties": {}
+    },
+    {
+      "id": "raii_like",
+      "name": "Deterministic resource management",
+      "type": "resource_management",
+      "description": "C# uses IDisposable/using patterns rather than C++ RAII as its primary managed-resource model.",
+      "properties": {}
+    },
+    {
+      "id": "serialization",
+      "name": "Serialization",
+      "type": "framework_concept",
+      "description": "Conversion of object/data representations to transport or storage formats through .NET serializers.",
+      "properties": {}
+    },
+    {
+      "id": "reflection_api",
+      "name": "System.Reflection",
+      "type": "framework_api",
+      "description": "APIs for inspecting assemblies, types, members and metadata.",
+      "properties": {}
+    },
+    {
+      "id": "expressiontree_api",
+      "name": "System.Linq.Expressions",
+      "type": "framework_api",
+      "description": "API for constructing and inspecting expression trees.",
+      "properties": {}
+    },
+    {
+      "id": "task_parallel_library",
+      "name": "Task Parallel Library",
+      "type": "framework_api",
+      "description": "Library for task-based parallelism and concurrency.",
+      "properties": {}
+    },
+    {
+      "id": "parallel_linq",
+      "name": "PLINQ",
+      "type": "framework_feature",
+      "description": "Parallel LINQ execution model for suitable workloads.",
+      "properties": {}
+    },
+    {
+      "id": "diagnostics",
+      "name": "Diagnostics",
+      "type": "framework_concept",
+      "description": "Tracing, logging, metrics and runtime diagnostics ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "interop",
+      "name": "Interop",
+      "type": "platform_feature",
+      "description": "Calling and integrating with native code and other runtime/language ecosystems.",
+      "properties": {}
+    },
+    {
+      "id": "pinvoke",
+      "name": "P/Invoke",
+      "type": "interop_feature",
+      "description": "Platform Invocation mechanism for calling unmanaged functions.",
+      "properties": {}
+    },
+    {
+      "id": "com_interop",
+      "name": "COM interop",
+      "type": "interop_feature",
+      "description": "Interop support for Component Object Model components.",
+      "properties": {}
+    },
+    {
+      "id": "native_aot",
+      "name": "Native AOT",
+      "type": "deployment_model",
+      "description": "Deployment mode compiling .NET applications ahead of time to native code.",
+      "properties": {}
+    },
+    {
+      "id": "jit",
+      "name": "JIT compilation",
+      "type": "runtime_feature",
+      "description": "Runtime compilation and optimization of intermediate language to native machine code.",
+      "properties": {}
+    },
+    {
+      "id": "il",
+      "name": "Common Intermediate Language",
+      "type": "intermediate_representation",
+      "description": "CLI intermediate language emitted by conventional .NET C# compilation.",
+      "properties": {}
+    },
+    {
+      "id": "metadata",
+      "name": "CLI metadata",
+      "type": "runtime_metadata",
+      "description": "Type, member, assembly and reference metadata carried in CLI binaries.",
+      "properties": {}
+    },
+    {
+      "id": "assembly_load",
+      "name": "Assembly loading",
+      "type": "runtime_feature",
+      "description": "Runtime process of locating, loading and binding managed assemblies.",
+      "properties": {}
+    },
+    {
+      "id": "dependency_injection",
+      "name": "Dependency injection",
+      "type": "architecture_pattern",
+      "description": "Common .NET application architecture pattern for supplying dependencies to components.",
+      "properties": {}
+    },
+    {
+      "id": "aspnet",
+      "name": "ASP.NET Core",
+      "type": "framework",
+      "description": "Web application and service framework commonly programmed in C#.",
+      "properties": {}
+    },
+    {
+      "id": "entity_framework",
+      "name": "Entity Framework Core",
+      "type": "orm",
+      "description": "Object-relational mapper for .NET applications.",
+      "properties": {}
+    },
+    {
+      "id": "maui",
+      "name": ".NET MAUI",
+      "type": "ui_framework",
+      "description": "Cross-platform application UI framework in the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "blazor",
+      "name": "Blazor",
+      "type": "web_framework",
+      "description": "Web UI framework allowing C#/.NET components to participate in web applications.",
+      "properties": {}
+    },
+    {
+      "id": "wpf",
+      "name": "WPF",
+      "type": "ui_framework",
+      "description": "Windows Presentation Foundation desktop UI framework.",
+      "properties": {}
+    },
+    {
+      "id": "int",
+      "name": "System.Int32",
+      "type": "primitive_value_type",
+      "description": "Signed 32-bit integer value type.",
+      "properties": {}
+    },
+    {
+      "id": "long",
+      "name": "System.Int64",
+      "type": "primitive_value_type",
+      "description": "Signed 64-bit integer value type.",
+      "properties": {}
+    },
+    {
+      "id": "float",
+      "name": "System.Single",
+      "type": "primitive_value_type",
+      "description": "32-bit IEEE floating-point value type.",
+      "properties": {}
+    },
+    {
+      "id": "double",
+      "name": "System.Double",
+      "type": "primitive_value_type",
+      "description": "64-bit IEEE floating-point value type.",
+      "properties": {}
+    },
+    {
+      "id": "decimal",
+      "name": "System.Decimal",
+      "type": "primitive_value_type",
+      "description": "Decimal numeric value type useful for financial calculations.",
+      "properties": {}
+    },
+    {
+      "id": "bool",
+      "name": "System.Boolean",
+      "type": "primitive_value_type",
+      "description": "Strict Boolean value type.",
+      "properties": {}
+    },
+    {
+      "id": "char",
+      "name": "System.Char",
+      "type": "primitive_value_type",
+      "description": "16-bit UTF-16 code unit value type.",
+      "properties": {}
+    },
+    {
+      "id": "datetime",
+      "name": "System.DateTime",
+      "type": "struct_type",
+      "description": "Date/time value type.",
+      "properties": {}
+    },
+    {
+      "id": "guid",
+      "name": "System.Guid",
+      "type": "struct_type",
+      "description": "Globally unique identifier value type.",
+      "properties": {}
+    },
+    {
+      "id": "list",
+      "name": "List<T>",
+      "type": "generic_collection",
+      "description": "Generic mutable list collection.",
+      "properties": {}
+    },
+    {
+      "id": "dictionary",
+      "name": "Dictionary<TKey,TValue>",
+      "type": "generic_collection",
+      "description": "Generic key/value hash-table collection.",
+      "properties": {}
+    },
+    {
+      "id": "hashset",
+      "name": "HashSet<T>",
+      "type": "generic_collection",
+      "description": "Generic set collection.",
+      "properties": {}
+    },
+    {
+      "id": "ienumerable_non_generic",
+      "name": "IEnumerable",
+      "type": "framework_interface",
+      "description": "Non-generic enumerable abstraction.",
+      "properties": {}
+    },
+    {
+      "id": "icollection",
+      "name": "ICollection<T>",
+      "type": "framework_interface",
+      "description": "Generic collection abstraction.",
+      "properties": {}
+    },
+    {
+      "id": "ilist",
+      "name": "IList<T>",
+      "type": "framework_interface",
+      "description": "Generic list abstraction.",
+      "properties": {}
+    },
+    {
+      "id": "icomparable",
+      "name": "IComparable<T>",
+      "type": "framework_interface",
+      "description": "Generic ordering/comparison contract.",
+      "properties": {}
+    },
+    {
+      "id": "icloneable",
+      "name": "ICloneable",
+      "type": "framework_interface",
+      "description": "Legacy cloning contract.",
+      "properties": {}
+    },
+    {
+      "id": "taskt",
+      "name": "Task<T>",
+      "type": "concurrency_type",
+      "description": "Task representing an asynchronous result of type T.",
+      "properties": {}
+    },
+    {
+      "id": "cancellationtoken",
+      "name": "CancellationToken",
+      "type": "concurrency_type",
+      "description": "Cooperative cancellation token used by asynchronous and parallel APIs.",
+      "properties": {}
+    },
+    {
+      "id": "valuetuple",
+      "name": "ValueTuple",
+      "type": "data_construct",
+      "description": "Value-type tuple representation used by modern tuple syntax.",
+      "properties": {}
+    },
+    {
+      "id": "nullable",
+      "name": "Nullable<T>",
+      "type": "generic_struct",
+      "description": "Value type wrapper representing a value or null.",
+      "properties": {}
+    },
+    {
+      "id": "span",
+      "name": "Span<T>",
+      "type": "memory_type",
+      "description": "Stack-only type-safe view over contiguous memory.",
+      "properties": {}
+    },
+    {
+      "id": "readonlyspan",
+      "name": "ReadOnlySpan<T>",
+      "type": "memory_type",
+      "description": "Read-only stack-only view over contiguous memory.",
+      "properties": {}
+    },
+    {
+      "id": "memory",
+      "name": "Memory<T>",
+      "type": "memory_type",
+      "description": "Heap-compatible memory abstraction for contiguous buffers.",
+      "properties": {}
+    },
+    {
+      "id": "read_only_memory",
+      "name": "ReadOnlyMemory<T>",
+      "type": "memory_type",
+      "description": "Read-only heap-compatible memory abstraction.",
+      "properties": {}
+    },
+    {
+      "id": "regex",
+      "name": "System.Text.RegularExpressions",
+      "type": "framework_library",
+      "description": "Regular-expression library.",
+      "properties": {}
+    },
+    {
+      "id": "httpclient",
+      "name": "HttpClient",
+      "type": "framework_type",
+      "description": "HTTP client abstraction in .NET.",
+      "properties": {}
+    },
+    {
+      "id": "json",
+      "name": "System.Text.Json",
+      "type": "framework_library",
+      "description": "Built-in JSON serialization/deserialization library.",
+      "properties": {}
+    },
+    {
+      "id": "xml",
+      "name": "System.Xml",
+      "type": "framework_library",
+      "description": "XML processing APIs.",
+      "properties": {}
+    },
+    {
+      "id": "ado",
+      "name": "ADO.NET",
+      "type": "data_access",
+      "description": "Core .NET data-access API family.",
+      "properties": {}
+    },
+    {
+      "id": "msbuild",
+      "name": "MSBuild",
+      "type": "build_system",
+      "description": "Build engine used extensively for .NET projects.",
+      "properties": {}
+    },
+    {
+      "id": "csharp_project",
+      "name": "C# project",
+      "type": "project_model",
+      "description": "Project definition describing source, references, target framework and build configuration.",
+      "properties": {}
+    },
+    {
+      "id": "csproj",
+      "name": ".csproj",
+      "type": "project_file",
+      "description": "MSBuild project file convention for C# projects.",
+      "properties": {}
+    },
+    {
+      "id": "sln",
+      "name": ".sln",
+      "type": "solution_file",
+      "description": "Visual Studio solution container format.",
+      "properties": {}
+    },
+    {
+      "id": "dotnet_cli",
+      "name": "dotnet CLI",
+      "type": "cli_tool",
+      "description": "Command-line interface for creating, building, testing, publishing and running .NET applications.",
+      "properties": {}
+    },
+    {
+      "id": "xunit",
+      "name": "xUnit.net",
+      "type": "testing_framework",
+      "description": "Popular .NET testing framework.",
+      "properties": {}
+    },
+    {
+      "id": "nunit",
+      "name": "NUnit",
+      "type": "testing_framework",
+      "description": "Unit-testing framework for .NET.",
+      "properties": {}
+    },
+    {
+      "id": "mstest",
+      "name": "MSTest",
+      "type": "testing_framework",
+      "description": "Microsoft testing framework for .NET.",
+      "properties": {}
+    },
+    {
+      "id": "analyzers",
+      "name": "Roslyn analyzers",
+      "type": "static_analysis",
+      "description": "Compiler-integrated static analysis extensions.",
+      "properties": {}
+    },
+    {
+      "id": "formatters",
+      "name": "dotnet format",
+      "type": "tool",
+      "description": "Code-formatting tool in the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "stylecop",
+      "name": "StyleCop",
+      "type": "analyzer_tool",
+      "description": "C# coding-style analyzer ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "nullable_flow",
+      "name": "Nullable flow analysis",
+      "type": "static_analysis",
+      "description": "Compiler flow analysis for nullability annotations and warnings.",
+      "properties": {}
+    },
+    {
+      "id": "pattern_dag",
+      "name": "Pattern decision DAG",
+      "type": "compiler_implementation",
+      "description": "Compiler representation used to optimize pattern matching decisions.",
+      "properties": {}
+    },
+    {
+      "id": "lowering",
+      "name": "Compiler lowering",
+      "type": "compiler_implementation",
+      "description": "Transformation of high-level C# constructs into lower-level forms during compilation.",
+      "properties": {}
+    },
+    {
+      "id": "state_machine",
+      "name": "Async/iterator state machine",
+      "type": "compiler_implementation",
+      "description": "Compiler-generated state machine used for async methods and iterators.",
+      "properties": {}
+    },
+    {
+      "id": "iterator",
+      "name": "Iterators",
+      "type": "language_feature",
+      "description": "yield-based sequence generation using compiler-generated state machines.",
+      "properties": {}
+    },
+    {
+      "id": "yield",
+      "name": "yield",
+      "type": "language_feature",
+      "description": "Produces iterator elements and suspends iterator execution.",
+      "properties": {}
+    },
+    {
+      "id": "ref_struct",
+      "name": "ref struct",
+      "type": "type_construct",
+      "description": "Stack-only value type restricted to avoid managed heap exposure.",
+      "properties": {}
+    },
+    {
+      "id": "readonly_struct",
+      "name": "readonly struct",
+      "type": "type_modifier",
+      "description": "Struct declaration whose instance members are restricted toward readonly semantics.",
+      "properties": {}
+    },
+    {
+      "id": "required",
+      "name": "required members",
+      "type": "language_feature",
+      "description": "Members that must be initialized by object construction syntax.",
+      "properties": {}
+    },
+    {
+      "id": "init",
+      "name": "init accessor",
+      "type": "property_feature",
+      "description": "Accessor permitting initialization during object construction but not ordinary later assignment.",
+      "properties": {}
+    },
+    {
+      "id": "primary_constructor",
+      "name": "primary constructors",
+      "type": "language_feature",
+      "description": "Constructor parameters declared with the type declaration syntax.",
+      "properties": {}
+    },
+    {
+      "id": "top_level",
+      "name": "top-level statements",
+      "type": "syntax_feature",
+      "description": "Allows program entry-point code without explicitly declaring Program/Main.",
+      "properties": {}
+    },
+    {
+      "id": "global_using",
+      "name": "global using",
+      "type": "syntax_feature",
+      "description": "Imports namespaces globally within a compilation.",
+      "properties": {}
+    },
+    {
+      "id": "file_scoped_namespace",
+      "name": "file-scoped namespaces",
+      "type": "syntax_feature",
+      "description": "Namespace syntax that reduces nesting.",
+      "properties": {}
+    },
+    {
+      "id": "target_typed_new",
+      "name": "target-typed new",
+      "type": "syntax_feature",
+      "description": "Object construction where the target type supplies the constructed type.",
+      "properties": {}
+    },
+    {
+      "id": "switch_expression",
+      "name": "switch expression",
+      "type": "expression_feature",
+      "description": "Expression-oriented switch form using patterns and arms.",
+      "properties": {}
+    },
+    {
+      "id": "list_pattern",
+      "name": "list patterns",
+      "type": "pattern_feature",
+      "description": "Pattern syntax for matching elements of list-like sequences.",
+      "properties": {}
+    },
+    {
+      "id": "required_members",
+      "name": "required members",
+      "type": "language_feature",
+      "description": "Compiler-enforced initialization requirements for selected members.",
+      "properties": {}
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "type": "programming_language",
+      "description": "C-family language influencing C# syntax and portability goals.",
+      "properties": {}
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "type": "programming_language",
+      "description": "C-family language strongly influencing C# syntax and design.",
+      "properties": {}
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "type": "programming_language",
+      "description": "Managed object-oriented language that influenced C# and provides a major comparison point.",
+      "properties": {}
+    },
+    {
+      "id": "eiffel",
+      "name": "Eiffel",
+      "type": "programming_language",
+      "description": "Object-oriented language influencing C# design ideas.",
+      "properties": {}
+    },
+    {
+      "id": "fsharp",
+      "name": "F#",
+      "type": "programming_language",
+      "description": "Functional-first .NET language that shares the CLI ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "haskell",
+      "name": "Haskell",
+      "type": "programming_language",
+      "description": "Functional language whose concepts influenced parts of C#.",
+      "properties": {}
+    },
+    {
+      "id": "scala",
+      "name": "Scala",
+      "type": "programming_language",
+      "description": "Multi-paradigm JVM language influenced by and influencing modern language design.",
+      "properties": {}
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "type": "programming_language",
+      "description": "Dynamic language relevant to C# dynamic binding and web ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "visual_basic",
+      "name": "Visual Basic",
+      "type": "programming_language",
+      "description": "Microsoft language influencing parts of .NET language design.",
+      "properties": {}
+    },
+    {
+      "id": "objective_c",
+      "name": "Objective-C",
+      "type": "programming_language",
+      "description": "C-family object-oriented language used as a comparison and influence.",
+      "properties": {}
+    },
+    {
+      "id": "smalltalk",
+      "name": "Smalltalk",
+      "type": "programming_language",
+      "description": "Object-oriented language referenced among design influences.",
+      "properties": {}
+    },
+    {
+      "id": "modula3",
+      "name": "Modula-3",
+      "type": "programming_language",
+      "description": "Language listed among C# influences.",
+      "properties": {}
+    },
+    {
+      "id": "object_pascal",
+      "name": "Object Pascal",
+      "type": "programming_language",
+      "description": "Object Pascal family language influencing C# history and syntax.",
+      "properties": {}
+    },
+    {
+      "id": "jsharp",
+      "name": "J#",
+      "type": "programming_language",
+      "description": "Discontinued Microsoft .NET language derived from Java.",
+      "properties": {}
+    },
+    {
+      "id": "csharp_omega",
+      "name": "Cω",
+      "type": "language_dialect",
+      "description": "Experimental C#-related language dialect.",
+      "properties": {}
+    },
+    {
+      "id": "polyphonic_csharp",
+      "name": "Polyphonic C#",
+      "type": "language_dialect",
+      "description": "Experimental concurrent extension/dialect related to C#.",
+      "properties": {}
+    },
+    {
+      "id": "enhanced_csharp",
+      "name": "Enhanced C#",
+      "type": "language_dialect",
+      "description": "Experimental C# dialect.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r0001",
+      "source": "csharp",
+      "target": "microsoft",
+      "type": "developed_by",
+      "description": "C# was developed at Microsoft.",
+      "properties": {}
+    },
+    {
+      "id": "r0002",
+      "source": "csharp",
+      "target": "csharp_designers",
+      "type": "designed_by",
+      "description": "Early principal designers include Anders Hejlsberg, Scott Wiltamuth and Peter Golde.",
+      "properties": {}
+    },
+    {
+      "id": "r0003",
+      "source": "csharp",
+      "target": "mads_torgersen",
+      "type": "maintained_by",
+      "description": "Mads Torgersen became a major C# language designer.",
+      "properties": {}
+    },
+    {
+      "id": "r0004",
+      "source": "csharp",
+      "target": "cli",
+      "type": "targets_or_integrates_with",
+      "description": "C# directly reflects the Common Language Infrastructure model.",
+      "properties": {}
+    },
+    {
+      "id": "r0005",
+      "source": "csharp",
+      "target": "dotnet",
+      "type": "runs_on",
+      "description": "Modern C# is primarily used with the .NET platform.",
+      "properties": {}
+    },
+    {
+      "id": "r0006",
+      "source": "csharp",
+      "target": "ecma334",
+      "type": "standardized_by",
+      "description": "C# is standardized by Ecma.",
+      "properties": {}
+    },
+    {
+      "id": "r0007",
+      "source": "csharp",
+      "target": "iso23270",
+      "type": "standardized_by",
+      "description": "C# has ISO/IEC 23270 specifications.",
+      "properties": {}
+    },
+    {
+      "id": "r0008",
+      "source": "csharp",
+      "target": "iso20619",
+      "type": "standardized_by",
+      "description": "Later C# specifications use ISO/IEC 20619.",
+      "properties": {}
+    },
+    {
+      "id": "r0009",
+      "source": "dotnet",
+      "target": "cli",
+      "type": "implements_or_conforms_to",
+      "description": "The .NET ecosystem implements the CLI model.",
+      "properties": {}
+    },
+    {
+      "id": "r0010",
+      "source": "cli",
+      "target": "cts",
+      "type": "defines",
+      "description": "CLI defines the Common Type System.",
+      "properties": {}
+    },
+    {
+      "id": "r0011",
+      "source": "csharp",
+      "target": "cts",
+      "type": "uses",
+      "description": "C# uses the CTS unified type model.",
+      "properties": {}
+    },
+    {
+      "id": "r0012",
+      "source": "dotnet",
+      "target": "clr",
+      "type": "contains_or_provides",
+      "description": "The .NET execution ecosystem provides managed runtimes derived from the CLR/CoreCLR lineage.",
+      "properties": {}
+    },
+    {
+      "id": "r0013",
+      "source": "csharp",
+      "target": "roslyn",
+      "type": "compiled_by",
+      "description": "Microsoft's modern C# compiler platform is Roslyn.",
+      "properties": {}
+    },
+    {
+      "id": "r0014",
+      "source": "roslyn",
+      "target": "il",
+      "type": "emits",
+      "description": "Roslyn conventionally emits CIL for managed .NET execution.",
+      "properties": {}
+    },
+    {
+      "id": "r0015",
+      "source": "il",
+      "target": "ryujit",
+      "type": "compiled_by",
+      "description": "RyuJIT compiles IL to native code at runtime in JIT scenarios.",
+      "properties": {}
+    },
+    {
+      "id": "r0016",
+      "source": "csharp",
+      "target": "mono",
+      "type": "implemented_by",
+      "description": "Mono provides an alternative open-source C# and CLI implementation.",
+      "properties": {}
+    },
+    {
+      "id": "r0017",
+      "source": "csharp",
+      "target": "visual_studio",
+      "type": "tooled_by",
+      "description": "Visual Studio provides integrated C# development tooling.",
+      "properties": {}
+    },
+    {
+      "id": "r0018",
+      "source": "csharp",
+      "target": "vscode",
+      "type": "tooled_by",
+      "description": "Visual Studio Code supports C# development.",
+      "properties": {}
+    },
+    {
+      "id": "r0019",
+      "source": "csharp",
+      "target": "unity",
+      "type": "used_by",
+      "description": "Unity uses C# as a primary scripting language.",
+      "properties": {}
+    },
+    {
+      "id": "r0020",
+      "source": "csharp",
+      "target": "godot",
+      "type": "used_by",
+      "description": "Godot provides optional C# integration.",
+      "properties": {}
+    },
+    {
+      "id": "r0021",
+      "source": "csharp",
+      "target": "elements",
+      "type": "compiled_by",
+      "description": "Elements can compile C# to multiple targets.",
+      "properties": {}
+    },
+    {
+      "id": "r0022",
+      "source": "csharp",
+      "target": "nuget",
+      "type": "uses_ecosystem",
+      "description": "C# projects commonly consume .NET packages through NuGet.",
+      "properties": {}
+    },
+    {
+      "id": "r0023",
+      "source": "csharp1",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 1.0"
+      }
+    },
+    {
+      "id": "r0024",
+      "source": "csharp2",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 2.0"
+      }
+    },
+    {
+      "id": "r0025",
+      "source": "csharp3",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 3.0"
+      }
+    },
+    {
+      "id": "r0026",
+      "source": "csharp4",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 4.0"
+      }
+    },
+    {
+      "id": "r0027",
+      "source": "csharp5",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 5.0"
+      }
+    },
+    {
+      "id": "r0028",
+      "source": "csharp6",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 6.0"
+      }
+    },
+    {
+      "id": "r0029",
+      "source": "csharp7",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 7.0"
+      }
+    },
+    {
+      "id": "r0030",
+      "source": "csharp8",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 8.0"
+      }
+    },
+    {
+      "id": "r0031",
+      "source": "csharp9",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 9.0"
+      }
+    },
+    {
+      "id": "r0032",
+      "source": "csharp10",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 10.0"
+      }
+    },
+    {
+      "id": "r0033",
+      "source": "csharp11",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 11.0"
+      }
+    },
+    {
+      "id": "r0034",
+      "source": "csharp12",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 12.0"
+      }
+    },
+    {
+      "id": "r0035",
+      "source": "csharp13",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 13.0"
+      }
+    },
+    {
+      "id": "r0036",
+      "source": "csharp14",
+      "target": "csharp",
+      "type": "version_of",
+      "description": "This entity represents a C# language version.",
+      "properties": {
+        "version": "C# 14.0"
+      }
+    },
+    {
+      "id": "r0037",
+      "source": "csharp1",
+      "target": "csharp2",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0038",
+      "source": "csharp2",
+      "target": "csharp3",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0039",
+      "source": "csharp3",
+      "target": "csharp4",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0040",
+      "source": "csharp4",
+      "target": "csharp5",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0041",
+      "source": "csharp5",
+      "target": "csharp6",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0042",
+      "source": "csharp6",
+      "target": "csharp7",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0043",
+      "source": "csharp7",
+      "target": "csharp8",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0044",
+      "source": "csharp8",
+      "target": "csharp9",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0045",
+      "source": "csharp9",
+      "target": "csharp10",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0046",
+      "source": "csharp10",
+      "target": "csharp11",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0047",
+      "source": "csharp11",
+      "target": "csharp12",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0048",
+      "source": "csharp12",
+      "target": "csharp13",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0049",
+      "source": "csharp13",
+      "target": "csharp14",
+      "type": "precedes",
+      "description": "Earlier language version precedes the later version.",
+      "properties": {}
+    },
+    {
+      "id": "r0050",
+      "source": "csharp",
+      "target": "static_typing",
+      "type": "supports",
+      "description": "C# is statically typed.",
+      "properties": {}
+    },
+    {
+      "id": "r0051",
+      "source": "csharp",
+      "target": "strong_typing",
+      "type": "supports",
+      "description": "C# uses strong type checking.",
+      "properties": {}
+    },
+    {
+      "id": "r0052",
+      "source": "csharp",
+      "target": "nominal_typing",
+      "type": "uses",
+      "description": "C# primarily uses nominal type relationships.",
+      "properties": {}
+    },
+    {
+      "id": "r0053",
+      "source": "csharp",
+      "target": "type_inference",
+      "type": "supports",
+      "description": "C# supports inference in several syntactic contexts.",
+      "properties": {}
+    },
+    {
+      "id": "r0054",
+      "source": "var",
+      "target": "type_inference",
+      "type": "implements",
+      "description": "var requests compiler inference for local variables.",
+      "properties": {}
+    },
+    {
+      "id": "r0055",
+      "source": "csharp",
+      "target": "value_types",
+      "type": "defines",
+      "description": "C# distinguishes value types.",
+      "properties": {}
+    },
+    {
+      "id": "r0056",
+      "source": "csharp",
+      "target": "reference_types",
+      "type": "defines",
+      "description": "C# distinguishes reference types.",
+      "properties": {}
+    },
+    {
+      "id": "r0057",
+      "source": "value_types",
+      "target": "valuetype",
+      "type": "inherit_from",
+      "description": "CTS value types derive from System.ValueType.",
+      "properties": {}
+    },
+    {
+      "id": "r0058",
+      "source": "reference_types",
+      "target": "object",
+      "type": "ultimately_derive_from",
+      "description": "Reference types ultimately derive from System.Object.",
+      "properties": {}
+    },
+    {
+      "id": "r0059",
+      "source": "object",
+      "target": "cts",
+      "type": "belongs_to",
+      "description": "System.Object is a CTS root type.",
+      "properties": {}
+    },
+    {
+      "id": "r0060",
+      "source": "string",
+      "target": "reference_types",
+      "type": "is_a",
+      "description": "System.String is a reference type.",
+      "properties": {}
+    },
+    {
+      "id": "r0061",
+      "source": "array",
+      "target": "reference_types",
+      "type": "is_a",
+      "description": "Arrays are reference types.",
+      "properties": {}
+    },
+    {
+      "id": "r0062",
+      "source": "struct",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "Structs are value types.",
+      "properties": {}
+    },
+    {
+      "id": "r0063",
+      "source": "enum",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "Enums are value types.",
+      "properties": {}
+    },
+    {
+      "id": "r0064",
+      "source": "record",
+      "target": "reference_types",
+      "type": "is_a",
+      "description": "A record declaration normally defines a reference type.",
+      "properties": {}
+    },
+    {
+      "id": "r0065",
+      "source": "record_struct",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "record struct defines a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0066",
+      "source": "nullable",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "Nullable<T> is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0067",
+      "source": "csharp",
+      "target": "boxing",
+      "type": "supports",
+      "description": "C# implicitly boxes value types where required.",
+      "properties": {}
+    },
+    {
+      "id": "r0068",
+      "source": "csharp",
+      "target": "unboxing",
+      "type": "supports",
+      "description": "C# explicitly unboxes previously boxed values.",
+      "properties": {}
+    },
+    {
+      "id": "r0069",
+      "source": "boxing",
+      "target": "value_types",
+      "type": "converts",
+      "description": "Boxing converts a value type to a reference representation.",
+      "properties": {}
+    },
+    {
+      "id": "r0070",
+      "source": "unboxing",
+      "target": "boxing",
+      "type": "reverses",
+      "description": "Unboxing reverses compatible boxing.",
+      "properties": {}
+    },
+    {
+      "id": "r0071",
+      "source": "csharp",
+      "target": "nullable_reference_types",
+      "type": "supports",
+      "description": "Modern C# supports nullable reference type analysis.",
+      "properties": {}
+    },
+    {
+      "id": "r0072",
+      "source": "csharp",
+      "target": "nullable_value_types",
+      "type": "supports",
+      "description": "C# supports Nullable<T> and T? for value types.",
+      "properties": {}
+    },
+    {
+      "id": "r0073",
+      "source": "csharp",
+      "target": "generics",
+      "type": "supports",
+      "description": "C# supports generic types and methods.",
+      "properties": {}
+    },
+    {
+      "id": "r0074",
+      "source": "generics",
+      "target": "generic_constraints",
+      "type": "supports",
+      "description": "Generic type parameters can be constrained.",
+      "properties": {}
+    },
+    {
+      "id": "r0075",
+      "source": "csharp",
+      "target": "variance",
+      "type": "supports",
+      "description": "C# supports variance for eligible generic interfaces and delegates.",
+      "properties": {}
+    },
+    {
+      "id": "r0076",
+      "source": "variance",
+      "target": "covariance",
+      "type": "includes",
+      "description": "Covariance is one direction of generic variance.",
+      "properties": {}
+    },
+    {
+      "id": "r0077",
+      "source": "variance",
+      "target": "contravariance",
+      "type": "includes",
+      "description": "Contravariance is one direction of generic variance.",
+      "properties": {}
+    },
+    {
+      "id": "r0078",
+      "source": "csharp",
+      "target": "class",
+      "type": "supports",
+      "description": "C# is class-based and supports class declarations.",
+      "properties": {}
+    },
+    {
+      "id": "r0079",
+      "source": "csharp",
+      "target": "interface",
+      "type": "supports",
+      "description": "C# supports interface contracts.",
+      "properties": {}
+    },
+    {
+      "id": "r0080",
+      "source": "csharp",
+      "target": "struct",
+      "type": "supports",
+      "description": "C# supports user-defined value structs.",
+      "properties": {}
+    },
+    {
+      "id": "r0081",
+      "source": "csharp",
+      "target": "record",
+      "type": "supports",
+      "description": "C# supports record declarations.",
+      "properties": {}
+    },
+    {
+      "id": "r0082",
+      "source": "csharp",
+      "target": "inheritance",
+      "type": "supports",
+      "description": "C# supports single class inheritance.",
+      "properties": {}
+    },
+    {
+      "id": "r0083",
+      "source": "csharp",
+      "target": "interfaces_impl",
+      "type": "supports",
+      "description": "Types can implement multiple interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "r0084",
+      "source": "csharp",
+      "target": "polymorphism",
+      "type": "supports",
+      "description": "C# supports multiple forms of polymorphism.",
+      "properties": {}
+    },
+    {
+      "id": "r0085",
+      "source": "csharp",
+      "target": "overload",
+      "type": "supports",
+      "description": "Methods can be overloaded.",
+      "properties": {}
+    },
+    {
+      "id": "r0086",
+      "source": "csharp",
+      "target": "operator_overload",
+      "type": "supports",
+      "description": "Operators can be overloaded.",
+      "properties": {}
+    },
+    {
+      "id": "r0087",
+      "source": "virtual",
+      "target": "override",
+      "type": "paired_with",
+      "description": "A derived override implements a virtual or abstract base member.",
+      "properties": {}
+    },
+    {
+      "id": "r0088",
+      "source": "override",
+      "target": "new_modifier",
+      "type": "contrasts_with",
+      "description": "override replaces a virtual dispatch implementation while new hides an inherited member.",
+      "properties": {}
+    },
+    {
+      "id": "r0089",
+      "source": "sealed",
+      "target": "override",
+      "type": "restricts",
+      "description": "sealed can prevent further overriding.",
+      "properties": {}
+    },
+    {
+      "id": "r0090",
+      "source": "abstract",
+      "target": "class",
+      "type": "modifies",
+      "description": "abstract can mark a class incomplete for direct instantiation.",
+      "properties": {}
+    },
+    {
+      "id": "r0091",
+      "source": "static",
+      "target": "class",
+      "type": "modifies",
+      "description": "static can make a class non-instantiable and type-level.",
+      "properties": {}
+    },
+    {
+      "id": "r0092",
+      "source": "class",
+      "target": "fields",
+      "type": "contains",
+      "description": "Classes can declare fields.",
+      "properties": {}
+    },
+    {
+      "id": "r0093",
+      "source": "class",
+      "target": "properties",
+      "type": "contains",
+      "description": "Classes can declare properties.",
+      "properties": {}
+    },
+    {
+      "id": "r0094",
+      "source": "class",
+      "target": "methods",
+      "type": "contains",
+      "description": "Classes can declare methods.",
+      "properties": {}
+    },
+    {
+      "id": "r0095",
+      "source": "class",
+      "target": "constructors",
+      "type": "contains",
+      "description": "Classes can declare constructors.",
+      "properties": {}
+    },
+    {
+      "id": "r0096",
+      "source": "properties",
+      "target": "auto_properties",
+      "type": "includes",
+      "description": "Auto-properties are a concise property form.",
+      "properties": {}
+    },
+    {
+      "id": "r0097",
+      "source": "csharp",
+      "target": "accessibility",
+      "type": "supports",
+      "description": "C# provides access modifiers.",
+      "properties": {}
+    },
+    {
+      "id": "r0098",
+      "source": "csharp",
+      "target": "delegates",
+      "type": "supports",
+      "description": "Delegates provide callable object types.",
+      "properties": {}
+    },
+    {
+      "id": "r0099",
+      "source": "csharp",
+      "target": "events",
+      "type": "supports",
+      "description": "Events provide publish-subscribe semantics.",
+      "properties": {}
+    },
+    {
+      "id": "r0100",
+      "source": "events",
+      "target": "delegates",
+      "type": "implemented_with",
+      "description": "C# events use delegate add/remove accessors.",
+      "properties": {}
+    },
+    {
+      "id": "r0101",
+      "source": "csharp",
+      "target": "extension_methods",
+      "type": "supports",
+      "description": "Extension methods provide instance-like syntax for static methods.",
+      "properties": {}
+    },
+    {
+      "id": "r0102",
+      "source": "extension_methods",
+      "target": "linq",
+      "type": "enables",
+      "description": "Extension methods are central to LINQ method syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0103",
+      "source": "csharp",
+      "target": "methods",
+      "type": "supports",
+      "description": "Methods are the primary callable member construct.",
+      "properties": {}
+    },
+    {
+      "id": "r0104",
+      "source": "methods",
+      "target": "ref",
+      "type": "supports",
+      "description": "Methods can declare ref parameters.",
+      "properties": {}
+    },
+    {
+      "id": "r0105",
+      "source": "methods",
+      "target": "out",
+      "type": "supports",
+      "description": "Methods can declare out parameters.",
+      "properties": {}
+    },
+    {
+      "id": "r0106",
+      "source": "methods",
+      "target": "in",
+      "type": "supports",
+      "description": "Methods can declare in parameters.",
+      "properties": {}
+    },
+    {
+      "id": "r0107",
+      "source": "methods",
+      "target": "params",
+      "type": "supports",
+      "description": "Methods can declare params arrays/collections.",
+      "properties": {}
+    },
+    {
+      "id": "r0108",
+      "source": "methods",
+      "target": "optional_params",
+      "type": "supports",
+      "description": "Methods can define default parameter values.",
+      "properties": {}
+    },
+    {
+      "id": "r0109",
+      "source": "methods",
+      "target": "named_args",
+      "type": "supports",
+      "description": "Calls can specify parameter names.",
+      "properties": {}
+    },
+    {
+      "id": "r0110",
+      "source": "csharp",
+      "target": "lambdas",
+      "type": "supports",
+      "description": "Lambda expressions provide concise anonymous functions.",
+      "properties": {}
+    },
+    {
+      "id": "r0111",
+      "source": "lambdas",
+      "target": "closures",
+      "type": "supports",
+      "description": "Lambdas can capture enclosing variables.",
+      "properties": {}
+    },
+    {
+      "id": "r0112",
+      "source": "csharp",
+      "target": "anonymous_methods",
+      "type": "supports",
+      "description": "C# supports anonymous delegate methods.",
+      "properties": {}
+    },
+    {
+      "id": "r0113",
+      "source": "csharp",
+      "target": "higher_order",
+      "type": "supports",
+      "description": "Delegates enable higher-order programming.",
+      "properties": {}
+    },
+    {
+      "id": "r0114",
+      "source": "csharp",
+      "target": "local_functions",
+      "type": "supports",
+      "description": "Modern C# supports nested named functions.",
+      "properties": {}
+    },
+    {
+      "id": "r0115",
+      "source": "csharp",
+      "target": "tuples",
+      "type": "supports",
+      "description": "Modern C# supports tuple syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0116",
+      "source": "csharp",
+      "target": "patterns",
+      "type": "supports",
+      "description": "Modern C# integrates pattern matching.",
+      "properties": {}
+    },
+    {
+      "id": "r0117",
+      "source": "patterns",
+      "target": "switch_expr",
+      "type": "used_by",
+      "description": "Pattern matching is central to switch expressions.",
+      "properties": {}
+    },
+    {
+      "id": "r0118",
+      "source": "csharp",
+      "target": "expression_bodied",
+      "type": "supports",
+      "description": "C# supports concise expression-bodied members.",
+      "properties": {}
+    },
+    {
+      "id": "r0119",
+      "source": "csharp",
+      "target": "interpolation",
+      "type": "supports",
+      "description": "C# supports interpolated strings.",
+      "properties": {}
+    },
+    {
+      "id": "r0120",
+      "source": "csharp",
+      "target": "raw_strings",
+      "type": "supports",
+      "description": "C# supports raw string literals.",
+      "properties": {}
+    },
+    {
+      "id": "r0121",
+      "source": "csharp",
+      "target": "collection_expr",
+      "type": "supports",
+      "description": "Modern C# supports collection expressions.",
+      "properties": {}
+    },
+    {
+      "id": "r0122",
+      "source": "csharp",
+      "target": "object_initializers",
+      "type": "supports",
+      "description": "C# supports object initializer syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0123",
+      "source": "csharp",
+      "target": "collection_initializers",
+      "type": "supports",
+      "description": "C# supports collection initializer syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0124",
+      "source": "csharp",
+      "target": "anonymous_types",
+      "type": "supports",
+      "description": "C# supports compiler-generated anonymous types.",
+      "properties": {}
+    },
+    {
+      "id": "r0125",
+      "source": "csharp",
+      "target": "iterator",
+      "type": "supports",
+      "description": "C# supports iterator methods.",
+      "properties": {}
+    },
+    {
+      "id": "r0126",
+      "source": "iterator",
+      "target": "yield",
+      "type": "implemented_with",
+      "description": "Iterators commonly use yield return/yield break.",
+      "properties": {}
+    },
+    {
+      "id": "r0127",
+      "source": "csharp",
+      "target": "top_level",
+      "type": "supports",
+      "description": "C# supports top-level statements.",
+      "properties": {}
+    },
+    {
+      "id": "r0128",
+      "source": "csharp",
+      "target": "global_using",
+      "type": "supports",
+      "description": "C# supports global using directives.",
+      "properties": {}
+    },
+    {
+      "id": "r0129",
+      "source": "csharp",
+      "target": "file_scoped_namespace",
+      "type": "supports",
+      "description": "C# supports file-scoped namespace syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0130",
+      "source": "csharp",
+      "target": "target_typed_new",
+      "type": "supports",
+      "description": "C# supports target-typed object creation.",
+      "properties": {}
+    },
+    {
+      "id": "r0131",
+      "source": "csharp",
+      "target": "required",
+      "type": "supports",
+      "description": "C# supports required members.",
+      "properties": {}
+    },
+    {
+      "id": "r0132",
+      "source": "csharp",
+      "target": "init",
+      "type": "supports",
+      "description": "C# supports init-only property setters.",
+      "properties": {}
+    },
+    {
+      "id": "r0133",
+      "source": "csharp",
+      "target": "primary_constructor",
+      "type": "supports",
+      "description": "C# supports primary constructors.",
+      "properties": {}
+    },
+    {
+      "id": "r0134",
+      "source": "csharp",
+      "target": "list_pattern",
+      "type": "supports",
+      "description": "Modern C# supports list patterns.",
+      "properties": {}
+    },
+    {
+      "id": "r0135",
+      "source": "csharp",
+      "target": "linq",
+      "type": "supports",
+      "description": "C# integrates LINQ through the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "r0136",
+      "source": "linq",
+      "target": "ienumerable",
+      "type": "operates_on",
+      "description": "LINQ-to-Objects commonly operates over IEnumerable<T>.",
+      "properties": {}
+    },
+    {
+      "id": "r0137",
+      "source": "linq",
+      "target": "lambdas",
+      "type": "uses",
+      "description": "LINQ method syntax commonly uses lambdas.",
+      "properties": {}
+    },
+    {
+      "id": "r0138",
+      "source": "linq",
+      "target": "extension_methods",
+      "type": "uses",
+      "description": "LINQ methods are implemented primarily as extension methods.",
+      "properties": {}
+    },
+    {
+      "id": "r0139",
+      "source": "linq",
+      "target": "query_syntax",
+      "type": "has_form",
+      "description": "LINQ provides query expression syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0140",
+      "source": "linq",
+      "target": "method_syntax",
+      "type": "has_form",
+      "description": "LINQ provides method-call syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0141",
+      "source": "query_syntax",
+      "target": "method_syntax",
+      "type": "translated_to",
+      "description": "The compiler translates query syntax into method-based operations.",
+      "properties": {}
+    },
+    {
+      "id": "r0142",
+      "source": "csharp",
+      "target": "delegates",
+      "type": "uses_for",
+      "description": "Delegates support first-class function-like values.",
+      "properties": {}
+    },
+    {
+      "id": "r0143",
+      "source": "csharp",
+      "target": "lambdas",
+      "type": "uses_for",
+      "description": "Lambdas provide functional programming constructs.",
+      "properties": {}
+    },
+    {
+      "id": "r0144",
+      "source": "csharp",
+      "target": "closures",
+      "type": "supports",
+      "description": "C# closures capture lexical variables.",
+      "properties": {}
+    },
+    {
+      "id": "r0145",
+      "source": "csharp",
+      "target": "patterns",
+      "type": "uses_for",
+      "description": "Pattern matching supports functional-style branching.",
+      "properties": {}
+    },
+    {
+      "id": "r0146",
+      "source": "csharp",
+      "target": "async",
+      "type": "supports",
+      "description": "C# supports async methods and lambdas.",
+      "properties": {}
+    },
+    {
+      "id": "r0147",
+      "source": "async",
+      "target": "await",
+      "type": "paired_with",
+      "description": "async methods commonly use await.",
+      "properties": {}
+    },
+    {
+      "id": "r0148",
+      "source": "await",
+      "target": "task",
+      "type": "awaits",
+      "description": "await commonly consumes Task-based operations.",
+      "properties": {}
+    },
+    {
+      "id": "r0149",
+      "source": "await",
+      "target": "valuetask",
+      "type": "awaits",
+      "description": "await can consume ValueTask-based operations.",
+      "properties": {}
+    },
+    {
+      "id": "r0150",
+      "source": "csharp",
+      "target": "task",
+      "type": "supports",
+      "description": "C# applications use Task through the .NET ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "r0151",
+      "source": "task",
+      "target": "taskt",
+      "type": "generalizes_to",
+      "description": "Task<T> represents asynchronous results.",
+      "properties": {}
+    },
+    {
+      "id": "r0152",
+      "source": "csharp",
+      "target": "async_streams",
+      "type": "supports",
+      "description": "C# supports asynchronous iteration.",
+      "properties": {}
+    },
+    {
+      "id": "r0153",
+      "source": "async_streams",
+      "target": "iterator",
+      "type": "extends",
+      "description": "Async streams extend iterator-style programming to asynchronous sources.",
+      "properties": {}
+    },
+    {
+      "id": "r0154",
+      "source": "csharp",
+      "target": "threading",
+      "type": "supports",
+      "description": "C# applications can use explicit threads and synchronization.",
+      "properties": {}
+    },
+    {
+      "id": "r0155",
+      "source": "csharp",
+      "target": "parallel",
+      "type": "supports",
+      "description": "C# applications can use parallel execution APIs.",
+      "properties": {}
+    },
+    {
+      "id": "r0156",
+      "source": "csharp",
+      "target": "lock",
+      "type": "supports",
+      "description": "C# provides lock synchronization syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0157",
+      "source": "csharp",
+      "target": "semaphore",
+      "type": "uses",
+      "description": "SemaphoreSlim is used for bounded concurrency.",
+      "properties": {}
+    },
+    {
+      "id": "r0158",
+      "source": "csharp",
+      "target": "channel",
+      "type": "uses",
+      "description": "Channels support asynchronous producer-consumer pipelines.",
+      "properties": {}
+    },
+    {
+      "id": "r0159",
+      "source": "csharp",
+      "target": "cancellationtoken",
+      "type": "supports",
+      "description": "CancellationToken enables cooperative cancellation.",
+      "properties": {}
+    },
+    {
+      "id": "r0160",
+      "source": "task_parallel_library",
+      "target": "parallel",
+      "type": "provides",
+      "description": "The Task Parallel Library provides parallel/task abstractions.",
+      "properties": {}
+    },
+    {
+      "id": "r0161",
+      "source": "parallel_linq",
+      "target": "linq",
+      "type": "extends",
+      "description": "PLINQ extends LINQ with parallel query execution.",
+      "properties": {}
+    },
+    {
+      "id": "r0162",
+      "source": "csharp",
+      "target": "gc",
+      "type": "uses",
+      "description": "Managed C# memory is automatically garbage collected.",
+      "properties": {}
+    },
+    {
+      "id": "r0163",
+      "source": "gc",
+      "target": "managed_memory",
+      "type": "manages",
+      "description": "GC manages reachable/unreachable managed objects.",
+      "properties": {}
+    },
+    {
+      "id": "r0164",
+      "source": "csharp",
+      "target": "unsafe",
+      "type": "supports",
+      "description": "Unsafe regions enable explicit pointer operations.",
+      "properties": {}
+    },
+    {
+      "id": "r0165",
+      "source": "unsafe",
+      "target": "pointers",
+      "type": "enables",
+      "description": "Unsafe code permits dereferencing native-style pointers.",
+      "properties": {}
+    },
+    {
+      "id": "r0166",
+      "source": "pointers",
+      "target": "intptr",
+      "type": "related_to",
+      "description": "IntPtr can represent unmanaged pointers without direct dereference.",
+      "properties": {}
+    },
+    {
+      "id": "r0167",
+      "source": "csharp",
+      "target": "idisposable",
+      "type": "supports",
+      "description": "C# uses IDisposable for deterministic resource cleanup.",
+      "properties": {}
+    },
+    {
+      "id": "r0168",
+      "source": "idisposable",
+      "target": "using_statement",
+      "type": "paired_with",
+      "description": "using statements deterministically dispose IDisposable resources.",
+      "properties": {}
+    },
+    {
+      "id": "r0169",
+      "source": "idisposable",
+      "target": "using_declaration",
+      "type": "paired_with",
+      "description": "using declarations deterministically dispose resources at scope exit.",
+      "properties": {}
+    },
+    {
+      "id": "r0170",
+      "source": "csharp",
+      "target": "raii_like",
+      "type": "uses_pattern",
+      "description": "C# achieves deterministic managed-resource cleanup through IDisposable and using.",
+      "properties": {}
+    },
+    {
+      "id": "r0171",
+      "source": "csharp",
+      "target": "span",
+      "type": "supports",
+      "description": "C# applications can use Span<T> for high-performance memory views.",
+      "properties": {}
+    },
+    {
+      "id": "r0172",
+      "source": "span",
+      "target": "ref_struct",
+      "type": "requires",
+      "description": "Span<T> is a ref struct.",
+      "properties": {}
+    },
+    {
+      "id": "r0173",
+      "source": "readonlyspan",
+      "target": "span",
+      "type": "read_only_variant_of",
+      "description": "ReadOnlySpan<T> provides read-only memory access.",
+      "properties": {}
+    },
+    {
+      "id": "r0174",
+      "source": "memory",
+      "target": "span",
+      "type": "heap_compatible_counterpart",
+      "description": "Memory<T> provides a heap-compatible alternative to Span<T>.",
+      "properties": {}
+    },
+    {
+      "id": "r0175",
+      "source": "read_only_memory",
+      "target": "memory",
+      "type": "read_only_variant_of",
+      "description": "ReadOnlyMemory<T> provides read-only heap-compatible memory.",
+      "properties": {}
+    },
+    {
+      "id": "r0176",
+      "source": "csharp",
+      "target": "exceptions",
+      "type": "supports",
+      "description": "C# uses structured exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "r0177",
+      "source": "exceptions",
+      "target": "try",
+      "type": "uses",
+      "description": "Exceptions are protected using try blocks.",
+      "properties": {}
+    },
+    {
+      "id": "r0178",
+      "source": "exceptions",
+      "target": "catch",
+      "type": "handled_by",
+      "description": "Matching exceptions are handled in catch blocks.",
+      "properties": {}
+    },
+    {
+      "id": "r0179",
+      "source": "exceptions",
+      "target": "finally",
+      "type": "cleanup_with",
+      "description": "finally supports cleanup regardless of normal/exceptional completion.",
+      "properties": {}
+    },
+    {
+      "id": "r0180",
+      "source": "csharp",
+      "target": "throw",
+      "type": "supports",
+      "description": "C# can explicitly throw exceptions.",
+      "properties": {}
+    },
+    {
+      "id": "r0181",
+      "source": "csharp",
+      "target": "no_checked_exceptions",
+      "type": "characterized_by",
+      "description": "C# has no checked exception requirement.",
+      "properties": {}
+    },
+    {
+      "id": "r0182",
+      "source": "csharp",
+      "target": "reflection",
+      "type": "supports",
+      "description": "C#/.NET exposes runtime reflection APIs.",
+      "properties": {}
+    },
+    {
+      "id": "r0183",
+      "source": "reflection",
+      "target": "reflection_api",
+      "type": "implemented_by",
+      "description": "System.Reflection provides reflection APIs.",
+      "properties": {}
+    },
+    {
+      "id": "r0184",
+      "source": "csharp",
+      "target": "expression_trees",
+      "type": "supports",
+      "description": "C# supports expression-tree lambdas.",
+      "properties": {}
+    },
+    {
+      "id": "r0185",
+      "source": "expression_trees",
+      "target": "expressiontree_api",
+      "type": "implemented_by",
+      "description": "System.Linq.Expressions provides expression tree APIs.",
+      "properties": {}
+    },
+    {
+      "id": "r0186",
+      "source": "csharp",
+      "target": "attributes",
+      "type": "supports",
+      "description": "C# supports metadata attributes.",
+      "properties": {}
+    },
+    {
+      "id": "r0187",
+      "source": "attributes",
+      "target": "reflection",
+      "type": "inspectable_by",
+      "description": "Attributes can be inspected through reflection.",
+      "properties": {}
+    },
+    {
+      "id": "r0188",
+      "source": "csharp",
+      "target": "reflection_emit",
+      "type": "supports",
+      "description": "C#/.NET can emit IL and metadata at runtime.",
+      "properties": {}
+    },
+    {
+      "id": "r0189",
+      "source": "csharp",
+      "target": "source_generators",
+      "type": "supports",
+      "description": "Roslyn source generators provide compile-time code generation.",
+      "properties": {}
+    },
+    {
+      "id": "r0190",
+      "source": "source_generators",
+      "target": "roslyn",
+      "type": "implemented_by",
+      "description": "Source generators integrate with Roslyn compilation.",
+      "properties": {}
+    },
+    {
+      "id": "r0191",
+      "source": "csharp",
+      "target": "dynamic",
+      "type": "supports",
+      "description": "C# supports runtime dynamic binding.",
+      "properties": {}
+    },
+    {
+      "id": "r0192",
+      "source": "dynamic",
+      "target": "reflection",
+      "type": "related_to",
+      "description": "Dynamic binding and reflection both support runtime-oriented inspection/invocation scenarios.",
+      "properties": {}
+    },
+    {
+      "id": "r0193",
+      "source": "csharp_project",
+      "target": "csproj",
+      "type": "represented_by",
+      "description": "A C# project is commonly represented by a .csproj file.",
+      "properties": {}
+    },
+    {
+      "id": "r0194",
+      "source": "dotnet_cli",
+      "target": "csharp_project",
+      "type": "builds_or_manages",
+      "description": "dotnet CLI manages C# projects.",
+      "properties": {}
+    },
+    {
+      "id": "r0195",
+      "source": "msbuild",
+      "target": "csproj",
+      "type": "builds",
+      "description": "MSBuild evaluates .csproj files.",
+      "properties": {}
+    },
+    {
+      "id": "r0196",
+      "source": "dotnet_cli",
+      "target": "msbuild",
+      "type": "invokes",
+      "description": "dotnet CLI commonly invokes the MSBuild build engine.",
+      "properties": {}
+    },
+    {
+      "id": "r0197",
+      "source": "csharp",
+      "target": "msbuild",
+      "type": "built_with",
+      "description": "C# projects are commonly built with MSBuild.",
+      "properties": {}
+    },
+    {
+      "id": "r0198",
+      "source": "csharp",
+      "target": "assembly",
+      "type": "compiles_to",
+      "description": "Managed C# compilation commonly produces assemblies.",
+      "properties": {}
+    },
+    {
+      "id": "r0199",
+      "source": "assembly",
+      "target": "metadata",
+      "type": "contains",
+      "description": "CLI assemblies contain metadata.",
+      "properties": {}
+    },
+    {
+      "id": "r0200",
+      "source": "assembly",
+      "target": "il",
+      "type": "contains",
+      "description": "Managed assemblies commonly contain CIL.",
+      "properties": {}
+    },
+    {
+      "id": "r0201",
+      "source": "assembly",
+      "target": "dotnet",
+      "type": "loaded_by",
+      "description": "The .NET runtime loads managed assemblies.",
+      "properties": {}
+    },
+    {
+      "id": "r0202",
+      "source": "roslyn",
+      "target": "metadata",
+      "type": "produces",
+      "description": "Compilation emits metadata describing types and members.",
+      "properties": {}
+    },
+    {
+      "id": "r0203",
+      "source": "roslyn",
+      "target": "analyzers",
+      "type": "integrates",
+      "description": "Roslyn hosts analyzers during compilation.",
+      "properties": {}
+    },
+    {
+      "id": "r0204",
+      "source": "roslyn",
+      "target": "source_generators",
+      "type": "hosts",
+      "description": "Roslyn hosts source generators.",
+      "properties": {}
+    },
+    {
+      "id": "r0205",
+      "source": "dotnet",
+      "target": "native_aot",
+      "type": "supports",
+      "description": "Modern .NET supports Native AOT deployment.",
+      "properties": {}
+    },
+    {
+      "id": "r0206",
+      "source": "dotnet",
+      "target": "jit",
+      "type": "uses",
+      "description": "JIT is a conventional managed-code execution strategy.",
+      "properties": {}
+    },
+    {
+      "id": "r0207",
+      "source": "ryujit",
+      "target": "jit",
+      "type": "implements",
+      "description": "RyuJIT is the JIT compiler used in modern .NET execution.",
+      "properties": {}
+    },
+    {
+      "id": "r0208",
+      "source": "native_aot",
+      "target": "jit",
+      "type": "contrasts_with",
+      "description": "Native AOT reduces dependence on runtime JIT compilation by compiling ahead of time.",
+      "properties": {}
+    },
+    {
+      "id": "r0209",
+      "source": "csharp",
+      "target": "aspnet",
+      "type": "used_for",
+      "description": "C# is widely used for ASP.NET Core applications.",
+      "properties": {}
+    },
+    {
+      "id": "r0210",
+      "source": "csharp",
+      "target": "entity_framework",
+      "type": "used_with",
+      "description": "C# commonly uses EF Core for relational data access.",
+      "properties": {}
+    },
+    {
+      "id": "r0211",
+      "source": "csharp",
+      "target": "maui",
+      "type": "used_with",
+      "description": "C# is a primary language for .NET MAUI applications.",
+      "properties": {}
+    },
+    {
+      "id": "r0212",
+      "source": "csharp",
+      "target": "blazor",
+      "type": "used_with",
+      "description": "C# is a primary language for Blazor components and applications.",
+      "properties": {}
+    },
+    {
+      "id": "r0213",
+      "source": "csharp",
+      "target": "wpf",
+      "type": "used_with",
+      "description": "C# is widely used with WPF desktop applications.",
+      "properties": {}
+    },
+    {
+      "id": "r0214",
+      "source": "csharp",
+      "target": "ado",
+      "type": "uses",
+      "description": "C# applications can use ADO.NET for data access.",
+      "properties": {}
+    },
+    {
+      "id": "r0215",
+      "source": "csharp",
+      "target": "json",
+      "type": "uses",
+      "description": "C# applications commonly use System.Text.Json.",
+      "properties": {}
+    },
+    {
+      "id": "r0216",
+      "source": "csharp",
+      "target": "xml",
+      "type": "uses",
+      "description": "C# applications can use System.Xml APIs.",
+      "properties": {}
+    },
+    {
+      "id": "r0217",
+      "source": "csharp",
+      "target": "httpclient",
+      "type": "uses",
+      "description": "C# applications commonly use HttpClient for HTTP.",
+      "properties": {}
+    },
+    {
+      "id": "r0218",
+      "source": "csharp",
+      "target": "regex",
+      "type": "uses",
+      "description": "C# applications can use regular-expression APIs.",
+      "properties": {}
+    },
+    {
+      "id": "r0219",
+      "source": "csharp",
+      "target": "xunit",
+      "type": "tested_with",
+      "description": "C# applications can be tested using xUnit.net.",
+      "properties": {}
+    },
+    {
+      "id": "r0220",
+      "source": "csharp",
+      "target": "nunit",
+      "type": "tested_with",
+      "description": "C# applications can be tested using NUnit.",
+      "properties": {}
+    },
+    {
+      "id": "r0221",
+      "source": "csharp",
+      "target": "mstest",
+      "type": "tested_with",
+      "description": "C# applications can be tested using MSTest.",
+      "properties": {}
+    },
+    {
+      "id": "r0222",
+      "source": "csharp",
+      "target": "diagnostics",
+      "type": "uses",
+      "description": "C# applications use .NET diagnostics facilities.",
+      "properties": {}
+    },
+    {
+      "id": "r0223",
+      "source": "csharp",
+      "target": "dependency_injection",
+      "type": "commonly_uses",
+      "description": "Modern .NET applications commonly use dependency injection.",
+      "properties": {}
+    },
+    {
+      "id": "r0224",
+      "source": "int",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Int32 is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0225",
+      "source": "long",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Int64 is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0226",
+      "source": "float",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Single is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0227",
+      "source": "double",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Double is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0228",
+      "source": "decimal",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Decimal is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0229",
+      "source": "bool",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Boolean is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0230",
+      "source": "char",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Char is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0231",
+      "source": "datetime",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.DateTime is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0232",
+      "source": "guid",
+      "target": "value_types",
+      "type": "is_a",
+      "description": "System.Guid is a value type.",
+      "properties": {}
+    },
+    {
+      "id": "r0233",
+      "source": "list",
+      "target": "generics",
+      "type": "instance_of_pattern",
+      "description": "List<T> is a generic type.",
+      "properties": {}
+    },
+    {
+      "id": "r0234",
+      "source": "dictionary",
+      "target": "generics",
+      "type": "instance_of_pattern",
+      "description": "Dictionary<TKey,TValue> is a generic type.",
+      "properties": {}
+    },
+    {
+      "id": "r0235",
+      "source": "hashset",
+      "target": "generics",
+      "type": "instance_of_pattern",
+      "description": "HashSet<T> is a generic type.",
+      "properties": {}
+    },
+    {
+      "id": "r0236",
+      "source": "taskt",
+      "target": "generics",
+      "type": "instance_of_pattern",
+      "description": "Task<T> is a generic type.",
+      "properties": {}
+    },
+    {
+      "id": "r0237",
+      "source": "nullable",
+      "target": "generics",
+      "type": "instance_of_pattern",
+      "description": "Nullable<T> is a generic type.",
+      "properties": {}
+    },
+    {
+      "id": "r0238",
+      "source": "generics",
+      "target": "cts",
+      "type": "integrates_with",
+      "description": "Generic types participate in the CTS.",
+      "properties": {}
+    },
+    {
+      "id": "r0239",
+      "source": "csharp",
+      "target": "c",
+      "type": "influenced_by",
+      "description": "C# adopts C-family syntax and conventions.",
+      "properties": {}
+    },
+    {
+      "id": "r0240",
+      "source": "csharp",
+      "target": "cpp",
+      "type": "influenced_by",
+      "description": "C++ is a major influence on C# design and syntax.",
+      "properties": {}
+    },
+    {
+      "id": "r0241",
+      "source": "csharp",
+      "target": "java",
+      "type": "influenced_by",
+      "description": "Java is a major influence and comparison point.",
+      "properties": {}
+    },
+    {
+      "id": "r0242",
+      "source": "csharp",
+      "target": "eiffel",
+      "type": "influenced_by",
+      "description": "Eiffel influenced aspects of C# design.",
+      "properties": {}
+    },
+    {
+      "id": "r0243",
+      "source": "csharp",
+      "target": "fsharp",
+      "type": "related_to",
+      "description": "F# shares the .NET/CLI ecosystem with C#.",
+      "properties": {}
+    },
+    {
+      "id": "r0244",
+      "source": "csharp",
+      "target": "haskell",
+      "type": "influenced_by",
+      "description": "Haskell influenced some functional features and design ideas.",
+      "properties": {}
+    },
+    {
+      "id": "r0245",
+      "source": "csharp",
+      "target": "scala",
+      "type": "related_to",
+      "description": "Scala and C# are multi-paradigm languages with substantial generic/functional features.",
+      "properties": {}
+    },
+    {
+      "id": "r0246",
+      "source": "csharp",
+      "target": "javascript",
+      "type": "influenced_by",
+      "description": "JavaScript influenced the dynamic runtime-binding capability.",
+      "properties": {}
+    },
+    {
+      "id": "r0247",
+      "source": "csharp",
+      "target": "visual_basic",
+      "type": "related_to",
+      "description": "Visual Basic is a Microsoft .NET language sharing the platform.",
+      "properties": {}
+    },
+    {
+      "id": "r0248",
+      "source": "csharp",
+      "target": "objective_c",
+      "type": "influenced_by",
+      "description": "Objective-C appears among languages influencing C# design context.",
+      "properties": {}
+    },
+    {
+      "id": "r0249",
+      "source": "csharp",
+      "target": "smalltalk",
+      "type": "influenced_by",
+      "description": "Smalltalk appears among historical object-oriented influences.",
+      "properties": {}
+    },
+    {
+      "id": "r0250",
+      "source": "csharp",
+      "target": "modula3",
+      "type": "influenced_by",
+      "description": "Modula-3 is listed among C# influences.",
+      "properties": {}
+    },
+    {
+      "id": "r0251",
+      "source": "csharp",
+      "target": "object_pascal",
+      "type": "influenced_by",
+      "description": "Object Pascal/Delphi history influenced C# design context.",
+      "properties": {}
+    },
+    {
+      "id": "r0252",
+      "source": "csharp_omega",
+      "target": "csharp",
+      "type": "dialect_of",
+      "description": "Cω is a C#-related experimental dialect.",
+      "properties": {}
+    },
+    {
+      "id": "r0253",
+      "source": "polyphonic_csharp",
+      "target": "csharp",
+      "type": "dialect_of",
+      "description": "Polyphonic C# is an experimental concurrent extension.",
+      "properties": {}
+    },
+    {
+      "id": "r0254",
+      "source": "enhanced_csharp",
+      "target": "csharp",
+      "type": "dialect_of",
+      "description": "Enhanced C# is a related dialect.",
+      "properties": {}
+    }
+  ]
+}

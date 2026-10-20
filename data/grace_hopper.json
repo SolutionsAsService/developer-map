@@ -1,0 +1,3654 @@
+{
+  "metadata": {
+    "title": "Grace Hopper — Pioneering Figure Knowledge Graph",
+    "subject": "Grace Brewster Murray Hopper",
+    "description": "Detailed connected knowledge graph of Grace Hopper's life, education, computing work, compiler and language history, military career, standards work, awards, anecdotes, and legacy. Built primarily from the user-provided biographical source, with explicit caveats preserved where the source distinguishes popular attribution from modern terminology.",
+    "version": "1.0.0",
+    "created_date": "2026-10-19",
+    "source_basis": "User-provided Wikipedia article text, including its biography, career, technical contributions, military chronology, awards, legacy, and notes.",
+    "source_notes": [
+      "The source says Hopper is often credited with creating the first compiler, but notes that A-0 would be considered a linker component in modern terminology.",
+      "The source states the word 'bug' predated computer use; Hopper is associated with popularizing the moth incident story, not coining the word.",
+      "Relationships distinguish direct source claims from broader conceptual links."
+    ],
+    "schema": "JSON Schema Draft 2020-12",
+    "entity_count": 179,
+    "relationship_count": 253,
+    "entity_type_count": 55,
+    "relationship_type_count": 163
+  },
+  "entity_types": [
+    "academic_field",
+    "academic_position",
+    "academic_work",
+    "anecdote",
+    "award",
+    "career_role",
+    "committee",
+    "company",
+    "computer",
+    "computer_architecture",
+    "computer_hardware",
+    "computing_concept",
+    "computing_field",
+    "computing_process",
+    "creative_work",
+    "credential",
+    "documentary",
+    "educational_demonstration",
+    "employee_group",
+    "engineering_concept",
+    "event",
+    "example",
+    "facility",
+    "historical_claim",
+    "historical_event",
+    "historical_note",
+    "honor",
+    "infrastructure",
+    "legacy",
+    "measurement",
+    "media_project",
+    "media_work",
+    "memorial_category",
+    "military_program",
+    "military_rank",
+    "military_vessel",
+    "minor_planet",
+    "nickname",
+    "organization",
+    "person",
+    "person_name",
+    "place",
+    "programming_language",
+    "programming_language_category",
+    "related_concept",
+    "satellite",
+    "scholarship_program",
+    "scientific_concept",
+    "social_and_professional_field",
+    "software_library",
+    "software_system",
+    "software_tool",
+    "technical_document",
+    "technical_publication",
+    "video_game"
+  ],
+  "relationship_types": [
+    "abstracts_over",
+    "acquired_by_or_integrated_into",
+    "administered_by_or_established_by",
+    "administered_later_by",
+    "advanced",
+    "advances_goal_of",
+    "advocated",
+    "advocated_access_to",
+    "affected_by",
+    "also_known_as",
+    "appears_in",
+    "artifact_preserved_at",
+    "assigned_by",
+    "associated_with",
+    "associated_with_claim",
+    "at_organization",
+    "attended",
+    "authored",
+    "authored_or_published",
+    "authorized_by",
+    "awarded_at",
+    "awarded_by",
+    "born_in",
+    "buried_at",
+    "can_provide",
+    "child_of",
+    "closely_represents",
+    "coauthored",
+    "coauthored_by",
+    "commemorated_by",
+    "completed",
+    "completion_event",
+    "component_name_of",
+    "concerns",
+    "contextualizes",
+    "contrasts_with",
+    "contributed_to",
+    "contributed_to_legacy",
+    "defined",
+    "depicts",
+    "descendant_of",
+    "described_by",
+    "designed_for",
+    "developed",
+    "developed_by",
+    "developed_or_supported",
+    "died_in",
+    "died_in_event",
+    "directed",
+    "discusses",
+    "distinguishes_from",
+    "documents",
+    "earned_credential",
+    "embodied_in",
+    "enables",
+    "established",
+    "established_by",
+    "example_of",
+    "explains",
+    "explains_history_of",
+    "first_version_of",
+    "focused_on",
+    "followed_by_interment_at",
+    "founding_member_of",
+    "graduated_from",
+    "granted_by",
+    "held_at",
+    "held_final_rank",
+    "held_role",
+    "historically_classified_as",
+    "honored_by",
+    "honored_by_named_position",
+    "honored_by_namesake_award",
+    "honors",
+    "honors_through_program",
+    "illustrates",
+    "illustrates_mindset",
+    "implements",
+    "includes",
+    "includes_language",
+    "includes_practice",
+    "includes_subfield",
+    "includes_system",
+    "incorporates_ideas_from",
+    "inducted_into",
+    "influenced",
+    "inspired",
+    "inspired_character_name",
+    "instance_of",
+    "is_remembered_for",
+    "is_subject_of",
+    "joined",
+    "known_as",
+    "led_release_of",
+    "legacy_includes",
+    "located_at",
+    "married_to",
+    "may_produce",
+    "member_of",
+    "mentored",
+    "names",
+    "namesake_of",
+    "near",
+    "occurred_at",
+    "occurred_in",
+    "occurred_on",
+    "often_overlaps_with",
+    "organized",
+    "organized_by",
+    "part_of",
+    "participated_in",
+    "participated_in_context",
+    "pioneered",
+    "pioneered_theory_of",
+    "popularized_anecdote_for",
+    "portrait_included_in",
+    "presided_under",
+    "program_of",
+    "promoted",
+    "promoted_in_event",
+    "promoted_to",
+    "promotes",
+    "qualifies",
+    "recalled_for",
+    "received_award",
+    "received_honor",
+    "recognized_by",
+    "recognized_by_event",
+    "recognizes",
+    "recruited_by",
+    "redesignated_as",
+    "refers_to",
+    "related_to",
+    "renamed_as",
+    "represented_by_event",
+    "requires_historical_nuance",
+    "resulted_in",
+    "resulted_in_rank",
+    "retired_in_event",
+    "same_work_as",
+    "served_as_technical_consultant",
+    "served_during",
+    "served_in",
+    "serves_audience",
+    "service_branch",
+    "specialized_in",
+    "studied_at",
+    "subject_of",
+    "supervised_by",
+    "supported_by",
+    "supports",
+    "supports_goal",
+    "trained_at",
+    "translated_to",
+    "used",
+    "used_as_illustration",
+    "used_demonstration",
+    "uses",
+    "uses_measurement",
+    "worked_at",
+    "worked_for",
+    "worked_on",
+    "worked_with"
+  ],
+  "entities": [
+    {
+      "id": "grace_hopper",
+      "name": "Grace Brewster Murray Hopper",
+      "type": "person",
+      "description": "American computer scientist, mathematician, U.S. Navy officer and programming-language pioneer; lived 1906–1992.",
+      "properties": {
+        "birth_date": "1906-12-09",
+        "death_date": "1992-01-01",
+        "nationality": "American",
+        "primary_fields": [
+          "computer science",
+          "mathematics",
+          "military service"
+        ],
+        "birth_name": "Grace Brewster Murray",
+        "surname_after_marriage": "Hopper"
+      }
+    },
+    {
+      "id": "grace_brewster_murray",
+      "name": "Grace Brewster Murray",
+      "type": "person_name",
+      "description": "Hopper's birth name.",
+      "properties": {}
+    },
+    {
+      "id": "vincent_foster_hopper",
+      "name": "Vincent Foster Hopper",
+      "type": "person",
+      "description": "New York University professor; Grace Hopper's spouse from 1930 until their divorce in 1945.",
+      "properties": {}
+    },
+    {
+      "id": "walter_fletcher_murray",
+      "name": "Walter Fletcher Murray",
+      "type": "person",
+      "description": "Grace Hopper's father.",
+      "properties": {}
+    },
+    {
+      "id": "mary_campbell_van_horne",
+      "name": "Mary Campbell Van Horne",
+      "type": "person",
+      "description": "Grace Hopper's mother.",
+      "properties": {}
+    },
+    {
+      "id": "alexander_wilson_russell",
+      "name": "Alexander Wilson Russell",
+      "type": "person",
+      "description": "Hopper's great-grandfather, a U.S. Navy admiral who fought at the Battle of Mobile Bay.",
+      "properties": {}
+    },
+    {
+      "id": "oystein_ore",
+      "name": "Øystein Ore",
+      "type": "person",
+      "description": "Mathematician who supervised Hopper's doctoral work at Yale.",
+      "properties": {}
+    },
+    {
+      "id": "howard_h_aiken",
+      "name": "Howard H. Aiken",
+      "type": "person",
+      "description": "Leader of the Harvard Mark I computing team; Hopper worked on the team and co-authored papers with him.",
+      "properties": {}
+    },
+    {
+      "id": "jean_e_sammet",
+      "name": "Jean E. Sammet",
+      "type": "person",
+      "description": "Computer scientist and member of the committee that worked on COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "rita_yavinsky",
+      "name": "Rita Yavinsky",
+      "type": "person",
+      "description": "Digital Equipment Corporation colleague who initially offered Hopper a position.",
+      "properties": {}
+    },
+    {
+      "id": "elmo_r_zumwalt_jr",
+      "name": "Admiral Elmo R. Zumwalt Jr.",
+      "type": "person",
+      "description": "U.S. Navy admiral who promoted Hopper to captain in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "ronald_reagan",
+      "name": "Ronald Reagan",
+      "type": "person",
+      "description": "U.S. president who promoted Hopper to commodore in 1983.",
+      "properties": {}
+    },
+    {
+      "id": "barack_obama",
+      "name": "Barack Obama",
+      "type": "person",
+      "description": "U.S. president who posthumously awarded Hopper the Presidential Medal of Freedom in 2016.",
+      "properties": {}
+    },
+    {
+      "id": "philip_crane",
+      "name": "Philip Crane",
+      "type": "person",
+      "description": "U.S. representative who championed a resolution to promote Hopper on the retired list after seeing her on 60 Minutes.",
+      "properties": {}
+    },
+    {
+      "id": "vassar_college",
+      "name": "Vassar College",
+      "type": "organization",
+      "description": "College where Hopper earned her bachelor's degree and taught mathematics.",
+      "properties": {}
+    },
+    {
+      "id": "yale_university",
+      "name": "Yale University",
+      "type": "organization",
+      "description": "University where Hopper earned master's and doctoral degrees; later named Grace Hopper College in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "harvard_university",
+      "name": "Harvard University",
+      "type": "organization",
+      "description": "Site of the Harvard Computation Laboratory and Mark I project where Hopper worked during and after World War II.",
+      "properties": {}
+    },
+    {
+      "id": "university_of_pennsylvania",
+      "name": "University of Pennsylvania",
+      "type": "organization",
+      "description": "Institution whose engineering school honored Hopper's A-0 work with an IEEE milestone plaque in 2024.",
+      "properties": {}
+    },
+    {
+      "id": "smith_college",
+      "name": "Smith College",
+      "type": "organization",
+      "description": "Location of the Naval Reserve Midshipmen's School where Hopper trained.",
+      "properties": {}
+    },
+    {
+      "id": "eckert_mauchly_computer_corporation",
+      "name": "Eckert–Mauchly Computer Corporation",
+      "type": "organization",
+      "description": "Computer company Hopper joined in 1949 while the UNIVAC I was being developed.",
+      "properties": {}
+    },
+    {
+      "id": "remington_rand",
+      "name": "Remington Rand",
+      "type": "company",
+      "description": "Company that took over Eckert–Mauchly; Hopper served as director of automatic programming development.",
+      "properties": {}
+    },
+    {
+      "id": "digital_equipment_corporation",
+      "name": "Digital Equipment Corporation (DEC)",
+      "type": "company",
+      "description": "Computer company where Hopper worked as a senior consultant after Navy retirement.",
+      "properties": {}
+    },
+    {
+      "id": "united_states_navy",
+      "name": "United States Navy",
+      "type": "organization",
+      "description": "U.S. military service in which Hopper served from 1943 to 1986, ultimately as rear admiral (lower half).",
+      "properties": {}
+    },
+    {
+      "id": "naval_reserve",
+      "name": "United States Navy Reserve",
+      "type": "organization",
+      "description": "Reserve service Hopper joined during World War II and in which she continued serving for decades.",
+      "properties": {}
+    },
+    {
+      "id": "waves",
+      "name": "WAVES",
+      "type": "military_program",
+      "description": "Women Accepted for Volunteer Emergency Service, the U.S. Navy women's reserve program in which Hopper served during World War II.",
+      "properties": {}
+    },
+    {
+      "id": "bureau_of_ships",
+      "name": "U.S. Navy Bureau of Ships",
+      "type": "organization",
+      "description": "Navy bureau associated with the Harvard computation project to which Hopper was assigned.",
+      "properties": {}
+    },
+    {
+      "id": "harvard_computation_laboratory",
+      "name": "Harvard Computation Laboratory",
+      "type": "organization",
+      "description": "Research and computing unit where Hopper worked on the Mark I and continued under a Navy contract.",
+      "properties": {}
+    },
+    {
+      "id": "society_of_women_engineers",
+      "name": "Society of Women Engineers",
+      "type": "organization",
+      "description": "Professional organization of which Hopper was a founding member in 1950 and whose Achievement Award she received in 1964.",
+      "properties": {}
+    },
+    {
+      "id": "association_for_computing_machinery",
+      "name": "Association for Computing Machinery (ACM)",
+      "type": "organization",
+      "description": "Computing society that established the annual Grace Murray Hopper Award for Outstanding Young Computer Professionals in 1971.",
+      "properties": {}
+    },
+    {
+      "id": "codasyl",
+      "name": "Conference on Data Systems Languages (CODASYL)",
+      "type": "organization",
+      "description": "Industry-government consortium whose 1959 committee defined COBOL; Hopper served as a technical consultant.",
+      "properties": {}
+    },
+    {
+      "id": "national_bureau_of_standards",
+      "name": "National Bureau of Standards (NBS)",
+      "type": "organization",
+      "description": "U.S. standards body that took over administration of programming-language conformance tests in the 1980s; now NIST.",
+      "properties": {}
+    },
+    {
+      "id": "nist",
+      "name": "National Institute of Standards and Technology (NIST)",
+      "type": "organization",
+      "description": "Modern name of the standards institution that assumed administration of language conformance tests.",
+      "properties": {}
+    },
+    {
+      "id": "computer_history_museum",
+      "name": "Computer History Museum",
+      "type": "organization",
+      "description": "Institution that named Hopper its first Fellow Award recipient in 1987.",
+      "properties": {}
+    },
+    {
+      "id": "national_academy_of_engineering",
+      "name": "National Academy of Engineering",
+      "type": "organization",
+      "description": "Hopper was elected to this academy in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "british_computer_society",
+      "name": "British Computer Society",
+      "type": "organization",
+      "description": "Made Hopper a Distinguished Fellow in 1973, the first American and first woman of any nationality to receive that distinction.",
+      "properties": {}
+    },
+    {
+      "id": "american_academy_of_arts_and_sciences",
+      "name": "American Academy of Arts and Sciences",
+      "type": "organization",
+      "description": "Elected Hopper as a Fellow in 1991.",
+      "properties": {}
+    },
+    {
+      "id": "national_womens_hall_of_fame",
+      "name": "National Women's Hall of Fame",
+      "type": "organization",
+      "description": "Inducted Hopper in 1994.",
+      "properties": {}
+    },
+    {
+      "id": "national_museum_of_american_history",
+      "name": "National Museum of American History",
+      "type": "organization",
+      "description": "Smithsonian museum holding the Mark II log book with the moth associated with a famous computing 'bug' anecdote.",
+      "properties": {}
+    },
+    {
+      "id": "arlington_national_cemetery",
+      "name": "Arlington National Cemetery",
+      "type": "place",
+      "description": "National cemetery where Hopper was interred with full military honors.",
+      "properties": {}
+    },
+    {
+      "id": "new_york_city",
+      "name": "New York City",
+      "type": "place",
+      "description": "Hopper's birthplace.",
+      "properties": {}
+    },
+    {
+      "id": "arlington_county_virginia",
+      "name": "Arlington County, Virginia",
+      "type": "place",
+      "description": "Place where Hopper died and where Grace Murray Hopper Park commemorates her.",
+      "properties": {}
+    },
+    {
+      "id": "hartridge_school",
+      "name": "Hartridge School",
+      "type": "organization",
+      "description": "Preparatory school Hopper attended in Plainfield, New Jersey.",
+      "properties": {}
+    },
+    {
+      "id": "battle_of_mobile_bay",
+      "name": "Battle of Mobile Bay",
+      "type": "historical_event",
+      "description": "American Civil War naval battle in which Hopper's great-grandfather Alexander Wilson Russell fought.",
+      "properties": {}
+    },
+    {
+      "id": "world_war_ii",
+      "name": "World War II",
+      "type": "historical_event",
+      "description": "Global war during which Hopper joined the Navy Reserve and was assigned to the Harvard computing project.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_thesis",
+      "name": "New Types of Irreducibility Criteria",
+      "type": "academic_work",
+      "description": "Hopper's 1934 doctoral dissertation in mathematics, supervised by Øystein Ore.",
+      "properties": {
+        "year": 1934
+      }
+    },
+    {
+      "id": "mark_i",
+      "name": "Harvard Mark I / Automatic Sequence Controlled Calculator",
+      "type": "computer",
+      "description": "Electromechanical computer on whose programming staff Hopper worked beginning in 1944.",
+      "properties": {}
+    },
+    {
+      "id": "mark_ii",
+      "name": "Harvard Mark II",
+      "type": "computer",
+      "description": "Computer associated with the 1947 moth-in-relay incident later memorialized in a log book.",
+      "properties": {}
+    },
+    {
+      "id": "univac_i",
+      "name": "UNIVAC I",
+      "type": "computer",
+      "description": "Early commercial large-scale electronic computer developed by the Eckert–Mauchly team; Hopper joined the team in 1949.",
+      "properties": {}
+    },
+    {
+      "id": "a0_system",
+      "name": "A-0 System",
+      "type": "software_system",
+      "description": "Hopper's early programming system, completed by 1952; described at the time as a compiler but often characterized in modern terms as a link-loader.",
+      "properties": {
+        "first_operational_version": "1952",
+        "historical_terminology_note": "Hopper called it a compiler; the source notes that a modern system would classify it as a linker component."
+      }
+    },
+    {
+      "id": "a_compiler",
+      "name": "A compiler",
+      "type": "software_system",
+      "description": "Name used for Hopper's early automatic-programming system; its first version was A-0.",
+      "properties": {}
+    },
+    {
+      "id": "math_matic",
+      "name": "MATH-MATIC",
+      "type": "programming_language",
+      "description": "One of the early compiler-based programming languages released by Hopper's department.",
+      "properties": {}
+    },
+    {
+      "id": "flow_matic",
+      "name": "FLOW-MATIC",
+      "type": "programming_language",
+      "description": "Early English-like business data-processing language developed under Hopper's leadership; a major influence on COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "cobol",
+      "name": "COBOL",
+      "type": "programming_language",
+      "description": "Common Business-Oriented Language, an English-like high-level language for business data processing defined through CODASYL in 1959.",
+      "properties": {
+        "acronym": "Common Business-Oriented Language"
+      }
+    },
+    {
+      "id": "comtran",
+      "name": "COMTRAN",
+      "type": "programming_language",
+      "description": "IBM language whose ideas contributed to COBOL alongside FLOW-MATIC.",
+      "properties": {}
+    },
+    {
+      "id": "fortran",
+      "name": "FORTRAN",
+      "type": "programming_language",
+      "description": "Programming language included in the early language-conformance testing and standardization work Hopper supported.",
+      "properties": {}
+    },
+    {
+      "id": "assembly_language",
+      "name": "Assembly language",
+      "type": "programming_language_category",
+      "description": "Low-level programming languages close to machine code, contrasted in Hopper's advocacy with English-like high-level languages.",
+      "properties": {}
+    },
+    {
+      "id": "machine_code",
+      "name": "Machine code",
+      "type": "computing_concept",
+      "description": "Processor-level instructions into which a compiler or translation system converts source-level program representations.",
+      "properties": {}
+    },
+    {
+      "id": "compiler",
+      "name": "Compiler",
+      "type": "software_tool",
+      "description": "Program that translates a source language or representation into another form, often machine code or an intermediate representation.",
+      "properties": {}
+    },
+    {
+      "id": "linker",
+      "name": "Linker",
+      "type": "software_tool",
+      "description": "Tool that combines object files and libraries and resolves symbols; the source notes A-0 is more accurately described as a linker component in modern terminology.",
+      "properties": {}
+    },
+    {
+      "id": "loader",
+      "name": "Loader",
+      "type": "software_tool",
+      "description": "System component that loads executable code and prepares it for execution; related to the historical link-loader description of A-0.",
+      "properties": {}
+    },
+    {
+      "id": "automatic_programming",
+      "name": "Automatic programming",
+      "type": "computing_concept",
+      "description": "Historical term for tools and languages that reduced the need to write machine-specific instructions directly.",
+      "properties": {}
+    },
+    {
+      "id": "machine_independent_language",
+      "name": "Machine-independent programming language",
+      "type": "computing_concept",
+      "description": "Language intended to express programs without requiring direct dependence on a particular machine's instruction representation.",
+      "properties": {}
+    },
+    {
+      "id": "high_level_language",
+      "name": "High-level programming language",
+      "type": "computing_concept",
+      "description": "Programming language designed to express operations at a higher abstraction level than machine code or assembly.",
+      "properties": {}
+    },
+    {
+      "id": "english_like_syntax",
+      "name": "English-like programming syntax",
+      "type": "computing_concept",
+      "description": "Readable, word-oriented notation Hopper advocated to make programming more accessible to data-processing professionals.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_translation",
+      "name": "Compilation / translation",
+      "type": "computing_process",
+      "description": "Translation process by which a program expressed in a higher-level language is transformed into a lower-level executable representation.",
+      "properties": {}
+    },
+    {
+      "id": "data_processing",
+      "name": "Data processing",
+      "type": "computing_field",
+      "description": "Business-oriented computational work that Hopper sought to make more accessible through English-like programming languages.",
+      "properties": {}
+    },
+    {
+      "id": "programming_language_standardization",
+      "name": "Programming-language standardization",
+      "type": "computing_process",
+      "description": "Efforts to define common language behavior and test implementations for conformance across vendors.",
+      "properties": {}
+    },
+    {
+      "id": "conformance_testing",
+      "name": "Programming-language conformance testing",
+      "type": "computing_process",
+      "description": "Testing that implementations conform to a language standard; Hopper helped develop validation software and testing practices.",
+      "properties": {}
+    },
+    {
+      "id": "distributed_computing",
+      "name": "Distributed computing",
+      "type": "computing_concept",
+      "description": "Architecture in which computing is spread across multiple networked nodes rather than concentrated in one central system.",
+      "properties": {}
+    },
+    {
+      "id": "networked_databases",
+      "name": "Shared network databases",
+      "type": "computing_concept",
+      "description": "Common databases accessible from different nodes, part of Hopper's advocacy for distributed computing in the 1970s.",
+      "properties": {}
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging",
+      "type": "computing_process",
+      "description": "Finding and correcting defects in software or computing systems; Hopper is associated with popularizing the computer-related 'bug' anecdote, not inventing the word.",
+      "properties": {}
+    },
+    {
+      "id": "computer_bug",
+      "name": "Software or computer bug",
+      "type": "computing_concept",
+      "description": "A defect or malfunction in a system; the term predated computers and was not coined by Hopper.",
+      "properties": {}
+    },
+    {
+      "id": "moth_incident",
+      "name": "1947 Mark II moth incident",
+      "type": "historical_event",
+      "description": "A moth stuck in a relay impeded the Mark II; the insect was taped into the log book with a note calling it the first actual case of a bug being found.",
+      "properties": {
+        "year": 1947
+      }
+    },
+    {
+      "id": "nanosecond_demo",
+      "name": "Nanosecond wire demonstration",
+      "type": "educational_demonstration",
+      "description": "Hopper used approximately 11.8-inch pieces of wire to illustrate the maximum distance light travels in vacuum in one nanosecond, and contrasted them with a 984-foot microsecond coil.",
+      "properties": {}
+    },
+    {
+      "id": "light_speed",
+      "name": "Speed of light",
+      "type": "scientific_concept",
+      "description": "Physical speed limit used by Hopper in demonstrations explaining signal propagation delay.",
+      "properties": {}
+    },
+    {
+      "id": "latency",
+      "name": "Signal propagation latency",
+      "type": "computing_concept",
+      "description": "Delay in signal transmission; Hopper's wire demonstrations made the physical constraints tangible.",
+      "properties": {}
+    },
+    {
+      "id": "computer_miniaturization",
+      "name": "Computer miniaturization",
+      "type": "engineering_concept",
+      "description": "Reducing physical distances in computing systems can help reduce communication delays, illustrated by Hopper's wire demonstrations.",
+      "properties": {}
+    },
+    {
+      "id": "society_women_engineers_award",
+      "name": "Society of Women Engineers Achievement Award",
+      "type": "award",
+      "description": "Award received by Hopper in 1964 for contributions to the computer industry and automatic programming systems.",
+      "properties": {
+        "year": 1964
+      }
+    },
+    {
+      "id": "dpma_man_of_year",
+      "name": "Data Processing Management Association Man of the Year award",
+      "type": "award",
+      "description": "Inaugural award recipient was Hopper in 1969; later called the Distinguished Information Sciences Award.",
+      "properties": {
+        "year": 1969
+      }
+    },
+    {
+      "id": "grace_murray_hopper_award",
+      "name": "Grace Murray Hopper Award",
+      "type": "award",
+      "description": "Annual ACM award established in 1971 to recognize outstanding young computer professionals.",
+      "properties": {
+        "established": 1971
+      }
+    },
+    {
+      "id": "defense_distinguished_service_medal",
+      "name": "Defense Distinguished Service Medal",
+      "type": "award",
+      "description": "Highest non-combat decoration awarded by the Department of Defense, presented to Hopper at her 1986 retirement.",
+      "properties": {
+        "year_received": 1986
+      }
+    },
+    {
+      "id": "legion_of_merit",
+      "name": "Legion of Merit",
+      "type": "award",
+      "description": "Military decoration awarded to Hopper in 1967.",
+      "properties": {
+        "year_received": 1967
+      }
+    },
+    {
+      "id": "meritorious_service_medal",
+      "name": "Meritorious Service Medal",
+      "type": "award",
+      "description": "Military decoration awarded to Hopper in 1980.",
+      "properties": {
+        "year_received": 1980
+      }
+    },
+    {
+      "id": "national_medal_of_technology",
+      "name": "National Medal of Technology",
+      "type": "award",
+      "description": "Awarded to Hopper in 1991 for pioneering work in programming languages and making computing accessible to more users.",
+      "properties": {
+        "year_received": 1991
+      }
+    },
+    {
+      "id": "presidential_medal_of_freedom",
+      "name": "Presidential Medal of Freedom",
+      "type": "award",
+      "description": "Posthumously awarded to Hopper on November 22, 2016.",
+      "properties": {
+        "year_received": 2016,
+        "posthumous": true
+      }
+    },
+    {
+      "id": "national_defense_service_medal",
+      "name": "National Defense Service Medal",
+      "type": "award",
+      "description": "One of Hopper's military awards.",
+      "properties": {}
+    },
+    {
+      "id": "american_campaign_medal",
+      "name": "American Campaign Medal",
+      "type": "award",
+      "description": "One of Hopper's military awards.",
+      "properties": {}
+    },
+    {
+      "id": "world_war_ii_victory_medal",
+      "name": "World War II Victory Medal",
+      "type": "award",
+      "description": "One of Hopper's military awards.",
+      "properties": {}
+    },
+    {
+      "id": "armed_forces_reserve_medal",
+      "name": "Armed Forces Reserve Medal",
+      "type": "award",
+      "description": "Hopper received the medal with two hourglass devices.",
+      "properties": {}
+    },
+    {
+      "id": "naval_reserve_medal",
+      "name": "Naval Reserve Medal",
+      "type": "award",
+      "description": "One of Hopper's military awards.",
+      "properties": {}
+    },
+    {
+      "id": "honorary_degrees",
+      "name": "Honorary degrees",
+      "type": "honor",
+      "description": "Hopper received 40 honorary degrees from universities around the world during her lifetime.",
+      "properties": {
+        "count": 40
+      }
+    },
+    {
+      "id": "national_medal_technology_career",
+      "name": "National technology recognition",
+      "type": "honor",
+      "description": "Recognition of Hopper's contribution to simplifying programming and broadening access to computing.",
+      "properties": {}
+    },
+    {
+      "id": "computer_history_museum_fellow",
+      "name": "Computer History Museum Fellow Award",
+      "type": "award",
+      "description": "Hopper became the first recipient in 1987.",
+      "properties": {
+        "year_received": 1987
+      }
+    },
+    {
+      "id": "distinguished_fellow_bcs",
+      "name": "Distinguished Fellow of the British Computer Society",
+      "type": "honor",
+      "description": "Hopper was the first American and first woman of any nationality to receive this distinction in 1973.",
+      "properties": {
+        "year_received": 1973
+      }
+    },
+    {
+      "id": "national_academy_engineering_election",
+      "name": "Election to National Academy of Engineering",
+      "type": "honor",
+      "description": "Hopper was elected in 1973.",
+      "properties": {
+        "year_received": 1973
+      }
+    },
+    {
+      "id": "fellow_aaas",
+      "name": "Fellow of American Academy of Arts and Sciences",
+      "type": "honor",
+      "description": "Hopper was elected a Fellow in 1991.",
+      "properties": {
+        "year_received": 1991
+      }
+    },
+    {
+      "id": "first_compiler_manual",
+      "name": "A Manual of Operation for the Automatic Sequence Controlled Calculator",
+      "type": "technical_publication",
+      "description": "Manual associated with the Harvard Mark I; often described as the first computer manual.",
+      "properties": {}
+    },
+    {
+      "id": "mark_i_papers",
+      "name": "Mark I technical papers",
+      "type": "academic_work",
+      "description": "Three papers on the Mark I co-authored by Hopper and Howard H. Aiken.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_paper_1952",
+      "name": "1952 paper on compilers",
+      "type": "academic_work",
+      "description": "Hopper published an early paper on compilers in 1952.",
+      "properties": {
+        "year": 1952
+      }
+    },
+    {
+      "id": "codasyl_committee",
+      "name": "CODASYL COBOL committee",
+      "type": "committee",
+      "description": "Short-term committee that defined COBOL in 1959, with Hopper serving as a technical consultant to CODASYL.",
+      "properties": {
+        "year": 1959
+      }
+    },
+    {
+      "id": "navy_programming_languages_group",
+      "name": "Navy Programming Languages Group",
+      "type": "organization",
+      "description": "Group Hopper directed from 1967 to 1977 within the Navy's Office of Information Systems Planning.",
+      "properties": {
+        "start_year": 1967,
+        "end_year": 1977
+      }
+    },
+    {
+      "id": "navy_office_information_systems_planning",
+      "name": "Navy Office of Information Systems Planning",
+      "type": "organization",
+      "description": "Office in which Hopper directed the Programming Languages Group.",
+      "properties": {}
+    },
+    {
+      "id": "navy_cobol_validation",
+      "name": "Navy COBOL validation software",
+      "type": "software_system",
+      "description": "Validation software Hopper developed for COBOL and its compiler as part of Navy-wide standardization.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_park",
+      "name": "Grace Murray Hopper Park",
+      "type": "place",
+      "description": "Small memorial park in Arlington County, Virginia, near Hopper's former residence.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_college",
+      "name": "Grace Hopper College",
+      "type": "organization",
+      "description": "Residential college at Yale University renamed in Hopper's honor in 2017.",
+      "properties": {
+        "renamed_year": 2017
+      }
+    },
+    {
+      "id": "uss_hopper",
+      "name": "USS Hopper (DDG-70)",
+      "type": "military_vessel",
+      "description": "Arleigh Burke-class guided-missile destroyer named for Hopper; launched in 1996.",
+      "properties": {
+        "launched_year": 1996
+      }
+    },
+    {
+      "id": "hopper_supercomputer",
+      "name": "Hopper supercomputer",
+      "type": "computer",
+      "description": "Cray XE6 system named in Hopper's honor at the National Energy Research Scientific Computing Center.",
+      "properties": {}
+    },
+    {
+      "id": "grace_supercomputing_cluster",
+      "name": "Grace supercomputing cluster",
+      "type": "computer",
+      "description": "Supercomputing cluster at Texas A&M University named in Hopper's honor.",
+      "properties": {}
+    },
+    {
+      "id": "nvidia_hopper_architecture",
+      "name": "NVIDIA Hopper GPU architecture",
+      "type": "computer_architecture",
+      "description": "GPU architecture named in honor of Hopper.",
+      "properties": {
+        "introduced": 2024
+      }
+    },
+    {
+      "id": "nvidia_grace_cpu",
+      "name": "NVIDIA Grace CPU generation",
+      "type": "computer_architecture",
+      "description": "CPU generation named in honor of Hopper.",
+      "properties": {
+        "introduced": 2024
+      }
+    },
+    {
+      "id": "grace_hopper_superchip",
+      "name": "NVIDIA GH200 Grace Hopper Superchip",
+      "type": "computer_hardware",
+      "description": "NVIDIA platform name combining the Grace CPU and Hopper GPU names.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_cable",
+      "name": "Grace Hopper submarine communications cable",
+      "type": "infrastructure",
+      "description": "Google undersea cable connecting the United States, United Kingdom, and Spain; completed in 2021.",
+      "properties": {
+        "completed_year": 2021,
+        "length_miles": 3900
+      }
+    },
+    {
+      "id": "grace_satellite",
+      "name": "ÑuSat 20 / Grace satellite",
+      "type": "satellite",
+      "description": "Satellite named Grace launched on June 30, 2021.",
+      "properties": {
+        "launch_date": "2021-06-30"
+      }
+    },
+    {
+      "id": "minor_planet_5773_hopper",
+      "name": "5773 Hopper",
+      "type": "minor_planet",
+      "description": "Minor planet named in Hopper's honor; official naming citation published in 2019.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_celebration",
+      "name": "Grace Hopper Celebration of Women in Computing",
+      "type": "event",
+      "description": "Annual conference inspired by Hopper's legacy and designed to bring women's research and career interests in computing to the forefront.",
+      "properties": {}
+    },
+    {
+      "id": "queen_of_code",
+      "name": "The Queen of Code",
+      "type": "documentary",
+      "description": "2015 documentary film about Grace Hopper produced by FiveThirtyEight.",
+      "properties": {
+        "year": 2015
+      }
+    },
+    {
+      "id": "secret_coders",
+      "name": "Secret Coders",
+      "type": "creative_work",
+      "description": "Comic-book series by Gene Luen Yang with a main character named Hopper Gracie-Hu, inspired by Hopper's name.",
+      "properties": {}
+    },
+    {
+      "id": "civilization_vi",
+      "name": "Sid Meier's Civilization VI",
+      "type": "video_game",
+      "description": "Video game in which Hopper appears as a recruitable Great Admiral.",
+      "properties": {}
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "type": "software_library",
+      "description": "Python plotting library that has included Hopper's official portrait as sample data since 2013.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_google_doodle",
+      "name": "Google Doodle for Hopper's 107th birthday",
+      "type": "media_work",
+      "description": "2013 animated Google Doodle depicting Hopper using COBOL and featuring a moth emerging from a computer.",
+      "properties": {
+        "year": 2013
+      }
+    },
+    {
+      "id": "time_women_of_year",
+      "name": "TIME 100 Women of the Year covers",
+      "type": "media_project",
+      "description": "TIME selected Hopper to represent 1959 in its 2020 project celebrating women of the year.",
+      "properties": {
+        "year": 2020
+      }
+    },
+    {
+      "id": "grace_hopper_information_services_center",
+      "name": "Grace Hopper Information Services Center",
+      "type": "facility",
+      "description": "U.S. Navy information services center named in Hopper's honor.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_hall_usna",
+      "name": "Hopper Hall, U.S. Naval Academy",
+      "type": "facility",
+      "description": "Academic building for the Naval Academy's cyber science department, opened in 2020 and named for Hopper.",
+      "properties": {
+        "year": 2020
+      }
+    },
+    {
+      "id": "grace_hopper_buildings",
+      "name": "Grace Hopper-named buildings and facilities",
+      "type": "memorial_category",
+      "description": "Multiple military, academic, and computing facilities are named in Hopper's honor.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_scholarships",
+      "name": "Admiral Grace Murray Hopper Scholarships",
+      "type": "scholarship_program",
+      "description": "Society of Women Engineers established three annual renewable scholarships in 1992.",
+      "properties": {
+        "established_year": 1992
+      }
+    },
+    {
+      "id": "microsoft_hoppers",
+      "name": "Hoppers employee group at Microsoft",
+      "type": "employee_group",
+      "description": "Employee group formed by women at Microsoft, with a scholarship established in Hopper's honor.",
+      "properties": {}
+    },
+    {
+      "id": "first_robotics_competition",
+      "name": "FIRST Robotics Competition",
+      "type": "event",
+      "description": "One of the competition fields at its world championship has been named for Hopper since 2015.",
+      "properties": {}
+    },
+    {
+      "id": "grace_hopper_professorship",
+      "name": "Grace Hopper named professorship at Yale",
+      "type": "academic_position",
+      "description": "A named professorship in Yale's Department of Computer Sciences established in Hopper's honor.",
+      "properties": {}
+    },
+    {
+      "id": "presidential_freedom_ceremony",
+      "name": "2016 Presidential Medal of Freedom ceremony",
+      "type": "historical_event",
+      "description": "Ceremony on November 22, 2016 at which Hopper was posthumously awarded the Presidential Medal of Freedom.",
+      "properties": {
+        "date": "2016-11-22"
+      }
+    },
+    {
+      "id": "retirement_1986",
+      "name": "Hopper's Navy retirement",
+      "type": "historical_event",
+      "description": "Hopper retired from the Navy on August 14, 1986 after a career spanning more than 42 years.",
+      "properties": {
+        "date": "1986-08-14"
+      }
+    },
+    {
+      "id": "promotion_1983",
+      "name": "Hopper's promotion to commodore",
+      "type": "historical_event",
+      "description": "President Ronald Reagan promoted Hopper to commodore on December 15, 1983; the title was redesignated rear admiral (lower half) in 1985.",
+      "properties": {
+        "date": "1983-12-15"
+      }
+    },
+    {
+      "id": "death_1992",
+      "name": "Grace Hopper's death",
+      "type": "historical_event",
+      "description": "Hopper died of natural causes in her sleep on New Year's Day 1992 at age 85.",
+      "properties": {
+        "date": "1992-01-01"
+      }
+    },
+    {
+      "id": "vassar_graduation",
+      "name": "Vassar graduation",
+      "type": "historical_event",
+      "description": "Hopper graduated Phi Beta Kappa from Vassar College in 1928 with a bachelor's degree in mathematics and physics.",
+      "properties": {
+        "year": 1928
+      }
+    },
+    {
+      "id": "yale_masters",
+      "name": "Yale master's degree",
+      "type": "credential",
+      "description": "Hopper earned a master's degree at Yale in 1930.",
+      "properties": {
+        "year": 1930
+      }
+    },
+    {
+      "id": "yale_phd",
+      "name": "Yale Ph.D. in mathematics",
+      "type": "credential",
+      "description": "Hopper earned a doctorate in mathematics at Yale in 1934.",
+      "properties": {
+        "year": 1934
+      }
+    },
+    {
+      "id": "vassar_teaching",
+      "name": "Mathematics teaching at Vassar",
+      "type": "career_role",
+      "description": "Hopper began teaching mathematics at Vassar in 1931 and became associate professor in 1941.",
+      "properties": {
+        "start_year": 1931,
+        "promotion_year": 1941
+      }
+    },
+    {
+      "id": "mark_i_assignment",
+      "name": "Harvard Mark I assignment",
+      "type": "career_role",
+      "description": "Hopper was assigned to the Bureau of Ships Computation Project at Harvard as a lieutenant junior grade in 1944.",
+      "properties": {
+        "year": 1944
+      }
+    },
+    {
+      "id": "univac_role",
+      "name": "UNIVAC automatic programming role",
+      "type": "career_role",
+      "description": "Hopper joined Eckert–Mauchly in 1949 and became director of automatic programming development at Remington Rand.",
+      "properties": {
+        "start_year": 1949
+      }
+    },
+    {
+      "id": "dec_consulting",
+      "name": "DEC principal corporate consulting engineer",
+      "type": "career_role",
+      "description": "Hopper worked full-time as a senior consultant and principal corporate consulting engineer for DEC after Navy retirement until her death.",
+      "properties": {}
+    },
+    {
+      "id": "director_automatic_programming",
+      "name": "Director of automatic programming",
+      "type": "career_role",
+      "description": "Hopper was named director of the company's automatic-programming department in 1954.",
+      "properties": {
+        "year": 1954
+      }
+    },
+    {
+      "id": "navy_service",
+      "name": "Hopper's U.S. Navy service",
+      "type": "career_role",
+      "description": "Hopper served from 1943 to 1986, with periods of retirement and recall to active duty.",
+      "properties": {
+        "start_year": 1943,
+        "end_year": 1986
+      }
+    },
+    {
+      "id": "navy_rank_rear_admiral",
+      "name": "Rear admiral (lower half)",
+      "type": "military_rank",
+      "description": "Hopper's final rank; commodore was redesignated rear admiral (lower half) in 1985.",
+      "properties": {}
+    },
+    {
+      "id": "navy_rank_captain",
+      "name": "Captain",
+      "type": "military_rank",
+      "description": "Hopper was promoted to captain in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "navy_rank_commodore",
+      "name": "Commodore",
+      "type": "military_rank",
+      "description": "Hopper was promoted to commodore in 1983 before the title was redesignated rear admiral (lower half).",
+      "properties": {}
+    },
+    {
+      "id": "midshipmen_school",
+      "name": "Naval Reserve Midshipmen's School",
+      "type": "organization",
+      "description": "School at Smith College where Hopper trained before assignment to Harvard.",
+      "properties": {}
+    },
+    {
+      "id": "computer_science",
+      "name": "Computer science",
+      "type": "academic_field",
+      "description": "Field to which Hopper made pioneering contributions through compiler systems, programming languages, standards, and education.",
+      "properties": {}
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "type": "academic_field",
+      "description": "Hopper's academic discipline; she taught mathematics and earned a Ph.D. in the subject.",
+      "properties": {}
+    },
+    {
+      "id": "women_in_computing",
+      "name": "Women in computing",
+      "type": "social_and_professional_field",
+      "description": "Area of participation and recognition linked to Hopper's career, awards, and legacy programs.",
+      "properties": {}
+    },
+    {
+      "id": "computing_education",
+      "name": "Computing education",
+      "type": "academic_field",
+      "description": "Hopper lectured widely, mentored younger people, and advocated programming approaches accessible to more users.",
+      "properties": {}
+    },
+    {
+      "id": "human_computer_accessibility",
+      "name": "Accessibility of programming to non-specialists",
+      "type": "computing_concept",
+      "description": "Hopper's goal of lowering the barrier to programming through readable languages and automatic translation.",
+      "properties": {}
+    },
+    {
+      "id": "programming_language_design",
+      "name": "Programming-language design",
+      "type": "academic_field",
+      "description": "Design of programming notation and semantics; a core part of Hopper's work on FLOW-MATIC and COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "computing_history",
+      "name": "History of computing",
+      "type": "academic_field",
+      "description": "Historical study of computing systems, languages, and people; Hopper is a central figure in early programming history.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_history",
+      "name": "History of compilers",
+      "type": "academic_field",
+      "description": "Historical development of systems translating programming notation into executable or linkable forms; A-0 is a significant early system.",
+      "properties": {}
+    },
+    {
+      "id": "computer_manual",
+      "name": "Computer operating manual",
+      "type": "technical_document",
+      "description": "Hopper is credited with writing the Mark I manual, A Manual of Operation for the Automatic Sequence Controlled Calculator.",
+      "properties": {}
+    },
+    {
+      "id": "english_statement_example",
+      "name": "English-like business instruction example",
+      "type": "example",
+      "description": "Hopper illustrated the idea with an instruction like 'Subtract income tax from pay' instead of machine-oriented numeric codes.",
+      "properties": {}
+    },
+    {
+      "id": "clock_anecdote",
+      "name": "Counterclockwise clock anecdote",
+      "type": "anecdote",
+      "description": "Hopper kept a clock running counterclockwise as a symbol of challenging resistance to change.",
+      "properties": {}
+    },
+    {
+      "id": "alarm_clock_anecdote",
+      "name": "Childhood alarm-clock disassembly anecdote",
+      "type": "anecdote",
+      "description": "At age seven Hopper dismantled seven alarm clocks to understand how they worked; her mother then limited her to one clock at a time.",
+      "properties": {}
+    },
+    {
+      "id": "pirate_metaphor",
+      "name": "Pirate spirit metaphor",
+      "type": "anecdote",
+      "description": "A description of Hopper's combination of Navy formality and irreverent, independent spirit.",
+      "properties": {}
+    },
+    {
+      "id": "grandma_cobol_nickname",
+      "name": "'Grandma COBOL' nickname",
+      "type": "nickname",
+      "description": "Nickname associated with Hopper in her later public-speaking career.",
+      "properties": {}
+    },
+    {
+      "id": "compiler_myth_caveat",
+      "name": "Compiler attribution nuance",
+      "type": "historical_note",
+      "description": "Hopper is often credited with creating the first compiler; the supplied source notes that A-0 was described by Hopper as a compiler but modern terminology would call it a linker component.",
+      "properties": {}
+    },
+    {
+      "id": "bug_term_caveat",
+      "name": "Origin of the term 'bug' caveat",
+      "type": "historical_note",
+      "description": "The computer-bug term predates Hopper; the Mark II moth story is a famous documented incident and Hopper is credited with popularizing the anecdote/term in computing.",
+      "properties": {}
+    },
+    {
+      "id": "nanos_wire_length",
+      "name": "11.8-inch wire",
+      "type": "measurement",
+      "description": "Approximate length of wire Hopper used to represent the distance light travels in vacuum in one nanosecond.",
+      "properties": {
+        "length_inches": 11.8,
+        "length_cm": 30
+      }
+    },
+    {
+      "id": "micros_wire_length",
+      "name": "984-foot wire coil",
+      "type": "measurement",
+      "description": "Approximate 300-metre coil used to represent the distance light travels in one microsecond.",
+      "properties": {
+        "length_feet": 984,
+        "length_meters": 300
+      }
+    },
+    {
+      "id": "first_computer_manual_claim",
+      "name": "First computer manual attribution",
+      "type": "historical_claim",
+      "description": "Hopper is often credited with writing the first computer manual, titled A Manual of Operation for the Automatic Sequence Controlled Calculator.",
+      "properties": {}
+    },
+    {
+      "id": "yale_renaming_2017",
+      "name": "Yale renames college for Hopper",
+      "type": "historical_event",
+      "description": "Yale's residential college was renamed Grace Hopper College in 2017.",
+      "properties": {
+        "year": 2017
+      }
+    },
+    {
+      "id": "nvidia_naming_2024",
+      "name": "NVIDIA Grace and Hopper naming",
+      "type": "historical_event",
+      "description": "NVIDIA's Grace CPU generation and Hopper GPU generation are named in honor of Hopper.",
+      "properties": {
+        "year": 2024
+      }
+    },
+    {
+      "id": "grace_hopper_cable_completion",
+      "name": "Grace Hopper cable completion",
+      "type": "historical_event",
+      "description": "The Grace Hopper submarine cable was completed in 2021, linking the United States, United Kingdom, and Spain.",
+      "properties": {
+        "year": 2021
+      }
+    },
+    {
+      "id": "swe_foundation_1950",
+      "name": "Society of Women Engineers founding",
+      "type": "historical_event",
+      "description": "Hopper was among the founding members of the Society of Women Engineers in May 1950.",
+      "properties": {
+        "year": 1950
+      }
+    },
+    {
+      "id": "codasyl_conference_1959",
+      "name": "CODASYL conference",
+      "type": "historical_event",
+      "description": "Two-day industry and government conference in spring 1959 that helped initiate the COBOL definition effort.",
+      "properties": {
+        "year": 1959
+      }
+    },
+    {
+      "id": "a0_completion_1952",
+      "name": "A-0 operational by 1952",
+      "type": "historical_event",
+      "description": "Hopper reported an operational A-0 link-loader by 1952.",
+      "properties": {
+        "year": 1952
+      }
+    },
+    {
+      "id": "active_duty_return_1967",
+      "name": "Return to active duty in 1967",
+      "type": "historical_event",
+      "description": "Hopper was recalled to active duty in August 1967; the initial six-month assignment became indefinite.",
+      "properties": {
+        "year": 1967
+      }
+    },
+    {
+      "id": "captain_promotion_1973",
+      "name": "Promotion to captain in 1973",
+      "type": "historical_event",
+      "description": "Hopper was promoted to captain in 1973.",
+      "properties": {
+        "year": 1973
+      }
+    },
+    {
+      "id": "standards_testing_1970s",
+      "name": "Programming-language conformance work in the 1970s",
+      "type": "historical_event",
+      "description": "Hopper advocated and developed standardization and validation approaches for languages including COBOL and FORTRAN.",
+      "properties": {}
+    },
+    {
+      "id": "distributed_computing_advocacy_1970s",
+      "name": "Distributed computing advocacy",
+      "type": "historical_event",
+      "description": "Hopper advocated replacing large centralized systems with networks of smaller computers and shared databases.",
+      "properties": {
+        "period": "1970s"
+      }
+    },
+    {
+      "id": "ieee_a0_plaque_2024",
+      "name": "IEEE milestone plaque for A-0",
+      "type": "historical_event",
+      "description": "IEEE dedicated a plaque at the University of Pennsylvania in 2024 recognizing Hopper's A-0 work.",
+      "properties": {
+        "year": 2024
+      }
+    },
+    {
+      "id": "grace_hopper_residence",
+      "name": "Former River House residence",
+      "type": "place",
+      "description": "Former residence near which Grace Murray Hopper Park is located in Arlington County.",
+      "properties": {}
+    },
+    {
+      "id": "univac_director_automatic_programming",
+      "name": "UNIVAC/Remington Rand automatic programming leadership",
+      "type": "career_role",
+      "description": "Hopper's role directing automatic programming development after joining Eckert–Mauchly and Remington Rand.",
+      "properties": {}
+    },
+    {
+      "id": "hoppers_legacy",
+      "name": "Grace Hopper's professional legacy",
+      "type": "legacy",
+      "description": "Legacy spans programming languages, compilers and link-loaders, standards, Navy service, mentorship, and increased visibility for women in computing.",
+      "properties": {}
+    },
+    {
+      "id": "society_women_engineers",
+      "name": "Society Women Engineers",
+      "type": "related_concept",
+      "description": "Related concept included to preserve the relationship graph.",
+      "properties": {
+        "generated_endpoint": true
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "grace_hopper",
+      "target": "grace_brewster_murray",
+      "type": "also_known_as",
+      "description": "Her birth name was Grace Brewster Murray.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "grace_hopper",
+      "target": "new_york_city",
+      "type": "born_in",
+      "description": "Born in New York City.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "grace_hopper",
+      "target": "arlington_county_virginia",
+      "type": "died_in",
+      "description": "Died in Arlington County, Virginia.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "grace_hopper",
+      "target": "arlington_national_cemetery",
+      "type": "buried_at",
+      "description": "Interred with full military honors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "grace_hopper",
+      "target": "walter_fletcher_murray",
+      "type": "child_of",
+      "description": "Daughter of Walter Fletcher Murray.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "grace_hopper",
+      "target": "mary_campbell_van_horne",
+      "type": "child_of",
+      "description": "Daughter of Mary Campbell Van Horne.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "grace_hopper",
+      "target": "alexander_wilson_russell",
+      "type": "descendant_of",
+      "description": "Her great-grandfather was Alexander Wilson Russell.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "alexander_wilson_russell",
+      "target": "battle_of_mobile_bay",
+      "type": "participated_in",
+      "description": "Russell fought in the Battle of Mobile Bay.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "grace_hopper",
+      "target": "vincent_foster_hopper",
+      "type": "married_to",
+      "description": "Married Vincent Foster Hopper in 1930; they divorced in 1945.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "grace_hopper",
+      "target": "hartridge_school",
+      "type": "attended",
+      "description": "Attended the Hartridge School for preparatory education.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "grace_hopper",
+      "target": "vassar_college",
+      "type": "graduated_from",
+      "description": "Graduated Phi Beta Kappa in 1928 with a bachelor's degree in mathematics and physics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "grace_hopper",
+      "target": "vassar_graduation",
+      "type": "participated_in",
+      "description": "Graduation event recorded in 1928.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "grace_hopper",
+      "target": "yale_university",
+      "type": "studied_at",
+      "description": "Earned master's and doctoral degrees at Yale.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "grace_hopper",
+      "target": "yale_masters",
+      "type": "earned_credential",
+      "description": "Earned a master's degree in 1930.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "grace_hopper",
+      "target": "yale_phd",
+      "type": "earned_credential",
+      "description": "Earned a Ph.D. in mathematics in 1934.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "grace_hopper",
+      "target": "mathematics",
+      "type": "specialized_in",
+      "description": "Earned a doctorate and taught mathematics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "grace_hopper",
+      "target": "grace_hopper_thesis",
+      "type": "authored",
+      "description": "Doctoral dissertation published in 1934.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "grace_hopper_thesis",
+      "target": "oystein_ore",
+      "type": "supervised_by",
+      "description": "Øystein Ore supervised the doctoral research.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "grace_hopper",
+      "target": "vassar_teaching",
+      "type": "held_role",
+      "description": "Taught mathematics beginning in 1931 and became associate professor in 1941.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "vassar_teaching",
+      "target": "vassar_college",
+      "type": "at_organization",
+      "description": "Teaching appointment was at Vassar College.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "grace_hopper",
+      "target": "computer_science",
+      "type": "contributed_to",
+      "description": "Pioneered programming systems, languages, and standards.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "grace_hopper",
+      "target": "computing_education",
+      "type": "contributed_to",
+      "description": "Lectured widely and emphasized training young people.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "grace_hopper",
+      "target": "women_in_computing",
+      "type": "influenced",
+      "description": "Her career and legacy became important to women in computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "grace_hopper",
+      "target": "computing_history",
+      "type": "is_subject_of",
+      "description": "A major figure in histories of early computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "grace_hopper",
+      "target": "hoppers_legacy",
+      "type": "contributed_to_legacy",
+      "description": "Her professional legacy spans technical and institutional work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "grace_hopper",
+      "target": "world_war_ii",
+      "type": "served_during",
+      "description": "Joined the Navy Reserve during World War II.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "grace_hopper",
+      "target": "naval_reserve",
+      "type": "served_in",
+      "description": "Joined the Navy Reserve in 1943.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "grace_hopper",
+      "target": "waves",
+      "type": "served_in",
+      "description": "Served in the WAVES during World War II.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "waves",
+      "target": "united_states_navy",
+      "type": "program_of",
+      "description": "WAVES was the Navy women's reserve program.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "grace_hopper",
+      "target": "smith_college",
+      "type": "trained_at",
+      "description": "Trained at the Naval Reserve Midshipmen's School located at Smith College.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "grace_hopper",
+      "target": "midshipmen_school",
+      "type": "attended",
+      "description": "Graduated first in her class in 1944.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "midshipmen_school",
+      "target": "smith_college",
+      "type": "located_at",
+      "description": "The school was located at Smith College.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "grace_hopper",
+      "target": "bureau_of_ships",
+      "type": "assigned_by",
+      "description": "Assigned to the Bureau of Ships Computation Project.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "grace_hopper",
+      "target": "harvard_computation_laboratory",
+      "type": "worked_at",
+      "description": "Worked at the Harvard computation lab from 1944 and remained until 1949.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "harvard_computation_laboratory",
+      "target": "harvard_university",
+      "type": "part_of",
+      "description": "Located at Harvard University.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "grace_hopper",
+      "target": "mark_i_assignment",
+      "type": "held_role",
+      "description": "Assigned as lieutenant junior grade to the Mark I programming staff in 1944.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "mark_i_assignment",
+      "target": "mark_i",
+      "type": "worked_on",
+      "description": "The assignment involved programming the Mark I.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "mark_i_assignment",
+      "target": "bureau_of_ships",
+      "type": "associated_with",
+      "description": "Part of the Bureau of Ships Computation Project.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "grace_hopper",
+      "target": "howard_h_aiken",
+      "type": "worked_with",
+      "description": "Worked on the Mark I team led by Howard H. Aiken.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "grace_hopper",
+      "target": "mark_i_papers",
+      "type": "coauthored",
+      "description": "Co-authored three papers about the Mark I with Howard H. Aiken.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "mark_i_papers",
+      "target": "howard_h_aiken",
+      "type": "coauthored_by",
+      "description": "Hopper and Aiken co-authored the papers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "grace_hopper",
+      "target": "first_computer_manual_claim",
+      "type": "associated_with_claim",
+      "description": "Often credited with writing the first computer manual.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "first_computer_manual_claim",
+      "target": "first_compiler_manual",
+      "type": "refers_to",
+      "description": "The cited manual is A Manual of Operation for the Automatic Sequence Controlled Calculator.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "first_compiler_manual",
+      "target": "mark_i",
+      "type": "documents",
+      "description": "Manual describes operation of the Automatic Sequence Controlled Calculator.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "grace_hopper",
+      "target": "navy_service",
+      "type": "held_role",
+      "description": "Navy career ran from 1943 to 1986, with retirements and recalls.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "navy_service",
+      "target": "united_states_navy",
+      "type": "service_branch",
+      "description": "Her military service was in the U.S. Navy.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "grace_hopper",
+      "target": "navy_rank_captain",
+      "type": "promoted_to",
+      "description": "Promoted to captain in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "grace_hopper",
+      "target": "captain_promotion_1973",
+      "type": "participated_in",
+      "description": "Promotion event occurred in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "captain_promotion_1973",
+      "target": "navy_rank_captain",
+      "type": "resulted_in_rank",
+      "description": "The promotion was to captain.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "grace_hopper",
+      "target": "active_duty_return_1967",
+      "type": "recalled_for",
+      "description": "Recalled to active duty in 1967.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "grace_hopper",
+      "target": "promotion_1983",
+      "type": "promoted_in_event",
+      "description": "Promoted to commodore in December 1983.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "promotion_1983",
+      "target": "ronald_reagan",
+      "type": "authorized_by",
+      "description": "President Ronald Reagan made the promotion.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "promotion_1983",
+      "target": "navy_rank_commodore",
+      "type": "resulted_in_rank",
+      "description": "Promotion was to commodore.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "navy_rank_commodore",
+      "target": "navy_rank_rear_admiral",
+      "type": "redesignated_as",
+      "description": "Commodore was redesignated rear admiral (lower half) in 1985.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "grace_hopper",
+      "target": "navy_rank_rear_admiral",
+      "type": "held_final_rank",
+      "description": "Her final rank was rear admiral (lower half).",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "grace_hopper",
+      "target": "retirement_1986",
+      "type": "retired_in_event",
+      "description": "Retired from the Navy on August 14, 1986.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "retirement_1986",
+      "target": "defense_distinguished_service_medal",
+      "type": "recognized_by",
+      "description": "Received the Defense Distinguished Service Medal at retirement.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "grace_hopper",
+      "target": "defense_distinguished_service_medal",
+      "type": "received_award",
+      "description": "Received the Defense Distinguished Service Medal in 1986.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "grace_hopper",
+      "target": "legion_of_merit",
+      "type": "received_award",
+      "description": "Received the Legion of Merit in 1967.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "grace_hopper",
+      "target": "meritorious_service_medal",
+      "type": "received_award",
+      "description": "Received the Meritorious Service Medal in 1980.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "grace_hopper",
+      "target": "american_campaign_medal",
+      "type": "received_award",
+      "description": "Received the American Campaign Medal.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "grace_hopper",
+      "target": "world_war_ii_victory_medal",
+      "type": "received_award",
+      "description": "Received the World War II Victory Medal.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "grace_hopper",
+      "target": "national_defense_service_medal",
+      "type": "received_award",
+      "description": "Received the National Defense Service Medal.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "grace_hopper",
+      "target": "armed_forces_reserve_medal",
+      "type": "received_award",
+      "description": "Received the Armed Forces Reserve Medal with two hourglass devices.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "grace_hopper",
+      "target": "naval_reserve_medal",
+      "type": "received_award",
+      "description": "Received the Naval Reserve Medal.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "grace_hopper",
+      "target": "philip_crane",
+      "type": "supported_by",
+      "description": "Philip Crane championed a promotion resolution after seeing Hopper on 60 Minutes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "grace_hopper",
+      "target": "navy_programming_languages_group",
+      "type": "directed",
+      "description": "Directed the Navy Programming Languages Group from 1967 to 1977.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "navy_programming_languages_group",
+      "target": "navy_office_information_systems_planning",
+      "type": "part_of",
+      "description": "Group operated within the Navy Office of Information Systems Planning.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "grace_hopper",
+      "target": "navy_cobol_validation",
+      "type": "developed",
+      "description": "Developed validation software for COBOL and its compiler for Navy standardization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "grace_hopper",
+      "target": "united_states_navy",
+      "type": "served_in",
+      "description": "Served in the Navy for more than 42 years, with periods of reserve and active duty.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "grace_hopper",
+      "target": "eckert_mauchly_computer_corporation",
+      "type": "joined",
+      "description": "Joined the company in 1949 as a senior mathematician.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "grace_hopper",
+      "target": "univac_i",
+      "type": "worked_on",
+      "description": "Joined the team developing UNIVAC I.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "univac_i",
+      "target": "eckert_mauchly_computer_corporation",
+      "type": "developed_by",
+      "description": "Developed by the Eckert–Mauchly team.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "eckert_mauchly_computer_corporation",
+      "target": "remington_rand",
+      "type": "acquired_by_or_integrated_into",
+      "description": "The company was taken over by Remington Rand.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "grace_hopper",
+      "target": "remington_rand",
+      "type": "worked_for",
+      "description": "Served as director of automatic programming development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "grace_hopper",
+      "target": "univac_role",
+      "type": "held_role",
+      "description": "Joined the UNIVAC development team and led automatic-programming work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "univac_role",
+      "target": "univac_i",
+      "type": "associated_with",
+      "description": "Role began during development of UNIVAC I.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "grace_hopper",
+      "target": "director_automatic_programming",
+      "type": "held_role",
+      "description": "Named the company's first director of automatic programming in 1954.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "director_automatic_programming",
+      "target": "automatic_programming",
+      "type": "focused_on",
+      "description": "Led work to simplify programming and translation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "grace_hopper",
+      "target": "a0_system",
+      "type": "developed",
+      "description": "Developed the A-0 system, operational by 1952.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "a0_system",
+      "target": "a_compiler",
+      "type": "first_version_of",
+      "description": "A-0 was the first version of the A compiler.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "a0_system",
+      "target": "compiler_myth_caveat",
+      "type": "requires_historical_nuance",
+      "description": "Hopper called it a compiler; the supplied source notes it would be a linker component in modern terminology.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "a0_system",
+      "target": "linker",
+      "type": "historically_classified_as",
+      "description": "Modern terminology more closely classifies A-0 as a linker component.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "a0_system",
+      "target": "loader",
+      "type": "related_to",
+      "description": "It was described historically as an operational link-loader.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "a0_system",
+      "target": "machine_code",
+      "type": "translated_to",
+      "description": "The system translated mathematical notation or program representations toward machine-level code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "grace_hopper",
+      "target": "compiler_paper_1952",
+      "type": "authored_or_published",
+      "description": "Published an early paper on compilers in 1952.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "compiler_paper_1952",
+      "target": "compiler",
+      "type": "discusses",
+      "description": "Paper addressed compiler concepts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "grace_hopper",
+      "target": "machine_independent_language",
+      "type": "pioneered_theory_of",
+      "description": "Devised theory for machine-independent programming languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "grace_hopper",
+      "target": "english_like_syntax",
+      "type": "advocated",
+      "description": "Argued that English-like statements would be easier for many data processors than symbolic or machine-oriented code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "english_like_syntax",
+      "target": "human_computer_accessibility",
+      "type": "supports",
+      "description": "Readable syntax can lower barriers to programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "human_computer_accessibility",
+      "target": "data_processing",
+      "type": "serves_audience",
+      "description": "Hopper emphasized making programming accessible to data-processing professionals.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "english_like_syntax",
+      "target": "flow_matic",
+      "type": "embodied_in",
+      "description": "FLOW-MATIC was designed around English-like business statements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "flow_matic",
+      "target": "cobol",
+      "type": "influenced",
+      "description": "FLOW-MATIC was a major influence on COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "comtran",
+      "target": "cobol",
+      "type": "influenced",
+      "description": "COBOL incorporated ideas from IBM's COMTRAN.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "codasyl",
+      "target": "codasyl_committee",
+      "type": "organized",
+      "description": "CODASYL organized the committee that defined COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "codasyl_committee",
+      "target": "cobol",
+      "type": "defined",
+      "description": "The committee defined COBOL in 1959.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "grace_hopper",
+      "target": "codasyl",
+      "type": "served_as_technical_consultant",
+      "description": "Served as a technical consultant to CODASYL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "grace_hopper",
+      "target": "codasyl_conference_1959",
+      "type": "participated_in_context",
+      "description": "The conference initiated the committee work on COBOL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "codasyl_conference_1959",
+      "target": "codasyl",
+      "type": "organized_by",
+      "description": "CODASYL convened the industry-government conference.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "cobol",
+      "target": "high_level_language",
+      "type": "instance_of",
+      "description": "COBOL is a high-level business programming language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "cobol",
+      "target": "programming_language_design",
+      "type": "example_of",
+      "description": "Its design reflects readable business-oriented notation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "cobol",
+      "target": "data_processing",
+      "type": "designed_for",
+      "description": "Designed for common business data-processing tasks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "cobol",
+      "target": "machine_independent_language",
+      "type": "supports_goal",
+      "description": "Its standardization sought portability across machines and vendors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "grace_hopper",
+      "target": "math_matic",
+      "type": "led_release_of",
+      "description": "Her department released MATH-MATIC among early compiler-based languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "grace_hopper",
+      "target": "flow_matic",
+      "type": "led_release_of",
+      "description": "Her department released FLOW-MATIC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "math_matic",
+      "target": "compiler_translation",
+      "type": "used",
+      "description": "An early compiler-based language released by Hopper's department.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "flow_matic",
+      "target": "compiler_translation",
+      "type": "used",
+      "description": "FLOW-MATIC was part of the early compiled-language work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "compiler",
+      "target": "compiler_translation",
+      "type": "implements",
+      "description": "A compiler performs translation from source representation to another representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "compiler_translation",
+      "target": "machine_code",
+      "type": "may_produce",
+      "description": "Compilation can translate source code into machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "high_level_language",
+      "target": "machine_code",
+      "type": "abstracts_over",
+      "description": "High-level languages reduce the need to program directly in machine code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "assembly_language",
+      "target": "machine_code",
+      "type": "closely_represents",
+      "description": "Assembly notation is close to machine instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "grace_hopper",
+      "target": "english_statement_example",
+      "type": "used_as_illustration",
+      "description": "Used a phrase such as 'Subtract income tax from pay' to illustrate English-like programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "english_statement_example",
+      "target": "english_like_syntax",
+      "type": "illustrates",
+      "description": "Illustrates the word-oriented programming notation Hopper advocated.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "grace_hopper",
+      "target": "programming_language_design",
+      "type": "contributed_to",
+      "description": "Developed and promoted accessible programming language concepts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "grace_hopper",
+      "target": "compiler_history",
+      "type": "contributed_to",
+      "description": "A-0 and her compiler advocacy are important to compiler history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "grace_hopper",
+      "target": "computer_manual",
+      "type": "associated_with",
+      "description": "Credited with writing an early computer operation manual.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "computer_manual",
+      "target": "first_compiler_manual",
+      "type": "same_work_as",
+      "description": "The manual title is A Manual of Operation for the Automatic Sequence Controlled Calculator.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "grace_hopper",
+      "target": "automatic_programming",
+      "type": "pioneered",
+      "description": "Led early automatic programming development.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "grace_hopper",
+      "target": "machine_independent_language",
+      "type": "promoted",
+      "description": "Advocated languages less tied to specific machine instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "grace_hopper",
+      "target": "programming_language_standardization",
+      "type": "advocated",
+      "description": "Worked on validation and standardization across vendors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "grace_hopper",
+      "target": "conformance_testing",
+      "type": "developed_or_supported",
+      "description": "Helped develop testing of programming-language implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "grace_hopper",
+      "target": "standards_testing_1970s",
+      "type": "contributed_to",
+      "description": "Supported language standards and conformance work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "navy_cobol_validation",
+      "target": "conformance_testing",
+      "type": "implements",
+      "description": "Validation software tested COBOL and compiler behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "conformance_testing",
+      "target": "programming_language_standardization",
+      "type": "supports",
+      "description": "Conformance tests encourage consistent implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "fortran",
+      "target": "conformance_testing",
+      "type": "subject_of",
+      "description": "FORTRAN was among languages included in early conformance testing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "cobol",
+      "target": "conformance_testing",
+      "type": "subject_of",
+      "description": "COBOL was tested as part of standardization.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "conformance_testing",
+      "target": "national_bureau_of_standards",
+      "type": "administered_later_by",
+      "description": "Administration moved to NBS in the 1980s.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "national_bureau_of_standards",
+      "target": "nist",
+      "type": "renamed_as",
+      "description": "NBS is now known as NIST.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "grace_hopper",
+      "target": "distributed_computing",
+      "type": "advocated",
+      "description": "In the 1970s advocated networks of smaller computers rather than only large centralized systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "distributed_computing",
+      "target": "networked_databases",
+      "type": "can_provide",
+      "description": "Networked nodes can access shared databases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "grace_hopper",
+      "target": "networked_databases",
+      "type": "advocated_access_to",
+      "description": "Envisioned users on any network node accessing common databases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "distributed_computing_advocacy_1970s",
+      "target": "distributed_computing",
+      "type": "concerns",
+      "description": "Historical advocacy for distributed systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "distributed_computing_advocacy_1970s",
+      "target": "networked_databases",
+      "type": "includes",
+      "description": "Included common databases accessible across network nodes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "grace_hopper",
+      "target": "ieee_a0_plaque_2024",
+      "type": "recognized_by_event",
+      "description": "IEEE dedicated a milestone plaque in 2024 for her A-0 work.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "ieee_a0_plaque_2024",
+      "target": "university_of_pennsylvania",
+      "type": "held_at",
+      "description": "Plaque was dedicated at the University of Pennsylvania.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "ieee_a0_plaque_2024",
+      "target": "a0_system",
+      "type": "recognizes",
+      "description": "Recognized the A-0 system's historical role.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "grace_hopper",
+      "target": "compiler_myth_caveat",
+      "type": "associated_with_claim",
+      "description": "The broad claim that Hopper created the first compiler requires historical terminology nuance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "compiler_myth_caveat",
+      "target": "a0_system",
+      "type": "qualifies",
+      "description": "A-0 was called a compiler historically but modern descriptions often classify it as a linker/loader.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "compiler_myth_caveat",
+      "target": "compiler",
+      "type": "distinguishes_from",
+      "description": "The note distinguishes historical usage from modern compiler terminology.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "grace_hopper",
+      "target": "mark_ii",
+      "type": "worked_on",
+      "description": "The 1947 moth story arose while Hopper was working on the Mark II.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "moth_incident",
+      "target": "mark_ii",
+      "type": "occurred_on",
+      "description": "A moth impeded operation of a Mark II relay.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "moth_incident",
+      "target": "computer_bug",
+      "type": "illustrates",
+      "description": "The moth was logged as an actual bug found in a computer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "moth_incident",
+      "target": "debugging",
+      "type": "associated_with",
+      "description": "The anecdote became linked to the practice and term debugging.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "moth_incident",
+      "target": "national_museum_of_american_history",
+      "type": "artifact_preserved_at",
+      "description": "The log book with the moth is held at the Smithsonian's National Museum of American History.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "grace_hopper",
+      "target": "debugging",
+      "type": "popularized_anecdote_for",
+      "description": "Associated with popularizing the computer-bug story, but did not coin the word 'bug'.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "bug_term_caveat",
+      "target": "computer_bug",
+      "type": "explains_history_of",
+      "description": "The term bug predated computers and Hopper.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "bug_term_caveat",
+      "target": "moth_incident",
+      "type": "contextualizes",
+      "description": "The moth incident is a documented example, not the origin of the word.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "grace_hopper",
+      "target": "nanosecond_demo",
+      "type": "used_demonstration",
+      "description": "Used wire lengths to explain signal propagation and computing speed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "nanosecond_demo",
+      "target": "nanos_wire_length",
+      "type": "uses_measurement",
+      "description": "Used approximately 11.8 inches to represent a nanosecond of light travel in vacuum.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "nanosecond_demo",
+      "target": "micros_wire_length",
+      "type": "contrasts_with",
+      "description": "Contrasted nanosecond-scale distance with a 984-foot microsecond coil.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "nanosecond_demo",
+      "target": "light_speed",
+      "type": "illustrates",
+      "description": "The distance represents light's travel in a vacuum during a time interval.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "nanosecond_demo",
+      "target": "latency",
+      "type": "explains",
+      "description": "Demonstrated that communication and computation have physical delays.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "latency",
+      "target": "computer_miniaturization",
+      "type": "affected_by",
+      "description": "Shorter physical distances can reduce propagation delay.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "grace_hopper",
+      "target": "computing_education",
+      "type": "promoted",
+      "description": "Used memorable demonstrations and talks to explain computing concepts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "grace_hopper",
+      "target": "clock_anecdote",
+      "type": "associated_with",
+      "description": "Counterclockwise clock symbolized resistance to 'we've always done it this way'.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "grace_hopper",
+      "target": "alarm_clock_anecdote",
+      "type": "associated_with",
+      "description": "Her childhood curiosity led her to dismantle seven alarm clocks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0157",
+      "source": "grace_hopper",
+      "target": "pirate_metaphor",
+      "type": "described_by",
+      "description": "A biographical description contrasts her Navy formality with a rebellious pirate spirit.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0158",
+      "source": "grace_hopper",
+      "target": "grandma_cobol_nickname",
+      "type": "known_as",
+      "description": "Known by the nickname 'Grandma COBOL' in her later career.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0159",
+      "source": "grace_hopper",
+      "target": "computing_education",
+      "type": "mentored",
+      "description": "She described training young people as one of her most important accomplishments.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0160",
+      "source": "grace_hopper",
+      "target": "digital_equipment_corporation",
+      "type": "worked_for",
+      "description": "After Navy retirement she became a senior consultant at DEC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0161",
+      "source": "grace_hopper",
+      "target": "dec_consulting",
+      "type": "held_role",
+      "description": "Worked as principal corporate consulting engineer and industry ambassador.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0162",
+      "source": "dec_consulting",
+      "target": "digital_equipment_corporation",
+      "type": "at_organization",
+      "description": "Consulting role was at DEC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0163",
+      "source": "grace_hopper",
+      "target": "rita_yavinsky",
+      "type": "recruited_by",
+      "description": "Rita Yavinsky initially offered her a position at DEC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0164",
+      "source": "grace_hopper",
+      "target": "human_computer_accessibility",
+      "type": "advanced",
+      "description": "Promoted language designs intended to make programming easier for a broader group of users.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0165",
+      "source": "grace_hopper",
+      "target": "society_women_engineers",
+      "type": "founding_member_of",
+      "description": "One of the founding members in 1950.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0166",
+      "source": "swe_foundation_1950",
+      "target": "society_of_women_engineers",
+      "type": "established",
+      "description": "The organization was founded in 1950.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0167",
+      "source": "grace_hopper",
+      "target": "society_women_engineers_award",
+      "type": "received_award",
+      "description": "Received the Society of Women Engineers Achievement Award in 1964.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0168",
+      "source": "society_women_engineers_award",
+      "target": "society_of_women_engineers",
+      "type": "awarded_by",
+      "description": "Award was given by the Society of Women Engineers.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0169",
+      "source": "grace_hopper",
+      "target": "dpma_man_of_year",
+      "type": "received_award",
+      "description": "Received the inaugural award in 1969.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0170",
+      "source": "grace_hopper",
+      "target": "grace_murray_hopper_award",
+      "type": "honored_by_namesake_award",
+      "description": "ACM's award for young computing professionals was named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0171",
+      "source": "grace_murray_hopper_award",
+      "target": "association_for_computing_machinery",
+      "type": "established_by",
+      "description": "ACM established the annual award in 1971.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0172",
+      "source": "grace_hopper",
+      "target": "national_academy_engineering_election",
+      "type": "received_honor",
+      "description": "Elected to the National Academy of Engineering in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0173",
+      "source": "national_academy_engineering_election",
+      "target": "national_academy_of_engineering",
+      "type": "granted_by",
+      "description": "Election was to the National Academy of Engineering.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0174",
+      "source": "grace_hopper",
+      "target": "distinguished_fellow_bcs",
+      "type": "received_honor",
+      "description": "Named a Distinguished Fellow of the British Computer Society in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0175",
+      "source": "distinguished_fellow_bcs",
+      "target": "british_computer_society",
+      "type": "granted_by",
+      "description": "Recognition granted by the British Computer Society.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0176",
+      "source": "grace_hopper",
+      "target": "computer_history_museum_fellow",
+      "type": "received_honor",
+      "description": "First recipient of the Computer History Museum Fellow Award in 1987.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0177",
+      "source": "computer_history_museum_fellow",
+      "target": "computer_history_museum",
+      "type": "granted_by",
+      "description": "Award granted by the Computer History Museum.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0178",
+      "source": "grace_hopper",
+      "target": "national_medal_of_technology",
+      "type": "received_award",
+      "description": "Received the National Medal of Technology in 1991.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0179",
+      "source": "grace_hopper",
+      "target": "fellow_aaas",
+      "type": "received_honor",
+      "description": "Elected a Fellow in 1991.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0180",
+      "source": "fellow_aaas",
+      "target": "american_academy_of_arts_and_sciences",
+      "type": "granted_by",
+      "description": "Fellowship granted by the American Academy of Arts and Sciences.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0181",
+      "source": "grace_hopper",
+      "target": "honorary_degrees",
+      "type": "received_honor",
+      "description": "Received 40 honorary degrees during her lifetime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0182",
+      "source": "grace_hopper",
+      "target": "presidential_medal_of_freedom",
+      "type": "received_award",
+      "description": "Posthumously awarded in 2016.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0183",
+      "source": "presidential_freedom_ceremony",
+      "target": "presidential_medal_of_freedom",
+      "type": "awarded_at",
+      "description": "The medal was presented posthumously at the 2016 ceremony.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0184",
+      "source": "presidential_freedom_ceremony",
+      "target": "barack_obama",
+      "type": "presided_under",
+      "description": "Award was conferred by President Barack Obama.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0185",
+      "source": "grace_hopper",
+      "target": "national_womens_hall_of_fame",
+      "type": "inducted_into",
+      "description": "Inducted in 1994.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0186",
+      "source": "grace_hopper",
+      "target": "defense_distinguished_service_medal",
+      "type": "received_award",
+      "description": "Received the medal at Navy retirement in 1986.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0187",
+      "source": "grace_hopper",
+      "target": "computer_history_museum",
+      "type": "recognized_by",
+      "description": "Recognized as a computing pioneer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0188",
+      "source": "grace_hopper",
+      "target": "british_computer_society",
+      "type": "recognized_by",
+      "description": "Received a distinctive fellowship in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0189",
+      "source": "grace_hopper",
+      "target": "national_academy_of_engineering",
+      "type": "member_of",
+      "description": "Elected in 1973.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0190",
+      "source": "grace_hopper",
+      "target": "american_academy_of_arts_and_sciences",
+      "type": "member_of",
+      "description": "Elected as a Fellow in 1991.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0191",
+      "source": "grace_hopper",
+      "target": "death_1992",
+      "type": "died_in_event",
+      "description": "Died on January 1, 1992.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0192",
+      "source": "death_1992",
+      "target": "arlington_county_virginia",
+      "type": "occurred_in",
+      "description": "Died at home in Arlington County, Virginia.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0193",
+      "source": "death_1992",
+      "target": "arlington_national_cemetery",
+      "type": "followed_by_interment_at",
+      "description": "Interred with full military honors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0194",
+      "source": "grace_hopper",
+      "target": "grace_hopper_park",
+      "type": "commemorated_by",
+      "description": "Park in Arlington County commemorates her.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0195",
+      "source": "grace_hopper_park",
+      "target": "grace_hopper_residence",
+      "type": "near",
+      "description": "The park is near her former residence.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0196",
+      "source": "grace_hopper",
+      "target": "grace_hopper_college",
+      "type": "commemorated_by",
+      "description": "Yale renamed a residential college in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0197",
+      "source": "yale_renaming_2017",
+      "target": "grace_hopper_college",
+      "type": "resulted_in",
+      "description": "College was renamed Grace Hopper College.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0198",
+      "source": "yale_renaming_2017",
+      "target": "yale_university",
+      "type": "occurred_at",
+      "description": "Renaming occurred at Yale University.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0199",
+      "source": "grace_hopper",
+      "target": "uss_hopper",
+      "type": "namesake_of",
+      "description": "U.S. Navy destroyer named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0200",
+      "source": "grace_hopper",
+      "target": "hopper_supercomputer",
+      "type": "namesake_of",
+      "description": "Cray XE6 supercomputer named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0201",
+      "source": "grace_hopper",
+      "target": "grace_supercomputing_cluster",
+      "type": "namesake_of",
+      "description": "Texas A&M supercomputing cluster named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0202",
+      "source": "grace_hopper",
+      "target": "nvidia_hopper_architecture",
+      "type": "namesake_of",
+      "description": "NVIDIA Hopper GPU architecture named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0203",
+      "source": "grace_hopper",
+      "target": "nvidia_grace_cpu",
+      "type": "namesake_of",
+      "description": "NVIDIA Grace CPU generation named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0204",
+      "source": "nvidia_grace_cpu",
+      "target": "grace_hopper_superchip",
+      "type": "component_name_of",
+      "description": "Grace CPU is part of the GH200 Grace Hopper Superchip name/platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0205",
+      "source": "nvidia_hopper_architecture",
+      "target": "grace_hopper_superchip",
+      "type": "component_name_of",
+      "description": "Hopper GPU is part of the GH200 Grace Hopper Superchip name/platform.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0206",
+      "source": "nvidia_naming_2024",
+      "target": "nvidia_grace_cpu",
+      "type": "names",
+      "description": "The Grace CPU generation is named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0207",
+      "source": "nvidia_naming_2024",
+      "target": "nvidia_hopper_architecture",
+      "type": "names",
+      "description": "The Hopper GPU generation is named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0208",
+      "source": "grace_hopper",
+      "target": "grace_hopper_cable",
+      "type": "namesake_of",
+      "description": "Google's undersea communications cable bears her name.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0209",
+      "source": "grace_hopper_cable_completion",
+      "target": "grace_hopper_cable",
+      "type": "completed",
+      "description": "Cable completed in 2021.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0210",
+      "source": "grace_hopper_cable",
+      "target": "grace_hopper_cable_completion",
+      "type": "completion_event",
+      "description": "Completion recorded in 2021.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0211",
+      "source": "grace_hopper",
+      "target": "grace_satellite",
+      "type": "namesake_of",
+      "description": "Satellite named Grace launched in 2021.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0212",
+      "source": "grace_hopper",
+      "target": "minor_planet_5773_hopper",
+      "type": "namesake_of",
+      "description": "Minor planet 5773 Hopper named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0213",
+      "source": "grace_hopper",
+      "target": "grace_hopper_information_services_center",
+      "type": "namesake_of",
+      "description": "Navy information services center named for her.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0214",
+      "source": "grace_hopper",
+      "target": "grace_hopper_hall_usna",
+      "type": "namesake_of",
+      "description": "Naval Academy cyber science building named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0215",
+      "source": "grace_hopper",
+      "target": "grace_hopper_buildings",
+      "type": "commemorated_by",
+      "description": "Military, academic, and computing facilities bear her name.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0216",
+      "source": "grace_hopper",
+      "target": "grace_hopper_scholarships",
+      "type": "honors_through_program",
+      "description": "Scholarships were established in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0217",
+      "source": "grace_hopper_scholarships",
+      "target": "society_of_women_engineers",
+      "type": "administered_by_or_established_by",
+      "description": "The Society of Women Engineers established the scholarships in 1992.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0218",
+      "source": "grace_hopper",
+      "target": "microsoft_hoppers",
+      "type": "inspired",
+      "description": "Microsoft employee group and scholarship were named in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0219",
+      "source": "grace_hopper",
+      "target": "first_robotics_competition",
+      "type": "honored_by",
+      "description": "A competition field at the FIRST Robotics Competition world championship is named for Hopper.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0220",
+      "source": "grace_hopper",
+      "target": "grace_hopper_professorship",
+      "type": "honored_by_named_position",
+      "description": "Yale established a named professorship in her honor.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0221",
+      "source": "grace_hopper",
+      "target": "grace_hopper_celebration",
+      "type": "inspired",
+      "description": "Her legacy inspired the annual Grace Hopper Celebration of Women in Computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0222",
+      "source": "grace_hopper_celebration",
+      "target": "women_in_computing",
+      "type": "promotes",
+      "description": "Conference foregrounds research and careers of women in computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0223",
+      "source": "grace_hopper",
+      "target": "queen_of_code",
+      "type": "subject_of",
+      "description": "Subject of the 2015 documentary The Queen of Code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0224",
+      "source": "grace_hopper",
+      "target": "secret_coders",
+      "type": "inspired_character_name",
+      "description": "A character name in the comic series draws on Hopper's name.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0225",
+      "source": "grace_hopper",
+      "target": "civilization_vi",
+      "type": "appears_in",
+      "description": "Appears as a Great Admiral in Civilization VI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0226",
+      "source": "grace_hopper",
+      "target": "matplotlib",
+      "type": "portrait_included_in",
+      "description": "Official portrait has been included as sample data since 2013.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0227",
+      "source": "grace_hopper_google_doodle",
+      "target": "grace_hopper",
+      "type": "depicts",
+      "description": "Doodle depicts Hopper programming in COBOL with a moth motif.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0228",
+      "source": "time_women_of_year",
+      "target": "grace_hopper",
+      "type": "honors",
+      "description": "Selected Hopper to represent 1959 in the 2020 project.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0229",
+      "source": "grace_hopper",
+      "target": "clock_anecdote",
+      "type": "illustrates_mindset",
+      "description": "The anecdote illustrates her resistance to 'we've always done it this way'.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0230",
+      "source": "grace_hopper",
+      "target": "grace_hopper_google_doodle",
+      "type": "honored_by",
+      "description": "Google celebrated her 107th birthday with an animated Doodle.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0231",
+      "source": "flow_matic",
+      "target": "machine_independent_language",
+      "type": "advances_goal_of",
+      "description": "Designed to make business programming less machine-dependent.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0232",
+      "source": "cobol",
+      "target": "english_like_syntax",
+      "type": "uses",
+      "description": "COBOL uses readable, English-derived keywords.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0233",
+      "source": "cobol",
+      "target": "comtran",
+      "type": "incorporates_ideas_from",
+      "description": "COBOL drew on COMTRAN as well as FLOW-MATIC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0234",
+      "source": "a0_system",
+      "target": "automatic_programming",
+      "type": "example_of",
+      "description": "A-0 was an early automatic-programming system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0235",
+      "source": "machine_independent_language",
+      "target": "high_level_language",
+      "type": "often_overlaps_with",
+      "description": "Machine independence is a design goal often associated with high-level languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0236",
+      "source": "compiler_translation",
+      "target": "human_computer_accessibility",
+      "type": "enables",
+      "description": "Translation lets users work in a higher-level notation while machines execute lower-level instructions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0237",
+      "source": "computer_science",
+      "target": "programming_language_design",
+      "type": "includes_subfield",
+      "description": "Programming-language design is part of computer science.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0238",
+      "source": "computer_science",
+      "target": "compiler_history",
+      "type": "includes_subfield",
+      "description": "Compiler development is part of computer science history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0239",
+      "source": "computer_science",
+      "target": "debugging",
+      "type": "includes_practice",
+      "description": "Debugging is a core software development practice.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0240",
+      "source": "computing_history",
+      "target": "mark_i",
+      "type": "includes_system",
+      "description": "Mark I was an important early programmable computing system.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0241",
+      "source": "computing_history",
+      "target": "univac_i",
+      "type": "includes_system",
+      "description": "UNIVAC I was an important early commercial computer.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0242",
+      "source": "computing_history",
+      "target": "cobol",
+      "type": "includes_language",
+      "description": "COBOL became a widely used business language.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0243",
+      "source": "women_in_computing",
+      "target": "grace_hopper_celebration",
+      "type": "represented_by_event",
+      "description": "The conference is a major event associated with women in computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0244",
+      "source": "grace_hopper",
+      "target": "hoppers_legacy",
+      "type": "is_remembered_for",
+      "description": "Remembered for technical innovation, standards work, military service, and mentorship.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0245",
+      "source": "hoppers_legacy",
+      "target": "a0_system",
+      "type": "legacy_includes",
+      "description": "Early automatic programming system A-0.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0246",
+      "source": "hoppers_legacy",
+      "target": "flow_matic",
+      "type": "legacy_includes",
+      "description": "Development and promotion of FLOW-MATIC.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0247",
+      "source": "hoppers_legacy",
+      "target": "cobol",
+      "type": "legacy_includes",
+      "description": "Influence on COBOL and its adoption.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0248",
+      "source": "hoppers_legacy",
+      "target": "programming_language_standardization",
+      "type": "legacy_includes",
+      "description": "Language standards and vendor conformance testing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0249",
+      "source": "hoppers_legacy",
+      "target": "distributed_computing",
+      "type": "legacy_includes",
+      "description": "Advocacy for smaller networked systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0250",
+      "source": "hoppers_legacy",
+      "target": "computing_education",
+      "type": "legacy_includes",
+      "description": "Mentorship and public education.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0251",
+      "source": "hoppers_legacy",
+      "target": "women_in_computing",
+      "type": "legacy_includes",
+      "description": "Visibility and recognition for women in computing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0252",
+      "source": "hoppers_legacy",
+      "target": "navy_service",
+      "type": "legacy_includes",
+      "description": "Long naval career and leadership.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0253",
+      "source": "hoppers_legacy",
+      "target": "debugging",
+      "type": "legacy_includes",
+      "description": "Popularization of the moth/bug anecdote.",
+      "properties": {}
+    }
+  ]
+}

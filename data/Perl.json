@@ -1,0 +1,6101 @@
+{
+  "metadata": {
+    "title": "Perl Programming Language — Detailed Knowledge Graph",
+    "subject": "Perl programming language, interpreter, syntax, runtime, history, ecosystem, applications, and community",
+    "source_basis": "User-provided Wikipedia article text about Perl, supplemented by structured cross-connections based on that text.",
+    "source_file": "Pasted text(20261019-222257).txt",
+    "schema_version": "1.0.0",
+    "created_date": "2026-10-19",
+    "format": "directed_semantic_knowledge_graph",
+    "entity_count": 271,
+    "relationship_count": 368,
+    "entity_type_count": 152,
+    "relationship_type_count": 150,
+    "id_convention": "snake_case identifiers; relationship IDs are sequential and stable within this artifact",
+    "notes": [
+      "Relationships are directed and each includes an explanatory description.",
+      "Claims explicitly uncertain or marked citation-needed in the supplied source are qualified in descriptions.",
+      "Release facts reflect the supplied article's stated snapshot and have not been independently refreshed."
+    ]
+  },
+  "entity_types": [
+    {
+      "type": "api",
+      "description": "Entities classified as api."
+    },
+    {
+      "type": "application_domain",
+      "description": "Entities classified as application domain."
+    },
+    {
+      "type": "backronym",
+      "description": "Entities classified as backronym."
+    },
+    {
+      "type": "benchmark_suite",
+      "description": "Entities classified as benchmark suite."
+    },
+    {
+      "type": "book",
+      "description": "Entities classified as book."
+    },
+    {
+      "type": "book_nickname",
+      "description": "Entities classified as book nickname."
+    },
+    {
+      "type": "builtin_function",
+      "description": "Entities classified as builtin function."
+    },
+    {
+      "type": "code_artwork",
+      "description": "Entities classified as code artwork."
+    },
+    {
+      "type": "command_language",
+      "description": "Entities classified as command language."
+    },
+    {
+      "type": "command_line_feature",
+      "description": "Entities classified as command line feature."
+    },
+    {
+      "type": "community_activity",
+      "description": "Entities classified as community activity."
+    },
+    {
+      "type": "community_concept",
+      "description": "Entities classified as community concept."
+    },
+    {
+      "type": "community_criticism",
+      "description": "Entities classified as community criticism."
+    },
+    {
+      "type": "community_event",
+      "description": "Entities classified as community event."
+    },
+    {
+      "type": "community_symbol",
+      "description": "Entities classified as community symbol."
+    },
+    {
+      "type": "community_tradition",
+      "description": "Entities classified as community tradition."
+    },
+    {
+      "type": "compatibility_feature",
+      "description": "Entities classified as compatibility feature."
+    },
+    {
+      "type": "compiler_optimization",
+      "description": "Entities classified as compiler optimization."
+    },
+    {
+      "type": "compiler_representation",
+      "description": "Entities classified as compiler representation."
+    },
+    {
+      "type": "computability_problem",
+      "description": "Entities classified as computability problem."
+    },
+    {
+      "type": "conference_series",
+      "description": "Entities classified as conference series."
+    },
+    {
+      "type": "control_structure",
+      "description": "Entities classified as control structure."
+    },
+    {
+      "type": "data_processing_task",
+      "description": "Entities classified as data processing task."
+    },
+    {
+      "type": "data_structure",
+      "description": "Entities classified as data structure."
+    },
+    {
+      "type": "data_structure_pattern",
+      "description": "Entities classified as data structure pattern."
+    },
+    {
+      "type": "data_type",
+      "description": "Entities classified as data type."
+    },
+    {
+      "type": "database_api",
+      "description": "Entities classified as database api."
+    },
+    {
+      "type": "database_driver",
+      "description": "Entities classified as database driver."
+    },
+    {
+      "type": "design_document_series",
+      "description": "Entities classified as design document series."
+    },
+    {
+      "type": "design_principle",
+      "description": "Entities classified as design principle."
+    },
+    {
+      "type": "design_process_artifact",
+      "description": "Entities classified as design process artifact."
+    },
+    {
+      "type": "developer_mailing_list",
+      "description": "Entities classified as developer mailing list."
+    },
+    {
+      "type": "development_activity",
+      "description": "Entities classified as development activity."
+    },
+    {
+      "type": "development_model",
+      "description": "Entities classified as development model."
+    },
+    {
+      "type": "development_movement",
+      "description": "Entities classified as development movement."
+    },
+    {
+      "type": "development_practice",
+      "description": "Entities classified as development practice."
+    },
+    {
+      "type": "development_process",
+      "description": "Entities classified as development process."
+    },
+    {
+      "type": "documentation_format",
+      "description": "Entities classified as documentation format."
+    },
+    {
+      "type": "documentation_page",
+      "description": "Entities classified as documentation page."
+    },
+    {
+      "type": "documentation_resource",
+      "description": "Entities classified as documentation resource."
+    },
+    {
+      "type": "documentation_tool",
+      "description": "Entities classified as documentation tool."
+    },
+    {
+      "type": "evaluation_context",
+      "description": "Entities classified as evaluation context."
+    },
+    {
+      "type": "execution_phase",
+      "description": "Entities classified as execution phase."
+    },
+    {
+      "type": "extension_interface",
+      "description": "Entities classified as extension interface."
+    },
+    {
+      "type": "file_format",
+      "description": "Entities classified as file format."
+    },
+    {
+      "type": "formal_language_property",
+      "description": "Entities classified as formal language property."
+    },
+    {
+      "type": "governance_body",
+      "description": "Entities classified as governance body."
+    },
+    {
+      "type": "gui_toolkit",
+      "description": "Entities classified as gui toolkit."
+    },
+    {
+      "type": "historical_event",
+      "description": "Entities classified as historical event."
+    },
+    {
+      "type": "historical_language_name",
+      "description": "Entities classified as historical language name."
+    },
+    {
+      "type": "historical_project",
+      "description": "Entities classified as historical project."
+    },
+    {
+      "type": "implementation_detail",
+      "description": "Entities classified as implementation detail."
+    },
+    {
+      "type": "instrumentation_capability",
+      "description": "Entities classified as instrumentation capability."
+    },
+    {
+      "type": "integration_technique",
+      "description": "Entities classified as integration technique."
+    },
+    {
+      "type": "intellectual_property",
+      "description": "Entities classified as intellectual property."
+    },
+    {
+      "type": "interpreter",
+      "description": "Entities classified as interpreter."
+    },
+    {
+      "type": "io_concept",
+      "description": "Entities classified as io concept."
+    },
+    {
+      "type": "keyword",
+      "description": "Entities classified as keyword."
+    },
+    {
+      "type": "language_capability",
+      "description": "Entities classified as language capability."
+    },
+    {
+      "type": "language_construct",
+      "description": "Entities classified as language construct."
+    },
+    {
+      "type": "language_culture",
+      "description": "Entities classified as language culture."
+    },
+    {
+      "type": "language_feature",
+      "description": "Entities classified as language feature."
+    },
+    {
+      "type": "language_history_topic",
+      "description": "Entities classified as language history topic."
+    },
+    {
+      "type": "language_implementation",
+      "description": "Entities classified as language implementation."
+    },
+    {
+      "type": "language_implementation_project",
+      "description": "Entities classified as language implementation project."
+    },
+    {
+      "type": "language_interoperability_module",
+      "description": "Entities classified as language interoperability module."
+    },
+    {
+      "type": "language_mechanism",
+      "description": "Entities classified as language mechanism."
+    },
+    {
+      "type": "language_property",
+      "description": "Entities classified as language property."
+    },
+    {
+      "type": "language_release",
+      "description": "Entities classified as language release."
+    },
+    {
+      "type": "language_specification",
+      "description": "Entities classified as language specification."
+    },
+    {
+      "type": "language_subsystem",
+      "description": "Entities classified as language subsystem."
+    },
+    {
+      "type": "language_version",
+      "description": "Entities classified as language version."
+    },
+    {
+      "type": "lexer",
+      "description": "Entities classified as lexer."
+    },
+    {
+      "type": "library_capability",
+      "description": "Entities classified as library capability."
+    },
+    {
+      "type": "memory_management",
+      "description": "Entities classified as memory management."
+    },
+    {
+      "type": "memory_management_mechanism",
+      "description": "Entities classified as memory management mechanism."
+    },
+    {
+      "type": "memory_structure",
+      "description": "Entities classified as memory structure."
+    },
+    {
+      "type": "namespace_mechanism",
+      "description": "Entities classified as namespace mechanism."
+    },
+    {
+      "type": "native_extension",
+      "description": "Entities classified as native extension."
+    },
+    {
+      "type": "object_oriented_concept",
+      "description": "Entities classified as object oriented concept."
+    },
+    {
+      "type": "object_relational_mapper",
+      "description": "Entities classified as object relational mapper."
+    },
+    {
+      "type": "online_community",
+      "description": "Entities classified as online community."
+    },
+    {
+      "type": "operating_system",
+      "description": "Entities classified as operating system."
+    },
+    {
+      "type": "operating_system_distribution",
+      "description": "Entities classified as operating system distribution."
+    },
+    {
+      "type": "operating_system_family",
+      "description": "Entities classified as operating system family."
+    },
+    {
+      "type": "operating_system_standard",
+      "description": "Entities classified as operating system standard."
+    },
+    {
+      "type": "operator",
+      "description": "Entities classified as operator."
+    },
+    {
+      "type": "organization",
+      "description": "Entities classified as organization."
+    },
+    {
+      "type": "package_repository",
+      "description": "Entities classified as package repository."
+    },
+    {
+      "type": "parser",
+      "description": "Entities classified as parser."
+    },
+    {
+      "type": "parser_behavior",
+      "description": "Entities classified as parser behavior."
+    },
+    {
+      "type": "parser_generator",
+      "description": "Entities classified as parser generator."
+    },
+    {
+      "type": "performance_characteristic",
+      "description": "Entities classified as performance characteristic."
+    },
+    {
+      "type": "performance_optimization",
+      "description": "Entities classified as performance optimization."
+    },
+    {
+      "type": "perl_distribution",
+      "description": "Entities classified as perl distribution."
+    },
+    {
+      "type": "perl_module",
+      "description": "Entities classified as perl module."
+    },
+    {
+      "type": "perl_module_family",
+      "description": "Entities classified as perl module family."
+    },
+    {
+      "type": "perl_package",
+      "description": "Entities classified as perl package."
+    },
+    {
+      "type": "perl_port",
+      "description": "Entities classified as perl port."
+    },
+    {
+      "type": "person",
+      "description": "Entities classified as person."
+    },
+    {
+      "type": "platform_capability",
+      "description": "Entities classified as platform capability."
+    },
+    {
+      "type": "pragma",
+      "description": "Entities classified as pragma."
+    },
+    {
+      "type": "programming_capability",
+      "description": "Entities classified as programming capability."
+    },
+    {
+      "type": "programming_contest",
+      "description": "Entities classified as programming contest."
+    },
+    {
+      "type": "programming_language",
+      "description": "Entities classified as programming language."
+    },
+    {
+      "type": "programming_paradigm",
+      "description": "Entities classified as programming paradigm."
+    },
+    {
+      "type": "programming_pastime",
+      "description": "Entities classified as programming pastime."
+    },
+    {
+      "type": "programming_pattern",
+      "description": "Entities classified as programming pattern."
+    },
+    {
+      "type": "proposed_language_version",
+      "description": "Entities classified as proposed language version."
+    },
+    {
+      "type": "publisher",
+      "description": "Entities classified as publisher."
+    },
+    {
+      "type": "query_language",
+      "description": "Entities classified as query language."
+    },
+    {
+      "type": "quote_operator",
+      "description": "Entities classified as quote operator."
+    },
+    {
+      "type": "regex_modifier",
+      "description": "Entities classified as regex modifier."
+    },
+    {
+      "type": "release_channel",
+      "description": "Entities classified as release channel."
+    },
+    {
+      "type": "release_event",
+      "description": "Entities classified as release event."
+    },
+    {
+      "type": "runtime_behavior",
+      "description": "Entities classified as runtime behavior."
+    },
+    {
+      "type": "runtime_capability",
+      "description": "Entities classified as runtime capability."
+    },
+    {
+      "type": "runtime_component",
+      "description": "Entities classified as runtime component."
+    },
+    {
+      "type": "runtime_cost",
+      "description": "Entities classified as runtime cost."
+    },
+    {
+      "type": "runtime_error",
+      "description": "Entities classified as runtime error."
+    },
+    {
+      "type": "runtime_mechanism",
+      "description": "Entities classified as runtime mechanism."
+    },
+    {
+      "type": "runtime_representation",
+      "description": "Entities classified as runtime representation."
+    },
+    {
+      "type": "runtime_value",
+      "description": "Entities classified as runtime value."
+    },
+    {
+      "type": "script_header",
+      "description": "Entities classified as script header."
+    },
+    {
+      "type": "software_distribution",
+      "description": "Entities classified as software distribution."
+    },
+    {
+      "type": "software_license",
+      "description": "Entities classified as software license."
+    },
+    {
+      "type": "software_module",
+      "description": "Entities classified as software module."
+    },
+    {
+      "type": "software_module_collection",
+      "description": "Entities classified as software module collection."
+    },
+    {
+      "type": "software_project",
+      "description": "Entities classified as software project."
+    },
+    {
+      "type": "software_role",
+      "description": "Entities classified as software role."
+    },
+    {
+      "type": "software_stack",
+      "description": "Entities classified as software stack."
+    },
+    {
+      "type": "source_parser_project",
+      "description": "Entities classified as source parser project."
+    },
+    {
+      "type": "special_variable",
+      "description": "Entities classified as special variable."
+    },
+    {
+      "type": "standard_stream",
+      "description": "Entities classified as standard stream."
+    },
+    {
+      "type": "style_guide",
+      "description": "Entities classified as style guide."
+    },
+    {
+      "type": "syntax_mechanism",
+      "description": "Entities classified as syntax mechanism."
+    },
+    {
+      "type": "syntax_token",
+      "description": "Entities classified as syntax token."
+    },
+    {
+      "type": "test_suite",
+      "description": "Entities classified as test suite."
+    },
+    {
+      "type": "testing_method",
+      "description": "Entities classified as testing method."
+    },
+    {
+      "type": "text_processing_tool",
+      "description": "Entities classified as text processing tool."
+    },
+    {
+      "type": "typing_discipline",
+      "description": "Entities classified as typing discipline."
+    },
+    {
+      "type": "usage_pattern",
+      "description": "Entities classified as usage pattern."
+    },
+    {
+      "type": "user_group_network",
+      "description": "Entities classified as user group network."
+    },
+    {
+      "type": "versioning_system",
+      "description": "Entities classified as versioning system."
+    },
+    {
+      "type": "virtual_machine",
+      "description": "Entities classified as virtual machine."
+    },
+    {
+      "type": "web_interface",
+      "description": "Entities classified as web interface."
+    },
+    {
+      "type": "web_programming_technique",
+      "description": "Entities classified as web programming technique."
+    },
+    {
+      "type": "web_scaling_concept",
+      "description": "Entities classified as web scaling concept."
+    },
+    {
+      "type": "web_server_interface",
+      "description": "Entities classified as web server interface."
+    },
+    {
+      "type": "web_server_module",
+      "description": "Entities classified as web server module."
+    },
+    {
+      "type": "web_technology",
+      "description": "Entities classified as web technology."
+    },
+    {
+      "type": "website",
+      "description": "Entities classified as website."
+    }
+  ],
+  "relationship_types": [
+    {
+      "type": "abstracts_over",
+      "description": "Directed semantic relation: abstracts over."
+    },
+    {
+      "type": "added_hooks_for",
+      "description": "Directed semantic relation: added hooks for."
+    },
+    {
+      "type": "affect",
+      "description": "Directed semantic relation: affect."
+    },
+    {
+      "type": "application_or_use_case",
+      "description": "Directed semantic relation: application or use case."
+    },
+    {
+      "type": "are_part_of",
+      "description": "Directed semantic relation: are part of."
+    },
+    {
+      "type": "associated_with",
+      "description": "Directed semantic relation: associated with."
+    },
+    {
+      "type": "associated_with_ecosystem",
+      "description": "Directed semantic relation: associated with ecosystem."
+    },
+    {
+      "type": "benchmarked_for",
+      "description": "Directed semantic relation: benchmarked for."
+    },
+    {
+      "type": "benchmarks",
+      "description": "Directed semantic relation: benchmarks."
+    },
+    {
+      "type": "benefits_from",
+      "description": "Directed semantic relation: benefits from."
+    },
+    {
+      "type": "built_on",
+      "description": "Directed semantic relation: built on."
+    },
+    {
+      "type": "can_be_abstracted_by",
+      "description": "Directed semantic relation: can be abstracted by."
+    },
+    {
+      "type": "can_be_part_of",
+      "description": "Directed semantic relation: can be part of."
+    },
+    {
+      "type": "can_embed",
+      "description": "Directed semantic relation: can embed."
+    },
+    {
+      "type": "can_help_mitigate",
+      "description": "Directed semantic relation: can help mitigate."
+    },
+    {
+      "type": "can_trigger_compilation_during",
+      "description": "Directed semantic relation: can trigger compilation during."
+    },
+    {
+      "type": "can_use",
+      "description": "Directed semantic relation: can use."
+    },
+    {
+      "type": "can_use_for_gui",
+      "description": "Directed semantic relation: can use for gui."
+    },
+    {
+      "type": "cannot_automatically_reclaim",
+      "description": "Directed semantic relation: cannot automatically reclaim."
+    },
+    {
+      "type": "capture",
+      "description": "Directed semantic relation: capture."
+    },
+    {
+      "type": "characterizes",
+      "description": "Directed semantic relation: characterizes."
+    },
+    {
+      "type": "commonly_distributed_through",
+      "description": "Directed semantic relation: commonly distributed through."
+    },
+    {
+      "type": "commonly_runs_on",
+      "description": "Directed semantic relation: commonly runs on."
+    },
+    {
+      "type": "connects",
+      "description": "Directed semantic relation: connects."
+    },
+    {
+      "type": "considered_as_runtime_for",
+      "description": "Directed semantic relation: considered as runtime for."
+    },
+    {
+      "type": "constructs",
+      "description": "Directed semantic relation: constructs."
+    },
+    {
+      "type": "contain",
+      "description": "Directed semantic relation: contain."
+    },
+    {
+      "type": "contribute_to_code_size_of",
+      "description": "Directed semantic relation: contribute to code size of."
+    },
+    {
+      "type": "contributes_to",
+      "description": "Directed semantic relation: contributes to."
+    },
+    {
+      "type": "coordinated_by",
+      "description": "Directed semantic relation: coordinated by."
+    },
+    {
+      "type": "coordinates_development_of",
+      "description": "Directed semantic relation: coordinates development of."
+    },
+    {
+      "type": "coordinates_with",
+      "description": "Directed semantic relation: coordinates with."
+    },
+    {
+      "type": "created",
+      "description": "Directed semantic relation: created."
+    },
+    {
+      "type": "decided",
+      "description": "Directed semantic relation: decided."
+    },
+    {
+      "type": "declares",
+      "description": "Directed semantic relation: declares."
+    },
+    {
+      "type": "delegates_to",
+      "description": "Directed semantic relation: delegates to."
+    },
+    {
+      "type": "describes_development_of",
+      "description": "Directed semantic relation: describes development of."
+    },
+    {
+      "type": "designed_for",
+      "description": "Directed semantic relation: designed for."
+    },
+    {
+      "type": "designed_through",
+      "description": "Directed semantic relation: designed through."
+    },
+    {
+      "type": "distinct_from",
+      "description": "Directed semantic relation: distinct from."
+    },
+    {
+      "type": "distributed_as",
+      "description": "Directed semantic relation: distributed as."
+    },
+    {
+      "type": "distributed_with",
+      "description": "Directed semantic relation: distributed with."
+    },
+    {
+      "type": "distributes",
+      "description": "Directed semantic relation: distributes."
+    },
+    {
+      "type": "documented_by",
+      "description": "Directed semantic relation: documented by."
+    },
+    {
+      "type": "documents",
+      "description": "Directed semantic relation: documents."
+    },
+    {
+      "type": "ecosystem_centered_on",
+      "description": "Directed semantic relation: ecosystem centered on."
+    },
+    {
+      "type": "embeds",
+      "description": "Directed semantic relation: embeds."
+    },
+    {
+      "type": "emphasizes",
+      "description": "Directed semantic relation: emphasizes."
+    },
+    {
+      "type": "enable",
+      "description": "Directed semantic relation: enable."
+    },
+    {
+      "type": "enables",
+      "description": "Directed semantic relation: enables."
+    },
+    {
+      "type": "encouraged_by",
+      "description": "Directed semantic relation: encouraged by."
+    },
+    {
+      "type": "encourages",
+      "description": "Directed semantic relation: encourages."
+    },
+    {
+      "type": "evolved_into",
+      "description": "Directed semantic relation: evolved into."
+    },
+    {
+      "type": "example_includes",
+      "description": "Directed semantic relation: example includes."
+    },
+    {
+      "type": "executed_by",
+      "description": "Directed semantic relation: executed by."
+    },
+    {
+      "type": "executed_during",
+      "description": "Directed semantic relation: executed during."
+    },
+    {
+      "type": "executes",
+      "description": "Directed semantic relation: executes."
+    },
+    {
+      "type": "expanded",
+      "description": "Directed semantic relation: expanded."
+    },
+    {
+      "type": "explains_name_of",
+      "description": "Directed semantic relation: explains name of."
+    },
+    {
+      "type": "expose_hooks_into",
+      "description": "Directed semantic relation: expose hooks into."
+    },
+    {
+      "type": "exposes",
+      "description": "Directed semantic relation: exposes."
+    },
+    {
+      "type": "extend",
+      "description": "Directed semantic relation: extend."
+    },
+    {
+      "type": "extends_through",
+      "description": "Directed semantic relation: extends through."
+    },
+    {
+      "type": "grouped_into",
+      "description": "Directed semantic relation: grouped into."
+    },
+    {
+      "type": "guided_by",
+      "description": "Directed semantic relation: guided by."
+    },
+    {
+      "type": "has_capability_or_construct",
+      "description": "Directed semantic relation: has capability or construct."
+    },
+    {
+      "type": "has_initial_release",
+      "description": "Directed semantic relation: has initial release."
+    },
+    {
+      "type": "has_phase",
+      "description": "Directed semantic relation: has phase."
+    },
+    {
+      "type": "has_version_or_release",
+      "description": "Directed semantic relation: has version or release."
+    },
+    {
+      "type": "helped_explore_design_of",
+      "description": "Directed semantic relation: helped explore design of."
+    },
+    {
+      "type": "helped_originate",
+      "description": "Directed semantic relation: helped originate."
+    },
+    {
+      "type": "historically_led_to",
+      "description": "Directed semantic relation: historically led to."
+    },
+    {
+      "type": "historically_versioned_as",
+      "description": "Directed semantic relation: historically versioned as."
+    },
+    {
+      "type": "hosts",
+      "description": "Directed semantic relation: hosts."
+    },
+    {
+      "type": "implementation_component_or_related_tool",
+      "description": "Directed semantic relation: implementation component or related tool."
+    },
+    {
+      "type": "implemented_by",
+      "description": "Directed semantic relation: implemented by."
+    },
+    {
+      "type": "implemented_in",
+      "description": "Directed semantic relation: implemented in."
+    },
+    {
+      "type": "implemented_using",
+      "description": "Directed semantic relation: implemented using."
+    },
+    {
+      "type": "implemented_with",
+      "description": "Directed semantic relation: implemented with."
+    },
+    {
+      "type": "implements",
+      "description": "Directed semantic relation: implements."
+    },
+    {
+      "type": "implicates",
+      "description": "Directed semantic relation: implicates."
+    },
+    {
+      "type": "improved",
+      "description": "Directed semantic relation: improved."
+    },
+    {
+      "type": "included",
+      "description": "Directed semantic relation: included."
+    },
+    {
+      "type": "includes",
+      "description": "Directed semantic relation: includes."
+    },
+    {
+      "type": "incurs",
+      "description": "Directed semantic relation: incurs."
+    },
+    {
+      "type": "incurs_cost_from",
+      "description": "Directed semantic relation: incurs cost from."
+    },
+    {
+      "type": "influenced",
+      "description": "Directed semantic relation: influenced."
+    },
+    {
+      "type": "influenced_by",
+      "description": "Directed semantic relation: influenced by."
+    },
+    {
+      "type": "informed",
+      "description": "Directed semantic relation: informed."
+    },
+    {
+      "type": "initiated_discussion_leading_to",
+      "description": "Directed semantic relation: initiated discussion leading to."
+    },
+    {
+      "type": "interacts_with",
+      "description": "Directed semantic relation: interacts with."
+    },
+    {
+      "type": "introduced",
+      "description": "Directed semantic relation: introduced."
+    },
+    {
+      "type": "introduced_in",
+      "description": "Directed semantic relation: introduced in."
+    },
+    {
+      "type": "is_a",
+      "description": "Directed semantic relation: is a."
+    },
+    {
+      "type": "is_error_under",
+      "description": "Directed semantic relation: is error under."
+    },
+    {
+      "type": "known_as",
+      "description": "Directed semantic relation: known as."
+    },
+    {
+      "type": "lacks_formal_written_standard_in_source",
+      "description": "Directed semantic relation: lacks formal written standard in source."
+    },
+    {
+      "type": "licensed_under",
+      "description": "Directed semantic relation: licensed under."
+    },
+    {
+      "type": "made_more_readable_by",
+      "description": "Directed semantic relation: made more readable by."
+    },
+    {
+      "type": "marks",
+      "description": "Directed semantic relation: marks."
+    },
+    {
+      "type": "mitigated_by",
+      "description": "Directed semantic relation: mitigated by."
+    },
+    {
+      "type": "name_homage_to",
+      "description": "Directed semantic relation: name homage to."
+    },
+    {
+      "type": "operates_on",
+      "description": "Directed semantic relation: operates on."
+    },
+    {
+      "type": "optimized_by",
+      "description": "Directed semantic relation: optimized by."
+    },
+    {
+      "type": "owns",
+      "description": "Directed semantic relation: owns."
+    },
+    {
+      "type": "parses_as_document",
+      "description": "Directed semantic relation: parses as document."
+    },
+    {
+      "type": "participates_in",
+      "description": "Directed semantic relation: participates in."
+    },
+    {
+      "type": "performs",
+      "description": "Directed semantic relation: performs."
+    },
+    {
+      "type": "planned_based_on",
+      "description": "Directed semantic relation: planned based on."
+    },
+    {
+      "type": "planned_baseline_for",
+      "description": "Directed semantic relation: planned baseline for."
+    },
+    {
+      "type": "popularized_by",
+      "description": "Directed semantic relation: popularized by."
+    },
+    {
+      "type": "portable_to",
+      "description": "Directed semantic relation: portable to."
+    },
+    {
+      "type": "ported_as",
+      "description": "Directed semantic relation: ported as."
+    },
+    {
+      "type": "possibly_influenced",
+      "description": "Directed semantic relation: possibly influenced."
+    },
+    {
+      "type": "preceded",
+      "description": "Directed semantic relation: preceded."
+    },
+    {
+      "type": "presents",
+      "description": "Directed semantic relation: presents."
+    },
+    {
+      "type": "preserved_ongoing_development_of",
+      "description": "Directed semantic relation: preserved ongoing development of."
+    },
+    {
+      "type": "promotes_style_of",
+      "description": "Directed semantic relation: promotes style of."
+    },
+    {
+      "type": "provided_integration_through",
+      "description": "Directed semantic relation: provided integration through."
+    },
+    {
+      "type": "provides",
+      "description": "Directed semantic relation: provides."
+    },
+    {
+      "type": "provides_names_for",
+      "description": "Directed semantic relation: provides names for."
+    },
+    {
+      "type": "published",
+      "description": "Directed semantic relation: published."
+    },
+    {
+      "type": "recommends",
+      "description": "Directed semantic relation: recommends."
+    },
+    {
+      "type": "reduces",
+      "description": "Directed semantic relation: reduces."
+    },
+    {
+      "type": "rejects",
+      "description": "Directed semantic relation: rejects."
+    },
+    {
+      "type": "renamed_to",
+      "description": "Directed semantic relation: renamed to."
+    },
+    {
+      "type": "represented_as",
+      "description": "Directed semantic relation: represented as."
+    },
+    {
+      "type": "represented_inside",
+      "description": "Directed semantic relation: represented inside."
+    },
+    {
+      "type": "resolve",
+      "description": "Directed semantic relation: resolve."
+    },
+    {
+      "type": "run_during",
+      "description": "Directed semantic relation: run during."
+    },
+    {
+      "type": "shaped_by",
+      "description": "Directed semantic relation: shaped by."
+    },
+    {
+      "type": "shares_idea_with",
+      "description": "Directed semantic relation: shares idea with."
+    },
+    {
+      "type": "specified_de_facto_by",
+      "description": "Directed semantic relation: specified de facto by."
+    },
+    {
+      "type": "subject_to",
+      "description": "Directed semantic relation: subject to."
+    },
+    {
+      "type": "submits",
+      "description": "Directed semantic relation: submits."
+    },
+    {
+      "type": "summarized_into",
+      "description": "Directed semantic relation: summarized into."
+    },
+    {
+      "type": "support",
+      "description": "Directed semantic relation: support."
+    },
+    {
+      "type": "supported_by_port",
+      "description": "Directed semantic relation: supported by port."
+    },
+    {
+      "type": "supported_by_version",
+      "description": "Directed semantic relation: supported by version."
+    },
+    {
+      "type": "supported_platform_for",
+      "description": "Directed semantic relation: supported platform for."
+    },
+    {
+      "type": "supports",
+      "description": "Directed semantic relation: supports."
+    },
+    {
+      "type": "supports_pattern",
+      "description": "Directed semantic relation: supports pattern."
+    },
+    {
+      "type": "targets",
+      "description": "Directed semantic relation: targets."
+    },
+    {
+      "type": "tested_by",
+      "description": "Directed semantic relation: tested by."
+    },
+    {
+      "type": "used_as",
+      "description": "Directed semantic relation: used as."
+    },
+    {
+      "type": "used_for",
+      "description": "Directed semantic relation: used for."
+    },
+    {
+      "type": "used_with",
+      "description": "Directed semantic relation: used with."
+    },
+    {
+      "type": "uses",
+      "description": "Directed semantic relation: uses."
+    },
+    {
+      "type": "uses_for_system_programming",
+      "description": "Directed semantic relation: uses for system programming."
+    },
+    {
+      "type": "validated_by",
+      "description": "Directed semantic relation: validated by."
+    }
+  ],
+  "entities": [
+    {
+      "id": "perl",
+      "name": "Perl",
+      "type": "programming_language",
+      "description": "High-level, general-purpose, interpreted, dynamically typed, multi-paradigm language created by Larry Wall and first released in 1987; particularly strong in text processing, regular expressions, scripting, reporting, and systems glue.",
+      "properties": {
+        "paradigm": [
+          "procedural",
+          "object-oriented",
+          "functional",
+          "generic scripting"
+        ],
+        "typing": "dynamic",
+        "implementation_language": "C",
+        "first_release": "1987-12-18",
+        "license": [
+          "Artistic License 1.0",
+          "GNU GPL version 1 or later"
+        ],
+        "extensions": [
+          ".pl",
+          ".pm",
+          ".t",
+          ".pod",
+          ".cgi",
+          ".psgi",
+          ".xs"
+        ]
+      }
+    },
+    {
+      "id": "larry_wall",
+      "name": "Larry Wall",
+      "type": "person",
+      "description": "Creator and principal original designer of Perl; his linguistic background influenced Perl's emphasis on expressive, human-oriented syntax.",
+      "properties": {}
+    },
+    {
+      "id": "perl_1",
+      "name": "Perl 1",
+      "type": "language_version",
+      "description": "Initial public Perl release on December 18, 1987.",
+      "properties": {}
+    },
+    {
+      "id": "perl_2",
+      "name": "Perl 2",
+      "type": "language_version",
+      "description": "1988 release that improved the regular-expression engine.",
+      "properties": {}
+    },
+    {
+      "id": "perl_3",
+      "name": "Perl 3",
+      "type": "language_version",
+      "description": "1989 release that added binary data-stream support.",
+      "properties": {}
+    },
+    {
+      "id": "perl_4",
+      "name": "Perl 4",
+      "type": "language_version",
+      "description": "1991 release associated with the Programming Perl reference book and capitalization of the language name.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5",
+      "name": "Perl 5",
+      "type": "language_version",
+      "description": "Major rewrite released in 1994, adding references, lexical variables, objects, and modules; remains the main Perl language line.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_6",
+      "name": "Perl 5.6",
+      "type": "language_version",
+      "description": "2000 release with 64-bit support, Unicode string representation, large-file support, and the our keyword.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_8",
+      "name": "Perl 5.8",
+      "type": "language_version",
+      "description": "2002 release improving Unicode, I/O, threads, numeric accuracy, and core modules.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_10",
+      "name": "Perl 5.10",
+      "type": "language_version",
+      "description": "2007 release with regex enhancements, given/when switch-like syntax, and smart match.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_12",
+      "name": "Perl 5.12",
+      "type": "language_version",
+      "description": "2010 release with features including package NAME VERSION syntax, implicit strictures, Y2038 work, and Unicode updates.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_14",
+      "name": "Perl 5.14",
+      "type": "language_version",
+      "description": "2011 release with JSON support built into the core distribution.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_20",
+      "name": "Perl 5.20",
+      "type": "language_version",
+      "description": "2014 release with subroutine signatures, hash slices and new slice syntax, and other language updates.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_44_0",
+      "name": "Perl 5.44.0",
+      "type": "language_release",
+      "description": "Stable release reported by the supplied source as dated July 15, 2026.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_45_3",
+      "name": "Perl 5.45.3",
+      "type": "language_release",
+      "description": "Preview release reported by the supplied source as dated September 24, 2026.",
+      "properties": {}
+    },
+    {
+      "id": "raku",
+      "name": "Raku",
+      "type": "programming_language",
+      "description": "Language formerly called Perl 6; renamed in October 2019 and developed independently from Perl 5, while ideas may be shared.",
+      "properties": {}
+    },
+    {
+      "id": "perl_6",
+      "name": "Perl 6",
+      "type": "historical_language_name",
+      "description": "Name used for the redesign effort begun around 2000; renamed Raku in 2019.",
+      "properties": {}
+    },
+    {
+      "id": "perl_7",
+      "name": "Perl 7",
+      "type": "proposed_language_version",
+      "description": "Successor plan announced in 2020, revised in 2021, and later cancelled as a release plan pending sufficient changes.",
+      "properties": {}
+    },
+    {
+      "id": "pearl",
+      "name": "PEARL",
+      "type": "programming_language",
+      "description": "An existing language whose name led Larry Wall to change the proposed name Pearl to Perl.",
+      "properties": {}
+    },
+    {
+      "id": "unix",
+      "name": "Unix",
+      "type": "operating_system_family",
+      "description": "Original environment and scripting context for Perl's creation.",
+      "properties": {}
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "type": "programming_language",
+      "description": "Language from which Perl borrows broad procedural structure and in which the core interpreter is implemented.",
+      "properties": {}
+    },
+    {
+      "id": "awk",
+      "name": "AWK",
+      "type": "programming_language",
+      "description": "Influence on Perl associative arrays/hashes and text-processing idioms.",
+      "properties": {}
+    },
+    {
+      "id": "sed",
+      "name": "sed",
+      "type": "text_processing_tool",
+      "description": "Stream editor whose regular-expression and text-transformation ideas influenced Perl.",
+      "properties": {}
+    },
+    {
+      "id": "unix_shell",
+      "name": "Unix shell",
+      "type": "command_language",
+      "description": "Influence on Perl scripting, command invocation, and variable interpolation into strings.",
+      "properties": {}
+    },
+    {
+      "id": "basic",
+      "name": "BASIC",
+      "type": "programming_language",
+      "description": "One of the languages listed as influencing Perl.",
+      "properties": {}
+    },
+    {
+      "id": "c_26",
+      "name": "C++",
+      "type": "programming_language",
+      "description": "Influence listed for Perl and an example compiled language used for performance comparisons.",
+      "properties": {}
+    },
+    {
+      "id": "lisp",
+      "name": "Lisp",
+      "type": "programming_language",
+      "description": "Influence associated with expression-oriented constructs and implicit return of the final value in a block.",
+      "properties": {}
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl and a comparison point for interpreted-language startup behavior.",
+      "properties": {}
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl and an alternative in web application stacks.",
+      "properties": {}
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl and a comparison point for interpreted execution.",
+      "properties": {}
+    },
+    {
+      "id": "powershell",
+      "name": "PowerShell",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "coffeescript",
+      "name": "CoffeeScript",
+      "type": "programming_language",
+      "description": "Language listed by the source as potentially influenced by Perl; source marks this claim citation-needed.",
+      "properties": {}
+    },
+    {
+      "id": "groovy",
+      "name": "Groovy",
+      "type": "programming_language",
+      "description": "Language listed by the source as potentially influenced by Perl; source marks this claim citation-needed.",
+      "properties": {}
+    },
+    {
+      "id": "julia",
+      "name": "Julia",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "lpc",
+      "name": "LPC",
+      "type": "programming_language",
+      "description": "Language listed among those influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "perl_philosophy_tmtowtdi",
+      "name": "Perl philosophy: TMTOWTDI",
+      "type": "design_principle",
+      "description": "There's More Than One Way To Do It: Perl often provides multiple ways to express a solution.",
+      "properties": {}
+    },
+    {
+      "id": "easy_things_easy_hard_things_possible",
+      "name": "Easy things easy, hard things possible",
+      "type": "design_principle",
+      "description": "Perl design slogan emphasizing low friction for common tasks while retaining expressive power.",
+      "properties": {}
+    },
+    {
+      "id": "no_built_in_limits",
+      "name": "No built-in limits",
+      "type": "design_principle",
+      "description": "Design ideal favoring flexible data and operations rather than arbitrary small limits.",
+      "properties": {}
+    },
+    {
+      "id": "linguistic_design_influence",
+      "name": "Linguistic design influence",
+      "type": "design_principle",
+      "description": "Perl syntax reflects linguistic ideas such as making common constructions concise and placing important information prominently.",
+      "properties": {}
+    },
+    {
+      "id": "practicality",
+      "name": "Practicality",
+      "type": "design_principle",
+      "description": "Perl's culture and design prioritize getting practical jobs done, even when the language accumulates exceptions and heuristics.",
+      "properties": {}
+    },
+    {
+      "id": "perl_interpreter",
+      "name": "Perl interpreter",
+      "type": "interpreter",
+      "description": "Core implementation written in C, coordinating a custom lexer and modified parser, constructing and optimizing syntax trees, and executing programs.",
+      "properties": {}
+    },
+    {
+      "id": "perl_c_api",
+      "name": "Perl C API",
+      "type": "api",
+      "description": "C-facing collection of structures, macros, typedefs, and functions representing Perl values and operations.",
+      "properties": {}
+    },
+    {
+      "id": "perl_compile_phase",
+      "name": "Perl compile phase",
+      "type": "execution_phase",
+      "description": "Phase in which Perl source is parsed into a syntax tree and compile-time code may execute.",
+      "properties": {}
+    },
+    {
+      "id": "perl_run_phase",
+      "name": "Perl run phase",
+      "type": "execution_phase",
+      "description": "Phase in which the interpreter normally executes the syntax tree, although additional compilation can occur at run time.",
+      "properties": {}
+    },
+    {
+      "id": "syntax_tree",
+      "name": "Syntax tree",
+      "type": "compiler_representation",
+      "description": "Tree constructed from parsed Perl code, optimized and then traversed during execution.",
+      "properties": {}
+    },
+    {
+      "id": "modified_gnu_bison_parser",
+      "name": "Modified GNU Bison parser",
+      "type": "parser",
+      "description": "Parser component coordinated with Perl's custom lexer to resolve Perl syntax ambiguities.",
+      "properties": {}
+    },
+    {
+      "id": "custom_perl_lexer",
+      "name": "Custom Perl lexer",
+      "type": "lexer",
+      "description": "Lexer used by Perl to coordinate with parsing and compile-time behavior that cannot be handled by a straightforward Lex/Yacc combination.",
+      "properties": {}
+    },
+    {
+      "id": "compile_time_execution",
+      "name": "Compile-time execution",
+      "type": "language_feature",
+      "description": "Perl can execute code during compilation, including code in BEGIN blocks.",
+      "properties": {}
+    },
+    {
+      "id": "begin_block",
+      "name": "BEGIN block",
+      "type": "language_construct",
+      "description": "Block whose code runs during the compile phase.",
+      "properties": {}
+    },
+    {
+      "id": "eval",
+      "name": "eval",
+      "type": "builtin_function",
+      "description": "Built-in that can compile a string of Perl code at run time, entering compilation during execution.",
+      "properties": {}
+    },
+    {
+      "id": "constant_folding",
+      "name": "Constant folding",
+      "type": "compiler_optimization",
+      "description": "Compile-time optimization that evaluates constant expressions in the syntax tree.",
+      "properties": {}
+    },
+    {
+      "id": "context_propagation",
+      "name": "Context propagation",
+      "type": "compiler_optimization",
+      "description": "Compile-time optimization listed among Perl syntax-tree transformations.",
+      "properties": {}
+    },
+    {
+      "id": "peephole_optimization",
+      "name": "Peephole optimization",
+      "type": "compiler_optimization",
+      "description": "Local optimization performed by the Perl interpreter.",
+      "properties": {}
+    },
+    {
+      "id": "turing_complete_grammar",
+      "name": "Turing-complete grammar",
+      "type": "formal_language_property",
+      "description": "Perl parsing can be affected by code executed during the compile phase, making general parsing theoretically unusual.",
+      "properties": {}
+    },
+    {
+      "id": "halting_problem",
+      "name": "Halting problem",
+      "type": "computability_problem",
+      "description": "Undecidable problem relevant to the theoretical limits of determining whether arbitrary compile-time code terminates.",
+      "properties": {}
+    },
+    {
+      "id": "ppi",
+      "name": "PPI",
+      "type": "source_parser_project",
+      "description": "Project by Adam Kennedy that parses Perl source as a document, preserving source integrity rather than attempting to execute all language semantics.",
+      "properties": {}
+    },
+    {
+      "id": "perl_functional_test_suite",
+      "name": "Perl functional test suite",
+      "type": "test_suite",
+      "description": "Large suite of tests for core Perl and modules used during normal builds to detect regressions.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_typing",
+      "name": "Dynamic typing",
+      "type": "typing_discipline",
+      "description": "Perl determines and converts data types at run time, with legal conversions performed automatically.",
+      "properties": {}
+    },
+    {
+      "id": "automatic_memory_management",
+      "name": "Automatic memory management",
+      "type": "memory_management",
+      "description": "Interpreter allocates and frees storage for data objects automatically.",
+      "properties": {}
+    },
+    {
+      "id": "reference_counting",
+      "name": "Reference counting",
+      "type": "memory_management_mechanism",
+      "description": "Memory-management technique described for Perl values; circular references may prevent automatic deallocation without intervention.",
+      "properties": {}
+    },
+    {
+      "id": "circular_reference",
+      "name": "Circular reference",
+      "type": "memory_structure",
+      "description": "Reference cycle that reference counting alone cannot reclaim automatically.",
+      "properties": {}
+    },
+    {
+      "id": "regular_expressions",
+      "name": "Regular expressions",
+      "type": "language_feature",
+      "description": "Built-in pattern-matching and text-processing facility central to Perl's historical popularity.",
+      "properties": {}
+    },
+    {
+      "id": "regex_engine",
+      "name": "Regex engine",
+      "type": "runtime_component",
+      "description": "Component improved in Perl 2 and further enhanced in later releases.",
+      "properties": {}
+    },
+    {
+      "id": "regex_x_modifier",
+      "name": "Regex /x modifier",
+      "type": "regex_modifier",
+      "description": "Allows whitespace and formatting in regular expressions to make complex patterns more readable.",
+      "properties": {}
+    },
+    {
+      "id": "qr",
+      "name": "qr//",
+      "type": "quote_operator",
+      "description": "Perl 5.005 regular-expression quote operator.",
+      "properties": {}
+    },
+    {
+      "id": "strings",
+      "name": "Strings",
+      "type": "data_type",
+      "description": "Scalar string values, with interpolation in appropriate string forms.",
+      "properties": {}
+    },
+    {
+      "id": "string_interpolation",
+      "name": "String interpolation",
+      "type": "language_feature",
+      "description": "Substitution of variable values into interpolating strings, influenced by shell scripting.",
+      "properties": {}
+    },
+    {
+      "id": "scalars",
+      "name": "Scalars",
+      "type": "data_structure",
+      "description": "Single-value Perl variables accessed with the $ sigil.",
+      "properties": {}
+    },
+    {
+      "id": "arrays",
+      "name": "Arrays",
+      "type": "data_structure",
+      "description": "Ordered collections conventionally accessed with the @ sigil; individual elements use scalar access.",
+      "properties": {}
+    },
+    {
+      "id": "hashes",
+      "name": "Hashes",
+      "type": "data_structure",
+      "description": "Associative arrays mapping keys to values, conventionally accessed with the % sigil.",
+      "properties": {}
+    },
+    {
+      "id": "references",
+      "name": "References",
+      "type": "language_feature",
+      "description": "Perl 5 feature enabling references to values and complex nested data structures.",
+      "properties": {}
+    },
+    {
+      "id": "subroutines",
+      "name": "Subroutines",
+      "type": "language_construct",
+      "description": "Named or anonymous callable blocks used to organize and reuse Perl code.",
+      "properties": {}
+    },
+    {
+      "id": "closures",
+      "name": "Closures",
+      "type": "language_feature",
+      "description": "First-class functions that can retain access to lexically scoped variables.",
+      "properties": {}
+    },
+    {
+      "id": "lexical_variables",
+      "name": "Lexical variables",
+      "type": "language_feature",
+      "description": "Variables declared with lexical scope, especially using my.",
+      "properties": {}
+    },
+    {
+      "id": "my",
+      "name": "my",
+      "type": "keyword",
+      "description": "Declares lexically scoped variables.",
+      "properties": {}
+    },
+    {
+      "id": "our",
+      "name": "our",
+      "type": "keyword",
+      "description": "Keyword added in Perl 5.6 for package variables visible through lexical declaration.",
+      "properties": {}
+    },
+    {
+      "id": "strict_pragma",
+      "name": "strict pragma",
+      "type": "pragma",
+      "description": "Compiler directive that enables stricter checks to prevent common mistakes.",
+      "properties": {}
+    },
+    {
+      "id": "warnings_pragma",
+      "name": "warnings pragma",
+      "type": "pragma",
+      "description": "Compiler directive that requests warnings about potentially problematic code.",
+      "properties": {}
+    },
+    {
+      "id": "pragmas",
+      "name": "Pragmas",
+      "type": "language_mechanism",
+      "description": "Compile-time directives that alter language behavior or checks, such as strict and warnings.",
+      "properties": {}
+    },
+    {
+      "id": "packages",
+      "name": "Packages",
+      "type": "namespace_mechanism",
+      "description": "Named namespaces that organize symbols and provide a basis for Perl 5 object-oriented conventions.",
+      "properties": {}
+    },
+    {
+      "id": "modules",
+      "name": "Modules",
+      "type": "software_module",
+      "description": "Reusable Perl or C packages loadable by programs; Perl 5 module support enabled language extension without changing the interpreter.",
+      "properties": {}
+    },
+    {
+      "id": "cpan",
+      "name": "CPAN",
+      "type": "package_repository",
+      "description": "Comprehensive Perl Archive Network, established in 1995, hosting public Perl modules and distributions.",
+      "properties": {}
+    },
+    {
+      "id": "perl_module_authoring",
+      "name": "Perl module authoring",
+      "type": "development_practice",
+      "description": "Creating reusable packages that extend applications and often distribute through CPAN.",
+      "properties": {}
+    },
+    {
+      "id": "prototypes",
+      "name": "Prototypes",
+      "type": "language_feature",
+      "description": "Perl 5.002 feature allowing subroutines to influence call syntax similarly to built-ins.",
+      "properties": {}
+    },
+    {
+      "id": "objects",
+      "name": "Objects",
+      "type": "object_oriented_concept",
+      "description": "Perl 5 introduced support for objects, using references, packages, and method dispatch conventions.",
+      "properties": {}
+    },
+    {
+      "id": "object_oriented_programming_in_perl",
+      "name": "Object-oriented programming in Perl",
+      "type": "programming_paradigm",
+      "description": "Perl 5 object model built from references, packages, and class-based method dispatch.",
+      "properties": {}
+    },
+    {
+      "id": "class_based_method_dispatch",
+      "name": "Class-based method dispatch",
+      "type": "runtime_mechanism",
+      "description": "Method calls dispatched according to Perl package/class conventions.",
+      "properties": {}
+    },
+    {
+      "id": "introspection",
+      "name": "Introspection",
+      "type": "language_feature",
+      "description": "Ability to inspect program and runtime information.",
+      "properties": {}
+    },
+    {
+      "id": "automatic_data_typing",
+      "name": "Automatic data typing",
+      "type": "language_feature",
+      "description": "Interpreter tracks data-object type and storage requirements and performs legal conversions at run time.",
+      "properties": {}
+    },
+    {
+      "id": "expressions",
+      "name": "Expressions",
+      "type": "language_construct",
+      "description": "Perl expressions produce values and can be used within larger expressions.",
+      "properties": {}
+    },
+    {
+      "id": "statements",
+      "name": "Statements",
+      "type": "language_construct",
+      "description": "Imperative operations and control statements; blocks use braces.",
+      "properties": {}
+    },
+    {
+      "id": "blocks",
+      "name": "Blocks",
+      "type": "language_construct",
+      "description": "Brace-delimited groupings of Perl statements; final value may be implicitly returned in relevant contexts.",
+      "properties": {}
+    },
+    {
+      "id": "control_structures",
+      "name": "Control structures",
+      "type": "language_construct",
+      "description": "Conditional and looping structures in Perl.",
+      "properties": {}
+    },
+    {
+      "id": "subroutine_signatures",
+      "name": "Subroutine signatures",
+      "type": "language_feature",
+      "description": "Feature noted in Perl 5.20 that allows declaring subroutine parameters.",
+      "properties": {}
+    },
+    {
+      "id": "given_when",
+      "name": "given/when",
+      "type": "control_structure",
+      "description": "Switch-like syntax introduced in Perl 5.10, with historical/version-dependent status.",
+      "properties": {}
+    },
+    {
+      "id": "smart_match_operator",
+      "name": "Smart match operator",
+      "type": "operator",
+      "description": "The ~~ operator introduced in Perl 5.10; behavior is context- and version-sensitive.",
+      "properties": {}
+    },
+    {
+      "id": "sigils",
+      "name": "Sigils",
+      "type": "syntax_mechanism",
+      "description": "Leading characters such as $, @, and % that indicate the kind of variable access/expression in Perl.",
+      "properties": {}
+    },
+    {
+      "id": "sigil",
+      "name": "$ sigil",
+      "type": "syntax_token",
+      "description": "Sigil used for scalar values and individual elements of arrays or hashes.",
+      "properties": {}
+    },
+    {
+      "id": "sigil_100",
+      "name": "@ sigil",
+      "type": "syntax_token",
+      "description": "Sigil conventionally used for arrays and list-valued access.",
+      "properties": {}
+    },
+    {
+      "id": "sigil_101",
+      "name": "% sigil",
+      "type": "syntax_token",
+      "description": "Sigil conventionally used for hashes.",
+      "properties": {}
+    },
+    {
+      "id": "context_sensitivity",
+      "name": "Context sensitivity",
+      "type": "language_property",
+      "description": "Perl built-ins can behave differently in list and scalar contexts.",
+      "properties": {}
+    },
+    {
+      "id": "scalar_context",
+      "name": "Scalar context",
+      "type": "evaluation_context",
+      "description": "Context in which an expression is expected to yield a scalar value.",
+      "properties": {}
+    },
+    {
+      "id": "list_context",
+      "name": "List context",
+      "type": "evaluation_context",
+      "description": "Context in which an expression is expected to yield a list of values.",
+      "properties": {}
+    },
+    {
+      "id": "implicit_return_value",
+      "name": "Implicit return value",
+      "type": "language_feature",
+      "description": "The last evaluated value in a block or subroutine can be returned implicitly.",
+      "properties": {}
+    },
+    {
+      "id": "file_handles",
+      "name": "File handles",
+      "type": "io_concept",
+      "description": "Perl values used to represent I/O streams.",
+      "properties": {}
+    },
+    {
+      "id": "stdout",
+      "name": "STDOUT",
+      "type": "standard_stream",
+      "description": "Standard output stream, used by print and for output examples.",
+      "properties": {}
+    },
+    {
+      "id": "argv",
+      "name": "ARGV",
+      "type": "special_variable",
+      "description": "Array containing command-line arguments passed to a Perl program.",
+      "properties": {}
+    },
+    {
+      "id": "special_variables",
+      "name": "Special variables",
+      "type": "language_feature",
+      "description": "Built-in variables, some of whose names use punctuation and carry implicit interpreter state.",
+      "properties": {}
+    },
+    {
+      "id": "english_module",
+      "name": "English module",
+      "type": "perl_module",
+      "description": "Module offering English names for many punctuation-style special variables.",
+      "properties": {}
+    },
+    {
+      "id": "command_line_one_liners",
+      "name": "Command-line one-liners",
+      "type": "usage_pattern",
+      "description": "Compact Perl programs invoked directly from a shell for file and text transformations.",
+      "properties": {}
+    },
+    {
+      "id": "shebang",
+      "name": "Shebang",
+      "type": "script_header",
+      "description": "Interpreter-selection line such as #!/usr/bin/env perl at the top of an executable script.",
+      "properties": {}
+    },
+    {
+      "id": "plain_old_documentation_pod",
+      "name": "Plain Old Documentation (POD)",
+      "type": "documentation_format",
+      "description": "Documentation format associated with Perl; .pod is among Perl-related file extensions.",
+      "properties": {}
+    },
+    {
+      "id": "perl_source_extensions",
+      "name": "Perl source extensions",
+      "type": "file_format",
+      "description": "Common extensions include .pl, .pm, .t, .pod, .cgi, .psgi, .xs, .plx, and .pls.",
+      "properties": {}
+    },
+    {
+      "id": "cgi",
+      "name": "CGI",
+      "type": "web_technology",
+      "description": "Common Gateway Interface; Perl's regex and text-processing facilities helped make it popular for CGI scripting in the 1990s.",
+      "properties": {}
+    },
+    {
+      "id": "psgi",
+      "name": "PSGI",
+      "type": "web_interface",
+      "description": "Perl web server gateway interface; .psgi is a Perl-related file extension.",
+      "properties": {}
+    },
+    {
+      "id": "mod_perl",
+      "name": "mod_perl",
+      "type": "web_server_module",
+      "description": "Apache integration that reduces repeated interpreter startup costs for Perl web applications.",
+      "properties": {}
+    },
+    {
+      "id": "isapi",
+      "name": "ISAPI",
+      "type": "web_server_interface",
+      "description": "Microsoft interface through which ActivePerl offered performance improvements.",
+      "properties": {}
+    },
+    {
+      "id": "database_interface_dbi",
+      "name": "Database Interface (DBI)",
+      "type": "database_api",
+      "description": "Database-independent Perl API that lets applications use a common interface for database operations.",
+      "properties": {}
+    },
+    {
+      "id": "database_driver_dbd",
+      "name": "Database Driver (DBD)",
+      "type": "database_driver",
+      "description": "Driver modules that implement DBI access to particular database systems.",
+      "properties": {}
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "type": "query_language",
+      "description": "Relational database query language that Perl applications can generate and submit.",
+      "properties": {}
+    },
+    {
+      "id": "dbix_class",
+      "name": "DBIx::Class",
+      "type": "object_relational_mapper",
+      "description": "Perl ORM often used above DBI to generate SQL and hide database details.",
+      "properties": {}
+    },
+    {
+      "id": "class_dbi",
+      "name": "Class::DBI",
+      "type": "object_relational_mapper",
+      "description": "Perl ORM named in the source as an abstraction over DBI.",
+      "properties": {}
+    },
+    {
+      "id": "rose_db_object",
+      "name": "Rose::DB::Object",
+      "type": "object_relational_mapper",
+      "description": "Perl ORM named in the source as an abstraction over DBI.",
+      "properties": {}
+    },
+    {
+      "id": "perl_tk",
+      "name": "Perl/Tk",
+      "type": "gui_toolkit",
+      "description": "Toolkit commonly used to add graphical interfaces to Perl scripts.",
+      "properties": {}
+    },
+    {
+      "id": "wxperl",
+      "name": "wxPerl",
+      "type": "gui_toolkit",
+      "description": "Perl bindings for wxWidgets commonly used to add graphical interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "inline",
+      "name": "Inline",
+      "type": "language_interoperability_module",
+      "description": "Module family allowing critical routines to be implemented in another language such as C.",
+      "properties": {}
+    },
+    {
+      "id": "xs",
+      "name": "XS",
+      "type": "extension_interface",
+      "description": "Flexible Perl extension mechanism for connecting Perl code with C implementations.",
+      "properties": {}
+    },
+    {
+      "id": "c_extension_modules",
+      "name": "C extension modules",
+      "type": "native_extension",
+      "description": "C-based modules can implement performance-critical routines or expose native libraries to Perl.",
+      "properties": {}
+    },
+    {
+      "id": "glue_language",
+      "name": "Glue language",
+      "type": "software_role",
+      "description": "Role in which Perl connects systems and interfaces not originally designed to interoperate.",
+      "properties": {}
+    },
+    {
+      "id": "data_munging",
+      "name": "Data munging",
+      "type": "data_processing_task",
+      "description": "Converting, cleaning, parsing, and transforming large amounts of data, often to produce reports.",
+      "properties": {}
+    },
+    {
+      "id": "system_administration",
+      "name": "System administration",
+      "type": "application_domain",
+      "description": "Common Perl use for automation and maintenance of operating systems and services.",
+      "properties": {}
+    },
+    {
+      "id": "network_programming",
+      "name": "Network programming",
+      "type": "application_domain",
+      "description": "Application area listed for Perl.",
+      "properties": {}
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "type": "application_domain",
+      "description": "Application area listed for Perl.",
+      "properties": {}
+    },
+    {
+      "id": "bioinformatics",
+      "name": "Bioinformatics",
+      "type": "application_domain",
+      "description": "Application area listed for Perl.",
+      "properties": {}
+    },
+    {
+      "id": "report_generation",
+      "name": "Report generation",
+      "type": "application_domain",
+      "description": "Original motivating use case for Perl: making report processing easier.",
+      "properties": {}
+    },
+    {
+      "id": "build_and_deployment_scripts",
+      "name": "Build and deployment scripts",
+      "type": "application_domain",
+      "description": "Portable scripts used to package, build, and deploy software.",
+      "properties": {}
+    },
+    {
+      "id": "web_applications",
+      "name": "Web applications",
+      "type": "application_domain",
+      "description": "Perl applications historically included CGI systems and web platforms.",
+      "properties": {}
+    },
+    {
+      "id": "gui_applications",
+      "name": "GUI applications",
+      "type": "application_domain",
+      "description": "Graphical applications can be built with Perl/Tk or wxPerl.",
+      "properties": {}
+    },
+    {
+      "id": "lamp_stack",
+      "name": "LAMP stack",
+      "type": "software_stack",
+      "description": "Web development stack where Perl can be used as an alternative to PHP or Python.",
+      "properties": {}
+    },
+    {
+      "id": "bugzilla",
+      "name": "Bugzilla",
+      "type": "software_project",
+      "description": "Project listed as a large Perl-based CGI-era project.",
+      "properties": {}
+    },
+    {
+      "id": "cpanel",
+      "name": "cPanel",
+      "type": "software_project",
+      "description": "Project listed as a large Perl-based CGI-era project.",
+      "properties": {}
+    },
+    {
+      "id": "slashdot",
+      "name": "Slashdot",
+      "type": "website",
+      "description": "Website named in the source among sites using Perl extensively and associated with the Slash software.",
+      "properties": {}
+    },
+    {
+      "id": "duckduckgo",
+      "name": "DuckDuckGo",
+      "type": "website",
+      "description": "Website named in the source among those using Perl extensively.",
+      "properties": {}
+    },
+    {
+      "id": "livejournal",
+      "name": "LiveJournal",
+      "type": "website",
+      "description": "Website named in the source among those using Perl extensively.",
+      "properties": {}
+    },
+    {
+      "id": "movable_type",
+      "name": "Movable Type",
+      "type": "software_project",
+      "description": "Project listed as a large Perl-based project.",
+      "properties": {}
+    },
+    {
+      "id": "twiki",
+      "name": "TWiki",
+      "type": "software_project",
+      "description": "Project listed as a large Perl-based project.",
+      "properties": {}
+    },
+    {
+      "id": "activeperl",
+      "name": "ActivePerl",
+      "type": "perl_distribution",
+      "description": "Closed-source distribution from ActiveState described in the source as tracking core Perl releases.",
+      "properties": {}
+    },
+    {
+      "id": "macperl",
+      "name": "MacPerl",
+      "type": "perl_port",
+      "description": "Special Perl port shipped independently for classic Mac OS.",
+      "properties": {}
+    },
+    {
+      "id": "posix",
+      "name": "POSIX",
+      "type": "operating_system_standard",
+      "description": "Operating-system standard whose compliant platforms are described as generally supporting compilation of Perl.",
+      "properties": {}
+    },
+    {
+      "id": "artistic_license_1_0",
+      "name": "Artistic License 1.0",
+      "type": "software_license",
+      "description": "One of the two licenses under which Perl is distributed.",
+      "properties": {}
+    },
+    {
+      "id": "gnu_general_public_license",
+      "name": "GNU General Public License",
+      "type": "software_license",
+      "description": "Alternative license for Perl; the source states version 1 or any later version.",
+      "properties": {}
+    },
+    {
+      "id": "programming_perl",
+      "name": "Programming Perl",
+      "type": "book",
+      "description": "O'Reilly reference book published in 1991; its camel cover led to the common name Camel Book.",
+      "properties": {}
+    },
+    {
+      "id": "camel_book",
+      "name": "Camel Book",
+      "type": "book_nickname",
+      "description": "Common nickname for Programming Perl, derived from the camel on its cover.",
+      "properties": {}
+    },
+    {
+      "id": "o_reilly_media",
+      "name": "O'Reilly Media",
+      "type": "publisher",
+      "description": "Publisher of Programming Perl and owner of the camel image trademark described in the source.",
+      "properties": {}
+    },
+    {
+      "id": "camel_symbol",
+      "name": "Camel symbol",
+      "type": "community_symbol",
+      "description": "Unofficial Perl symbol popularized by Programming Perl's camel cover.",
+      "properties": {}
+    },
+    {
+      "id": "perl_foundation",
+      "name": "Perl Foundation",
+      "type": "organization",
+      "description": "Organization that owns the onion symbol and supports community activities.",
+      "properties": {}
+    },
+    {
+      "id": "onion_logo",
+      "name": "Onion logo",
+      "type": "community_symbol",
+      "description": "Alternative Perl symbol owned by The Perl Foundation; a visual pun on pearl onion.",
+      "properties": {}
+    },
+    {
+      "id": "new_camel_logo_2024",
+      "name": "New camel logo (2024)",
+      "type": "community_symbol",
+      "description": "Non-official camel logo published in 2024 under a Creative Commons license by a small developer group.",
+      "properties": {}
+    },
+    {
+      "id": "comprehensive_perl_archive_network_cpan",
+      "name": "Comprehensive Perl Archive Network (CPAN)",
+      "type": "package_repository",
+      "description": "Repository and ecosystem for Perl modules and distributions, established October 26, 1995.",
+      "properties": {}
+    },
+    {
+      "id": "perl5_porters",
+      "name": "perl5-porters",
+      "type": "developer_mailing_list",
+      "description": "Mailing list established in 1994 to coordinate Perl 5 porting and continuing development.",
+      "properties": {}
+    },
+    {
+      "id": "perl_mongers",
+      "name": "Perl Mongers",
+      "type": "user_group_network",
+      "description": "Community network whose user groups helped originate the YAPC conference series.",
+      "properties": {}
+    },
+    {
+      "id": "perlmonks",
+      "name": "PerlMonks",
+      "type": "online_community",
+      "description": "Online community mentioned as a venue for Perl poetry and Perl-related exchange.",
+      "properties": {}
+    },
+    {
+      "id": "state_of_the_onion",
+      "name": "State of the Onion",
+      "type": "community_event",
+      "description": "Larry Wall's yearly keynote-style summaries of Perl development and community.",
+      "properties": {}
+    },
+    {
+      "id": "yapc",
+      "name": "YAPC",
+      "type": "conference_series",
+      "description": "Yet Another Perl Conference, a community conference series begun in 1999; later names included The Perl Conference and The Perl and Raku Conference.",
+      "properties": {}
+    },
+    {
+      "id": "the_perl_journal_obfuscated_perl_contest",
+      "name": "The Perl Journal Obfuscated Perl Contest",
+      "type": "programming_contest",
+      "description": "Contest held from 1996 to 2000 celebrating syntactic flexibility and deliberately obfuscated Perl code.",
+      "properties": {}
+    },
+    {
+      "id": "japh",
+      "name": "JAPH",
+      "type": "community_tradition",
+      "description": "Just Another Perl Hacker short programs, often compact or obfuscated, that print a signature phrase.",
+      "properties": {}
+    },
+    {
+      "id": "perl_golf",
+      "name": "Perl golf",
+      "type": "programming_pastime",
+      "description": "Challenge of minimizing character count in Perl programs.",
+      "properties": {}
+    },
+    {
+      "id": "perl_poetry",
+      "name": "Perl poetry",
+      "type": "programming_pastime",
+      "description": "Poems that are also syntactically valid Perl programs.",
+      "properties": {}
+    },
+    {
+      "id": "black_perl",
+      "name": "Black Perl",
+      "type": "code_artwork",
+      "description": "Known example of Perl poetry.",
+      "properties": {}
+    },
+    {
+      "id": "perl_language_specification",
+      "name": "Perl language specification",
+      "type": "language_specification",
+      "description": "The source states that Perl 5 has no separately written formal language standard; interpreter behavior and tests serve as a de facto specification.",
+      "properties": {}
+    },
+    {
+      "id": "perl_functional_tests",
+      "name": "Perl functional tests",
+      "type": "testing_method",
+      "description": "Functional tests distributed with Perl and run during the normal build process.",
+      "properties": {}
+    },
+    {
+      "id": "interpreter_startup_overhead",
+      "name": "Interpreter startup overhead",
+      "type": "performance_characteristic",
+      "description": "Perl source is compiled on each execution, which can make short-lived programs slower to start than comparable compiled programs.",
+      "properties": {}
+    },
+    {
+      "id": "bytecode_interpretation",
+      "name": "Bytecode interpretation",
+      "type": "runtime_cost",
+      "description": "Execution overhead noted for Perl relative to compiled languages.",
+      "properties": {}
+    },
+    {
+      "id": "dynamic_type_checking_overhead",
+      "name": "Dynamic type checking overhead",
+      "type": "runtime_cost",
+      "description": "Run-time type checks contribute to execution overhead.",
+      "properties": {}
+    },
+    {
+      "id": "memory_usage",
+      "name": "Memory usage",
+      "type": "performance_characteristic",
+      "description": "Benchmark implementations of Perl often use relatively high memory compared with some alternatives.",
+      "properties": {}
+    },
+    {
+      "id": "benchmarking_game",
+      "name": "Benchmarking Game",
+      "type": "benchmark_suite",
+      "description": "Computer Language Benchmarks Game used to compare implementations of typical programming tasks.",
+      "properties": {}
+    },
+    {
+      "id": "perl_version_emulation",
+      "name": "Perl version emulation",
+      "type": "compatibility_feature",
+      "description": "Feature added in Perl 5.16 to request behavior associated with a specified Perl version.",
+      "properties": {}
+    },
+    {
+      "id": "unicode_support",
+      "name": "Unicode support",
+      "type": "language_capability",
+      "description": "Perl's Unicode support improved significantly in Perl 5.6 and later releases.",
+      "properties": {}
+    },
+    {
+      "id": "64_bit_support",
+      "name": "64-bit support",
+      "type": "platform_capability",
+      "description": "Perl 5.6 added 64-bit support.",
+      "properties": {}
+    },
+    {
+      "id": "binary_data_streams",
+      "name": "Binary data streams",
+      "type": "language_capability",
+      "description": "Perl 3 added support for binary data streams.",
+      "properties": {}
+    },
+    {
+      "id": "large_file_support",
+      "name": "Large-file support",
+      "type": "language_capability",
+      "description": "Perl 5.6 added support for files larger than 2 GiB.",
+      "properties": {}
+    },
+    {
+      "id": "thread_support",
+      "name": "Thread support",
+      "type": "runtime_capability",
+      "description": "Perl 5.8 included a new thread implementation.",
+      "properties": {}
+    },
+    {
+      "id": "json_support",
+      "name": "JSON support",
+      "type": "library_capability",
+      "description": "JSON support is described as built into the core starting with Perl 5.14.",
+      "properties": {}
+    },
+    {
+      "id": "cgi_pm",
+      "name": "CGI.pm",
+      "type": "perl_module",
+      "description": "Module included in Perl 5.004 that contributed to Perl's popularity as a CGI scripting language.",
+      "properties": {}
+    },
+    {
+      "id": "universal_package",
+      "name": "UNIVERSAL package",
+      "type": "perl_package",
+      "description": "Perl 5.004 addition providing a base object from which classes are automatically derived.",
+      "properties": {}
+    },
+    {
+      "id": "perl_on_new_internal_engine_ponie",
+      "name": "Perl On New Internal Engine (PONIE)",
+      "type": "historical_project",
+      "description": "2003–2006 effort to bridge Perl 5 and Perl 6 by targeting the Parrot virtual machine; discontinued.",
+      "properties": {}
+    },
+    {
+      "id": "parrot_vm",
+      "name": "Parrot VM",
+      "type": "virtual_machine",
+      "description": "Cross-language virtual machine selected in 2001 as a planned Perl 6 runtime and target of PONIE.",
+      "properties": {}
+    },
+    {
+      "id": "pugs",
+      "name": "Pugs",
+      "type": "language_implementation_project",
+      "description": "Perl 6 implementation and exploration platform written in Haskell by Audrey Tang, started in 2005.",
+      "properties": {}
+    },
+    {
+      "id": "rakudo",
+      "name": "Rakudo",
+      "type": "language_implementation",
+      "description": "Implementation of Perl 6/Raku described as an active implementation in the source's historical account.",
+      "properties": {}
+    },
+    {
+      "id": "moarvm",
+      "name": "MoarVM",
+      "type": "virtual_machine",
+      "description": "C-based virtual machine designed primarily for Rakudo, announced in 2013.",
+      "properties": {}
+    },
+    {
+      "id": "niecza",
+      "name": "Niecza",
+      "type": "language_implementation",
+      "description": "Historical Perl 6 implementation targeting the Common Language Runtime.",
+      "properties": {}
+    },
+    {
+      "id": "common_language_runtime",
+      "name": "Common Language Runtime",
+      "type": "virtual_machine",
+      "description": "Runtime targeted by the historical Niecza implementation.",
+      "properties": {}
+    },
+    {
+      "id": "java_virtual_machine",
+      "name": "Java Virtual Machine",
+      "type": "virtual_machine",
+      "description": "Runtime considered for Perl 6; source notes this approach was found problematic for the design, while historical implementations had support.",
+      "properties": {}
+    },
+    {
+      "id": "perl_6_rfcs",
+      "name": "Perl 6 RFCs",
+      "type": "design_process_artifact",
+      "description": "Community submitted more than 300 requests for comments to guide the Perl 6 redesign.",
+      "properties": {}
+    },
+    {
+      "id": "apocalypses",
+      "name": "Apocalypses",
+      "type": "design_document_series",
+      "description": "Larry Wall's numbered documents describing and organizing Perl 6 design changes.",
+      "properties": {}
+    },
+    {
+      "id": "synopses",
+      "name": "Synopses",
+      "type": "design_document_series",
+      "description": "Documents that evolved into the Perl 6 language specification.",
+      "properties": {}
+    },
+    {
+      "id": "modern_perl",
+      "name": "Modern Perl",
+      "type": "development_movement",
+      "description": "Style/movement emphasizing CPAN, newer language features, and high-quality code.",
+      "properties": {}
+    },
+    {
+      "id": "modern_perl_book",
+      "name": "Modern Perl book",
+      "type": "book",
+      "description": "Book associated with the Modern Perl movement.",
+      "properties": {}
+    },
+    {
+      "id": "cgi_scripting",
+      "name": "CGI scripting",
+      "type": "web_programming_technique",
+      "description": "Perl's historic web use, boosted by text processing and regular expressions.",
+      "properties": {}
+    },
+    {
+      "id": "text_processing",
+      "name": "Text processing",
+      "type": "programming_capability",
+      "description": "Core Perl capability for searching, extracting, transforming, and reporting textual data.",
+      "properties": {}
+    },
+    {
+      "id": "hash_slices",
+      "name": "Hash slices",
+      "type": "language_feature",
+      "description": "Feature noted in Perl 5.20.",
+      "properties": {}
+    },
+    {
+      "id": "y2038_compliance",
+      "name": "Y2038 compliance",
+      "type": "compatibility_feature",
+      "description": "Perl 5.12 core enhancement described as full Y2038 compliance.",
+      "properties": {}
+    },
+    {
+      "id": "dtrace_support",
+      "name": "DTrace support",
+      "type": "instrumentation_capability",
+      "description": "Tracing support included in Perl 5.12 and further hooks in 5.18.",
+      "properties": {}
+    },
+    {
+      "id": "security_release",
+      "name": "Security release",
+      "type": "release_event",
+      "description": "Perl 5.003 was released as a security release.",
+      "properties": {}
+    },
+    {
+      "id": "cross_platform_portability",
+      "name": "Cross-platform portability",
+      "type": "platform_capability",
+      "description": "Perl distributions are available for many operating systems, particularly Unix-like platforms.",
+      "properties": {}
+    },
+    {
+      "id": "perl_documentation",
+      "name": "Perl documentation",
+      "type": "documentation_resource",
+      "description": "Documentation historically included a lengthy man page and later extensive perldoc material.",
+      "properties": {}
+    },
+    {
+      "id": "perldoc",
+      "name": "Perldoc",
+      "type": "documentation_tool",
+      "description": "Documentation system and collection of Perl manuals.",
+      "properties": {}
+    },
+    {
+      "id": "perl_culture",
+      "name": "Perl culture",
+      "type": "community_concept",
+      "description": "Practical, humorous, collaborative culture expressed through conferences, JAPH, golf, poetry, and other traditions.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_module_system",
+      "name": "Perl 5 module system",
+      "type": "language_subsystem",
+      "description": "Reusable module mechanism introduced in Perl 5 that permits language extension outside the interpreter core.",
+      "properties": {}
+    },
+    {
+      "id": "linguistic_heuristics",
+      "name": "Linguistic heuristics",
+      "type": "parser_behavior",
+      "description": "Heuristics and tolerated exceptions used to resolve Perl syntactic ambiguities.",
+      "properties": {}
+    },
+    {
+      "id": "ambiguous_syntax",
+      "name": "Ambiguous syntax",
+      "type": "language_property",
+      "description": "Some Perl constructs require parser and lexer coordination due to context and compile-time behavior.",
+      "properties": {}
+    },
+    {
+      "id": "write_only_language_criticism",
+      "name": "Write-only language criticism",
+      "type": "community_criticism",
+      "description": "Criticism that Perl syntax can be difficult to read; source notes that careful style and formatted regexes can mitigate it.",
+      "properties": {}
+    },
+    {
+      "id": "line_noise_criticism",
+      "name": "Line noise criticism",
+      "type": "community_criticism",
+      "description": "Description of Perl punctuation-heavy syntax, especially special variables and regular expressions.",
+      "properties": {}
+    },
+    {
+      "id": "perlstyle",
+      "name": "perlstyle",
+      "type": "style_guide",
+      "description": "Perl style documentation recommending readable code and discussing techniques such as the regex /x modifier.",
+      "properties": {}
+    },
+    {
+      "id": "perlfunc",
+      "name": "perlfunc",
+      "type": "documentation_page",
+      "description": "Manual page documenting Perl built-in functions, including context-dependent behavior.",
+      "properties": {}
+    },
+    {
+      "id": "perlintro",
+      "name": "perlintro",
+      "type": "documentation_page",
+      "description": "Introductory Perl document that discusses punctuation-style special variables.",
+      "properties": {}
+    },
+    {
+      "id": "file_i_o",
+      "name": "File I/O",
+      "type": "programming_capability",
+      "description": "Perl's I/O implementation was improved in Perl 5.8.",
+      "properties": {}
+    },
+    {
+      "id": "networking_and_os_calls",
+      "name": "Networking and OS calls",
+      "type": "programming_capability",
+      "description": "Built-ins provide access to sorting and operating-system facilities commonly needed in scripts.",
+      "properties": {}
+    },
+    {
+      "id": "perl_command_line_options_i_n_p_l_e",
+      "name": "Perl command-line options -i -n -p -l -e",
+      "type": "command_line_feature",
+      "description": "Options used in one-liners for in-place editing, implicit input loops, printing, line-ending handling, and inline program code.",
+      "properties": {}
+    },
+    {
+      "id": "sql_query_generation",
+      "name": "SQL query generation",
+      "type": "programming_pattern",
+      "description": "Using Perl strings, interpolation, arrays, and hashes to generate SQL and post-process result sets.",
+      "properties": {}
+    },
+    {
+      "id": "database_handle_caching",
+      "name": "Database handle caching",
+      "type": "performance_optimization",
+      "description": "DBI caching of database handles and queries can improve long-lived applications.",
+      "properties": {}
+    },
+    {
+      "id": "slash_effect",
+      "name": "Slash effect",
+      "type": "web_scaling_concept",
+      "description": "Traffic spike phenomenon cited in the source as an example of load challenges DBI caching can help mitigate.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_005",
+      "name": "Perl 5.005",
+      "type": "language_version",
+      "description": "1998 release with regex enhancements, qr//, B::* hooks, new core modules, and expanded OS support.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_004",
+      "name": "Perl 5.004",
+      "type": "language_version",
+      "description": "1997 release adding UNIVERSAL, module version requirements, CGI.pm, and additional operating-system support.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_002",
+      "name": "Perl 5.002",
+      "type": "language_version",
+      "description": "1996 release adding prototypes.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_003",
+      "name": "Perl 5.003",
+      "type": "language_version",
+      "description": "1996 security release.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_18",
+      "name": "Perl 5.18",
+      "type": "language_version",
+      "description": "2013 release with lexical subs, DTrace hooks, hash security overhaul, and Unicode 6.2.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_16",
+      "name": "Perl 5.16",
+      "type": "language_version",
+      "description": "2012 release adding version emulation and Unicode 6.1 support.",
+      "properties": {}
+    },
+    {
+      "id": "perl_5_32",
+      "name": "Perl 5.32",
+      "type": "language_version",
+      "description": "Version proposed as the initial base for the Perl 7 successor plan.",
+      "properties": {}
+    },
+    {
+      "id": "perl_steering_committee",
+      "name": "Perl Steering Committee",
+      "type": "governance_body",
+      "description": "Group that cancelled the Perl 7 release plan to avoid compatibility issues.",
+      "properties": {}
+    },
+    {
+      "id": "perl_7_plan_cancellation",
+      "name": "Perl 7 plan cancellation",
+      "type": "historical_event",
+      "description": "Decision to delay Perl 7 until sufficient features justify a major-version release.",
+      "properties": {}
+    },
+    {
+      "id": "o_reilly_camel_trademark",
+      "name": "O'Reilly camel trademark",
+      "type": "intellectual_property",
+      "description": "O'Reilly Media's trademark ownership of the camel image used on Programming Perl, with licensing conditions described in the source.",
+      "properties": {}
+    },
+    {
+      "id": "creative_commons_license",
+      "name": "Creative Commons license",
+      "type": "software_license",
+      "description": "License under which the new camel logo was published in 2024.",
+      "properties": {}
+    },
+    {
+      "id": "perl_distributions",
+      "name": "Perl distributions",
+      "type": "software_distribution",
+      "description": "Packaged Perl runtimes and supporting modules for different operating systems.",
+      "properties": {}
+    },
+    {
+      "id": "windows",
+      "name": "Windows",
+      "type": "operating_system",
+      "description": "Perl support was added in Perl 5.004 and portable Perl scripts are used across Windows and Unix.",
+      "properties": {}
+    },
+    {
+      "id": "classic_mac_os",
+      "name": "Classic Mac OS",
+      "type": "operating_system",
+      "description": "Environment for which the MacPerl port was created.",
+      "properties": {}
+    },
+    {
+      "id": "plan_9",
+      "name": "Plan 9",
+      "type": "operating_system",
+      "description": "Operating system whose support was added in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "qnx",
+      "name": "QNX",
+      "type": "operating_system",
+      "description": "Operating system whose support was added in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "amigaos",
+      "name": "AmigaOS",
+      "type": "operating_system",
+      "description": "Operating system whose support was added in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "beos",
+      "name": "BeOS",
+      "type": "operating_system",
+      "description": "Operating system support added in Perl 5.005.",
+      "properties": {}
+    },
+    {
+      "id": "debian",
+      "name": "Debian",
+      "type": "operating_system_distribution",
+      "description": "Linux distribution described as using Perl extensively for system programming.",
+      "properties": {}
+    },
+    {
+      "id": "perl_interpreter_embedding",
+      "name": "Perl interpreter embedding",
+      "type": "integration_technique",
+      "description": "The interpreter can be compiled as a link library and embedded in other programs.",
+      "properties": {}
+    },
+    {
+      "id": "perl_test_build_process",
+      "name": "Perl test build process",
+      "type": "development_process",
+      "description": "Build workflow runs core language and module functional tests to identify regressions.",
+      "properties": {}
+    },
+    {
+      "id": "perl_community_conferences",
+      "name": "Perl community conferences",
+      "type": "community_activity",
+      "description": "Conferences provide a forum for discussion of Perl, its tools, and community.",
+      "properties": {}
+    },
+    {
+      "id": "randal_l_schwartz",
+      "name": "Randal L. Schwartz",
+      "type": "person",
+      "description": "Early professional Perl trainer associated with JAPH programs and Perl golf culture.",
+      "properties": {}
+    },
+    {
+      "id": "audrey_tang",
+      "name": "Audrey Tang",
+      "type": "person",
+      "description": "Started the Pugs Perl 6 implementation project in Haskell in 2005.",
+      "properties": {}
+    },
+    {
+      "id": "adam_kennedy",
+      "name": "Adam Kennedy",
+      "type": "person",
+      "description": "Created the PPI project and argued that general Perl parsing has a relationship to the halting problem.",
+      "properties": {}
+    },
+    {
+      "id": "jon_orwant",
+      "name": "Jon Orwant",
+      "type": "person",
+      "description": "At the 2000 Perl Conference advocated for a major new language initiative leading to Perl 6.",
+      "properties": {}
+    },
+    {
+      "id": "yacc",
+      "name": "Yacc",
+      "type": "parser_generator",
+      "description": "Compiler-compiler whose name is echoed in the acronym YAPC.",
+      "properties": {}
+    },
+    {
+      "id": "regular_expression_text_transformation",
+      "name": "Regular-expression text transformation",
+      "type": "programming_pattern",
+      "description": "Pattern-directed substitution such as replacing a string across files using a Perl one-liner.",
+      "properties": {}
+    },
+    {
+      "id": "automatic_conversions",
+      "name": "Automatic conversions",
+      "type": "runtime_behavior",
+      "description": "Perl performs legal conversions such as number-to-string at run time.",
+      "properties": {}
+    },
+    {
+      "id": "illegal_type_conversion",
+      "name": "Illegal type conversion",
+      "type": "runtime_error",
+      "description": "Illegal conversions are described in the source as fatal errors.",
+      "properties": {}
+    },
+    {
+      "id": "nested_data_structures",
+      "name": "Nested data structures",
+      "type": "data_structure_pattern",
+      "description": "References allow complex combinations of arrays, hashes, and other values.",
+      "properties": {}
+    },
+    {
+      "id": "perl_object_representation",
+      "name": "Perl object representation",
+      "type": "runtime_representation",
+      "description": "Scalars, arrays, hashes, coderefs, and file handles are represented by C structs inside the interpreter.",
+      "properties": {}
+    },
+    {
+      "id": "coderefs",
+      "name": "Coderefs",
+      "type": "runtime_value",
+      "description": "References to subroutines represented as values in the Perl interpreter.",
+      "properties": {}
+    },
+    {
+      "id": "b_modules",
+      "name": "B::* modules",
+      "type": "perl_module_family",
+      "description": "Modules providing hooks into interpreter internals, noted in Perl 5.005.",
+      "properties": {}
+    },
+    {
+      "id": "perl_core_modules",
+      "name": "Perl core modules",
+      "type": "software_module_collection",
+      "description": "Modules distributed with Perl, distinct from third-party CPAN distributions.",
+      "properties": {}
+    },
+    {
+      "id": "third_party_perl_modules",
+      "name": "Third-party Perl modules",
+      "type": "software_module_collection",
+      "description": "Modules distributed outside the core, commonly through CPAN.",
+      "properties": {}
+    },
+    {
+      "id": "porting",
+      "name": "Porting",
+      "type": "development_activity",
+      "description": "Adapting Perl to operating systems and coordinating platform support.",
+      "properties": {}
+    },
+    {
+      "id": "open_source_language_development",
+      "name": "Open-source language development",
+      "type": "development_model",
+      "description": "Perl development coordinated by maintainers and community channels including perl5-porters.",
+      "properties": {}
+    },
+    {
+      "id": "perl_naming",
+      "name": "Perl naming",
+      "type": "language_history_topic",
+      "description": "Language was first called Pearl, then shortened to Perl after discovery of the existing PEARL language.",
+      "properties": {}
+    },
+    {
+      "id": "perl_name_backronyms",
+      "name": "Perl name backronyms",
+      "type": "language_culture",
+      "description": "Expansions such as Practical Extraction and Report Language and Pathologically Eclectic Rubbish Lister are later backronyms, not the original source of the name.",
+      "properties": {}
+    },
+    {
+      "id": "practical_extraction_and_report_language",
+      "name": "Practical Extraction and Report Language",
+      "type": "backronym",
+      "description": "Common but unofficial expansion of Perl's name.",
+      "properties": {}
+    },
+    {
+      "id": "pathologically_eclectic_rubbish_lister",
+      "name": "Pathologically Eclectic Rubbish Lister",
+      "type": "backronym",
+      "description": "Humorous expansion associated with Larry Wall and documented in the perl manual.",
+      "properties": {}
+    },
+    {
+      "id": "web_glue",
+      "name": "Web glue",
+      "type": "software_role",
+      "description": "Use of Perl to connect HTML, JavaScript, SQL, and backend data-processing steps.",
+      "properties": {}
+    },
+    {
+      "id": "interpreted_language_performance",
+      "name": "Interpreted language performance",
+      "type": "performance_characteristic",
+      "description": "Perl performance resembles other interpreted languages in benchmark-style workloads, with startup and runtime overhead.",
+      "properties": {}
+    },
+    {
+      "id": "data_encoding_tables",
+      "name": "Data encoding tables",
+      "type": "implementation_detail",
+      "description": "The source notes that much C code in some Perl modules consists of character-encoding tables.",
+      "properties": {}
+    },
+    {
+      "id": "perl_language_versions_and_releases",
+      "name": "Perl language versions and releases",
+      "type": "versioning_system",
+      "description": "Perl's version history includes stable and development release lines; the source notes odd/even development conventions adopted after 5.005_63.",
+      "properties": {}
+    },
+    {
+      "id": "perl_development_releases",
+      "name": "Perl development releases",
+      "type": "release_channel",
+      "description": "Development versions historically used odd version numbers after a versioning-scheme change.",
+      "properties": {}
+    },
+    {
+      "id": "perl_stable_releases",
+      "name": "Perl stable releases",
+      "type": "release_channel",
+      "description": "Stable versions historically used even version numbers under the versioning scheme described in the source.",
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "larry_wall",
+      "target": "perl",
+      "type": "created",
+      "description": "Larry Wall began Perl in 1987 and released its first version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0002",
+      "source": "perl",
+      "target": "perl_1",
+      "type": "has_initial_release",
+      "description": "Perl 1 was the first public release of Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0003",
+      "source": "perl_1",
+      "target": "perl_2",
+      "type": "preceded",
+      "description": "Perl 2 followed the initial release and improved regex support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0004",
+      "source": "perl_2",
+      "target": "regex_engine",
+      "type": "improved",
+      "description": "Perl 2 featured a better regular-expression engine.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0005",
+      "source": "perl_3",
+      "target": "binary_data_streams",
+      "type": "introduced",
+      "description": "Perl 3 added binary stream support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0006",
+      "source": "perl",
+      "target": "perl_4",
+      "type": "evolved_into",
+      "description": "Perl 4 marked a documented release stage and capitalization shift.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0007",
+      "source": "perl_4",
+      "target": "programming_perl",
+      "type": "documented_by",
+      "description": "The 1991 book became the de facto reference.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0008",
+      "source": "perl_4",
+      "target": "perl_5",
+      "type": "preceded",
+      "description": "Perl 5 was the major interpreter rewrite following Perl 4.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0009",
+      "source": "perl_5",
+      "target": "references",
+      "type": "introduced",
+      "description": "References were among the major Perl 5 additions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0010",
+      "source": "perl_5",
+      "target": "lexical_variables",
+      "type": "introduced",
+      "description": "Lexical variables declared with my were added in Perl 5.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0011",
+      "source": "perl_5",
+      "target": "objects",
+      "type": "introduced",
+      "description": "Perl 5 added object support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0012",
+      "source": "perl_5",
+      "target": "modules",
+      "type": "introduced",
+      "description": "Perl 5's module mechanism allowed extension without modifying the interpreter.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0013",
+      "source": "perl_5_6",
+      "target": "64_bit_support",
+      "type": "introduced",
+      "description": "Perl 5.6 added 64-bit support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0014",
+      "source": "perl_5_6",
+      "target": "unicode_support",
+      "type": "improved",
+      "description": "Perl 5.6 introduced Unicode string representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0015",
+      "source": "perl_5_6",
+      "target": "large_file_support",
+      "type": "introduced",
+      "description": "Perl 5.6 supported files over 2 GiB.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0016",
+      "source": "perl_5_8",
+      "target": "unicode_support",
+      "type": "improved",
+      "description": "Perl 5.8 further improved Unicode support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0017",
+      "source": "perl_5_8",
+      "target": "thread_support",
+      "type": "introduced",
+      "description": "Perl 5.8 included a new thread implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0018",
+      "source": "perl_5_10",
+      "target": "given_when",
+      "type": "introduced",
+      "description": "Perl 5.10 introduced switch-like syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0019",
+      "source": "perl_5_10",
+      "target": "smart_match_operator",
+      "type": "introduced",
+      "description": "The smart match operator appeared in Perl 5.10.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0020",
+      "source": "perl_5_12",
+      "target": "y2038_compliance",
+      "type": "introduced",
+      "description": "Perl 5.12 included full Y2038 compliance according to the source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0021",
+      "source": "perl_5_14",
+      "target": "json_support",
+      "type": "introduced",
+      "description": "JSON support was built into the core in Perl 5.14.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0022",
+      "source": "perl_5_20",
+      "target": "subroutine_signatures",
+      "type": "introduced",
+      "description": "Subroutine signatures were listed among Perl 5.20 features.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0023",
+      "source": "perl_5_20",
+      "target": "hash_slices",
+      "type": "introduced",
+      "description": "Hash slices and new slice syntax were listed among Perl 5.20 features.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0024",
+      "source": "perl",
+      "target": "raku",
+      "type": "distinct_from",
+      "description": "Raku was formerly called Perl 6 but is developed independently from Perl 5.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0025",
+      "source": "perl_6",
+      "target": "raku",
+      "type": "renamed_to",
+      "description": "The Perl 6 name was changed to Raku in October 2019.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0026",
+      "source": "perl_7",
+      "target": "perl_5_32",
+      "type": "planned_based_on",
+      "description": "The announced Perl 7 plan initially proposed Perl 5.32 as its base.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0027",
+      "source": "perl_steering_committee",
+      "target": "perl_7_plan_cancellation",
+      "type": "decided",
+      "description": "The release plan was cancelled to avoid backward-compatibility problems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0028",
+      "source": "perl",
+      "target": "perl_philosophy_tmtowtdi",
+      "type": "guided_by",
+      "description": "The slogan describes Perl's permissive choice of multiple ways to solve tasks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0029",
+      "source": "perl",
+      "target": "easy_things_easy_hard_things_possible",
+      "type": "guided_by",
+      "description": "This slogan summarizes Perl's pragmatic design objective.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0030",
+      "source": "perl",
+      "target": "linguistic_design_influence",
+      "type": "shaped_by",
+      "description": "Larry Wall's linguistic background influenced Perl's design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0031",
+      "source": "perl",
+      "target": "practicality",
+      "type": "guided_by",
+      "description": "Perl emphasizes solving practical programming tasks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0032",
+      "source": "perl",
+      "target": "no_built_in_limits",
+      "type": "guided_by",
+      "description": "The design favors flexibility rather than arbitrary built-in limits.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0033",
+      "source": "perl",
+      "target": "c",
+      "type": "influenced_by",
+      "description": "Perl's overall program structure broadly derives from C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0034",
+      "source": "perl",
+      "target": "awk",
+      "type": "influenced_by",
+      "description": "Perl hashes and text-processing ideas draw from AWK.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0035",
+      "source": "perl",
+      "target": "sed",
+      "type": "influenced_by",
+      "description": "Perl regular expressions and text transformation draw from sed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0036",
+      "source": "perl",
+      "target": "unix_shell",
+      "type": "influenced_by",
+      "description": "Perl borrowed shell-style interpolation and scripting idioms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0037",
+      "source": "perl",
+      "target": "lisp",
+      "type": "influenced_by",
+      "description": "Perl shares expression-oriented and implicit-return ideas with Lisp.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0038",
+      "source": "perl",
+      "target": "basic",
+      "type": "influenced_by",
+      "description": "BASIC is listed as a language influence.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0039",
+      "source": "perl",
+      "target": "c",
+      "type": "influenced_by",
+      "description": "C++ is listed as a language influence.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0040",
+      "source": "perl",
+      "target": "javascript",
+      "type": "influenced",
+      "description": "The source lists JavaScript among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0041",
+      "source": "perl",
+      "target": "python",
+      "type": "influenced",
+      "description": "The source lists Python among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0042",
+      "source": "perl",
+      "target": "php",
+      "type": "influenced",
+      "description": "The source lists PHP among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0043",
+      "source": "perl",
+      "target": "ruby",
+      "type": "influenced",
+      "description": "The source lists Ruby among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0044",
+      "source": "perl",
+      "target": "powershell",
+      "type": "influenced",
+      "description": "The source lists PowerShell among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0045",
+      "source": "perl",
+      "target": "coffeescript",
+      "type": "possibly_influenced",
+      "description": "The supplied source lists this influence but marks the claim citation-needed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0046",
+      "source": "perl",
+      "target": "groovy",
+      "type": "possibly_influenced",
+      "description": "The supplied source lists this influence but marks the claim citation-needed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0047",
+      "source": "perl",
+      "target": "julia",
+      "type": "influenced",
+      "description": "The source lists Julia among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0048",
+      "source": "perl",
+      "target": "lpc",
+      "type": "influenced",
+      "description": "The source lists LPC among languages influenced by Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0049",
+      "source": "perl",
+      "target": "perl_interpreter",
+      "type": "implemented_by",
+      "description": "The core interpreter is written in C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0050",
+      "source": "perl_interpreter",
+      "target": "c",
+      "type": "implemented_in",
+      "description": "The interpreter is implemented in C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0051",
+      "source": "perl_interpreter",
+      "target": "perl_c_api",
+      "type": "exposes",
+      "description": "C-facing structures and operations form the Perl API.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0052",
+      "source": "perl_interpreter",
+      "target": "perl_compile_phase",
+      "type": "has_phase",
+      "description": "Perl processing includes a compile phase.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0053",
+      "source": "perl_interpreter",
+      "target": "perl_run_phase",
+      "type": "has_phase",
+      "description": "Perl processing includes a run phase.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0054",
+      "source": "perl_compile_phase",
+      "target": "custom_perl_lexer",
+      "type": "uses",
+      "description": "Perl uses a custom lexer to deal with context-sensitive parsing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0055",
+      "source": "custom_perl_lexer",
+      "target": "modified_gnu_bison_parser",
+      "type": "coordinates_with",
+      "description": "The lexer coordinates with a modified Bison parser.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0056",
+      "source": "perl_compile_phase",
+      "target": "syntax_tree",
+      "type": "constructs",
+      "description": "Parsed code is represented as a syntax tree.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0057",
+      "source": "syntax_tree",
+      "target": "perl_run_phase",
+      "type": "executed_during",
+      "description": "The interpreter executes by walking the syntax tree.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0058",
+      "source": "perl_compile_phase",
+      "target": "compile_time_execution",
+      "type": "supports",
+      "description": "Perl can execute code while compiling.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0059",
+      "source": "begin_block",
+      "target": "compile_time_execution",
+      "type": "participates_in",
+      "description": "BEGIN blocks execute during the compile phase.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0060",
+      "source": "eval",
+      "target": "perl_run_phase",
+      "type": "can_trigger_compilation_during",
+      "description": "Code passed as a string to eval is compiled at run time.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0061",
+      "source": "syntax_tree",
+      "target": "constant_folding",
+      "type": "optimized_by",
+      "description": "Constant folding is among syntax-tree optimizations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0062",
+      "source": "syntax_tree",
+      "target": "context_propagation",
+      "type": "optimized_by",
+      "description": "Context propagation is among syntax-tree optimizations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0063",
+      "source": "syntax_tree",
+      "target": "peephole_optimization",
+      "type": "optimized_by",
+      "description": "Peephole optimization is also performed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0064",
+      "source": "compile_time_execution",
+      "target": "turing_complete_grammar",
+      "type": "contributes_to",
+      "description": "Compile-time code can affect how later source is parsed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0065",
+      "source": "turing_complete_grammar",
+      "target": "halting_problem",
+      "type": "implicates",
+      "description": "General parsing can be limited by the undecidability of termination.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0066",
+      "source": "ppi",
+      "target": "perl",
+      "type": "parses_as_document",
+      "description": "PPI parses Perl source while preserving document integrity rather than treating it purely as executable code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0067",
+      "source": "perl_interpreter",
+      "target": "perl_functional_test_suite",
+      "type": "tested_by",
+      "description": "The core interpreter is extensively tested during builds.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0068",
+      "source": "perl",
+      "target": "perl_language_specification",
+      "type": "specified_de_facto_by",
+      "description": "For Perl 5, interpreter behavior and functional tests act as a de facto specification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0069",
+      "source": "perl",
+      "target": "dynamic_typing",
+      "type": "uses",
+      "description": "Perl is dynamically typed.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0070",
+      "source": "perl",
+      "target": "automatic_memory_management",
+      "type": "uses",
+      "description": "Perl manages storage for values automatically.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0071",
+      "source": "automatic_memory_management",
+      "target": "reference_counting",
+      "type": "implemented_using",
+      "description": "Reference counting is described as the principal mechanism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0072",
+      "source": "reference_counting",
+      "target": "circular_reference",
+      "type": "cannot_automatically_reclaim",
+      "description": "Reference counting alone cannot reclaim circular data structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0073",
+      "source": "perl",
+      "target": "regular_expressions",
+      "type": "provides",
+      "description": "Regular expressions are a core language facility.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0074",
+      "source": "regular_expressions",
+      "target": "regex_engine",
+      "type": "executed_by",
+      "description": "Pattern matching is implemented by the regex engine.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0075",
+      "source": "regular_expressions",
+      "target": "regex_x_modifier",
+      "type": "made_more_readable_by",
+      "description": "The x modifier allows whitespace and formatting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0076",
+      "source": "perl_5_005",
+      "target": "qr",
+      "type": "introduced",
+      "description": "The qr// quote operator was added in Perl 5.005.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0077",
+      "source": "perl",
+      "target": "strings",
+      "type": "supports",
+      "description": "Strings are a core data representation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0078",
+      "source": "string_interpolation",
+      "target": "strings",
+      "type": "operates_on",
+      "description": "Variable values can be interpolated into strings.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0079",
+      "source": "unix_shell",
+      "target": "string_interpolation",
+      "type": "influenced",
+      "description": "Shell interpolation influenced Perl's string interpolation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0080",
+      "source": "perl",
+      "target": "scalars",
+      "type": "supports",
+      "description": "Scalars are one of Perl's main data structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0081",
+      "source": "perl",
+      "target": "arrays",
+      "type": "supports",
+      "description": "Arrays are one of Perl's main data structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0082",
+      "source": "perl",
+      "target": "hashes",
+      "type": "supports",
+      "description": "Hashes are associative arrays and a core data structure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0083",
+      "source": "perl",
+      "target": "references",
+      "type": "supports",
+      "description": "References enable complex data structures.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0084",
+      "source": "references",
+      "target": "nested_data_structures",
+      "type": "enable",
+      "description": "References support nested combinations of arrays and hashes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0085",
+      "source": "perl",
+      "target": "subroutines",
+      "type": "supports",
+      "description": "Subroutines organize reusable behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0086",
+      "source": "perl",
+      "target": "closures",
+      "type": "supports",
+      "description": "Perl 5 supports closures as first-class values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0087",
+      "source": "closures",
+      "target": "lexical_variables",
+      "type": "capture",
+      "description": "Closures can retain access to lexically scoped variables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0088",
+      "source": "my",
+      "target": "lexical_variables",
+      "type": "declares",
+      "description": "my declares lexically scoped variables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0089",
+      "source": "our",
+      "target": "perl_5_6",
+      "type": "introduced_in",
+      "description": "The our keyword was introduced in Perl 5.6.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0090",
+      "source": "strict_pragma",
+      "target": "pragmas",
+      "type": "is_a",
+      "description": "strict is a compiler directive.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0091",
+      "source": "warnings_pragma",
+      "target": "pragmas",
+      "type": "is_a",
+      "description": "warnings is a compiler directive.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0092",
+      "source": "pragmas",
+      "target": "perl_compile_phase",
+      "type": "affect",
+      "description": "Pragmas influence compile-time checking and behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0093",
+      "source": "perl",
+      "target": "packages",
+      "type": "supports",
+      "description": "Packages provide named namespaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0094",
+      "source": "packages",
+      "target": "objects",
+      "type": "support",
+      "description": "Perl's class-based object conventions use packages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0095",
+      "source": "modules",
+      "target": "perl_5_module_system",
+      "type": "implemented_by",
+      "description": "The module system supports reusable extension outside the interpreter core.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0096",
+      "source": "cpan",
+      "target": "modules",
+      "type": "distributes",
+      "description": "CPAN hosts reusable Perl modules and distributions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0097",
+      "source": "perl_5_module_system",
+      "target": "perl_culture",
+      "type": "encourages",
+      "description": "Module support was intended to encourage a broad Perl ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0098",
+      "source": "prototypes",
+      "target": "perl_5_002",
+      "type": "introduced_in",
+      "description": "Prototypes were added in Perl 5.002.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0099",
+      "source": "objects",
+      "target": "object_oriented_programming_in_perl",
+      "type": "enable",
+      "description": "Perl 5 supports an object-oriented programming model.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0100",
+      "source": "object_oriented_programming_in_perl",
+      "target": "references",
+      "type": "built_on",
+      "description": "Perl objects are commonly represented through references.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0101",
+      "source": "object_oriented_programming_in_perl",
+      "target": "packages",
+      "type": "built_on",
+      "description": "Packages provide the namespace/class convention.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0102",
+      "source": "object_oriented_programming_in_perl",
+      "target": "class_based_method_dispatch",
+      "type": "uses",
+      "description": "Methods are dispatched according to package/class conventions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0103",
+      "source": "perl",
+      "target": "introspection",
+      "type": "supports",
+      "description": "Perl includes introspection capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0104",
+      "source": "perl",
+      "target": "automatic_data_typing",
+      "type": "uses",
+      "description": "The interpreter tracks values and performs legal conversions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0105",
+      "source": "statements",
+      "target": "expressions",
+      "type": "contain",
+      "description": "Statements can include expressions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0106",
+      "source": "perl",
+      "target": "expressions",
+      "type": "supports",
+      "description": "Expressions are a core part of Perl syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0107",
+      "source": "perl",
+      "target": "statements",
+      "type": "supports",
+      "description": "Perl is procedural and has statements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0108",
+      "source": "statements",
+      "target": "blocks",
+      "type": "grouped_into",
+      "description": "Brace-delimited blocks group statements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0109",
+      "source": "perl",
+      "target": "control_structures",
+      "type": "supports",
+      "description": "Perl provides conditionals and loops.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0110",
+      "source": "perl_5_20",
+      "target": "subroutine_signatures",
+      "type": "introduced_in",
+      "description": "Subroutine signatures were among Perl 5.20 additions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0111",
+      "source": "perl",
+      "target": "sigils",
+      "type": "uses",
+      "description": "Leading sigils distinguish different variable access forms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0112",
+      "source": "sigil",
+      "target": "scalars",
+      "type": "marks",
+      "description": "The dollar sigil is used for scalar access.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0113",
+      "source": "sigil",
+      "target": "arrays",
+      "type": "marks",
+      "description": "The at sigil denotes arrays/list-valued access.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0114",
+      "source": "sigil",
+      "target": "hashes",
+      "type": "marks",
+      "description": "The percent sigil denotes hashes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0115",
+      "source": "sigils",
+      "target": "context_sensitivity",
+      "type": "interacts_with",
+      "description": "Perl's sigils and evaluation contexts contribute to its distinctive syntax.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0116",
+      "source": "context_sensitivity",
+      "target": "scalar_context",
+      "type": "includes",
+      "description": "Scalar context is one evaluation context.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0117",
+      "source": "context_sensitivity",
+      "target": "list_context",
+      "type": "includes",
+      "description": "List context is one evaluation context.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0118",
+      "source": "perlfunc",
+      "target": "context_sensitivity",
+      "type": "documents",
+      "description": "Built-in functions can vary by list and scalar context.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0119",
+      "source": "implicit_return_value",
+      "target": "lisp",
+      "type": "shares_idea_with",
+      "description": "Perl and Lisp share implicit return of the final value in a block.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0120",
+      "source": "perl",
+      "target": "file_handles",
+      "type": "supports",
+      "description": "File handles are runtime values for I/O.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0121",
+      "source": "stdout",
+      "target": "file_handles",
+      "type": "is_a",
+      "description": "STDOUT is a standard output stream.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0122",
+      "source": "argv",
+      "target": "special_variables",
+      "type": "is_a",
+      "description": "ARGV holds command-line arguments.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0123",
+      "source": "english_module",
+      "target": "special_variables",
+      "type": "provides_names_for",
+      "description": "English offers long and short alternatives to punctuation-style variables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0124",
+      "source": "perl",
+      "target": "command_line_one_liners",
+      "type": "supports",
+      "description": "Perl is commonly used for compact shell-invoked transformations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0125",
+      "source": "shebang",
+      "target": "perl_source_extensions",
+      "type": "used_with",
+      "description": "A Perl script often begins with an interpreter-selection line.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0126",
+      "source": "plain_old_documentation_pod",
+      "target": "perl_source_extensions",
+      "type": "associated_with",
+      "description": "POD files use the .pod extension.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0127",
+      "source": "perl",
+      "target": "cgi",
+      "type": "used_for",
+      "description": "Perl gained popularity for CGI scripting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0128",
+      "source": "perl",
+      "target": "psgi",
+      "type": "used_with",
+      "description": "PSGI is a Perl web interface and file extension.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0129",
+      "source": "mod_perl",
+      "target": "interpreter_startup_overhead",
+      "type": "reduces",
+      "description": "mod_perl avoids repeatedly starting a fresh interpreter for each request.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0130",
+      "source": "activeperl",
+      "target": "isapi",
+      "type": "provided_integration_through",
+      "description": "ActivePerl provided web performance integration through ISAPI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0131",
+      "source": "perl",
+      "target": "database_interface_dbi",
+      "type": "uses",
+      "description": "Perl database access commonly uses DBI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0132",
+      "source": "database_interface_dbi",
+      "target": "database_driver_dbd",
+      "type": "delegates_to",
+      "description": "DBD modules handle database-specific access.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0133",
+      "source": "database_interface_dbi",
+      "target": "sql",
+      "type": "submits",
+      "description": "DBI applications submit SQL queries to databases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0134",
+      "source": "dbix_class",
+      "target": "database_interface_dbi",
+      "type": "abstracts_over",
+      "description": "DBIx::Class is commonly used above DBI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0135",
+      "source": "class_dbi",
+      "target": "database_interface_dbi",
+      "type": "abstracts_over",
+      "description": "Class::DBI is an ORM layer above DBI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0136",
+      "source": "rose_db_object",
+      "target": "database_interface_dbi",
+      "type": "abstracts_over",
+      "description": "Rose::DB::Object is an ORM layer above DBI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0137",
+      "source": "perl",
+      "target": "perl_tk",
+      "type": "can_use_for_gui",
+      "description": "Perl/Tk adds graphical interfaces to scripts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0138",
+      "source": "perl",
+      "target": "wxperl",
+      "type": "can_use_for_gui",
+      "description": "wxPerl adds graphical interfaces to scripts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0139",
+      "source": "inline",
+      "target": "c",
+      "type": "can_embed",
+      "description": "Inline modules can connect Perl with code in another language such as C.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0140",
+      "source": "xs",
+      "target": "c_extension_modules",
+      "type": "connects",
+      "description": "XS provides a mechanism for native C extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0141",
+      "source": "c_extension_modules",
+      "target": "perl",
+      "type": "extend",
+      "description": "C modules can implement critical routines callable from Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0142",
+      "source": "perl",
+      "target": "glue_language",
+      "type": "used_as",
+      "description": "Perl connects otherwise separate systems and interfaces.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0143",
+      "source": "perl",
+      "target": "data_munging",
+      "type": "used_for",
+      "description": "Perl processes and transforms large datasets and text.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0144",
+      "source": "perl",
+      "target": "system_administration",
+      "type": "used_for",
+      "description": "Perl is widely used for administrative scripting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0145",
+      "source": "perl",
+      "target": "network_programming",
+      "type": "used_for",
+      "description": "Network programming is a listed application area.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0146",
+      "source": "perl",
+      "target": "finance",
+      "type": "used_for",
+      "description": "Finance is a listed application area.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0147",
+      "source": "perl",
+      "target": "bioinformatics",
+      "type": "used_for",
+      "description": "Bioinformatics is a listed application area.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0148",
+      "source": "perl",
+      "target": "report_generation",
+      "type": "designed_for",
+      "description": "Report processing was an original motivation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0149",
+      "source": "perl",
+      "target": "build_and_deployment_scripts",
+      "type": "used_for",
+      "description": "Perl scripts can be portable across Windows and Unix for build/deployment.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0150",
+      "source": "perl",
+      "target": "web_applications",
+      "type": "used_for",
+      "description": "Perl has powered web applications and web infrastructure.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0151",
+      "source": "perl",
+      "target": "gui_applications",
+      "type": "used_for",
+      "description": "Perl can support GUI applications through toolkits.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0152",
+      "source": "perl",
+      "target": "lamp_stack",
+      "type": "can_be_part_of",
+      "description": "Perl can be an alternative to PHP or Python in a LAMP-style stack.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0153",
+      "source": "bugzilla",
+      "target": "perl",
+      "type": "implemented_in",
+      "description": "Bugzilla is listed among large Perl projects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0154",
+      "source": "cpanel",
+      "target": "perl",
+      "type": "implemented_in",
+      "description": "cPanel is listed among large Perl projects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0155",
+      "source": "slashdot",
+      "target": "perl",
+      "type": "uses",
+      "description": "Slashdot is listed among sites using Perl extensively.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0156",
+      "source": "duckduckgo",
+      "target": "perl",
+      "type": "uses",
+      "description": "DuckDuckGo is listed among sites using Perl extensively.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0157",
+      "source": "livejournal",
+      "target": "perl",
+      "type": "uses",
+      "description": "LiveJournal is listed among sites using Perl extensively.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0158",
+      "source": "movable_type",
+      "target": "perl",
+      "type": "implemented_in",
+      "description": "Movable Type is listed among large Perl projects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0159",
+      "source": "twiki",
+      "target": "perl",
+      "type": "implemented_in",
+      "description": "TWiki is listed among large Perl projects.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0160",
+      "source": "perl",
+      "target": "activeperl",
+      "type": "distributed_as",
+      "description": "ActivePerl is a Perl distribution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0161",
+      "source": "perl",
+      "target": "macperl",
+      "type": "ported_as",
+      "description": "MacPerl is a port for classic Mac OS.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0162",
+      "source": "perl",
+      "target": "posix",
+      "type": "portable_to",
+      "description": "Perl can be compiled on POSIX-compliant and many Unix-compatible platforms.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0163",
+      "source": "perl",
+      "target": "artistic_license_1_0",
+      "type": "licensed_under",
+      "description": "Artistic License 1.0 is one of Perl's dual licenses.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0164",
+      "source": "perl",
+      "target": "gnu_general_public_license",
+      "type": "licensed_under",
+      "description": "GPL version 1 or later is the other license option described.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0165",
+      "source": "programming_perl",
+      "target": "camel_book",
+      "type": "known_as",
+      "description": "Programming Perl is commonly nicknamed the Camel Book.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0166",
+      "source": "o_reilly_media",
+      "target": "programming_perl",
+      "type": "published",
+      "description": "O'Reilly published the reference book.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0167",
+      "source": "camel_symbol",
+      "target": "programming_perl",
+      "type": "popularized_by",
+      "description": "The camel cover became an unofficial Perl symbol.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0168",
+      "source": "o_reilly_media",
+      "target": "o_reilly_camel_trademark",
+      "type": "owns",
+      "description": "O'Reilly owns the camel image trademark described in the source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0169",
+      "source": "perl_foundation",
+      "target": "onion_logo",
+      "type": "owns",
+      "description": "The Perl Foundation owns the onion symbol.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0170",
+      "source": "new_camel_logo_2024",
+      "target": "creative_commons_license",
+      "type": "licensed_under",
+      "description": "The new logo was published under a Creative Commons license.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0171",
+      "source": "cpan",
+      "target": "third_party_perl_modules",
+      "type": "distributes",
+      "description": "CPAN is the main repository for public modules outside core.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0172",
+      "source": "perl5_porters",
+      "target": "perl",
+      "type": "coordinates_development_of",
+      "description": "The list coordinates Perl 5 development, maintenance, and porting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0173",
+      "source": "perl_mongers",
+      "target": "yapc",
+      "type": "helped_originate",
+      "description": "YAPC originated in the Perl Mongers user-group network.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0174",
+      "source": "perlmonks",
+      "target": "perl_poetry",
+      "type": "hosts",
+      "description": "Perl poetry submissions are mentioned on PerlMonks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0175",
+      "source": "larry_wall",
+      "target": "state_of_the_onion",
+      "type": "presents",
+      "description": "Larry Wall gives yearly progress and community talks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0176",
+      "source": "yapc",
+      "target": "yacc",
+      "type": "name_homage_to",
+      "description": "YAPC's name is an homage to yacc.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0177",
+      "source": "randal_l_schwartz",
+      "target": "japh",
+      "type": "associated_with",
+      "description": "Randal L. Schwartz originated the JAPH trend.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0178",
+      "source": "perl",
+      "target": "perl_golf",
+      "type": "used_for",
+      "description": "Perl's flexibility and concision make it popular for code golf.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0179",
+      "source": "perl",
+      "target": "perl_poetry",
+      "type": "used_for",
+      "description": "Perl's large vocabulary of legal constructs enables code poems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0180",
+      "source": "perl_poetry",
+      "target": "black_perl",
+      "type": "example_includes",
+      "description": "Black Perl is a known example of Perl poetry.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0181",
+      "source": "perl",
+      "target": "perl_language_specification",
+      "type": "lacks_formal_written_standard_in_source",
+      "description": "The source says Perl 5 has no separately written standard.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0182",
+      "source": "perl_functional_tests",
+      "target": "perl_test_build_process",
+      "type": "run_during",
+      "description": "Tests run as part of the normal build process.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0183",
+      "source": "perl",
+      "target": "interpreter_startup_overhead",
+      "type": "incurs",
+      "description": "Perl source is compiled each time a program starts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0184",
+      "source": "perl",
+      "target": "bytecode_interpretation",
+      "type": "incurs_cost_from",
+      "description": "Interpretive execution adds overhead compared with compiled code.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0185",
+      "source": "perl",
+      "target": "dynamic_type_checking_overhead",
+      "type": "incurs_cost_from",
+      "description": "Dynamic type checking contributes to runtime overhead.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0186",
+      "source": "perl",
+      "target": "memory_usage",
+      "type": "benchmarked_for",
+      "description": "Benchmark implementations often show relatively high memory use.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0187",
+      "source": "benchmarking_game",
+      "target": "perl",
+      "type": "benchmarks",
+      "description": "The Benchmarks Game compares typical program implementations.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0188",
+      "source": "perl_5_16",
+      "target": "perl_version_emulation",
+      "type": "introduced",
+      "description": "Perl 5.16 added a way to emulate a selected language version.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0189",
+      "source": "perl",
+      "target": "unicode_support",
+      "type": "provides",
+      "description": "Perl's Unicode capabilities improved across releases.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0190",
+      "source": "perl_5_8",
+      "target": "file_i_o",
+      "type": "improved",
+      "description": "Perl 5.8 included a new I/O implementation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0191",
+      "source": "cgi_pm",
+      "target": "cgi",
+      "type": "supports",
+      "description": "CGI.pm contributed to Perl's CGI popularity.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0192",
+      "source": "perl_5_004",
+      "target": "universal_package",
+      "type": "introduced",
+      "description": "Perl 5.004 included the UNIVERSAL package.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0193",
+      "source": "pugs",
+      "target": "raku",
+      "type": "helped_explore_design_of",
+      "description": "Pugs served as an early test platform for Perl 6 design.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0194",
+      "source": "rakudo",
+      "target": "raku",
+      "type": "implements",
+      "description": "Rakudo is an implementation of Perl 6/Raku.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0195",
+      "source": "moarvm",
+      "target": "rakudo",
+      "type": "designed_for",
+      "description": "MoarVM was designed primarily for Rakudo.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0196",
+      "source": "niecza",
+      "target": "common_language_runtime",
+      "type": "targets",
+      "description": "Niecza targeted the CLR.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0197",
+      "source": "java_virtual_machine",
+      "target": "perl_6",
+      "type": "considered_as_runtime_for",
+      "description": "The JVM was considered but found problematic as the primary runtime approach.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0198",
+      "source": "perl_6_rfcs",
+      "target": "apocalypses",
+      "type": "informed",
+      "description": "RFCs informed the Perl 6 design documents.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0199",
+      "source": "apocalypses",
+      "target": "synopses",
+      "type": "summarized_into",
+      "description": "Synopses began as summaries and evolved into the specification.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0200",
+      "source": "modern_perl",
+      "target": "cpan",
+      "type": "emphasizes",
+      "description": "Modern Perl encourages use of CPAN.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0201",
+      "source": "modern_perl",
+      "target": "perl",
+      "type": "promotes_style_of",
+      "description": "Modern Perl promotes contemporary features and code quality.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0202",
+      "source": "perl",
+      "target": "hash_slices",
+      "type": "supports",
+      "description": "Hash slices were added in Perl 5.20.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0203",
+      "source": "perl_5_12",
+      "target": "dtrace_support",
+      "type": "introduced",
+      "description": "Perl 5.12 added DTrace support.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0204",
+      "source": "perl",
+      "target": "cross_platform_portability",
+      "type": "provides",
+      "description": "Perl is available on many operating systems.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0205",
+      "source": "perldoc",
+      "target": "perl_documentation",
+      "type": "provides",
+      "description": "Perldoc provides language documentation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0206",
+      "source": "perl_culture",
+      "target": "state_of_the_onion",
+      "type": "includes",
+      "description": "The talks are a recurring cultural practice.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0207",
+      "source": "perl_culture",
+      "target": "japh",
+      "type": "includes",
+      "description": "JAPH is a recognizable community tradition.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0208",
+      "source": "perl_culture",
+      "target": "perl_golf",
+      "type": "includes",
+      "description": "Code golf is a community pastime.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0209",
+      "source": "perl_culture",
+      "target": "perl_poetry",
+      "type": "includes",
+      "description": "Perl poetry is a community art form.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0210",
+      "source": "perl_culture",
+      "target": "yapc",
+      "type": "includes",
+      "description": "Conferences are part of the community.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0211",
+      "source": "perl",
+      "target": "linguistic_heuristics",
+      "type": "uses",
+      "description": "Perl tolerates exceptions and heuristics to resolve ambiguities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0212",
+      "source": "linguistic_heuristics",
+      "target": "ambiguous_syntax",
+      "type": "resolve",
+      "description": "Heuristics help resolve Perl syntax ambiguities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0213",
+      "source": "perl",
+      "target": "write_only_language_criticism",
+      "type": "subject_to",
+      "description": "Some critics describe Perl as hard to read.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0214",
+      "source": "perl",
+      "target": "line_noise_criticism",
+      "type": "subject_to",
+      "description": "Punctuation-heavy syntax and regexes prompted the line-noise criticism.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0215",
+      "source": "perlstyle",
+      "target": "regex_x_modifier",
+      "type": "recommends",
+      "description": "The style documentation discusses using /x to improve regex readability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0216",
+      "source": "perlintro",
+      "target": "special_variables",
+      "type": "documents",
+      "description": "The introduction discusses punctuation-like special variables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0217",
+      "source": "perl",
+      "target": "file_i_o",
+      "type": "supports",
+      "description": "Perl provides I/O facilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0218",
+      "source": "perl",
+      "target": "networking_and_os_calls",
+      "type": "supports",
+      "description": "Perl includes tools for OS facilities and scripting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0219",
+      "source": "perl_command_line_options_i_n_p_l_e",
+      "target": "command_line_one_liners",
+      "type": "enables",
+      "description": "These options support concise input-processing and in-place-editing scripts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0220",
+      "source": "perl",
+      "target": "sql_query_generation",
+      "type": "used_for",
+      "description": "Perl can generate SQL and post-process result data.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0221",
+      "source": "database_interface_dbi",
+      "target": "database_handle_caching",
+      "type": "supports",
+      "description": "DBI caches handles and queries.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0222",
+      "source": "database_handle_caching",
+      "target": "slash_effect",
+      "type": "can_help_mitigate",
+      "description": "Caching can help long-running services handle load spikes.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0223",
+      "source": "perl_5_004",
+      "target": "cgi_pm",
+      "type": "included",
+      "description": "CGI.pm was included in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0224",
+      "source": "perl_5_005",
+      "target": "b_modules",
+      "type": "added_hooks_for",
+      "description": "Perl 5.005 added hooks into the backend through B::* modules.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0225",
+      "source": "perl_5_18",
+      "target": "dtrace_support",
+      "type": "expanded",
+      "description": "Perl 5.18 included new DTrace hooks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0226",
+      "source": "perl_5_32",
+      "target": "perl_7",
+      "type": "planned_baseline_for",
+      "description": "The Perl 7 plan initially targeted Perl 5.32 as its baseline.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0227",
+      "source": "perl_7_plan_cancellation",
+      "target": "perl_5",
+      "type": "preserved_ongoing_development_of",
+      "description": "The cancellation avoided imposing a major-version transition on existing Perl 5 scripts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0228",
+      "source": "windows",
+      "target": "perl",
+      "type": "supported_platform_for",
+      "description": "Perl gained Windows support and portable scripts can run on Windows.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0229",
+      "source": "classic_mac_os",
+      "target": "macperl",
+      "type": "supported_by_port",
+      "description": "MacPerl addressed classic Mac OS requirements.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0230",
+      "source": "plan_9",
+      "target": "perl",
+      "type": "supported_by_version",
+      "description": "Support was added in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0231",
+      "source": "qnx",
+      "target": "perl",
+      "type": "supported_by_version",
+      "description": "Support was added in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0232",
+      "source": "amigaos",
+      "target": "perl",
+      "type": "supported_by_version",
+      "description": "Support was added in Perl 5.004.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0233",
+      "source": "beos",
+      "target": "perl",
+      "type": "supported_by_version",
+      "description": "Support was added in Perl 5.005.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0234",
+      "source": "debian",
+      "target": "perl",
+      "type": "uses_for_system_programming",
+      "description": "The source describes Perl as extensively used for Debian system programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0235",
+      "source": "perl_interpreter_embedding",
+      "target": "perl_interpreter",
+      "type": "embeds",
+      "description": "The interpreter can be compiled as a library and embedded in another program.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0236",
+      "source": "perl_test_build_process",
+      "target": "perl_functional_tests",
+      "type": "executes",
+      "description": "The build process runs the functional test suite.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0237",
+      "source": "perl_community_conferences",
+      "target": "yapc",
+      "type": "includes",
+      "description": "YAPC is a conference series in the Perl community.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0238",
+      "source": "audrey_tang",
+      "target": "pugs",
+      "type": "created",
+      "description": "Audrey Tang began work on Pugs in 2005.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0239",
+      "source": "adam_kennedy",
+      "target": "ppi",
+      "type": "created",
+      "description": "Adam Kennedy developed PPI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0240",
+      "source": "jon_orwant",
+      "target": "perl_6_rfcs",
+      "type": "initiated_discussion_leading_to",
+      "description": "His 2000 proposal helped launch the redesign process.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0241",
+      "source": "regular_expression_text_transformation",
+      "target": "regular_expressions",
+      "type": "uses",
+      "description": "Pattern substitutions use regular expressions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0242",
+      "source": "automatic_conversions",
+      "target": "dynamic_typing",
+      "type": "are_part_of",
+      "description": "Run-time automatic conversions are part of Perl's dynamic typing behavior.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0243",
+      "source": "illegal_type_conversion",
+      "target": "dynamic_typing",
+      "type": "is_error_under",
+      "description": "Illegal conversions are described as fatal errors.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0244",
+      "source": "perl_object_representation",
+      "target": "perl_interpreter",
+      "type": "represented_inside",
+      "description": "The interpreter represents values with C structs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0245",
+      "source": "coderefs",
+      "target": "perl_object_representation",
+      "type": "represented_as",
+      "description": "Coderefs are one of the runtime values represented by C structs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0246",
+      "source": "b_modules",
+      "target": "perl_interpreter",
+      "type": "expose_hooks_into",
+      "description": "B::* modules provide hooks into interpreter internals.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0247",
+      "source": "perl_core_modules",
+      "target": "perl",
+      "type": "distributed_with",
+      "description": "Core modules ship with Perl.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0248",
+      "source": "third_party_perl_modules",
+      "target": "cpan",
+      "type": "commonly_distributed_through",
+      "description": "Third-party modules are commonly available from CPAN.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0249",
+      "source": "porting",
+      "target": "perl5_porters",
+      "type": "coordinated_by",
+      "description": "The mailing list coordinates porting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0250",
+      "source": "open_source_language_development",
+      "target": "perl",
+      "type": "describes_development_of",
+      "description": "Perl development is coordinated through maintainers and community.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0251",
+      "source": "perl_naming",
+      "target": "perl",
+      "type": "explains_name_of",
+      "description": "The proposed name Pearl was shortened after discovery of PEARL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0252",
+      "source": "perl_name_backronyms",
+      "target": "practical_extraction_and_report_language",
+      "type": "includes",
+      "description": "This is a common unofficial expansion.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0253",
+      "source": "perl_name_backronyms",
+      "target": "pathologically_eclectic_rubbish_lister",
+      "type": "includes",
+      "description": "This is a humorous alternative expansion.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0254",
+      "source": "web_glue",
+      "target": "perl",
+      "type": "implemented_with",
+      "description": "Perl can connect HTML, JavaScript, SQL, and server-side processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0255",
+      "source": "interpreted_language_performance",
+      "target": "perl",
+      "type": "characterizes",
+      "description": "Perl has interpreter startup and execution overhead typical of interpreted languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0256",
+      "source": "data_encoding_tables",
+      "target": "c_extension_modules",
+      "type": "contribute_to_code_size_of",
+      "description": "The source notes that many lines of C in modules are encoding tables.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0257",
+      "source": "perl_language_versions_and_releases",
+      "target": "perl_development_releases",
+      "type": "includes",
+      "description": "Perl uses development release channels.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0258",
+      "source": "perl_language_versions_and_releases",
+      "target": "perl_stable_releases",
+      "type": "includes",
+      "description": "Perl uses stable release channels.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0259",
+      "source": "perl_development_releases",
+      "target": "perl_5",
+      "type": "historically_versioned_as",
+      "description": "Development releases historically used odd numbers after a versioning change.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0260",
+      "source": "perl_stable_releases",
+      "target": "perl_5",
+      "type": "historically_versioned_as",
+      "description": "Stable releases historically used even numbers after a versioning change.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0261",
+      "source": "perl",
+      "target": "strings",
+      "type": "has_capability_or_construct",
+      "description": "Strings is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0262",
+      "source": "perl",
+      "target": "scalars",
+      "type": "has_capability_or_construct",
+      "description": "Scalars is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0263",
+      "source": "perl",
+      "target": "arrays",
+      "type": "has_capability_or_construct",
+      "description": "Arrays is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0264",
+      "source": "perl",
+      "target": "hashes",
+      "type": "has_capability_or_construct",
+      "description": "Hashes is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0265",
+      "source": "perl",
+      "target": "references",
+      "type": "has_capability_or_construct",
+      "description": "References is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0266",
+      "source": "perl",
+      "target": "subroutines",
+      "type": "has_capability_or_construct",
+      "description": "Subroutines is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0267",
+      "source": "perl",
+      "target": "closures",
+      "type": "has_capability_or_construct",
+      "description": "Closures is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0268",
+      "source": "perl",
+      "target": "lexical_variables",
+      "type": "has_capability_or_construct",
+      "description": "Lexical variables is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0269",
+      "source": "perl",
+      "target": "packages",
+      "type": "has_capability_or_construct",
+      "description": "Packages is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0270",
+      "source": "perl",
+      "target": "modules",
+      "type": "has_capability_or_construct",
+      "description": "Modules is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0271",
+      "source": "perl",
+      "target": "regular_expressions",
+      "type": "has_capability_or_construct",
+      "description": "Regular expressions is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0272",
+      "source": "perl",
+      "target": "expressions",
+      "type": "has_capability_or_construct",
+      "description": "Expressions is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0273",
+      "source": "perl",
+      "target": "statements",
+      "type": "has_capability_or_construct",
+      "description": "Statements is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0274",
+      "source": "perl",
+      "target": "blocks",
+      "type": "has_capability_or_construct",
+      "description": "Blocks is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0275",
+      "source": "perl",
+      "target": "control_structures",
+      "type": "has_capability_or_construct",
+      "description": "Control structures is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0276",
+      "source": "perl",
+      "target": "file_handles",
+      "type": "has_capability_or_construct",
+      "description": "File handles is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0277",
+      "source": "perl",
+      "target": "special_variables",
+      "type": "has_capability_or_construct",
+      "description": "Special variables is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0278",
+      "source": "perl",
+      "target": "unicode_support",
+      "type": "has_capability_or_construct",
+      "description": "Unicode support is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0279",
+      "source": "perl",
+      "target": "automatic_memory_management",
+      "type": "has_capability_or_construct",
+      "description": "Automatic memory management is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0280",
+      "source": "perl",
+      "target": "introspection",
+      "type": "has_capability_or_construct",
+      "description": "Introspection is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0281",
+      "source": "perl",
+      "target": "context_sensitivity",
+      "type": "has_capability_or_construct",
+      "description": "Context sensitivity is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0282",
+      "source": "perl",
+      "target": "dynamic_typing",
+      "type": "has_capability_or_construct",
+      "description": "Dynamic typing is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0283",
+      "source": "perl",
+      "target": "text_processing",
+      "type": "has_capability_or_construct",
+      "description": "Text processing is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0284",
+      "source": "perl",
+      "target": "file_i_o",
+      "type": "has_capability_or_construct",
+      "description": "File I/O is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0285",
+      "source": "perl",
+      "target": "cross_platform_portability",
+      "type": "has_capability_or_construct",
+      "description": "Cross-platform portability is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0286",
+      "source": "perl",
+      "target": "json_support",
+      "type": "has_capability_or_construct",
+      "description": "JSON support is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0287",
+      "source": "perl",
+      "target": "thread_support",
+      "type": "has_capability_or_construct",
+      "description": "Thread support is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0288",
+      "source": "perl",
+      "target": "binary_data_streams",
+      "type": "has_capability_or_construct",
+      "description": "Binary data streams is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0289",
+      "source": "perl",
+      "target": "64_bit_support",
+      "type": "has_capability_or_construct",
+      "description": "64-bit support is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0290",
+      "source": "perl",
+      "target": "large_file_support",
+      "type": "has_capability_or_construct",
+      "description": "Large-file support is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0291",
+      "source": "perl",
+      "target": "subroutine_signatures",
+      "type": "has_capability_or_construct",
+      "description": "Subroutine signatures is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0292",
+      "source": "perl",
+      "target": "given_when",
+      "type": "has_capability_or_construct",
+      "description": "given/when is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0293",
+      "source": "perl",
+      "target": "smart_match_operator",
+      "type": "has_capability_or_construct",
+      "description": "Smart match operator is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0294",
+      "source": "perl",
+      "target": "hash_slices",
+      "type": "has_capability_or_construct",
+      "description": "Hash slices is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0295",
+      "source": "perl",
+      "target": "perl_version_emulation",
+      "type": "has_capability_or_construct",
+      "description": "Perl version emulation is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0296",
+      "source": "perl",
+      "target": "plain_old_documentation_pod",
+      "type": "has_capability_or_construct",
+      "description": "Plain Old Documentation (POD) is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0297",
+      "source": "perl",
+      "target": "perl_c_api",
+      "type": "has_capability_or_construct",
+      "description": "Perl C API is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0298",
+      "source": "perl",
+      "target": "perl_core_modules",
+      "type": "has_capability_or_construct",
+      "description": "Perl core modules is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0299",
+      "source": "perl",
+      "target": "third_party_perl_modules",
+      "type": "has_capability_or_construct",
+      "description": "Third-party Perl modules is part of the Perl language, implementation, ecosystem, or documented capabilities.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0300",
+      "source": "perl",
+      "target": "perl_5_004",
+      "type": "has_version_or_release",
+      "description": "Perl 5.004 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0301",
+      "source": "perl",
+      "target": "perl_5_005",
+      "type": "has_version_or_release",
+      "description": "Perl 5.005 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0302",
+      "source": "perl",
+      "target": "perl_5_002",
+      "type": "has_version_or_release",
+      "description": "Perl 5.002 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0303",
+      "source": "perl",
+      "target": "perl_5_003",
+      "type": "has_version_or_release",
+      "description": "Perl 5.003 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0304",
+      "source": "perl",
+      "target": "perl_5_6",
+      "type": "has_version_or_release",
+      "description": "Perl 5.6 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0305",
+      "source": "perl",
+      "target": "perl_5_8",
+      "type": "has_version_or_release",
+      "description": "Perl 5.8 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0306",
+      "source": "perl",
+      "target": "perl_5_10",
+      "type": "has_version_or_release",
+      "description": "Perl 5.10 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0307",
+      "source": "perl",
+      "target": "perl_5_12",
+      "type": "has_version_or_release",
+      "description": "Perl 5.12 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0308",
+      "source": "perl",
+      "target": "perl_5_14",
+      "type": "has_version_or_release",
+      "description": "Perl 5.14 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0309",
+      "source": "perl",
+      "target": "perl_5_16",
+      "type": "has_version_or_release",
+      "description": "Perl 5.16 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0310",
+      "source": "perl",
+      "target": "perl_5_18",
+      "type": "has_version_or_release",
+      "description": "Perl 5.18 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0311",
+      "source": "perl",
+      "target": "perl_5_20",
+      "type": "has_version_or_release",
+      "description": "Perl 5.20 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0312",
+      "source": "perl",
+      "target": "perl_5_32",
+      "type": "has_version_or_release",
+      "description": "Perl 5.32 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0313",
+      "source": "perl",
+      "target": "perl_5_44_0",
+      "type": "has_version_or_release",
+      "description": "Perl 5.44.0 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0314",
+      "source": "perl",
+      "target": "perl_5_45_3",
+      "type": "has_version_or_release",
+      "description": "Perl 5.45.3 is part of the Perl release history.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0315",
+      "source": "perl",
+      "target": "cgi_scripting",
+      "type": "application_or_use_case",
+      "description": "Perl is used for cgi scripting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0316",
+      "source": "perl",
+      "target": "text_processing",
+      "type": "application_or_use_case",
+      "description": "Perl is used for text processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0317",
+      "source": "perl",
+      "target": "data_munging",
+      "type": "application_or_use_case",
+      "description": "Perl is used for data munging.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0318",
+      "source": "perl",
+      "target": "report_generation",
+      "type": "application_or_use_case",
+      "description": "Perl is used for report generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0319",
+      "source": "perl",
+      "target": "system_administration",
+      "type": "application_or_use_case",
+      "description": "Perl is used for system administration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0320",
+      "source": "perl",
+      "target": "network_programming",
+      "type": "application_or_use_case",
+      "description": "Perl is used for network programming.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0321",
+      "source": "perl",
+      "target": "finance",
+      "type": "application_or_use_case",
+      "description": "Perl is used for finance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0322",
+      "source": "perl",
+      "target": "bioinformatics",
+      "type": "application_or_use_case",
+      "description": "Perl is used for bioinformatics.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0323",
+      "source": "perl",
+      "target": "build_and_deployment_scripts",
+      "type": "application_or_use_case",
+      "description": "Perl is used for build and deployment scripts.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0324",
+      "source": "perl",
+      "target": "web_applications",
+      "type": "application_or_use_case",
+      "description": "Perl is used for web applications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0325",
+      "source": "perl",
+      "target": "gui_applications",
+      "type": "application_or_use_case",
+      "description": "Perl is used for gui applications.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0326",
+      "source": "perl",
+      "target": "sql_query_generation",
+      "type": "application_or_use_case",
+      "description": "Perl is used for sql query generation.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0327",
+      "source": "perl",
+      "target": "cpan",
+      "type": "associated_with_ecosystem",
+      "description": "CPAN is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0328",
+      "source": "perl",
+      "target": "perl5_porters",
+      "type": "associated_with_ecosystem",
+      "description": "perl5-porters is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0329",
+      "source": "perl",
+      "target": "perl_foundation",
+      "type": "associated_with_ecosystem",
+      "description": "Perl Foundation is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0330",
+      "source": "perl",
+      "target": "perl_mongers",
+      "type": "associated_with_ecosystem",
+      "description": "Perl Mongers is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0331",
+      "source": "perl",
+      "target": "perlmonks",
+      "type": "associated_with_ecosystem",
+      "description": "PerlMonks is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0332",
+      "source": "perl",
+      "target": "yapc",
+      "type": "associated_with_ecosystem",
+      "description": "YAPC is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0333",
+      "source": "perl",
+      "target": "state_of_the_onion",
+      "type": "associated_with_ecosystem",
+      "description": "State of the Onion is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0334",
+      "source": "perl",
+      "target": "modern_perl",
+      "type": "associated_with_ecosystem",
+      "description": "Modern Perl is part of Perl's development, package, or community ecosystem.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0335",
+      "source": "perl_interpreter",
+      "target": "custom_perl_lexer",
+      "type": "implementation_component_or_related_tool",
+      "description": "Custom Perl lexer is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0336",
+      "source": "perl_interpreter",
+      "target": "modified_gnu_bison_parser",
+      "type": "implementation_component_or_related_tool",
+      "description": "Modified GNU Bison parser is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0337",
+      "source": "perl_interpreter",
+      "target": "syntax_tree",
+      "type": "implementation_component_or_related_tool",
+      "description": "Syntax tree is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0338",
+      "source": "perl_interpreter",
+      "target": "perl_compile_phase",
+      "type": "implementation_component_or_related_tool",
+      "description": "Perl compile phase is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0339",
+      "source": "perl_interpreter",
+      "target": "perl_run_phase",
+      "type": "implementation_component_or_related_tool",
+      "description": "Perl run phase is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0340",
+      "source": "perl_interpreter",
+      "target": "perl_c_api",
+      "type": "implementation_component_or_related_tool",
+      "description": "Perl C API is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0341",
+      "source": "perl_interpreter",
+      "target": "perl_functional_tests",
+      "type": "implementation_component_or_related_tool",
+      "description": "Perl functional tests is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0342",
+      "source": "perl_interpreter",
+      "target": "ppi",
+      "type": "implementation_component_or_related_tool",
+      "description": "PPI is directly involved in Perl parsing, execution, testing, or native integration.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0343",
+      "source": "cgi_scripting",
+      "target": "regular_expressions",
+      "type": "benefits_from",
+      "description": "Regular expressions helped make Perl effective for CGI scripting.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0344",
+      "source": "text_processing",
+      "target": "regular_expressions",
+      "type": "uses",
+      "description": "Pattern matching is central to text processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0345",
+      "source": "text_processing",
+      "target": "strings",
+      "type": "uses",
+      "description": "String handling is central to text processing.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0346",
+      "source": "data_munging",
+      "target": "arrays",
+      "type": "uses",
+      "description": "Arrays collect ordered records and values.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0347",
+      "source": "data_munging",
+      "target": "hashes",
+      "type": "uses",
+      "description": "Hashes support keyed records and lookup.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0348",
+      "source": "report_generation",
+      "target": "text_processing",
+      "type": "uses",
+      "description": "Report generation often involves extracting and formatting text.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0349",
+      "source": "system_administration",
+      "target": "command_line_one_liners",
+      "type": "uses",
+      "description": "Compact Perl scripts are useful for administrative tasks.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0350",
+      "source": "build_and_deployment_scripts",
+      "target": "cross_platform_portability",
+      "type": "benefits_from",
+      "description": "Portable scripts simplify software packaging and maintenance.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0351",
+      "source": "web_applications",
+      "target": "database_interface_dbi",
+      "type": "can_use",
+      "description": "Perl web applications can use DBI for database access.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0352",
+      "source": "database_interface_dbi",
+      "target": "dbix_class",
+      "type": "can_be_abstracted_by",
+      "description": "ORMs can be used above DBI.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0353",
+      "source": "database_interface_dbi",
+      "target": "sql_query_generation",
+      "type": "supports_pattern",
+      "description": "DBI can submit generated SQL.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0354",
+      "source": "perl",
+      "target": "cpan",
+      "type": "ecosystem_centered_on",
+      "description": "CPAN is a central module repository.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0355",
+      "source": "cpan",
+      "target": "perl_core_modules",
+      "type": "distinct_from",
+      "description": "CPAN also provides modules outside the core distribution.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0356",
+      "source": "perl",
+      "target": "perl_6_rfcs",
+      "type": "historically_led_to",
+      "description": "The Perl community proposed a major redesign effort in 2000.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0357",
+      "source": "perl_6",
+      "target": "perl_6_rfcs",
+      "type": "designed_through",
+      "description": "The RFC process informed the Perl 6 redesign.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0358",
+      "source": "raku",
+      "target": "rakudo",
+      "type": "implemented_by",
+      "description": "Rakudo is an implementation of Raku.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0359",
+      "source": "raku",
+      "target": "moarvm",
+      "type": "commonly_runs_on",
+      "description": "MoarVM was designed primarily for Rakudo.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0360",
+      "source": "perl",
+      "target": "perl_interpreter_embedding",
+      "type": "supports",
+      "description": "The interpreter can be embedded in other programs.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0361",
+      "source": "perl",
+      "target": "xs",
+      "type": "extends_through",
+      "description": "XS connects Perl with native C extensions.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0362",
+      "source": "perl",
+      "target": "inline",
+      "type": "extends_through",
+      "description": "Inline supports interoperability with other languages.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0363",
+      "source": "perl",
+      "target": "automatic_conversions",
+      "type": "performs",
+      "description": "Legal conversions occur automatically at run time.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0364",
+      "source": "perl",
+      "target": "illegal_type_conversion",
+      "type": "rejects",
+      "description": "Illegal type conversions are fatal errors according to the source.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0365",
+      "source": "perl",
+      "target": "line_noise_criticism",
+      "type": "mitigated_by",
+      "description": "Formatting and named alternatives can improve readability.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0366",
+      "source": "perl",
+      "target": "modern_perl",
+      "type": "encouraged_by",
+      "description": "Modern Perl promotes disciplined contemporary Perl style.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0367",
+      "source": "perl",
+      "target": "perl_documentation",
+      "type": "documented_by",
+      "description": "The language is described by manuals and reference material.",
+      "properties": {}
+    },
+    {
+      "id": "rel_0368",
+      "source": "perl",
+      "target": "perl_test_build_process",
+      "type": "validated_by",
+      "description": "The test process helps ensure interpreter changes do not introduce regressions.",
+      "properties": {}
+    }
+  ]
+}
