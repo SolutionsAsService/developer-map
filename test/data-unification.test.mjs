@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { buildAtlas } from '../scripts/build-atlas.mjs';
 import { createIdentityResolver, connectivity } from '../scripts/concept-identity.mjs';
+import { documentNodes, relationshipEntries } from '../scripts/normalize-source.mjs';
 import { aliasGroups } from '../scripts/concept-curation.mjs';
 
 const atlas = await buildAtlas();
@@ -18,13 +19,13 @@ test('explicit semantic aliases unify all reviewed source members', () => {
       assert.ok(canonical.variants.some(variant => variant.sourceKey === member), member);
     }
   }
-  for (const [alias, id] of Object.entries({ k8s: 'kubernetes', dependencies: 'dependency', open_shift: 'openshift', freebsd_jails: 'freebsd_jail', 'docker:namespaces': 'namespaces', 'containerization:cgroups': 'cgroups', container_portability: 'portability' })) assert.equal(resolve(alias), id);
+  for (const [alias, id] of Object.entries({ k8s: 'kubernetes', dependencies: 'dependency', open_shift: 'openshift', freebsd_jails: 'freebsd_jail', 'Docker:namespaces': 'namespaces', 'Containerization:cgroups': 'cgroups', container_portability: 'portability' })) assert.equal(resolve(alias), id);
   assert.equal(byId.get('kubernetes').topics.length, 6);
   assert.equal(byId.get('virtual_machine').topics.length, 5);
 });
 
 test('ambiguous and narrower concepts are not conflated', () => {
-  for (const ids of [['image', 'container_image'], ['docker:service', 'kubernetes:service'], ['docker:volume', 'kubernetes:volume'], ['namespaces', 'kubernetes:namespace'], ['docker:host', 'virtual_machine:host'], ['docker_swarm', 'swarm', 'swarm_cluster'], ['portability', 'kubernetes:portability'], ['container', 'pod', 'virtual_machine']]) {
+  for (const ids of [['image', 'container_image'], ['Docker:service', 'Kubernetes:service'], ['Docker:volume', 'Kubernetes:volume'], ['namespaces', 'Kubernetes:namespace'], ['Docker:host', 'virtual_machine:host'], ['docker_swarm', 'swarm', 'swarm_cluster'], ['portability', 'Kubernetes:portability'], ['container', 'pod', 'virtual_machine']]) {
     assert.equal(new Set(ids.map(resolve)).size, ids.length);
     assert.ok(ids.every(id => byId.has(id)));
   }
@@ -50,22 +51,23 @@ test('direct meaningful core relations exist with honest provenance', () => {
 test('every endpoint and learning path remaps through its own source identity', async () => {
   let nodeRecords = 0, edgeRecords = 0;
   for (const doc of atlas.documents) {
-    const source = JSON.parse(await readFile(new URL('../data/' + doc.file, import.meta.url)));
+    const raw = JSON.parse(await readFile(new URL('../data/' + doc.file, import.meta.url)));
+    const source = documentNodes(raw);
     nodeRecords += source.nodes.length;
     for (const record of source.nodes) {
       const node = byId.get(atlas.sourceNodeMap[doc.graphId + ':' + record.id]);
       assert.ok(node);
       assert.deepEqual(node.variants.find(variant => variant.sourceKey === doc.graphId + ':' + record.id).record, record);
     }
-    for (const [index, record] of (source.edges || source.relationships).entries()) {
+    for (const { record, section, index } of relationshipEntries(raw)) {
       edgeRecords++;
-      const edge = atlas.edges.find(edge => edge.id === doc.graphId + ':' + index);
+      const edge = atlas.edges.find(edge => edge.id === doc.graphId + ':' + section + ':' + index);
       assert.deepEqual(edge.record, record);
       assert.equal(edge.source, atlas.sourceNodeMap[doc.graphId + ':' + record.source]);
       assert.equal(edge.target, atlas.sourceNodeMap[doc.graphId + ':' + record.target]);
       assert.equal(edge.provenance, 'source');
     }
-    for (const [index, record] of source.learning_paths.entries()) {
+    for (const [index, record] of (source.learning_paths || []).entries()) {
       const path = atlas.paths.find(path => path.id === doc.graphId + ':path:' + index);
       assert.deepEqual(path.record, record);
       if (Array.isArray(record.sequence)) assert.deepEqual(path.steps, record.sequence.map(id => atlas.sourceNodeMap[doc.graphId + ':' + id]).filter(Boolean));
@@ -74,8 +76,8 @@ test('every endpoint and learning path remaps through its own source identity', 
       else if (typeof record !== "string") assert.equal(path.sequenceText, record.sequence);
     }
   }
-  assert.equal(nodeRecords, 7812);
-  assert.equal(edgeRecords, 8560);
+  assert.equal(nodeRecords, 14597);
+  assert.equal(edgeRecords, 17744);
   assert.ok(atlas.edges.every(edge => byId.has(edge.source) && byId.has(edge.target) && (edge.source !== edge.target || edge.record.source === edge.record.target)));
   assert.equal(new Set(atlas.edges.map(edge => edge.id)).size, atlas.edges.length);
   assert.ok(Object.values(atlas.aliases).every(id => byId.has(id)));
@@ -85,7 +87,7 @@ test('every endpoint and learning path remaps through its own source identity', 
 test('claims and references remain isolated identities even without conventional ID prefixes', () => {
   const documents = ['one', 'two'].map(graph => ({ file: graph + '_full_test.json', data: { nodes: [{ id: 'citation', label: 'Identical reference', type: 'reference' }, { id: 'assertion', label: 'Same claim', type: 'concept' }], source_claims: [{ id: 'assertion', statement: 'Same statement' }], edges: [] } }));
   const identity = createIdentityResolver(documents, [], {});
-  for (const { file } of documents) for (const id of ['citation', 'assertion']) assert.equal(identity.resolve(file, id), file.split('_full_')[0] + ':' + id);
+  for (const { file } of documents) for (const id of ['citation', 'assertion']) assert.equal(identity.resolve(file, id), file.replace(/\.json$/, '') + ':' + id);
   for (const id of ['citation', 'assertion']) assert.throws(() => createIdentityResolver(documents, [{ id, label: id, rationale: 'Unsafe test', members: ['one:' + id, 'two:' + id] }], {}), /cannot merge/);
   const protectedNodes = atlas.nodes.filter(node => node.claim || node.variants.some(variant => /^(claim_|ref_)/.test(variant.record.id)));
   assert.ok(protectedNodes.every(node => node.topics.length === 1 && node.variants.length === 1));
@@ -93,12 +95,12 @@ test('claims and references remain isolated identities even without conventional
 
 test('connectivity audit reports disconnected data instead of inventing repairs', () => {
   assert.deepEqual(atlas.audit.connectivity, connectivity(atlas.nodes, atlas.edges));
-  assert.equal(atlas.summary.components, 1754);
-  assert.equal(atlas.summary.isolated, 1604);
-  assert.equal(atlas.audit.connectivity.componentSizes[0], 5729);
+  assert.equal(atlas.summary.components, 2560);
+  assert.equal(atlas.summary.isolated, 2234);
+  assert.equal(atlas.audit.connectivity.componentSizes[0], 6525);
   assert.ok(atlas.audit.sourceOnlyConnectivity.componentCount >= atlas.audit.connectivity.componentCount);
   assert.equal(atlas.audit.sourceClaimRecords, 526);
-  assert.deepEqual(atlas.audit.selfLoops, ['IPv6.json:234', 'Next.js.json:168', 'firewall:133', 'operating_system:46', 'operating_system:55', 'python_language:140']);
+  assert.deepEqual(atlas.audit.selfLoops, ['Firewall:relationships:133', 'IPv6:relationships:234', 'Next.js:relationships:168', 'OS:relationships:46', 'OS:relationships:55', 'Python:relationships:140', 'asm:relationships:270', 'git:relationships:42', 'git:relationships:44']);
 });
 
 test('repeated builds are byte-for-byte deterministic including layout and audits', async () => {

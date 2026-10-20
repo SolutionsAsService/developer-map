@@ -1,6 +1,6 @@
 import { writeDetails } from './build-details.mjs';
 import { createHash } from 'node:crypto';
-import { documentTitle, relationshipEntries, relationshipPredicate, normalizePath, pathRecord, isSourceFile } from './normalize-source.mjs';
+import { documentTitle, relationshipSource, relationshipTarget, relationshipPredicate, relationshipEntries, normalizePath, pathRecord, isSourceFile, graphKey, documentNodes, sourceRelationshipSections, documentPathEntries } from './normalize-source.mjs';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,8 +22,13 @@ export async function buildAtlas() {
     try { return { file, data: JSON.parse(bytes), sha256: createHash('sha256').update(bytes).digest('hex') }; }
     catch (error) { throw new Error(`Malformed source JSON ${file}: ${error.message}`); }
   }));
-  const documents = sources.filter(({ data }) => Array.isArray(data.nodes) && (Array.isArray(data.edges) || Array.isArray(data.relationships)));
-  if (documents.length !== sources.length) throw new Error('Unsupported JSON source schema (expected nodes and relationships/edges arrays): ' + sources.filter(source => !documents.includes(source)).map(source => source.file).join(', '));
+  const documents = [];
+  const skipped = [];
+  for (const source of sources) {
+    const data = documentNodes(source.data);
+    if (data && sourceRelationshipSections(data).length) documents.push({ ...source, data });
+    else skipped.push({ file: source.file, sha256: source.sha256, reason: 'No importable node or relationship arrays; retained as a downloadable source file only' });
+  }
   const identity = createIdentityResolver(documents);
   const scopedId = identity.resolve;
   const nodes = new Map();
@@ -32,11 +37,12 @@ export async function buildAtlas() {
   const paths = [];
 
   for (const { file, data, sha256 } of documents) {
-    const graphId = slug(file);
-    const relationships = relationshipEntries(data);
+    const graphId = graphKey(file);
+    const relationshipSections = sourceRelationshipSections(data);
+    const relationships = relationshipSections.flatMap(({ section, pointer, entries }) => entries.map(entry => ({ section, pointer, ...entry })));
     const title = documentTitle(data, graphId);
     const claimsById = new Map(claimEntries(data).map(claim => [claim.id, claim]));
-    const { nodes: _nodes, edges: _edges, relationships: _relationships, ...metadata } = data;
+    const { nodes: _nodes, entities: _entities, edges: _edges, relationships: _relationships, ...metadata } = data;
     const related = relatedSections(metadata, new Set([...data.nodes.map(node => node.id), ...claimsById.keys()]));
     documentMetadata.push({ file, graphId, title, sha256, domain: data.domain || data.metadata?.domain || graphId, nodeCount: data.nodes.length, edgeCount: relationships.length, fields: explainDocument(metadata), metadata });
 
@@ -58,12 +64,14 @@ export async function buildAtlas() {
       if (nodes.has(id)) continue;
       nodes.set(id, { id, originalId: claim.id, originalIds: [claim.id], label: String(claimText(claim) || claim.id).slice(0, 76), type: 'source claim', description: claimText(claim), topics: [graphId], claim: true, variants: [{ ...explainVariant(claim, file, claimsById), sourceId: claim.id, sourceKey: graphId + ':' + claim.id, related: related.get(claim.id) || [] }] });
     }
-    relationships.forEach(({ record: original, section, index }) => {
-      if (!original.source || !original.target) throw new Error(`Incomplete edge ${file}:${index}`);
-      edges.push({ id: section === 'rich_semantic_relationships' || (section === 'edges' && data.relationships) ? `${graphId}:${section}:${index}` : `${graphId}:${index}`, section, sourceIndex: index, sourcePointer: `/${section}/${index}`, source: scopedId(file, original.source), target: scopedId(file, original.target), relation: relationshipPredicate(original), kind: relationKind(relationshipPredicate(original)), assertionStatus: 'Source assertion; not independently fact-checked', semantic: original.semantic || original.description || original.mechanism || original.meaning || '', ...explainEdge(original, file, claimsById), provenance: 'source', curated: false });
+    relationships.forEach(({ record: original, section, pointer, index }) => {
+      const sourceId = relationshipSource(original), targetId = relationshipTarget(original);
+      if (!sourceId || !targetId) throw new Error(`Incomplete edge ${file}:${index}`);
+      edges.push({ id: `${graphId}:${section}:${index}`, section, sourceIndex: index, sourcePointer: `/${pointer}/${index}`, source: scopedId(file, sourceId), target: scopedId(file, targetId), relation: relationshipPredicate(original), kind: relationKind(relationshipPredicate(original)), assertionStatus: 'Source assertion; not independently fact-checked', semantic: original.semantic || original.description || original.mechanism || original.meaning || '', ...explainEdge(original, file, claimsById), provenance: 'source', curated: false });
     });
-    for (const [index, learningPath] of (data.learning_paths || []).entries()) {
-      paths.push({ id: `${graphId}:path:${index}`, title: pathRecord(learningPath, data).title || pathRecord(learningPath, data).name || pathRecord(learningPath, data).label || pathRecord(learningPath, data).id, subtitle: `From the ${title} source graph`, color: graphId, description: 'Original source learning suggestion; consecutive ideas need not have a recorded edge.', ...normalizePath(learningPath, data, id => scopedId(file, id)), document: file, sourcePointer: `/learning_paths/${index}`, record: learningPath });
+    for (const { record: learningPath, pointer } of documentPathEntries(data)) {
+      const index = pointer.split('/').pop();
+      paths.push({ id: `${graphId}:path:${index}`, title: pathRecord(learningPath, data).title || pathRecord(learningPath, data).name || pathRecord(learningPath, data).label || pathRecord(learningPath, data).id, subtitle: `From the ${title} source graph`, color: graphId, description: 'Original source learning suggestion; consecutive ideas need not have a recorded edge.', ...normalizePath(learningPath, data, id => scopedId(file, id)), document: file, sourcePointer: pointer, record: learningPath });
     }
   }
 
@@ -88,13 +96,13 @@ export async function buildAtlas() {
   layoutGraph(unifiedNodes, edges, documentMetadata);
   const graphAudit = connectivity(unifiedNodes, edges);
   const sourceAudit = connectivity(unifiedNodes, edges.filter(edge => !edge.curated));
-  const audit = { connectivity: graphAudit, sourceOnlyConnectivity: sourceAudit, aliasGroups, forcedScopes, declinedMerges,
+  const audit = { connectivity: graphAudit, sourceOnlyConnectivity: sourceAudit, aliasGroups, forcedScopes, declinedMerges, skippedSources: skipped,
     sourceNodeRecords: documents.reduce((sum, { data }) => sum + data.nodes.length, 0), sourceClaimRecords: documents.reduce((sum, { data }) => sum + claimEntries(data).length, 0),
     protectedRecordCount: identity.protectedKeys.size, selfLoops: edges.filter(edge => edge.source === edge.target).map(edge => edge.id),
     sourceParallelEdgesRetained: true, policy: 'No fuzzy identities. Original records and all parallel source edges retained. Editorial edges do not repair or endorse source claims.' };
 
   const overview = overviewProjection(unifiedNodes, edges);
-  audit.coverage = documents.map(({file, data, sha256}) => ({ file, sha256, inputNodes: data.nodes.length, importedNodeVariants: unifiedNodes.flatMap(n=>n.variants).filter(v=>v.document===file && data.nodes.some(n=>n.id===v.sourceId)).length, sections: ['edges','relationships','rich_semantic_relationships'].map(section=>({section,input:(data[section]||[]).length,imported:edges.filter(e=>e.document===file && e.section===section).length})), duplicateNodeIds: data.nodes.map(n=>n.id).filter((id,i,all)=>all.indexOf(id)!==i), duplicateRelationshipIds: relationshipEntries(data).map(e=>e.record.id).filter(Boolean).filter((id,i,all)=>all.indexOf(id)!==i) }));
+  audit.coverage = documents.map(({file, data, sha256}) => ({ file, sha256, inputNodes: data.nodes.length, importedNodeVariants: unifiedNodes.flatMap(n=>n.variants).filter(v=>v.document===file && data.nodes.some(n=>n.id===v.sourceId)).length, sections: sourceRelationshipSections(data).map(({section, entries}) => ({section,input:entries.length,imported:edges.filter(e=>e.document===file && e.section===section).length})), duplicateNodeIds: data.nodes.map(n=>n.id).filter((id,i,all)=>all.indexOf(id)!==i), duplicateRelationshipIds: relationshipEntries(data).map(e=>e.record.id).filter(Boolean).filter((id,i,all)=>all.indexOf(id)!==i) }));
   audit.conflicts = unifiedNodes.filter(n=>n.variants.length>1 && new Set(n.variants.map(v=>JSON.stringify(v.record.description||v.record.definition||v.record.semantic_definition||''))).size>1).map(n=>({id:n.id,status:'Variant descriptions differ; preserved, not resolved or endorsed',sources:n.variants.map(v=>v.sourceKey)}));
   audit.unsupportedClaims = edges.filter(e=>!e.curated && !e.evidence.length).map(e=>e.id);
   audit.missingWhy = edges.filter(e=>!e.semantic && !e.record.rationale && !e.record.explanation).map(e=>e.id);

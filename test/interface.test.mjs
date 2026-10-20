@@ -199,9 +199,9 @@ test("ambiguous old Host link offers scoped choices rather than silently guessin
     d.querySelector("#search-results").textContent,
     /multiple meanings/,
   );
-  assert.ok(d.querySelector('[data-concept="docker:host"]'));
+  assert.ok(d.querySelector('[data-concept="Docker:host"]'));
   assert.ok(d.querySelector('[data-concept="virtual_machine:host"]'));
-  d.querySelector('[data-concept="docker:host"]').click();
+  d.querySelector('[data-concept="Docker:host"]').click();
   assert.match(d.querySelector("#map-mode").textContent, /DOCKER HOST/);
   dom.window.close();
 });
@@ -227,7 +227,7 @@ test("selected edge focus is reversible and editorial evidence is a real link", 
 
 test('all new domains and neutral fallback have colors and featured source trails', async () => {
   const dom = await mount(); const w = dom.window, d = w.document;
-  for (const graph of ['operating_system','python_language','optical_disc_image','system_image','volume_computing','sandbox_computer_security']) {
+  for (const graph of ['OS','Python','optical_disc_image','system_image','volume_computing','sandbox']) {
     assert.equal(w.DeveloperMapKey.groupOf({topics:[graph],type:'concept'}), graph);
     assert.ok(w.DeveloperMapKey.domainById.get(graph).color);
     assert.ok(d.querySelector('[data-route="' + graph + ':path:0"]'));
@@ -244,12 +244,12 @@ test('all new domains and neutral fallback have colors and featured source trail
 test('text paths display full prose, preserve unresolved gaps and handle zero resolved concepts', async () => {
   const dom = await mount(); const d = dom.window.document;
   d.querySelector('#routes-more').click();
-  d.querySelector('[data-route="python_language:path:0"]').click();
+  d.querySelector('[data-route="Python:path:0"]').click();
   assert.equal(d.querySelector('.route-source-text').textContent,'python -> goals -> paradigms -> philosophy');
   d.querySelector('[data-step="1"]').click();
   assert.match(d.querySelector('#route-detail').textContent,/Unresolved source segment/);
   assert.equal(d.querySelector('#route-explore'),null);
-  d.querySelector('[data-route="python_language:path:13"]').click();
+  d.querySelector('[data-route="Python:path:13"]').click();
   assert.match(d.querySelector('#route-detail').textContent,/Cython\/Nuitka\/Numba/);
   assert.equal(d.querySelector('#route-explore'),null);
   d.querySelector('#route-next').click();
@@ -263,7 +263,7 @@ test('new ambiguous bare URLs offer scoped choices and qualified legacy aliases 
     for (const id of atlas.ambiguousAliases[key]) assert.ok(dom.window.document.querySelector('#search-results [data-concept="' + id + '"]'));
     dom.window.close();
   }
-  for (const [key,id] of [['jvm','jvm'],['python_language:jvm','jvm'],['sandbox','sandbox'],['docker:vm','virtual_machine'],['python_language:vm','python_language:vm']]) {
+  for (const [key,id] of [['jvm','jvm'],['Python:jvm','jvm'],['sandbox','sandbox'],['Docker:vm','virtual_machine'],['Python:vm','Python:vm']]) {
     const dom = await mount('http://localhost:4173/?concept=' + encodeURIComponent(key));
     assert.equal(new URL(dom.window.location.href).searchParams.get('concept'),id);
     dom.window.close();
@@ -271,7 +271,7 @@ test('new ambiguous bare URLs offer scoped choices and qualified legacy aliases 
 });
 test('rich inspector exposes section provenance, mechanism, conditions and effects', async () => {
   const dom = await mount('http://localhost:4173/?concept=os'); const d = dom.window.document;
-  const entry = d.querySelector('[data-relation-id="operating_system:rich_semantic_relationships:0"]');
+  const entry = d.querySelector('[data-relation-id="OS:rich_semantic_relationships:0"]');
   assert.ok(entry);
   for (const text of ['Mechanism','Conditions','Effect','Scope','/rich_semantic_relationships/0']) assert.ok(entry.textContent.includes(text), text);
   assert.match(d.querySelector('#inspector').textContent,/Operating System — Full Relationship/);
@@ -281,7 +281,7 @@ test('rich inspector exposes section provenance, mechanism, conditions and effec
 
 test('high degree reselect preserves every incoming outgoing parallel rich edge across overview filters', async () => {
   const dom = await mount(); const w=dom.window, d=w.document;
-  for (const legacyId of ['os','python','virtual_machine','sandbox','metaclass','operating_system:embedded','realtime']) {
+  for (const legacyId of ['os','python','virtual_machine','sandbox','metaclass','OS:embedded','realtime']) {
     const id = atlas.aliases[legacyId] || legacyId;
     const expected = atlas.edges.filter(edge => edge.source===id || edge.target===id).map(edge=>edge.id).sort();
     w.selectConcept(id);
@@ -294,7 +294,7 @@ test('high degree reselect preserves every incoming outgoing parallel rich edge 
       assert.ok(headings.findIndex(text => text.startsWith('All connections')) < headings.findIndex(text => text.startsWith('Original source records')));
     };
     verify(); d.querySelector('#edge-focus').click(); verify();
-    d.querySelector('[data-topic="docker"]').click(); verify();
+    d.querySelector('[data-topic="Docker"]').click(); verify();
     w.selectConcept(id); verify();
     assert.equal(d.querySelector('#edge-focus').getAttribute('aria-pressed'),'false');
     d.querySelector('[data-start="python"]').focus(); verify();

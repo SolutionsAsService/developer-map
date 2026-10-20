@@ -1,7 +1,8 @@
 import legacy from './legacy-identities.json' with { type: 'json' };
 import { claimEntries } from './extract-concepts.mjs';
 import { aliasGroups, forcedScopes } from './concept-curation.mjs';
-export const graphIdFor = file => file.split('_full_')[0];
+import { graphKey } from './normalize-source.mjs';
+export const graphIdFor = graphKey;
 const labelKey = node => String(node.label || node.id).trim().toLowerCase().replace(/\s+/g, ' ');
 const sortedObject = entries => Object.fromEntries([...entries].sort(([a], [b]) => a.localeCompare(b)));
 

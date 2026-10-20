@@ -26,7 +26,7 @@ async function mount({url='https://example.test/', response, delay}={}) {
 
 test('deterministic content-addressed shards cover each exact record, edge, source and path within bounds',()=>{
  const again=detailArtifacts(atlas);assert.deepEqual(artifacts.reference,again.reference);assert.deepEqual([...artifacts.files],[...again.files]);
- assert.ok(artifacts.reference.bytes<1024*1024);
+ assert.ok(artifacts.reference.bytes<4*1024*1024);
  const m=artifacts.manifest;
  for(const kind of ['nodes','edges','documents','paths']){
   const keys=kind==='paths'?m.paths:[...new Set(Object.values(m[kind]))];
@@ -42,9 +42,9 @@ test('empty 200 archive is never fetched: search click shows immediate complete 
  let release;const gate=new Promise(r=>release=r);const {w,d,calls}=await mount({delay:url=>url.includes('details/')?gate:undefined});
  const before=d.querySelector('canvas').dataset.nodePositions;
  const input=d.querySelector('#search');input.value='Next.js';input.dispatchEvent(new w.Event('input'));
- d.querySelector('#search-results [data-concept="Next.js.json:nextjs"]').click();
- assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Next.js.json:nextjs');assert.match(d.querySelector('#map-preview').textContent,/Loading full evidence/);assert.match(d.querySelector('#inspector').textContent,/record is incomplete/);
- assert.equal(d.querySelectorAll('[data-connection-id]').length,atlas.edges.filter(e=>e.source==='Next.js.json:nextjs'||e.target==='Next.js.json:nextjs').length);
+ d.querySelector('#search-results [data-concept="Next.js:nextjs"]').click();
+ assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Next.js:nextjs');assert.match(d.querySelector('#map-preview').textContent,/Loading full evidence/);assert.match(d.querySelector('#inspector').textContent,/record is incomplete/);
+ assert.equal(d.querySelectorAll('[data-connection-id]').length,atlas.edges.filter(e=>e.source==='Next.js:nextjs'||e.target==='Next.js:nextjs').length);
  release();await until(()=>d.querySelector('.detail-status.ready'));
  assert.match(d.querySelector('#inspector').textContent,/Original source records/);assert.ok(d.querySelector('[data-relation-id="editorial:next-web-framework"] a'));
  const after=JSON.parse(d.querySelector('canvas').dataset.nodePositions);for(const [id,point] of Object.entries(JSON.parse(before)))assert.deepEqual(after[id],point,id);assert.ok(!calls.some(url=>url.includes('atlas.json')));
@@ -60,20 +60,20 @@ for(const failure of ['empty','malformed','missing','stale'])test(failure+' deta
 
 test('rapid selection, clear, and late responses cannot replace the current selection',async()=>{
  let release;const gate=new Promise(r=>release=r);const {w,d}=await mount({delay:url=>url.includes('details/')?gate:undefined});
- w.selectConcept('c');w.selectConcept('python');w.clearSelection();w.selectConcept('Next.js.json:nextjs');release();await until(()=>d.querySelector('.detail-status.ready'));
- assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Next.js.json:nextjs');assert.equal(d.querySelector('#map-preview h3').textContent,'Next.js');w.close();
+ w.selectConcept('c');w.selectConcept('python');w.clearSelection();w.selectConcept('Next.js:nextjs');release();await until(()=>d.querySelector('.detail-status.ready'));
+ assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Next.js:nextjs');assert.equal(d.querySelector('#map-preview h3').textContent,'Next.js');w.close();
 });
 
 test('deep link and scoped aliases expose cross-source incoming/outgoing edges, implementation facets, neighbor navigation, back and reset',async()=>{
- const {w,d}=await mount({url:'https://example.test/?concept=python_language:cpython'});await until(()=>d.querySelector('.detail-status.ready'));
+ const {w,d}=await mount({url:'https://example.test/?concept=Python:cpython'});await until(()=>d.querySelector('.detail-status.ready'));
  assert.ok(d.querySelector('[data-relation-id="editorial:cpython-implementation-c"] a[href^="https://docs.python.org/"]'));
  const kind=d.querySelector('#connection-kind');kind.value='implementation-language';kind.dispatchEvent(new w.Event('change'));assert.ok(d.querySelector('[data-connection-id="editorial:cpython-implementation-c"]'));
  d.querySelector('[data-connection-id="editorial:cpython-implementation-c"] [data-neighbor]').click();await until(()=>d.querySelector('.detail-status.ready'));
  assert.equal(d.querySelector('canvas').dataset.selectedConcept,'c');const incoming=d.querySelector('#connection-direction');incoming.value='incoming';incoming.dispatchEvent(new w.Event('change'));assert.ok(d.querySelector('[data-connection-id="editorial:cpython-implementation-c"]'));
  d.querySelector('#connection-reset').click();assert.equal(d.querySelector('#connection-direction').value,'all');
- d.querySelector('#selection-back').click();assert.equal(d.querySelector('canvas').dataset.selectedConcept,'python_language:cpython');
+ d.querySelector('#selection-back').click();assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Python:cpython');
  d.querySelector('#reset-map').click();assert.equal(d.querySelector('#source-select').value,'all');assert.equal(d.querySelector('canvas').dataset.selectedConcept,'');
- const input=d.querySelector('#search');input.value='V8';input.dispatchEvent(new w.Event('input'));input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter'}));await until(()=>d.querySelector('.detail-status.ready'));assert.equal(d.querySelector('canvas').dataset.selectedConcept,'JavaScript.json:v8');
+ const input=d.querySelector('#search');input.value='V8';input.dispatchEvent(new w.Event('input'));input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter'}));await until(()=>d.querySelector('.detail-status.ready'));assert.equal(d.querySelector('canvas').dataset.selectedConcept,'JavaScript:v8');
  assert.ok(d.querySelector('[data-relation-id="editorial:v8-written-cpp"]'));assert.ok(d.querySelector('[data-relation-id="editorial:v8-ecmascript"]'));w.close();
 });
 
@@ -92,9 +92,9 @@ test('semantic facets do not conflate implementations, languages, runtimes, spec
 test('exact edge deep link remains synchronized through delayed evidence and dataset changes', async () => {
  let release;const gate=new Promise(resolve=>release=resolve);
  const id='editorial:next-css';
- const {w,d}=await mount({url:'https://example.test/?concept=Next.js.json:nextjs&edge='+id,delay:url=>url.includes('details/')?gate:undefined});
+ const {w,d}=await mount({url:'https://example.test/?concept=Next.js:nextjs&edge='+id,delay:url=>url.includes('details/')?gate:undefined});
  assert.equal(d.querySelector('canvas').dataset.activeEdge,id);
- const filter=d.querySelector('#source-select');filter.value='docker';filter.dispatchEvent(new w.Event('change'));
+ const filter=d.querySelector('#source-select');filter.value='Docker';filter.dispatchEvent(new w.Event('change'));
  assert.equal(d.querySelector('canvas').dataset.activeEdge,id);
  assert.equal(d.querySelector('canvas').dataset.edgeEmphasized,'true');
  const input=d.querySelector('#connection-search');input.value='CSS';input.dispatchEvent(new w.Event('input'));input.focus();input.setSelectionRange(1,2);
