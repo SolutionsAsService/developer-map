@@ -1,0 +1,3747 @@
+{
+  "schema_version": "1.0.0",
+  "graph_metadata": {
+    "title": "Bitcoin — Full Detail Knowledge Graph",
+    "description": "Comprehensive machine-readable graph of Bitcoin's history, cryptographic primitives, UTXO transaction model, proof-of-work mining, consensus, Bitcoin Core C++ implementation context, wallets, scaling, privacy, economics, governance, and legal/ecological issues, based on the supplied article plus clearly labeled explanatory modeling.",
+    "source_article": "Bitcoin",
+    "source_basis": "User-supplied Wikipedia article text with explanatory modeling and an explicit C-versus-C++ implementation clarification.",
+    "created_date": "2026-10-20",
+    "language": "en",
+    "entity_count": 210,
+    "relationship_count": 253,
+    "architecture_pattern_count": 10,
+    "derived_rule_count": 25,
+    "example_count": 8,
+    "source_count": 1
+  },
+  "entities": [
+    {
+      "id": "bitcoin",
+      "name": "Bitcoin",
+      "type": "cryptocurrency",
+      "description": "Decentralized peer-to-peer digital currency and payment system introduced in 2008–2009; uses a public blockchain and proof-of-work consensus."
+    },
+    {
+      "id": "bitcoin_network",
+      "name": "Bitcoin peer-to-peer network",
+      "type": "network",
+      "description": "Global peer-to-peer network through which nodes relay transactions and blocks without a central administrator."
+    },
+    {
+      "id": "bitcoin_core",
+      "name": "Bitcoin Core",
+      "type": "software_implementation",
+      "description": "Major open-source reference implementation of the Bitcoin protocol; the supplied article identifies it as the implementation and says it is written in C++."
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "type": "programming_language",
+      "description": "Primary implementation language of Bitcoin Core according to the supplied article; C++ is related to but distinct from C."
+    },
+    {
+      "id": "c_language",
+      "name": "C programming language",
+      "type": "programming_language",
+      "description": "Procedural systems programming language. Bitcoin Core is not accurately described as being written in C; it is written in C++."
+    },
+    {
+      "id": "open_source",
+      "name": "Free and open-source software",
+      "type": "software_model",
+      "description": "Software whose source code is available under its license for inspection, modification, and redistribution."
+    },
+    {
+      "id": "mit_license",
+      "name": "MIT License",
+      "type": "software_license",
+      "description": "Permissive open-source license listed in the supplied article for Bitcoin Core."
+    },
+    {
+      "id": "satoshi_nakamoto",
+      "name": "Satoshi Nakamoto",
+      "type": "person",
+      "description": "Pseudonym of the unknown author of the Bitcoin white paper and original implementation."
+    },
+    {
+      "id": "whitepaper",
+      "name": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "type": "publication",
+      "description": "White paper posted to a cryptography mailing list on 31 October 2008."
+    },
+    {
+      "id": "bitcoin_org",
+      "name": "bitcoin.org",
+      "type": "website",
+      "description": "Domain registered on 18 August 2008; early project website."
+    },
+    {
+      "id": "genesis_block",
+      "name": "Genesis block",
+      "type": "blockchain_object",
+      "description": "First block in the Bitcoin blockchain, mined on 3 January 2009."
+    },
+    {
+      "id": "times_headline",
+      "name": "The Times headline embedded in genesis block",
+      "type": "historical_artifact",
+      "description": "Text embedded in the genesis block: 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks'."
+    },
+    {
+      "id": "hal_finney",
+      "name": "Hal Finney",
+      "type": "person",
+      "description": "Cryptographer and early Bitcoin participant who received the first described Bitcoin transaction from Nakamoto."
+    },
+    {
+      "id": "wei_dai",
+      "name": "Wei Dai",
+      "type": "person",
+      "description": "Cryptographer who proposed b-money in 1998, a conceptual precursor to Bitcoin."
+    },
+    {
+      "id": "nick_szabo",
+      "name": "Nick Szabo",
+      "type": "person",
+      "description": "Researcher who proposed bit gold in 1998, a conceptual precursor to Bitcoin."
+    },
+    {
+      "id": "david_chaum",
+      "name": "David Chaum",
+      "type": "person",
+      "description": "Creator associated with ecash, an earlier digital-cash system developed in the 1980s."
+    },
+    {
+      "id": "cynthia_dwork",
+      "name": "Cynthia Dwork",
+      "type": "person",
+      "description": "Researcher who, with Moni Naor, proposed computational puzzles as a way to price or deter junk mail."
+    },
+    {
+      "id": "moni_naor",
+      "name": "Moni Naor",
+      "type": "person",
+      "description": "Researcher who, with Cynthia Dwork, proposed computational puzzles as a way to price or deter junk mail."
+    },
+    {
+      "id": "adam_back",
+      "name": "Adam Back",
+      "type": "person",
+      "description": "Cryptographer who developed Hashcash, a proof-of-work scheme for spam control in 1997."
+    },
+    {
+      "id": "hashcash",
+      "name": "Hashcash",
+      "type": "proof_of_work_system",
+      "description": "Proof-of-work scheme developed for spam control; a conceptual antecedent to Bitcoin mining."
+    },
+    {
+      "id": "rpow",
+      "name": "Reusable proof of work (RPOW)",
+      "type": "digital_cash_concept",
+      "description": "Reusable proof-of-work currency system developed by Hal Finney in 2004."
+    },
+    {
+      "id": "martti_malmi",
+      "name": "Martti Malmi",
+      "type": "person",
+      "description": "Finnish developer and early Bitcoin contributor who helped create content for bitcoin.org."
+    },
+    {
+      "id": "gavin_andresen",
+      "name": "Gavin Andresen",
+      "type": "person",
+      "description": "Early developer who received network alert-key and code-repository control from Nakamoto, according to the supplied article."
+    },
+    {
+      "id": "arvind_narayanan",
+      "name": "Arvind Narayanan",
+      "type": "person",
+      "description": "Computer scientist cited in the article for analysis of Bitcoin's academic and technical antecedents."
+    },
+    {
+      "id": "blockchain",
+      "name": "Bitcoin blockchain",
+      "type": "distributed_ledger",
+      "description": "Ordered public ledger of transactions represented as blocks linked through cryptographic hashes."
+    },
+    {
+      "id": "block",
+      "name": "Block",
+      "type": "blockchain_object",
+      "description": "Container of transactions plus metadata including a header and a reference to the preceding block."
+    },
+    {
+      "id": "block_header",
+      "name": "Block header",
+      "type": "data_structure",
+      "description": "Block metadata hashed for proof of work; includes fields such as previous-block hash, timestamp, target encoding, and nonce."
+    },
+    {
+      "id": "previous_block_hash",
+      "name": "Previous-block hash",
+      "type": "cryptographic_reference",
+      "description": "Hash reference linking a block to its predecessor and making history tampering computationally costly."
+    },
+    {
+      "id": "transaction",
+      "name": "Bitcoin transaction",
+      "type": "protocol_message",
+      "description": "Signed instruction that spends existing unspent transaction outputs and creates new outputs."
+    },
+    {
+      "id": "transaction_input",
+      "name": "Transaction input",
+      "type": "transaction_component",
+      "description": "Reference to a previous unspent transaction output being spent."
+    },
+    {
+      "id": "transaction_output",
+      "name": "Transaction output",
+      "type": "transaction_component",
+      "description": "Amount of bitcoin locked by a script that specifies conditions for spending."
+    },
+    {
+      "id": "utxo",
+      "name": "Unspent transaction output (UTXO)",
+      "type": "ledger_model",
+      "description": "Output created by a transaction that has not yet been spent; the basic spendable unit tracked by Bitcoin nodes."
+    },
+    {
+      "id": "utxo_set",
+      "name": "UTXO set",
+      "type": "ledger_state",
+      "description": "Set of currently unspent outputs used to determine whether transaction inputs are spendable."
+    },
+    {
+      "id": "address",
+      "name": "Bitcoin address",
+      "type": "identifier",
+      "description": "Human-shareable encoding used to direct funds; often derived from a public key or represents a script condition."
+    },
+    {
+      "id": "private_key",
+      "name": "Private key",
+      "type": "cryptographic_key",
+      "description": "Secret scalar used to authorize spending by producing digital signatures; loss can permanently remove access to funds."
+    },
+    {
+      "id": "public_key",
+      "name": "Public key",
+      "type": "cryptographic_key",
+      "description": "Public cryptographic value corresponding to a private key and used in signature verification or address/script constructions."
+    },
+    {
+      "id": "digital_signature",
+      "name": "Digital signature",
+      "type": "cryptographic_primitive",
+      "description": "Cryptographic proof authorizing a transaction under a relevant spending condition."
+    },
+    {
+      "id": "ecdsa",
+      "name": "ECDSA",
+      "type": "signature_algorithm",
+      "description": "Elliptic Curve Digital Signature Algorithm historically used by Bitcoin for signatures."
+    },
+    {
+      "id": "schnorr",
+      "name": "Schnorr signatures",
+      "type": "signature_algorithm",
+      "description": "Signature scheme enabled for Bitcoin through Taproot, with functionality benefits including improved signature handling."
+    },
+    {
+      "id": "elliptic_curve",
+      "name": "Elliptic-curve cryptography",
+      "type": "cryptographic_primitive",
+      "description": "Public-key cryptography used in Bitcoin key and signature operations."
+    },
+    {
+      "id": "hash_function",
+      "name": "Cryptographic hash function",
+      "type": "cryptographic_primitive",
+      "description": "Deterministic function mapping data to a fixed-size digest, used in block linking, proof of work, and other protocol operations."
+    },
+    {
+      "id": "sha256",
+      "name": "SHA-256",
+      "type": "hash_algorithm",
+      "description": "Hash algorithm used twice on Bitcoin block headers for proof-of-work and block identifiers."
+    },
+    {
+      "id": "double_sha256",
+      "name": "Double SHA-256",
+      "type": "hash_construction",
+      "description": "Application of SHA-256 twice, used for Bitcoin block-header hashing."
+    },
+    {
+      "id": "nonce",
+      "name": "Nonce",
+      "type": "block_header_field",
+      "description": "Variable miners change while searching for a block header hash below the difficulty target."
+    },
+    {
+      "id": "difficulty_target",
+      "name": "Proof-of-work difficulty target",
+      "type": "consensus_parameter",
+      "description": "Numerical threshold that a candidate block hash must be below to satisfy proof of work."
+    },
+    {
+      "id": "proof_of_work",
+      "name": "Proof of work",
+      "type": "consensus_mechanism",
+      "description": "Computational puzzle mechanism used to make block production costly and establish a chain with accumulated work."
+    },
+    {
+      "id": "mining",
+      "name": "Bitcoin mining",
+      "type": "protocol_process",
+      "description": "Process of selecting and assembling transactions, searching for valid proof of work, and proposing candidate blocks."
+    },
+    {
+      "id": "miner",
+      "name": "Bitcoin miner",
+      "type": "network_role",
+      "description": "Participant that constructs candidate blocks and expends computation searching for a valid proof of work."
+    },
+    {
+      "id": "hashrate",
+      "name": "Hash rate",
+      "type": "measurement",
+      "description": "Rate at which mining hardware computes candidate hashes."
+    },
+    {
+      "id": "mining_hardware",
+      "name": "Mining hardware",
+      "type": "hardware_category",
+      "description": "Computers used to perform proof-of-work calculations; modern mining uses specialized equipment."
+    },
+    {
+      "id": "asic",
+      "name": "Application-specific integrated circuit (ASIC)",
+      "type": "hardware",
+      "description": "Specialized mining hardware designed to perform hashing efficiently."
+    },
+    {
+      "id": "gpu",
+      "name": "Graphics processing unit (GPU)",
+      "type": "hardware",
+      "description": "Parallel processor that has been used for mining, though specialized ASICs dominate Bitcoin proof-of-work."
+    },
+    {
+      "id": "fpga",
+      "name": "Field-programmable gate array (FPGA)",
+      "type": "hardware",
+      "description": "Reconfigurable hardware historically used for cryptocurrency mining."
+    },
+    {
+      "id": "mining_pool",
+      "name": "Mining pool",
+      "type": "organization",
+      "description": "Group of miners coordinating work and sharing rewards to reduce payout variance; can concentrate hash power."
+    },
+    {
+      "id": "coinbase_transaction",
+      "name": "Coinbase transaction",
+      "type": "transaction_type",
+      "description": "Special first transaction in a block that claims the block subsidy and collected transaction fees."
+    },
+    {
+      "id": "block_subsidy",
+      "name": "Block subsidy",
+      "type": "economic_mechanism",
+      "description": "Newly issued bitcoin claimable by a valid block's coinbase transaction."
+    },
+    {
+      "id": "block_reward",
+      "name": "Block reward",
+      "type": "economic_mechanism",
+      "description": "Miner compensation consisting of the block subsidy plus transaction fees."
+    },
+    {
+      "id": "halving",
+      "name": "Bitcoin halving",
+      "type": "protocol_event",
+      "description": "Scheduled reduction of the block subsidy by half every 210,000 blocks."
+    },
+    {
+      "id": "transaction_fee",
+      "name": "Transaction fee",
+      "type": "economic_mechanism",
+      "description": "Difference between total transaction inputs and outputs; paid to the miner of a block including the transaction."
+    },
+    {
+      "id": "difficulty_adjustment",
+      "name": "Difficulty adjustment",
+      "type": "consensus_process",
+      "description": "Protocol recalculation every 2,016 blocks to keep average block interval near ten minutes."
+    },
+    {
+      "id": "block_time",
+      "name": "Ten-minute target block interval",
+      "type": "protocol_parameter",
+      "description": "Target average interval between blocks, not a guaranteed exact interval."
+    },
+    {
+      "id": "node",
+      "name": "Bitcoin node",
+      "type": "network_role",
+      "description": "Software participant that independently checks transactions and blocks and maintains ledger state."
+    },
+    {
+      "id": "full_node",
+      "name": "Full node",
+      "type": "network_role",
+      "description": "Node that validates consensus rules and maintains blockchain/UTXO data needed for independent verification."
+    },
+    {
+      "id": "lightweight_client",
+      "name": "Lightweight wallet/client",
+      "type": "software_category",
+      "description": "Client that sends and receives transactions without storing and validating the entire blockchain locally."
+    },
+    {
+      "id": "spv",
+      "name": "Simplified payment verification (SPV)",
+      "type": "verification_method",
+      "description": "Lightweight verification approach that relies on block headers and proofs rather than a complete locally validated chain."
+    },
+    {
+      "id": "blockchain_explorer",
+      "name": "Blockchain explorer",
+      "type": "software_tool",
+      "description": "Tool for viewing public block, transaction, and address-related data."
+    },
+    {
+      "id": "consensus",
+      "name": "Bitcoin consensus",
+      "type": "distributed_system_concept",
+      "description": "Convergence of independently validating nodes on the valid chain with the greatest accumulated proof of work."
+    },
+    {
+      "id": "chainwork",
+      "name": "Accumulated chain work",
+      "type": "consensus_metric",
+      "description": "Cumulative proof-of-work measure used to compare competing valid chains; often simplified as the most-work chain rather than merely longest by block count."
+    },
+    {
+      "id": "longest_chain_rule",
+      "name": "Most-work chain selection",
+      "type": "consensus_rule",
+      "description": "Nodes follow the valid chain with the greatest accumulated work; commonly described informally as the longest-chain rule."
+    },
+    {
+      "id": "double_spending",
+      "name": "Double spending",
+      "type": "security_problem",
+      "description": "Attempt to spend the same value more than once by creating conflicting transactions."
+    },
+    {
+      "id": "majority_attack",
+      "name": "Majority hash-rate attack",
+      "type": "security_attack",
+      "description": "Attack in which an adversary controlling a majority of hash rate may reorganize recent history, censor transactions, or double-spend; it does not permit arbitrary rule violations."
+    },
+    {
+      "id": "sybil_attack",
+      "name": "Sybil attack",
+      "type": "security_attack",
+      "description": "Attack in which one actor creates many apparent identities; proof of work helps make influence depend on computational work rather than node count."
+    },
+    {
+      "id": "byzantine_fault_tolerance",
+      "name": "Byzantine fault tolerance",
+      "type": "distributed_system_property",
+      "description": "Ability to maintain agreement despite some adversarial or faulty participants, under the protocol's assumptions."
+    },
+    {
+      "id": "transaction_validation",
+      "name": "Transaction validation",
+      "type": "validation_process",
+      "description": "Checks that transactions satisfy consensus rules, including valid inputs, signatures/scripts, and no spending of unavailable outputs."
+    },
+    {
+      "id": "block_validation",
+      "name": "Block validation",
+      "type": "validation_process",
+      "description": "Checks that a proposed block and its transactions satisfy consensus rules, including proof of work and valid transaction ordering/state transitions."
+    },
+    {
+      "id": "mempool",
+      "name": "Mempool",
+      "type": "node_data_structure",
+      "description": "Node-local collection of valid-looking unconfirmed transactions waiting for inclusion in a block; mempools can differ among nodes."
+    },
+    {
+      "id": "broadcast",
+      "name": "Peer-to-peer relay",
+      "type": "network_process",
+      "description": "Propagation of transactions and blocks among connected nodes."
+    },
+    {
+      "id": "fork",
+      "name": "Blockchain fork",
+      "type": "protocol_event",
+      "description": "Divergence in block histories or software rules; temporary chain splits can resolve, while consensus-rule splits may persist."
+    },
+    {
+      "id": "soft_fork",
+      "name": "Soft fork",
+      "type": "protocol_upgrade",
+      "description": "Backward-compatible tightening of consensus rules for nodes that do not upgrade in certain respects."
+    },
+    {
+      "id": "hard_fork",
+      "name": "Hard fork",
+      "type": "protocol_upgrade",
+      "description": "Change not compatible with older consensus rules, potentially creating a persistent separate chain."
+    },
+    {
+      "id": "segwit",
+      "name": "Segregated Witness (SegWit)",
+      "type": "protocol_upgrade",
+      "description": "2017 upgrade that changed transaction data accounting and signature-data handling, supporting capacity improvements and Lightning Network use."
+    },
+    {
+      "id": "taproot",
+      "name": "Taproot",
+      "type": "protocol_upgrade",
+      "description": "Upgrade activated in November 2021 adding Schnorr signatures and improved scripting/privacy-efficiency capabilities."
+    },
+    {
+      "id": "bitcoin_cash",
+      "name": "Bitcoin Cash",
+      "type": "cryptocurrency_fork",
+      "description": "Separate cryptocurrency created in 2017 after a dispute over scaling and block-size policy."
+    },
+    {
+      "id": "lightning_network",
+      "name": "Lightning Network",
+      "type": "layer_two_protocol",
+      "description": "Second-layer payment network designed to enable faster, lower-on-chain-footprint Bitcoin payments through payment channels."
+    },
+    {
+      "id": "payment_channel",
+      "name": "Payment channel",
+      "type": "layer_two_component",
+      "description": "Mechanism allowing parties to update payment balances off-chain and settle opening/closing state on the base chain."
+    },
+    {
+      "id": "scalability",
+      "name": "Bitcoin scalability",
+      "type": "system_property",
+      "description": "Ability to process more transactions while preserving acceptable cost, latency, and decentralization."
+    },
+    {
+      "id": "block_size_limit",
+      "name": "Block-size and block-weight constraints",
+      "type": "protocol_constraint",
+      "description": "Constraints on block capacity that limit base-layer transaction throughput and can affect fees and confirmation delays."
+    },
+    {
+      "id": "privacy",
+      "name": "Bitcoin privacy",
+      "type": "security_property",
+      "description": "Degree to which transaction activity can be linked to people; Bitcoin is pseudonymous, not inherently anonymous."
+    },
+    {
+      "id": "pseudonymity",
+      "name": "Pseudonymity",
+      "type": "privacy_model",
+      "description": "Transactions refer to addresses rather than directly to civil identities, while all on-chain activity remains publicly observable."
+    },
+    {
+      "id": "fungibility",
+      "name": "Fungibility",
+      "type": "monetary_property",
+      "description": "Interchangeability of units; Bitcoin protocol treats units under the same rules, but transaction histories may lead third parties to discriminate."
+    },
+    {
+      "id": "chain_analysis",
+      "name": "Blockchain chain analysis",
+      "type": "analysis_method",
+      "description": "Analysis of public transaction graph and usage patterns to infer address relationships or likely identities."
+    },
+    {
+      "id": "new_address",
+      "name": "Address reuse avoidance",
+      "type": "privacy_practice",
+      "description": "Generating new receiving addresses can reduce some linkability but does not guarantee anonymity."
+    },
+    {
+      "id": "wallet",
+      "name": "Bitcoin wallet",
+      "type": "software_category",
+      "description": "Software or device managing keys and transaction data needed to receive, construct, sign, and broadcast bitcoin transactions; it does not literally store coins."
+    },
+    {
+      "id": "hot_wallet",
+      "name": "Hot wallet",
+      "type": "wallet_type",
+      "description": "Wallet whose keys or signing capability are connected to an internet-connected system, creating online compromise risks."
+    },
+    {
+      "id": "cold_storage",
+      "name": "Cold storage",
+      "type": "key_management_method",
+      "description": "Keeping private keys offline to reduce exposure to online attacks."
+    },
+    {
+      "id": "hardware_wallet",
+      "name": "Hardware wallet",
+      "type": "wallet_type",
+      "description": "Dedicated device that protects private keys and signs transactions while limiting key exposure to a general-purpose computer."
+    },
+    {
+      "id": "paper_wallet",
+      "name": "Paper wallet",
+      "type": "wallet_type",
+      "description": "Printed key material or recovery information; vulnerable to loss, damage, theft, and unsafe generation practices."
+    },
+    {
+      "id": "custodial_wallet",
+      "name": "Custodial wallet",
+      "type": "wallet_type",
+      "description": "Service in which a third party controls the keys or credentials associated with users' funds."
+    },
+    {
+      "id": "noncustodial_wallet",
+      "name": "Non-custodial wallet",
+      "type": "wallet_type",
+      "description": "Wallet where the user controls the private keys or signing authority."
+    },
+    {
+      "id": "multisig",
+      "name": "Multisignature script",
+      "type": "script_pattern",
+      "description": "Spending condition requiring signatures from multiple distinct keys according to a configured threshold or policy."
+    },
+    {
+      "id": "script",
+      "name": "Bitcoin Script",
+      "type": "scripting_language",
+      "description": "Forth-like stack-based scripting language used to express transaction output spending conditions."
+    },
+    {
+      "id": "script_hash",
+      "name": "Script hash",
+      "type": "cryptographic_identifier",
+      "description": "Hash-based representation used in certain address formats to commit to spending conditions."
+    },
+    {
+      "id": "satoshi",
+      "name": "Satoshi",
+      "type": "currency_unit",
+      "description": "Smallest base unit described in the article: one hundred-millionth of a bitcoin."
+    },
+    {
+      "id": "millibitcoin",
+      "name": "Millibitcoin (mBTC)",
+      "type": "currency_unit",
+      "description": "One-thousandth of a bitcoin."
+    },
+    {
+      "id": "microbitcoin",
+      "name": "Microbitcoin",
+      "type": "currency_unit",
+      "description": "One-millionth of a bitcoin."
+    },
+    {
+      "id": "btc_code",
+      "name": "BTC",
+      "type": "currency_code",
+      "description": "Common code for bitcoin; article notes that XBT is also used in some contexts."
+    },
+    {
+      "id": "xbt_code",
+      "name": "XBT",
+      "type": "currency_code",
+      "description": "Code used by some financial data services; conforms to the X-prefixed convention but is not officially recognized by ISO according to the article."
+    },
+    {
+      "id": "bitcoin_sign",
+      "name": "Bitcoin sign ₿",
+      "type": "currency_symbol",
+      "description": "Unicode character U+20BF commonly used as Bitcoin's symbol."
+    },
+    {
+      "id": "supply_limit",
+      "name": "21-million bitcoin supply limit",
+      "type": "monetary_policy",
+      "description": "Protocol issuance limit commonly described as 21 million bitcoin; exact theoretical total is slightly below 21 million due to subsidy schedule rounding."
+    },
+    {
+      "id": "issuance_schedule",
+      "name": "Bitcoin issuance schedule",
+      "type": "monetary_policy",
+      "description": "Decentralized issuance through coinbase block subsidies that halve every 210,000 blocks."
+    },
+    {
+      "id": "circulating_supply",
+      "name": "Circulating bitcoin supply",
+      "type": "economic_metric",
+      "description": "Amount of bitcoin considered in circulation at a given date; estimates are date-sensitive."
+    },
+    {
+      "id": "exchange_rate",
+      "name": "Floating exchange rate",
+      "type": "market_property",
+      "description": "Bitcoin's price is market-determined and can vary significantly across time and venues."
+    },
+    {
+      "id": "volatility",
+      "name": "Price volatility",
+      "type": "market_property",
+      "description": "Large and sometimes rapid price changes that affect bitcoin's suitability for pricing and everyday payments."
+    },
+    {
+      "id": "exchange",
+      "name": "Cryptocurrency exchange",
+      "type": "market_infrastructure",
+      "description": "Service or marketplace where users trade bitcoin for fiat currencies or other digital assets."
+    },
+    {
+      "id": "bitcoin_futures",
+      "name": "Bitcoin futures",
+      "type": "financial_instrument",
+      "description": "Derivative contracts giving exposure to bitcoin prices; CME futures began in December 2017 according to the article."
+    },
+    {
+      "id": "spot_etf",
+      "name": "Spot bitcoin exchange-traded fund",
+      "type": "financial_instrument",
+      "description": "Exchange-traded investment product designed to provide exposure to spot bitcoin prices; US spot products began trading in January 2024 according to the article."
+    },
+    {
+      "id": "investment_asset",
+      "name": "Bitcoin as an investment asset",
+      "type": "economic_use",
+      "description": "Use of bitcoin as a speculative investment or store-of-value claim rather than primarily for routine payments."
+    },
+    {
+      "id": "store_of_value",
+      "name": "Store of value",
+      "type": "monetary_function",
+      "description": "Function of an asset to preserve purchasing power over time; Bitcoin's performance in this role is contested."
+    },
+    {
+      "id": "medium_of_exchange",
+      "name": "Medium of exchange",
+      "type": "monetary_function",
+      "description": "Function of money used to buy goods or services; bitcoin usage is constrained by volatility, fees, and confirmation latency."
+    },
+    {
+      "id": "unit_of_account",
+      "name": "Unit of account",
+      "type": "monetary_function",
+      "description": "Function of money as a common denomination for quoting prices; prices are rarely denominated directly in bitcoin according to the article."
+    },
+    {
+      "id": "austrian_economics",
+      "name": "Austrian school of economics",
+      "type": "economic_school",
+      "description": "Economic tradition associated in the article with Bitcoin's ideological roots and free-market monetary ideas."
+    },
+    {
+      "id": "friedrich_hayek",
+      "name": "Friedrich Hayek",
+      "type": "person",
+      "description": "Economist whose book The Denationalisation of Money argued for competition in money production and management."
+    },
+    {
+      "id": "denationalisation_of_money",
+      "name": "The Denationalisation of Money",
+      "type": "publication",
+      "description": "Hayek's work cited as an ideological antecedent for private and market-based money."
+    },
+    {
+      "id": "libertarianism",
+      "name": "Libertarian political philosophy",
+      "type": "political_ideology",
+      "description": "Ideological current that values individual liberty and limits on state control; some early Bitcoin proponents were attracted to it."
+    },
+    {
+      "id": "cypherpunk_movement",
+      "name": "Cypherpunk movement",
+      "type": "social_movement",
+      "description": "Community promoting privacy-enhancing cryptography and technologies for individual autonomy; contextual predecessor to Bitcoin."
+    },
+    {
+      "id": "regulation",
+      "name": "Bitcoin regulation",
+      "type": "governance_topic",
+      "description": "Legal and compliance treatment of Bitcoin, exchanges, miners, and intermediaries varies by jurisdiction."
+    },
+    {
+      "id": "fincen",
+      "name": "Financial Crimes Enforcement Network (FinCEN)",
+      "type": "government_agency",
+      "description": "US agency that issued 2013 guidance on decentralized virtual currencies and certain money-services obligations."
+    },
+    {
+      "id": "legal_tender",
+      "name": "Legal tender status",
+      "type": "legal_concept",
+      "description": "Legal designation for a currency or payment instrument; Bitcoin's status varies by jurisdiction and over time."
+    },
+    {
+      "id": "el_salvador",
+      "name": "El Salvador",
+      "type": "country",
+      "description": "Country that adopted bitcoin as legal tender in 2021 alongside the US dollar, followed by a 2025 reform removing mandatory acceptance obligations according to the supplied article."
+    },
+    {
+      "id": "central_african_republic",
+      "name": "Central African Republic",
+      "type": "country",
+      "description": "Country that adopted bitcoin as legal tender in 2022 and repealed the reform in 2023 according to the article."
+    },
+    {
+      "id": "silk_road",
+      "name": "Silk Road",
+      "type": "historical_marketplace",
+      "description": "Dark-web marketplace that accepted bitcoin and became an early high-profile example of its use in illicit markets."
+    },
+    {
+      "id": "mt_gox",
+      "name": "Mt. Gox",
+      "type": "cryptocurrency_exchange",
+      "description": "Early major bitcoin exchange associated with regulatory action and large-scale losses/theft."
+    },
+    {
+      "id": "bitcoin_pizza_day",
+      "name": "Bitcoin Pizza Day",
+      "type": "historical_event",
+      "description": "Commemorates the 22 May 2010 purchase of two pizzas for 10,000 BTC by Laszlo Hanyecz."
+    },
+    {
+      "id": "laszlo_hanyecz",
+      "name": "Laszlo Hanyecz",
+      "type": "person",
+      "description": "Programmer associated with the first known commercial Bitcoin purchase described in the article: two pizzas for 10,000 BTC."
+    },
+    {
+      "id": "microstrategy",
+      "name": "MicroStrategy / Strategy",
+      "type": "company",
+      "description": "Company described in the article as having purchased bitcoin as a treasury reserve asset in 2020."
+    },
+    {
+      "id": "square",
+      "name": "Square, Inc.",
+      "type": "company",
+      "description": "Company that purchased bitcoin in 2020 according to the article; later known as Block, Inc."
+    },
+    {
+      "id": "massmutual",
+      "name": "MassMutual",
+      "type": "company",
+      "description": "Insurer that invested in bitcoin in 2020 according to the article."
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "type": "company",
+      "description": "Payments company that added US support for buying, holding, and selling bitcoin in November 2020 according to the article."
+    },
+    {
+      "id": "blackrock",
+      "name": "BlackRock",
+      "type": "company",
+      "description": "Asset manager discussed in the article in connection with a 2024 recommendation about possible portfolio allocation to bitcoin."
+    },
+    {
+      "id": "proshares_bito",
+      "name": "ProShares BITO",
+      "type": "financial_product",
+      "description": "Bitcoin futures ETF listed in October 2021 according to the article."
+    },
+    {
+      "id": "cme",
+      "name": "Chicago Mercantile Exchange (CME)",
+      "type": "financial_market",
+      "description": "Exchange that introduced bitcoin futures in December 2017 and listed the ProShares BITO futures ETF."
+    },
+    {
+      "id": "imf",
+      "name": "International Monetary Fund (IMF)",
+      "type": "international_organization",
+      "description": "International organization that urged El Salvador in 2022 to reverse its bitcoin legal-tender decision; the article links later reforms to IMF loan conditions."
+    },
+    {
+      "id": "environmental_impact",
+      "name": "Environmental impact of mining",
+      "type": "environmental_topic",
+      "description": "Electricity use and electronic waste associated with proof-of-work mining; estimates and implications are debated."
+    },
+    {
+      "id": "electricity_consumption",
+      "name": "Mining electricity consumption",
+      "type": "environmental_metric",
+      "description": "Electricity used by mining hardware to compute proof of work."
+    },
+    {
+      "id": "electronic_waste",
+      "name": "Mining electronic waste",
+      "type": "environmental_metric",
+      "description": "Discarded mining hardware resulting from short equipment lifetimes and rapid efficiency competition."
+    },
+    {
+      "id": "energy_mix",
+      "name": "Mining electricity energy mix",
+      "type": "environmental_metric",
+      "description": "Mix of fossil and non-fossil energy sources used by mining operations."
+    },
+    {
+      "id": "51_percent",
+      "name": "51% hash-rate threshold",
+      "type": "security_threshold",
+      "description": "Common shorthand for majority control of active mining hash rate; can enable reorganization/censorship but cannot make invalid transactions valid to honest nodes."
+    },
+    {
+      "id": "confirmation",
+      "name": "Transaction confirmation",
+      "type": "ledger_status",
+      "description": "Inclusion of a transaction in a block; later blocks add depth and generally increase the cost of reversing it."
+    },
+    {
+      "id": "reorganization",
+      "name": "Chain reorganization",
+      "type": "consensus_event",
+      "description": "Replacement of a node's previously preferred chain with another valid chain having greater accumulated work."
+    },
+    {
+      "id": "network_partition",
+      "name": "Network partition",
+      "type": "network_failure_mode",
+      "description": "Temporary loss of connectivity that can cause nodes to see competing candidate chains."
+    },
+    {
+      "id": "orphaned_block",
+      "name": "Stale/orphaned block",
+      "type": "blockchain_object",
+      "description": "Valid block not retained in the ultimately preferred chain after competing blocks are resolved."
+    },
+    {
+      "id": "transaction_malleability",
+      "name": "Transaction malleability",
+      "type": "security_topic",
+      "description": "Potential change in transaction identifier representation without changing the economic intent; SegWit altered relevant transaction-data handling."
+    },
+    {
+      "id": "taproot_script",
+      "name": "Taproot script-path spending",
+      "type": "script_pattern",
+      "description": "Taproot spending path allowing a committed script condition to be revealed and executed when used."
+    },
+    {
+      "id": "ordinals",
+      "name": "Ordinals",
+      "type": "protocol_extension",
+      "description": "Protocol convention introduced in 2023 for identifying satoshis and associating data with them, described by the article in connection with Bitcoin NFTs."
+    },
+    {
+      "id": "nft",
+      "name": "Non-fungible token (NFT)",
+      "type": "digital_asset_concept",
+      "description": "Unique or non-interchangeable digital-asset representation; Ordinals enabled NFT-like uses on Bitcoin."
+    },
+    {
+      "id": "payment_processor",
+      "name": "Bitcoin payment processor",
+      "type": "market_infrastructure",
+      "description": "Intermediary that may convert between bitcoin and fiat or facilitate merchant payments."
+    },
+    {
+      "id": "remittance",
+      "name": "Cross-border remittance",
+      "type": "economic_use",
+      "description": "Cross-border money transfer use case sometimes proposed for bitcoin, though article reports limited evidence of broad remittance use in 2015."
+    },
+    {
+      "id": "criminal_use",
+      "name": "Criminal use and illicit finance",
+      "type": "risk_topic",
+      "description": "Illicit uses that have attracted law-enforcement and regulatory attention; Bitcoin's public ledger also enables tracing."
+    },
+    {
+      "id": "double_entry_ledger",
+      "name": "Traditional account-based ledger",
+      "type": "ledger_model",
+      "description": "Conventional ledger model contrasted with Bitcoin's model of transaction outputs and cryptographic ownership authorization."
+    },
+    {
+      "id": "peer_to_peer",
+      "name": "Peer-to-peer architecture",
+      "type": "architecture",
+      "description": "System architecture in which participants communicate directly without a required central server or administrator."
+    },
+    {
+      "id": "distributed_system",
+      "name": "Distributed system",
+      "type": "computer_science_concept",
+      "description": "Multiple independent computers coordinate over a network while maintaining state and applying common rules."
+    },
+    {
+      "id": "cryptography",
+      "name": "Cryptography",
+      "type": "academic_field",
+      "description": "Mathematical techniques used in Bitcoin for signatures, hashes, key control, and transaction authorization."
+    },
+    {
+      "id": "digital_scarcity",
+      "name": "Digital scarcity",
+      "type": "economic_computer_concept",
+      "description": "Property of making digitally represented units scarce under agreed protocol rules, despite digital data being easy to copy."
+    },
+    {
+      "id": "censorship_resistance",
+      "name": "Censorship resistance",
+      "type": "security_property",
+      "description": "Resistance to an actor preventing valid transactions from being relayed or included; depends on network and mining decentralization."
+    },
+    {
+      "id": "decentralization",
+      "name": "Decentralization",
+      "type": "system_property",
+      "description": "Distribution of validation, mining, development, custody, and infrastructure across independent actors."
+    },
+    {
+      "id": "governance",
+      "name": "Bitcoin protocol governance",
+      "type": "governance_process",
+      "description": "Informal coordination among developers, node operators, miners, businesses, and users around software and consensus changes."
+    },
+    {
+      "id": "developer",
+      "name": "Bitcoin Core developer",
+      "type": "network_role",
+      "description": "Contributor who proposes, reviews, implements, or maintains Bitcoin software changes."
+    },
+    {
+      "id": "release",
+      "name": "Bitcoin Core release",
+      "type": "software_release",
+      "description": "Versioned distribution of Bitcoin Core; article lists release 31.1.0 on 7 July 2026."
+    },
+    {
+      "id": "coin_control",
+      "name": "Coin selection / coin control",
+      "type": "wallet_process",
+      "description": "Wallet function for choosing which UTXOs to spend, affecting fees and privacy."
+    },
+    {
+      "id": "change_output",
+      "name": "Change output",
+      "type": "transaction_component",
+      "description": "Output returning the excess value of selected inputs to the spender."
+    },
+    {
+      "id": "fee_rate",
+      "name": "Fee rate",
+      "type": "transaction_parameter",
+      "description": "Fee expressed relative to transaction data size, commonly in satoshis per virtual byte under modern transaction accounting."
+    },
+    {
+      "id": "block_subsidy_schedule",
+      "name": "Block subsidy schedule",
+      "type": "monetary_schedule",
+      "description": "Schedule beginning at 50 BTC per block and halving every 210,000 blocks."
+    },
+    {
+      "id": "initial_release",
+      "name": "Bitcoin 0.1.0",
+      "type": "software_release",
+      "description": "Initial Bitcoin software release dated 9 January 2009 in the supplied article."
+    },
+    {
+      "id": "bitcoin_2008",
+      "name": "Bitcoin's 2008 proposal",
+      "type": "historical_event",
+      "description": "Publication of Nakamoto's white paper on 31 October 2008."
+    },
+    {
+      "id": "bitcoin_launch",
+      "name": "Bitcoin network launch",
+      "type": "historical_event",
+      "description": "Creation of the Bitcoin network through mining of the genesis block on 3 January 2009."
+    },
+    {
+      "id": "first_transaction",
+      "name": "First described Bitcoin transaction",
+      "type": "historical_event",
+      "description": "Hal Finney received 10 BTC from Nakamoto on 12 January 2009 according to the article."
+    },
+    {
+      "id": "segwit_2017",
+      "name": "SegWit activation (2017)",
+      "type": "historical_event",
+      "description": "SegWit activated in August 2017."
+    },
+    {
+      "id": "taproot_2021",
+      "name": "Taproot activation (2021)",
+      "type": "historical_event",
+      "description": "Taproot activated in November 2021."
+    },
+    {
+      "id": "etf_2024",
+      "name": "US spot bitcoin ETF launch (2024)",
+      "type": "historical_event",
+      "description": "First 11 US spot bitcoin ETFs began trading in January 2024 according to the article."
+    },
+    {
+      "id": "bitcoin_issuance",
+      "name": "Bitcoin issuance",
+      "type": "protocol_process",
+      "description": "Creation of new bitcoin via valid coinbase subsidy claims according to consensus rules."
+    },
+    {
+      "id": "wallet_backup",
+      "name": "Wallet backup and recovery material",
+      "type": "key_management_concept",
+      "description": "Backup of private keys, seed phrases, or other recovery data; losing all valid key material can make funds inaccessible."
+    },
+    {
+      "id": "seed_phrase",
+      "name": "Wallet seed phrase",
+      "type": "key_management_concept",
+      "description": "Human-readable representation of wallet recovery entropy in many wallet systems; not specified as a protocol primitive in the supplied article but relevant to wallet operation."
+    },
+    {
+      "id": "economic_bubble",
+      "name": "Economic bubble debate",
+      "type": "economic_concept",
+      "description": "Debate over whether bitcoin price reflects sustainable value or speculative narratives and market dynamics."
+    },
+    {
+      "id": "market_liquidity",
+      "name": "Market liquidity",
+      "type": "market_property",
+      "description": "Ability to buy or sell without large price impact; varies by venue and conditions."
+    },
+    {
+      "id": "fiat_currency",
+      "name": "Fiat currency",
+      "type": "currency_category",
+      "description": "Government-issued currency such as the US dollar, often used as a pricing reference and exchange pair for bitcoin."
+    },
+    {
+      "id": "us_dollar",
+      "name": "United States dollar",
+      "type": "currency",
+      "description": "Fiat currency used alongside bitcoin during El Salvador's 2021 legal-tender period."
+    },
+    {
+      "id": "genesis_coinbase",
+      "name": "Genesis block coinbase data",
+      "type": "blockchain_data",
+      "description": "Coinbase transaction and embedded headline in the genesis block; genesis subsidy treatment is special in Bitcoin implementation."
+    },
+    {
+      "id": "node_consensus_rules",
+      "name": "Consensus rules",
+      "type": "protocol_rules",
+      "description": "Rules independently enforced by nodes for valid transactions, blocks, issuance, scripts, and proof of work."
+    },
+    {
+      "id": "block_template",
+      "name": "Candidate block template",
+      "type": "mining_data_structure",
+      "description": "Proposed block contents assembled by a miner or mining pool before searching for proof of work."
+    },
+    {
+      "id": "transaction_selection",
+      "name": "Transaction selection",
+      "type": "mining_process",
+      "description": "Selection of mempool transactions for a candidate block, commonly influenced by fee rate and validity."
+    },
+    {
+      "id": "hash_puzzle",
+      "name": "Hash threshold puzzle",
+      "type": "cryptographic_mechanism",
+      "description": "Mining task of finding header data whose double-SHA-256 hash is numerically below the target."
+    },
+    {
+      "id": "probabilistic_finality",
+      "name": "Probabilistic settlement confidence",
+      "type": "distributed_system_property",
+      "description": "Confidence in transaction settlement increases with additional valid blocks but is not absolute mathematical finality."
+    },
+    {
+      "id": "economic_incentives",
+      "name": "Mining economic incentives",
+      "type": "economic_mechanism",
+      "description": "Subsidy and transaction fees incentivize miners to expend resources and propose valid blocks."
+    },
+    {
+      "id": "network_propagation",
+      "name": "Block propagation",
+      "type": "network_process",
+      "description": "Dissemination of newly found blocks so other nodes can validate and extend the chain."
+    },
+    {
+      "id": "proof_of_work_security",
+      "name": "Proof-of-work security assumption",
+      "type": "security_assumption",
+      "description": "Security depends in part on honest or economically aligned hash power, validation by nodes, and the cost of accumulating more work than competing chains."
+    },
+    {
+      "id": "decentralized_issuance",
+      "name": "Decentralized issuance",
+      "type": "monetary_property",
+      "description": "No central issuer chooses individual issuance; issuance follows protocol-valid block subsidy rules."
+    },
+    {
+      "id": "monetary_policy",
+      "name": "Bitcoin monetary policy",
+      "type": "monetary_policy",
+      "description": "Protocol-defined issuance and maximum-supply schedule rather than discretionary central-bank policy."
+    },
+    {
+      "id": "bitcoin_price_history",
+      "name": "Bitcoin price history",
+      "type": "market_data_series",
+      "description": "Market price history characterized by large rises and falls, influenced by demand, regulation, institutional participation, and broader market events."
+    },
+    {
+      "id": "bitcoin_pizza_transaction",
+      "name": "10,000 BTC pizza purchase",
+      "type": "transaction",
+      "description": "Purchase by Laszlo Hanyecz of two pizzas for 10,000 BTC on 22 May 2010."
+    },
+    {
+      "id": "genesis_timestamp",
+      "name": "Genesis block timestamp",
+      "type": "blockchain_data",
+      "description": "Genesis block is dated 3 January 2009."
+    },
+    {
+      "id": "block_reward_2026",
+      "name": "3.125 BTC block subsidy (2024–2028 era)",
+      "type": "economic_parameter",
+      "description": "The supplied article states a 3.125 BTC block reward as of 2026; technically this refers to the subsidy and excludes transaction fees."
+    },
+    {
+      "id": "max_supply_exact",
+      "name": "Exact theoretical issuance ceiling",
+      "type": "economic_parameter",
+      "description": "The article's note gives an exact total of 20,999,999.9769 BTC rather than a perfectly round 21 million."
+    },
+    {
+      "id": "bitcoin_whitepaper_list",
+      "name": "Cryptography mailing list",
+      "type": "communication_channel",
+      "description": "Mailing list where the Bitcoin white paper link was posted in October 2008."
+    },
+    {
+      "id": "financial_crimes",
+      "name": "Financial crime enforcement",
+      "type": "law_enforcement_topic",
+      "description": "Investigations and enforcement involving exchange compliance, illicit marketplaces, and seizures of bitcoin."
+    },
+    {
+      "id": "bitcoin_seizure",
+      "name": "Government bitcoin seizure",
+      "type": "law_enforcement_event",
+      "description": "Government agencies have seized bitcoin connected to investigations, as described in the article's historical examples."
+    },
+    {
+      "id": "software_fork",
+      "name": "Software fork",
+      "type": "software_development_concept",
+      "description": "A copied or modified codebase that may diverge in implementation, policy, or consensus rules."
+    },
+    {
+      "id": "bitcoin_unlimited",
+      "name": "Bitcoin Unlimited",
+      "type": "software_fork",
+      "description": "Fork of Bitcoin Core mentioned in the supplied article."
+    },
+    {
+      "id": "source_wikipedia_bitcoin",
+      "name": "Supplied Wikipedia Bitcoin article",
+      "type": "source_document",
+      "description": "User-provided Bitcoin article text used as the primary source for this graph; time-sensitive claims are treated as source-reported rather than independently verified."
+    },
+    {
+      "id": "layer_two_protocol",
+      "name": "Layer-two protocol",
+      "type": "architecture_category",
+      "description": "Protocol operating above the base blockchain to improve transaction throughput, latency, or functionality while using the base chain for settlement."
+    },
+    {
+      "id": "local_storage_requirement",
+      "name": "Local storage requirement",
+      "type": "system_resource",
+      "description": "Disk and bandwidth resources needed by a client to store blockchain data; full nodes generally require more resources than lightweight clients."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "bitcoin_rel_0001",
+      "source": "bitcoin",
+      "predicate": "implemented_by",
+      "target": "bitcoin_core",
+      "description": "Bitcoin Core is a major implementation of the Bitcoin protocol."
+    },
+    {
+      "id": "bitcoin_rel_0002",
+      "source": "bitcoin_core",
+      "predicate": "written_in",
+      "target": "cpp",
+      "description": "The supplied article specifies C++, not C."
+    },
+    {
+      "id": "bitcoin_rel_0003",
+      "source": "cpp",
+      "predicate": "distinct_from",
+      "target": "c_language",
+      "description": "C and C++ are related but distinct languages; calling Bitcoin Core a C program would be inaccurate."
+    },
+    {
+      "id": "bitcoin_rel_0004",
+      "source": "bitcoin_core",
+      "predicate": "licensed_under",
+      "target": "mit_license",
+      "description": "The article lists the MIT License."
+    },
+    {
+      "id": "bitcoin_rel_0005",
+      "source": "bitcoin_core",
+      "predicate": "is",
+      "target": "open_source",
+      "description": "Bitcoin Core is open-source software."
+    },
+    {
+      "id": "bitcoin_rel_0006",
+      "source": "satoshi_nakamoto",
+      "predicate": "authored",
+      "target": "whitepaper",
+      "description": "The white paper was published under Nakamoto's pseudonym."
+    },
+    {
+      "id": "bitcoin_rel_0007",
+      "source": "whitepaper",
+      "predicate": "proposed",
+      "target": "bitcoin",
+      "description": "The 2008 paper described a peer-to-peer electronic cash system."
+    },
+    {
+      "id": "bitcoin_rel_0008",
+      "source": "bitcoin_org",
+      "predicate": "registered_on",
+      "target": "bitcoin_2008",
+      "description": "The domain was registered in August 2008 before the white paper."
+    },
+    {
+      "id": "bitcoin_rel_0009",
+      "source": "whitepaper",
+      "predicate": "posted_to",
+      "target": "bitcoin_whitepaper_list",
+      "description": "The link appeared on a cryptography mailing list."
+    },
+    {
+      "id": "bitcoin_rel_0010",
+      "source": "satoshi_nakamoto",
+      "predicate": "mined",
+      "target": "genesis_block",
+      "description": "Nakamoto mined the starting block."
+    },
+    {
+      "id": "bitcoin_rel_0011",
+      "source": "genesis_block",
+      "predicate": "begins",
+      "target": "blockchain",
+      "description": "The genesis block is the first block of the chain."
+    },
+    {
+      "id": "bitcoin_rel_0012",
+      "source": "genesis_block",
+      "predicate": "contains",
+      "target": "times_headline",
+      "description": "The block contains the newspaper headline text."
+    },
+    {
+      "id": "bitcoin_rel_0013",
+      "source": "times_headline",
+      "predicate": "references",
+      "target": "genesis_timestamp",
+      "description": "The embedded text includes 3 January 2009."
+    },
+    {
+      "id": "bitcoin_rel_0014",
+      "source": "satoshi_nakamoto",
+      "predicate": "sent_transaction_to",
+      "target": "hal_finney",
+      "description": "Finney received 10 BTC from Nakamoto."
+    },
+    {
+      "id": "bitcoin_rel_0015",
+      "source": "first_transaction",
+      "predicate": "involves",
+      "target": "hal_finney",
+      "description": "The described early transaction was received by Finney."
+    },
+    {
+      "id": "bitcoin_rel_0016",
+      "source": "first_transaction",
+      "predicate": "sent_by",
+      "target": "satoshi_nakamoto",
+      "description": "Nakamoto sent the transaction."
+    },
+    {
+      "id": "bitcoin_rel_0017",
+      "source": "bitcoin_pizza_day",
+      "predicate": "commemorates",
+      "target": "bitcoin_pizza_transaction",
+      "description": "The date commemorates the 10,000 BTC pizza purchase."
+    },
+    {
+      "id": "bitcoin_rel_0018",
+      "source": "bitcoin_pizza_transaction",
+      "predicate": "involves",
+      "target": "laszlo_hanyecz",
+      "description": "Hanyecz made the purchase."
+    },
+    {
+      "id": "bitcoin_rel_0019",
+      "source": "bitcoin_pizza_transaction",
+      "predicate": "uses",
+      "target": "bitcoin",
+      "description": "The purchase used bitcoin as payment."
+    },
+    {
+      "id": "bitcoin_rel_0020",
+      "source": "david_chaum",
+      "predicate": "developed",
+      "target": "cryptography",
+      "description": "Chaum's ecash work is an early digital-cash antecedent."
+    },
+    {
+      "id": "bitcoin_rel_0021",
+      "source": "david_chaum",
+      "predicate": "associated_with",
+      "target": "digital_scarcity",
+      "description": "Ecash was an earlier attempt at digital cash, although it relied on centralized control."
+    },
+    {
+      "id": "bitcoin_rel_0022",
+      "source": "cynthia_dwork",
+      "predicate": "co_proposed",
+      "target": "moni_naor",
+      "description": "They proposed computational puzzles to combat junk mail."
+    },
+    {
+      "id": "bitcoin_rel_0023",
+      "source": "cynthia_dwork",
+      "predicate": "co_proposed",
+      "target": "hashcash",
+      "description": "Dwork and Naor's work influenced the proof-of-work lineage."
+    },
+    {
+      "id": "bitcoin_rel_0024",
+      "source": "adam_back",
+      "predicate": "developed",
+      "target": "hashcash",
+      "description": "Hashcash was introduced for spam control in 1997."
+    },
+    {
+      "id": "bitcoin_rel_0025",
+      "source": "hashcash",
+      "predicate": "influenced",
+      "target": "proof_of_work",
+      "description": "Hashcash is a conceptual proof-of-work predecessor."
+    },
+    {
+      "id": "bitcoin_rel_0026",
+      "source": "wei_dai",
+      "predicate": "proposed",
+      "target": "digital_scarcity",
+      "description": "b-money was a distributed digital-cash proposal."
+    },
+    {
+      "id": "bitcoin_rel_0027",
+      "source": "wei_dai",
+      "predicate": "proposed",
+      "target": "bitcoin",
+      "description": "b-money is a conceptual precursor rather than the Bitcoin implementation."
+    },
+    {
+      "id": "bitcoin_rel_0028",
+      "source": "nick_szabo",
+      "predicate": "proposed",
+      "target": "digital_scarcity",
+      "description": "bit gold explored digital scarcity."
+    },
+    {
+      "id": "bitcoin_rel_0029",
+      "source": "nick_szabo",
+      "predicate": "proposed",
+      "target": "bitcoin",
+      "description": "bit gold is a conceptual precursor rather than the Bitcoin implementation."
+    },
+    {
+      "id": "bitcoin_rel_0030",
+      "source": "hal_finney",
+      "predicate": "developed",
+      "target": "rpow",
+      "description": "Finney developed reusable proof of work in 2004."
+    },
+    {
+      "id": "bitcoin_rel_0031",
+      "source": "rpow",
+      "predicate": "influenced",
+      "target": "proof_of_work",
+      "description": "RPOW is part of the conceptual history of proof-of-work digital currency."
+    },
+    {
+      "id": "bitcoin_rel_0032",
+      "source": "martti_malmi",
+      "predicate": "contributed_to",
+      "target": "bitcoin_org",
+      "description": "Malmi helped create website content."
+    },
+    {
+      "id": "bitcoin_rel_0033",
+      "source": "satoshi_nakamoto",
+      "predicate": "transferred_maintenance_to",
+      "target": "gavin_andresen",
+      "description": "The article says Nakamoto handed over alert-key and repository control."
+    },
+    {
+      "id": "bitcoin_rel_0034",
+      "source": "arvind_narayanan",
+      "predicate": "analyzed",
+      "target": "bitcoin",
+      "description": "Narayanan is cited for analysis of Bitcoin's technical antecedents."
+    },
+    {
+      "id": "bitcoin_rel_0035",
+      "source": "bitcoin",
+      "predicate": "uses_architecture",
+      "target": "peer_to_peer",
+      "description": "Participants communicate without a required central administrator."
+    },
+    {
+      "id": "bitcoin_rel_0036",
+      "source": "peer_to_peer",
+      "predicate": "is_a",
+      "target": "distributed_system",
+      "description": "The network consists of independent communicating computers."
+    },
+    {
+      "id": "bitcoin_rel_0037",
+      "source": "bitcoin_network",
+      "predicate": "implements",
+      "target": "peer_to_peer",
+      "description": "Nodes relay data among peers."
+    },
+    {
+      "id": "bitcoin_rel_0038",
+      "source": "bitcoin_network",
+      "predicate": "maintains",
+      "target": "blockchain",
+      "description": "The distributed network maintains copies of the ledger."
+    },
+    {
+      "id": "bitcoin_rel_0039",
+      "source": "node",
+      "predicate": "participates_in",
+      "target": "bitcoin_network",
+      "description": "Nodes communicate through the peer-to-peer network."
+    },
+    {
+      "id": "bitcoin_rel_0040",
+      "source": "full_node",
+      "predicate": "is_a",
+      "target": "node",
+      "description": "A full node independently validates protocol rules."
+    },
+    {
+      "id": "bitcoin_rel_0041",
+      "source": "full_node",
+      "predicate": "validates",
+      "target": "transaction",
+      "description": "Nodes validate transactions."
+    },
+    {
+      "id": "bitcoin_rel_0042",
+      "source": "full_node",
+      "predicate": "validates",
+      "target": "block",
+      "description": "Nodes independently check blocks."
+    },
+    {
+      "id": "bitcoin_rel_0043",
+      "source": "full_node",
+      "predicate": "maintains",
+      "target": "utxo_set",
+      "description": "Nodes use the UTXO set to determine current spendability."
+    },
+    {
+      "id": "bitcoin_rel_0044",
+      "source": "blockchain",
+      "predicate": "contains",
+      "target": "block",
+      "description": "The ledger is an ordered list of blocks."
+    },
+    {
+      "id": "bitcoin_rel_0045",
+      "source": "block",
+      "predicate": "contains",
+      "target": "block_header",
+      "description": "Each block includes a header."
+    },
+    {
+      "id": "bitcoin_rel_0046",
+      "source": "block",
+      "predicate": "contains",
+      "target": "transaction",
+      "description": "Blocks include transactions."
+    },
+    {
+      "id": "bitcoin_rel_0047",
+      "source": "block_header",
+      "predicate": "contains",
+      "target": "previous_block_hash",
+      "description": "The header references the previous block."
+    },
+    {
+      "id": "bitcoin_rel_0048",
+      "source": "previous_block_hash",
+      "predicate": "links",
+      "target": "blockchain",
+      "description": "Hash references chain blocks in order."
+    },
+    {
+      "id": "bitcoin_rel_0049",
+      "source": "block_header",
+      "predicate": "hashed_with",
+      "target": "double_sha256",
+      "description": "Bitcoin hashes the block header twice with SHA-256."
+    },
+    {
+      "id": "bitcoin_rel_0050",
+      "source": "double_sha256",
+      "predicate": "uses",
+      "target": "sha256",
+      "description": "Double SHA-256 applies SHA-256 twice."
+    },
+    {
+      "id": "bitcoin_rel_0051",
+      "source": "hash_function",
+      "predicate": "includes",
+      "target": "sha256",
+      "description": "SHA-256 is a cryptographic hash function."
+    },
+    {
+      "id": "bitcoin_rel_0052",
+      "source": "block_header",
+      "predicate": "contains",
+      "target": "nonce",
+      "description": "The nonce is one variable in the proof-of-work search."
+    },
+    {
+      "id": "bitcoin_rel_0053",
+      "source": "miner",
+      "predicate": "searches_for",
+      "target": "nonce",
+      "description": "Miners vary nonce and other header-affecting data to find a valid hash."
+    },
+    {
+      "id": "bitcoin_rel_0054",
+      "source": "miner",
+      "predicate": "performs",
+      "target": "mining",
+      "description": "Mining is the block-construction and proof-of-work process."
+    },
+    {
+      "id": "bitcoin_rel_0055",
+      "source": "mining",
+      "predicate": "uses",
+      "target": "proof_of_work",
+      "description": "Proof of work is required for block acceptance."
+    },
+    {
+      "id": "bitcoin_rel_0056",
+      "source": "proof_of_work",
+      "predicate": "depends_on",
+      "target": "hash_puzzle",
+      "description": "Mining searches for a hash below a target."
+    },
+    {
+      "id": "bitcoin_rel_0057",
+      "source": "hash_puzzle",
+      "predicate": "uses",
+      "target": "double_sha256",
+      "description": "Bitcoin proof of work uses double SHA-256 of the header."
+    },
+    {
+      "id": "bitcoin_rel_0058",
+      "source": "hash_puzzle",
+      "predicate": "constrained_by",
+      "target": "difficulty_target",
+      "description": "The hash must be numerically below the target."
+    },
+    {
+      "id": "bitcoin_rel_0059",
+      "source": "difficulty_target",
+      "predicate": "adjusted_by",
+      "target": "difficulty_adjustment",
+      "description": "The target is recalculated on a 2,016-block interval."
+    },
+    {
+      "id": "bitcoin_rel_0060",
+      "source": "difficulty_adjustment",
+      "predicate": "targets",
+      "target": "block_time",
+      "description": "Difficulty aims to keep the average interval near ten minutes."
+    },
+    {
+      "id": "bitcoin_rel_0061",
+      "source": "block_time",
+      "predicate": "is_parameter_of",
+      "target": "bitcoin",
+      "description": "Bitcoin targets an average block interval of roughly ten minutes."
+    },
+    {
+      "id": "bitcoin_rel_0062",
+      "source": "miner",
+      "predicate": "uses",
+      "target": "mining_hardware",
+      "description": "Miners expend computing resources."
+    },
+    {
+      "id": "bitcoin_rel_0063",
+      "source": "mining_hardware",
+      "predicate": "includes",
+      "target": "asic",
+      "description": "ASICs are specialized Bitcoin mining hardware."
+    },
+    {
+      "id": "bitcoin_rel_0064",
+      "source": "mining_hardware",
+      "predicate": "includes",
+      "target": "gpu",
+      "description": "GPUs have been used for mining."
+    },
+    {
+      "id": "bitcoin_rel_0065",
+      "source": "mining_hardware",
+      "predicate": "includes",
+      "target": "fpga",
+      "description": "FPGAs have been used historically."
+    },
+    {
+      "id": "bitcoin_rel_0066",
+      "source": "miner",
+      "predicate": "may_join",
+      "target": "mining_pool",
+      "description": "Miners pool hash power to smooth payouts."
+    },
+    {
+      "id": "bitcoin_rel_0067",
+      "source": "mining_pool",
+      "predicate": "can_concentrate",
+      "target": "hashrate",
+      "description": "Pools can aggregate a large share of total hash power."
+    },
+    {
+      "id": "bitcoin_rel_0068",
+      "source": "hashrate",
+      "predicate": "affects",
+      "target": "difficulty_adjustment",
+      "description": "Network hash rate influences block arrival time and the next adjustment."
+    },
+    {
+      "id": "bitcoin_rel_0069",
+      "source": "miner",
+      "predicate": "constructs",
+      "target": "block_template",
+      "description": "Miners assemble candidate block contents."
+    },
+    {
+      "id": "bitcoin_rel_0070",
+      "source": "block_template",
+      "predicate": "contains",
+      "target": "transaction",
+      "description": "Candidate blocks include selected transactions."
+    },
+    {
+      "id": "bitcoin_rel_0071",
+      "source": "transaction_selection",
+      "predicate": "uses",
+      "target": "mempool",
+      "description": "Miners select from available unconfirmed transactions."
+    },
+    {
+      "id": "bitcoin_rel_0072",
+      "source": "transaction_selection",
+      "predicate": "may_consider",
+      "target": "fee_rate",
+      "description": "Fee rates influence transaction selection."
+    },
+    {
+      "id": "bitcoin_rel_0073",
+      "source": "node",
+      "predicate": "maintains",
+      "target": "mempool",
+      "description": "Nodes retain local sets of unconfirmed transactions."
+    },
+    {
+      "id": "bitcoin_rel_0074",
+      "source": "node",
+      "predicate": "performs",
+      "target": "broadcast",
+      "description": "Nodes relay transactions and blocks."
+    },
+    {
+      "id": "bitcoin_rel_0075",
+      "source": "broadcast",
+      "predicate": "propagates_through",
+      "target": "bitcoin_network",
+      "description": "Peer-to-peer relays distribute new data."
+    },
+    {
+      "id": "bitcoin_rel_0076",
+      "source": "miner",
+      "predicate": "broadcasts",
+      "target": "block",
+      "description": "A successful miner proposes a block to the network."
+    },
+    {
+      "id": "bitcoin_rel_0077",
+      "source": "block",
+      "predicate": "requires",
+      "target": "block_validation",
+      "description": "A block must pass validation."
+    },
+    {
+      "id": "bitcoin_rel_0078",
+      "source": "block_validation",
+      "predicate": "checks",
+      "target": "proof_of_work",
+      "description": "Validation checks the proof-of-work requirement."
+    },
+    {
+      "id": "bitcoin_rel_0079",
+      "source": "block_validation",
+      "predicate": "checks",
+      "target": "node_consensus_rules",
+      "description": "A block must satisfy consensus rules."
+    },
+    {
+      "id": "bitcoin_rel_0080",
+      "source": "transaction_validation",
+      "predicate": "checks",
+      "target": "digital_signature",
+      "description": "Spend authorization is checked under the applicable script."
+    },
+    {
+      "id": "bitcoin_rel_0081",
+      "source": "transaction_validation",
+      "predicate": "checks",
+      "target": "utxo_set",
+      "description": "Inputs must refer to available unspent outputs."
+    },
+    {
+      "id": "bitcoin_rel_0082",
+      "source": "transaction_validation",
+      "predicate": "prevents",
+      "target": "double_spending",
+      "description": "An already-spent output cannot be spent again in the valid ledger."
+    },
+    {
+      "id": "bitcoin_rel_0083",
+      "source": "transaction",
+      "predicate": "contains",
+      "target": "transaction_input",
+      "description": "Transactions can contain one or more inputs."
+    },
+    {
+      "id": "bitcoin_rel_0084",
+      "source": "transaction",
+      "predicate": "contains",
+      "target": "transaction_output",
+      "description": "Transactions can contain one or more outputs."
+    },
+    {
+      "id": "bitcoin_rel_0085",
+      "source": "transaction_input",
+      "predicate": "spends",
+      "target": "utxo",
+      "description": "An input references a previous unspent output."
+    },
+    {
+      "id": "bitcoin_rel_0086",
+      "source": "transaction_output",
+      "predicate": "creates",
+      "target": "utxo",
+      "description": "An output becomes a UTXO until spent."
+    },
+    {
+      "id": "bitcoin_rel_0087",
+      "source": "transaction_output",
+      "predicate": "locked_by",
+      "target": "script",
+      "description": "Spending conditions are expressed by scripts."
+    },
+    {
+      "id": "bitcoin_rel_0088",
+      "source": "transaction",
+      "predicate": "uses",
+      "target": "script",
+      "description": "Bitcoin transactions rely on script conditions."
+    },
+    {
+      "id": "bitcoin_rel_0089",
+      "source": "script",
+      "predicate": "is",
+      "target": "script",
+      "description": "Bitcoin Script is a Forth-like stack-based scripting language."
+    },
+    {
+      "id": "bitcoin_rel_0090",
+      "source": "address",
+      "predicate": "may_encode",
+      "target": "public_key",
+      "description": "Many addresses encode a public-key hash or related public-key construction."
+    },
+    {
+      "id": "bitcoin_rel_0091",
+      "source": "address",
+      "predicate": "may_encode",
+      "target": "script_hash",
+      "description": "Some address formats represent a script hash."
+    },
+    {
+      "id": "bitcoin_rel_0092",
+      "source": "private_key",
+      "predicate": "derives",
+      "target": "public_key",
+      "description": "The public key is mathematically derived from the private key."
+    },
+    {
+      "id": "bitcoin_rel_0093",
+      "source": "public_key",
+      "predicate": "used_to_verify",
+      "target": "digital_signature",
+      "description": "Public-key cryptography allows validation of spending authorization."
+    },
+    {
+      "id": "bitcoin_rel_0094",
+      "source": "private_key",
+      "predicate": "creates",
+      "target": "digital_signature",
+      "description": "The private key authorizes a spend by signing."
+    },
+    {
+      "id": "bitcoin_rel_0095",
+      "source": "digital_signature",
+      "predicate": "historically_uses",
+      "target": "ecdsa",
+      "description": "Bitcoin historically used ECDSA signatures."
+    },
+    {
+      "id": "bitcoin_rel_0096",
+      "source": "digital_signature",
+      "predicate": "can_use",
+      "target": "schnorr",
+      "description": "Taproot enabled Schnorr signatures."
+    },
+    {
+      "id": "bitcoin_rel_0097",
+      "source": "ecdsa",
+      "predicate": "uses",
+      "target": "elliptic_curve",
+      "description": "ECDSA is an elliptic-curve signature scheme."
+    },
+    {
+      "id": "bitcoin_rel_0098",
+      "source": "schnorr",
+      "predicate": "uses",
+      "target": "elliptic_curve",
+      "description": "Bitcoin Schnorr signatures use elliptic-curve cryptography."
+    },
+    {
+      "id": "bitcoin_rel_0099",
+      "source": "cryptography",
+      "predicate": "supports",
+      "target": "bitcoin",
+      "description": "Cryptography supports ownership authorization and tamper-evident linking."
+    },
+    {
+      "id": "bitcoin_rel_0100",
+      "source": "wallet",
+      "predicate": "manages",
+      "target": "private_key",
+      "description": "Wallet software/device manages key material or access to it."
+    },
+    {
+      "id": "bitcoin_rel_0101",
+      "source": "wallet",
+      "predicate": "constructs",
+      "target": "transaction",
+      "description": "Wallets construct spending transactions."
+    },
+    {
+      "id": "bitcoin_rel_0102",
+      "source": "wallet",
+      "predicate": "signs",
+      "target": "transaction",
+      "description": "A wallet signs transactions according to spend conditions."
+    },
+    {
+      "id": "bitcoin_rel_0103",
+      "source": "wallet",
+      "predicate": "may_be",
+      "target": "hot_wallet",
+      "description": "Wallets may be connected to online systems."
+    },
+    {
+      "id": "bitcoin_rel_0104",
+      "source": "wallet",
+      "predicate": "may_be",
+      "target": "cold_storage",
+      "description": "Keys can be kept offline."
+    },
+    {
+      "id": "bitcoin_rel_0105",
+      "source": "wallet",
+      "predicate": "may_be",
+      "target": "hardware_wallet",
+      "description": "A hardware wallet protects keys and signs transactions."
+    },
+    {
+      "id": "bitcoin_rel_0106",
+      "source": "wallet",
+      "predicate": "may_be",
+      "target": "paper_wallet",
+      "description": "Paper wallets store printed key material."
+    },
+    {
+      "id": "bitcoin_rel_0107",
+      "source": "wallet",
+      "predicate": "may_be",
+      "target": "custodial_wallet",
+      "description": "Some services control user credentials or keys."
+    },
+    {
+      "id": "bitcoin_rel_0108",
+      "source": "wallet",
+      "predicate": "may_be",
+      "target": "noncustodial_wallet",
+      "description": "Non-custodial wallets keep signing authority with the user."
+    },
+    {
+      "id": "bitcoin_rel_0109",
+      "source": "cold_storage",
+      "predicate": "reduces_exposure_to",
+      "target": "bitcoin_network",
+      "description": "Offline keys are less exposed to remote online compromise; transactions still eventually reach the network."
+    },
+    {
+      "id": "bitcoin_rel_0110",
+      "source": "hardware_wallet",
+      "predicate": "protects",
+      "target": "private_key",
+      "description": "It limits exposure of keys to general-purpose online devices."
+    },
+    {
+      "id": "bitcoin_rel_0111",
+      "source": "wallet_backup",
+      "predicate": "supports_recovery_of",
+      "target": "private_key",
+      "description": "Recovery data can restore access if the original device is lost."
+    },
+    {
+      "id": "bitcoin_rel_0112",
+      "source": "seed_phrase",
+      "predicate": "can_encode_recovery_for",
+      "target": "wallet",
+      "description": "Many wallets use seed phrases to derive keys."
+    },
+    {
+      "id": "bitcoin_rel_0113",
+      "source": "private_key",
+      "predicate": "must_remain_secret_for",
+      "target": "bitcoin",
+      "description": "Exposure can permit theft; loss can permanently remove access."
+    },
+    {
+      "id": "bitcoin_rel_0114",
+      "source": "multisig",
+      "predicate": "requires",
+      "target": "digital_signature",
+      "description": "Multisignature conditions require several keys/signatures."
+    },
+    {
+      "id": "bitcoin_rel_0115",
+      "source": "script",
+      "predicate": "supports",
+      "target": "multisig",
+      "description": "Script conditions can require multiple signers."
+    },
+    {
+      "id": "bitcoin_rel_0116",
+      "source": "coinbase_transaction",
+      "predicate": "included_in",
+      "target": "block",
+      "description": "Each block includes a special reward-claim transaction."
+    },
+    {
+      "id": "bitcoin_rel_0117",
+      "source": "coinbase_transaction",
+      "predicate": "claims",
+      "target": "block_subsidy",
+      "description": "The coinbase transaction claims the subsidy."
+    },
+    {
+      "id": "bitcoin_rel_0118",
+      "source": "coinbase_transaction",
+      "predicate": "collects",
+      "target": "transaction_fee",
+      "description": "Miner fees are collected in the block reward transaction."
+    },
+    {
+      "id": "bitcoin_rel_0119",
+      "source": "block_reward",
+      "predicate": "consists_of",
+      "target": "block_subsidy",
+      "description": "Block reward includes subsidy plus transaction fees."
+    },
+    {
+      "id": "bitcoin_rel_0120",
+      "source": "block_reward",
+      "predicate": "consists_of",
+      "target": "transaction_fee",
+      "description": "Fees supplement the subsidy."
+    },
+    {
+      "id": "bitcoin_rel_0121",
+      "source": "bitcoin_issuance",
+      "predicate": "occurs_through",
+      "target": "coinbase_transaction",
+      "description": "New issuance is claimed in coinbase transactions."
+    },
+    {
+      "id": "bitcoin_rel_0122",
+      "source": "issuance_schedule",
+      "predicate": "governs",
+      "target": "block_subsidy",
+      "description": "The subsidy follows a fixed halving schedule."
+    },
+    {
+      "id": "bitcoin_rel_0123",
+      "source": "block_subsidy_schedule",
+      "predicate": "halves_via",
+      "target": "halving",
+      "description": "The subsidy halves every 210,000 blocks."
+    },
+    {
+      "id": "bitcoin_rel_0124",
+      "source": "halving",
+      "predicate": "affects",
+      "target": "block_subsidy",
+      "description": "Each halving cuts new issuance per block in half."
+    },
+    {
+      "id": "bitcoin_rel_0125",
+      "source": "block_subsidy",
+      "predicate": "contributes_to",
+      "target": "supply_limit",
+      "description": "The schedule yields a total slightly below 21 million BTC."
+    },
+    {
+      "id": "bitcoin_rel_0126",
+      "source": "supply_limit",
+      "predicate": "constrains",
+      "target": "bitcoin_issuance",
+      "description": "Consensus rules constrain issuance to the schedule."
+    },
+    {
+      "id": "bitcoin_rel_0127",
+      "source": "decentralized_issuance",
+      "predicate": "implemented_by",
+      "target": "monetary_policy",
+      "description": "Issuance is rule-based and decentralized."
+    },
+    {
+      "id": "bitcoin_rel_0128",
+      "source": "monetary_policy",
+      "predicate": "governs",
+      "target": "issuance_schedule",
+      "description": "The schedule encodes Bitcoin's monetary policy."
+    },
+    {
+      "id": "bitcoin_rel_0129",
+      "source": "block_reward_2026",
+      "predicate": "describes",
+      "target": "block_subsidy",
+      "description": "The article states 3.125 BTC as the reward in 2026; this is subsidy before fees."
+    },
+    {
+      "id": "bitcoin_rel_0130",
+      "source": "max_supply_exact",
+      "predicate": "qualifies",
+      "target": "supply_limit",
+      "description": "The theoretical total is slightly below the rounded 21 million figure."
+    },
+    {
+      "id": "bitcoin_rel_0131",
+      "source": "transaction",
+      "predicate": "pays",
+      "target": "transaction_fee",
+      "description": "Input value exceeding output value becomes the fee."
+    },
+    {
+      "id": "bitcoin_rel_0132",
+      "source": "transaction",
+      "predicate": "may_return",
+      "target": "change_output",
+      "description": "Excess input value can be returned to the payer."
+    },
+    {
+      "id": "bitcoin_rel_0133",
+      "source": "change_output",
+      "predicate": "creates",
+      "target": "utxo",
+      "description": "A change output is a new spendable output."
+    },
+    {
+      "id": "bitcoin_rel_0134",
+      "source": "fee_rate",
+      "predicate": "measured_in",
+      "target": "satoshi",
+      "description": "Fees are commonly expressed in satoshis per unit of transaction data."
+    },
+    {
+      "id": "bitcoin_rel_0135",
+      "source": "satoshi",
+      "predicate": "is_subunit_of",
+      "target": "bitcoin",
+      "description": "One satoshi is one hundred-millionth of a bitcoin."
+    },
+    {
+      "id": "bitcoin_rel_0136",
+      "source": "millibitcoin",
+      "predicate": "is_subunit_of",
+      "target": "bitcoin",
+      "description": "One mBTC is one-thousandth of a bitcoin."
+    },
+    {
+      "id": "bitcoin_rel_0137",
+      "source": "microbitcoin",
+      "predicate": "is_subunit_of",
+      "target": "bitcoin",
+      "description": "One microbitcoin is one-millionth of a bitcoin."
+    },
+    {
+      "id": "bitcoin_rel_0138",
+      "source": "bitcoin",
+      "predicate": "represented_by",
+      "target": "bitcoin_sign",
+      "description": "The symbol is Unicode U+20BF."
+    },
+    {
+      "id": "bitcoin_rel_0139",
+      "source": "bitcoin",
+      "predicate": "uses_code",
+      "target": "btc_code",
+      "description": "BTC is the common currency code."
+    },
+    {
+      "id": "bitcoin_rel_0140",
+      "source": "bitcoin",
+      "predicate": "sometimes_uses_code",
+      "target": "xbt_code",
+      "description": "Some market data services use XBT."
+    },
+    {
+      "id": "bitcoin_rel_0141",
+      "source": "consensus",
+      "predicate": "selects",
+      "target": "longest_chain_rule",
+      "description": "Nodes choose the valid chain with the most accumulated work."
+    },
+    {
+      "id": "bitcoin_rel_0142",
+      "source": "longest_chain_rule",
+      "predicate": "compares",
+      "target": "chainwork",
+      "description": "Chain selection is best understood as most accumulated work, not simply block count."
+    },
+    {
+      "id": "bitcoin_rel_0143",
+      "source": "chainwork",
+      "predicate": "accumulates_in",
+      "target": "blockchain",
+      "description": "Each valid block adds proof of work to its chain."
+    },
+    {
+      "id": "bitcoin_rel_0144",
+      "source": "consensus",
+      "predicate": "depends_on",
+      "target": "proof_of_work",
+      "description": "Proof of work provides the chain-selection mechanism."
+    },
+    {
+      "id": "bitcoin_rel_0145",
+      "source": "consensus",
+      "predicate": "enforced_by",
+      "target": "full_node",
+      "description": "Nodes independently enforce consensus rules."
+    },
+    {
+      "id": "bitcoin_rel_0146",
+      "source": "node_consensus_rules",
+      "predicate": "include",
+      "target": "transaction_validation",
+      "description": "Rules govern transaction validity."
+    },
+    {
+      "id": "bitcoin_rel_0147",
+      "source": "node_consensus_rules",
+      "predicate": "include",
+      "target": "block_validation",
+      "description": "Rules govern block validity."
+    },
+    {
+      "id": "bitcoin_rel_0148",
+      "source": "proof_of_work",
+      "predicate": "helps_resist",
+      "target": "sybil_attack",
+      "description": "Influence is tied to computational work rather than raw identity count."
+    },
+    {
+      "id": "bitcoin_rel_0149",
+      "source": "proof_of_work",
+      "predicate": "helps_resist",
+      "target": "double_spending",
+      "description": "The cost of rewriting history raises the difficulty of double-spends."
+    },
+    {
+      "id": "bitcoin_rel_0150",
+      "source": "majority_attack",
+      "predicate": "targets",
+      "target": "chainwork",
+      "description": "An attacker with majority hash rate may produce more work than competing miners."
+    },
+    {
+      "id": "bitcoin_rel_0151",
+      "source": "majority_attack",
+      "predicate": "can_enable",
+      "target": "reorganization",
+      "description": "Majority hash rate can support recent-chain replacement."
+    },
+    {
+      "id": "bitcoin_rel_0152",
+      "source": "majority_attack",
+      "predicate": "can_enable",
+      "target": "censorship_resistance",
+      "description": "A majority attacker may censor transactions, undermining censorship resistance."
+    },
+    {
+      "id": "bitcoin_rel_0153",
+      "source": "majority_attack",
+      "predicate": "does_not_override",
+      "target": "node_consensus_rules",
+      "description": "Hash power cannot make nodes accept an invalid signature, arbitrary inflation, or otherwise invalid block."
+    },
+    {
+      "id": "bitcoin_rel_0154",
+      "source": "confirmation",
+      "predicate": "increases_with",
+      "target": "blockchain",
+      "description": "Each subsequent block adds confirmation depth."
+    },
+    {
+      "id": "bitcoin_rel_0155",
+      "source": "confirmation",
+      "predicate": "increases",
+      "target": "probabilistic_finality",
+      "description": "More confirmations generally increase reversal cost and settlement confidence."
+    },
+    {
+      "id": "bitcoin_rel_0156",
+      "source": "reorganization",
+      "predicate": "replaces",
+      "target": "orphaned_block",
+      "description": "A reorg can remove previously accepted blocks from the preferred chain."
+    },
+    {
+      "id": "bitcoin_rel_0157",
+      "source": "network_partition",
+      "predicate": "can_cause",
+      "target": "fork",
+      "description": "Disconnected groups may temporarily see different valid chains."
+    },
+    {
+      "id": "bitcoin_rel_0158",
+      "source": "fork",
+      "predicate": "may_resolve_as",
+      "target": "reorganization",
+      "description": "A temporary fork resolves when a more-work valid chain wins."
+    },
+    {
+      "id": "bitcoin_rel_0159",
+      "source": "segwit",
+      "predicate": "is_a",
+      "target": "soft_fork",
+      "description": "SegWit was a soft-fork upgrade."
+    },
+    {
+      "id": "bitcoin_rel_0160",
+      "source": "segwit",
+      "predicate": "activated_in",
+      "target": "segwit_2017",
+      "description": "The upgrade activated in August 2017."
+    },
+    {
+      "id": "bitcoin_rel_0161",
+      "source": "segwit",
+      "predicate": "supports",
+      "target": "lightning_network",
+      "description": "SegWit improved transaction handling and supported Lightning use."
+    },
+    {
+      "id": "bitcoin_rel_0162",
+      "source": "segwit",
+      "predicate": "addresses",
+      "target": "transaction_malleability",
+      "description": "SegWit changed witness-data handling relevant to malleability."
+    },
+    {
+      "id": "bitcoin_rel_0163",
+      "source": "bitcoin_cash",
+      "predicate": "originated_from",
+      "target": "fork",
+      "description": "Bitcoin Cash split from Bitcoin in a scaling dispute."
+    },
+    {
+      "id": "bitcoin_rel_0164",
+      "source": "bitcoin_cash",
+      "predicate": "associated_with",
+      "target": "block_size_limit",
+      "description": "The dispute concerned block-size scaling choices."
+    },
+    {
+      "id": "bitcoin_rel_0165",
+      "source": "taproot",
+      "predicate": "is_a",
+      "target": "soft_fork",
+      "description": "Taproot was activated as a protocol upgrade."
+    },
+    {
+      "id": "bitcoin_rel_0166",
+      "source": "taproot",
+      "predicate": "activated_in",
+      "target": "taproot_2021",
+      "description": "Taproot activated in November 2021."
+    },
+    {
+      "id": "bitcoin_rel_0167",
+      "source": "taproot",
+      "predicate": "enables",
+      "target": "schnorr",
+      "description": "Taproot added support for Schnorr signatures."
+    },
+    {
+      "id": "bitcoin_rel_0168",
+      "source": "taproot",
+      "predicate": "improves",
+      "target": "script",
+      "description": "Taproot expanded script capabilities and efficiency."
+    },
+    {
+      "id": "bitcoin_rel_0169",
+      "source": "taproot",
+      "predicate": "supports",
+      "target": "lightning_network",
+      "description": "Taproot can support improved Lightning functionality."
+    },
+    {
+      "id": "bitcoin_rel_0170",
+      "source": "lightning_network",
+      "predicate": "is_a",
+      "target": "layer_two_protocol",
+      "description": "Lightning operates as a second layer over Bitcoin."
+    },
+    {
+      "id": "bitcoin_rel_0171",
+      "source": "lightning_network",
+      "predicate": "uses",
+      "target": "payment_channel",
+      "description": "Payment channels allow off-chain updates."
+    },
+    {
+      "id": "bitcoin_rel_0172",
+      "source": "payment_channel",
+      "predicate": "settles_on",
+      "target": "blockchain",
+      "description": "Channel opening and closing can use base-layer transactions."
+    },
+    {
+      "id": "bitcoin_rel_0173",
+      "source": "block_size_limit",
+      "predicate": "constrains",
+      "target": "scalability",
+      "description": "Base-layer capacity constraints affect throughput and fees."
+    },
+    {
+      "id": "bitcoin_rel_0174",
+      "source": "scalability",
+      "predicate": "motivates",
+      "target": "lightning_network",
+      "description": "Second-layer systems aim to handle more payments without every payment being an on-chain transaction."
+    },
+    {
+      "id": "bitcoin_rel_0175",
+      "source": "bitcoin",
+      "predicate": "is",
+      "target": "pseudonymity",
+      "description": "Addresses do not directly encode civil identities."
+    },
+    {
+      "id": "bitcoin_rel_0176",
+      "source": "pseudonymity",
+      "predicate": "limits",
+      "target": "privacy",
+      "description": "Public address identifiers do not guarantee anonymity."
+    },
+    {
+      "id": "bitcoin_rel_0177",
+      "source": "blockchain",
+      "predicate": "makes_public",
+      "target": "transaction",
+      "description": "On-chain transaction data is public."
+    },
+    {
+      "id": "bitcoin_rel_0178",
+      "source": "chain_analysis",
+      "predicate": "analyzes",
+      "target": "blockchain",
+      "description": "Public transactions can be clustered using behavioral patterns."
+    },
+    {
+      "id": "bitcoin_rel_0179",
+      "source": "chain_analysis",
+      "predicate": "can_link",
+      "target": "address",
+      "description": "Known identity/address associations can expose transaction relationships."
+    },
+    {
+      "id": "bitcoin_rel_0180",
+      "source": "new_address",
+      "predicate": "can_improve",
+      "target": "privacy",
+      "description": "Address rotation may reduce some address reuse linkability but does not guarantee anonymity."
+    },
+    {
+      "id": "bitcoin_rel_0181",
+      "source": "fungibility",
+      "predicate": "challenged_by",
+      "target": "chain_analysis",
+      "description": "Historical provenance can lead to discriminatory treatment of otherwise equivalent units."
+    },
+    {
+      "id": "bitcoin_rel_0182",
+      "source": "bitcoin",
+      "predicate": "aims_for",
+      "target": "fungibility",
+      "description": "Protocol-level units follow the same spending rules."
+    },
+    {
+      "id": "bitcoin_rel_0183",
+      "source": "blockchain_explorer",
+      "predicate": "displays",
+      "target": "blockchain",
+      "description": "Explorers expose public ledger data."
+    },
+    {
+      "id": "bitcoin_rel_0184",
+      "source": "lightweight_client",
+      "predicate": "may_use",
+      "target": "spv",
+      "description": "SPV clients do not independently validate the entire chain in the same way as full nodes."
+    },
+    {
+      "id": "bitcoin_rel_0185",
+      "source": "spv",
+      "predicate": "reduces",
+      "target": "local_storage_requirement",
+      "description": "Light clients avoid downloading and validating the complete chain."
+    },
+    {
+      "id": "bitcoin_rel_0186",
+      "source": "lightweight_client",
+      "predicate": "depends_on",
+      "target": "bitcoin_network",
+      "description": "Light clients communicate with network peers or services."
+    },
+    {
+      "id": "bitcoin_rel_0187",
+      "source": "bitcoin",
+      "predicate": "faces",
+      "target": "scalability",
+      "description": "Limited capacity can lead to delays and fees."
+    },
+    {
+      "id": "bitcoin_rel_0188",
+      "source": "bitcoin",
+      "predicate": "faces",
+      "target": "decentralization",
+      "description": "Mining pools, software concentration, and infrastructure dependencies can create centralization pressure."
+    },
+    {
+      "id": "bitcoin_rel_0189",
+      "source": "mining_pool",
+      "predicate": "can_increase",
+      "target": "decentralization",
+      "description": "Pooling can reduce individual miner payout variance but may also concentrate decision power; this relation is context-dependent."
+    },
+    {
+      "id": "bitcoin_rel_0190",
+      "source": "decentralization",
+      "predicate": "supports",
+      "target": "censorship_resistance",
+      "description": "Distribution of independent actors reduces single points of control."
+    },
+    {
+      "id": "bitcoin_rel_0191",
+      "source": "governance",
+      "predicate": "coordinates",
+      "target": "developer",
+      "description": "Developers contribute code but do not unilaterally force every node to accept a consensus change."
+    },
+    {
+      "id": "bitcoin_rel_0192",
+      "source": "governance",
+      "predicate": "involves",
+      "target": "miner",
+      "description": "Miners signal and produce blocks but must still satisfy node rules."
+    },
+    {
+      "id": "bitcoin_rel_0193",
+      "source": "governance",
+      "predicate": "involves",
+      "target": "full_node",
+      "description": "Node operators choose software and enforce its rules."
+    },
+    {
+      "id": "bitcoin_rel_0194",
+      "source": "bitcoin_core",
+      "predicate": "maintained_by",
+      "target": "developer",
+      "description": "Open-source contributors maintain implementation code."
+    },
+    {
+      "id": "bitcoin_rel_0195",
+      "source": "bitcoin_core",
+      "predicate": "has_release",
+      "target": "release",
+      "description": "The supplied article lists version 31.1.0 in July 2026."
+    },
+    {
+      "id": "bitcoin_rel_0196",
+      "source": "initial_release",
+      "predicate": "is_release_of",
+      "target": "bitcoin_core",
+      "description": "Bitcoin 0.1.0 was released in January 2009."
+    },
+    {
+      "id": "bitcoin_rel_0197",
+      "source": "bitcoin",
+      "predicate": "has_currency_function",
+      "target": "medium_of_exchange",
+      "description": "Bitcoin is used for payments but common usage faces practical limitations."
+    },
+    {
+      "id": "bitcoin_rel_0198",
+      "source": "bitcoin",
+      "predicate": "has_currency_function",
+      "target": "store_of_value",
+      "description": "Some holders use bitcoin as a store-of-value asset; this claim is contested."
+    },
+    {
+      "id": "bitcoin_rel_0199",
+      "source": "bitcoin",
+      "predicate": "has_currency_function",
+      "target": "unit_of_account",
+      "description": "Direct price quotation in bitcoin is relatively uncommon according to the article."
+    },
+    {
+      "id": "bitcoin_rel_0200",
+      "source": "investment_asset",
+      "predicate": "associated_with",
+      "target": "exchange_rate",
+      "description": "Market price is floating and can be highly volatile."
+    },
+    {
+      "id": "bitcoin_rel_0201",
+      "source": "investment_asset",
+      "predicate": "affected_by",
+      "target": "volatility",
+      "description": "Price volatility creates risk for investors and merchants."
+    },
+    {
+      "id": "bitcoin_rel_0202",
+      "source": "bitcoin",
+      "predicate": "traded_on",
+      "target": "exchange",
+      "description": "Exchanges provide BTC/fiat and BTC/crypto markets."
+    },
+    {
+      "id": "bitcoin_rel_0203",
+      "source": "bitcoin_futures",
+      "predicate": "traded_at",
+      "target": "cme",
+      "description": "CME introduced Bitcoin futures in December 2017."
+    },
+    {
+      "id": "bitcoin_rel_0204",
+      "source": "spot_etf",
+      "predicate": "includes",
+      "target": "etf_2024",
+      "description": "US spot Bitcoin ETFs began trading in January 2024."
+    },
+    {
+      "id": "bitcoin_rel_0205",
+      "source": "proshares_bito",
+      "predicate": "is_a",
+      "target": "bitcoin_futures",
+      "description": "BITO is a futures-based bitcoin ETF."
+    },
+    {
+      "id": "bitcoin_rel_0206",
+      "source": "proshares_bito",
+      "predicate": "listed_on",
+      "target": "cme",
+      "description": "The article says BITO was listed on CME."
+    },
+    {
+      "id": "bitcoin_rel_0207",
+      "source": "bitcoin",
+      "predicate": "may_be_used_as",
+      "target": "investment_asset",
+      "description": "Investors and companies hold bitcoin as an investment."
+    },
+    {
+      "id": "bitcoin_rel_0208",
+      "source": "bitcoin_price_history",
+      "predicate": "reflects",
+      "target": "volatility",
+      "description": "The price history includes substantial rises and falls."
+    },
+    {
+      "id": "bitcoin_rel_0209",
+      "source": "economic_bubble",
+      "predicate": "debates",
+      "target": "investment_asset",
+      "description": "Economists disagree whether market valuation reflects a bubble, useful asset, or speculative narrative."
+    },
+    {
+      "id": "bitcoin_rel_0210",
+      "source": "market_liquidity",
+      "predicate": "affects",
+      "target": "exchange_rate",
+      "description": "Liquidity varies across venues and can affect execution."
+    },
+    {
+      "id": "bitcoin_rel_0211",
+      "source": "austrian_economics",
+      "predicate": "influenced",
+      "target": "libertarianism",
+      "description": "Free-market monetary thought overlaps with some libertarian arguments."
+    },
+    {
+      "id": "bitcoin_rel_0212",
+      "source": "friedrich_hayek",
+      "predicate": "authored",
+      "target": "denationalisation_of_money",
+      "description": "Hayek's book is cited as an ideological antecedent."
+    },
+    {
+      "id": "bitcoin_rel_0213",
+      "source": "denationalisation_of_money",
+      "predicate": "influenced",
+      "target": "bitcoin",
+      "description": "The article links Bitcoin ideology to competition in money and opposition to monetary monopoly."
+    },
+    {
+      "id": "bitcoin_rel_0214",
+      "source": "cypherpunk_movement",
+      "predicate": "influenced",
+      "target": "bitcoin",
+      "description": "Cryptographic privacy and digital-autonomy discussions form part of Bitcoin's intellectual context."
+    },
+    {
+      "id": "bitcoin_rel_0215",
+      "source": "bitcoin",
+      "predicate": "discussed_in",
+      "target": "regulation",
+      "description": "Bitcoin's decentralized nature complicates but does not eliminate regulation."
+    },
+    {
+      "id": "bitcoin_rel_0216",
+      "source": "fincen",
+      "predicate": "issued_guidance_on",
+      "target": "regulation",
+      "description": "FinCEN issued 2013 guidance on decentralized virtual currencies."
+    },
+    {
+      "id": "bitcoin_rel_0217",
+      "source": "regulation",
+      "predicate": "affects",
+      "target": "exchange",
+      "description": "Authorities can regulate intermediaries and exchanges."
+    },
+    {
+      "id": "bitcoin_rel_0218",
+      "source": "regulation",
+      "predicate": "affects",
+      "target": "miner",
+      "description": "Some miners may have registration or compliance obligations depending on jurisdiction and activity."
+    },
+    {
+      "id": "bitcoin_rel_0219",
+      "source": "el_salvador",
+      "predicate": "adopted",
+      "target": "legal_tender",
+      "description": "Bitcoin was adopted alongside the US dollar in 2021, followed by a 2025 reform removing mandatory acceptance obligations."
+    },
+    {
+      "id": "bitcoin_rel_0220",
+      "source": "imf",
+      "predicate": "influenced_policy_in",
+      "target": "el_salvador",
+      "description": "The article associates the 2025 reform with IMF loan conditions."
+    },
+    {
+      "id": "bitcoin_rel_0221",
+      "source": "central_african_republic",
+      "predicate": "adopted",
+      "target": "legal_tender",
+      "description": "The country adopted Bitcoin legal-tender status in 2022 and repealed the reform in 2023."
+    },
+    {
+      "id": "bitcoin_rel_0222",
+      "source": "us_dollar",
+      "predicate": "coexisted_with",
+      "target": "el_salvador",
+      "description": "The US dollar remained the other currency in El Salvador's 2021 framework."
+    },
+    {
+      "id": "bitcoin_rel_0223",
+      "source": "bitcoin",
+      "predicate": "used_by",
+      "target": "silk_road",
+      "description": "Silk Road was an early high-profile use case and regulatory concern."
+    },
+    {
+      "id": "bitcoin_rel_0224",
+      "source": "mt_gox",
+      "predicate": "associated_with",
+      "target": "financial_crimes",
+      "description": "Mt. Gox faced enforcement actions and is associated with exchange-related theft/losses."
+    },
+    {
+      "id": "bitcoin_rel_0225",
+      "source": "bitcoin_seizure",
+      "predicate": "associated_with",
+      "target": "financial_crimes",
+      "description": "Authorities seized bitcoin in investigations."
+    },
+    {
+      "id": "bitcoin_rel_0226",
+      "source": "criminal_use",
+      "predicate": "motivates",
+      "target": "regulation",
+      "description": "Illicit use has drawn regulators and law-enforcement attention."
+    },
+    {
+      "id": "bitcoin_rel_0227",
+      "source": "bitcoin",
+      "predicate": "has_environmental_issue",
+      "target": "environmental_impact",
+      "description": "Proof-of-work mining consumes electricity and produces hardware waste."
+    },
+    {
+      "id": "bitcoin_rel_0228",
+      "source": "environmental_impact",
+      "predicate": "includes",
+      "target": "electricity_consumption",
+      "description": "Electricity use is a major environmental concern."
+    },
+    {
+      "id": "bitcoin_rel_0229",
+      "source": "environmental_impact",
+      "predicate": "includes",
+      "target": "electronic_waste",
+      "description": "Short hardware lifetimes can generate electronic waste."
+    },
+    {
+      "id": "bitcoin_rel_0230",
+      "source": "energy_mix",
+      "predicate": "affects",
+      "target": "environmental_impact",
+      "description": "The environmental footprint depends in part on the electricity mix and equipment."
+    },
+    {
+      "id": "bitcoin_rel_0231",
+      "source": "mining",
+      "predicate": "consumes",
+      "target": "electricity_consumption",
+      "description": "Hashing requires computational energy."
+    },
+    {
+      "id": "bitcoin_rel_0232",
+      "source": "asic",
+      "predicate": "contributes_to",
+      "target": "electronic_waste",
+      "description": "Rapid hardware competition can shorten equipment useful life."
+    },
+    {
+      "id": "bitcoin_rel_0233",
+      "source": "bitcoin",
+      "predicate": "supports",
+      "target": "digital_scarcity",
+      "description": "The issuance and transaction rules aim to create digitally scarce units."
+    },
+    {
+      "id": "bitcoin_rel_0234",
+      "source": "digital_scarcity",
+      "predicate": "depends_on",
+      "target": "node_consensus_rules",
+      "description": "Scarcity relies on nodes enforcing issuance and validity rules."
+    },
+    {
+      "id": "bitcoin_rel_0235",
+      "source": "bitcoin",
+      "predicate": "aims_for",
+      "target": "censorship_resistance",
+      "description": "No single administrator approves transactions, though inclusion can be influenced by miners."
+    },
+    {
+      "id": "bitcoin_rel_0236",
+      "source": "bitcoin",
+      "predicate": "uses",
+      "target": "decentralized_issuance",
+      "description": "New coins arise through protocol-defined subsidy claims."
+    },
+    {
+      "id": "bitcoin_rel_0237",
+      "source": "bitcoin",
+      "predicate": "launched_at",
+      "target": "bitcoin_launch",
+      "description": "The network began with the genesis block on 3 January 2009."
+    },
+    {
+      "id": "bitcoin_rel_0238",
+      "source": "bitcoin_2008",
+      "predicate": "preceded",
+      "target": "bitcoin_launch",
+      "description": "The white paper preceded the network launch."
+    },
+    {
+      "id": "bitcoin_rel_0239",
+      "source": "segwit_2017",
+      "predicate": "changed",
+      "target": "segwit",
+      "description": "The activation event marks SegWit deployment."
+    },
+    {
+      "id": "bitcoin_rel_0240",
+      "source": "taproot_2021",
+      "predicate": "changed",
+      "target": "taproot",
+      "description": "The activation event marks Taproot deployment."
+    },
+    {
+      "id": "bitcoin_rel_0241",
+      "source": "etf_2024",
+      "predicate": "changed_market_access_for",
+      "target": "investment_asset",
+      "description": "Spot ETFs provided a regulated exchange-traded exposure channel in the US."
+    },
+    {
+      "id": "bitcoin_rel_0242",
+      "source": "ordinals",
+      "predicate": "uses",
+      "target": "satoshi",
+      "description": "Ordinals assign identifiers/order conventions to satoshis."
+    },
+    {
+      "id": "bitcoin_rel_0243",
+      "source": "ordinals",
+      "predicate": "supports",
+      "target": "nft",
+      "description": "The article describes Ordinals as enabling NFT-like uses on Bitcoin."
+    },
+    {
+      "id": "bitcoin_rel_0244",
+      "source": "payment_processor",
+      "predicate": "facilitates",
+      "target": "medium_of_exchange",
+      "description": "Payment processors can help merchants accept bitcoin or convert to fiat."
+    },
+    {
+      "id": "bitcoin_rel_0245",
+      "source": "remittance",
+      "predicate": "uses",
+      "target": "bitcoin",
+      "description": "Bitcoin has been proposed for cross-border transfers, though broad usage claims require careful qualification."
+    },
+    {
+      "id": "bitcoin_rel_0246",
+      "source": "double_entry_ledger",
+      "predicate": "contrasted_with",
+      "target": "utxo",
+      "description": "Bitcoin tracks spendable outputs rather than balances in a conventional account ledger."
+    },
+    {
+      "id": "bitcoin_rel_0247",
+      "source": "probabilistic_finality",
+      "predicate": "depends_on",
+      "target": "chainwork",
+      "description": "Additional work on top of a transaction increases confidence in settlement."
+    },
+    {
+      "id": "bitcoin_rel_0248",
+      "source": "economic_incentives",
+      "predicate": "motivate",
+      "target": "miner",
+      "description": "Subsidy and fees compensate miners for work."
+    },
+    {
+      "id": "bitcoin_rel_0249",
+      "source": "proof_of_work_security",
+      "predicate": "depends_on",
+      "target": "hashrate",
+      "description": "The relative distribution of hash power affects attack cost."
+    },
+    {
+      "id": "bitcoin_rel_0250",
+      "source": "proof_of_work_security",
+      "predicate": "depends_on",
+      "target": "node_consensus_rules",
+      "description": "Independent validation rejects invalid blocks even if a miner produced them."
+    },
+    {
+      "id": "bitcoin_rel_0251",
+      "source": "block_subsidy",
+      "predicate": "eventually_declines_toward",
+      "target": "transaction_fee",
+      "description": "As the subsidy declines, fees are intended to become a larger part of miner revenue."
+    },
+    {
+      "id": "bitcoin_rel_0252",
+      "source": "bitcoin_issuance",
+      "predicate": "is_constrained_by",
+      "target": "max_supply_exact",
+      "description": "The subsidy schedule leads to a total below 21 million."
+    },
+    {
+      "id": "bitcoin_rel_0253",
+      "source": "source_wikipedia_bitcoin",
+      "predicate": "describes",
+      "target": "bitcoin",
+      "description": "The source article supplies the core historical, technical, economic, and legal account."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "p2p_node_validation",
+      "name": "Peer-to-peer independent validation",
+      "description": "Nodes relay data but independently apply consensus rules instead of trusting a central server.",
+      "participants": [
+        "bitcoin_network",
+        "node",
+        "full_node",
+        "transaction",
+        "block",
+        "node_consensus_rules"
+      ],
+      "flow": [
+        "transaction broadcast",
+        "peer relay",
+        "independent transaction validation",
+        "miner selection",
+        "block broadcast",
+        "independent block validation",
+        "chain state update"
+      ],
+      "benefits": [
+        "No central ledger administrator",
+        "Independent verification",
+        "Resistance to accepting invalid state from a single service"
+      ],
+      "tradeoffs": [
+        "Bandwidth, storage, and validation costs",
+        "Network partitions can temporarily produce competing views"
+      ]
+    },
+    {
+      "id": "utxo_spend_lifecycle",
+      "name": "UTXO transaction lifecycle",
+      "description": "Bitcoin value is represented as outputs created by prior transactions and consumed by later transactions.",
+      "participants": [
+        "wallet",
+        "private_key",
+        "transaction_input",
+        "utxo",
+        "transaction_output",
+        "script",
+        "digital_signature",
+        "transaction_fee",
+        "change_output"
+      ],
+      "flow": [
+        "select spendable UTXOs",
+        "construct inputs and outputs",
+        "satisfy locking scripts",
+        "compute fee from input/output difference",
+        "broadcast transaction",
+        "validate inputs and scripts",
+        "mark inputs spent and outputs unspent"
+      ],
+      "benefits": [
+        "Explicit ownership conditions",
+        "Straightforward double-spend checks against current UTXO state"
+      ],
+      "tradeoffs": [
+        "Coin selection affects privacy and fees",
+        "Change and fee handling require wallet logic"
+      ]
+    },
+    {
+      "id": "proof_of_work_mining",
+      "name": "Proof-of-work block production",
+      "description": "Miners assemble candidate blocks and repeatedly hash header variants until the result meets the target.",
+      "participants": [
+        "miner",
+        "block_template",
+        "transaction_selection",
+        "block_header",
+        "nonce",
+        "double_sha256",
+        "difficulty_target",
+        "proof_of_work"
+      ],
+      "flow": [
+        "select valid mempool transactions",
+        "assemble candidate block",
+        "vary nonce and other header data",
+        "compute double SHA-256",
+        "compare hash to target",
+        "broadcast winning block",
+        "nodes independently validate"
+      ],
+      "benefits": [
+        "Makes block creation resource-costly",
+        "Lets nodes verify a solution cheaply"
+      ],
+      "tradeoffs": [
+        "High electricity and hardware expenditure",
+        "Mining-pool concentration can weaken decentralization"
+      ]
+    },
+    {
+      "id": "most_work_consensus",
+      "name": "Most-accumulated-work chain selection",
+      "description": "Nodes choose among valid competing histories based on accumulated proof of work.",
+      "participants": [
+        "full_node",
+        "blockchain",
+        "chainwork",
+        "consensus",
+        "fork",
+        "reorganization",
+        "confirmation"
+      ],
+      "flow": [
+        "receive candidate blocks",
+        "validate each block",
+        "track competing valid branches",
+        "compare accumulated work",
+        "switch to the valid most-work chain when needed"
+      ],
+      "benefits": [
+        "Deterministic fork-choice rule from node perspective",
+        "Older history becomes more expensive to replace as work accumulates"
+      ],
+      "tradeoffs": [
+        "Settlement confidence is probabilistic",
+        "Recent transactions can be reversed by sufficiently powerful competing work"
+      ]
+    },
+    {
+      "id": "issuance_and_miner_incentives",
+      "name": "Coinbase issuance and miner compensation",
+      "description": "A valid block's coinbase transaction claims the scheduled subsidy and fees from included transactions.",
+      "participants": [
+        "coinbase_transaction",
+        "block_subsidy",
+        "transaction_fee",
+        "block_reward",
+        "halving",
+        "issuance_schedule",
+        "supply_limit",
+        "miner"
+      ],
+      "flow": [
+        "determine current subsidy era",
+        "select transactions and fees",
+        "create coinbase claim within consensus limits",
+        "validate block",
+        "credit claimed outputs as UTXOs"
+      ],
+      "benefits": [
+        "Rule-based issuance without a central issuer",
+        "Economic incentive to secure the chain"
+      ],
+      "tradeoffs": [
+        "Subsidy declines over time",
+        "Long-term security depends increasingly on fee revenue and other economic conditions"
+      ]
+    },
+    {
+      "id": "wallet_key_control",
+      "name": "Wallet key custody and signing",
+      "description": "Wallets manage key material, create transactions, and produce authorization proofs while the network validates them.",
+      "participants": [
+        "wallet",
+        "private_key",
+        "public_key",
+        "digital_signature",
+        "address",
+        "hardware_wallet",
+        "cold_storage",
+        "wallet_backup"
+      ],
+      "flow": [
+        "create or recover key material",
+        "derive public key/address",
+        "receive outputs locked to a script",
+        "construct a spend",
+        "sign under the spending condition",
+        "broadcast signed transaction"
+      ],
+      "benefits": [
+        "Users can self-custody without an account administrator",
+        "Offline signing can reduce key exposure"
+      ],
+      "tradeoffs": [
+        "Lost keys can mean unrecoverable funds",
+        "Exposed keys can enable theft; custodial services introduce counterparty risk"
+      ]
+    },
+    {
+      "id": "scaling_layers",
+      "name": "Base-layer and second-layer scaling",
+      "description": "Base-layer block capacity constraints motivate systems such as Lightning that move many payment updates off-chain.",
+      "participants": [
+        "blockchain",
+        "block_size_limit",
+        "scalability",
+        "segwit",
+        "lightning_network",
+        "payment_channel"
+      ],
+      "flow": [
+        "open channel on-chain",
+        "exchange off-chain channel updates",
+        "route payments through channel network",
+        "settle channel state on-chain when needed"
+      ],
+      "benefits": [
+        "Can reduce base-layer transaction demand",
+        "Can improve payment latency and throughput"
+      ],
+      "tradeoffs": [
+        "Channel liquidity and routing constraints",
+        "Not every operation is free of base-layer dependencies"
+      ]
+    },
+    {
+      "id": "public_ledger_privacy",
+      "name": "Pseudonymous public ledger and chain analysis",
+      "description": "Addresses obscure identities at the protocol layer but transaction graphs remain public and can be analyzed.",
+      "participants": [
+        "address",
+        "blockchain",
+        "transaction",
+        "pseudonymity",
+        "chain_analysis",
+        "new_address",
+        "privacy"
+      ],
+      "flow": [
+        "publish address or transaction",
+        "record transaction publicly",
+        "analyze input/output patterns",
+        "associate clusters with known identities where evidence permits"
+      ],
+      "benefits": [
+        "Public auditability and verifiability"
+      ],
+      "tradeoffs": [
+        "Address reuse and transaction patterns can reveal links",
+        "New addresses do not guarantee anonymity"
+      ]
+    },
+    {
+      "id": "bitcoin_core_cplusplus_implementation",
+      "name": "Bitcoin Core C++ implementation architecture",
+      "description": "The supplied article identifies Bitcoin Core as the open-source implementation written in C++. This is a conceptual mapping of major subsystems, not a claim that the project is written in C.",
+      "participants": [
+        "bitcoin_core",
+        "cpp",
+        "c_language",
+        "bitcoin_network",
+        "full_node",
+        "transaction_validation",
+        "block_validation",
+        "utxo_set",
+        "mempool",
+        "wallet",
+        "mining"
+      ],
+      "flow": [
+        "peer networking receives messages",
+        "serialization/parsing produces protocol objects",
+        "validation checks transactions and blocks",
+        "chainstate and UTXO state update",
+        "mempool tracks unconfirmed transactions",
+        "wallet logic manages keys and transaction construction",
+        "RPC/UI surfaces operations"
+      ],
+      "benefits": [
+        "Modular implementation of a distributed protocol",
+        "Open-source review and independent builds"
+      ],
+      "tradeoffs": [
+        "Large systems codebase with security-critical edge cases",
+        "C++ semantics and project APIs matter; illustrative C pseudocode is not drop-in Bitcoin Core code"
+      ]
+    },
+    {
+      "id": "protocol_upgrade_governance",
+      "name": "Protocol upgrade and ecosystem coordination",
+      "description": "Consensus and software upgrades require coordination among developers, miners, node operators, wallets, and businesses.",
+      "participants": [
+        "governance",
+        "developer",
+        "bitcoin_core",
+        "full_node",
+        "miner",
+        "soft_fork",
+        "hard_fork",
+        "segwit",
+        "taproot"
+      ],
+      "flow": [
+        "propose change",
+        "review and implement",
+        "release software",
+        "participants choose whether and when to upgrade",
+        "activate under specified rules",
+        "nodes enforce their configured consensus rules"
+      ],
+      "benefits": [
+        "Changes can be developed transparently",
+        "Users and operators retain independent rule-enforcement choices"
+      ],
+      "tradeoffs": [
+        "Coordination can be slow and contentious",
+        "Incompatible rules can cause persistent forks"
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "r01",
+      "rule": "A transaction input must reference an available unspent output and satisfy its spending conditions.",
+      "category": "consensus_validation",
+      "implication": "A valid signature alone is not sufficient if the referenced output is missing or already spent."
+    },
+    {
+      "id": "r02",
+      "rule": "A node independently validates blocks against consensus rules.",
+      "category": "consensus_validation",
+      "implication": "A miner's block is not accepted merely because the miner found proof of work."
+    },
+    {
+      "id": "r03",
+      "rule": "A Bitcoin proof-of-work block header must hash below the current target under double SHA-256.",
+      "category": "proof_of_work",
+      "implication": "The target defines the acceptable hash threshold."
+    },
+    {
+      "id": "r04",
+      "rule": "The valid chain with the greatest accumulated work is preferred over a competing valid chain.",
+      "category": "consensus",
+      "implication": "Block count alone is an incomplete description of fork choice."
+    },
+    {
+      "id": "r05",
+      "rule": "Difficulty is recalculated every 2,016 blocks to target an average block interval near ten minutes.",
+      "category": "difficulty",
+      "implication": "Actual block times vary; ten minutes is a long-run target, not a timer."
+    },
+    {
+      "id": "r06",
+      "rule": "A coinbase transaction may claim only the permitted subsidy plus eligible fees.",
+      "category": "issuance",
+      "implication": "Nodes reject blocks that create excess value even if the block has valid proof of work."
+    },
+    {
+      "id": "r07",
+      "rule": "The block subsidy halves every 210,000 blocks.",
+      "category": "monetary_policy",
+      "implication": "Issuance declines over time and approaches a total below 21 million BTC."
+    },
+    {
+      "id": "r08",
+      "rule": "A bitcoin is divisible into 100,000,000 satoshis under the unit model described in the article.",
+      "category": "denominations",
+      "implication": "The satoshi is the smallest base unit in this model."
+    },
+    {
+      "id": "r09",
+      "rule": "Private keys must remain secret and backed up safely.",
+      "category": "key_management",
+      "implication": "Key exposure can enable theft; loss of all valid key material can make funds inaccessible."
+    },
+    {
+      "id": "r10",
+      "rule": "Bitcoin addresses and transaction histories are public, even though addresses do not directly state civil identities.",
+      "category": "privacy",
+      "implication": "Bitcoin is pseudonymous rather than inherently anonymous."
+    },
+    {
+      "id": "r11",
+      "rule": "Generating a new address can reduce some linkability but does not guarantee privacy.",
+      "category": "privacy",
+      "implication": "Public transaction patterns and external identity information can still connect activity."
+    },
+    {
+      "id": "r12",
+      "rule": "A majority-hash-rate attacker may reorganize recent blocks or censor transactions, but cannot force fully validating nodes to accept invalid transactions.",
+      "category": "security",
+      "implication": "Hash power does not override signature, supply, or block-validity rules."
+    },
+    {
+      "id": "r13",
+      "rule": "More confirmations generally increase the cost of reversing a transaction, but do not provide absolute mathematical finality.",
+      "category": "settlement",
+      "implication": "Risk tolerance and transaction value influence appropriate confirmation policy."
+    },
+    {
+      "id": "r14",
+      "rule": "Wallet software manages keys and transaction construction; bitcoin is represented on-chain as UTXOs, not stored inside the wallet application.",
+      "category": "wallet_model",
+      "implication": "A wallet backup protects key/recovery material rather than copying coins."
+    },
+    {
+      "id": "r15",
+      "rule": "The article identifies Bitcoin Core as written in C++, not C.",
+      "category": "implementation",
+      "implication": "C-like pseudocode can illustrate concepts but must not be mistaken for compilable Bitcoin Core source."
+    },
+    {
+      "id": "r16",
+      "rule": "A transaction's fee is the difference between its input value and output value, subject to valid transaction rules.",
+      "category": "fees",
+      "implication": "A wallet must account for fee and change-output handling."
+    },
+    {
+      "id": "r17",
+      "rule": "Mining pools reduce individual payout variance but can aggregate decision-making and hash power.",
+      "category": "decentralization",
+      "implication": "Pool concentration is a network-level risk even if many individual machines participate."
+    },
+    {
+      "id": "r18",
+      "rule": "A lightweight client does not provide the same independent full validation as a fully validating node.",
+      "category": "verification",
+      "implication": "Convenience and lower resource use can entail reliance on peers or servers."
+    },
+    {
+      "id": "r19",
+      "rule": "Bitcoin's price is floating and has historically been volatile.",
+      "category": "economics",
+      "implication": "Market price risk differs from the protocol's deterministic issuance schedule."
+    },
+    {
+      "id": "r20",
+      "rule": "Bitcoin's protocol-level fungibility does not prevent services from analyzing or discriminating based on transaction history.",
+      "category": "fungibility",
+      "implication": "Technical interchangeability and market treatment are distinct properties."
+    },
+    {
+      "id": "r21",
+      "rule": "A soft fork tightens or changes rules in a way intended to remain compatible with non-upgraded nodes under defined conditions; a hard fork can be incompatible.",
+      "category": "upgrades",
+      "implication": "Upgrade type influences coordination and chain-split risk."
+    },
+    {
+      "id": "r22",
+      "rule": "Lightning payment channels use off-chain state updates and depend on the base chain for relevant settlement operations.",
+      "category": "scaling",
+      "implication": "Second-layer payments reduce on-chain load but do not eliminate base-layer dependencies."
+    },
+    {
+      "id": "r23",
+      "rule": "A valid proof of work is easy to verify relative to the repeated computation required to find it.",
+      "category": "proof_of_work",
+      "implication": "Nodes can cheaply check a candidate block's hash against the target."
+    },
+    {
+      "id": "r24",
+      "rule": "The 21-million figure is a rounded description; the article notes a theoretical total of 20,999,999.9769 BTC.",
+      "category": "monetary_policy",
+      "implication": "Use exact-supply claims with the article's qualification."
+    },
+    {
+      "id": "r25",
+      "rule": "Legal status and compliance duties vary by jurisdiction and may change over time.",
+      "category": "law",
+      "implication": "Historical legal status should not be presented as current universal advice."
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex01",
+      "title": "Alice pays Bob using a UTXO",
+      "scenario": "Alice's wallet selects spendable outputs, creates an input referencing them, creates a payment output to Bob, optionally creates change, signs the spend, and broadcasts it.",
+      "steps": [
+        "Wallet queries available UTXOs",
+        "Construct inputs and payment/change outputs",
+        "Calculate fee from input-output difference",
+        "Sign according to each input's script condition",
+        "Nodes validate and relay the transaction",
+        "A miner includes it in a valid block"
+      ],
+      "entities": [
+        "wallet",
+        "utxo",
+        "transaction_input",
+        "transaction_output",
+        "private_key",
+        "digital_signature",
+        "transaction_fee",
+        "change_output",
+        "full_node",
+        "miner"
+      ],
+      "caveats": [
+        "The wallet does not contain the coins; the ledger tracks UTXOs.",
+        "A broadcast transaction is not yet confirmed."
+      ]
+    },
+    {
+      "id": "ex02",
+      "title": "Miner finds a block",
+      "scenario": "A miner builds a candidate block and searches for a header hash below the current target.",
+      "steps": [
+        "Select transactions from a mempool",
+        "Build a candidate block and coinbase transaction",
+        "Try nonce and other header variations",
+        "Double-hash the header with SHA-256",
+        "Check hash against target",
+        "Broadcast a successful candidate",
+        "Nodes independently validate it"
+      ],
+      "entities": [
+        "miner",
+        "mempool",
+        "block_template",
+        "nonce",
+        "double_sha256",
+        "difficulty_target",
+        "proof_of_work",
+        "block_validation"
+      ],
+      "caveats": [
+        "Finding a valid hash is probabilistic and can require many attempts.",
+        "Other miners may find a competing block at nearly the same time."
+      ]
+    },
+    {
+      "id": "ex03",
+      "title": "Two blocks appear at once",
+      "scenario": "Network latency leads different nodes to see competing valid blocks at the same height.",
+      "steps": [
+        "Each branch is validated independently",
+        "Miners extend one or both branches",
+        "Nodes compare accumulated work",
+        "Nodes converge on the valid branch with more work",
+        "Transactions only in the losing branch may return to mempools if still valid"
+      ],
+      "entities": [
+        "network_partition",
+        "fork",
+        "chainwork",
+        "consensus",
+        "reorganization",
+        "orphaned_block",
+        "mempool"
+      ],
+      "caveats": [
+        "This is a normal possible network event, not automatically evidence of an attack."
+      ]
+    },
+    {
+      "id": "ex04",
+      "title": "Multisignature treasury",
+      "scenario": "A script requires signatures from multiple distinct keys before funds can be spent.",
+      "steps": [
+        "Create an output locked to a multisignature script",
+        "Distribute signing authority to separate key holders",
+        "Construct a transaction when spending is authorized",
+        "Collect required signatures",
+        "Nodes validate the script and input"
+      ],
+      "entities": [
+        "multisig",
+        "script",
+        "private_key",
+        "digital_signature",
+        "transaction",
+        "transaction_validation"
+      ],
+      "caveats": [
+        "Key loss and coordination failures can still prevent spending."
+      ]
+    },
+    {
+      "id": "ex05",
+      "title": "Cold-storage signing",
+      "scenario": "A user keeps keys offline and transfers an unsigned or partially constructed transaction to an offline signer.",
+      "steps": [
+        "Prepare transaction details on an online device",
+        "Review destination and amount on a trusted display",
+        "Sign with offline key material",
+        "Return signed transaction to an online device",
+        "Broadcast to the network"
+      ],
+      "entities": [
+        "cold_storage",
+        "hardware_wallet",
+        "private_key",
+        "wallet",
+        "digital_signature",
+        "transaction",
+        "bitcoin_network"
+      ],
+      "caveats": [
+        "Offline custody reduces some remote risks but does not prevent all physical, supply-chain, or user-interface attacks."
+      ]
+    },
+    {
+      "id": "ex06",
+      "title": "Lightning payment",
+      "scenario": "Two parties route a payment through payment channels rather than recording every update on the base chain.",
+      "steps": [
+        "Open or use existing channel liquidity",
+        "Exchange off-chain channel updates",
+        "Route payment through channel network",
+        "Use the base chain for relevant channel settlement"
+      ],
+      "entities": [
+        "lightning_network",
+        "payment_channel",
+        "blockchain",
+        "scalability",
+        "segwit"
+      ],
+      "caveats": [
+        "Liquidity, routing, online availability, and channel management affect usability."
+      ]
+    },
+    {
+      "id": "ex07",
+      "title": "Public-ledger privacy risk",
+      "scenario": "An address is not directly a person's name, but transaction patterns may link it to other addresses and known identities.",
+      "steps": [
+        "Observe public transactions",
+        "Cluster addresses using spending patterns",
+        "Associate a cluster with an exchange or published identity",
+        "Infer links to other activity with varying confidence"
+      ],
+      "entities": [
+        "pseudonymity",
+        "privacy",
+        "chain_analysis",
+        "address",
+        "blockchain",
+        "new_address"
+      ],
+      "caveats": [
+        "Inference can be probabilistic and should not be treated as proof of identity without corroboration."
+      ]
+    },
+    {
+      "id": "ex08",
+      "title": "C-like educational model of a UTXO spend",
+      "scenario": "Illustrative pseudocode models the logic of checking inputs and creating outputs. It is not production Bitcoin code and does not represent the full Bitcoin Script or consensus implementation.",
+      "code_language": "C-like pseudocode (illustrative only; Bitcoin Core is C++)",
+      "code": "bool validate_tx(Transaction tx, UTXOSet *set) {\\n    Amount in_total = 0;\\n    Amount out_total = 0;\\n    for (size_t i = 0; i < tx.input_count; i++) {\\n        UTXO *u = utxo_lookup(set, tx.inputs[i].prevout);\\n        if (u == NULL || u->already_spent) return false;\\n        if (!verify_spend_condition(tx, i, u->locking_script)) return false;\\n        in_total += u->value;\\n    }\\n    for (size_t j = 0; j < tx.output_count; j++) {\\n        if (tx.outputs[j].value < 0) return false;\\n        out_total += tx.outputs[j].value;\\n    }\\n    if (out_total > in_total) return false;\\n    return true; // simplified: real validation includes many more consensus checks\\n}",
+      "entities": [
+        "c_language",
+        "cpp",
+        "bitcoin_core",
+        "transaction",
+        "utxo_set",
+        "transaction_validation",
+        "script",
+        "digital_signature"
+      ],
+      "caveats": [
+        "Educational simplification only: omits integer-overflow-safe arithmetic, serialization, locktime/sequence rules, script execution details, witness handling, fee policy, consensus edge cases, and implementation APIs. Never use as a consensus implementation."
+      ],
+      "steps": [
+        "Use a simplified UTXO lookup to reject missing or already-spent inputs",
+        "Check spending authorization for each input",
+        "Sum input and output values",
+        "Reject outputs exceeding inputs",
+        "Treat the result only as a conceptual sketch, not full consensus validation"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_wikipedia_bitcoin",
+      "title": "Bitcoin — supplied Wikipedia article text",
+      "source_type": "user_provided_article_text",
+      "source_basis": "The attached article text supplied by the user; its history, design, mining, wallets, scaling, economics, and regulatory sections inform this graph.",
+      "citation": "The attached Bitcoin article begins with the article metadata and overview and continues through references and further reading.",
+      "limitations": [
+        "Historical and time-sensitive figures are represented as claims reported by the supplied article, not independently verified current data.",
+        "This graph adds explanatory conceptual links and the C-versus-C++ clarification; those links are identified as explanatory modeling rather than verbatim article claims."
+      ]
+    }
+  ],
+  "graph_integrity": {
+    "unique_entity_ids": true,
+    "unique_relationship_ids": true,
+    "all_relationship_endpoints_resolve": true,
+    "entity_ids_pattern": "^[a-z0-9_]+$",
+    "validation_notes": [
+      "All relationship source and target IDs resolve to defined entities.",
+      "Relationship IDs are unique.",
+      "Entities and relationships are a conceptual knowledge graph, not a substitute for the Bitcoin consensus specification or source code."
+    ]
+  },
+  "notes": [
+    "Primary source is the user-provided Bitcoin article text. Facts explicitly time-bound in that text (release version, circulating supply, price records, legal status, energy estimates, mining geography, and institutional holdings) must be read with their stated dates.",
+    "Implementation-language correction: the supplied article says Bitcoin Core is written in C++. C and C++ are related but distinct languages. The included C-like example is only educational pseudocode, not actual Bitcoin Core code.",
+    "Bitcoin is not a file or balance stored inside a wallet. On-chain value is tracked through UTXOs; wallets manage keys and transaction construction.",
+    "The 'longest chain' phrase is a shorthand. Consensus selection is more accurately described as the valid chain with the greatest accumulated proof of work.",
+    "Proof-of-work mining does not make invalid transactions valid. Fully validating nodes enforce consensus rules independently of miner hash power.",
+    "Bitcoin privacy is pseudonymity: the public transaction graph may support chain analysis, and new addresses do not guarantee anonymity.",
+    "Bitcoin's total issuance is commonly rounded to 21 million BTC; the supplied article gives a theoretical total of 20,999,999.9769 BTC.",
+    "Not investment, legal, tax, or cybersecurity advice. Laws, market conditions, and implementation details can change."
+  ]
+}

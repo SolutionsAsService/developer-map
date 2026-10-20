@@ -1,0 +1,3888 @@
+{
+  "schema_version": "1.0.0",
+  "graph_metadata": {
+    "title": "Botnets — Full Detail Historical and Technical Knowledge Graph",
+    "subject": "Botnet architecture, command-and-control, uses, defenses, historical families, dates, size estimates, aliases, and law-enforcement events",
+    "created_date": "2026-10-20",
+    "source_basis": "User-supplied Botnet article text",
+    "purpose": "Preserve the article’s concepts and historical botnet table as a machine-readable graph, including dates, estimated bot counts, spam capacity, aliases, events, architecture, use cases, mitigations, and uncertainty.",
+    "security_framing": "Defensive and educational. No exploit commands, infection scripts, C&C implementation instructions, or attack traffic instructions are included.",
+    "counts": {
+      "entities": 170,
+      "relationships": 281,
+      "architecture_patterns": 6,
+      "derived_rules": 25,
+      "examples": 5,
+      "sources": 1,
+      "historical_botnet_records": 35
+    }
+  },
+  "entities": [
+    {
+      "id": "botnet",
+      "name": "Botnet",
+      "type": "cybersecurity_concept",
+      "description": "A logical group of compromised Internet-connected devices controlled or coordinated by an operator."
+    },
+    {
+      "id": "bot",
+      "name": "Bot / compromised node",
+      "type": "botnet_component",
+      "description": "A compromised device running bot software and receiving instructions or participating in malicious activity."
+    },
+    {
+      "id": "bot_herder",
+      "name": "Bot herder / bot master",
+      "type": "threat_actor_role",
+      "description": "Person or group controlling botnet activity; identities vary and are not inferred from a botnet name."
+    },
+    {
+      "id": "c2",
+      "name": "Command and control (C&C)",
+      "type": "architecture_component",
+      "description": "Communication and instruction infrastructure used to coordinate bots."
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie computer",
+      "type": "botnet_component",
+      "description": "Compromised computer or device used remotely without the owner’s informed authorization."
+    },
+    {
+      "id": "malware",
+      "name": "Malware",
+      "type": "software_category",
+      "description": "Malicious software used to compromise or control devices."
+    },
+    {
+      "id": "iot",
+      "name": "Internet of Things devices",
+      "type": "asset_category",
+      "description": "Connected embedded devices such as routers, cameras, gateways, and smart devices."
+    },
+    {
+      "id": "smartphones",
+      "name": "Smartphones",
+      "type": "asset_category",
+      "description": "Mobile devices that have also been targeted by botnet-capable malware."
+    },
+    {
+      "id": "client_server",
+      "name": "Client-server botnet architecture",
+      "type": "architecture_pattern",
+      "description": "Bots connect to centralized servers or services that relay commands."
+    },
+    {
+      "id": "p2p",
+      "name": "Peer-to-peer botnet architecture",
+      "type": "architecture_pattern",
+      "description": "Bots exchange control information with peers rather than relying on a single central server."
+    },
+    {
+      "id": "irc",
+      "name": "Internet Relay Chat (IRC)",
+      "type": "protocol",
+      "description": "Historically common botnet command-and-control protocol."
+    },
+    {
+      "id": "http",
+      "name": "HTTP/HTTPS and web-based C&C",
+      "type": "protocol_family",
+      "description": "Web protocols and domains can be used to retrieve commands or report status."
+    },
+    {
+      "id": "telnet",
+      "name": "Telnet",
+      "type": "network_protocol",
+      "description": "Remote terminal protocol; exposed/default credentials have been abused to compromise devices."
+    },
+    {
+      "id": "ssh",
+      "name": "SSH",
+      "type": "network_protocol",
+      "description": "Secure remote administration protocol that can still be abused when credentials or configurations are compromised."
+    },
+    {
+      "id": "dns",
+      "name": "DNS",
+      "type": "network_service",
+      "description": "Name-resolution system that can be abused through fast-flux techniques and domain generation."
+    },
+    {
+      "id": "fast_flux",
+      "name": "Fast-flux DNS",
+      "type": "evasion_technique",
+      "description": "Frequently changing DNS mappings that complicate tracking of infrastructure."
+    },
+    {
+      "id": "dga",
+      "name": "Domain generation algorithm (DGA)",
+      "type": "evasion_technique",
+      "description": "Algorithmic generation of candidate domains for resilient rendezvous infrastructure."
+    },
+    {
+      "id": "pki",
+      "name": "Public-key cryptography and digital signatures",
+      "type": "security_technology",
+      "description": "Cryptographic mechanisms reported in some P2P botnets to restrict who can issue valid commands."
+    },
+    {
+      "id": "egress_filtering",
+      "name": "Egress filtering",
+      "type": "security_control",
+      "description": "Controls outbound network access; botnets may attempt to blend C&C into permitted services."
+    },
+    {
+      "id": "ddos",
+      "name": "Distributed denial-of-service (DDoS)",
+      "type": "attack_type",
+      "description": "Coordinated traffic intended to impair availability of a target service."
+    },
+    {
+      "id": "spam",
+      "name": "Email spam",
+      "type": "abuse_type",
+      "description": "Bulk unsolicited or malicious email sent using compromised systems."
+    },
+    {
+      "id": "spyware",
+      "name": "Spyware and data theft",
+      "type": "abuse_type",
+      "description": "Collection or exfiltration of passwords, payment details, or confidential data."
+    },
+    {
+      "id": "click_fraud",
+      "name": "Click fraud",
+      "type": "abuse_type",
+      "description": "Automated visits or clicks intended to create fraudulent traffic or revenue."
+    },
+    {
+      "id": "ad_fraud",
+      "name": "Advertising fraud",
+      "type": "abuse_type",
+      "description": "Manipulation of advertising impressions, clicks, or attribution."
+    },
+    {
+      "id": "credential_stuffing",
+      "name": "Credential stuffing",
+      "type": "attack_type",
+      "description": "Automated attempts to log in using credentials stolen from other services."
+    },
+    {
+      "id": "crypto_mining",
+      "name": "Cryptocurrency mining abuse",
+      "type": "abuse_type",
+      "description": "Use of compromised compute resources to mine cryptocurrency for an operator."
+    },
+    {
+      "id": "phishing",
+      "name": "Phishing",
+      "type": "attack_type",
+      "description": "Social engineering intended to obtain credentials or induce malicious actions."
+    },
+    {
+      "id": "residential_proxy",
+      "name": "Residential proxy network (RESIP)",
+      "type": "service_category",
+      "description": "Proxy service using residential IP addresses; some hosts may be compromised or used without informed consent."
+    },
+    {
+      "id": "self_spreading",
+      "name": "Self-spreading propagation",
+      "type": "malware_behavior",
+      "description": "Malware behavior that seeks new devices using vulnerabilities or weak credentials."
+    },
+    {
+      "id": "trojan",
+      "name": "Trojan horse / exploit kit",
+      "type": "malware_delivery",
+      "description": "Delivery or initial-compromise mechanism discussed in the source."
+    },
+    {
+      "id": "drive_by",
+      "name": "Drive-by download",
+      "type": "infection_vector",
+      "description": "Compromise associated with browsing to a site or resource that triggers an unwanted download or exploit."
+    },
+    {
+      "id": "command_protocols",
+      "name": "Botnet control protocols",
+      "type": "concept",
+      "description": "Protocols and communication patterns used to relay commands and receive results."
+    },
+    {
+      "id": "detection",
+      "name": "Botnet detection",
+      "type": "security_process",
+      "description": "Identify suspicious host and network behavior using signatures, heuristics, and behavior analysis."
+    },
+    {
+      "id": "signature_detection",
+      "name": "Signature-based detection",
+      "type": "detection_method",
+      "description": "Detects known byte, packet, file, or request patterns."
+    },
+    {
+      "id": "behavior_detection",
+      "name": "Behavior-based detection",
+      "type": "detection_method",
+      "description": "Distinguishes automated or malicious behavior from normal user and device behavior."
+    },
+    {
+      "id": "honeypot",
+      "name": "Honeypots and sandbox analysis",
+      "type": "security_tool",
+      "description": "Controlled decoy or isolated environment used to observe and analyze malware."
+    },
+    {
+      "id": "sinkhole",
+      "name": "DNS sinkholing and null routing",
+      "type": "mitigation_method",
+      "description": "Redirect or discard traffic associated with known malicious infrastructure."
+    },
+    {
+      "id": "take_down",
+      "name": "C&C disruption and takedown",
+      "type": "mitigation_method",
+      "description": "Legal and technical actions to seize, disable, or disrupt control infrastructure."
+    },
+    {
+      "id": "segmentation",
+      "name": "Network segmentation",
+      "type": "security_control",
+      "description": "Separates device and trust zones to constrain compromise and lateral movement."
+    },
+    {
+      "id": "patching",
+      "name": "Patching and secure configuration",
+      "type": "security_control",
+      "description": "Update software and close known vulnerabilities or insecure configurations."
+    },
+    {
+      "id": "credential_security",
+      "name": "Credential security",
+      "type": "security_control",
+      "description": "Use unique credentials, MFA where supported, and remove default or weak passwords."
+    },
+    {
+      "id": "logging",
+      "name": "Centralized logging and telemetry",
+      "type": "security_control",
+      "description": "Correlate host, DNS, authentication, network, and application events."
+    },
+    {
+      "id": "incident_response",
+      "name": "Incident response",
+      "type": "security_process",
+      "description": "Contain compromised systems, preserve evidence, remediate, recover, and learn."
+    },
+    {
+      "id": "law_enforcement",
+      "name": "Law enforcement and legal disruption",
+      "type": "actor_group",
+      "description": "Authorities and private parties may use legal mechanisms to disrupt botnets, subject to jurisdictional constraints."
+    },
+    {
+      "id": "earthlink",
+      "name": "EarthLink",
+      "type": "organization",
+      "description": "ISP named in the source’s historical account of an early spam botnet disclosure."
+    },
+    {
+      "id": "khan_smith",
+      "name": "Khan C. Smith",
+      "type": "person",
+      "description": "Spammer named in the source’s account of a 2001 lawsuit involving an early botnet."
+    },
+    {
+      "id": "operation_endgame",
+      "name": "Operation Endgame",
+      "type": "law_enforcement_operation",
+      "description": "International operation announced by Europol in May 2024 to disrupt malware droppers and botnets."
+    },
+    {
+      "id": "europol",
+      "name": "Europol",
+      "type": "organization",
+      "description": "European Union law-enforcement agency named in the article’s Operation Endgame account."
+    },
+    {
+      "id": "france",
+      "name": "France",
+      "type": "country",
+      "description": "Country named in the source."
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "type": "country",
+      "description": "Country named in the source."
+    },
+    {
+      "id": "netherlands",
+      "name": "Netherlands",
+      "type": "country",
+      "description": "Country named in the source."
+    },
+    {
+      "id": "year_2001",
+      "name": "2001",
+      "type": "year",
+      "description": "Calendar year of the early botnet disclosure."
+    },
+    {
+      "id": "n_baiot",
+      "name": "N-BaIoT",
+      "type": "detection_method",
+      "description": "Network anomaly-detection method using traffic snapshots and deep autoencoders to identify compromised IoT behavior."
+    },
+    {
+      "id": "mirai",
+      "name": "Mirai",
+      "type": "malware_family",
+      "description": "IoT-targeting malware/botnet listed in the historical table and discussed in IoT detection research."
+    },
+    {
+      "id": "bashlite",
+      "name": "BASHLITE",
+      "type": "malware_family",
+      "description": "IoT botnet/malware family referenced in the N-BaIoT evaluation."
+    },
+    {
+      "id": "general_motors",
+      "name": "General Motors",
+      "type": "organization",
+      "description": "Organization named in the source as an example of a 2022 credential-stuffing attack."
+    },
+    {
+      "id": "great_cannon",
+      "name": "Great Cannon of China",
+      "type": "system",
+      "description": "Traffic-manipulation capability described in the source in connection with a 2015 ephemeral botnet targeting GitHub."
+    },
+    {
+      "id": "project_chanology",
+      "name": "Project Chanology",
+      "type": "historical_event",
+      "description": "2010 event associated in the source with volunteer hacktivists and LOIC-based activity."
+    },
+    {
+      "id": "loic",
+      "name": "Low Orbit Ion Cannon (LOIC)",
+      "type": "software",
+      "description": "Tool mentioned in the source in the context of volunteer hacktivist activity."
+    },
+    {
+      "id": "sexy_space",
+      "name": "Sexy Space SMS worm",
+      "type": "malware_family",
+      "description": "Mobile malware released in the wild in July 2009 and described as an SMS-worm with botnet capabilities targeting Symbian."
+    },
+    {
+      "id": "charlie_miller",
+      "name": "Charlie Miller",
+      "type": "person",
+      "description": "Security researcher who demonstrated an iPhone proof-of-concept text-message worm in July 2009."
+    },
+    {
+      "id": "etisalat",
+      "name": "Etisalat BlackBerry spyware program",
+      "type": "incident",
+      "description": "Program reported to have targeted UAE BlackBerry consumers in July 2009."
+    },
+    {
+      "id": "sandia",
+      "name": "Sandia National Laboratories",
+      "type": "organization",
+      "description": "Research organization described as emulating large botnet-scale behavior on a high-performance cluster."
+    },
+    {
+      "id": "bot_hunter",
+      "name": "BotHunter",
+      "type": "software",
+      "description": "Network tool developed with support from the U.S. Army Research Office to identify patterns characteristic of botnet infection."
+    },
+    {
+      "id": "senate_hearing",
+      "name": "U.S. Senate hearing on botnets",
+      "type": "historical_event",
+      "description": "Subcommittee hearing on botnet threats and disruption efforts held on 15 July 2014."
+    },
+    {
+      "id": "ucsb_study",
+      "name": "UC Santa Barbara botnet size study",
+      "type": "research",
+      "description": "Research account in the source describing a measured botnet six times smaller than expected."
+    },
+    {
+      "id": "spam_2005",
+      "name": "2005 spam estimate",
+      "type": "historical_statistic",
+      "description": "Source reports that an estimated 50–80% of worldwide spam was sent by zombie computers as of 2005."
+    },
+    {
+      "id": "first_botnet_2001",
+      "name": "Early spam botnet disclosure (2001)",
+      "type": "historical_event",
+      "description": "The source says EarthLink exposed an early bulk-spam botnet during litigation involving Khan C. Smith."
+    },
+    {
+      "id": "scale_back_2006",
+      "name": "Botnets scaling back in size (around 2006)",
+      "type": "historical_trend",
+      "description": "The source reports that some botnets reduced size around 2006 to thwart detection."
+    },
+    {
+      "id": "mobile_2009",
+      "name": "Mobile botnet milestones (July 2009)",
+      "type": "historical_event",
+      "description": "Several mobile malware or proof-of-concept events were reported in July 2009."
+    },
+    {
+      "id": "gm_2022",
+      "name": "General Motors credential-stuffing incident (2022)",
+      "type": "historical_event",
+      "description": "Credential-stuffing example named in the source."
+    },
+    {
+      "id": "operation_endgame_2024",
+      "name": "Operation Endgame disruption (27–29 May 2024)",
+      "type": "historical_event",
+      "description": "The source reports four arrests, more than 100 servers seized, and 2,000 domains taken over."
+    },
+    {
+      "id": "iot_detection_study",
+      "name": "IoT botnet anomaly detection study",
+      "type": "research",
+      "description": "The source says N-BaIoT was evaluated using nine IoT devices infected with Mirai and BASHLITE."
+    },
+    {
+      "id": "historical_list",
+      "name": "Historical botnet list from supplied article",
+      "type": "dataset",
+      "description": "Non-exhaustive table of botnets, dates, estimated bot counts, spam capacity, and aliases."
+    },
+    {
+      "id": "source_article",
+      "name": "Supplied Wikipedia article: Botnet",
+      "type": "source_document",
+      "description": "User-provided article text used as the source for this graph."
+    },
+    {
+      "id": "uncertainty",
+      "name": "Historical estimates and source limitations",
+      "type": "epistemic_note",
+      "description": "Bot counts, dates, aliases, spam estimates, and disruption status may vary by source and time; the article’s table is explicitly non-exhaustive."
+    },
+    {
+      "id": "botnet_maxite",
+      "name": "MaXiTE",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "2002",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "500-1000 servers",
+        "spam_capacity_billion_per_day_as_reported": 0,
+        "aliases": [
+          "MaXiTE XDCC Bot",
+          "MaXiTE IRC TCL Script",
+          "MaxServ"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_marina_botnet",
+      "name": "Marina Botnet",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "Unknown (no later than 2004)",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "6,215,000",
+        "spam_capacity_billion_per_day_as_reported": 92,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_torpig",
+      "name": "Torpig",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "180,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "Sinowal",
+          "Anserin"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_storm",
+      "name": "Storm",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "160,000",
+        "spam_capacity_billion_per_day_as_reported": 3,
+        "aliases": [
+          "Nuwar",
+          "Peacomm",
+          "Zhelatin"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_rustock",
+      "name": "Rustock",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2006",
+        "date_dismantled_as_reported": "March 2011",
+        "estimated_bots_as_reported": "150,000",
+        "spam_capacity_billion_per_day_as_reported": 30,
+        "aliases": [
+          "RKRustok",
+          "Costrat"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_donbot",
+      "name": "Donbot",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "125,000",
+        "spam_capacity_billion_per_day_as_reported": 0.8,
+        "aliases": [
+          "Buzus",
+          "Bachsoy"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_cutwail",
+      "name": "Cutwail",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2007",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "1,500,000",
+        "spam_capacity_billion_per_day_as_reported": 74,
+        "aliases": [
+          "Pandex",
+          "Mutant"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_akbot",
+      "name": "Akbot",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "2007",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "1,300,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_srizbi",
+      "name": "Srizbi",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "March 2007",
+        "date_dismantled_as_reported": "November 2008",
+        "estimated_bots_as_reported": "450,000",
+        "spam_capacity_billion_per_day_as_reported": 60,
+        "aliases": [
+          "Cbeplay",
+          "Exchanger"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_sality",
+      "name": "Sality",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2008",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "1,000,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "Sector",
+          "Kuku"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_mariposa",
+      "name": "Mariposa",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2008",
+        "date_dismantled_as_reported": "December 2009",
+        "estimated_bots_as_reported": "12,000,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_kraken",
+      "name": "Kraken",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2008",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "495,000",
+        "spam_capacity_billion_per_day_as_reported": 9,
+        "aliases": [
+          "Kracken"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_conficker",
+      "name": "Conficker",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "November 2008",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "10,500,000+",
+        "spam_capacity_billion_per_day_as_reported": 10,
+        "aliases": [
+          "DownUp",
+          "DownAndUp",
+          "DownAdUp",
+          "Kido"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_waledac",
+      "name": "Waledac",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "November 2008",
+        "date_dismantled_as_reported": "March 2010",
+        "estimated_bots_as_reported": "80,000",
+        "spam_capacity_billion_per_day_as_reported": 1.5,
+        "aliases": [
+          "Waled",
+          "Waledpak"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_onewordsub",
+      "name": "Onewordsub",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "40,000",
+        "spam_capacity_billion_per_day_as_reported": 1.8,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_nucrypt",
+      "name": "Nucrypt",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "20,000",
+        "spam_capacity_billion_per_day_as_reported": 5,
+        "aliases": [
+          "Loosky",
+          "Locksky"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_wopla",
+      "name": "Wopla",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "20,000",
+        "spam_capacity_billion_per_day_as_reported": 0.6,
+        "aliases": [
+          "Pokier",
+          "Slogger",
+          "Cryptic"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_asprox",
+      "name": "Asprox",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2008",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "15,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "Danmec",
+          "Hydraflux"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_spamthru",
+      "name": "Spamthru",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "12,000",
+        "spam_capacity_billion_per_day_as_reported": 0.35,
+        "aliases": [
+          "Spam-DComServ",
+          "Covesmer",
+          "Xmiler"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_gumblar",
+      "name": "Gumblar",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2008",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": null,
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_bredolab",
+      "name": "BredoLab",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "May 2009",
+        "date_dismantled_as_reported": "November 2010 (not complete)",
+        "estimated_bots_as_reported": "30,000,000",
+        "spam_capacity_billion_per_day_as_reported": 3.6,
+        "aliases": [
+          "Oficla"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_grum",
+      "name": "Grum",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2009",
+        "date_dismantled_as_reported": "2012-07-19",
+        "estimated_bots_as_reported": "560,000",
+        "spam_capacity_billion_per_day_as_reported": 39.9,
+        "aliases": [
+          "Tedroo"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_mega_d",
+      "name": "Mega-D",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": null,
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "509,000",
+        "spam_capacity_billion_per_day_as_reported": 10,
+        "aliases": [
+          "Ozdok"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_festi",
+      "name": "Festi",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "August 2009",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "250,000",
+        "spam_capacity_billion_per_day_as_reported": 2.25,
+        "aliases": [
+          "Spamnost"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_vulcanbot",
+      "name": "Vulcanbot",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "March 2010",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": null,
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_tdl4",
+      "name": "TDL4",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2010",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "4,500,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "TDSS",
+          "Alureon"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_zeus",
+      "name": "Zeus",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2010",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "3,600,000 (US only)",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "Zbot",
+          "PRG",
+          "Wsnpoem",
+          "Gorhax",
+          "Kneber"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_kelihos",
+      "name": "Kelihos",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "2010",
+        "date_dismantled_as_reported": "Several: 2011, 2012",
+        "estimated_bots_as_reported": "300,000+",
+        "spam_capacity_billion_per_day_as_reported": 4,
+        "aliases": [
+          "Hlux"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_ramnit",
+      "name": "Ramnit",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "2011 or earlier",
+        "date_dismantled_as_reported": "February 2015",
+        "estimated_bots_as_reported": "3,000,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_chameleon",
+      "name": "Chameleon",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "around 2012",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "120,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "None"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_necurs",
+      "name": "Necurs",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "2014",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "6,000,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_mirai",
+      "name": "Mirai",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "August 2016",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "380,000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [
+          "None"
+        ],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_mantis",
+      "name": "Mantis",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "2022",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "5000",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_rapper_bot",
+      "name": "Rapper Bot",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "August 2025",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "20,000+",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_aisuru",
+      "name": "Aisuru",
+      "type": "historical_botnet",
+      "description": "Historical botnet listed in the supplied article. Values are transcribed from its non-exhaustive table; blank fields remain unknown.",
+      "attributes": {
+        "date_created_as_reported": "unknown (active 2025)",
+        "date_dismantled_as_reported": null,
+        "estimated_bots_as_reported": "hundreds of thousands",
+        "spam_capacity_billion_per_day_as_reported": null,
+        "aliases": [],
+        "table_source": "Supplied article historical botnet table",
+        "estimates_are_approximate": true
+      }
+    },
+    {
+      "id": "botnet_icedid",
+      "name": "IcedID",
+      "type": "malware_or_botnet_family",
+      "description": "IcedID, named in the supplied article as disrupted during Operation Endgame in May 2024.",
+      "attributes": {
+        "operation_endgame_mention": true
+      }
+    },
+    {
+      "id": "botnet_systembc",
+      "name": "SystemBC",
+      "type": "malware_or_botnet_family",
+      "description": "SystemBC, named in the supplied article as disrupted during Operation Endgame in May 2024.",
+      "attributes": {
+        "operation_endgame_mention": true
+      }
+    },
+    {
+      "id": "botnet_pikabot",
+      "name": "Pikabot",
+      "type": "malware_or_botnet_family",
+      "description": "Pikabot, named in the supplied article as disrupted during Operation Endgame in May 2024.",
+      "attributes": {
+        "operation_endgame_mention": true
+      }
+    },
+    {
+      "id": "botnet_smokeloader",
+      "name": "Smokeloader",
+      "type": "malware_or_botnet_family",
+      "description": "Smokeloader, named in the supplied article as disrupted during Operation Endgame in May 2024.",
+      "attributes": {
+        "operation_endgame_mention": true
+      }
+    },
+    {
+      "id": "botnet_bumblebee",
+      "name": "Bumblebee",
+      "type": "malware_or_botnet_family",
+      "description": "Bumblebee, named in the supplied article as disrupted during Operation Endgame in May 2024.",
+      "attributes": {
+        "operation_endgame_mention": true
+      }
+    },
+    {
+      "id": "botnet_trickbot",
+      "name": "Trickbot",
+      "type": "malware_or_botnet_family",
+      "description": "Trickbot, named in the supplied article as disrupted during Operation Endgame in May 2024.",
+      "attributes": {
+        "operation_endgame_mention": true
+      }
+    },
+    {
+      "id": "alias_maxite_xdcc_bot",
+      "name": "MaXiTE XDCC Bot",
+      "type": "botnet_alias",
+      "description": "Alias listed for MaXiTE in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_maxite"
+      }
+    },
+    {
+      "id": "alias_maxite_irc_tcl_script",
+      "name": "MaXiTE IRC TCL Script",
+      "type": "botnet_alias",
+      "description": "Alias listed for MaXiTE in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_maxite"
+      }
+    },
+    {
+      "id": "alias_maxserv",
+      "name": "MaxServ",
+      "type": "botnet_alias",
+      "description": "Alias listed for MaXiTE in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_maxite"
+      }
+    },
+    {
+      "id": "alias_sinowal",
+      "name": "Sinowal",
+      "type": "botnet_alias",
+      "description": "Alias listed for Torpig in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_torpig"
+      }
+    },
+    {
+      "id": "alias_anserin",
+      "name": "Anserin",
+      "type": "botnet_alias",
+      "description": "Alias listed for Torpig in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_torpig"
+      }
+    },
+    {
+      "id": "alias_nuwar",
+      "name": "Nuwar",
+      "type": "botnet_alias",
+      "description": "Alias listed for Storm in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_storm"
+      }
+    },
+    {
+      "id": "alias_peacomm",
+      "name": "Peacomm",
+      "type": "botnet_alias",
+      "description": "Alias listed for Storm in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_storm"
+      }
+    },
+    {
+      "id": "alias_zhelatin",
+      "name": "Zhelatin",
+      "type": "botnet_alias",
+      "description": "Alias listed for Storm in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_storm"
+      }
+    },
+    {
+      "id": "alias_rkrustok",
+      "name": "RKRustok",
+      "type": "botnet_alias",
+      "description": "Alias listed for Rustock in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_rustock"
+      }
+    },
+    {
+      "id": "alias_costrat",
+      "name": "Costrat",
+      "type": "botnet_alias",
+      "description": "Alias listed for Rustock in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_rustock"
+      }
+    },
+    {
+      "id": "alias_buzus",
+      "name": "Buzus",
+      "type": "botnet_alias",
+      "description": "Alias listed for Donbot in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_donbot"
+      }
+    },
+    {
+      "id": "alias_bachsoy",
+      "name": "Bachsoy",
+      "type": "botnet_alias",
+      "description": "Alias listed for Donbot in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_donbot"
+      }
+    },
+    {
+      "id": "alias_pandex",
+      "name": "Pandex",
+      "type": "botnet_alias",
+      "description": "Alias listed for Cutwail in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_cutwail"
+      }
+    },
+    {
+      "id": "alias_mutant",
+      "name": "Mutant",
+      "type": "botnet_alias",
+      "description": "Alias listed for Cutwail in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_cutwail"
+      }
+    },
+    {
+      "id": "alias_cbeplay",
+      "name": "Cbeplay",
+      "type": "botnet_alias",
+      "description": "Alias listed for Srizbi in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_srizbi"
+      }
+    },
+    {
+      "id": "alias_exchanger",
+      "name": "Exchanger",
+      "type": "botnet_alias",
+      "description": "Alias listed for Srizbi in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_srizbi"
+      }
+    },
+    {
+      "id": "alias_sector",
+      "name": "Sector",
+      "type": "botnet_alias",
+      "description": "Alias listed for Sality in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_sality"
+      }
+    },
+    {
+      "id": "alias_kuku",
+      "name": "Kuku",
+      "type": "botnet_alias",
+      "description": "Alias listed for Sality in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_sality"
+      }
+    },
+    {
+      "id": "alias_kracken",
+      "name": "Kracken",
+      "type": "botnet_alias",
+      "description": "Alias listed for Kraken in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_kraken"
+      }
+    },
+    {
+      "id": "alias_downup",
+      "name": "DownUp",
+      "type": "botnet_alias",
+      "description": "Alias listed for Conficker in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_conficker"
+      }
+    },
+    {
+      "id": "alias_downandup",
+      "name": "DownAndUp",
+      "type": "botnet_alias",
+      "description": "Alias listed for Conficker in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_conficker"
+      }
+    },
+    {
+      "id": "alias_downadup",
+      "name": "DownAdUp",
+      "type": "botnet_alias",
+      "description": "Alias listed for Conficker in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_conficker"
+      }
+    },
+    {
+      "id": "alias_kido",
+      "name": "Kido",
+      "type": "botnet_alias",
+      "description": "Alias listed for Conficker in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_conficker"
+      }
+    },
+    {
+      "id": "alias_waled",
+      "name": "Waled",
+      "type": "botnet_alias",
+      "description": "Alias listed for Waledac in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_waledac"
+      }
+    },
+    {
+      "id": "alias_waledpak",
+      "name": "Waledpak",
+      "type": "botnet_alias",
+      "description": "Alias listed for Waledac in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_waledac"
+      }
+    },
+    {
+      "id": "alias_loosky",
+      "name": "Loosky",
+      "type": "botnet_alias",
+      "description": "Alias listed for Nucrypt in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_nucrypt"
+      }
+    },
+    {
+      "id": "alias_locksky",
+      "name": "Locksky",
+      "type": "botnet_alias",
+      "description": "Alias listed for Nucrypt in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_nucrypt"
+      }
+    },
+    {
+      "id": "alias_pokier",
+      "name": "Pokier",
+      "type": "botnet_alias",
+      "description": "Alias listed for Wopla in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_wopla"
+      }
+    },
+    {
+      "id": "alias_slogger",
+      "name": "Slogger",
+      "type": "botnet_alias",
+      "description": "Alias listed for Wopla in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_wopla"
+      }
+    },
+    {
+      "id": "alias_cryptic",
+      "name": "Cryptic",
+      "type": "botnet_alias",
+      "description": "Alias listed for Wopla in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_wopla"
+      }
+    },
+    {
+      "id": "alias_danmec",
+      "name": "Danmec",
+      "type": "botnet_alias",
+      "description": "Alias listed for Asprox in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_asprox"
+      }
+    },
+    {
+      "id": "alias_hydraflux",
+      "name": "Hydraflux",
+      "type": "botnet_alias",
+      "description": "Alias listed for Asprox in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_asprox"
+      }
+    },
+    {
+      "id": "alias_spam_dcomserv",
+      "name": "Spam-DComServ",
+      "type": "botnet_alias",
+      "description": "Alias listed for Spamthru in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_spamthru"
+      }
+    },
+    {
+      "id": "alias_covesmer",
+      "name": "Covesmer",
+      "type": "botnet_alias",
+      "description": "Alias listed for Spamthru in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_spamthru"
+      }
+    },
+    {
+      "id": "alias_xmiler",
+      "name": "Xmiler",
+      "type": "botnet_alias",
+      "description": "Alias listed for Spamthru in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_spamthru"
+      }
+    },
+    {
+      "id": "alias_oficla",
+      "name": "Oficla",
+      "type": "botnet_alias",
+      "description": "Alias listed for BredoLab in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_bredolab"
+      }
+    },
+    {
+      "id": "alias_tedroo",
+      "name": "Tedroo",
+      "type": "botnet_alias",
+      "description": "Alias listed for Grum in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_grum"
+      }
+    },
+    {
+      "id": "alias_ozdok",
+      "name": "Ozdok",
+      "type": "botnet_alias",
+      "description": "Alias listed for Mega-D in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_mega_d"
+      }
+    },
+    {
+      "id": "alias_spamnost",
+      "name": "Spamnost",
+      "type": "botnet_alias",
+      "description": "Alias listed for Festi in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_festi"
+      }
+    },
+    {
+      "id": "alias_tdss",
+      "name": "TDSS",
+      "type": "botnet_alias",
+      "description": "Alias listed for TDL4 in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_tdl4"
+      }
+    },
+    {
+      "id": "alias_alureon",
+      "name": "Alureon",
+      "type": "botnet_alias",
+      "description": "Alias listed for TDL4 in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_tdl4"
+      }
+    },
+    {
+      "id": "alias_zbot",
+      "name": "Zbot",
+      "type": "botnet_alias",
+      "description": "Alias listed for Zeus in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_zeus"
+      }
+    },
+    {
+      "id": "alias_prg",
+      "name": "PRG",
+      "type": "botnet_alias",
+      "description": "Alias listed for Zeus in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_zeus"
+      }
+    },
+    {
+      "id": "alias_wsnpoem",
+      "name": "Wsnpoem",
+      "type": "botnet_alias",
+      "description": "Alias listed for Zeus in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_zeus"
+      }
+    },
+    {
+      "id": "alias_gorhax",
+      "name": "Gorhax",
+      "type": "botnet_alias",
+      "description": "Alias listed for Zeus in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_zeus"
+      }
+    },
+    {
+      "id": "alias_kneber",
+      "name": "Kneber",
+      "type": "botnet_alias",
+      "description": "Alias listed for Zeus in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_zeus"
+      }
+    },
+    {
+      "id": "alias_hlux",
+      "name": "Hlux",
+      "type": "botnet_alias",
+      "description": "Alias listed for Kelihos in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_kelihos"
+      }
+    },
+    {
+      "id": "alias_none",
+      "name": "None",
+      "type": "botnet_alias",
+      "description": "Alias listed for Chameleon in the supplied article historical table.",
+      "attributes": {
+        "alias_of": "botnet_chameleon"
+      }
+    },
+    {
+      "id": "example_iot_triage",
+      "name": "Triage suspected IoT bot",
+      "type": "example",
+      "description": "A router or camera shows unusual outbound connections and unexpected resource usage."
+    },
+    {
+      "id": "example_botnet_ioc",
+      "name": "Validate a historical botnet indicator",
+      "type": "example",
+      "description": "An old report lists a domain or IP associated with a botnet."
+    },
+    {
+      "id": "example_ddos_response",
+      "name": "Respond to a DDoS event",
+      "type": "example",
+      "description": "A public service experiences sudden availability loss and traffic from many networks."
+    },
+    {
+      "id": "example_p2p_detection",
+      "name": "Investigate suspected P2P bot behavior",
+      "type": "example",
+      "description": "Network telemetry shows unusual peer-to-peer traffic and repeated peer discovery."
+    },
+    {
+      "id": "example_credentials",
+      "name": "Reduce credential-driven bot recruitment",
+      "type": "example",
+      "description": "An audit finds Internet-exposed administration services or default credentials."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_maxite",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0002",
+      "source": "botnet_maxite",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0003",
+      "source": "botnet_maxite",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0004",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_marina_botnet",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0005",
+      "source": "botnet_marina_botnet",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0006",
+      "source": "botnet_marina_botnet",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0007",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_torpig",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0008",
+      "source": "botnet_torpig",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0009",
+      "source": "botnet_torpig",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0010",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_storm",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0011",
+      "source": "botnet_storm",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0012",
+      "source": "botnet_storm",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0013",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_rustock",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0014",
+      "source": "botnet_rustock",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0015",
+      "source": "botnet_rustock",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0016",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_donbot",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0017",
+      "source": "botnet_donbot",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0018",
+      "source": "botnet_donbot",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0019",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_cutwail",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0020",
+      "source": "botnet_cutwail",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0021",
+      "source": "botnet_cutwail",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0022",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_akbot",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0023",
+      "source": "botnet_akbot",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0024",
+      "source": "botnet_akbot",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0025",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_srizbi",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0026",
+      "source": "botnet_srizbi",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0027",
+      "source": "botnet_srizbi",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0028",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_sality",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0029",
+      "source": "botnet_sality",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0030",
+      "source": "botnet_sality",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0031",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_mariposa",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0032",
+      "source": "botnet_mariposa",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0033",
+      "source": "botnet_mariposa",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0034",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_kraken",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0035",
+      "source": "botnet_kraken",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0036",
+      "source": "botnet_kraken",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0037",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_conficker",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0038",
+      "source": "botnet_conficker",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0039",
+      "source": "botnet_conficker",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0040",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_waledac",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0041",
+      "source": "botnet_waledac",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0042",
+      "source": "botnet_waledac",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0043",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_onewordsub",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0044",
+      "source": "botnet_onewordsub",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0045",
+      "source": "botnet_onewordsub",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0046",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_nucrypt",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0047",
+      "source": "botnet_nucrypt",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0048",
+      "source": "botnet_nucrypt",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0049",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_wopla",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0050",
+      "source": "botnet_wopla",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0051",
+      "source": "botnet_wopla",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0052",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_asprox",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0053",
+      "source": "botnet_asprox",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0054",
+      "source": "botnet_asprox",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0055",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_spamthru",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0056",
+      "source": "botnet_spamthru",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0057",
+      "source": "botnet_spamthru",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0058",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_gumblar",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0059",
+      "source": "botnet_gumblar",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0060",
+      "source": "botnet_gumblar",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0061",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_bredolab",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0062",
+      "source": "botnet_bredolab",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0063",
+      "source": "botnet_bredolab",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0064",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_grum",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0065",
+      "source": "botnet_grum",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0066",
+      "source": "botnet_grum",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0067",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_mega_d",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0068",
+      "source": "botnet_mega_d",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0069",
+      "source": "botnet_mega_d",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0070",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_festi",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0071",
+      "source": "botnet_festi",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0072",
+      "source": "botnet_festi",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0073",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_vulcanbot",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0074",
+      "source": "botnet_vulcanbot",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0075",
+      "source": "botnet_vulcanbot",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0076",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_tdl4",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0077",
+      "source": "botnet_tdl4",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0078",
+      "source": "botnet_tdl4",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0079",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_zeus",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0080",
+      "source": "botnet_zeus",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0081",
+      "source": "botnet_zeus",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0082",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_kelihos",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0083",
+      "source": "botnet_kelihos",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0084",
+      "source": "botnet_kelihos",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0085",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_ramnit",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0086",
+      "source": "botnet_ramnit",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0087",
+      "source": "botnet_ramnit",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0088",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_chameleon",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0089",
+      "source": "botnet_chameleon",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0090",
+      "source": "botnet_chameleon",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0091",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_necurs",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0092",
+      "source": "botnet_necurs",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0093",
+      "source": "botnet_necurs",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0094",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_mirai",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0095",
+      "source": "botnet_mirai",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0096",
+      "source": "botnet_mirai",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0097",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_mantis",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0098",
+      "source": "botnet_mantis",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0099",
+      "source": "botnet_mantis",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0100",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_rapper_bot",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0101",
+      "source": "botnet_rapper_bot",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0102",
+      "source": "botnet_rapper_bot",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0103",
+      "source": "historical_list",
+      "predicate": "lists_botnet",
+      "target": "botnet_aisuru",
+      "description": "The source table includes this botnet and its reported dates, size estimate, spam capacity, and aliases."
+    },
+    {
+      "id": "rel_0104",
+      "source": "botnet_aisuru",
+      "predicate": "instance_of",
+      "target": "botnet",
+      "description": "A named historical botnet entry."
+    },
+    {
+      "id": "rel_0105",
+      "source": "botnet_aisuru",
+      "predicate": "has_uncertainty_note",
+      "target": "uncertainty",
+      "description": "Historical measurements and dates are source-reported and may be approximate or incomplete."
+    },
+    {
+      "id": "rel_0106",
+      "source": "botnet",
+      "predicate": "contains",
+      "target": "bot",
+      "description": "A botnet is composed of compromised devices running bot software."
+    },
+    {
+      "id": "rel_0107",
+      "source": "bot",
+      "predicate": "may_be_called",
+      "target": "zombie",
+      "description": "A compromised computer used remotely is commonly called a zombie computer."
+    },
+    {
+      "id": "rel_0108",
+      "source": "malware",
+      "predicate": "compromises",
+      "target": "bot",
+      "description": "Malware can turn a device into a bot."
+    },
+    {
+      "id": "rel_0109",
+      "source": "bot_herder",
+      "predicate": "controls",
+      "target": "botnet",
+      "description": "The bot herder coordinates botnet activity through C&C."
+    },
+    {
+      "id": "rel_0110",
+      "source": "bot_herder",
+      "predicate": "uses",
+      "target": "c2",
+      "description": "C&C is the coordination mechanism."
+    },
+    {
+      "id": "rel_0111",
+      "source": "bot",
+      "predicate": "communicates_with",
+      "target": "c2",
+      "description": "Bots receive commands and may report results."
+    },
+    {
+      "id": "rel_0112",
+      "source": "c2",
+      "predicate": "may_use",
+      "target": "client_server",
+      "description": "Traditional architecture relies on central servers."
+    },
+    {
+      "id": "rel_0113",
+      "source": "c2",
+      "predicate": "may_use",
+      "target": "p2p",
+      "description": "P2P architecture distributes coordination among peers."
+    },
+    {
+      "id": "rel_0114",
+      "source": "client_server",
+      "predicate": "historically_used",
+      "target": "irc",
+      "description": "IRC has been a common historical C&C protocol."
+    },
+    {
+      "id": "rel_0115",
+      "source": "client_server",
+      "predicate": "may_use",
+      "target": "http",
+      "description": "Web pages and domains can deliver commands."
+    },
+    {
+      "id": "rel_0116",
+      "source": "botnet",
+      "predicate": "may_use_protocol",
+      "target": "telnet",
+      "description": "Telnet is described as a botnet-related access vector or control context."
+    },
+    {
+      "id": "rel_0117",
+      "source": "botnet",
+      "predicate": "may_abuse",
+      "target": "ssh",
+      "description": "SSH services with weak or compromised access may be abused in infections."
+    },
+    {
+      "id": "rel_0118",
+      "source": "p2p",
+      "predicate": "may_use_cryptography",
+      "target": "pki",
+      "description": "Some P2P botnets use signatures to restrict command issuance."
+    },
+    {
+      "id": "rel_0119",
+      "source": "p2p",
+      "predicate": "reduces",
+      "target": "client_server",
+      "description": "P2P reduces dependence on a single central server."
+    },
+    {
+      "id": "rel_0120",
+      "source": "client_server",
+      "predicate": "has_risk",
+      "target": "take_down",
+      "description": "Central infrastructure can be seized or disabled."
+    },
+    {
+      "id": "rel_0121",
+      "source": "irc",
+      "predicate": "specified_by",
+      "target": "command_protocols",
+      "description": "IRC is one control-protocol family."
+    },
+    {
+      "id": "rel_0122",
+      "source": "dns",
+      "predicate": "may_be_abused_by",
+      "target": "fast_flux",
+      "description": "Fast flux complicates infrastructure tracking."
+    },
+    {
+      "id": "rel_0123",
+      "source": "dns",
+      "predicate": "may_be_abused_by",
+      "target": "dga",
+      "description": "DGAs can create changing candidate C&C domains."
+    },
+    {
+      "id": "rel_0124",
+      "source": "botnet",
+      "predicate": "may_use",
+      "target": "fast_flux",
+      "description": "Some botnets use fast-flux DNS."
+    },
+    {
+      "id": "rel_0125",
+      "source": "botnet",
+      "predicate": "may_use",
+      "target": "dga",
+      "description": "Some botnets generate new domain names."
+    },
+    {
+      "id": "rel_0126",
+      "source": "botnet",
+      "predicate": "may_blend_into",
+      "target": "egress_filtering",
+      "description": "C&C may use common services to evade outbound controls."
+    },
+    {
+      "id": "rel_0127",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "ddos",
+      "description": "DDoS is a common botnet use."
+    },
+    {
+      "id": "rel_0128",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "spam",
+      "description": "Bots can send bulk email."
+    },
+    {
+      "id": "rel_0129",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "spyware",
+      "description": "Bots can collect or exfiltrate sensitive data."
+    },
+    {
+      "id": "rel_0130",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "click_fraud",
+      "description": "Bots can generate fraudulent traffic."
+    },
+    {
+      "id": "rel_0131",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "ad_fraud",
+      "description": "Bots can manipulate advertising metrics."
+    },
+    {
+      "id": "rel_0132",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "credential_stuffing",
+      "description": "Botnets can automate logins with reused stolen credentials."
+    },
+    {
+      "id": "rel_0133",
+      "source": "botnet",
+      "predicate": "can_perform",
+      "target": "crypto_mining",
+      "description": "Compromised compute can be used for mining."
+    },
+    {
+      "id": "rel_0134",
+      "source": "botnet",
+      "predicate": "can_support",
+      "target": "phishing",
+      "description": "Botnets can distribute phishing messages and malicious content."
+    },
+    {
+      "id": "rel_0135",
+      "source": "botnet",
+      "predicate": "may_support",
+      "target": "residential_proxy",
+      "description": "Compromised devices may be used as proxy endpoints."
+    },
+    {
+      "id": "rel_0136",
+      "source": "botnet",
+      "predicate": "may_use_behavior",
+      "target": "self_spreading",
+      "description": "Some botnets automate further infection."
+    },
+    {
+      "id": "rel_0137",
+      "source": "malware",
+      "predicate": "may_be_delivered_by",
+      "target": "trojan",
+      "description": "Trojans and exploit kits are described as infection mechanisms."
+    },
+    {
+      "id": "rel_0138",
+      "source": "malware",
+      "predicate": "may_be_delivered_by",
+      "target": "drive_by",
+      "description": "Drive-by downloads are one possible infection vector."
+    },
+    {
+      "id": "rel_0139",
+      "source": "botnet",
+      "predicate": "can_include",
+      "target": "iot",
+      "description": "IoT devices are among compromised device types."
+    },
+    {
+      "id": "rel_0140",
+      "source": "botnet",
+      "predicate": "can_include",
+      "target": "smartphones",
+      "description": "Smartphones have also been used in botnet-like systems."
+    },
+    {
+      "id": "rel_0141",
+      "source": "detection",
+      "predicate": "includes",
+      "target": "signature_detection",
+      "description": "Signature-based detection looks for known patterns."
+    },
+    {
+      "id": "rel_0142",
+      "source": "detection",
+      "predicate": "includes",
+      "target": "behavior_detection",
+      "description": "Behavioral detection looks for abnormal or automated behavior."
+    },
+    {
+      "id": "rel_0143",
+      "source": "detection",
+      "predicate": "can_use",
+      "target": "honeypot",
+      "description": "Honeypots and isolated analysis can aid investigation."
+    },
+    {
+      "id": "rel_0144",
+      "source": "take_down",
+      "predicate": "may_include",
+      "target": "sinkhole",
+      "description": "Disruption can include DNS sinkholing or null-routing."
+    },
+    {
+      "id": "rel_0145",
+      "source": "take_down",
+      "predicate": "may_be_performed_by",
+      "target": "law_enforcement",
+      "description": "Law enforcement can use legal and technical disruption mechanisms."
+    },
+    {
+      "id": "rel_0146",
+      "source": "segmentation",
+      "predicate": "mitigates",
+      "target": "botnet",
+      "description": "Segmentation limits spread and impact."
+    },
+    {
+      "id": "rel_0147",
+      "source": "patching",
+      "predicate": "mitigates",
+      "target": "malware",
+      "description": "Patching closes exploited weaknesses."
+    },
+    {
+      "id": "rel_0148",
+      "source": "credential_security",
+      "predicate": "mitigates",
+      "target": "botnet",
+      "description": "Strong unique credentials reduce compromise through default or weak logins."
+    },
+    {
+      "id": "rel_0149",
+      "source": "logging",
+      "predicate": "supports",
+      "target": "detection",
+      "description": "Telemetry enables correlation of suspicious behavior."
+    },
+    {
+      "id": "rel_0150",
+      "source": "incident_response",
+      "predicate": "responds_to",
+      "target": "botnet",
+      "description": "Response includes containment, cleanup, and recovery."
+    },
+    {
+      "id": "rel_0151",
+      "source": "earthlink",
+      "predicate": "associated_with",
+      "target": "first_botnet_2001",
+      "description": "The source credits EarthLink with exposing an early spam botnet during litigation."
+    },
+    {
+      "id": "rel_0152",
+      "source": "khan_smith",
+      "predicate": "associated_with",
+      "target": "first_botnet_2001",
+      "description": "Khan C. Smith is named in the source’s 2001 account."
+    },
+    {
+      "id": "rel_0153",
+      "source": "first_botnet_2001",
+      "predicate": "illustrates",
+      "target": "spam",
+      "description": "The early botnet was built for bulk spam."
+    },
+    {
+      "id": "rel_0154",
+      "source": "first_botnet_2001",
+      "predicate": "occurred_in",
+      "target": "year_2001",
+      "description": "The article dates the disclosure to 2001."
+    },
+    {
+      "id": "rel_0155",
+      "source": "scale_back_2006",
+      "predicate": "describes_trend_in",
+      "target": "botnet",
+      "description": "Some botnets reportedly scaled back around 2006 to avoid detection."
+    },
+    {
+      "id": "rel_0156",
+      "source": "spam_2005",
+      "predicate": "describes",
+      "target": "spam",
+      "description": "Source-reported estimate: 50–80% of worldwide spam was sent by zombie computers in 2005."
+    },
+    {
+      "id": "rel_0157",
+      "source": "mobile_2009",
+      "predicate": "includes",
+      "target": "sexy_space",
+      "description": "Sexy Space was released in the wild in July 2009."
+    },
+    {
+      "id": "rel_0158",
+      "source": "mobile_2009",
+      "predicate": "includes",
+      "target": "charlie_miller",
+      "description": "Charlie Miller demonstrated an iPhone proof-of-concept SMS worm in July 2009."
+    },
+    {
+      "id": "rel_0159",
+      "source": "mobile_2009",
+      "predicate": "includes",
+      "target": "etisalat",
+      "description": "The source reports an Etisalat BlackBerry spyware program in July 2009."
+    },
+    {
+      "id": "rel_0160",
+      "source": "loic",
+      "predicate": "associated_with",
+      "target": "project_chanology",
+      "description": "The source links LOIC use by volunteer hacktivists to Project Chanology in 2010."
+    },
+    {
+      "id": "rel_0161",
+      "source": "great_cannon",
+      "predicate": "associated_with",
+      "target": "botnet",
+      "description": "The source describes traffic manipulation that created an ephemeral botnet-like attack capability."
+    },
+    {
+      "id": "rel_0162",
+      "source": "great_cannon",
+      "predicate": "targeted",
+      "target": "historical_list",
+      "description": "The source describes a 2015 attack against GitHub; represented separately as historical context."
+    },
+    {
+      "id": "rel_0163",
+      "source": "general_motors",
+      "predicate": "associated_with",
+      "target": "gm_2022",
+      "description": "The source names General Motors in a 2022 credential-stuffing example."
+    },
+    {
+      "id": "rel_0164",
+      "source": "gm_2022",
+      "predicate": "uses_attack_type",
+      "target": "credential_stuffing",
+      "description": "The event is described as credential stuffing."
+    },
+    {
+      "id": "rel_0165",
+      "source": "europol",
+      "predicate": "announced",
+      "target": "operation_endgame_2024",
+      "description": "Europol announced Operation Endgame in May 2024."
+    },
+    {
+      "id": "rel_0166",
+      "source": "operation_endgame_2024",
+      "predicate": "is_operation",
+      "target": "operation_endgame",
+      "description": "Operation Endgame is an international law-enforcement action."
+    },
+    {
+      "id": "rel_0167",
+      "source": "operation_endgame_2024",
+      "predicate": "involved_country",
+      "target": "france",
+      "description": "The source says the takedowns were led by France, Germany, and the Netherlands."
+    },
+    {
+      "id": "rel_0168",
+      "source": "operation_endgame_2024",
+      "predicate": "involved_country",
+      "target": "germany",
+      "description": "The source says the takedowns were led by France, Germany, and the Netherlands."
+    },
+    {
+      "id": "rel_0169",
+      "source": "operation_endgame_2024",
+      "predicate": "involved_country",
+      "target": "netherlands",
+      "description": "The source says the takedowns were led by France, Germany, and the Netherlands."
+    },
+    {
+      "id": "rel_0170",
+      "source": "operation_endgame_2024",
+      "predicate": "disrupted_botnet",
+      "target": "botnet_icedid",
+      "description": "Operation Endgame disrupted IcedID according to the source."
+    },
+    {
+      "id": "rel_0171",
+      "source": "operation_endgame_2024",
+      "predicate": "disrupted_botnet",
+      "target": "botnet_systembc",
+      "description": "Operation Endgame disrupted SystemBC according to the source."
+    },
+    {
+      "id": "rel_0172",
+      "source": "operation_endgame_2024",
+      "predicate": "disrupted_botnet",
+      "target": "botnet_pikabot",
+      "description": "Operation Endgame disrupted Pikabot according to the source."
+    },
+    {
+      "id": "rel_0173",
+      "source": "operation_endgame_2024",
+      "predicate": "disrupted_botnet",
+      "target": "botnet_smokeloader",
+      "description": "Operation Endgame disrupted Smokeloader according to the source."
+    },
+    {
+      "id": "rel_0174",
+      "source": "operation_endgame_2024",
+      "predicate": "disrupted_botnet",
+      "target": "botnet_bumblebee",
+      "description": "Operation Endgame disrupted Bumblebee according to the source."
+    },
+    {
+      "id": "rel_0175",
+      "source": "operation_endgame_2024",
+      "predicate": "disrupted_botnet",
+      "target": "botnet_trickbot",
+      "description": "Operation Endgame disrupted Trickbot according to the source."
+    },
+    {
+      "id": "rel_0176",
+      "source": "operation_endgame_2024",
+      "predicate": "reported_result",
+      "target": "uncertainty",
+      "description": "Reported results: four arrests, more than 100 servers seized, and 2,000 domains taken over."
+    },
+    {
+      "id": "rel_0177",
+      "source": "n_baiot",
+      "predicate": "detects",
+      "target": "botnet",
+      "description": "N-BaIoT is described as detecting abnormal traffic from compromised IoT devices."
+    },
+    {
+      "id": "rel_0178",
+      "source": "iot_detection_study",
+      "predicate": "evaluated_method",
+      "target": "n_baiot",
+      "description": "The source describes N-BaIoT evaluation."
+    },
+    {
+      "id": "rel_0179",
+      "source": "iot_detection_study",
+      "predicate": "used_malware",
+      "target": "mirai",
+      "description": "Nine IoT devices were infected with Mirai and BASHLITE for evaluation, according to the source."
+    },
+    {
+      "id": "rel_0180",
+      "source": "iot_detection_study",
+      "predicate": "used_malware",
+      "target": "bashlite",
+      "description": "Nine IoT devices were infected with Mirai and BASHLITE for evaluation, according to the source."
+    },
+    {
+      "id": "rel_0181",
+      "source": "sandia",
+      "predicate": "studied",
+      "target": "botnet",
+      "description": "Sandia researchers emulated large botnet-scale behavior with Linux kernels on an HPC cluster."
+    },
+    {
+      "id": "rel_0182",
+      "source": "bot_hunter",
+      "predicate": "detects",
+      "target": "botnet",
+      "description": "BotHunter identifies network patterns characteristic of botnet activity."
+    },
+    {
+      "id": "rel_0183",
+      "source": "senate_hearing",
+      "predicate": "concerned_with",
+      "target": "botnet",
+      "description": "The 15 July 2014 hearing addressed botnet threats and disruption."
+    },
+    {
+      "id": "rel_0184",
+      "source": "ucsb_study",
+      "predicate": "measured",
+      "target": "uncertainty",
+      "description": "The source warns botnet estimates based on IP addresses can be inaccurate."
+    },
+    {
+      "id": "rel_0185",
+      "source": "source_article",
+      "predicate": "describes",
+      "target": "botnet",
+      "description": "This graph is based on the supplied article."
+    },
+    {
+      "id": "rel_0186",
+      "source": "source_article",
+      "predicate": "contains_dataset",
+      "target": "historical_list",
+      "description": "The article includes a non-exhaustive historical table."
+    },
+    {
+      "id": "rel_0187",
+      "source": "historical_list",
+      "predicate": "has_limitation",
+      "target": "uncertainty",
+      "description": "Dates and estimates are incomplete and not directly comparable across all rows."
+    },
+    {
+      "id": "rel_0188",
+      "source": "law_enforcement",
+      "predicate": "may_disrupt",
+      "target": "c2",
+      "description": "Legal and technical actions can disrupt C&C infrastructure."
+    },
+    {
+      "id": "rel_0189",
+      "source": "take_down",
+      "predicate": "may_target",
+      "target": "c2",
+      "description": "C&C server/domain disruption is one countermeasure."
+    },
+    {
+      "id": "rel_0190",
+      "source": "sinkhole",
+      "predicate": "supports",
+      "target": "detection",
+      "description": "Sinkholing can redirect known malicious traffic for measurement or disruption."
+    },
+    {
+      "id": "rel_0191",
+      "source": "behavior_detection",
+      "predicate": "uses",
+      "target": "logging",
+      "description": "Behavioral analysis depends on telemetry."
+    },
+    {
+      "id": "rel_0192",
+      "source": "honeypot",
+      "predicate": "supports",
+      "target": "detection",
+      "description": "Controlled decoys can help observe suspicious behavior."
+    },
+    {
+      "id": "rel_0193",
+      "source": "source_article",
+      "predicate": "reports_event",
+      "target": "operation_endgame_2024",
+      "description": "May 2024 Operation Endgame details are from the supplied article."
+    },
+    {
+      "id": "rel_0194",
+      "source": "source_article",
+      "predicate": "reports_event",
+      "target": "mobile_2009",
+      "description": "July 2009 mobile milestones are from the supplied article."
+    },
+    {
+      "id": "rel_0195",
+      "source": "source_article",
+      "predicate": "reports_event",
+      "target": "first_botnet_2001",
+      "description": "The 2001 historical account is from the supplied article."
+    },
+    {
+      "id": "rel_0196",
+      "source": "botnet_maxite",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: 2002."
+    },
+    {
+      "id": "rel_0197",
+      "source": "botnet_maxite",
+      "predicate": "has_alias",
+      "target": "alias_maxite_xdcc_bot",
+      "description": "The source lists MaXiTE XDCC Bot as an alias of MaXiTE."
+    },
+    {
+      "id": "rel_0198",
+      "source": "botnet_maxite",
+      "predicate": "has_alias",
+      "target": "alias_maxite_irc_tcl_script",
+      "description": "The source lists MaXiTE IRC TCL Script as an alias of MaXiTE."
+    },
+    {
+      "id": "rel_0199",
+      "source": "botnet_maxite",
+      "predicate": "has_alias",
+      "target": "alias_maxserv",
+      "description": "The source lists MaxServ as an alias of MaXiTE."
+    },
+    {
+      "id": "rel_0200",
+      "source": "botnet_marina_botnet",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: Unknown (no later than 2004)."
+    },
+    {
+      "id": "rel_0201",
+      "source": "botnet_torpig",
+      "predicate": "has_alias",
+      "target": "alias_sinowal",
+      "description": "The source lists Sinowal as an alias of Torpig."
+    },
+    {
+      "id": "rel_0202",
+      "source": "botnet_torpig",
+      "predicate": "has_alias",
+      "target": "alias_anserin",
+      "description": "The source lists Anserin as an alias of Torpig."
+    },
+    {
+      "id": "rel_0203",
+      "source": "botnet_storm",
+      "predicate": "has_alias",
+      "target": "alias_nuwar",
+      "description": "The source lists Nuwar as an alias of Storm."
+    },
+    {
+      "id": "rel_0204",
+      "source": "botnet_storm",
+      "predicate": "has_alias",
+      "target": "alias_peacomm",
+      "description": "The source lists Peacomm as an alias of Storm."
+    },
+    {
+      "id": "rel_0205",
+      "source": "botnet_storm",
+      "predicate": "has_alias",
+      "target": "alias_zhelatin",
+      "description": "The source lists Zhelatin as an alias of Storm."
+    },
+    {
+      "id": "rel_0206",
+      "source": "botnet_rustock",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2006."
+    },
+    {
+      "id": "rel_0207",
+      "source": "botnet_rustock",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: March 2011."
+    },
+    {
+      "id": "rel_0208",
+      "source": "botnet_rustock",
+      "predicate": "has_alias",
+      "target": "alias_rkrustok",
+      "description": "The source lists RKRustok as an alias of Rustock."
+    },
+    {
+      "id": "rel_0209",
+      "source": "botnet_rustock",
+      "predicate": "has_alias",
+      "target": "alias_costrat",
+      "description": "The source lists Costrat as an alias of Rustock."
+    },
+    {
+      "id": "rel_0210",
+      "source": "botnet_donbot",
+      "predicate": "has_alias",
+      "target": "alias_buzus",
+      "description": "The source lists Buzus as an alias of Donbot."
+    },
+    {
+      "id": "rel_0211",
+      "source": "botnet_donbot",
+      "predicate": "has_alias",
+      "target": "alias_bachsoy",
+      "description": "The source lists Bachsoy as an alias of Donbot."
+    },
+    {
+      "id": "rel_0212",
+      "source": "botnet_cutwail",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2007."
+    },
+    {
+      "id": "rel_0213",
+      "source": "botnet_cutwail",
+      "predicate": "has_alias",
+      "target": "alias_pandex",
+      "description": "The source lists Pandex as an alias of Cutwail."
+    },
+    {
+      "id": "rel_0214",
+      "source": "botnet_cutwail",
+      "predicate": "has_alias",
+      "target": "alias_mutant",
+      "description": "The source lists Mutant as an alias of Cutwail."
+    },
+    {
+      "id": "rel_0215",
+      "source": "botnet_akbot",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: 2007."
+    },
+    {
+      "id": "rel_0216",
+      "source": "botnet_srizbi",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: March 2007."
+    },
+    {
+      "id": "rel_0217",
+      "source": "botnet_srizbi",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: November 2008."
+    },
+    {
+      "id": "rel_0218",
+      "source": "botnet_srizbi",
+      "predicate": "has_alias",
+      "target": "alias_cbeplay",
+      "description": "The source lists Cbeplay as an alias of Srizbi."
+    },
+    {
+      "id": "rel_0219",
+      "source": "botnet_srizbi",
+      "predicate": "has_alias",
+      "target": "alias_exchanger",
+      "description": "The source lists Exchanger as an alias of Srizbi."
+    },
+    {
+      "id": "rel_0220",
+      "source": "botnet_sality",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2008."
+    },
+    {
+      "id": "rel_0221",
+      "source": "botnet_sality",
+      "predicate": "has_alias",
+      "target": "alias_sector",
+      "description": "The source lists Sector as an alias of Sality."
+    },
+    {
+      "id": "rel_0222",
+      "source": "botnet_sality",
+      "predicate": "has_alias",
+      "target": "alias_kuku",
+      "description": "The source lists Kuku as an alias of Sality."
+    },
+    {
+      "id": "rel_0223",
+      "source": "botnet_mariposa",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2008."
+    },
+    {
+      "id": "rel_0224",
+      "source": "botnet_mariposa",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: December 2009."
+    },
+    {
+      "id": "rel_0225",
+      "source": "botnet_kraken",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2008."
+    },
+    {
+      "id": "rel_0226",
+      "source": "botnet_kraken",
+      "predicate": "has_alias",
+      "target": "alias_kracken",
+      "description": "The source lists Kracken as an alias of Kraken."
+    },
+    {
+      "id": "rel_0227",
+      "source": "botnet_conficker",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: November 2008."
+    },
+    {
+      "id": "rel_0228",
+      "source": "botnet_conficker",
+      "predicate": "has_alias",
+      "target": "alias_downup",
+      "description": "The source lists DownUp as an alias of Conficker."
+    },
+    {
+      "id": "rel_0229",
+      "source": "botnet_conficker",
+      "predicate": "has_alias",
+      "target": "alias_downandup",
+      "description": "The source lists DownAndUp as an alias of Conficker."
+    },
+    {
+      "id": "rel_0230",
+      "source": "botnet_conficker",
+      "predicate": "has_alias",
+      "target": "alias_downadup",
+      "description": "The source lists DownAdUp as an alias of Conficker."
+    },
+    {
+      "id": "rel_0231",
+      "source": "botnet_conficker",
+      "predicate": "has_alias",
+      "target": "alias_kido",
+      "description": "The source lists Kido as an alias of Conficker."
+    },
+    {
+      "id": "rel_0232",
+      "source": "botnet_waledac",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: November 2008."
+    },
+    {
+      "id": "rel_0233",
+      "source": "botnet_waledac",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: March 2010."
+    },
+    {
+      "id": "rel_0234",
+      "source": "botnet_waledac",
+      "predicate": "has_alias",
+      "target": "alias_waled",
+      "description": "The source lists Waled as an alias of Waledac."
+    },
+    {
+      "id": "rel_0235",
+      "source": "botnet_waledac",
+      "predicate": "has_alias",
+      "target": "alias_waledpak",
+      "description": "The source lists Waledpak as an alias of Waledac."
+    },
+    {
+      "id": "rel_0236",
+      "source": "botnet_nucrypt",
+      "predicate": "has_alias",
+      "target": "alias_loosky",
+      "description": "The source lists Loosky as an alias of Nucrypt."
+    },
+    {
+      "id": "rel_0237",
+      "source": "botnet_nucrypt",
+      "predicate": "has_alias",
+      "target": "alias_locksky",
+      "description": "The source lists Locksky as an alias of Nucrypt."
+    },
+    {
+      "id": "rel_0238",
+      "source": "botnet_wopla",
+      "predicate": "has_alias",
+      "target": "alias_pokier",
+      "description": "The source lists Pokier as an alias of Wopla."
+    },
+    {
+      "id": "rel_0239",
+      "source": "botnet_wopla",
+      "predicate": "has_alias",
+      "target": "alias_slogger",
+      "description": "The source lists Slogger as an alias of Wopla."
+    },
+    {
+      "id": "rel_0240",
+      "source": "botnet_wopla",
+      "predicate": "has_alias",
+      "target": "alias_cryptic",
+      "description": "The source lists Cryptic as an alias of Wopla."
+    },
+    {
+      "id": "rel_0241",
+      "source": "botnet_asprox",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2008."
+    },
+    {
+      "id": "rel_0242",
+      "source": "botnet_asprox",
+      "predicate": "has_alias",
+      "target": "alias_danmec",
+      "description": "The source lists Danmec as an alias of Asprox."
+    },
+    {
+      "id": "rel_0243",
+      "source": "botnet_asprox",
+      "predicate": "has_alias",
+      "target": "alias_hydraflux",
+      "description": "The source lists Hydraflux as an alias of Asprox."
+    },
+    {
+      "id": "rel_0244",
+      "source": "botnet_spamthru",
+      "predicate": "has_alias",
+      "target": "alias_spam_dcomserv",
+      "description": "The source lists Spam-DComServ as an alias of Spamthru."
+    },
+    {
+      "id": "rel_0245",
+      "source": "botnet_spamthru",
+      "predicate": "has_alias",
+      "target": "alias_covesmer",
+      "description": "The source lists Covesmer as an alias of Spamthru."
+    },
+    {
+      "id": "rel_0246",
+      "source": "botnet_spamthru",
+      "predicate": "has_alias",
+      "target": "alias_xmiler",
+      "description": "The source lists Xmiler as an alias of Spamthru."
+    },
+    {
+      "id": "rel_0247",
+      "source": "botnet_gumblar",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2008."
+    },
+    {
+      "id": "rel_0248",
+      "source": "botnet_bredolab",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: May 2009."
+    },
+    {
+      "id": "rel_0249",
+      "source": "botnet_bredolab",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: November 2010 (not complete)."
+    },
+    {
+      "id": "rel_0250",
+      "source": "botnet_bredolab",
+      "predicate": "has_alias",
+      "target": "alias_oficla",
+      "description": "The source lists Oficla as an alias of BredoLab."
+    },
+    {
+      "id": "rel_0251",
+      "source": "botnet_grum",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2009."
+    },
+    {
+      "id": "rel_0252",
+      "source": "botnet_grum",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: 2012-07-19."
+    },
+    {
+      "id": "rel_0253",
+      "source": "botnet_grum",
+      "predicate": "has_alias",
+      "target": "alias_tedroo",
+      "description": "The source lists Tedroo as an alias of Grum."
+    },
+    {
+      "id": "rel_0254",
+      "source": "botnet_mega_d",
+      "predicate": "has_alias",
+      "target": "alias_ozdok",
+      "description": "The source lists Ozdok as an alias of Mega-D."
+    },
+    {
+      "id": "rel_0255",
+      "source": "botnet_festi",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: August 2009."
+    },
+    {
+      "id": "rel_0256",
+      "source": "botnet_festi",
+      "predicate": "has_alias",
+      "target": "alias_spamnost",
+      "description": "The source lists Spamnost as an alias of Festi."
+    },
+    {
+      "id": "rel_0257",
+      "source": "botnet_vulcanbot",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: March 2010."
+    },
+    {
+      "id": "rel_0258",
+      "source": "botnet_tdl4",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2010."
+    },
+    {
+      "id": "rel_0259",
+      "source": "botnet_tdl4",
+      "predicate": "has_alias",
+      "target": "alias_tdss",
+      "description": "The source lists TDSS as an alias of TDL4."
+    },
+    {
+      "id": "rel_0260",
+      "source": "botnet_tdl4",
+      "predicate": "has_alias",
+      "target": "alias_alureon",
+      "description": "The source lists Alureon as an alias of TDL4."
+    },
+    {
+      "id": "rel_0261",
+      "source": "botnet_zeus",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2010."
+    },
+    {
+      "id": "rel_0262",
+      "source": "botnet_zeus",
+      "predicate": "has_alias",
+      "target": "alias_zbot",
+      "description": "The source lists Zbot as an alias of Zeus."
+    },
+    {
+      "id": "rel_0263",
+      "source": "botnet_zeus",
+      "predicate": "has_alias",
+      "target": "alias_prg",
+      "description": "The source lists PRG as an alias of Zeus."
+    },
+    {
+      "id": "rel_0264",
+      "source": "botnet_zeus",
+      "predicate": "has_alias",
+      "target": "alias_wsnpoem",
+      "description": "The source lists Wsnpoem as an alias of Zeus."
+    },
+    {
+      "id": "rel_0265",
+      "source": "botnet_zeus",
+      "predicate": "has_alias",
+      "target": "alias_gorhax",
+      "description": "The source lists Gorhax as an alias of Zeus."
+    },
+    {
+      "id": "rel_0266",
+      "source": "botnet_zeus",
+      "predicate": "has_alias",
+      "target": "alias_kneber",
+      "description": "The source lists Kneber as an alias of Zeus."
+    },
+    {
+      "id": "rel_0267",
+      "source": "botnet_kelihos",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: 2010."
+    },
+    {
+      "id": "rel_0268",
+      "source": "botnet_kelihos",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: Several: 2011, 2012."
+    },
+    {
+      "id": "rel_0269",
+      "source": "botnet_kelihos",
+      "predicate": "has_alias",
+      "target": "alias_hlux",
+      "description": "The source lists Hlux as an alias of Kelihos."
+    },
+    {
+      "id": "rel_0270",
+      "source": "botnet_ramnit",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: 2011 or earlier."
+    },
+    {
+      "id": "rel_0271",
+      "source": "botnet_ramnit",
+      "predicate": "has_reported_dismantling_date",
+      "target": "uncertainty",
+      "description": "Dismantling date/status as transcribed: February 2015."
+    },
+    {
+      "id": "rel_0272",
+      "source": "botnet_chameleon",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: around 2012."
+    },
+    {
+      "id": "rel_0273",
+      "source": "botnet_chameleon",
+      "predicate": "has_alias",
+      "target": "alias_none",
+      "description": "The source lists None as an alias of Chameleon."
+    },
+    {
+      "id": "rel_0274",
+      "source": "botnet_necurs",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: 2014."
+    },
+    {
+      "id": "rel_0275",
+      "source": "botnet_mirai",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: August 2016."
+    },
+    {
+      "id": "rel_0276",
+      "source": "botnet_mirai",
+      "predicate": "has_alias",
+      "target": "alias_none",
+      "description": "The source lists None as an alias of Mirai."
+    },
+    {
+      "id": "rel_0277",
+      "source": "botnet_mantis",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: 2022."
+    },
+    {
+      "id": "rel_0278",
+      "source": "botnet_rapper_bot",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: August 2025."
+    },
+    {
+      "id": "rel_0279",
+      "source": "botnet_aisuru",
+      "predicate": "has_reported_creation_date",
+      "target": "uncertainty",
+      "description": "Creation date as transcribed: unknown (active 2025)."
+    },
+    {
+      "id": "rel_0280",
+      "source": "operation_endgame_2024",
+      "predicate": "announced_by",
+      "target": "europol",
+      "description": "The source attributes announcement of the operation to Europol; the reported action dates were 27–29 May 2024."
+    },
+    {
+      "id": "rel_0281",
+      "source": "source_article",
+      "predicate": "reports_statistic",
+      "target": "spam_2005",
+      "description": "Historical spam proportion is a source-reported estimate."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern_centralized_c2",
+      "name": "Centralized client-server C&C",
+      "description": "Bots connect to a central service and receive relayed commands; centralization simplifies control but creates disruption points.",
+      "participants": [
+        "client_server",
+        "c2",
+        "bot",
+        "bot_herder",
+        "take_down"
+      ],
+      "steps": [
+        "A bot checks in with a configured control service.",
+        "The service relays authorized-by-operator commands to connected bots.",
+        "Bots perform assigned activity and may report status.",
+        "Defenders can investigate and disrupt central infrastructure through appropriate legal and technical processes."
+      ],
+      "safety_note": "Conceptual description only; no operational botnet construction instructions."
+    },
+    {
+      "id": "pattern_p2p_c2",
+      "name": "Peer-to-peer botnet architecture",
+      "description": "Peers share control information and can reduce reliance on one central server, complicating takedown.",
+      "participants": [
+        "p2p",
+        "bot",
+        "c2",
+        "pki",
+        "detection"
+      ],
+      "steps": [
+        "Peers exchange limited network and version information.",
+        "Control information is distributed among multiple peers.",
+        "Defenders correlate peer behavior and infrastructure rather than relying on a single server indicator."
+      ],
+      "safety_note": "Defensive and conceptual."
+    },
+    {
+      "id": "pattern_botnet_detection",
+      "name": "Layered botnet detection",
+      "description": "Combine host, network, DNS, identity, and behavior signals to reduce blind spots.",
+      "participants": [
+        "detection",
+        "signature_detection",
+        "behavior_detection",
+        "logging",
+        "honeypot",
+        "bot_hunter",
+        "n_baiot"
+      ],
+      "steps": [
+        "Collect endpoint, authentication, DNS, and network telemetry.",
+        "Correlate known signatures with anomalous behavior.",
+        "Use isolated analysis or honeypots when appropriate.",
+        "Validate findings and contain confirmed infected assets."
+      ]
+    },
+    {
+      "id": "pattern_iot_defense",
+      "name": "IoT botnet prevention and containment",
+      "description": "Baseline for reducing compromise and limiting impact on embedded devices.",
+      "participants": [
+        "iot",
+        "segmentation",
+        "patching",
+        "credential_security",
+        "logging",
+        "incident_response"
+      ],
+      "steps": [
+        "Inventory devices and firmware.",
+        "Replace defaults and restrict management exposure.",
+        "Patch supported firmware and segment IoT/OT devices.",
+        "Monitor unusual outbound traffic and behavior.",
+        "Isolate, restore, rotate credentials, and verify after compromise."
+      ]
+    },
+    {
+      "id": "pattern_c2_disruption",
+      "name": "C&C disruption and coordinated takedown",
+      "description": "A legally authorized response may disrupt servers, domains, or other infrastructure while considering collateral effects.",
+      "participants": [
+        "law_enforcement",
+        "take_down",
+        "sinkhole",
+        "c2",
+        "incident_response"
+      ],
+      "steps": [
+        "Validate infrastructure and scope with trusted evidence.",
+        "Coordinate with providers, registrars, researchers, and relevant authorities.",
+        "Apply authorized seizure, sinkholing, filtering, or null-routing measures.",
+        "Monitor bot infections that remain after C&C disruption and support remediation."
+      ]
+    },
+    {
+      "id": "pattern_historical_data",
+      "name": "Historical botnet dataset interpretation",
+      "description": "Preserve original reported fields while avoiding false precision when estimates and dates are incomplete.",
+      "participants": [
+        "historical_list",
+        "uncertainty",
+        "source_article"
+      ],
+      "steps": [
+        "Retain reported creation and dismantling fields exactly as supplied.",
+        "Preserve blank/unknown values as null.",
+        "Store bot-count estimates, spam capacity, and aliases separately.",
+        "Record source and uncertainty; corroborate before analytical comparisons."
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "R001",
+      "rule": "Preserve source-reported botnet dates, counts, spam capacity, and aliases without silently filling missing values.",
+      "category": "data_integrity"
+    },
+    {
+      "id": "R002",
+      "rule": "Treat the historical botnet table as non-exhaustive, as the source states.",
+      "category": "data_integrity"
+    },
+    {
+      "id": "R003",
+      "rule": "Do not treat historical bot-count estimates as precise unique-device counts; IP churn and measurement methods can distort estimates.",
+      "category": "measurement"
+    },
+    {
+      "id": "R004",
+      "rule": "Do not assume that one malware family maps one-to-one to one botnet operator; multiple botnets may use the same malware.",
+      "category": "attribution"
+    },
+    {
+      "id": "R005",
+      "rule": "Centralized C&C and P2P C&C have different resilience and disruption trade-offs.",
+      "category": "architecture"
+    },
+    {
+      "id": "R006",
+      "rule": "Use multiple telemetry sources because signature-only detection may miss changing behavior.",
+      "category": "detection"
+    },
+    {
+      "id": "R007",
+      "rule": "Use behavior-based analysis alongside signatures and threat intelligence.",
+      "category": "detection"
+    },
+    {
+      "id": "R008",
+      "rule": "Restrict management services and replace default credentials on Internet-connected devices.",
+      "category": "prevention"
+    },
+    {
+      "id": "R009",
+      "rule": "Patch supported firmware and software to reduce exploitation risk.",
+      "category": "prevention"
+    },
+    {
+      "id": "R010",
+      "rule": "Segment IoT devices and restrict outbound communication where operationally feasible.",
+      "category": "containment"
+    },
+    {
+      "id": "R011",
+      "rule": "Treat domains and IP addresses from historical reports as time-sensitive indicators requiring validation.",
+      "category": "threat_intelligence"
+    },
+    {
+      "id": "R012",
+      "rule": "Coordinate large DDoS responses with upstream providers and mitigation services.",
+      "category": "availability"
+    },
+    {
+      "id": "R013",
+      "rule": "Botnet takedowns can leave infected devices compromised; remediation of endpoints remains necessary.",
+      "category": "incident_response"
+    },
+    {
+      "id": "R014",
+      "rule": "Preserve legal authority, evidence, and collateral-impact considerations during infrastructure disruption.",
+      "category": "governance"
+    },
+    {
+      "id": "R015",
+      "rule": "Keep aliases distinct from independent botnet identities unless a source explicitly equates them.",
+      "category": "data_integrity"
+    },
+    {
+      "id": "R016",
+      "rule": "Retain units in numerical fields; the article’s spam capacity column is in billions per day.",
+      "category": "data_integrity"
+    },
+    {
+      "id": "R017",
+      "rule": "Keep unknown or blank date fields null rather than inventing dates.",
+      "category": "data_integrity"
+    },
+    {
+      "id": "R018",
+      "rule": "Separate historical event dates from botnet creation and dismantling dates.",
+      "category": "temporal_modeling"
+    },
+    {
+      "id": "R019",
+      "rule": "Mobile and IoT devices are both relevant botnet asset classes.",
+      "category": "scope"
+    },
+    {
+      "id": "R020",
+      "rule": "Use honeypots and isolated environments for safe malware analysis.",
+      "category": "analysis"
+    },
+    {
+      "id": "R021",
+      "rule": "Record source provenance and uncertainty for every historical estimate.",
+      "category": "provenance"
+    },
+    {
+      "id": "R022",
+      "rule": "Do not infer an operator’s identity from a botnet name or malware-family label alone.",
+      "category": "attribution"
+    },
+    {
+      "id": "R023",
+      "rule": "Evaluate proxy networks for consent and host integrity; a residential IP does not prove legitimate participation.",
+      "category": "abuse_prevention"
+    },
+    {
+      "id": "R024",
+      "rule": "Monitor credential-stuffing, spam, DDoS, mining, and data-theft signals as distinct use cases.",
+      "category": "detection"
+    },
+    {
+      "id": "R025",
+      "rule": "Cross-check historical claims against primary research and official advisories before operational or publication use.",
+      "category": "verification"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_iot_triage",
+      "name": "Triage suspected IoT bot",
+      "scenario": "A router or camera shows unusual outbound connections and unexpected resource usage.",
+      "steps": [
+        "Record device model, firmware, logs, and observed network indicators.",
+        "Compare firmware and exposure against official vendor advisories.",
+        "Isolate the device from untrusted networks if compromise is credible.",
+        "Restore trusted firmware, rotate credentials, patch, and monitor."
+      ],
+      "expected_outcome": "Compromise is investigated and the device is returned to service only after hardening."
+    },
+    {
+      "id": "example_botnet_ioc",
+      "name": "Validate a historical botnet indicator",
+      "scenario": "An old report lists a domain or IP associated with a botnet.",
+      "steps": [
+        "Preserve source and timestamp.",
+        "Corroborate with current trusted threat-intelligence sources and DNS history.",
+        "Check whether the indicator is stale, shared, or reassigned.",
+        "Apply scoped controls with a review/expiry process."
+      ],
+      "expected_outcome": "Indicators are used with provenance and minimized false positives."
+    },
+    {
+      "id": "example_ddos_response",
+      "name": "Respond to a DDoS event",
+      "scenario": "A public service experiences sudden availability loss and traffic from many networks.",
+      "steps": [
+        "Activate incident coordination and collect service/traffic telemetry.",
+        "Contact upstream provider or DDoS mitigation service.",
+        "Apply tested rate limits and filtering while monitoring legitimate-user impact.",
+        "Review logs, restore normal service, and conduct a post-incident review."
+      ],
+      "expected_outcome": "Mitigation is coordinated and lessons are captured."
+    },
+    {
+      "id": "example_p2p_detection",
+      "name": "Investigate suspected P2P bot behavior",
+      "scenario": "Network telemetry shows unusual peer-to-peer traffic and repeated peer discovery.",
+      "steps": [
+        "Correlate traffic with endpoint process and DNS telemetry.",
+        "Compare behavior to validated threat intelligence.",
+        "Isolate confirmed compromised endpoints and preserve evidence.",
+        "Reimage or remediate using trusted procedures and verify before reconnecting."
+      ],
+      "expected_outcome": "Suspicious behavior is investigated without relying on a single C&C domain."
+    },
+    {
+      "id": "example_credentials",
+      "name": "Reduce credential-driven bot recruitment",
+      "scenario": "An audit finds Internet-exposed administration services or default credentials.",
+      "steps": [
+        "Restrict administrative interfaces to trusted networks.",
+        "Replace defaults with unique credentials and enable MFA where supported.",
+        "Disable unused services and patch supported firmware.",
+        "Review authentication logs for signs of misuse."
+      ],
+      "expected_outcome": "Reduced risk of compromise through exposed or weakly protected services."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_article_1",
+      "title": "Botnet",
+      "source_type": "user_supplied_article_text",
+      "citation": "Supplied Wikipedia article text uploaded in this conversation",
+      "source_file": "Pasted text(20261020-220648).txt",
+      "retrieval_note": "The historical table is explicitly non-exhaustive. Values and incident claims are transcribed as reported, not independently verified."
+    }
+  ],
+  "graph_integrity": {
+    "entity_ids_unique": true,
+    "relationship_ids_unique": true,
+    "all_relationship_endpoints_resolve": true,
+    "architecture_participants_resolve": true,
+    "example_ids_resolve": true,
+    "historical_records_preserved": true
+  },
+  "notes": [
+    "Historical botnet table values and aliases are transcribed from the supplied article; missing cells are null.",
+    "Creation/dismantling dates and bot counts are estimates as reported by the source and not independently verified.",
+    "The historical list is non-exhaustive.",
+    "Operation Endgame details are represented as article-reported claims.",
+    "Entity attributes are used to retain table fields without losing the common entity/relationship graph shape."
+  ]
+}

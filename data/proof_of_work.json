@@ -1,0 +1,3145 @@
+{
+  "schema_version": "1.0.0",
+  "graph_metadata": {
+    "title": "Proof of Work — Full Detail Knowledge Graph",
+    "description": "Machine-readable knowledge graph covering proof-of-work fundamentals, history, algorithms, consensus, mining, security, economics, environmental considerations, useful-work variants, people and publications from the supplied article.",
+    "source_article": "Proof of work",
+    "source_basis": "User-supplied Wikipedia article text",
+    "created_date": "2026-10-20",
+    "language": "en",
+    "entity_count": 158,
+    "relationship_count": 177,
+    "architecture_pattern_count": 11,
+    "derived_rule_count": 18,
+    "example_count": 8,
+    "source_count": 1
+  },
+  "entities": [
+    {
+      "id": "proof_of_work",
+      "name": "Proof of work (PoW)",
+      "type": "cryptographic_mechanism",
+      "description": "A scheme in which a prover expends computational resources to produce a proof that verifiers can check relatively cheaply."
+    },
+    {
+      "id": "prover",
+      "name": "Prover / requester",
+      "type": "role",
+      "description": "Participant that performs the required computational effort and presents a proof."
+    },
+    {
+      "id": "verifier",
+      "name": "Verifier / service provider",
+      "type": "role",
+      "description": "Participant that checks a proof, typically with substantially less effort than generating it."
+    },
+    {
+      "id": "computational_effort",
+      "name": "Computational effort",
+      "type": "concept",
+      "description": "Processing time, hardware capacity, memory accesses, or other resource expenditure used to produce a proof."
+    },
+    {
+      "id": "verification_cost",
+      "name": "Low verification cost",
+      "type": "property",
+      "description": "Asymmetry whereby checking a valid proof is much cheaper than generating it."
+    },
+    {
+      "id": "asymmetry",
+      "name": "Proof-of-work asymmetry",
+      "type": "property",
+      "description": "Work is costly for the prover but comparatively inexpensive for the verifier."
+    },
+    {
+      "id": "client_puzzle",
+      "name": "Client puzzle",
+      "type": "cryptographic_mechanism",
+      "description": "A computational challenge imposed on a client to make resource-intensive requests costly."
+    },
+    {
+      "id": "cpu_cost_function",
+      "name": "CPU cost function",
+      "type": "concept",
+      "description": "A function whose evaluation imposes computational expense on the requester."
+    },
+    {
+      "id": "sybil_deterrence",
+      "name": "Sybil deterrence",
+      "type": "security_property",
+      "description": "Mechanism that makes creating or operating many pseudonymous participants costly."
+    },
+    {
+      "id": "denial_of_service",
+      "name": "Denial-of-service (DoS)",
+      "type": "security_threat",
+      "description": "Attack that attempts to exhaust a service's resources or make it unavailable."
+    },
+    {
+      "id": "spam",
+      "name": "Spam",
+      "type": "abuse_case",
+      "description": "Unsolicited bulk messaging that early proof-of-work systems aimed to make economically costly."
+    },
+    {
+      "id": "hashcash",
+      "name": "Hashcash",
+      "type": "software_protocol",
+      "description": "Adam Back's proof-of-work anti-spam system based on partial hash inversion."
+    },
+    {
+      "id": "partial_hash_inversion",
+      "name": "Partial hash inversion",
+      "type": "algorithm",
+      "description": "Repeatedly search for an input whose cryptographic hash satisfies a target prefix or other constraint."
+    },
+    {
+      "id": "sha1",
+      "name": "SHA-1",
+      "type": "cryptographic_hash",
+      "description": "160-bit cryptographic hash function used by the Hashcash example described in the source."
+    },
+    {
+      "id": "sha256",
+      "name": "SHA-256",
+      "type": "cryptographic_hash",
+      "description": "Hash function used by Bitcoin's Hashcash-derived proof-of-work mining."
+    },
+    {
+      "id": "bitcoin",
+      "name": "Bitcoin",
+      "type": "cryptocurrency_network",
+      "description": "Permissionless peer-to-peer digital currency using proof of work to order blocks and resist double spending."
+    },
+    {
+      "id": "blockchain",
+      "name": "Blockchain",
+      "type": "data_structure",
+      "description": "Append-only sequence of blocks linked by cryptographic references, making history modification computationally costly."
+    },
+    {
+      "id": "block",
+      "name": "Block",
+      "type": "data_structure",
+      "description": "Unit of blockchain history containing transactions and metadata and linked to a predecessor."
+    },
+    {
+      "id": "transaction",
+      "name": "Transaction",
+      "type": "data_object",
+      "description": "A proposed state change or transfer recorded in a blockchain."
+    },
+    {
+      "id": "miner",
+      "name": "Miner",
+      "type": "role",
+      "description": "Participant that expends computational resources searching for a valid proof and competing to propose a block."
+    },
+    {
+      "id": "mining",
+      "name": "Mining",
+      "type": "process",
+      "description": "Proof-of-work process in which miners search for valid block proofs and may receive protocol rewards."
+    },
+    {
+      "id": "hash_power",
+      "name": "Hash power / hash rate",
+      "type": "resource_metric",
+      "description": "Rate of hash computations available to a miner or network."
+    },
+    {
+      "id": "difficulty",
+      "name": "Mining difficulty",
+      "type": "protocol_parameter",
+      "description": "Target-setting parameter that controls the expected amount of work required to find a valid block."
+    },
+    {
+      "id": "difficulty_adjustment",
+      "name": "Difficulty adjustment",
+      "type": "protocol_mechanism",
+      "description": "Periodic adjustment of proof difficulty to keep block production near a target rate."
+    },
+    {
+      "id": "block_reward",
+      "name": "Block reward",
+      "type": "economic_incentive",
+      "description": "Protocol compensation associated with successfully producing a block, commonly including subsidy and fees."
+    },
+    {
+      "id": "transaction_fees",
+      "name": "Transaction fees",
+      "type": "economic_incentive",
+      "description": "Fees attached to transactions that may compensate miners for including them in blocks."
+    },
+    {
+      "id": "consensus",
+      "name": "Distributed consensus",
+      "type": "distributed_system_concept",
+      "description": "Agreement among network participants about the canonical sequence of accepted blocks and transactions."
+    },
+    {
+      "id": "p2p_network",
+      "name": "Peer-to-peer network",
+      "type": "network_architecture",
+      "description": "Network in which nodes communicate directly without relying on one central authoritative server."
+    },
+    {
+      "id": "double_spending",
+      "name": "Double spending",
+      "type": "security_threat",
+      "description": "Attempt to spend the same digital asset more than once by reversing or replacing previously accepted history."
+    },
+    {
+      "id": "confirmation",
+      "name": "Transaction confirmation",
+      "type": "blockchain_concept",
+      "description": "A block added after the block containing a transaction, increasing the depth of that transaction in the chain."
+    },
+    {
+      "id": "chain_reorganization",
+      "name": "Chain reorganization",
+      "type": "blockchain_event",
+      "description": "Replacement of part of a node's previously accepted chain by a competing chain."
+    },
+    {
+      "id": "majority_attack",
+      "name": "Majority attack / 51% attack",
+      "type": "security_attack",
+      "description": "Attack in which an actor controls a majority of relevant mining power and can influence canonical block history."
+    },
+    {
+      "id": "censorship",
+      "name": "Transaction censorship",
+      "type": "security_threat",
+      "description": "Selective exclusion or delay of transactions by a miner or coalition."
+    },
+    {
+      "id": "permissionless_network",
+      "name": "Permissionless network",
+      "type": "network_architecture",
+      "description": "Network in which participation is not restricted to a centrally approved identity set."
+    },
+    {
+      "id": "cryptocurrency",
+      "name": "Cryptocurrency",
+      "type": "digital_asset_category",
+      "description": "Digital asset system that may use proof of work to protect ledger consensus."
+    },
+    {
+      "id": "proof_of_stake",
+      "name": "Proof of stake (PoS)",
+      "type": "consensus_mechanism",
+      "description": "Alternative Sybil-resistance and consensus family in which stake rather than computational work is central."
+    },
+    {
+      "id": "proof_of_useful_work",
+      "name": "Proof of useful work (PoUW)",
+      "type": "consensus_mechanism",
+      "description": "Approach that directs consensus-related computation toward useful optimization or other computational problems."
+    },
+    {
+      "id": "optimisable_pow",
+      "name": "Optimisable Proof of Work (OPoW)",
+      "type": "consensus_mechanism",
+      "description": "Variant described in the supplied article where algorithms can be improved and computational problem solving is decoupled from block creation."
+    },
+    {
+      "id": "energy_consumption",
+      "name": "Energy consumption",
+      "type": "environmental_metric",
+      "description": "Electricity and other energy consumed by computational work, including cryptocurrency mining."
+    },
+    {
+      "id": "environmental_externality",
+      "name": "Environmental externality",
+      "type": "economic_environmental_concept",
+      "description": "Environmental or social cost not fully reflected in the market price paid for electricity or mining."
+    },
+    {
+      "id": "asic",
+      "name": "Application-specific integrated circuit (ASIC)",
+      "type": "hardware",
+      "description": "Specialized chip designed to perform a narrow class of computations efficiently."
+    },
+    {
+      "id": "gpu",
+      "name": "Graphics processing unit (GPU)",
+      "type": "hardware",
+      "description": "Parallel processor used for proof-of-work computation, historically following CPU mining in Bitcoin."
+    },
+    {
+      "id": "fpga",
+      "name": "Field-programmable gate array (FPGA)",
+      "type": "hardware",
+      "description": "Reconfigurable hardware used in some mining hardware generations."
+    },
+    {
+      "id": "cpu_mining",
+      "name": "CPU mining",
+      "type": "mining_approach",
+      "description": "Proof-of-work computation performed on general-purpose central processing units."
+    },
+    {
+      "id": "gpu_mining",
+      "name": "GPU mining",
+      "type": "mining_approach",
+      "description": "Proof-of-work computation performed on graphics processing units."
+    },
+    {
+      "id": "asic_resistance",
+      "name": "ASIC resistance",
+      "type": "design_goal",
+      "description": "Attempt to limit the efficiency advantage of specialized ASIC hardware over commodity hardware."
+    },
+    {
+      "id": "mining_pool",
+      "name": "Mining pool",
+      "type": "coordination_mechanism",
+      "description": "Group of miners that combine or coordinate hash power and typically share rewards."
+    },
+    {
+      "id": "security_budget",
+      "name": "Security budget",
+      "type": "economic_security_concept",
+      "description": "Resources economically supporting network security, described in the source as roughly tied to block rewards."
+    },
+    {
+      "id": "halving",
+      "name": "Block subsidy halving",
+      "type": "protocol_event",
+      "description": "Scheduled reduction of a cryptocurrency's block subsidy, which can affect miner revenue and security economics."
+    },
+    {
+      "id": "network_attack_cost",
+      "name": "Network attack cost",
+      "type": "security_economic_metric",
+      "description": "Estimated resources or expenditure required to execute an attack against a proof-of-work network."
+    },
+    {
+      "id": "hashcash_stamp",
+      "name": "Hashcash stamp",
+      "type": "protocol_data",
+      "description": "Structured token that encodes message or recipient-related fields and a nonce-like value whose hash meets a difficulty condition."
+    },
+    {
+      "id": "leading_zero_bits",
+      "name": "Leading-zero-bit target",
+      "type": "proof_condition",
+      "description": "Constraint requiring a hash output to begin with a specified number of zero bits."
+    },
+    {
+      "id": "nonce",
+      "name": "Nonce / trial value",
+      "type": "cryptographic_parameter",
+      "description": "Candidate input varied during proof search to produce a hash satisfying a target."
+    },
+    {
+      "id": "challenge_response",
+      "name": "Challenge-response protocol",
+      "type": "protocol_class",
+      "description": "Interactive design in which a provider issues a challenge and the requester finds and returns a valid response."
+    },
+    {
+      "id": "solution_verification",
+      "name": "Solution-verification protocol",
+      "type": "protocol_class",
+      "description": "Non-interactive or non-preselected challenge design where requester chooses a problem and verifier checks both problem and solution."
+    },
+    {
+      "id": "fixed_cost_puzzle",
+      "name": "Fixed-cost puzzle",
+      "type": "protocol_class",
+      "description": "Puzzle designed to impose a bounded or predetermined amount of computational effort."
+    },
+    {
+      "id": "timelock_puzzle",
+      "name": "Time-lock puzzle",
+      "type": "cryptographic_puzzle",
+      "description": "Puzzle designed to require a specified amount of sequential computation before it can be solved."
+    },
+    {
+      "id": "cpu_bound_pow",
+      "name": "CPU-bound proof of work",
+      "type": "pow_variant",
+      "description": "Work whose speed depends primarily on processor computation."
+    },
+    {
+      "id": "memory_bound_pow",
+      "name": "Memory-bound proof of work",
+      "type": "pow_variant",
+      "description": "Work whose performance is constrained by memory latency or bandwidth."
+    },
+    {
+      "id": "network_bound_pow",
+      "name": "Network-bound proof of work",
+      "type": "pow_variant",
+      "description": "Mechanism whose cost includes latency or collection of tokens from remote services."
+    },
+    {
+      "id": "shortcut_pow",
+      "name": "Shortcut proof of work",
+      "type": "pow_variant",
+      "description": "A scheme allowing participants with a secret, such as a private key, to generate proofs more cheaply."
+    },
+    {
+      "id": "reusable_pow",
+      "name": "Reusable proof of work (RPoW)",
+      "type": "cryptographic_system",
+      "description": "Hal Finney's reusable-proof-of-work idea described as adapting PoW to digital tokens with a trusted-computing component."
+    },
+    {
+      "id": "hal_finney",
+      "name": "Hal Finney",
+      "type": "person",
+      "description": "Cryptographer who proposed reusable proof of work in 2004."
+    },
+    {
+      "id": "moni_naor",
+      "name": "Moni Naor",
+      "type": "person",
+      "description": "Researcher who co-proposed early proof-of-work ideas for combating junk email in 1993."
+    },
+    {
+      "id": "cynthia_dwork",
+      "name": "Cynthia Dwork",
+      "type": "person",
+      "description": "Researcher who co-proposed early computational pricing mechanisms for combating junk email."
+    },
+    {
+      "id": "adam_back",
+      "name": "Adam Back",
+      "type": "person",
+      "description": "Cryptographer who created Hashcash as an anti-spam proof-of-work system."
+    },
+    {
+      "id": "markus_jakobsson",
+      "name": "Markus Jakobsson",
+      "type": "person",
+      "description": "Co-author, with Ari Juels, of a 1999 paper that coined and formalized the term proof of work."
+    },
+    {
+      "id": "ari_juels",
+      "name": "Ari Juels",
+      "type": "person",
+      "description": "Co-author of foundational work formalizing proof-of-work and bread-pudding protocols."
+    },
+    {
+      "id": "satoshi_nakamoto",
+      "name": "Satoshi Nakamoto",
+      "type": "person_or_pseudonym",
+      "description": "Author of the Bitcoin whitepaper and pseudonym associated with Bitcoin's launch."
+    },
+    {
+      "id": "colin_percival",
+      "name": "Colin Percival",
+      "type": "person",
+      "description": "Author associated with the scrypt password-based key derivation function."
+    },
+    {
+      "id": "litecoin",
+      "name": "Litecoin",
+      "type": "cryptocurrency_network",
+      "description": "Cryptocurrency that replaced Bitcoin's SHA-256 mining hash with scrypt to emphasize memory-intensive work."
+    },
+    {
+      "id": "scrypt",
+      "name": "scrypt",
+      "type": "proof_of_work_algorithm",
+      "description": "Memory-intensive password-based key derivation function used as proof of work by Litecoin and other systems."
+    },
+    {
+      "id": "modular_square_root",
+      "name": "Integer square root modulo a large prime",
+      "type": "algorithm",
+      "description": "Early proposed computational puzzle based on modular arithmetic."
+    },
+    {
+      "id": "fiat_shamir_signatures",
+      "name": "Weakened Fiat–Shamir signatures",
+      "type": "algorithm_family",
+      "description": "A proof-of-work function listed in the source among historical proposals."
+    },
+    {
+      "id": "pollard_attack",
+      "name": "Pollard attack on Ong–Schnorr–Shamir signature",
+      "type": "cryptanalysis",
+      "description": "A listed historical proof-of-work construction involving a signature scheme broken by Pollard."
+    },
+    {
+      "id": "hash_sequences",
+      "name": "Hash sequences",
+      "type": "algorithm_family",
+      "description": "Proof-of-work function family listed in the source."
+    },
+    {
+      "id": "diffie_hellman_puzzle",
+      "name": "Diffie–Hellman-based puzzle",
+      "type": "cryptographic_puzzle",
+      "description": "Puzzle family based on Diffie–Hellman-related computations."
+    },
+    {
+      "id": "moderate",
+      "name": "Moderate",
+      "type": "pow_algorithm",
+      "description": "Memory-bound proof-of-work function listed in the source."
+    },
+    {
+      "id": "mbound",
+      "name": "Mbound",
+      "type": "pow_algorithm",
+      "description": "Memory-bound proof-of-work function listed in the source."
+    },
+    {
+      "id": "hokkaido",
+      "name": "Hokkaido",
+      "type": "pow_algorithm",
+      "description": "Proof-of-work function listed in the source."
+    },
+    {
+      "id": "cuckoo_cycle",
+      "name": "Cuckoo Cycle",
+      "type": "pow_algorithm",
+      "description": "Memory-bound, graph-theoretic proof-of-work algorithm."
+    },
+    {
+      "id": "merkle_pow",
+      "name": "Merkle tree-based proof of work",
+      "type": "algorithm_family",
+      "description": "Proof-of-work construction using Merkle trees."
+    },
+    {
+      "id": "guided_tour_puzzle",
+      "name": "Guided tour puzzle protocol",
+      "type": "protocol",
+      "description": "Puzzle protocol proposed for denial-of-service prevention."
+    },
+    {
+      "id": "ofelimos",
+      "name": "Ofelimos",
+      "type": "blockchain_protocol",
+      "description": "Proof-of-useful-work blockchain protocol described at Crypto 2022."
+    },
+    {
+      "id": "dpls",
+      "name": "Doubly Parallel Local Search (DPLS)",
+      "type": "optimization_algorithm",
+      "description": "Local-search algorithm used as the proof-of-useful-work component in Ofelimos."
+    },
+    {
+      "id": "walksat",
+      "name": "WalkSAT",
+      "type": "optimization_algorithm",
+      "description": "Local-search algorithm for Boolean satisfiability problems cited as an example PoUW task."
+    },
+    {
+      "id": "boolean_satisfiability",
+      "name": "Boolean satisfiability (SAT)",
+      "type": "computational_problem",
+      "description": "Problem of determining whether a Boolean formula has a satisfying assignment."
+    },
+    {
+      "id": "vehicle_routing",
+      "name": "Capacitated vehicle routing problem",
+      "type": "optimization_problem",
+      "description": "Combinatorial optimization problem named as one possible OPoW challenge domain."
+    },
+    {
+      "id": "knapsack_problem",
+      "name": "Knapsack problem",
+      "type": "optimization_problem",
+      "description": "Combinatorial optimization problem named as one possible OPoW challenge domain."
+    },
+    {
+      "id": "algorithm_contributor",
+      "name": "Algorithm contributor",
+      "type": "role",
+      "description": "OPoW participant who develops and submits improved algorithms and can earn rewards based on adoption."
+    },
+    {
+      "id": "proof_of_space",
+      "name": "Proof of space",
+      "type": "consensus_mechanism",
+      "description": "Alternative mechanism family listed for comparison with proof of work."
+    },
+    {
+      "id": "proof_of_authority",
+      "name": "Proof of authority",
+      "type": "consensus_mechanism",
+      "description": "Alternative consensus mechanism listed in the source."
+    },
+    {
+      "id": "proof_of_burn",
+      "name": "Proof of burn",
+      "type": "consensus_mechanism",
+      "description": "Alternative mechanism listed in the source."
+    },
+    {
+      "id": "proof_of_personhood",
+      "name": "Proof of personhood",
+      "type": "identity_mechanism",
+      "description": "Mechanism family listed alongside proof-of-work alternatives."
+    },
+    {
+      "id": "proof_of_elapsed_time",
+      "name": "Proof of elapsed time",
+      "type": "consensus_mechanism",
+      "description": "Alternative mechanism listed in the source."
+    },
+    {
+      "id": "ethereum_pow",
+      "name": "Ethereum proof of work era",
+      "type": "historical_network_configuration",
+      "description": "Ethereum's historical proof-of-work configuration, listed as Ethash-based and distinct from its later proof-of-stake era."
+    },
+    {
+      "id": "ethash",
+      "name": "Ethash",
+      "type": "proof_of_work_algorithm",
+      "description": "Proof-of-work algorithm historically associated with Ethereum."
+    },
+    {
+      "id": "randomx",
+      "name": "RandomX",
+      "type": "proof_of_work_algorithm",
+      "description": "Proof-of-work algorithm based on random code execution, listed in the source."
+    },
+    {
+      "id": "x11",
+      "name": "X11",
+      "type": "proof_of_work_algorithm",
+      "description": "Proof-of-work algorithm family listed in the source."
+    },
+    {
+      "id": "equihash",
+      "name": "Equihash",
+      "type": "proof_of_work_algorithm",
+      "description": "Proof-of-work algorithm family listed in the source."
+    },
+    {
+      "id": "cryptojacking",
+      "name": "Cryptojacking",
+      "type": "security_threat",
+      "description": "Unauthorized use of another party's computing resources for cryptocurrency mining."
+    },
+    {
+      "id": "demand_response",
+      "name": "Electricity demand response",
+      "type": "energy_system_concept",
+      "description": "Adjusting electricity consumption in response to grid or market conditions; mining loads may be interruptible."
+    },
+    {
+      "id": "renewable_energy",
+      "name": "Renewable energy",
+      "type": "energy_source_category",
+      "description": "Energy sources such as wind and solar discussed in relation to mining's environmental impact."
+    },
+    {
+      "id": "bitcoin_whitepaper",
+      "name": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "type": "publication",
+      "description": "Satoshi Nakamoto's 2008 whitepaper describing Bitcoin's peer-to-peer electronic cash design."
+    },
+    {
+      "id": "pricing_via_processing",
+      "name": "Pricing via Processing or Combatting Junk Mail",
+      "type": "publication",
+      "description": "Dwork and Naor's 1993 work proposing computational pricing mechanisms for junk mail."
+    },
+    {
+      "id": "hashcash_paper",
+      "name": "Hashcash: A Denial of Service Counter-Measure",
+      "type": "publication",
+      "description": "Adam Back's work describing Hashcash as a denial-of-service countermeasure."
+    },
+    {
+      "id": "pow_bread_pudding_paper",
+      "name": "Proofs of Work and Bread Pudding Protocols",
+      "type": "publication",
+      "description": "Jakobsson and Juels's 1999 paper formalizing proof of work and reusable-proof ideas."
+    },
+    {
+      "id": "bitcoin_2013_fork",
+      "name": "Bitcoin March 2013 chain split incident",
+      "type": "historical_event",
+      "description": "Chain split associated with Bitcoin 0.8.0 compatibility and a transaction reversal described in the supplied article."
+    },
+    {
+      "id": "new_york_moratorium",
+      "name": "New York cryptocurrency-mining moratorium (2022)",
+      "type": "policy_event",
+      "description": "Two-year moratorium described by the supplied article for certain cryptocurrency-mining operations not fully powered by renewable energy."
+    },
+    {
+      "id": "eu_pow_debate",
+      "name": "EU proof-of-work environmental policy debate (2022)",
+      "type": "policy_debate",
+      "description": "Call by ESMA vice-chair Erik Thedéen for an EU ban on proof-of-work mining in favor of proof of stake."
+    },
+    {
+      "id": "difficulty_target",
+      "name": "Difficulty target",
+      "type": "protocol_parameter",
+      "description": "Hash or puzzle acceptance threshold that defines valid work."
+    },
+    {
+      "id": "block_time_target",
+      "name": "Target block interval",
+      "type": "protocol_parameter",
+      "description": "Desired average time between newly accepted blocks; the supplied article describes Bitcoin's target as about ten minutes."
+    },
+    {
+      "id": "canonical_chain",
+      "name": "Canonical chain",
+      "type": "blockchain_concept",
+      "description": "Chain a node or network treats as authoritative under its consensus rules."
+    },
+    {
+      "id": "orphan_competing_chain",
+      "name": "Competing chain",
+      "type": "blockchain_concept",
+      "description": "Alternative chain that may become canonical if it accumulates sufficient accepted work under the protocol."
+    },
+    {
+      "id": "mining_subsidy",
+      "name": "Block subsidy",
+      "type": "economic_incentive",
+      "description": "Newly issued units included in the block reward, distinct from transaction fees."
+    },
+    {
+      "id": "market_cap",
+      "name": "Market capitalization",
+      "type": "economic_metric",
+      "description": "Aggregate market value used in the source to discuss the relationship between network value and security spending."
+    },
+    {
+      "id": "electricity_price",
+      "name": "Electricity price",
+      "type": "economic_metric",
+      "description": "Price paid for electrical energy; may not reflect all external environmental and social costs."
+    },
+    {
+      "id": "commodity_hardware",
+      "name": "Commodity hardware",
+      "type": "hardware_category",
+      "description": "General-purpose processors and memory available without specialized mining equipment."
+    },
+    {
+      "id": "hash_function",
+      "name": "Cryptographic hash function",
+      "type": "cryptographic_primitive",
+      "description": "Deterministic function mapping input data to a fixed-size digest, used in many PoW systems."
+    },
+    {
+      "id": "hash_digest",
+      "name": "Hash digest",
+      "type": "cryptographic_data",
+      "description": "Fixed-length output of a cryptographic hash function."
+    },
+    {
+      "id": "target_prefix",
+      "name": "Target prefix",
+      "type": "proof_condition",
+      "description": "Required leading bit or hexadecimal pattern in a hash digest."
+    },
+    {
+      "id": "difficulty_variance",
+      "name": "Proof search variance",
+      "type": "statistical_concept",
+      "description": "Variation in the amount of work needed to find a solution in probabilistic iterative search."
+    },
+    {
+      "id": "independent_subchallenges",
+      "name": "Independent sub-challenges",
+      "type": "protocol_technique",
+      "description": "Technique described as reducing variance by averaging work over multiple independent sub-challenges."
+    },
+    {
+      "id": "rectangular_distribution",
+      "name": "Rectangular distribution",
+      "type": "statistical_concept",
+      "description": "Distribution referenced in the source when comparing variance of known-solution and probabilistic protocols."
+    },
+    {
+      "id": "poisson_distribution",
+      "name": "Poisson distribution",
+      "type": "statistical_concept",
+      "description": "Distribution referenced in the source in explaining variance for unbounded probabilistic protocols."
+    },
+    {
+      "id": "private_key",
+      "name": "Private key",
+      "type": "cryptographic_key",
+      "description": "Secret cryptographic key that may enable shortcut proof generation in some described PoW schemes."
+    },
+    {
+      "id": "trusted_computing",
+      "name": "Trusted computing function",
+      "type": "security_architecture",
+      "description": "Hardware or system component trusted by the reusable-proof system described in the source."
+    },
+    {
+      "id": "reward_distribution",
+      "name": "Reward distribution",
+      "type": "economic_mechanism",
+      "description": "Rules allocating block rewards or fees to miners and, in OPoW, algorithm contributors."
+    },
+    {
+      "id": "influence_calculation",
+      "name": "Influence calculation",
+      "type": "economic_mechanism",
+      "description": "OPoW mechanism described as tying multiple computational challenges together and distributing rewards proportionally."
+    },
+    {
+      "id": "synthetic_algorithm_market",
+      "name": "Synthetic market for algorithms",
+      "type": "economic_concept",
+      "description": "OPoW framing in which improved algorithms are rewarded according to miner adoption."
+    },
+    {
+      "id": "cryptocurrency_mining",
+      "name": "Cryptocurrency mining",
+      "type": "process",
+      "description": "Industrial or distributed execution of proof-of-work computations to propose blocks."
+    },
+    {
+      "id": "confirmation_depth",
+      "name": "Confirmation depth",
+      "type": "blockchain_metric",
+      "description": "Number of subsequent blocks building on the block containing a transaction."
+    },
+    {
+      "id": "reorg_risk",
+      "name": "Chain reorganization risk",
+      "type": "security_risk",
+      "description": "Risk that previously accepted transaction history is replaced by a competing chain."
+    },
+    {
+      "id": "centralization_risk",
+      "name": "Mining centralization risk",
+      "type": "security_risk",
+      "description": "Risk that specialized hardware, cheap power, or pools concentrate control of mining resources."
+    },
+    {
+      "id": "low_security_budget",
+      "name": "Low security budget",
+      "type": "security_condition",
+      "description": "Condition in which rewards and fees may not provide sufficient economic protection against attack."
+    },
+    {
+      "id": "asic_economics",
+      "name": "ASIC economics",
+      "type": "economic_concept",
+      "description": "Relationship between specialized hardware cost, energy costs, efficiency and mining profitability."
+    },
+    {
+      "id": "block_reward_halving_cycle",
+      "name": "Bitcoin subsidy-halving cycle",
+      "type": "protocol_schedule",
+      "description": "Recurring subsidy reductions that can change miner revenue and security-budget composition."
+    },
+    {
+      "id": "interruptible_mining_load",
+      "name": "Interruptible mining load",
+      "type": "energy_system_concept",
+      "description": "Mining demand that can be curtailed under some conditions to support grid balancing."
+    },
+    {
+      "id": "proof_validity",
+      "name": "Proof validity",
+      "type": "security_property",
+      "description": "Whether a candidate solution meets the protocol's formal acceptance conditions."
+    },
+    {
+      "id": "proof_reuse",
+      "name": "Proof reuse",
+      "type": "cryptographic_property",
+      "description": "Reuse of a proof or work token, distinguished from ordinary one-use Hashcash stamps."
+    },
+    {
+      "id": "anti_spam_cost",
+      "name": "Anti-spam computational cost",
+      "type": "economic_mechanism",
+      "description": "Computational expense intended to make bulk message abuse unproductive while keeping legitimate requests practical."
+    },
+    {
+      "id": "work_factor",
+      "name": "Work factor",
+      "type": "security_parameter",
+      "description": "Expected effort needed to generate an accepted proof at a specified difficulty."
+    },
+    {
+      "id": "algorithm_optimization",
+      "name": "Algorithm optimization",
+      "type": "process",
+      "description": "Improving the efficiency of a computational method used to solve a proof-of-work task."
+    },
+    {
+      "id": "blockchain_history",
+      "name": "Blockchain history",
+      "type": "data_history",
+      "description": "Sequence of accepted blocks and transactions whose modification is constrained by accumulated work."
+    },
+    {
+      "id": "network_nodes",
+      "name": "Network nodes",
+      "type": "role_group",
+      "description": "Peer-to-peer participants that validate blocks and transactions according to consensus rules."
+    },
+    {
+      "id": "merchant",
+      "name": "Merchant",
+      "type": "role",
+      "description": "Recipient of cryptocurrency payment who may wait for confirmations before treating it as final."
+    },
+    {
+      "id": "economic_incentive",
+      "name": "Economic incentive",
+      "type": "economic_concept",
+      "description": "Rewards intended to motivate miners to allocate resources to network security."
+    },
+    {
+      "id": "proof_of_work_security",
+      "name": "Proof-of-work security",
+      "type": "security_property",
+      "description": "Security resulting from the cost of acquiring and sustaining computational control relative to the network."
+    },
+    {
+      "id": "work_not_useful_computation",
+      "name": "Non-useful puzzle computation",
+      "type": "concept",
+      "description": "Conventional PoW computation that serves the protocol's security purpose but may not directly solve an external useful problem."
+    },
+    {
+      "id": "useful_optimization",
+      "name": "Useful optimization",
+      "type": "computational_application",
+      "description": "Optimization work that may produce outputs beyond consensus itself in PoUW and OPoW approaches."
+    },
+    {
+      "id": "gpu_rental_attack",
+      "name": "Rented commodity-compute attack",
+      "type": "security_attack",
+      "description": "Risk described for ASIC-resistant designs where an attacker rents large amounts of commodity processing power."
+    },
+    {
+      "id": "network_hash_rate",
+      "name": "Network hash rate",
+      "type": "resource_metric",
+      "description": "Aggregate rate of hashing performed by the proof-of-work network."
+    },
+    {
+      "id": "proof_of_work_chain_selection",
+      "name": "Proof-of-work chain selection",
+      "type": "consensus_mechanism",
+      "description": "Rule family that uses accumulated work to help determine the chain treated as canonical."
+    },
+    {
+      "id": "block_template",
+      "name": "Block template",
+      "type": "mining_data",
+      "description": "Candidate block data miners vary while searching for a valid proof."
+    },
+    {
+      "id": "miner_nonce_search",
+      "name": "Nonce search",
+      "type": "mining_process",
+      "description": "Repeatedly changing trial values and hashing candidate block data until the target condition is met."
+    },
+    {
+      "id": "network_validation",
+      "name": "Network validation",
+      "type": "process",
+      "description": "Independent checking by nodes of block structure, proof validity, transactions and protocol rules."
+    },
+    {
+      "id": "resource_pricing",
+      "name": "Computational resource pricing",
+      "type": "economic_mechanism",
+      "description": "Using required computation as a cost imposed on resource requesters."
+    },
+    {
+      "id": "attack_externality",
+      "name": "Attack externality",
+      "type": "security_economic_concept",
+      "description": "Costs imposed on users and network participants when a successful attack modifies history or censors transactions."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "proof_of_work",
+      "target": "prover",
+      "type": "involves_role",
+      "description": "A proof-of-work system requires a prover to generate a candidate proof."
+    },
+    {
+      "id": "rel_0002",
+      "source": "proof_of_work",
+      "target": "verifier",
+      "type": "involves_role",
+      "description": "A proof-of-work system requires verifiers to check candidate proofs."
+    },
+    {
+      "id": "rel_0003",
+      "source": "proof_of_work",
+      "target": "computational_effort",
+      "type": "requires",
+      "description": "Generating a proof requires expenditure of computational effort."
+    },
+    {
+      "id": "rel_0004",
+      "source": "proof_of_work",
+      "target": "verification_cost",
+      "type": "has_property",
+      "description": "Verification is intended to be comparatively inexpensive."
+    },
+    {
+      "id": "rel_0005",
+      "source": "proof_of_work",
+      "target": "asymmetry",
+      "type": "embodies",
+      "description": "The central design property is costly generation and cheap verification."
+    },
+    {
+      "id": "rel_0006",
+      "source": "asymmetry",
+      "target": "verification_cost",
+      "type": "contrasts_with",
+      "description": "Low verification cost contrasts with the more expensive proof-generation work."
+    },
+    {
+      "id": "rel_0007",
+      "source": "client_puzzle",
+      "target": "proof_of_work",
+      "type": "is_a",
+      "description": "A client puzzle is a proof-of-work-style challenge."
+    },
+    {
+      "id": "rel_0008",
+      "source": "cpu_cost_function",
+      "target": "proof_of_work",
+      "type": "related_to",
+      "description": "A CPU cost function imposes computational cost on a requester."
+    },
+    {
+      "id": "rel_0009",
+      "source": "proof_of_work",
+      "target": "sybil_deterrence",
+      "type": "can_provide",
+      "description": "PoW can make mass pseudonymous participation costly."
+    },
+    {
+      "id": "rel_0010",
+      "source": "proof_of_work",
+      "target": "denial_of_service",
+      "type": "mitigates",
+      "description": "Early PoW proposals aimed to raise the cost of denial-of-service abuse."
+    },
+    {
+      "id": "rel_0011",
+      "source": "proof_of_work",
+      "target": "spam",
+      "type": "mitigates",
+      "description": "Early PoW systems aimed to make bulk spam costly."
+    },
+    {
+      "id": "rel_0012",
+      "source": "hashcash",
+      "target": "adam_back",
+      "type": "created_by",
+      "description": "Hashcash was created by Adam Back."
+    },
+    {
+      "id": "rel_0013",
+      "source": "hashcash",
+      "target": "partial_hash_inversion",
+      "type": "uses",
+      "description": "Hashcash searches for a hash meeting a target constraint."
+    },
+    {
+      "id": "rel_0014",
+      "source": "partial_hash_inversion",
+      "target": "hash_function",
+      "type": "uses",
+      "description": "Partial inversion search repeatedly evaluates a hash function."
+    },
+    {
+      "id": "rel_0015",
+      "source": "hashcash",
+      "target": "sha1",
+      "type": "uses",
+      "description": "The supplied article's Hashcash example checks a SHA-1 digest."
+    },
+    {
+      "id": "rel_0016",
+      "source": "hashcash",
+      "target": "hashcash_stamp",
+      "type": "produces",
+      "description": "Hashcash uses a structured stamp carrying a proof."
+    },
+    {
+      "id": "rel_0017",
+      "source": "hashcash_stamp",
+      "target": "leading_zero_bits",
+      "type": "must_satisfy",
+      "description": "The stamp's hash must begin with the specified number of zero bits."
+    },
+    {
+      "id": "rel_0018",
+      "source": "leading_zero_bits",
+      "target": "difficulty_target",
+      "type": "implements",
+      "description": "A leading-zero requirement is one representation of a proof difficulty target."
+    },
+    {
+      "id": "rel_0019",
+      "source": "partial_hash_inversion",
+      "target": "nonce",
+      "type": "varies",
+      "description": "Search varies candidate input or nonce values."
+    },
+    {
+      "id": "rel_0020",
+      "source": "sha1",
+      "target": "hash_function",
+      "type": "is_a",
+      "description": "SHA-1 is a cryptographic hash function."
+    },
+    {
+      "id": "rel_0021",
+      "source": "sha256",
+      "target": "hash_function",
+      "type": "is_a",
+      "description": "SHA-256 is a cryptographic hash function."
+    },
+    {
+      "id": "rel_0022",
+      "source": "bitcoin",
+      "target": "proof_of_work",
+      "type": "uses_consensus_mechanism",
+      "description": "Bitcoin uses proof of work as a core consensus and Sybil-resistance mechanism."
+    },
+    {
+      "id": "rel_0023",
+      "source": "bitcoin",
+      "target": "sha256",
+      "type": "uses",
+      "description": "Bitcoin's mining proof is based on SHA-256 hashing."
+    },
+    {
+      "id": "rel_0024",
+      "source": "bitcoin",
+      "target": "hashcash",
+      "type": "derived_from",
+      "description": "Bitcoin's proof-of-work design is described as Hashcash-derived."
+    },
+    {
+      "id": "rel_0025",
+      "source": "bitcoin",
+      "target": "p2p_network",
+      "type": "operates_over",
+      "description": "Bitcoin relies on a decentralized peer-to-peer network."
+    },
+    {
+      "id": "rel_0026",
+      "source": "bitcoin",
+      "target": "blockchain",
+      "type": "maintains",
+      "description": "Bitcoin records transactions in a blockchain."
+    },
+    {
+      "id": "rel_0027",
+      "source": "miner",
+      "target": "mining",
+      "type": "performs",
+      "description": "Miners perform mining computations."
+    },
+    {
+      "id": "rel_0028",
+      "source": "mining",
+      "target": "block",
+      "type": "attempts_to_produce",
+      "description": "Mining searches for a valid proof for a candidate block."
+    },
+    {
+      "id": "rel_0029",
+      "source": "mining",
+      "target": "hash_power",
+      "type": "consumes",
+      "description": "Mining draws on available hash power."
+    },
+    {
+      "id": "rel_0030",
+      "source": "hash_power",
+      "target": "network_hash_rate",
+      "type": "contributes_to",
+      "description": "Miner hash power contributes to aggregate network hash rate."
+    },
+    {
+      "id": "rel_0031",
+      "source": "mining",
+      "target": "difficulty",
+      "type": "constrained_by",
+      "description": "Mining success depends on the current difficulty target."
+    },
+    {
+      "id": "rel_0032",
+      "source": "difficulty_adjustment",
+      "target": "difficulty",
+      "type": "updates",
+      "description": "Difficulty adjustment changes the target difficulty."
+    },
+    {
+      "id": "rel_0033",
+      "source": "difficulty_adjustment",
+      "target": "block_time_target",
+      "type": "aims_to_maintain",
+      "description": "Difficulty adjustment aims to keep block production near a target interval."
+    },
+    {
+      "id": "rel_0034",
+      "source": "bitcoin",
+      "target": "block_time_target",
+      "type": "targets",
+      "description": "The supplied article describes Bitcoin's target block interval as approximately ten minutes."
+    },
+    {
+      "id": "rel_0035",
+      "source": "block",
+      "target": "blockchain",
+      "type": "part_of",
+      "description": "A block is part of blockchain history."
+    },
+    {
+      "id": "rel_0036",
+      "source": "block",
+      "target": "transaction",
+      "type": "contains",
+      "description": "Blocks contain transactions."
+    },
+    {
+      "id": "rel_0037",
+      "source": "consensus",
+      "target": "canonical_chain",
+      "type": "determines",
+      "description": "Consensus rules and accumulated work help determine the canonical chain."
+    },
+    {
+      "id": "rel_0038",
+      "source": "proof_of_work_chain_selection",
+      "target": "canonical_chain",
+      "type": "helps_select",
+      "description": "Proof-of-work chain-selection rules help nodes identify the canonical chain."
+    },
+    {
+      "id": "rel_0039",
+      "source": "canonical_chain",
+      "target": "blockchain_history",
+      "type": "represents",
+      "description": "The canonical chain represents the accepted transaction history."
+    },
+    {
+      "id": "rel_0040",
+      "source": "network_nodes",
+      "target": "network_validation",
+      "type": "perform",
+      "description": "Nodes validate blocks and transactions."
+    },
+    {
+      "id": "rel_0041",
+      "source": "network_validation",
+      "target": "proof_validity",
+      "type": "checks",
+      "description": "Validation includes checking proof validity."
+    },
+    {
+      "id": "rel_0042",
+      "source": "proof_validity",
+      "target": "difficulty_target",
+      "type": "must_meet",
+      "description": "A valid proof must meet the target difficulty."
+    },
+    {
+      "id": "rel_0043",
+      "source": "mining",
+      "target": "block_reward",
+      "type": "may_earn",
+      "description": "Successful block production can earn a block reward."
+    },
+    {
+      "id": "rel_0044",
+      "source": "block_reward",
+      "target": "mining_subsidy",
+      "type": "may_include",
+      "description": "Block rewards can include a subsidy component."
+    },
+    {
+      "id": "rel_0045",
+      "source": "block_reward",
+      "target": "transaction_fees",
+      "type": "may_include",
+      "description": "Block rewards can include transaction fees."
+    },
+    {
+      "id": "rel_0046",
+      "source": "economic_incentive",
+      "target": "mining",
+      "type": "motivates",
+      "description": "Rewards incentivize miners to contribute computational resources."
+    },
+    {
+      "id": "rel_0047",
+      "source": "transaction",
+      "target": "double_spending",
+      "type": "can_be_target_of",
+      "description": "Double spending attempts to reverse or replace payment history."
+    },
+    {
+      "id": "rel_0048",
+      "source": "confirmation",
+      "target": "transaction",
+      "type": "increases_confidence_in",
+      "description": "Additional confirmations generally make reversal more difficult."
+    },
+    {
+      "id": "rel_0049",
+      "source": "confirmation_depth",
+      "target": "confirmation",
+      "type": "measures",
+      "description": "Confirmation depth measures how many blocks build on a transaction's block."
+    },
+    {
+      "id": "rel_0050",
+      "source": "confirmation_depth",
+      "target": "reorg_risk",
+      "type": "reduces",
+      "description": "More confirmations generally increase the work required to reverse a transaction."
+    },
+    {
+      "id": "rel_0051",
+      "source": "chain_reorganization",
+      "target": "canonical_chain",
+      "type": "changes",
+      "description": "A reorganization replaces part of the previously accepted chain."
+    },
+    {
+      "id": "rel_0052",
+      "source": "majority_attack",
+      "target": "chain_reorganization",
+      "type": "can_enable",
+      "description": "Majority mining power can enable chain reorganizations."
+    },
+    {
+      "id": "rel_0053",
+      "source": "majority_attack",
+      "target": "double_spending",
+      "type": "can_enable",
+      "description": "A majority attack can facilitate double spending."
+    },
+    {
+      "id": "rel_0054",
+      "source": "majority_attack",
+      "target": "censorship",
+      "type": "can_enable",
+      "description": "A majority attacker may censor or delay transactions."
+    },
+    {
+      "id": "rel_0055",
+      "source": "majority_attack",
+      "target": "hash_power",
+      "type": "requires_control_of",
+      "description": "A majority attack requires majority control of relevant mining power, subject to protocol and network assumptions."
+    },
+    {
+      "id": "rel_0056",
+      "source": "majority_attack",
+      "target": "network_attack_cost",
+      "type": "has_economic_cost",
+      "description": "Executing an attack requires access to substantial computational resources and may entail large costs."
+    },
+    {
+      "id": "rel_0057",
+      "source": "proof_of_work",
+      "target": "proof_of_work_security",
+      "type": "provides",
+      "description": "PoW security derives from the economic and computational cost of controlling the network."
+    },
+    {
+      "id": "rel_0058",
+      "source": "proof_of_work_security",
+      "target": "hash_power",
+      "type": "depends_on",
+      "description": "Security depends materially on the resources available to honest participants and attackers."
+    },
+    {
+      "id": "rel_0059",
+      "source": "security_budget",
+      "target": "block_reward",
+      "type": "is_supported_by",
+      "description": "The article characterizes the security budget as roughly linked to block rewards."
+    },
+    {
+      "id": "rel_0060",
+      "source": "security_budget",
+      "target": "transaction_fees",
+      "type": "also_depends_on",
+      "description": "Transaction fees can contribute to miner compensation and security."
+    },
+    {
+      "id": "rel_0061",
+      "source": "halving",
+      "target": "mining_subsidy",
+      "type": "reduces",
+      "description": "A halving reduces the block subsidy."
+    },
+    {
+      "id": "rel_0062",
+      "source": "halving",
+      "target": "security_budget",
+      "type": "can_affect",
+      "description": "Reduced subsidy can affect miner revenue and the network security budget."
+    },
+    {
+      "id": "rel_0063",
+      "source": "market_cap",
+      "target": "security_budget",
+      "type": "compared_with",
+      "description": "The supplied article discusses security spending relative to network market value."
+    },
+    {
+      "id": "rel_0064",
+      "source": "low_security_budget",
+      "target": "majority_attack",
+      "type": "can_increase_risk_of",
+      "description": "Low-budget PoW networks may be more vulnerable to majority attacks."
+    },
+    {
+      "id": "rel_0065",
+      "source": "asic",
+      "target": "mining",
+      "type": "accelerates",
+      "description": "ASICs can perform supported mining computations more efficiently than general-purpose hardware."
+    },
+    {
+      "id": "rel_0066",
+      "source": "cpu_mining",
+      "target": "gpu_mining",
+      "type": "historically_preceded",
+      "description": "Bitcoin mining historically moved from CPUs to GPUs."
+    },
+    {
+      "id": "rel_0067",
+      "source": "gpu_mining",
+      "target": "fpga",
+      "type": "historically_preceded",
+      "description": "The article describes a progression from GPUs to FPGAs."
+    },
+    {
+      "id": "rel_0068",
+      "source": "fpga",
+      "target": "asic",
+      "type": "historically_preceded",
+      "description": "The article describes a progression from FPGAs to ASICs."
+    },
+    {
+      "id": "rel_0069",
+      "source": "mining_pool",
+      "target": "hash_power",
+      "type": "aggregates",
+      "description": "Mining pools coordinate or aggregate participants' hash power."
+    },
+    {
+      "id": "rel_0070",
+      "source": "asic",
+      "target": "centralization_risk",
+      "type": "can_increase",
+      "description": "Specialized hardware can raise barriers to entry and contribute to concentration."
+    },
+    {
+      "id": "rel_0071",
+      "source": "mining_pool",
+      "target": "centralization_risk",
+      "type": "can_increase",
+      "description": "Concentrated pool coordination can increase control concentration."
+    },
+    {
+      "id": "rel_0072",
+      "source": "asic_resistance",
+      "target": "commodity_hardware",
+      "type": "aims_to_support",
+      "description": "ASIC resistance aims to preserve the viability of commodity hardware."
+    },
+    {
+      "id": "rel_0073",
+      "source": "asic_resistance",
+      "target": "gpu_rental_attack",
+      "type": "can_increase_exposure_to",
+      "description": "The source notes that ASIC resistance may permit attackers to rent large amounts of commodity processing power."
+    },
+    {
+      "id": "rel_0074",
+      "source": "gpu_rental_attack",
+      "target": "majority_attack",
+      "type": "can_enable",
+      "description": "Rented commodity processing power can potentially be used to attempt a majority attack."
+    },
+    {
+      "id": "rel_0075",
+      "source": "litecoin",
+      "target": "scrypt",
+      "type": "uses",
+      "description": "Litecoin adopted scrypt instead of SHA-256 for proof of work."
+    },
+    {
+      "id": "rel_0076",
+      "source": "scrypt",
+      "target": "memory_bound_pow",
+      "type": "is_a",
+      "description": "scrypt is described as memory-intensive."
+    },
+    {
+      "id": "rel_0077",
+      "source": "scrypt",
+      "target": "asic",
+      "type": "did_not_prevent",
+      "description": "The source says Litecoin's accessibility goal did not prevent later ASIC mining."
+    },
+    {
+      "id": "rel_0078",
+      "source": "proof_of_work",
+      "target": "challenge_response",
+      "type": "has_variant",
+      "description": "Challenge-response is one class of proof-of-work protocol."
+    },
+    {
+      "id": "rel_0079",
+      "source": "proof_of_work",
+      "target": "solution_verification",
+      "type": "has_variant",
+      "description": "Solution-verification is another class of proof-of-work protocol."
+    },
+    {
+      "id": "rel_0080",
+      "source": "challenge_response",
+      "target": "prover",
+      "type": "challenges",
+      "description": "The provider issues a challenge that the requester solves."
+    },
+    {
+      "id": "rel_0081",
+      "source": "challenge_response",
+      "target": "verifier",
+      "type": "receives_response_from",
+      "description": "The verifier checks the response to its chosen challenge."
+    },
+    {
+      "id": "rel_0082",
+      "source": "challenge_response",
+      "target": "difficulty",
+      "type": "can_adapt_to_load",
+      "description": "An on-the-spot challenge can be adjusted to current provider load."
+    },
+    {
+      "id": "rel_0083",
+      "source": "solution_verification",
+      "target": "prover",
+      "type": "requires_self_imposed_problem_from",
+      "description": "The requester selects or instantiates the problem before solving it."
+    },
+    {
+      "id": "rel_0084",
+      "source": "solution_verification",
+      "target": "verifier",
+      "type": "checks_problem_and_solution",
+      "description": "The verifier checks both the problem choice and the solution."
+    },
+    {
+      "id": "rel_0085",
+      "source": "fixed_cost_puzzle",
+      "target": "timelock_puzzle",
+      "type": "includes_example",
+      "description": "Time-lock puzzles are mentioned as fixed-cost puzzle examples."
+    },
+    {
+      "id": "rel_0086",
+      "source": "proof_of_work",
+      "target": "cpu_bound_pow",
+      "type": "has_variant",
+      "description": "CPU-bound PoW is one underlying cost profile."
+    },
+    {
+      "id": "rel_0087",
+      "source": "proof_of_work",
+      "target": "memory_bound_pow",
+      "type": "has_variant",
+      "description": "Memory-bound PoW is one underlying cost profile."
+    },
+    {
+      "id": "rel_0088",
+      "source": "proof_of_work",
+      "target": "network_bound_pow",
+      "type": "has_variant",
+      "description": "Network-bound PoW is one underlying cost profile."
+    },
+    {
+      "id": "rel_0089",
+      "source": "proof_of_work",
+      "target": "shortcut_pow",
+      "type": "has_variant",
+      "description": "Some schemes allow secret holders to generate cheaper proofs."
+    },
+    {
+      "id": "rel_0090",
+      "source": "memory_bound_pow",
+      "target": "commodity_hardware",
+      "type": "may_reduce_advantage_of",
+      "description": "Memory-bound design aims to reduce sensitivity to some processor improvements, though it does not guarantee equal access."
+    },
+    {
+      "id": "rel_0091",
+      "source": "network_bound_pow",
+      "target": "computational_effort",
+      "type": "includes_network_latency",
+      "description": "The cost may be incurred through waiting for remote tokens rather than local computation."
+    },
+    {
+      "id": "rel_0092",
+      "source": "shortcut_pow",
+      "target": "private_key",
+      "type": "may_depend_on",
+      "description": "Some schemes allow a private-key holder to create a proof more cheaply."
+    },
+    {
+      "id": "rel_0093",
+      "source": "reusable_pow",
+      "target": "hal_finney",
+      "type": "proposed_by",
+      "description": "Hal Finney proposed reusable proof of work in 2004."
+    },
+    {
+      "id": "rel_0094",
+      "source": "reusable_pow",
+      "target": "trusted_computing",
+      "type": "uses_in_description",
+      "description": "The source contrasts RPoW's trusted-computing component with Bitcoin's decentralized P2P protection."
+    },
+    {
+      "id": "rel_0095",
+      "source": "reusable_pow",
+      "target": "proof_reuse",
+      "type": "supports",
+      "description": "Reusable proof of work is designed around reusing work tokens."
+    },
+    {
+      "id": "rel_0096",
+      "source": "proof_of_work",
+      "target": "moni_naor",
+      "type": "early_work_by",
+      "description": "Moni Naor co-proposed early computational pricing mechanisms."
+    },
+    {
+      "id": "rel_0097",
+      "source": "proof_of_work",
+      "target": "cynthia_dwork",
+      "type": "early_work_by",
+      "description": "Cynthia Dwork co-proposed early computational pricing mechanisms."
+    },
+    {
+      "id": "rel_0098",
+      "source": "pricing_via_processing",
+      "target": "moni_naor",
+      "type": "authored_by",
+      "description": "The 1993 work was co-authored by Moni Naor and Cynthia Dwork."
+    },
+    {
+      "id": "rel_0099",
+      "source": "pricing_via_processing",
+      "target": "cynthia_dwork",
+      "type": "authored_by",
+      "description": "The 1993 work was co-authored by Cynthia Dwork and Moni Naor."
+    },
+    {
+      "id": "rel_0100",
+      "source": "hashcash_paper",
+      "target": "adam_back",
+      "type": "authored_by",
+      "description": "Adam Back described Hashcash in a paper on denial-of-service countermeasures."
+    },
+    {
+      "id": "rel_0101",
+      "source": "pow_bread_pudding_paper",
+      "target": "markus_jakobsson",
+      "type": "authored_by",
+      "description": "The 1999 formalization paper was co-authored by Markus Jakobsson."
+    },
+    {
+      "id": "rel_0102",
+      "source": "pow_bread_pudding_paper",
+      "target": "ari_juels",
+      "type": "authored_by",
+      "description": "The 1999 formalization paper was co-authored by Ari Juels."
+    },
+    {
+      "id": "rel_0103",
+      "source": "bitcoin_whitepaper",
+      "target": "satoshi_nakamoto",
+      "type": "authored_by",
+      "description": "The Bitcoin whitepaper is attributed to Satoshi Nakamoto."
+    },
+    {
+      "id": "rel_0104",
+      "source": "bitcoin_whitepaper",
+      "target": "bitcoin",
+      "type": "describes",
+      "description": "The whitepaper describes Bitcoin's peer-to-peer electronic cash design."
+    },
+    {
+      "id": "rel_0105",
+      "source": "litecoin",
+      "target": "colin_percival",
+      "type": "associated_with_algorithm_work",
+      "description": "The source cites Colin Percival's scrypt specification."
+    },
+    {
+      "id": "rel_0106",
+      "source": "modular_square_root",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "Modular square roots are listed among historical PoW functions."
+    },
+    {
+      "id": "rel_0107",
+      "source": "fiat_shamir_signatures",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "Weakened Fiat–Shamir signatures are listed among historical functions."
+    },
+    {
+      "id": "rel_0108",
+      "source": "pollard_attack",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "An Ong–Schnorr–Shamir signature construction broken by Pollard is listed historically."
+    },
+    {
+      "id": "rel_0109",
+      "source": "hash_sequences",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "Hash sequences are listed among PoW functions."
+    },
+    {
+      "id": "rel_0110",
+      "source": "diffie_hellman_puzzle",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "Diffie–Hellman-based puzzles are listed among PoW functions."
+    },
+    {
+      "id": "rel_0111",
+      "source": "moderate",
+      "target": "memory_bound_pow",
+      "type": "is_a",
+      "description": "Moderate is listed among memory-bound PoW functions."
+    },
+    {
+      "id": "rel_0112",
+      "source": "mbound",
+      "target": "memory_bound_pow",
+      "type": "is_a",
+      "description": "Mbound is listed among memory-bound PoW functions."
+    },
+    {
+      "id": "rel_0113",
+      "source": "hokkaido",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "Hokkaido is listed as a PoW function."
+    },
+    {
+      "id": "rel_0114",
+      "source": "cuckoo_cycle",
+      "target": "memory_bound_pow",
+      "type": "is_a",
+      "description": "Cuckoo Cycle is described as memory-bound and graph-theoretic."
+    },
+    {
+      "id": "rel_0115",
+      "source": "merkle_pow",
+      "target": "proof_of_work",
+      "type": "is_listed_as",
+      "description": "Merkle tree-based PoW is listed among functions."
+    },
+    {
+      "id": "rel_0116",
+      "source": "guided_tour_puzzle",
+      "target": "denial_of_service",
+      "type": "aims_to_mitigate",
+      "description": "The guided tour puzzle protocol was proposed for DoS prevention."
+    },
+    {
+      "id": "rel_0117",
+      "source": "proof_of_useful_work",
+      "target": "proof_of_work",
+      "type": "is_variant_of",
+      "description": "PoUW adapts PoW's consensus role while aiming to make computation useful."
+    },
+    {
+      "id": "rel_0118",
+      "source": "ofelimos",
+      "target": "proof_of_useful_work",
+      "type": "implements",
+      "description": "Ofelimos is described as a PoUW blockchain protocol."
+    },
+    {
+      "id": "rel_0119",
+      "source": "ofelimos",
+      "target": "dpls",
+      "type": "uses",
+      "description": "Ofelimos uses Doubly Parallel Local Search as its PoUW component."
+    },
+    {
+      "id": "rel_0120",
+      "source": "dpls",
+      "target": "walksat",
+      "type": "can_use_variant_of",
+      "description": "The article gives a WalkSAT variant as an example."
+    },
+    {
+      "id": "rel_0121",
+      "source": "walksat",
+      "target": "boolean_satisfiability",
+      "type": "solves",
+      "description": "WalkSAT is a local-search approach for Boolean problems."
+    },
+    {
+      "id": "rel_0122",
+      "source": "optimisable_pow",
+      "target": "proof_of_work",
+      "type": "is_variant_of",
+      "description": "OPoW is presented as a variant of proof of work."
+    },
+    {
+      "id": "rel_0123",
+      "source": "optimisable_pow",
+      "target": "algorithm_optimization",
+      "type": "incentivizes",
+      "description": "OPoW rewards the development and adoption of more efficient algorithms."
+    },
+    {
+      "id": "rel_0124",
+      "source": "optimisable_pow",
+      "target": "vehicle_routing",
+      "type": "may_include_problem",
+      "description": "Vehicle routing is named as one possible computational challenge."
+    },
+    {
+      "id": "rel_0125",
+      "source": "optimisable_pow",
+      "target": "knapsack_problem",
+      "type": "may_include_problem",
+      "description": "The knapsack problem is named as one possible computational challenge."
+    },
+    {
+      "id": "rel_0126",
+      "source": "optimisable_pow",
+      "target": "boolean_satisfiability",
+      "type": "may_include_problem",
+      "description": "Boolean satisfiability is named as one possible computational challenge."
+    },
+    {
+      "id": "rel_0127",
+      "source": "optimisable_pow",
+      "target": "algorithm_contributor",
+      "type": "rewards_role",
+      "description": "Algorithm contributors may earn rewards based on adoption."
+    },
+    {
+      "id": "rel_0128",
+      "source": "optimisable_pow",
+      "target": "influence_calculation",
+      "type": "uses",
+      "description": "The mechanism binds multiple challenges through an influence calculation."
+    },
+    {
+      "id": "rel_0129",
+      "source": "influence_calculation",
+      "target": "reward_distribution",
+      "type": "determines",
+      "description": "The influence calculation distributes rewards proportionally in the described design."
+    },
+    {
+      "id": "rel_0130",
+      "source": "optimisable_pow",
+      "target": "synthetic_algorithm_market",
+      "type": "creates",
+      "description": "The source characterizes OPoW as creating a synthetic market for algorithms."
+    },
+    {
+      "id": "rel_0131",
+      "source": "optimisable_pow",
+      "target": "block",
+      "type": "decouples_from_solution_count",
+      "description": "The description decouples computational solutions from block creation, allowing multiple solutions per block."
+    },
+    {
+      "id": "rel_0132",
+      "source": "bitcoin",
+      "target": "difficulty_adjustment",
+      "type": "uses",
+      "description": "Bitcoin periodically adjusts difficulty."
+    },
+    {
+      "id": "rel_0133",
+      "source": "bitcoin",
+      "target": "double_spending",
+      "type": "aims_to_prevent",
+      "description": "Bitcoin's decentralized PoW protocol aims to make double spending difficult."
+    },
+    {
+      "id": "rel_0134",
+      "source": "bitcoin",
+      "target": "network_nodes",
+      "type": "is_verified_by",
+      "description": "Decentralized nodes verify blocks and transactions."
+    },
+    {
+      "id": "rel_0135",
+      "source": "bitcoin",
+      "target": "confirmation",
+      "type": "uses_finality_signal",
+      "description": "Merchants may use confirmations as a practical signal of transaction confidence."
+    },
+    {
+      "id": "rel_0136",
+      "source": "bitcoin_2013_fork",
+      "target": "bitcoin",
+      "type": "affected",
+      "description": "The 2013 incident involved a Bitcoin 0.8.0 chain split."
+    },
+    {
+      "id": "rel_0137",
+      "source": "bitcoin_2013_fork",
+      "target": "chain_reorganization",
+      "type": "included",
+      "description": "The article describes a 24-block reversal in the incident."
+    },
+    {
+      "id": "rel_0138",
+      "source": "bitcoin_2013_fork",
+      "target": "double_spending",
+      "type": "involved",
+      "description": "The described incident included a transaction reversal and double-spend experiment."
+    },
+    {
+      "id": "rel_0139",
+      "source": "proof_of_work",
+      "target": "energy_consumption",
+      "type": "incurs",
+      "description": "Proof-of-work computation consumes electricity and hardware resources."
+    },
+    {
+      "id": "rel_0140",
+      "source": "energy_consumption",
+      "target": "cryptocurrency_mining",
+      "type": "is_associated_with",
+      "description": "Mining requires substantial computational resources and electricity."
+    },
+    {
+      "id": "rel_0141",
+      "source": "energy_consumption",
+      "target": "environmental_externality",
+      "type": "can_create",
+      "description": "Electricity use may create environmental and social costs not reflected in market prices."
+    },
+    {
+      "id": "rel_0142",
+      "source": "electricity_price",
+      "target": "environmental_externality",
+      "type": "may_not_reflect",
+      "description": "The article discusses external costs not necessarily reflected in electricity market prices."
+    },
+    {
+      "id": "rel_0143",
+      "source": "interruptible_mining_load",
+      "target": "demand_response",
+      "type": "can_support",
+      "description": "Interruptible mining may provide demand-response services under certain conditions."
+    },
+    {
+      "id": "rel_0144",
+      "source": "renewable_energy",
+      "target": "energy_consumption",
+      "type": "can_change_impact_of",
+      "description": "Energy source affects the environmental impact of electricity consumption."
+    },
+    {
+      "id": "rel_0145",
+      "source": "proof_of_work",
+      "target": "work_not_useful_computation",
+      "type": "often_uses",
+      "description": "Conventional PoW puzzles primarily serve the security mechanism rather than external computation."
+    },
+    {
+      "id": "rel_0146",
+      "source": "proof_of_useful_work",
+      "target": "useful_optimization",
+      "type": "directs_work_toward",
+      "description": "PoUW directs effort toward optimization tasks."
+    },
+    {
+      "id": "rel_0147",
+      "source": "proof_of_work",
+      "target": "proof_of_stake",
+      "type": "contrasted_with",
+      "description": "PoW and PoS are described as prominent Sybil-deterrence and consensus families."
+    },
+    {
+      "id": "rel_0148",
+      "source": "proof_of_work",
+      "target": "proof_of_space",
+      "type": "contrasted_with",
+      "description": "Proof of space is listed among alternative consensus approaches."
+    },
+    {
+      "id": "rel_0149",
+      "source": "proof_of_work",
+      "target": "proof_of_authority",
+      "type": "contrasted_with",
+      "description": "Proof of authority is listed among alternative consensus approaches."
+    },
+    {
+      "id": "rel_0150",
+      "source": "proof_of_work",
+      "target": "proof_of_burn",
+      "type": "contrasted_with",
+      "description": "Proof of burn is listed among alternative consensus approaches."
+    },
+    {
+      "id": "rel_0151",
+      "source": "proof_of_work",
+      "target": "proof_of_personhood",
+      "type": "contrasted_with",
+      "description": "Proof of personhood is listed among related alternatives."
+    },
+    {
+      "id": "rel_0152",
+      "source": "proof_of_work",
+      "target": "proof_of_elapsed_time",
+      "type": "contrasted_with",
+      "description": "Proof of elapsed time is listed among alternative mechanisms."
+    },
+    {
+      "id": "rel_0153",
+      "source": "ethereum_pow",
+      "target": "ethash",
+      "type": "used_algorithm",
+      "description": "The source lists Ethereum's historical PoW era as Ethash-based."
+    },
+    {
+      "id": "rel_0154",
+      "source": "randomx",
+      "target": "proof_of_work",
+      "type": "is_a",
+      "description": "RandomX is listed as a proof-of-work algorithm based on random code execution."
+    },
+    {
+      "id": "rel_0155",
+      "source": "x11",
+      "target": "proof_of_work",
+      "type": "is_a",
+      "description": "X11 is listed as a proof-of-work algorithm family."
+    },
+    {
+      "id": "rel_0156",
+      "source": "equihash",
+      "target": "proof_of_work",
+      "type": "is_a",
+      "description": "Equihash is listed as a proof-of-work algorithm family."
+    },
+    {
+      "id": "rel_0157",
+      "source": "cryptojacking",
+      "target": "cryptocurrency_mining",
+      "type": "abuses_for",
+      "description": "Cryptojacking abuses another party's computing resources for mining."
+    },
+    {
+      "id": "rel_0158",
+      "source": "asic_economics",
+      "target": "asic",
+      "type": "concerns",
+      "description": "ASIC economics concern efficiency, costs and barriers created by specialized hardware."
+    },
+    {
+      "id": "rel_0159",
+      "source": "block_reward_halving_cycle",
+      "target": "halving",
+      "type": "contains_event",
+      "description": "The recurring halving cycle includes subsidy reductions."
+    },
+    {
+      "id": "rel_0160",
+      "source": "block_reward_halving_cycle",
+      "target": "security_budget",
+      "type": "can_affect",
+      "description": "Halvings can alter the revenue base supporting network security."
+    },
+    {
+      "id": "rel_0161",
+      "source": "confirmation",
+      "target": "reorg_risk",
+      "type": "reduces",
+      "description": "Waiting for more confirmations increases the effort required for reversal."
+    },
+    {
+      "id": "rel_0162",
+      "source": "merchant",
+      "target": "confirmation",
+      "type": "may_wait_for",
+      "description": "Merchants may wait for one or more confirmations before treating payment as completed."
+    },
+    {
+      "id": "rel_0163",
+      "source": "transaction_fees",
+      "target": "security_budget",
+      "type": "contribute_to",
+      "description": "Transaction fees can supplement subsidy as miner compensation."
+    },
+    {
+      "id": "rel_0164",
+      "source": "security_budget",
+      "target": "low_security_budget",
+      "type": "can_become",
+      "description": "If rewards and fees are insufficient relative to attack resources, the network may have a low security budget."
+    },
+    {
+      "id": "rel_0165",
+      "source": "network_attack_cost",
+      "target": "hash_power",
+      "type": "depends_on",
+      "description": "Attack cost depends in part on acquiring or renting sufficient computational power."
+    },
+    {
+      "id": "rel_0166",
+      "source": "work_factor",
+      "target": "difficulty_target",
+      "type": "is_set_by",
+      "description": "Difficulty target determines the expected work factor."
+    },
+    {
+      "id": "rel_0167",
+      "source": "difficulty_variance",
+      "target": "solution_verification",
+      "type": "is_relevant_to",
+      "description": "Unbounded probabilistic search has variance in time to find a valid solution."
+    },
+    {
+      "id": "rel_0168",
+      "source": "independent_subchallenges",
+      "target": "difficulty_variance",
+      "type": "can_reduce",
+      "description": "Averaging independent sub-challenges can reduce variance."
+    },
+    {
+      "id": "rel_0169",
+      "source": "rectangular_distribution",
+      "target": "difficulty_variance",
+      "type": "compared_in_source",
+      "description": "The article compares variance with that of a Poisson distribution."
+    },
+    {
+      "id": "rel_0170",
+      "source": "poisson_distribution",
+      "target": "difficulty_variance",
+      "type": "compared_in_source",
+      "description": "The article compares variance with that of a rectangular distribution."
+    },
+    {
+      "id": "rel_0171",
+      "source": "block_template",
+      "target": "miner_nonce_search",
+      "type": "is_input_to",
+      "description": "Nonce search repeatedly hashes candidate block data."
+    },
+    {
+      "id": "rel_0172",
+      "source": "miner_nonce_search",
+      "target": "nonce",
+      "type": "varies",
+      "description": "Miners vary trial values during proof search."
+    },
+    {
+      "id": "rel_0173",
+      "source": "miner_nonce_search",
+      "target": "hash_digest",
+      "type": "evaluates",
+      "description": "Each trial produces a hash digest checked against the target."
+    },
+    {
+      "id": "rel_0174",
+      "source": "hash_digest",
+      "target": "target_prefix",
+      "type": "is_checked_against",
+      "description": "A candidate digest is tested against a target prefix or threshold."
+    },
+    {
+      "id": "rel_0175",
+      "source": "resource_pricing",
+      "target": "proof_of_work",
+      "type": "implemented_by",
+      "description": "Proof of work can price requests through imposed computational effort."
+    },
+    {
+      "id": "rel_0176",
+      "source": "anti_spam_cost",
+      "target": "hashcash",
+      "type": "implemented_by",
+      "description": "Hashcash imposes computational cost to discourage bulk email abuse."
+    },
+    {
+      "id": "rel_0177",
+      "source": "attack_externality",
+      "target": "majority_attack",
+      "type": "can_result_from",
+      "description": "A majority attack can impose costs on merchants and other network users."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pat_hashcash_email_stamp",
+      "name": "Hashcash anti-spam stamp",
+      "description": "Require a sender to generate a hash satisfying a recipient- or message-bound difficulty target, then verify it cheaply before accepting the request.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Construct a stamp from version, difficulty, date, resource identifier and trial value.",
+          "effects": [
+            "stamp binds work to the request context"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Search candidate values until the stamp hash meets the leading-zero target.",
+          "effects": [
+            "computational work is expended"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Attach the stamp to the request or email.",
+          "effects": [
+            "recipient receives proof material"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Verify the stamp hash and target with a small number of computations.",
+          "effects": [
+            "request can be accepted or rejected based on policy"
+          ]
+        }
+      ],
+      "related_entities": [
+        "hashcash",
+        "hashcash_stamp",
+        "partial_hash_inversion",
+        "leading_zero_bits",
+        "anti_spam_cost"
+      ]
+    },
+    {
+      "id": "pat_bitcoin_mining",
+      "name": "Bitcoin-style proof-of-work mining loop",
+      "description": "Miners search over candidate block data and trial values until a digest satisfies the network difficulty target; nodes independently validate the result.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Assemble a candidate block template.",
+          "effects": [
+            "candidate transactions and metadata are selected"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Vary nonce or other candidate data and compute SHA-256-based hashes.",
+          "effects": [
+            "repeated hashing consumes computational resources"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Check each digest against the difficulty target.",
+          "effects": [
+            "invalid candidates are discarded"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Broadcast a candidate block when a valid proof is found.",
+          "effects": [
+            "other nodes can inspect the candidate"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Nodes validate proof, transactions and consensus rules.",
+          "effects": [
+            "valid block may extend the canonical chain"
+          ]
+        },
+        {
+          "step": 6,
+          "action": "Miner may receive the block reward if the block is accepted.",
+          "effects": [
+            "economic incentives support mining"
+          ]
+        }
+      ],
+      "related_entities": [
+        "bitcoin",
+        "miner",
+        "mining",
+        "sha256",
+        "difficulty_target",
+        "network_nodes",
+        "block_reward"
+      ]
+    },
+    {
+      "id": "pat_confirmation_risk",
+      "name": "Merchant confirmation risk management",
+      "description": "Use increasing confirmation depth as a practical way to increase the computational burden of reversing a payment, while recognizing that confirmations are not absolute finality.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Observe the block containing the payment transaction.",
+          "effects": [
+            "initial confirmation exists"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Wait for additional blocks to build on that block.",
+          "effects": [
+            "confirmation depth increases"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Evaluate transaction value and network risk before releasing goods or services.",
+          "effects": [
+            "risk tolerance informs operational policy"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Avoid treating a fixed number of confirmations as a mathematical guarantee against all attacks.",
+          "effects": [
+            "residual reorganization risk remains explicit"
+          ]
+        }
+      ],
+      "related_entities": [
+        "merchant",
+        "confirmation",
+        "confirmation_depth",
+        "reorg_risk",
+        "majority_attack"
+      ]
+    },
+    {
+      "id": "pat_difficulty_adjustment",
+      "name": "Difficulty adjustment to target block interval",
+      "description": "Periodically change the proof threshold based on observed block production to keep average production near a target interval.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Measure block production over the protocol's adjustment window.",
+          "effects": [
+            "observed timing is collected"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Compare observed timing with the target interval.",
+          "effects": [
+            "direction and magnitude of adjustment are determined"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Update the difficulty parameter under consensus rules.",
+          "effects": [
+            "future proof acceptance threshold changes"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Nodes enforce the same adjustment rules.",
+          "effects": [
+            "consensus remains deterministic across compliant nodes"
+          ]
+        }
+      ],
+      "related_entities": [
+        "difficulty_adjustment",
+        "difficulty",
+        "block_time_target",
+        "bitcoin",
+        "consensus"
+      ]
+    },
+    {
+      "id": "pat_pool_mining",
+      "name": "Coordinated mining pool",
+      "description": "Miners coordinate work through a pool to smooth reward variance and divide payouts, while creating concentration and coordination considerations.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Miners contribute hash power to a pool.",
+          "effects": [
+            "pool coordinates multiple participants"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Pool distributes candidate work or assignments.",
+          "effects": [
+            "participants search for valid proof candidates"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Pool accounts for submitted work and accepted blocks.",
+          "effects": [
+            "contribution and reward shares can be calculated"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Monitor pool concentration and operational control.",
+          "effects": [
+            "centralization risks are visible"
+          ]
+        }
+      ],
+      "related_entities": [
+        "mining_pool",
+        "hash_power",
+        "reward_distribution",
+        "centralization_risk"
+      ]
+    },
+    {
+      "id": "pat_proof_useful_work",
+      "name": "Proof of useful work optimization loop",
+      "description": "Combine a consensus protocol with a computational task whose output can solve an optimization problem beyond producing a proof.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Define a useful optimization problem and verifiable solution criteria.",
+          "effects": [
+            "work has external computational value"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Run the selected local-search or optimization algorithm.",
+          "effects": [
+            "candidate solutions are produced"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Verify solution validity and protocol eligibility.",
+          "effects": [
+            "valid work can contribute to consensus"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Apply the protocol's consensus and reward rules.",
+          "effects": [
+            "participants are incentivized for useful computation"
+          ]
+        }
+      ],
+      "related_entities": [
+        "proof_of_useful_work",
+        "ofelimos",
+        "dpls",
+        "walksat",
+        "boolean_satisfiability"
+      ]
+    },
+    {
+      "id": "pat_opow_algorithm_market",
+      "name": "Optimisable proof-of-work algorithm market",
+      "description": "Reward both problem solvers and contributors of improved algorithms according to adoption and a proportional influence mechanism.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Specify a family of computational challenges.",
+          "effects": [
+            "multiple problem classes can be used"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Contributors submit improved algorithms.",
+          "effects": [
+            "algorithm candidates become available"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Miners select and run algorithms to solve challenge instances.",
+          "effects": [
+            "algorithm adoption and performance become observable"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Calculate influence and distribute rewards under protocol rules.",
+          "effects": [
+            "solvers and algorithm contributors can be compensated"
+          ]
+        }
+      ],
+      "related_entities": [
+        "optimisable_pow",
+        "algorithm_contributor",
+        "algorithm_optimization",
+        "influence_calculation",
+        "reward_distribution"
+      ]
+    },
+    {
+      "id": "pat_attack_surface_review",
+      "name": "Proof-of-work security-budget review",
+      "description": "Assess whether the resources securing a network remain adequate relative to plausible attack resources and economic incentives.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Estimate honest network hash rate and its concentration.",
+          "effects": [
+            "defensive resource baseline is established"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Estimate the cost and availability of acquiring attack hash power.",
+          "effects": [
+            "attacker resource assumptions are explicit"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Review subsidy, fees, energy costs, hardware access and pool concentration.",
+          "effects": [
+            "economic security drivers are identified"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Model reorganization, censorship and double-spend consequences.",
+          "effects": [
+            "threat impact is considered"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Reassess after reward changes, halvings or market shifts.",
+          "effects": [
+            "security assumptions are revisited over time"
+          ]
+        }
+      ],
+      "related_entities": [
+        "security_budget",
+        "network_attack_cost",
+        "hash_power",
+        "majority_attack",
+        "halving",
+        "transaction_fees"
+      ]
+    },
+    {
+      "id": "pat_energy_aware_mining",
+      "name": "Energy-aware and interruptible mining operations",
+      "description": "Where market and grid conditions permit, treat mining as a controllable load while evaluating energy source and external costs.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Measure electricity use and the energy supply mix.",
+          "effects": [
+            "energy footprint is characterized"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Identify contractual and technical ability to curtail load.",
+          "effects": [
+            "interruptibility is understood"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Respond to grid or market signals where safe and permitted.",
+          "effects": [
+            "demand response may be provided"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Report environmental assumptions and limitations transparently.",
+          "effects": [
+            "externalities are not hidden behind simple energy-price comparisons"
+          ]
+        }
+      ],
+      "related_entities": [
+        "energy_consumption",
+        "interruptible_mining_load",
+        "demand_response",
+        "renewable_energy",
+        "environmental_externality"
+      ]
+    },
+    {
+      "id": "pat_pow_service_rate_limiting",
+      "name": "PoW client puzzle for abusive request control",
+      "description": "Use adaptive challenge difficulty to raise the cost of abusive high-volume requests while keeping legitimate traffic usable.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Observe service load and abuse indicators.",
+          "effects": [
+            "current risk and capacity are assessed"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Issue a challenge with a policy-selected difficulty.",
+          "effects": [
+            "requester must perform bounded or probabilistic work"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Verify the response cheaply.",
+          "effects": [
+            "valid proof can be checked with low server effort"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Combine PoW with conventional abuse controls and accessibility safeguards.",
+          "effects": [
+            "PoW is not treated as a complete standalone defense"
+          ]
+        }
+      ],
+      "related_entities": [
+        "client_puzzle",
+        "challenge_response",
+        "difficulty",
+        "denial_of_service",
+        "verification_cost"
+      ]
+    },
+    {
+      "id": "pat_chain_reorg_response",
+      "name": "Chain reorganization response",
+      "description": "Handle competing chain history by applying protocol rules consistently and treating transaction reversals as a risk requiring operational awareness.",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Detect that a competing chain conflicts with previously accepted blocks.",
+          "effects": [
+            "potential reorganization is identified"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Validate competing blocks and their proof under consensus rules.",
+          "effects": [
+            "invalid histories are rejected"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Follow the protocol's canonical-chain selection rule.",
+          "effects": [
+            "nodes converge on the accepted chain under normal assumptions"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Notify affected services about transactions removed or replaced by the reorganization.",
+          "effects": [
+            "payment state can be reconciled"
+          ]
+        }
+      ],
+      "related_entities": [
+        "chain_reorganization",
+        "canonical_chain",
+        "proof_of_work_chain_selection",
+        "network_validation",
+        "double_spending"
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule_asymmetric_cost",
+      "title": "Proof generation should be costly relative to verification",
+      "statement": "A PoW design should document the prover's expected work factor and verifier's validation cost; a high prover cost without cheap reliable verification defeats the core asymmetry.",
+      "severity": "critical",
+      "related_entities": [
+        "proof_of_work",
+        "prover",
+        "verifier",
+        "asymmetry",
+        "verification_cost"
+      ]
+    },
+    {
+      "id": "rule_difficulty_is_policy",
+      "title": "Difficulty controls expected work, not the meaning of the result",
+      "statement": "Difficulty should be selected for the threat model and service context; satisfying a target proves compliance with that target, not that arbitrary useful work was performed.",
+      "severity": "important",
+      "related_entities": [
+        "difficulty_target",
+        "work_factor",
+        "proof_validity",
+        "proof_of_work"
+      ]
+    },
+    {
+      "id": "rule_adaptive_challenge",
+      "title": "Interactive challenges can adapt to service load",
+      "statement": "Where challenge-response is used, adapt difficulty carefully so abuse becomes expensive without making legitimate requests impractical.",
+      "severity": "important",
+      "related_entities": [
+        "challenge_response",
+        "client_puzzle",
+        "difficulty",
+        "denial_of_service"
+      ]
+    },
+    {
+      "id": "rule_bind_stamp_context",
+      "title": "Bind anti-spam work to the request context",
+      "statement": "A Hashcash-style stamp should be checked against its specified fields and policy to reduce trivial replay or cross-context reuse.",
+      "severity": "important",
+      "related_entities": [
+        "hashcash",
+        "hashcash_stamp",
+        "anti_spam_cost"
+      ]
+    },
+    {
+      "id": "rule_nodes_validate",
+      "title": "Nodes must independently validate candidate blocks",
+      "statement": "A miner's claim is not sufficient; nodes must verify proof validity, transactions and consensus rules before accepting a block.",
+      "severity": "critical",
+      "related_entities": [
+        "network_nodes",
+        "network_validation",
+        "block",
+        "consensus"
+      ]
+    },
+    {
+      "id": "rule_confirmations_not_finality",
+      "title": "Confirmations increase confidence but are not absolute finality",
+      "statement": "Operational payment policies should account for value and reorganization risk rather than treating any fixed confirmation count as impossible to reverse.",
+      "severity": "critical",
+      "related_entities": [
+        "confirmation",
+        "confirmation_depth",
+        "reorg_risk",
+        "merchant"
+      ]
+    },
+    {
+      "id": "rule_majority_attack",
+      "title": "Majority hash power can reorganize history",
+      "statement": "Threat models should include reorganization, double spending and censorship when an attacker controls a majority of relevant mining power.",
+      "severity": "critical",
+      "related_entities": [
+        "majority_attack",
+        "chain_reorganization",
+        "double_spending",
+        "censorship"
+      ]
+    },
+    {
+      "id": "rule_security_budget",
+      "title": "Monitor miner revenue as a security input",
+      "statement": "Track subsidy and fees alongside hash rate, energy and hardware economics; lower rewards can alter the cost of attacking the network.",
+      "severity": "critical",
+      "related_entities": [
+        "security_budget",
+        "block_reward",
+        "transaction_fees",
+        "halving"
+      ]
+    },
+    {
+      "id": "rule_pool_concentration",
+      "title": "Measure mining concentration, not only total hash rate",
+      "statement": "Total network hash rate does not by itself reveal how mining power is coordinated or controlled; monitor pools and ownership concentration.",
+      "severity": "important",
+      "related_entities": [
+        "hash_power",
+        "network_hash_rate",
+        "mining_pool",
+        "centralization_risk"
+      ]
+    },
+    {
+      "id": "rule_asic_resistance_tradeoff",
+      "title": "ASIC resistance is not equivalent to attack resistance",
+      "statement": "Commodity-hardware designs may lower specialization advantages while making large amounts of rentable general-purpose compute relevant to attack analysis.",
+      "severity": "important",
+      "related_entities": [
+        "asic_resistance",
+        "commodity_hardware",
+        "gpu_rental_attack",
+        "majority_attack"
+      ]
+    },
+    {
+      "id": "rule_pow_energy",
+      "title": "Report energy consumption with context",
+      "statement": "Energy assessments should state the measurement period, energy mix, system boundary and assumptions; electricity use alone does not settle all environmental or grid questions.",
+      "severity": "important",
+      "related_entities": [
+        "energy_consumption",
+        "renewable_energy",
+        "environmental_externality",
+        "demand_response"
+      ]
+    },
+    {
+      "id": "rule_useful_work_verifiability",
+      "title": "Useful-work consensus requires verifiable task outputs",
+      "statement": "PoUW needs task definitions and solution checks that are compatible with decentralized validation and the consensus security model.",
+      "severity": "important",
+      "related_entities": [
+        "proof_of_useful_work",
+        "useful_optimization",
+        "proof_validity"
+      ]
+    },
+    {
+      "id": "rule_opow_incentives",
+      "title": "Specify reward attribution for algorithm contributions",
+      "statement": "OPoW-style systems need transparent influence and reward rules so miners and algorithm contributors can understand how adoption affects compensation.",
+      "severity": "important",
+      "related_entities": [
+        "optimisable_pow",
+        "algorithm_contributor",
+        "influence_calculation",
+        "reward_distribution"
+      ]
+    },
+    {
+      "id": "rule_memory_bound_tradeoff",
+      "title": "Memory-bound work shifts rather than eliminates hardware economics",
+      "statement": "Memory-intensive algorithms can alter hardware advantages, but implementation, memory bandwidth, ASIC development and access to hardware still require analysis.",
+      "severity": "important",
+      "related_entities": [
+        "memory_bound_pow",
+        "scrypt",
+        "asic_resistance",
+        "commodity_hardware"
+      ]
+    },
+    {
+      "id": "rule_source_claims",
+      "title": "Treat article-specific statistics and estimates as source-reported",
+      "statement": "Time-bound attack-cost estimates, energy estimates, policy status and adoption statistics should be revalidated before operational or financial decisions.",
+      "severity": "important",
+      "related_entities": [
+        "network_attack_cost",
+        "energy_consumption",
+        "eu_pow_debate",
+        "new_york_moratorium"
+      ]
+    },
+    {
+      "id": "rule_poW_not_complete_dos",
+      "title": "PoW should not be treated as a complete DoS defense",
+      "statement": "Computational puzzles can raise abuse cost but should be evaluated alongside rate limits, authentication, queueing and accessibility constraints.",
+      "severity": "important",
+      "related_entities": [
+        "proof_of_work",
+        "denial_of_service",
+        "client_puzzle",
+        "anti_spam_cost"
+      ]
+    },
+    {
+      "id": "rule_security_budget_not_marketcap",
+      "title": "Network value does not itself guarantee adequate security expenditure",
+      "statement": "Compare the resources protecting a network with plausible attack costs; a large market capitalization alone does not establish that history is expensive to rewrite.",
+      "severity": "critical",
+      "related_entities": [
+        "market_cap",
+        "security_budget",
+        "network_attack_cost"
+      ]
+    },
+    {
+      "id": "rule_difficulty_consistency",
+      "title": "Difficulty adjustment must be deterministic across compliant nodes",
+      "statement": "Every node should apply the same protocol rules and input window when deriving the updated target to avoid consensus divergence.",
+      "severity": "critical",
+      "related_entities": [
+        "difficulty_adjustment",
+        "consensus",
+        "difficulty"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "ex_hashcash_stamp",
+      "title": "Verify a Hashcash-style anti-spam stamp",
+      "scenario": "A service wants to impose a computational cost on high-volume requests.",
+      "steps": [
+        "Select a difficulty policy appropriate to the service and request context.",
+        "Have the client search for a stamp whose SHA-1 digest satisfies the stated leading-zero requirement, if reproducing the historical example.",
+        "Verify the supplied stamp and its bound fields.",
+        "Reject invalid or policy-expired stamps and apply ordinary abuse controls as well."
+      ],
+      "outcome": "The service can impose asymmetric computational cost, while recognizing that PoW is only one abuse-control mechanism.",
+      "related_entities": [
+        "hashcash",
+        "hashcash_stamp",
+        "sha1",
+        "leading_zero_bits",
+        "client_puzzle"
+      ]
+    },
+    {
+      "id": "ex_bitcoin_mining",
+      "title": "Simplified proof-of-work mining flow",
+      "scenario": "A miner participates in a Bitcoin-style proof-of-work network.",
+      "steps": [
+        "Build a candidate block template from candidate transactions and metadata.",
+        "Repeatedly vary nonce or other eligible candidate data and compute SHA-256-based hashes.",
+        "Compare each result with the network's target.",
+        "Broadcast a candidate only after a valid proof is found.",
+        "Nodes independently verify the proof and all consensus rules."
+      ],
+      "outcome": "A valid candidate may extend the chain and earn a block reward if accepted; this is a conceptual workflow, not production mining software.",
+      "related_entities": [
+        "bitcoin",
+        "miner",
+        "block_template",
+        "miner_nonce_search",
+        "sha256",
+        "difficulty_target",
+        "network_nodes"
+      ]
+    },
+    {
+      "id": "ex_confirmation_policy",
+      "title": "Choose a merchant confirmation policy",
+      "scenario": "A merchant receives a cryptocurrency payment and needs a practical settlement policy.",
+      "steps": [
+        "Assess transaction value and the consequences of reversal.",
+        "Observe the transaction's block confirmation.",
+        "Wait for additional blocks according to the merchant's risk policy.",
+        "Reassess chain health and relevant attack conditions before releasing high-value goods."
+      ],
+      "outcome": "The merchant makes an explicit risk-based decision rather than assuming one confirmation guarantees irreversibility.",
+      "related_entities": [
+        "merchant",
+        "transaction",
+        "confirmation",
+        "confirmation_depth",
+        "reorg_risk"
+      ]
+    },
+    {
+      "id": "ex_security_budget_review",
+      "title": "Review a PoW network's security budget",
+      "scenario": "A protocol team wants to understand whether miner incentives remain sufficient as subsidy changes.",
+      "steps": [
+        "Track block subsidy and transaction fees over time.",
+        "Estimate network hash rate and concentration among pools or operators.",
+        "Assess hardware and energy costs and the availability of rentable hash power.",
+        "Compare plausible attack resources with the network's protection and economic exposure.",
+        "Repeat after halvings or material market changes."
+      ],
+      "outcome": "The team has a structured threat and economic review; numerical estimates must use current, independently verified data.",
+      "related_entities": [
+        "security_budget",
+        "block_reward",
+        "transaction_fees",
+        "halving",
+        "network_hash_rate",
+        "network_attack_cost"
+      ]
+    },
+    {
+      "id": "ex_pouw_sat",
+      "title": "Use a verifiable SAT task as useful work",
+      "scenario": "A research protocol explores using a Boolean optimization problem in a PoUW design.",
+      "steps": [
+        "Define a SAT instance and a machine-checkable solution criterion.",
+        "Run a search algorithm such as a WalkSAT variant to produce candidate assignments.",
+        "Verify the candidate independently.",
+        "Integrate accepted work only according to the protocol's consensus and reward rules."
+      ],
+      "outcome": "The computation may contribute to an optimization task while still requiring careful design of verification, incentives and consensus safety.",
+      "related_entities": [
+        "proof_of_useful_work",
+        "ofelimos",
+        "dpls",
+        "walksat",
+        "boolean_satisfiability"
+      ]
+    },
+    {
+      "id": "ex_opow_contributor",
+      "title": "Reward algorithm improvement in OPoW",
+      "scenario": "A protocol wants to incentivize both solving challenge instances and improving the algorithms used to solve them.",
+      "steps": [
+        "Define eligible computational challenge classes and validity checks.",
+        "Allow contributors to submit improved algorithms.",
+        "Measure adoption and apply the published influence calculation.",
+        "Distribute rewards to solvers and contributors according to transparent rules."
+      ],
+      "outcome": "The system attempts to reward useful algorithmic improvement without conflating every solution with block creation.",
+      "related_entities": [
+        "optimisable_pow",
+        "algorithm_contributor",
+        "algorithm_optimization",
+        "influence_calculation",
+        "reward_distribution"
+      ]
+    },
+    {
+      "id": "ex_energy_curtailment",
+      "title": "Evaluate interruptible mining load",
+      "scenario": "A mining operator evaluates whether its electricity load can provide demand-response value.",
+      "steps": [
+        "Measure load and document the electricity supply mix.",
+        "Determine whether the site can safely and contractually curtail consumption.",
+        "Evaluate grid signals, market rules and operational constraints.",
+        "Report both energy impacts and the limits of the analysis."
+      ],
+      "outcome": "The operator can assess possible grid flexibility without claiming that all mining is renewable or environmentally beneficial.",
+      "related_entities": [
+        "energy_consumption",
+        "interruptible_mining_load",
+        "demand_response",
+        "renewable_energy",
+        "environmental_externality"
+      ]
+    },
+    {
+      "id": "ex_asic_resistance",
+      "title": "Evaluate an ASIC-resistant algorithm trade-off",
+      "scenario": "A protocol designer wants mining to remain feasible on commodity hardware.",
+      "steps": [
+        "Benchmark representative CPU and GPU implementations.",
+        "Assess memory, bandwidth, energy and software implementation costs.",
+        "Estimate the availability and cost of rented commodity compute.",
+        "Model majority-attack and centralization scenarios.",
+        "Document the trade-off instead of treating ASIC resistance as a security guarantee."
+      ],
+      "outcome": "The design review distinguishes access goals from actual network attack resistance.",
+      "related_entities": [
+        "asic_resistance",
+        "commodity_hardware",
+        "memory_bound_pow",
+        "gpu_rental_attack",
+        "majority_attack"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_user_wikipedia_proof_of_work",
+      "title": "Proof of work (Wikipedia article text supplied by user)",
+      "source_type": "user_supplied_text",
+      "provenance": {
+        "uploaded_file": "Pasted text(20261020-192147).txt",
+        "article_title": "Proof of work",
+        "article_last_edited": "2026-10-20",
+        "article_date_context": "The supplied article includes time-sensitive estimates and claims, including 2025 attack-cost estimates and 2022 policy events. They are preserved as source-reported rather than independently verified.",
+        "line_ranges": [
+          [
+            56,
+            63,
+            "Definition, asymmetric cost, cryptocurrency context and environmental framing"
+          ],
+          [
+            65,
+            77,
+            "Background, Hashcash, SHA-1 example and anti-spam use"
+          ],
+          [
+            78,
+            90,
+            "Historical evolution, Bitcoin, SHA-256, hardware evolution and scrypt"
+          ],
+          [
+            91,
+            107,
+            "Challenge-response, solution-verification and CPU/memory/network-bound variants"
+          ],
+          [
+            109,
+            125,
+            "Listed proof-of-work functions"
+          ],
+          [
+            126,
+            131,
+            "Proof of useful work and Optimisable Proof of Work"
+          ],
+          [
+            132,
+            134,
+            "Bitcoin-type proof of work and decentralized verification"
+          ],
+          [
+            135,
+            168,
+            "Energy consumption, confirmations, majority attacks, mining pools and environmental policy"
+          ],
+          [
+            182,
+            231,
+            "References and supporting publications cited by the supplied article"
+          ]
+        ]
+      }
+    }
+  ],
+  "graph_integrity": {
+    "entity_ids_unique": true,
+    "relationship_ids_unique": true,
+    "relationship_endpoints_resolve": true,
+    "all_related_entity_references_resolve": true,
+    "unresolved_relationships": [],
+    "unresolved_related_entity_references": []
+  },
+  "notes": [
+    "This graph is derived from the user-supplied article. It is not an independently researched or exhaustive account of every proof-of-work design.",
+    "Source-reported dates, estimates, historical incidents, energy figures and policy claims should be verified against primary sources before being used for operational, legal, investment or policy decisions.",
+    "Relationships represent explicit source statements or clearly labeled architectural connections; they do not imply that all listed algorithms are deployed in production networks.",
+    "Proof of work is not synonymous with Bitcoin mining: the graph includes anti-spam client puzzles, reusable proof of work, memory-bound variants, proof of useful work and optimisable proof of work.",
+    "A majority attack's capabilities depend on the protocol, network conditions and attacker control; the graph summarizes the supplied article's framing rather than providing a complete threat model."
+  ]
+}

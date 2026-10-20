@@ -1,0 +1,2339 @@
+{
+  "schema_version": "1.0.0",
+  "graph_metadata": {
+    "title": "Gayfemboy Malware — Full Detail Knowledge Graph",
+    "subject": "Mirai-family Linux IoT/corporate-device malware and botnet",
+    "created_date": "2026-10-20",
+    "source_basis": "User-supplied article text",
+    "purpose": "Machine-readable knowledge graph preserving concepts, components, reported behavior, variants/family links, historical claims, impacts, defensive controls, workflows, and source limitations.",
+    "security_framing": "Defensive analysis only. No executable exploit commands, payloads, attack scripts, or DDoS instructions are included.",
+    "counts": {
+      "entities": 132,
+      "relationships": 167,
+      "architecture_patterns": 6,
+      "derived_rules": 25,
+      "examples": 6,
+      "sources": 1
+    }
+  },
+  "entities": [
+    {
+      "id": "gayfemboy",
+      "name": "Gayfemboy",
+      "type": "malware_family",
+      "description": "Mirai-derived Linux malware and botnet strain described in the supplied article."
+    },
+    {
+      "id": "mirai",
+      "name": "Mirai",
+      "type": "malware_family",
+      "description": "Linux IoT malware family whose recruitment and DDoS patterns are cited as a model for Gayfemboy."
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "type": "operating_system",
+      "description": "Operating-system platform targeted by the described malware."
+    },
+    {
+      "id": "iot",
+      "name": "Internet of Things devices",
+      "type": "technology_domain",
+      "description": "Connected embedded devices such as routers, cameras, and smart-home equipment."
+    },
+    {
+      "id": "corporate_devices",
+      "name": "Corporate network devices",
+      "type": "asset_category",
+      "description": "Corporate electronics and network appliances reported as targets."
+    },
+    {
+      "id": "industrial_routers",
+      "name": "Industrial routers",
+      "type": "device_class",
+      "description": "Routers used in industrial and enterprise networks."
+    },
+    {
+      "id": "smart_home_devices",
+      "name": "Smart-home devices",
+      "type": "device_class",
+      "description": "Connected consumer devices reported as later targets."
+    },
+    {
+      "id": "draytek",
+      "name": "DrayTek devices",
+      "type": "vendor",
+      "description": "Vendor whose devices are named among affected products in the source."
+    },
+    {
+      "id": "tp_link",
+      "name": "TP-Link devices",
+      "type": "vendor",
+      "description": "Vendor whose devices are named among affected products in the source."
+    },
+    {
+      "id": "raisecom",
+      "name": "Raisecom devices",
+      "type": "vendor",
+      "description": "Vendor whose devices are named among affected products in the source."
+    },
+    {
+      "id": "cisco",
+      "name": "Cisco devices",
+      "type": "vendor",
+      "description": "Vendor whose devices are named among affected products in the source."
+    },
+    {
+      "id": "asus",
+      "name": "Asus devices",
+      "type": "vendor",
+      "description": "Vendor named in a 2025 payload report."
+    },
+    {
+      "id": "vivo",
+      "name": "Vivo devices",
+      "type": "vendor",
+      "description": "Vendor named in a 2025 payload report."
+    },
+    {
+      "id": "zyxel",
+      "name": "Zyxel devices",
+      "type": "vendor",
+      "description": "Vendor named in a 2025 payload report."
+    },
+    {
+      "id": "realtek",
+      "name": "Realtek components/devices",
+      "type": "vendor",
+      "description": "Vendor named in a 2025 payload report."
+    },
+    {
+      "id": "arm",
+      "name": "ARM architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture included among reported targets."
+    },
+    {
+      "id": "mips",
+      "name": "MIPS I architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture included among reported targets."
+    },
+    {
+      "id": "powerpc",
+      "name": "PowerPC architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture included among reported targets."
+    },
+    {
+      "id": "x86",
+      "name": "Intel x86 architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture included among reported targets."
+    },
+    {
+      "id": "cve",
+      "name": "CVE vulnerabilities",
+      "type": "vulnerability_identifier_system",
+      "description": "Public identifiers used to track reported vulnerabilities; the supplied article does not list specific CVE IDs."
+    },
+    {
+      "id": "zero_day",
+      "name": "Zero-day vulnerability claims",
+      "type": "vulnerability_category",
+      "description": "The source reports use of zero-day vulnerabilities; individual identifiers and verification are not supplied in detail."
+    },
+    {
+      "id": "unauth_redis",
+      "name": "Unauthenticated Redis exposure",
+      "type": "misconfiguration",
+      "description": "Exposed Redis service reachable without appropriate authentication, described as an initial-access route."
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "type": "software",
+      "description": "In-memory data store discussed in the article as an exposed service."
+    },
+    {
+      "id": "redis_port",
+      "name": "TCP port 6379",
+      "type": "network_port",
+      "description": "Default Redis service port mentioned by the source."
+    },
+    {
+      "id": "config",
+      "name": "Redis CONFIG command",
+      "type": "software_command",
+      "description": "Legitimate Redis command referenced in the source's account of abuse."
+    },
+    {
+      "id": "set",
+      "name": "Redis SET command",
+      "type": "software_command",
+      "description": "Legitimate Redis command referenced in the source's account of abuse."
+    },
+    {
+      "id": "save",
+      "name": "Redis SAVE command",
+      "type": "software_command",
+      "description": "Legitimate Redis command referenced in the source's account of abuse."
+    },
+    {
+      "id": "cron",
+      "name": "Cron scheduler",
+      "type": "system_component",
+      "description": "Scheduled-task mechanism described as being abused for persistence/execution."
+    },
+    {
+      "id": "shell_script",
+      "name": "Shell script",
+      "type": "script_artifact",
+      "description": "Script artifact described by the source in the Redis-related infection chain."
+    },
+    {
+      "id": "selinux",
+      "name": "SELinux",
+      "type": "security_control",
+      "description": "Linux mandatory access-control system which the article says the malware attempts to disable in affected scenarios."
+    },
+    {
+      "id": "processes",
+      "name": "System processes and threads",
+      "type": "system_component",
+      "description": "Runtime processes and threads inspected or managed by the malware."
+    },
+    {
+      "id": "procfs",
+      "name": "Linux /proc filesystem",
+      "type": "system_interface",
+      "description": "Kernel-provided process information filesystem, including process executable and command-line details."
+    },
+    {
+      "id": "proc_exe",
+      "name": "/proc/[PID]/exe",
+      "type": "system_interface",
+      "description": "Process executable-path interface mentioned in the article."
+    },
+    {
+      "id": "proc_cmdline",
+      "name": "/proc/[PID]/cmdline",
+      "type": "system_interface",
+      "description": "Process command-line interface mentioned in the article."
+    },
+    {
+      "id": "command_strings",
+      "name": "Embedded command strings",
+      "type": "malware_artifact",
+      "description": "Strings reportedly loaded and compared against process command lines."
+    },
+    {
+      "id": "monitor",
+      "name": "Malware monitor/self-preservation logic",
+      "type": "malware_component",
+      "description": "Component described as detecting termination and attempting restart."
+    },
+    {
+      "id": "restart",
+      "name": "Restart behavior",
+      "type": "malware_behavior",
+      "description": "Reported self-restart behavior when the malware process is terminated."
+    },
+    {
+      "id": "sandbox",
+      "name": "Analysis sandbox",
+      "type": "security_analysis_environment",
+      "description": "Controlled environment used to analyze malware; the article describes timing-based evasion behavior."
+    },
+    {
+      "id": "sandbox_evasion",
+      "name": "Sandbox evasion",
+      "type": "malware_behavior",
+      "description": "Behavior intended to detect or interfere with automated analysis."
+    },
+    {
+      "id": "dormancy",
+      "name": "Dormant delay state",
+      "type": "malware_behavior",
+      "description": "The article reports a 27-hour dormant state following a particular sandbox-detection path."
+    },
+    {
+      "id": "obfuscation",
+      "name": "Payload obfuscation",
+      "type": "evasion_technique",
+      "description": "Code and file-format transformations intended to make inspection or detection harder."
+    },
+    {
+      "id": "upx",
+      "name": "UPX packer marker",
+      "type": "packing_technology",
+      "description": "Packing technology whose usual header is reportedly altered in observed samples."
+    },
+    {
+      "id": "header_mutation",
+      "name": "Modified packer header",
+      "type": "evasion_technique",
+      "description": "Reported replacement of the normal UPX marker with non-printable bytes."
+    },
+    {
+      "id": "backdoor",
+      "name": "Remote backdoor access",
+      "type": "malware_capability",
+      "description": "Remote command channel described by the source."
+    },
+    {
+      "id": "c2",
+      "name": "Command-and-control server",
+      "type": "infrastructure",
+      "description": "Remote infrastructure from which the botnet receives commands."
+    },
+    {
+      "id": "c2_domains",
+      "name": "Reported C2 domains",
+      "type": "infrastructure_indicator",
+      "description": "Domains listed by the source as associated with the campaign; treat as historical indicators requiring current verification."
+    },
+    {
+      "id": "cross_compiling",
+      "name": "cross-compiling.org",
+      "type": "domain_indicator",
+      "description": "Domain listed in the source as associated with the campaign."
+    },
+    {
+      "id": "i_kiss_boys",
+      "name": "i-kiss-boys.com",
+      "type": "domain_indicator",
+      "description": "Domain listed in the source as associated with the campaign."
+    },
+    {
+      "id": "furry_femboys",
+      "name": "furry-femboys.top",
+      "type": "domain_indicator",
+      "description": "Domain listed in the source as associated with the campaign."
+    },
+    {
+      "id": "twinkfinder",
+      "name": "twinkfinder.nl",
+      "type": "domain_indicator",
+      "description": "Domain listed in the source as associated with the campaign."
+    },
+    {
+      "id": "3gipcam",
+      "name": "3gipcam.com",
+      "type": "domain_indicator",
+      "description": "Domain listed in the source as associated with the campaign."
+    },
+    {
+      "id": "udp",
+      "name": "UDP",
+      "type": "network_protocol",
+      "description": "Protocol reported as used for DDoS activity and associated with the malware's network behavior."
+    },
+    {
+      "id": "tcp",
+      "name": "TCP",
+      "type": "network_protocol",
+      "description": "Protocol reported as used for DDoS activity."
+    },
+    {
+      "id": "icmp",
+      "name": "ICMP",
+      "type": "network_protocol",
+      "description": "Protocol reported as used for DDoS activity."
+    },
+    {
+      "id": "ddos",
+      "name": "Distributed denial-of-service attack",
+      "type": "attack_type",
+      "description": "Coordinated traffic intended to make target services unavailable."
+    },
+    {
+      "id": "botnet",
+      "name": "Botnet",
+      "type": "threat_concept",
+      "description": "Network of compromised devices controlled as a group."
+    },
+    {
+      "id": "nodes",
+      "name": "Compromised bot nodes",
+      "type": "botnet_component",
+      "description": "Infected devices that can participate in the botnet."
+    },
+    {
+      "id": "attack_targets",
+      "name": "Target websites and services",
+      "type": "target_category",
+      "description": "Online services reported as targets of distributed denial-of-service activity."
+    },
+    {
+      "id": "four_modules",
+      "name": "Four primary modules",
+      "type": "malware_architecture",
+      "description": "The article reports four primary modules but does not name or detail each module."
+    },
+    {
+      "id": "crypto_mining",
+      "name": "Cryptocurrency mining",
+      "type": "malicious_objective",
+      "description": "The source reports delivery or activation of Monero miners in some campaigns."
+    },
+    {
+      "id": "monero",
+      "name": "Monero",
+      "type": "cryptocurrency",
+      "description": "Cryptocurrency referenced in relation to mining payloads."
+    },
+    {
+      "id": "kinsing",
+      "name": "Kinsing",
+      "type": "malware_family",
+      "description": "Competing mining process cited as a target for termination."
+    },
+    {
+      "id": "rival_malware",
+      "name": "Competing malware",
+      "type": "malware_category",
+      "description": "Other malicious processes the malware may terminate or displace."
+    },
+    {
+      "id": "firewall",
+      "name": "Host/network firewall",
+      "type": "security_control",
+      "description": "Traffic filtering control relevant to restricting exposure and limiting unwanted communications."
+    },
+    {
+      "id": "network_segmentation",
+      "name": "Network segmentation",
+      "type": "security_control",
+      "description": "Separates device classes and limits lateral movement and exposure."
+    },
+    {
+      "id": "patching",
+      "name": "Firmware and software patching",
+      "type": "security_control",
+      "description": "Applying vendor updates that address exploited vulnerabilities."
+    },
+    {
+      "id": "credential_hardening",
+      "name": "Credential hardening",
+      "type": "security_control",
+      "description": "Use unique strong credentials, disable defaults, and restrict administrative access."
+    },
+    {
+      "id": "redis_auth",
+      "name": "Redis authentication and access controls",
+      "type": "security_control",
+      "description": "Authentication, network binding, and access restrictions that reduce exposed Redis risk."
+    },
+    {
+      "id": "selinux_enforcement",
+      "name": "SELinux enforcement and policy review",
+      "type": "security_control",
+      "description": "Maintain mandatory access controls and alert on unexpected changes."
+    },
+    {
+      "id": "process_monitoring",
+      "name": "Process and persistence monitoring",
+      "type": "detection_control",
+      "description": "Monitoring unexpected process termination, cron changes, miners, and suspicious restarts."
+    },
+    {
+      "id": "edr",
+      "name": "Endpoint detection and response",
+      "type": "security_control",
+      "description": "Telemetry and response controls for detecting malicious process behavior."
+    },
+    {
+      "id": "ids_ips",
+      "name": "Network IDS/IPS",
+      "type": "security_control",
+      "description": "Network detection/prevention controls that can identify malicious patterns and known exploit activity."
+    },
+    {
+      "id": "dns_filtering",
+      "name": "DNS/web filtering",
+      "type": "security_control",
+      "description": "Blocking known malicious command-and-control domains, as reported in the source."
+    },
+    {
+      "id": "ioc",
+      "name": "Indicators of compromise",
+      "type": "security_artifact",
+      "description": "Observable artifacts such as domains, process behavior, hashes, and network indicators."
+    },
+    {
+      "id": "incident_response",
+      "name": "Incident response",
+      "type": "security_process",
+      "description": "Containment, evidence preservation, eradication, recovery, and follow-up hardening."
+    },
+    {
+      "id": "isolation",
+      "name": "Device isolation",
+      "type": "incident_response_action",
+      "description": "Remove a suspected device from untrusted networks while preserving safe administrative access."
+    },
+    {
+      "id": "reimage",
+      "name": "Firmware recovery/reflash",
+      "type": "remediation_action",
+      "description": "Restore a device using trusted vendor firmware or a verified recovery process."
+    },
+    {
+      "id": "credential_rotation",
+      "name": "Credential rotation",
+      "type": "remediation_action",
+      "description": "Rotate credentials after removing malware and closing the initial access route."
+    },
+    {
+      "id": "asset_inventory",
+      "name": "Asset inventory",
+      "type": "security_process",
+      "description": "Identify exposed devices, firmware versions, management interfaces, and business owners."
+    },
+    {
+      "id": "vulnerability_management",
+      "name": "Vulnerability management",
+      "type": "security_process",
+      "description": "Track affected products, validate exposure, prioritize fixes, and verify remediation."
+    },
+    {
+      "id": "fortiguard",
+      "name": "FortiGuard Labs / services",
+      "type": "security_research_or_service",
+      "description": "Fortinet research and protection services cited in the article."
+    },
+    {
+      "id": "fortinet",
+      "name": "Fortinet",
+      "type": "organization",
+      "description": "Security vendor whose researchers discovered and reported aspects of the campaign."
+    },
+    {
+      "id": "feb_2024",
+      "name": "February 2024 discovery",
+      "type": "historical_event",
+      "description": "Initial discovery period reported by the source."
+    },
+    {
+      "id": "jan_2024_activity",
+      "name": "January 2024 attack activity",
+      "type": "historical_event",
+      "description": "Attack wave preceding the reported February 2024 discovery."
+    },
+    {
+      "id": "nov_2024_scale",
+      "name": "November 2024 reported expansion",
+      "type": "historical_event",
+      "description": "Source reports expansion toward industrial routers and smart-home devices and more than 15,000 active nodes."
+    },
+    {
+      "id": "jul_2025_payload",
+      "name": "July 2025 payload report",
+      "type": "historical_event",
+      "description": "Source reports payloads exploiting device vulnerabilities and delivering malware/miners."
+    },
+    {
+      "id": "aug_2025_defenses",
+      "name": "August 2025 defensive measures",
+      "type": "historical_event",
+      "description": "Source reports multilayered filtering and IPS protection."
+    },
+    {
+      "id": "global_impact",
+      "name": "Reported multi-country impact",
+      "type": "impact_scope",
+      "description": "Countries and sectors listed in the supplied article as affected."
+    },
+    {
+      "id": "countries",
+      "name": "Brazil, France, Germany, Israel, Mexico, United States, Switzerland, Vietnam",
+      "type": "geographic_scope",
+      "description": "Countries listed in the supplied article as affected."
+    },
+    {
+      "id": "sectors",
+      "name": "Construction, manufacturing, technology, media and communications",
+      "type": "industry_sector",
+      "description": "Sectors listed in the supplied article as affected."
+    },
+    {
+      "id": "researchers",
+      "name": "Security researchers",
+      "type": "actor_group",
+      "description": "Researchers who identified, analyzed, and reported the malware."
+    },
+    {
+      "id": "fortinet_researchers",
+      "name": "Fortinet security researchers",
+      "type": "actor_group",
+      "description": "Researchers credited with discovery and subsequent campaign reporting."
+    },
+    {
+      "id": "operators",
+      "name": "Botnet operators",
+      "type": "threat_actor_role",
+      "description": "Operators directing infected nodes and campaign activity; identities are not established by the supplied article."
+    },
+    {
+      "id": "name_origin",
+      "name": "Name origin and code/domain references",
+      "type": "naming_context",
+      "description": "Article attributes the malware name to LGBTQ+ and femboy references found in code and domains; this is a naming detail, not an indicator of any community's involvement."
+    },
+    {
+      "id": "threat_intel",
+      "name": "Threat intelligence",
+      "type": "security_discipline",
+      "description": "Collection, validation, sharing, and lifecycle management of indicators and campaign context."
+    },
+    {
+      "id": "false_positive",
+      "name": "Indicator false positives and staleness",
+      "type": "operational_risk",
+      "description": "Domains and indicators can expire, change ownership, or be reused; verify before blocking."
+    },
+    {
+      "id": "logging",
+      "name": "Centralized logging",
+      "type": "security_control",
+      "description": "Collect and correlate authentication, process, DNS, firewall, Redis, and scheduled-task events."
+    },
+    {
+      "id": "egress_filtering",
+      "name": "Egress filtering",
+      "type": "security_control",
+      "description": "Restricts outbound connections to reduce command-and-control reachability and abuse."
+    },
+    {
+      "id": "least_privilege",
+      "name": "Least privilege",
+      "type": "security_principle",
+      "description": "Limit privileges and service permissions to only what is required."
+    },
+    {
+      "id": "backup_recovery",
+      "name": "Trusted backup and recovery",
+      "type": "security_control",
+      "description": "Maintain validated recovery paths and configurations for affected devices."
+    },
+    {
+      "id": "vendor_advisories",
+      "name": "Vendor security advisories",
+      "type": "information_source",
+      "description": "Official advisories used to identify affected models, firmware, mitigations, and CVEs."
+    },
+    {
+      "id": "cve_records",
+      "name": "Public CVE records",
+      "type": "information_source",
+      "description": "Structured vulnerability records; exact CVE identifiers for the Gayfemboy claims are not enumerated in the supplied text."
+    },
+    {
+      "id": "source_article",
+      "name": "Supplied Gayfemboy article text",
+      "type": "source_document",
+      "description": "User-provided article text used as the source for this graph."
+    },
+    {
+      "id": "attribution_limits",
+      "name": "Attribution and evidence limits",
+      "type": "epistemic_note",
+      "description": "The supplied article does not establish the identity of operators or independently validate every reported count and claim."
+    },
+    {
+      "id": "upstream_mitigation",
+      "name": "Upstream DDoS mitigation",
+      "type": "security_control",
+      "description": "Provider-side filtering, rate limiting, and traffic scrubbing for large DDoS events."
+    },
+    {
+      "id": "rate_limiting",
+      "name": "Rate limiting",
+      "type": "security_control",
+      "description": "Restricts request or connection rates to protect services."
+    },
+    {
+      "id": "service_resilience",
+      "name": "Service resilience and recovery",
+      "type": "security_goal",
+      "description": "Maintain availability through redundancy, capacity planning, and response procedures."
+    },
+    {
+      "id": "tcp_47272",
+      "name": "UDP port 47272",
+      "type": "network_port",
+      "description": "The article states that the malware binds to UDP port 47272."
+    },
+    {
+      "id": "timing_evasion",
+      "name": "Timing-based analysis evasion",
+      "type": "evasion_technique",
+      "description": "The article describes a very short timing check associated with a long dormant state; exact implementation should be treated as source-reported."
+    },
+    {
+      "id": "authentication_bypass",
+      "name": "Authentication bypass",
+      "type": "attack_technique",
+      "description": "Broad category of vulnerabilities or misconfigurations that allow access without intended authentication."
+    },
+    {
+      "id": "remote_execution",
+      "name": "Remote code execution",
+      "type": "vulnerability_impact",
+      "description": "Execution of code on a remote system due to a vulnerability."
+    },
+    {
+      "id": "device_management",
+      "name": "Device management interfaces",
+      "type": "attack_surface",
+      "description": "Administrative interfaces and services on network devices that should be restricted."
+    },
+    {
+      "id": "service_exposure",
+      "name": "Unnecessary exposed services",
+      "type": "misconfiguration",
+      "description": "Management or application services reachable from untrusted networks."
+    },
+    {
+      "id": "malware_analysis",
+      "name": "Malware analysis",
+      "type": "security_process",
+      "description": "Static and dynamic analysis in an isolated, controlled environment."
+    },
+    {
+      "id": "evidence_preservation",
+      "name": "Evidence preservation",
+      "type": "incident_response_action",
+      "description": "Preserve logs, firmware, hashes, timestamps, and network records before destructive remediation where feasible."
+    },
+    {
+      "id": "policy_change_alerts",
+      "name": "Security-policy change alerts",
+      "type": "detection_control",
+      "description": "Alert on unexpected disabling of SELinux, firewall modifications, or changes to scheduled tasks."
+    },
+    {
+      "id": "cron_monitoring",
+      "name": "Cron and scheduled-task monitoring",
+      "type": "detection_control",
+      "description": "Monitor new or altered scheduled jobs and their parent processes."
+    },
+    {
+      "id": "hashes",
+      "name": "File hashes and sample identifiers",
+      "type": "security_artifact",
+      "description": "Sample-specific hashes are not included in the supplied article and should be obtained from trusted reports."
+    },
+    {
+      "id": "vuln_exploit_chain",
+      "name": "Vulnerability exploitation chain",
+      "type": "attack_pattern",
+      "description": "High-level chain in which an exposed vulnerable device is compromised and enrolled in botnet activity."
+    },
+    {
+      "id": "redis_abuse_chain",
+      "name": "Redis abuse and scheduled-task chain",
+      "type": "attack_pattern",
+      "description": "High-level chain described by the article involving exposed Redis, scheduled execution, and defense evasion."
+    },
+    {
+      "id": "botnet_lifecycle",
+      "name": "Botnet infection-to-command lifecycle",
+      "type": "architecture_pattern",
+      "description": "Discovery/compromise, enrollment, command receipt, malicious tasking, monitoring, and remediation."
+    },
+    {
+      "id": "ddos_defense_lifecycle",
+      "name": "DDoS defense lifecycle",
+      "type": "architecture_pattern",
+      "description": "Prepare, detect, coordinate with providers, mitigate, restore, and learn."
+    },
+    {
+      "id": "defense_in_depth",
+      "name": "Defense-in-depth",
+      "type": "architecture_pattern",
+      "description": "Layered controls reduce reliance on a single signature or protection product."
+    },
+    {
+      "id": "iot_hardening_pattern",
+      "name": "IoT device hardening pattern",
+      "type": "architecture_pattern",
+      "description": "Inventory, patch, restrict management access, replace default credentials, segment, monitor, and maintain recovery."
+    },
+    {
+      "id": "detection_pattern",
+      "name": "Behavior-based detection pattern",
+      "type": "architecture_pattern",
+      "description": "Correlate suspicious process, cron, Redis, egress, and DDoS indicators."
+    },
+    {
+      "id": "remediation_pattern",
+      "name": "Infection remediation pattern",
+      "type": "architecture_pattern",
+      "description": "Isolate, preserve evidence, update or reflash, rotate credentials, validate, and monitor."
+    },
+    {
+      "id": "example_exposed_redis",
+      "name": "Example: exposed Redis containment",
+      "type": "example",
+      "description": "Defensive example for reducing exposure of Redis and checking for unauthorized scheduled tasks."
+    },
+    {
+      "id": "example_router_hardening",
+      "name": "Example: enterprise router hardening",
+      "type": "example",
+      "description": "Defensive example for securing router management interfaces and firmware."
+    },
+    {
+      "id": "example_ioc_triage",
+      "name": "Example: C2 indicator triage",
+      "type": "example",
+      "description": "Defensive example for validating and safely operationalizing reported domains."
+    },
+    {
+      "id": "example_ddos_response",
+      "name": "Example: DDoS incident response",
+      "type": "example",
+      "description": "Defensive example for coordinating provider-side mitigation and protecting service availability."
+    },
+    {
+      "id": "example_forensic_analysis",
+      "name": "Example: safe malware analysis",
+      "type": "example",
+      "description": "Defensive example for analyzing a suspected sample in an isolated environment."
+    },
+    {
+      "id": "example_recovery",
+      "name": "Example: device recovery",
+      "type": "example",
+      "description": "Defensive example for restoring a compromised device and preventing reinfection."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_0001",
+      "source": "gayfemboy",
+      "predicate": "member_of_family",
+      "target": "mirai",
+      "description": "The supplied article classifies Gayfemboy as a Mirai-family strain."
+    },
+    {
+      "id": "rel_0002",
+      "source": "gayfemboy",
+      "predicate": "targets_platform",
+      "target": "linux",
+      "description": "The article lists Linux as the platform."
+    },
+    {
+      "id": "rel_0003",
+      "source": "gayfemboy",
+      "predicate": "targets_domain",
+      "target": "iot",
+      "description": "Reported target domain includes IoT devices."
+    },
+    {
+      "id": "rel_0004",
+      "source": "gayfemboy",
+      "predicate": "targets_category",
+      "target": "corporate_devices",
+      "description": "Reported to infect corporate electronics and network devices."
+    },
+    {
+      "id": "rel_0005",
+      "source": "gayfemboy",
+      "predicate": "targets_device_class",
+      "target": "industrial_routers",
+      "description": "The article reports later targeting of industrial routers."
+    },
+    {
+      "id": "rel_0006",
+      "source": "gayfemboy",
+      "predicate": "targets_device_class",
+      "target": "smart_home_devices",
+      "description": "The article reports later targeting of smart-home devices."
+    },
+    {
+      "id": "rel_0007",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "draytek",
+      "description": "DrayTek is named among affected device vendors."
+    },
+    {
+      "id": "rel_0008",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "tp_link",
+      "description": "TP-Link is named among affected device vendors."
+    },
+    {
+      "id": "rel_0009",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "raisecom",
+      "description": "Raisecom is named among affected device vendors."
+    },
+    {
+      "id": "rel_0010",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "cisco",
+      "description": "Cisco is named among affected device vendors."
+    },
+    {
+      "id": "rel_0011",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "asus",
+      "description": "Asus is named in a later payload report."
+    },
+    {
+      "id": "rel_0012",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "vivo",
+      "description": "Vivo is named in a later payload report."
+    },
+    {
+      "id": "rel_0013",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "zyxel",
+      "description": "Zyxel is named in a later payload report."
+    },
+    {
+      "id": "rel_0014",
+      "source": "gayfemboy",
+      "predicate": "reported_vendor_target",
+      "target": "realtek",
+      "description": "Realtek is named in a later payload report."
+    },
+    {
+      "id": "rel_0015",
+      "source": "gayfemboy",
+      "predicate": "supports_architecture",
+      "target": "arm",
+      "description": "The article lists ARM among targeted architectures."
+    },
+    {
+      "id": "rel_0016",
+      "source": "gayfemboy",
+      "predicate": "supports_architecture",
+      "target": "mips",
+      "description": "The article lists MIPS I among targeted architectures."
+    },
+    {
+      "id": "rel_0017",
+      "source": "gayfemboy",
+      "predicate": "supports_architecture",
+      "target": "powerpc",
+      "description": "The article lists PowerPC among targeted architectures."
+    },
+    {
+      "id": "rel_0018",
+      "source": "gayfemboy",
+      "predicate": "supports_architecture",
+      "target": "x86",
+      "description": "The article lists Intel x86 among targeted architectures."
+    },
+    {
+      "id": "rel_0019",
+      "source": "gayfemboy",
+      "predicate": "reportedly_exploits",
+      "target": "cve",
+      "description": "The article says CVEs are used but supplies no exhaustive list of identifiers."
+    },
+    {
+      "id": "rel_0020",
+      "source": "gayfemboy",
+      "predicate": "reported_to_use",
+      "target": "zero_day",
+      "description": "Source reports zero-day exploitation claims; these require corroboration against advisories."
+    },
+    {
+      "id": "rel_0021",
+      "source": "gayfemboy",
+      "predicate": "uses_component",
+      "target": "processes",
+      "description": "Tracks or inspects processes and threads, according to the article."
+    },
+    {
+      "id": "rel_0022",
+      "source": "processes",
+      "predicate": "information_source",
+      "target": "procfs",
+      "description": "Linux process information is exposed through procfs."
+    },
+    {
+      "id": "rel_0023",
+      "source": "procfs",
+      "predicate": "contains_interface",
+      "target": "proc_exe",
+      "description": "The executable-path interface is described in the article."
+    },
+    {
+      "id": "rel_0024",
+      "source": "procfs",
+      "predicate": "contains_interface",
+      "target": "proc_cmdline",
+      "description": "The command-line interface is described in the article."
+    },
+    {
+      "id": "rel_0025",
+      "source": "gayfemboy",
+      "predicate": "inspects_interface",
+      "target": "proc_exe",
+      "description": "The article says executable paths are inspected."
+    },
+    {
+      "id": "rel_0026",
+      "source": "gayfemboy",
+      "predicate": "inspects_interface",
+      "target": "proc_cmdline",
+      "description": "The article says process command lines are reviewed."
+    },
+    {
+      "id": "rel_0027",
+      "source": "gayfemboy",
+      "predicate": "loads",
+      "target": "command_strings",
+      "description": "The article reports 47 command strings loaded into memory."
+    },
+    {
+      "id": "rel_0028",
+      "source": "command_strings",
+      "predicate": "used_by",
+      "target": "gayfemboy",
+      "description": "Strings are used in the reported process-inspection behavior."
+    },
+    {
+      "id": "rel_0029",
+      "source": "gayfemboy",
+      "predicate": "includes_component",
+      "target": "monitor",
+      "description": "The Monitor is described as supporting self-preservation and sandbox detection."
+    },
+    {
+      "id": "rel_0030",
+      "source": "monitor",
+      "predicate": "may_trigger",
+      "target": "restart",
+      "description": "The article says the monitor attempts restart if the malware process is terminated."
+    },
+    {
+      "id": "rel_0031",
+      "source": "gayfemboy",
+      "predicate": "uses_evasion",
+      "target": "sandbox_evasion",
+      "description": "The source describes sandbox-detection behavior."
+    },
+    {
+      "id": "rel_0032",
+      "source": "sandbox_evasion",
+      "predicate": "interacts_with",
+      "target": "sandbox",
+      "description": "The reported behavior attempts to detect analysis environments."
+    },
+    {
+      "id": "rel_0033",
+      "source": "sandbox_evasion",
+      "predicate": "may_trigger",
+      "target": "dormancy",
+      "description": "The source reports a long dormant state after a timing-related detection path."
+    },
+    {
+      "id": "rel_0034",
+      "source": "gayfemboy",
+      "predicate": "uses_evasion",
+      "target": "timing_evasion",
+      "description": "The source reports a timing-based check."
+    },
+    {
+      "id": "rel_0035",
+      "source": "gayfemboy",
+      "predicate": "uses_evasion",
+      "target": "obfuscation",
+      "description": "Samples are described as obfuscated."
+    },
+    {
+      "id": "rel_0036",
+      "source": "obfuscation",
+      "predicate": "includes",
+      "target": "upx",
+      "description": "The source mentions a UPX packer marker."
+    },
+    {
+      "id": "rel_0037",
+      "source": "obfuscation",
+      "predicate": "includes",
+      "target": "header_mutation",
+      "description": "The UPX header marker was reportedly replaced with non-printable bytes."
+    },
+    {
+      "id": "rel_0038",
+      "source": "gayfemboy",
+      "predicate": "communicates_with",
+      "target": "c2",
+      "description": "The malware reportedly connects to a remote server for commands."
+    },
+    {
+      "id": "rel_0039",
+      "source": "c2",
+      "predicate": "issues_commands_to",
+      "target": "nodes",
+      "description": "C2 tasking directs compromised nodes."
+    },
+    {
+      "id": "rel_0040",
+      "source": "nodes",
+      "predicate": "collectively_form",
+      "target": "botnet",
+      "description": "Compromised devices operate as a botnet."
+    },
+    {
+      "id": "rel_0041",
+      "source": "gayfemboy",
+      "predicate": "creates_or_joins",
+      "target": "botnet",
+      "description": "The strain is described as a botnet."
+    },
+    {
+      "id": "rel_0042",
+      "source": "botnet",
+      "predicate": "launches",
+      "target": "ddos",
+      "description": "The article reports DDoS attacks from infected machines."
+    },
+    {
+      "id": "rel_0043",
+      "source": "ddos",
+      "predicate": "targets",
+      "target": "attack_targets",
+      "description": "DDoS activity targets websites and services."
+    },
+    {
+      "id": "rel_0044",
+      "source": "gayfemboy",
+      "predicate": "uses_protocol",
+      "target": "udp",
+      "description": "UDP is reported among the DDoS protocols."
+    },
+    {
+      "id": "rel_0045",
+      "source": "gayfemboy",
+      "predicate": "uses_protocol",
+      "target": "tcp",
+      "description": "TCP is reported among the DDoS protocols."
+    },
+    {
+      "id": "rel_0046",
+      "source": "gayfemboy",
+      "predicate": "uses_protocol",
+      "target": "icmp",
+      "description": "ICMP is reported among the DDoS protocols."
+    },
+    {
+      "id": "rel_0047",
+      "source": "gayfemboy",
+      "predicate": "binds_reportedly_to",
+      "target": "tcp_47272",
+      "description": "The article says the malware binds to UDP port 47272; entity label retains the source's stated protocol."
+    },
+    {
+      "id": "rel_0048",
+      "source": "gayfemboy",
+      "predicate": "has_reported_architecture",
+      "target": "four_modules",
+      "description": "The article reports four primary modules but does not detail their names."
+    },
+    {
+      "id": "rel_0049",
+      "source": "gayfemboy",
+      "predicate": "reported_initial_access_route",
+      "target": "unauth_redis",
+      "description": "The article describes searching for unauthenticated Redis servers."
+    },
+    {
+      "id": "rel_0050",
+      "source": "unauth_redis",
+      "predicate": "exposes_service",
+      "target": "redis",
+      "description": "The described initial-access route involves Redis."
+    },
+    {
+      "id": "rel_0051",
+      "source": "redis",
+      "predicate": "commonly_uses_port",
+      "target": "redis_port",
+      "description": "Port 6379 is identified in the source."
+    },
+    {
+      "id": "rel_0052",
+      "source": "gayfemboy",
+      "predicate": "abuses_command",
+      "target": "config",
+      "description": "The article describes use of legitimate Redis CONFIG command."
+    },
+    {
+      "id": "rel_0053",
+      "source": "gayfemboy",
+      "predicate": "abuses_command",
+      "target": "set",
+      "description": "The article describes use of legitimate Redis SET command."
+    },
+    {
+      "id": "rel_0054",
+      "source": "gayfemboy",
+      "predicate": "abuses_command",
+      "target": "save",
+      "description": "The article describes use of legitimate Redis SAVE command."
+    },
+    {
+      "id": "rel_0055",
+      "source": "redis_abuse_chain",
+      "predicate": "includes_stage",
+      "target": "unauth_redis",
+      "description": "The high-level chain begins with exposed Redis."
+    },
+    {
+      "id": "rel_0056",
+      "source": "redis_abuse_chain",
+      "predicate": "includes_stage",
+      "target": "cron",
+      "description": "The source describes a harmful cron job."
+    },
+    {
+      "id": "rel_0057",
+      "source": "redis_abuse_chain",
+      "predicate": "includes_stage",
+      "target": "shell_script",
+      "description": "The scheduled job is described as executing a shell script."
+    },
+    {
+      "id": "rel_0058",
+      "source": "gayfemboy",
+      "predicate": "reportedly_abuses",
+      "target": "cron",
+      "description": "The article describes a cron job as part of the Redis-related chain."
+    },
+    {
+      "id": "rel_0059",
+      "source": "cron",
+      "predicate": "may_execute",
+      "target": "shell_script",
+      "description": "The source describes scheduled execution of a shell script."
+    },
+    {
+      "id": "rel_0060",
+      "source": "shell_script",
+      "predicate": "reported_to_attempt_change",
+      "target": "selinux",
+      "description": "The article says the script attempts to disable SELinux."
+    },
+    {
+      "id": "rel_0061",
+      "source": "gayfemboy",
+      "predicate": "reported_to_target_process",
+      "target": "kinsing",
+      "description": "The source says competing mining processes such as Kinsing may be terminated."
+    },
+    {
+      "id": "rel_0062",
+      "source": "gayfemboy",
+      "predicate": "may_terminate",
+      "target": "rival_malware",
+      "description": "The source reports termination of competing processes."
+    },
+    {
+      "id": "rel_0063",
+      "source": "gayfemboy",
+      "predicate": "may_deploy",
+      "target": "crypto_mining",
+      "description": "The article reports cryptocurrency-mining payloads in some campaigns."
+    },
+    {
+      "id": "rel_0064",
+      "source": "crypto_mining",
+      "predicate": "may_mine",
+      "target": "monero",
+      "description": "The source specifically mentions Monero miners."
+    },
+    {
+      "id": "rel_0065",
+      "source": "gayfemboy",
+      "predicate": "reported_to_use",
+      "target": "backdoor",
+      "description": "Remote command access is described."
+    },
+    {
+      "id": "rel_0066",
+      "source": "backdoor",
+      "predicate": "receives_commands_from",
+      "target": "c2",
+      "description": "The remote channel is associated with C2 command delivery."
+    },
+    {
+      "id": "rel_0067",
+      "source": "gayfemboy",
+      "predicate": "may_terminate_on_command_from",
+      "target": "c2",
+      "description": "The article says the malware can terminate itself on a server command."
+    },
+    {
+      "id": "rel_0068",
+      "source": "gayfemboy",
+      "predicate": "may_terminate_if_detects",
+      "target": "sandbox",
+      "description": "The article describes self-termination if sandbox manipulation is detected."
+    },
+    {
+      "id": "rel_0069",
+      "source": "gayfemboy",
+      "predicate": "reported_name_context",
+      "target": "name_origin",
+      "description": "The source explains the name via references in code and C2 domains."
+    },
+    {
+      "id": "rel_0070",
+      "source": "gayfemboy",
+      "predicate": "first_reported_discovered_at",
+      "target": "feb_2024",
+      "description": "The article dates initial discovery to February 2024."
+    },
+    {
+      "id": "rel_0071",
+      "source": "feb_2024",
+      "predicate": "followed_attack_activity",
+      "target": "jan_2024_activity",
+      "description": "The source says a January wave preceded discovery."
+    },
+    {
+      "id": "rel_0072",
+      "source": "gayfemboy",
+      "predicate": "reported_expansion_at",
+      "target": "nov_2024_scale",
+      "description": "The article reports expansion by November 2024."
+    },
+    {
+      "id": "rel_0073",
+      "source": "nov_2024_scale",
+      "predicate": "reported_active_nodes",
+      "target": "botnet",
+      "description": "The source reports more than 15,000 active nodes; this count is source-reported."
+    },
+    {
+      "id": "rel_0074",
+      "source": "gayfemboy",
+      "predicate": "reported_payload_activity_at",
+      "target": "jul_2025_payload",
+      "description": "The source describes a July 2025 payload report."
+    },
+    {
+      "id": "rel_0075",
+      "source": "gayfemboy",
+      "predicate": "reported_defense_response_at",
+      "target": "aug_2025_defenses",
+      "description": "The source describes protection measures in August 2025."
+    },
+    {
+      "id": "rel_0076",
+      "source": "fortinet",
+      "predicate": "employs_or_hosts",
+      "target": "fortiguard",
+      "description": "FortiGuard Labs/services are associated with the reporting."
+    },
+    {
+      "id": "rel_0077",
+      "source": "fortinet_researchers",
+      "predicate": "reported",
+      "target": "gayfemboy",
+      "description": "Researchers at Fortinet are credited with discovery and later reporting."
+    },
+    {
+      "id": "rel_0078",
+      "source": "fortiguard",
+      "predicate": "reported_campaign",
+      "target": "gayfemboy",
+      "description": "The article cites FortiGuard campaign analysis."
+    },
+    {
+      "id": "rel_0079",
+      "source": "aug_2025_defenses",
+      "predicate": "includes_control",
+      "target": "dns_filtering",
+      "description": "The article reports blocking identified C2 domains."
+    },
+    {
+      "id": "rel_0080",
+      "source": "aug_2025_defenses",
+      "predicate": "includes_control",
+      "target": "ids_ips",
+      "description": "The article reports IPS signatures covering exploited vulnerabilities."
+    },
+    {
+      "id": "rel_0081",
+      "source": "c2_domains",
+      "predicate": "includes_indicator",
+      "target": "cross_compiling",
+      "description": "Domain listed in the source; verify before operational use."
+    },
+    {
+      "id": "rel_0082",
+      "source": "c2_domains",
+      "predicate": "includes_indicator",
+      "target": "i_kiss_boys",
+      "description": "Domain listed in the source; verify before operational use."
+    },
+    {
+      "id": "rel_0083",
+      "source": "c2_domains",
+      "predicate": "includes_indicator",
+      "target": "furry_femboys",
+      "description": "Domain listed in the source; verify before operational use."
+    },
+    {
+      "id": "rel_0084",
+      "source": "c2_domains",
+      "predicate": "includes_indicator",
+      "target": "twinkfinder",
+      "description": "Domain listed in the source; verify before operational use."
+    },
+    {
+      "id": "rel_0085",
+      "source": "c2_domains",
+      "predicate": "includes_indicator",
+      "target": "3gipcam",
+      "description": "Domain listed in the source; verify before operational use."
+    },
+    {
+      "id": "rel_0086",
+      "source": "gayfemboy",
+      "predicate": "reported_in",
+      "target": "global_impact",
+      "description": "The article lists affected countries and sectors."
+    },
+    {
+      "id": "rel_0087",
+      "source": "global_impact",
+      "predicate": "includes_geography",
+      "target": "countries",
+      "description": "The article names eight countries."
+    },
+    {
+      "id": "rel_0088",
+      "source": "global_impact",
+      "predicate": "includes_sector",
+      "target": "sectors",
+      "description": "The article names construction, manufacturing, technology, and media/communications."
+    },
+    {
+      "id": "rel_0089",
+      "source": "operators",
+      "predicate": "directs",
+      "target": "c2",
+      "description": "The role of operators is to direct the command infrastructure; identity is not established here."
+    },
+    {
+      "id": "rel_0090",
+      "source": "researchers",
+      "predicate": "perform",
+      "target": "malware_analysis",
+      "description": "Researchers analyze samples and behavior."
+    },
+    {
+      "id": "rel_0091",
+      "source": "malware_analysis",
+      "predicate": "uses_environment",
+      "target": "sandbox",
+      "description": "Safe analysis uses isolated environments."
+    },
+    {
+      "id": "rel_0092",
+      "source": "credential_hardening",
+      "predicate": "mitigates",
+      "target": "unauth_redis",
+      "description": "Strong credentials and restricted access reduce unauthenticated service exposure."
+    },
+    {
+      "id": "rel_0093",
+      "source": "redis_auth",
+      "predicate": "mitigates",
+      "target": "unauth_redis",
+      "description": "Redis authentication and network restrictions reduce exposure."
+    },
+    {
+      "id": "rel_0094",
+      "source": "patching",
+      "predicate": "mitigates",
+      "target": "cve",
+      "description": "Patch affected products after verifying vendor advisories."
+    },
+    {
+      "id": "rel_0095",
+      "source": "vendor_advisories",
+      "predicate": "inform",
+      "target": "vulnerability_management",
+      "description": "Vendor advisories help determine affected models and mitigations."
+    },
+    {
+      "id": "rel_0096",
+      "source": "cve_records",
+      "predicate": "inform",
+      "target": "vulnerability_management",
+      "description": "CVE records support vulnerability tracking."
+    },
+    {
+      "id": "rel_0097",
+      "source": "asset_inventory",
+      "predicate": "supports",
+      "target": "vulnerability_management",
+      "description": "Inventory makes it possible to identify affected assets."
+    },
+    {
+      "id": "rel_0098",
+      "source": "network_segmentation",
+      "predicate": "reduces_exposure_of",
+      "target": "iot",
+      "description": "Segmentation limits access to vulnerable device classes."
+    },
+    {
+      "id": "rel_0099",
+      "source": "firewall",
+      "predicate": "supports",
+      "target": "network_segmentation",
+      "description": "Firewall rules can enforce segmentation boundaries."
+    },
+    {
+      "id": "rel_0100",
+      "source": "egress_filtering",
+      "predicate": "limits",
+      "target": "c2",
+      "description": "Restricting outbound paths can reduce command-channel reachability."
+    },
+    {
+      "id": "rel_0101",
+      "source": "least_privilege",
+      "predicate": "reduces_risk_of",
+      "target": "remote_execution",
+      "description": "Least privilege can constrain impact after compromise."
+    },
+    {
+      "id": "rel_0102",
+      "source": "selinux_enforcement",
+      "predicate": "protects",
+      "target": "linux",
+      "description": "SELinux can limit actions when correctly configured and enforced."
+    },
+    {
+      "id": "rel_0103",
+      "source": "policy_change_alerts",
+      "predicate": "detects",
+      "target": "selinux",
+      "description": "Alerting can surface unexpected changes to SELinux policy or state."
+    },
+    {
+      "id": "rel_0104",
+      "source": "cron_monitoring",
+      "predicate": "detects",
+      "target": "cron",
+      "description": "Monitoring can surface unauthorized scheduled tasks."
+    },
+    {
+      "id": "rel_0105",
+      "source": "process_monitoring",
+      "predicate": "detects",
+      "target": "processes",
+      "description": "Process telemetry can identify unexpected termination, restarts, or miners."
+    },
+    {
+      "id": "rel_0106",
+      "source": "logging",
+      "predicate": "supports",
+      "target": "process_monitoring",
+      "description": "Centralized logs improve correlation of process and host behavior."
+    },
+    {
+      "id": "rel_0107",
+      "source": "logging",
+      "predicate": "supports",
+      "target": "cron_monitoring",
+      "description": "Centralized logs help identify scheduled-task changes."
+    },
+    {
+      "id": "rel_0108",
+      "source": "logging",
+      "predicate": "supports",
+      "target": "redis_auth",
+      "description": "Authentication and service logs support Redis incident triage."
+    },
+    {
+      "id": "rel_0109",
+      "source": "edr",
+      "predicate": "supports",
+      "target": "process_monitoring",
+      "description": "Endpoint telemetry can detect suspicious process behavior."
+    },
+    {
+      "id": "rel_0110",
+      "source": "ids_ips",
+      "predicate": "supports",
+      "target": "vulnerability_management",
+      "description": "IPS alerts can identify exploitation attempts, alongside patching."
+    },
+    {
+      "id": "rel_0111",
+      "source": "dns_filtering",
+      "predicate": "blocks_or_flags",
+      "target": "c2_domains",
+      "description": "Use validated indicators with expiry and false-positive review."
+    },
+    {
+      "id": "rel_0112",
+      "source": "threat_intel",
+      "predicate": "manages",
+      "target": "ioc",
+      "description": "Threat intelligence tracks and validates indicators."
+    },
+    {
+      "id": "rel_0113",
+      "source": "ioc",
+      "predicate": "may_include",
+      "target": "c2_domains",
+      "description": "Domains are one type of indicator."
+    },
+    {
+      "id": "rel_0114",
+      "source": "ioc",
+      "predicate": "may_include",
+      "target": "hashes",
+      "description": "Hashes may help identify specific samples, but are absent from the supplied text."
+    },
+    {
+      "id": "rel_0115",
+      "source": "false_positive",
+      "predicate": "qualifies_use_of",
+      "target": "c2_domains",
+      "description": "Indicators can be stale or reused; validate before blocking."
+    },
+    {
+      "id": "rel_0116",
+      "source": "incident_response",
+      "predicate": "may_use_action",
+      "target": "isolation",
+      "description": "Contain suspected devices."
+    },
+    {
+      "id": "rel_0117",
+      "source": "incident_response",
+      "predicate": "may_use_action",
+      "target": "evidence_preservation",
+      "description": "Preserve relevant evidence where feasible."
+    },
+    {
+      "id": "rel_0118",
+      "source": "incident_response",
+      "predicate": "may_use_action",
+      "target": "reimage",
+      "description": "Restore trusted firmware when appropriate."
+    },
+    {
+      "id": "rel_0119",
+      "source": "incident_response",
+      "predicate": "may_use_action",
+      "target": "credential_rotation",
+      "description": "Rotate exposed credentials after containment."
+    },
+    {
+      "id": "rel_0120",
+      "source": "incident_response",
+      "predicate": "uses_process",
+      "target": "asset_inventory",
+      "description": "Inventory helps scope the incident."
+    },
+    {
+      "id": "rel_0121",
+      "source": "incident_response",
+      "predicate": "uses_process",
+      "target": "vulnerability_management",
+      "description": "Track fixes and verify remediation."
+    },
+    {
+      "id": "rel_0122",
+      "source": "isolation",
+      "predicate": "supports",
+      "target": "malware_analysis",
+      "description": "Isolation limits risk while triaging a suspected device."
+    },
+    {
+      "id": "rel_0123",
+      "source": "reimage",
+      "predicate": "supports",
+      "target": "backup_recovery",
+      "description": "Trusted recovery procedures support restoration."
+    },
+    {
+      "id": "rel_0124",
+      "source": "credential_rotation",
+      "predicate": "mitigates",
+      "target": "unauth_redis",
+      "description": "Close the original credential or access path to reduce reinfection."
+    },
+    {
+      "id": "rel_0125",
+      "source": "upstream_mitigation",
+      "predicate": "mitigates",
+      "target": "ddos",
+      "description": "Provider-side controls can reduce the impact of large traffic floods."
+    },
+    {
+      "id": "rel_0126",
+      "source": "rate_limiting",
+      "predicate": "supports",
+      "target": "service_resilience",
+      "description": "Rate limits can help preserve capacity for legitimate users."
+    },
+    {
+      "id": "rel_0127",
+      "source": "service_resilience",
+      "predicate": "supported_by",
+      "target": "ddos_defense_lifecycle",
+      "description": "Resilience depends on preparation, mitigation, recovery, and learning."
+    },
+    {
+      "id": "rel_0128",
+      "source": "ddos_defense_lifecycle",
+      "predicate": "includes_control",
+      "target": "upstream_mitigation",
+      "description": "Coordinate with providers for large-scale mitigation."
+    },
+    {
+      "id": "rel_0129",
+      "source": "ddos_defense_lifecycle",
+      "predicate": "includes_control",
+      "target": "rate_limiting",
+      "description": "Apply appropriate application/service rate limits."
+    },
+    {
+      "id": "rel_0130",
+      "source": "defense_in_depth",
+      "predicate": "includes_control",
+      "target": "patching",
+      "description": "Layered defense includes timely updates."
+    },
+    {
+      "id": "rel_0131",
+      "source": "defense_in_depth",
+      "predicate": "includes_control",
+      "target": "network_segmentation",
+      "description": "Layered defense includes segmentation."
+    },
+    {
+      "id": "rel_0132",
+      "source": "defense_in_depth",
+      "predicate": "includes_control",
+      "target": "credential_hardening",
+      "description": "Layered defense includes strong unique credentials."
+    },
+    {
+      "id": "rel_0133",
+      "source": "defense_in_depth",
+      "predicate": "includes_control",
+      "target": "dns_filtering",
+      "description": "Layered defense may include validated DNS/web filtering."
+    },
+    {
+      "id": "rel_0134",
+      "source": "iot_hardening_pattern",
+      "predicate": "includes_control",
+      "target": "asset_inventory",
+      "description": "Identify devices and firmware."
+    },
+    {
+      "id": "rel_0135",
+      "source": "iot_hardening_pattern",
+      "predicate": "includes_control",
+      "target": "patching",
+      "description": "Apply vendor-supported updates."
+    },
+    {
+      "id": "rel_0136",
+      "source": "iot_hardening_pattern",
+      "predicate": "includes_control",
+      "target": "credential_hardening",
+      "description": "Remove defaults and restrict admin access."
+    },
+    {
+      "id": "rel_0137",
+      "source": "iot_hardening_pattern",
+      "predicate": "includes_control",
+      "target": "network_segmentation",
+      "description": "Separate IoT from sensitive networks."
+    },
+    {
+      "id": "rel_0138",
+      "source": "iot_hardening_pattern",
+      "predicate": "includes_control",
+      "target": "logging",
+      "description": "Monitor activity."
+    },
+    {
+      "id": "rel_0139",
+      "source": "iot_hardening_pattern",
+      "predicate": "includes_control",
+      "target": "backup_recovery",
+      "description": "Maintain a trusted recovery path."
+    },
+    {
+      "id": "rel_0140",
+      "source": "detection_pattern",
+      "predicate": "includes_signal",
+      "target": "process_monitoring",
+      "description": "Monitor unexpected processes and restarts."
+    },
+    {
+      "id": "rel_0141",
+      "source": "detection_pattern",
+      "predicate": "includes_signal",
+      "target": "cron_monitoring",
+      "description": "Monitor unauthorized scheduled jobs."
+    },
+    {
+      "id": "rel_0142",
+      "source": "detection_pattern",
+      "predicate": "includes_signal",
+      "target": "logging",
+      "description": "Correlate across logs."
+    },
+    {
+      "id": "rel_0143",
+      "source": "detection_pattern",
+      "predicate": "includes_signal",
+      "target": "dns_filtering",
+      "description": "Check validated C2 indicators."
+    },
+    {
+      "id": "rel_0144",
+      "source": "remediation_pattern",
+      "predicate": "includes_action",
+      "target": "isolation",
+      "description": "Contain the suspected device."
+    },
+    {
+      "id": "rel_0145",
+      "source": "remediation_pattern",
+      "predicate": "includes_action",
+      "target": "evidence_preservation",
+      "description": "Preserve evidence before destructive changes when feasible."
+    },
+    {
+      "id": "rel_0146",
+      "source": "remediation_pattern",
+      "predicate": "includes_action",
+      "target": "reimage",
+      "description": "Restore trusted firmware/software."
+    },
+    {
+      "id": "rel_0147",
+      "source": "remediation_pattern",
+      "predicate": "includes_action",
+      "target": "credential_rotation",
+      "description": "Rotate credentials and close exposed paths."
+    },
+    {
+      "id": "rel_0148",
+      "source": "remediation_pattern",
+      "predicate": "includes_action",
+      "target": "vulnerability_management",
+      "description": "Patch and verify remediation."
+    },
+    {
+      "id": "rel_0149",
+      "source": "example_exposed_redis",
+      "predicate": "demonstrates",
+      "target": "redis_auth",
+      "description": "Defensive example: restrict Redis to trusted interfaces, require authentication, and review configuration."
+    },
+    {
+      "id": "rel_0150",
+      "source": "example_exposed_redis",
+      "predicate": "demonstrates",
+      "target": "cron_monitoring",
+      "description": "Check for unexpected scheduled jobs without executing suspicious payloads."
+    },
+    {
+      "id": "rel_0151",
+      "source": "example_router_hardening",
+      "predicate": "demonstrates",
+      "target": "patching",
+      "description": "Defensive example: inventory models, apply vendor updates, and disable exposed management interfaces."
+    },
+    {
+      "id": "rel_0152",
+      "source": "example_router_hardening",
+      "predicate": "demonstrates",
+      "target": "network_segmentation",
+      "description": "Place device management on restricted network segments."
+    },
+    {
+      "id": "rel_0153",
+      "source": "example_ioc_triage",
+      "predicate": "demonstrates",
+      "target": "threat_intel",
+      "description": "Defensive example: corroborate reported domains with current trusted feeds and preserve provenance."
+    },
+    {
+      "id": "rel_0154",
+      "source": "example_ioc_triage",
+      "predicate": "demonstrates",
+      "target": "false_positive",
+      "description": "Expire or revalidate indicators and assess business impact before blocking."
+    },
+    {
+      "id": "rel_0155",
+      "source": "example_ddos_response",
+      "predicate": "demonstrates",
+      "target": "upstream_mitigation",
+      "description": "Defensive example: contact upstream providers and use scrubbing or filtering."
+    },
+    {
+      "id": "rel_0156",
+      "source": "example_ddos_response",
+      "predicate": "demonstrates",
+      "target": "rate_limiting",
+      "description": "Use carefully tuned rate limits to protect service availability."
+    },
+    {
+      "id": "rel_0157",
+      "source": "example_forensic_analysis",
+      "predicate": "demonstrates",
+      "target": "malware_analysis",
+      "description": "Analyze samples only in an isolated, controlled lab."
+    },
+    {
+      "id": "rel_0158",
+      "source": "example_forensic_analysis",
+      "predicate": "demonstrates",
+      "target": "evidence_preservation",
+      "description": "Record hashes, timestamps, logs, and observed behavior."
+    },
+    {
+      "id": "rel_0159",
+      "source": "example_recovery",
+      "predicate": "demonstrates",
+      "target": "reimage",
+      "description": "Restore a device from trusted vendor firmware."
+    },
+    {
+      "id": "rel_0160",
+      "source": "example_recovery",
+      "predicate": "demonstrates",
+      "target": "credential_rotation",
+      "description": "Change credentials and restrict management access before reconnecting."
+    },
+    {
+      "id": "rel_0161",
+      "source": "source_article",
+      "predicate": "describes",
+      "target": "gayfemboy",
+      "description": "The supplied article is the basis for this graph."
+    },
+    {
+      "id": "rel_0162",
+      "source": "source_article",
+      "predicate": "mentions",
+      "target": "mirai",
+      "description": "The supplied article places Gayfemboy in the Mirai family."
+    },
+    {
+      "id": "rel_0163",
+      "source": "source_article",
+      "predicate": "includes_claim",
+      "target": "attribution_limits",
+      "description": "The graph preserves article claims while marking evidence limitations."
+    },
+    {
+      "id": "rel_0164",
+      "source": "attribution_limits",
+      "predicate": "applies_to",
+      "target": "zero_day",
+      "description": "The article does not enumerate or independently substantiate each zero-day claim."
+    },
+    {
+      "id": "rel_0165",
+      "source": "attribution_limits",
+      "predicate": "applies_to",
+      "target": "nov_2024_scale",
+      "description": "The node count is reported by the source, not independently measured here."
+    },
+    {
+      "id": "rel_0166",
+      "source": "attribution_limits",
+      "predicate": "applies_to",
+      "target": "global_impact",
+      "description": "Reported country/sector scope is source-derived."
+    },
+    {
+      "id": "rel_0167",
+      "source": "attribution_limits",
+      "predicate": "applies_to",
+      "target": "c2_domains",
+      "description": "Domains are historical source indicators, not a guarantee of current maliciousness."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "botnet_lifecycle",
+      "name": "Botnet infection-to-command lifecycle",
+      "description": "High-level lifecycle for understanding the reported threat: exposed asset, compromise, node enrollment, C2 tasking, malicious activity, detection, and recovery.",
+      "participants": [
+        "gayfemboy",
+        "iot",
+        "nodes",
+        "botnet",
+        "c2",
+        "ddos",
+        "incident_response"
+      ],
+      "steps": [
+        "Inventory and identify exposed assets.",
+        "Validate relevant vendor advisories and exposure.",
+        "Observe suspicious process, persistence, and network behavior.",
+        "Contain confirmed compromise and preserve evidence.",
+        "Restore trusted firmware/software, rotate credentials, patch, and verify."
+      ],
+      "safety_note": "Conceptual and defensive; omits executable infection and attack instructions."
+    },
+    {
+      "id": "redis_abuse_chain",
+      "name": "Redis exposure abuse chain",
+      "description": "Source-described chain connecting unauthenticated Redis exposure with unauthorized scheduled execution and defense evasion.",
+      "participants": [
+        "unauth_redis",
+        "redis",
+        "redis_port",
+        "config",
+        "set",
+        "save",
+        "cron",
+        "shell_script",
+        "selinux"
+      ],
+      "steps": [
+        "Detect whether Redis is reachable from untrusted networks.",
+        "Restrict service binding and network access; require appropriate authentication.",
+        "Review audit logs and scheduled-task changes for unauthorized activity.",
+        "Contain affected hosts and restore secure configuration."
+      ],
+      "safety_note": "Do not reproduce the malicious command sequence; the pattern is expressed as an investigation and prevention workflow."
+    },
+    {
+      "id": "iot_hardening_pattern",
+      "name": "IoT device hardening",
+      "description": "A layered baseline for routers, cameras, and embedded systems potentially exposed to Mirai-family malware.",
+      "participants": [
+        "asset_inventory",
+        "vendor_advisories",
+        "patching",
+        "credential_hardening",
+        "device_management",
+        "network_segmentation",
+        "egress_filtering",
+        "logging",
+        "backup_recovery"
+      ],
+      "steps": [
+        "Inventory model, firmware, owner, and exposed management services.",
+        "Apply vendor-recommended firmware and security updates.",
+        "Replace defaults and restrict management to trusted administrators.",
+        "Segment IoT/OT devices and restrict outbound communications.",
+        "Monitor and maintain a tested recovery process."
+      ]
+    },
+    {
+      "id": "detection_pattern",
+      "name": "Behavior-based detection",
+      "description": "Correlate independent host and network signals rather than relying on a single domain or signature.",
+      "participants": [
+        "process_monitoring",
+        "cron_monitoring",
+        "logging",
+        "dns_filtering",
+        "ids_ips",
+        "edr",
+        "ioc"
+      ],
+      "steps": [
+        "Collect process, scheduled-task, DNS, firewall, and authentication telemetry.",
+        "Look for unexpected cron changes, mining processes, unusual restarts, or suspicious outbound traffic.",
+        "Correlate with current vendor advisories and validated indicators.",
+        "Document confidence and false-positive considerations before response."
+      ]
+    },
+    {
+      "id": "ddos_defense_lifecycle",
+      "name": "DDoS defense and service recovery",
+      "description": "Operational response for services targeted by a distributed flood.",
+      "participants": [
+        "service_resilience",
+        "rate_limiting",
+        "upstream_mitigation",
+        "incident_response",
+        "logging"
+      ],
+      "steps": [
+        "Activate incident coordination and establish service impact.",
+        "Engage upstream provider or DDoS mitigation service.",
+        "Apply tested filtering and rate limits while preserving legitimate traffic.",
+        "Monitor effectiveness, restore normal operation, and conduct a post-incident review."
+      ]
+    },
+    {
+      "id": "remediation_pattern",
+      "name": "Compromised-device remediation",
+      "description": "A safe workflow for containing and restoring a suspected compromised network appliance.",
+      "participants": [
+        "isolation",
+        "evidence_preservation",
+        "reimage",
+        "credential_rotation",
+        "patching",
+        "vulnerability_management",
+        "backup_recovery"
+      ],
+      "steps": [
+        "Isolate the device from untrusted networks.",
+        "Preserve relevant logs and evidence when practical.",
+        "Restore known-good vendor firmware or replace unsupported hardware.",
+        "Rotate credentials and close exposed management/service paths.",
+        "Patch, verify, and monitor before returning the device to service."
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "R001",
+      "rule": "Do not expose Redis directly to untrusted networks; restrict interfaces and enforce authentication.",
+      "category": "prevention"
+    },
+    {
+      "id": "R002",
+      "rule": "Treat vendor/CVE exposure claims as leads to verify against current vendor advisories and affected-model lists.",
+      "category": "verification"
+    },
+    {
+      "id": "R003",
+      "rule": "Maintain an inventory of embedded devices, firmware versions, owners, and management exposure.",
+      "category": "asset_management"
+    },
+    {
+      "id": "R004",
+      "rule": "Replace default credentials and use unique administrative credentials.",
+      "category": "identity"
+    },
+    {
+      "id": "R005",
+      "rule": "Restrict management interfaces to trusted administrative networks.",
+      "category": "network_security"
+    },
+    {
+      "id": "R006",
+      "rule": "Segment IoT and industrial devices from sensitive corporate systems.",
+      "category": "containment"
+    },
+    {
+      "id": "R007",
+      "rule": "Apply vendor-supported firmware updates and retire unsupported devices where necessary.",
+      "category": "patch_management"
+    },
+    {
+      "id": "R008",
+      "rule": "Monitor unauthorized cron or scheduled-task changes.",
+      "category": "detection"
+    },
+    {
+      "id": "R009",
+      "rule": "Alert on unexpected attempts to disable SELinux or modify host security controls.",
+      "category": "detection"
+    },
+    {
+      "id": "R010",
+      "rule": "Correlate process, network, DNS, Redis, and authentication logs for stronger detection.",
+      "category": "detection"
+    },
+    {
+      "id": "R011",
+      "rule": "Treat reported C2 domains as time-sensitive indicators; verify provenance and freshness before blocking.",
+      "category": "threat_intelligence"
+    },
+    {
+      "id": "R012",
+      "rule": "Do not infer the current maliciousness of a domain solely from a historical article listing.",
+      "category": "threat_intelligence"
+    },
+    {
+      "id": "R013",
+      "rule": "Use layered defenses; a single signature or filtering service is not sufficient by itself.",
+      "category": "defense_in_depth"
+    },
+    {
+      "id": "R014",
+      "rule": "Restrict outbound traffic where operationally feasible to reduce command-channel and abuse options.",
+      "category": "egress_control"
+    },
+    {
+      "id": "R015",
+      "rule": "Use least privilege to limit the impact of compromise.",
+      "category": "system_hardening"
+    },
+    {
+      "id": "R016",
+      "rule": "Analyze suspicious samples only in isolated, controlled environments.",
+      "category": "malware_analysis"
+    },
+    {
+      "id": "R017",
+      "rule": "Preserve relevant evidence before destructive remediation when safe and practical.",
+      "category": "incident_response"
+    },
+    {
+      "id": "R018",
+      "rule": "After compromise, restore trusted firmware/software and rotate credentials before reconnecting the device.",
+      "category": "recovery"
+    },
+    {
+      "id": "R019",
+      "rule": "Confirm and remediate the initial access path to reduce reinfection risk.",
+      "category": "recovery"
+    },
+    {
+      "id": "R020",
+      "rule": "For major DDoS events, coordinate with upstream providers and mitigation services.",
+      "category": "availability"
+    },
+    {
+      "id": "R021",
+      "rule": "Tune rate limits and filtering to protect capacity without unnecessarily blocking legitimate users.",
+      "category": "availability"
+    },
+    {
+      "id": "R022",
+      "rule": "The supplied article reports four primary modules but does not identify or explain each one; do not invent module names.",
+      "category": "source_fidelity"
+    },
+    {
+      "id": "R023",
+      "rule": "The supplied article does not enumerate specific CVE identifiers; do not assign CVEs to Gayfemboy without corroboration.",
+      "category": "source_fidelity"
+    },
+    {
+      "id": "R024",
+      "rule": "Keep attribution, node counts, and geographic impact marked as source-reported unless independently corroborated.",
+      "category": "epistemic_quality"
+    },
+    {
+      "id": "R025",
+      "rule": "The malware name's stated origin is a code/domain naming detail and is not evidence of involvement by LGBTQ+ people or communities.",
+      "category": "context"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_exposed_redis",
+      "name": "Investigate exposed Redis",
+      "scenario": "A server team discovers Redis reachable from an untrusted network.",
+      "steps": [
+        "Restrict Redis to approved interfaces and networks.",
+        "Require authentication and review effective configuration.",
+        "Review logs and scheduled tasks for unauthorized changes.",
+        "Isolate and remediate any confirmed compromise."
+      ],
+      "expected_outcome": "Reduced attack surface and an auditable triage path."
+    },
+    {
+      "id": "example_router_hardening",
+      "name": "Harden enterprise routers",
+      "scenario": "A network team needs to assess routers from vendors mentioned in the article.",
+      "steps": [
+        "Inventory exact models and firmware versions.",
+        "Consult official vendor advisories for matching CVEs and mitigations.",
+        "Patch or replace unsupported devices.",
+        "Restrict management interfaces and segment device networks."
+      ],
+      "expected_outcome": "Verified remediation of applicable vulnerabilities and reduced exposure."
+    },
+    {
+      "id": "example_ioc_triage",
+      "name": "Validate a reported C2 domain",
+      "scenario": "A threat-intelligence feed contains a domain listed in the supplied article.",
+      "steps": [
+        "Record the original source and timestamp.",
+        "Corroborate with current reputable threat-intelligence and DNS data.",
+        "Assess whether the indicator is current and relevant to the environment.",
+        "Apply a scoped block or alert and define an expiry/review date."
+      ],
+      "expected_outcome": "Evidence-based response with fewer stale-indicator false positives."
+    },
+    {
+      "id": "example_ddos_response",
+      "name": "Respond to a DDoS event",
+      "scenario": "A public service experiences abnormal traffic and availability loss.",
+      "steps": [
+        "Activate incident coordination and collect traffic/service metrics.",
+        "Contact upstream provider or DDoS mitigation partner.",
+        "Apply appropriate filtering and rate limits.",
+        "Track service health and review lessons after recovery."
+      ],
+      "expected_outcome": "Faster mitigation and documented recovery."
+    },
+    {
+      "id": "example_forensic_analysis",
+      "name": "Analyze a suspected sample safely",
+      "scenario": "A security team receives a suspected Gayfemboy sample for analysis.",
+      "steps": [
+        "Use an isolated lab with controlled networking and no production credentials.",
+        "Record hashes, provenance, timestamps, and observed behavior.",
+        "Correlate findings with trusted vendor reports.",
+        "Share validated indicators with context and confidence levels."
+      ],
+      "expected_outcome": "Repeatable analysis without exposing production systems."
+    },
+    {
+      "id": "example_recovery",
+      "name": "Recover a compromised router",
+      "scenario": "A router shows suspicious process behavior or unauthorized scheduled changes.",
+      "steps": [
+        "Isolate it from untrusted networks while preserving safe administration.",
+        "Preserve logs and configuration evidence when feasible.",
+        "Restore trusted vendor firmware or replace the device.",
+        "Rotate credentials, patch, restrict management, and verify before reconnecting."
+      ],
+      "expected_outcome": "A trusted device state and a reduced chance of reinfection."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_article_1",
+      "title": "Gayfemboy",
+      "source_type": "user_supplied_article_text",
+      "citation": "Supplied Wikipedia article text uploaded in this conversation",
+      "retrieval_note": "Source-derived claims were preserved as reported; the graph does not independently verify current campaign status, indicators, counts, or attribution.",
+      "source_file": "Pasted text(20261020-220452).txt"
+    }
+  ],
+  "graph_integrity": {
+    "entity_ids_unique": true,
+    "relationship_ids_unique": true,
+    "all_relationship_endpoints_resolve": true,
+    "architecture_participants_resolve": true,
+    "example_ids_resolve": true,
+    "source_ids_unique": true
+  },
+  "notes": [
+    "Names, indicators, counts, dates, and behavior descriptions are grounded in the supplied article unless explicitly described as defensive engineering recommendations.",
+    "The article does not list exact CVE identifiers, name the four reported modules, or provide sample hashes; these gaps are preserved rather than filled by guesswork.",
+    "Historical command-and-control domains are represented as indicators, not as proof that those domains are currently malicious.",
+    "Port 47272 is described by the supplied article as UDP; the entity is labeled accordingly.",
+    "Reported country/sector impact and active-node counts should be independently corroborated before operational or publication use."
+  ]
+}

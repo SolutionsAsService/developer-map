@@ -1,0 +1,2542 @@
+{
+  "schema_version": "1.0.0",
+  "graph_metadata": {
+    "title": "Mirai (malware) — Full Detail Knowledge Graph",
+    "schema_version": "1.0.0",
+    "graph_type": "cybersecurity_concept_graph",
+    "created_for": "Machine-readable knowledge graph preserving concepts, people, variants, incidents, architecture, and defensive connections",
+    "source_basis": "User-provided Wikipedia article text; source-derived claims are distinguished from defensive synthesis.",
+    "safety_scope": "Educational and defensive. No executable attack commands, exploit instructions, credential lists, target-selection guidance, or traffic-generation instructions are included.",
+    "counts": {
+      "entities": 141,
+      "relationships": 168,
+      "architecture_patterns": 7,
+      "derived_rules": 25,
+      "examples": 6,
+      "sources": 1
+    }
+  },
+  "entities": [
+    {
+      "id": "mirai",
+      "name": "Mirai",
+      "type": "malware",
+      "description": "Linux-targeting IoT malware that recruits vulnerable devices into a remotely controlled botnet used in DDoS attacks.",
+      "attributes": {
+        "agent_language": "C",
+        "controller_language": "Go",
+        "operating_system": "Linux",
+        "license": "GNU GPL-3.0"
+      },
+      "source_refs": [
+        "turn25file0 lines 51-61"
+      ]
+    },
+    {
+      "id": "botnet",
+      "name": "Botnet",
+      "type": "cybersecurity_concept",
+      "description": "A collection of compromised devices controlled as a coordinated network."
+    },
+    {
+      "id": "iot",
+      "name": "Internet of Things (IoT)",
+      "type": "technology_domain",
+      "description": "Network-connected embedded and consumer devices, including cameras, routers, gateways, and other appliances."
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "type": "operating_system",
+      "description": "Operating-system kernel family used by many embedded and network devices."
+    },
+    {
+      "id": "ddos",
+      "name": "Distributed denial-of-service (DDoS)",
+      "type": "cyber_attack",
+      "description": "An attack that uses many distributed sources to overwhelm a service or its upstream infrastructure."
+    },
+    {
+      "id": "dos",
+      "name": "Denial-of-service (DoS)",
+      "type": "cyber_attack",
+      "description": "An attempt to make a system or service unavailable to legitimate users."
+    },
+    {
+      "id": "agent",
+      "name": "Mirai agent",
+      "type": "malware_component",
+      "description": "The device-resident component that scans for vulnerable devices and participates in botnet behavior."
+    },
+    {
+      "id": "controller",
+      "name": "Mirai controller",
+      "type": "malware_component",
+      "description": "The controller-side component used to coordinate infected agents and attack tasking."
+    },
+    {
+      "id": "c2",
+      "name": "Command-and-control (C2) server",
+      "type": "infrastructure_component",
+      "description": "Infrastructure through which a botnet operator coordinates infected devices and communicates tasking."
+    },
+    {
+      "id": "scanner",
+      "name": "Device discovery and scanning component",
+      "type": "malware_component",
+      "description": "Mirai behavior that searches for reachable devices; described here only at a conceptual level."
+    },
+    {
+      "id": "credential_abuse",
+      "name": "Default-credential abuse",
+      "type": "attack_technique",
+      "description": "Abuse of unchanged vendor-supplied usernames and passwords on exposed devices."
+    },
+    {
+      "id": "telnet",
+      "name": "Telnet",
+      "type": "network_protocol",
+      "description": "A remote terminal protocol historically exposed on embedded devices; unencrypted and unsafe for Internet-facing administration."
+    },
+    {
+      "id": "factory_credentials",
+      "name": "Factory-default credentials",
+      "type": "security_weakness",
+      "description": "Vendor-supplied credentials left unchanged on devices."
+    },
+    {
+      "id": "ip_camera",
+      "name": "IP camera",
+      "type": "iot_device",
+      "description": "A network-connected camera commonly found among consumer IoT devices."
+    },
+    {
+      "id": "home_router",
+      "name": "Home router",
+      "type": "iot_device",
+      "description": "A consumer router that provides local connectivity and often remote administration features."
+    },
+    {
+      "id": "collection_server",
+      "name": "Credential/report collection server",
+      "type": "infrastructure_component",
+      "description": "A server that receives information about newly compromised devices, as described in the source."
+    },
+    {
+      "id": "infected_device",
+      "name": "Compromised IoT device",
+      "type": "compromised_asset",
+      "description": "A vulnerable device recruited into the botnet."
+    },
+    {
+      "id": "ipv4",
+      "name": "IPv4",
+      "type": "network_protocol",
+      "description": "Internet Protocol version 4 addressing used in the scanning behavior described by the source."
+    },
+    {
+      "id": "syn",
+      "name": "TCP SYN probe",
+      "type": "network_traffic_concept",
+      "description": "A TCP connection-initiation packet; Mirai's scanning behavior is described as using SYN probes."
+    },
+    {
+      "id": "port23",
+      "name": "TCP port 23",
+      "type": "network_port",
+      "description": "Default Telnet port, mentioned in the source as a Mirai scanning target."
+    },
+    {
+      "id": "port2323",
+      "name": "TCP port 2323",
+      "type": "network_port",
+      "description": "An alternate Telnet-related port mentioned in the source."
+    },
+    {
+      "id": "blacklist",
+      "name": "Hard-coded IP exclusions",
+      "type": "malware_configuration",
+      "description": "Address ranges excluded from scanning by the malware, according to the source."
+    },
+    {
+      "id": "memory",
+      "name": "Volatile memory",
+      "type": "computer_resource",
+      "description": "Runtime memory in which malware may execute and from which it may be removed by reboot."
+    },
+    {
+      "id": "reboot",
+      "name": "Device reboot",
+      "type": "recovery_action",
+      "description": "Restarting a device can remove a non-persistent Mirai infection, though an unchanged weakness can permit reinfection."
+    },
+    {
+      "id": "bandwidth",
+      "name": "Network bandwidth",
+      "type": "network_resource",
+      "description": "Available traffic capacity that botnets can aggregate and exhaust."
+    },
+    {
+      "id": "availability",
+      "name": "Service availability",
+      "type": "security_property",
+      "description": "The ability of legitimate users to access a system or service."
+    },
+    {
+      "id": "mitigation",
+      "name": "DDoS mitigation",
+      "type": "security_control",
+      "description": "Measures to detect, absorb, filter, or divert harmful traffic and preserve legitimate service."
+    },
+    {
+      "id": "patching",
+      "name": "Security patching",
+      "type": "security_control",
+      "description": "Installing vendor fixes for known vulnerabilities."
+    },
+    {
+      "id": "password_change",
+      "name": "Changing default credentials",
+      "type": "security_control",
+      "description": "Replacing default passwords with unique, strong credentials."
+    },
+    {
+      "id": "segmentation",
+      "name": "Network segmentation",
+      "type": "security_control",
+      "description": "Separating devices and management planes to limit exposure and lateral movement."
+    },
+    {
+      "id": "egress_filtering",
+      "name": "Egress filtering",
+      "type": "security_control",
+      "description": "Restricting outbound traffic to reduce abuse of compromised devices."
+    },
+    {
+      "id": "monitoring",
+      "name": "Security monitoring",
+      "type": "security_control",
+      "description": "Telemetry and alerting used to identify compromise, abnormal traffic, and service degradation."
+    },
+    {
+      "id": "incident_response",
+      "name": "Incident response",
+      "type": "security_process",
+      "description": "Coordinated detection, containment, eradication, recovery, and lessons learned."
+    },
+    {
+      "id": "firmware",
+      "name": "Device firmware",
+      "type": "software_component",
+      "description": "Software installed on embedded devices; updates may close vulnerabilities."
+    },
+    {
+      "id": "secure_management",
+      "name": "Secure device management",
+      "type": "security_practice",
+      "description": "Restricting administrative interfaces to trusted networks and using secure authentication."
+    },
+    {
+      "id": "source_code",
+      "name": "Publicly released Mirai source code",
+      "type": "software_artifact",
+      "description": "The article reports that Mirai source code was published on a forum and later reused in other malware projects."
+    },
+    {
+      "id": "gpl3",
+      "name": "GNU General Public License v3.0",
+      "type": "software_license",
+      "description": "The license listed for the source-code project in the article."
+    },
+    {
+      "id": "malwaremustdie",
+      "name": "MalwareMustDie",
+      "type": "organization",
+      "description": "White-hat malware research group credited in the article with first finding Mirai in August 2016."
+    },
+    {
+      "id": "paras_jha",
+      "name": "Paras Jha",
+      "type": "person",
+      "description": "One of the three individuals identified in the article as an original Mirai author and who pleaded guilty to related crimes."
+    },
+    {
+      "id": "josiah_white",
+      "name": "Josiah White",
+      "type": "person",
+      "description": "One of the three individuals identified in the article as an original Mirai author and who pleaded guilty to related crimes."
+    },
+    {
+      "id": "dalton_norman",
+      "name": "Dalton Norman",
+      "type": "person",
+      "description": "One of the three individuals identified in the article as an original Mirai author and who pleaded guilty to related crimes."
+    },
+    {
+      "id": "anna_senpai",
+      "name": "Anna-senpai",
+      "type": "alias",
+      "description": "Alias associated in the article with Mirai's original author."
+    },
+    {
+      "id": "brian_krebs",
+      "name": "Brian Krebs",
+      "type": "person",
+      "description": "Security journalist whose website was targeted by a major Mirai-associated DDoS attack and who reported on the suspected author."
+    },
+    {
+      "id": "dyn",
+      "name": "Dyn",
+      "type": "company",
+      "description": "DNS service provider targeted in October 2016 by attacks attributed to Mirai."
+    },
+    {
+      "id": "ovh",
+      "name": "OVH",
+      "type": "company",
+      "description": "French web hosting provider targeted by a major Mirai-associated DDoS attack."
+    },
+    {
+      "id": "krebs_site",
+      "name": "Krebs on Security website",
+      "type": "online_service",
+      "description": "Security journalism website targeted by a Mirai-associated DDoS attack in September 2016."
+    },
+    {
+      "id": "rutgers",
+      "name": "Rutgers University",
+      "type": "organization",
+      "description": "University affected by DDoS attacks later linked to Mirai, according to the article."
+    },
+    {
+      "id": "deutsche_telekom",
+      "name": "Deutsche Telekom",
+      "type": "company",
+      "description": "Telecommunications provider whose customer routers were affected by a failed Mirai-variant exploitation campaign in late 2016."
+    },
+    {
+      "id": "talktalk",
+      "name": "TalkTalk",
+      "type": "company",
+      "description": "Telecommunications provider whose routers were reported as affected by Mirai variants."
+    },
+    {
+      "id": "liberia",
+      "name": "Liberia Internet infrastructure",
+      "type": "critical_infrastructure",
+      "description": "Internet infrastructure in Liberia targeted by a DDoS attack in November 2016."
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "type": "software_hosting_service",
+      "description": "Hosting service referenced as a location from which Mirai-derived source code was used to develop variants."
+    },
+    {
+      "id": "minecraft",
+      "name": "Minecraft server ecosystem",
+      "type": "online_service",
+      "description": "The article says the original operators initially used Mirai against Minecraft servers and DDoS protection providers."
+    },
+    {
+      "id": "protraf",
+      "name": "ProTraf Solutions",
+      "type": "company",
+      "description": "DDoS mitigation company associated in the article with Paras Jha."
+    },
+    {
+      "id": "dlink",
+      "name": "D-Link router",
+      "type": "iot_device",
+      "description": "Router family mentioned in reporting about the PureMasuta variant."
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei HG532 router",
+      "type": "iot_device",
+      "description": "Router model whose vulnerability was reportedly exploited by the Satori variant."
+    },
+    {
+      "id": "arc",
+      "name": "ARC processor",
+      "type": "processor_architecture",
+      "description": "Embedded processor architecture targeted by the Okiru variant."
+    },
+    {
+      "id": "arm",
+      "name": "ARM architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture mentioned among targets of Mirai variants."
+    },
+    {
+      "id": "mips",
+      "name": "MIPS architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture mentioned among targets of Mirai variants."
+    },
+    {
+      "id": "x86",
+      "name": "x86 architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture mentioned among targets of Mirai variants."
+    },
+    {
+      "id": "powerpc",
+      "name": "PowerPC architecture",
+      "type": "processor_architecture",
+      "description": "Processor architecture mentioned among targets of Mirai variants."
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "type": "operating_system",
+      "description": "Operating system mentioned in reporting about Mirai campaigns using exposed Android Debug Bridge."
+    },
+    {
+      "id": "adb",
+      "name": "Android Debug Bridge (ADB)",
+      "type": "developer_interface",
+      "description": "Android debugging interface reported as an infection path when exposed on a network."
+    },
+    {
+      "id": "thinkphp",
+      "name": "ThinkPHP",
+      "type": "software_framework",
+      "description": "Web framework whose remote-code-execution vulnerability was reported as an infection vector for Mirai-derived variants."
+    },
+    {
+      "id": "proxy",
+      "name": "Proxy server",
+      "type": "network_service",
+      "description": "A relay service that forwards traffic; the OMG variant was reported to turn compromised devices into proxies."
+    },
+    {
+      "id": "http",
+      "name": "HTTP",
+      "type": "network_protocol",
+      "description": "Web protocol; HTTP proxy ports were among the services configured by the OMG variant."
+    },
+    {
+      "id": "socks",
+      "name": "SOCKS",
+      "type": "network_protocol",
+      "description": "Proxy protocol referenced in reporting about the OMG variant."
+    },
+    {
+      "id": "3proxy",
+      "name": "3proxy",
+      "type": "software",
+      "description": "Open-source proxy software reported as used by the OMG variant."
+    },
+    {
+      "id": "satori",
+      "name": "Satori",
+      "type": "malware_variant",
+      "description": "Mirai variant reported in December 2017 to exploit a flaw in Huawei HG532 routers."
+    },
+    {
+      "id": "okiru",
+      "name": "Okiru",
+      "type": "malware_variant",
+      "description": "Mirai successor reported in January 2018 with support for targeting Linux devices using ARC processors."
+    },
+    {
+      "id": "masuta",
+      "name": "Masuta",
+      "type": "malware_variant",
+      "description": "Mirai-related variant reported in January 2018."
+    },
+    {
+      "id": "puremasuta",
+      "name": "PureMasuta",
+      "type": "malware_variant",
+      "description": "More heavily modified Mirai-related variant reported to exploit a D-Link router vulnerability."
+    },
+    {
+      "id": "omg",
+      "name": "OMG",
+      "type": "malware_variant",
+      "description": "Mirai variant reported in March 2018 that added proxy-server functionality."
+    },
+    {
+      "id": "wicked",
+      "name": "Wicked",
+      "type": "malware_variant",
+      "description": "Mirai variant reported in 2018 with additional targeting of vulnerable routers and CCTV/DVR devices."
+    },
+    {
+      "id": "sora",
+      "name": "Sora",
+      "type": "malware_variant",
+      "description": "Mirai-related botnet named in the article as possibly linked to the same author as Wicked, Owari, and Omni."
+    },
+    {
+      "id": "owari",
+      "name": "Owari",
+      "type": "malware_variant",
+      "description": "Mirai-related botnet named in the article as possibly linked to the same author as Wicked, Sora, and Omni."
+    },
+    {
+      "id": "omni",
+      "name": "Omni",
+      "type": "malware_variant",
+      "description": "Mirai-related botnet named in the article as possibly linked to the same author as Wicked, Sora, and Owari."
+    },
+    {
+      "id": "miori",
+      "name": "Miori",
+      "type": "malware_variant",
+      "description": "Mirai variant reported in late 2018 using a ThinkPHP remote-code-execution vulnerability."
+    },
+    {
+      "id": "hakai",
+      "name": "Hakai",
+      "type": "malware_variant",
+      "description": "Mirai-derived variant reported in January 2019 using a vulnerability previously abused by Miori."
+    },
+    {
+      "id": "yowai",
+      "name": "Yowai",
+      "type": "malware_variant",
+      "description": "Mirai-derived variant reported in January 2019 using a vulnerability previously abused by Miori."
+    },
+    {
+      "id": "speakup",
+      "name": "SpeakUp",
+      "type": "malware_variant",
+      "description": "Mirai-derived variant reported in February 2019 using a vulnerability previously abused by Miori."
+    },
+    {
+      "id": "gayfemboy",
+      "name": "Gayfemboy botnet",
+      "type": "malware_variant",
+      "description": "Mirai-based botnet reported as discovered in 2024, with effects also reported in 2025."
+    },
+    {
+      "id": "aisuru",
+      "name": "Aisuru",
+      "type": "malware_variant",
+      "description": "Mirai-based botnet reported in the article as first discovered in August 2024 and associated with very large DDoS attacks."
+    },
+    {
+      "id": "bashlite",
+      "name": "BASHLITE",
+      "type": "malware_family",
+      "description": "Another IoT malware family mentioned alongside Mirai in reporting about the Krebs attack."
+    },
+    {
+      "id": "wifatch",
+      "name": "Linux.Wifatch",
+      "type": "malware_family",
+      "description": "IoT malware listed in the article's related topics."
+    },
+    {
+      "id": "darlloz",
+      "name": "Linux.Darlloz",
+      "type": "malware_family",
+      "description": "IoT malware listed in the article's related topics."
+    },
+    {
+      "id": "remaiten",
+      "name": "Remaiten",
+      "type": "malware_family",
+      "description": "IoT DDoS malware listed in the article's related topics."
+    },
+    {
+      "id": "hajime",
+      "name": "Hajime",
+      "type": "malware_family",
+      "description": "IoT malware listed in the article's related topics."
+    },
+    {
+      "id": "brickerbot",
+      "name": "BrickerBot",
+      "type": "malware_family",
+      "description": "Malware listed in the article's related topics, associated with destructive device disruption."
+    },
+    {
+      "id": "edb38722",
+      "name": "D-Link HNAP vulnerability report (EDB-38722)",
+      "type": "vulnerability_reference",
+      "description": "Exploit reference cited in the article's account of PureMasuta; details are recorded only as source attribution."
+    },
+    {
+      "id": "cve20148361",
+      "name": "CVE-2014-8361",
+      "type": "vulnerability",
+      "description": "SOAP-related router vulnerability referenced in the article in connection with Satori."
+    },
+    {
+      "id": "cve201717215",
+      "name": "CVE-2017-17215",
+      "type": "vulnerability",
+      "description": "SOAP-related router vulnerability referenced in the article in connection with Satori."
+    },
+    {
+      "id": "cve201820062",
+      "name": "CVE-2018-20062",
+      "type": "vulnerability",
+      "description": "ThinkPHP remote-code-execution vulnerability referenced in the article's description of Mirai-derived campaigns."
+    },
+    {
+      "id": "rce",
+      "name": "Remote code execution (RCE)",
+      "type": "vulnerability_class",
+      "description": "A vulnerability class that can allow an attacker to run code remotely under affected conditions."
+    },
+    {
+      "id": "zero_day",
+      "name": "Zero-day vulnerability",
+      "type": "vulnerability_class",
+      "description": "A vulnerability exploited before a fix is available to affected defenders, as described in the article's Satori discussion."
+    },
+    {
+      "id": "bruteforce",
+      "name": "Credential guessing",
+      "type": "attack_technique",
+      "description": "Repeated attempts to authenticate using candidate credentials; Mirai's credential-based recruitment is described at a high level."
+    },
+    {
+      "id": "exploit",
+      "name": "Vulnerability exploitation",
+      "type": "attack_technique",
+      "description": "Taking advantage of a software flaw to compromise a device."
+    },
+    {
+      "id": "recruitment",
+      "name": "Botnet recruitment",
+      "type": "attack_phase",
+      "description": "Process by which a vulnerable device is compromised and joins a botnet."
+    },
+    {
+      "id": "attack_tasking",
+      "name": "Attack tasking",
+      "type": "botnet_function",
+      "description": "The C2-directed selection of a target or attack activity."
+    },
+    {
+      "id": "volumetric",
+      "name": "Volumetric DDoS",
+      "type": "attack_category",
+      "description": "DDoS that attempts to consume network capacity with large amounts of traffic."
+    },
+    {
+      "id": "reflection",
+      "name": "Reflection/amplification DDoS",
+      "type": "attack_category",
+      "description": "DDoS class that uses third-party services to direct or amplify traffic toward a victim."
+    },
+    {
+      "id": "traffic_filtering",
+      "name": "Traffic filtering",
+      "type": "security_control",
+      "description": "Filtering traffic using signatures, behavior, reputation, and upstream telemetry."
+    },
+    {
+      "id": "rate_limit",
+      "name": "Rate limiting",
+      "type": "security_control",
+      "description": "Limiting request or connection rates to protect constrained services."
+    },
+    {
+      "id": "anycast",
+      "name": "Anycast routing",
+      "type": "network_architecture",
+      "description": "Routing a shared IP address to multiple distributed locations to distribute load and improve resilience."
+    },
+    {
+      "id": "scrubbing",
+      "name": "DDoS scrubbing center",
+      "type": "security_service",
+      "description": "Service that filters malicious traffic before forwarding clean traffic to the protected destination."
+    },
+    {
+      "id": "cdn",
+      "name": "Content delivery network (CDN)",
+      "type": "network_service",
+      "description": "Distributed edge network that can absorb traffic and serve cached content."
+    },
+    {
+      "id": "upstream_provider",
+      "name": "Upstream network provider",
+      "type": "organization_role",
+      "description": "Network provider able to filter or divert traffic upstream of a victim."
+    },
+    {
+      "id": "dns",
+      "name": "Domain Name System (DNS)",
+      "type": "network_service",
+      "description": "Naming infrastructure; Dyn's DNS services were affected by the October 2016 incident."
+    },
+    {
+      "id": "cctv_dvr",
+      "name": "CCTV/DVR device",
+      "type": "iot_device",
+      "description": "Surveillance and recording device type mentioned in connection with Wicked."
+    },
+    {
+      "id": "gateway",
+      "name": "IoT gateway",
+      "type": "iot_device",
+      "description": "Network gateway device that may be exposed or vulnerable to compromise."
+    },
+    {
+      "id": "security_research",
+      "name": "Security research",
+      "type": "activity",
+      "description": "Analysis of malware samples, botnet behavior, campaigns, and variants."
+    },
+    {
+      "id": "attribution",
+      "name": "Threat attribution",
+      "type": "security_process",
+      "description": "Assessment of who operated or developed malware; claims can vary in certainty and require corroboration."
+    },
+    {
+      "id": "law_enforcement",
+      "name": "Law enforcement",
+      "type": "organization_role",
+      "description": "Authorities investigating botnet operators and related cybercrime."
+    },
+    {
+      "id": "restitution",
+      "name": "Restitution",
+      "type": "legal_concept",
+      "description": "Court-ordered payment to compensate victims for losses."
+    },
+    {
+      "id": "community_service",
+      "name": "Community service",
+      "type": "legal_concept",
+      "description": "Court-ordered service as part of a sentence."
+    },
+    {
+      "id": "probation",
+      "name": "Probation",
+      "type": "legal_concept",
+      "description": "Court-supervised sentence condition reported for the original authors."
+    },
+    {
+      "id": "public_release",
+      "name": "Public source release",
+      "type": "event",
+      "description": "The article reports Mirai source code was published on Hack Forums and then reused by others."
+    },
+    {
+      "id": "krebs_attack",
+      "name": "Krebs website DDoS, 20 September 2016",
+      "type": "cyber_incident",
+      "description": "Mirai-associated DDoS against Krebs on Security, reported at 620 Gbit/s in the article."
+    },
+    {
+      "id": "ovh_attack",
+      "name": "OVH DDoS incident, 2016",
+      "type": "cyber_incident",
+      "description": "Large DDoS attack against French host OVH, reported by Ars Technica as reaching 1 Tbit/s."
+    },
+    {
+      "id": "dyn_attack",
+      "name": "Dyn DNS DDoS, 21 October 2016",
+      "type": "cyber_incident",
+      "description": "Mirai-associated attacks against Dyn's DNS service that disrupted access to multiple high-profile websites."
+    },
+    {
+      "id": "rutgers_attacks",
+      "name": "Rutgers University DDoS attacks, 2014–2016",
+      "type": "cyber_incident",
+      "description": "Series of DDoS incidents that disrupted campus Internet and authentication services, later linked to Mirai in the article."
+    },
+    {
+      "id": "dt_router_incident",
+      "name": "Deutsche Telekom router outage, November 2016",
+      "type": "cyber_incident",
+      "description": "Approximately 900,000 routers reportedly crashed after failed exploitation attempts by a Mirai variant."
+    },
+    {
+      "id": "liberia_attack",
+      "name": "Liberia Internet infrastructure attack, November 2016",
+      "type": "cyber_incident",
+      "description": "Mirai-associated DDoS activity reported against Liberia's Internet infrastructure."
+    },
+    {
+      "id": "variant_ecosystem",
+      "name": "Mirai-derived variant ecosystem",
+      "type": "malware_ecosystem",
+      "description": "Successor botnets reuse and modify publicly available Mirai code, changing targets and capabilities."
+    },
+    {
+      "id": "secure_boot",
+      "name": "Secure boot and firmware integrity",
+      "type": "security_control",
+      "description": "Verifies trusted device software at boot where supported."
+    },
+    {
+      "id": "asset_inventory",
+      "name": "IoT asset inventory",
+      "type": "security_control",
+      "description": "Maintains ownership, model, firmware, exposure, and support status of connected devices."
+    },
+    {
+      "id": "vuln_management",
+      "name": "Vulnerability management",
+      "type": "security_process",
+      "description": "Identifies, prioritizes, remediates, and tracks weaknesses in device firmware and exposed services."
+    },
+    {
+      "id": "credential_vault",
+      "name": "Credential management",
+      "type": "security_control",
+      "description": "Stores and manages unique credentials and secrets securely."
+    },
+    {
+      "id": "isolation",
+      "name": "Compromise containment/isolation",
+      "type": "security_action",
+      "description": "Isolates infected devices from networks to stop command-and-control and outbound abuse."
+    },
+    {
+      "id": "factory_reset",
+      "name": "Factory reset/reimage",
+      "type": "recovery_action",
+      "description": "Restores a device to a known state; should be followed by patching and credential changes."
+    },
+    {
+      "id": "vendor_support",
+      "name": "Vendor support lifecycle",
+      "type": "device_lifecycle",
+      "description": "Availability of firmware updates and security support for a device."
+    },
+    {
+      "id": "supply_chain",
+      "name": "IoT supply-chain security",
+      "type": "security_domain",
+      "description": "Security properties of devices, firmware, defaults, and vendor support over the product lifecycle."
+    },
+    {
+      "id": "ethics",
+      "name": "Authorized security testing",
+      "type": "security_principle",
+      "description": "Testing only systems owned by the tester or for which explicit authorization exists."
+    },
+    {
+      "id": "impact",
+      "name": "Operational and economic impact",
+      "type": "impact_category",
+      "description": "Service outages, lost access, response costs, reputational harm, and possible downstream consequences."
+    },
+    {
+      "id": "malware_family",
+      "name": "Malware family",
+      "type": "malware_category",
+      "description": "A family or lineage of malicious software."
+    },
+    {
+      "id": "source_wikipedia_mirai",
+      "name": "Wikipedia article: Mirai (malware)",
+      "type": "source_document",
+      "description": "User-provided source text for the Mirai malware article; claims and historical figures are attributed to this source and have not been independently verified."
+    },
+    {
+      "id": "japan_word_mirai",
+      "name": "Japanese word 未来 (mirai)",
+      "type": "linguistic_term",
+      "description": "The article says Mirai derives from the Japanese word meaning 'future'."
+    },
+    {
+      "id": "mirai_nikki",
+      "name": "Mirai Nikki",
+      "type": "television_series",
+      "description": "The article attributes the botnet's name to the 2011 anime series Mirai Nikki, based on a cited chat log."
+    },
+    {
+      "id": "2011",
+      "name": "2011",
+      "type": "year",
+      "description": "Year associated in the source with the Mirai Nikki anime series."
+    },
+    {
+      "id": "2016",
+      "name": "2016",
+      "type": "year",
+      "description": "Year of Mirai's discovery and major DDoS incidents described in the source."
+    },
+    {
+      "id": "2024",
+      "name": "2024",
+      "type": "year",
+      "description": "Year in which the source says the Gayfemboy and Aisuru botnets were discovered or first reported."
+    },
+    {
+      "id": "2026",
+      "name": "2026",
+      "type": "year",
+      "description": "Year referenced in the source for a reported Aisuru attack record; source-reported and not independently verified."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "mirai_rel_0001",
+      "source": "mirai",
+      "predicate": "is_type_of",
+      "target": "malware_family",
+      "description": "Mirai is Linux-targeting IoT malware."
+    },
+    {
+      "id": "mirai_rel_0002",
+      "source": "mirai",
+      "predicate": "creates_or_operates",
+      "target": "botnet",
+      "description": "Its purpose includes recruiting devices into a remotely controlled botnet."
+    },
+    {
+      "id": "mirai_rel_0003",
+      "source": "mirai",
+      "predicate": "targets",
+      "target": "iot",
+      "description": "The article identifies consumer IoT devices as primary targets."
+    },
+    {
+      "id": "mirai_rel_0004",
+      "source": "mirai",
+      "predicate": "runs_on",
+      "target": "linux",
+      "description": "The article lists Linux as the operating system."
+    },
+    {
+      "id": "mirai_rel_0005",
+      "source": "agent",
+      "predicate": "implemented_in",
+      "target": "mirai",
+      "description": "The article lists the agent as written in C."
+    },
+    {
+      "id": "mirai_rel_0006",
+      "source": "controller",
+      "predicate": "implemented_in",
+      "target": "mirai",
+      "description": "The article lists the controller as written in Go."
+    },
+    {
+      "id": "mirai_rel_0007",
+      "source": "mirai",
+      "predicate": "uses_component",
+      "target": "agent",
+      "description": "The agent resides on compromised devices."
+    },
+    {
+      "id": "mirai_rel_0008",
+      "source": "mirai",
+      "predicate": "uses_component",
+      "target": "controller",
+      "description": "Controller functionality coordinates botnet operations."
+    },
+    {
+      "id": "mirai_rel_0009",
+      "source": "agent",
+      "predicate": "communicates_with",
+      "target": "c2",
+      "description": "Infected devices monitor command-and-control tasking."
+    },
+    {
+      "id": "mirai_rel_0010",
+      "source": "c2",
+      "predicate": "coordinates",
+      "target": "botnet",
+      "description": "C2 infrastructure directs botnet activity."
+    },
+    {
+      "id": "mirai_rel_0011",
+      "source": "scanner",
+      "predicate": "part_of",
+      "target": "agent",
+      "description": "Scanning is one described agent behavior."
+    },
+    {
+      "id": "mirai_rel_0012",
+      "source": "scanner",
+      "predicate": "discovers",
+      "target": "infected_device",
+      "description": "The scanner finds devices susceptible to compromise; this relationship describes the malware's behavior, not a procedure to reproduce it."
+    },
+    {
+      "id": "mirai_rel_0013",
+      "source": "scanner",
+      "predicate": "uses_protocol",
+      "target": "ipv4",
+      "description": "The article describes scanning across IPv4 address space."
+    },
+    {
+      "id": "mirai_rel_0014",
+      "source": "scanner",
+      "predicate": "uses_traffic_concept",
+      "target": "syn",
+      "description": "The article describes stateless TCP SYN probes."
+    },
+    {
+      "id": "mirai_rel_0015",
+      "source": "scanner",
+      "predicate": "targets_service",
+      "target": "telnet",
+      "description": "Telnet is a service Mirai was reported to look for."
+    },
+    {
+      "id": "mirai_rel_0016",
+      "source": "telnet",
+      "predicate": "commonly_uses_port",
+      "target": "port23",
+      "description": "TCP port 23 is the default Telnet port."
+    },
+    {
+      "id": "mirai_rel_0017",
+      "source": "telnet",
+      "predicate": "may_use_alternate_port",
+      "target": "port2323",
+      "description": "The article also names TCP port 2323."
+    },
+    {
+      "id": "mirai_rel_0018",
+      "source": "scanner",
+      "predicate": "respects_configured_exclusions",
+      "target": "blacklist",
+      "description": "The source reports hard-coded excluded address ranges."
+    },
+    {
+      "id": "mirai_rel_0019",
+      "source": "mirai",
+      "predicate": "abuses_weakness",
+      "target": "factory_credentials",
+      "description": "Default credentials were a major recruitment path."
+    },
+    {
+      "id": "mirai_rel_0020",
+      "source": "credential_abuse",
+      "predicate": "exploits",
+      "target": "factory_credentials",
+      "description": "Leaving default credentials in place enables unauthorized access."
+    },
+    {
+      "id": "mirai_rel_0021",
+      "source": "credential_abuse",
+      "predicate": "targets_service",
+      "target": "telnet",
+      "description": "The article describes login attempts through Telnet."
+    },
+    {
+      "id": "mirai_rel_0022",
+      "source": "infected_device",
+      "predicate": "is_a",
+      "target": "iot",
+      "description": "Compromised nodes are IoT devices."
+    },
+    {
+      "id": "mirai_rel_0023",
+      "source": "ip_camera",
+      "predicate": "is_a",
+      "target": "iot",
+      "description": "IP cameras are a consumer IoT category."
+    },
+    {
+      "id": "mirai_rel_0024",
+      "source": "home_router",
+      "predicate": "is_a",
+      "target": "iot",
+      "description": "Home routers are a consumer IoT category."
+    },
+    {
+      "id": "mirai_rel_0025",
+      "source": "mirai",
+      "predicate": "often_targets",
+      "target": "ip_camera",
+      "description": "The article calls out IP cameras."
+    },
+    {
+      "id": "mirai_rel_0026",
+      "source": "mirai",
+      "predicate": "often_targets",
+      "target": "home_router",
+      "description": "The article calls out home routers."
+    },
+    {
+      "id": "mirai_rel_0027",
+      "source": "mirai",
+      "predicate": "reports_compromise_to",
+      "target": "collection_server",
+      "description": "The article says successfully accessed device information is sent to a collection server."
+    },
+    {
+      "id": "mirai_rel_0028",
+      "source": "collection_server",
+      "predicate": "supports",
+      "target": "recruitment",
+      "description": "Collection supports coordinating newly discovered compromised devices."
+    },
+    {
+      "id": "mirai_rel_0029",
+      "source": "infected_device",
+      "predicate": "may_show_symptoms",
+      "target": "bandwidth",
+      "description": "Infection can increase bandwidth use."
+    },
+    {
+      "id": "mirai_rel_0030",
+      "source": "infected_device",
+      "predicate": "may_show_symptoms",
+      "target": "availability",
+      "description": "Device owners may experience degraded local or Internet service."
+    },
+    {
+      "id": "mirai_rel_0031",
+      "source": "mirai",
+      "predicate": "removes_competing_malware_from",
+      "target": "memory",
+      "description": "The article reports Mirai attempts to remove competing malware from memory."
+    },
+    {
+      "id": "mirai_rel_0032",
+      "source": "reboot",
+      "predicate": "may_remove",
+      "target": "memory",
+      "description": "A reboot can remove a non-persistent infection from volatile memory."
+    },
+    {
+      "id": "mirai_rel_0033",
+      "source": "reboot",
+      "predicate": "does_not_fix",
+      "target": "factory_credentials",
+      "description": "A reboot does not correct the weak credentials that enabled infection."
+    },
+    {
+      "id": "mirai_rel_0034",
+      "source": "factory_credentials",
+      "predicate": "can_cause",
+      "target": "recruitment",
+      "description": "Unchanged credentials can allow rapid reinfection."
+    },
+    {
+      "id": "mirai_rel_0035",
+      "source": "mirai",
+      "predicate": "uses_for_impact",
+      "target": "ddos",
+      "description": "Mirai bots have been used in distributed denial-of-service attacks."
+    },
+    {
+      "id": "mirai_rel_0036",
+      "source": "ddos",
+      "predicate": "threatens",
+      "target": "availability",
+      "description": "The objective is to make services unavailable."
+    },
+    {
+      "id": "mirai_rel_0037",
+      "source": "botnet",
+      "predicate": "aggregates",
+      "target": "bandwidth",
+      "description": "Many compromised devices aggregate traffic capacity."
+    },
+    {
+      "id": "mirai_rel_0038",
+      "source": "botnet",
+      "predicate": "reduces_single_source_dependency_for",
+      "target": "ddos",
+      "description": "Distributed sources make simple per-IP blocking less effective."
+    },
+    {
+      "id": "mirai_rel_0039",
+      "source": "ddos",
+      "predicate": "may_be",
+      "target": "volumetric",
+      "description": "Mirai incidents included very large traffic floods."
+    },
+    {
+      "id": "mirai_rel_0040",
+      "source": "mitigation",
+      "predicate": "protects",
+      "target": "availability",
+      "description": "Mitigation aims to preserve legitimate access."
+    },
+    {
+      "id": "mirai_rel_0041",
+      "source": "patching",
+      "predicate": "reduces_risk_of",
+      "target": "exploit",
+      "description": "Patching closes known software vulnerabilities."
+    },
+    {
+      "id": "mirai_rel_0042",
+      "source": "password_change",
+      "predicate": "reduces_risk_of",
+      "target": "credential_abuse",
+      "description": "Unique credentials prevent reuse of factory defaults."
+    },
+    {
+      "id": "mirai_rel_0043",
+      "source": "segmentation",
+      "predicate": "limits_exposure_of",
+      "target": "iot",
+      "description": "Segmentation can restrict device reachability."
+    },
+    {
+      "id": "mirai_rel_0044",
+      "source": "egress_filtering",
+      "predicate": "limits",
+      "target": "bandwidth",
+      "description": "Outbound controls can limit abusive traffic from compromised devices."
+    },
+    {
+      "id": "mirai_rel_0045",
+      "source": "monitoring",
+      "predicate": "detects",
+      "target": "infected_device",
+      "description": "Monitoring can identify unusual traffic and device behavior."
+    },
+    {
+      "id": "mirai_rel_0046",
+      "source": "incident_response",
+      "predicate": "includes",
+      "target": "isolation",
+      "description": "Containment isolates compromised assets."
+    },
+    {
+      "id": "mirai_rel_0047",
+      "source": "incident_response",
+      "predicate": "includes",
+      "target": "patching",
+      "description": "Remediation includes installing fixes."
+    },
+    {
+      "id": "mirai_rel_0048",
+      "source": "incident_response",
+      "predicate": "includes",
+      "target": "password_change",
+      "description": "Credentials should be changed during remediation where applicable."
+    },
+    {
+      "id": "mirai_rel_0049",
+      "source": "firmware",
+      "predicate": "is_installed_on",
+      "target": "iot",
+      "description": "Embedded devices run firmware."
+    },
+    {
+      "id": "mirai_rel_0050",
+      "source": "secure_management",
+      "predicate": "protects",
+      "target": "home_router",
+      "description": "Administrative services should be restricted and secured."
+    },
+    {
+      "id": "mirai_rel_0051",
+      "source": "source_code",
+      "predicate": "licensed_under",
+      "target": "gpl3",
+      "description": "The article lists GPL-3.0."
+    },
+    {
+      "id": "mirai_rel_0052",
+      "source": "public_release",
+      "predicate": "released_artifact",
+      "target": "source_code",
+      "description": "The article says the source code was published publicly."
+    },
+    {
+      "id": "mirai_rel_0053",
+      "source": "source_code",
+      "predicate": "enabled_reuse_in",
+      "target": "variant_ecosystem",
+      "description": "Public code was subsequently adapted by other actors."
+    },
+    {
+      "id": "mirai_rel_0054",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "satori",
+      "description": "Satori is a reported Mirai variant."
+    },
+    {
+      "id": "mirai_rel_0055",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "okiru",
+      "description": "Okiru is a reported Mirai successor."
+    },
+    {
+      "id": "mirai_rel_0056",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "masuta",
+      "description": "Masuta is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0057",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "puremasuta",
+      "description": "PureMasuta is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0058",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "omg",
+      "description": "OMG is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0059",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "wicked",
+      "description": "Wicked is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0060",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "sora",
+      "description": "Sora is named among related botnets."
+    },
+    {
+      "id": "mirai_rel_0061",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "owari",
+      "description": "Owari is named among related botnets."
+    },
+    {
+      "id": "mirai_rel_0062",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "omni",
+      "description": "Omni is named among related botnets."
+    },
+    {
+      "id": "mirai_rel_0063",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "miori",
+      "description": "Miori is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0064",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "hakai",
+      "description": "Hakai is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0065",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "yowai",
+      "description": "Yowai is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0066",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "speakup",
+      "description": "SpeakUp is a reported variant."
+    },
+    {
+      "id": "mirai_rel_0067",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "gayfemboy",
+      "description": "The article describes this as Mirai-based."
+    },
+    {
+      "id": "mirai_rel_0068",
+      "source": "variant_ecosystem",
+      "predicate": "includes_variant",
+      "target": "aisuru",
+      "description": "The article describes Aisuru as Mirai-based."
+    },
+    {
+      "id": "mirai_rel_0069",
+      "source": "satori",
+      "predicate": "exploited_reportedly",
+      "target": "huawei",
+      "description": "The source says Satori exploited a vulnerability in Huawei HG532 routers."
+    },
+    {
+      "id": "mirai_rel_0070",
+      "source": "satori",
+      "predicate": "associated_with_vulnerability",
+      "target": "cve20148361",
+      "description": "The article names this CVE in the Satori discussion."
+    },
+    {
+      "id": "mirai_rel_0071",
+      "source": "satori",
+      "predicate": "associated_with_vulnerability",
+      "target": "cve201717215",
+      "description": "The article names this CVE in the Satori discussion."
+    },
+    {
+      "id": "mirai_rel_0072",
+      "source": "cve20148361",
+      "predicate": "is_a",
+      "target": "rce",
+      "description": "The article describes the referenced issues as SOAP-related router exploits; exact technical applicability should be verified from primary advisories."
+    },
+    {
+      "id": "mirai_rel_0073",
+      "source": "cve201717215",
+      "predicate": "is_a",
+      "target": "rce",
+      "description": "The article describes the referenced issues as SOAP-related router exploits; exact technical applicability should be verified from primary advisories."
+    },
+    {
+      "id": "mirai_rel_0074",
+      "source": "okiru",
+      "predicate": "targets_architecture",
+      "target": "arc",
+      "description": "The article reports ARC-based Linux devices as a new target class."
+    },
+    {
+      "id": "mirai_rel_0075",
+      "source": "okiru",
+      "predicate": "also_targets_architecture",
+      "target": "arm",
+      "description": "The article lists ARM among supported processor architectures."
+    },
+    {
+      "id": "mirai_rel_0076",
+      "source": "okiru",
+      "predicate": "also_targets_architecture",
+      "target": "mips",
+      "description": "The article lists MIPS among supported processor architectures."
+    },
+    {
+      "id": "mirai_rel_0077",
+      "source": "okiru",
+      "predicate": "also_targets_architecture",
+      "target": "x86",
+      "description": "The article lists x86 among supported processor architectures."
+    },
+    {
+      "id": "mirai_rel_0078",
+      "source": "okiru",
+      "predicate": "also_targets_architecture",
+      "target": "powerpc",
+      "description": "The article lists PowerPC among supported processor architectures."
+    },
+    {
+      "id": "mirai_rel_0079",
+      "source": "puremasuta",
+      "predicate": "associated_with_vulnerability",
+      "target": "edb38722",
+      "description": "The article references an exploit record concerning D-Link router HNAP."
+    },
+    {
+      "id": "mirai_rel_0080",
+      "source": "puremasuta",
+      "predicate": "targets_device_family",
+      "target": "dlink",
+      "description": "D-Link routers are mentioned in the report."
+    },
+    {
+      "id": "mirai_rel_0081",
+      "source": "omg",
+      "predicate": "adds_capability",
+      "target": "proxy",
+      "description": "The article says OMG added proxy-server functionality."
+    },
+    {
+      "id": "mirai_rel_0082",
+      "source": "omg",
+      "predicate": "uses_software",
+      "target": "3proxy",
+      "description": "The article reports use of 3proxy."
+    },
+    {
+      "id": "mirai_rel_0083",
+      "source": "proxy",
+      "predicate": "may_forward",
+      "target": "http",
+      "description": "The variant reportedly opened HTTP proxy ports."
+    },
+    {
+      "id": "mirai_rel_0084",
+      "source": "proxy",
+      "predicate": "may_forward",
+      "target": "socks",
+      "description": "The variant reportedly opened SOCKS proxy ports."
+    },
+    {
+      "id": "mirai_rel_0085",
+      "source": "wicked",
+      "predicate": "targets_device_type",
+      "target": "home_router",
+      "description": "The article mentions additional router targets."
+    },
+    {
+      "id": "mirai_rel_0086",
+      "source": "wicked",
+      "predicate": "targets_device_type",
+      "target": "cctv_dvr",
+      "description": "The article mentions CCTV/DVR devices."
+    },
+    {
+      "id": "mirai_rel_0087",
+      "source": "miori",
+      "predicate": "exploits_class",
+      "target": "rce",
+      "description": "The article reports remote-code-execution exploitation in ThinkPHP."
+    },
+    {
+      "id": "mirai_rel_0088",
+      "source": "miori",
+      "predicate": "targets_software",
+      "target": "thinkphp",
+      "description": "ThinkPHP is the framework named in the article."
+    },
+    {
+      "id": "mirai_rel_0089",
+      "source": "miori",
+      "predicate": "associated_with_vulnerability",
+      "target": "cve201820062",
+      "description": "The article identifies CVE-2018-20062 in the variant lineage."
+    },
+    {
+      "id": "mirai_rel_0090",
+      "source": "hakai",
+      "predicate": "reuses_reported_infection_path_from",
+      "target": "miori",
+      "description": "The article describes continued abuse of the ThinkPHP vulnerability by later variants."
+    },
+    {
+      "id": "mirai_rel_0091",
+      "source": "yowai",
+      "predicate": "reuses_reported_infection_path_from",
+      "target": "miori",
+      "description": "The article describes continued abuse of the ThinkPHP vulnerability by later variants."
+    },
+    {
+      "id": "mirai_rel_0092",
+      "source": "speakup",
+      "predicate": "reuses_reported_infection_path_from",
+      "target": "miori",
+      "description": "The article describes continued abuse of the ThinkPHP vulnerability by later variants."
+    },
+    {
+      "id": "mirai_rel_0093",
+      "source": "android",
+      "predicate": "exposes_interface",
+      "target": "adb",
+      "description": "The article reports campaigns using exposed Android Debug Bridge."
+    },
+    {
+      "id": "mirai_rel_0094",
+      "source": "adb",
+      "predicate": "can_be_abused_for",
+      "target": "recruitment",
+      "description": "An exposed debugging interface can provide an unauthorized path to compromise."
+    },
+    {
+      "id": "mirai_rel_0095",
+      "source": "bashlite",
+      "predicate": "is_related_to",
+      "target": "mirai",
+      "description": "The article mentions BASHLITE alongside Mirai in an incident."
+    },
+    {
+      "id": "mirai_rel_0096",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "krebs_attack",
+      "description": "The article links Mirai and BASHLITE to the September 2016 attack."
+    },
+    {
+      "id": "mirai_rel_0097",
+      "source": "krebs_attack",
+      "predicate": "targeted",
+      "target": "krebs_site",
+      "description": "The incident targeted Krebs on Security."
+    },
+    {
+      "id": "mirai_rel_0098",
+      "source": "krebs_attack",
+      "predicate": "reported_peak_traffic",
+      "target": "bandwidth",
+      "description": "The article reports a peak of 620 Gbit/s; this is a source-reported historical figure."
+    },
+    {
+      "id": "mirai_rel_0099",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "ovh_attack",
+      "description": "The article reports a major attack against OVH."
+    },
+    {
+      "id": "mirai_rel_0100",
+      "source": "ovh_attack",
+      "predicate": "targeted",
+      "target": "ovh",
+      "description": "The incident targeted French web host OVH."
+    },
+    {
+      "id": "mirai_rel_0101",
+      "source": "ovh_attack",
+      "predicate": "reported_peak_traffic",
+      "target": "bandwidth",
+      "description": "The article reports a 1 Tbit/s figure attributed to Ars Technica."
+    },
+    {
+      "id": "mirai_rel_0102",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "dyn_attack",
+      "description": "The article attributes the October 2016 Dyn attacks to Mirai."
+    },
+    {
+      "id": "mirai_rel_0103",
+      "source": "dyn_attack",
+      "predicate": "targeted",
+      "target": "dyn",
+      "description": "Dyn DNS services were targeted."
+    },
+    {
+      "id": "mirai_rel_0104",
+      "source": "dyn_attack",
+      "predicate": "disrupted",
+      "target": "dns",
+      "description": "The attacks disrupted DNS service."
+    },
+    {
+      "id": "mirai_rel_0105",
+      "source": "dyn_attack",
+      "predicate": "affected_services",
+      "target": "github",
+      "description": "The article lists GitHub among services that became inaccessible."
+    },
+    {
+      "id": "mirai_rel_0106",
+      "source": "dyn_attack",
+      "predicate": "affected_services",
+      "target": "availability",
+      "description": "Multiple services became inaccessible to some users."
+    },
+    {
+      "id": "mirai_rel_0107",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "rutgers_attacks",
+      "description": "The article says Mirai was later linked to Rutgers attacks."
+    },
+    {
+      "id": "mirai_rel_0108",
+      "source": "rutgers_attacks",
+      "predicate": "targeted",
+      "target": "rutgers",
+      "description": "The attacks disrupted campus Internet and authentication services."
+    },
+    {
+      "id": "mirai_rel_0109",
+      "source": "rutgers_attacks",
+      "predicate": "caused_costs_or_response",
+      "target": "impact",
+      "description": "The article reports consulting expenses and an increased cybersecurity budget."
+    },
+    {
+      "id": "mirai_rel_0110",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "dt_router_incident",
+      "description": "A variant's failed exploitation attempts reportedly crashed routers."
+    },
+    {
+      "id": "mirai_rel_0111",
+      "source": "dt_router_incident",
+      "predicate": "affected",
+      "target": "deutsche_telekom",
+      "description": "The incident affected Deutsche Telekom customer routers."
+    },
+    {
+      "id": "mirai_rel_0112",
+      "source": "dt_router_incident",
+      "predicate": "involved_scale",
+      "target": "infected_device",
+      "description": "The article estimates approximately 900,000 routers were affected; it describes a disruption, not necessarily confirmed infection of every router."
+    },
+    {
+      "id": "mirai_rel_0113",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "liberia_attack",
+      "description": "The article reports Mirai-associated attacks against Liberia."
+    },
+    {
+      "id": "mirai_rel_0114",
+      "source": "liberia_attack",
+      "predicate": "targeted",
+      "target": "liberia",
+      "description": "The incident targeted Internet infrastructure in Liberia."
+    },
+    {
+      "id": "mirai_rel_0115",
+      "source": "mirai",
+      "predicate": "associated_with_incident",
+      "target": "talktalk",
+      "description": "The article reports a Mirai variant later found in TalkTalk routers."
+    },
+    {
+      "id": "mirai_rel_0116",
+      "source": "talktalk",
+      "predicate": "uses_device_type",
+      "target": "home_router",
+      "description": "The report concerns TalkTalk routers."
+    },
+    {
+      "id": "mirai_rel_0117",
+      "source": "mirai",
+      "predicate": "used_initially_against",
+      "target": "minecraft",
+      "description": "The article says the creators initially used Mirai against Minecraft servers and DDoS protection providers."
+    },
+    {
+      "id": "mirai_rel_0118",
+      "source": "paras_jha",
+      "predicate": "associated_with_alias",
+      "target": "anna_senpai",
+      "description": "The article identifies Anna-senpai as an alias associated with the original author."
+    },
+    {
+      "id": "mirai_rel_0119",
+      "source": "paras_jha",
+      "predicate": "coauthored",
+      "target": "mirai",
+      "description": "The article lists Paras Jha among the original authors and reports a guilty plea."
+    },
+    {
+      "id": "mirai_rel_0120",
+      "source": "josiah_white",
+      "predicate": "coauthored",
+      "target": "mirai",
+      "description": "The article lists Josiah White among the original authors and reports a guilty plea."
+    },
+    {
+      "id": "mirai_rel_0121",
+      "source": "dalton_norman",
+      "predicate": "coauthored",
+      "target": "mirai",
+      "description": "The article lists Dalton Norman among the original authors and reports a guilty plea."
+    },
+    {
+      "id": "mirai_rel_0122",
+      "source": "malwaremustdie",
+      "predicate": "first_reported_discovery_of",
+      "target": "mirai",
+      "description": "The article credits MalwareMustDie with finding Mirai in August 2016."
+    },
+    {
+      "id": "mirai_rel_0123",
+      "source": "brian_krebs",
+      "predicate": "reported_on",
+      "target": "paras_jha",
+      "description": "The article describes Krebs reporting on the suspected author's identity; early attribution was disputed."
+    },
+    {
+      "id": "mirai_rel_0124",
+      "source": "paras_jha",
+      "predicate": "was_prosecuted_for",
+      "target": "mirai",
+      "description": "The article reports guilty pleas and sentencing related to botnet crimes."
+    },
+    {
+      "id": "mirai_rel_0125",
+      "source": "josiah_white",
+      "predicate": "was_prosecuted_for",
+      "target": "mirai",
+      "description": "The article reports guilty pleas related to Mirai crimes."
+    },
+    {
+      "id": "mirai_rel_0126",
+      "source": "dalton_norman",
+      "predicate": "was_prosecuted_for",
+      "target": "mirai",
+      "description": "The article reports guilty pleas related to Mirai crimes."
+    },
+    {
+      "id": "mirai_rel_0127",
+      "source": "law_enforcement",
+      "predicate": "investigated",
+      "target": "mirai",
+      "description": "Authorities investigated people connected to Mirai-related attacks."
+    },
+    {
+      "id": "mirai_rel_0128",
+      "source": "paras_jha",
+      "predicate": "received_sentence_component",
+      "target": "probation",
+      "description": "The article reports probation/community service for the trio, and later home incarceration for Jha in a separate Rutgers case."
+    },
+    {
+      "id": "mirai_rel_0129",
+      "source": "paras_jha",
+      "predicate": "ordered_to_pay",
+      "target": "restitution",
+      "description": "The article reports an $8.6 million restitution order in connection with Rutgers attacks."
+    },
+    {
+      "id": "mirai_rel_0130",
+      "source": "mirai",
+      "predicate": "is_compared_with",
+      "target": "bashlite",
+      "description": "Both are discussed as IoT malware associated with DDoS activity."
+    },
+    {
+      "id": "mirai_rel_0131",
+      "source": "mirai",
+      "predicate": "belongs_to_domain",
+      "target": "iot",
+      "description": "It is an IoT malware threat."
+    },
+    {
+      "id": "mirai_rel_0132",
+      "source": "variant_ecosystem",
+      "predicate": "demonstrates",
+      "target": "source_code",
+      "description": "Public malware code can be reused and modified by later operators."
+    },
+    {
+      "id": "mirai_rel_0133",
+      "source": "asset_inventory",
+      "predicate": "supports",
+      "target": "vuln_management",
+      "description": "Inventory helps defenders prioritize device remediation."
+    },
+    {
+      "id": "mirai_rel_0134",
+      "source": "vuln_management",
+      "predicate": "includes",
+      "target": "patching",
+      "description": "Vulnerability management tracks and applies fixes."
+    },
+    {
+      "id": "mirai_rel_0135",
+      "source": "secure_boot",
+      "predicate": "protects",
+      "target": "firmware",
+      "description": "Firmware integrity controls can reduce unauthorized software persistence where supported."
+    },
+    {
+      "id": "mirai_rel_0136",
+      "source": "credential_vault",
+      "predicate": "supports",
+      "target": "password_change",
+      "description": "Credential management supports unique device credentials."
+    },
+    {
+      "id": "mirai_rel_0137",
+      "source": "isolation",
+      "predicate": "part_of",
+      "target": "incident_response",
+      "description": "Isolation is a containment action."
+    },
+    {
+      "id": "mirai_rel_0138",
+      "source": "factory_reset",
+      "predicate": "part_of",
+      "target": "incident_response",
+      "description": "Resetting/reimaging can be part of recovery."
+    },
+    {
+      "id": "mirai_rel_0139",
+      "source": "factory_reset",
+      "predicate": "should_be_followed_by",
+      "target": "patching",
+      "description": "Reset alone does not fix the underlying vulnerability."
+    },
+    {
+      "id": "mirai_rel_0140",
+      "source": "factory_reset",
+      "predicate": "should_be_followed_by",
+      "target": "password_change",
+      "description": "Reset/recovery should include changing default credentials."
+    },
+    {
+      "id": "mirai_rel_0141",
+      "source": "vendor_support",
+      "predicate": "affects",
+      "target": "patching",
+      "description": "Unsupported devices may not receive fixes."
+    },
+    {
+      "id": "mirai_rel_0142",
+      "source": "supply_chain",
+      "predicate": "includes",
+      "target": "vendor_support",
+      "description": "Support lifecycle is part of IoT supply-chain security."
+    },
+    {
+      "id": "mirai_rel_0143",
+      "source": "traffic_filtering",
+      "predicate": "mitigates",
+      "target": "ddos",
+      "description": "Traffic filtering helps distinguish and block malicious traffic."
+    },
+    {
+      "id": "mirai_rel_0144",
+      "source": "rate_limit",
+      "predicate": "mitigates",
+      "target": "ddos",
+      "description": "Rate limits can protect constrained application endpoints."
+    },
+    {
+      "id": "mirai_rel_0145",
+      "source": "anycast",
+      "predicate": "supports",
+      "target": "mitigation",
+      "description": "Distributed routing can spread traffic across locations."
+    },
+    {
+      "id": "mirai_rel_0146",
+      "source": "scrubbing",
+      "predicate": "supports",
+      "target": "mitigation",
+      "description": "Scrubbing filters malicious traffic upstream."
+    },
+    {
+      "id": "mirai_rel_0147",
+      "source": "cdn",
+      "predicate": "supports",
+      "target": "mitigation",
+      "description": "A CDN can absorb traffic and cache content."
+    },
+    {
+      "id": "mirai_rel_0148",
+      "source": "upstream_provider",
+      "predicate": "can_apply",
+      "target": "scrubbing",
+      "description": "Providers can filter or divert large traffic volumes upstream."
+    },
+    {
+      "id": "mirai_rel_0149",
+      "source": "monitoring",
+      "predicate": "supports",
+      "target": "attribution",
+      "description": "Telemetry can aid investigation, though attribution remains uncertain."
+    },
+    {
+      "id": "mirai_rel_0150",
+      "source": "security_research",
+      "predicate": "analyzes",
+      "target": "variant_ecosystem",
+      "description": "Researchers analyze samples and evolving behaviors."
+    },
+    {
+      "id": "mirai_rel_0151",
+      "source": "attribution",
+      "predicate": "requires",
+      "target": "security_research",
+      "description": "Attribution should be supported by corroborated evidence."
+    },
+    {
+      "id": "mirai_rel_0152",
+      "source": "ethics",
+      "predicate": "constrains",
+      "target": "security_research",
+      "description": "Testing must be authorized and avoid harm."
+    },
+    {
+      "id": "mirai_rel_0153",
+      "source": "ddos",
+      "predicate": "can_cause",
+      "target": "impact",
+      "description": "DDoS can cause outages and response costs."
+    },
+    {
+      "id": "mirai_rel_0154",
+      "source": "mirai",
+      "predicate": "can_cause",
+      "target": "impact",
+      "description": "Compromise and DDoS activity can impose operational and economic harm."
+    },
+    {
+      "id": "mirai_rel_0155",
+      "source": "remaiten",
+      "predicate": "is_related_to",
+      "target": "mirai",
+      "description": "The article lists Remaiten among related IoT DDoS malware."
+    },
+    {
+      "id": "mirai_rel_0156",
+      "source": "wifatch",
+      "predicate": "is_related_to",
+      "target": "iot",
+      "description": "The article lists Linux.Wifatch among related IoT malware."
+    },
+    {
+      "id": "mirai_rel_0157",
+      "source": "darlloz",
+      "predicate": "is_related_to",
+      "target": "iot",
+      "description": "The article lists Linux.Darlloz among related IoT malware."
+    },
+    {
+      "id": "mirai_rel_0158",
+      "source": "hajime",
+      "predicate": "is_related_to",
+      "target": "iot",
+      "description": "The article lists Hajime among related IoT malware."
+    },
+    {
+      "id": "mirai_rel_0159",
+      "source": "brickerbot",
+      "predicate": "is_related_to",
+      "target": "iot",
+      "description": "The article lists BrickerBot among related IoT malware."
+    },
+    {
+      "id": "mirai_rel_0160",
+      "source": "mirai",
+      "predicate": "name_derived_from",
+      "target": "japan_word_mirai",
+      "description": "The article explains the Japanese meaning of the name."
+    },
+    {
+      "id": "mirai_rel_0161",
+      "source": "mirai",
+      "predicate": "name_reportedly_references",
+      "target": "mirai_nikki",
+      "description": "The article attributes the name to the 2011 anime series via a chat log."
+    },
+    {
+      "id": "mirai_rel_0162",
+      "source": "mirai_nikki",
+      "predicate": "associated_with_year",
+      "target": "2011",
+      "description": "The article names the 2011 series."
+    },
+    {
+      "id": "mirai_rel_0163",
+      "source": "malwaremustdie",
+      "predicate": "reported_discovery_in_year",
+      "target": "2016",
+      "description": "The article dates discovery to August 2016."
+    },
+    {
+      "id": "mirai_rel_0164",
+      "source": "krebs_attack",
+      "predicate": "occurred_in_year",
+      "target": "2016",
+      "description": "The incident occurred in September 2016."
+    },
+    {
+      "id": "mirai_rel_0165",
+      "source": "dyn_attack",
+      "predicate": "occurred_in_year",
+      "target": "2016",
+      "description": "The Dyn incident occurred in October 2016."
+    },
+    {
+      "id": "mirai_rel_0166",
+      "source": "gayfemboy",
+      "predicate": "reported_discovery_in_year",
+      "target": "2024",
+      "description": "The article says discovered in 2024; related effects were reported in 2025."
+    },
+    {
+      "id": "mirai_rel_0167",
+      "source": "aisuru",
+      "predicate": "reported_discovery_in_year",
+      "target": "2024",
+      "description": "The article says first discovered in August 2024."
+    },
+    {
+      "id": "mirai_rel_0168",
+      "source": "aisuru",
+      "predicate": "source_reports_record_attack_in_year",
+      "target": "2026",
+      "description": "The article reports a 31.4 Tbps Cloudflare-associated figure as of February 2026; this claim is not independently verified here."
+    }
+  ],
+  "architecture_patterns": [
+    {
+      "id": "pattern_mirai_lifecycle",
+      "name": "Mirai botnet lifecycle (conceptual)",
+      "description": "High-level lifecycle from exposed device discovery through compromise, reporting, C2 tasking, DDoS participation, and defender containment.",
+      "participants": [
+        "mirai",
+        "scanner",
+        "credential_abuse",
+        "recruitment",
+        "collection_server",
+        "c2",
+        "infected_device",
+        "ddos",
+        "mitigation"
+      ],
+      "steps": [
+        "Internet-exposed or reachable IoT asset has a weakness",
+        "Malware discovers a potentially vulnerable device",
+        "Weak credentials or an exploitable software flaw permits unauthorized access",
+        "Compromised device is recruited into the botnet",
+        "Botnet infrastructure coordinates activity",
+        "Bots generate distributed traffic against a target",
+        "Defenders detect, contain, remediate, and recover"
+      ],
+      "security_notes": [
+        "Conceptual model only; not an operational attack recipe.",
+        "Break the chain through secure defaults, patching, management-plane isolation, monitoring, and upstream DDoS controls."
+      ]
+    },
+    {
+      "id": "pattern_device_hardening",
+      "name": "IoT device hardening baseline",
+      "description": "Reduce the likelihood that an embedded device can be recruited into a botnet.",
+      "participants": [
+        "asset_inventory",
+        "password_change",
+        "patching",
+        "secure_management",
+        "segmentation",
+        "secure_boot",
+        "vendor_support"
+      ],
+      "steps": [
+        "Inventory device models, firmware, owners, and exposure",
+        "Replace default credentials with unique credentials",
+        "Disable unnecessary remote administration and Telnet",
+        "Install supported firmware updates",
+        "Restrict management access to trusted networks",
+        "Segment IoT devices and monitor outbound behavior",
+        "Replace devices that cannot be supported securely"
+      ],
+      "security_notes": [
+        "A reboot or factory reset alone is not durable remediation if defaults and vulnerabilities remain."
+      ]
+    },
+    {
+      "id": "pattern_ddos_resilience",
+      "name": "Layered DDoS resilience",
+      "description": "Combine application, edge, network-provider, and incident-response measures.",
+      "participants": [
+        "monitoring",
+        "traffic_filtering",
+        "rate_limit",
+        "cdn",
+        "anycast",
+        "scrubbing",
+        "upstream_provider",
+        "mitigation",
+        "incident_response"
+      ],
+      "steps": [
+        "Baseline normal traffic and service health",
+        "Detect abnormal volume, protocol patterns, and application pressure",
+        "Engage provider or scrubbing services for upstream traffic",
+        "Use CDN/Anycast and rate limits where appropriate",
+        "Preserve allowlisted legitimate traffic and critical functions",
+        "Communicate status and review telemetry after mitigation"
+      ],
+      "security_notes": [
+        "No single control prevents every DDoS class; controls should be layered and rehearsed."
+      ]
+    },
+    {
+      "id": "pattern_variant_intelligence",
+      "name": "Variant and threat-intelligence workflow",
+      "description": "Track the Mirai-derived ecosystem without assuming every family has identical behavior.",
+      "participants": [
+        "security_research",
+        "variant_ecosystem",
+        "monitoring",
+        "vuln_management",
+        "attribution"
+      ],
+      "steps": [
+        "Collect samples and telemetry lawfully",
+        "Record observed behavior, timestamps, confidence, and provenance",
+        "Map variant lineage while distinguishing confirmed from suspected links",
+        "Translate indicators into defensive detections and patch priorities",
+        "Reassess detections as variants change"
+      ],
+      "security_notes": [
+        "The source article mixes reported, suspected, and attributed claims; preserve uncertainty."
+      ]
+    },
+    {
+      "id": "pattern_compromise_response",
+      "name": "Response to a suspected infected IoT device",
+      "description": "A defensive containment and recovery workflow for suspected Mirai infection.",
+      "participants": [
+        "monitoring",
+        "isolation",
+        "incident_response",
+        "firmware",
+        "factory_reset",
+        "patching",
+        "password_change",
+        "asset_inventory"
+      ],
+      "steps": [
+        "Confirm symptoms with logs and network telemetry",
+        "Isolate the device from external access and outbound abuse",
+        "Preserve relevant evidence when required",
+        "Update firmware or restore a trusted image",
+        "Change all default and exposed credentials",
+        "Disable unnecessary services and restrict management access",
+        "Validate traffic and monitor for reinfection",
+        "Retire unsupported equipment"
+      ],
+      "security_notes": [
+        "Coordinate with the ISP, vendor, and incident-response team when service disruption or widespread compromise is suspected."
+      ]
+    },
+    {
+      "id": "pattern_public_code_reuse",
+      "name": "Public malware code reuse and variant evolution",
+      "description": "Public release of malware source can lower the barrier to derivative variants and new targeting.",
+      "participants": [
+        "source_code",
+        "public_release",
+        "variant_ecosystem",
+        "security_research",
+        "vuln_management"
+      ],
+      "steps": [
+        "A codebase becomes publicly available",
+        "Other actors reuse or modify it",
+        "Variants add target architectures, exploits, or capabilities",
+        "Defenders update asset coverage and detection",
+        "Patching and secure configuration reduce exploitable surface"
+      ],
+      "security_notes": [
+        "The same release can aid analysis while also enabling harmful reuse; analysis should remain defensive and authorized."
+      ]
+    },
+    {
+      "id": "pattern_incident_attribution",
+      "name": "Evidence-based incident attribution",
+      "description": "Distinguish technical observations from claims about people or organizations.",
+      "participants": [
+        "security_research",
+        "monitoring",
+        "attribution",
+        "law_enforcement"
+      ],
+      "steps": [
+        "Collect verifiable logs and forensic evidence",
+        "Correlate infrastructure, samples, timelines, and victim reports",
+        "State confidence and alternative hypotheses",
+        "Refer legal conclusions to competent authorities",
+        "Update assessments when new evidence appears"
+      ],
+      "security_notes": [
+        "An alias, public claim, or shared codebase alone does not prove authorship or operational control."
+      ]
+    }
+  ],
+  "derived_rules": [
+    {
+      "id": "rule_default_credentials",
+      "rule": "Never leave factory-default credentials enabled on Internet-reachable IoT devices.",
+      "basis_entity": "password_change",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_disable_telnet",
+      "rule": "Disable Telnet and other unnecessary cleartext remote administration services.",
+      "basis_entity": "telnet",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_management_plane",
+      "rule": "Expose device administration only to explicitly trusted management networks.",
+      "basis_entity": "secure_management",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_patch_supported",
+      "rule": "Track and apply vendor firmware updates for supported devices.",
+      "basis_entity": "patching",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_retire_unsupported",
+      "rule": "Replace unsupported devices that cannot be secured to an acceptable standard.",
+      "basis_entity": "vendor_support",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_segment_iot",
+      "rule": "Place IoT devices in appropriately restricted network segments.",
+      "basis_entity": "segmentation",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_egress",
+      "rule": "Monitor and restrict unnecessary outbound connections from embedded devices.",
+      "basis_entity": "egress_filtering",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_inventory",
+      "rule": "Maintain an inventory of device models, firmware, owners, and exposure.",
+      "basis_entity": "asset_inventory",
+      "category": "Operational"
+    },
+    {
+      "id": "rule_reboot_not_fix",
+      "rule": "Do not treat rebooting as full remediation when the original weakness remains.",
+      "basis_entity": "reboot",
+      "category": "Recovery"
+    },
+    {
+      "id": "rule_reset_not_fix",
+      "rule": "After factory reset, patch the device and change credentials before reconnecting it.",
+      "basis_entity": "factory_reset",
+      "category": "Recovery"
+    },
+    {
+      "id": "rule_detect_behavior",
+      "rule": "Alert on unusual outbound volume, unexpected remote access, and abnormal device resource use.",
+      "basis_entity": "monitoring",
+      "category": "Detective"
+    },
+    {
+      "id": "rule_layered_ddos",
+      "rule": "Use layered DDoS protection across application, edge, network, and provider boundaries.",
+      "basis_entity": "mitigation",
+      "category": "Resilience"
+    },
+    {
+      "id": "rule_upstream_escalation",
+      "rule": "Prepare provider escalation and scrubbing procedures before a major DDoS incident.",
+      "basis_entity": "scrubbing",
+      "category": "Resilience"
+    },
+    {
+      "id": "rule_capacity_limits",
+      "rule": "Use suitable rate limits and service-level protection without blocking legitimate clients indiscriminately.",
+      "basis_entity": "rate_limit",
+      "category": "Resilience"
+    },
+    {
+      "id": "rule_preserve_evidence",
+      "rule": "Preserve logs and relevant telemetry during incident response where lawful and feasible.",
+      "basis_entity": "incident_response",
+      "category": "Forensic"
+    },
+    {
+      "id": "rule_isolate_fast",
+      "rule": "Isolate suspected compromised IoT assets when needed to stop further abuse.",
+      "basis_entity": "isolation",
+      "category": "Containment"
+    },
+    {
+      "id": "rule_verify_recovery",
+      "rule": "Verify clean firmware, credential changes, and expected traffic before restoring network access.",
+      "basis_entity": "incident_response",
+      "category": "Recovery"
+    },
+    {
+      "id": "rule_distinguish_claims",
+      "rule": "Record whether a variant, incident, or attribution is confirmed, reported, or suspected.",
+      "basis_entity": "attribution",
+      "category": "Analytical"
+    },
+    {
+      "id": "rule_provenance",
+      "rule": "Keep source provenance and publication dates attached to threat-intelligence claims.",
+      "basis_entity": "security_research",
+      "category": "Analytical"
+    },
+    {
+      "id": "rule_authorized_testing",
+      "rule": "Perform malware analysis and security testing only in authorized, isolated environments.",
+      "basis_entity": "ethics",
+      "category": "Safety"
+    },
+    {
+      "id": "rule_no_shared_secrets",
+      "rule": "Do not reuse device passwords across deployments or device fleets.",
+      "basis_entity": "credential_vault",
+      "category": "Preventive"
+    },
+    {
+      "id": "rule_monitor_vendor",
+      "rule": "Track vendor support and end-of-life dates for deployed IoT hardware.",
+      "basis_entity": "vendor_support",
+      "category": "Operational"
+    },
+    {
+      "id": "rule_c2_indicators",
+      "rule": "Use vetted indicators and behavior-based detections; do not rely on static indicators alone.",
+      "basis_entity": "monitoring",
+      "category": "Detective"
+    },
+    {
+      "id": "rule_variant_drift",
+      "rule": "Assume Mirai-derived variants may change targets and capabilities; refresh controls as evidence changes.",
+      "basis_entity": "variant_ecosystem",
+      "category": "Operational"
+    },
+    {
+      "id": "rule_attack_surface",
+      "rule": "Disable unnecessary services and interfaces on IoT and embedded devices.",
+      "basis_entity": "secure_management",
+      "category": "Preventive"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_harden_camera",
+      "title": "Harden a consumer IP camera",
+      "description": "Defensive example for a camera exposed to a home or small-business network.",
+      "entities": [
+        "ip_camera",
+        "password_change",
+        "patching",
+        "secure_management",
+        "segmentation",
+        "monitoring"
+      ],
+      "steps": [
+        "Change the factory password to a unique credential",
+        "Install supported firmware",
+        "Disable remote administration and Telnet unless explicitly required",
+        "Allow management only from a trusted network",
+        "Place the camera on an isolated IoT network",
+        "Monitor unexpected outbound traffic"
+      ],
+      "expected_outcome": "Reduced likelihood of credential-based compromise and reduced blast radius if the device is later compromised."
+    },
+    {
+      "id": "example_router_compromise",
+      "title": "Suspected router infection",
+      "description": "A router shows unusual outbound traffic and intermittent performance degradation.",
+      "entities": [
+        "home_router",
+        "monitoring",
+        "isolation",
+        "incident_response",
+        "firmware",
+        "factory_reset",
+        "patching",
+        "password_change"
+      ],
+      "steps": [
+        "Capture relevant telemetry and contact the network administrator or ISP",
+        "Restrict external management and isolate the router if feasible",
+        "Use vendor guidance to update or restore trusted firmware",
+        "Change administrator and Wi-Fi credentials",
+        "Verify configuration and traffic before reconnecting"
+      ],
+      "expected_outcome": "Containment and recovery that address both the active compromise and its root cause."
+    },
+    {
+      "id": "example_provider_ddos",
+      "title": "Prepare for a volumetric DDoS incident",
+      "description": "A public service expects possible large-scale traffic disruption.",
+      "entities": [
+        "monitoring",
+        "cdn",
+        "anycast",
+        "scrubbing",
+        "upstream_provider",
+        "rate_limit",
+        "incident_response"
+      ],
+      "steps": [
+        "Document provider contacts and escalation triggers",
+        "Agree on upstream filtering or scrubbing procedures",
+        "Test CDN/Anycast configuration and application rate limits",
+        "Define service health metrics and communication roles",
+        "Conduct a post-incident review"
+      ],
+      "expected_outcome": "Faster escalation and more resilient service delivery during traffic spikes."
+    },
+    {
+      "id": "example_asset_inventory",
+      "title": "Find high-risk IoT assets",
+      "description": "A security team needs to prioritize devices likely to be recruited into IoT botnets.",
+      "entities": [
+        "asset_inventory",
+        "iot",
+        "vendor_support",
+        "vuln_management",
+        "patching",
+        "secure_management"
+      ],
+      "steps": [
+        "Identify devices with Internet-reachable management interfaces",
+        "Record firmware and vendor support status",
+        "Prioritize default credentials and known exploitable vulnerabilities",
+        "Remediate, isolate, or retire high-risk devices",
+        "Recheck exposure after changes"
+      ],
+      "expected_outcome": "A prioritized remediation queue based on exposure and fixability."
+    },
+    {
+      "id": "example_incident_timeline",
+      "title": "Build a Mirai incident timeline",
+      "description": "Analysts correlate reports and telemetry without overclaiming attribution.",
+      "entities": [
+        "security_research",
+        "monitoring",
+        "attribution",
+        "variant_ecosystem",
+        "law_enforcement"
+      ],
+      "steps": [
+        "Normalize event timestamps",
+        "Separate directly observed facts from third-party reporting",
+        "Map samples and indicators to a tentative variant lineage",
+        "Assign confidence and list missing evidence",
+        "Update the assessment as corroboration arrives"
+      ],
+      "expected_outcome": "An auditable threat assessment that preserves uncertainty and source provenance."
+    },
+    {
+      "id": "example_unsupported_devices",
+      "title": "Manage unsupported embedded devices",
+      "description": "A deployed device no longer receives security updates.",
+      "entities": [
+        "vendor_support",
+        "supply_chain",
+        "segmentation",
+        "asset_inventory",
+        "secure_management"
+      ],
+      "steps": [
+        "Document business owner and operational dependency",
+        "Restrict access and outbound connectivity",
+        "Assess replacement or compensating-control options",
+        "Schedule replacement and verify removal from inventory"
+      ],
+      "expected_outcome": "Reduced exposure while planning retirement of equipment that cannot be maintained securely."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source_1",
+      "title": "Mirai (malware)",
+      "publisher": "Wikipedia, The Free Encyclopedia",
+      "source_type": "user-provided article text",
+      "source_url": "https://en.wikipedia.org/wiki/Mirai_(malware)",
+      "retrieval_note": "The user supplied an exported text of the article. This graph reflects that source's content and its stated attributions; it does not independently validate every reported figure or attribution.",
+      "relevant_topics": [
+        "malware behavior",
+        "IoT botnet recruitment",
+        "Mirai variants",
+        "DDoS incidents",
+        "attribution and legal outcomes",
+        "defensive controls"
+      ]
+    }
+  ],
+  "graph_integrity": {
+    "unique_entity_ids": true,
+    "unique_relationship_ids": true,
+    "all_relationship_endpoints_resolve": true,
+    "all_pattern_participants_resolve": true,
+    "all_example_entities_resolve": true,
+    "notes": [
+      "Historical attack sizes, variant claims, attribution, and legal details are reported as described in the user-provided article, not independently fact-checked.",
+      "The graph models malware behavior at a conceptual level and emphasizes mitigation and safe administration.",
+      "Some variant names and lineages are reported or suspected in the source rather than definitively established."
+    ]
+  }
+}
