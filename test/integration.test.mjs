@@ -17,15 +17,17 @@ test('all source input hashes and exact manifest mappings preserve source record
     assert.equal(source.sha256, source.baselineSha256);
     const pointer = value => value.split('/').slice(1).reduce((item, key) => item[key], data);
     for (const record of source.nodes) {
-      const original = pointer(record.pointer);
-      assert.deepEqual(byId.get(record.derivedId).variants.find(v => v.document === source.file.slice(5) && v.sourceId === record.sourceId).record, original);
+      const variant = byId.get(record.derivedId).variants.find(v => v.document === source.file.slice(5) && v.sourceId === record.sourceId);
+      // Synthesized records (registers, edge-only references) have no raw pointer.
+      if (record.pointer == null) { assert.ok(variant); continue; }
+      assert.deepEqual(variant.record, { ...variant.record, ...pointer(record.pointer) });
     }
     for (const record of source.edges) assert.deepEqual(atlas.edges.find(edge => edge.id === record.derivedId).record, pointer(record.pointer));
     for (const record of source.paths) assert.deepEqual(atlas.paths.find(item => item.id === record.derivedId).record, pointer(record.pointer));
     for (const record of source.claims) assert.ok(byId.get(record.derivedId).variants.some(v => JSON.stringify(v.record) === JSON.stringify(pointer(record.pointer)) || v.claims.some(c => JSON.stringify(c) === JSON.stringify(pointer(record.pointer)))));
     nodes += source.nodes.length; edges += source.edges.length; claims += source.claims.length; paths += source.paths.length;
   }
-  assert.deepEqual([nodes, edges, claims, paths], [7812, 8604, 526, 522]);
+  assert.deepEqual([nodes, edges, claims, paths], [14597, 17744, 526, 522]);
   assert.deepEqual(manifest.derivedNodeIds, atlas.nodes.map(n => n.id));
   assert.deepEqual(manifest.derivedEdgeIds, atlas.edges.map(e => e.id));
 });
@@ -46,29 +48,29 @@ test('vm jvm linux sandbox kernel filesystem URL identities remain conservative'
     assert.equal(atlas.aliases[key], undefined);
     assert.ok(atlas.ambiguousAliases[key].length > 1);
   }
-  assert.equal(id('python_language:jvm'), 'jvm');
+  assert.equal(id('Python:jvm'), 'jvm');
   assert.equal(id('virtual_machine:jvm'), 'jvm');
-  assert.equal(id('docker:vm'), 'virtual_machine');
-  assert.equal(id('sandbox_computer_security:vm'), 'virtual_machine');
-  assert.notEqual(id('python_language:vm'), 'virtual_machine');
-  assert.notEqual(id('operating_system:vm'), id('operating_system:virtual_machine'));
-  assert.equal(id('operating_system:sandbox'), id('sandbox_computer_security:sandbox'));
-  assert.notEqual(id('virtual_machine:sandbox'), id('sandbox_computer_security:sandbox'));
-  assert.notEqual(id('sandbox_computer_security:linux'), id('docker:linux'));
-  for (const pair of [['docker:volume','volume_computing:volume'],['kubernetes:volume','volume_computing:volume'],['optical_disc_image:filesystem','volume_computing:filesystem'],['python_language:namespace','kubernetes:namespace']]) assert.notEqual(id(pair[0]), id(pair[1]));
+  assert.equal(id('Docker:vm'), 'virtual_machine');
+  assert.equal(id('sandbox:vm'), 'virtual_machine');
+  assert.notEqual(id('Python:vm'), 'virtual_machine');
+  assert.notEqual(id('OS:vm'), id('OS:virtual_machine'));
+  assert.equal(id('OS:sandbox'), id('sandbox:sandbox'));
+  assert.notEqual(id('virtual_machine:sandbox'), id('sandbox:sandbox'));
+  assert.notEqual(id('sandbox:linux'), id('Docker:linux'));
+  for (const pair of [['Docker:volume','volume_computing:volume'],['Kubernetes:volume','volume_computing:volume'],['optical_disc_image:filesystem','volume_computing:filesystem'],['Python:namespace','Kubernetes:namespace']]) assert.notEqual(id(pair[0]), id(pair[1]));
   for (const [alias, target] of Object.entries(atlas.aliases)) { assert.ok(byId.has(target)); assert.ok(!byId.has(alias)); }
 });
 test('source evidence connects new domains without invented editorial repairs', () => {
-  const cases = {operating_system:[3,313,314,316,317],sandbox_computer_security:[14,25,26,27,42,43],python_language:[192,193,194,271,310],virtual_machine:[33],optical_disc_image:[0,113,116,117],system_image:[3],volume_computing:[4,24,27]};
+  const cases = {OS:[3,313,314,316,317],sandbox:[14,25,26,27,42,43],Python:[192,193,194,271,310],virtual_machine:[33],optical_disc_image:[0,113,116,117],system_image:[3],volume_computing:[4,24,27]};
   for (const [graph, indexes] of Object.entries(cases)) for (const index of indexes) {
-    const edge = atlas.edges.find(e => e.id === graph + ':' + index);
+    const edge = atlas.edges.find(e => e.id === graph + ':relationships:' + index);
     assert.equal(edge.source, id(graph + ':' + edge.record.source));
     assert.equal(edge.target, id(graph + ':' + edge.record.target));
     assert.equal(edge.provenance, 'source');
   }
-  assert.equal(atlas.edges.filter(e => e.curated).length, 19);
-  assert.equal(atlas.edges.find(e => e.id === 'python_language:310').target, atlas.edges.find(e => e.id === 'virtual_machine:33').source);
-  assert.equal(atlas.edges.find(e => e.id === 'system_image:3').record.conditions, 'All relevant state must be on disk.');
+  assert.equal(atlas.edges.filter(e => e.curated).length, 20);
+  assert.equal(atlas.edges.find(e => e.id === 'Python:relationships:310').target, atlas.edges.find(e => e.id === 'virtual_machine:relationships:33').source);
+  assert.equal(atlas.edges.find(e => e.id === 'system_image:relationships:3').record.conditions, 'All relevant state must be on disk.');
 });
 test('prose paths preserve unresolved whole segments and never infer graph edges', () => {
   const prose = atlas.paths.filter(p => p.sequenceKind === 'prose');

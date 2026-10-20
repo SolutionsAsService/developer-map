@@ -10,9 +10,16 @@ export function detailArtifacts(atlas) {
   const files = new Map();
   const manifest = { schemaVersion: 1, maxShardBytes: MAX_SHARD_BYTES, nodes: {}, edges: {}, documents: {}, paths: [] };
   function emit(kind, records) {
+    // Split batches until every shard stays within the byte cap.
     const text = JSON.stringify({ schemaVersion: 1, kind, records });
     const bytes = Buffer.byteLength(text);
-    if (bytes > MAX_SHARD_BYTES) throw new Error('Oversized detail record: ' + kind);
+    if (bytes > MAX_SHARD_BYTES) {
+      if (records.length < 2) throw new Error('Oversized detail record: ' + kind);
+      const middle = Math.floor(records.length / 2);
+      emit(kind, records.slice(0, middle));
+      emit(kind, records.slice(middle));
+      return;
+    }
     const sha256 = hash(text), file = 'details/' + sha256 + '.json';
     const key = Object.keys(refs).length.toString(36);
     files.set(file, text);
