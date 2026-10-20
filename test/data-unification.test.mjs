@@ -30,7 +30,7 @@ test('ambiguous and narrower concepts are not conflated', () => {
     assert.ok(ids.every(id => byId.has(id)));
   }
   assert.equal(atlas.aliases.host, undefined);
-  for (const expected of ['cuda:host','docker:host','virtual_machine:host']) assert.ok(atlas.ambiguousAliases.host.includes(expected));
+  for (const expected of ['Cuda:host','Docker:host','virtual_machine:host']) assert.ok(atlas.ambiguousAliases.host.includes(expected));
 });
 
 test('direct meaningful core relations exist with honest provenance', () => {
@@ -59,12 +59,14 @@ test('every endpoint and learning path remaps through its own source identity', 
       assert.ok(node);
       assert.deepEqual(node.variants.find(variant => variant.sourceKey === doc.graphId + ':' + record.id).record, record);
     }
+    const endpoint = (record, ...keys) => keys.map(key => record[key]).find(value => typeof value === 'string' && value.length);
     for (const { record, section, index } of relationshipEntries(raw)) {
       edgeRecords++;
       const edge = atlas.edges.find(edge => edge.id === doc.graphId + ':' + section + ':' + index);
       assert.deepEqual(edge.record, record);
-      assert.equal(edge.source, atlas.sourceNodeMap[doc.graphId + ':' + record.source]);
-      assert.equal(edge.target, atlas.sourceNodeMap[doc.graphId + ':' + record.target]);
+      // Endpoints use the same subject/object/from fallbacks as the build.
+      assert.equal(edge.source, atlas.sourceNodeMap[doc.graphId + ':' + endpoint(record, 'source', 'subject', 'from')]);
+      assert.equal(edge.target, atlas.sourceNodeMap[doc.graphId + ':' + endpoint(record, 'target', 'object', 'to')]);
       assert.equal(edge.provenance, 'source');
     }
     for (const [index, record] of (source.learning_paths || []).entries()) {
@@ -76,8 +78,8 @@ test('every endpoint and learning path remaps through its own source identity', 
       else if (typeof record !== "string") assert.equal(path.sequenceText, record.sequence);
     }
   }
-  assert.equal(nodeRecords, 14597);
-  assert.equal(edgeRecords, 17744);
+  assert.equal(nodeRecords, 15618);
+  assert.equal(edgeRecords, 19009);
   assert.ok(atlas.edges.every(edge => byId.has(edge.source) && byId.has(edge.target) && (edge.source !== edge.target || edge.record.source === edge.record.target)));
   assert.equal(new Set(atlas.edges.map(edge => edge.id)).size, atlas.edges.length);
   assert.ok(Object.values(atlas.aliases).every(id => byId.has(id)));
@@ -88,19 +90,19 @@ test('claims and references remain isolated identities even without conventional
   const documents = ['one', 'two'].map(graph => ({ file: graph + '_full_test.json', data: { nodes: [{ id: 'citation', label: 'Identical reference', type: 'reference' }, { id: 'assertion', label: 'Same claim', type: 'concept' }], source_claims: [{ id: 'assertion', statement: 'Same statement' }], edges: [] } }));
   const identity = createIdentityResolver(documents, [], {});
   for (const { file } of documents) for (const id of ['citation', 'assertion']) assert.equal(identity.resolve(file, id), file.replace(/\.json$/, '') + ':' + id);
-  for (const id of ['citation', 'assertion']) assert.throws(() => createIdentityResolver(documents, [{ id, label: id, rationale: 'Unsafe test', members: ['one:' + id, 'two:' + id] }], {}), /cannot merge/);
+  for (const id of ['citation', 'assertion']) assert.throws(() => createIdentityResolver(documents, [{ id, label: id, rationale: 'Unsafe test', members: ['one_full_test:' + id, 'two_full_test:' + id] }], {}), /cannot merge/);
   const protectedNodes = atlas.nodes.filter(node => node.claim || node.variants.some(variant => /^(claim_|ref_)/.test(variant.record.id)));
   assert.ok(protectedNodes.every(node => node.topics.length === 1 && node.variants.length === 1));
 });
 
 test('connectivity audit reports disconnected data instead of inventing repairs', () => {
   assert.deepEqual(atlas.audit.connectivity, connectivity(atlas.nodes, atlas.edges));
-  assert.equal(atlas.summary.components, 2560);
-  assert.equal(atlas.summary.isolated, 2234);
-  assert.equal(atlas.audit.connectivity.componentSizes[0], 6525);
+  assert.equal(atlas.summary.components, 2659);
+  assert.equal(atlas.summary.isolated, 2327);
+  assert.equal(atlas.audit.connectivity.componentSizes[0], 8513);
   assert.ok(atlas.audit.sourceOnlyConnectivity.componentCount >= atlas.audit.connectivity.componentCount);
   assert.equal(atlas.audit.sourceClaimRecords, 526);
-  assert.deepEqual(atlas.audit.selfLoops, ['Firewall:relationships:133', 'IPv6:relationships:234', 'Next.js:relationships:168', 'OS:relationships:46', 'OS:relationships:55', 'Python:relationships:140', 'asm:relationships:270', 'git:relationships:42', 'git:relationships:44']);
+  assert.deepEqual(atlas.audit.selfLoops, ['Firewall:relationships:133', 'IPv6:relationships:234', 'Next.js:relationships:168', 'OS:relationships:46', 'OS:relationships:55', 'Python:relationships:140', 'asm:relationships:270', 'bitcoin:relationships:88', 'git:relationships:42', 'git:relationships:44']);
 });
 
 test('repeated builds are byte-for-byte deterministic including layout and audits', async () => {

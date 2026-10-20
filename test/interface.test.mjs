@@ -368,7 +368,7 @@ test('pointer pan and wheel zoom preserve selection while reset restores stable 
 
 test('expanded dataset selector, search, editorial rationale and reset work in mocked Canvas', async()=>{
  const dom=await mount();const w=dom.window,d=w.document;
- assert.equal(d.querySelector('#source-select').options.length,38);
+ assert.equal(d.querySelector('#source-select').options.length,81);
  let select=d.querySelector('#source-select');select.value='Next.js.json';select.dispatchEvent(new w.Event('change',{bubbles:true}));
  const search=d.querySelector('#search');search.value='Next.js';search.dispatchEvent(new w.Event('input',{bubbles:true}));
  d.querySelector('#search-results [data-concept="Next.js.json:nextjs"]').click();

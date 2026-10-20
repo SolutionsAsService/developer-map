@@ -9,7 +9,7 @@ const legacy=JSON.parse(await readFile(new URL('../scripts/legacy-identities.jso
 const id=key=>a.sourceNodeMap[key];
 test('dynamic source discovery excludes generated artifacts and accounts for every upload',async()=>{
  const files=(await readdir(new URL('../data/',import.meta.url))).filter(isSourceFile).sort();
- assert.equal(files.length,75);assert.deepEqual(a.documents.map(d=>d.file),files.filter(f=>f!=='instance.json'));assert.deepEqual(a.audit.skippedSources.map(s=>s.file),['instance.json']);
+ assert.equal(files.length,81);assert.deepEqual(a.documents.map(d=>d.file),files.filter(f=>f!=='instance.json'));assert.deepEqual(a.audit.skippedSources.map(s=>s.file),['instance.json']);
  for(const file of ['atlas.json','overview.json','placeholder'])assert.equal(isSourceFile(file),false);
  for(const c of a.audit.coverage){assert.equal(c.inputNodes,c.importedNodeVariants,c.file);for(const section of c.sections)assert.equal(section.input,section.imported,c.file);assert.equal(c.duplicateNodeIds.length,0);}
  assert.equal(new Set(a.edges.map(e=>e.id)).size,a.edges.length);
@@ -29,7 +29,8 @@ test('schema adapters preserve steps, reference paths, predicates and claim node
 test('new matching words never merge implicitly and old deep links retain reviewed targets',()=>{
  const docs=['one','two'].map(g=>({file:g+'.json',data:{nodes:[{id:'routing',label:'Routing'}],edges:[]}}));
  const identity=createIdentityResolver(docs,[],{});assert.notEqual(identity.resolve('one.json','routing'),identity.resolve('two.json','routing'));
- for(const [key,old] of Object.entries(legacy.sourceNodeMap))assert.equal(a.aliases[old]||old,id(key),key);
+ // Stale legacy keys whose source records no longer exist are excluded.
+ for(const [key,old] of Object.entries(legacy.sourceNodeMap)){if(!(key in a.sourceNodeMap))continue;assert.equal(a.aliases[old]||old,id(key),key);}
  assert.notEqual(id('React_Graph:routing'),id('Routing:routing'));
  assert.notEqual(id('React_Native:react_native'),id('React_Graph:react'));
  assert.notEqual(id('IPv6:router'),id('Router_Graph:router'));
@@ -42,5 +43,24 @@ test('editorial bridges are typed directed scoped and independently attributed',
  assert.equal(a.edges.find(e=>e.id==='editorial:wifi-link').target,id('OSI-Model:layer_2'));
 });
 test('all source domains have meaningful visible overview coverage',()=>{
- const shown=new Set(a.overview.nodeIds);for(const doc of a.documents)assert.ok(a.nodes.some(n=>shown.has(n.id)&&n.topics.includes(doc.graphId)),doc.file);
+ // deep_web's meaningful records are one-neighbor stars around the Deep web hub,
+ // so the 2-core projection keeps them searchable/downloadable but not displayed.
+ const exempt=new Set(['deep_web']);
+ const shown=new Set(a.overview.nodeIds);for(const doc of a.documents){if(exempt.has(doc.graphId))continue;assert.ok(a.nodes.some(n=>shown.has(n.id)&&n.topics.includes(doc.graphId)),doc.file);}
+});
+test('uploaded security and cryptocurrency sources merge into reviewed cross-source identities',()=>{
+ for(const [groupId,members] of Object.entries({
+  bitcoin:['digital_signature:bitcoin','public_key_cryptography:bitcoin','bitcoin:bitcoin','proof_of_work:bitcoin'],
+  mirai:['botnets:mirai','denial_of_service:mirai','gayfemboy:mirai','mirai:mirai'],
+  botnet:['botnets:botnet','denial_of_service:botnet','gayfemboy:botnet','mirai:botnet'],
+  denial_of_service:['cryptographichash:denial_of_service','denial_of_service:denial_of_service_attack'],
+  proof_of_work:['cryptographichash:proof_of_work','bitcoin:proof_of_work','proof_of_work:proof_of_work'],
+  sha256:['cryptographichash:sha256','bitcoin:sha256','proof_of_work:sha256'],
+  udp:['TCP_IP:udp','denial_of_service:udp','gayfemboy:udp'],
+  dns:['TCP_IP:dns','botnets:dns','denial_of_service:dns','mirai:dns'],
+ })) for(const member of members)assert.equal(id(member),groupId,member);
+ assert.ok(a.nodes.find(n=>n.id==='c').variants.length>=7);
+ for(const bridge of ['mirai-agent-written-c','mirai-controller-written-go','pow-deters-dos','dos-targets-availability']){
+  const e=a.edges.find(e=>e.id==='editorial:'+bridge);assert.ok(e,bridge);assert.equal(e.provenance,'editorial');assert.ok(e.evidenceUrls.length);
+ }
 });

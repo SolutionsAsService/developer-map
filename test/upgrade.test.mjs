@@ -6,7 +6,7 @@ import { overviewProjection, meaningful } from '../scripts/semantic-model.mjs';
 const a=JSON.parse(await readFile(new URL('../data/atlas.json',import.meta.url)));
 const id=key=>a.sourceNodeMap[key];
 test('all uploads and all existing sources retain exact git bytes and structured coverage',async()=>{
- assert.equal(a.documents.length,74);
+ assert.equal(a.documents.length,80);
  for(const prefix of ['C','CPP','Cuda','Ruby_on_Rails']) assert.ok(a.documents.some(d=>d.graphId===prefix));
  for(const d of a.documents) assert.equal(createHash('sha256').update(await readFile(new URL('../data/'+d.file,import.meta.url))).digest('hex'),d.sha256);
  for(const c of a.audit.coverage) {assert.equal(c.inputNodes,c.importedNodeVariants);assert.equal(c.duplicateNodeIds.length,0);for(const s of c.sections)assert.equal(s.input,s.imported);}
