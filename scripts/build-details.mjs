@@ -6,6 +6,27 @@ export const MAX_SHARD_BYTES = 192 * 1024;
 const hash = text => createHash('sha256').update(text).digest('hex');
 // Existing native fetch + static JSON suffice; no new framework or service.
 // Content addresses bind each payload to the overview that requested it.
+// A record too large for one shard (for example a concept merged from many
+// files) is shortened step by step; the full record stays in atlas.json.
+function compact(record) {
+  const fits = item => Buffer.byteLength(JSON.stringify({ schemaVersion: 1, kind: 'x', records: [item] })) <= MAX_SHARD_BYTES - 64;
+  const note = 'Shortened to fit a detail shard; the full record is in data/atlas.json.';
+  if (Array.isArray(record.variants)) {
+    let item = { ...record, truncated: note, variants: record.variants.map(variant => ({ ...variant, related: (variant.related || []).map(({ record, ...rest }) => rest) })) };
+    if (fits(item)) return item;
+    item = { ...item, variants: item.variants.map(({ related, ...variant }) => ({ ...variant, related: [] })) };
+    if (fits(item)) return item;
+    item = { ...item, variants: item.variants.map(({ record, ...variant }) => variant) };
+    if (fits(item)) return item;
+  }
+  for (const drop of [['record'], ['record', 'metadata'], ['record', 'metadata', 'fields']]) {
+    const item = { ...record, truncated: note };
+    for (const key of drop) delete item[key];
+    if (fits(item)) return item;
+  }
+  return { id: record.id, file: record.file, label: record.label, truncated: note };
+}
+
 export function detailArtifacts(atlas) {
   const files = new Map();
   const manifest = { schemaVersion: 1, maxShardBytes: MAX_SHARD_BYTES, nodes: {}, edges: {}, documents: {}, paths: [] };
@@ -14,7 +35,7 @@ export function detailArtifacts(atlas) {
     const text = JSON.stringify({ schemaVersion: 1, kind, records });
     const bytes = Buffer.byteLength(text);
     if (bytes > MAX_SHARD_BYTES) {
-      if (records.length < 2) throw new Error('Oversized detail record: ' + kind);
+      if (records.length < 2) return emit(kind, [compact(records[0])]);
       const middle = Math.floor(records.length / 2);
       emit(kind, records.slice(0, middle));
       emit(kind, records.slice(middle));

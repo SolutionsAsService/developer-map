@@ -12,7 +12,9 @@ const byId = new Map(atlas.nodes.map(node => [node.id, node]));
 test('published atlas matches regenerated source data', () => {
   assert.deepEqual(published, atlas);
   assert.equal(atlas.documents.length, 80);
-  assert.equal(atlas.summary.sourceRelationships, 19009);
+  // Links between two records that merged into one concept are audited, not drawn as loops.
+  assert.ok(atlas.audit.mergedSelfLoops.length <= 20);
+  assert.equal(atlas.summary.sourceRelationships + atlas.audit.mergedSelfLoops.length, 19009);
   assert.equal(atlas.summary.bridges, 24);
   assert.equal(atlas.summary.unresolved, 0);
   assert.equal(atlas.paths.length, 522);
@@ -24,8 +26,11 @@ test('every source node, relationship, claim and path survives with provenance',
     const raw = JSON.parse(await readFile(new URL(`../data/${doc.file}`, import.meta.url)));
     const source = documentNodes(raw);
     const originals = relationshipEntries(raw);
-    assert.equal(atlas.edges.filter(edge => edge.document === doc.file).length, originals.length);
+    const merged = new Set(atlas.audit.mergedSelfLoops.map(loop => loop.id));
+    const mergedHere = originals.filter(({section, index}) => merged.has(`${doc.graphId}:${section}:${index}`)).length;
+    assert.equal(atlas.edges.filter(edge => edge.document === doc.file).length + mergedHere, originals.length);
     originals.forEach(({record, section, index}) => {
+      if (merged.has(`${doc.graphId}:${section}:${index}`)) return;
       const edge = atlas.edges.find(item => item.document === doc.file && item.section === section && item.sourceIndex === index);
       assert.deepEqual(edge.record, record);
       assert.ok(byId.has(edge.source) && byId.has(edge.target));

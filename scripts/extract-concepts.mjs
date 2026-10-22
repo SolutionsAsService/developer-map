@@ -11,13 +11,13 @@ const titles = {
 
 export function claimEntries(document) {
   const value = document.claims || document.source_claims || [];
+  // Claim references that point nowhere, or claims without IDs, are skipped.
   if (Array.isArray(value)) return value.map(claim => {
     if (typeof claim !== 'string') return claim;
-    const record = document.nodes.find(node => node.id === claim);
-    if (!record) throw new Error('Unknown source-claim reference: ' + claim);
-    return record;
-  });
-  return Object.entries(value).map(([key, claim]) => ({ id: claim.id || key, ...claim }));
+    return document.nodes.find(node => node.id === claim);
+  }).filter(claim => claim && typeof claim === 'object' && typeof claim.id === 'string');
+  if (!value || typeof value !== 'object') return [];
+  return Object.entries(value).filter(([, claim]) => claim && typeof claim === 'object').map(([key, claim]) => ({ id: claim.id || key, ...claim }));
 }
 
 export function claimText(claim) {

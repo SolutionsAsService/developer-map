@@ -18,10 +18,13 @@ export const relationshipPredicate = record => record.relation || record.relatio
 // Normalize uploaded node records to the id/label/type shape; original bytes stay in the variant record.
 export function normalizeNode(record) {
   if (!record || typeof record !== 'object' || Array.isArray(record)) return record;
-  if (record.id != null && record.label != null) return record;
-  const id = record.id ?? record.name;
-  return { ...record, id, label: record.label ?? record.name ?? record.canonical_name ?? id, type: record.type ?? record.entity_type };
+  if (typeof record.id === 'string' && record.label != null) return record;
+  const raw = record.id ?? record.name ?? record.canonical_name;
+  const id = typeof raw === 'number' ? String(raw) : raw;
+  return { ...record, id, label: record.label ?? record.name ?? record.canonical_name ?? record.title ?? id, type: record.type ?? record.entity_type };
 }
+// Readable label for an endpoint that only exists as an ID ("tcp_ip" -> "tcp ip").
+export const humanizeId = id => String(id).replace(/^[a-z]+[:.](?=\w)/i, '').replace(/[_\-]+/g, ' ').trim() || String(id);
 // Node arrays in upload order: nodes or entities, single-record documents,
 // and documents whose graph edges reference id/name-only concept lists.
 export function sourceNodeList(data) {
@@ -84,7 +87,8 @@ export function sourceNodeList(data) {
 const relationshipArray = (data, section, path) => {
   const value = path.split('/').reduce((item, key) => item?.[key], data);
   if (value == null) return [];
-  if (!Array.isArray(value)) throw new Error('Expected relationship array at /' + path.replaceAll('/', '/'));
+  // A non-array section is skipped (and reported by the build), never fatal.
+  if (!Array.isArray(value)) return [];
   return value.map((record, index) => ({ section, index, record }));
 };
 // Directed relationship arrays in upload order, with their JSON pointer paths.
@@ -98,11 +102,39 @@ export function sourceRelationshipSections(data) {
   return found;
 }
 export function documentNodes(data) {
-  const nodes = sourceNodeList(data);
-  return nodes ? { ...data, nodes } : null;
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return null;
+  const listed = sourceNodeList(data);
+  if (!listed) return null;
+  // Drop records without a usable ID. Repeated IDs are kept; they become extra
+  // records of one node.
+  const seen = new Set();
+  const nodes = [];
+  for (const node of listed) {
+    if (!node || typeof node !== 'object' || typeof node.id !== 'string' || !node.id) continue;
+    seen.add(node.id);
+    nodes.push(node);
+  }
+  // Relationships may name endpoints the file never declares as nodes. Add an
+  // explicit placeholder so the edge survives and can join same-named concepts
+  // from other files.
+  const claimIds = new Set();
+  const claims = data.claims || data.source_claims;
+  if (Array.isArray(claims)) claims.forEach(claim => typeof claim === 'object' && claim?.id && claimIds.add(claim.id));
+  else if (claims && typeof claims === 'object') Object.entries(claims).forEach(([key, claim]) => claimIds.add(claim?.id || key));
+  for (const { entries } of sourceRelationshipSections(data)) {
+    for (const { record } of entries) {
+      if (!record || typeof record !== 'object') continue;
+      for (const endpoint of [relationshipSource(record), relationshipTarget(record)]) {
+        if (!endpoint || seen.has(endpoint) || claimIds.has(endpoint)) continue;
+        seen.add(endpoint);
+        nodes.push({ id: endpoint, label: humanizeId(endpoint), type: 'referenced_concept', description: 'Referenced by a relationship but not described as a node in this source file.', placeholder: true });
+      }
+    }
+  }
+  return { ...data, nodes };
 }
 export function documentPathEntries(data) {
-  return (data.learning_paths || []).map((record, index) => ({ record, pointer: '/learning_paths/' + index }));
+  return (Array.isArray(data.learning_paths) ? data.learning_paths : []).map((record, index) => ({ record, pointer: '/learning_paths/' + index }));
 }
 export function pathRecord(record, data) {
   if (typeof record !== 'string') return record;

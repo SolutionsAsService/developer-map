@@ -27,7 +27,7 @@ test('all source input hashes and exact manifest mappings preserve source record
     for (const record of source.claims) assert.ok(byId.get(record.derivedId).variants.some(v => JSON.stringify(v.record) === JSON.stringify(pointer(record.pointer)) || v.claims.some(c => JSON.stringify(c) === JSON.stringify(pointer(record.pointer)))));
     nodes += source.nodes.length; edges += source.edges.length; claims += source.claims.length; paths += source.paths.length;
   }
-  assert.deepEqual([nodes, edges, claims, paths], [15618, 19009, 526, 522]);
+  assert.deepEqual([nodes, edges + atlas.audit.mergedSelfLoops.length, claims, paths], [15618, 19009, 526, 522]);
   assert.deepEqual(manifest.derivedNodeIds, atlas.nodes.map(n => n.id));
   assert.deepEqual(manifest.derivedEdgeIds, atlas.edges.map(e => e.id));
 });

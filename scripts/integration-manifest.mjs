@@ -12,7 +12,7 @@ const sources = [];
 for (const doc of atlas.documents) {
   const file = 'data/' + doc.file;
   const bytes = await readFile(path.join(root, file));
-  const raw = JSON.parse(bytes);
+  const raw = JSON.parse(bytes.toString('utf8').replace(/^﻿/, ''));
   const data = { ...raw, nodes: sourceNodeList(raw) };
   const nodeSection = Array.isArray(raw.nodes) ? 'nodes' : Array.isArray(raw.entities) ? 'entities' : null;
   const sha256 = hash(bytes);

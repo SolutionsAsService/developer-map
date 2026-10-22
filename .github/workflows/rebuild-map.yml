@@ -1,0 +1,43 @@
+# Rebuilds the generated map files whenever source data or build code changes on
+# main, so uploading a new data/*.json through GitHub is enough to update the site.
+name: Rebuild map
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**.json'
+      - '!data/atlas.json'
+      - '!data/overview.json'
+      - '!data/details/**'
+      - 'scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-map
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/integration-manifest.mjs
+      - name: Commit regenerated files
+        run: |
+          git add -A data docs/integration-manifest.json
+          if git diff --cached --quiet; then echo "Generated files already up to date"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Rebuild map from source data"
+          git push

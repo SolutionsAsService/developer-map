@@ -9,7 +9,7 @@ test('all uploads and all existing sources retain exact git bytes and structured
  assert.equal(a.documents.length,80);
  for(const prefix of ['C','CPP','Cuda','Ruby_on_Rails']) assert.ok(a.documents.some(d=>d.graphId===prefix));
  for(const d of a.documents) assert.equal(createHash('sha256').update(await readFile(new URL('../data/'+d.file,import.meta.url))).digest('hex'),d.sha256);
- for(const c of a.audit.coverage) {assert.equal(c.inputNodes,c.importedNodeVariants);assert.equal(c.duplicateNodeIds.length,0);for(const s of c.sections)assert.equal(s.input,s.imported);}
+ for(const c of a.audit.coverage) {assert.equal(c.inputNodes,c.importedNodeVariants);assert.equal(c.duplicateNodeIds.length,0);for(const s of c.sections)assert.equal(s.input,s.imported+s.mergedSelfLoops);}
  assert.equal(new Set(a.nodes.map(n=>n.id)).size,a.nodes.length);
 });
 test('language compiler GPU and framework distinctions and directions stay typed',()=>{

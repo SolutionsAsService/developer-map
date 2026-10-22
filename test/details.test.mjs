@@ -71,7 +71,8 @@ test('deep link and scoped aliases expose cross-source incoming/outgoing edges, 
  d.querySelector('[data-connection-id="editorial:cpython-implementation-c"] [data-neighbor]').click();await until(()=>d.querySelector('.detail-status.ready'));
  assert.equal(d.querySelector('canvas').dataset.selectedConcept,'c');const incoming=d.querySelector('#connection-direction');incoming.value='incoming';incoming.dispatchEvent(new w.Event('change'));assert.ok(d.querySelector('[data-connection-id="editorial:cpython-implementation-c"]'));
  d.querySelector('#connection-reset').click();assert.equal(d.querySelector('#connection-direction').value,'all');
- d.querySelector('#selection-back').click();assert.equal(d.querySelector('canvas').dataset.selectedConcept,'Python:cpython');
+ // The old Python:cpython deep link resolves to the merged CPython concept.
+ d.querySelector('#selection-back').click();assert.equal(d.querySelector('canvas').dataset.selectedConcept,'cpython');
  d.querySelector('#reset-map').click();assert.equal(d.querySelector('#source-select').value,'all');assert.equal(d.querySelector('canvas').dataset.selectedConcept,'');
  const input=d.querySelector('#search');input.value='V8';input.dispatchEvent(new w.Event('input'));input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter'}));await until(()=>d.querySelector('.detail-status.ready'));assert.equal(d.querySelector('canvas').dataset.selectedConcept,'JavaScript:v8');
  assert.ok(d.querySelector('[data-relation-id="editorial:v8-written-cpp"]'));assert.ok(d.querySelector('[data-relation-id="editorial:v8-ecmascript"]'));w.close();

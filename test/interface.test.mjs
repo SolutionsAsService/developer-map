@@ -369,9 +369,9 @@ test('pointer pan and wheel zoom preserve selection while reset restores stable 
 test('expanded dataset selector, search, editorial rationale and reset work in mocked Canvas', async()=>{
  const dom=await mount();const w=dom.window,d=w.document;
  assert.equal(d.querySelector('#source-select').options.length,81);
- let select=d.querySelector('#source-select');select.value='Next.js.json';select.dispatchEvent(new w.Event('change',{bubbles:true}));
+ let select=d.querySelector('#source-select');select.value='Next.js';select.dispatchEvent(new w.Event('change',{bubbles:true}));
  const search=d.querySelector('#search');search.value='Next.js';search.dispatchEvent(new w.Event('input',{bubbles:true}));
- d.querySelector('#search-results [data-concept="Next.js.json:nextjs"]').click();
+ d.querySelector(`#search-results [data-concept="${atlas.sourceNodeMap['Next.js:nextjs']}"]`).click();
  const edge=d.querySelector('[data-relation-id="editorial:next-web-framework"]');assert.ok(edge);assert.match(edge.textContent,/full-stack web application/);assert.ok(edge.querySelector('a[href="https://nextjs.org/docs"]'));
  assert.match(d.querySelector('#map-count').textContent,/overview.*archived/);
  d.querySelector('#zoom-in').click();d.querySelector('#zoom-out').click();d.querySelector('#reset-map').click();

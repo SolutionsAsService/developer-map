@@ -16,6 +16,13 @@ npm run smoke:deploy -- http://localhost:4173/ --exact
 
 Open http://localhost:4173. Set PORT to change the local development port. Deploy the **repository root** to any static host. Keep index.html, favicon.svg, src/, data/overview.json, the entire data/details/ directory, data/atlas.json and every original source JSON together. No framework build or backend is required when generated JSON is committed. Regenerate the derived archive, overview and content-addressed detail shards with npm run build after source changes; the manifest command regenerates the source-retention audit. The local server is not a production server.
 
+## Adding data
+
+Drop a new JSON file into `data/` and push to `main`. The **Rebuild map** GitHub Action (`.github/workflows/rebuild-map.yml`) runs `npm run build` and the integration manifest, then commits the regenerated `atlas.json`, `overview.json` and detail shards, so the site picks the file up without a local build.
+
+- **No repeated nodes.** A concept that appears in several files (for example `C`, `lang_c` and `C (programming language)`, or `TCP` and `Transmission Control Protocol (TCP)`) becomes one node that carries every file's record and every file's links. Matching is exact after normalizing case, spacing, `_`/`-`, generic qualifiers and acronyms; there is no fuzzy matching. People, claims/citations/learning paths, the curated `declinedMerges`/`forcedScopes`, and single words with several technical meanings (host, kernel, switch, frame…) are never merged automatically. Replaced IDs remain aliases, so older deep links still resolve.
+- **One odd file never breaks the site.** Malformed JSON, unknown shapes, records without IDs, duplicate IDs, non-array relationship sections, relationships pointing at undeclared nodes (kept as `referenced_concept` placeholders), stale alias-group members, broken learning paths and oversized records are skipped or shortened and listed in `audit.warnings` / `audit.skippedSources` in `atlas.json` instead of stopping the build.
+
 ## Map and evidence
 
 The default map is the entire meaningful connected-concept overview: **1,529 concepts and 2,930 original/editorial links**, selected by iterative pruning to at least two distinct displayed neighbors. Bibliography, people, claims, isolated and one-neighbor records remain searchable, inspectable and downloadable rather than becoming artificial concept hubs. The full archive preserves **7,812 original node records, 526 claims, 8,604 structured source relationships and 522 learning paths** as 7,908 canonical records, plus 19 explicitly marked editorial bridges.

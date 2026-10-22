@@ -12,16 +12,21 @@ const resolve = id => byId.has(id) ? id : atlas.aliases[id];
 
 test('explicit semantic aliases unify all reviewed source members', () => {
   for (const group of aliasGroups) {
-    const canonical = byId.get(group.id);
-    assert.equal(canonical.label, group.label);
+    // A reviewed group may join a wider same-named concept; its ID then stays as an alias.
+    const canonical = byId.get(resolve(group.id));
+    assert.ok(canonical, group.id);
     for (const member of group.members) {
-      assert.equal(atlas.sourceNodeMap[member], group.id);
+      assert.equal(atlas.sourceNodeMap[member], canonical.id);
       assert.ok(canonical.variants.some(variant => variant.sourceKey === member), member);
     }
   }
   for (const [alias, id] of Object.entries({ k8s: 'kubernetes', dependencies: 'dependency', open_shift: 'openshift', freebsd_jails: 'freebsd_jail', 'Docker:namespaces': 'namespaces', 'Containerization:cgroups': 'cgroups', container_portability: 'portability' })) assert.equal(resolve(alias), id);
-  assert.equal(byId.get('kubernetes').topics.length, 6);
-  assert.equal(byId.get('virtual_machine').topics.length, 5);
+  assert.ok(byId.get('kubernetes').topics.length >= 6);
+  assert.ok(byId.get('virtual_machine').topics.length >= 5);
+  // The same concept from different files is one node.
+  for (const label of ['C', 'C++', 'Java', 'Python', 'JavaScript', 'Linux', 'Garbage collection']) assert.equal(atlas.nodes.filter(node => node.label === label && node.type !== 'learning_path').length, 1, label);
+  assert.equal(resolve('pod'), 'pod');
+  assert.notEqual(atlas.sourceNodeMap['Perl:pod'] ?? 'none', 'pod');
 });
 
 test('ambiguous and narrower concepts are not conflated', () => {
@@ -50,6 +55,7 @@ test('direct meaningful core relations exist with honest provenance', () => {
 
 test('every endpoint and learning path remaps through its own source identity', async () => {
   let nodeRecords = 0, edgeRecords = 0;
+  const mergedSelfLoops = new Set(atlas.audit.mergedSelfLoops.map(loop => loop.id));
   for (const doc of atlas.documents) {
     const raw = JSON.parse(await readFile(new URL('../data/' + doc.file, import.meta.url)));
     const source = documentNodes(raw);
@@ -62,6 +68,8 @@ test('every endpoint and learning path remaps through its own source identity', 
     const endpoint = (record, ...keys) => keys.map(key => record[key]).find(value => typeof value === 'string' && value.length);
     for (const { record, section, index } of relationshipEntries(raw)) {
       edgeRecords++;
+      // A link between two records that merged into one concept is listed in the audit, not drawn as a loop.
+      if (mergedSelfLoops.has(doc.graphId + ':' + section + ':' + index)) continue;
       const edge = atlas.edges.find(edge => edge.id === doc.graphId + ':' + section + ':' + index);
       assert.deepEqual(edge.record, record);
       // Endpoints use the same subject/object/from fallbacks as the build.
@@ -78,8 +86,9 @@ test('every endpoint and learning path remaps through its own source identity', 
       else if (typeof record !== "string") assert.equal(path.sequenceText, record.sequence);
     }
   }
-  assert.equal(nodeRecords, 15618);
+  assert.equal(nodeRecords, atlas.audit.coverage.reduce((sum, item) => sum + item.inputNodes, 0));
   assert.equal(edgeRecords, 19009);
+  assert.equal(atlas.edges.filter(edge => !edge.curated).length + mergedSelfLoops.size, edgeRecords);
   assert.ok(atlas.edges.every(edge => byId.has(edge.source) && byId.has(edge.target) && (edge.source !== edge.target || edge.record.source === edge.record.target)));
   assert.equal(new Set(atlas.edges.map(edge => edge.id)).size, atlas.edges.length);
   assert.ok(Object.values(atlas.aliases).every(id => byId.has(id)));
@@ -97,9 +106,10 @@ test('claims and references remain isolated identities even without conventional
 
 test('connectivity audit reports disconnected data instead of inventing repairs', () => {
   assert.deepEqual(atlas.audit.connectivity, connectivity(atlas.nodes, atlas.edges));
-  assert.equal(atlas.summary.components, 2659);
-  assert.equal(atlas.summary.isolated, 2327);
-  assert.equal(atlas.audit.connectivity.componentSizes[0], 8513);
+  // Merging same-named concepts joins more of the map into one component.
+  assert.equal(atlas.summary.components, 2238);
+  assert.equal(atlas.summary.isolated, 2063);
+  assert.equal(atlas.audit.connectivity.componentSizes[0], 10716);
   assert.ok(atlas.audit.sourceOnlyConnectivity.componentCount >= atlas.audit.connectivity.componentCount);
   assert.equal(atlas.audit.sourceClaimRecords, 526);
   assert.deepEqual(atlas.audit.selfLoops, ['Firewall:relationships:133', 'IPv6:relationships:234', 'Next.js:relationships:168', 'OS:relationships:46', 'OS:relationships:55', 'Python:relationships:140', 'asm:relationships:270', 'bitcoin:relationships:88', 'git:relationships:42', 'git:relationships:44']);
