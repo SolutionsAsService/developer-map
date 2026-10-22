@@ -174,8 +174,7 @@
                 ></canvas>
                 <div id="map-tooltip" class="map-tooltip" hidden></div>
                 <div class="map-hint">
-                  CLICK NODE OR LABEL · SELECTED NODE + ALL NEIGHBORS ·
-                  DRAG TO PAN · + / − TO ZOOM · HOME TO FIT · ESC TO CLEAR
+                  CLICK A NODE TO SEE ITS LINKS · DRAG · SCROLL TO ZOOM
                 </div>
               </div>
               <div class="map-footer">
@@ -186,14 +185,14 @@
                 ></div>
                 <span class="map-count" id="map-count"></span>
               </div>
-              <div class="relation-key">
-                <span class="key-title">LINES / WHY CONNECTED</span>
+              <details class="relation-key">
+                <summary class="key-title">LINE STYLES</summary>
                 <div
                   id="relation-key"
                   class="relation-key-items"
                   aria-label="Relationship line styles"
                 ></div>
-              </div>
+              </details>
             </div>
             <aside class="connection-pane" aria-label="Selected concept">
               <div class="pane-title">

@@ -53,9 +53,12 @@
     let labelTargets = [];
     const incidentById = new Map(nodes.map(node => [node.id, []]));
     for (const edge of edges) for (const id of new Set([edge.source, edge.target])) incidentById.get(id).push(edge);
+    const layerOfNode = new Map(nodes.map((node) => [node.id, mapKey.layerOf(node)]));
+    let hiddenLayers = new Set();
     function rebuildNeighborhood() { localPositions.clear(); }
     function basePoint(node) { return {x:(node.layout.x-centerX)*fitScaleX,y:(node.layout.y-centerY)*fitScaleY}; }
-    function isVisible(node) { return overviewIds.has(node.id) || node.id===selected || neighbors.get(selected)?.has(node.id); }
+    function layerShown(node) { return node.id === selected || !hiddenLayers.has(layerOfNode.get(node.id)); }
+    function isVisible(node) { return node.id===selected || (layerShown(node) && (overviewIds.has(node.id) || neighbors.get(selected)?.has(node.id))); }
     function nodeRadius(node) { return node.id === selected ? 10 : Math.max(4, Math.min(8, 3 + Math.sqrt(node.degree || 0)*0.45)); }
 
     function screen(node) {
@@ -81,7 +84,7 @@
       function drawEdge(edge, highlighted) {
         const from = byId.get(edge.source),
           to = byId.get(edge.target);
-        if (!from || !to) return;
+        if (!from || !to || !layerShown(from) || !layerShown(to)) return;
         const inTopic =
           topic === "all" ||
           from.topics.includes(topic) ||
@@ -133,9 +136,9 @@
           context.moveTo(start.x, start.y);
           context.quadraticCurveTo(control.x, control.y, end.x, end.y);
           context.stroke();
-          if (highlighted && offset) { context.fillStyle = style.color; context.font = '10px ui-monospace, monospace'; context.fillText(String(lane.index + 1), control.x, control.y); }
         }
-        if (edge.source !== edge.target && distance > 75 && (highlighted || zoom >= 2.5)) {
+        // Only the one edge being inspected gets a caption; the rest stay quiet lines.
+        if (edge === featuredEdge && edgeOnly && edge.source !== edge.target && distance > 75) {
           const caption = edge.relation;
           context.font = '11px ui-monospace, monospace';
           const textWidth = context.measureText(caption).width;
@@ -184,20 +187,27 @@
           }
         }
       }
-      for (const edge of edges)
-        if (overviewEdges.has(edge.id) && (!active || (edge.source !== active && edge.target !== active)))
-          drawEdge(edge, false);
+      // Links appear only for the selected (or hovered) concept; "Whole-map
+      // context" opts back into the faint background web.
+      if (selected && !neighborhoodMode)
+        for (const edge of edges)
+          if (overviewEdges.has(edge.id) && edge.source !== active && edge.target !== active)
+            drawEdge(edge, false);
       if (active)
         for (const edge of incident)
           if (edge !== featuredEdge) drawEdge(edge, true);
       if (featuredEdge && incident.includes(featuredEdge)) drawEdge(featuredEdge, true);
       context.setLineDash([]);
-      const labeled = new Set(ranked.slice(0, 32).map((node) => node.id));
-      if (active) {
-        labeled.add(active);
-        for (const node of ranked.filter((node) => related.has(node.id)))
-          labeled.add(node.id);
-      }
+      // Few labels: the biggest hubs, more as you zoom in; around a selection,
+      // its best-connected neighbors.
+      const shownCount = Math.max(1, nodes.reduce((count, node) => count + (overviewIds.has(node.id) && isVisible(node) ? 1 : 0), 0));
+      const sparseness = Math.min(3, Math.max(1, Math.sqrt(overviewIds.size / shownCount)));
+      const labelBudget = Math.round(Math.min(60, 8 * Math.max(1, zoom) ** 2 * sparseness));
+      const labeled = new Set(
+        active
+          ? [active, ...ranked.filter((node) => related.has(node.id) && isVisible(node)).slice(0, Math.min(40, 10 * Math.max(1, zoom))).map((node) => node.id)]
+          : ranked.filter((node) => overviewIds.has(node.id) && isVisible(node)).slice(0, labelBudget).map((node) => node.id),
+      );
       if (featuredEdge) {
         labeled.add(featuredEdge.source);
         labeled.add(featuredEdge.target);
@@ -215,11 +225,11 @@
           active
               ? relevant
                 ? 1
-                : 0.3
+                : 0.12
               : inTopic
-                ? 0.82
-                : 0.25;
-        context.fillStyle = mapKey.domainById.get(mapKey.groupOf(node)).color;
+                ? 0.75
+                : 0.15;
+        context.fillStyle = mapKey.layerById.get(layerOfNode.get(node.id)).color;
         context.beginPath();
         context.arc(
           point.x,
@@ -272,7 +282,7 @@
         context.font =
           (important ? "600 13px" : "11px") + " ui-monospace, monospace";
         const label =
-          node.label.length > 28 ? node.label.slice(0, 27) + "…" : node.label;
+          node.label.length > 24 ? node.label.slice(0, 23) + "…" : node.label;
         const tw = context.measureText(label).width;
         const x = Math.max(8, Math.min(width - tw - 12, point.x + 10));
         const y = point.y + (important ? 25 : -9);
@@ -290,14 +300,14 @@
           continue;
         labelBoxes.push(box);
         labelTargets.push({...box, id:node.id});
-        context.globalAlpha = 0.93;
+        context.globalAlpha = important ? 0.9 : 0.6;
         context.fillStyle = "#111810";
         context.fillRect(box.x, box.y, box.w, box.h);
-        context.globalAlpha = 1;
+        context.globalAlpha = important ? 1 : 0.85;
         context.fillStyle = important ? "#edffd8" : "#b8c8b0";
         context.fillText(label, x, y);
       }
-      if (featuredEdge) {
+      if (featuredEdge && edgeOnly) {
         const from = screen(byId.get(featuredEdge.source)),
           to = screen(byId.get(featuredEdge.target));
         const dx = to.x - from.x,
@@ -529,6 +539,18 @@
       },
       topic(id) {
         topic = id;
+        draw();
+      },
+      layers(hidden) {
+        hiddenLayers = new Set(hidden);
+        // Frame what is left so a small layer fills the canvas.
+        const shown = nodes.filter((node) => overviewIds.has(node.id) && isVisible(node)).map(basePoint);
+        if (!selected && shown.length && hiddenLayers.size) {
+          const xs = shown.map((point) => point.x), ys = shown.map((point) => point.y);
+          const left = Math.min(...xs), right = Math.max(...xs), top = Math.min(...ys), bottom = Math.max(...ys);
+          zoom = Math.min(6, (width - 80) / Math.max(50, right - left), (height - 90) / Math.max(50, bottom - top));
+          panX = -(left + right) / 2 * zoom; panY = -(top + bottom) / 2 * zoom;
+        } else if (!selected && !hiddenLayers.size) { zoom = 1; panX = 0; panY = 0; }
         draw();
       },
       zoom(factor) {

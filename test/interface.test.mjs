@@ -50,7 +50,7 @@ test("map, search, route, source inspector and Escape work without a server", as
   );
   assert.equal(
     document.querySelector("#map-count").textContent,
-    `${atlas.overview.nodeIds.length.toLocaleString()} overview nodes · ${atlas.overview.edgeIds.length.toLocaleString()} overview links / ${atlas.nodes.length.toLocaleString()} archived nodes · ${atlas.edges.length.toLocaleString()} archived links`,
+    `${atlas.overview.nodeIds.length.toLocaleString()} overview concepts of ${atlas.nodes.length.toLocaleString()} archived`,
   );
   assert.match(
     document.querySelector("#inspector").textContent,
@@ -373,7 +373,7 @@ test('expanded dataset selector, search, editorial rationale and reset work in m
  const search=d.querySelector('#search');search.value='Next.js';search.dispatchEvent(new w.Event('input',{bubbles:true}));
  d.querySelector(`#search-results [data-concept="${atlas.sourceNodeMap['Next.js:nextjs']}"]`).click();
  const edge=d.querySelector('[data-relation-id="editorial:next-web-framework"]');assert.ok(edge);assert.match(edge.textContent,/full-stack web application/);assert.ok(edge.querySelector('a[href="https://nextjs.org/docs"]'));
- assert.match(d.querySelector('#map-count').textContent,/overview.*archived/);
+ assert.match(d.querySelector('#map-count').textContent,/\d+ links · \d+ neighbors · all sources/);
  d.querySelector('#zoom-in').click();d.querySelector('#zoom-out').click();d.querySelector('#reset-map').click();
  assert.equal(d.querySelector('#source-select').value,'all');assert.equal(search.value,'');assert.match(d.querySelector('#map-mode').textContent,/WHOLE FIELD/);
  for(const doc of atlas.documents)assert.ok(w.DeveloperMapKey.domainById.has(doc.graphId));dom.window.close();
@@ -432,5 +432,21 @@ test('evidence refresh preserves list position and keyboard focus', async () => 
   const counts = d.querySelector('#map-count').textContent;
   d.querySelector('#edge-focus').click();
   assert.equal(d.querySelector('#map-count').textContent, counts);
+  w.close();
+});
+
+test('layer chips show one kind of node, links appear only for a selection, and reset restores every layer', async () => {
+  const dom = await mount(); const w = dom.window, d = w.document, canvas = d.querySelector('canvas');
+  const byId = new Map(atlas.nodes.map(node => [node.id, node]));
+  assert.deepEqual(JSON.parse(canvas.dataset.incidentEdgeIds), []);
+  d.querySelector('[data-layer="language"]').click();
+  const visible = JSON.parse(canvas.dataset.visibleNodeIds);
+  assert.ok(visible.length > 0 && visible.every(id => w.DeveloperMapKey.layerOf(byId.get(id)) === 'language'));
+  w.selectConcept('python');
+  const drawn = JSON.parse(canvas.dataset.incidentEdgeIds);
+  assert.ok(drawn.length > 0 && drawn.every(id => { const edge = atlas.edges.find(e => e.id === id); return [edge.source, edge.target].every(end => end === 'python' || w.DeveloperMapKey.layerOf(byId.get(end)) === 'language'); }));
+  d.querySelector('#reset-map').click();
+  assert.equal(d.querySelectorAll('[data-layer][aria-pressed="false"]').length, 0);
+  assert.equal(JSON.parse(canvas.dataset.visibleNodeIds).length, atlas.overview.nodeIds.length);
   w.close();
 });

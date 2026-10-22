@@ -6,6 +6,7 @@ const state = {
   selected: null,
   featuredEdge: null,
   topic: "all",
+  hiddenLayers: new Set(),
   query: "",
   catalogQuery: "",
   catalogLimit: 36,
@@ -247,10 +248,11 @@ function renderMap() {
   $("#neighborhood-view").setAttribute("aria-pressed", String(state.neighborhood));
   $("#neighborhood-view").textContent = state.neighborhood ? "Highlight · same map" : "Whole-map context";
   $("#map-mode").textContent = state.selected
-    ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()} · ALL INCIDENT LINKS / ALL SOURCES`
-    : "WHOLE FIELD / ALL NODES ARCHIVED · CONNECTED CONCEPT OVERVIEW";
-  $("#map-count").textContent =
-    `${state.atlas.overview.nodeIds.length.toLocaleString()} overview nodes · ${state.atlas.overview.edgeIds.length.toLocaleString()} overview links / ${state.atlas.nodes.length.toLocaleString()} archived nodes · ${state.atlas.edges.length.toLocaleString()} archived links${state.selected ? ` · ${(state.edgesById.get(state.selected) || []).length} incident links · ${network?.counts().connected || 0} direct neighbors · all sources (overview filter does not hide incident links)` : ""}`;
+    ? `FOCUS / ${state.byId.get(state.selected).label.toUpperCase()}`
+    : "WHOLE FIELD / ALL NODES";
+  $("#map-count").textContent = state.selected
+    ? `${(state.edgesById.get(state.selected) || []).length} links · ${network?.counts().connected || 0} neighbors · all sources`
+    : `${state.atlas.overview.nodeIds.length.toLocaleString()} overview concepts of ${state.atlas.nodes.length.toLocaleString()} archived`;
   const directed = (state.edgesById.get(state.selected) || []).filter(
     (edge) => window.DeveloperMapKey.classify(edge).arrow,
   );
@@ -326,10 +328,31 @@ function lineSample(style) {
   return `<svg class="line-sample" viewBox="0 0 42 10" width="42" height="10" aria-hidden="true"><path d="M1 5 H${endpoint}" fill="none" stroke="${style.color}" stroke-width="2.2" stroke-dasharray="${style.dash.join(" ") || "none"}"/>${head}</svg>`;
 }
 
+// Layer chips double as the color key. With every layer on, clicking one
+// shows only that layer; after that each click toggles it.
+function renderLayers() {
+  const key = window.DeveloperMapKey;
+  const overview = new Set(state.atlas.overview.nodeIds);
+  const counts = new Map();
+  for (const node of state.atlas.nodes) if (overview.has(node.id)) counts.set(key.layerOf(node), (counts.get(key.layerOf(node)) || 0) + 1);
+  const allOn = !state.hiddenLayers.size;
+  $("#domain-key").innerHTML =
+    `<span class="key-title">LAYERS</span>${key.layers.map((layer) => `<button type="button" class="layer-toggle" data-layer="${layer.id}" aria-pressed="${!state.hiddenLayers.has(layer.id)}" title="${allOn ? "Show only " : "Show or hide "}${escapeHtml(layer.label.toLowerCase())}"><i style="--domain-color:${layer.color}" aria-hidden="true"></i>${escapeHtml(layer.label)}<span class="layer-count">${(counts.get(layer.id) || 0).toLocaleString()}</span></button>`).join("")}<button type="button" class="layer-toggle layer-all" data-layer="all" ${allOn ? "hidden" : ""}>Show all</button>`;
+  $("#domain-key").querySelectorAll("[data-layer]").forEach((button) => button.addEventListener("click", () => {
+    const id = button.dataset.layer;
+    if (id === "all") state.hiddenLayers = new Set();
+    else if (!state.hiddenLayers.size) state.hiddenLayers = new Set(key.layers.map((layer) => layer.id).filter((other) => other !== id));
+    else if (state.hiddenLayers.has(id)) state.hiddenLayers.delete(id);
+    else state.hiddenLayers.add(id);
+    if (state.hiddenLayers.size === key.layers.length) state.hiddenLayers = new Set();
+    network?.layers(state.hiddenLayers);
+    renderLayers();
+  }));
+}
+
 function renderMapKey() {
   const key = window.DeveloperMapKey;
-  $("#domain-key").innerHTML =
-    `<span class="key-title">POINTS / DOMAINS</span>${key.domains.map((domain) => `<span class="domain-item"><i style="--domain-color:${domain.color}" aria-hidden="true"></i>${escapeHtml(domain.label)}</span>`).join("")}`;
+  renderLayers();
   $("#relation-key").innerHTML =
     key.relationships
       .map(
@@ -749,7 +772,7 @@ function setupMapGestures() {
   $("#zoom-in").addEventListener("click", () => network.zoom(1.3));
   $("#zoom-out").addEventListener("click", () => network.zoom(1 / 1.3));
   $("#reset-map").addEventListener("click", () => {
-    state.topic="all"; state.query=""; state.catalogQuery=""; state.relationQuery=""; state.relationDirection="all"; state.relationKind="all"; state.selectionHistory=[]; $("#search").value=""; $("#catalog-search").value="";
+    state.topic="all"; state.hiddenLayers=new Set(); network.layers(state.hiddenLayers); renderLayers(); state.query=""; state.catalogQuery=""; state.relationQuery=""; state.relationDirection="all"; state.relationKind="all"; state.selectionHistory=[]; $("#search").value=""; $("#catalog-search").value="";
     clearSelection({ fit: true }); renderFilters(); renderSearch(); renderCatalog();
   });
 }

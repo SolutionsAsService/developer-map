@@ -109,6 +109,32 @@
     return topics.find(topic => domainById.has(topic)) || "neutral";
   }
 
+  // Map layers group the thousands of source node types into a few kinds a
+  // reader can switch on and off. Checked in order; the first match wins.
+  const layers = [
+    { id: "language", label: "Languages", color: "#d5ff70" },
+    { id: "software", label: "Software & tools", color: "#7cc8ff" },
+    { id: "protocol", label: "Protocols & standards", color: "#ffb86b" },
+    { id: "hardware", label: "Hardware & networks", color: "#ff7eb6" },
+    { id: "concept", label: "Concepts", color: "#b8a6ff" },
+    { id: "people", label: "People & orgs", color: "#ffd84d" },
+    { id: "history", label: "Sources & history", color: "#8fa8b6" },
+  ];
+  const layerById = new Map(layers.map((layer) => [layer.id, layer]));
+  const layerRules = [
+    ["people", /person|people|researcher|author|inventor|scientist|company|organi[sz]ation|vendor|foundation|consortium|community/],
+    ["history", /claim|reference|citation|source|book|paper|bibliograph|learning|question|misconception|example|expansion|histor|release|version|timeline|award|use_case|usage/],
+    ["language", /(^|_)language($|_(?!feature|version|standard|construct|area))|dialect|markup/],
+    ["protocol", /protocol|standard|specification|rfc|format|encoding|header|osi|packet|pdu|message|network_(layer|architecture|unit)|(^|_)abi|calling_convention|license|^pep$/],
+    ["software", /software|tool|compiler|interpreter|framework|librar|runtime|application|engine|platform|product|implementation|database|server|browser|editor|package|(^|_)ide($|_)|(^|_)vm($|_)|virtual|container|orchestr|service|command|(^|_)git|(^|_)os($|_)|operating_system|kernel|distribution|malware|botnet|program$/],
+    ["hardware", /hardware|device|processor|cpu|gpu|chip|register|instruction|(^|_)isa($|_)|storage|disk|network|router|switch|wireless|wifi|physical|infrastructure|cluster|host/],
+  ];
+  function layerOf(node) {
+    if (node.claim || /^ref_|^claim_/i.test(node.originalId || node.id)) return "history";
+    const type = String(node.type || "").toLowerCase();
+    return layerRules.find(([, rule]) => rule.test(type))?.[0] || "concept";
+  }
+
   function classify(edge) {
     if (edge.curated)
       return {
@@ -160,6 +186,9 @@
     relationships,
     domainById,
     groupOf,
+    layers,
+    layerById,
+    layerOf,
     classify,
   };
 })();
