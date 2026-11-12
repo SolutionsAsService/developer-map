@@ -196,3 +196,8 @@ The graph and panel served; the process lacked one probe. The old site's worst d
 - [x] Printed figures re-measured at the final state (section 6)
 - [x] Anchor ledger, double loop
 - [x] Run recorded in the dada-changes ledger (import_log.py), see the final reply
+
+## Human grade
+
+- **Grade:** A- (2026-11-12, on the final state).
+- **Words, verbatim:** "Ok push that main a minus good job"
