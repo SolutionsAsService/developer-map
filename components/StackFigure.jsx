@@ -22,7 +22,7 @@ export default function StackFigure({ atlas, size, id, traceId }) {
           <line className="row-rule" x1="0" x2={s.width} y1={row.y0} y2={row.y0} />
           <Link href={`/regions/${row.id}`} className="region-row" aria-label={`${row.name}: ${row.graphs} graphs, ${row.count} records`}>
             <rect className="row-hit" x="0" y={row.y0} width={g.plotX - 6} height={s.rowH} />
-            <text className="row-name" x="0" y={row.y0 + (size === 'mini' ? 19 : wide ? 21 : 16)}>{wide ? row.name : row.name.split(/[ &]/)[0]}</text>
+            <text className="row-name" x="0" y={row.y0 + (size === 'mini' ? 19 : wide ? 21 : 16)}>{size === 'wide' ? row.name : size === 'mini' ? row.name.replace('Peer-to-peer & hidden web', 'Peer-to-peer').replace('Paradigms & compilers', 'Paradigms') : row.name.split(/[ &]/)[0]}</text>
             {size !== 'mini' && <text className="row-count" x="0" y={row.y0 + (wide ? 37 : 29)}>{wide ? `${row.graphs} graphs · ${row.count.toLocaleString('en')} rec.` : `${row.count.toLocaleString('en')} rec.`}</text>}
           </Link>
           {row.tiles.map(t => (

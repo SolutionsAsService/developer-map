@@ -18,8 +18,7 @@ export default function Home() {
     <p className="lede">
       Each row is a region and each block one source graph, drawn as wide as the concepts it holds, on one scale. The white
       thread is <Link href={atlas.href(TRACE_ID)}>{trace.label}</Link>: it turns up in {trace.graphs.length} graphs across{' '}
-      {trace.regions.length} of the {atlas.regions.length} regions. No concept reaches more regions, and of the {sameSpan.length} that reach{' '}
-      {maxSpan}, {trace.label} is in the most graphs (the most-shared concept overall is in {mostGraphs}).
+      {trace.regions.length} of the {atlas.regions.length} regions. No concept spans more regions{mostGraphs > trace.graphs.length ? `; only ${atlas.nodes.filter(n => n.graphs.length > trace.graphs.length).map(n => n.label).join(' and ')} ${atlas.nodes.filter(n => n.graphs.length > trace.graphs.length).length > 1 ? 'are' : 'is'} in more graphs (${mostGraphs})` : ''}.
     </p>
   );
 
