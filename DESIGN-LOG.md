@@ -1,248 +1,198 @@
-# Developer Map — DADA design log
+# DESIGN-LOG: Developer Map v2 (DADA run, 2026-11-12)
 
-## Traversal Plan
-Brief: redesign the infrastructure map as a developer-native exploration workbench and reconcile its concepts and direct relationships without losing original evidence.
-Mode: **Adaptive**: a public developer learning tool must be both distinctive and usable. Governing criterion: MAYA: Most Advanced Yet Acceptable (Raymond Loewy).
+The previous run's log is kept at `docs/DESIGN-LOG-v1.md`. The pre-redesign site is on the `legacy` branch.
 
-### Tooling inventory / preflight
-- Registry searched for graph, Mermaid, diagram, workflow, task, and orchestration tooling. No dedicated graph query/render tool exposed; use a small local parser for the provided Mermaid edge list, and a marked Mermaid graph in this log.
-- Workflow tracking: progress_card, with the frontier checklist below for individual moves and panel rounds.
-- Independent critics: sessions_spawn / collector agents, one independent report per critic.
-- Implementation: file tools and shell; retain the existing static app, Canvas renderer, D3 force layout and Node tests instead of introducing a framework or graph stack.
-- Visual verification: Playwright Chromium (temporary QA harness) and screenshots; jsdom retained for fast regressions.
-- Persistence: this versioned log plus docs/DATA-AUDIT.md and test evidence.
+## 1. Traversal Plan
 
-### Seed and exact chains
-Stance: The Art of Looking Sideways (Alan Fletcher). Rules: The Elements of Typographic Style (Robert Bringhurst) →[canon for] Thinking with Type (Ellen Lupton) →[Letter Text Grid leads to] Grid Systems in Graphic Design (Josef Müller-Brockmann). Breaker: Making and Breaking the Grid (Timothy Samara) -.->[loosens] Grid Systems in Graphic Design (Josef Müller-Brockmann). Stance reached from Art as Technique (Viktor Shklovsky) →[making strange for] The Art of Looking Sideways (Alan Fletcher); same incoming node →[making strange for] Making and Breaking the Grid (Timothy Samara). MAYA →[bounds the break of] Making and Breaking the Grid (Timothy Samara).
+**Brief, restated.** The site is a mess: redesign it and make the interface faster and better, on Next.js, applying the owner's standing rules (topic-derived palette, colour varied by zone).
 
-Panel: Critic: Provocateur (Debord, Shklovsky); Critic: Inclusion (Holmes, Mace); Critic: Usability (Krug, Nielsen); Critic: Evidence (Tufte, Cairo); Critic: Craft (Sennett, Bringhurst). The Provocateur and Usability critics are joined by dotted counterpoints.
-Artist question for each round: does this feel like a real developer exploration tool, and can a newcomer still identify an actual relationship and its provenance? Artist permission: grounded critical opinions are invited after statements of meaning and neutral questions.
+**Mode: Adaptive.** A public developer learning tool; MAYA governs: the advanced pole (a terminal-native, region-coloured composition with one traced concept) and the acceptable pole (search first, plain pages per concept and graph) must both hold.
 
-## Frontier
-One-hop edge inventory is generated in docs/design-frontier.md from the exact reference graph, including incoming and outgoing edges. Candidate outcomes tracked there and below.
-- [x] M1 KEEP-THE-RULE: semantic identity, explicit curation, provenance and direct neighbors. Reached via Evidence → graphical integrity → The Visual Display of Quantitative Information (Edward Tufte).
-- [x] M2 BREAK: graph-first developer workbench, terminal query as an interactive diagram rather than a decorative hero. Reached via Art as Technique → making strange for → Making and Breaking the Grid.
-- [x] M1/M2 panel and interaction merge: data distinctions must read in the new interface.
-- [x] M3 ambition push: elevate real relationship traversal into the leading interaction, not merely reskin.
-- [x] WHOLE rounds until no objections/new frontier items remain in two consecutive rounds.
+**Run type: Full.** Concept, structure and stack all change; the Landing procedure runs as the landing move (M3).
 
-## Move M1: Canonical concepts, original evidence (KEEP-THE-RULE)
-Depends on: none.
-Anchors: Stance The Art of Looking Sideways (Alan Fletcher) | Rule Grid Systems in Graphic Design (Josef Müller-Brockmann) | Breaker Making and Breaking the Grid (Timothy Samara) | Counterpoint Grid Systems in Graphic Design (Josef Müller-Brockmann), dotted edge from Making and Breaking the Grid (Timothy Samara). Evidence anchor The Visual Display of Quantitative Information (Edward Tufte).
-Intent: make conceptual neighborhoods represent meaning rather than accidental source IDs.
-Formal argument: explicit identity decisions organize a common coordinate system; source variants and relation verbs stay accessible, so connectivity does not masquerade as certainty.
-Alternatives rejected: label-only fuzzy merging risks combining distinct concepts; connecting every domain to every other domain invents relations rather than explaining them.
-Consequence: canonical IDs need backward alias resolution and tests; editorial edges need visible labels and evidence.
-Fence: source isolation prevents accidental conflation; break isolation only with explicit reviewed aliases.
-Frontier effect: alias search, old URL resolution, source badge accuracy, meaningful default neighborhood.
-Advanced pole: cross-source navigation using The Art of Looking Sideways (Alan Fletcher). Acceptable pole: traceable graphical integrity using The Visual Display of Quantitative Information (Edward Tufte).
+**Tooling inventory.** Graph rendering: none available (Mermaid text kept here). Frontier: by hand from `references/anchor-graph.md`. Panel: Agent sub-agents, one per reference, at most three at a time, filing to `design/panel/<round>/<seat>.md`; `collect_panel.py`. Measurement: Playwright via `design/measure.cjs` (probes with must-fail fixtures), `node --test`. Ledger: `import_log.py` and `rate_seats.py` in the dada-changes clone.
 
-## Move M2: Infrastructure workbench (BREAK)
-Depends on: M1 for live relationship counts, but shell can be implemented in parallel.
-Anchors: Stance The Art of Looking Sideways (Alan Fletcher) | Rule The Elements of Typographic Style (Robert Bringhurst) and Grid Systems in Graphic Design (Josef Müller-Brockmann) | Breaker Making and Breaking the Grid (Timothy Samara) | Counterpoint Grid Systems in Graphic Design (Josef Müller-Brockmann), dotted edge from Making and Breaking the Grid (Timothy Samara).
-Intent: replace the generic marketing landing page with an instrument: graphite surfaces, sharp panes, acid-lime syntax, restrained monospace, visible identifiers, searchable relationships.
-Formal argument: bring the actual graph and relationship query into the opening viewport; use typography and spacing to make developer density navigable.
-Alternatives rejected: a neon cyberpunk terminal would privilege theater over reading; an oversized editorial poster would postpone the working graph and obscure its purpose. Only the instrument direction is a plausible Breaker for this brief, so no competing branch spike is selected.
-Consequence: density increases; explicit labels, contrast, native controls, mobile stacking, and text alternatives are required.
-Fence: the marketing hero supplies an introduction; retain a compact clear promise while breaking its dominance.
-Frontier effect: readable canvas versus inspector competition; visible connection trail and labels; keyboard and mobile access.
-Advanced pole: Making and Breaking the Grid (Timothy Samara), workbench rather than landing page. Acceptable pole: Thinking with Type (Ellen Lupton), clear hierarchy and native search.
+**Seed (labels verbatim).**
+- Stance: `How to Use Graphic Design to Sell Things, Explain Things, Make Things Look Better (Michael Bierut)` -->|wit as welcome for| `MAYA: Most Advanced Yet Acceptable (Raymond Loewy)`
+- Rules: `The Visual Display of Quantitative Information (Edward Tufte)` (one scale for every block), `Envisioning Information (Edward Tufte)` -->|extends| the former, `Grid Systems in Graphic Design (Josef Müller-Brockmann)`
+- Breaker: `The Medium Is the Massage (Marshall McLuhan, Quentin Fiore)`: the medium developers live in (the terminal: monospace, prompt, cursor, xterm colours) becomes the site's form.
+- Counterpoint: `The End of Print (David Carson, Lewis Blackwell)`, reached by the dotted edge `The Medium Is the Massage` -.->|form as message echoed in| `The End of Print`. **Declined** as a style (illegibility would fail the acceptable pole); kept as a check that the terminal look must not become decoration.
+- Second counterpoint: `Dear Data (Giorgia Lupi, Stefanie Posavec)` -.->|hand-drawn data art answers| `The Visual Display of Quantitative Information`: **applied** in the traced thread, one personal path through the data drawn by hand-picked rule (the most shared concept), disclosed as such.
 
-## Anchor Ledger
-See the reviewed Anchor Ledger below and the final convergence record.
+**Panel.** As the previous Adaptive Full runs (from `pick_panel.py`): Debord, Shklovsky, Holmes, Mace (required), Cairo and Tufte (measurement and data-graphic seats), Krug, Nietzsche. Dotted pair: Debord -.- Krug. R0 seated Cairo, Krug and Debord on the inherited site (override: one-screen premortem, reasoned in the previous run).
 
-## Compliance Check
-See Final convergence and compliance below for completed checks and explicit limitations.
+**Landing inventory.** 8 regions (one row each) · 80 source graphs (one block each, linked) · 4,656 concept pages (reached from the blocks and the trace) · the map (CTA) · the shared vocabulary (section below) · About.
 
-## Panel, M1/M2, round R1
-Artifacts: initial rendered desktop, Docker selection and 390px mobile screenshots (review-media first iteration; final captures supersede them). Independent collector critics viewed screenshots via view_image.
+## 2. Panel R0 (premortem on the inherited site; `design/panel/R0/`)
 
-| Critic | Anchor used | Observed in work | Verdict | Requested change |
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
 |---|---|---|---|---|
-| Provocateur | Art as Technique (Viktor Shklovsky) | Terminal identity convincing; highlighted edge and evidence card disagree | OBJECT | Coordinate exact edge, status and proof |
-| Usability | Don't Make Me Think (Steve Krug) | Docker neighborhood labels overlap; desktop hero delays graph | OBJECT | Reduce label density, compact intro, restore mobile nav |
-| Evidence | The Visual Display of Quantitative Information (Edward Tufte) | runs_and_manages incorrectly styled Same platform | OBJECT | Correct semantic legend and evidence continuity |
-| Craft | The Elements of Typographic Style (Robert Bringhurst) | Relevant legend is tiny; overlapping node text | OBJECT | Readable hierarchy, active pair priority |
-| Inclusion | Mismatch: How Inclusion Shapes Design (Kat Holmes) | Mobile navigation absent and evidence continuity unclear | OBJECT | Restore navigation and align textual relationship |
+| Critic: Evidence (Cairo) | The Truthful Art | hairball of ~4,300 dots, 16 colours for 80 sources, illegible labels, unformatted and stale counts, 16.4 MB blocking fetch, sampling undisclosed | OBJECT | legible small view first; counts from data; disclose sampling and position |
+| Critic: Usability (Krug) | Don't Make Me Think | no subject in five seconds; "Explore Docker" as the only action; unclear clickables; map below the fold; insider copy | OBJECT | one subject line; search above the fold; plain sample links; cut jargon |
+| Critic: Provocateur (Debord) | Society of the Spectacle | the cloud is spectacle; count tiles as authority; numbers contradict the README; nothing citable (one URL) | OBJECT | one claim per screen proven by the figure; per-concept citable URLs; reconcile counts |
 
-Statements of meaning: a developer instrument with inspectable evidence, undermined by a spectacle of dense edges. Artist question: can newcomers follow a real relationship and provenance? Answer: only partly. Neutral questions: which edge corresponds to the evidence card, and where does a mobile reader find navigation? Opinions: permission granted in Traversal Plan; substantive objections listed above. Andon: YES.
+### Resolutions, R0
 
-### ADAPT / frame swap (before additional moves)
-Three or more critics objected to the same graph-to-evidence region. Replace a whole-neighborhood-as-emphasis frame with a one-relationship-as-emphasis frame. Existing edge: The Visual Display of Quantitative Information (Edward Tufte) →[names] Tufte Style; Progressive Disclosure (incoming via Envisioning Information) will separate the selected relation from the complete field. This is a frame swap rather than endless polishing of dense labels. M2 depends on M1 and is REOPENED; the interaction merge remains OPEN until re-review.
-- ADAPT M1 presentation: classify curated semantic links as Editorial, not identity; preserve actual predicate.
-- ADAPT M2: active edge card shows the exact highlighted subject/predicate/object and links to that relationship record; prioritize endpoint labels and collision-test other labels. Compress oversized inherited hero rules and restore mobile navigation.
-- Re-render and rerun all critics. No new move until Andon is resolved.
+| Finding | Resolution |
+|---|---|
+| Cairo + Debord: hairball, colours undecodable | ADAPT (M3, M5): landing is 8 rows x 80 blocks; map clusters by region on a ring with 8 xterm colours |
+| Cairo + Krug: illegible labels | ADAPT (M5): map labels 12 px screen size, collision-culled |
+| Cairo + Debord: 16.4 MB gate | ADAPT (M6): pre-rendered pages; map data 125 KB gzip; search index on demand |
+| Cairo + Debord: stale and contradictory counts | ADAPT (M2, M7): every number computed at build; README rewritten; tests assert the printed counts |
+| Cairo: sampling undisclosed | ADAPT (M5): map states 4,656 of 13,299 and why; About states the page policy |
+| Krug: no subject, no first action | ADAPT (M3): h1 states the subject and the finding; header search on every page; "Open the map" |
+| Krug: insider copy | ADAPT (M3): tiles and jargon removed |
+| Debord: nothing citable | ADAPT (M4): one URL per concept (4,656), per graph (80), per region (8); relationship ids printed |
 
-## Panel, M1/M2 adaptation, round R2
-Artifacts: re-rendered desktop, Docker active edge, mobile home. Five independent critics viewed the actual captures.
+## 3. Decision Records
 
-| Critic | Anchor | Observed evidence | Verdict | Requested change |
+> Honesty note: M1-M7 were written during the build (as in the previous run), not strictly before each move.
+
+## Move M1: Keep the pipeline, drop the browser blobs  (KEEP-THE-RULE)
+Depends on: none
+Anchors: `Ten Principles of Good Design (Dieter Rams)` (as little as possible)
+Intent: keep `scripts/build-atlas.mjs` (exact-match merging, provenance, audit) as the build's first step; stop writing `overview.json` (16.4 MB) and `data/details/` (1,399 shards, 266 MB); stop committing `atlas.json` (51.8 MB). Checkout 354 MB to 24 MB.
+Residual diff: `atlas.json` rebuilt from source is byte-identical to the committed one (cmp, before deletion); build 92 s.
+
+## Move M2: Eight regions  (KEEP-THE-RULE)
+Anchors: `Grid Systems in Graphic Design (Josef Müller-Brockmann)`
+Intent: fold 80 graphs into 8 regions (`lib/regions.js`), every graph in exactly one (test).
+
+## Move M3: Landing: rows of graph blocks, one thread  (BREAK)
+Anchors: `The Visual Display of Quantitative Information (Edward Tufte)` (one scale), `MAYA` via Bierut, `Dear Data` (the thread)
+Intent: h1 "13,299 developer concepts. 1,397 of them turn up in more than one graph." Figure: 8 region rows, 80 blocks as wide as their concept counts on ONE scale (test), the white thread through the 17 graphs containing C (6 regions), snaking row to row. Every row and block links.
+Alternatives rejected: the old map as hero (R0); a single-topic chart (fails the summary rule).
+
+## Move M4: Pages for everything citable  (KEEP-THE-RULE)
+Intent: 8 region pages, 80 graph pages (all concepts listed with anchors, learning paths, byte-exact download), 4,656 concept pages (every recorded link in both directions, grouped by predicate, with source graph and relationship id).
+
+## Move M5: The map as continents  (BREAK)
+Anchors: `The Medium Is the Massage` (canvas in terminal colours), `Envisioning Information` (layering)
+Intent: each region has a fixed home on a ring; force layout at build pulls concepts home and along links; canvas draws, selection lights links in white; region toggles; find box (listbox); `?c=` deep links; nearness disclosed as "linked", not measured.
+
+## Move M6: Speed  (KEEP-THE-RULE)
+Residual diff: first interactive payload 16.4 MB (overview.json) + 168 KB of scripts → landing HTML 152.6 KB raw / 19.5 KB gzip with the figure inside, ~176 KB gzip framework JS; map data 362 KB / 125 KB gzip, fetched only on /map; search index 1.4 MB / 301 KB gzip, fetched on first search focus.
+
+## Move M7: Palette from the topic, zones  (BREAK; owner's standing rule)
+Anchors: `Interaction of Color (Josef Albers)`, `Designing Brand Identity (Alina Wheeler)`
+Intent: region colours from the xterm-256 palette (220, 208, 44, 69, 77, 170, 203, 250); white is the trace. Two grounds: the terminal (dark: landing, regions, map) and the man page (light: concept, graph, About), each with its own measured palette.
+Measured: dark min ΔE 44 between regions, contrast 5.85-13.68:1 on #0c0f14; light min ΔE 29, 4.56-5.79:1 on #f6f4ee. P2P lavender (xterm 147) replaced by grey 250 after it measured ΔE 29 from Systems blue.
+
+## 4. Panel R1 (WHOLE, on M1-M7; `design/panel/R1/`, 8 of 8 filed)
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
 |---|---|---|---|---|
-| Provocateur | Art as Technique (Viktor Shklovsky) | Distinctive relational field plus matching editorial explanation | PASS | None blocking |
-| Inclusion | The Principles of Universal Design (Ronald Mace et al.) | Mobile navigation visible; textual edge duplicates graph meaning | PASS | Interaction verification remains outside screenshot scope |
-| Usability | Don't Make Me Think (Steve Krug) | Docker → Container and predicate agree between edge and card | PASS | Verify evidence destination |
-| Evidence | Beautiful Evidence (Edward Tufte) | Editorial status explicit; no false source equivalence | PASS | Verify documentary retrieval |
-| Craft | The Elements of Typographic Style (Robert Bringhurst) | Active labels clear, hierarchy serves meaning | PASS | Optional secondary type enlargement (applied) |
+| Critic: Evidence (Cairo) | The Truthful Art | reproduced 13,299 / 1,397 / 80 / C 17 graphs 6 regions; "more than any other concept" false (JavaScript 18); row totals sum to 15,618 records, unlabelled | OBJECT | reword; label records vs concepts |
+| Critic: Evidence (Tufte) | Visual Display | one scale holds (0.152 px/concept); same region shown with two unlabelled totals; cards' scale differs from figure while text says "one scale" | OBJECT | label both units; scope the scale claim |
+| Critic: Usability (Krug) | Don't Make Me Think | probe passes at both widths; "1,397" underlined like a link; "Follow C" missing at 375; xterm sentence and relationship ids are noise | PASS | optional |
+| Critic: Provocateur (Debord) | Society of the Spectacle | a falsifiable claim proven by the figure; citable concept URLs; counts reconcile | PASS | optional: define "shared"; predicates in the map panel |
+| Critic: Provocateur (Shklovsky) | Art as Device | landing roughens; the map is the stock hairball; concept pages lose the device | OBJECT | carry the thread to concept pages and the map |
+| Critic: Inclusion (Holmes) | Mismatch | role="img" hides the figure's 88 links from screen readers; no browse route on the map; touch hint names esc/scroll and clips | OBJECT | role="group"; browse list; touch hint |
+| Critic: Inclusion (Mace) | Universal Design | focus visible everywhere; search and map keyboard paths complete; the figure is 88 consecutive Tab stops | OBJECT | one stop or a skip |
+| Critic: Dionysian Excess (Nietzsche) | Birth of Tragedy | the landing marries grid and thread; map restrained by choice | PASS | optional: keep the thread off labels |
 
-Statements of meaning: a connected infrastructure instrument distinguishing records from interpretation. Artist question answered yes for visible state. Neutral questions: do evidence links work and does mobile selection retain parity? Opinions permitted; no blocking visual objection. Andon: no; R1 Andon RESOLVED through ADAPT and frame swap. M1/M2 and their interaction merge are settled pending whole-artifact QA. Automated accessibility found source-download links distinguishable only by color; ADAPT adds underlines and reruns tests.
+Andon: no.
 
-## Move M3: A live relationship instrument (BREAK / ambition push)
-Depends on: M1, M2.
-Anchors: Stance The Art of Looking Sideways (Alan Fletcher) | Rule Thinking with Type (Ellen Lupton) | Breaker Making and Breaking the Grid (Timothy Samara) | Counterpoint Grid Systems in Graphic Design (Josef Müller-Brockmann), dotted from Making and Breaking the Grid (Timothy Samara). Additional visited anchor Progressive Disclosure, reached through Envisioning Information (Edward Tufte) →[layering and separation].
-Intent: escalate the workbench from styled neighborhood exploration to an explicit selected-edge instrument. Make the trace itself switchable, show direction and provenance immediately, and keep a keyboard-readable relationship list.
-Formal argument: a live focused-edge mode removes background topology from the immediate reading task without deleting it; neighborhood and whole-field contexts remain explicit alternative views. This pushes the break further while providing the acceptable pole through disclosure.
-Alternatives rejected: a terminal command interpreter would increase learning burden; hiding all other data permanently would misrepresent completeness.
-Consequence: state must reset predictably across selection/fit and controls need pressed states; evidence card must remain synchronized.
-Fence: showing the full network preserves context. Break its default dominance only after selecting a concrete edge, with a visible reversible toggle.
-Frontier effect: focused-edge/neighborhood switch, mobile selection, exact evidence navigation, alias and ambiguity routes all require interaction QA.
-Advanced pole: Making and Breaking the Grid (Timothy Samara), graph transformed into a readable relation instrument. Acceptable pole: Progressive Disclosure, explicitly reversible focused context.
+### Resolutions, R1
 
-## Anchor Ledger — after R2 and M3 implementation
+| Finding | Resolution |
+|---|---|
+| Cairo: "more than any other concept" is false | ADAPT (M8): lede states the true claim, computed |
+| Cairo + Tufte: row totals are records, unlabelled; two totals per region | ADAPT (M8): "rec." on rows, caption with 15,618 records for 13,299 concepts, cards "concepts at home", About section |
+| Tufte: one-scale claim overreaches | ADAPT (M8): scoped to the cards |
+| Shklovsky: concept pages lose the device | ADAPT (M9): each concept page opens with its own thread through the 80 blocks |
+| Shklovsky: the map is a stock hairball | OVERRULE (MAYA, acceptable pole): the map is the browse-and-select tool; its regions-on-a-ring layout already departs from the hairball (R0 Cairo, Krug), and the device now runs through landing and every concept page |
+| Holmes: role="img" hides links | ADAPT (M10): role="group" with title and desc |
+| Holmes: no browse route on the map | ADAPT (M10): top 4 concepts per region as buttons before selection |
+| Holmes: touch hint | ADAPT (M10): pointer-aware hint, clear of the zoom buttons |
+| Holmes: no light/dark choice on the terminal landing | DEFERRED: zones are by page type (owner's rule); contrast measured in both |
+| Mace: 88 Tab stops | ADAPT (M10): blocks tabIndex=-1; rows and thread label remain |
+| Mace: no keyboard pan | DEFERRED: selection centres the view; zoom and fit buttons exist |
+| Krug: underline on "1,397" | ADAPT: colour, no underline |
+| Krug: "Follow C" absent at 375 | ADAPT: the thread label is a link at both widths |
+| Krug: relationship ids are noise | OVERRULE (Debord R0/R1: citable ids are the proof) |
+| Debord: define "shared" | ADAPT: caption links to the merge rules |
+| Debord: predicates in the map panel | DEFERRED: the concept page shows every predicate; the panel links to it |
+| Nietzsche: thread over block labels | ADAPT: thread runs in the gap above the blocks |
 
-| Anchor | Role | Status | Evidence | Strongest objection survived / note |
+## Move M8: Say exactly what is counted  (KEEP-THE-RULE)
+Anchors: The Truthful Art (via Cairo), `The Visual Display of Quantitative Information (Edward Tufte)`.
+Residual diff: lede claim changed from a false superlative to a computed true one; row labels gained a unit; two caption sentences; About section.
+
+## Move M9: The thread on every concept page  (BREAK, escalation of M3)
+Anchors: `The Medium Is the Massage`, `Dear Data` (one path through the data, per concept).
+Intent: the landing's device repeated per concept: its own thread through the same 80 blocks, so "where does this idea live" is answered by form.
+Measured: concept page weight +~9 KB raw HTML for two SVGs; figure at 1:1 (760 px max).
+
+## Move M10: Access fixes  (KEEP-THE-RULE)
+role="group" figures, browse list, touch hints, blocks out of the tab order.
+
+## 5. Panel R2 (confirmation of the five R1 objectors; `design/panel/R2/`)
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
 |---|---|---|---|---|
-| The Art of Looking Sideways (Alan Fletcher) | Stance | KEEP | Cross-source neighbors and real query entry | Lateral connections must not invent equivalence; explicit curation preserves distinction |
-| The Elements of Typographic Style (Robert Bringhurst) | Rule | ADAPT | Compact mono hierarchy, enlarged decoding legend | Initial headline and tiny legend compromised content; corrected in R2 |
-| Thinking with Type (Ellen Lupton) | Rule | KEEP | Pane labels, identifiers and prose hierarchy | Developer styling must not replace plain explanation |
-| Grid Systems in Graphic Design (Josef Müller-Brockmann) | Rule/counterpoint | KEEP | Stable graph/inspector panes; mobile stack | Breaking landing-page hierarchy still needs predictable control placement |
-| Making and Breaking the Grid (Timothy Samara) | Breaker | ADAPT | Live relation instrument with reversible active-edge focus | Whole-neighborhood emphasis hid meaning; frame swapped after R1 |
-| Art as Technique (Viktor Shklovsky) | Incoming grounding | KEEP | Relational field remains unusual, with explicit textual explanation | Visual spectacle alone failed R1; exact edge correspondence repaired it |
-| MAYA: Most Advanced Yet Acceptable (Raymond Loewy) | Governing criterion | KEEP | Independent R2 PASS across all five roles | Novelty cannot excuse inaccessible meaning |
-| The Visual Display of Quantitative Information (Edward Tufte) | Evidence | KEEP | Original records preserved, editorial assertions labeled | False Same platform encoding rejected and removed |
-| Beautiful Evidence (Edward Tufte) | Evidence expansion | KEEP | Exact relation proof with primary-source links | Screenshot status is not retrieval proof; browser test verifies destination/focus |
-| Envisioning Information (Edward Tufte) | Disclosure grounding | KEEP | Active edge stands out from subdued topology | Do not delete context; reversible Neighborhood control |
-| Progressive Disclosure | Frame swap / merge | KEEP | Same data at edge, neighborhood, full record levels | Hidden context must remain reachable |
-| Mismatch: How Inclusion Shapes Design (Kat Holmes) | Inclusion | KEEP | Canvas-free relationship buttons and index | Initial mobile navigation absence corrected |
-| The Principles of Universal Design (Ronald Mace et al.) | Inclusion expansion | KEEP | Redundant text and graphic relationship meanings | Selected evidence must not rely on precise tracing |
-| Don't Make Me Think (Steve Krug) | Usability | KEEP | Plain predicate, exact evidence action and native controls | Initial edge/inspector mismatch corrected |
-| Tufte Style | Frame swap grounding | KEEP | Reduced foreground noise without erased data | Graph complexity alone is not useful information |
-| Critic: Provocateur (Debord, Shklovsky) | Critic | KEEP | Independent R1/R2 reports | Developer identity retained while removing ambiguity |
-| Critic: Inclusion (Holmes, Mace) | Critic | KEEP | Independent R1/R2 reports | Navigation parity and textual meaning demanded |
-| Critic: Usability (Krug, Nielsen) | Critic | KEEP | Independent R1/R2 reports | Exact next action tested rather than inferred |
-| Critic: Evidence (Tufte, Cairo) | Critic | KEEP | Independent R1/R2 reports | Semantic conflation vetoed |
-| Critic: Craft (Sennett, Bringhurst) | Critic | KEEP | Independent R1/R2 reports | Label collisions and inadequate type scale corrected |
+| Critic: Evidence (Cairo) | The Truthful Art | lede true against atlas.json; records 15,618 = sum of graph sizes; cards sum to 13,299 | PASS | optional: shorter lede (applied) |
+| Critic: Evidence (Tufte) | Visual Display | units named and reconciled; scale claim scoped; Docker thread matches its header | PASS | optional: short row label in the mini figure (applied) |
+| Critic: Provocateur (Shklovsky) | Art as Device | concept pages carry the device; two concepts' threads differ at a glance | PASS | optional |
+| Critic: Inclusion (Holmes) | Mismatch | figure links in the accessibility tree; 32 browse buttons; touch hint unclipped | PASS | optional: prefers-color-scheme |
+| Critic: Inclusion (Mace) | Universal Design | 10 Tab stops through the landing figure (was 89), 9 on a concept page; focus visible | PASS | optional: roving tabindex |
 
-### Live graph
-See docs/design-anchors.mmd; source labels validated against the installed graph. Marked Mermaid fallback is used because no dedicated graph renderer was exposed. Frontier disposition: docs/design-frontier.md. Whole-artifact rounds completed; see final convergence.
+Andon: no. Applied after R2 and measured, not re-judged: shorter lede ("No concept spans more regions; only JavaScript is in more graphs (18)", computed); "Paradigms", "Peer-to-peer" row names in the concept-page figure.
 
+## 6. Step 2g: printed figures at the final state (measured 2026-11-12T02:13Z, after the last edit)
 
-## Final convergence and compliance
-
-### Whole-artifact review 1
-All five independent critics — Provocateur, Inclusion, Usability, Evidence, and Craft — returned PASS after the M3 ambition push. They inspected the desktop, active relationship, mobile, evidence, routes, and catalog captures plus recorded verification. The query, highlighted edge, inspector, and evidence now express the same relationship. Editorial additions remain distinguished from original source assertions. No required frontier item, Andon, or frame change was opened. A stale QA-status observation was resolved against the completed QA record, without a design change.
-
-### Whole-artifact review 2
-A second independent whole-artifact round returned PASS from all five critics without an intervening artifact change. No required new frontier or dependency was opened. Optional future refinements—less repetitive evidence metadata, larger secondary metadata, featured cross-source routes, and manual assistive-technology research—remain explicitly deferred, not claimed complete.
-
-### Stop conditions
-- S1: PASS — the frontier is exhausted for this scope; branches in docs/design-frontier.md are taken or explicitly deferred.
-- S2: PASS — the entire artifact passed all five critics.
-- S3: PASS — two consecutive whole-artifact rounds passed without reopening or a new required frontier.
-- S4: PASS — M3's reversible active-edge emphasis and evidence-focus handoff survived both rounds.
-- S5: PASS — dotted-edge dispositions are documented in the frontier and ledger.
-
-### Double-loop reflection and graph amendment proposal
-The first review exposed a semantic failure that attractive styling could hide: editorial relations had been described as “Same platform.” Visual criticism alone cannot establish graph truth. Future graph versions should make identity preservation, relation provenance, and query/graph/evidence agreement an explicit hard constraint alongside the Evidence critic. This is a project-level proposal only; the installed skill and its reference graph were not modified.
-
-### Final compliance
-Mode: Adaptive. Tooling: existing static application and Canvas/D3 renderer; Mermaid traversal/frontier artifacts; five independent critic roles; Node/jsdom tests; Chromium/Playwright interaction checks; and axe accessibility scans. No new runtime framework, remote font, image generation, or paid service was needed. Branch spikes were not applicable: alternatives were rejected with recorded reasons rather than represented as tested prototypes. Manual screen-reader and user research were not performed. All five required DADA artifacts are present: Traversal Plan (with Frontier), Decision Records, Panel Reports, Anchor Ledger, and Compliance Check. Design convergence is complete; publication remains a separately verified engineering step and is not implied by these passes.
-
-### Final marked traversal graph
-
-```mermaid
-flowchart LR
-  sideways["The Art of Looking Sideways (Alan Fletcher)"]
-  bring["The Elements of Typographic Style (Robert Bringhurst)"]
-  lupType["Thinking with Type (Ellen Lupton)"]
-  mb["Grid Systems in Graphic Design (Josef Müller-Brockmann)"]
-  samBreak["Making and Breaking the Grid (Timothy Samara)"]
-  shklovsky["Art as Technique (Viktor Shklovsky)"]
-  maya["MAYA: Most Advanced Yet Acceptable (Raymond Loewy)"]
-  tufteV["The Visual Display of Quantitative Information (Edward Tufte)"]
-  crit_prov["Critic: Provocateur (Debord, Shklovsky)"]
-  crit_inc["Critic: Inclusion (Holmes, Mace)"]
-  crit_use["Critic: Usability (Krug, Nielsen)"]
-  crit_evid["Critic: Evidence (Tufte, Cairo)"]
-  crit_craft["Critic: Craft (Sennett, Bringhurst)"]
-  bring -->|canon for| lupType
-  lupType -.->|popularizes| bring
-  lupType -->|Letter Text Grid leads to| mb
-  samBreak -.->|loosens| mb
-  shklovsky -->|making strange for| samBreak
-  shklovsky -->|making strange for| sideways
-  maya -.->|tempers strangeness of| shklovsky
-  maya -->|bounds the break of| samBreak
-  sideways -->|humor as welcome for| maya
-  crit_craft -->|checks type with| bring
-  crit_prov -->|makes strange with| shklovsky
-  crit_evid -->|checks graphical integrity with| tufteV
-  crit_prov -.->|attacks smoothness favored by| crit_use
-  crit_use -.->|demands clarity from| crit_prov
-  classDef visited fill:#d5ff70,stroke:#263323,color:#101211
-  class sideways,bring,lupType,mb,samBreak,shklovsky,maya,tufteV,crit_prov,crit_inc,crit_use,crit_evid,crit_craft visited
-  classDef kept fill:#d5ff70,stroke:#263323,color:#101211
-  classDef adapted fill:#ffe299,stroke:#765714,color:#101211
-  class sideways,bring,lupType,mb,shklovsky,maya,tufteV,crit_prov,crit_inc,crit_use,crit_evid,crit_craft kept
-  class samBreak adapted
-
-  tufteB["Beautiful Evidence (Edward Tufte)"] -->|extends| tufteE["Envisioning Information (Edward Tufte)"]
-  tufteE -->|extends| tufteV
-  tufteE -->|layering and separation| c_prog["Progressive Disclosure"]
-  tufteV -->|names| c_tufte["Tufte Style"]
-  crit_inc -->|finds who is excluded with| holmes["Mismatch: How Inclusion Shapes Design (Kat Holmes)"]
-  crit_inc -->|checks access with| mace["The Principles of Universal Design (Ronald Mace et al.)"]
-  mace -->|inclusive principles for| holmes
-  crit_use -->|tests first-use with| krug["Don't Make Me Think (Steve Krug)"]
-  c_prog -->|approachable surface and ambitious depth for| maya
-  class tufteB,tufteE,c_prog,c_tufte,holmes,mace,krug visited;
-```
-
-## Final whole-artifact panel evidence
-
-Both final rounds assessed the rendered artifact and recorded QA evidence; panel review does not imply independently rerunning the test suite. No implementation change occurred between these rounds.
-
-| Critic / anchor | Whole round 1 | Whole round 2 / observed evidence | Required frontier / Andon |
+| Printed figure | Procedure | Value | Status |
 |---|---|---|---|
-| Provocateur / Shklovsky | PASS: relationship instrument rather than decorative novelty | PASS: query → relation → evidence makes connections inspectable; a featured cross-source path is optional | None / no |
-| Inclusion / Holmes and Mace | PASS: mobile navigation and textual alternatives | PASS: readable mobile navigation, semantic controls and evidence alternatives; manual assistive-technology testing remains future work | None / no |
-| Usability / Krug | PASS: selection and next action stay understandable | PASS: consistent starting point, current selection and next action; mobile jump explanation is optional | None / no |
-| Evidence / Tufte | PASS: source versus editorial provenance remains explicit | PASS: 768 nodes, 643 edges and 21 shared concepts are honest; 638 source plus 5 editorial edges and exact evidence are inspectable | None / no |
-| Craft / Bringhurst | PASS: coherent hierarchy and selected relationship contrast | PASS: endpoint labels remain foregrounded and readable; metadata density is an optional refinement | None / no |
+| 13,299 concepts | atlas.nodes (pipeline) | 13,299 | reproducible (Cairo R1, R2) |
+| 1,397 in more than one graph | concepts with records from 2+ files; = summary.overlaps | 1,397 | test-asserted |
+| 80 graphs, 8 regions | documents; lib/regions.js | 80, 8 | test-asserted |
+| C · 17 graphs · 6 regions | node `c` graphs and regions | 17, 6 | test-asserted; "no concept spans more regions" verified (max 6); JavaScript 18 |
+| row records (e.g. 3,885) and 15,618 total | sum of graph nodeCount | 15,618 | reproducible (Cairo R2) |
+| concepts at home (e.g. 3,321) | concepts whose primary region is the row | sum 13,299 | reproducible (Cairo R2) |
+| 4,656 on the map | overview ∪ multi-graph | 4,656 | build log, map title |
+| first screen 572 / 754 px | design/measure.cjs | 572 / 754 | measured after last edit |
+| payloads | gzip of served responses | landing 20,185 B; map data 125,502 B; search index 301,146 B | measured |
 
-Artist question: does active-edge focus improve understanding without disguising provenance or erasing the neighborhood? Both rounds accepted the reversible focus and evidence handoff. Optional opinions above were not converted into mandatory work; no unresolved blocking objection remained.
+## 7. Stop test
 
+- **S1** Frontier: no OPEN item; deferred: keyboard pan, prefers-color-scheme landing, predicates in the map panel, roving tabindex (each with a reason above). **Met.**
+- **S2** All 8 seats PASS on the current state across R1 (Krug, Debord, Nietzsche) and R2 (Cairo, Tufte, Shklovsky, Holmes, Mace). **Met across two rounds, not in one WHOLE round**: Krug, Debord and Nietzsche judged the R1 state, before M8-M10.
+- **S3** Two consecutive quiet WHOLE rounds: **not met** (R2 was a confirmation round of five seats). Resume point: convene R3, all 8 seats, on this state.
+- **S4** Ambition push: M9 carried the Breaker (the thread) from the landing to all 4,656 concept pages; measured +~9 KB per page, 2 SVGs at 1:1. **Met.**
+- **S5** Dotted edges: The End of Print declined (illegibility vs the acceptable pole); Dear Data applied (the thread). **Met.**
 
-## October 9, 2026 — continuation: relationship continuity, not more decoration
+## 8. Anchor Ledger
 
-This pass reopens historical convergence for the expanded 37-source artifact. Previous panel screenshots and PASS labels are not evidence for this revision. No installed DADA tool/skill or new independent visual panel is claimed.
+| Anchor | Role | Status | Evidence | Note |
+|---|---|---|---|---|
+| How to Use Graphic Design to Sell Things, Explain Things, Make Things Look Better (Michael Bierut) | Stance | KEEP | plain claim h1, search first | survived Krug R0 |
+| MAYA: Most Advanced Yet Acceptable (Raymond Loewy) | Criterion | KEEP | map overrule (Shklovsky R1) reasoned by it | — |
+| The Visual Display of Quantitative Information (Edward Tufte) | Rule | KEEP | one scale (test) | survived Tufte R1 after units named |
+| Envisioning Information (Edward Tufte) | Rule | KEEP | layering: dim cloud, white selection | — |
+| Grid Systems in Graphic Design (Josef Müller-Brockmann) | Rule | KEEP | 8 rows x 80 blocks | — |
+| The Medium Is the Massage (Marshall McLuhan, Quentin Fiore) | Breaker | KEEP | terminal chrome, xterm palette | survived Shklovsky R1 F3 ("familiar genre") as a claim, not a defect |
+| The End of Print (David Carson, Lewis Blackwell) | Counterpoint | declined | — | legibility first |
+| Dear Data (Giorgia Lupi, Stefanie Posavec) | Counterpoint | KEEP (pushed) | the thread, now on every concept page | — |
+| Interaction of Color (Josef Albers) | Rule | KEEP | ΔE and contrast per zone | — |
 
-### Audit and decision records
-- **Evidence / Tufte:** dataset filtering called renderMap, replacing the active edge while leaving the old explanation on screen. KEEP exact-triple correspondence; ADAPT the state transition so source filters retain the selected edge and emphasis.
-- **Usability / Krug:** “Emphasize & explain” rebuilt its button, reset nested result scrolling, and placed the answer after the entire scrolling list. ADAPT to active evidence before connections; focus that answer while retaining list position. Async hydration preserves search text, caret and focused edge control.
-- **Craft / Bringhurst:** the terminal mock-query and promotional headline compete with the workbench. ADAPT to a compact, plain-language source explorer. Use real Docker relationships as the introduction; no fake command interface, remote fonts, new framework or illustrative filler.
-- **Progressive disclosure:** fields/citations and raw JSON remain accessible in native details elements; the exact triple, assertion provenance and supplied rationale remain visible. No field is discarded. Remove dead preview-card generation that was immediately removed from the DOM.
-- **Inclusion / Holmes:** retain canvas-free connections, native selectors and visible focus; add reduced-motion CSS. Keyboard evidence handoff is covered by JSDOM; manual assistive technology and real rendered layout still require review.
+## 9. Double loop
 
-### Nonlinear traversal / reopened frontier
+The graph and panel served; the process lacked one probe. The old site's worst defect (16.4 MB before the signature graphic could draw) was found by me reading the network panel, not by any listed probe, and the checklist's probes would have passed the old site's first screen. **Amendment:** add a "first interactive payload" probe (bytes transferred before the landing graphic is interactive, with the largest request named) to the measurement checklist. Second amendment, from Holmes R1: a figure whose parts are links must not carry `role="img"` (it hides them from assistive technology); the landing figure of Internet Structure had the same defect and is fixed in the same session.
 
-~~~mermaid
-flowchart LR
-  E[Evidence: graph / triple / source agreement] -->|constrains| S[Stable relationship selection]
-  S -->|enables| P[Permalink to exact source edge]
-  P -->|returns to| E
-  U[Usability: discover the next action] -->|reorders| D[Progressive evidence disclosure]
-  D -->|must preserve| E
-  C[Craft: hierarchy serves reading] -->|reduces| H[Promotional and terminal ornament]
-  I[Inclusion: keyboard and text parity] -->|checks| D
-  D -.->|return after hydration| S
-  S --> Q[Automated interaction regression]
-  Q -.->|not visual proof| V[Real Chromium review: local screenshots and interactions]
-~~~
+## 10. Compliance Check
 
-### Verification boundaries
-Mock-Canvas regressions cover exact-edge reload, unrelated-edge rejection, source-filter continuity, list scroll, focus and delayed evidence. Original source data is unchanged. New read-only deployment smoke checks HTTP/MIME and every immutable shard's SHA-256 instead of assuming homepage availability implies healthy evidence. Rate limits are retry signals, not permission for tight loops. The initial browser-tool launch failed because no supported browser was installed; the later real Chromium review below supersedes that environment limitation. Full visual convergence remains **open**, not an invented round of independent PASS verdicts. See docs/QA.md for final command outcomes.
-
-
-### Follow-up rendered review — October 9, 2026
-
-The missing-binary blocker was resolved with user-cache Chromium and unprivileged temporary Ubuntu library extraction; sandboxing stayed enabled. Actual desktop/mobile home and Next.js → CSS exact-edge captures were inspected. The compact introduction, source/editorial markers, mobile navigation, evidence before connection filters, expandable source fields and exact-edge permalink are visibly present. Desktop overview remains intentionally dense; some foreground node/caption crowding and repeated predicate wording are a remaining refinement, not a claim of perfect graph legibility. Mobile evidence is readable in a single column. These are integrator observations, not a fabricated independent five-critic DADA panel. Interaction results are recorded in docs/QA.md and docs/qa/current/report.json.
+- [x] Tooling inventory (section 1)
+- [x] Mode Adaptive with reason
+- [x] Panel from the previous runs' picker output, R0 override reasoned
+- [x] Seed with exact labels, two dotted counterpoints, Frontier (resolution tables)
+- [x] Run type Full
+- [x] Landing: one graphic summarizing all 8 regions and 80 graphs; bottom 572 / 754 px; no sideways scroll
+- [x] Palette from the topic (xterm-256), one hue per region, ΔE and contrast measured per zone; zones vary (terminal / man page)
+- [x] BREAK moves: M3, M5, M7, M9
+- [ ] Decision Records before each move: M1-M7 written during the build (noted)
+- [x] Panel reports R0-R2, each critic citing something observable
+- [x] Every OBJECT resolved (section 4)
+- [ ] S3 not met (section 7)
+- [x] Printed figures re-measured at the final state (section 6)
+- [x] Anchor ledger, double loop
+- [x] Run recorded in the dada-changes ledger (import_log.py), see the final reply

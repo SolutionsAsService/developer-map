@@ -1,18 +1,24 @@
 {
   "name": "developer-map",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "node scripts/serve.mjs",
-    "build": "node scripts/build-atlas.mjs",
-    "test": "node --test --test-concurrency=1",
-    "check:syntax": "node --check src/app.js && node --check src/network.js && node --check src/details.js && node --check src/map-key.js",
-    "smoke:deploy": "node scripts/smoke-deploy.mjs",
-    "build:static": "node scripts/vercel-output.mjs"
+  "engines": {
+    "node": ">=20.9"
   },
-  "devDependencies": {
+  "scripts": {
+    "atlas": "node scripts/build-atlas.mjs",
+    "predev": "node scripts/build-atlas.mjs --if-missing && node scripts/copy-sources.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/build-atlas.mjs && node scripts/copy-sources.mjs",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test"
+  },
+  "dependencies": {
     "d3-force": "^3.0.0",
-    "jsdom": "^26.1.0"
+    "next": "16.3.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }
