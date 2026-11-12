@@ -10,11 +10,16 @@ export default function Home() {
   const total = atlas.nodes.length;
   const shared = atlas.nodes.filter(n => n.graphs.length > 1).sort((a, b) => b.graphs.length - a.graphs.length || b.degree - a.degree);
   const maxConcepts = Math.max(...atlas.regions.map(r => r.conceptCount));
+  const records = atlas.graphs.reduce((s, g) => s + g.nodeCount, 0);
+  const maxSpan = Math.max(...atlas.nodes.map(n => n.regions.length));
+  const sameSpan = atlas.nodes.filter(n => n.regions.length === maxSpan);
+  const mostGraphs = Math.max(...atlas.nodes.map(n => n.graphs.length));
   const lede = (
     <p className="lede">
       Each row is a region and each block one source graph, drawn as wide as the concepts it holds, on one scale. The white
       thread is <Link href={atlas.href(TRACE_ID)}>{trace.label}</Link>: it turns up in {trace.graphs.length} graphs across{' '}
-      {trace.regions.length} of the {atlas.regions.length} regions, more than any other concept.
+      {trace.regions.length} of the {atlas.regions.length} regions. No concept reaches more regions, and of the {sameSpan.length} that reach{' '}
+      {maxSpan}, {trace.label} is in the most graphs (the most-shared concept overall is in {mostGraphs}).
     </p>
   );
 
@@ -40,12 +45,19 @@ export default function Home() {
           </ul>
           <StackFigure atlas={atlas} size="wide" id="fw" />
           <StackFigure atlas={atlas} size="narrow" id="fn" />
-          <figcaption>Colours are xterm terminal colours, one per region. Select a row for its region, a block for its graph.</figcaption>
+          <figcaption className="cap-full">
+            Block width = the graph’s own records, so a concept shared by two graphs counts in both ({fmt(records)} records for {fmt(total)} concepts).
+            “Shared” means the same label after normalising (<Link href="/about">how concepts are merged</Link>). Select a row for its region, a block for its graph.
+          </figcaption>
         </figure>
       </section>
 
       <div className="hero-after">
         {lede}
+        <p className="muted" style={{ fontSize: 13 }}>
+          Block width = the graph’s own records, so a concept shared by two graphs counts in both ({fmt(records)} records for {fmt(total)} concepts).
+          “Shared” means the same label after normalising (<Link href="/about">how concepts are merged</Link>).
+        </p>
         <Link className="button" href={atlas.href(TRACE_ID)}>Follow {trace.label}</Link>
       </div>
 
@@ -53,7 +65,7 @@ export default function Home() {
         <section className="section" aria-labelledby="regions-title">
           <div className="section-head">
             <h2 id="regions-title">Eight regions</h2>
-            <p>The {atlas.graphs.length} source graphs grouped by what they describe. Bars share one scale: concepts whose home is that region.</p>
+            <p>The {atlas.graphs.length} source graphs grouped by what they describe. Each card counts distinct concepts whose home is that region (the region most of their graphs belong to); the bars share one scale with each other.</p>
           </div>
           <div className="region-grid">
             {atlas.regions.map(r => (
@@ -61,7 +73,7 @@ export default function Home() {
                 <h3>{r.name}</h3>
                 <p>{r.blurb}</p>
                 <span className="unit-bar" style={{ width: `${(r.conceptCount / maxConcepts) * 100}%` }} aria-hidden="true" />
-                <span className="count">{fmt(r.conceptCount)} concepts · {r.graphs.length} graphs</span>
+                <span className="count">{fmt(r.conceptCount)} concepts at home · {r.graphs.length} graphs</span>
               </Link>
             ))}
           </div>

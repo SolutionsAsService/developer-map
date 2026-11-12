@@ -77,3 +77,52 @@ Residual diff: first interactive payload 16.4 MB (overview.json) + 168 KB of scr
 Anchors: `Interaction of Color (Josef Albers)`, `Designing Brand Identity (Alina Wheeler)`
 Intent: region colours from the xterm-256 palette (220, 208, 44, 69, 77, 170, 203, 250); white is the trace. Two grounds: the terminal (dark: landing, regions, map) and the man page (light: concept, graph, About), each with its own measured palette.
 Measured: dark min ΔE 44 between regions, contrast 5.85-13.68:1 on #0c0f14; light min ΔE 29, 4.56-5.79:1 on #f6f4ee. P2P lavender (xterm 147) replaced by grey 250 after it measured ΔE 29 from Systems blue.
+
+## 4. Panel R1 (WHOLE, on M1-M7; `design/panel/R1/`, 8 of 8 filed)
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
+|---|---|---|---|---|
+| Critic: Evidence (Cairo) | The Truthful Art | reproduced 13,299 / 1,397 / 80 / C 17 graphs 6 regions; "more than any other concept" false (JavaScript 18); row totals sum to 15,618 records, unlabelled | OBJECT | reword; label records vs concepts |
+| Critic: Evidence (Tufte) | Visual Display | one scale holds (0.152 px/concept); same region shown with two unlabelled totals; cards' scale differs from figure while text says "one scale" | OBJECT | label both units; scope the scale claim |
+| Critic: Usability (Krug) | Don't Make Me Think | probe passes at both widths; "1,397" underlined like a link; "Follow C" missing at 375; xterm sentence and relationship ids are noise | PASS | optional |
+| Critic: Provocateur (Debord) | Society of the Spectacle | a falsifiable claim proven by the figure; citable concept URLs; counts reconcile | PASS | optional: define "shared"; predicates in the map panel |
+| Critic: Provocateur (Shklovsky) | Art as Device | landing roughens; the map is the stock hairball; concept pages lose the device | OBJECT | carry the thread to concept pages and the map |
+| Critic: Inclusion (Holmes) | Mismatch | role="img" hides the figure's 88 links from screen readers; no browse route on the map; touch hint names esc/scroll and clips | OBJECT | role="group"; browse list; touch hint |
+| Critic: Inclusion (Mace) | Universal Design | focus visible everywhere; search and map keyboard paths complete; the figure is 88 consecutive Tab stops | OBJECT | one stop or a skip |
+| Critic: Dionysian Excess (Nietzsche) | Birth of Tragedy | the landing marries grid and thread; map restrained by choice | PASS | optional: keep the thread off labels |
+
+Andon: no.
+
+### Resolutions, R1
+
+| Finding | Resolution |
+|---|---|
+| Cairo: "more than any other concept" is false | ADAPT (M8): lede states the true claim, computed |
+| Cairo + Tufte: row totals are records, unlabelled; two totals per region | ADAPT (M8): "rec." on rows, caption with 15,618 records for 13,299 concepts, cards "concepts at home", About section |
+| Tufte: one-scale claim overreaches | ADAPT (M8): scoped to the cards |
+| Shklovsky: concept pages lose the device | ADAPT (M9): each concept page opens with its own thread through the 80 blocks |
+| Shklovsky: the map is a stock hairball | OVERRULE (MAYA, acceptable pole): the map is the browse-and-select tool; its regions-on-a-ring layout already departs from the hairball (R0 Cairo, Krug), and the device now runs through landing and every concept page |
+| Holmes: role="img" hides links | ADAPT (M10): role="group" with title and desc |
+| Holmes: no browse route on the map | ADAPT (M10): top 4 concepts per region as buttons before selection |
+| Holmes: touch hint | ADAPT (M10): pointer-aware hint, clear of the zoom buttons |
+| Holmes: no light/dark choice on the terminal landing | DEFERRED: zones are by page type (owner's rule); contrast measured in both |
+| Mace: 88 Tab stops | ADAPT (M10): blocks tabIndex=-1; rows and thread label remain |
+| Mace: no keyboard pan | DEFERRED: selection centres the view; zoom and fit buttons exist |
+| Krug: underline on "1,397" | ADAPT: colour, no underline |
+| Krug: "Follow C" absent at 375 | ADAPT: the thread label is a link at both widths |
+| Krug: relationship ids are noise | OVERRULE (Debord R0/R1: citable ids are the proof) |
+| Debord: define "shared" | ADAPT: caption links to the merge rules |
+| Debord: predicates in the map panel | DEFERRED: the concept page shows every predicate; the panel links to it |
+| Nietzsche: thread over block labels | ADAPT: thread runs in the gap above the blocks |
+
+## Move M8: Say exactly what is counted  (KEEP-THE-RULE)
+Anchors: The Truthful Art (via Cairo), `The Visual Display of Quantitative Information (Edward Tufte)`.
+Residual diff: lede claim changed from a false superlative to a computed true one; row labels gained a unit; two caption sentences; About section.
+
+## Move M9: The thread on every concept page  (BREAK, escalation of M3)
+Anchors: `The Medium Is the Massage`, `Dear Data` (one path through the data, per concept).
+Intent: the landing's device repeated per concept: its own thread through the same 80 blocks, so "where does this idea live" is answered by form.
+Measured: concept page weight +~9 KB raw HTML for two SVGs; figure at 1:1 (760 px max).
+
+## Move M10: Access fixes  (KEEP-THE-RULE)
+role="group" figures, browse list, touch hints, blocks out of the tab order.

@@ -228,7 +228,7 @@ export default function MapCanvas() {
           <canvas ref={canvasRef} aria-label="Map of developer concepts by region; use the search box or the list in the panel to choose a concept" role="img" />
           {!data && <p className="map-hint" style={{ top: 12, bottom: 'auto' }}>Loading the map…</p>}
           {hov && <p className="map-hint" style={{ top: 12, bottom: 'auto', color: '#fff' }}>{hov[4]} · {hov[3]} links</p>}
-          <p className="map-hint">drag · scroll or pinch to zoom · click a dot · esc clears</p>
+          <p className="map-hint"><span className="mouse">drag · scroll to zoom · click a dot · esc clears</span><span className="touch">tap a dot · drag · pinch to zoom</span></p>
           <div className="zoom">
             <button type="button" aria-label="Zoom in" onClick={() => stageRef.current.zoomBy(1.4)}>+</button>
             <button type="button" aria-label="Zoom out" onClick={() => stageRef.current.zoomBy(1 / 1.4)}>−</button>
@@ -258,7 +258,22 @@ export default function MapCanvas() {
                 Each dot is a concept, coloured by region, placed near its region and pulled by its links, so shared concepts sit
                 between clusters. Select one to light up its links, then step from neighbour to neighbour. Turn regions on and off above.
               </p>
-              <p className="muted" style={{ fontSize: 14 }}>Prefer lists? Browse the <Link href="/graphs">80 source graphs</Link> or the <Link href="/regions">regions</Link>.</p>
+              <p className="muted" style={{ fontSize: 14 }}>Or start from the most connected concept in each region:</p>
+              {data && (
+                <ul>
+                  {data.regions.map((r, ri) => {
+                    const top = data.order.filter(i => data.nodes[i][2] === ri).slice(0, 4);
+                    return top.map((i, k) => (
+                      <li key={i} className={`rg-${r.id}`}>
+                        <span className="swatch" aria-hidden="true" />
+                        <button type="button" onClick={() => choose(i)}>{data.nodes[i][4]}</button>
+                        {k === 0 && <span className="meta" style={{ marginLeft: 'auto' }}>{r.name}</span>}
+                      </li>
+                    ));
+                  })}
+                </ul>
+              )}
+              <p className="muted" style={{ fontSize: 14 }}>Every concept is also listed on its <Link href="/graphs">graph’s page</Link>.</p>
             </div>
           )}
         </aside>

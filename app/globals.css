@@ -131,7 +131,7 @@ p { margin: 0 0 1em; }
   display: grid; grid-template-columns: minmax(0, 1fr) 760px; gap: 32px; align-items: start;
 }
 .hero h1 { font-size: clamp(32px, 3.5vw, 46px); margin: 0 0 16px; letter-spacing: -0.035em; text-wrap: balance; }
-.hero h1 .hl { color: var(--signal); text-decoration: underline; text-decoration-thickness: 0.09em; text-underline-offset: 0.14em; }
+.hero h1 .hl { color: var(--r-languages); }
 .hero .lede { font-size: 16px; color: #c3c9d4; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .hero-figure { margin: 0; }
@@ -158,7 +158,7 @@ p { margin: 0 0 1em; }
 .tile-label--dim { fill: #c3c9d4; font-weight: 500; }
 .trace-line { fill: none; stroke: var(--signal); stroke-width: 2.5; stroke-linejoin: round; pointer-events: none; }
 .trace-dot { fill: var(--bg); stroke: var(--signal); stroke-width: 2.5; pointer-events: none; }
-.trace-label { fill: var(--signal); font: 700 13px var(--mono); paint-order: stroke; stroke: var(--bg); stroke-width: 4px; pointer-events: none; }
+.trace-label { cursor: pointer; fill: var(--signal); font: 700 13px var(--mono); paint-order: stroke; stroke: var(--bg); stroke-width: 4px; pointer-events: none; }
 .row-rule { stroke: var(--hair); }
 
 /* ── Cards ────────────────────────────────────────── */
@@ -194,6 +194,11 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .concept-head h1 { font-size: clamp(30px, 5vw, 54px); word-break: break-word; }
 .concept-head .type { font: 600 13px var(--mono); color: var(--muted); margin-bottom: 8px; }
 .concept-head .desc { font-size: 18px; max-width: 44em; margin-top: 14px; }
+.concept-thread { margin: 0 0 28px; padding: 18px; border-radius: 10px; background: #0c0f14; color: #e8ebf0; overflow: hidden;
+  --bg: #0c0f14; --ink: #e8ebf0; --muted: #9aa3b2; --hair: #262e3b; --signal: #ffffff; --focus: #8ab4ff;
+  --r-languages: #ffd700; --r-paradigms: #ff8700; --r-machines: #00d7d7; --r-systems: #5f87ff; --r-networks: #5fd75f; --r-web: #d75fd7; --r-security: #ff5f5f; --r-p2p: #bcbcbc; }
+.concept-thread figcaption { color: #c3c9d4; }
+.concept-thread .stack-figure--mini { width: auto; max-width: 100%; height: auto; }
 .links { list-style: none; margin: 0; padding: 0; }
 .links li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 4px 10px; padding: 10px 0; border-bottom: 1px solid var(--hair); }
 .links .dir { font: 700 14px var(--mono); color: var(--muted); padding-top: 1px; }
@@ -231,7 +236,9 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .map-tools .rshort { display: none; }
 .zoom { position: absolute; right: 12px; bottom: 12px; display: grid; gap: 6px; }
 .zoom button { width: 44px; height: 44px; border: 1px solid #3a4456; border-radius: 6px; background: #141922; color: #e8ebf0; font: 700 20px var(--mono); cursor: pointer; }
-.map-hint { position: absolute; left: 12px; bottom: 12px; font: 12px var(--mono); color: #9aa3b2; pointer-events: none; }
+.map-hint .touch { display: none; }
+@media (pointer: coarse) { .map-hint .touch { display: inline; } .map-hint .mouse { display: none; } }
+.map-hint { max-width: calc(100% - 84px); position: absolute; left: 12px; bottom: 12px; font: 12px var(--mono); color: #9aa3b2; pointer-events: none; }
 
 /* ── Footer ───────────────────────────────────────── */
 .site-footer { border-top: 1px solid #262e3b; margin-top: 0; padding: 28px var(--gutter) 44px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; font-size: 14px; color: #9aa3b2; background: #0c0f14; }
@@ -251,7 +258,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .site-footer { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 800px) {
-  .stack-figure--wide { display: none; }
+  .stack-figure--wide, .stack-figure--mini { display: none; }
   .stack-figure--narrow { display: block; }
 }
 @media (max-width: 640px) {
@@ -261,6 +268,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .hero h1 { font-size: 27px; margin-bottom: 8px; }
   .hero .lede, .hero .hero-ctas { display: none; }
   .hero-mobile-cta { display: block; margin: 0 0 4px; }
+  .hero-figure .cap-full { display: none; }
   .hero-after { display: block !important; }
   .concept-head { padding: 18px 16px; border-left-width: 6px; }
   .map-tools button { min-height: 34px; padding: 0 9px; font-size: 12px; }

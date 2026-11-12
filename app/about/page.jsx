@@ -30,6 +30,8 @@ export default function About() {
           <dl>
             <dt><strong>{fmt(sum.concepts)} concepts</strong></dt>
             <dd>Records whose labels match across files after normalising case, spacing, underscores and hyphens, generic qualifiers and acronyms become one concept. There is no fuzzy matching. People, claims, ambiguous single words (host, kernel, switch, frame…) and {au.declinedMerges?.length ?? 0} declined pairs are never merged. The build made {fmt(au.autoMerges.length)} automatic merges.</dd>
+            <dt><strong>Records versus concepts</strong></dt>
+            <dd>The front page’s blocks and row totals count each graph’s own records ({fmt(atlas.graphs.reduce((s, g) => s + g.nodeCount, 0))} in all). A concept shared by several graphs is one concept but several records, so the {fmt(sum.concepts)} concepts come from more records than that. Region cards count distinct concepts at home in a region: the region most of their graphs belong to.</dd>
             <dt><strong>{fmt(atlas.multiCount)} in more than one graph</strong></dt>
             <dd>Concepts whose merged records come from two or more source files.</dd>
             <dt><strong>{fmt(sum.relationships)} links</strong></dt>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { loadAtlas } from '../../../lib/atlas.js';
 import { shortName } from '../../../lib/figure.js';
+import StackFigure from '../../../components/StackFigure.jsx';
 
 export const dynamicParams = false;
 export function generateStaticParams() { return [...loadAtlas().slugOf.values()].map(id => ({ id })); }
@@ -41,11 +42,13 @@ export default async function ConceptPage({ params }) {
           <h1>{n.label}</h1>
           {n.description && <p className="desc">{n.description}</p>}
         </div>
-        <dl className="facts">
-          <div><dt>Recorded links</dt><dd>{links.length}</dd></div>
-          <div><dt>Source graphs</dt><dd>{n.graphs.length}</dd></div>
-          <div><dt>Regions</dt><dd>{n.regions.length}</dd></div>
-        </dl>
+        <figure className="concept-thread">
+          <figcaption className="kicker">
+            {n.label} in {n.graphs.length} of {atlas.graphs.length} graphs · {n.regions.length} of {atlas.regions.length} regions · {links.length} recorded links
+          </figcaption>
+          <StackFigure atlas={atlas} size="mini" id={`ct-${slug}`} traceId={n.id} />
+          <StackFigure atlas={atlas} size="narrow" id={`ctn-${slug}`} traceId={n.id} />
+        </figure>
 
         <div className="two-col" style={{ paddingBottom: 56 }}>
           <section aria-labelledby="links-title">
