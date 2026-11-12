@@ -126,3 +126,73 @@ Measured: concept page weight +~9 KB raw HTML for two SVGs; figure at 1:1 (760 p
 
 ## Move M10: Access fixes  (KEEP-THE-RULE)
 role="group" figures, browse list, touch hints, blocks out of the tab order.
+
+## 5. Panel R2 (confirmation of the five R1 objectors; `design/panel/R2/`)
+
+| Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
+|---|---|---|---|---|
+| Critic: Evidence (Cairo) | The Truthful Art | lede true against atlas.json; records 15,618 = sum of graph sizes; cards sum to 13,299 | PASS | optional: shorter lede (applied) |
+| Critic: Evidence (Tufte) | Visual Display | units named and reconciled; scale claim scoped; Docker thread matches its header | PASS | optional: short row label in the mini figure (applied) |
+| Critic: Provocateur (Shklovsky) | Art as Device | concept pages carry the device; two concepts' threads differ at a glance | PASS | optional |
+| Critic: Inclusion (Holmes) | Mismatch | figure links in the accessibility tree; 32 browse buttons; touch hint unclipped | PASS | optional: prefers-color-scheme |
+| Critic: Inclusion (Mace) | Universal Design | 10 Tab stops through the landing figure (was 89), 9 on a concept page; focus visible | PASS | optional: roving tabindex |
+
+Andon: no. Applied after R2 and measured, not re-judged: shorter lede ("No concept spans more regions; only JavaScript is in more graphs (18)", computed); "Paradigms", "Peer-to-peer" row names in the concept-page figure.
+
+## 6. Step 2g: printed figures at the final state (measured 2026-11-12T02:13Z, after the last edit)
+
+| Printed figure | Procedure | Value | Status |
+|---|---|---|---|
+| 13,299 concepts | atlas.nodes (pipeline) | 13,299 | reproducible (Cairo R1, R2) |
+| 1,397 in more than one graph | concepts with records from 2+ files; = summary.overlaps | 1,397 | test-asserted |
+| 80 graphs, 8 regions | documents; lib/regions.js | 80, 8 | test-asserted |
+| C · 17 graphs · 6 regions | node `c` graphs and regions | 17, 6 | test-asserted; "no concept spans more regions" verified (max 6); JavaScript 18 |
+| row records (e.g. 3,885) and 15,618 total | sum of graph nodeCount | 15,618 | reproducible (Cairo R2) |
+| concepts at home (e.g. 3,321) | concepts whose primary region is the row | sum 13,299 | reproducible (Cairo R2) |
+| 4,656 on the map | overview ∪ multi-graph | 4,656 | build log, map title |
+| first screen 572 / 754 px | design/measure.cjs | 572 / 754 | measured after last edit |
+| payloads | gzip of served responses | landing 20,185 B; map data 125,502 B; search index 301,146 B | measured |
+
+## 7. Stop test
+
+- **S1** Frontier: no OPEN item; deferred: keyboard pan, prefers-color-scheme landing, predicates in the map panel, roving tabindex (each with a reason above). **Met.**
+- **S2** All 8 seats PASS on the current state across R1 (Krug, Debord, Nietzsche) and R2 (Cairo, Tufte, Shklovsky, Holmes, Mace). **Met across two rounds, not in one WHOLE round**: Krug, Debord and Nietzsche judged the R1 state, before M8-M10.
+- **S3** Two consecutive quiet WHOLE rounds: **not met** (R2 was a confirmation round of five seats). Resume point: convene R3, all 8 seats, on this state.
+- **S4** Ambition push: M9 carried the Breaker (the thread) from the landing to all 4,656 concept pages; measured +~9 KB per page, 2 SVGs at 1:1. **Met.**
+- **S5** Dotted edges: The End of Print declined (illegibility vs the acceptable pole); Dear Data applied (the thread). **Met.**
+
+## 8. Anchor Ledger
+
+| Anchor | Role | Status | Evidence | Note |
+|---|---|---|---|---|
+| How to Use Graphic Design to Sell Things, Explain Things, Make Things Look Better (Michael Bierut) | Stance | KEEP | plain claim h1, search first | survived Krug R0 |
+| MAYA: Most Advanced Yet Acceptable (Raymond Loewy) | Criterion | KEEP | map overrule (Shklovsky R1) reasoned by it | — |
+| The Visual Display of Quantitative Information (Edward Tufte) | Rule | KEEP | one scale (test) | survived Tufte R1 after units named |
+| Envisioning Information (Edward Tufte) | Rule | KEEP | layering: dim cloud, white selection | — |
+| Grid Systems in Graphic Design (Josef Müller-Brockmann) | Rule | KEEP | 8 rows x 80 blocks | — |
+| The Medium Is the Massage (Marshall McLuhan, Quentin Fiore) | Breaker | KEEP | terminal chrome, xterm palette | survived Shklovsky R1 F3 ("familiar genre") as a claim, not a defect |
+| The End of Print (David Carson, Lewis Blackwell) | Counterpoint | declined | — | legibility first |
+| Dear Data (Giorgia Lupi, Stefanie Posavec) | Counterpoint | KEEP (pushed) | the thread, now on every concept page | — |
+| Interaction of Color (Josef Albers) | Rule | KEEP | ΔE and contrast per zone | — |
+
+## 9. Double loop
+
+The graph and panel served; the process lacked one probe. The old site's worst defect (16.4 MB before the signature graphic could draw) was found by me reading the network panel, not by any listed probe, and the checklist's probes would have passed the old site's first screen. **Amendment:** add a "first interactive payload" probe (bytes transferred before the landing graphic is interactive, with the largest request named) to the measurement checklist. Second amendment, from Holmes R1: a figure whose parts are links must not carry `role="img"` (it hides them from assistive technology); the landing figure of Internet Structure had the same defect and is fixed in the same session.
+
+## 10. Compliance Check
+
+- [x] Tooling inventory (section 1)
+- [x] Mode Adaptive with reason
+- [x] Panel from the previous runs' picker output, R0 override reasoned
+- [x] Seed with exact labels, two dotted counterpoints, Frontier (resolution tables)
+- [x] Run type Full
+- [x] Landing: one graphic summarizing all 8 regions and 80 graphs; bottom 572 / 754 px; no sideways scroll
+- [x] Palette from the topic (xterm-256), one hue per region, ΔE and contrast measured per zone; zones vary (terminal / man page)
+- [x] BREAK moves: M3, M5, M7, M9
+- [ ] Decision Records before each move: M1-M7 written during the build (noted)
+- [x] Panel reports R0-R2, each critic citing something observable
+- [x] Every OBJECT resolved (section 4)
+- [ ] S3 not met (section 7)
+- [x] Printed figures re-measured at the final state (section 6)
+- [x] Anchor ledger, double loop
+- [x] Run recorded in the dada-changes ledger (import_log.py), see the final reply
