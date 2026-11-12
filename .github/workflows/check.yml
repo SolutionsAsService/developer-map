@@ -1,0 +1,22 @@
+# Checks every push: rebuilds the atlas from the source graphs, runs the tests and
+# builds the site. Nothing is committed back; the host builds the same way on deploy.
+name: Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run atlas
+      - run: npm test
+      - run: npx next build

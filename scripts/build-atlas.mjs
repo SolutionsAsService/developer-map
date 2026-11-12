@@ -1,4 +1,3 @@
-import { writeDetails } from './build-details.mjs';
 import { createHash } from 'node:crypto';
 import { documentTitle, relationshipSource, relationshipTarget, relationshipPredicate, relationshipEntries, normalizePath, pathRecord, isSourceFile, graphKey, documentNodes, sourceRelationshipSections, documentPathEntries } from './normalize-source.mjs';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
@@ -133,11 +132,11 @@ export async function buildAtlas() {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const target = path.join(dataDirectory, 'atlas.json');
+  if (process.argv.includes('--if-missing')) {
+    try { await readFile(target); console.log('data/atlas.json exists; skipping rebuild (npm run atlas to force)'); process.exit(0); } catch {}
+  }
   const atlas = await buildAtlas();
   await writeFile(path.join(dataDirectory, 'atlas.json'), JSON.stringify(atlas));
-  // Full records load through content-addressed, bounded detail shards.
-  const details = await writeDetails(atlas, dataDirectory);
-  const overview = { ...atlas, details, documents: atlas.documents.map(({metadata,fields,...doc})=>doc), nodes: atlas.nodes.map(({variants,...node})=>({...node,variants:[]})), edges: atlas.edges.map(({record,fields,evidence,...edge})=>({...edge, record:{source:edge.source,target:edge.target},fields:[],evidence:[]})), paths:[], audit:{}, lightweight:true };
-  await writeFile(path.join(dataDirectory, 'overview.json'), JSON.stringify(overview));
   console.log(`Built ${atlas.summary.concepts} concepts from ${atlas.documents.length} source graphs, ${atlas.summary.sourceRelationships} source relationships, ${atlas.summary.bridges} curated bridges`);
 }
